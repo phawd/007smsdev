@@ -26,11 +26,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.widget.SwitchCompat;
 
 import org.mobicents.protocols.ss7.map.api.smstpdu.SmsStatusReportTpdu;
 import org.mobicents.protocols.ss7.map.api.smstpdu.SmsTpdu;
@@ -78,9 +81,10 @@ public final class MainActivity extends AppCompatActivity {
     PendingIntent deliveryPI;
 
     EditText phoneNumber;
-    TextView statusText, resultText;
+    TextView statusText, resultText, rootStatusText;
     ListView historyList;
     ImageButton resultPduDetails;
+    SwitchCompat type0MonitorSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,9 +96,14 @@ public final class MainActivity extends AppCompatActivity {
         resultText = findViewById(R.id.resultStatus);
         historyList = findViewById(R.id.historyList);
         resultPduDetails = findViewById(R.id.resultPduDetails);
+        rootStatusText = findViewById(R.id.rootStatusText);
+        type0MonitorSwitch = findViewById(R.id.type0MonitorSwitch);
 
         preferences = getPreferences(Context.MODE_PRIVATE);
         phoneNumber.setText(preferences.getString(PREF_LAST_NUMBER, getString(R.string.phonenumber)));
+
+        // Initialize Type-0 SMS monitoring UI
+        initializeType0Monitoring();
 
         findViewById(R.id.sendButton).setOnClickListener(v -> {
             final String phoneNum = phoneNumber.getText().toString();
@@ -348,4 +357,58 @@ public final class MainActivity extends AppCompatActivity {
 
         }
     };
+
+    /**
+     * Initialize Type-0 SMS monitoring UI and functionality
+     */
+    void initializeType0Monitoring() {
+        // Check root access in background thread to avoid blocking UI
+        new Thread(() -> {
+            final boolean hasRoot = RootChecker.isRootAvailable();
+            
+            runOnUiThread(() -> {
+                // Update root status text
+                if (hasRoot) {
+                    rootStatusText.setText(R.string.root_available);
+                    type0MonitorSwitch.setEnabled(true);
+                } else {
+                    rootStatusText.setText(R.string.root_not_available);
+                    type0MonitorSwitch.setEnabled(false);
+                }
+                
+                // Set initial switch state from preferences
+                boolean isEnabled = Type0SmsMonitorService.isMonitoringEnabled(MainActivity.this);
+                type0MonitorSwitch.setChecked(isEnabled);
+                
+                // Set up switch listener
+                type0MonitorSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                        handleType0MonitoringToggle(isChecked);
+                    }
+                });
+            });
+        }).start();
+    }
+
+    /**
+     * Handle Type-0 SMS monitoring toggle
+     */
+    void handleType0MonitoringToggle(boolean enabled) {
+        if (enabled) {
+            // Start the monitoring service
+            Intent serviceIntent = new Intent(this, Type0SmsMonitorService.class);
+            startService(serviceIntent);
+            Type0SmsMonitorService.setMonitoringEnabled(this, true);
+            Toast.makeText(this, R.string.monitoring_enabled, Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "Type-0 SMS monitoring enabled");
+        } else {
+            // Stop the monitoring service
+            Intent serviceIntent = new Intent(this, Type0SmsMonitorService.class);
+            stopService(serviceIntent);
+            Type0SmsMonitorService.setMonitoringEnabled(this, false);
+            Toast.makeText(this, R.string.monitoring_disabled, Toast.LENGTH_SHORT).show();
+            Log.d(TAG, "Type-0 SMS monitoring disabled");
+        }
+    }
 }

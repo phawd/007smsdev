@@ -47,6 +47,11 @@
                     android:scheme="sms" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name=".Type0SmsMonitorService"
+            android:enabled="true"
+            android:exported="false" />
     </application>
 
 </manifest>
