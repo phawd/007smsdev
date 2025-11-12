@@ -89,6 +89,13 @@ But you have been warned. :)
 
 Another option is to clone this repository on your computer, install *Android Studio*, compile an app by yourself, and install it directly to your Android device.
 
-Please also note you need a faily new Android installed on yur phone.
+## Android Version Compatibility
+
+This application is compatible with Android devices running:
+- **Minimum**: Android 6.0 (Marshmallow, API 23)
+- **Target**: Android 13 (Tiramisu, API 33)
+- **Tested**: Android 12, 13, and 14
+
+**Note**: You need Android 6.0 or newer installed on your phone. For detailed compatibility information, see [ANDROID_COMPATIBILITY.md](ANDROID_COMPATIBILITY.md).
 
 You are of course always welcome to inspect the source code of the application in order to check that it does not contain some malicious code. And you can also contribute your code or ideas to the project.

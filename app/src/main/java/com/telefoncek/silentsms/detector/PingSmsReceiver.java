@@ -22,6 +22,21 @@ public class PingSmsReceiver extends BroadcastReceiver {
     public static final String TAG = "PingSmsReceiver";
     public final String CHANNEL_ID = "com.telefoncek.silentsms.detector";
 
+    /**
+     * Receives and processes incoming Class-0 SMS (Flash SMS) messages.
+     * 
+     * Android Compatibility:
+     * - Android 6.0+ (API 23+): DATA_SMS_RECEIVED broadcast works consistently
+     * - Android 12+ (API 31+): No changes to SMS reception behavior
+     * - Android 13+ (API 33+): Requires POST_NOTIFICATIONS permission for displaying notifications
+     * - Android 14+ (API 34+): Expected to work without changes
+     * 
+     * Note: This receiver can only detect Class-0 SMS messages, not Type-0 SMS.
+     * Type-0 SMS messages are completely hidden by Android since Android 2.3 (API 9).
+     * 
+     * @param context Application context
+     * @param intent Intent containing SMS data
+     */
     @Override
     public void onReceive(Context context, Intent intent) {
         if (!Telephony.Sms.Intents.DATA_SMS_RECEIVED_ACTION.equals(intent.getAction())) {
@@ -76,6 +91,7 @@ public class PingSmsReceiver extends BroadcastReceiver {
         intent.putExtra("title", "Silent SMS detected!");
         intent.putExtra("text", message);
         // Open NotificationView.java Activity
+        // Android 12+ Compatibility: FLAG_MUTABLE required for PendingIntents that may be modified
         PendingIntent pIntent = PendingIntent.getActivity(context, 0, intent,
                 PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_MUTABLE);
 
@@ -100,6 +116,9 @@ public class PingSmsReceiver extends BroadcastReceiver {
                 // Dismiss Notification
                 .setAutoCancel(true);
 
+        // Android 8.0+ (API 26+) requires notification channels
+        // Android 12+ and 13+: No changes to notification channel behavior
+        // Android 13+ requires POST_NOTIFICATIONS permission (checked in MainActivity)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, "com.telefoncek.silentsms.detector", NotificationManager.IMPORTANCE_HIGH);
             // Configure the notification channel.
