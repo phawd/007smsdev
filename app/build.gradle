@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'project-report'
 
 android {
+    // Android 13 (API 33) - Compatible with Android 12, 13, and 14
+    // For full Android 14 support, consider updating to compileSdkVersion 34
     compileSdkVersion 33
     buildToolsVersion '33.0.2'
 
@@ -12,8 +14,18 @@ android {
 
     defaultConfig {
         applicationId 'com.telefoncek.silentsms.detector'
+        
+        // Minimum SDK: Android 6.0 (Marshmallow)
+        // - Required for runtime permission model
+        // - SMS APIs stable from this version
         minSdkVersion 23
+        
+        // Target SDK: Android 13 (Tiramisu)
+        // - Includes POST_NOTIFICATIONS permission support
+        // - Compatible with Android 12+ PendingIntent requirements
+        // - Meets Google Play Store requirements (API 33+ for new apps)
         targetSdkVersion 33
+        
         versionCode 6
         versionName "4"
     }

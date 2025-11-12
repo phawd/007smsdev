@@ -92,11 +92,25 @@ public class StoreActivity extends AppCompatActivity {
         return converted;
     }
 
+    /**
+     * Format phone number according to the device's locale.
+     * 
+     * Android Compatibility:
+     * - Android 5.0+ (API 21 Lollipop): Uses modern formatNumber with locale
+     * - Android 4.x and below: Uses deprecated single-argument method (not supported by minSdk 23)
+     * 
+     * Note: Since minSdkVersion is 23, the else branch should never execute,
+     * but kept for code completeness and historical reference.
+     * 
+     * @param number Phone number to format
+     * @return Formatted phone number string
+     */
     public static String formatNumber(String number) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             return PhoneNumberUtils.formatNumber(number, Locale.getDefault().getCountry());
         } else {
-            //Deprecated method
+            // Deprecated method - only for devices below API 21
+            // This code path should never execute since minSdkVersion is 23
             //noinspection deprecation
             return PhoneNumberUtils.formatNumber(number);
         }

@@ -102,12 +102,16 @@ public final class MainActivity extends AppCompatActivity {
                 resultText.setText(null);
                 updateHistory(phoneNum);
 
+                // Send Class-0 SMS (Flash SMS) - Compatible with Android 6.0+ (API 23+)
+                // Port 9200 is used for silent SMS detection as per GSM 03.40/3GPP 23.040 standards
                 getSystemService(SmsManager.class).sendDataMessage(phoneNum, null, (short) 9200, payload, sentPI, deliveryPI);
             }
         });
 
         resultPduDetails.setOnClickListener(v -> showPduInfoDialog());
 
+        // Android 12+ Compatibility: FLAG_MUTABLE is required for PendingIntents that need to be mutable
+        // These PendingIntents are used for SMS delivery callbacks and must be mutable to receive extras
         sentPI = PendingIntent.getBroadcast(this, 0x1337, new Intent(SENT), PendingIntent.FLAG_CANCEL_CURRENT|PendingIntent.FLAG_MUTABLE);
         deliveryPI = PendingIntent.getBroadcast(this, 0x1337, new Intent(DELIVER), PendingIntent.FLAG_CANCEL_CURRENT|PendingIntent.FLAG_MUTABLE);
 
@@ -139,6 +143,20 @@ public final class MainActivity extends AppCompatActivity {
         updateHistory(null);
     }
 
+    /**
+     * Check and request runtime permissions required for app functionality.
+     * 
+     * Android 6.0+ (API 23+): Requires runtime permission requests for dangerous permissions
+     * Android 13+ (API 33+): Requires POST_NOTIFICATIONS permission for displaying notifications
+     * 
+     * Required permissions:
+     * - SEND_SMS: For sending silent SMS messages
+     * - RECEIVE_SMS: For detecting incoming silent SMS
+     * - READ_PHONE_STATE: For phone state information
+     * - POST_NOTIFICATIONS: For notification display (Android 13+)
+     * 
+     * @return true if all permissions are granted, false otherwise
+     */
     boolean checkPermissions() {
         List<String> missingPermissions = new ArrayList<>();
 
@@ -160,6 +178,7 @@ public final class MainActivity extends AppCompatActivity {
             missingPermissions.add(Manifest.permission.RECEIVE_SMS);
         }
 
+        // Android 13+ (API 33+) requires explicit runtime permission for notifications
         if (postNotificationPermission != PackageManager.PERMISSION_GRANTED) {
             missingPermissions.add(Manifest.permission.POST_NOTIFICATIONS);
         }
