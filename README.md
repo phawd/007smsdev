@@ -31,15 +31,24 @@ This type of message carries SIM card data. The SIM card data must be successful
 These are normal SMS messages that are forwarded from the receiving entity to an external device. The delivery acknowledgment is sent to the sender regardless of whether or not the message was forwarded to the external device. 
 
 - **Type 0 SMS**
-These are true silent SMS messages that do not show any notification on the phone, but return a delivery receipt to the sender. The `TP_PID` field in these messages is set to the value `0x40`. The purpose of the message is exclusively one - tracking users. The application *Silent SMS detector* **cannot detect these messages**.
+These are true silent SMS messages that do not show any notification on the phone, but return a delivery receipt to the sender. The `TP_PID` field in these messages is set to the value `0x40`. The purpose of the message is exclusively one - tracking users.
 
-In May 2010, Google [made a change in the Android code](https://android-review.googlesource.com/c/platform/frameworks/base/+/14069) to keep Type-0 SMS messages completely hidden. This means that these messages do not appear anywhere, are not saved on the phone and do not show any notification to the recipient. In theory, it would be possible to detect these messages by changing the Android code, however this would likely mean that your Android device is not compliant to mobile stadards. However, [research has shown](https://akaki.io/2022/transmission_and_detection_of_silent_sms_in_android) that receiving a Type-0 message triggers a record in Android logs (`GsmInboundSmsHandler: Received short message type 0, do not display or store. Send ACK.`). Unfortunately, this requires rooted Android device. As mentioned, the application *Silent SMS detector* cannot detect these messages.
+In May 2010, Google [made a change in the Android code](https://android-review.googlesource.com/c/platform/frameworks/base/+/14069) to keep Type-0 SMS messages completely hidden. This means that these messages do not appear anywhere, are not saved on the phone and do not show any notification to the recipient. In theory, it would be possible to detect these messages by changing the Android code, however this would likely mean that your Android device is not compliant to mobile stadards. However, [research has shown](https://akaki.io/2022/transmission_and_detection_of_silent_sms_in_android) that receiving a Type-0 message triggers a record in Android logs (`GsmInboundSmsHandler: Received short message type 0, do not display or store. Send ACK.`).
+
+**NEW FEATURE**: The application *Silent SMS detector* can now detect Type-0 SMS messages on **rooted devices**. When root access is available, the app can scan system logs for Type-0 SMS indicators and notify the user. This feature must be manually enabled in the app and requires root permissions.
 
 ## What is this application doing (and *what not*)?
 
-This application, which is a fork of [Android Silent SMS Ping](https://github.com/itds-consulting/android-silent-ping-sms), can send silent SMS messages to determine if a target SIM card (phone number) is active or not. It can also detect received silent SMS messages and alert user that he received silent SMS. However, it is handling only *Class 0* SME messages and not *Type 0* SMS messages.
+This application, which is a fork of [Android Silent SMS Ping](https://github.com/itds-consulting/android-silent-ping-sms), can send silent SMS messages to determine if a target SIM card (phone number) is active or not. It can also detect received silent SMS messages and alert user that he received silent SMS.
 
-The application is running on new Android devices and does not require rooted device.
+**Class-0 SMS Detection (No Root Required)**: The application can detect *Class-0* SMS messages on all Android devices without requiring root access. These messages are displayed to the receiver and trigger standard Android SMS reception mechanisms.
+
+**Type-0 SMS Detection (Root Required)**: The application can now also detect *Type-0* SMS messages on rooted Android devices. Since these messages are completely hidden by Android, detection is only possible by scanning system logs for specific indicators. This feature must be explicitly enabled by the user and requires:
+- Root access on the Android device
+- User permission to run log scanning in the background
+- Manual activation via the app's toggle switch
+
+The application is running on new Android devices. Basic functionality (Class-0 SMS detection) does not require a rooted device, but Type-0 SMS detection requires root access.
 
 <img src="notification1.jpg" alt="Silent SMS notification" width="300"/>
 
@@ -56,6 +65,42 @@ Oh, and BTW, did you know that your SIM card can be sending SMS messages without
 **Anyway, notification that you received silent SMS message does not necessarily means something bad is happening, and absence of this notification does not means that you are safe from tracking.**
 
 However, if you want to have greater transparency of what is happening "behind the scenes", *Silent SMS detector* could be interesting application. Because silent SMSes are meant to stay hidden from you, and with this application you can detect some of them. *Isn't that cool?*
+
+## Using Type-0 SMS Detection
+
+The Type-0 SMS detection feature is designed for users who have rooted Android devices and want enhanced detection capabilities.
+
+### Requirements
+- **Rooted Android device**: Your device must have root access (su binary must be available and functional)
+- **Android 6.0 or higher**: The feature requires modern Android versions for proper log access
+- **User activation**: The feature must be manually enabled in the app
+
+### How to Enable
+1. Open the Silent SMS detector app
+2. Look for the "Type-0 SMS Detection" section on the main screen
+3. The app will automatically check if your device has root access
+4. If root is available, toggle the "Enable Type-0 SMS Monitoring" switch
+5. The app will start a background service that scans system logs every 30 seconds
+
+### How It Works
+When enabled, the app:
+- Runs a background service that periodically scans Android system logs
+- Looks for specific log entries from `GsmInboundSmsHandler` indicating Type-0 SMS reception
+- Sends you a notification whenever a Type-0 SMS is detected
+- The notification will include timestamp information from the log entry
+
+### Limitations
+- **Battery impact**: Background log scanning may have a minor impact on battery life
+- **Root requirement**: Without root access, Type-0 SMS detection is impossible
+- **Log retention**: Detection depends on Android's log retention policy; very old messages may not be detected
+- **False negatives**: If logs are cleared or not retained, some Type-0 SMS messages may be missed
+- **No sender information**: Type-0 SMS log entries typically don't include sender phone numbers
+
+### Privacy and Security
+- The app only scans logs locally on your device
+- No log data is transmitted over the network
+- Root access is used solely for reading system logs
+- The background service can be disabled at any time by toggling the switch off
 
 ### History
 
