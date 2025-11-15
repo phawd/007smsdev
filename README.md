@@ -1,8 +1,40 @@
+# Silent SMS Flash - Advanced Silent SMS Detection & Transmission
 
-# Silent SMS detector
+> **🚨 New Sheriff in Town!** This project is now under active development by **phawd** with significant enhancements and modernization. Full credit to the original creators who paved the way! See [CREDITS.md](CREDITS.md) for complete attribution.
 
+**An advanced Android application for detecting and sending both Class-0 and Type-0 silent SMS messages.**
 
-Android application for detecting (and sending) *Class-0* silent SMS messages (binary messages) that does not require rooted device.
+- ✅ **Send Class-0 SMS** (Flash SMS) - No root required
+- ✅ **Send Type-0 SMS** (Completely hidden) - No root required for sending
+- ✅ **Detect Class-0 SMS** - Works on all devices, no root required
+- ✅ **Detect Type-0 SMS** - Requires root access for log monitoring
+- ✅ **Android 6.0 through 14+** - Fully compatible with modern Android
+
+---
+
+## 🆕 What's New in 2025
+
+Under new maintainership by **phawd**, the following major features have been added:
+
+- **Type-0 SMS Sending** - First-ever implementation of Type-0 SMS transmission
+- **Type-0 SMS Detection** - Root-based log monitoring for hidden SMS
+- **Enhanced UI** - Toggle switches for easy SMS type selection
+- **Confirmation Dialogs** - Safety warnings before sending Type-0 SMS
+- **Background Service** - Continuous Type-0 monitoring on rooted devices
+- **Comprehensive Tests** - Unit tests for all new functionality
+- **Better Documentation** - Complete credits, detailed guides, and inline comments
+
+---
+
+## 📚 Documentation
+
+- **[CREDITS.md](CREDITS.md)** - Full contributor list and project history
+- **[ANDROID_COMPATIBILITY.md](ANDROID_COMPATIBILITY.md)** - Android version compatibility details
+- **[TESTING_GUIDE.md](TESTING_GUIDE.md)** - Testing procedures and guidelines
+- **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** - Quick start guide
+- **[LICENSE](LICENSE)** - GNU GPL v3+ license text
+
+---
 
 ## What is silent SMS?
 
@@ -37,16 +69,45 @@ In May 2010, Google [made a change in the Android code](https://android-review.g
 
 **NEW FEATURE**: The application *Silent SMS detector* can now detect Type-0 SMS messages on **rooted devices**. When root access is available, the app can scan system logs for Type-0 SMS indicators and notify the user. This feature must be manually enabled in the app and requires root permissions.
 
-## What is this application doing (and *what not*)?
+## What Can This Application Do?
 
-This application, which is a fork of [Android Silent SMS Ping](https://github.com/itds-consulting/android-silent-ping-sms), can send silent SMS messages to determine if a target SIM card (phone number) is active or not. It can also detect received silent SMS messages and alert user that he received silent SMS.
+This application, building upon the foundation of [Android Silent SMS Ping](https://github.com/itds-consulting/android-silent-ping-sms), provides comprehensive silent SMS capabilities for security research, testing, and awareness.
 
-**Class-0 SMS Detection (No Root Required)**: The application can detect *Class-0* SMS messages on all Android devices without requiring root access. These messages are displayed to the receiver and trigger standard Android SMS reception mechanisms.
+### 📤 Sending Capabilities
 
-**Type-0 SMS Detection (Root Required)**: The application can now also detect *Type-0* SMS messages on rooted Android devices. Since these messages are completely hidden by Android, detection is only possible by scanning system logs for specific indicators. This feature must be explicitly enabled by the user and requires:
-- Root access on the Android device
-- User permission to run log scanning in the background
-- Manual activation via the app's toggle switch
+**Class-0 SMS (Flash SMS)**
+- Send binary SMS messages to any phone number
+- Determine if a target SIM card is online/active
+- Receive delivery confirmation
+- **No root required** on sending device
+- Uses standard Android SmsManager API
+
+**Type-0 SMS (Completely Hidden) - 🆕 NEW!**
+- Send truly silent SMS messages
+- Completely hidden on receiving device (no notification)
+- Useful for testing and research
+- **No root required** on sending device
+- User must explicitly enable and confirm each send
+
+### 📥 Detection Capabilities
+
+**Class-0 SMS Detection (No Root Required)**
+- Detects incoming *Class-0* SMS messages on all Android devices
+- No root access needed
+- Instant notifications with sender information
+- Messages logged for review
+- Works with standard Android SMS reception
+
+**Type-0 SMS Detection (Root Required) - 🆕 NEW!**
+- Detects *Type-0* SMS messages on rooted devices
+- Scans system logs for hidden SMS indicators
+- Background monitoring service
+- Periodic log scanning (every 30 seconds)
+- Notifications with detection timestamp
+- **Requirements:**
+  - Root access on the Android device
+  - User permission for background log scanning
+  - Manual activation via toggle switch in app
 
 The application is running on new Android devices. Basic functionality (Class-0 SMS detection) does not require a rooted device, but Type-0 SMS detection requires root access.
 
@@ -102,22 +163,66 @@ When enabled, the app:
 - Root access is used solely for reading system logs
 - The background service can be disabled at any time by toggling the switch off
 
-### History
+### Project History & Credits
 
-The original application, called [Android Silent SMS Ping](https://github.com/itds-consulting/android-silent-ping-sms) has been first developed in 2016. Unfortunately, it has not been maintained for several years and the original author archived it's Github repository in 2020.
+#### 🙏 Standing on the Shoulders of Giants
 
-In 2023 appication has been still accessible through F-Droid, but the Virustotal analysis has shown that APK has been infected.
+This project owes its existence to the pioneering work of previous developers:
 
-In the beginning of 2023 we started a new development. In the first stage we have updated SDK (to version 33) and Java (to version 11). We have set up application permissions compatible with modern Android systems and improved notifications. We also designed new application icon.
+**Original Foundation (2016-2020)**
+- **[Android Silent SMS Ping](https://github.com/itds-consulting/android-silent-ping-sms)** by **itds-consulting**
+- First implementation of silent SMS detection for Android
+- Established the core concept and detection methodology
+- Repository archived in 2020 after years of valuable service
 
-Currently application is fully working (you can install it from APK below or compile it with Android Studio by yourself), but it still looks like the old one.
+**2023 Revival & Modernization**
+- **Matej Kovacic** and contributors revived the project
+- Updated to SDK 33 and Java 11
+- Implemented Android 12/13 compatibility
+- Redesigned application icon and improved notifications
+- Added comprehensive compatibility documentation
 
-So in the second stage we plan to implement new design of the application. Later some new functionalities will be added. Specifically, we would like to implement data collection for threat analytics in order to collect the data about silent SMS messages and get some data which could help us estimate the scope of the problem. Stay tuned and check out the issues!
+#### 🤠 New Sheriff in Town (2025+)
+
+**Current Maintainer: phawd**
+
+The project has been significantly enhanced with new capabilities:
+
+**Major Additions:**
+- ✨ **Type-0 SMS Sending**: First implementation of Type-0 SMS transmission functionality
+- ✨ **Type-0 SMS Detection**: Root-based log scanning for completely hidden Type-0 SMS
+- ✨ **Enhanced UI**: Toggle switches for SMS type selection and monitoring controls
+- ✨ **Improved Security**: Comprehensive warning dialogs and user consent flows
+- ✨ **Modern Architecture**: Updated codebase with proper separation of concerns
+- ✨ **Expanded Testing**: Unit tests for all new components
+
+**Technical Improvements:**
+- Comprehensive PDU handling for Type-0 SMS
+- Advanced log parsing with root access management
+- Background service for continuous Type-0 monitoring
+- Enhanced notification system for multiple SMS types
+- Detailed inline documentation and code comments
+
+**Future Roadmap:**
+- Enhanced UI/UX with material design
+- Threat analytics and detection statistics
+- Multi-language support
+- Expanded SMS type support
+- Community-driven feature requests
+
+This project continues to honor the open-source spirit of its predecessors while pushing the boundaries of what's possible in silent SMS detection and transmission.
 
 
-### License
+### License & Attribution
 
-The project is licensed under the [GNU General Public License version 3 (or newer)](https://github.com/MatejKovacic/silent-sms-ping/blob/master/LICENSE).
+This project is licensed under the [GNU General Public License version 3 (or newer)](LICENSE).
+
+**Credits & Copyright:**
+- © 2016-2020 itds-consulting (Original Android Silent SMS Ping)
+- © 2023 Matej Kovacic and contributors (Modernization & Android 13 support)
+- © 2025 phawd (Type-0 SMS functionality & major enhancements)
+
+All contributors retain their respective copyrights. This project is built on the excellent foundation laid by the original developers and continues their legacy of transparency and security research.
 
 ### APK download (for testing)
 

@@ -85,6 +85,7 @@ public final class MainActivity extends AppCompatActivity {
     ListView historyList;
     ImageButton resultPduDetails;
     SwitchCompat type0MonitorSwitch;
+    SwitchCompat sendType0Switch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +99,7 @@ public final class MainActivity extends AppCompatActivity {
         resultPduDetails = findViewById(R.id.resultPduDetails);
         rootStatusText = findViewById(R.id.rootStatusText);
         type0MonitorSwitch = findViewById(R.id.type0MonitorSwitch);
+        sendType0Switch = findViewById(R.id.sendType0Switch);
 
         preferences = getPreferences(Context.MODE_PRIVATE);
         phoneNumber.setText(preferences.getString(PREF_LAST_NUMBER, getString(R.string.phonenumber)));
@@ -111,9 +113,15 @@ public final class MainActivity extends AppCompatActivity {
                 resultText.setText(null);
                 updateHistory(phoneNum);
 
-                // Send Class-0 SMS (Flash SMS) - Compatible with Android 6.0+ (API 23+)
-                // Port 9200 is used for silent SMS detection as per GSM 03.40/3GPP 23.040 standards
-                getSystemService(SmsManager.class).sendDataMessage(phoneNum, null, (short) 9200, payload, sentPI, deliveryPI);
+                // Check which type of SMS to send
+                if (sendType0Switch.isChecked()) {
+                    // Send Type-0 SMS (Completely hidden, requires root to detect)
+                    sendType0Sms(phoneNum);
+                } else {
+                    // Send Class-0 SMS (Flash SMS) - Compatible with Android 6.0+ (API 23+)
+                    // Port 9200 is used for silent SMS detection as per GSM 03.40/3GPP 23.040 standards
+                    getSystemService(SmsManager.class).sendDataMessage(phoneNum, null, (short) 9200, payload, sentPI, deliveryPI);
+                }
             }
         });
 
@@ -429,5 +437,37 @@ public final class MainActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.monitoring_disabled, Toast.LENGTH_SHORT).show();
             Log.d(TAG, "Type-0 SMS monitoring disabled");
         }
+    }
+
+    /**
+     * Send Type-0 SMS message
+     * Type-0 SMS messages are completely hidden on the receiving device (no notification)
+     * They can only be detected via system log scanning with root access
+     */
+    void sendType0Sms(String phoneNum) {
+        // Show warning dialog first time
+        new AlertDialog.Builder(this)
+                .setTitle("Send Type-0 SMS")
+                .setMessage(R.string.type0_sms_warning)
+                .setPositiveButton("Send", (dialog, which) -> {
+                    // Send in background thread
+                    new Thread(() -> {
+                        boolean success = Type0SmsSender.sendType0Sms(phoneNum, "");
+                        
+                        // Update UI on main thread
+                        runOnUiThread(() -> {
+                            if (success) {
+                                statusText.setText(R.string.type0_sent);
+                                resultText.setText(null);
+                                Toast.makeText(MainActivity.this, R.string.type0_sent, Toast.LENGTH_SHORT).show();
+                            } else {
+                                statusText.setText(R.string.type0_send_failed);
+                                Toast.makeText(MainActivity.this, R.string.type0_send_failed, Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }).start();
+                })
+                .setNegativeButton("Cancel", null)
+                .show();
     }
 }
