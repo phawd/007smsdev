@@ -1,4 +1,4 @@
-package com.telefoncek.silentsms.detector;
+package com.telefoncek.zerosms.detector;
 
 import android.telephony.SmsManager;
 import android.util.Log;

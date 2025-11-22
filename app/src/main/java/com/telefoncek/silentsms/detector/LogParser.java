@@ -1,8 +1,9 @@
-package com.telefoncek.silentsms.detector;
+package com.telefoncek.zerosms.detector;
 
 import android.util.Log;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,40 @@ import java.util.regex.Pattern;
 public class LogParser {
     private static final String TAG = "LogParser";
     
+    public interface Logger {
+        void d(String tag, String msg);
+        void e(String tag, String msg, Throwable tr);
+        void w(String tag, String msg);
+    }
+
+    private static Logger logger = new Logger() {
+        @Override
+        public void d(String tag, String msg) { Log.d(tag, msg); }
+        @Override
+        public void e(String tag, String msg, Throwable tr) { Log.e(tag, msg, tr); }
+        @Override
+        public void w(String tag, String msg) { Log.w(tag, msg); }
+    };
+
+    public static void setLogger(Logger newLogger) {
+        logger = newLogger;
+    }
+
+    public interface CommandExecutor {
+        Process execute(String command) throws IOException;
+    }
+
+    private static CommandExecutor commandExecutor = new CommandExecutor() {
+        @Override
+        public Process execute(String command) throws IOException {
+            return Runtime.getRuntime().exec(command);
+        }
+    };
+
+    public static void setCommandExecutor(CommandExecutor executor) {
+        commandExecutor = executor;
+    }
+
     // Pattern to match Type-0 SMS log entries
     private static final String TYPE0_SMS_PATTERN = "GsmInboundSmsHandler.*Received short message type 0";
     private static final Pattern pattern = Pattern.compile(TYPE0_SMS_PATTERN, Pattern.CASE_INSENSITIVE);
@@ -32,7 +67,7 @@ public class LogParser {
         List<String> detectedMessages = new ArrayList<>();
         
         if (!RootChecker.isRootAvailable()) {
-            Log.w(TAG, "Root access not available. Cannot scan logs.");
+            logger.w(TAG, "Root access not available. Cannot scan logs.");
             return detectedMessages;
         }
 
@@ -46,7 +81,7 @@ public class LogParser {
             // -v time: include timestamps
             // *:S: silence all logs except what we filter
             String command = "su -c logcat -t " + sinceDuration + " -v time";
-            process = Runtime.getRuntime().exec(command);
+            process = commandExecutor.execute(command);
             
             reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             errorReader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
@@ -58,7 +93,7 @@ public class LogParser {
                     // Extract timestamp from the log line to avoid duplicates
                     String timestamp = extractTimestamp(line);
                     if (!timestamp.equals(lastTimestamp)) {
-                        Log.d(TAG, "Type-0 SMS detected: " + line);
+                        logger.d(TAG, "Type-0 SMS detected: " + line);
                         detectedMessages.add(line);
                         lastTimestamp = timestamp;
                     }
@@ -68,11 +103,11 @@ public class LogParser {
             // Log any errors
             String errorLine;
             while ((errorLine = errorReader.readLine()) != null) {
-                Log.e(TAG, "Logcat error: " + errorLine);
+                logger.e(TAG, "Logcat error: " + errorLine);
             }
             
         } catch (Exception e) {
-            Log.e(TAG, "Error scanning logs for Type-0 SMS", e);
+            logger.e(TAG, "Error scanning logs for Type-0 SMS", e);
         } finally {
             try {
                 if (reader != null) {
@@ -85,7 +120,7 @@ public class LogParser {
                     process.destroy();
                 }
             } catch (Exception e) {
-                Log.e(TAG, "Error closing resources", e);
+                logger.e(TAG, "Error closing resources", e);
             }
         }
         
@@ -105,7 +140,7 @@ public class LogParser {
                 return logLine.substring(0, 18).trim();
             }
         } catch (Exception e) {
-            Log.e(TAG, "Error extracting timestamp", e);
+            logger.e(TAG, "Error extracting timestamp", e);
         }
         return "";
     }
@@ -124,7 +159,7 @@ public class LogParser {
             // such as message ID, sender info if available in logs
             return "Type-0 SMS detected at " + timestamp;
         } catch (Exception e) {
-            Log.e(TAG, "Error parsing log entry", e);
+            logger.e(TAG, "Error parsing log entry", e);
             return "Type-0 SMS detected (parsing error)";
         }
     }
@@ -142,21 +177,53 @@ public class LogParser {
      */
     public static boolean isLogScanningAvailable() {
         if (!RootChecker.isRootAvailable()) {
+            logger.w(TAG, "Root access not available for log scanning");
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Scans system logs for Type-0 SMS patterns
+     * @return true if Type-0 SMS pattern was found
+     */
+    public static boolean scanLogsForType0Sms() {
+        if (!isLogScanningAvailable()) {
             return false;
         }
 
-        // Try to read logs briefly to check if it works
         Process process = null;
+        BufferedReader reader = null;
         try {
-            process = Runtime.getRuntime().exec("su -c logcat -d -t 1");
-            int exitValue = process.waitFor();
-            return exitValue == 0;
+            // Command to read recent logs and grep for Type-0 SMS pattern
+            // We look for "GsmInboundSmsHandler" and "Received short message type 0"
+            // -t 100: limit to last 100 lines to keep it fast
+            String command = "logcat -t 100 -d | grep -E \"GsmInboundSmsHandler.*Received short message type 0\"";
+            
+            // We need to run this as root to see all system logs
+            process = commandExecutor.execute("su -c " + command);
+            
+            reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.contains("Received short message type 0")) {
+                    logger.d(TAG, "Type-0 SMS detected in logs: " + line);
+                    return true;
+                }
+            }
+            
+            process.waitFor();
+            return false;
+            
         } catch (Exception e) {
-            Log.e(TAG, "Error checking log scanning availability", e);
+            logger.e(TAG, "Error scanning logs", e);
             return false;
         } finally {
-            if (process != null) {
-                process.destroy();
+            try {
+                if (reader != null) reader.close();
+                if (process != null) process.destroy();
+            } catch (Exception e) {
+                // Ignore cleanup errors
             }
         }
     }

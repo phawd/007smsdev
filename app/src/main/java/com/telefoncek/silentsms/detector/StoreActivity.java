@@ -1,4 +1,4 @@
-package com.telefoncek.silentsms.detector;
+package com.telefoncek.zerosms.detector;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -29,7 +29,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Locale;
 
-import static com.telefoncek.silentsms.detector.MainActivity.PREF_DATA_SMS_STORE;
+import static com.telefoncek.zerosms.detector.MainActivity.PREF_DATA_SMS_STORE;
 
 
 public class StoreActivity extends AppCompatActivity {

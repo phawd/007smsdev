@@ -1,4 +1,4 @@
-package com.telefoncek.silentsms.detector;
+package com.telefoncek.zerosms.detector;
 
 import android.Manifest;
 import android.app.NotificationManager;
@@ -119,7 +119,7 @@ public final class MainActivity extends AppCompatActivity {
                     sendType0Sms(phoneNum);
                 } else {
                     // Send Class-0 SMS (Flash SMS) - Compatible with Android 6.0+ (API 23+)
-                    // Port 9200 is used for silent SMS detection as per GSM 03.40/3GPP 23.040 standards
+                    // Port 9200 is used for ZeroSMS detection as per GSM 03.40/3GPP 23.040 standards
                     getSystemService(SmsManager.class).sendDataMessage(phoneNum, null, (short) 9200, payload, sentPI, deliveryPI);
                 }
             }
@@ -167,8 +167,8 @@ public final class MainActivity extends AppCompatActivity {
      * Android 13+ (API 33+): Requires POST_NOTIFICATIONS permission for displaying notifications
      * 
      * Required permissions:
-     * - SEND_SMS: For sending silent SMS messages
-     * - RECEIVE_SMS: For detecting incoming silent SMS
+     * - SEND_SMS: For sending ZeroSMS messages
+     * - RECEIVE_SMS: For detecting incoming ZeroSMS
      * - READ_PHONE_STATE: For phone state information
      * - POST_NOTIFICATIONS: For notification display (Android 13+)
      * 

@@ -1,4 +1,4 @@
-package com.telefoncek.silentsms.detector;
+package com.telefoncek.zerosms.detector;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -16,11 +16,11 @@ import androidx.core.app.NotificationCompat;
 import android.telephony.SmsMessage;
 import android.util.Log;
 
-import static com.telefoncek.silentsms.detector.MainActivity.PREF_DATA_SMS_STORE;
+import static com.telefoncek.zerosms.detector.MainActivity.PREF_DATA_SMS_STORE;
 
 public class PingSmsReceiver extends BroadcastReceiver {
     public static final String TAG = "PingSmsReceiver";
-    public final String CHANNEL_ID = "com.telefoncek.silentsms.detector";
+    public final String CHANNEL_ID = "com.telefoncek.zerosms.detector";
 
     /**
      * Receives and processes incoming Class-0 SMS (Flash SMS) messages.
@@ -88,7 +88,7 @@ public class PingSmsReceiver extends BroadcastReceiver {
 
         Intent intent = new Intent(context, StoreActivity.class);
         // Send data to NotificationView Class
-        intent.putExtra("title", "Silent SMS detected!");
+        intent.putExtra("title", "ZeroSMS detected!");
         intent.putExtra("text", message);
         // Open NotificationView.java Activity
         // Android 12+ Compatibility: FLAG_MUTABLE required for PendingIntents that may be modified
@@ -106,11 +106,11 @@ public class PingSmsReceiver extends BroadcastReceiver {
                 // Set Ticker Message
                 .setTicker(message)
                 // Set Title
-                .setContentTitle("Silent SMS detected!")
+                .setContentTitle("ZeroSMS detected!")
                 // Set Text
-                .setContentText("Silent SMS has been received from: "+phone_number)
+                .setContentText("ZeroSMS has been received from: "+phone_number)
                 // Add an Action Button below Notification
-                .addAction(R.drawable.main_icon, "Open Silent SMS detector", pIntent)
+                .addAction(R.drawable.main_icon, "Open ZeroSMS detector", pIntent)
                 // Set PendingIntent into Notification
                 .setContentIntent(pIntent)
                 // Dismiss Notification
@@ -120,9 +120,9 @@ public class PingSmsReceiver extends BroadcastReceiver {
         // Android 12+ and 13+: No changes to notification channel behavior
         // Android 13+ requires POST_NOTIFICATIONS permission (checked in MainActivity)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, "com.telefoncek.silentsms.detector", NotificationManager.IMPORTANCE_HIGH);
+            NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, "com.telefoncek.zerosms.detector", NotificationManager.IMPORTANCE_HIGH);
             // Configure the notification channel.
-            mChannel.setDescription("Silent SMS detector notifications");
+            mChannel.setDescription("ZeroSMS detector notifications");
             mChannel.enableLights(true);
             mChannel.setLightColor(Color.RED);
             mChannel.enableVibration(true);

@@ -1,4 +1,4 @@
-package com.telefoncek.silentsms.detector;
+package com.telefoncek.zerosms.detector;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -25,7 +25,7 @@ import java.util.List;
  */
 public class Type0SmsMonitorService extends Service {
     private static final String TAG = "Type0SmsMonitor";
-    private static final String CHANNEL_ID = "com.telefoncek.silentsms.detector.type0";
+    private static final String CHANNEL_ID = "com.telefoncek.zerosms.detector.type0";
     private static final int SCAN_INTERVAL_MS = 30000; // 30 seconds
     private static final String PREF_NAME = "Type0SmsPreferences";
     private static final String PREF_MONITORING_ENABLED = "monitoring_enabled";

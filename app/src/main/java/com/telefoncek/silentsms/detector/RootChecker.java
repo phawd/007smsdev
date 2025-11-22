@@ -1,9 +1,10 @@
-package com.telefoncek.silentsms.detector;
+package com.telefoncek.zerosms.detector;
 
 import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
@@ -12,6 +13,40 @@ import java.io.InputStreamReader;
  */
 public class RootChecker {
     private static final String TAG = "RootChecker";
+
+    public interface Logger {
+        void d(String tag, String msg);
+        void e(String tag, String msg, Throwable tr);
+        void w(String tag, String msg);
+    }
+
+    private static Logger logger = new Logger() {
+        @Override
+        public void d(String tag, String msg) { Log.d(tag, msg); }
+        @Override
+        public void e(String tag, String msg, Throwable tr) { Log.e(tag, msg, tr); }
+        @Override
+        public void w(String tag, String msg) { Log.w(tag, msg); }
+    };
+
+    public static void setLogger(Logger newLogger) {
+        logger = newLogger;
+    }
+
+    public interface CommandExecutor {
+        Process execute(String command) throws IOException;
+    }
+
+    private static CommandExecutor commandExecutor = new CommandExecutor() {
+        @Override
+        public Process execute(String command) throws IOException {
+            return Runtime.getRuntime().exec(command);
+        }
+    };
+
+    public static void setCommandExecutor(CommandExecutor executor) {
+        commandExecutor = executor;
+    }
 
     /**
      * Check if the device has root access by attempting to execute 'su' command
@@ -34,7 +69,7 @@ public class RootChecker {
 
         for (String path : rootPaths) {
             if (new File(path).exists()) {
-                Log.d(TAG, "Root binary found at: " + path);
+                logger.d(TAG, "Root binary found at: " + path);
                 return canExecuteSuCommand();
             }
         }
@@ -50,7 +85,7 @@ public class RootChecker {
         Process process = null;
         BufferedReader reader = null;
         try {
-            process = Runtime.getRuntime().exec("su -c id");
+            process = commandExecutor.execute("su -c id");
             reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String output = reader.readLine();
             
@@ -59,14 +94,14 @@ public class RootChecker {
             
             // If the command executed successfully and output contains 'uid=0' (root user)
             if (exitValue == 0 && output != null && output.toLowerCase().contains("uid=0")) {
-                Log.d(TAG, "Root access verified: " + output);
+                logger.d(TAG, "Root access verified: " + output);
                 return true;
             }
             
-            Log.d(TAG, "Root access check failed. Exit value: " + exitValue + ", Output: " + output);
+            logger.d(TAG, "Root access check failed. Exit value: " + exitValue + ", Output: " + output);
             return false;
         } catch (Exception e) {
-            Log.e(TAG, "Error checking root access", e);
+            logger.e(TAG, "Error checking root access", e);
             return false;
         } finally {
             try {
@@ -77,7 +112,7 @@ public class RootChecker {
                     process.destroy();
                 }
             } catch (Exception e) {
-                Log.e(TAG, "Error closing resources", e);
+                logger.e(TAG, "Error closing resources", e);
             }
         }
     }

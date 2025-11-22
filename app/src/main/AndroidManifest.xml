@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.telefoncek.silentsms.detector">
+    package="com.telefoncek.zerosms.detector">
     <uses-feature android:glEsVersion="0x00020000" android:required="true" />
     
     <!-- Android 13+ (API 33+) Permission: Required for displaying notifications -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     
-    <!-- SMS Permissions: Required for silent SMS detection and sending -->
+    <!-- SMS Permissions: Required for ZeroSMS detection and sending -->
     <!-- Compatible with Android 6.0+ (API 23+) with runtime permission requests -->
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
