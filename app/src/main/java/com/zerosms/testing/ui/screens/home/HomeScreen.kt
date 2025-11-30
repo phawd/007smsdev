@@ -204,7 +204,7 @@ data class TestCategory(
     val testCount: Int
 )
 
-val testCategories = listOf(
+private fun getTestCategories(): List<TestCategory> = listOf(
     TestCategory(
         type = "SMS",
         title = "SMS Testing",
