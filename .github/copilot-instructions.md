@@ -1,187 +1,288 @@
-# Silent SMS Flash - AI Coding Agent Instructions
+# Copilot Instructions for `zerosms`
 
 ## Project Overview
+**ZeroSMS** is a comprehensive SMS/MMS/RCS testing suite for Android with full RFC compliance. The application enables testing of all messaging protocols against industry standards (GSM 03.40, OMA MMS, GSMA RCS UP 2.4).
 
-**Silent SMS Flash** is an Android security research application for detecting and sending silent SMS messages. The app supports two SMS types:
-- **Class-0 SMS (Flash SMS)**: Visible detection, no root required
-- **Type-0 SMS (Completely hidden)**: Requires root access for detection via log scanning
+## Architecture
 
-**Key Stats**: ~20 Java files, Android Gradle project, targets API 33, supports Android 6.0+ (API 23+)
-
-## Critical Architecture
-
-### SMS Type Distinction (Essential Concept)
-This is the core architectural concept that permeates the entire codebase:
-
-1. **Class-0 SMS**: Uses Android's public `SmsManager.sendDataMessage()` on port 9200. Detected via `BroadcastReceiver` with `DATA_SMS_RECEIVED_ACTION` intent filter. **No root required** for sending or receiving.
-
-2. **Type-0 SMS**: Attempts to mimic hidden SMS behavior using binary data messages. Detection requires **root access** to scan Android system logs for `GsmInboundSmsHandler` entries. Uses background service `Type0SmsMonitorService` with 30-second scanning intervals.
-
-### Component Architecture
-
+### Layer Structure
 ```
-MainActivity (UI & orchestration)
-├── PingSmsReceiver (Class-0 detection) → StoreActivity (view history)
-├── Type0SmsMonitorService (Type-0 background scanning)
-│   ├── RootChecker (verify root access)
-│   └── LogParser (scan system logs for Type-0 indicators)
-└── Type0SmsSender (send Type-0 SMS via data message)
+app/src/main/java/com/zerosms/testing/
+├── core/
+│   ├── model/         # Domain models (Message, TestResult, etc.)
+│   ├── sms/           # SMS protocol implementation (GSM 03.40)
+│   ├── mms/           # MMS protocol implementation (OMA MMS)
+│   ├── rcs/           # RCS implementation (GSMA UP 2.4)
+│   └── receiver/      # Broadcast receivers for incoming messages
+├── ui/
+│   ├── screens/       # Jetpack Compose screens (Home, Test, Results, Settings)
+│   ├── navigation/    # Navigation graph
+│   └── theme/         # Material 3 theming
+└── ZeroSMSApplication.kt
 ```
 
-**Critical Data Flow**: Class-0 SMS → `PingSmsReceiver.onReceive()` → `SharedPreferences` storage → `StoreActivity` display. Type-0 SMS → system logs → `LogParser.scanLogsForType0Sms()` → notification.
+### Key Components
 
-## Build & Test Commands
+**SmsManagerWrapper** (`core/sms/`):
+- Handles GSM 03.40 compliant SMS operations
+- Encoding: GSM 7-bit, 8-bit, UCS-2
+- Message types: Standard, Binary, Flash (Class 0), Silent (Type 0)
+- Concatenation with UDH for multi-part messages
+- Delivery and read reports
+- **AT command support** for direct modem access (requires root)
+- **Fallback mechanism** when AT commands unavailable
 
-### Build (Verified Working)
+**MmsManagerWrapper** (`core/mms/`):
+- OMA MMS Encapsulation Protocol implementation
+- PDU encoding with WSP format
+- MIME multipart message assembly
+- Attachment handling (images, video, audio, vCard)
+- Size validation (300KB typical limit)
+
+**RcsManagerWrapper** (`core/rcs/`):
+- GSMA RCS Universal Profile 2.4
+- Rich messaging (8000 char limit)
+- File transfer (100MB limit)
+- Group chat (100 participants)
+- Capability discovery and fallback
+
+### Data Models (`core/model/Models.kt`)
+- `Message`: Core message entity with type, encoding, class, priority
+- `MessageType`: Enum for SMS_TEXT, SMS_BINARY, SMS_FLASH, SMS_SILENT, MMS_*, RCS_*
+- `TestResult`: Test execution results with metrics and RFC violations
+- `DeliveryStatus`: Tracking states (PENDING, SENT, DELIVERED, FAILED, etc.)
+
+## RFC Compliance
+
+### Standards Implemented
+- **GSM 03.40**: SMS Point-to-Point protocol
+- **GSM 03.38**: Character encoding (7-bit, extended, UCS-2)
+- **3GPP TS 23.040**: Technical SMS realization
+- **OMA MMS Encapsulation**: MMS PDU structure
+- **WAP-209/WAP-230**: MMS encoding and WSP
+- **GSMA RCS UP 2.4**: Rich Communication Services
+- **RFC 2046**: MIME types
+- **RFC 4975**: MSRP protocol (RCS)
+
+### Encoding Rules
+- **GSM 7-bit**: 160 chars single, 153 chars per part (concatenated)
+- **UCS-2**: 70 chars single, 67 chars per part (concatenated)
+- **Extended GSM**: Characters like `^{}[]\|~€` require escape (2 char cost)
+- Always check `containsUnicodeCharacters()` to determine encoding
+
+### Message Class Significance
+- **CLASS_0**: Flash SMS - immediate display, no storage
+- **CLASS_1**: Default mobile storage
+- **CLASS_2**: SIM card storage
+- **CLASS_3**: Terminal equipment storage
+- **NONE**: Standard inbox delivery
+
+## Build & Development
+
+### Tech Stack
+- **Language**: Kotlin 1.9.20
+- **UI**: Jetpack Compose (BOM 2023.10.01) with Material 3
+- **Min SDK**: 24 (Android 7.0)
+- **Target/Compile SDK**: 34 (Android 14)
+- **Build System**: Gradle 8.2 with Kotlin DSL
+- **Async**: Coroutines + StateFlow
+- **Navigation**: Navigation Compose
+- **Permissions**: Accompanist Permissions library
+
+### Build Commands
 ```bash
-# Clean build (always run this first if you encounter build issues)
-./gradlew clean
-
-# Build debug APK
-./gradlew assembleDebug
-
-# Build release APK  
-./gradlew assembleRelease
-
-# Install on connected device/emulator
-./gradlew installDebug
+./gradlew assembleDebug      # Build debug APK
+./gradlew assembleRelease    # Build release APK  
+./gradlew test               # Run unit tests
+./gradlew connectedAndroidTest # Run instrumentation tests
+./gradlew installDebug       # Install on device
 ```
 
-**IMPORTANT**: Always run `./gradlew clean` before building after changing dependencies or if you see "duplicate class" errors.
-
-### Testing
-```bash
-# Run all unit tests
-./gradlew test
-
-# Run specific test class
-./gradlew test --tests Type0SmsSenderTest
-
-# Run tests with detailed output
-./gradlew test --info
-```
-
-**Test Coverage**: Unit tests exist for `LogParser`, `RootChecker`, and `Type0SmsSender`. No instrumented tests. Tests are in `app/src/test/java/com/telefoncek/silentsms/detector/`.
-
-### Compatibility Validation
-```bash
-# Run compatibility checker script (validates Android 12-14 best practices)
-bash scripts/check_compatibility.sh
-```
-
-This script checks: PendingIntent flags, SDK versions, exported components, notification permissions. **Run this before committing Android compatibility changes.**
-
-## Project-Specific Conventions
-
-### Android Version Compatibility Patterns
-
-**Critical**: This project maintains compatibility with Android 6.0-14 (API 23-34). Every Android API call must consider version differences:
-
-1. **PendingIntent Creation** (Android 12+ requirement):
-   ```java
-   // ALWAYS include FLAG_MUTABLE or FLAG_IMMUTABLE
-   PendingIntent.getBroadcast(context, id, intent, 
-       PendingIntent.FLAG_CANCEL_CURRENT | PendingIntent.FLAG_MUTABLE);
-   ```
-
-2. **Notification Channels** (Android 8.0+ requirement):
-   ```java
-   if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-       NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
-       notificationManager.createNotificationChannel(channel);
-   }
-   ```
-
-3. **Runtime Permissions** (Android 13+ added POST_NOTIFICATIONS):
-   - Check `MainActivity.checkPermissions()` for the canonical pattern
-   - Always request SEND_SMS, RECEIVE_SMS, READ_PHONE_STATE, and POST_NOTIFICATIONS
-   - See inline comments in `MainActivity.java` lines 148-165
-
-### Code Documentation Standards
-
-**Pattern**: Every Android version-specific code MUST have inline comments explaining the "why":
-```java
-// Android 13+ (API 33+): Requires POST_NOTIFICATIONS permission for displaying notifications
-if (postNotificationPermission != PackageManager.PERMISSION_GRANTED) {
-    missingPermissions.add(Manifest.permission.POST_NOTIFICATIONS);
-}
-```
-
-Look at existing files (MainActivity, PingSmsReceiver, Type0SmsMonitorService) for this pattern. Comments include API level, reason, and context.
-
-### Root Access Pattern
-
-**Always check root before attempting root operations**:
-```java
-if (!RootChecker.isRootAvailable()) {
-    Log.w(TAG, "Root access not available");
-    // Handle gracefully - show UI message, disable feature, return
-    return;
-}
-```
-
-This pattern appears in `Type0SmsMonitorService.onStartCommand()` and `MainActivity.initializeType0Monitoring()`. Never assume root is available.
-
-### Shared Preferences Keys
-
-**Centralized in MainActivity as public static final**:
-- `PREF_LAST_NUMBER`: Last phone number used
-- `PREF_HISTORY`: Comma-separated history of numbers
-- `PREF_DATA_SMS_STORE`: Stored received SMS PDUs
-
-Access pattern: `getPreferences(Context.MODE_PRIVATE)` in activities, `getSharedPreferences(PREF_DATA_SMS_STORE, MODE_PRIVATE)` in receivers.
-
-## Key Files & Their Purpose
-
-- **`app/build.gradle`**: Android SDK versions (compileSdk 33, minSdk 23, targetSdk 33), dependencies (mobicents SS7 for PDU parsing)
-- **`MainActivity.java`**: Main orchestrator (474 lines) - permission handling, UI bindings, SMS sending logic, Type-0 monitoring toggle
-- **`PingSmsReceiver.java`**: BroadcastReceiver for Class-0 SMS, registers for `DATA_SMS_RECEIVED_ACTION` on port 9200
-- **`Type0SmsMonitorService.java`**: Background service, 30s interval log scanning, notification creation
-- **`LogParser.java`**: Root-based logcat scanning for "GsmInboundSmsHandler.*Received short message type 0" pattern
-- **`RootChecker.java`**: Tests for su binary in 10 common paths, executes `su -c id` to verify root
-- **`AndroidManifest.xml`**: Permissions (SEND_SMS, RECEIVE_SMS, POST_NOTIFICATIONS), receiver for port 9200 data SMS
-
-## Integration Points
-
-### SMS Port 9200 Standard
-Port 9200 is used for silent SMS detection per GSM 03.40/3GPP 23.040 standards. This is **not arbitrary** - the receiver is registered for this port in the manifest:
+### Critical Permissions
 ```xml
-<receiver android:name=".PingSmsReceiver" android:exported="true">
-    <intent-filter>
-        <action android:name="android.provider.Telephony.DATA_SMS_RECEIVED" />
-        <data android:scheme="sms" android:port="9200" />
-    </intent-filter>
-</receiver>
+<!-- Required for core functionality -->
+SEND_SMS, RECEIVE_SMS, READ_SMS, READ_PHONE_STATE
+RECEIVE_MMS, INTERNET, ACCESS_NETWORK_STATE
+READ_MEDIA_IMAGES, READ_MEDIA_VIDEO, READ_MEDIA_AUDIO
+POST_NOTIFICATIONS (Android 13+)
 ```
 
-### External Dependencies
-- **mobicents SS7 (org.mobicents.protocols.ss7.map:map-impl:8.0.112)**: PDU parsing for SMS status reports and delivery confirmations. Used in `MainActivity` for parsing `lastSendResultPDU`. MTP modules are explicitly excluded.
+## Development Patterns
 
-### System Log Integration
-Type-0 detection depends on Android's system log format. Pattern: `GsmInboundSmsHandler.*Received short message type 0`. This is a **stable pattern** from Android 2.3 onward but requires root access to read logs via `logcat -t <duration>`.
+### Adding New Message Type
+1. Add enum to `MessageType` in `Models.kt`
+2. Implement send logic in appropriate manager (SMS/MMS/RCS)
+3. Add UI test card in `HomeScreen.kt` test categories
+4. Create test templates in `TestScreen.kt`
+5. Add RFC references in `getRfcForType()`
+6. Update `RFC_COMPLIANCE.md` documentation
 
-## Common Pitfalls & Workarounds
+### Handling Broadcasts
+- **SmsReceiver**: Handles incoming SMS via `SMS_RECEIVED`
+  - **ENHANCED**: Captures and stores Class 0 (Flash) and Type 0 (Silent) SMS
+  - Detects message class and protocol ID (PID = 0x40 for Type 0)
+  - Persists to `IncomingSmsDatabase` for operator monitoring
+  - Provides detailed logging with PDU hex dump
+- **MmsReceiver**: Handles incoming MMS via `WAP_PUSH_RECEIVED`
+- **DeliveryReceiver**: Tracks send/delivery status with `PendingIntent`
 
-1. **PendingIntent Crash on Android 12+**: If you see "Targeting S+ requires FLAG_IMMUTABLE or FLAG_MUTABLE", you forgot the flag. Search codebase for "FLAG_MUTABLE" to see correct usage.
+### Root Access & AT Commands
+- **RootAccessManager** (`core/root/`): Detects root, executes root commands
+- **AtCommandManager** (`core/at/`): Direct modem communication
+- Use `SmsManagerWrapper.initializeAtCommands()` on app startup
+- Use `sendSmsViaAt()` for Class 0/Type 0 with enhanced control
+- Automatic fallback to standard API if root unavailable
+- Modem device paths: `/dev/smd0`, `/dev/smd11`, `/dev/ttyUSB*`
 
-2. **Type-0 SMS Not Detected**: Check three things in order:
-   - Root access available? (`RootChecker.isRootAvailable()`)
-   - Service running? (check toggle switch state)
-   - Logcat accessible? (`LogParser.isLogScanningAvailable()`)
+### Incoming SMS Monitoring
+- **IncomingSmsDatabase** (`core/database/`): In-memory message storage
+- **MonitorScreen** (`ui/screens/monitor/`): Real-time SMS viewer
+- Auto-refresh every second for live monitoring
+- Filter by All/Flash/Silent message types
+- Click message for full PDU and technical details
+- Access via "SMS Monitor" button on home screen
 
-3. **Gradle Build Failure**: If you see "Duplicate class" errors, it's likely MTP module conflicts. Check `app/build.gradle` lines 37-42 for the `withoutMTP` exclusion pattern and ensure it's applied to any SS7 dependencies.
+### State Management
+- Use `StateFlow` for reactive status updates
+- `SmsManagerWrapper._messageStatus` tracks per-message delivery
+- UI observes flows with `collectAsState()` in Composables
 
-4. **SMS Not Received**: Class-0 SMS must be sent to port 9200. Any other port won't be received by `PingSmsReceiver`. The port is hardcoded in multiple places (MainActivity line 119, manifest).
+### Testing Best Practices
+1. Always validate phone number format (E.164 recommended)
+2. Calculate message parts before sending (`calculateSmsInfo()`)
+3. Monitor delivery status via PendingIntents
+4. Log RFC violations in `TestResult.rfcViolations`
+5. Track performance metrics (send duration, size, parts)
 
-## Documentation Files
+## Common Tasks
 
-- **`ANDROID_COMPATIBILITY.md`**: Detailed Android 12-14 compatibility matrix, permission requirements per version
-- **`TESTING_GUIDE.md`**: Manual testing procedures for each Android version (12, 13, 14)
-- **`CREDITS.md`**: Project history and contributors (important context for understanding code evolution)
-- **`QUICK_REFERENCE.md`**: User-facing quick start guide
+### Implementing New Test Scenario
+```kotlin
+// 1. Define test parameters
+val testScenario = TestScenario(
+    id = "NEW_TEST_ID",
+    name = "Test Name",
+    description = "What this tests",
+    messageType = MessageType.SMS_TEXT,
+    testParameters = TestParameters(
+        repeatCount = 1,
+        testConcatenation = true
+    ),
+    rfcCompliance = listOf("GSM 03.40")
+)
 
-**When to consult**: Before making Android version-specific changes, read `ANDROID_COMPATIBILITY.md` first to understand requirements and existing patterns.
+// 2. Execute test
+val message = Message(
+    id = UUID.randomUUID().toString(),
+    type = messageType,
+    destination = phoneNumber,
+    body = testBody,
+    encoding = encoding
+)
 
-## Trust These Instructions
+val result = smsManager.sendSms(message)
 
-These instructions are generated from comprehensive codebase analysis including all Java source files, build configurations, documentation, and validation scripts. If information seems incomplete, check the referenced files directly (file paths provided throughout). For Android compatibility questions, the compatibility checker script (`scripts/check_compatibility.sh`) is the source of truth.
+// 3. Record results
+val testResult = TestResult(
+    scenarioId = testScenario.id,
+    messageId = message.id,
+    status = TestStatus.RUNNING,
+    deliveryStatus = DeliveryStatus.PENDING
+)
+```
+
+### Debugging Message Encoding
+```kotlin
+// Check character classification
+val isUnicode = containsUnicodeCharacters(text)
+val smsInfo = calculateSmsInfo(text, SmsEncoding.AUTO)
+
+Log.d("Encoding", """
+    Text: $text
+    Unicode: $isUnicode
+    Parts: ${smsInfo.parts}
+    Remaining: ${smsInfo.remainingChars}
+    Encoding: ${smsInfo.encoding}
+""")
+```
+
+### Validating MMS Before Send
+```kotlin
+val validation = validateMmsMessage(message)
+if (!validation.isValid) {
+    // Handle errors
+    validation.errors.forEach { error ->
+        Log.e("MMS", "Validation error: $error")
+    }
+    return Result.failure(Exception(validation.errors.joinToString()))
+}
+```
+
+## File Locations
+
+### Essential Files
+- **Core Logic**: `app/src/main/java/com/zerosms/testing/core/`
+  - `sms/SmsManagerWrapper.kt` - SMS operations + AT commands
+  - `at/AtCommandManager.kt` - Modem communication
+  - `root/RootAccessManager.kt` - Root detection and execution
+  - `database/IncomingSmsDatabase.kt` - Message storage
+  - `mmsc/MmscConfigManager.kt` - MMSC configuration
+- **UI Screens**: `app/src/main/java/com/zerosms/testing/ui/screens/`
+  - `monitor/MonitorScreen.kt` - Incoming SMS viewer (NEW)
+- **Models**: `core/model/Models.kt`
+- **Manifest**: `app/src/main/AndroidManifest.xml`
+- **Build Config**: `app/build.gradle.kts`
+
+### Documentation
+- **README.md**: Project overview and quick start
+- **docs/RFC_COMPLIANCE.md**: Detailed RFC implementation
+- **docs/TESTING_GUIDE.md**: User testing guide
+- **docs/ROOT_ACCESS_GUIDE.md**: Root access, AT commands, MMSC configuration (NEW)
+
+## When Making Changes
+
+### Code Style
+- Use Kotlin idioms (data classes, sealed classes, when expressions)
+- Prefer coroutines over threads
+- Use `StateFlow` for reactive state
+- Keep Composables focused and reusable
+- Extract business logic from UI
+
+### Adding Dependencies
+Document in README with:
+- Maven coordinates
+- Version number
+- Purpose/justification
+- Any licensing considerations
+
+### Updating RFCs
+When implementing new RFC features:
+1. Add to relevant manager (SMS/MMS/RCS)
+2. Update `RFC_COMPLIANCE.md` with implementation details
+3. Add test scenarios to verify compliance
+4. Include RFC number in test metadata
+
+### Testing Strategy
+- Unit tests for encoding logic, validation rules
+- Integration tests for manager classes (mock Android APIs)
+- Instrumentation tests for actual message sending (require device/emulator)
+- Always test on real device for final validation
+
+## Known Limitations
+
+- RCS requires Google Play Services and carrier support
+- MMS PDU encoding is simplified; production needs carrier APN config
+- Silent SMS may be blocked by carriers
+- Flash SMS support varies by device manufacturer
+- Binary SMS port addressing may have restrictions
+
+## Future Enhancements Roadmap
+- Database persistence (Room) for test history
+- Export results (CSV, JSON, PDF)
+- Scheduled test execution (WorkManager)
+- REST API for remote testing
+- CI/CD integration for automated tests
+- Network condition simulation
+- Multi-device synchronization
+
+When contributing, prioritize RFC compliance and maintain comprehensive test coverage. Always document protocol behavior and carrier-specific quirks.

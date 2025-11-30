@@ -1,0 +1,26 @@
+2025-11-23T09:25:02.404Z [INFO] ----------------------invoke generate_upgrade_plan----------------------
+2025-11-23T09:25:02.404Z [INFO] [Tool.invoke]({name: generate_upgrade_plan, input: {
+  "projectPath": "F:\\repo\\zerosms",
+  "targetJavaVersion": "21",
+  "jdkPath": "C:\\Users\\cross\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10",
+  "targetJdkPath": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.8.9-hotspot"
+}}).
+2025-11-23T09:25:02.405Z [INFO] [Plan.tryStartTask]({tool:generate_upgrade_plan, nextTask:{type:undefined, tool:undefined}}
+2025-11-23T09:25:02.405Z [INFO] [Plan.tryStartTask]: no next task, create new one.
+2025-11-23T09:25:02.405Z [INFO] [Plan.createTaskAtStart]({tool: generate_upgrade_plan, input: {
+  "projectPath": "F:\\repo\\zerosms",
+  "targetJavaVersion": "21",
+  "jdkPath": "C:\\Users\\cross\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10",
+  "targetJdkPath": "C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.8.9-hotspot",
+  "sessionId": "20251123092502"
+}}).
+2025-11-23T09:25:02.406Z [INFO] [Plan.tryStartTask]: starting task generatePlan
+2025-11-23T09:25:02.406Z [INFO] [Task.start](): Starting task generatePlan
+2025-11-23T09:25:02.407Z [INFO] [Task.start](1): Started task generatePlan
+2025-11-23T09:25:02.448Z [INFO] [Tool.invoke] validate GitHub Copilot license.
+2025-11-23T09:25:02.448Z [INFO] [Tool.invoke] do pre-invoke.
+2025-11-23T09:25:02.448Z [INFO] [Tool.invoke] do invoke.
+2025-11-23T09:25:02.498Z [ERROR] [Tool.invoke] error occurs when invoking tool generate_upgrade_plan: UserError: Failed to prepare project configuration or init upgrade options: Unsupported project type: undefined. only Maven, Maven Wrapper and Gradle Wrapper project is supported. Please choose a valid supported project. Please check the project configuration and try again..
+2025-11-23T09:25:02.499Z [INFO] [Task.complete](1): Completing task generatePlan
+2025-11-23T09:25:02.499Z [INFO] ----------------------invoked generate_upgrade_plan----------------------
+2025-11-23T09:25:02.500Z [INFO] [Task.complete](1): Completed task generatePlan

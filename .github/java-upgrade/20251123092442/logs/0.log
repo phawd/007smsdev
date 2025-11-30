@@ -1,0 +1,85 @@
+2025-11-23T09:24:42.705Z [INFO] ----------------------invoke list_jdks----------------------
+2025-11-23T09:24:42.705Z [INFO] [Tool.invoke]({name: list_jdks, input: {
+  "projectPath": "f:\\repo\\zerosms"
+}}).
+2025-11-23T09:24:42.706Z [INFO] [Task.start](): Starting task toolCall
+2025-11-23T09:24:42.706Z [INFO] [Task.start](): Started task toolCall
+2025-11-23T09:24:42.707Z [INFO] [Tool.invoke] validate GitHub Copilot license.
+2025-11-23T09:24:57.030Z [INFO] Copilot user info:{
+  "access_type_sku": "monthly_subscriber_quota",
+  "analytics_tracking_id": "a46860ef64ad05ae7363a1d0cef0eded",
+  "assigned_date": "2025-06-15T11:39:05-05:00",
+  "can_signup_for_limited": false,
+  "chat_enabled": true,
+  "copilot_plan": "individual",
+  "organization_login_list": [],
+  "organization_list": [],
+  "quota_reset_date": "2025-12-01",
+  "quota_snapshots": {
+    "chat": {
+      "entitlement": 0,
+      "overage_count": 0,
+      "overage_permitted": false,
+      "percent_remaining": 100,
+      "quota_id": "chat",
+      "quota_remaining": 0,
+      "remaining": 0,
+      "unlimited": true,
+      "timestamp_utc": "2025-11-23T09:24:59.449Z"
+    },
+    "completions": {
+      "entitlement": 0,
+      "overage_count": 0,
+      "overage_permitted": false,
+      "percent_remaining": 100,
+      "quota_id": "completions",
+      "quota_remaining": 0,
+      "remaining": 0,
+      "unlimited": true,
+      "timestamp_utc": "2025-11-23T09:24:59.449Z"
+    },
+    "premium_interactions": {
+      "entitlement": 300,
+      "overage_count": 0,
+      "overage_permitted": true,
+      "percent_remaining": 37.14999999999999,
+      "quota_id": "premium_interactions",
+      "quota_remaining": 111.44999999999996,
+      "remaining": 111,
+      "unlimited": false,
+      "timestamp_utc": "2025-11-23T09:24:59.449Z"
+    }
+  },
+  "quota_reset_date_utc": "2025-12-01T00:00:00.000Z"
+}
+2025-11-23T09:24:57.047Z [INFO] [Tool.invoke] do pre-invoke.
+2025-11-23T09:24:57.047Z [INFO] [Tool.invoke] do invoke.
+2025-11-23T09:24:57.084Z [INFO] [Tool.invoke]({result: {
+  "message": "We found following jdks in your system:\n\n1. Java 17.0.17\n   📁 Path: C:\\Users\\cross\\.gradle\\jdks\\eclipse_adoptium-17-amd64-windows\\jdk-17.0.17+10\\bin\n   🏷️ Source: Gradle\n\n2. Java 21.0.8\n   📁 Path: C:\\Program Files\\Eclipse Adoptium\\jdk-21.0.8.9-hotspot\\bin\n   🏷️ Source: PATH\n\n3. Java 21.0.9\n   📁 Path: C:\\Users\\cross\\.jdks\\jbr-21.0.9\\bin\n   🏷️ Source: others\n\n4. Java 24.0.2\n   📁 Path: C:\\Program Files\\Java\\jdk-24\\bin\n   🏷️ Source: others\n\n5. Java 25\n   📁 Path: C:\\Program Files\\Zulu\\zulu-25\\bin\n   🏷️ Source: PATH,JAVA_HOME\n\nTotal: 5 JDK installation(s) found"
+}}).
+2025-11-23T09:24:57.085Z [INFO] [Task.complete](): Completing task toolCall
+2025-11-23T09:24:57.085Z [INFO] [Task.complete](): Completed task toolCall
+2025-11-23T09:24:57.086Z [INFO] [Tool.invoke]({message: We found following jdks in your system:
+
+1. Java 17.0.17
+   📁 Path: C:\Users\cross\.gradle\jdks\eclipse_adoptium-17-amd64-windows\jdk-17.0.17+10\bin
+   🏷️ Source: Gradle
+
+2. Java 21.0.8
+   📁 Path: C:\Program Files\Eclipse Adoptium\jdk-21.0.8.9-hotspot\bin
+   🏷️ Source: PATH
+
+3. Java 21.0.9
+   📁 Path: C:\Users\cross\.jdks\jbr-21.0.9\bin
+   🏷️ Source: others
+
+4. Java 24.0.2
+   📁 Path: C:\Program Files\Java\jdk-24\bin
+   🏷️ Source: others
+
+5. Java 25
+   📁 Path: C:\Program Files\Zulu\zulu-25\bin
+   🏷️ Source: PATH,JAVA_HOME
+
+Total: 5 JDK installation(s) found}).
+2025-11-23T09:24:57.086Z [INFO] ----------------------invoked list_jdks----------------------
