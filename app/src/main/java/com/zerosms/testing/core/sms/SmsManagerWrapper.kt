@@ -28,9 +28,7 @@ class SmsManagerWrapper(private val context: Context) {
     
     private val TAG = "SmsManagerWrapper"
     
-    // AT command support (requires root)
-    private val rootManager = RootAccessManager()
-    private val atCommandManager = AtCommandManager(rootManager)
+    // AT command support (requires root) - now uses singleton objects
     private var atCommandsAvailable = false
     
     private val smsManager: SmsManager = context.getSystemService(SmsManager::class.java)
@@ -142,10 +140,28 @@ class SmsManagerWrapper(private val context: Context) {
     
     /**
      * Send Flash SMS (Class 0) - Immediate display without saving
+     * Tries AT commands first, falls back to standard API
      */
-    private fun sendFlashSms(message: Message, messageId: String): Result<String> {
-        // Flash SMS requires using low-level SMS PDU manipulation
-        // For Android, we approximate using standard SMS with note to user
+    private suspend fun sendFlashSms(message: Message, messageId: String): Result<String> {
+        // Try AT commands first for proper Class 0 SMS
+        if (atCommandsAvailable && AtCommandManager.isInitialized()) {
+            Logger.d(TAG, "Sending Flash SMS via AT commands for proper Class 0")
+            val (pdu, tpduLen) = AtCommandManager.buildFlashSmsPdu(
+                message.destination,
+                message.body ?: ""
+            )
+            val success = AtCommandManager.sendSmsPdu(pdu, tpduLen)
+            return if (success) {
+                updateStatus(messageId, DeliveryStatus.SENT)
+                Result.success(messageId)
+            } else {
+                Logger.w(TAG, "AT command failed, falling back to standard API")
+                sendTextSms(message.copy(messageClass = MessageClass.CLASS_0), messageId)
+            }
+        }
+        
+        // Fallback: Standard API (Class 0 support varies by device)
+        Logger.w(TAG, "AT commands unavailable, using standard API for Flash SMS")
         return sendTextSms(
             message.copy(messageClass = MessageClass.CLASS_0),
             messageId
@@ -156,9 +172,32 @@ class SmsManagerWrapper(private val context: Context) {
      * Send Silent SMS (Type 0) - No user notification
      * Used for network testing and location tracking
      */
-    private fun sendSilentSms(message: Message, messageId: String): Result<String> {
-        // Silent SMS implementation requires carrier support
-        // Standard Android API doesn't directly support Type 0
+    private suspend fun sendSilentSms(message: Message, messageId: String): Result<String> {
+        // Try AT commands first for proper Type 0 SMS
+        if (atCommandsAvailable && AtCommandManager.isInitialized()) {
+            Logger.d(TAG, "Sending Silent SMS via AT commands for proper Type 0")
+            val success = AtCommandManager.sendSmsText(
+                message.destination,
+                message.body ?: ""
+            )
+            return if (success) {
+                updateStatus(messageId, DeliveryStatus.SENT)
+                Result.success(messageId)
+            } else {
+                Logger.w(TAG, "AT command failed, falling back to standard API")
+                sendTextSmsStandard(message, messageId)
+            }
+        }
+        
+        // Fallback: Standard API (Type 0 support varies by device)
+        Logger.w(TAG, "AT commands unavailable, using standard API for Silent SMS")
+        return sendTextSmsStandard(message, messageId)
+    }
+    
+    /**
+     * Simple text SMS via standard API (fallback)
+     */
+    private fun sendTextSmsStandard(message: Message, messageId: String): Result<String> {
         val body = message.body ?: ""
         val sentIntent = createPendingIntent(ACTION_SMS_SENT, messageId)
         
@@ -167,7 +206,7 @@ class SmsManagerWrapper(private val context: Context) {
             null,
             body,
             sentIntent,
-            null  // No delivery report for silent SMS
+            null
         )
         
         updateStatus(messageId, DeliveryStatus.SENT)
@@ -264,27 +303,37 @@ class SmsManagerWrapper(private val context: Context) {
     suspend fun initializeAtCommands(): Boolean {
         return try {
             Logger.d(TAG, "Initializing AT command interface...")
-            atCommandsAvailable = atCommandManager.initialize()
-            Log.i(TAG, "AT commands available: $atCommandsAvailable")
-            atCommandsAvailable
+            
+            // Check root first
+            if (!RootAccessManager.isRootAvailable()) {
+                Log.i(TAG, "Root not available, AT commands disabled")
+                atCommandsAvailable = false
+                return false
+            }
+            
+            // Probe for devices
+            val devices = AtCommandManager.probeDevices()
+            if (devices.isEmpty()) {
+                Log.i(TAG, "No modem devices found")
+                atCommandsAvailable = false
+                return false
+            }
+            
+            // Try to initialize on first available device
+            for (device in devices) {
+                if (AtCommandManager.initializeAtOnDevice(device)) {
+                    atCommandsAvailable = true
+                    Log.i(TAG, "AT commands initialized on $device")
+                    return true
+                }
+            }
+            
+            atCommandsAvailable = false
+            false
         } catch (e: Exception) {
             Log.e(TAG, "Failed to initialize AT commands", e)
+            atCommandsAvailable = false
             false
-        }
-    }
-    
-    /**
-     * Send SMS via AT commands (requires root)
-     * Use this for Class 0 (Flash) and Type 0 (Silent) SMS
-     * when more direct control is needed
-     */
-    suspend fun sendSmsViaAt(message: Message): Result<String> {
-        return if (atCommandsAvailable) {
-            Logger.d(TAG, "Sending SMS via AT commands: ${message.type}")
-            atCommandManager.sendSmsViaAt(message)
-        } else {
-            Log.w(TAG, "AT commands not available, falling back to standard API")
-            sendSms(message)  // Fallback to standard API
         }
     }
     
@@ -297,13 +346,13 @@ class SmsManagerWrapper(private val context: Context) {
      * Check if device has root access
      */
     suspend fun checkRootAccess(): Boolean {
-        return rootManager.isRootAvailable()
+        return RootAccessManager.isRootAvailable()
     }
     
     /**
      * Get modem device path (if AT commands are available)
      */
-    fun getModemDevice(): String? = atCommandManager.getModemDevice()
+    fun getModemDevice(): String? = AtCommandManager.getInitializedDevice()
 }
 
 /**

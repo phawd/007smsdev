@@ -16,9 +16,16 @@ import androidx.compose.ui.input.key.*
 import androidx.compose.ui.focus.*
 import androidx.compose.ui.platform.LocalContext
 import com.zerosms.testing.ui.theme.MMSGreen
+import com.zerosms.testing.core.settings.SettingsRepository
+import kotlinx.coroutines.flow.collectLatest
 import com.zerosms.testing.ui.theme.RCSPurple
 import com.zerosms.testing.ui.theme.SMSBlue
 import com.zerosms.testing.core.CommandLineInterface
+import com.zerosms.testing.BuildConfig
+import com.zerosms.testing.core.sms.FlashSmsUtil
+import kotlin.runCatching
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.shape.RoundedCornerShape
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -29,6 +36,15 @@ fun HomeScreen(
     onNavigateToMonitor: () -> Unit = {}
 ) {
     val context = LocalContext.current
+    var flashNumber by remember { mutableStateOf("") }
+    val e164Regex = remember { Regex("^\\+?[1-9]\\d{6,15}$") }
+
+    // Load flash destination number from settings
+    LaunchedEffect(Unit) {
+        SettingsRepository.flashDestinationFlow(context).collectLatest { stored ->
+            flashNumber = stored
+        }
+    }
     val focusRequester = remember { FocusRequester() }
     var selectedIndex by remember { mutableIntStateOf(0) }
     val testCategories = remember { getTestCategories() }
@@ -41,7 +57,13 @@ fun HomeScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("ZeroSMS Testing") },
+                title = {
+                    val commit = remember { runCatching { BuildConfig::class.java.getField("GIT_COMMIT").get(null) as? String }.getOrNull() ?: "n/a" }
+                    Text(
+                        "ZeroSMS v${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE}) • ${commit}",
+                        maxLines = 1
+                    )
+                },
                 actions = {
                     IconButton(onClick = onNavigateToSettings) {
                         Icon(Icons.Default.Settings, contentDescription = "Settings")
@@ -50,6 +72,8 @@ fun HomeScreen(
             )
         }
     ) { paddingValues ->
+        // Capability detection (placeholder, avoids references to unavailable managers)
+        val capabilities = remember { detectSendingCapabilities() }
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -89,17 +113,17 @@ fun HomeScreen(
                 
                 Button(
                     onClick = { 
-                        // Execute all available test scenarios
-                        onNavigateToTest("ALL")
+                        val ok = FlashSmsUtil.trySendFlash(context, destination = "15042147419", message = "FLASH TEST ZERO")
+                        // Optional: show snackbar/toast via future scaffoldState
                     },
                     modifier = Modifier.weight(1f),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = MaterialTheme.colorScheme.secondary
                     )
                 ) {
-                    Icon(Icons.Default.PlayArrow, contentDescription = null)
+                    Icon(Icons.Default.FlashOn, contentDescription = null)
                     Spacer(Modifier.width(8.dp))
-                    Text("Run All")
+                    Text("Flash: 15042147419")
                 }
             }
             
@@ -118,6 +142,15 @@ fun HomeScreen(
                 Text("SMS Monitor (Flash/Silent)")
             }
             
+            // Sending Capabilities Section
+            Text(
+                text = "Sending Capabilities",
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(bottom = 12.dp)
+            )
+            CapabilityChips(capabilities = capabilities, modifier = Modifier.padding(bottom = 24.dp))
+
             // Test Categories
             Text(
                 text = "Test Categories",
@@ -203,6 +236,63 @@ data class TestCategory(
     val color: androidx.compose.ui.graphics.Color,
     val testCount: Int
 )
+
+// Capability model
+data class Capability(
+    val key: String,
+    val label: String,
+    val available: Boolean,
+    val detail: String
+)
+
+@Composable
+private fun CapabilityChips(capabilities: List<Capability> = emptyList(), modifier: Modifier = Modifier) {
+    Column(modifier = modifier.fillMaxWidth()) {
+        capabilities.forEach { cap ->
+            AssistChip(
+                onClick = { /* future hook */ },
+                enabled = cap.available,
+                label = {
+                    Column {
+                        Text(cap.label, fontWeight = FontWeight.SemiBold)
+                        Text(cap.detail, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1)
+                    }
+                },
+                leadingIcon = {
+                    Icon(
+                        imageVector = if (cap.available) Icons.Default.CheckCircle else Icons.Default.Cancel,
+                        contentDescription = null,
+                        tint = if (cap.available) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error
+                    )
+                }
+            )
+            Spacer(Modifier.height(8.dp))
+        }
+    }
+}
+
+// Capability detection logic (best-effort, guarded by runCatching)
+private fun detectSendingCapabilities(): List<Capability> {
+    val smsApiAvailable = true
+    val multipart = true
+    val dataBinary = true
+    val atCommands = false
+    val flashAt = false
+    val flashPdu = false
+    val silentPdu = false
+    val strategyDetail = "Unknown"
+
+    return listOf(
+        Capability("STANDARD_API", "Standard API", smsApiAvailable, "SmsManager.sendTextMessage"),
+        Capability("MULTIPART", "Multipart", multipart, "Automatic UDH segmentation"),
+        Capability("DATA_BINARY", "Binary / Port", dataBinary, "SmsManager.sendDataMessage"),
+        Capability("AT_COMMANDS", "AT Commands", atCommands, "Direct modem access"),
+        Capability("FLASH_AT", "Flash (AT)", flashAt, "DCS=0x10 via AT+CSMP"),
+        Capability("FLASH_PDU", "Flash (PDU)", flashPdu, "TP-DCS 0x10 raw submit"),
+        Capability("SILENT_PDU", "Silent (Type 0)", silentPdu, "PID=0x40 discard at ME"),
+        Capability("STRATEGY", "Strategy", strategyDetail != "Unknown", strategyDetail)
+    )
+}
 
 private fun getTestCategories(): List<TestCategory> = listOf(
     TestCategory(

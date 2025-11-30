@@ -1,291 +1,366 @@
 package com.zerosms.testing.core.at
 
+import android.content.Context
 import android.util.Log
+import com.zerosms.testing.core.device.DeviceInfoManager
+import com.zerosms.testing.core.device.ModemChipset
+import com.zerosms.testing.core.device.AtCommandMethod
 import com.zerosms.testing.core.root.RootAccessManager
-import com.zerosms.testing.core.model.Message
-import com.zerosms.testing.core.model.MessageType
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
-import java.io.File
-import java.io.FileInputStream
-import java.io.FileOutputStream
 
 /**
- * AT Command Manager
- * 
- * Handles direct modem communication via AT commands for SMS operations.
+ * AT Command Manager - Handles direct modem communication via AT commands for SMS.
  * Requires root access for serial port communication.
  * 
- * Common AT Commands:
- * - AT+CMGF=0/1  : Set SMS format (0=PDU, 1=Text)
- * - AT+CMGS      : Send SMS
- * - AT+CMGW      : Write SMS to storage
- * - AT+CMGL      : List messages
- * - AT+CSCA      : Set/Get Service Center Address
- * - AT+CSMS      : Select Message Service
+ * Enhanced with DeviceInfoManager integration for chipset-specific modem detection
+ * and AT command handling optimized for each chipset type.
  */
-class AtCommandManager(
-    private val rootManager: RootAccessManager
-) {
-    
-    private val TAG = "AtCommandManager"
-    
-    // Common modem device paths in priority order
-    private val MODEM_DEVICE_PATHS = listOf(
-        "/dev/smd0",
-        "/dev/smd11",
-        "/dev/smd7",
-        "/dev/ttyUSB0",
-        "/dev/ttyUSB1",
-        "/dev/ttyUSB2",
-        "/dev/ttyACM0",
-        "/dev/ttyGS0"
+object AtCommandManager {
+    private const val TAG = "AtCommandManager"
+
+    // Default fallback modem device paths (used if DeviceInfoManager unavailable)
+    private val FALLBACK_MODEM_PATHS = listOf(
+        "/dev/smd0", "/dev/smd7", "/dev/smd11",
+        "/dev/ttyUSB0", "/dev/ttyUSB1", "/dev/ttyUSB2",
+        "/dev/ttyACM0", "/dev/ttyACM1",
+        "/dev/ttyGS0", "/dev/at_mdm0"
     )
-    
+
     private var modemDevice: String? = null
-    
-    /**
-     * Initialize AT command interface
-     * Detects and configures modem device
-     */
-    suspend fun initialize(): Boolean = withContext(Dispatchers.IO) {
-        Log.d(TAG, "Initializing AT command interface...")
+    private var rootAvailableCache: Boolean? = null
+    private var detectedMethod: AtCommandMethod = AtCommandMethod.STANDARD_TTY
+
+    /** Check if root is available (suspend function) */
+    suspend fun isRootAvailable(): Boolean {
+        rootAvailableCache?.let { return it }
+        val result = RootAccessManager.isRootAvailable()
+        rootAvailableCache = result
+        return result
+    }
+
+    /** Get the detected AT command method for this device */
+    fun getDetectedMethod(): AtCommandMethod = detectedMethod
+
+    /** Probe for available modem devices with chipset-aware ordering */
+    suspend fun probeDevices(context: Context? = null): List<String> = withContext(Dispatchers.IO) {
+        if (!isRootAvailable()) return@withContext emptyList()
+
+        val found = mutableListOf<String>()
         
-        // Check root access first
-        if (!rootManager.isRootAvailable()) {
-            Log.e(TAG, "Root access not available")
-            return@withContext false
+        // First try chipset-specific paths from DeviceInfoManager if context available
+        context?.let { ctx ->
+            try {
+                val modemInfo = DeviceInfoManager.modemInfo.value
+                if (modemInfo != null) {
+                    detectedMethod = modemInfo.atCommandMethod
+                    Log.i(TAG, "Using chipset-specific paths for ${modemInfo.chipset.displayName}")
+                    Log.i(TAG, "AT method: ${modemInfo.atCommandMethod}")
+                    
+                    // Priority paths from DeviceInfoManager
+                    for (path in modemInfo.modemDevicePaths) {
+                        if (RootAccessManager.checkDeviceAccess(path)) {
+                            found.add(path)
+                            Log.d(TAG, "Found chipset path: $path")
+                        }
+                    }
+                }
+            } catch (e: Exception) {
+                Log.w(TAG, "DeviceInfoManager not available, using fallback paths", e)
+            }
+        }
+
+        // Fallback: Check default paths
+        for (path in FALLBACK_MODEM_PATHS) {
+            if (path !in found && RootAccessManager.checkDeviceAccess(path)) {
+                found.add(path)
+            }
         }
         
-        // Find available modem device
-        for (devicePath in MODEM_DEVICE_PATHS) {
-            if (rootManager.checkDeviceAccess(devicePath)) {
-                Log.d(TAG, "Found modem device: $devicePath")
-                
-                // Test with basic AT command
-                if (testDevice(devicePath)) {
+        // Also discover via ls
+        found.addAll(RootAccessManager.getModemPorts().filter { it !in found })
+        found
+    }
+
+    /** Initialize AT on a specific device path with chipset-aware configuration */
+    suspend fun initializeAtOnDevice(devicePath: String): Boolean = withContext(Dispatchers.IO) {
+        if (!isRootAvailable()) {
+            Log.e(TAG, "Root not available")
+            return@withContext false
+        }
+
+        try {
+            // Get chipset-specific configuration
+            val baudRate = getBaudRateForDevice(devicePath)
+            val configCmd = getSerialConfigCommand(devicePath, baudRate)
+            
+            Log.d(TAG, "Configuring $devicePath with baud rate $baudRate")
+            
+            // Configure serial port
+            val configResult = RootAccessManager.executeRootCommand(configCmd)
+            if (!configResult.success) {
+                Log.e(TAG, "Failed to configure port: ${configResult.error}")
+                return@withContext false
+            }
+
+            // Test AT command with chipset-specific timeout
+            val timeout = getTimeoutForMethod()
+            val atTest = sendAtCommand(devicePath, "AT", timeout)
+            if (atTest.contains("OK")) {
+                modemDevice = devicePath
+                Log.i(TAG, "Modem initialized on $devicePath (method: $detectedMethod)")
+                return@withContext true
+            }
+            
+            // Some modems need ATE0 (echo off) first
+            val ate0Test = sendAtCommand(devicePath, "ATE0", timeout)
+            if (ate0Test.contains("OK") || ate0Test.contains("ATE0")) {
+                val atRetry = sendAtCommand(devicePath, "AT", timeout)
+                if (atRetry.contains("OK")) {
                     modemDevice = devicePath
-                    Log.i(TAG, "Successfully initialized modem: $devicePath")
+                    Log.i(TAG, "Modem initialized on $devicePath after ATE0")
                     return@withContext true
                 }
             }
-        }
-        
-        // Try discovering via ls
-        val discoveredPorts = rootManager.getModemPorts()
-        Log.d(TAG, "Discovered ports: $discoveredPorts")
-        
-        for (port in discoveredPorts) {
-            if (testDevice(port)) {
-                modemDevice = port
-                Log.i(TAG, "Successfully initialized modem: $port")
-                return@withContext true
-            }
-        }
-        
-        Log.e(TAG, "No working modem device found")
-        return@withContext false
-    }
-    
-    /**
-     * Test if device responds to AT commands
-     */
-    private suspend fun testDevice(devicePath: String): Boolean = withContext(Dispatchers.IO) {
-        try {
-            val response = sendAtCommand(devicePath, "AT")
-            response.contains("OK")
+            
+            Log.w(TAG, "No OK response from $devicePath")
+            false
         } catch (e: Exception) {
-            Log.e(TAG, "Device test failed: $devicePath", e)
+            Log.e(TAG, "Init failed on $devicePath", e)
             false
         }
     }
-    
-    /**
-     * Send SMS using AT commands (PDU mode)
-     * Supports Class 0 (Flash) and Type 0 (Silent) SMS
-     */
-    suspend fun sendSmsViaAt(message: Message): Result<String> = withContext(Dispatchers.IO) {
+
+    /** Get appropriate baud rate based on device path and chipset */
+    private fun getBaudRateForDevice(devicePath: String): Int {
+        return when {
+            // QMI/Qualcomm paths often need 9600
+            devicePath.contains("qmi") || devicePath.contains("smd") -> 9600
+            // USB serial typically 115200
+            devicePath.contains("ttyUSB") || devicePath.contains("ttyACM") -> 115200
+            // MediaTek CCCI paths
+            devicePath.contains("ccci") -> 115200
+            // Intel paths
+            devicePath.contains("gsmtty") -> 115200
+            // Default
+            else -> 115200
+        }
+    }
+
+    /** Get serial configuration command for device */
+    private fun getSerialConfigCommand(devicePath: String, baudRate: Int): String {
+        return "stty -F $devicePath $baudRate cs8 -cstopb -parenb raw -echo"
+    }
+
+    /** Get timeout based on detected AT method */
+    private fun getTimeoutForMethod(): Int {
+        return when (detectedMethod) {
+            AtCommandMethod.QCRIL_SMD -> 5
+            AtCommandMethod.MEDIATEK_CCCI -> 3
+            AtCommandMethod.MEDIATEK_CCCI_V2 -> 3
+            AtCommandMethod.SAMSUNG_IPC -> 5
+            AtCommandMethod.SAMSUNG_IPC_V2 -> 5
+            AtCommandMethod.HUAWEI_APPVCOM -> 5
+            AtCommandMethod.INTEL_TTY -> 3
+            AtCommandMethod.SPREADTRUM_STTY -> 3
+            AtCommandMethod.GOOGLE_TENSOR_IPC -> 3
+            AtCommandMethod.STANDARD_TTY -> 3
+            AtCommandMethod.UNSUPPORTED -> 5
+        }
+    }
+
+    /** Get currently initialized modem device */
+    fun getInitializedDevice(): String? = modemDevice
+
+    /** Check if AT commands are ready */
+    fun isInitialized(): Boolean = modemDevice != null
+
+    /** Send PDU mode SMS via AT commands */
+    suspend fun sendSmsPdu(pdu: String, pduLen: Int): Boolean = withContext(Dispatchers.IO) {
+        val device = modemDevice ?: return@withContext false
         try {
-            val device = modemDevice ?: return@withContext Result.failure(
-                Exception("AT command interface not initialized")
-            )
-            
             // Set PDU mode
-            var response = sendAtCommand(device, "AT+CMGF=0")
-            if (!response.contains("OK")) {
-                return@withContext Result.failure(Exception("Failed to set PDU mode: $response"))
+            val modeResp = sendAtCommand(device, "AT+CMGF=0")
+            if (!modeResp.contains("OK")) {
+                Log.e(TAG, "Failed to set PDU mode")
+                return@withContext false
             }
-            
-            // Build PDU
-            val pdu = buildSmsPdu(message)
-            val pduLength = (pdu.length / 2) - 1  // Length of TPDU in bytes
-            
-            Log.d(TAG, "Sending SMS: length=$pduLength, PDU=$pdu")
-            
-            // Send SMS command
-            response = sendAtCommand(device, "AT+CMGS=$pduLength")
-            if (!response.contains(">")) {
-                return@withContext Result.failure(Exception("Modem not ready: $response"))
+
+            // Send CMGS command
+            val cmgsResp = sendAtCommand(device, "AT+CMGS=$pduLen")
+            if (!cmgsResp.contains(">")) {
+                Log.e(TAG, "No prompt after CMGS")
+                return@withContext false
             }
-            
-            // Send PDU (terminated with Ctrl+Z = 0x1A)
-            response = sendAtCommand(device, "$pdu\u001A")
-            
-            if (response.contains("OK") || response.contains("+CMGS:")) {
-                // Extract message reference if available
-                val messageRef = response.lines()
-                    .firstOrNull { it.startsWith("+CMGS:") }
-                    ?.substringAfter("+CMGS:")
-                    ?.trim()
-                
-                Log.i(TAG, "SMS sent successfully via AT: ref=$messageRef")
-                Result.success(messageRef ?: "SUCCESS")
-            } else {
-                Result.failure(Exception("Send failed: $response"))
-            }
-            
+
+            // Send PDU data
+            val sendResp = sendPduData(device, pdu)
+            val success = sendResp.contains("+CMGS:") || sendResp.contains("OK")
+            Log.d(TAG, "SMS send result: $success")
+            success
         } catch (e: Exception) {
-            Log.e(TAG, "AT command send failed", e)
-            Result.failure(e)
+            Log.e(TAG, "PDU send failed", e)
+            false
         }
     }
-    
-    /**
-     * Build SMS PDU (Protocol Data Unit)
-     * Format: SMSC + SMS-SUBMIT
-     */
-    private fun buildSmsPdu(message: Message): String {
-        val destination = message.destination.replace("+", "").replace("-", "").replace(" ", "")
-        
-        // SMSC (Service Center) - use default (00 = use device default)
-        val smsc = "00"
-        
-        // SMS-SUBMIT header
-        val pduType = when (message.type) {
-            MessageType.SMS_FLASH -> 0x10  // Class 0 (Flash)
-            MessageType.SMS_SILENT -> 0x40  // Type 0 (Silent) - PID=0x40
-            else -> 0x11  // Standard with validity period
+
+    /** Send text mode SMS (simpler fallback) */
+    suspend fun sendSmsText(destination: String, message: String): Boolean = withContext(Dispatchers.IO) {
+        val device = modemDevice ?: return@withContext false
+        try {
+            // Set text mode
+            val modeResp = sendAtCommand(device, "AT+CMGF=1")
+            if (!modeResp.contains("OK")) {
+                Log.e(TAG, "Failed to set text mode")
+                return@withContext false
+            }
+
+            // Send CMGS command
+            val cmgsResp = sendAtCommand(device, "AT+CMGS=\"$destination\"")
+            if (!cmgsResp.contains(">")) {
+                Log.e(TAG, "No prompt after CMGS")
+                return@withContext false
+            }
+
+            // Send message text with Ctrl+Z
+            val sendResp = sendTextData(device, message)
+            val success = sendResp.contains("+CMGS:") || sendResp.contains("OK")
+            Log.d(TAG, "Text SMS send result: $success")
+            success
+        } catch (e: Exception) {
+            Log.e(TAG, "Text send failed", e)
+            false
         }
-        
-        val pduHeader = String.format("%02X", pduType)
-        
-        // Message reference (let modem set)
-        val messageRef = "00"
-        
+    }
+
+    /** Build PDU for flash SMS (class 0) */
+    fun buildFlashSmsPdu(destination: String, message: String): Pair<String, Int> {
+        // GSM 03.40 SMS-SUBMIT PDU
+        val pduBuilder = StringBuilder()
+
+        // SMSC length (00 = use default)
+        pduBuilder.append("00")
+
+        // First octet: SMS-SUBMIT (01), no VP, no SRR, no UDHI
+        pduBuilder.append("11")
+
+        // Message reference (00 = let network assign)
+        pduBuilder.append("00")
+
         // Destination address
-        val destLength = destination.length
-        val destType = if (destination.startsWith("00")) "91" else "81"  // International or national
-        val destAddress = swapNibbles(destination)
-        val destPdu = String.format("%02X%s%s", destLength, destType, destAddress)
-        
-        // Protocol Identifier
-        val pid = when (message.type) {
-            MessageType.SMS_SILENT -> "40"  // Silent SMS (Type 0)
-            else -> "00"  // Normal SMS
-        }
-        
-        // Data Coding Scheme
-        val dcs = when {
-            message.type == MessageType.SMS_FLASH -> "10"  // Class 0 (Flash)
-            message.type == MessageType.SMS_BINARY -> "04"  // 8-bit
-            message.body?.any { it.code > 127 } == true -> "08"  // UCS-2
-            else -> "00"  // GSM 7-bit
-        }
-        
-        // Validity Period (relative, 24 hours = 0xA7)
-        val vp = "A7"
-        
-        // User Data
-        val (udl, userData) = encodeUserData(message.body ?: "", dcs)
-        
-        // Combine all parts
-        return smsc + pduHeader + messageRef + destPdu + pid + dcs + vp + udl + userData
+        val cleanDest = destination.replace("+", "").replace("-", "").replace(" ", "")
+        val addrLen = cleanDest.length
+        pduBuilder.append(String.format("%02X", addrLen))
+
+        // Type of address: 91 for international, 81 for national
+        val toa = if (destination.startsWith("+")) "91" else "81"
+        pduBuilder.append(toa)
+
+        // Encode destination (swap nibbles)
+        pduBuilder.append(swapNibbles(cleanDest))
+
+        // Protocol identifier (00 = SMS)
+        pduBuilder.append("00")
+
+        // Data coding scheme: 0x10 = Class 0 (flash), GSM 7-bit
+        pduBuilder.append("10")
+
+        // No validity period (handled by first octet)
+
+        // User data
+        val encoded = encodeGsm7bit(message)
+        pduBuilder.append(String.format("%02X", message.length))
+        pduBuilder.append(encoded)
+
+        val pdu = pduBuilder.toString()
+        // TPDU length = PDU length minus SMSC bytes (1 byte = 2 hex chars)
+        val tpduLen = (pdu.length - 2) / 2
+        return Pair(pdu, tpduLen)
     }
-    
-    /**
-     * Encode user data based on DCS
-     */
-    private fun encodeUserData(text: String, dcs: String): Pair<String, String> {
-        return when (dcs) {
-            "00" -> {
-                // GSM 7-bit
-                val encoded = encodeGsm7Bit(text)
-                val udl = String.format("%02X", text.length)
-                Pair(udl, encoded)
-            }
-            "08" -> {
-                // UCS-2
-                val encoded = text.map { String.format("%04X", it.code) }.joinToString("")
-                val udl = String.format("%02X", encoded.length / 2)
-                Pair(udl, encoded)
-            }
-            "04" -> {
-                // 8-bit binary
-                val encoded = text.toByteArray().joinToString("") { String.format("%02X", it) }
-                val udl = String.format("%02X", text.length)
-                Pair(udl, encoded)
-            }
-            else -> {
-                val udl = String.format("%02X", text.length)
-                Pair(udl, text.map { String.format("%02X", it.code) }.joinToString(""))
-            }
+
+    /** GSM 7-bit encoding */
+    private fun encodeGsm7bit(text: String): String {
+        val gsm7bitChars = "@£\$¥èéùìòÇ\nØø\rÅåΔ_ΦΓΛΩΠΨΣΘΞ ÆæßÉ !\"#¤%&'()*+,-./0123456789:;<=>?" +
+            "¡ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÑÜ§¿abcdefghijklmnopqrstuvwxyzäöñüà"
+
+        val septets = mutableListOf<Int>()
+        for (c in text) {
+            val idx = gsm7bitChars.indexOf(c)
+            septets.add(if (idx >= 0) idx else 0x3F) // '?' for unknown
         }
+
+        // Pack 7-bit septets into 8-bit octets
+        val octets = mutableListOf<Int>()
+        var shift = 0
+        var carry = 0
+
+        for (i in septets.indices) {
+            if (shift == 7) {
+                octets.add(carry)
+                shift = 0
+                carry = 0
+            }
+            val current = septets[i]
+            val octet = ((current shl shift) or carry) and 0xFF
+            carry = current shr (7 - shift)
+            octets.add(octet)
+            shift++
+        }
+        if (shift > 0 && carry > 0) {
+            octets.add(carry)
+        }
+
+        return octets.joinToString("") { String.format("%02X", it) }
     }
-    
-    /**
-     * Encode text as GSM 7-bit
-     */
-    private fun encodeGsm7Bit(text: String): String {
-        // Simplified GSM 7-bit encoding
-        // In production, use proper bit packing
-        return text.toByteArray().joinToString("") { String.format("%02X", it) }
-    }
-    
-    /**
-     * Swap nibbles for BCD encoding of phone numbers
-     */
-    private fun swapNibbles(number: String): String {
-        val padded = if (number.length % 2 != 0) number + "F" else number
+
+    private fun swapNibbles(num: String): String {
+        val padded = if (num.length % 2 != 0) num + "F" else num
         return padded.chunked(2) { "${it[1]}${it[0]}" }.joinToString("")
     }
-    
-    /**
-     * Send AT command to modem device
-     */
-    private suspend fun sendAtCommand(devicePath: String, command: String): String = withContext(Dispatchers.IO) {
+
+    private suspend fun sendAtCommand(devicePath: String, command: String, timeout: Int = 3): String = withContext(Dispatchers.IO) {
         try {
-            // Open device with root
-            val result = rootManager.executeRootCommand("""
-                stty -F $devicePath 115200 cs8 -cstopb -parenb
-                echo -ne "$command\r\n" > $devicePath
-                timeout 3 cat $devicePath
-            """.trimIndent())
-            
-            if (result.success) {
-                Log.d(TAG, "AT Command: $command -> ${result.output}")
-                result.output
-            } else {
-                Log.e(TAG, "AT Command failed: ${result.error}")
-                "ERROR: ${result.error}"
-            }
+            Log.d(TAG, "AT Command: $command (timeout: ${timeout}s)")
+            val result = RootAccessManager.executeRootCommand(
+                "stty -F $devicePath $(stty -F $devicePath -g 2>/dev/null || echo '115200 cs8'); echo -ne \"$command\\r\\n\" > $devicePath; timeout $timeout cat $devicePath 2>/dev/null || true"
+            )
+            if (result.success) result.output else "ERROR: ${result.error}"
         } catch (e: Exception) {
-            Log.e(TAG, "AT command exception", e)
             "ERROR: ${e.message}"
         }
     }
-    
-    /**
-     * Get Service Center Address
-     */
+
+    private suspend fun sendPduData(devicePath: String, pdu: String): String = withContext(Dispatchers.IO) {
+        try {
+            // Send PDU followed by Ctrl+Z (0x1A)
+            val result = RootAccessManager.executeRootCommand(
+                "echo -ne \"$pdu\\x1a\" > $devicePath; timeout 5 cat $devicePath"
+            )
+            if (result.success) result.output else "ERROR: ${result.error}"
+        } catch (e: Exception) {
+            "ERROR: ${e.message}"
+        }
+    }
+
+    private suspend fun sendTextData(devicePath: String, message: String): String = withContext(Dispatchers.IO) {
+        try {
+            // Escape special chars and send with Ctrl+Z
+            val escaped = message.replace("\"", "\\\"").replace("'", "\\'")
+            val result = RootAccessManager.executeRootCommand(
+                "echo -ne \"$escaped\\x1a\" > $devicePath; timeout 5 cat $devicePath"
+            )
+            if (result.success) result.output else "ERROR: ${result.error}"
+        } catch (e: Exception) {
+            "ERROR: ${e.message}"
+        }
+    }
+
+    /** Get service center address from modem */
     suspend fun getServiceCenterAddress(): String? = withContext(Dispatchers.IO) {
         val device = modemDevice ?: return@withContext null
-        
         try {
-            val response = sendAtCommand(device, "AT+CSCA?")
-            // Parse response: +CSCA: "+1234567890",145
-            response.lines()
-                .firstOrNull { it.startsWith("+CSCA:") }
+            val resp = sendAtCommand(device, "AT+CSCA?")
+            resp.lines().firstOrNull { it.startsWith("+CSCA:") }
                 ?.substringAfter("\"")
                 ?.substringBefore("\"")
         } catch (e: Exception) {
@@ -293,29 +368,100 @@ class AtCommandManager(
             null
         }
     }
-    
+
     /**
-     * Set Service Center Address
+     * Auto-initialize modem using DeviceInfoManager for intelligent device detection.
+     * This tries chipset-specific paths first, then falls back to standard probing.
+     * 
+     * @param context Android context for DeviceInfoManager
+     * @return true if modem initialized successfully
      */
-    suspend fun setServiceCenterAddress(smsc: String): Boolean = withContext(Dispatchers.IO) {
-        val device = modemDevice ?: return@withContext false
-        
-        try {
-            val response = sendAtCommand(device, "AT+CSCA=\"$smsc\"")
-            response.contains("OK")
-        } catch (e: Exception) {
-            Log.e(TAG, "Failed to set SMSC", e)
-            false
+    suspend fun autoInitialize(context: Context): Boolean = withContext(Dispatchers.IO) {
+        if (!isRootAvailable()) {
+            Log.e(TAG, "Root not available, cannot auto-initialize modem")
+            return@withContext false
         }
+
+        // Ensure DeviceInfoManager has run detection
+        try {
+            DeviceInfoManager.initialize(context)
+        } catch (e: Exception) {
+            Log.w(TAG, "DeviceInfoManager initialization failed", e)
+        }
+
+        // Probe for devices with context awareness
+        val devices = probeDevices(context)
+        if (devices.isEmpty()) {
+            Log.e(TAG, "No modem devices found")
+            return@withContext false
+        }
+
+        Log.i(TAG, "Found ${devices.size} potential modem device(s): $devices")
+
+        // Try each device in order (chipset-specific paths should be first)
+        for (device in devices) {
+            Log.d(TAG, "Attempting to initialize: $device")
+            if (initializeAtOnDevice(device)) {
+                Log.i(TAG, "Successfully initialized modem on $device")
+                return@withContext true
+            }
+        }
+
+        Log.e(TAG, "Failed to initialize any modem device")
+        false
     }
-    
+
     /**
-     * Check if AT interface is ready
+     * Get diagnostic info about current modem configuration
      */
-    fun isReady(): Boolean = modemDevice != null
-    
-    /**
-     * Get current modem device path
-     */
-    fun getModemDevice(): String? = modemDevice
+    suspend fun getDiagnosticInfo(): Map<String, String> = withContext(Dispatchers.IO) {
+        val info = mutableMapOf<String, String>()
+        
+        info["rootAvailable"] = (rootAvailableCache ?: false).toString()
+        info["modemDevice"] = modemDevice ?: "none"
+        info["atMethod"] = detectedMethod.toString()
+        info["isInitialized"] = isInitialized().toString()
+        
+        modemDevice?.let { device ->
+            // Try to get signal quality
+            try {
+                val csq = sendAtCommand(device, "AT+CSQ")
+                if (csq.contains("+CSQ:")) {
+                    info["signalQuality"] = csq.substringAfter("+CSQ:").trim().substringBefore("\n")
+                }
+            } catch (e: Exception) {
+                info["signalQuality"] = "error"
+            }
+            
+            // Try to get operator
+            try {
+                val cops = sendAtCommand(device, "AT+COPS?")
+                if (cops.contains("+COPS:")) {
+                    info["operator"] = cops.substringAfter("+COPS:").trim().substringBefore("\n")
+                }
+            } catch (e: Exception) {
+                info["operator"] = "error"
+            }
+            
+            // Try to get IMEI
+            try {
+                val imei = sendAtCommand(device, "AT+CGSN")
+                val imeiVal = imei.lines().firstOrNull { it.matches(Regex("\\d{15}")) }
+                if (imeiVal != null) {
+                    info["imei"] = imeiVal
+                }
+            } catch (e: Exception) {
+                info["imei"] = "error"
+            }
+        }
+        
+        info
+    }
+
+    /** Reset state */
+    fun reset() {
+        modemDevice = null
+        rootAvailableCache = null
+        detectedMethod = AtCommandMethod.STANDARD_TTY
+    }
 }
