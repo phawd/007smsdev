@@ -4,7 +4,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.autoMirrored.ChevronRight
+import androidx.compose.material.icons.autoMirrored.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -44,7 +45,7 @@ fun HomeScreen(
                 title = { Text("ZeroSMS Testing") },
                 actions = {
                     IconButton(onClick = onNavigateToSettings) {
-                        Icon(Icons.Default.Settings, contentDescription = "Settings")
+                        Icon(Icons.AutoMirrored.Filled.Settings, contentDescription = "Settings")
                     }
                 }
             )
@@ -82,7 +83,7 @@ fun HomeScreen(
                     onClick = onNavigateToResults,
                     modifier = Modifier.weight(1f)
                 ) {
-                    Icon(Icons.Default.BarChart, contentDescription = null)
+                    Icon(Icons.AutoMirrored.Filled.BarChart, contentDescription = null)
                     Spacer(Modifier.width(8.dp))
                     Text("Results")
                 }
@@ -97,7 +98,7 @@ fun HomeScreen(
                         containerColor = MaterialTheme.colorScheme.secondary
                     )
                 ) {
-                    Icon(Icons.Default.PlayArrow, contentDescription = null)
+                    Icon(Icons.AutoMirrored.Filled.PlayArrow, contentDescription = null)
                     Spacer(Modifier.width(8.dp))
                     Text("Run All")
                 }
@@ -113,7 +114,7 @@ fun HomeScreen(
                     containerColor = MaterialTheme.colorScheme.tertiary
                 )
             ) {
-                Icon(Icons.Default.Visibility, contentDescription = null)
+                Icon(Icons.AutoMirrored.Filled.Visibility, contentDescription = null)
                 Spacer(Modifier.width(8.dp))
                 Text("SMS Monitor (Flash/Silent)")
             }
@@ -187,7 +188,7 @@ fun TestCategoryCard(
             }
             
             Icon(
-                imageVector = Icons.Default.ChevronRight,
+                imageVector = Icons.AutoMirrored.Filled.ChevronRight,
                 contentDescription = "Navigate",
                 tint = MaterialTheme.colorScheme.onSurfaceVariant
             )
@@ -209,7 +210,7 @@ private fun getTestCategories(): List<TestCategory> = listOf(
         type = "SMS",
         title = "SMS Testing",
         description = "GSM 03.40, GSM 03.38 compliant SMS tests",
-        icon = Icons.Default.Message,
+        icon = Icons.AutoMirrored.Filled.Message,
         color = SMSBlue,
         testCount = 15
     ),
@@ -217,7 +218,7 @@ private fun getTestCategories(): List<TestCategory> = listOf(
         type = "MMS",
         title = "MMS Testing",
         description = "OMA MMS Encapsulation Protocol tests",
-        icon = Icons.Default.Message,
+        icon = Icons.AutoMirrored.Filled.Message,
         color = MMSGreen,
         testCount = 12
     ),
@@ -225,7 +226,7 @@ private fun getTestCategories(): List<TestCategory> = listOf(
         type = "RCS",
         title = "RCS Testing",
         description = "GSMA RCS Universal Profile 2.4 tests",
-        icon = Icons.Default.Chat,
+        icon = Icons.AutoMirrored.Filled.Chat,
         color = RCSPurple,
         testCount = 10
     ),
@@ -233,7 +234,7 @@ private fun getTestCategories(): List<TestCategory> = listOf(
         type = "BINARY",
         title = "Binary SMS",
         description = "8-bit data SMS and port addressing",
-        icon = Icons.Default.DataObject,
+        icon = Icons.AutoMirrored.Filled.DataObject,
         color = SMSBlue,
         testCount = 8
     ),
@@ -241,7 +242,7 @@ private fun getTestCategories(): List<TestCategory> = listOf(
         type = "FLASH",
         title = "Flash SMS",
         description = "Class 0 SMS immediate display tests",
-        icon = Icons.Default.FlashOn,
+        icon = Icons.AutoMirrored.Filled.FlashOn,
         color = SMSBlue,
         testCount = 5
     ),
@@ -249,7 +250,7 @@ private fun getTestCategories(): List<TestCategory> = listOf(
         type = "SILENT",
         title = "Silent SMS",
         description = "Type 0 SMS network testing",
-        icon = Icons.Default.VisibilityOff,
+        icon = Icons.AutoMirrored.Filled.VisibilityOff,
         color = SMSBlue,
         testCount = 6
     ),
@@ -257,7 +258,7 @@ private fun getTestCategories(): List<TestCategory> = listOf(
         type = "CONCATENATION",
         title = "Message Concatenation",
         description = "Multi-part message handling (GSM 03.40)",
-        icon = Icons.Default.ViewStream,
+        icon = Icons.AutoMirrored.Filled.ViewStream,
         color = SMSBlue,
         testCount = 7
     ),
@@ -265,7 +266,7 @@ private fun getTestCategories(): List<TestCategory> = listOf(
         type = "ENCODING",
         title = "Character Encoding",
         description = "GSM 7-bit, UCS-2, and Unicode tests",
-        icon = Icons.Default.Abc,
+        icon = Icons.AutoMirrored.Filled.Abc,
         color = SMSBlue,
         testCount = 9
     ),
@@ -273,7 +274,7 @@ private fun getTestCategories(): List<TestCategory> = listOf(
         type = "DELIVERY",
         title = "Delivery Reports",
         description = "Status reports and acknowledgments",
-        icon = Icons.Default.DoneAll,
+        icon = Icons.AutoMirrored.Filled.DoneAll,
         color = MMSGreen,
         testCount = 6
     ),
@@ -281,7 +282,7 @@ private fun getTestCategories(): List<TestCategory> = listOf(
         type = "STRESS",
         title = "Stress Testing",
         description = "High-volume and performance tests",
-        icon = Icons.Default.Speed,
+        icon = Icons.AutoMirrored.Filled.Speed,
         color = RCSPurple,
         testCount = 8
     )

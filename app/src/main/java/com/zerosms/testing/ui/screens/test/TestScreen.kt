@@ -100,7 +100,7 @@ fun TestScreen(
                     onValueChange = { messageBody = it },
                     label = { Text("Message Content") },
                     placeholder = { Text("Enter test message...") },
-                    leadingIcon = { Icon(Icons.Default.Message, contentDescription = null) },
+                    leadingIcon = { Icon(Icons.AutoMirrored.Filled.Message, contentDescription = null) },
                     minLines = 3,
                     maxLines = 5,
                     modifier = Modifier.fillMaxWidth()
@@ -165,7 +165,7 @@ fun TestScreen(
                         enabled = phoneNumber.isNotEmpty() && messageBody.isNotEmpty() && 
                                  permissionsState.allPermissionsGranted && !testRunning
                     ) {
-                        Icon(Icons.Default.Send, contentDescription = null)
+                        Icon(Icons.AutoMirrored.Filled.Send, contentDescription = null)
                         Spacer(Modifier.width(8.dp))
                         Text(if (testRunning) "Running..." else "Send Test")
                     }
