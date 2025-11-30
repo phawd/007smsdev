@@ -1,0 +1,11 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' } // add like this
+    }
+}
+
+rootProject.name = "zeroSMS"
+include ':app'

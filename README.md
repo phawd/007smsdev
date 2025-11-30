@@ -13,6 +13,7 @@ ZeroSMS is a professional-grade testing tool designed to validate messaging prot
 ## Features
 
 ### SMS Testing
+
 - ✅ Standard text messages (GSM 7-bit, 8-bit, UCS-2)
 - ✅ Binary SMS with port addressing
 - ✅ Flash SMS (Class 0 - immediate display)
@@ -28,6 +29,7 @@ ZeroSMS is a professional-grade testing tool designed to validate messaging prot
 - ✅ **Command Line Interface (CLI) with cursor navigation support**
 
 ### MMS Testing
+
 - ✅ Text-only MMS
 - ✅ Image attachments (JPEG, PNG, GIF)
 - ✅ Video attachments (MP4, 3GPP)
@@ -40,6 +42,7 @@ ZeroSMS is a professional-grade testing tool designed to validate messaging prot
 - ✅ **MMSC configuration with carrier presets**
 
 ### RCS Testing
+
 - ✅ Rich text messages (up to 8000 chars)
 - ✅ File transfer (up to 100MB)
 - ✅ Group chat (up to 100 participants)
@@ -52,18 +55,21 @@ ZeroSMS is a professional-grade testing tool designed to validate messaging prot
 ## RFC & Standards Compliance
 
 ### SMS Standards
+
 - **GSM 03.40** - Technical realization of SMS
 - **GSM 03.38** - Alphabets and language-specific information
 - **3GPP TS 23.040** - Technical realization of SMS
 - **3GPP TS 23.038** - Alphabets and language-specific information
 
 ### MMS Standards
+
 - **OMA MMS Encapsulation Protocol** - Message structure
 - **WAP-209-MMSEncapsulation** - Encoding specifications
 - **WAP-230-WSP** - Wireless Session Protocol
 - **RFC 2046** - MIME Media Types
 
 ### RCS Standards
+
 - **GSMA RCS Universal Profile 2.4** - Core specifications
 - **RFC 4975** - MSRP (Message Session Relay Protocol)
 - **RFC 6120** - XMPP Core (Extensible Messaging)
@@ -87,10 +93,20 @@ app/
 └── AndroidManifest.xml
 ```
 
+## Legacy Reference
+
+The original “silent-sms-flash1” Java project has been imported verbatim under
+`legacy/silent-sms-flash1`. This snapshot retains its Groovy Gradle scripts,
+drawables, documentation, and historical APK builds for compliance review. It
+is intentionally isolated from the primary ZeroSMS module—treat it as a
+read-only reference when comparing behaviors or porting features forward.
+
 ## Key Components
 
 ### SmsManagerWrapper
+
 Handles all SMS operations with full GSM compliance:
+
 - Message encoding (GSM 7-bit, 8-bit, UCS-2)
 - Message segmentation and concatenation
 - Binary SMS with port addressing
@@ -99,7 +115,9 @@ Handles all SMS operations with full GSM compliance:
 - Delivery status tracking
 
 ### MmsManagerWrapper
+
 Manages MMS operations per OMA specifications:
+
 - PDU (Protocol Data Unit) encoding
 - WSP (Wireless Session Protocol) encoding
 - MIME multipart message assembly
@@ -108,7 +126,9 @@ Manages MMS operations per OMA specifications:
 - MMSC gateway communication
 
 ### RcsManagerWrapper
+
 Implements RCS Universal Profile:
+
 - Rich messaging capabilities
 - Large file transfers
 - Group chat management
@@ -118,6 +138,7 @@ Implements RCS Universal Profile:
 ## Build Instructions
 
 ### Prerequisites
+
 - Android Studio Hedgehog (2023.1.1) or later
 - JDK 17
 - Android SDK 34
@@ -146,6 +167,7 @@ adb shell am start -n com.zerosms.testing/.MainActivity --es cli true
 ```
 
 ### Gradle Configuration
+
 - **Min SDK**: 24 (Android 7.0)
 - **Target SDK**: 35 (Android 15)
 - **Compile SDK**: 35
@@ -180,6 +202,7 @@ adb shell am start -n com.zerosms.testing/.MainActivity --es cli true
 ## Advanced Features (Root Required)
 
 ### AT Command Support
+
 - **Direct modem access** for sending SMS via AT commands
 - **Class 0 (Flash SMS)** with enhanced control
 - **Type 0 (Silent SMS)** for network testing
@@ -187,6 +210,7 @@ adb shell am start -n com.zerosms.testing/.MainActivity --es cli true
 - Supports multiple modem device paths: `/dev/smd0`, `/dev/smd11`, `/dev/ttyUSB0`, etc.
 
 ### Incoming SMS Monitor
+
 - **Real-time monitoring** of all incoming SMS
 - **Capture and display** Class 0 (Flash) and Type 0 (Silent) SMS
 - **Persistent storage** of normally hidden messages
@@ -194,6 +218,7 @@ adb shell am start -n com.zerosms.testing/.MainActivity --es cli true
 - **Filter by message type** (Flash, Silent, Normal)
 
 ### MMSC Configuration
+
 - **Custom MMSC settings** for MMS sending
 - **Carrier presets** (T-Mobile, AT&T, Verizon, Vodafone, etc.)
 - **Proxy and port configuration**
@@ -202,13 +227,15 @@ adb shell am start -n com.zerosms.testing/.MainActivity --es cli true
 **Note:** Root access is required for AT command functionality. The app will fall back to standard Android SMS APIs if root is not available.
 
 ### Command Line Interface (CLI)
+
 - **Interactive CLI** with ANSI color support and cursor navigation
 - **Menu-driven interface** for easy navigation
 - **All core functions** accessible via command line
 - **Cross-platform support** (Android terminal, ADB shell)
 - **Command history** and auto-completion
 
-#### CLI Commands:
+#### CLI Commands
+
 ```bash
 test sms <number>     # Send SMS test to specified number
 test mms <number>     # Send MMS test to specified number
@@ -284,6 +311,7 @@ val result = smsManager.sendSms(message)
 ## Test Results
 
 Results include:
+
 - ✅ **Status**: Passed/Failed/Timeout
 - ✅ **Delivery Status**: Sent/Delivered/Failed
 - ✅ **Performance Metrics**: Send/delivery duration
@@ -295,6 +323,7 @@ Results include:
 ## Development
 
 ### Technology Stack
+
 - **Language**: Kotlin
 - **UI Framework**: Jetpack Compose (Material 3)
 - **Architecture**: MVVM with Clean Architecture
@@ -303,6 +332,7 @@ Results include:
 - **Navigation**: Navigation Compose
 
 ### Code Organization
+
 - `core/model/` - Domain models and data classes
 - `core/sms/` - SMS protocol implementation
 - `core/mms/` - MMS protocol implementation
@@ -331,6 +361,7 @@ This project is intended for testing and educational purposes. Ensure compliance
 ## Contributing
 
 Contributions welcome! Areas of focus:
+
 - Additional RFC compliance tests
 - Performance optimizations
 - UI/UX improvements
@@ -344,6 +375,3 @@ For issues, questions, or contributions, please open an issue on the repository.
 ---
 
 **ZeroSMS** - Professional messaging protocol testing for Android is an Android application that allows users to send silent SMS messages without notifying the recipient. This can be useful for various purposes, such as network testing or discreet communication. This is not meant for public distribution and should be used responsibly.
-
-
-
