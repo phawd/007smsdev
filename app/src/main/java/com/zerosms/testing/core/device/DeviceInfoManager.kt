@@ -4,6 +4,8 @@ import android.content.Context
 import android.os.Build
 import android.telephony.TelephonyManager
 import android.util.Log
+import com.zerosms.testing.core.at.AtCapabilityScanResult
+import com.zerosms.testing.core.at.AtCommandManager
 import com.zerosms.testing.core.root.RootAccessManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -37,6 +39,8 @@ object DeviceInfoManager {
 
     private val _detectionProgress = MutableStateFlow<List<String>>(emptyList())
     val detectionProgress: StateFlow<List<String>> = _detectionProgress.asStateFlow()
+    private val _atCapabilityResults = MutableStateFlow<List<AtCapabilityScanResult>>(emptyList())
+    val atCapabilityResults: StateFlow<List<AtCapabilityScanResult>> = _atCapabilityResults.asStateFlow()
 
     private var initialized = false
 
@@ -83,6 +87,12 @@ object DeviceInfoManager {
             appendProgress("🧪 Determining SMS strategy...")
             val strategy = getRecommendedSmsStrategy()
             appendProgress("🎯 Strategy: ${strategy.displayName}")
+
+            // Step 5: Scan SMS AT capability for detected chipset paths (Qualcomm, MTK, etc.)
+            appendProgress("🔬 Scanning AT/SMS capabilities...")
+            val atScan = AtCommandManager.scanAtCapabilities(detectedModemInfo)
+            _atCapabilityResults.value = atScan
+            appendProgress("📊 AT scan: ${atScan.count { it.responded }} responsive port(s)")
 
             appendProgress("✔ Detection complete")
             Log.i(TAG, "Device: $detectedDeviceInfo")

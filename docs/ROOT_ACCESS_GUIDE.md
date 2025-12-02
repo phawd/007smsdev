@@ -85,6 +85,32 @@ ZeroSMS automatically searches for modem devices in priority order:
 - **Samsung Exynos** - May use `/dev/umts*`
 - **Huawei HiSilicon** - May use `/dev/ttyAMA*`
 
+### Qualcomm Diagnostic Ports
+
+Some Qualcomm/Snapdragon devices gate the AT/diag interfaces behind USB configuration flags such as `diag`, `diag_mdm`, or `serial_cdev`. Root-only capability is provided in the Settings screen’s Root Access card via the **“Enable Qualcomm Diag Ports”** button. Choose the preset that matches your hardware (Generic Snapdragon, Inseego MiFi, etc.) and ZeroSMS will run the corresponding `setprop` sequence to update `sys.usb.config`, `persist.sys.usb.config`, and `persist.vendor.usb.config`. Common combinations include `diag,serial_cdev,rmnet,dpl,qdss,adb`, `diag,serial_cdev,adb`, and `diag,diag_mdm,adb`. After the command completes, confirm the diag profile by running `getprop sys.usb.config` in an ADB shell and verifying it contains one of the diag strings. USB reconnection may be required for the new mode to take effect.
+
+Prefer automating from a desktop? Use the bundled Python helper:
+
+```bash
+# From the repo root
+python3 tools/zerosms_cli.py diag --ai                 # AI diag probing
+python3 tools/zerosms_cli.py probe --deep --include-response   # Deep modem scan
+python3 tools/zerosms_cli.py usb --json                        # List USB VID/PIDs (lsusb/system profiler)
+python3 tools/zerosms_cli.py usb-switch -v 0x05c6 -p 0x90b4    # Run usb_modeswitch for dongles
+python3 tools/zerosms_cli.py comscan                           # Enumerate desktop COM ports
+python3 tools/zerosms_cli.py sms +15551234567 "Hello" --auto   # Auto-pick responsive modem
+```
+
+The script calls `adb shell su -c ...` under the hood, so adb/USB debugging and root are still required.
+
+ZeroSMS has been tested with Inseego devices such as:
+
+- **Inseego MiFi M2100** (Snapdragon 8cx); diag mode exposes `/dev/smd0`.
+- **Inseego MiFi M2000** (Snapdragon X55); use diag configs `diag,diag_mdm,adb`.
+- **Inseego Inseego 5G MiFi 8000** (Snapdragon X55); `Serial_cdev` variant works best.
+
+You can adapt the same process to other NOVAtel/Inseego models that share Qualcomm chipsets.
+
 ### PDU Mode Encoding
 
 AT commands use PDU (Protocol Data Unit) mode for SMS. ZeroSMS automatically:

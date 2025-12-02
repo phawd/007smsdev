@@ -21,6 +21,15 @@
   - Service Center Address (SMSC) management
   - BCD phone number encoding
   - Fallback to standard API when unavailable
+  - Chipset-aware capability scanner that validates Qualcomm/MediaTek/Samsung modem paths before enabling SMS
+
+### ✅ Qualcomm Diagnostic Port Enabler
+- **File**: `core/qualcomm/QualcommDiagManager.kt`
+- **Capabilities**:
+  - Runs root `setprop` commands to push diag-capable USB configs (`diag`, `diag_mdm`, `serial_cdev`)
+  - Reads `sys.usb.config` and persistent USB props to verify diagnostic mode
+  - Provides device-specific presets (Generic Snapdragon, Inseego MiFi, fallback serial-only) in Settings > Root Access and via the desktop helper (`tools/zerosms_cli.py`)
+  - Desktop helper also scans USB vendor/product IDs, invokes `usb_modeswitch`, enumerates COM ports, and can operate with/without adb root
 
 ### ✅ Incoming SMS Database
 - **File**: `core/database/IncomingSmsDatabase.kt`
@@ -78,7 +87,7 @@
 ### ✅ Updated Settings UI
 - **File**: `ui/screens/settings/SettingsScreen.kt` (enhanced)
 - **New Sections**:
-  - **Root Access Card**: Shows root and AT command status
+- **Root Access Card**: Shows root and AT command status and now exposes the Qualcomm diag-port toggle
   - **MMSC Configuration Card**: MMSC URL, proxy, port settings with carrier presets
   - Status indicators for availability
   - Initialize/refresh buttons

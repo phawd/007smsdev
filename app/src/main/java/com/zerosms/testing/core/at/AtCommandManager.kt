@@ -8,6 +8,7 @@ import com.zerosms.testing.core.device.AtCommandMethod
 import com.zerosms.testing.core.root.RootAccessManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.io.File
 
 /**
  * AT Command Manager - Handles direct modem communication via AT commands for SMS.
@@ -51,7 +52,7 @@ object AtCommandManager {
         // First try chipset-specific paths from DeviceInfoManager if context available
         context?.let { ctx ->
             try {
-                val modemInfo = DeviceInfoManager.modemInfo.value
+                val modemInfo: DeviceInfoManager.ModemInfo? = DeviceInfoManager.modemInfo.value
                 if (modemInfo != null) {
                     detectedMethod = modemInfo.atCommandMethod
                     Log.i(TAG, "Using chipset-specific paths for ${modemInfo.chipset.displayName}")
@@ -464,4 +465,74 @@ object AtCommandManager {
         rootAvailableCache = null
         detectedMethod = AtCommandMethod.STANDARD_TTY
     }
+
+    /**
+     * Scan a list of modem device paths to determine AT/SMS readiness.
+     * Returns a result per candidate path indicating whether it exists, is accessible, and responds to AT.
+     */
+    suspend fun scanAtCapabilities(modemInfo: DeviceInfoManager.ModemInfo?): List<AtCapabilityScanResult> = withContext(Dispatchers.IO) {
+        if (!isRootAvailable()) return@withContext emptyList()
+
+        val candidates = linkedSetOf<Pair<String, DeviceInfoManager.ModemInfo?>>()
+        modemInfo?.modemDevicePaths?.forEach { candidates.add(it to modemInfo) }
+        FALLBACK_MODEM_PATHS.forEach { candidates.add(it to null) }
+        RootAccessManager.getModemPorts().forEach { candidates.add(it to null) }
+
+        val results = mutableListOf<AtCapabilityScanResult>()
+        for ((path, info) in candidates) {
+            val file = File(path)
+            val exists = file.exists()
+            if (!exists) {
+                results.add(
+                    AtCapabilityScanResult(
+                        devicePath = path,
+                        chipset = info?.chipset ?: DeviceInfoManager.ModemChipset.UNKNOWN,
+                        exists = false,
+                        accessible = false,
+                        responded = false,
+                        responseSnippet = "Device node missing"
+                    )
+                )
+                continue
+            }
+
+            val accessible = RootAccessManager.checkDeviceAccess(path)
+            if (!accessible) {
+                results.add(
+                    AtCapabilityScanResult(
+                        devicePath = path,
+                        chipset = info?.chipset ?: DeviceInfoManager.ModemChipset.UNKNOWN,
+                        exists = true,
+                        accessible = false,
+                        responded = false,
+                        responseSnippet = "Permission denied"
+                    )
+                )
+                continue
+            }
+
+            val response = sendAtCommand(path, "AT", getTimeoutForMethod())
+            val responded = response.contains("OK", ignoreCase = true)
+            results.add(
+                AtCapabilityScanResult(
+                    devicePath = path,
+                    chipset = info?.chipset ?: DeviceInfoManager.ModemChipset.UNKNOWN,
+                    exists = true,
+                    accessible = true,
+                    responded = responded,
+                    responseSnippet = response.lines().firstOrNull()?.take(120) ?: ""
+                )
+            )
+        }
+        results
+    }
 }
+
+data class AtCapabilityScanResult(
+    val devicePath: String,
+    val chipset: DeviceInfoManager.ModemChipset,
+    val exists: Boolean,
+    val accessible: Boolean,
+    val responded: Boolean,
+    val responseSnippet: String
+)

@@ -15,9 +15,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import com.zerosms.testing.core.at.AtCapabilityScanResult
 import com.zerosms.testing.core.at.AtCommandManager
 import com.zerosms.testing.core.device.DeviceInfoManager
 import com.zerosms.testing.core.device.SmsStrategy
+import com.zerosms.testing.core.qualcomm.QualcommDiagManager
+import com.zerosms.testing.core.qualcomm.QualcommDiagProfile
 import com.zerosms.testing.core.settings.SettingsRepository
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -201,6 +204,15 @@ fun RootAccessCard() {
     var modemDevice by remember { mutableStateOf<String?>(null) }
     var detectedDevices by remember { mutableStateOf<List<String>>(emptyList()) }
     var selectedDevice by remember { mutableStateOf<String?>(null) }
+    var diagUsbConfig by remember { mutableStateOf<String?>(null) }
+    var diagStatusMessage by remember { mutableStateOf("Checking Qualcomm diagnostic USB config...") }
+    var diagInProgress by remember { mutableStateOf(false) }
+    val diagProfiles = remember { QualcommDiagManager.getPresetProfiles() }
+    var selectedDiagProfileId by remember { mutableStateOf(diagProfiles.firstOrNull()?.id) }
+
+    val selectedDiagProfile: QualcommDiagProfile? = remember(selectedDiagProfileId, diagProfiles) {
+        diagProfiles.firstOrNull { it.id == selectedDiagProfileId }
+    }
 
     LaunchedEffect(Unit) {
         withContext(Dispatchers.IO) {
@@ -211,6 +223,14 @@ fun RootAccessCard() {
             selectedDevice = list.firstOrNull()
             modemDevice = selectedDevice
             atReady = root && selectedDevice != null
+        }
+    }
+
+    LaunchedEffect(Unit) {
+        scope.launch {
+            val config = withContext(Dispatchers.IO) { QualcommDiagManager.getActiveUsbConfig() }
+            diagUsbConfig = config
+            diagStatusMessage = config?.let { "USB config: $it" } ?: "Qualcomm USB config unavailable"
         }
     }
 
@@ -260,6 +280,51 @@ fun RootAccessCard() {
                         SettingsRepository.setLastModemDevice(context, dev)
                     }
                 }, modifier = Modifier.weight(1f)) { Icon(Icons.Default.PlayArrow, null); Spacer(Modifier.width(8.dp)); Text("Initialize") }
+            }
+            Spacer(Modifier.height(16.dp))
+            Divider()
+            Spacer(Modifier.height(12.dp))
+            Text("Qualcomm Diagnostic Ports", style = MaterialTheme.typography.titleSmall)
+            Spacer(Modifier.height(4.dp))
+            Text("Select the diag USB profile that matches your device. Inseego/NOVAtel units may require the diag_mdm option.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Spacer(Modifier.height(8.dp))
+            diagProfiles.forEach { profile ->
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { selectedDiagProfileId = profile.id }
+                        .padding(vertical = 4.dp)
+                ) {
+                    RadioButton(
+                        selected = selectedDiagProfileId == profile.id,
+                        onClick = { selectedDiagProfileId = profile.id }
+                    )
+                    Column(modifier = Modifier.padding(start = 8.dp)) {
+                        Text(profile.label, style = MaterialTheme.typography.bodyMedium)
+                        Text(profile.description, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    }
+                }
+            }
+            Spacer(Modifier.height(8.dp))
+            Text(diagStatusMessage, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text("Active USB config: ${diagUsbConfig ?: "Unknown"}", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Spacer(Modifier.height(8.dp))
+            Button(
+                onClick = {
+                    scope.launch {
+                        diagInProgress = true
+                        diagStatusMessage = "Applying Qualcomm diagnostic USB configuration..."
+                        val result = withContext(Dispatchers.IO) { QualcommDiagManager.enableDiagnosticPorts(selectedDiagProfile) }
+                        diagUsbConfig = result.activeConfig
+                        diagStatusMessage = result.message
+                        diagInProgress = false
+                    }
+                },
+                modifier = Modifier.fillMaxWidth(),
+                enabled = !diagInProgress
+            ) {
+                Text(if (diagInProgress) "Applying diag configuration…" else "Enable Qualcomm Diag Ports")
             }
         }
     }
@@ -317,6 +382,7 @@ fun DeviceDetectionCard() {
     var detectionLog by remember { mutableStateOf<List<String>>(emptyList()) }
     var manufacturer by remember { mutableStateOf("") }
     var model by remember { mutableStateOf("") }
+    var atCapabilityResults by remember { mutableStateOf<List<AtCapabilityScanResult>>(emptyList()) }
     
     // Collect device info from DeviceInfoManager
     LaunchedEffect(Unit) {
@@ -344,6 +410,12 @@ fun DeviceDetectionCard() {
         DeviceInfoManager.detectionProgress.collect { progress ->
             detectionLog = progress
             isDetecting = progress.isNotEmpty() && !progress.lastOrNull().orEmpty().contains("complete")
+        }
+    }
+
+    LaunchedEffect(Unit) {
+        DeviceInfoManager.atCapabilityResults.collect { results ->
+            atCapabilityResults = results
         }
     }
     
@@ -420,6 +492,32 @@ fun DeviceDetectionCard() {
                             Text(line, style = MaterialTheme.typography.bodySmall)
                         }
                     }
+                }
+            }
+
+            if (atCapabilityResults.isNotEmpty()) {
+                Spacer(Modifier.height(12.dp))
+                Text("AT Capability Scan", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                Spacer(Modifier.height(4.dp))
+                atCapabilityResults.take(4).forEach { result ->
+                    val statusText = when {
+                        !result.exists -> "Missing"
+                        !result.accessible -> "Inaccessible"
+                        result.responded -> "AT OK"
+                        else -> "No response"
+                    }
+                    val color = when {
+                        result.responded -> MaterialTheme.colorScheme.primary
+                        !result.exists -> MaterialTheme.colorScheme.onSurfaceVariant
+                        else -> MaterialTheme.colorScheme.error
+                    }
+                    Column(modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
+                        Text("${result.devicePath} (${result.chipset.displayName})", style = MaterialTheme.typography.bodySmall)
+                        Text(statusText, style = MaterialTheme.typography.bodySmall, color = color)
+                    }
+                }
+                if (atCapabilityResults.size > 4) {
+                    Text("…and ${atCapabilityResults.size - 4} more", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
             }
             

@@ -208,6 +208,8 @@ adb shell am start -n com.zerosms.testing/.MainActivity --es cli true
 - **Type 0 (Silent SMS)** for network testing
 - **PDU mode** encoding with full GSM 03.40 compliance
 - Supports multiple modem device paths: `/dev/smd0`, `/dev/smd11`, `/dev/ttyUSB0`, etc.
+- Qualcomm diag-port enabler with device-specific USB profiles (Generic Snapdragon, Inseego MiFi, custom diag_mdm)
+- Chipset-aware scanner that probes Qualcomm, MediaTek, Samsung, and fallback modem nodes to confirm AT/SMS readiness
 
 ### Incoming SMS Monitor
 
@@ -233,6 +235,21 @@ adb shell am start -n com.zerosms.testing/.MainActivity --es cli true
 - **All core functions** accessible via command line
 - **Cross-platform support** (Android terminal, ADB shell)
 - **Command history** and auto-completion
+
+### Desktop Helper (Python)
+
+ZeroSMS ships with a lightweight helper script for desktop automation (`tools/zerosms_cli.py`). It mirrors the APK’s Qualcomm diag toggle and AT-based SMS sending via adb:
+
+- `python3 tools/zerosms_cli.py diag --profile inseego-m2000` — enable diag ports for a given preset
+- `python3 tools/zerosms_cli.py diag --ai` — AI mode cycles every preset until diag is active
+- `python3 tools/zerosms_cli.py sms +15551234567 "Hello" --auto --deep` — auto-select modem and send SMS
+- `python3 tools/zerosms_cli.py probe --deep --include-response` — deep AT scan (Qualcomm/MediaTek/Samsung)
+- `python3 tools/zerosms_cli.py usb --json` — enumerate USB vendor/product IDs (uses `lsusb`/system profiler)
+- `python3 tools/zerosms_cli.py usb-switch -v 0x05c6 -p 0x90b4` — run `usb_modeswitch` for dongles and MiFi
+- `python3 tools/zerosms_cli.py comscan` — list desktop COM ports via pySerial (great for USB modem drivers)
+- Add `--adb-non-root` when the connected device cannot provide `su`
+
+The helper assumes `adb` is installed. Commands that touch modem nodes may still require root; non-root mode attempts the same calls without `su` but may lack permissions.
 
 #### CLI Commands
 
