@@ -5,28 +5,23 @@ import android.os.Build
 import android.telephony.TelephonyManager
 import android.util.Log
 import com.zerosms.testing.core.at.AtCapabilityScanResult
-import com.zerosms.testing.core.at.AtCommandManager
+
 import com.zerosms.testing.core.root.RootAccessManager
+import com.zerosms.testing.core.root.RootActivityType
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import java.io.File
 
 /**
- * Comprehensive device hardware and modem detection manager.
- * Detects phone type, modem chipset, radio type, and determines optimal SMS sending strategy.
- * 
- * Supports:
- * - Qualcomm Snapdragon (MSM, SDM, SM series)
- * - MediaTek (Helio, Dimensity)
- * - Samsung Exynos
- * - HiSilicon Kirin (Huawei)
- * - Intel XMM
- * - Spreadtrum/UNISOC
- * - Google Tensor
- * - And fallback for unknown chipsets
+ * Manages device hardware information detection
+ * Detects phone type, modem chipset, radio type, and determines optimal SMS sending strategy
  */
 object DeviceInfoManager {
     private const val TAG = "DeviceInfoManager"
@@ -37,255 +32,285 @@ object DeviceInfoManager {
     private val _modemInfo = MutableStateFlow<ModemInfo?>(null)
     val modemInfo: StateFlow<ModemInfo?> = _modemInfo.asStateFlow()
 
+    // Detection progress lines (verbose for UI)
     private val _detectionProgress = MutableStateFlow<List<String>>(emptyList())
     val detectionProgress: StateFlow<List<String>> = _detectionProgress.asStateFlow()
     private val _atCapabilityResults = MutableStateFlow<List<AtCapabilityScanResult>>(emptyList())
     val atCapabilityResults: StateFlow<List<AtCapabilityScanResult>> = _atCapabilityResults.asStateFlow()
 
-    private var initialized = false
+    // Detection state
+    private val _isDetecting = MutableStateFlow(false)
+    val isDetecting: StateFlow<Boolean> = _isDetecting.asStateFlow()
+
+    // Current detection job (for cancellation / refresh)
+    private var detectionJob: Job? = null
+    private val detectionMutex = Mutex()
 
     /**
-     * Initialize device detection (call once on app startup)
+     * Initialize device detection (skips if already completed)
      */
     suspend fun initialize(context: Context) {
-        if (initialized) return
-        runDetection(context)
-        initialized = true
+        Log.i(TAG, "initialize() called - force=false")
+        runDetection(context, force = false)
     }
 
     /**
-     * Force refresh device detection
+     * Refresh/rescan device detection (forces re-detection)
      */
     suspend fun refresh(context: Context) {
-        runDetection(context)
+        Log.i(TAG, "refresh() called - force=true, clearing previous state")
+        runDetection(context, force = true)
     }
 
-    private suspend fun runDetection(context: Context) = withContext(Dispatchers.IO) {
-        _detectionProgress.value = emptyList()
-        appendProgress("🚀 Starting device detection...")
+    fun cancelDetection() {
+        Log.w(TAG, "cancelDetection() called by user")
+        detectionJob?.cancel()
+        detectionJob = null
+        _isDetecting.value = false
+        appendProgress("✋ Detection cancelled by user")
+        RootAccessManager.logActivity("Detection cancelled by user", RootActivityType.WARNING)
+    }
 
-        try {
-            // Step 1: Collect base build info
-            appendProgress("🔍 Collecting device information...")
-            val detectedDeviceInfo = detectDeviceInfo(context)
-            _deviceInfo.value = detectedDeviceInfo
-            appendProgress("✅ Device: ${detectedDeviceInfo.manufacturer} ${detectedDeviceInfo.model}")
+    private suspend fun runDetection(context: Context, force: Boolean) {
+        detectionMutex.withLock {
+            // Check if already running
+            if (_isDetecting.value) {
+                Log.w(TAG, "Detection already in progress, skipping")
+                appendProgress("⏳ Detection already in progress...")
+                return
+            }
 
-            // Step 2: Detect chipset and radio
-            appendProgress("🔧 Detecting chipset & radio...")
-            val detectedModemInfo = detectModemInfo(context, detectedDeviceInfo)
-            _modemInfo.value = detectedModemInfo
-            appendProgress("📡 Chipset: ${detectedModemInfo.chipset.displayName}")
-            appendProgress("📶 Radio: ${detectedModemInfo.radioType.displayName}")
+            // Check if already completed (only skip if not forcing)
+            if (!force && _deviceInfo.value != null && _modemInfo.value != null) {
+                Log.i(TAG, "Detection already completed, skipping (use refresh to force)")
+                return
+            }
 
-            // Step 3: Probe for modem devices
-            appendProgress("🔌 Probing modem device paths...")
-            val availablePaths = probeModemPaths(detectedModemInfo)
-            appendProgress("📁 Found ${availablePaths.size} accessible modem path(s)")
+            // Cancel any existing job
+            detectionJob?.cancel()
+            
+            // Clear previous state if forcing refresh
+            if (force) {
+                Log.d(TAG, "Forcing refresh - clearing previous detection data")
+                _deviceInfo.value = null
+                _modemInfo.value = null
+            }
+            
+            _detectionProgress.value = emptyList()
+            _isDetecting.value = true
+        }
 
-            // Step 4: Determine strategy
-            appendProgress("🧪 Determining SMS strategy...")
-            val strategy = getRecommendedSmsStrategy()
-            appendProgress("🎯 Strategy: ${strategy.displayName}")
+        // Launch detection in IO scope
+        detectionJob = CoroutineScope(Dispatchers.IO).launch {
+            try {
+                Log.i(TAG, "========== DEVICE DETECTION STARTED ==========")
+                appendProgress("🚀 Starting device detection...")
+                RootAccessManager.logActivity("Starting device detection...", RootActivityType.INFO)
 
-            // Step 5: Scan SMS AT capability for detected chipset paths (Qualcomm, MTK, etc.)
-            appendProgress("🔬 Scanning AT/SMS capabilities...")
-            val atScan = AtCommandManager.scanAtCapabilities(detectedModemInfo)
-            _atCapabilityResults.value = atScan
-            appendProgress("📊 AT scan: ${atScan.count { it.responded }} responsive port(s)")
+                // Step 1: Collect build info
+                Log.d(TAG, "Step 1: Collecting base build info")
+                appendProgress("🔍 Collecting base build info...")
+                
+                Log.v(TAG, "  Build.MANUFACTURER = ${Build.MANUFACTURER}")
+                Log.v(TAG, "  Build.MODEL = ${Build.MODEL}")
+                Log.v(TAG, "  Build.BRAND = ${Build.BRAND}")
+                Log.v(TAG, "  Build.DEVICE = ${Build.DEVICE}")
+                Log.v(TAG, "  Build.HARDWARE = ${Build.HARDWARE}")
+                Log.v(TAG, "  Build.BOARD = ${Build.BOARD}")
+                Log.v(TAG, "  Build.VERSION.RELEASE = ${Build.VERSION.RELEASE}")
+                Log.v(TAG, "  Build.VERSION.SDK_INT = ${Build.VERSION.SDK_INT}")
+                
+                val detectedDeviceInfo = detectDeviceInfo(context)
+                
+                appendProgress("  📱 Manufacturer: ${detectedDeviceInfo.manufacturer}")
+                appendProgress("  📱 Model: ${detectedDeviceInfo.model}")
+                appendProgress("  📱 Hardware: ${detectedDeviceInfo.hardware}")
+                appendProgress("  📱 Board: ${detectedDeviceInfo.board}")
+                appendProgress("  📱 Android: ${detectedDeviceInfo.androidVersion} (SDK ${detectedDeviceInfo.sdkInt})")
+                appendProgress("  📱 Baseband: ${detectedDeviceInfo.basebandVersion}")
+                appendProgress("✅ Device identified: ${detectedDeviceInfo.manufacturer} ${detectedDeviceInfo.model}")
+                
+                Log.i(TAG, "Device identified: ${detectedDeviceInfo.manufacturer} ${detectedDeviceInfo.model}")
+                Log.d(TAG, "Full DeviceInfo: $detectedDeviceInfo")
 
-            appendProgress("✔ Detection complete")
-            Log.i(TAG, "Device: $detectedDeviceInfo")
-            Log.i(TAG, "Modem: $detectedModemInfo")
-            Log.i(TAG, "Strategy: $strategy")
+                // Step 2: Detect chipset
+                Log.d(TAG, "Step 2: Detecting chipset from hardware identifiers")
+                appendProgress("🔧 Detecting chipset & radio...")
+                appendProgress("  🔍 Analyzing: hardware=${Build.HARDWARE}, board=${Build.BOARD}")
+                
+                Log.d(TAG, "Detecting chipset from: hardware=${Build.HARDWARE}, board=${Build.BOARD}, device=${Build.DEVICE}")
+                
+                val detectedModemInfo = detectModemInfo(context)
+                
+                appendProgress("  📡 Chipset: ${detectedModemInfo.chipset.displayName}")
+                appendProgress("  📶 Radio type: ${detectedModemInfo.radioType.displayName}")
+                appendProgress("  🔌 AT method: ${detectedModemInfo.atCommandMethod}")
+                appendProgress("  🔓 Direct modem access: ${if (detectedModemInfo.supportsDirectModemAccess) "Supported" else "Not supported"}")
+                
+                Log.i(TAG, "Chipset detected: ${detectedModemInfo.chipset.displayName}")
+                Log.i(TAG, "Radio type: ${detectedModemInfo.radioType.displayName}")
+                Log.i(TAG, "AT command method: ${detectedModemInfo.atCommandMethod}")
 
-        } catch (e: Exception) {
-            appendProgress("❌ Detection failed: ${e.message}")
-            Log.e(TAG, "Detection failure", e)
+                // Step 3: Scan modem paths
+                Log.d(TAG, "Step 3: Scanning modem device paths")
+                appendProgress("🔍 Scanning modem device paths...")
+                
+                val accessiblePaths = mutableListOf<String>()
+                for (path in detectedModemInfo.modemDevicePaths) {
+                    val file = File(path)
+                    val exists = file.exists()
+                    if (exists) {
+                        accessiblePaths.add(path)
+                        Log.d(TAG, "  ✓ Modem path accessible: $path")
+                        appendProgress("  ✓ Found: $path")
+                    } else {
+                        Log.v(TAG, "  ✗ Modem path not found: $path")
+                    }
+                }
+                
+                if (accessiblePaths.isEmpty()) {
+                    appendProgress("  ⚠️ No modem paths accessible (may need root)")
+                    Log.w(TAG, "No modem paths accessible - root may be required")
+                } else {
+                    appendProgress("  📂 ${accessiblePaths.size} modem path(s) found")
+                    Log.i(TAG, "Found ${accessiblePaths.size} accessible modem paths")
+                }
+
+                // Step 4: Determine SMS strategy
+                Log.d(TAG, "Step 4: Determining SMS strategy")
+                appendProgress("🧪 Determining SMS strategy...")
+                
+                _deviceInfo.value = detectedDeviceInfo
+                _modemInfo.value = detectedModemInfo
+                
+                val rootAvailable = RootAccessManager.rootAvailable.value == true
+                appendProgress("  🔐 Root access: ${if (rootAvailable) "Available" else "Not available"}")
+                Log.d(TAG, "Root access available: $rootAvailable")
+                
+                val strategy = getRecommendedSmsStrategy()
+                appendProgress("🎯 Strategy: $strategy")
+                
+                Log.i(TAG, "Recommended SMS strategy: $strategy")
+
+                // Complete
+                appendProgress("✔ Detection complete")
+                Log.i(TAG, "========== DEVICE DETECTION COMPLETE ==========")
+                Log.i(TAG, "Device: $detectedDeviceInfo")
+                Log.i(TAG, "Modem: $detectedModemInfo")
+                Log.i(TAG, "Strategy: $strategy")
+                
+                RootAccessManager.logActivity(
+                    "Detection complete. Chipset: ${detectedModemInfo.chipset.displayName}, Strategy: $strategy",
+                    RootActivityType.SUCCESS
+                )
+                
+            } catch (e: Exception) {
+                Log.e(TAG, "========== DEVICE DETECTION FAILED ==========", e)
+                appendProgress("❌ Detection failed: ${e.message}")
+                RootAccessManager.logActivity("Detection failed: ${e.message}", RootActivityType.ERROR)
+            } finally {
+                _isDetecting.value = false
+                Log.d(TAG, "Detection job finished, isDetecting=false")
+            }
         }
     }
 
     /**
      * Detect device manufacturer, model, and hardware details
      */
-    private suspend fun detectDeviceInfo(context: Context): DeviceInfo = withContext(Dispatchers.IO) {
-        // Get baseband version (modem firmware)
-        val basebandVersion = try {
-            Build.getRadioVersion() ?: RootAccessManager.getSystemProperty("gsm.version.baseband") ?: "Unknown"
-        } catch (e: Exception) {
-            "Unknown"
-        }
-
-        // Get RIL version
-        val rilVersion = RootAccessManager.getSystemProperty("gsm.version.ril-impl") ?: "Unknown"
-
-        // Get bootloader
-        val bootloader = Build.BOOTLOADER ?: "Unknown"
-
-        DeviceInfo(
-            manufacturer = Build.MANUFACTURER ?: "Unknown",
-            model = Build.MODEL ?: "Unknown",
-            brand = Build.BRAND ?: "Unknown",
-            device = Build.DEVICE ?: "Unknown",
-            hardware = Build.HARDWARE ?: "Unknown",
-            board = Build.BOARD ?: "Unknown",
-            product = Build.PRODUCT ?: "Unknown",
-            androidVersion = Build.VERSION.RELEASE ?: "Unknown",
+    private fun detectDeviceInfo(context: Context): DeviceInfo {
+        return DeviceInfo(
+            manufacturer = Build.MANUFACTURER,
+            model = Build.MODEL,
+            brand = Build.BRAND,
+            device = Build.DEVICE,
+            hardware = Build.HARDWARE,
+            board = Build.BOARD,
+            androidVersion = Build.VERSION.RELEASE,
             sdkInt = Build.VERSION.SDK_INT,
-            basebandVersion = basebandVersion,
-            rilVersion = rilVersion,
-            bootloader = bootloader,
-            fingerprint = Build.FINGERPRINT ?: "Unknown"
+            basebandVersion = Build.getRadioVersion() ?: "Unknown"
         )
     }
 
     /**
      * Detect modem chipset and radio type
      */
-    private suspend fun detectModemInfo(context: Context, deviceInfo: DeviceInfo): ModemInfo = withContext(Dispatchers.IO) {
-        val telephonyManager = try {
-            context.getSystemService(Context.TELEPHONY_SERVICE) as? TelephonyManager
-        } catch (e: Exception) {
-            null
-        }
-
+    private fun detectModemInfo(context: Context): ModemInfo {
+        val telephonyManager = context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+        
         // Detect chipset based on hardware/board info
-        val chipset = detectChipset(deviceInfo)
-        appendProgress("   → Chipset identified: ${chipset.name}")
-
+        val chipset = detectChipset()
+        
         // Detect radio type
         val radioType = detectRadioType(telephonyManager)
-        appendProgress("   → Radio type: ${radioType.displayName}")
-
-        // Get modem device paths for this chipset
-        val modemPaths = getModemPathsForChipset(chipset)
-        appendProgress("   → ${modemPaths.size} potential modem paths")
-
+        
+        // Get modem device paths
+        val modemPaths = getModemPaths(chipset)
+        
         // Detect preferred AT command method
         val atCommandMethod = detectAtCommandMethod(chipset, radioType)
-        appendProgress("   → AT method: ${atCommandMethod.displayName}")
-
-        // Get modem-specific properties
-        val modemProperties = detectModemProperties(chipset)
-
-        ModemInfo(
+        
+        return ModemInfo(
             chipset = chipset,
             radioType = radioType,
             modemDevicePaths = modemPaths,
             atCommandMethod = atCommandMethod,
-            supportsDirectModemAccess = chipset != ModemChipset.UNKNOWN,
-            modemProperties = modemProperties,
-            baudRate = getBaudRateForChipset(chipset),
-            requiresRootForAt = chipset.requiresRoot
+            supportsDirectModemAccess = chipset != ModemChipset.UNKNOWN
         )
     }
 
     /**
      * Detect modem chipset from hardware identifiers
      */
-    private fun detectChipset(deviceInfo: DeviceInfo): ModemChipset {
-        val hardware = deviceInfo.hardware.lowercase()
-        val board = deviceInfo.board.lowercase()
-        val device = deviceInfo.device.lowercase()
-        val product = deviceInfo.product.lowercase()
-        val bootloader = deviceInfo.bootloader.lowercase()
-        val baseband = deviceInfo.basebandVersion.lowercase()
-        val combined = "$hardware $board $device $product"
-
-        Log.d(TAG, "Detecting chipset from: hardware=$hardware, board=$board, device=$device")
+    private fun detectChipset(): ModemChipset {
+        val hardware = Build.HARDWARE.lowercase()
+        val board = Build.BOARD.lowercase()
+        val device = Build.DEVICE.lowercase()
+        val combined = "$hardware $board $device"
 
         return when {
-            // Google Tensor (Pixel 6+)
-            combined.contains("tensor") || combined.contains("gs1") || combined.contains("gs2") ||
-            bootloader.contains("slider") || bootloader.contains("oriole") || bootloader.contains("raven") ||
-            bootloader.contains("cheetah") || bootloader.contains("panther") -> ModemChipset.GOOGLE_TENSOR
-
-            // Qualcomm Snapdragon - Most common
+            // Qualcomm Snapdragon - Enhanced detection for all variants
             combined.contains("qcom") || combined.contains("msm") || 
-            combined.contains("sdm") || combined.contains("sm8") || combined.contains("sm7") ||
-            combined.contains("sm6") || combined.contains("snapdragon") ||
-            baseband.contains("mpss") -> {
+            combined.contains("sdm") || combined.contains("sm") ||
+            combined.contains("snapdragon") || combined.contains("kona") ||
+            combined.contains("lahaina") || combined.contains("monaco") ||
+            combined.contains("holi") || combined.contains("skiff") ||
+            combined.contains("taro") || combined.contains("parrot") -> {
                 when {
-                    // Snapdragon 8 Gen series (SM8xxx)
-                    combined.contains("sm8550") || combined.contains("sm8650") -> ModemChipset.QUALCOMM_SM8_GEN
-                    combined.contains("sm8450") || combined.contains("sm8475") -> ModemChipset.QUALCOMM_SM8_GEN
-                    combined.contains("sm8350") || combined.contains("sm8250") -> ModemChipset.QUALCOMM_SM8_GEN
-                    
-                    // Snapdragon 7xx series
-                    combined.contains("sm7") || combined.contains("sdm7") -> ModemChipset.QUALCOMM_SM7XX
-                    
-                    // Snapdragon 6xx series
-                    combined.contains("sm6") || combined.contains("sdm6") -> ModemChipset.QUALCOMM_SM6XX
-                    
-                    // SDM (older Snapdragon)
-                    combined.contains("sdm845") || combined.contains("sdm855") ||
-                    combined.contains("sdm865") -> ModemChipset.QUALCOMM_SDM
-                    
-                    // MSM8xxx series
-                    combined.contains("msm89") || combined.contains("msm88") -> ModemChipset.QUALCOMM_MSM8XXX
                     combined.contains("msm8") -> ModemChipset.QUALCOMM_MSM8XXX
                     combined.contains("msm7") -> ModemChipset.QUALCOMM_MSM7XXX
-                    
+                    combined.contains("sdm") || combined.contains("sm8") -> ModemChipset.QUALCOMM_SDM
+                    // Newer codenames (5G capable)
+                    combined.contains("kona") || combined.contains("lahaina") ||
+                    combined.contains("monaco") || combined.contains("holi") ||
+                    combined.contains("skiff") || combined.contains("taro") ||
+                    combined.contains("parrot") -> ModemChipset.QUALCOMM_SDM
                     else -> ModemChipset.QUALCOMM_GENERIC
                 }
             }
-
+            
             // MediaTek
-            combined.contains("mt") && (combined.contains("mt6") || combined.contains("mt8")) ||
-            baseband.contains("moly") -> {
+            combined.contains("mt") && (combined.contains("mt6") || combined.contains("mt8")) -> {
                 when {
-                    // Dimensity 9xxx/8xxx (high-end)
-                    combined.contains("mt689") || combined.contains("mt698") ||
-                    combined.contains("mt699") -> ModemChipset.MEDIATEK_DIMENSITY_HIGH
-                    
-                    // Dimensity 7xxx/6xxx (mid-range)  
-                    combined.contains("mt678") || combined.contains("mt677") ||
-                    combined.contains("mt676") -> ModemChipset.MEDIATEK_DIMENSITY_MID
-                    
-                    // Helio G/P series
-                    combined.contains("mt676") || combined.contains("mt675") ||
-                    combined.contains("mt681") || combined.contains("mt682") -> ModemChipset.MEDIATEK_HELIO
-                    
-                    // Older MediaTek
-                    combined.contains("mt67") || combined.contains("mt65") -> ModemChipset.MEDIATEK_GENERIC
-                    
+                    combined.contains("mt67") || combined.contains("mt68") -> ModemChipset.MEDIATEK_HELIO
+                    combined.contains("mt81") || combined.contains("mt89") -> ModemChipset.MEDIATEK_DIMENSITY
                     else -> ModemChipset.MEDIATEK_GENERIC
                 }
             }
-
+            
             // Samsung Exynos
-            combined.contains("exynos") || combined.contains("universal") ||
-            combined.contains("samsungexynos") -> {
-                when {
-                    combined.contains("exynos2") || combined.contains("s5e99") -> ModemChipset.SAMSUNG_EXYNOS_2XXX
-                    combined.contains("exynos1") || combined.contains("s5e98") -> ModemChipset.SAMSUNG_EXYNOS_1XXX
-                    combined.contains("exynos9") || combined.contains("s5e9") -> ModemChipset.SAMSUNG_EXYNOS_9XXX
-                    else -> ModemChipset.SAMSUNG_EXYNOS
-                }
-            }
-
+            combined.contains("exynos") || combined.contains("universal") -> ModemChipset.SAMSUNG_EXYNOS
+            
             // HiSilicon Kirin (Huawei)
-            combined.contains("kirin") || combined.contains("hi36") || combined.contains("hi37") ||
-            combined.contains("hisi") -> {
-                when {
-                    combined.contains("kirin99") || combined.contains("kirin98") -> ModemChipset.HISILICON_KIRIN_9XX
-                    combined.contains("kirin9") -> ModemChipset.HISILICON_KIRIN_9XX
-                    else -> ModemChipset.HISILICON_KIRIN
-                }
-            }
-
-            // Intel/Infineon (older iPhones via USB, some tablets)
-            combined.contains("intel") || combined.contains("infineon") ||
-            baseband.contains("xmm") -> ModemChipset.INTEL_XMM
-
-            // Spreadtrum/UNISOC (budget devices)
+            combined.contains("kirin") || combined.contains("hi36") || combined.contains("hi37") -> ModemChipset.HISILICON_KIRIN
+            
+            // Intel/Infineon
+            combined.contains("intel") || combined.contains("infineon") -> ModemChipset.INTEL_XMM
+            
+            // Spreadtrum/UNISOC
             combined.contains("spreadtrum") || combined.contains("unisoc") || 
-            combined.contains("sc9") || combined.contains("ums") ||
-            baseband.contains("unisoc") -> ModemChipset.SPREADTRUM_UNISOC
-
-            // Apple (for reference, won't work on Android but detect it)
-            combined.contains("apple") -> ModemChipset.APPLE_BASEBAND
-
+            combined.contains("sc") && combined.contains("sc9") -> ModemChipset.SPREADTRUM
+            
             else -> ModemChipset.UNKNOWN
         }
     }
@@ -293,28 +318,18 @@ object DeviceInfoManager {
     /**
      * Detect radio type (GSM/CDMA/LTE/5G)
      */
-    private fun detectRadioType(telephonyManager: TelephonyManager?): RadioType {
-        if (telephonyManager == null) return RadioType.UNKNOWN
-
+    private fun detectRadioType(telephonyManager: TelephonyManager): RadioType {
         return try {
             val phoneType = telephonyManager.phoneType
-            val networkType = try {
-                telephonyManager.dataNetworkType
-            } catch (e: SecurityException) {
-                TelephonyManager.NETWORK_TYPE_UNKNOWN
-            }
-
+            val networkType = telephonyManager.dataNetworkType
+            
             when {
-                // 5G NR detection
+                // 5G detection
                 networkType == TelephonyManager.NETWORK_TYPE_NR -> RadioType.NR_5G
-
-                // 5G NSA (LTE with NR)
-                Build.VERSION.SDK_INT >= 29 && networkType == 20 -> RadioType.NR_5G_NSA
-
-                // LTE/4G (NETWORK_TYPE_LTE_CA = 19, added in API 23)
-                networkType == TelephonyManager.NETWORK_TYPE_LTE ||
-                networkType == 19 -> RadioType.LTE
-
+                
+                // LTE detection
+                networkType == TelephonyManager.NETWORK_TYPE_LTE -> RadioType.LTE
+                
                 // CDMA variants
                 phoneType == TelephonyManager.PHONE_TYPE_CDMA ||
                 networkType in listOf(
@@ -324,30 +339,19 @@ object DeviceInfoManager {
                     TelephonyManager.NETWORK_TYPE_EVDO_B,
                     TelephonyManager.NETWORK_TYPE_1xRTT
                 ) -> RadioType.CDMA
-
-                // HSPA+ / 3G
-                networkType in listOf(
-                    TelephonyManager.NETWORK_TYPE_HSPAP,
-                    TelephonyManager.NETWORK_TYPE_HSPA,
-                    TelephonyManager.NETWORK_TYPE_HSDPA,
-                    TelephonyManager.NETWORK_TYPE_HSUPA,
-                    TelephonyManager.NETWORK_TYPE_UMTS
-                ) -> RadioType.HSPA
-
-                // GSM/EDGE/GPRS (2G)
+                
+                // GSM variants (default for most)
                 phoneType == TelephonyManager.PHONE_TYPE_GSM ||
                 networkType in listOf(
                     TelephonyManager.NETWORK_TYPE_GPRS,
                     TelephonyManager.NETWORK_TYPE_EDGE,
-                    TelephonyManager.NETWORK_TYPE_GSM
+                    TelephonyManager.NETWORK_TYPE_UMTS,
+                    TelephonyManager.NETWORK_TYPE_HSDPA,
+                    TelephonyManager.NETWORK_TYPE_HSUPA,
+                    TelephonyManager.NETWORK_TYPE_HSPA,
+                    TelephonyManager.NETWORK_TYPE_HSPAP
                 ) -> RadioType.GSM
-
-                // TD-SCDMA (China)
-                networkType == TelephonyManager.NETWORK_TYPE_TD_SCDMA -> RadioType.TD_SCDMA
-
-                // iWLAN (WiFi calling)
-                networkType == TelephonyManager.NETWORK_TYPE_IWLAN -> RadioType.IWLAN
-
+                
                 else -> RadioType.UNKNOWN
             }
         } catch (e: Exception) {
@@ -359,206 +363,116 @@ object DeviceInfoManager {
     /**
      * Get modem device paths based on chipset
      */
-    private fun getModemPathsForChipset(chipset: ModemChipset): List<String> {
-        val paths = mutableListOf<String>()
-
-        // Add chipset-specific paths
-        paths.addAll(when (chipset) {
+    private fun getModemPaths(chipset: ModemChipset): List<String> {
+        return when (chipset) {
             ModemChipset.QUALCOMM_GENERIC,
             ModemChipset.QUALCOMM_MSM7XXX,
             ModemChipset.QUALCOMM_MSM8XXX,
-            ModemChipset.QUALCOMM_SDM,
-            ModemChipset.QUALCOMM_SM6XX,
-            ModemChipset.QUALCOMM_SM7XX,
-            ModemChipset.QUALCOMM_SM8_GEN -> listOf(
-                "/dev/smd0", "/dev/smd7", "/dev/smd8", "/dev/smd11",
-                "/dev/ttyHS0", "/dev/ttyHSL0", "/dev/ttyHSL1",
-                "/dev/at_usb0", "/dev/at_mdm0",
-                "/dev/diag", "/dev/diag_mdm"
-            )
-
+            ModemChipset.QUALCOMM_SDM -> getQualcommModemPaths()
+            
             ModemChipset.MEDIATEK_GENERIC,
             ModemChipset.MEDIATEK_HELIO,
-            ModemChipset.MEDIATEK_DIMENSITY_MID,
-            ModemChipset.MEDIATEK_DIMENSITY_HIGH -> listOf(
-                "/dev/radio/pttycmd1", "/dev/radio/pttycmd2",
-                "/dev/radio/atci1", "/dev/radio/atci2",
-                "/dev/ttyMT0", "/dev/ttyMT1", "/dev/ttyMT2",
-                "/dev/ttyC0", "/dev/ttyC1",
-                "/dev/ccci_uem_tx", "/dev/ccci_uem_rx",
-                "/dev/ccci_fs", "/dev/ccci_aud"
+            ModemChipset.MEDIATEK_DIMENSITY -> listOf(
+                "/dev/radio/pttycmd1",
+                "/dev/radio/atci1",
+                "/dev/ttyMT0",
+                "/dev/ttyMT1",
+                "/dev/ttyMT2",
+                "/dev/ccci_uem_tx",
+                "/dev/ccci_uem_rx"
             )
-
-            ModemChipset.SAMSUNG_EXYNOS,
-            ModemChipset.SAMSUNG_EXYNOS_9XXX,
-            ModemChipset.SAMSUNG_EXYNOS_1XXX,
-            ModemChipset.SAMSUNG_EXYNOS_2XXX -> listOf(
-                "/dev/umts_ipc0", "/dev/umts_rfs0",
-                "/dev/umts_boot0", "/dev/umts_multi",
-                "/dev/link_pm", "/dev/modem_ctl",
-                "/dev/samsung_ipc0", "/dev/dpram0"
+            
+            ModemChipset.SAMSUNG_EXYNOS -> listOf(
+                "/dev/umts_ipc0",
+                "/dev/umts_rfs0",
+                "/dev/umts_boot0",
+                "/dev/link_pm",
+                "/dev/modem_ctl"
             )
-
-            ModemChipset.HISILICON_KIRIN,
-            ModemChipset.HISILICON_KIRIN_9XX -> listOf(
-                "/dev/appvcom", "/dev/appvcom1", "/dev/appvcom4",
-                "/dev/ttyAMA1", "/dev/ttyAMA2",
-                "/dev/hisi_at"
+            
+            ModemChipset.HISILICON_KIRIN -> listOf(
+                "/dev/appvcom",
+                "/dev/appvcom4",
+                "/dev/ttyUSB0",
+                "/dev/ttyUSB1"
             )
-
+            
             ModemChipset.INTEL_XMM -> listOf(
-                "/dev/gsmtty1", "/dev/gsmtty2", "/dev/gsmtty7",
-                "/dev/ttyIFX0", "/dev/ttyIFX1",
-                "/dev/mdm_ctrl", "/dev/ttyXMM0"
+                "/dev/gsmtty1",
+                "/dev/gsmtty7",
+                "/dev/ttyIFX0"
             )
-
-            ModemChipset.SPREADTRUM_UNISOC -> listOf(
-                "/dev/stty_lte1", "/dev/stty_lte2", "/dev/stty_lte3",
-                "/dev/slog_lte", "/dev/spipe_lte1",
-                "/dev/stty_td1", "/dev/stty_td2"
+            
+            ModemChipset.SPREADTRUM -> listOf(
+                "/dev/stty_lte1",
+                "/dev/stty_lte2",
+                "/dev/slog_lte"
             )
-
-            ModemChipset.GOOGLE_TENSOR -> listOf(
-                "/dev/umts_ipc0", "/dev/umts_boot0",
-                "/dev/modem_ctrl", "/dev/samsung_ipc"
+            
+            ModemChipset.UNKNOWN -> listOf(
+                "/dev/smd0",
+                "/dev/smd11",
+                "/dev/ttyUSB0",
+                "/dev/ttyUSB1",
+                "/dev/ttyUSB2"
             )
-
-            ModemChipset.APPLE_BASEBAND -> emptyList() // Not applicable
-
-            ModemChipset.UNKNOWN -> emptyList()
-        })
-
-        // Always add generic fallback paths
-        paths.addAll(listOf(
-            "/dev/ttyUSB0", "/dev/ttyUSB1", "/dev/ttyUSB2", "/dev/ttyUSB3",
-            "/dev/ttyACM0", "/dev/ttyACM1",
-            "/dev/ttyGS0", "/dev/ttyGS1"
-        ))
-
-        return paths.distinct()
+        }
     }
 
     /**
-     * Probe which modem paths actually exist and are accessible
+     * Returns all known Qualcomm modem device paths, including Inseego-specific ports.
+     * Covers SMD, TTYHS, USB, DIAG, and WWAN interfaces.
      */
-    private suspend fun probeModemPaths(modemInfo: ModemInfo): List<String> = withContext(Dispatchers.IO) {
-        val available = mutableListOf<String>()
-
-        for (path in modemInfo.modemDevicePaths) {
-            try {
-                val file = File(path)
-                if (file.exists()) {
-                    // Check if accessible with root
-                    if (RootAccessManager.checkDeviceAccess(path)) {
-                        available.add(path)
-                        Log.d(TAG, "Modem path accessible: $path")
-                    } else {
-                        Log.d(TAG, "Modem path exists but not accessible: $path")
-                    }
-                }
-            } catch (e: Exception) {
-                Log.w(TAG, "Error checking path $path: ${e.message}")
-            }
-        }
-
-        available
-    }
+    private fun getQualcommModemPaths(): List<String> = listOf(
+        // SMD (Shared Memory Device) interfaces
+        "/dev/smd0", "/dev/smd1", "/dev/smd2", "/dev/smd3", "/dev/smd4", "/dev/smd5", "/dev/smd6", "/dev/smd7", "/dev/smd8", "/dev/smd9", "/dev/smd10", "/dev/smd11",
+        // TTYHS (High-Speed UART) interfaces
+        "/dev/ttyHS0", "/dev/ttyHS1", "/dev/ttyHS2", "/dev/ttyHS3",
+        // USB serial interfaces (for external modems or diag)
+        "/dev/ttyUSB0", "/dev/ttyUSB1", "/dev/ttyUSB2", "/dev/ttyUSB3",
+        // DIAG interface (diagnostic, sometimes used for AT)
+        "/dev/diag",
+        // WWAN interfaces (Inseego and some MDM modems)
+        "/dev/wwan0at", "/dev/wwan1at", "/dev/wwan2at", "/dev/wwan3at",
+        // QMI/MBIM (rare, but some Inseego/Netgear)
+        "/dev/cdc-wdm0", "/dev/cdc-wdm1",
+        // Misc legacy/variant
+        "/dev/ts0710mux0", "/dev/ts0710mux1", "/dev/ts0710mux2", "/dev/ts0710mux3",
+        // Inseego-specific (observed on some models)
+        "/dev/ttyUSB_DIAG", "/dev/ttyUSB_AT", "/dev/ttyUSB_MODEM", "/dev/ttyUSB_NMEA"
+    )
 
     /**
      * Determine optimal AT command method based on chipset and radio
      */
     private fun detectAtCommandMethod(chipset: ModemChipset, radioType: RadioType): AtCommandMethod {
-        return when (chipset) {
-            ModemChipset.QUALCOMM_GENERIC,
-            ModemChipset.QUALCOMM_MSM7XXX,
-            ModemChipset.QUALCOMM_MSM8XXX,
-            ModemChipset.QUALCOMM_SDM,
-            ModemChipset.QUALCOMM_SM6XX,
-            ModemChipset.QUALCOMM_SM7XX,
-            ModemChipset.QUALCOMM_SM8_GEN -> AtCommandMethod.QCRIL_SMD
-
-            ModemChipset.MEDIATEK_GENERIC,
-            ModemChipset.MEDIATEK_HELIO -> AtCommandMethod.MEDIATEK_CCCI
-
-            ModemChipset.MEDIATEK_DIMENSITY_MID,
-            ModemChipset.MEDIATEK_DIMENSITY_HIGH -> AtCommandMethod.MEDIATEK_CCCI_V2
-
-            ModemChipset.SAMSUNG_EXYNOS,
-            ModemChipset.SAMSUNG_EXYNOS_9XXX -> AtCommandMethod.SAMSUNG_IPC
-
-            ModemChipset.SAMSUNG_EXYNOS_1XXX,
-            ModemChipset.SAMSUNG_EXYNOS_2XXX -> AtCommandMethod.SAMSUNG_IPC_V2
-
-            ModemChipset.HISILICON_KIRIN,
-            ModemChipset.HISILICON_KIRIN_9XX -> AtCommandMethod.HUAWEI_APPVCOM
-
-            ModemChipset.INTEL_XMM -> AtCommandMethod.INTEL_TTY
-
-            ModemChipset.SPREADTRUM_UNISOC -> AtCommandMethod.SPREADTRUM_STTY
-
-            ModemChipset.GOOGLE_TENSOR -> AtCommandMethod.GOOGLE_TENSOR_IPC
-
-            ModemChipset.APPLE_BASEBAND -> AtCommandMethod.UNSUPPORTED
-
-            ModemChipset.UNKNOWN -> AtCommandMethod.STANDARD_TTY
+        return when {
+            // Qualcomm devices typically use SMD
+            chipset == ModemChipset.QUALCOMM_GENERIC ||
+            chipset == ModemChipset.QUALCOMM_MSM7XXX ||
+            chipset == ModemChipset.QUALCOMM_MSM8XXX ||
+            chipset == ModemChipset.QUALCOMM_SDM -> AtCommandMethod.QCRIL_SMD
+            
+            // MediaTek uses CCCI interface
+            chipset == ModemChipset.MEDIATEK_GENERIC ||
+            chipset == ModemChipset.MEDIATEK_HELIO ||
+            chipset == ModemChipset.MEDIATEK_DIMENSITY -> AtCommandMethod.MEDIATEK_CCCI
+            
+            // Samsung Exynos uses IPC interface
+            chipset == ModemChipset.SAMSUNG_EXYNOS -> AtCommandMethod.SAMSUNG_IPC
+            
+            // HiSilicon/Huawei
+            chipset == ModemChipset.HISILICON_KIRIN -> AtCommandMethod.HUAWEI_APPVCOM
+            
+            // Intel modems
+            chipset == ModemChipset.INTEL_XMM -> AtCommandMethod.INTEL_TTY
+            
+            // Spreadtrum
+            chipset == ModemChipset.SPREADTRUM -> AtCommandMethod.SPREADTRUM_STTY
+            
+            // Unknown - try standard methods
+            else -> AtCommandMethod.STANDARD_TTY
         }
-    }
-
-    /**
-     * Get baud rate for chipset
-     */
-    private fun getBaudRateForChipset(chipset: ModemChipset): Int {
-        return when (chipset) {
-            ModemChipset.QUALCOMM_MSM7XXX -> 9600
-            ModemChipset.INTEL_XMM -> 115200
-            ModemChipset.SPREADTRUM_UNISOC -> 921600
-            else -> 115200 // Default
-        }
-    }
-
-    /**
-     * Detect modem-specific properties via getprop
-     */
-    private suspend fun detectModemProperties(chipset: ModemChipset): Map<String, String> = withContext(Dispatchers.IO) {
-        val props = mutableMapOf<String, String>()
-
-        val propKeys = when (chipset) {
-            ModemChipset.QUALCOMM_GENERIC, ModemChipset.QUALCOMM_MSM7XXX,
-            ModemChipset.QUALCOMM_MSM8XXX, ModemChipset.QUALCOMM_SDM,
-            ModemChipset.QUALCOMM_SM6XX, ModemChipset.QUALCOMM_SM7XX,
-            ModemChipset.QUALCOMM_SM8_GEN -> listOf(
-                "gsm.version.baseband", "gsm.version.ril-impl",
-                "ro.baseband", "persist.radio.multisim.config"
-            )
-
-            ModemChipset.MEDIATEK_GENERIC, ModemChipset.MEDIATEK_HELIO,
-            ModemChipset.MEDIATEK_DIMENSITY_MID, ModemChipset.MEDIATEK_DIMENSITY_HIGH -> listOf(
-                "gsm.version.baseband", "gsm.version.ril-impl",
-                "ro.mediatek.chip_ver", "ro.mediatek.platform"
-            )
-
-            ModemChipset.SAMSUNG_EXYNOS, ModemChipset.SAMSUNG_EXYNOS_9XXX,
-            ModemChipset.SAMSUNG_EXYNOS_1XXX, ModemChipset.SAMSUNG_EXYNOS_2XXX -> listOf(
-                "gsm.version.baseband", "ril.modem.board",
-                "ro.boot.em.model", "ro.boot.hardware.revision"
-            )
-
-            else -> listOf("gsm.version.baseband", "gsm.version.ril-impl")
-        }
-
-        for (key in propKeys) {
-            try {
-                RootAccessManager.getSystemProperty(key)?.let { value ->
-                    if (value.isNotEmpty()) {
-                        props[key] = value
-                    }
-                }
-            } catch (e: Exception) {
-                Log.w(TAG, "Failed to get property $key: ${e.message}")
-            }
-        }
-
-        props
     }
 
     /**
@@ -569,183 +483,42 @@ object DeviceInfoManager {
         val device = _deviceInfo.value ?: return SmsStrategy.STANDARD_API_ONLY
 
         return when {
-            // Chipset is completely unsupported
-            modem.chipset == ModemChipset.APPLE_BASEBAND -> SmsStrategy.UNSUPPORTED
-
-            // Known chipset with direct modem access support
+            // Root available and known chipset with direct modem access
+            RootAccessManager.rootAvailable.value == true &&
             modem.supportsDirectModemAccess &&
-            modem.chipset != ModemChipset.UNKNOWN &&
-            modem.atCommandMethod != AtCommandMethod.UNSUPPORTED -> {
-                if (modem.requiresRootForAt) {
-                    SmsStrategy.AT_COMMANDS_PRIMARY
-                } else {
-                    SmsStrategy.AT_WITH_FALLBACK
-                }
+            modem.chipset != ModemChipset.UNKNOWN -> {
+                RootAccessManager.logActivity(
+                    "Using AT command method: ${modem.atCommandMethod}",
+                    RootActivityType.INFO
+                )
+                SmsStrategy.AT_COMMANDS_PRIMARY
             }
-
-            // Unknown chipset - try standard TTY with fallback
-            modem.chipset == ModemChipset.UNKNOWN -> SmsStrategy.AT_WITH_FALLBACK
-
-            // No direct modem access - standard API only
-            else -> SmsStrategy.STANDARD_API_ONLY
+            
+            // Root available but unknown chipset - try AT with fallback
+            RootAccessManager.rootAvailable.value == true -> {
+                RootAccessManager.logActivity(
+                    "Unknown chipset, attempting AT with fallback",
+                    RootActivityType.WARNING
+                )
+                SmsStrategy.AT_WITH_FALLBACK
+            }
+            
+            // No root - standard API only
+            else -> {
+                RootAccessManager.logActivity(
+                    "No root access, using standard SMS API",
+                    RootActivityType.INFO
+                )
+                SmsStrategy.STANDARD_API_ONLY
+            }
         }
     }
 
-    /**
-     * Get a summary of device capabilities for UI display
-     */
-    fun getCapabilitySummary(): DeviceCapabilitySummary {
-        val device = _deviceInfo.value
-        val modem = _modemInfo.value
-
-        return DeviceCapabilitySummary(
-            deviceName = device?.let { "${it.manufacturer} ${it.model}" } ?: "Unknown",
-            androidVersion = device?.androidVersion ?: "Unknown",
-            chipset = modem?.chipset?.displayName ?: "Unknown",
-            radioType = modem?.radioType?.displayName ?: "Unknown",
-            atMethod = modem?.atCommandMethod?.displayName ?: "Unknown",
-            strategy = getRecommendedSmsStrategy(),
-            modemPathCount = modem?.modemDevicePaths?.size ?: 0,
-            basebandVersion = device?.basebandVersion ?: "Unknown"
-        )
-    }
-
     private fun appendProgress(line: String) {
+        Log.d(TAG, "[Progress] $line")
         val updated = _detectionProgress.value + line
-        _detectionProgress.value = updated.takeLast(30)
+        _detectionProgress.value = updated.takeLast(50) // cap to last 50 lines for more verbose output
     }
 }
 
-/**
- * Device information
- */
-data class DeviceInfo(
-    val manufacturer: String,
-    val model: String,
-    val brand: String,
-    val device: String,
-    val hardware: String,
-    val board: String,
-    val product: String,
-    val androidVersion: String,
-    val sdkInt: Int,
-    val basebandVersion: String,
-    val rilVersion: String,
-    val bootloader: String,
-    val fingerprint: String
-)
 
-/**
- * Modem information
- */
-data class ModemInfo(
-    val chipset: ModemChipset,
-    val radioType: RadioType,
-    val modemDevicePaths: List<String>,
-    val atCommandMethod: AtCommandMethod,
-    val supportsDirectModemAccess: Boolean,
-    val modemProperties: Map<String, String>,
-    val baudRate: Int,
-    val requiresRootForAt: Boolean
-)
-
-/**
- * Supported modem chipsets
- */
-enum class ModemChipset(val displayName: String, val requiresRoot: Boolean = true) {
-    // Qualcomm
-    QUALCOMM_GENERIC("Qualcomm Generic"),
-    QUALCOMM_MSM7XXX("Qualcomm MSM7xxx"),
-    QUALCOMM_MSM8XXX("Qualcomm MSM8xxx"),
-    QUALCOMM_SDM("Qualcomm Snapdragon (SDM)"),
-    QUALCOMM_SM6XX("Qualcomm Snapdragon 6xx"),
-    QUALCOMM_SM7XX("Qualcomm Snapdragon 7xx"),
-    QUALCOMM_SM8_GEN("Qualcomm Snapdragon 8 Gen"),
-
-    // MediaTek
-    MEDIATEK_GENERIC("MediaTek Generic"),
-    MEDIATEK_HELIO("MediaTek Helio"),
-    MEDIATEK_DIMENSITY_MID("MediaTek Dimensity (Mid)"),
-    MEDIATEK_DIMENSITY_HIGH("MediaTek Dimensity (High)"),
-
-    // Samsung
-    SAMSUNG_EXYNOS("Samsung Exynos"),
-    SAMSUNG_EXYNOS_9XXX("Samsung Exynos 9xxx"),
-    SAMSUNG_EXYNOS_1XXX("Samsung Exynos 1xxx"),
-    SAMSUNG_EXYNOS_2XXX("Samsung Exynos 2xxx"),
-
-    // HiSilicon
-    HISILICON_KIRIN("HiSilicon Kirin"),
-    HISILICON_KIRIN_9XX("HiSilicon Kirin 9xx"),
-
-    // Intel
-    INTEL_XMM("Intel XMM"),
-
-    // Spreadtrum
-    SPREADTRUM_UNISOC("Spreadtrum/UNISOC"),
-
-    // Google
-    GOOGLE_TENSOR("Google Tensor"),
-
-    // Apple (for reference)
-    APPLE_BASEBAND("Apple Baseband", requiresRoot = false),
-
-    // Unknown
-    UNKNOWN("Unknown", requiresRoot = true)
-}
-
-/**
- * Radio technology types
- */
-enum class RadioType(val displayName: String) {
-    GSM("GSM/GPRS/EDGE (2G)"),
-    HSPA("HSPA/UMTS (3G)"),
-    LTE("LTE (4G)"),
-    NR_5G("5G NR (SA)"),
-    NR_5G_NSA("5G NR (NSA)"),
-    CDMA("CDMA/EVDO"),
-    TD_SCDMA("TD-SCDMA"),
-    IWLAN("WiFi Calling"),
-    UNKNOWN("Unknown")
-}
-
-/**
- * AT command communication methods
- */
-enum class AtCommandMethod(val displayName: String) {
-    QCRIL_SMD("Qualcomm SMD"),
-    MEDIATEK_CCCI("MediaTek CCCI"),
-    MEDIATEK_CCCI_V2("MediaTek CCCI v2"),
-    SAMSUNG_IPC("Samsung IPC"),
-    SAMSUNG_IPC_V2("Samsung IPC v2"),
-    HUAWEI_APPVCOM("Huawei APPVCOM"),
-    INTEL_TTY("Intel TTY"),
-    SPREADTRUM_STTY("Spreadtrum STTY"),
-    GOOGLE_TENSOR_IPC("Google Tensor IPC"),
-    STANDARD_TTY("Standard TTY"),
-    UNSUPPORTED("Unsupported")
-}
-
-/**
- * SMS sending strategies
- */
-enum class SmsStrategy(val displayName: String) {
-    AT_COMMANDS_PRIMARY("AT Commands (Primary)"),
-    AT_WITH_FALLBACK("AT Commands + Fallback"),
-    STANDARD_API_ONLY("Standard API Only"),
-    UNSUPPORTED("Unsupported")
-}
-
-/**
- * Summary for UI display
- */
-data class DeviceCapabilitySummary(
-    val deviceName: String,
-    val androidVersion: String,
-    val chipset: String,
-    val radioType: String,
-    val atMethod: String,
-    val strategy: SmsStrategy,
-    val modemPathCount: Int,
-    val basebandVersion: String
-)

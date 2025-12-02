@@ -1,3 +1,56 @@
+## Bootloader Unlock & Fastboot Access
+
+ZeroSMS supports advanced device operations that may require access to fastboot or bootloader modes, especially for Qualcomm, MediaTek, and other chipsets. This is essential for:
+
+- Unlocking the bootloader (required for root, custom recovery, or firmware modifications)
+- Flashing custom images or recovery
+- Accessing EDL (Emergency Download) mode on Qualcomm devices
+- Performing low-level device diagnostics
+
+### General Fastboot Steps
+
+1. **Enable OEM Unlocking** in Android settings (Developer Options → OEM Unlocking)
+2. **Reboot to bootloader/fastboot**:
+   - `adb reboot bootloader` or power off, then hold Volume Down + Power
+3. **Unlock bootloader** (data will be wiped!):
+   - `fastboot oem unlock` or `fastboot flashing unlock`
+4. **Flash images or recovery** as needed:
+   - `fastboot flash recovery recovery.img`
+   - `fastboot flash boot boot.img`
+5. **Reboot device**:
+   - `fastboot reboot`
+
+### Qualcomm Devices (Snapdragon, Inseego, etc.)
+
+- **EDL Mode (Emergency Download):**
+  - Some Qualcomm devices require EDL mode for unbricking or deep flashing.
+  - Enter EDL via `adb reboot edl`, test points, or special cable (deep flash cable).
+  - Use tools like `QFIL`, `QPST`, or `XiaoMiFlash` for EDL flashing.
+- **Fastboot:**
+  - Standard fastboot commands work for most unlock/flash operations.
+  - Some carrier devices may require unlock tokens from OEM.
+
+### MediaTek Devices
+
+- **SP Flash Tool:**
+  - Use for flashing scatter files, recovery, or firmware.
+  - Device must be powered off and connected via USB.
+- **Fastboot:**
+  - Many newer MediaTek devices support standard fastboot commands.
+
+### Samsung, Huawei, and Others
+
+- **Samsung:** Uses Odin/Download mode, not fastboot.
+- **Huawei:** Uses proprietary tools (e.g., Hisuite, Fastboot for some models).
+
+### Warnings & Notes
+
+- **Unlocking bootloader wipes all data.**
+- **May void warranty and break OTA updates.**
+- **Some devices require unlock codes from manufacturer.**
+- **EDL/Download modes can brick device if used incorrectly.**
+- **Always back up important data before proceeding.**
+
 # Root Access & AT Command Guide
 
 ## Overview
@@ -14,6 +67,7 @@ ZeroSMS includes advanced features that require root access on Android devices. 
 ### Why Root is Needed
 
 Root access is required to:
+
 1. **Access serial devices** (`/dev/smd*`, `/dev/tty*`) where the modem is exposed
 2. **Execute AT commands** directly to the modem hardware
 3. **Capture all SMS types** including those normally hidden by the system
@@ -22,17 +76,20 @@ Root access is required to:
 ### Rooting Your Device
 
 **WARNING:** Rooting your device:
+
 - Voids most manufacturer warranties
 - May brick your device if done incorrectly
 - Exposes security risks if not managed properly
 - May prevent OTA updates
 
 Popular rooting methods:
+
 - **Magisk** - Systemless root solution (recommended)
 - **SuperSU** - Traditional root management
 - **KingRoot** - One-click rooting (limited device support)
 
 For testing purposes, we recommend:
+
 - Using a dedicated test device
 - Android emulator with root access (AVD with Google APIs, rooted)
 - Devices with unlocked bootloaders (Pixel, OnePlus Developer Edition)
@@ -69,17 +126,37 @@ ZeroSMS uses the following AT commands:
 
 ### Modem Device Detection
 
-ZeroSMS automatically searches for modem devices in priority order:
+ZeroSMS automatically searches for modem devices in priority order, including expanded support for Qualcomm and Inseego devices:
 
-1. `/dev/smd0` - Qualcomm Snapdragon modems (primary)
-2. `/dev/smd11` - Qualcomm Snapdragon modems (alternate)
-3. `/dev/smd7` - Qualcomm modems (data channel)
-4. `/dev/ttyUSB0` - USB modems
-5. `/dev/ttyUSB1`, `/dev/ttyUSB2` - Additional USB modems
-6. `/dev/ttyACM0` - ACM class modems
-7. `/dev/ttyGS0` - Generic serial
+**Qualcomm/Inseego/Netgear/Generic Snapdragon:**
+
+1. `/dev/smd0`, `/dev/smd1`, `/dev/smd2`, `/dev/smd3`, `/dev/smd4`, `/dev/smd5`, `/dev/smd6`, `/dev/smd7`, `/dev/smd8`, `/dev/smd9`, `/dev/smd10`, `/dev/smd11` (SMD interfaces)
+2. `/dev/ttyHS0`, `/dev/ttyHS1`, `/dev/ttyHS2`, `/dev/ttyHS3` (High-speed UART)
+3. `/dev/ttyUSB0`, `/dev/ttyUSB1`, `/dev/ttyUSB2`, `/dev/ttyUSB3` (USB serial)
+4. `/dev/diag` (diagnostic, sometimes AT)
+5. `/dev/wwan0at`, `/dev/wwan1at`, `/dev/wwan2at`, `/dev/wwan3at` (Inseego/Netgear WWAN AT ports)
+6. `/dev/cdc-wdm0`, `/dev/cdc-wdm1` (QMI/MBIM, rare)
+7. `/dev/ts0710mux0`, `/dev/ts0710mux1`, `/dev/ts0710mux2`, `/dev/ts0710mux3` (legacy multiplexed)
+8. `/dev/ttyUSB_DIAG`, `/dev/ttyUSB_AT`, `/dev/ttyUSB_MODEM`, `/dev/ttyUSB_NMEA` (Inseego-specific)
+9. `/dev/ttyACM0` (ACM class modems)
+10. `/dev/ttyGS0` (Generic serial)
+
+**Special Requirements:**
+
+- **Root access** is required to open these device files.
+- **SELinux** may need to be set to permissive mode (`setenforce 0`) on some devices to allow access.
+- Some ports may be disabled by default; use `setprop persist.sys.usb.config diag,serial_cdev,rmnet,adb` or similar to enable diagnostic/AT ports (requires root).
+- Not all ports will respond to AT commands; ZeroSMS will auto-detect the correct one.
 
 **Note:** Device paths vary by manufacturer:
+
+- **Qualcomm/Snapdragon/Inseego** - See above for full list
+- **MediaTek** - May use `/dev/ttyMT*` or `/dev/ccci*`
+- **Samsung Exynos** - May use `/dev/umts*`
+- **Huawei HiSilicon** - May use `/dev/ttyAMA*`
+
+**Note:** Device paths vary by manufacturer:
+
 - **Qualcomm/Snapdragon** - Usually `/dev/smd0` or `/dev/smd11`
 - **MediaTek** - May use `/dev/ttyMT*` or `/dev/ccci*`
 - **Samsung Exynos** - May use `/dev/umts*`
@@ -122,6 +199,7 @@ AT commands use PDU (Protocol Data Unit) mode for SMS. ZeroSMS automatically:
 5. **Calculates lengths** in bytes/septets
 
 Example PDU for Flash SMS:
+
 ```
 00          SMSC (use default)
 10          PDU Type (Flash SMS)
@@ -141,12 +219,14 @@ A7          Validity Period (24 hours)
 ### Class 0 (Flash SMS)
 
 **Characteristics:**
+
 - Displays immediately on screen
 - Not stored in inbox by default
 - Used for alerts and notifications
 - GSM 03.40 Message Class 0
 
 **Use Cases:**
+
 - Emergency alerts
 - Network notifications
 - Promotional messages
@@ -155,12 +235,14 @@ A7          Validity Period (24 hours)
 ### Type 0 (Silent SMS)
 
 **Characteristics:**
+
 - No user notification
 - Not displayed to user
 - Protocol ID = 0x40
 - Used for network testing
 
 **Use Cases:**
+
 - Location tracking (controversial)
 - Network diagnostics
 - Device presence checks
@@ -203,6 +285,7 @@ MMSC (Multimedia Messaging Service Center) is the gateway server for MMS. Each c
 ZeroSMS includes presets for major carriers:
 
 #### United States
+
 - **T-Mobile USA**
   - URL: `http://mms.msg.eng.t-mobile.com/mms/wapenc`
   - Proxy: None
@@ -219,6 +302,7 @@ ZeroSMS includes presets for major carriers:
   - Port: 80
 
 #### United Kingdom
+
 - **Vodafone UK**
   - URL: `http://mms.vodafone.co.uk/servlets/mms`
   - Proxy: `212.183.137.12`
@@ -230,6 +314,7 @@ ZeroSMS includes presets for major carriers:
   - Port: 8080
 
 #### Europe
+
 - **Orange France**
   - URL: `http://mms.orange.fr`
   - Proxy: `192.168.10.200`
@@ -264,27 +349,32 @@ To verify MMSC settings:
 ### Root Access Issues
 
 **Problem:** Root not detected
+
 - **Solution:** Ensure device is properly rooted with Magisk or SuperSU
 - **Check:** Run `adb shell su -c "id"` to verify
 - **Note:** Some root solutions (KingRoot) may not work
 
 **Problem:** Root permission denied
+
 - **Solution:** Grant root access when prompted by root manager
 - **Check:** ZeroSMS should appear in Magisk/SuperSU app list
 
 ### AT Command Issues
 
 **Problem:** No modem device found
+
 - **Solution:** Device may use non-standard path
 - **Check:** Run `ls -la /dev/smd* /dev/tty*` as root
 - **Try:** Manually test with `echo -ne "AT\r\n" > /dev/smd0`
 
 **Problem:** AT commands timeout
+
 - **Solution:** Modem may be in use by system
 - **Check:** Ensure no other apps are using AT interface
 - **Note:** Some manufacturers lock AT interface
 
 **Problem:** SMS not sent via AT
+
 - **Solution:** Verify PDU encoding is correct
 - **Check:** Enable debug logs to see full AT command sequence
 - **Fallback:** App will use standard Android SMS API
@@ -292,11 +382,13 @@ To verify MMSC settings:
 ### Monitor Not Showing Messages
 
 **Problem:** Class 0/Type 0 messages not appearing
+
 - **Solution:** Ensure receiver is registered in manifest
 - **Check:** Receiver priority should be high (999)
 - **Note:** Some carriers block Silent SMS
 
 **Problem:** Messages arrive but no notification
+
 - **Solution:** This is expected for Type 0 (Silent) SMS
 - **Check:** Open Monitor screen to see captured messages
 - **Feature:** Monitor updates in real-time
@@ -304,11 +396,13 @@ To verify MMSC settings:
 ### MMSC Configuration Issues
 
 **Problem:** MMS not sending
+
 - **Solution:** Verify MMSC URL is correct for carrier
 - **Check:** Ensure internet/data connection is active
 - **Try:** Use carrier preset if available
 
 **Problem:** Proxy connection timeout
+
 - **Solution:** Some carriers require VPN or specific APN
 - **Check:** Proxy IP and port must match carrier settings
 - **Note:** MMSC may be restricted to carrier network
@@ -325,12 +419,14 @@ To verify MMSC settings:
 ### Responsible Use
 
 This software is for:
+
 - ✅ Testing and development
 - ✅ Security research
 - ✅ Network diagnostics
 - ✅ RFC compliance verification
 
 This software is NOT for:
+
 - ❌ Unauthorized surveillance
 - ❌ Spam or harassment
 - ❌ Privacy violations
@@ -347,6 +443,7 @@ This software is NOT for:
 ## Support & Resources
 
 ### Documentation
+
 - **GSM 03.40** - SMS Point-to-Point Protocol
 - **GSM 03.38** - Character Set and Encoding
 - **3GPP TS 23.040** - Technical Realization
@@ -354,6 +451,7 @@ This software is NOT for:
 - **Carrier APNs** - Mobile network settings
 
 ### Community
+
 - Open issues on GitHub for bugs
 - Contribute improvements via pull requests
 - Share carrier MMSC configurations
@@ -362,6 +460,7 @@ This software is NOT for:
 ### Disclaimer
 
 Root access and AT command usage can:
+
 - Damage your device if used incorrectly
 - Violate carrier terms of service
 - Expose security vulnerabilities

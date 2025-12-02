@@ -76,6 +76,65 @@ ZeroSMS is a professional-grade testing tool designed to validate messaging prot
 
 ## Architecture
 
+## Tools: Direct Device Access (Python)
+
+For advanced users and debugging, a standalone Python script is provided to send AT commands directly to modem device files (e.g., Qualcomm, Inseego, MediaTek, USB modems) from a PC or rooted Android with Python support.
+
+**Script:** `tools/qualcomm_modem_access.py`
+
+**Requirements:**
+
+- Python 3.x
+- `pyserial` package (`pip install pyserial`)
+- Root access (if running on Android)
+
+**Usage:**
+
+Scan and list all available serial ports and USB IDs:
+
+```sh
+python tools/qualcomm_modem_access.py scan
+```
+
+Enable diagnostic/AT ports (device-dependent):
+
+```sh
+python tools/qualcomm_modem_access.py enable <device_type>
+# device_type: qualcomm | mtk | samsung | generic
+# Example for Qualcomm:
+python tools/qualcomm_modem_access.py enable qualcomm
+# Example for MediaTek:
+python tools/qualcomm_modem_access.py enable mtk
+```
+
+Send a single AT command:
+
+```sh
+python tools/qualcomm_modem_access.py <device_path> <AT_command> [baudrate]
+# Example:
+python tools/qualcomm_modem_access.py /dev/smd0 "AT+CSQ"
+```
+
+Send an SMS (supports Qualcomm, MTK, and generic modems):
+
+```sh
+python tools/qualcomm_modem_access.py <device_path> sms <modem_type> <phone_number> <message>
+# Example for Qualcomm:
+python tools/qualcomm_modem_access.py /dev/smd0 sms qualcomm +1234567890 "Hello from Python!"
+# Example for MediaTek:
+python tools/qualcomm_modem_access.py /dev/ttyUSB0 sms mtk +1234567890 "Test MTK SMS"
+```
+
+This script can be used to:
+
+- Test AT command responses on any supported device path
+- Send SMS directly from PC or rooted Android
+- Enable diagnostic/AT ports for supported device types
+- Debug modem access issues outside the Android app
+- Validate port permissions and connectivity
+
+**Warning:** Use with caution. Writing to the wrong device file or enabling diagnostic ports incorrectly can cause instability. Always verify device path, permissions, and device type.
+
 ```
 app/
 ├── src/main/java/com/zerosms/testing/
@@ -140,30 +199,56 @@ Implements RCS Universal Profile:
 ### Prerequisites
 
 - Android Studio Hedgehog (2023.1.1) or later
-- JDK 17
-- Android SDK 34
-- Gradle 8.2
 
-### Build Commands
+For advanced users and debugging, a standalone Python script is provided to send AT commands and SMS directly to modem device files (Qualcomm, Inseego, MediaTek, USB, etc.) from a PC or rooted Android with Python support.
 
-```bash
-# Build debug APK
-./gradlew assembleDebug
+**Script:** `tools/qualcomm_modem_access.py`
 
-# Build release APK (with code optimization)
-./gradlew assembleRelease
+**Requirements:**
 
-# Run tests
-./gradlew test
+- Python 3.x
+- `pyserial` package (`pip install pyserial`)
+- Root access (if running on Android)
 
-# Run instrumentation tests
-./gradlew connectedAndroidTest
+**Usage:**
 
-# Install on device
-./gradlew installDebug
+Scan and list all available serial ports and USB IDs:
 
-# CLI usage (via adb shell)
-adb shell am start -n com.zerosms.testing/.MainActivity --es cli true
+```sh
+python tools/qualcomm_modem_access.py scan
+```
+
+Send a single AT command:
+
+```sh
+python tools/qualcomm_modem_access.py <device_path> <AT_command> [baudrate]
+# Example:
+python tools/qualcomm_modem_access.py /dev/smd0 "AT+CSQ"
+```
+
+Send an SMS (supports Qualcomm, MTK, and generic modems):
+
+```sh
+python tools/qualcomm_modem_access.py <device_path> sms <modem_type> <phone_number> <message>
+# Example for Qualcomm:
+python tools/qualcomm_modem_access.py /dev/smd0 sms qualcomm +1234567890 "Hello from Python!"
+# Example for MediaTek:
+python tools/qualcomm_modem_access.py /dev/ttyUSB0 sms mtk +1234567890 "Test MTK SMS"
+```
+
+python tools/qualcomm_modem_access.py /dev/ttyUSB0 sms mtk +1234567890 "Test MTK SMS"
+
+```
+
+This script can be used to:
+
+- Test AT command responses on any supported device path
+- Send SMS directly from PC or rooted Android
+- Debug modem access issues outside the Android app
+- Validate port permissions and connectivity
+
+**Warning:** Use with caution. Writing to the wrong device file can cause instability. Always verify device path and permissions.
+
 ```
 
 ### Gradle Configuration

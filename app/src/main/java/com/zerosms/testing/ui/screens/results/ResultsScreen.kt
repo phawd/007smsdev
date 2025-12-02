@@ -1,16 +1,18 @@
 package com.zerosms.testing.ui.screens.results
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.zerosms.testing.core.export.LogExporter
 import com.zerosms.testing.core.model.*
 import com.zerosms.testing.ui.theme.*
 import java.text.SimpleDateFormat
@@ -21,8 +23,9 @@ import java.util.*
 fun ResultsScreen(
     onNavigateBack: () -> Unit
 ) {
-    // Mock data for demonstration
-    val testResults = remember { generateMockResults() }
+    val context = LocalContext.current
+    // TODO: Connect to actual test results repository/database
+    val testResults = remember { emptyList<TestResult>() }
     var selectedFilter by remember { mutableStateOf("ALL") }
     
     Scaffold(
@@ -35,7 +38,13 @@ fun ResultsScreen(
                     }
                 },
                 actions = {
-                    IconButton(onClick = { /* Export results */ }) {
+                    IconButton(onClick = {
+                        if (testResults.isEmpty()) {
+                            Toast.makeText(context, "No results to export", Toast.LENGTH_SHORT).show()
+                        } else {
+                            LogExporter.exportTestResults(context, testResults)
+                        }
+                    }) {
                         Icon(Icons.Default.Download, contentDescription = "Export")
                     }
                 }
@@ -221,7 +230,7 @@ fun TestResultCard(result: TestResult) {
             
             // Expanded Details
             if (expanded) {
-                Divider(modifier = Modifier.padding(vertical = 12.dp))
+                HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
                 
                 // Metrics
                 result.metrics?.let { metrics ->
@@ -288,62 +297,4 @@ fun MetricRow(label: String, value: String) {
     }
 }
 
-fun generateMockResults(): List<TestResult> {
-    return listOf(
-        TestResult(
-            scenarioId = "SMS_TEXT_BASIC",
-            messageId = "msg_001",
-            startTime = Date(System.currentTimeMillis() - 3600000),
-            endTime = Date(System.currentTimeMillis() - 3599000),
-            status = TestStatus.PASSED,
-            deliveryStatus = DeliveryStatus.DELIVERED,
-            metrics = TestMetrics(
-                sendDuration = 245,
-                deliveryDuration = 1200,
-                messageSize = 160,
-                partsSent = 1,
-                partsReceived = 1
-            )
-        ),
-        TestResult(
-            scenarioId = "SMS_CONCATENATION_LONG",
-            messageId = "msg_002",
-            startTime = Date(System.currentTimeMillis() - 7200000),
-            endTime = Date(System.currentTimeMillis() - 7199000),
-            status = TestStatus.PASSED,
-            deliveryStatus = DeliveryStatus.DELIVERED,
-            metrics = TestMetrics(
-                sendDuration = 890,
-                deliveryDuration = 3400,
-                messageSize = 500,
-                partsSent = 4,
-                partsReceived = 4
-            )
-        ),
-        TestResult(
-            scenarioId = "MMS_IMAGE_TRANSFER",
-            messageId = "msg_003",
-            startTime = Date(System.currentTimeMillis() - 10800000),
-            status = TestStatus.FAILED,
-            deliveryStatus = DeliveryStatus.FAILED,
-            errors = listOf(
-                "Attachment size exceeds carrier limit",
-                "Connection timeout to MMSC"
-            ),
-            metrics = TestMetrics(
-                sendDuration = 5600,
-                deliveryDuration = null,
-                messageSize = 524288,
-                partsSent = 1,
-                partsReceived = 0
-            )
-        ),
-        TestResult(
-            scenarioId = "RCS_FILE_TRANSFER",
-            messageId = "msg_004",
-            startTime = Date(System.currentTimeMillis() - 1800000),
-            status = TestStatus.RUNNING,
-            deliveryStatus = DeliveryStatus.SENT
-        )
-    )
-}
+
