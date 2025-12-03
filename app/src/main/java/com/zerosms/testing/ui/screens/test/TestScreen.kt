@@ -50,13 +50,13 @@ fun TestScreen(
                 title = { Text("$messageType Testing") },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.Filled.ArrowBack, contentDescription = "Back")
                     }
                 },
                 actions = {
                     IconButton(onClick = { showAdvancedOptions = !showAdvancedOptions }) {
                         Icon(
-                            if (showAdvancedOptions) Icons.Default.ExpandLess else Icons.Default.ExpandMore,
+                            if (showAdvancedOptions) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
                             contentDescription = "Advanced Options"
                         )
                     }
@@ -87,7 +87,7 @@ fun TestScreen(
                     onValueChange = { phoneNumber = it },
                     label = { Text("Phone Number") },
                     placeholder = { Text("+1234567890") },
-                    leadingIcon = { Icon(Icons.Default.Phone, contentDescription = null) },
+                    leadingIcon = { Icon(Icons.Filled.Phone, contentDescription = null) },
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -100,7 +100,7 @@ fun TestScreen(
                     onValueChange = { messageBody = it },
                     label = { Text("Message Content") },
                     placeholder = { Text("Enter test message...") },
-                    leadingIcon = { Icon(Icons.Default.Message, contentDescription = null) },
+                    leadingIcon = { Icon(Icons.Filled.Message, contentDescription = null) },
                     minLines = 3,
                     maxLines = 5,
                     modifier = Modifier.fillMaxWidth()
@@ -165,7 +165,7 @@ fun TestScreen(
                         enabled = phoneNumber.isNotEmpty() && messageBody.isNotEmpty() && 
                                  permissionsState.allPermissionsGranted && !testRunning
                     ) {
-                        Icon(Icons.Default.Send, contentDescription = null)
+                        Icon(Icons.Filled.Send, contentDescription = null)
                         Spacer(Modifier.width(8.dp))
                         Text(if (testRunning) "Running..." else "Send Test")
                     }
@@ -177,7 +177,7 @@ fun TestScreen(
                         },
                         modifier = Modifier.weight(1f)
                     ) {
-                        Icon(Icons.Default.Clear, contentDescription = null)
+                        Icon(Icons.Filled.Clear, contentDescription = null)
                         Spacer(Modifier.width(8.dp))
                         Text("Clear")
                     }
@@ -209,7 +209,7 @@ fun PermissionCard(
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Icon(
-                    Icons.Default.Warning,
+                    Icons.Filled.Warning,
                     contentDescription = null,
                     tint = MaterialTheme.colorScheme.error
                 )
@@ -382,7 +382,7 @@ fun RfcComplianceCard(messageType: String) {
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(Icons.Default.VerifiedUser, contentDescription = null)
+                Icon(Icons.Filled.VerifiedUser, contentDescription = null)
                 Spacer(Modifier.width(8.dp))
                 Text(
                     "RFC Compliance",

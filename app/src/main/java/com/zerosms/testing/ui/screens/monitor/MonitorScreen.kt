@@ -61,7 +61,7 @@ fun MonitorScreen(
                     // Auto-refresh toggle
                     IconButton(onClick = { autoRefresh = !autoRefresh }) {
                         Icon(
-                            Icons.Default.Refresh,
+                            Icons.Filled.Refresh,
                             contentDescription = "Auto-refresh",
                             tint = if (autoRefresh) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface
                         )
@@ -72,7 +72,7 @@ fun MonitorScreen(
                         database.clearAll()
                         messages = emptyList()
                     }) {
-                        Icon(Icons.Default.Delete, contentDescription = "Clear All")
+                        Icon(Icons.Filled.Delete, contentDescription = "Clear All")
                     }
                 }
             )

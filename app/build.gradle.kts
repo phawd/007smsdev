@@ -22,6 +22,15 @@ android {
         }
     }
 
+    sourceSets {
+        getByName("androidTest") {
+            java.srcDirs("src/androidTest/java", "src/androidTest/kotlin")
+        }
+        getByName("test") {
+            java.srcDirs("src/test/java")
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true
@@ -36,7 +45,11 @@ android {
             isDebuggable = true
         }
     }
-    
+    testOptions {
+        unitTests.all {
+            it.useJUnitPlatform()
+        }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21

@@ -54,12 +54,12 @@ fun ScenariosScreen(
                 title = { Text("Test Scenarios (${filteredScenarios.size})") },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.Filled.ArrowBack, contentDescription = "Back")
                     }
                 },
                 actions = {
                     IconButton(onClick = { /* Export scenarios */ }) {
-                        Icon(Icons.Default.Download, contentDescription = "Export")
+                        Icon(Icons.Filled.Download, contentDescription = "Export")
                     }
                 }
             )
@@ -75,7 +75,7 @@ fun ScenariosScreen(
                 value = searchQuery,
                 onValueChange = { searchQuery = it },
                 label = { Text("Search scenarios") },
-                leadingIcon = { Icon(Icons.Default.Search, null) },
+                leadingIcon = { Icon(Icons.Filled.Search, null) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp)
@@ -203,7 +203,7 @@ fun FilterSection(
                 selected = showRootOnly,
                 onClick = { onRootOnlyChange(!showRootOnly) },
                 label = { Text("Root Required Only") },
-                leadingIcon = { Icon(Icons.Default.Security, null) }
+                leadingIcon = { Icon(Icons.Filled.Security, null) }
             )
         }
         
@@ -339,7 +339,7 @@ fun ScenarioCard(
                 }
                 
                 Icon(
-                    imageVector = if (isExpanded) Icons.Default.ExpandLess else Icons.Default.ExpandMore,
+                    imageVector = if (isExpanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
                     contentDescription = if (isExpanded) "Collapse" else "Expand"
                 )
             }
@@ -381,7 +381,7 @@ fun ScenarioCard(
                     onClick = onRun,
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Icon(Icons.Default.PlayArrow, contentDescription = null)
+                    Icon(Icons.Filled.PlayArrow, contentDescription = null)
                     Spacer(Modifier.width(8.dp))
                     Text("Run This Scenario")
                 }
@@ -450,7 +450,7 @@ fun ScenarioDetails(scenario: TestScenario) {
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
                     Icon(
-                        Icons.Default.Info,
+                        Icons.Filled.Info,
                         contentDescription = null,
                         tint = MaterialTheme.colorScheme.onSecondaryContainer
                     )
