@@ -383,11 +383,13 @@ sms_cli delete <MESSAGE_ID>
 ### Extended Range Testing (0-30,000)
 
 **Coarse-grain scan results:**
+
 - All 25 test points (0, 500, 1000, ... 30000) returned successful responses
 - **Conclusion**: NV addressing extends well beyond 20,000 limit
 - Modem firmware supports full 16-bit NV ID range (0-65535 possible)
 
 **Fine-grain scan (550-1100, 50-item intervals):**
+
 - All 12 test points readable (550, 600, 650, ... 1100)
 - Consistent with previous 100-item interval pattern
 - Estimated 300+ additional readable items in extended range
@@ -397,6 +399,7 @@ sms_cli delete <MESSAGE_ID>
 **NV 60044 - PRI Version String: ✓ CONFIRMED WRITABLE**
 
 Test procedure and results:
+
 ```
 Original value: "PRI.90029477 REV 151 Alpine VERIZON"
 Test write: "NVTL rocks!!"
@@ -406,6 +409,7 @@ Restoration: Successfully restored original value
 ```
 
 **Significance:**
+
 - First confirmed writable NV item on this device
 - String-type items (non-binary) are more accessible
 - Demonstrates protection hierarchy is selective, not absolute
@@ -445,54 +449,66 @@ TIER 4: NO PROTECTION
 All programs catalogued from `/opt/nvtl/bin/` directory:
 
 ### Modem Control (8 programs)
+
 - `modem2_cli`, `modem2d`, `modem2.sh`
 - `modem_at_server_cli`, `modem_at_serverd`, `modem_at_server.sh`
 - `diag_read`, `diag_read.sh`
 
 ### SMS Handling (3 programs)
+
 - `sms_cli`, `sms.sh`, `smsd`
 - **Library**: `libsms_encoder.so` (PDU encoding)
 
 ### NV Item Access (2 programs)
+
 - `nwcli` (main QMI/NV interface)
 - `nwnvitem` (device-specific NV items)
 
 ### USB Management (8 programs)
+
 - `usb_cli`, `usb.sh`, `usbd`
 - `usb_start.sh`, `usb_start_init.sh`
 - `nvtl_usb_flash.sh`, `sua_flash_device.sh`
 
 ### Firmware/FOTA (8 programs)
+
 - `fota_cli`, `fotad`, `fota.sh`
 - `fota_linux_pri.sh` - PRI firmware update
 - `fota_pmode_watchdog.sh`, `fota_pmode_watchdog_init.sh`
 - `fota_interruption.sh`, `program_fotacookie.sh`
 
 ### System Configuration (20+ programs)
+
 - `settings_cli`, `settingsd`, `settings.sh`
 - `factory_reset_cli`, `factory_reset.sh`
 - `bckrst_cli`, `bckrst.sh`, `bckrstd`
 - XML, config, database management tools
 
 ### Network/Routing (8 programs)
+
 - `router2_cli`, `router2d`, `router2.sh`
 - `wifi_cli`, `wifid`, `wifi.sh`
 - `vpn_cli`, `vpnd`, `vpn.sh`
 
 ### GPS/Location (3 programs)
+
 - `gps_cli`, `gpsd`, `gps.sh`
 
 ### Device UI (8+ programs)
+
 - `devui_cli`, `devuid`, `devuiappd`
 - Display and UPI interfaces
 
 ### Diagnostics/Debug (10+ programs)
+
 - `mifi_debug_cli`, `mifi_debugd`
 - `kernel_crash_log`, `kernel_crash_log.sh`
 - GPIO, ACM, recovery testing tools
 
 ### FOTA & Firmware Tools
+
 **Critical for device modification:**
+
 - `/opt/nvtl/bin/fota_cli` - FOTA control
 - `/opt/nvtl/bin/fota_linux_pri.sh` - Modem firmware update
 - `/opt/nvtl/bin/fotad` - FOTA background service
@@ -505,6 +521,7 @@ All programs catalogued from `/opt/nvtl/bin/` directory:
 ## Alternative Access Methods
 
 ### 1. SMD (Shared Memory Driver) Channels
+
 ```
 /dev/smd7, /dev/smd8, /dev/smd11, /dev/smd21, /dev/smd22
 /dev/smdcntl0, /dev/smdcntl8
@@ -513,6 +530,7 @@ Purpose: Direct modem communication channels
 ```
 
 ### 2. DIAG Protocol Interface
+
 ```
 /dev/diag - Qualcomm diagnostic protocol
 Status: PRESENT, root-accessible
@@ -520,6 +538,7 @@ Purpose: Low-level modem debugging and control
 ```
 
 ### 3. AT Command Interfaces
+
 ```
 /dev/at_mdm0  - Modem AT port
 /dev/at_usb0  - USB AT serial 0
@@ -529,6 +548,7 @@ Purpose: AT command sending for modem control
 ```
 
 ### 4. UART Interfaces
+
 ```
 /dev/ttyHS0   - High-speed UART 0
 /dev/ttyHSL0  - High-speed UART 0 logging

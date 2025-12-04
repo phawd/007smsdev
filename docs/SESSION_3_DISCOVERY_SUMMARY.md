@@ -22,6 +22,7 @@ This session successfully extended previous NV item discovery from 0-20,000 rang
 **Restoration**: Successfully restored original value  
 
 **Significance**:
+
 - First confirmed writable NV item on this device
 - Demonstrates protection hierarchy is NOT absolute
 - String-type items more accessible than binary items
@@ -30,10 +31,12 @@ This session successfully extended previous NV item discovery from 0-20,000 rang
 ### 2. Extended NV Range Accessibility (0-30,000+)
 
 **Coarse-grain scan (500-item intervals, 0-30000):**
+
 - ✅ All 25 test points successful (0, 500, 1000, ... 30000)
 - **Conclusion**: Modem supports full 16-bit NV addressing (0-65535 possible)
 
 **Fine-grain scan (50-item intervals, 550-1100):**
+
 - ✅ All 12 test points readable
 - Pattern consistent with previous discovery (201 items in 0-20,000)
 - **Estimated**: 300+ additional readable items in extended range
@@ -41,6 +44,7 @@ This session successfully extended previous NV item discovery from 0-20,000 rang
 ### 3. Comprehensive Program Inventory (180+ Programs)
 
 **Organized by function:**
+
 - **Modem Control**: 8 programs (modem2_cli, modem_at_server_cli, diag_read, etc.)
 - **SMS Handling**: 3 programs (sms_cli, smsd, libsms_encoder.so)
 - **NV Access**: 2 programs (nwcli, nwnvitem)
@@ -56,6 +60,7 @@ This session successfully extended previous NV item discovery from 0-20,000 rang
 ### 4. FOTA (Firmware Over The Air) Infrastructure
 
 **Critical Programs Identified:**
+
 - `fota_cli` - Main FOTA control interface
 - `fota_linux_pri.sh` - **Modem PRI firmware update script**
 - `fotad` - FOTA background daemon
@@ -67,6 +72,7 @@ This session successfully extended previous NV item discovery from 0-20,000 rang
 ### 5. Alternative Modem Access Methods
 
 **Direct Device Interfaces Available:**
+
 - ✅ `/dev/smd*` (7 SMD channels) - Direct modem communication
 - ✅ `/dev/diag` - Qualcomm DIAG protocol interface
 - ✅ `/dev/at_mdm0`, `/dev/at_usb0`, `/dev/at_usb1` - AT command ports
@@ -77,6 +83,7 @@ This session successfully extended previous NV item discovery from 0-20,000 rang
 ### 6. EFS (Embedded File System) Accessibility
 
 **Confirmed Readable**: `/policyman/device_config.xml` (503 bytes)
+
 - Successfully read via `nwcli qmi_idl read_file`
 - Contains device capabilities configuration
 - **Write capability**: Untested, but infrastructure present
@@ -135,16 +142,19 @@ ACTION: Full read/write access
 ### Recommended Exploitation Priority
 
 **Phase 1 (Immediate):**
+
 1. Extended NV scan to 65535 (find more writable items)
 2. Binary library analysis (extract write function symbols)
 3. EFS file write testing (device_config.xml modification)
 
 **Phase 2 (Medium-term):**
+
 1. FOTA firmware modification chain
 2. DIAG protocol reverse engineering
 3. SMD channel protocol implementation
 
 **Phase 3 (Long-term):**
+
 1. SPC code extraction methodology
 2. EDL mode access procedures
 3. Carrier lock bypass techniques
@@ -154,17 +164,20 @@ ACTION: Full read/write access
 ## Artifacts & Documentation
 
 ### New Scripts
+
 - `tools/nv_extended_audit.sh` - Extended NV enumeration with write testing
 - `tools/program_discovery.sh` - Comprehensive program discovery
 - `tools/advanced_nv_exploration.sh` - (Syntax-corrected version pending)
 - `tools/alternate_program_discovery.sh` - (Syntax-corrected version pending)
 
 ### New Documentation
+
 - `docs/EXTENDED_NV_DISCOVERY.md` - Complete extended discovery report (500+ lines)
 - `docs/NV_WRITE_CAPABILITY_ANALYSIS.md` - Write capability analysis and implications
 - `docs/NV_DISCOVERY_REFERENCE.md` - Updated reference with extended findings
 
 ### Commits
+
 1. **cb18650**: Extended NV discovery (0-30K range) + comprehensive program inventory
 2. **32c0a90**: Documentation: Write capability analysis and extended discovery findings
 
@@ -207,6 +220,7 @@ ACTION: Full read/write access
 **Updated Assessment**: **"MODERATE"** (multiple bypass vectors exist)
 
 **Contributing Factors:**
+
 - ✓ Some NV items writable (TIER 3)
 - ✓ FOTA infrastructure for firmware updates
 - ✓ Multiple direct modem access methods
@@ -223,24 +237,28 @@ ACTION: Full read/write access
 ## Next Investigation Phases
 
 ### Immediate (Priority 1)
+
 - [ ] Scan NV 60000-65535 for additional writable items
 - [ ] Extract symbols from modem libraries (nm analysis)
 - [ ] Test EFS file write capability
 - [ ] Create NV item correlation database
 
 ### Short-term (Priority 2)
+
 - [ ] Reverse engineer FOTA firmware update process
 - [ ] Develop DIAG protocol handler
 - [ ] Implement SMD channel communication
 - [ ] Build unified device control API
 
 ### Medium-term (Priority 3)
+
 - [ ] Investigate SPC code extraction (firmware analysis)
 - [ ] Develop EDL mode access procedure
 - [ ] Create custom firmware patching toolkit
 - [ ] Establish carrier lock bypass methodology
 
 ### Long-term (Priority 4)
+
 - [ ] Full device emulation/simulation
 - [ ] Carrier policy modification
 - [ ] Kernel/bootloader patching
