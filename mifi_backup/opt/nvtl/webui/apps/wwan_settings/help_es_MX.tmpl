@@ -1,0 +1,61 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p> Use el interruptor para activar y desactivar la conexión de red móvil de su <tmpl_var _("webui", "webui_product_name")>. Cuando esté apagado, los dispositivos conectados no podrán conectarse a la red móvil usando su plan de datos móviles (normalmente, estos estarán desactivados). </p>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Preferencia de conexión</h3>
+			<p> Seleccione la opción deseada para controlar en qué momento el <tmpl_var _("webui", "webui_product_name")> establecerá una conexión de datos a la red móvil. </p>
+	</tmpl_if>
+
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p> Esto muestra el modo de red actual. Su <tmpl_var _("webui", "webui_product_name")> seleccionará automáticamente la mejor tecnología disponible. </p>
+	</tmpl_if>
+
+	<h3>Selección manual de la red</h3>
+		
+	<p> Puede usar esta función para seleccionar una red específica si hay varias redes disponibles y tiene preferencias sobre cuál usar. </p>
+	<p> Haga clic en Seleccionar red manualmente para ver una lista de las redes disponibles. </p>
+	<p> Nota: Esta función no está disponible cuando el modo de red es solo LTE. </p>
+	
+	
+	<tmpl_unless apnProfileSettings>
+		<tmpl_if NetworksFourGLTEAPNShow>
+			<h3><tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))></h3>
+			<p>
+				El APN está configurado previamente; usted no debería cambiar el APN a menos que tenga una cuenta corporativa (con su propio APN).
+			</p>
+		</tmpl_if>
+
+		<tmpl_if NetworksCustomAPNShow>
+			<h3><tmpl_var truncate(_("webui", "wwan_settings_custom_apn_label"), (size(_("webui", "wwan_settings_custom_apn_label")) - size(":")))></h3>
+			<p>
+				Este APN se utiliza si cambia la SIM por una SIM que no sea de Verizon. De lo contrario, se ignora y no tiene ningún efecto.
+			</p>
+		</tmpl_if>
+		
+	<tmpl_else>
+		<h2>Configuración avanzada</h2>
+		<p>Use este Encabezado/Enlace para mostrar u ocultar la configuración avanzada según sea necesario. </p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_apn_label"), (size(_("webui", "wwan_settings_apn_label")) - size(":")))></h3>
+		<p> Si necesita cambiar el APN, ingrese el valor proporcionado por su proveedor de servicio de redes móviles. </p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p>Elija la opción especificada por su proveedor de servicio. </p>
+			<ul>
+				<li>Ninguna</li>
+				<li>PAP</li>
+				<li>CHAP</li>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))></h3>
+		<p> Si la Autenticación es <strong>Ninguna</strong>, este campo puede quedar en blanco. De lo contrario, ingrese el valor especificado por su proveedor de servicio. </p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))></h3>
+		<p>Si la Autenticación es <strong>Ninguna</strong>, este campo puede quedar en blanco. De lo contrario, ingrese el valor especificado por su proveedor de servicio. </p>
+
+	</tmpl_unless>
+
+</div>

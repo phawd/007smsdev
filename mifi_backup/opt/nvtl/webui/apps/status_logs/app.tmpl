@@ -1,0 +1,393 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+	</div>
+<tmpl_else>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var firstLoad = true;
+	var refreshButtonClicked = false;
+
+	$(function()
+	{
+		<tmpl_if isHidden>
+				return;
+		</tmpl_if>
+		<tmpl_if LogEnable>
+			$("#wwan_log").on("click", function() {
+				updateTabDisplay($(this));
+				applyHideLockSettings(true);
+				getWwanEventLog();
+			});
+
+			$("#system_log").on("click", function() {
+				updateTabDisplay($(this));
+				applyHideLockSettings(false);
+				getSystemLog();
+			});
+
+			// Prevent anchor clicks.
+			$("#wwan_log a, #system_log a").on("click", function(e) {
+				e.preventDefault();
+			});
+
+			$("#refreshLog").on("click", function() {
+				if(!refreshButtonClicked) {
+					refreshButtonClicked = true;
+					if ($("#wwan_log.active").length > 0) {
+						getWwanEventLog();
+					} else if ($("#system_log.active").length > 0) {
+						getSystemLog();
+					}
+				}
+			});
+
+			$("#clearLog").on("click", clearLog);
+			$("#downloadLog").on("click", downloadLog);
+
+			getWwanEventLog();
+		</tmpl_if>
+
+		<tmpl_if LogEnableShow>
+			<tmpl_unless LogEnableLocked>
+				$("#LogEnable").on("change", function() {
+					<tmpl_if LogLifeTimeShow>
+						<tmpl_unless LogLifeTimeLocked>
+							if ($(this).is(":checked")) {
+								$("#LogLifeTime").prop("disabled", false);
+							} else {
+								$("#LogLifeTime").prop("disabled", true);
+							}
+							if (jQuery.uniform) $.uniform.update("#LogLifeTime");
+						</tmpl_unless>
+					</tmpl_if>
+				});
+			</tmpl_unless>
+		</tmpl_if>
+
+		if ($("#wwan_log.active").length > 0) {
+			applyHideLockSettings(true);
+		} else {
+			applyHideLockSettings(false);
+		}
+
+		<tmpl_if NewUILayoutShow>
+		$("#saveBtn").on("click", function(){
+			$("#statusLogs").submit();
+		});
+		</tmpl_if>
+	});
+
+	function applyHideLockSettings(isWanSettings) {
+		<tmpl_if !isLocked>
+			if (isWanSettings) {			
+				<tmpl_if LogDownloadNetworkLogShow>
+					$("#downLoadLogForm").show();
+				<tmpl_else>
+					$("#downLoadLogForm").hide();
+				</tmpl_if>
+				<tmpl_if LogDownloadNetworkLogLocked>
+					$("#downloadLog").prop("disabled", true);
+				<tmpl_else>
+					$("#downloadLog").prop("disabled", false);
+				</tmpl_if>			
+				<tmpl_if LogClearNetworkLogShow>
+					$("#clearLog").toggle(true);
+				<tmpl_else>
+					$("#clearLog").toggle(false);
+				</tmpl_if>
+				<tmpl_if LogClearNetworkLogLocked>
+					$("#clearLog").prop("disabled", true);
+				<tmpl_else>
+					$("#clearLog").prop("disabled", false);
+				</tmpl_if>
+		} else {
+				<tmpl_if LogDownloadSyslogShow>
+					$("#downLoadLogForm").show();
+				<tmpl_else>
+					$("#downLoadLogForm").hide();
+				</tmpl_if>
+				<tmpl_if LogDownloadSyslogLocked>
+					$("#downloadLog").prop("disabled", true);
+				<tmpl_else>
+					$("#downloadLog").prop("disabled", false);
+				</tmpl_if>			
+				<tmpl_if LogClearSyslogShow>
+					$("#clearLog").toggle(true);
+				<tmpl_else>
+					$("#clearLog").toggle(false);
+				</tmpl_if>
+				<tmpl_if LogClearSyslogLocked>
+					$("#clearLog").prop("disabled", true);
+				<tmpl_else>
+					$("#clearLog").prop("disabled", false);
+				</tmpl_if>			
+		}
+		</tmpl_if>
+	}
+
+	function updateTabDisplay(el)
+	{
+		$(".tabs_container.tier_2.tabs_2 .tabs ul li").removeClass("active");
+		el.addClass("active");
+	}
+
+	function clearLog()
+	{
+		var url;
+		<tmpl_if LogClearNetworkLogShow>
+			<tmpl_unless LogClearNetworkLogLocked>
+				if ($("#wwan_log.active").length > 0) {
+					url = '<tmpl_udf GET_URI("status_logs_clearwanlog")>';
+				}
+			</tmpl_unless>
+		</tmpl_if>
+		<tmpl_if LogClearSyslogShow>
+			<tmpl_unless LogClearSyslogLocked>
+				if ($("#system_log.active").length > 0) {
+					url = '<tmpl_udf GET_URI("status_logs_clearsyslog")>';
+				}
+			</tmpl_unless>
+		</tmpl_if>
+		if(typeof url !== "undefined") {
+			$.ajax({
+				url : url,
+				type : "POST",
+				data : {
+					gSecureToken : "<tmpl_var gSecureToken>"
+				},
+				dataType : "json",
+				success : function(data) {
+					buildTableFromArray(data["statusLogsDisplay"]);
+				},
+				error : function(xhr, textStatus, errorThrown) {
+					// If auth session has ended, force a new login with a fresh GET.
+					if( (xhr.status == 401) || (xhr.status == 403) || (xhr.status == 406) ) window.location.replace(window.location.href);
+				},
+				complete : function() {
+					$("#clearLog").blur();
+				}
+				});
+		}
+
+	}
+
+	function downloadLog()
+	{
+		var theForm = $(this).closest("form");
+		var formAction = theForm.find('input[name="formAction"]');
+		<tmpl_if LogDownloadNetworkLogShow>
+			<tmpl_unless LogDownloadNetworkLogLocked>
+				if ($("#wwan_log.active").length > 0) {
+					formAction.val("downloadwwanlog");
+					theForm.submit();
+				}
+			</tmpl_unless>
+		</tmpl_if>
+		<tmpl_if LogDownloadSyslogShow>
+			<tmpl_unless LogDownloadSyslogLocked>
+				if ($("#system_log.active").length > 0) {
+					formAction.val("downloadsyslog");
+					theForm.submit();
+				}
+			</tmpl_unless>
+		</tmpl_if>
+		
+	}
+
+	function getWwanEventLog()
+	{
+		var data;
+		$.ajax({
+			url : '<tmpl_udf GET_URI("status_logs_getwwanlog")>',
+			type : "GET",
+			dataType : "json",
+			success : function(data) {
+				updateTabDisplay($("#wwan_log"));
+				buildTableFromArray(data["statusLogsDisplay"]);
+			},
+			error : function(xhr, textStatus, errorThrown) {
+				// If auth session has ended, force a new login with a fresh GET.
+				if( (xhr.status == 401) || (xhr.status == 403) || (xhr.status == 406) ) window.location.replace(window.location.href);
+			},
+			complete : getLogComplete
+		});
+	}
+
+	function getSystemLog()
+	{
+		$.ajax({
+			url : '<tmpl_udf GET_URI("status_logs_getsyslog")>',
+			type : "GET",
+			dataType : "json",
+			success : function(data){
+				updateTabDisplay($("#system_log"));
+				buildTableFromArray(data["statusLogsDisplay"]);
+			},
+			error : function(xhr, textStatus, errorThrown) {
+				// If auth session has ended, force a new login with a fresh GET.
+				if( (xhr.status == 401) || (xhr.status == 403) || (xhr.status == 406) ) window.location.replace(window.location.href);
+			},
+			complete : getLogComplete
+		});
+	}
+
+	function getLogComplete()
+	{
+		refreshButtonClicked = false;
+		$("#refreshLog").blur();
+		if (firstLoad) {
+			firstLoad = false;
+		} else {
+			// Scroll to bottom of page.
+			$(window).scrollTop($(document).height() - $(window).height());
+		}
+	}
+
+	// Builds log table from data. Expects data to be a "\n" delimited string.
+	function buildTableFromArray(data)
+	{
+		var table = $('<table class="logs" />');
+		var tbody = $('<tbody />');
+		if(data == "" || typeof data == "undefined"){
+			tbody = $('<tbody><tr><td id="noLogData"><tmpl_var _("status_logs_text_no_data")></td></tr></tbody>');
+		} else {
+			var rows = "";
+			var splitData = data.split("\n");
+
+			$.each(splitData, function(i) {
+				var zebra = (i % 2) ? "odd" : "even";
+				rows += '<tr class="' + zebra + '"><td>' + splitData[i] + '</td></tr>';
+			});
+
+			$(rows).appendTo(tbody);
+		}
+
+		table.append(tbody);
+		$("#log_container").empty().append(table);
+	}
+	/* ]]> */
+</script>
+<tmpl_if isLocked>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+	</div>
+</tmpl_if>
+
+<tmpl_if errorCount>
+<div class="notification app error">
+	<div class="notification_inner">
+		<p>
+			<tmpl_var _("webui", "webui_save_code_failed_text")>
+		</p>
+	</div>
+</div>
+</tmpl_if>
+
+<tmpl_if gPostSuccess>
+<div class="notification app success">
+	<div class="notification_inner">
+		<p>
+			<tmpl_var _("webui", "webui_save_code_success_text")>
+		</p>
+	</div>
+</div>
+</tmpl_if>
+
+<p class="note"><tmpl_var _("webui", "status_logs_header_note_text")></p>
+<tmpl_if systemSettingsShowUserOptions>
+	<form id="statusLogs" method="POST" action="<tmpl_udf GET_URI('status_logs')>">
+		<input type="hidden" name="gSecureToken" id="gSecureToken" value="<tmpl_var gSecureToken>" />
+		<fieldset class="first">
+			<div class="table">
+				<tmpl_if LogEnableShow>
+					<div class="row clearfix">
+						<div class="col label">
+							<h4><label for="LogEnable"><tmpl_var _("webui", "status_logs_enable_logs_label")></label></h4>
+						</div>
+						<div class="col input">
+							<input type="checkbox" id="LogEnable" name="LogEnable"<tmpl_if LogEnable> checked="checked"</tmpl_if><tmpl_if LogEnableLocked> disabled="disabled"</tmpl_if>/>
+						</div>
+					</div>
+				</tmpl_if>
+
+				<tmpl_if LogLifeTimeShow>
+					<div class="row clearfix">
+						<div class="col label">
+							<h4><label for="LogLifeTime"><tmpl_var _("webui", "status_logs_delete_sys_logs_label")></label></h4>
+						</div>
+						<div class="col input">
+							<select name="LogLifeTime" id="LogLifeTime"<tmpl_unless LogEnable> disabled="disabled"</tmpl_unless><tmpl_if LogLifeTimeLocked> disabled="disabled"</tmpl_if>>
+								<tmpl_include "log_life_time_options.tmpl">
+							</select>
+						</div>
+						<tmpl_unless NewUILayoutShow>
+							<div class="col help">
+								<tmpl_var _("webui", "status_logs_network_log_lost_on_shutdown_help_text")>
+							</div>
+						</tmpl_unless>
+					</div>
+					<tmpl_if NewUILayoutShow>
+					<div class="row">
+						<tmpl_var _("webui", "status_logs_network_log_lost_on_shutdown_help_text")>
+					</div>
+					</tmpl_if>
+				</tmpl_if>
+			</div><!-- /.table -->
+		</fieldset>
+
+		<tmpl_unless NewUILayoutShow>
+		<div class="button_container clearfix">
+			<button id="saveBtn" type="submit" class="primary" <tmpl_if isLocked>disabled="disabled"</tmpl_if> ><tmpl_var _("webui", "webui_save_button")></button>
+		</div>
+		</tmpl_unless>
+	</form>
+</tmpl_if>
+
+	<tmpl_if LogEnable>
+		<fieldset class="last">
+			<div class="tabs_container tier_2 tabs_2">
+				<div class="tabs clearfix">
+					<ul>
+						<li id="wwan_log" class="first active"><a href="#"><tmpl_var _("webui", "status_logs_mobile_network_log_href")></a></li>
+						<li id="system_log" class="last"><a href="#"><tmpl_var _("webui", "status_logs_system_log_href")></a></li>
+					</ul>
+				</div>
+
+				<div class="tier_2_content logs clearfix">
+					<div id="log_container"></div>
+					<tmpl_unless NewUILayoutShow>
+					<div class="button_container clearfix">
+						<button type="button" class="secondary clear" id="clearLog" <tmpl_if isLocked>disabled="disabled"</tmpl_if>><tmpl_var _("webui", "status_logs_clear_log_btn")></button>
+						<button type="button" class="secondary refresh" id="refreshLog" <tmpl_if isLocked>disabled="disabled"</tmpl_if>><tmpl_var _("webui", "status_logs_refresh_btn")></button>
+						<tmpl_if showDownloadLogs>
+						<form method="POST" action="<tmpl_udf GET_URI('status_logs')>" id="downLoadLogForm" <tmpl_unless LogClearNetworkLogShow>style="display:none;"</tmpl_unless>>
+								<input type="hidden" name="gSecureToken" id="gSecureToken" value="<tmpl_var gSecureToken>" />
+								<input type="hidden" name="formAction" id="formAction" value="" />
+								<button type="button" class="secondary download" id="downloadLog" <tmpl_if isLocked>disabled="disabled"</tmpl_if><tmpl_if LogDownloadNetworkLogLocked>disabled="disabled"</tmpl_if>><tmpl_var _("webui", "status_logs_download_btn")></button>
+						</form>
+						</tmpl_if>
+					</div>
+					<tmpl_else>
+					<div class="button_container clearfix">
+						<button type="button" class="secondary refresh" id="refreshLog" <tmpl_if isLocked>disabled="disabled"</tmpl_if>><tmpl_var _("webui", "status_logs_refresh_btn")></button>
+						<tmpl_if showDownloadLogs>
+						<form method="POST" action="<tmpl_udf GET_URI('status_logs')>" id="downLoadLogForm" <tmpl_unless LogClearNetworkLogShow>style="display:none;"</tmpl_unless>>
+								<input type="hidden" name="gSecureToken" id="gSecureToken" value="<tmpl_var gSecureToken>" />
+								<input type="hidden" name="formAction" id="formAction" value="" />
+								<button type="button" class="secondary download" id="downloadLog" <tmpl_if isLocked>disabled="disabled"</tmpl_if><tmpl_if LogDownloadNetworkLogLocked>disabled="disabled"</tmpl_if>><tmpl_var _("webui", "status_logs_download_btn")></button>
+						</form>
+						</tmpl_if>
+						<button type="button" class="secondary clear" id="clearLog" <tmpl_if isLocked>disabled="disabled"</tmpl_if>><tmpl_var _("webui", "status_logs_clear_log_btn")></button>
+					</div>
+					</tmpl_unless>
+				</div>
+			</div>
+		</fieldset>
+	</tmpl_if>
+	<tmpl_if NewUILayoutShow>
+		<div class="button_container clearfix">
+			<button id="saveBtn" type="submit" class="primary" <tmpl_if isLocked>disabled="disabled"</tmpl_if> ><tmpl_var _("webui", "webui_save_button")></button>
+		</div>
+	</tmpl_if>
+</tmpl_if> <!-- isHidden -->

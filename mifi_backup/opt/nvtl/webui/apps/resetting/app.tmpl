@@ -1,0 +1,72 @@
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var date = new Date();
+	var lastRequestTime = 0;
+	var delayTime = 1000; // 1 second
+	var resettingDelay = 20000; // 20 seconds
+	var maxresettingSec = 60000; // 60 seconds
+	var isRedirecting = false;
+
+	$(function()
+	{
+		setTimeout(kickOff, resettingDelay);
+		
+	});
+
+	function kickOff()
+	{
+		backYet();
+		setTimeout(function(){
+			var notification = $('<div class="notification app error"></div>');
+			var notificationInner = $('<div class="notification_inner"></div>');
+			var p1 = $('<p><tmpl_udf GET_PO_TEXT( "resetting_device_not_respond_notification_title", gProductName)></p>');
+			var p2 = $('<p><tmpl_udf GET_PO_TEXT("resetting_device_not_respond_notification_text", gProductName)></p>');
+			notificationInner.append(p1, p2);
+			notification.append(notificationInner);
+			var linkHome = $('<p id="homeLink"><a class="gohome" href="/"><tmpl_var _("webui", "resetting_home_page_link_text")></a></p>');
+			$("#resettingContentInner").empty().append(notification, linkHome);
+		}, maxresettingSec);
+	}
+
+	function backYet()
+	{
+		$.ajax({
+			url : "/srv/status",
+			type : 'GET',
+			dataType : "json",
+			timeout : maxresettingSec,
+			success: function(data, textStatus, xhr) {
+				// If no network connected, success event still occurs.
+				// We need to implicitly see an xhr.status greater than 0 to know we've actually made contact.
+				if ( (xhr.readyState == 4 ) && (xhr.status > 0) ) {
+					window.location.href = "/";
+					isRedirecting = true;
+				}
+			},
+			complete : function(xhr, textStatus) {
+				// Long Polling, until timeout.
+				// timeout doesn't seem to kick in if no network response is returned.
+				// All this delay nonsense is for Window's benefit.
+				if(isRedirecting == false)
+				{
+					var diff = date.getTime() - lastRequestTime;
+					var delay = (diff > delayTime) ? 0 : delayTime - diff;
+					lastRequestTime = date.getTime();
+					setTimeout(backYet, delay);
+				}
+			}
+		});
+	}
+	/* ]]> */
+</script>
+
+<div id="resettingContent">
+	<div id="resettingContentInner">
+		<div id="restartHead">
+			<h2 class="loading"><tmpl_udf GET_PO_TEXT("resetting_loading_text", gProductName, gProductNumber)></h2>
+		</div>
+		<p id="statusText">
+			<tmpl_var _("webui", "resetting_status_text")>
+		</p>
+	</div>
+</div>

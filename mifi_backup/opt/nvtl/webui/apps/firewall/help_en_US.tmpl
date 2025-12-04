@@ -1,0 +1,32 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+	<h2>Overview</h2>
+		<p>A firewall protects your connected devices against malicious incoming traffic from the internet. The firewall cannot be turned off, but the following settings are  available: 
+		</p>
+			
+			
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+		<p>This feature allows VPN client software on connected devices to connect, through your <tmpl_var _("webui", "webui_product_name")>, to remote VPN servers. Normally, this option should be left on.  	</p>
+
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+			<p>Normally, the firewall will block incoming IPv6 connection requests intended for an IPv6 connected device.
+			</p>
+			<p>
+				If you wish to allow these incoming connection requests to reach the intended connected device, turn on this setting.</p>  
+                           <p>Note: Transparent Mode should only be turned on when necessary, as it reduces the protection provided by the <tmpl_var _("webui", "webui_product_name")> firewall.</p>
+	</tmpl_if>
+			
+	<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+	<p>Select to direct all traffic that would normally be blocked by the firewall, to a specific connected device.</p> 
+
+	<p>For security, this feature should be off unless absolutely necessary.</p>
+	<h3>Destination IP address</h3>
+		<p>Enter the IP address of the connected device you want to set as the DMZ device (DMZ destination) into this field.
+		You can view the IP addresses of connected devices on the connected devices screen.
+		</p>
+			
+</div>
+<!-- id="firewall" -->
+

@@ -1,0 +1,19 @@
+<tmpl_if isHidden>
+   <div class="notification app error">
+       <tmpl_var _("webui", "webui_app_hidden_text")>
+   </div>
+<tmpl_else>
+
+	<tmpl_if isLocked>
+	    <div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+	    </div>
+	</tmpl_if>
+
+	<fieldset class="last">
+		<h3 class="sectionHead"><tmpl_var _("webui","field_test_info_diagnostics_info_sub_header")></h3>
+		<div id="diagInfo">
+			<pre><tmpl_var diagInfo></pre>
+		</div>
+	</fieldset>
+</tmpl_if>

@@ -1,0 +1,42 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>Cela affiche l'état de la connexion Internet via le réseau mobile. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>Le nom du réseau mobile auquel cet appareil est actuellement connecté. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>La technologie de réseau utilisée pour la connexion actuelle. LTE est la technologie la plus rapide à l'heure actuelle. </p> 
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured, but may need to be changed if you change the SIM.
+	</p>    
+	-->
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>Pour la session Internet actuelle, période de temps écoulée depuis l'établissement de la connexion. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))>
+</h3>
+	<p>Pour la session Internet actuelle, quantité de données reçues. Ce compteur commence à zéro lorsque la connexion est établie. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>Pour la session Internet actuelle, quantité de données transmises. Ce compteur commence à zéro lorsque la connexion est établie. </p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+	<p> L'adresse IP Internet attribuée à cet appareil. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))>
+</h3>
+	<p> Le masque réseau associé à l'adresse IP ci-dessus. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	<p> L'adresse IP de la passerelle associée à l'adresse IP ci-dessus. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))>
+</h3>
+	<p> Le serveur de noms de domaine actuellement utilisé par cet appareil. </p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+	<p>L'adresse IPv6 globale pour le <tmpl_var _("webui", "webui_product_name")> apparaît ici. Elle restera vide si l'IPv6 est désactivé, ou s'il n'est pas pris en charge par la connexion réseau actuelle. </p>
+	
+</div> 
+<!-- id="status_internet" -->
+

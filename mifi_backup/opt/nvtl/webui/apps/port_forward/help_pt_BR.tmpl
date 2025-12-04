@@ -1,0 +1,46 @@
+<!-- Port Forwarding -->
+<div id="port_forward">
+	<h1>Encaminhamento de Porta</h1>
+	<h2>Visão geral</h2>
+	<p>O recurso de Encaminhamento de Porta permite que o tráfego recebido da internet seja reencaminhado para um computador ou dispositivo específico da sua rede Wi-Fi. Normalmente, o firewall incorporado bloqueia o tráfego recebido da internet. Você pode utilizar o Encaminhamento de Porta para permitir que os usuários da internet acessem qualquer servidor que você esteja executando NO seu computador, como um servidor web, FTP ou de e-mail. Em alguns jogos on-line, o Encaminhamento de Porta deve ser utilizado para que funcionem corretamente. Observe que o Encaminhamento de Porta cria um risco de segurança e deve permanecer desativo quando não houver necessidade. </p>
+<p><strong>Observação:</strong> Algumas redes móveis sem fio fornecem um endereço IP da sua própria rede, em vez de um endereço IP da internet. Nesse caso, o Encaminhamento de Porta não pode ser utilizado porque os usuários da internet não conseguem obter o seu endereço IP. </p>
+
+	<h2>Aplicativos de Encaminhamento de Porta</h2>
+	<h3>Caixas de seleção do aplicativo</h3>
+		<p> São listados vários aplicativos comuns do servidor. Para usar qualquer um desses aplicativos, siga este procedimento: </p>
+		<ol>
+			<li>Instale o aplicativo em um computador conectado à rede Wi-Fi desse dispositivo.</li>
+			<li>No computador, verifique o endereço IP do aplicativo para obter a rede Wi-Fi. Como alternativa, você pode verificar o endereço IP do computador na tela de dispositivos conectados.</li>
+			<li>Nessa tela, insira o endereço IP do computador no campo <strong>Endereço IP do dispositivo conectado</strong> ao lado do aplicativo.</li>
+			<li>Ative o aplicativo nessa tela, selecionando sua caixa de seleção.</li>
+			<li>Salve suas alterações.</li>
+			<li>Na tela <strong>Status atual</strong>, anote o endereço IP da internet desse dispositivo.</li>
+			<li>Solicite que os usuários na internet se conectem ao endereço IP da internet desse dispositivo. Essas solicitações de conexão serão encaminhadas para o endereço IP especificado na etapa 3.</li>
+		</ol>
+
+	<h2>Aplicativos personalizados</h2>
+	<p>Esse recurso permite que você defina os seus próprios aplicativos. Depois de definidos, esses aplicativos podem ser ativados e desativados da mesma forma que os aplicativos predefinidos. Para definir um aplicativo, você precisa conhecer as portas e o protocolo (TCP, UDP) utilizado para o tráfego de saída do aplicativo. Para começar, clique no botão <strong>Adicionar aplicativo personalizado</strong> e, em seguida, informe os dados a seguir. </p>
+	<h3>Caixa de seleção do aplicativo</h3>
+	<p>Use essa caixa de seleção para ativar um aplicativo após defini-lo. </p>
+	<h3>Nome do aplicativo</h3>
+	<p> Insira um nome adequado para o aplicativo que você está definindo. </p>
+
+	<h3>Endereço IP do dispositivo conectado</h3>
+	<p> Insira o endereço IP do dispositivo conectado que receberá esse tráfego. </p>
+
+	<h3>Tipo de porta e Número das portas</h3>
+		<p>Cada aplicativo tem o seu próprio intervalo de porta. Insira o início e o fim do intervalo de porta para cada aplicativo. </p>
+		<div class="blockgroup">
+			<ul>
+				<li>Para um intervalo de porta, insira o início do intervalo no campo <strong>De</strong> e fim do intervalo no campo <strong>Para</strong>.</li>
+				<li>Para uma porta de conversão, insira o número da porta tanto no campo <strong>Ext</strong>, como no campo <strong>Int</strong>.</li>
+			</ul>
+		</div>
+	<h3>Protocolo</h3>
+	<p> Para cada intervalo de porta, selecione o protocolo (TCP ou UDP) utilizado por aquele intervalo. </p>
+		
+	<h3>Excluir</h3>
+	<p>Use essa caixa de seleção para excluir um aplicativo personalizado. </p>
+</div>
+<!-- id="port_forward" -->
+

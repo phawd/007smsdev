@@ -1,0 +1,47 @@
+<div id="device_preferences">
+	<h1><tmpl_var _("webui", "preferences_device_preference_sub_header_text")></h1>
+	<p>Esta pantalla contiene muchas opciones que le permiten definir el comportamiento del <tmpl_var _("webui", "webui_product_name")> para satisfacer mejor sus necesidades. </p>
+
+	<h2><tmpl_udf  GET_PO_TEXT("preferences_display_settings_toggle_label", gProductName)></h2>
+	<p> Actívelo para permitir que se realicen algunos cambios de configuración desde la pantalla de <tmpl_var _("webui", "webui_product_name")>. (La configuración avanzada solo está disponible en el sitio web de Administrador). </p>
+
+	<h2><tmpl_udf  GET_PO_TEXT("preferences_hardware_reset_toggle_label", gProductName)></h2>	
+	<p> Actívelo para permitir que el <tmpl_var _("webui", "webui_product_name")> se restablezca a modo de fábrica usando la pantalla táctil o el botón debajo de la tapa de la batería. </p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_usb_mode_label"), (size(_("webui", "preferences_usb_mode_label")) - size(":")))></h3>
+	<p>Estos parámetros definen el tipo de conexión cuando hay una computadora conectada al puerto USB C del Jetpack. Seleccione la opción deseada.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_usb_connection_prompt_label"), (size(_("webui", "preferences_usb_connection_prompt_label")) - size(":")))></h3>
+	<p>Si se encuentra marcada, se le indicará (en la pantalla del Jetpack) que seleccione el modo USB deseado que se usará cuando se detecte una conexión USB a una computadora. Si realiza una selección en este indicador, no se modificará el parámetro mencionado, sino que solamente se establecerá el modo para la sesión actual USB.
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_turnoff_diplay_label"), (size(_("webui", "preferences_turnoff_diplay_label")) - size(":")))></h3>
+	<p>Esta configuración determina con qué rapidez se apagará la pantalla del <tmpl_var _("webui", "webui_product_name_with_suffix")>, después de un período de inactividad. Seleccione la opción deseada. </p>		
+
+	<h3><tmpl_var truncate(_("webui", "preferences_deep_sleep_label"), (size(_("webui", "preferences_deep_sleep_label")) - size(":")))></h3>
+	<p>El <tmpl_var _("webui", "webui_product_name")> ingresará al modo de suspensión después de un período de inactividad. Seleccione el período deseado previo al ingreso al modo de suspensión. </p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_auto_shutdown_label"), (size(_("webui", "preferences_auto_shutdown_label")) - size(":")))></h3>
+	<p>El <tmpl_var _("webui", "webui_product_name")> puede apagarse después de un período de inactividad. Seleccione el período deseado previo a que se active el apagado. </p>
+
+	<h2><tmpl_var _("webui", "preferences_universal_charging_sub_header_text")></h2>
+	<p>Esta función le permite cargar dispositivos, como su teléfono o sus auriculares Bluetooth, desde la batería del Jetpack. Simplemente conecte el cable USB de su dispositivo al puerto USB C del Jetpack. </p>
+
+	<h3><tmpl_udf truncate(GET_PO_TEXT("preferences_universal_charging_label", gProductName), (size(GET_PO_TEXT("preferences_universal_charging_label", gProductName)) - size(":")))></h3>
+	<p>Cuando el nivel de la batería del <tmpl_var _("webui", "webui_product_name_with_suffix")> es demasiado bajo, no es posible cargar otros dispositivos. Use esta configuración para especificar el nivel de batería para "demasiado bajo". </p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_universal_charging_status_label"), (size(_("webui", "preferences_universal_charging_status_label")) - size(":")))></h3>
+	<p>Este campo muestra el estado actual de la función de Carga universal. Los valores de estado posibles son los siguientes: </p>
+	<blockquote>
+	<div class="blockgroup">
+	<blockquote>
+	<ul>
+	   <li><tmpl_var _("preferences_universal_charging_status_charging_text")> - un dispositivo externo se carga desde la batería del <tmpl_var _("webui", "webui_product_name_with_suffix")>. </li>
+	   <li><tmpl_var _("preferences_universal_charging_status_available_text")> - si un dispositivo externo se conecta al puerto USB C <tmpl_var _("webui", "webui_product_name_with_suffix")>, se cargará. </li>
+	   <li><tmpl_var _("preferences_universal_charging_status_not_available_text")> - el nivel de la batería del <tmpl_var _("webui", "webui_product_name_with_suffix")> está demasiado bajo para cargar otros dispositivos. </li>
+	</ul>
+	</blockquote>
+	</div>
+	</blockquote>
+	
+</div>

@@ -1,0 +1,40 @@
+<!-- Connected Devices -->
+<div id="connected_devices">
+	<h1><tmpl_var _("webui", "connected_devices_menu_text")></h1>
+	<h2>Descripción</h2>
+	<p>Esta página muestra detalles de cada dispositivo conectado a <tmpl_var _("webui", "webui_product_name")> y también indica cualquier dispositivo bloqueado. </p>
+
+	<h2><tmpl_var _("webui", "connected_devices_sub_header_text")></h2>
+	<p> Esta tabla enumera todos los dispositivos conectados al <tmpl_var _("webui", "webui_product_name")>. Presione V para ver más información acerca del dispositivo. </p>
+	<p> La información siguiente aparece para cada dispositivo conectado: </p>
+
+	<h3>Tipo de conexión</h3>
+	<p>Un icono indica el tipo de conexión para cada dispositivo conectado. </p>
+	<h3>Nombre</h3>
+	<p>Normalmente, es el nombre del servidor del dispositivo conectado, tal como se configuró en el dispositivo conectado. En casos poco frecuentes, el nombre del servidor no está disponible. Si ha usado la opción Editar para cambiar el nombre de un dispositivo conectado, el nombre que suministró se muestra en lugar del nombre del servidor. </p>
+	<p>Puede usar la opción Editar para cambiar el nombre de los dispositivos conectados. </p>
+
+	<h3>Dirección de IP</h3>
+	<p> La dirección de IP del dispositivo conectado. </p>
+	<h3><tmpl_var truncate(_("webui", "connected_devices_mac_address_label"), (size(_("webui", "connected_devices_mac_address_label")) - size(":")))></h3>
+	<p> La dirección MAC es un identificador de red único para este dispositivo conectado. </p>
+
+	<tmpl_if isIPv6Supported>
+	<h3><tmpl_var truncate(_("webui", "connected_devices_link_local_label"), (size(_("webui", "connected_devices_link_local_label")) - size(":")))>
+</h3>
+	<p>Si el dispositivo conectado admite IPv6, se muestra la dirección de IPv6 del enlace-local. </p>
+	</tmpl_if>
+
+	<h2>Bloqueo y desbloqueo de dispositivos</h2>
+	<h3>Botón Bloquear</h3>
+	<p> Al hacer clic en el botón Bloquear se desconecta el dispositivo conectado y se impide su reconexión. El dispositivo bloqueado entonces aparece en la Lista de dispositivos bloqueados. </p>
+	<p>Los dispositivos bloqueados se bloquean tanto de la red de invitados como la red principal. </p>
+	<p> Esta opción está disponible para usarse con cada dispositivo conectado, con la excepción de su propio dispositivo y cualquier dispositivo conectado a través de USB. </p>
+	
+	<h3>Lista de dispositivos bloqueados</h3>
+	<p> Enumera los dispositivos que ha bloqueado. Tenga en cuenta que, dado que estos dispositivos no están conectados actualmente y tienen la conexión bloqueada, no tienen una dirección de IP. Por el contrario, se identifican por su nombre y su dirección MAC. </p>
+	<h3>Botón Desbloquear</h3>
+	<p> Al hacer clic en el botón Desbloquear se desbloquea un dispositivo anteriormente bloqueado, liberándolo para conectarlo nuevamente. El dispositivo desbloqueado se elimina de la lista de Dispositivos bloqueados y reaparecerá en la lista de Dispositivos conectados cuando se conecte. </p>
+</div>
+<!-- id="connected_devices" -->
+

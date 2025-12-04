@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<!--[if lte IE 8]><html class="no-js ie8 oldie<tmpl_if IN_SET(gLangDirection, "rtl")> rtl</tmpl_if>" lang="<tmpl_var gHtmlLang>"<tmpl_if IN_SET(gLangDirection, "rtl")> dir="<tmpl_var gLangDirection>"</tmpl_if>><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js<tmpl_if IN_SET(gLangDirection, "rtl")> rtl</tmpl_if>" lang="<tmpl_var gHtmlLang>"<tmpl_if IN_SET(gLangDirection, "rtl")> dir="<tmpl_var gLangDirection>"</tmpl_if>><!--<![endif]-->
+	<head>
+		<tmpl_include "meta.tmpl">
+		<title><tmpl_include "admin_title.tmpl"></title>
+		<tmpl_include "links.tmpl">
+		<tmpl_include "scripts.tmpl">
+	</head>
+	<body id="<tmpl_var gPageId>" class="no_status_bar_no_footer">
+
+		<div id="container">
+			<div id="container_inner">
+				
+				<div id="main_inner" role="main">
+
+					<tmpl_include "noscript.tmpl">
+
+					<div id="app_container" class="page">
+						<div id="app_inner">
+							<div id="app_content">
+								<tmpl_include "app.tmpl">
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>

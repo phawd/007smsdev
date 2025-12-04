@@ -1,0 +1,54 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p> Vous pouvez utiliser le réglage ACTIVÉ/DÉSACTIVÉ quand vous avez besoin de désactiver les données cellulaires et d'empêcher l'accès au réseau mobile. Cela empêche les appareils connectés de se connecter à Internet et d'utiliser votre forfait de données mobile. Pour le fonctionnement normal, il doit rester activé. </p>
+	</tmpl_if>
+
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p> La valeur par défaut est « <tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")> ». Le <tmpl_var _("webui", "webui_product_name")> sélectionnera la meilleure technologie disponible. </p>
+		<p> Vous pouvez modifier ce réglage pour limiter les technologies de réseau utilisées. </p>
+	</tmpl_if>
+	
+	<tmpl_unless apnProfileSettings>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))></h3>
+		<p> L'APN est déjà configuré; vous ne devez pas le modifier à moins que vous ne possédiez un compte d'entreprise (avec votre propre APN) ou ne changiez de carte SIM. </p>
+
+		<h3>Sélection manuelle du réseau</h3>
+			
+		<p> Cette fonction vous permet de choisir le réseau GSM/WCDMA mobile utilisé. Cela peut être utile si plusieurs réseaux sont disponibles et que vous avez une préférence concernant le réseau à utiliser. </p>
+		<p> Cliquez sur le bouton « Sélectionner le réseau » pour parcourir les réseaux disponibles; vous pouvez ensuite sélectionner le réseau de votre choix. </p>
+	<tmpl_else>
+		<h2>Les réglages avancés</h2>
+		<p>Utilisez ce titre / lien pour afficher ou masquer les paramètres avancés selon vos besoins.
+			</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_apn_label"), (size(_("webui", "wwan_settings_apn_label")) - size(":")))></h3>
+		<p>
+			Si vous souhaiter changer l'APN, entrez la valeur fournie par votre opérateur de téléphonie mobile.
+		</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p>Sélectionnez l'option spécifiée par votre fournisseur de service.
+			</p>
+			<ul>
+				<li>Aucun</li>
+				<li>PAP</li>
+				<li>CHAP</li>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))></h3>
+		<p>
+			Si l'authentification affiche <strong>Aucune</strong>, ce champ peut rester vide.
+			Autrement, entrez la valeur spécifiée par votre fournisseur de service.
+		</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))></h3>
+		<p>Si l'authentification affiche <strong>Aucune</strong>, ce champ peut rester vide.
+			Autrement, entrez la valeur spécifiée par votre fournisseur de service.
+		</p>
+
+	</tmpl_unless>
+
+	
+</div>

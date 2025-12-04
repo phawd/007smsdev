@@ -1,0 +1,108 @@
+<script type="text/javascript">
+	/* <![CDATA[ */
+	$(function()
+	{
+		// Monitor and update badge counts in menu.
+		var $navConnDev = $("#mobile_navigation li.connected-devices");
+		var $navSMS = $("#mobile_navigation li.messages");
+
+		$(document).ajaxSuccess(function(e, xhr, settings)
+		{
+			if((xhr.responseText) && (settings.dataType == "json")) {
+				try {
+					var obj = jQuery.parseJSON(xhr.responseText || "null");
+
+					if((typeof obj.statusData.statusBarMaxWiFiClientListSize !== "undefined") &&
+					   (typeof obj.statusData.statusBarClientListSize !== "undefined")) {
+								var primaryClientListSize = parseInt(obj.statusData.statusBarWiFiClientListSize);
+								var guestClientListSize = parseInt(obj.statusData.statusBarGuestClientListSize);
+								var counts = "";
+								var totalAllowedClients = parseInt(obj.statusData.statusBarMaxWiFiClientListSize);
+								var totalConnectedClients = primaryClientListSize;
+								if (( typeof obj.statusData.statusBarGuestWifiEnabled !== "undefined") && (parseInt(obj.statusData.statusBarGuestWifiEnabled) > 0) ) {
+									totalConnectedClients = totalConnectedClients + guestClientListSize;
+								}
+						if (totalConnectedClients >= totalAllowedClients) {
+							updateMobileBadge($navConnDev, '<tmpl_var _("webui", "status_bar_connected_devices_max")>'); // Max
+						} else {
+							updateMobileBadge($navConnDev, totalConnectedClients);
+						}
+					}
+
+					if(typeof obj.statusData.statusBarSmsUnreadCount !== "undefined") {
+						updateMobileBadge($navSMS, obj.statusData.statusBarSmsUnreadCount);
+					}
+				} catch(e) {}
+			}
+		});
+	});
+
+	function updateMobileBadge($el, count)
+	{
+		var theCount = (count) ? count : 0;
+		var $linkWrap = $el.find(".linkWrap");
+		$linkWrap.find(".badge").remove();
+		if( (theCount > 0) || isNaN(theCount) ) {
+			$linkWrap.append('<span class="badge">' + theCount + '</span>');
+		}
+	}
+	/* ]]> */
+</script>
+
+<ul id="mobile_navigation_ext" class="level-1">
+	<li class="menuitem menu-home-mobile first">
+		<a href="<tmpl_udf GET_URI('apps_home')>" class="linkWrap menu-home-mobile<tmpl_if IN_SET(gPageId, "apps_home")> active</tmpl_if>"><tmpl_udf GET_PO_TEXT("menu_apps_home_text", gProductName)></a>
+	</li>
+	<tmpl_unless IN_SET(gPageId, "login")>
+		<tmpl_if IN_SET(gIsLoggedIn, "1", "true")>
+			<li class="logout">
+				<a><tmpl_var _("webui", "vzw_header_logout_link")></a>
+			</li>
+		<tmpl_else>
+			<li class="login">
+				<a><tmpl_var _("webui", "vzw_header_login_link")></a>
+			</li>
+		</tmpl_if>
+	</tmpl_unless>
+	<tmpl_unless IN_SET(gPageId, "login", "apps_home", "help_faq")>
+		<li class="mobile_help">
+			<a title='<tmpl_if parent.pageTitle><tmpl_var parent.pageTitle><tmpl_else><tmpl_var parent.title></tmpl_if> <tmpl_var _("webui", "tabs_help_word")>' class="helpLink parent" href="<tmpl_var gHelpURL>"><tmpl_var _("webui", "tabs_help_word")></a>
+		</li>
+	</tmpl_unless>
+	<li id="messages">
+		<a><tmpl_var _("webui", "sms_menu_text")></a>
+	</li>
+</ul>
+
+<tmpl_foreach gMenuLayout as menuItem>
+		<tmpl_block "active_loop">
+			<tmpl_foreach menuItem.children as child>
+				<tmpl_foreach child.children as grandchild>
+					<tmpl_if IN_SET(gPageId, menuItem.pageId, child.pageId, grandchild.pageId)> active</tmpl_if>
+				</tmpl_foreach>
+				<tmpl_if IN_SET(gPageId, menuItem.pageId, child.pageId)> active</tmpl_if>
+			</tmpl_foreach>
+		</tmpl_block>
+	<tmpl_if menuItem.__first__><ul id="mobile_navigation" class="level-1"></tmpl_if>
+		<li class="menuitem <tmpl_var menuItem.itemClass><tmpl_if menuItem.__first__> first</tmpl_if><tmpl_if menuItem.__last__> last</tmpl_if><tmpl_call 'active_loop'>">
+				<a href="<tmpl_var menuItem.url>" class="linkWrap <tmpl_var menuItem.itemClass><tmpl_if IN_SET(gPageId, menuItem.pageId)> active</tmpl_if>">
+				 <tmpl_if menuItem.menutitle><tmpl_var menuItem.menutitle><tmpl_else><tmpl_var menuItem.title></tmpl_if><tmpl_if menuItem.children><span class="indicator<tmpl_call 'active_loop'>"></span></tmpl_if>
+				</a>
+					<tmpl_foreach menuItem.children as child>
+						<tmpl_if child.__first__><ul class="level-2"></tmpl_if>
+								<li class="menuitem <tmpl_var child.itemClass><tmpl_if menuItem.__first__> first</tmpl_if><tmpl_if menuItem.__last__> last</tmpl_if><tmpl_call 'active_loop'>">
+										<a href="<tmpl_var child.url>" class="linkWrap <tmpl_var child.itemClass><tmpl_if IN_SET(gPageId, child.pageId)> active</tmpl_if>">
+										<tmpl_var child.title><tmpl_if child.children><span class="indicator<tmpl_call 'active_loop'>"></span></tmpl_if></a>
+											<tmpl_foreach child.children as grandchild>
+												<tmpl_if grandchild.__first__><ul class="level-3"></tmpl_if>
+														<li class="menuitem <tmpl_var grandchild.itemClass><tmpl_if menuItem.__first__> first</tmpl_if><tmpl_if menuItem.__last__> last</tmpl_if><tmpl_if IN_SET(gPageId, grandchild.pageId)> active</tmpl_if>">
+															<a href="<tmpl_var grandchild.url>" class="linkWrap <tmpl_var grandchild.itemClass><tmpl_if IN_SET(gPageId, grandchild.pageId)> active</tmpl_if>"><tmpl_var grandchild.title></a>
+														</li>
+												<tmpl_if grandchild.__last__></ul></tmpl_if>
+											</tmpl_foreach>
+								</li>
+							<tmpl_if child.__last__></ul></tmpl_if>
+					</tmpl_foreach>
+		</li>
+	<tmpl_if menuItem.__last__></ul><!-- /#mobile-navigation --></tmpl_if>
+</tmpl_foreach>

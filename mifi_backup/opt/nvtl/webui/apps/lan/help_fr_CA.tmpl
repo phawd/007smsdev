@@ -1,0 +1,40 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+	<h2>Vue d'ensemble</h2>
+		<p>Ces réglages s'appliquent à votre réseau local ou LAN. Pour cet appareil, le réseau local est constitué de cet appareil et de tous les appareils connectés (y compris les appareils connectés via Ethernet, le cas échéant). </p>
+			
+	<h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+		<p> L'adresse IP pour cet appareil, telle qu'elle est affichée sur le réseau local. Normalement, vous pouvez utiliser la valeur par défaut. </p>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+		<p> La valeur par défaut 255.255.255.0 est standard pour les petits réseaux (de catégorie C). Si vous modifiez l'adresse IP du réseau local, assurez-vous d'utiliser le bon masque sous-réseau. </p>
+			
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+		<p> L'adresse MAC est un identificateur de réseau unique qui est assigné lorsqu'un appareil réseau est fabriqué. Ce champ à lecture seule affiche l'adresse MAC pour les interfaces Wi-Fi et USB sur cet appareil. </p>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+		<p>Normalement, il devrait rester activé. Le serveur DHCP attribue une adresse IP à chaque appareil connecté. Si le serveur DHCP a été désactivé, il faut assigner à chaque appareil connecté une adresse IP fixe. </p>
+
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+		<p>Ce champ détermine à quelle fréquence les appareils connectés doivent renouveler l'adresse IP qui leur est assignée par le serveur DHCP. Normalement, la valeur par défaut peut être conservée, mais si vous avez des besoins spécifiques, vous pouvez modifier cette valeur. </p>
+
+
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>Si vous souhaitez modifier l'espace adressable IP utilisé par le serveur DHCP, vous pouvez le faire en modifiant cette valeur. Cette option n'est destinée qu'aux utilisateurs experts. </p>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+		<p>Il s'agit de l'espace adressable IP qui peut être alloué aux appareils connectés. Si vous utilisez une adresse IP fixe sur un appareil connecté, vous devriez utiliser une adresse IP en dehors de cet espace. </p>
+			
+	
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>Si certains de vos appareils connectés prennent en charge l'IPv6, ce réglage doit être activé. Les appareils connectés IPv6 seront alors en mesure de créer des connexions IPv6 vers Internet. </p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+			<p>C'est l'adresse IPv6 de cet appareil. L'adresse locale de lien est utilisée pour la communication IPv6 entre les appareils d'un même réseau. </p>
+	</tmpl_if>	
+			
+</div>
+<!-- id="lan" -->
+

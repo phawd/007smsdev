@@ -1,0 +1,41 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+	<h2>Descripción</h2>
+		<p>Esta configuración se aplica a su red de área local o LAN. Para este dispositivo, la LAN consta de este dispositivo y todos los dispositivos conectados (incluidos los dispositivos conectados a Ethernet, si existen). </p>
+			
+	<h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+		<p> La dirección de IP de este dispositivo, tal como se ve desde la red local. Normalmente, puede usar el valor predeterminado. </p>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+		<p> El valor predeterminado 255.255.255.0 es el estándar para las redes pequeñas (clase "C"). Si modifica la dirección de IP de LAN, asegúrese de usar la máscara de subred correcta. </p>
+			
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+		<p> La dirección MAC es un identificador de red único, asignado cuando se fabrica un dispositivo de red. Este campo de solo lectura muestra la dirección MAC de las interfaces Wi-Fi y USB de este dispositivo. </p>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+		<p>Normalmente, esta opción debe dejarse activada. El servidor DHCP asigna una dirección de IP a cada dispositivo conectado. Si se desactivó el servidor DHCP, sería necesario asignar una dirección de IP fija a cada dispositivo conectado. </p>
+
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+		<p>Este campo determina la frecuencia con la cual los dispositivos conectados deben renovar la dirección de IP que les asignó el servidor DHCP. Normalmente, esto se puede dejar en el valor predeterminado, pero si tiene requisitos especiales, puede cambiar este valor. </p>
+
+
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>Si desea cambiar el rango de la dirección de IP usado por el servidor DHCP, puede hacerlo modificando este valor. Esta opción es solo para usuarios expertos. </p>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+		<p>Indica el rango de las direcciones de IP que pueden asignarse a los dispositivos conectados. Si usa una dirección de IP fija en un dispositivo conectado, debe usar una dirección de IP fuera de este rango. </p>
+			
+	
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>Si algunos de sus dispositivos conectados admite IPv6, se debe activar esta configuración. Los dispositivos conectados a IPv6 entonces podrán establecer conexiones de IPv6 en internet. </p>
+			
+		</tmpl_if>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+			<p>Esta es la dirección IPv6 de este dispositivo. La dirección de enlace local se usa para la comunicación de IPv6 entre dispositivos en la misma red. </p>
+	</tmpl_if>	
+			
+</div>
+<!-- id="lan" -->
+

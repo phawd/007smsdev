@@ -1,0 +1,49 @@
+<!-- Port Forwarding -->
+<div id="port_forward">
+	<h1>Enrutamiento de puertos</h1>
+	<h2>Descripción</h2>
+	<p>La función de Enrutamiento de puertos permite que el tráfico entrante de internet se enrute a una computadora o un dispositivo en particular en su red Wi-Fi. Normalmente, el firewall incorporado bloquea el tráfico entrante de internet. Utilice el Enrutamiento de puertos para permitir a los usuarios de internet acceder a cualquier servidor que esté ejecutando en su computadora, como un servidor web, FTP o de correo electrónico. Algunos juegos en línea requieren Enrutamiento de puertos para funcionar correctamente. </p>
+	<p><strong>Advertencia:</strong> El uso del Enrutamiento de puertos crea un riesgo de seguridad. Así que úselo únicamente cuando sea necesario.</p>
+	<p><strong>Nota:</strong> Algunas redes móviles le proporcionan una dirección IP dentro de su propia red en lugar de una dirección IP de internet. En este caso, el Enrutamiento de puertos no se puede usar porque los usuarios de internet no pueden acceder a su dirección IP. </p>
+
+<h2>Aplicaciones de Enrutamiento de puertos</h2>
+<p> Se enumeran varias aplicaciones de servidor comunes. Para usar cualquiera de estas aplicaciones, siga este procedimiento: </p>
+
+	<ol class="OrderList">		
+		<li>Instale la aplicación en una computadora que esté conectada a la red de Wi-Fi de este dispositivo.</li>
+		<li>En la computadora, verifique su dirección de IP para la red de Wi-Fi. De forma alternativa, puede verificar la dirección de IP de la computadora en la pantalla Dispositivos conectados.</li>
+		<li>En esta pantalla, ingrese la dirección IP de la computadora en el campo Dirección IP de la aplicación que se encuentra al lado de la aplicación.</li>
+		<li>Active la aplicación seleccionando su casilla de verificación.</li>
+		<li>Guarde los cambios.</li>
+	</ol>
+		
+		<p>En la pantalla <strong>Estado de Internet</strong>, tome nota de la dirección IP de internet del Jetpack.</p>
+		<p>Solicite a los usuarios de internet que se conecten a la dirección IP de internet del Jetpack. Estas solicitudes de conexión se enviarán a la dirección IP especificada en el paso 3.</p>
+
+	<h2>Aplicaciones personalizadas</h2>
+	<p>Esta función le permite definir sus propias aplicaciones. Una vez definidas, estas aplicaciones se pueden activar y desactivar de la misma manera que las aplicaciones predefinidas. Para definir una aplicación, debe conocer los puertos y el protocolo (TCP o UDP) usados por la aplicación para el tráfico entrante. Para comenzar, haga clic en el botón <strong>Agregar Aplicación Personalizada</strong> y luego ingrese los datos siguientes. </p>
+	<h3>La casilla de verificación Activado</h3>
+	<p>Use esta casilla para activar una aplicación después de haberla definido. </p>
+	<h3>Nombre de la aplicación</h3>
+	<p> Ingrese un nombre para la aplicación que está definiendo. </p>
+
+	<h3>Dirección de IP</h3>
+	<p> Ingrese la dirección de IP del dispositivo conectado que recibirá este tráfico. </p>
+
+	<h3>Tipo de puerto y números de puerto</h3>
+		<p>Cada aplicación posee su propio rango de puertos. Ingrese el comienzo y el final del rango de puertos para cada aplicación. </p>
+		<div class="blockgroup">
+			<ul>
+				<li>Debajo de Tipo de puerto, seleccione <strong>Rango</strong> o <strong>Traducir</strong>.</li>
+				<li>Para un rango de puertos, ingrese el comienzo del rango en el campo <strong>Desde</strong> y el fin del rango en el campo <strong>Hasta</strong>.</li>
+				<li>Para un puerto de traducción, ingrese el número de puerto en los campos <strong>Ext</strong> e <strong>Int</strong>.</li>
+			</ul>
+		</div>
+	<h3>Protocolo</h3>
+	<p> Para cada rango de puertos, seleccione el protocolo (TCP, UDP o TCP/UDP) utilizado por ese rango de puertos. </p>
+		
+	<h3>Eliminar</h3>
+	<p>Use esta casilla de verificación para eliminar una aplicación personalizada. </p>
+</div>
+<!-- id="port_forward" -->
+

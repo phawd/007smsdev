@@ -1,0 +1,912 @@
+<Settings>
+	<Header>
+		<!-- file header (read only) for use by tool - do not change -->
+		<SettingsTemplateVersion>1.0</SettingsTemplateVersion>
+		<!-- to match a settings file with a FW. To be used by the tool for validation -->
+	</Header>
+	<!-- all settings -->
+	<Watchdog>
+		<Enabled>1</Enabled>
+		<!-- 1(on), 0(off) -->
+		<Interval>60</Interval>
+		<!-- interval, in seconds(minimum 60), at which watchdog system shall check for registered apps' keepalives -->
+	</Watchdog>
+	<Modem>
+		<RoamEnabled>0</RoamEnabled>
+		<!-- 1(on), 0(off) -->
+		<IntlRoamEnabled>0</IntlRoamEnabled>
+		<!-- 1(on), 0(off) -->
+		<LabTestEnabled>0</LabTestEnabled>
+		<!-- indicates whether this is the lab test PRI or not -->
+		<MNSTimeout>120</MNSTimeout>
+		<!-- when using MNS, the amount of no service time (seconds) before reverting to auto mode -->
+		<CertifiedCarrier>Verizon</CertifiedCarrier>
+		<!-- The carrier name for which the modem is certified  
+		                                             valid options are: Verizon, Sprint, AT&T, Bell, Telus, GSM, AUTO -->
+		<PreferredTechnology>31</PreferredTechnology>
+		<!-- Preferred network technology, is a bitmap of possible modem2_tech_modes_e values. default: 31(global). -->
+	</Modem>
+	<WiFi>
+		<!-- all wifi settings -->
+		<WiFiSettings>
+			<Enabled>1</Enabled>
+			<!-- Wifi functionality is enabled -->
+			<Country>US</Country>
+			<!-- Country code -->
+		</WiFiSettings>
+		<APSettings>
+			<APEnabled>1</APEnabled>
+			<!-- Wifi AP functionality is enabled -->
+			<MaxClients>15</MaxClients>
+			<!-- min-value: 1, max-value: 15 -->
+		</APSettings>
+		<STASettings>
+			<STAEnabled>0</STAEnabled>
+			<!-- Wifi STA functionality is enabled -->
+		</STASettings>
+		<APProfiles>
+			<APProfile index="1">
+				<Enabled>1</Enabled>
+				<!-- Wifi active 1(on), 0(off) -->
+				<Name>Profile1</Name>
+				<!-- Name of the profile -->
+				<Ssid>Verizon-MiFi8800L-C874</Ssid>
+				<!-- -->
+				<SsidBroadcast>0</SsidBroadcast>
+				<!-- Ignore SSID Broadcast 0(on), 1(off) -->
+				<StationPrivacy>0</StationPrivacy>
+				<!-- 1(on), 0(off) -->
+				<InterfaceFeatureMask>1</InterfaceFeatureMask>
+				<!-- Depends upon what features are enables. -->
+				<WPS>1</WPS>
+				<!-- 1(on), 0(off) -->
+				<Channel>0</Channel>
+				<!-- channel number. values (). for automatic, use 0-->
+				<Bandwidth>1</Bandwidth>
+				<!-- 1=(20 MHz), 2=(40 MHz)-->
+				<Mode>1</Mode>
+				<!-- band + width + data-rate (a,b,g,n,) right now -->
+				<SecurityType>3</SecurityType>
+				<!-- security mode. values: -->
+				<EncryptionType>4</EncryptionType>
+				<!-- encryption mode. values: (1,2,3,4,5) -->
+				<Passphrase>9e78d247</Passphrase>
+				<!-- Passphrase for WPA/WPA2/WPAMIX -->
+				<WepAuthType>0</WepAuthType>
+				<!-- Wifi WEP authentication Open=1, shared=2 -->
+				<WepIndex>0</WepIndex>
+				<!-- WEP Key index -->
+				<WepKey0></WepKey0>
+				<!-- WEP Key 0 -->
+				<WepKey1></WepKey1>
+				<!-- WEP Key 1 -->
+				<WepKey2></WepKey2>
+				<!-- WEP Key 2 -->
+				<WepKey3></WepKey3>
+				<!-- WEP Key 3 -->
+			</APProfile>
+			<APProfile index="2">
+				<Enabled>1</Enabled>
+				<!-- Wifi active 1(on), 0(off) -->
+				<Name>Profile2</Name>
+				<!-- Name of the profile -->
+				<Ssid>Verizon-MiFi8800L-C874</Ssid>
+				<!-- -->
+				<SsidBroadcast>0</SsidBroadcast>
+				<!-- Ignore SSID Broadcast 0(on), 1(off) -->
+				<StationPrivacy>0</StationPrivacy>
+				<!-- 1(on), 0(off) -->
+				<InterfaceFeatureMask>1</InterfaceFeatureMask>
+				<!-- Depends upon what features are enables. -->
+				<WPS>1</WPS>
+				<!-- 1(on), 0(off) -->
+				<Channel>0</Channel>
+				<!-- channel number. values (). for automatic, use 0-->
+				<Bandwidth>3</Bandwidth>
+				<!-- 1=(20 MHz), 2=(40 MHz, 3=(80 MHz) -->
+				<Mode>11</Mode>
+				<!-- 11=AC_5, 10=AN, 7=AC_2.4, 5=GN_2.4, 1=BGN -->
+				<SecurityType>3</SecurityType>
+				<!-- security encryption mode. values: -->
+				<EncryptionType>4</EncryptionType>
+				<!-- encryption mode. values: (1,2,3,4,5) -->
+				<Passphrase>9e78d247</Passphrase>
+				<!-- Passphrase for WPA/WPA2/WPAMIX -->
+				<WepAuthType>0</WepAuthType>
+				<!-- Wifi WEP authentication Open=1, shared=2 -->
+				<WepIndex>0</WepIndex>
+				<!-- WEP Key index -->
+				<WepKey0></WepKey0>
+				<!-- WEP Key 0 -->
+				<WepKey1></WepKey1>
+				<!-- WEP Key 1 -->
+				<WepKey2></WepKey2>
+				<!-- WEP Key 2 -->
+				<WepKey3></WepKey3>
+				<!-- WEP Key 3 -->
+			</APProfile>
+			<APProfile index="3">
+				<Enabled>0</Enabled>
+				<!-- Wifi active 1(on), 0(off) -->
+				<Name>Profile3</Name>
+				<!-- Name of the profile -->
+				<Ssid>Verizon-MiFi8800L-Guest-C875</Ssid>
+				<!-- -->
+				<SsidBroadcast>0</SsidBroadcast>
+				<!-- Ignore SSID Broadcast 0(on), 1(off) -->
+				<StationPrivacy>1</StationPrivacy>
+				<!-- 1(on), 0(off) -->
+				<InterfaceFeatureMask>29</InterfaceFeatureMask>
+				<!-- Depends upon what features are enables,WL,II,WP,FP -->
+				<WPS>1</WPS>
+				<!-- 1(on), 0(off) -->
+				<Channel>0</Channel>
+				<!-- channel number. values (). for automatic, use 0-->
+				<Bandwidth>1</Bandwidth>
+				<!-- 1=(20 MHz), 2=(40 MHz)-->
+				<Mode>1</Mode>
+				<!-- 11=AC_5, 10=AN, 7=AC_2.4, 5=GN_2.4, 1=BGN -->
+				<SecurityType>3</SecurityType>
+				<!-- security encryption mode. values: -->
+				<EncryptionType>4</EncryptionType>
+				<!-- encryption mode. values: (1,2,3,4,5) -->
+				<Passphrase>5abe3e55</Passphrase>
+				<!-- Passphrase for WPA/WPA2/WPAMIX -->
+				<WepAuthType>0</WepAuthType>
+				<!-- Wifi WEP authentication Open=1, shared=2 -->
+				<WepIndex>0</WepIndex>
+				<!-- WEP Key index -->
+				<WepKey0></WepKey0>
+				<!-- WEP Key 0 -->
+				<WepKey1></WepKey1>
+				<!-- WEP Key 1 -->
+				<WepKey2></WepKey2>
+				<!-- WEP Key 2 -->
+				<WepKey3></WepKey3>
+				<!-- WEP Key 3 -->
+			</APProfile>
+			<APProfile index="4">
+				<Enabled>0</Enabled>
+				<!-- Wifi active 1(on), 0(off) -->
+				<Name>Profile4</Name>
+				<!-- Name of the profile -->
+				<Ssid>Verizon-MiFi8800L-Guest-C875</Ssid>
+				<!-- -->
+				<SsidBroadcast>0</SsidBroadcast>
+				<!-- Ignore SSID Broadcast 0(on), 1(off) -->
+				<StationPrivacy>1</StationPrivacy>
+				<!-- 1(on), 0(off) -->
+				<InterfaceFeatureMask>29</InterfaceFeatureMask>
+				<!-- Depends upon what features are enables,WL,II,WP,FP -->
+				<WPS>1</WPS>
+				<!-- 1(on), 0(off) -->
+				<Channel>0</Channel>
+				<!-- channel number. values (). for automatic, use 0-->
+				<Bandwidth>3</Bandwidth>
+				<!-- 1=(20 MHz), 2=(40 MHz, 3=(80 MHz) -->
+				<Mode>11</Mode>
+				<!-- band + width + data-rate (a,b,g,n,) right now -->
+				<SecurityType>3</SecurityType>
+				<!-- security encryption mode. values: -->
+				<EncryptionType>4</EncryptionType>
+				<!-- encryption mode. values: (1,2,3,4,5) -->
+				<Passphrase>5abe3e55</Passphrase>
+				<!-- Passphrase for WPA/WPA2/WPAMIX -->
+				<WepAuthType>0</WepAuthType>
+				<!-- Wifi WEP authentication Open=1, shared=2 -->
+				<WepIndex>0</WepIndex>
+				<!-- WEP Key index -->
+				<WepKey0></WepKey0>
+				<!-- WEP Key 0 -->
+				<WepKey1></WepKey1>
+				<!-- WEP Key 1 -->
+				<WepKey2></WepKey2>
+				<!-- WEP Key 2 -->
+				<WepKey3></WepKey3>
+				<!-- WEP Key 3 -->
+			</APProfile>
+			<APProfile index="5">
+				<Enabled>1</Enabled>
+				<!-- Wifi active 1(on), 0(off) -->
+				<Name>Profile5</Name>
+				<!-- Name of the profile -->
+				<Ssid>Factory-Rooney</Ssid>
+				<!-- -->
+				<SsidBroadcast>0</SsidBroadcast>
+				<!-- Ignore SSID Broadcast 0(on), 1(off) -->
+				<StationPrivacy>0</StationPrivacy>
+				<!-- 1(on), 0(off) -->
+				<InterfaceFeatureMask>0</InterfaceFeatureMask>
+				<!-- Depends upon what features are enables. -->
+				<WPS>1</WPS>
+				<!-- 1(on), 0(off) -->
+				<Channel>1</Channel>
+				<!-- channel number. values (). for automatic, use 0-->
+				<Bandwidth>1</Bandwidth>
+				<!-- 1=(20 MHz), 2=(40 MHz)-->
+				<Mode>1</Mode>
+				<!-- band + width + data-rate (a,b,g,n,) right now -->
+				<SecurityType>0</SecurityType>
+				<!-- security mode. values: -->
+				<EncryptionType>0</EncryptionType>
+				<!-- encryption mode. values: (1,2,3,4,5) -->
+				<Passphrase></Passphrase>
+				<!-- Passphrase for WPA/WPA2/WPAMIX -->
+				<WepAuthType>0</WepAuthType>
+				<!-- Wifi WEP authentication Open=1, shared=2 -->
+				<WepIndex>0</WepIndex>
+				<!-- WEP Key index -->
+				<WepKey0></WepKey0>
+				<!-- WEP Key 0 -->
+				<WepKey1></WepKey1>
+				<!-- WEP Key 1 -->
+				<WepKey2></WepKey2>
+				<!-- WEP Key 2 -->
+				<WepKey3></WepKey3>
+				<!-- WEP Key 3 -->
+			</APProfile>
+		</APProfiles>
+	</WiFi>
+	<Router>
+		<IPPassthrough>
+			<Enabled>0</Enabled>
+			<!-- 1(on), 0(off) -->
+			<IFC>1</IFC>
+			<!-- 1(USB), 2(ethernet) -->
+			<Ports>
+				<!-- DNAT: Port #, protocol (tcp=1, udp=2) -->
+				<PortInfo>
+					<Start>1720</Start>
+					<Type>2</Type>
+				</PortInfo>
+			</Ports>
+		</IPPassthrough>
+		<VPNPassthroughEnabled>1</VPNPassthroughEnabled>
+		<!-- 1(on), 0(off) -->
+		<PortFilter>
+			<PortFilterEnabled>0</PortFilterEnabled>
+			<PortFilterList>
+			</PortFilterList>
+		</PortFilter>
+		<PortForward>
+			<!-- -->
+			<PortForwardEnabled>0</PortForwardEnabled>
+			<PortForwardList>
+			</PortForwardList>
+		</PortForward>
+		<DNS>
+			<WebuiURLs>
+				<WebuiURL>
+					<URL>my.jetpack</URL>
+					<!-- designated webui URL for this product -->
+				</WebuiURL>
+				<WebuiURL>
+					<URL>webapi.nvtl</URL>
+					<!-- webui URL common for all MiFi-OS-X products -->
+				</WebuiURL>
+			</WebuiURLs>
+			<RedirectToWebuiEnabled>1</RedirectToWebuiEnabled>
+			<!-- 1(on), 0(off) - redirect if no internet -->
+		</DNS>
+		<ManualDNS>
+			<Enabled>0</Enabled>
+			<!-- Manual DNS status 1(enable), 0(disable) -->
+			<PrimaryDNS></PrimaryDNS>
+			<!-- Manual primary DNS -->
+			<SecondaryDNS></SecondaryDNS>
+			<!-- Manual secondary DNS -->
+		</ManualDNS>
+		<DMZ>
+			<Enabled>0</Enabled>
+			<!-- 1(on), 0(off) -->
+			<IPAddr></IPAddr>
+			<!-- to redirect unknown traffic -->
+		</DMZ>
+		<LAN>
+			<IPAddr>192.168.1.1</IPAddr>
+			<!-- router IP address -->
+			<Netmask>255.255.255.0</Netmask>
+			<!-- netmask -->
+			<Subnet>192.168.1.0</Subnet>
+			<!-- subnet ID -->
+			<MTU>1428</MTU>
+			<!-- -->
+		</LAN>
+		<IPv6>
+			<IPv6FirewallEnabled>1</IPv6FirewallEnabled>
+			<!-- 1(on), 0(off) -->
+		</IPv6>
+		<DHCP>
+			<Enabled>1</Enabled>
+			<!-- 1(on), 0(off) -->
+			<DHCPStartAddress>192.168.1.2</DHCPStartAddress>
+			<!-- IP address - consistent to LAN IP & subnet mask -->
+			<DHCPEndAddress>192.168.1.102</DHCPEndAddress>
+			<!-- IP address - consistent to LAN IP & subnet mask -->
+			<MaxDHCPClients>100</MaxDHCPClients>
+			<!-- Should match dhcp start/end address rage -->
+			<Lease>86400</Lease>
+			<!-- unit(seconds) -->
+		</DHCP>
+	</Router>
+	<CCM>
+		<IPv6Enabled>1</IPv6Enabled>
+		<CellularDataEnabled>1</CellularDataEnabled>
+		<WiFiAPEnabled>1</WiFiAPEnabled>
+		<WiFiSTNEnabled>0</WiFiSTNEnabled>
+		<AirplaneModeEnabled>0</AirplaneModeEnabled>
+		<WiFiWhileTetheredEnabled>1</WiFiWhileTetheredEnabled>
+		<EthernetEnabled>0</EthernetEnabled>
+		<StaticIP></StaticIP>
+		<NTP>pool.ntp.org</NTP>
+		<!-- time server used by MiFi-OS -->
+		<WanCmPriorityPreference>3 2 1</WanCmPriorityPreference>
+		<AutoConnect>2</AutoConnect>
+		<!-- 0(off) 1(connect when a client connects), 2(connect on service) 3(connect on service, not roaming) -->
+	</CCM>
+	<GPS>
+		<Enabled>0</Enabled>
+		<!-- 1(on), 0(off)  -->
+		<PrivacyEnabled>0</PrivacyEnabled>
+		<!-- 1(on), 0(off)  -->
+		<Active>1</Active>
+		<!-- 1(on), 0(off)  -->
+		<NMEAOverTCP>
+			<Enabled>0</Enabled>
+			<!-- 1(on), 0(off)  -->
+			<Port>11010</Port>
+			<!-- TCP port number for GPS NMEA stream -->
+		</NMEAOverTCP>
+		<Mode>0</Mode>
+		<!-- 0(XTRA) 1(MS-B) 2(MS-A) -->
+	</GPS>
+	<OMADM>
+		<EnableFUMO>1</EnableFUMO>
+		<!-- 1(on), 0(off)  -->
+	</OMADM>
+	<DSM>
+		<CriticalBatteryThreshold>1</CriticalBatteryThreshold>
+		<!-- unit(percentage) -->
+	</DSM>
+	<PowerSave>
+		<Enabled>1</Enabled>
+		<!-- 1(on), 0(off)  -->
+		<DeepSleepEnabled>1</DeepSleepEnabled>
+		<!-- 1(enabled), 0(disabled)  -->
+		<DeepSleepIdleTime>300</DeepSleepIdleTime>
+		<!-- idle time before device can enter deepsleep(in seconds > 60) -->
+		<DeepSleepWakeupTime>7200</DeepSleepWakeupTime>
+		<!-- wakeup time for device to come out of deepsleep(in seconds > DeepSleepIdleTime)  -->
+		<ShutdownEnabled>0</ShutdownEnabled>
+		<!-- 1(enabled), 0(disabled)  -->
+		<ShutdownIdleTime>0</ShutdownIdleTime>
+		<!-- idle time before device can shutdown(in seconds) -->
+	</PowerSave>
+	<ExternalLocations>
+		<URI id="provider_manage_account_consumer">
+			<URL>https://wbillpay.verizonwireless.com/vzw/nos/topline.jsp</URL>
+			<Text>link_provider-manage-account-consumer_text</Text>
+		</URI>
+		<URI id="provider_coverage_map">
+			<URL>http://www.verizonwireless.com/b2c/explore/?page=why-verizon&amp;section=our-network-coverage#our-network-coverage</URL>
+			<Text>link_provider-coverage-map_text</Text>
+		</URI>
+		<URI id="provider_data_calculator">
+			<URL>http://www.verizonwireless.com/datacalculator</URL>
+			<Text>link_provider-data-calculator_text</Text>
+		</URI>
+		<URI id="provider_trip_planner">
+			<URL>http://www.verizonwireless.com/tripplanner</URL>
+			<Text>link_provider-trip-planner_text</Text>
+		</URI>
+		<URI id="provider_workshops">
+			<URL>https://vzwworkshops.verizonwireless.com/vzwworkshops/</URL>
+			<Text>link_provider-workshops_text</Text>
+		</URI>
+		<URI id="provider_forums">
+			<URL>https://community.verizonwireless.com/community/additional-devices/</URL>
+			<Text>link_provider-forums_text</Text>
+		</URI>
+		<URI id="provider_support_site_consumer">
+			<URL>https://www.verizonwireless.com/support/verizon-jetpack-mifi-8800L</URL>
+			<Text>link_provider-support-site-consumer_text</Text>
+		</URI>
+		<URI id="provider_gps_windows_driver_downloader">
+			<URL>http://production.8800.verizon.mifiupdates.com/Windows/MiFi8800Win.zip</URL>
+			<Text>link_provider-gps-windows-driver-downloader_text</Text>
+		</URI>
+		<URI id="provider_pco_verizon_link">
+			<URL>http://www.verizon.com/myverizon</URL>
+			<Text>link_provider-pco_verizon_text</Text>
+		</URI>
+	</ExternalLocations>
+	<Localization>
+		<!-- all localization settings - used in webui and deviceui -->
+		<Language>en_US</Language>
+		<!-- en_US(English-US) -->
+		<DateFormat>0</DateFormat>
+		<!-- 0(mm/dd/yyyy), 1(dd.mm.yyyy), 2(dd/mm/yyyy), 3(yyyy/mm/dd) -->
+		<TimeFormat>0</TimeFormat>
+		<!-- 0(12hr), 1(24hr) -->
+		<TemperatureUnit>0</TemperatureUnit>
+		<!-- 0(Fahrenheit), 1(Celsius) -->
+		<DistanceUnit>0</DistanceUnit>
+		<!-- 0(US), 1(Metric) -->
+		<NumericDecimalSeparator>0</NumericDecimalSeparator>
+		<!-- 0(period, 1(comma) -->
+	</Localization>
+	<Webui>
+		<SiteTitle>Jetpack MiFi 8800L</SiteTitle>
+		<!-- webui is the web browser interface to view/change user settings (e.g. http://192.168.1.1 -->
+		<Login>
+			<!-- -->
+			<WebuiPassword>9e78d247</WebuiPassword>
+			<!-- alpha-numeric string (min-length: , max-length: )-->
+			<WebuiDefaultPassword>9e78d247</WebuiDefaultPassword>
+			<MaxRetries>5</MaxRetries>
+			<!-- after this many attempts, webUI access is locked till system restart -->
+			<AutoLogOut>600</AutoLogOut>
+			<SecurityQuestion>
+				<!-- for webUI password recovery -->
+				<Question>0</Question>
+				<!-- security question-->
+				<Answer></Answer>
+				<!-- saved answer for the security question-->
+			</SecurityQuestion>
+		</Login>
+		<Applications>
+			<!-- webui application specific settings -->
+			<Logs>
+				<!-- -->
+				<Enabled>0</Enabled>
+				<!-- 1(on), 0(off)-->
+				<LogLifeTime>3</LogLifeTime>
+				<!-- number of days, allowed values 0 - 4 -->
+			</Logs>
+			<AdvancedSettings>
+				<LoginEnabled>1</LoginEnabled>
+				<GPSAppLoginEnabled>1</GPSAppLoginEnabled>
+				<NetworksAppLoginEnabled>1</NetworksAppLoginEnabled>
+			</AdvancedSettings>
+			<CustomerCare>
+				<Section id="1">
+					<Title>customer_care_links_sub_header_verizon_text</Title>
+					<Contents>
+						<Content>
+							<URL>https://wbillpay.verizonwireless.com/vzw/nos/topline.jsp</URL>
+							<Text>customer_care_manage_account_verizon_link_text</Text>
+							<Label></Label>
+							<Value></Value>
+						</Content>
+						<Content>
+							<URL>http://www.verizonwireless.com/b2c/explore/?page=why-verizon&amp;section=our-network-coverage#our-network-coverage</URL>
+							<Text>customer_care_coverage_map_verizon_link_text</Text>
+							<Label></Label>
+							<Value></Value>
+						</Content>
+						<Content>
+							<URL>http://www.verizonwireless.com/datacalculator</URL>
+							<Text>customer_care_data_calculator_verizon_link_text</Text>
+							<Label></Label>
+							<Value></Value>
+						</Content>
+						<Content>
+							<URL>http://www.verizonwireless.com/tripplanner</URL>
+							<Text>customer_care_trip_planner_verizon_link_text</Text>
+							<Label></Label>
+							<Value></Value>
+						</Content>
+					</Contents>
+				</Section>
+				<Section id="2">
+					<Title>customer_care_support_sub_header_verizon_text</Title>
+					<Contents>
+						<Content>
+							<URL>https://vzwworkshops.verizonwireless.com/vzwworkshops</URL>
+							<Text>customer_care_workshop_verizon_link_text</Text>
+							<Label></Label>
+							<Value></Value>
+						</Content>
+						<Content>
+							<URL>https://community.verizonwireless.com/community/additional-devices</URL>
+							<Text>customer_care_forum_verizon_link_text</Text>
+							<Label></Label>
+							<Value></Value>
+						</Content>
+						<Content>
+							<URL>https://www.verizonwireless.com/support/verizon-jetpack-mifi-8800L</URL>
+							<Text>customer_care_device_support_verizon_link_text</Text>
+							<Label></Label>
+							<Value></Value>
+						</Content>
+					</Contents>
+				</Section>
+				<Section id="3">
+					<Title>customer_care_numbers_sub_header_verizon_text</Title>
+					<Contents>
+						<Content>
+							<URL></URL>
+							<Text></Text>
+							<Label>customer_care_contact_verizon_label</Label>
+							<Value>1 800.922.0204</Value>
+						</Content>
+					</Contents>
+				</Section>
+			</CustomerCare>
+		</Applications>
+		<NetworkTechnologyList>
+			<NetworkTechnology>
+				<Value>18</Value>
+				<Text>
+					<TechnologyText>radio_technology_lte_text</TechnologyText>
+					<TechnologyText>radio_technology_umts_text</TechnologyText>
+				</Text>
+				<Format>
+					<Locale>en_US</Locale>
+					<Specifier>T</Specifier>
+					<!-- P-prependText, T-technologyText, A-appendText -->
+				</Format>
+				<Format>
+					<Locale>es_MX</Locale>
+					<Specifier>T</Specifier>
+					<!-- P-prependText, T-technologyText, A-appendText -->
+				</Format>
+			</NetworkTechnology>
+		</NetworkTechnologyList>
+	</Webui>
+	<Deviceui>
+		<!-- all deviceUI settings -->
+		<ShowWebuiPasswordEnabled>1</ShowWebuiPasswordEnabled>
+		<!-- 1(on), 0(off) -->
+		<ScreenTimeout>30000</ScreenTimeout>
+		<!-- time till auto screen off (unit: seconds, min-value: , max-value: ) -->
+		<ShowGuestWirelessKeyEnabled>1</ShowGuestWirelessKeyEnabled>
+		<!-- 1(on), 0(off) -->
+		<ShowGuestWirelessNameEnabled>1</ShowGuestWirelessNameEnabled>
+		<!-- 1(on), 0(off) -->
+		<ShowWirelessKeyEnabled>1</ShowWirelessKeyEnabled>
+		<!-- 1(on), 0(off) -->
+		<ShowWirelessNameEnabled>1</ShowWirelessNameEnabled>
+		<!-- 1(on), 0(off) -->
+		<ShowDisplaySettingsEnabled>1</ShowDisplaySettingsEnabled>
+		<!-- 1(on), 0(off) -->
+		<ShowQuickstartEnabled>1</ShowQuickstartEnabled>
+		<!-- 1(on), 0(off) -->
+		<ShowUSBConnectionPromptEnabled>1</ShowUSBConnectionPromptEnabled>
+		<!-- 1(on), 0(off) -->
+		<ShowFileSharingDisplaySettingsEnabled>1</ShowFileSharingDisplaySettingsEnabled>
+		<!-- 1(on), 0(off) -->
+		<ShowWifiDisplaySettingsEnabled>1</ShowWifiDisplaySettingsEnabled>
+		<!-- 1(on), 0(off) -->
+		<ShowNotificationDisplayWakeup>1</ShowNotificationDisplayWakeup><!-- wakeup screen on alert 1(on), 0(off) -->
+	</Deviceui>
+	<BatteryPack>
+		<!-- for devices that support charging external devices -->
+		<Enabled>1</Enabled>
+		<!-- 1(on), 0(off) -->
+		<LowBatteryThreshold>25</LowBatteryThreshold>
+		<!-- stops providing charge once own battery is down to this percentage (min-value: 10, max-value: 50)-->
+	</BatteryPack>
+	<SubSys>
+		<Setting1>1</Setting1>
+		<Setting2>testtext</Setting2>
+	</SubSys>
+	<ANS>
+		<StealthModeEnabled>0</StealthModeEnabled>
+		<AudioAlertsEnabled>1</AudioAlertsEnabled>
+		<Notifications>
+			<Notification id="startup">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces></DisplaySurfaces>
+				<WakeDisplayEnabled>0</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="shutdown">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces></DisplaySurfaces>
+				<WakeDisplayEnabled>0</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="battery10">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="batteryCritical">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="batteryCharging">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="batteryFull">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="lowCharger">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="simNone">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="simError">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="simPINLocked">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>browser</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="simPUKLocked">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>browser</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="simNonVZW">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="PCO2">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>browser</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="PCO3">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>browser</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="PCO5">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>browser</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="mnsAuto">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="switchToGlobalMode">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="noService">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="roaming">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="deviceJoinWiFi">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="wifiDisabled">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="smsReceived">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="wdcpDone">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="ucOK">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="ucLowBattery">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="ucTerminated">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="usbModePrompt">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="usbMassStorage">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="usbMassStorageFailure">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="softwareUpdate">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="softwareUpdateSuccess">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="softwareUpdateFailure">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="systemUpdateSuccess">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="systemUpdateFailure">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="systemDiagnostics">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>0</AudioAlertEnabled>
+				<DisplaySurfaces>lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="highTemp">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+			<Notification id="autoVpnFailure">
+				<Enabled>1</Enabled>
+				<AudioAlertEnabled>1</AudioAlertEnabled>
+				<DisplaySurfaces>browser lcd</DisplaySurfaces>
+				<WakeDisplayEnabled>1</WakeDisplayEnabled>
+			</Notification>
+		</Notifications>
+	</ANS>
+	<DMDB>
+		<MacFilter>
+			<Enabled>1</Enabled>
+			<!-- 1(on), 0(off) -->
+			<Type>2</Type>
+			<!-- 1(white list), 2(black list), 3(both) -->
+		</MacFilter>
+		<SiteAccessMonitorEnabled>0</SiteAccessMonitorEnabled>
+		<!-- 1(enabled), 0(disabled) -->
+		<Devices>
+		</Devices>
+	</DMDB>
+	<FileSharing>
+		<Enabled>1</Enabled>
+		<!-- 1(on), 0(off) -->
+		<SambaHostName>JetpackMiFi8800</SambaHostName>
+		<!-- USB Hostname for network access -->
+		<ShareOption>1</ShareOption>
+		<!-- 1(all), 0(selected) -->
+		<ShareAllType>1</ShareAllType>
+		<!-- share type RO(0) or RW(1) -->
+		<ShareFoldersList>
+			<Entry>
+				<FolderName>Public</FolderName>
+				<!-- Name of the folder to be shared -->
+				<ShareType>1</ShareType>
+				<!-- share type RO(0) or RW(1) -->
+			</Entry>
+			<Entry>
+				<FolderName>Shared</FolderName>
+				<!-- Name of the folder to be shared -->
+				<ShareType>1</ShareType>
+				<!-- share type RO(0) or RW(1) -->
+			</Entry>
+		</ShareFoldersList>
+	</FileSharing>
+	<FactoryReset>
+		<HardwareResetEnabled>1</HardwareResetEnabled>
+		<!-- 1 consider HW reset switch 0 ignore HW reset switch -->
+	</FactoryReset>
+	<LED>
+		<Enabled>1</Enabled>
+		<!-- 1(on), 0(off) -->
+	</LED>
+	<VPN>
+		<AutoConnect>0</AutoConnect>
+		<!-- 1(on), 0(off) -->
+		<TunnelType>0</TunnelType>
+		<!-- 0(None), 1(PPTP), 2(OpenVPN), 3(L2TP over IPSec), 4(IPSec), 5(OpenVPN with config files) -->
+		<Retries>0</Retries>
+		<OpenVPN>
+			<ConfigFileName></ConfigFileName>
+			<!-- This value is set only when OpenVPN with config file is selected -->
+			<URL></URL>
+			<!-- VPN server URL/IP address -->
+			<Username></Username>
+			<Password></Password>
+			<Protocol>1</Protocol>
+			<!-- 0-TCP, 1-UDP -->
+			<Port>1194</Port>
+			<!-- Server Default Port number is 1194 -->
+			<RootCA></RootCA>
+			<ClientCertificate></ClientCertificate>
+			<ClientKey></ClientKey>
+			<TLSAuthentication></TLSAuthentication>
+			<Encryption></Encryption>
+			<AuthenticationAlgorithm>0</AuthenticationAlgorithm>
+			<Compression>1</Compression>
+			<!-- 1-LZO compression to use, 0-LZO compression not to use -->
+		</OpenVPN>
+		<PPTP>
+			<URL></URL>
+			<!-- VPN server URL/IP address -->
+			<Username></Username>
+			<Password></Password>
+			<AuthenticationType></AuthenticationType>
+			<!-- 0-PAP, 1-CHAP -->
+		</PPTP>
+		<L2TP>
+			<URL></URL>
+			<!-- VPN server URL/IP address -->
+			<Username></Username>
+			<Password></Password>
+			<PreSharedKey></PreSharedKey>
+		</L2TP>
+	</VPN>
+	<USB>
+		<TetherEnabled>0</TetherEnabled>
+		<!-- 1(on), 0(off) -->
+	</USB>
+</Settings>

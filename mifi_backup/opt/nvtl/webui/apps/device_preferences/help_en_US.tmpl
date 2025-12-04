@@ -1,0 +1,57 @@
+<div id="device_preferences">
+	<h1><tmpl_var _("webui", "preferences_device_preference_sub_header_text")></h1>
+	<p>This screen contains many options which allow you to set the behaviour of the <tmpl_var _("webui", "webui_product_name")> to better meet your needs.
+	</p>
+
+	<h2><tmpl_udf  GET_PO_TEXT("preferences_display_settings_toggle_label", gProductName)></h2>
+	<p>Turn on to allow some settings changes to be made from the <tmpl_var _("webui", "webui_product_name")> screen. (Advanced settings are only available on the Admin website.)</p>
+
+	<h2><tmpl_udf  GET_PO_TEXT("preferences_hardware_reset_toggle_label", gProductName)></h2>	
+	<p>Turn on to allow the <tmpl_var _("webui", "webui_product_name")> to be factory reset using the touchscreen or the button under the battery cover.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_usb_mode_label"), (size(_("webui", "preferences_usb_mode_label")) - size(":")))></h3>
+	<p>This settings determines the connection type when a computer is connected to the <tmpl_var _("webui", "webui_product_name_with_suffix")> USB C port. Select the desired option.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_usb_connection_prompt_label"), (size(_("webui", "preferences_usb_connection_prompt_label")) - size(":")))></h3>
+	<p>If checked, then you will be prompted (on the <tmpl_var _("webui", "webui_product_name")>'s screen) to select the desired USB mode when a USB connection to a computer is detected. Making a selection on this prompt does not change the setting above, but only sets the mode for the current USB session.
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_turnoff_diplay_label"), (size(_("webui", "preferences_turnoff_diplay_label")) - size(":")))></h3>
+	<p>This setting determines how quickly the <tmpl_var _("webui", "webui_product_name_with_suffix")> screen will turn off, after a period of inactivity. 
+	Select the desired option.
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_deep_sleep_label"), (size(_("webui", "preferences_deep_sleep_label")) - size(":")))></h3>
+	<p>The <tmpl_var _("webui", "webui_product_name")> will enter sleep mode after a period of inactivity. 
+	Select the desired time period to enter sleep mode.
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_auto_shutdown_label"), (size(_("webui", "preferences_auto_shutdown_label")) - size(":")))></h3>
+	<p>The <tmpl_var _("webui", "webui_product_name")> can shutdown after a period of inactivity. 
+	Select the desired time period to trigger a shutdown.
+	</p>
+	
+	<h2><tmpl_var _("webui", "preferences_universal_charging_sub_header_text")></h2>
+	<p>This feature allows you to charge devices such as your phone or Bluetooth headset from the <tmpl_var _("webui", "webui_product_name_with_suffix")> battery.
+	 Simply connect your device's USB cable to the <tmpl_var _("webui", "webui_product_name_with_suffix")> USB C port.
+	</p>
+
+	<h3><tmpl_udf truncate(GET_PO_TEXT("preferences_universal_charging_label", gProductName), (size(GET_PO_TEXT("preferences_universal_charging_label", gProductName)) - size(":")))></h3>
+	<p>When the <tmpl_var _("webui", "webui_product_name_with_suffix")> battery is too low, charging other devices is not possible. 
+	Use this setting to specify the battery level for "too low".
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_universal_charging_status_label"), (size(_("webui", "preferences_universal_charging_status_label")) - size(":")))></h3>
+	<p>This field displays the current status of the Universal Charging feature. Possible status values are:
+	</p>
+	<div class="blockgroup">
+	<blockquote>
+	<ul>
+	   <li><tmpl_var _("preferences_universal_charging_status_charging_text")> - an external devices is being charged from the <tmpl_var _("webui", "webui_product_name_with_suffix")> battery.</li>
+	   <li><tmpl_var _("preferences_universal_charging_status_available_text")> - if an external device is connected to the <tmpl_var _("webui", "webui_product_name_with_suffix")> USB C port, it will be charged.
+	   </li>
+	   <li><tmpl_var _("preferences_universal_charging_status_not_available_text")> - the <tmpl_var _("webui", "webui_product_name_with_suffix")> battery is too low to charge other devices. </li>
+	</ul>
+	</blockquote>
+	</div>
+</div>

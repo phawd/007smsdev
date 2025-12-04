@@ -1,0 +1,28 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+	<h2>Vue d'ensemble</h2>
+		<p>Un pare-feu protège vos appareils connectés du trafic malveillant en provenance d'Internet. Le pare-feu ne peut pas être désactivé, mais les réglages suivants sont disponibles. </p>
+			
+	<h2>Réglages</h2>
+			
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+		<p>Cette fonctionnalité permet à un logiciel client de RPV sur les appareils connectés de se connecter par cet appareil à des serveurs de RPV à distance. Normalement, cette option devrait rester activée. </p>
+
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+			<p>Normalement, le pare-feu bloquera les demandes de connexion IPv6 entrantes destinées à un appareil connecté IPv6. </p>
+			<p> Si vous souhaitez que ces demandes de connexion entrantes parviennent à l'appareil connecté destinataire, activez ce réglage. Le Mode Transparent ne doit être activé que si nécessaire, car il diminue la protection fournie par le pare-feu MiFi. </p>
+	</tmpl_if>
+			
+	<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+	<p> Si cette option est cochée, l'appareil connecté désigné comme adresse IP DMZ (destination DMZ) recevra tout le trafic qui aurait dû être bloqué par le pare-feu. Cela peut permettre à certaines applications réseau problématiques de fonctionner correctement, mais l'appareil DMZ doit posséder son propre pare-feu pour se protéger contre le trafic malveillant. </p>
+	<h3>Case DMZ</h3>
+				
+		<p>Utilisez-la pour activer/désactiver cette fonctionnalité selon le besoin. En général, le DMZ doit être désactivé à moins que cela ne soit réellement nécessaire. </p>
+	<h3>Adresse IP DMZ</h3>
+		<p>Saisissez l'adresse IP de l'appareil connecté qui doit devenir l'appareil DMZ (destination DMZ) dans ce champ. Vous pouvez vérifier l'adresse IP de chaque appareil connecté sur l'écran des appareils connectés. </p>
+			
+</div>
+<!-- id="firewall" -->
+

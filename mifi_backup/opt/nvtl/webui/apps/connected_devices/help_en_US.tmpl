@@ -1,0 +1,65 @@
+<!-- Connected Devices -->
+<div id="connected_devices">
+	<h1><tmpl_var _("webui", "connected_devices_menu_text")></h1>
+	<h2>Overview</h2>
+	<p>This page displays details of each device connected to the <tmpl_var _("webui", "webui_product_name")>, and also lists any blocked devices.
+	</p>
+
+	<h2><tmpl_var _("webui", "connected_devices_sub_header_text")></h2>
+	<p>This table lists all devices connected to the <tmpl_var _("webui", "webui_product_name")>. Tap the V to see more information about the device.
+	</p>
+	<p>
+		The following information is displayed for each connected device:
+	</p>
+
+	<h3>Connection Type</h3>
+	<p>An icon indicates the connection type for each connected device.
+	</p>
+
+	<h3>Name</h3>
+	<p>Normally, this is the hostname of the connected device, as set on the connected device itself.
+	    In rare cases, the hostname may be unavailable.
+		If you have used the Edit option to change the name of a connected device, the name you provided is displayed in place of the hostname.
+	</p>
+	<p>You can use the Edit option to change the name of any connected device.
+	</p>
+
+	<h3>IP Address</h3>
+	<p>
+		The IP address of the connected device.
+	</p>
+	<h3><tmpl_var truncate(_("webui", "connected_devices_mac_address_label"), (size(_("webui", "connected_devices_mac_address_label")) - size(":")))></h3>
+	<p>
+		The MAC address is a unique network identifier for this connected device.
+	</p>
+
+	<tmpl_if isIPv6Supported>
+	<h3><tmpl_var truncate(_("webui", "connected_devices_link_local_label"), (size(_("webui", "connected_devices_link_local_label")) - size(":")))>
+	</h3>
+	<p>If the connected device supports IPv6, the Link-Local IPv6 address is displayed. </p>
+	</tmpl_if>
+	
+	<h2>Blocking and Unblocking Devices</h2>
+	<h3>Block Button</h3>
+	<p>
+	Clicking the Block button disconnects the connected device and prevents it from reconnecting. The blocked device then appears in the Blocked List. 
+	</p>
+	<p>Blocked devices are blocked from both the guest and primary network.
+	</p>
+	<p>
+	This option is available for use with each connected device, with the exception of your own device, and any device connected via USB.
+	</p>
+	
+	<h3>Blocked List</h3>
+	<p>
+		This lists any devices you have blocked. Note that since these devices are not currently connected and are blocked from connecting, they do not have an IP address.
+		Instead, they are identified by their name and MAC address.
+
+	</p>
+	<h3>Unblock Button</h3>
+	<p>
+		Clicking the Unblock button unblocks a previously blocked device, freeing it to connect again. The unblocked device is deleted from the Blocked List, and will reappear in the Connected Devices list when it connects.
+	</p>
+</div>
+<!-- id="connected_devices" -->
+

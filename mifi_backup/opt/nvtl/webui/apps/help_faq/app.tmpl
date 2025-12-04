@@ -1,0 +1,65 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+	</div>
+<tmpl_else>
+
+<tmpl_if isLocked>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+	</div>
+</tmpl_if>
+
+	<fieldset class="first">
+		<!-- FAQ 1 -->
+		<h3 class="sectionHead">  <tmpl_udf GET_PO_TEXT("help_your_jetpack_sub_header_text", gProductName)>  </h3>
+		<ul>
+			<li> <a href="<tmpl_udf GET_URI('help_faq_help')>#overview" class="helpAnchor"> <tmpl_var _("webui", "help_jetpack_overview_link")> </a>  </li>
+			<li> <a href="<tmpl_udf GET_URI('help_faq_help')>#setup" class="helpAnchor"><tmpl_var _("webui", "help_Setup_link")> </a> </li>
+			<li><a href="<tmpl_udf GET_URI('help_faq_help')>#tips" class="helpAnchor"> <tmpl_var _("webui", "help_Tips_link")> </a> </li>
+			<li> <a href="<tmpl_udf GET_URI('help_faq_help')>#security" class="helpAnchor"><tmpl_udf GET_PO_TEXT("help_Security_features_link", gProductName)> </a> </li>
+		</ul>	
+	</fieldset>
+	<fieldset>
+		<div class="col-md-6">   
+			<h3 class="sectionHead">  <tmpl_udf GET_PO_TEXT("help_admin_jetpack_sub_header_text", gProductName)>  </h3>
+		<ul>
+				<!--<li> <a href="<tmpl_udf GET_URI('')>" class="helpAnchor"> <tmpl_var _("webui", "help_jetpack_overview_link")> </a> </li> -->
+				<li> <a href="<tmpl_udf GET_URI('data_usage_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_datausage_help_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('connected_devices_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_connected_help_link")>  </a></li>
+				<li> <a href="<tmpl_udf GET_URI('wifi_advanced_settings_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_wifi_advanced_help_link")> </a> </li>	
+				<li> <a href="<tmpl_udf GET_URI('wifi_primary_settings_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_wifi_primary_help_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('wifi_guest_settings_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_wifi_guest_help_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('set_passcode_help')>" class="helpAnchor"> <tmpl_udf GET_PO_TEXT("help_admin_password_help_link", gProductName)> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('device_preferences_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_device_preference_help_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('notification_preferences_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_notification_preference_help_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('user_preferences_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_user_preference_help_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('software_update_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_software_update_help_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('backup_restore_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_backup_restore_help_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('gps_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_gps_help_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('sms_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_messages_help_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('file_sharing_help')>" class="helpAnchor"><tmpl_var _("webui", "help_mifi_share_link")> </a> </li>	
+				<li> <a href="<tmpl_udf GET_URI('status_current_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_internetstatus_help_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('device_info_help')>" class="helpAnchor"> <tmpl_udf GET_PO_TEXT("help_jetpack_info_help_link", gProductName)> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('status_diagnostics_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_diagnostic_help_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('status_logs_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_log_help_link")> </a> </li>
+			</ul>	
+		</div>
+	<div class="col-md-6">     
+		<h3 class="sectionHead">  <tmpl_var _("webui", "help_advanced_sub_header_text")>  </h3>
+		<ul>
+				<!--<li> <a href="<tmpl_udf GET_URI('')>" class="helpAnchor"> <tmpl_var _("webui", "help_jetpack_overview_link")> </a> </li>-->
+				<li> <a href="<tmpl_udf GET_URI('wwan_settings_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_network_features_link")> </a> </li>  
+				<li> <a href="<tmpl_udf GET_URI('mns_help')>" class="helpAnchor"> <tmpl_var _("webui", "help_manual_features_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('manual_dns_help')>" class="helpAnchor"><tmpl_var _("webui", "help_manual_dns_features_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('sim_help')>" class="helpAnchor"><tmpl_var _("webui", "help_sim_features_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('firewall_help')>" class="helpAnchor"><tmpl_var _("webui", "help_firewall_features_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('macfilter_help')>" class="helpAnchor"><tmpl_var _("webui", "help_mac_filter_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('lan_help')>" class="helpAnchor"><tmpl_var _("webui", "help_lan_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('port_filtering_help')>" class="helpAnchor"><tmpl_var _("webui", "help_port_filtering_features_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('port_forward_help')>" class="helpAnchor"><tmpl_var _("webui", "help_port_forwarding_link")> </a> </li>
+				<li> <a href="<tmpl_udf GET_URI('vpn_help')>" class="helpAnchor"><tmpl_var _("webui", "help_vpn_link")> </a> </li>
+			</ul>	
+	 </div>
+	</fieldset>
+</tmpl_if>

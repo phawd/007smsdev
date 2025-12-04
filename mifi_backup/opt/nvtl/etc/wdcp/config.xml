@@ -1,0 +1,23 @@
+<Config>
+	<!-- Number of times to retry after a failed check-in attempt-->
+	<CheckInFailedRetries>2</CheckInFailedRetries>
+	<!-- Interval between failed check-in retries-->
+	<CheckInRetryInterval>300</CheckInRetryInterval>
+	<!-- Indicates if a check-in is to be attempted-->
+	<CheckInInterval>24</CheckInInterval><!-- In Hours -->
+	<!-- base key for decrypting for command 101-->
+	<BaseEncryptionKey>5F34CBAD-A244-470B-BC49-B9A27A6A03EF</BaseEncryptionKey>
+	<!--RequestTimeout - timeout in seconds to keep the request up , 0 to mean no timeout -->
+	<RequestTimeout>15</RequestTimeout>
+	<RequestTemplate>request.txt</RequestTemplate>
+	<requestDataUsageTemplate>request_data_usage.txt</requestDataUsageTemplate>
+	<CheckInTemplate>checkin.txt</CheckInTemplate>
+	<ReceiptTemplate>devconfig_receipt.txt</ReceiptTemplate>
+	<!-- DataUsageResponseWaitTime is derived from data usage agent config -->
+	<!-- RequestTimeout*RequestRetries -->
+	<DataUsageResponseWaitTime>15</DataUsageResponseWaitTime>
+	<!-- When WDCP command SMS value is 104, get key and check-in url from portal by sending a request -->
+	<SMS104CheckInTemplate>sms_104_checkin.txt</SMS104CheckInTemplate>
+	<!-- Data Call Type is 0 means connect through APP's APN and 1 means connect through INTERNET APN. -->
+	<DataCallType>0</DataCallType>
+</Config>

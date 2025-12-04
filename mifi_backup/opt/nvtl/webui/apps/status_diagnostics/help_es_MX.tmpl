@@ -1,0 +1,186 @@
+<!-- Diagnostics -->
+<div id="status_diagnostics">
+	<h1><tmpl_var _("webui", "status_diagnostics_menu_text")></h1>
+	<h2>Descripción</h2>
+	<p>Esta página contiene información acerca del <tmpl_var _("webui", "webui_product_name")> y de las redes disponibles. Úsela según sea necesario para la resolución de problemas. </p>
+	<h2><tmpl_var _("webui", "status_diagnostics_modem_sub_header_text")></h2>
+
+	<h3><tmpl_var truncate(_("webui", "status_diagnostics_phone_number_label"), (size(_("webui", "status_diagnostics_phone_number_label")) - size(":")))></h3>
+	<p>Este es el número móvil del <tmpl_var _("webui", "webui_product_name")>.</p>
+
+	<h3><tmpl_var truncate(_("webui", "status_diagnostics_imei_label"), (size(_("webui", "status_diagnostics_imei_label")) - size(":")))></h3>
+	<p>Esta es la identificación internacional de equipos móviles (IMEI, por sus siglas en inglés) para este dispositivo. La IMEI es un código de 15 o 17 dígitos que se utiliza para identificar de forma única una estación móvil individual en una red LTE. La IMEI no cambia cuando se cambia la tarjeta SIM. </p>
+	<tmpl_if showImeisv>
+			
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imeisv_label"), (size(_("webui", "status_diagnostics_imeisv_label")) - size(":")))></h3>
+		<p>Este campo combina el IMEI con un número de aprobación para este tipo de dispositivo. </p>
+			
+	</tmpl_if>
+
+	<tmpl_if showMeid>
+	
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_meid_label"), (size(_("webui", "status_diagnostics_meid_label")) - size(":")))></h3>
+		<p>El MEID (Mobile Equipment ID, ID de equipo móvil) es un número único usado para identificar una estación móvil individual en una red de CDMA. </p>
+
+	</tmpl_if>
+						
+	<h3><tmpl_var truncate(_("webui", "status_diagnostics_fw_version_label"), (size(_("webui", "status_diagnostics_fw_version_label")) - size(":")))></h3>
+		<p>La versión del firmware (software) instalado actualmente en el módem. </p>
+	<h3><tmpl_var truncate(_("webui", "status_diagnostics_sim_status_label"), (size(_("webui", "status_diagnostics_sim_status_label")) - size(":")))></h3>
+		<p>Indica el estado de la tarjeta SIM. Si falta la tarjeta SIM, o este campo indica alguna forma de error de la tarjeta SIM, no es posible la conexión a la red móvil. </p>
+	<h3><tmpl_var truncate(_("webui", "status_diagnostics_iccid_label"), (size(_("webui", "status_diagnostics_iccid_label")) - size(":")))>
+</h3>
+		<p>Este número único de ID se asigna a la tarjeta SIM. No aparece si no hay una tarjeta SIM instalada o si existe una condición de error de la tarjeta SIM. </p>
+
+	<tmpl_if showModemDetails>
+		<tmpl_if showMINMSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_msid_label"), (size(_("webui", "status_diagnostics_msid_label")) - size(":")))></h3>
+			<p>Esta ID se usa para identificar a un suscriptor en la red de datos móviles.</p>
+		</tmpl_if>
+		<tmpl_if showESN>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_esn_label"), (size(_("webui", "status_diagnostics_esn_label")) - size(":")))></h3>
+			<p>El Número de serie Electrónico (Electronic Serial Number, ESN) es el método tradicional para identificar dispositivos en redes CDMA de manera única, pero ha sido reemplazado por el MEID. En el caso de los dispositivos que usan un MEID (como este dispositivo), el ESN está en blanco o es un pseudo-ESN que no tiene la garantía de ser único.</p>
+ 		</tmpl_if>
+		<tmpl_if showHomeSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_home_sid_label"), (size(_("webui", "status_diagnostics_home_sid_label")) - size(":")))></h3>
+			<p>El SID (System ID, ID del sistema) es un identificador de red que indica el punto de conexión a la red de datos móviles.</p>
+		</tmpl_if>
+		<tmpl_if showERIVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_eri_version_label"), (size(_("webui", "status_diagnostics_eri_version_label")) - size(":")))></h3>
+			<p>La tabla del Indicador de Itinerancia Optimizado (ERI) contiene información acerca de cada red de itinerancia a la cual se puede conectar el dispositivo móvil. Este campo indica la versión de ERI actualmente instalada. La tabla de ERI se actualiza automáticamente.</p>
+		</tmpl_if>
+ 		<tmpl_if showPRLVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_prl_version_label"), (size(_("webui", "status_diagnostics_prl_version_label")) - size(":")))></h3>
+			<p>La Lista de Itinerancia Preferida (PRL) se usa para seleccionar una red cuando hay varias redes disponibles. Este campo indica la versión de PRL actualmente instalada. La PRL se actualiza automáticamente. </p>			
+		</tmpl_if>
+	</tmpl_if>
+	<tmpl_if lteSupported>			
+		<h2><tmpl_var _("webui", "status_diagnostics_fourg_lte_sub_header_text")></h2>
+			
+		<h3>Estado</h3>
+		<p>Para la red LTE, los posibles valores de estado son: </p>
+		<div class="blockgroup">
+			<ul>
+				<li>Apagado: la red LTE se ha deshabilitado. Verifique su conexión de datos móviles en <b><tmpl_udf GET_PO_TEXT("settings_group_menu_text", gProductName)> &gt; Avanzado &gt; Redes</b> página.</li>
+				<li>No disponible: no se ha detectado una red LTE.</li>
+				<li>Disponible: se ha detectado una red LTE.</li>
+				<li>Conectado: se ha detectado y conectado una red LTE.</li>
+			</ul>
+		</div>
+		<p> Los siguientes datos solo se proporcionan si la red LTE está disponible. </p>
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>Es el nombre de la red LTE. </p>
+		</tmpl_if>
+			
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_signal_strength_label"), (size(_("webui", "status_diagnostics_fourg_signal_strength_label")) - size(":")))></h3>
+		<p>Indica la intensidad de la señal LTE, medida en dBm. Los valores absolutos más elevados indican una señal más fuerte, por lo que -80 dBm es una señal más fuerte que -90 dBm. Observe que la intensidad de la señal LTE es típicamente inferior que la intensidad de la señal 3G. </p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_sinr_label"), (size(_("webui", "status_diagnostics_sinr_label")) - size(":")))></h3>
+		<p>La relación entre señal y ruido (SNR, por sus siglas en inglés) es una medida de calidad de la señal. Los números más altos indican una mejor señal. </p>
+		<tmpl_if showLteBand>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_lte_band_label"), (size(_("webui", "status_diagnostics_lte_band_label")) - size(":")))></h3>
+			<p>Las redes LTE pueden usar diferentes bandas en diferentes regiones. Este campo indica la banda usada para la conexión LTE actual. </p>
+		</tmpl_if>
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_roaming_label"), (size(_("webui", "status_diagnostics_fourg_roaming_label")) - size(":")))></h3>
+			<p>Indica si la conexión actual es una conexión de itinerancia. </p>
+		</tmpl_if>
+	</tmpl_if>
+		
+	<tmpl_if isHSPATechnology>	
+		<h2><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> Estado</h2>
+			
+		<h3>Estado</h3>
+		<p> Para la red <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>, se admiten los siguientes estados: </p>
+		<div class="blockgroup">
+			<ul>
+				<li>No disponible: no se ha detectado una red <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>.</li>
+				<li>Disponible: se ha detectado una red <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>.</li>
+			</ul>
+		</div>
+		<p> Los elementos de datos siguientes solo se proveen si la red está disponible. </p>
+
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p> Es el nombre de la red <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>. </p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p> La tecnología actual en uso para la red <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>. Los posibles valores, desde el más lento hasta el más rápido, son: </p>
+			<ul>
+				<tmpl_if gsmSupported>
+					<li>GPRS</li>
+				</tmpl_if>
+				<tmpl_if wcdmaSupported>
+					<li>UMTS</li>
+				</tmpl_if>
+				<tmpl_if cdmaSupported>
+					<li>HSPA+</li>
+					<li>HSPA+ DC</li>
+				</tmpl_if>
+				<tmpl_if evdoSupported>
+					<li>EDGE</li>
+					<li>HSDPA</li>
+					<li>HSUPA</li>
+				</tmpl_if>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_networkid_label"), (size(_("webui", "status_diagnostics_networkid_label")) - size(":")))></h3>
+			<p> El nombre y/o ID de la Red Móvil Terrestre Pública (Public Land Mobile Network, PLMN). </p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_cellid_label"), (size(_("webui", "status_diagnostics_cellid_label")) - size(":")))></h3>
+			<p> Este valor identifica la torre de telefonía celular actualmente en uso. </p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_rssi_label"), (size(_("webui", "status_diagnostics_rssi_label")) - size(":")))></h3>
+			<p> Este indica el RSSI para la señal <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>. RSSI es una medida de la fuerza de la señal en decibeles, relativa a un milivatio. Siempre es negativa debido a que los dispositivos móviles de radio son mucho menos potentes que un milivatio. Los valores absolutos más elevados indican una señal más fuerte, por lo que -50 dBm es una señal más fuerte que -70 dBm. </p>
+
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_roaming_label"), (size(_("webui", "status_diagnostics_roaming_label")) - size(":")))></h3>
+			<p> Indica si la conexión actual es una conexión de itinerancia. </p>
+
+		</tmpl_if>
+		<tmpl_if show3g>
+			<h2><tmpl_var _("webui", "status_diagnostics_threeg_label")></h2>
+			
+			<h3>Estado</h3>
+			<p>Los valores de estado posibles son: </p>
+			<div class="blockgroup">
+				<ul>
+					<li>No disponible: no se ha detectado una red 3G.</li>
+					<li>Disponible: se ha detectado una red 3G.</li>
+				</ul>
+			</div>
+			<p> Los elementos de datos siguientes solo se proveen si la red está disponible. </p>
+			<tmpl_if showNetworkOperator>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_network_label"), (size(_("webui", "status_diagnostics_threeg_network_label")) - size(":")))></h3>
+				<p>Es el nombre de la red 3G. </p>
+			</tmpl_if>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_onex_label"), (size(_("webui", "status_diagnostics_threeg_onex_label")) - size(":")))></h3>
+			<p>RSSI es una medida de intensidad de la señal. La unidad es decibeles, en relación con 1 milivatio, y siempre es negativa porque los dispositivos de radio móviles son mucho menos potentes que 1 milivatio. Los valores absolutos más elevados indican una señal más fuerte, por lo que -50 dBm es una señal más fuerte que -70 dBm. Este campo indica el RSSI de la señal 1xRTT. </p>
+			<tmpl_if show3gEvdoRssi>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_evdo_label"), (size(_("webui", "status_diagnostics_threeg_evdo_label")) - size(":")))></h3>
+				<p>RSSI es una medida de intensidad de la señal. Este campo indica el RSSI para la señal EVDO o eHRPD. </p>
+ 			</tmpl_if>
+			<tmpl_if show3gTechnology>
+ 				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+				<p>La tecnología actual en uso para la red 3G. Posibles valores son 1xRTT, EVDO o eHRPD. </p>
+ 			</tmpl_if>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_ecio_label"), (size(_("webui", "status_diagnostics_threeg_ecio_label")) - size(":")))></h3>
+			<p>Ec/Io es una medida de la "limpieza" de la señal, y es un tipo de relación señal-ruido. Los valores típicos van de -10 a -40. Un valor de -4 sería una señal muy "limpia".</p>
+ 
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_sid_label"), (size(_("webui", "status_diagnostics_threeg_sid_label")) - size(":")))></h3>
+			<p>La SID (ID del sistema) es un identificador de red que indica el punto de conexión actual con la red de datos móviles. Un grupo de torres de telefonía celular puede tener el mismo valor de SID. Este campo indica la SID actual. </p>		
+			<tmpl_if showRoaming>
+				<h3>Itinerancia</h3>
+				<p> Indica si la conexión actual es una conexión de itinerancia. </p>			
+			</tmpl_if>
+			<tmpl_if linkToFieldTest>	
+				<h2><tmpl_var _("webui", "status_diagnostics_field_test_button")></h2>
+				<p>El botón "Prueba de campo" proporciona una lista de parámetros de red de nivel bajo que puede ser útiles para el personal de asistencia técnica cuando debe resolver problemas de conectividad de red. </p>
+				
+				<p>Este botón solo está disponible si la red 3G está disponible. </p>
+			</tmpl_if>
+		</tmpl_if>
+	</tmpl_if>
+			
+</div>
+<!-- id="status_diagnostics" -->
+		

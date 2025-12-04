@@ -1,0 +1,80 @@
+<!-- mass_storage -->
+<div id="mass_storage">
+	<h1><tmpl_var _("webui","file_sharing_menu_text")></h1>
+	<h2>Overview</h2>
+	<p>
+	You can share files with devices connected to your <tmpl_var _("webui", "webui_product_name_with_suffix")> Wi-Fi network when you connect a USB mass storage device (USB stick) to your <tmpl_var _("webui", "webui_product_name_with_suffix")> USB C port.
+	</p>
+	<p>
+	To view the shared content from your computer, browse or search the network for “JetpackMiFi8800”. Any shared folder will be listed under this network device.
+	</p>
+	<p>Note: If you change the Share Name (see below), search for that name.</p>
+	
+	<h2>Turning MiFi Share On and Off and Sharing Files</h2>
+	<p>
+		MiFi share can only be turned on and off from the Admin website. Go to the MiFi Share page and tap the MiFi Share switch. 
+	</p>
+	<p>
+	When MiFi is on and a USB stick is connected to the <tmpl_var _("webui", "webui_product_name")>, the USB Mass Storage Device screen will be shown on the <tmpl_var _("webui", "webui_product_name")>. Tap Share to give connected devices access to the USB stick’s content.
+	</p>
+
+	<h2><tmpl_udf GET_PO_TEXT("file_sharing_display_toggle_label", gProductName)></h2>
+	<p>
+	This setting can be used to hide the MiFi Share feature from <tmpl_var _("webui", "webui_product_name")> users who have access to the <tmpl_var _("webui", "webui_product_name_with_suffix")> touchscreen but not to this Web interface.
+	</p>
+
+	<div class="blockgroup">
+		<ul>
+			<li>
+			If on, the MiFi Share application is listed in the main menu on the <tmpl_var _("webui", "webui_product_name_with_suffix")> touchscreen, and is also explained in the help application in the display UI.
+			</li>
+
+			<li>
+			If off, both the MiFi Share application and the help content relating to this application are hidden in the <tmpl_var _("webui", "webui_product_name_with_suffix")> touchscreen menu.
+			</li>
+		</ul>
+	</div>
+
+	<h2><tmpl_var _("webui","file_sharing_setting_sub_header_text")></h2>
+	<p>
+	These settings can be changed at any time and will be applied the next time the MiFi Share feature is used. 
+	</p>
+
+	<h3>Share Name</h3>
+	<p>
+	The Share name is the name of the USB Mass Storage device. Look for this name when searching for the shared content from a connected device.
+	</p>
+
+	<h3>Share</h3>
+	<p>To give connected devices access to everything on the USB stick, choose “All folders and files”.</p> 
+
+	<p>To limit what shared devices can access, choose “Specified top-level folders”. Then enter the names of the folders to be shared in the field.  (The default folder named Public and Shared are already listed. Those can be deleted.)
+	</p>
+
+	<h3>Connected devices can</h3>
+	<p>
+	Select the desired option for <tmpl_var _("webui","file_sharing_share_access_type_read_only_text")> or <tmpl_var _("webui","file_sharing_share_access_type_read_write_text")> access to the shared folders.
+	</p>
+	<p>
+	If the USB mass storage device is using the NTFS or HFS+ file systems, then access will be <tmpl_var _("webui","file_sharing_share_access_type_read_only_text")> regardless of this setting.
+	</p>
+	<tmpl_if SwapToggleButtonAction>
+		<h3>Share with primary network</h3>
+		<p>
+		When checked, the USB Mass Storage device is visible and it's content is available to all connected devices on the primary network. 
+		</p>
+		<h3>Share with guest network</h3>
+		<p>
+		When checked, the USB Mass Storage device is visible and it's content is available to all connected devices on the guest network.
+		</p>
+	<tmpl_else>
+		<h3>Network Access</h3>
+		<p>
+		Use these checkboxes to determine if users on the Primary or Guest Wi-Fi networks have access to the shared folders. 
+		</p>
+	</tmpl_if>
+
+	
+</div>
+
+<!-- id="mass_storage" -->

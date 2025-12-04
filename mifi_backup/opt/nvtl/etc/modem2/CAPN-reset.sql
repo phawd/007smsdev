@@ -1,0 +1,10 @@
+DELETE FROM CustomAPN;
+
+
+
+
+
+
+
+
+

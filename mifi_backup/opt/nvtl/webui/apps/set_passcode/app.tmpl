@@ -1,0 +1,360 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+	</div>
+<tmpl_else>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var currPassCode;
+
+	$(function()
+	{
+		var isPasswordHashed = 0;
+		insertCurrPasscodeInput();
+
+		<tmpl_unless isLocked>
+		$("#closePopUp").on("click", function() {
+			location.reload();
+		});
+
+		$(document).keypress(function(event) {
+			if(($("#passwordChanged").css("display") !== "none") && (event.keyCode === 13)) {
+				$("#closePopUp").trigger('click');
+			}
+		});
+
+		$("#continue").on("click", function() {
+			validatePassword();
+		});
+
+		$("#validateCurrPasswd").keypress(function(event) {
+			if(event.keyCode === 13) {
+	           validatePassword();
+			}
+			if (event.stopPropagation) 
+				event.stopPropagation();
+		});
+
+		$("#savechanges").on("click",function() {
+            changePasscode();
+		});
+
+		$("#setPasscodeField").keypress(function(event) {
+			if(event.keyCode === 13) {
+	            changePasscode();
+			}
+			if (event.stopPropagation) 
+				event.stopPropagation();
+		});
+
+		function changePasscode()
+		{
+            var passCode = $("#currentPasscodeTwo").val();
+            var secToken = "<tmpl_var secToken>";
+            var shaPw = Sha1.hash(passCode + secToken);
+            $("#shaPassword").val(shaPw);
+			var url = "<tmpl_udf GET_URI('set_passcode_verify_new_password')>";		
+
+			$.ajax({
+				url : url,
+				type : "POST",
+				data : {
+					gSecureToken : "<tmpl_var gSecureToken>",
+					shaPassword : $("#shaPassword").val(),
+					newPasscode : $("#newPasscode").val(),
+					confirmPasscode : $("#confirmPasscode").val(),
+					securityAnswer : $("#securityAnswer").val(),
+					securityQuestion: $("#securityQuestion").val(),
+				},
+				dataType : "json",
+				success : function(data, textStatus, xhr) {
+					$("#setPasscodeField, #showPascodeToggle").hide();
+					$("#passwordChanged").show();
+				},
+				error : function(xhr, textStatus, errorThrown) {
+					if (xhr.status == 500) {
+						$("#currentPasscodeError span").remove();
+	                    $("#newPasscodeError span").remove();
+	                    $("#confirmPasscodeError span").remove();
+	                    $("#answerError span").remove();
+						if (xhr.responseText != "") {
+				            var jsonResponseText = $.parseJSON(xhr.responseText);
+				            var error = '';
+				            $.each(jsonResponseText, function(errorId, val) {
+				                if (errorId == "currentPasscodeError") {
+				                    error = $.parseJSON(JSON.stringify(val));
+				                     $("#currentPasscodeError").append("<span>" + error + "</span>");
+				                } else if (errorId == "newPasscodeError") {
+				                    error = $.parseJSON(JSON.stringify(val));
+				                     $("#newPasscodeError").append("<span>" + error + "</span>");
+				                } else if(errorId == "confirmPasscodeError") {
+				                    error = $.parseJSON(JSON.stringify(val));
+				                     $("#confirmPasscodeError").append("<span>" + error + "</span>");
+				                } else if (errorId == "answerError") {
+				                    error = $.parseJSON(JSON.stringify(val));
+				                     $("#answerError").append("<span>" + error + "</span>");
+				                }
+				            });
+						} else {
+							location.replace('<tmpl_var gRedirectUrl>');
+						}
+					}
+				}
+			});
+		}
+
+		</tmpl_unless>
+
+		if (jQuery.fn.slideButton) {
+			$("#displayPasscode").slideButton("ajaxToggle", {
+				checkUrl : "<tmpl_udf GET_URI('set_passcode_enable_display')>",
+				uncheckUrl : "<tmpl_udf GET_URI('set_passcode_disable_display')>",
+				data : {
+					gSecureToken : "<tmpl_var gSecureToken>"
+				}
+			});
+		}
+	});
+
+	// To prevent folks with javascript turned off from submitting the login form
+	// or entering a clear text password, we'll use javascript to append the
+	// inputPassword field and the submit button.
+	function currPassCodeInput($el, $input)
+	{
+		$input.appendTo($el);
+		if (jQuery.uniform) {
+			// This is for uniform 1 and uniform 2 compatibility.
+			var uniformOptions = ( typeof $.uniform.options !== "undefined") ? $.uniform.options : $.uniform.defaults;
+			if (uniformOptions.filter) {
+				$el.find(uniformOptions.filter).uniform();
+			}
+		}
+	}
+
+
+	function insertCurrPasscodeInput()
+	{
+		if ($("#validPassword").val() == "0") {
+			$("#validateCurrPasswd, #showPascodeToggle").show();
+			$("#newpasswd").hide();
+			currPassCode = $('<input class="passcode<tmpl_if authError> error</tmpl_if><tmpl_if currentPasscodeError> error</tmpl_if>" type="password" name="currentPasscode" id="currentPasscode" value="" autocomplete="off" />');
+			currPassCodeInput($("#currentPasscodeRow"), currPassCode);
+		} else {
+			$("#validateCurrPasswd, #showPascodeToggle").hide();
+			$("#newpasswd").show();
+			currPassCode = $('<input class="passcode<tmpl_if authError> error</tmpl_if><tmpl_if currentPasscodeError> error</tmpl_if>" type="password" name="currentPasscodeTwo" id="currentPasscodeTwo" value="" autocomplete="off" />');
+			currPassCodeInput($("#currentPasscodeRowTwo"), currPassCode);
+		}
+	}
+
+	// If a password is entered, we must hash it before sending.
+	// If password field is empty, let the code behind handle any error.
+	function validatePassword()
+	{
+		if (currPassCode.val() !== "") {
+			var secToken = "<tmpl_var secToken>";
+			if (secToken === "") {
+				$("#clientSideAuthError").remove();
+				$(this).find("fieldset").prepend('<p id="clientSideAuthError" class="error"><tmpl_var _("webui", "set_passcode_security_token_acquisition_failed_error_text")></p>');
+			} else {
+				var shaPw = Sha1.hash(currPassCode.val() + secToken);
+				$("#shaPassword").val(shaPw);
+				// We can't post the current passCode in plain text.
+				currPassCode.val("");
+			}
+		}
+		var url = "<tmpl_udf GET_URI('set_passcode_verify_current_password')>";
+		var shaPass = $("#shaPassword").val();
+
+		$.ajax({
+			url : url,
+			type : "POST",
+			data : {
+				gSecureToken : "<tmpl_var gSecureToken>",
+				password : shaPass,
+			},
+			dataType : "json",
+			success : function(data, textStatus, xhr) {
+				$("#validPassword").val("1");
+				$("#validateCurrPasswd, #showPascodeToggle").hide();
+				$("#newpasswd").show();
+				insertCurrPasscodeInput();
+			},
+			error : function(xhr, textStatus, errorThrown) {
+				if (xhr.status == 500) {
+					$("#passcodeError span").remove();
+					$("#passcodeError").append("<span>" + "<tmpl_udf GET_PO_TEXT('set_passcode_current_passcode_error_text', gProductName)>" + "</span>");
+				}  else {
+					location.replace('<tmpl_var gRedirectUrl>');
+				}
+			}
+		});
+	}
+
+	/* ]]> */
+</script>
+
+<tmpl_if isLocked>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+	</div>
+</tmpl_if>
+
+<tmpl_if errorMsg>
+	<div class="notification app error">
+		<div class="notification_inner">
+			<p>
+				<tmpl_var errorMsg>
+			</p>
+		</div>
+	</div>
+</tmpl_if>
+<tmpl_if gPostSuccess>
+	<div class="notification app success">
+		<div class="notification_inner">
+			<p>
+				<tmpl_var _("webui", "webui_save_code_success_text")>
+			</p>
+		</div>
+	</div>
+</tmpl_if>
+
+<div id="showPascodeToggle">
+	<tmpl_if showDisplayPascode>
+		<div class="toggleSettingContainer">
+			<div class="toggleSettingContainerInner">
+				<div class="desc">
+					<label for="displayPasscode"><tmpl_udf GET_PO_TEXT("set_passcode_display_passcode_label", gProductName)></label>
+					<p class="note">
+						<tmpl_udf GET_PO_TEXT("set_passcode_display_passcode_help_text", gProductName)>
+					</p>
+				</div>
+				<div class="toggle">
+					<input class="toggleSwitchCheckbox" type="checkbox" id="displayPasscode" name="displayPasscode"<tmpl_if IN_SET(displayPasscode, "true")> checked="checked"</tmpl_if> <tmpl_if isLocked> disabled="disabled"</tmpl_if>/>
+				</div>
+			</div><!--/.toggleSettingContainerInner-->
+		</div><!--/.toggleSettingContainer-->
+	</tmpl_if>
+</div>
+
+<form method="POST" action="<tmpl_udf GET_URI('set_passcode')>" id="setPasscodeForm" name="setPasscodeForm">
+	<fieldset id="setPasscodeField" class="first">
+		<input type="hidden" name="shaPassword" id="shaPassword" value="" />
+		<input type="hidden" name="gSecureToken" value="<tmpl_var gSecureToken>" />
+		<input type="hidden" name="validPassword" id="validPassword" value="<tmpl_var validPassword>" />
+
+		<h2 class="sectionHead"><tmpl_udf GET_PO_TEXT("set_passcode_login_sub_header_text", gProductName)></h2>
+		<div id="validateCurrPasswd">
+			<div class="table">
+				<div class="row clearfix">
+					<div class="col label">
+						<label for="currentPasscodeRow"> <tmpl_udf GET_PO_TEXT("set_passcode_current_passcode_label", gProductName)></label>
+					</div>
+					<div id="currentPasscodeRow" class="col input"></div>
+					<div class="col button_container clearfix">
+						<button type="button" class="primary" id="continue" name="continue" <tmpl_if isLocked>disabled="disabled"</tmpl_if> >
+							<tmpl_var _("webui", "webui_modal_continue_button")>
+						</button>
+					</div>
+				</div>
+				<div class="row clearfix">
+					<div class="col label">						
+					</div>
+					<div class="col inline_error" id="passcodeError"></div>
+				</div>	
+			</div><!-- /.table -->
+		</div><!-- /#validateCurrPasswd -->
+
+		<div id="newpasswd">
+			<div class="table">
+				<div class="row clearfix">	<!--current_passcode -->
+					<div class="col label">
+						<label for="currentPasscodeRowTwo"><tmpl_udf GET_PO_TEXT("set_passcode_current_passcode_label", gProductName)></label>
+					</div>
+					<div id="currentPasscodeRowTwo" class="col input"></div>
+				</div>
+				<div class="row clearfix">
+					<div class="col label">
+					</div>
+					<div class="col inline_error" id="currentPasscodeError"></div>
+				</div>	<!--current_passcode -->
+
+				<div class="row clearfix">	<!--new_passcode-->
+					<div class="col label">
+						<label for="newPasscode"><tmpl_var _("webui", "set_passcode_new_passcode_label")></label>
+					</div>
+					<div class="col input">
+						<input class="passcode<tmpl_if newPasscodeError> error</tmpl_if>" type="password" name="newPasscode" id="newPasscode" value="" autocomplete="off" />
+					</div>
+				</div>
+				<div class="row clearfix">
+					<div class="col label">
+					</div>
+					<div class="col inline_error" id="newPasscodeError"></div>
+				</div>
+				<div id="newPasscodeHelp" class="row clearfix">
+					<tmpl_var _("webui", "set_passcode_new_passcode_help1_text")>
+						<tmpl_var minPasscodeLen>
+							<tmpl_var _("webui", "set_passcode_new_passcode_help2_text")>
+				</div>	<!--new_passcode-->
+
+				<div class="row clearfix">	<!--confirm_passcode-->
+					<div class="col label">
+						<label for="confirmPasscode"><tmpl_var _("webui", "set_passcode_confirm_passcode_label")></label>
+					</div>
+					<div class="col input">
+						<input class="passcode<tmpl_if confirmPasscodeError> error</tmpl_if>" type="password" name="confirmPasscode" id="confirmPasscode" value="" autocomplete="off" />
+					</div>
+				</div>
+				<div class="row clearfix">
+					<div class="col label">
+					</div>
+					<div class="col inline_error" id="confirmPasscodeError"></div>
+				</div>	<!--confirm_passcode-->
+
+
+				<div class="row clearfix">
+					<div class="col label">
+						<label for="securityQuestion"><tmpl_var _("webui", "set_passcode_security_question_label")></label>
+					</div>
+					<div class="col input">
+						<select name="securityQuestion" id="securityQuestion">
+							<tmpl_include "security_question_options.tmpl">
+						</select>
+					</div>
+				</div>
+				<div class="row clearfix">	<!--security_answer-->
+					<div class="col label">
+						<label for="securityAnswer"><tmpl_var _("webui", "set_passcode_security_answer_label")></label>
+					</div>
+					<div class="col input">
+						<input class="text<tmpl_if answerError> error</tmpl_if>" type="text" name="securityAnswer" maxlength="255" id="securityAnswer" value="" autocomplete="off" />
+					</div>
+				</div>
+				<div class="row clearfix">
+					<div class="col label">
+					</div>
+					<div class="col inline_error" id="answerError"></div>
+				</div>	<!--security_answer-->
+
+			</div><!-- /.table -->
+
+			<div class="table">
+				<div class="col label">						
+				</div>
+				<div class="col button_container clearfix">
+					<button type="button" class="primary"  id="savechanges" <tmpl_if isLocked> disabled="disabled"</tmpl_if>>
+						<tmpl_var _("webui", "webui_save_button")>
+					</button>
+				</div>
+			</div><!-- /.table -->
+		</div><!-- /#newpasswd -->
+	</fieldset>
+	<div id="passwordChanged"class="button_container clearfix" style="display:none">
+			<div><tmpl_udf GET_PO_TEXT("set_passcode-password_changed_successfully_text", gProductName)></div>
+			<button type="button" class="primary" id="closePopUp">
+				<tmpl_var _("webui", "webui_modal_ok_button")>
+			</button>
+		</div>
+</form>
+</tmpl_if>

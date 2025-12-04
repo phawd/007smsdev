@@ -1,0 +1,27 @@
+<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/fonts.css" />
+<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/layout.css" />
+
+<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/status.css" />
+<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/messages.css" />
+<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/form.css" />
+<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/uniform.css" />
+
+<tmpl_comment>Overrides for narrow displays, not necessarily Mobile Devices.</tmpl_comment>
+<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/mobile_768.css" media="screen and (max-width: 940px)" />
+<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/mobile_480.css" media="screen and (max-width: 480px)" />
+<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/mobile_320.css" media="screen and (max-width: 320px)" />
+
+<tmpl_comment>Customer theme overrides. Should only affect colors, fonts, and images.</tmpl_comment>
+<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/look_and_feel.css" />
+
+<tmpl_comment>Loop through and link any application styles.</tmpl_comment>
+<tmpl_unless IN_SET(gPageId, "login")>
+	<tmpl_foreach gCssList as css>
+		<link rel="stylesheet" type="text/css" href="/<tmpl_var gPageId>/<tmpl_var css.cssPath>" />
+	</tmpl_foreach>
+</tmpl_unless>
+
+<tmpl_comment>Non-semantic helper classes. Define all styles before this style sheet.</tmpl_comment>
+<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/last.css" />

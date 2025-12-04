@@ -1,0 +1,171 @@
+<script type="text/javascript">
+	/* <![CDATA[ */
+	$(function()
+	{
+		// To prevent folks with javascript turned off from submitting the login form
+		// or entering a clear text password, we'll use javascript to insert the
+		// inputPassword fields after the label and insert the submit button.
+		$('<input type="password" class="password<tmpl_if passcodeDebugLogsError> error</tmpl_if>" name="passcodeInput" id="passcodeDebugLogs" value="" autocomplete="off" />')
+		.appendTo("#passcodeDebugLogsRow div.input");
+
+		$('<button type="submit" id="downloadLogs" class="multi"><tmpl_var _("webui", "debug_logs_download_button")></button>')
+		.appendTo("#passcodeDebugLogsButtonRow")
+		.click(function(e) {
+			var theForm = $(this).closest("form");
+			clearErrors(theForm);
+			securePasscode(e, theForm);
+		});
+
+		// We need to apply uniform, if available, to all the dynamically added elements above.
+		if (jQuery.uniform) {
+			// This is for uniform 1 and uniform 2 compatibility.
+			var uniformOptions = (typeof $.uniform.options !== "undefined") ? $.uniform.options : $.uniform.defaults;
+			if (uniformOptions.filter) {
+				$("#passcodeDebugLogsRow, #passcodeDebugLogsButtonRow")
+					.find(uniformOptions.filter)
+					.filter(":input:not(input:file)")
+					.uniform()
+					.closest("div.button")
+					.addClass("secondary");
+			}
+		}
+	});
+
+	function clearErrors(el)
+	{
+		$(".notification").remove();
+		el.find(".inline_error").remove();
+	}
+
+	function resetForm(f)
+	{
+		f.find(":input").filter(':input:not(input[name="formAction"], input[name="gSecureToken"], input[name="redirectLocation"])').val("").prop({"checked" : false, "selected" : false});
+		if(jQuery.uniform) {
+			// This is for uniform 1 and uniform 2 compatibility.
+			var fileDefaultText = (typeof $.uniform.options !== "undefined") ? $.uniform.options.fileDefaultText : $.uniform.defaults.fileDefaultHtml;
+			f.find(".uploader .filename").html(fileDefaultText);
+			$.uniform.update();
+		}
+
+		f[0].reset();
+	}
+
+	// If a password is entered, we must hash it before sending.
+	// If password field is empty, let the code behind handle any error.
+	function securePasscode(e, theForm, msg)
+	{
+		var needModal = typeof msg !== 'undefined' ? true : false;
+
+		var shaPassCode = theForm.find('input[name="shaPassword"]');
+		var passCode = theForm.find('input[name="passcodeInput"]');
+		if (passCode.val() !== "") {
+			e.preventDefault();
+			var secToken = "<tmpl_var secToken>";
+			if(secToken === "") {
+				$("#clientSideAuthError").remove();
+				theForm.prepend('<p id="clientSideAuthError" class="error"><tmpl_var _("webui", "debug_logs_no_security_token_error_text")></p>');
+			} else {
+				var inputPw = passCode.val();
+				var shaPw = Sha1.hash(inputPw + secToken);
+				shaPassCode.val(shaPw);
+				// We can't post the passCode in plain text.
+				passCode.val("");
+				if(needModal) {
+					makeModal(e, theForm, msg, shaPassCode);
+				} else {
+					theForm.submit();
+					shaPassCode.val("");
+				}
+			}
+		}
+	}
+
+	function makeModal(e, theForm, msg, shaPassCode)
+	{
+		e.preventDefault();
+		modalPopup.createWindow(
+			'<tmpl_var _("webui", "webui_modal_title")>',
+			msg,
+			430, 200,
+			[
+				{
+					text: '<tmpl_var _("webui", "webui_modal_cancel_button")>',
+					className: "cancel",
+					trigger: function(){
+						resetForm(theForm);
+					}
+				},
+				{
+					text: '<tmpl_var _("webui", "webui_modal_confirm_button")>',
+					className: "primary",
+					trigger: function(){
+						theForm.submit();
+						shaPassCode.val("");
+					}
+				}
+			],
+			null,
+			function() {
+				resetForm(theForm);
+			}
+		);
+	}
+/* ]]> */
+</script>
+<h1 class="parent">
+	<tmpl_var _("webui", "debug_logs_menu_info_text")>
+</h1>
+<p class="note">
+	<tmpl_var _("webui", "debug_logs_intro")>
+</p>
+
+<tmpl_if errorCount>
+	<div class="notification app error">
+		<div class="notification_inner">
+      <p>
+				<tmpl_var _("webui", "debug_logs_save_code_failed_text")>
+			</p>
+		</div>
+	</div>
+</tmpl_if>
+
+<form id="dlForm" method="POST" action="<tmpl_udf GET_URI('debug_logs')>">
+	<fieldset id="debuglogs_field" class="first">
+		<input type="hidden" name="formAction" id="debugLogsForm" value="debugLogs" />
+		<input type="hidden" name="shaPassword" id="shaPasswordDebugLogs" value="" />
+		<input type="hidden" name="gSecureToken" value="<tmpl_var gSecureToken>" />
+
+		<div class="table">
+			<div id="passcodeDebugLogsRow" class="row clearfix">
+				<div class="col label">
+					<tmpl_if showToolTip>
+						<div class="tooltip tooltip-help" id="sample" title="<tmpl_var _('webui', 'debug_logs_passcode_max_retries_warning_text')>">
+							<tmpl_var _("webui", "webui_inline_help_icon")>
+						</div>
+					</tmpl_if>	
+					<label for="passcodeDebugLogs"><tmpl_var _("webui", "debug_logs_admin_login_label")></label>
+				</div>
+				<div class="col input"></div>
+				<tmpl_unless showToolTip>
+					<div class="col help">
+						<tmpl_var _("webui", "debug_logs_passcode_max_retries_warning_text")>
+					</div>
+				</tmpl_unless>
+				<tmpl_if debug_logsError>
+					<div class="col inline_error">
+						<tmpl_var debug_logsError>
+					</div>
+				</tmpl_if>
+				<tmpl_if debug_logsAuthError>
+					<div class="col inline_error">
+						<tmpl_var debug_logsAuthError>
+					</div>
+				</tmpl_if>
+			</div>
+		</div><!-- /.table -->
+
+		<div id="passcodeDebugLogsButtonRow" class="button_container clearfix"></div>
+	</fieldset>
+</form>
+
+

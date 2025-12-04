@@ -1,0 +1,10 @@
+<tmpl_if useDeepSleepExtraOptions>
+	<option value="1"<tmpl_if IN_SET(deepSleep, 1)> selected="selected"</tmpl_if>><tmpl_var _("webui", "webui_app_after_text")>&nbsp;1&nbsp;<tmpl_var _("webui", "webui_app_minute_text")></option>
+	<option value="2"<tmpl_if IN_SET(deepSleep, 2)> selected="selected"</tmpl_if>><tmpl_var _("webui", "webui_app_after_text")>&nbsp;2&nbsp;<tmpl_var _("webui", "webui_app_minutes_text")></option>
+</tmpl_if>
+	<option value="5"<tmpl_if IN_SET(deepSleep, 5)> selected="selected"</tmpl_if>><tmpl_var _("webui", "webui_app_after_text")>&nbsp;5&nbsp;<tmpl_var _("webui", "webui_app_minutes_text")></option>
+	<option value="15"<tmpl_if IN_SET(deepSleep, 15)> selected="selected"</tmpl_if>><tmpl_var _("webui", "webui_app_after_text")>&nbsp;15&nbsp;<tmpl_var _("webui", "webui_app_minutes_text")></option>
+	<option value="30"<tmpl_if IN_SET(deepSleep, 30)> selected="selected"</tmpl_if>><tmpl_var _("webui", "webui_app_after_text")>&nbsp;30&nbsp;<tmpl_var _("webui", "webui_app_minutes_text")></option>
+	<option value="60"<tmpl_if IN_SET(deepSleep, 60)> selected="selected"</tmpl_if>><tmpl_var _("webui", "webui_app_after_text")>&nbsp;60&nbsp;<tmpl_var _("webui", "webui_app_minutes_text")></option>
+	<option value="0"<tmpl_if IN_SET(deepSleep, 0)> selected="selected"</tmpl_if>><tmpl_var _("webui", "webui_app_never_text")></option>
+

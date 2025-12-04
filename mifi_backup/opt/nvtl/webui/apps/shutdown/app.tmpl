@@ -1,0 +1,36 @@
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var pollDelay;
+	var restartingInterval;
+	var shutdownErrorText = $("<i/>").html('<tmpl_var _("webui", "shutdown_error_txt")>').text();
+
+	$(function()
+	{
+		$.ajax({
+			url : '<tmpl_udf GET_URI("shutdown_do_shutdown")>',
+			type : 'POST',
+			data : {
+				gSecureToken : "<tmpl_var gSecureToken>"
+			},
+			dataType : "json",
+			success : function(data) {
+				if (data["shutdown"]) {
+					// Nothing special
+				} else {
+					$("#statusText").text(shutdownErorText);
+				}
+			},
+			error : function(xhr, textStatus, errorThrown) {
+				$("#statusText").text(shutdownErrorText);
+			}
+		});
+	});
+	/* ]]> */
+</script>
+
+<div id="shutdownContent">
+	<div id="shutdownContentInner">
+		<h2 class="appHead"><tmpl_udf GET_PO_TEXT("shutdown_title", gProductName, gProductNumber)></h2>
+		<p><tmpl_udf GET_PO_TEXT("shutdown_intro", gProductName)></p>
+	</div>
+</div>

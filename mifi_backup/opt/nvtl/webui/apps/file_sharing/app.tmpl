@@ -1,0 +1,274 @@
+<tmpl_if isHidden>
+    <div class="notification app error">
+        <tmpl_var _("webui", "webui_app_hidden_text")>
+    </div>
+<tmpl_else>
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var maxFolderCount = <tmpl_var MaxFolderCount>
+    var FileSharingEnableValue= <tmpl_var FileSharingEnableValue>;
+    $(function()
+    {
+        if (jQuery.fn.slideButton) {
+            $("#FileSharingEnableValue").slideButton("ajaxToggle", {
+                checkUrl : "<tmpl_udf GET_URI('file_sharing_enable')>",
+                uncheckUrl : "<tmpl_udf GET_URI('file_sharing_disable')>",
+                data : {
+                    gSecureToken : "<tmpl_var gSecureToken>"
+                }
+            });
+            
+            $("#FileSharingDisplayEnableValue").slideButton("ajaxToggle", {
+                checkUrl : "<tmpl_udf GET_URI('file_sharing_display_enable')>",
+                uncheckUrl : "<tmpl_udf GET_URI('file_sharing_display_disable')>",
+                data : {
+                    gSecureToken : "<tmpl_var gSecureToken>"
+                }
+            });
+        }
+
+        if (FileSharingEnableValue == 0) {
+            $(".toggleFileSharingSettings").hide();
+        }        
+
+        $("#FileSharingEnableValue").on("change", function() {
+            $(".toggleFileSharingSettings").slideToggle();
+        });
+
+        $("#accessSharedFolderlToggle").on("click", function() {
+            $("#accessSharedFolderHelp").slideToggle();
+        });
+
+        $("#FileShareType").on("change", function() {
+            if($("#FileShareType").val() == 0) { 
+                $("#FolderNamesSection").hide();
+            } else {
+                $("#FolderNamesSection").show();
+            }
+        });
+    });
+    /* ]]> */
+</script>
+<tmpl_if isLocked>
+    <div class="notification app error">
+        <tmpl_var _("webui", "webui_app_locked_text")>
+    </div>
+</tmpl_if>
+
+<tmpl_if errorCount>
+<div class="notification app error">
+    <div class="notification_inner">
+        <p>
+            <tmpl_var _("webui", "webui_save_code_failed_text")>
+        </p>
+    </div>
+</div>
+</tmpl_if>
+
+<tmpl_if gPostSuccess>
+<div class="notification app success">
+    <div class="notification_inner">
+        <p>
+            <tmpl_var _("webui", "webui_save_code_success_text")>
+        </p>
+    </div>
+</div>
+</tmpl_if>
+
+<p class="note"><tmpl_udf GET_PO_TEXT("file_sharing_intro_text", gProductName)></p>
+
+<tmpl_if MiFiSharingEnableShow>
+    <div class="table">
+        <form id="file_sharing_form" method="POST" action="<tmpl_udf GET_URI('file_sharing')>">
+        <input type="hidden" name="gSecureToken" id="gSecureToken" value="<tmpl_var gSecureToken>" />
+        <div class="row clearfix">
+            <div class="col-primary">                
+                <fieldset id="fileSharingSettings" class="first">
+                    <div class="toggleSettingContainer" id="enableFileSharingToggle">
+                        <div class="toggleSettingContainerInner">                            
+                            <div class="desc">
+                                <tmpl_if showToolTip>
+                                    <div class="tooltip tooltip-help" id="FileSharingEnableValueDesc" title="<tmpl_udf GET_PO_TEXT('file_sharing_mifi_share_text', gProductName)>">
+                                        <tmpl_var _("webui", "webui_inline_help_icon")>
+                                    </div>
+                                </tmpl_if>
+                                <label for="FileSharingEnableValue"><tmpl_var _("webui", "file_sharing_toggle_label")></label>
+                                <tmpl_unless showToolTip>
+                                    <p> <tmpl_udf GET_PO_TEXT("file_sharing_mifi_share_text", gProductName)></p>
+                                </tmpl_unless>
+                            </div>
+                            <div class="toggle">
+                                <input class="toggleSwitchCheckbox" type="checkbox" id="FileSharingEnableValue" <tmpl_if IN_SET(FileSharingEnableValue, "true", "on", "1")> checked="checked"</tmpl_if> <tmpl_if MiFiSharingEnableLocked>disabled="disabled"</tmpl_if> <tmpl_if isLocked> disabled="disabled"</tmpl_if>/>
+                            </div>
+                        </div><!--/.toggleSettingContainerInner-->
+                    </div><!--/.toggleSettingContainer-->
+                </fieldset>
+
+                <tmpl_if MiFiSharingOnDisplayShow>      
+                    <fieldset id="fileSharingDisplaySettings" class="first toggleFileSharingSettings">
+                        <div class="toggleSettingContainer" id="enableFileSharingDisplayToggle">
+                            <div class="toggleSettingContainerInner">                        
+                                <div class="desc">
+                                    <h4><label for="FileSharingDisplayEnableValue"><tmpl_udf GET_PO_TEXT("file_sharing_display_toggle_label", gProductName)></label></h4>
+                                </div>
+                                <div class="toggle">
+                                        <input class="toggleSwitchCheckbox" type="checkbox" id="FileSharingDisplayEnableValue" <tmpl_if IN_SET(FileSharingDisplayEnableValue, "true", "on", "1")> checked="checked"</tmpl_if> <tmpl_if MiFiSharingOnDisplayLocked>disabled="disabled"</tmpl_if> <tmpl_if isLocked> disabled="disabled"</tmpl_if>/>
+                                </div>
+                            </div><!--/.toggleSettingContainerInner-->
+                        </div><!--/.toggleSettingContainer-->
+                        <p>
+                            <tmpl_udf GET_PO_TEXT("file_sharing_display_toggle_text", gProductName)>
+                        </p>
+                        <br/>
+                    </fieldset>
+                </tmpl_if>
+            </div><!--col-primary-->
+            <div class="col-secondary bg-color toggleFileSharingSettings">
+                <tmpl_if MiFiSharingNetworkAccessShow>
+                    <div class="row clearfix">
+                        <div class="col label-long">
+                            <h4><label for="FileSharingWifiEnableValue"><tmpl_var _("webui", "file_sharing_network_access_label")></label></h4>
+                        </div>
+                        <div class="col input-checkbox">
+                            <input type="checkbox" name="FileSharingWifiEnableValue" id="FileSharingWifiEnableValue" <tmpl_if MiFiSharingWiFiNetworkAccessLocked> disabled="disabled"</tmpl_if> <tmpl_if IN_SET(FileSharingWifiEnableValue, "true", "on", "1")> checked="checked"</tmpl_if> <tmpl_if NetworkAccessError>class="error"</tmpl_if> >
+                        </div>
+                        <tmpl_if NetworkAccessError>
+                            <div class="col inline_error">
+                                <tmpl_var NetworkAccessError>
+                            </div>
+                        </tmpl_if>
+                    </div>
+                    <tmpl_if MiFiSharingGuestWiFiNetworkAccessShow>
+                        <div class="row clearfix">
+                            <div class="col label-long">
+                                <h4><label for="FileSharingGuestWifiEnableValue"><tmpl_var _("webui", "file_sharing_guest_network_access_label")></label></h4>
+                            </div>
+                            <div class="col input-checkbox">
+                                <input type="checkbox" name="FileSharingGuestWifiEnableValue" id="FileSharingGuestWifiEnableValue" <tmpl_if MiFiSharingGuestWiFiNetworkAccessLocked> disabled="disabled"</tmpl_if> <tmpl_if IN_SET(FileSharingGuestWifiEnableValue, "true", "on", "1")> checked="checked"</tmpl_if> <tmpl_if NetworkAccessError>class="error"</tmpl_if> >
+                            </div>
+                            <tmpl_if NetworkAccessError>
+                                <div class="col inline_error">
+                                    <tmpl_var NetworkAccessError>
+                                </div>
+                            </tmpl_if>
+                        </div>
+                    </tmpl_if>
+                </tmpl_if>
+            </div><!--col-secondary-->
+        </div>
+        <h3 class="sectionHead toggleFileSharingSettings"><tmpl_var _("webui", "file_sharing_setting_sub_header_text")></h3>
+        <div class="row clearfix toggleFileSharingSettings">
+            <div class="col-primary">
+                <tmpl_if MiFiSharingShareNameShow>
+                    <div class="row clearfix">
+                        <div class="col label-teeny">
+                            <h4><label for="FileShareName"><tmpl_var _("webui", "file_sharing_share_name_label")></label></h4>
+                        </div>
+                        <div class="col input-textbox">
+                            <input type="text" id="FileShareName" name="FileShareName" value="<tmpl_var MiFiShareName>" <tmpl_if FileShareNameError>class="error"</tmpl_if> <tmpl_if MiFiSharingShareNameLocked> disabled="disabled"</tmpl_if> maxlength="<tmpl_var MaxShareNameLength>"/>
+                        </div>
+                        <tmpl_if FileShareNameError>
+                            <div class="col inline_error">
+                                <tmpl_var FileShareNameError>
+                            </div>
+                        </tmpl_if>
+                    </div>
+                </tmpl_if>
+                <tmpl_if MiFiSharingShareTypeShow>
+                    <div class="row clearfix">
+                        <div class="col label-teeny">
+                            <h4><label for="FileShareType"><tmpl_var _("webui", "file_sharing_share_type_label")></label></h4>
+                        </div>
+                        <div class="col input-textbox">
+                            <select name="FileShareType" id="FileShareType" <tmpl_if MiFiSharingShareTypeLocked> disabled="disabled"</tmpl_if>>
+                                <tmpl_include "share_type_options.tmpl">
+                            </select>
+                        </div>
+                    </div>
+                </tmpl_if>
+                <tmpl_if MiFiSharingAccessTypeShow>
+                    <div class="row clearfix">
+                        <div class="col label-teeny">
+                            <h4><label for="FileShareAccessType"><tmpl_var _("webui", "file_sharing_folder_access_type_label")></label></h4>
+                        </div>
+                        <div class="col input-textbox">
+                            <select name="FileShareAccessType" id="FileShareAccessType" <tmpl_if MiFiSharingAccessTypeLocked> disabled="disabled"</tmpl_if>>
+                                <tmpl_include "access_type_options.tmpl">
+                            </select>
+                        </div>
+                    </div>
+                </tmpl_if>                
+
+            </div><!--col-primary-->
+            <div class="col-secondary ">
+                <tmpl_if MiFiSharingSpecifiedFoldersShow>
+                    <div class="row clearfix" id="FolderNamesSection" <tmpl_if IN_SET(FileShareType, 0)>style="display:none"</tmpl_if> >
+                        <div class="col label-teeny">
+                            <h4><label for="FolderNames"><tmpl_var _("webui", "file_sharing_folder_list_label")></label></h4>
+                        </div>
+                        <div class="col input-textbox">
+                            <textarea name="FolderNames" class="bg-color" id="FolderNames" <tmpl_if MiFiSharingSpecifiedFoldersLocked> disabled="disabled"</tmpl_if> ><tmpl_var FolderNames></textarea>
+                        </div>
+                        <tmpl_if FolderListError>
+                            <div class="col inline_error">
+                                <tmpl_var FolderListError>
+                            </div>
+                        </tmpl_if>
+                    </div>
+                </tmpl_if>
+            </div><!--col-secondary-->
+        </div>
+        <div class="row clearfix toggleFileSharingSettings">
+            <h4 class="hideShowSection" id="accessSharedFolderlToggle">
+                <tmpl_var _("webui", "file_sharing_access_shared_folder_help_title")>
+            </h4>
+            <div class="table" id="accessSharedFolderHelp" style="display:none" >
+                <div class="row clearfix label assing-folder">
+                    <h3><tmpl_var _("webui", "file_sharing_access_shared_folder_title")></h3>
+                    <h4><tmpl_var _("webui", "file_sharing_access_shared_folder_title_text1")> </h4>
+                    <ol class="orderlistitems">
+                        <li> <tmpl_var _("webui", "file_sharing_Open_Explorer")></li>
+                        <li> <tmpl_udf GET_PO_TEXT("file_sharing_under_network", HostName)></li>
+                        <li> <tmpl_udf GET_PO_TEXT("file_sharing_not_visible_text3", HostName)></li>
+                        <li> <tmpl_udf GET_PO_TEXT("file_sharing_shared_folder_text4", gProductName)></li>
+                        <li> <tmpl_var _("webui", "file_sharing_shared_folder_text5")> </li>    
+                    </ol>
+                    <h4><tmpl_var _("webui", "file_sharing_not_found_title2")></h4>
+                    <p><tmpl_udf GET_PO_TEXT("file_sharing_Windows_not_found_text", gProductName)> </p>
+                </div>
+                <div class="row clearfix label assing-folder">
+                    <h4><tmpl_var _("webui", "file_sharing_Macintosh_title")></h4>
+                    <ol class="orderlistitems">
+                        <li> <tmpl_var _("webui", "file_sharing_Open_Finder_text1")></li>
+                        <li> <tmpl_udf GET_PO_TEXT("file_sharing_Open_Finder_text2", HostName)></li>
+                        <li> <tmpl_udf GET_PO_TEXT("file_sharing_Open_Finder_text3", gProductName)> </li>
+                        
+                    </ol>
+                    <h4><tmpl_var _("webui", "file_sharing_not_found_title2")></h4>
+                    <ol class="orderlistitems">
+                        <li> <tmpl_var _("webui", "file_sharing_Macintosh_not_found_text1")></li>
+                        <li> <tmpl_udf GET_PO_TEXT("file_sharing_Macintosh_not_found_text2", HostName)></li>
+                        <li> <tmpl_var _("webui", "file_sharing_Macintosh_not_found_text3")> </li>          
+                    </ol>
+                </div>
+                <div class="row clearfix label assing-folder">
+                    <h4> <tmpl_var _("webui", "file_sharing_Apple_iOS_title")></h4>
+                    <p> <tmpl_udf GET_PO_TEXT("file_sharing_Apple_iOS_text", gProductName)></p>
+                    <!--<p><tmpl_udf GET_PO_TEXT("file_sharing_access_shared_folder_help_text_3", DomainURL)></p>  -->
+                </div>
+                <div class="row clearfix label assing-folder">
+                    <h4> <tmpl_var _("webui", "file_sharing_Andriod_title")></h4>
+                    <p> <tmpl_udf GET_PO_TEXT("file_sharing_Andriod_text", gProductName)></p>
+                    <!--<p><tmpl_udf _("webui", "file_sharing_access_shared_folder_help_text_4", HostName)></p>  -->
+                </div>  
+            </div>
+        </div> 
+        <div class="button_container clearfix toggleFileSharingSettings">
+            <button type="submit" class="primary" <tmpl_if isLocked> disabled="disabled"</tmpl_if> >
+                <tmpl_var _("webui", "webui_save_button")>
+            </button>
+        </div>
+    </div><!--table-->
+</tmpl_if>
+
+</tmpl_if><!-- isHidden -->

@@ -1,0 +1,11 @@
+<tmpl_if ShowWifiSecurityNone>
+    <option value="0"<tmpl_if IN_SET(WifiPrimarySecurity, "0")> selected="selected"</tmpl_if>>
+        <tmpl_var _("webui", "wifi_security_none_text")>
+    </option> <!-- WIFI_SECURITY_NONE -->
+</tmpl_if>
+<option value="4"<tmpl_if IN_SET(WifiPrimarySecurity, "4")> selected="selected"</tmpl_if>>
+    <tmpl_var _("webui", "wifi_security_wpa2_text")>
+</option> <!-- WIFI_SECURITY_WPA2 -->
+<option value="5"<tmpl_if IN_SET(WifiPrimarySecurity, "5")> selected="selected"</tmpl_if>>
+    <tmpl_var _("webui", "wifi_security_wpa2_mix_text")>
+</option> <!-- WIFI_SECURITY_WPA2MIX -->

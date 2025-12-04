@@ -1,0 +1,2757 @@
+/**
+ * 	STYLE
+ */
+html, body
+{
+	/* Adjusted from medium (16px) browser size. */
+	font-size: 0.92em; /* 14px */
+	line-height: 1.43em; /* 20px */
+}
+
+html, html a, body, button, input, select, textarea
+{
+	-webkit-font-smoothing: antialiased; /* Chrome, Safari */
+	-moz-osx-font-smoothing: grayscale; /* Mozilla, Mac Only */
+	text-rendering: optimizeLegibility; /* Modern desktop browser support for kerning, ligatures, etc. */
+}
+
+/* =============================================================================
+ LINKS
+ ========================================================================== */
+a
+{
+	cursor: pointer;
+	text-decoration: none;
+}
+
+/* Add external icon to external links in just the
+application area of the page and the help pages. */
+#app_container a[href^="http"],
+#help_wrapper a[href^="http"]
+{
+	padding-right: 14px;
+}
+
+html.rtl #app_container a[href^="http"],
+html.rtl #help_wrapper a[href^="http"],
+.external
+{
+	padding-right: 0;
+	padding-left: 14px;
+}
+
+a.gohome
+{
+	font-size: 1.3em; /* 18px */
+	padding:5px 0px 5px 35px;
+	background:rgba(0, 0, 0, 0) url("../images/icons/left-arrow-home.png") no-repeat scroll left center;
+	margin-top:15px;
+	border-bottom: 1px solid #01b3fb;
+	display: inline-block;
+	color: #01b3fb;
+}
+a.gohome:hover{
+	color:#01b3fb;
+}
+
+html.rtl a.gohome
+{
+	padding-right: 0;
+	padding-left: 12px;
+}
+
+a.moreLink
+{
+	font-size: 0.86em; /* 12px */
+	padding-right: 10px;
+}
+
+html.rtl a.moreLink
+{
+	padding-right: 0;
+	padding-left: 10px;
+}
+a.helpLink[title="Help Help"] {
+    display: none;
+}
+
+/* =============================================================================
+ PAGE HEADERS
+ ========================================================================== */
+h1
+{
+	font-size: 1.86em; /* 26px */
+	line-height: normal;
+}
+
+h1.pageHead
+{
+	width: auto;
+	height: auto;
+	line-height: 34px;
+	position: relative;
+	padding-left: 44px;
+	left: -2px;
+}
+
+html.rtl h1.pageHead
+{
+	padding-left: 0;
+	padding-right: 50px;
+	left: auto;
+	right: -8px;
+}
+
+h1.pageHead.parental-controls
+{
+	padding-left: 40px;
+}
+
+html.rtl h1.pageHead.parental-controls
+{
+	padding-right: 48px;
+}
+
+h1.pageHead.customer-care
+{
+	padding-left: 43px;
+}
+
+html.rtl h1.pageHead.customer-care
+{
+	padding-right: 55px;
+}
+
+h2
+{
+	font-size: 1.3em; /* 18px */
+	margin-bottom: 0.25em;
+}
+
+h2.loading
+{
+	padding-left: 46px;
+	line-height: 32px;
+}
+
+html.rtl h2.loading
+{
+	padding-left: 0;
+	padding-right: 46px;
+}
+
+h2.appHead
+{
+	font-size: 1.15em; /* 16px */
+	margin-bottom: 0.4em;
+}
+
+h2.sectionHead,
+h2.tableHeader.sectionHead
+{
+    font-size: 1.15em; /* 16px */
+    margin-bottom: 0.714em; /* 10px; */
+}
+
+h2.tableHeader.sectionHead
+{
+    margin-bottom:  0.357em; /* 5px; */;
+}
+
+h3,
+h3.subSectionHead,
+h3.tableHeader.subSectionHead
+{
+    font-size: 1.075em; /* 15px */
+    margin-bottom: 0.25em;
+}
+
+h3.subSectionHead
+{
+    margin-bottom:  0.714em; /* 10px; */
+}
+
+h3.tableHeader.subSectionHead
+{
+    margin-top: 0;
+    margin-bottom:  0.357em; /* 5px; */;
+}
+
+/* =============================================================================
+ LISTS
+ ========================================================================== */
+ul.bullet
+{
+	padding: 4px 4px 4px 24px;
+}
+
+html.rtl ul.bullet
+{
+	padding: 4px 24px 4px 4px;
+}
+
+ul.bullet li
+{
+	list-style-type: disc;
+}
+
+/* =============================================================================
+ SECTIONS - used just on status_current right now. We need a new divider?
+ ========================================================================== */
+.section
+{
+	padding: 0 0 28px 0;
+	margin: 0 0 10px 0;
+}
+
+.section.last
+{
+	background: none;
+	padding-bottom: 0;
+}
+
+.section ul.table.first
+{
+}
+
+.section ul.table.last
+{
+	margin-bottom: 0;
+}
+
+/* =============================================================================
+ HIDE SHOW SECTION LINKS
+ ========================================================================== */
+.hideShowSection
+{
+	cursor: pointer;
+	color: #06c !important;
+	display:inline-block;
+}
+
+h1.hideShowSection,
+h2.hideShowSection,
+h3.hideShowSection,
+h4.hideShowSection
+{
+	font-size: 100%;
+	font-weight: normal;
+	margin: 1em 0;
+}
+
+.hideShowSection:visited
+{
+    color: #06c !important;
+}
+
+.hideShowSection:hover,
+.hideShowSection:focus
+{
+	color: #ec2227 !important;
+}
+
+/* ==|== primary styles =====================================================
+ Author:
+ ========================================================================== */
+p
+{
+	margin-bottom: 10px;
+}
+
+p.last, p:last-child
+{
+	margin-bottom: 0;
+}
+
+div.note, p.note,
+div.warning, p.warning,
+div.red_warning, p.red_warning
+{
+	line-height: 1.57em; /* 22px */
+}
+
+html.rtl div.note, html.rtl p.note,
+html.rtl div.warning, html.rtl p.warning,
+html.rtl div.red_warning, html.rtl p.red_warning
+{
+}
+
+div.note, p.note
+{
+	margin: 10px 0;
+}
+
+div.warning, p.warning,
+div.red_warning, p.red_warning
+{
+	margin: 20px 0;
+}
+
+fieldset .note
+{
+	padding: 0;
+}
+
+fieldset p.note
+{
+	margin: 0 0 10px 0;
+}
+
+.left, .center
+{
+	float: left;
+}
+
+.center
+{
+	text-align: center;
+}
+
+.right
+{
+	float: right;
+	text-align: right;
+}
+
+.rb
+{
+	width: 200px;
+	text-align: center;
+	font-weight: bold;
+}
+
+/* =============================================================================
+ BUTTON TEXT OVERRIDES
+ ========================================================================== */
+button.actionBtn,
+button.edit,
+button.cancelActionBtn,
+button.deletePeriod,
+button.deleteVpnProfile,
+button.deleteMessage
+{
+	/* hide any button text */
+	color: transparent;
+	text-transform: capitalize;
+	/* end hide any button text */
+	background-color: transparent !important;
+}
+
+/* =============================================================================
+ NAVIGATION
+ ========================================================================== */
+#navigation
+{
+}
+
+#navigation li
+{
+	position: relative;
+}
+
+html.rtl #navigation li
+{
+	padding-left: 0;
+	padding-right: 13px;
+}
+
+#navigation li .linkWrap
+{
+	font-family: NHaasGroteskTXPro-75Bd,Arial,sans-serif;
+	font-size: 16px;
+	height: 47px;
+	padding-left: 12px;
+	padding-right: 5px;
+	overflow: hidden;
+	display: table-cell;
+	vertical-align: middle;
+	width: 220px;
+	background-color: #ECEDEE;
+	padding-top: 5px;
+	vertical-align: middle;
+	box-sizing: border-box;
+}
+
+html.rtl #navigation li .linkWrap
+{
+	padding-right: 47px;
+	padding-left: 15px;
+}
+
+#navigation li:hover,
+#navigation li:focus,
+#navigation li.active
+{
+	
+}
+
+#navigation li a
+{
+	font-size: 1.15em; /* 16px */
+	line-height: 1.19em; /* 19px */
+}
+
+/* Count Badges */
+#navigation li .roomForBadge
+{
+	padding-right: 50px;
+}
+
+html.rtl #navigation li .roomForBadge
+{
+	padding-right: 47px; /* Return to default right padding for icon clearance. */
+	padding-left: 50px;
+}
+
+#navigation .badge
+{
+	position: absolute;
+	left: auto;
+	right: 10px;
+	top: 10px;
+	padding: 0 2px;
+	line-height: 20px;
+	min-width: 16px;
+	text-align: center;
+}
+
+html.rtl #navigation .badge
+{
+	right: auto;
+	left: 10px;
+}
+#sidebar a.settings-file-sharing, #pageHeadCol h1.settings-file-sharing {
+    background-position: 0 -871px;
+}
+/* =============================================================================
+ TABS
+ ========================================================================== */
+.tabs_container
+{
+}
+
+.tabs_container .tabs
+{
+	position: relative;
+	top: 1px;
+}
+
+.tabs_container .tabs ul li
+{
+	float: left;
+	padding: 0 20px;
+	margin: 10px 0;
+	width: auto;
+	white-space: nowrap;
+	background-image: none;
+}
+
+html.rtl .tabs_container .tabs ul li
+{
+	float: right;
+}
+
+.page .tabs_container.tabs_5 .tabs ul li, .tabbed_page .tabs_container.tabs_5 .tabs ul li
+{
+	/*max-width: 94px;*/
+}
+
+.page .tabs_container.tabs_6 .tabs ul li, .tabbed_page .tabs_container.tabs_6 .tabs ul li
+{
+	/*max-width: 71px;*/
+}
+
+.tabs_container .tabs ul li.last
+{
+	border-right: none;
+}
+
+html.rtl .tabs_container .tabs ul li.last
+{
+	border-left: none;
+}
+
+.tabs_container .tabs ul li a
+{
+	color: #01b3fb;
+}
+
+.tabs_container .tabs ul li:hover
+{
+}
+
+.tabs_container .tabs ul li.active
+{
+	padding: 10px 20px;
+	margin: 0;
+	position: relative;
+	left: -1px;
+}
+
+html.rtl .tabs_container .tabs ul li.active
+{
+	left: auto;
+	right: -1px;
+}
+
+.tabs_container .tabs ul li.first
+{
+	left: 0;
+}
+
+.tier_1_content
+{
+	padding: 25px 0px 0px 0px;
+}
+
+ul#navigationTabsTwo
+{
+}
+
+.tabs_container.tier_2
+{
+}
+
+.tabs_container.tier_2 .tabs ul li
+{
+	float: left;
+	padding: 7px 7px;
+	margin: 0 13px 0 0;
+	border-right: none;
+	border-bottom: 1px solid #333;
+}
+.tabs_container.tier_2 .tabs ul li:hover{
+ 	border-bottom: 2px solid #333;
+}
+html.rtl .tabs_container.tier_2 .tabs ul li
+{
+	float: right;
+	border-left: none;
+}
+
+.tabs_container.tier_2 .tabs ul li.last
+{
+	margin-right: 0;
+}
+
+html.rtl .tabs_container.tier_2 .tabs ul li.last
+{
+	margin-left: 0;
+}
+
+.tabs_container.tier_2 .tabs ul li a
+{
+	font-size: 1em; /* 14px */
+}
+
+.tabs_container.tier_2 .tabs ul li.active
+{
+	padding: 6px 10px 7px 10px; /* compensate for 1px top border */
+	position: relative;
+	left: 0;
+}
+
+html.rtl .tabs_container.tier_2 .tabs ul li.active
+{
+	left: auto;
+	right: 0;
+}
+
+.tier_2_content
+{
+	padding-top: 35px;
+}
+
+/* =============================================================================
+ LOGIN PAGE TEMPLATE
+ ========================================================================== */
+.login_page #login_container
+{
+	margin-left: -60px;
+}
+
+html.rtl .login_page #login_container
+{
+	margin-left: 0;
+	margin-right: -60px;
+}
+
+.login_page h1.pageHead
+{
+	padding-left: 0;
+	position: relative;
+	left: 0;
+}
+
+html.rtl .login_page h1.pageHead
+{
+	left: auto;
+	right: 0;
+	padding-right: 0;
+}
+
+.login_page h2
+{
+	margin: 1em 0;
+}
+
+#login_inner
+{
+	padding: 20px 20px 30px 450px;
+	min-height: 400px;
+}
+
+html.rtl #login_inner
+{
+	padding: 20px 450px 30px 20px;
+}
+
+#login_content
+{
+	max-width: 550px;
+}
+
+.login_page form fieldset
+{
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.login_page fieldset p.note,
+.login_page fieldset p.warning
+{
+	margin: 10px 0 0 0;
+	padding: 0 6px 0 26px;
+}
+
+html.rtl .login_page fieldset p.note,
+html.rtl .login_page fieldset p.warning
+{
+	padding: 0 26px 0 6px;
+}
+
+#login #forgot_password_area
+{
+	margin-bottom: 1em;
+}
+
+#login #forgot_password_area #passwordResponse
+{
+	margin-top: 1em;
+}
+
+/* =============================================================================
+ PAGE-RELATED APPLICATION STYLES
+ ========================================================================== */
+#pageHeadRow
+{
+	padding-bottom: 3px;
+	margin-bottom: 15px;
+}
+
+#pageHeadCol
+{
+	float: left;
+}
+
+html.rtl #pageHeadCol
+{
+	float: right;
+}
+
+.page #pageHeadCol, .tabbed_page #pageHeadCol
+{
+	width: 381px;
+}
+
+/* =============================================================================
+ ERROR PAGES
+ ========================================================================== */
+.error_page #app_container
+{
+	position: relative;
+	top: 80px;
+	width: 900px;
+	margin: 0 auto;
+	float: none;
+}
+
+.error_page #app_content
+{
+	text-align: left;
+	margin-left: 225px;
+	margin-top:5%;
+}
+
+.error_page h1
+{
+	line-height: normal;
+	font-size: 3em; /* 45px */
+}
+
+.error_page h2
+{
+	font-size: 1.57em; /* 22px */
+	margin: 17px auto;
+	line-height: 35px;
+	font-weight: bold;
+}
+
+/* =============================================================================
+ PROGRESS / DATA USAGE BAR
+ ========================================================================== */
+.progress_bar_wrapper
+{
+	display: table; /* change for mobile */
+	width: 100%;
+}
+
+.progress_bar_wrapper #data_plan_usage_bar_col,
+.progress_bar_wrapper #refresh_btn_col
+{
+	display: table-cell; /* change for mobile */
+	vertical-align: middle;
+}
+
+.progress_bar_wrapper #data_plan_usage_bar_col
+{
+	width: 100%;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+#refresh_btn_col2{
+	 margin-bottom: 15px;
+	 float: left;
+	 width: 100%;
+}
+
+.progress_bar_wrapper #refresh_btn_col
+{
+	width: 15%;
+	text-align: right;
+}
+
+html.rtl .progress_bar_wrapper #refresh_btn_col
+{
+	text-align: left;
+}
+
+.progress_bar_wrapper .ui-progressbar
+{
+	overflow: hidden;
+}
+
+.progress_bar_wrapper .ui-progressbar,
+.progress_bar_wrapper .ui-progressbar .ui-widget-header,
+.progress_bar_wrapper .ui-progressbar .ui-widget-header-line
+{
+	height: 26px;
+}
+
+/* shared */
+.progress_bar_wrapper .ui-progressbar .ui-widget-header
+{
+}
+
+/* device */
+.progress_bar_wrapper .ui-progressbar .ui-widget-header-line
+{
+	margin-top: -26px;
+}
+
+.progress_bar_wrapper #data_plan_usage_bar_col .lineUsage,
+/*.progress_bar_wrapper #data_plan_usage_bar_col .endDate*/
+{
+	width: 44%;
+}
+
+.progress_bar_wrapper #data_plan_usage_bar_col .title
+{
+	width: 75%;
+}
+
+.progress_bar_wrapper #data_plan_usage_bar_col .title,
+.progress_bar_wrapper #data_plan_usage_bar_col .lineUsage
+{
+	float: left;
+}
+
+.progress_bar_wrapper #data_plan_usage_bar_col .lineUsageColor,
+.progress_bar_wrapper #data_plan_usage_bar_col .totalUsageColor,
+.progress_bar_wrapper #data_plan_usage_bar_col .remainingUsageColor
+{
+	width: 15px;                 
+	height: 15px;                
+	border:1px solid #808080;
+	float: left;
+	margin-top: 20px;
+}
+
+.progress_bar_wrapper #data_plan_usage_bar_col .lineUsageColor
+{
+	background-color: #006600;
+}
+
+.progress_bar_wrapper #data_plan_usage_bar_col .totalUsageColor,
+.progress_bar_wrapper #data_plan_usage_bar_col .remainingUsageColor
+{
+	background-color: #FF9900;
+}
+
+/*.progress_bar_wrapper #data_plan_usage_bar_col .totalUsageColor
+{
+	margin-left: 30%;
+}*/
+
+.progress_bar_wrapper #data_plan_usage_bar_col .remainingUsageColor
+{
+	margin-left: 50%;
+}
+
+html.rtl .progress_bar_wrapper #data_plan_usage_bar_col .title,
+html.rtl .progress_bar_wrapper #data_plan_usage_bar_col .lineUsage
+{
+	float: right;
+}
+
+html.rtl .progress_bar_wrapper #data_plan_usage_bar_col .totalusage
+{
+	margin-left: 10px;
+	float: right;
+}
+
+.progress_bar_wrapper #data_plan_usage_bar_col .totalusage
+{
+	margin-left: 10px;
+	float: left;
+}
+
+html.rtl .progress_bar_wrapper #data_plan_usage_bar_col .remainingusage,
+html.rtl .progress_bar_wrapper #data_plan_usage_bar_col .endDate
+{
+	font-size: 1em;
+	float: left;
+	text-align: left;
+}
+
+.progress_bar_wrapper #data_plan_usage_bar_col .remainingusage
+{
+	padding-left: 95px;
+}
+
+/*.progress_bar_wrapper #data_plan_usage_bar_col .endDate
+{
+	float: right;
+	text-align: right;
+}*/
+
+#data_plan_circle {                                      
+	width: 120px;                                
+	height: 120px;                               
+	border:3px solid #006600;                         
+	border-radius: 50%;                          
+	font-size: 12px;                                             
+	color: #000;                                 
+	line-height: inherit;                           
+	text-align: center;                                          
+	background: #fff;
+	margin-top: 25px;
+}                                              
+                                               
+                                               
+#data_plan_circle_inner {                     
+    width: 47px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #fff;
+    background: #000;
+    position: relative;
+    bottom: 11%;
+    left: 30%;
+    display: table;
+}
+
+#data_plan_circle_not_available {
+
+    float: left;
+    margin-left: 150px;
+    margin-top: 45px;
+    margin-right: 15px;
+}
+
+#retrieval_status {
+    padding-top: 45px;
+    padding-left: 150px;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+#data_usage-form h3.subSectionHead {
+	font-weight: bold;
+}
+
+.progress_bar_wrapper #data_plan_usage_bar_col #lineUsageDetails,
+.progress_bar_wrapper #data_plan_usage_bar_col #totalUsageDetails,
+.progress_bar_wrapper #data_plan_usage_bar_col #remainingUsageDetails
+{
+	width: 33%;
+	float: left;
+}
+
+#usedPercentage {
+    margin-top: 5px;
+    padding: 5px 5px 0px 5px;
+}
+
+.duUnlimitedShared {
+    line-height: 1.5em;
+    min-height: 90px;
+}
+.duUnlimited {
+	margin-top: 35px !important;
+	min-height: 50px;
+}
+
+#remainingData {
+    position: relative;
+    margin-top: -25px;
+}
+
+#remainingText {
+    position: relative;
+    margin-top: -35px;
+}
+
+#data_plan_circle_outer {
+    margin-top: -25px;
+    margin-left: 10px;
+}
+
+/** Progressbar class css*/
+.progressbar {
+    width: 80%;
+	margin-top: 5px;
+	margin-bottom: 35px;
+	position: relative;
+	background-color: #EEEEEE;
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,.1);
+	margin-left: 30px;
+}
+
+.proggress{
+	height: 8px;
+	width: 10px;
+	background-color: #3498db;
+}
+
+.percentCount{
+	float: right;
+    margin-top: -50px;
+    clear: both;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.deviceName{
+	float: left;
+    clear: both;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#ConnectedDevicesPrimaryTable .hostName {
+	margin-top: 10px; 	
+}
+
+#ConnectedDevicesPrimaryTable button#dropdown{
+	margin-top: 10px;
+}
+#ConnectedDevicesPrimaryTable button#dropdown:hover, #ConnectedDevicesPrimaryTable button#dropdown:focus{
+	border-color: none;
+    -webkit-box-shadow: none;
+    box-shadow:none;
+}
+
+#apps_home .deviceName {
+	margin-top: 0px;
+}
+
+#pie_chart_container {
+	height: 390px;
+    background-color:#E0E0E0;
+    margin-top: 50px;                                     
+}                              
+         
+.jqplot-target {
+    height: 350px;        
+    margin-top: 50px;                                                              
+}                                                                                                         
+                                                            
+#duLearnMore {  
+    float: right;                                                       
+    font-size: 20px;                
+    background: url("/assets/images/icons/navigation_arrow.png") no-repeat right;
+    padding-right: 20px;
+}
+.jqplot-title {            
+    padding: 10px;                                              
+}
+
+#usage_header {
+	margin-bottom: 50px;	
+}
+
+/* =============================================================================
+ DATA USAGE PAGE
+ ========================================================================== */
+.data_usage_confirmation .title
+{
+	margin-top: 10px;
+}
+
+.data_usage_confirmation .message
+{
+	margin-top: 10px;
+}
+
+#data_usage h2 span.usage_data
+{
+	white-space: nowrap;
+}
+
+#data_usage #retrieval_status.loading
+{
+	height: 150px;
+	padding-top: 0px;
+    padding-left: 0px;
+}
+
+#data_usage fieldset p.note
+{
+	margin-top: 40px;
+}
+
+#data_usage .title,
+#data_usage .type,
+#data_usage .lineUsage,
+#data_usage .totalusage,
+#data_usage .endDate,
+#data_usage .remainingusage,
+#data_usage .planusage
+{
+	font-size: 1em; /* 14px */
+	margin: 10px 0;
+}
+
+/* =============================================================================
+ SOFTWARE UPDATE PAGE
+ ========================================================================== */
+#software_update table#softwareUpdates col.date
+{
+	width: 33%;
+}
+
+/* =============================================================================
+ BACKUP AND RESTORE PAGE
+ ========================================================================== */
+.backup_restore_shutdown_restart button
+{
+	margin: 0 10px 10px 0;
+}
+
+/* ===========================================================================
+ MNS PAGE
+ ========================================================================== */
+#networkListHeader th
+{
+	text-align: left;
+}
+
+#networkListTableHeader .loading
+{
+	margin-left: 250px;
+}
+
+#NetworksSelectMNS {
+    margin-left: 230px;
+    /*display: flex;*/
+    margin: 0 auto;
+    float: none;
+}
+
+/* =============================================================================
+ DEVICES TABLE
+ ========================================================================== */
+table.devicesTable col.icon
+{
+	width: 70px;
+}
+
+table.devicesTable tr
+{
+	height: 50px;
+	min-height: 50px;
+}
+
+/* Connected Device Icons */
+table.devicesTable tbody tr td.icon span
+{
+	width: 24px;
+	height: 24px;
+	display: block;
+	margin: 0 auto !important;
+	margin-left: 12px;
+	margin-top: -2px;
+}
+
+/* Connected Device Icons */
+html.rtl table.devicesTable tbody tr td.icon span
+{
+	margin-left: 0;
+	margin-right: 12px;
+}
+
+table.devicesTable tbody tr td.deviceName
+{
+	font-size: 1em;
+}
+
+/* Connection Types Icons */
+table.devicesTable tbody tr td.interfaceType span.wifi,
+table.devicesTable tbody tr td.interfaceType span.usb,
+table.devicesTable tbody tr td.interfaceType span.ethernet
+{
+	display: block;
+	margin: 0 auto !important;
+}
+
+table.devicesTable tbody tr td.interfaceType span.wifi
+{
+	background-image: url("../images/icons/connected_devices/image-wifi.png") !important;
+	width: 32px;
+	height: 25px;
+}
+
+table.devicesTable tbody tr td.interfaceType span.usb
+{
+	width: 32px;
+	height: 14px;
+}
+
+table.devicesTable tbody tr td.interfaceType span.ethernet
+{
+	width: 32px;
+	height: 32px;
+}
+
+table.devicesTable tbody tr td p
+{
+	margin: 0;
+}
+
+table.devicesTable tbody tr.editDeviceRow td
+{
+	white-space: nowrap;
+}
+
+table.devicesTable button.edit
+{
+	width: 20px;
+	height: 20px;
+}
+
+table.devicesTable td.networkType
+{
+	text-align: center;
+}
+
+table.devicesTable td.buttonColumn
+{
+	text-align: center;
+}
+
+html.rtl table.devicesTable td.buttonColumn
+{
+	text-align: left;
+}
+
+table.devicesTable .editDeviceRow .buttonColumn .actionBtn
+{
+	height: 27px;
+	width: 27px;
+}
+
+tr.editDeviceRow td.selectContainer .selector,
+tr.editDeviceRow td.selectContainer select
+{
+	width: 200px;
+	margin-right: 20px;
+}
+
+html.rtl tr.editDeviceRow td.selectContainer .selector,
+html.rtl tr.editDeviceRow td.selectContainer select
+{
+	margin-right: 0;
+	margin-left: 20px;
+}
+
+tr.editDeviceRow td.selectContainer .selector
+{
+	float: left;
+}
+
+html.rtl tr.editDeviceRow td.selectContainer .selector
+{
+	float: right;
+}
+
+table.devicesTable .editDeviceRow, #no_blocked_devices
+{
+	display: none;
+}
+
+/* =============================================================================
+ MESSAGES PAGE
+ ========================================================================== */
+#smsInbox tr.Unread:hover
+{
+	cursor: pointer;
+}
+
+#smsInbox td
+{
+	vertical-align: top;
+}
+
+#smsInbox p.sender
+{
+	width: 104px;
+}
+
+#smsInbox p.timeReceived
+{
+	width: 134px;
+}
+
+#smsInbox p.message
+{
+	margin-bottom: 4px;
+}
+
+#smsInbox p.message
+{
+	font-size: 1.2em;
+}
+
+#smsInbox p.message
+{
+	overflow-wrap: break-word;
+	width: 320px;
+}
+
+.ie8 #smsInbox p.message
+{
+	overflow: auto;
+}
+
+#smsInbox p.timeReceived, #smsInbox p.sender
+{
+	white-space: nowrap;
+}
+
+#smsInbox td.checkbox
+{
+	text-align: right;
+}
+
+#deleteMessage
+{
+	width: 97px;
+	height: 26px;
+	margin-top: 5px;
+	float: right;
+}
+
+.tiney-display {
+    display: none;
+}
+
+#ui-id-1 .wideTableWrap {
+    overflow-x: unset;
+}
+
+/* =============================================================================
+PARENTAL CONTROL SITE FILTER PAGE
+ ========================================================================== */
+#parentalctrl_site #parentalControlSiteFilter div.col
+{
+	width: auto;
+	padding-right: 30px;
+}
+
+html.rtl #parentalctrl_site #parentalControlSiteFilter div.col
+{
+	padding-right: 0;
+	padding-left: 30px;
+}
+
+#parentalctrl_site #parentalControlSiteFilter div.sites_count
+{
+	padding-right: 0 !important;
+	padding-left: 30px;
+	text-align: right;
+}
+
+html.rtl #parentalctrl_site #parentalControlSiteFilter div.sites_count
+{
+	padding-right: 30px !important;
+	padding-left: 0 !important;
+	text-align: left;
+}
+
+#parentalctrl_site .sites_count,
+#parental_control_site_selectAll
+{
+	float: right;
+}
+
+html.rtl #parentalctrl_site .sites_count,
+html.rtl #parental_control_site_selectAll
+{
+	float: left;
+}
+
+html.rtl #parentalctrl_site #parentalControlSiteFilter div#parentalControlSitesCount
+{
+	padding-left: 0;
+	float: left;
+	text-align: left;
+}
+
+#parentalctrl_site table.parentalControlSiteTable td input.text
+{
+	width: 98%;
+}
+
+tr.parentalControlSiteInformationRow td
+{
+	vertical-align: top;
+}
+
+.addParentalControlSite
+{
+	padding-left: 30px;
+	display: block !important;
+	line-height: 24px;
+}
+
+html.rtl .addParentalControlSite
+{
+	padding-left: 0;
+	padding-right: 30px;
+}
+
+.parentalControlSiteTable col.checkbox
+{
+	width: 50px;
+	text-align: center;
+}
+
+#parentalctrl_device table.devicesTable col.icon
+{
+	width: 50px;
+}
+
+#parentalctrl_device table.devicesTable col.deviceName,
+#parentalctrl_device table.devicesTable col.ipaddress,
+#parentalctrl_device table.devicesTable col.macaddress
+{
+	width: 25%;
+}
+
+.parentalControlSiteTable
+{
+	margin: 10px 0;
+}
+
+#parental_control_site.siteName,
+{
+	width: 100px;
+}
+
+#parentalctrl_schedule button.actionBtn,
+#parentalctrl_schedule button.cancelActionBtn,
+#parentalctrl_schedule button.deletePeriod
+{
+	line-height: normal;
+	padding: 0;
+}
+
+#parentalctrl_schedule button.deletePeriod
+{
+	width: 24px;
+}
+
+#parentalctrl_schedule button.deletePeriod
+{
+	height: 26px;
+}
+
+#parentalctrl_schedule .actionBtn
+{
+	height: 26px;
+	width: 28px;
+}
+
+#parentalctrl_schedule .cancelActionBtn
+{
+	height: 26px;
+	width: 26px;
+}
+
+#parentalctrl_schedule button.deletePeriod:hover,
+#parentalctrl_schedule button.deletePeriod:focus,
+#parentalctrl_schedule .actionBtn:hover,
+#parentalctrl_schedule .actionBtn:focus,
+#parentalctrl_schedule .cancelActionBtn:hover,
+#parentalctrl_schedule .cancelActionBtn:focus
+{
+	border: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+/* =============================================================================
+ ADVANCED PORT FILTERING PAGE
+ ADVANCED PORT FORWARDING PAGE
+ ========================================================================== */
+/* Stack the Applications in rows of 2 or three per row using floats */
+tr.portInformationRow td
+{
+	vertical-align: top;
+}
+
+.addCustomApp
+{
+	margin-left: 10px;
+	padding-left: 27px;
+	margin-top: 10px;
+	display: block;
+}
+
+html.rtl .addCustomApp
+{
+	margin-left: 0;
+	padding-left: 0;
+	margin-right: 10px;
+	padding-right: 27px;
+}
+
+#portFilteringCustomApplicationsList td.checkbox,
+#portForwardingCustomApplicationsList td.checkbox
+{
+	text-align: center;
+}
+
+.portFilteringTable col.checkbox
+{
+	width: 50px;
+}
+
+#portFilteringCustomApplicationsList td.portName input,
+#portFilteringCustomApplicationsList td.portIpAddress input
+{
+	width: 100%;
+}
+#portForwardingCustomApplicationsList td.portName input,
+#portForwardingCustomApplicationsList td.portIpAddress input
+{
+	width: 100px;
+	width: 100%;
+}
+
+#portFilteringCustomApplicationsList
+{
+	margin-bottom: 10px;
+}
+
+#portFilteringCustomApplicationsList td div.checker,
+#portForwardingCustomApplicationsList td div.checker
+{
+	margin: 5px 0;
+}
+
+#adv_port_forward .applicationOnHeading
+{
+	text-align: center;
+}
+
+/* =============================================================================
+ DEVICE INFO & STATUS DIAGNOSTICS PAGES
+ ========================================================================== */
+#device_info div.col.input,
+#status_diagnostics div.col.input
+{
+	width: 398px;
+}
+
+/* =============================================================================
+ BENGAL ADVANCED SETTINGS PAGE
+ ========================================================================== */
+#settings_virtual .tier_2 .tabs,
+.tabitem.settings-advanced-bengal-advanced
+{
+	display: none;
+}
+
+#settings_virtual .tier_2_content
+{
+	padding-top: 0;
+}
+
+/* =============================================================================
+ GPS PAGE
+ ========================================================================== */
+#gps_status p.note
+{
+	display: none;
+}
+
+/* =============================================================================
+ PCO PAGE
+ =========================================================================== */
+#pco .loading
+{
+	background: url("../images/ajax_loader_f7f7f7.gif") no-repeat;
+	min-height: 32px;
+	min-width: 32px;
+	padding-left: 40px;
+}
+
+#pco .pco-container
+{
+	width: 650px;
+	margin: 0 auto;
+}
+
+#pco p.clearfix
+{
+	padding-left: 25px;
+}
+
+#pco .pco-container #warningText
+{
+	background: url("/assets/images/icons/image-alert.png") no-repeat left;
+	padding-left: 25px;
+}
+
+/* =============================================================================
+ RESTARTING PAGE
+ ========================================================================== */
+#restarting #app_container
+{
+	min-height: 400px;
+	margin-left: -60px;
+}
+
+html.rtl #restarting #app_container
+{
+	margin-left: 0;
+	margin-right: -60px;
+}
+
+#restarting #restartingContentInner
+{
+	padding: 145px 50px 0 420px;
+}
+
+html.rtl #restarting #restartingContentInner
+{
+	padding: 145px 420px 0 50px;
+}
+
+#restarting #restartingContent h2
+{
+	display: table;
+	margin: 0 auto 10px auto;
+}
+
+#restarting #restartingContent p
+{
+	text-align: center;
+}
+
+#restarting #restartingContent #homeLink {
+	margin: 20px 0;
+}
+
+/* =============================================================================
+ RESETTING PAGE
+ ========================================================================== */
+#resetting #app_container
+{
+	min-height: 400px;
+	margin-left: -60px;
+}
+
+html.rtl #resetting #app_container
+{
+	margin-left: 0;
+	margin-right: -60px;
+}
+
+#resetting #resettingContentInner
+{
+	padding: 145px 50px 0 420px;
+}
+
+html.rtl #resetting #resettingContentInner
+{
+	padding: 145px 420px 0 50px;
+}
+
+#resetting #resettingContent h2
+{
+	display: table;
+	margin: 0 auto 10px auto;
+}
+
+#resetting #resettingContent p
+{
+	text-align: center;
+}
+
+#resetting #resettingContent #homeLink {
+	margin: 20px 0;
+}
+
+
+/* =============================================================================
+ SHUTDOWN PAGE
+ ========================================================================== */
+#shutdown #app_container
+{
+	min-height: 400px;
+	margin-left: -60px;
+}
+
+html.rtl #shutdown #app_container
+{
+	margin-left: 0;
+	margin-right: -60px;
+}
+
+#shutdownContentInner
+{
+	padding: 154px 20px 0 450px;
+}
+
+html.rtl #shutdownContentInner
+{
+	padding: 154px 450px 0 20px;
+}
+
+#shutdown h2.appHead
+{
+	font-size: 1.86em; /* 26px */
+	line-height: normal;
+	margin-bottom: 0.4em;
+}
+
+/* =============================================================================
+ SOFTWARE INSTALL PAGE
+ ========================================================================== */
+#software_install #softwareInstallContent
+{
+	background-image: url("/assets/images/heros/marquee-crop-left.png");
+	background-repeat: no-repeat;
+	background-position: 550px -55px;
+	margin: 20px;
+	text-align:left;
+}
+
+html.rtl #software_install #softwareInstallContent
+{
+        background-position: right 0;
+}
+
+#software_install #softwareInstallContentInner
+{
+       display: inline-block;
+       margin-top: 65px;
+}
+
+#softwareInstallContentInner.status
+{
+       margin-top: 111px !important;
+}
+
+html.rtl #software_install #softwareInstallContentInner
+{
+        padding: 120px 320px 0 50px;
+}
+
+#software_install #softwareInstallContent h2
+{
+	display: table;
+	margin: 5px auto 30px 0px;
+	font-size: 25px;
+}
+
+#software_install #softwareInstallContent p
+{
+        text-align: center;
+}
+
+#software_install #softwareInstallContent #homeLink
+{
+        margin: 20px 0;
+        text-align: center;
+}
+
+@media screen and (max-width: 1220px)
+{
+	#software_install #softwareInstallContent
+	{
+        background-image: url("");
+        text-align:center;
+	}
+}
+
+/* =============================================================================
+ SIDELOAD SOFTWARE UPDATE PAGE
+ ========================================================================== */
+#sideload_software_update #softwareUpdateFileProcessingMsg.loading
+{
+        /* See .loading style definition. */
+        background-position: left center !important;
+        padding-left: 46px;
+        line-height: 32px;
+        font-weight: bold;
+}
+
+html.rtl #sideload_software_update #softwareUpdateFileProcessingMsg.loading
+{
+        /* See .loading style definition. */
+        background-position: right center !important;
+        padding-left: 0;
+        padding-right: 46px;
+}
+
+
+/* =============================================================================
+ SIDELOAD SOFTWARE INSTALL PAGE
+ ========================================================================== */
+#sideload_software_install #softwareInstallContent
+{
+	background-image: url("/assets/images/heros/marquee-crop-left.png");
+	background-repeat: no-repeat;
+	background-position: 550px -55px;
+	margin: 20px;
+	text-align:left;;
+}
+
+html.rtl #sideload_software_install #softwareInstallContent
+{
+        background-position: right 0;
+}
+
+#sideload_software_install #softwareInstallContentInner
+{
+       display: inline-block;
+       margin-top: 87px;
+}
+
+html.rtl #sideload_software_install #softwareInstallContentInner
+{
+        padding: 120px 320px 0 50px;
+}
+
+#softwareInstallContentInner.status
+{
+       margin-top: 111px !important;
+}
+
+#sideload_software_install #softwareInstallContent h2
+{
+        display: table;
+        margin: 0 auto 10px 0px;
+}
+
+#sideload_software_install #softwareInstallContent p
+{
+        text-align: center;
+}
+
+#sideload_software_install #softwareInstallContent #homeLink
+{
+        margin: 20px 0;
+        text-align: center;
+}
+
+#homeLink a.gohome
+{
+	margin-left: 15px !important;
+	float: left !important;
+	padding: 0px !important;
+	background: none !important;
+}
+
+@media screen and (max-width: 1220px)
+{
+	#sideload_software_install #softwareInstallContent
+	{
+        background-image: url("");
+        text-align:center;
+	}
+}
+
+#SoftwareInstallStatus.success
+{
+	text-align: left !important;
+	font-weight: bold !important;
+	padding: 10px 0px 0px 40px !important;
+	background: url("../../../assets/images/icons/navigation/icn-warning.png") no-repeat;
+	background-size: 30px;
+	background-position: 0px 12px;
+}
+
+#SoftwareInstallStatus.progress
+{
+	float: left !important;
+	text-align: left !important;
+	font-weight: bold !important;
+	color: #000000 !important;
+	background: url("../../../assets/images/icons/navigation/icn-warning.png") no-repeat;
+	background-size: 30px;
+	background-position: 0px 7px;
+}
+
+#SoftwareInstallStatus.fail
+{
+	text-align: left !important;
+	font-weight: bold !important;
+	color: #000000 !important;
+	background: url("../../../assets/images/icons/navigation/icn-warning.png") no-repeat;
+    background-position: 0px 5px;
+    background-size: 30px;
+}
+
+#SoftwareInstallStatus.noresp
+{
+	text-align: left !important;
+	font-weight: bold !important;
+	background: url("../../../assets/images/icons/navigation/icn-warning.png") no-repeat;
+	background-size: 30px;
+	background-position: 0px 7px;
+}
+
+#SoftwareInstallTitle
+{
+	color: #000 !important;
+}
+
+#SoftwareInstallNote
+{
+	color: #000000 !important;
+	font-weight: bold !important;
+	margin-top: 10px !important;
+}
+
+/* =============================================================================
+ BENGAL PREFERENCES PAGE
+ ========================================================================== */
+#ucf_animation
+{
+	width: 280px;
+	margin-left: 200px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+html.rtl #ucf_animation
+{
+	margin-left: 0;
+	margin-right: 200px;
+}
+
+/* =============================================================================
+ LAB TEST INFO PAGE
+ ========================================================================== */
+#lab_test_info #connectionControl .toggleSettingContainer
+{
+	margin: -10px auto;
+}
+
+#lab_test_info #diagInfo
+{
+	padding: 10px;
+}
+
+/* =============================================================================
+ MODAL DIALOG
+ ========================================================================== */
+.ui-dialog
+{
+	outline-width: 0;
+	outline-style: none;
+	width: 340px;
+	position: absolute;
+	height: auto;
+	z-index: 1005;
+}
+
+.ui-icon
+{
+	display: block;
+	text-indent: -99999px;
+	overflow: hidden;
+}
+
+.ui-dialog-titlebar
+{
+	padding: 17px 50px 14px 17px;
+}
+
+html.rtl .ui-dialog-titlebar
+{
+	padding: 17px 17px 14px 50px;
+}
+
+.ui-dialog-titlebar span
+{
+	font-size: 1.43em; /* 20px */
+	line-height: 30px;
+}
+
+.noTitle .ui-dialog-titlebar
+{
+	display: none;
+}
+
+.ui-dialog-content
+{
+	position: relative;
+	padding: 24px 17px 30px 17px;
+	overflow: auto;
+	min-height: 60px !important;
+	zoom: 1;
+}
+
+.ui-dialog-content h3
+{
+	font-size: 1.43em; /* 20px */
+	font-weight: bold;
+	line-height: 22px;
+	margin: 10px 0 8px 0;
+}
+
+.ui-dialog-content p
+{
+	line-height: 22px;
+}
+
+.ui-dialog-titlebar-close
+{
+	position: absolute;
+	right: 17px;
+	top: 24px;
+	width: 16px;
+	margin: 0;
+	padding: 0;
+	height: 16px;
+	background-color: transparent;
+	overflow: hidden;
+}
+
+html.rtl .ui-dialog-titlebar-close
+{
+	right: auto;
+	left: 17px;
+}
+
+.ui-dialog-titlebar-close span.ui-icon-closethick
+{
+	width: 16px;
+	height: 15px;
+	display: block;
+	margin: inherit;
+}
+
+.ui-dialog-titlebar-close span.ui-button-text
+{
+	display: none;
+}
+
+.ui-widget-overlay
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1004;
+	width: 100%;
+	height: 100%;
+	opacity: 0.75;
+}
+
+.oldie .ui-widget-overlay
+{
+	position: absolute;
+	filter: Alpha(Opacity=75);
+}
+
+.ui-dialog-buttonpane
+{
+	padding: 17px 18px;
+	text-align: right;
+}
+
+html.rtl .ui-dialog-buttonpane
+{
+	text-align: left;
+}
+
+.ui-dialog-buttonpane div.button,
+.ui-dialog-buttonpane button
+{
+	margin-left: 10px;
+}
+
+html.rtl .ui-dialog-buttonpane div.button,
+html.rtl .ui-dialog-buttonpane button
+{
+	margin-left: 0;
+	margin-right: 10px;
+}
+
+.ui-dialog-buttonset
+{
+	text-align: right;
+	height: 27px;
+	line-height: 27px;
+}
+
+html.rtl .ui-dialog-buttonset
+{
+	text-align: left;
+}
+
+/* =============================================================================
+ Help Dialog and Support Elements
+ ========================================================================== */
+#help_wrapper
+{
+}
+
+/*
+ * We need #help_wrapper div as part of each selector here
+ * or the styles won't stick to the $.load() content.
+ */
+#help_wrapper div h1, #help_wrapper div h2, #help_wrapper div h3, #help_wrapper div h4
+{
+	line-height: normal;
+}
+
+#help_wrapper div h1
+{
+	font-size: 1.5em;
+	margin: 0 0 10px 0;
+}
+
+#help_wrapper div h2
+{
+	font-size: 1.25em;
+	margin: 10px 0 8px 0;
+}
+
+#help_wrapper div h3
+{
+	font-size: 1em;
+	margin: 10px 0 0 0;
+}
+
+#help_wrapper div p
+{
+	margin: 4px 8px;
+}
+
+#help_wrapper div.blockgroup
+{
+	margin: 4px 0 4px 12px;
+}
+
+html.rtl #help_wrapper div.blockgroup
+{
+	margin: 4px 12px 4px 0;
+}
+
+#help_wrapper div.blockgroup p
+{
+	margin: 0 0 4px 0;
+}
+
+#help_wrapper div.blockgroup ul, #help_wrapper div.blockgroup ol
+{
+	margin: 0;
+	padding: 4px 4px 4px 24px;
+}
+
+html.rtl #help_wrapper div.blockgroup ul,
+html.rtl #help_wrapper div.blockgroup ol
+{
+	padding: 4px 24px 4px 4px;
+}
+
+#help_wrapper div.blockgroup ul li
+{
+	list-style-type: square;
+}
+
+#help_wrapper div.blockgroup ol li
+{
+	list-style-type: decimal;
+}
+
+a.helpLink
+{
+	width: 20px;
+	height: 20px;
+	display: block;
+	overflow: hidden;
+	float: right;
+	position: relative;
+	z-index: 890;
+	margin-top: 9px;
+}
+
+html.rtl a.helpLink
+{
+	float: left;
+}
+
+.help_dialog
+{
+	text-align: center;
+}
+
+/*
+ * Hide divs with this class if javascript disabled.
+ * Depends on Modernizr.
+ */
+.no-js #app_content,
+.no-js #login_content
+{
+	display: none;
+}
+
+#noscript
+{
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.login_page #noscript
+{
+	margin: 50px 0;
+}
+
+#noscript h1,
+#noscript h4
+{
+	font-size: 1.15em; /* 16px */
+	margin-bottom: 10px;
+}
+.checkboxspace > .checker {
+    margin: 2px 5px 3px 0;
+}
+
+/* =============================================================================
+PCO
+ ========================================================================== */
+.pco-container {
+    margin: 0 auto;
+    width: 55%;
+}
+.pco-container #buttons {
+    text-align: center;
+}
+.pco-container #buttons button {
+    display: inline-block;
+    float: none;
+    margin-bottom: 25px;
+    margin-top: 23px;
+}
+.no_status_bar #app_inner {
+    border: medium none;
+}
+
+/* =============================================================================
+ Help Styles	
+ ==============================================================================*/
+.list-style li {
+    list-style: disc;
+    margin-left: 20px;
+}
+#macFilterTable th {
+    text-align: center;
+}
+#macFilterTable td.delete {
+    text-align: center;
+}
+table tr .status {
+    width: 15%;
+}
+#status_bar #statusBar_connected_devices_grp {
+    margin-right: 0px;
+}
+.assing-folder h2 {
+    font-size: 1.15em;
+}
+.assing-folder h4 {
+    font-weight: bold;
+    margin-top: 10px;
+}
+h2#accessSharedFolderlToggle {
+    margin: 0.4em 0;
+    padding-left: 39px;
+}
+#accessSharedFolderHelp {
+    margin-left: 40px;
+}
+.orderlistitems li {
+    list-style-type: inherit;
+    list-style-position: inside;
+}
+.portFilteringTable thead th:nth-child(2) {
+    text-align: center;
+}
+.portForwardingTable tr th {
+    text-align: left;
+}
+
+/* =============================================================================
+ input type file design
+ ==============================================================================*/
+.filetype .uploader {
+    border: medium none;
+    width: 100%;
+}
+.filetype .uploader .filename {
+        background: #fcfcfc none repeat scroll 0 0;
+    border-color: #cdcdcd #efefef #efefef #cdcdcd;
+    border-style: solid;
+    border-width: 1px;
+    cursor: auto;
+    display: inline-block;
+    line-height: 19px;
+    margin-right: 17px;
+    width: 200px;
+}
+.filetype .uploader .action {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ccc;
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+    line-height: 19px;
+}
+.filetype .uploader:hover,
+.filetype .uploader:focus,
+.filetype .uploader:active {
+    box-shadow: none;
+    border:none;
+}
+.clearfix .input.filetype {
+    width: 62%;
+}
+.filetype input[type="file"] {
+    right: 2px;
+    width: 115px;
+}
+
+#ProgressBarZeroPercent
+{
+    float: left !important;
+}
+
+#ProgressBarHundredPercent
+{
+    float: right !important;
+}
+                                                                                 
+.clearfix .input.filetype {                                                              
+	width: 345px;                                                                                          
+}  
+
+#help_faq a.helpLink, 
+#customer_care a.helpLink, 
+#settings_virtual a.helpLink {
+    display: none;
+}
+
+a.goUrl {
+	border-bottom: 1px solid #333;
+	color: #333;
+}
+
+/* ToolTip styles */
+.tooltip {
+	border: 2px solid black;
+	width: 17px;
+	height: 17px;
+	display: inline-block;
+	border-radius: 100%;
+	font-size: 13.5px;
+	text-align: center;
+	background-color: white;
+	margin-right: 3px;
+}
+
+.uitooltip {
+	padding: 8px;
+	background-color: #323232;
+	position: absolute;
+	max-width: 200px;
+	min-width: 10px;
+	-webkit-box-shadow: 0 0 5px #aaa;
+	box-shadow: 0 0 5px #aaa;
+	font-size: 15px;
+	text-align: left;
+	font-weight: normal;
+	white-space: pre-line;
+	border-radius: 10px;
+	opacity: 0.85;
+	border: 1px solid black;
+	color: white;
+	z-index: 5;
+}
+
+/*************************
+ *	Four column layout   *
+ *************************/
+
+.input-portnum {
+	width: 20%;
+}
+
+div#uniform-GPSPortNumberSave {
+    float: right;
+    margin-right: -98%;
+    margin-top: -35%;
+}
+
+.scrimp {
+	width: 54%;
+}
+
+.scrimp .slidebutton-container {
+    margin-left: 30px;
+}
+
+#file_sharing #FolderNamesSection .input-textbox {
+	width: 100%;
+}
+
+#file_sharing #FolderNames.bg-color {
+    background-color: #E0E0E0;
+    border: 2px solid #333;
+	height: 90px;
+
+}
+
+#data_usage .hideShowSection,
+#connected_devices .hideShowSection,
+#file_sharing .hideShowSection {
+	border-bottom: 1px solid #333;
+}
+
+#data_usage.tabbed_page #app_inner,
+#connected_devices.tabbed_page #app_inner,
+#file_sharing.tabbed_page #app_inner {
+	padding-top: 10px;
+}
+
+#data_usage.tabbed_page #app_inner #pageHeadRow,
+#connected_devices.tabbed_page #app_inner #pageHeadRow,
+#file_sharing.tabbed_page #app_inner #pageHeadRow {
+	padding-top: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 1px;
+}
+
+#data_usage.tabbed_page #app_inner p.note,
+#connected_devices.tabbed_page #app_inner p.note,
+#file_sharing.tabbed_page #app_inner p.note {
+	margin-top: 0px;
+}
+
+#connected_devices.tabbed_page #app_inner p.note {
+	padding-left: 35px;
+	background-image: url("../images/icons/connected_devices/alert-icon.png");
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+	background-size: 22px;
+}
+
+#connected_devices.tabbed_page #app_inner p.note a#RefreshList {
+	color: #06c;
+	text-decoration: underline;
+}
+
+.arrow{
+    width:2%;    
+    cursor:pointer;
+    font-size: 25px;
+    padding-top: 8px;
+}
+
+.right-move {
+	margin-left: 2%;
+    float:left;
+}
+
+.left-move {
+	float: left;
+	margin-right: 2%;
+}
+
+.arrow:hover {
+	font-weight: bold;
+}
+
+.tabs {
+    overflow: hidden;
+    float:left;
+    /*width: 600px;*/
+}
+
+.tabitem {
+	float:left;
+	position:relative;
+}
+
+#navigationTabsTwo {
+    min-width: 1000px;
+}
+
+.tabs_container .tabs {
+    width: 88%;
+}
+
+.tabs_container.tier_2 .tabs {
+    float: left;
+}
+
+#navigationTabsOne {
+    min-width: 1000px;
+}
+
+.droppable {
+	background: #F6F6F6;
+	color: #333;
+	padding: 20px 0;
+	text-align: center;
+	border:2px solid black;
+}
+.droppable.dragover {
+	background: #00CC71;
+}
+
+.tier_1 > .row,
+.tier_2 > .row {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+#settings_virtual .tier_2 .arrow {
+	display: none;
+}
+
+#newpasswd .table .row .inline_error,
+#validateCurrPasswd .button_container {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#validateCurrPasswd .table .row {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+#newpasswd .table .row .inline_error,
+#validateCurrPasswd .table .row .inline_error {
+	margin-left: 0%;
+	width: 214px;
+}
+
+#login-form .table .inline_error {
+	margin-left: 232px;		/* =(label width + margin) */
+	width: 214px;	/* =(input textbox width) */
+}
+
+#connected_devices #editName {
+	width: 83%;
+	margin-right: 10px;
+    margin-bottom: 7px;
+}
+
+#session_log_info .page #app_inner {
+	padding: 25px;
+}
+
+.table .col-primary .col.inline_error {
+	margin-left: 48%;
+	width: 52%;
+	word-break: break-all;
+}
+
+.error_page #carrier_logo,
+#shutdown #carrier_logo,
+#resetting #carrier_logo,
+#restarting #carrier_logo {
+	color: #333;
+	display: none;
+}
+
+#macfilter table th,
+#macfilter table td {
+    padding: 5px 0px;
+}
+
+#macFilterTable th {
+    text-align: left;
+}
+
+.error_page .error-icon {
+	display: none;
+}
+
+.error_page h2 {
+	color: #cd040b;
+}
+
+#BlockedDevicesCountZero .icon {
+	width: 40px;
+	height: 35px;
+}
+
+#BlockedDevicesCountZero .icon {
+	background-image: url("../images/icons/connected_devices/block-connected-device-icon.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-size: 26px;
+}
+
+#BlockedDevicesCountZero .col p {
+	padding-top: 5px;
+}
+
+#connected_devices table.devicesTable tbody tr td p {
+	margin: 0 0 5px 0;
+	font-weight: normal;
+}
+
+#apps_home table.devicesTable tbody .deviceName,
+#connected_devices table.devicesTable tbody .deviceName {
+	font-weight: normal;	
+}
+
+#gps .col-secondary .inline_error {
+	margin-left: 0%;
+	width: 120px;
+	padding-top: 5px;
+}
+
+#UpdateStatusIndicator .loading {
+    padding-right: 22px;
+}
+
+#UpdateStatusIndicator p {
+    padding-top: 8px;
+    /* padding-left: 26px; */
+}
+
+#apps_home .deviceName {
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+#gps .ui-dialog-titlebar-close {
+    /*display: none;*/
+}
+
+#gps .ui-dialog-titlebar span {
+    color: #333;
+}
+
+#gps .ui-dialog-titlebar {
+    border-bottom: none;
+    background-color: #fff;
+    padding-left: 30px;
+}
+
+#gps .ui-dialog-content {
+    padding: 0 30px 0px 30px;
+}
+
+#gps .ui-dialog-buttonpane {
+    background: transparent none;
+    border-top: none; 
+    margin-bottom: 10px;
+}
+
+#gps .ui-dialog-buttonset
+{
+	margin-right: 35%;
+}
+
+#mobile_status_bar ul.status li #mobile_statusBar_femto_roam.femto_on,
+#status_bar ul.status li #statusBar_femto_roam.femto_on {
+    background-image: url("../images/status/femto-cell.png");
+    background-repeat: no-repeat;    
+    background-position: 4px 0px;
+    background-size: 20px;
+    height: 25px;
+    width: 25px;
+    margin-top: -8px;
+}
+
+#status_login,
+#status_area #statusBar_airplane_grp,
+/*#status_area #statusBar_sim_grp .wan_tech_error,*/
+#status_area #statusBar_roamingFemto_grp,
+#status_area #item_statusBar_sim,
+#status_area #statusBar_battery_grp,
+#status_area #statusBar_activity_grp,
+#status_area #statusBar_tech,
+#status_area #statusBar_network_grp {
+	margin-top: 8px;
+}
+
+#vpn #vpnControl {
+	width: 295px;
+	margin-right: 0px; 
+}
+
+#vpn #vpnControl #vpnConnectDisconnect {
+	margin-right: 10px;
+	float: left;
+}
+
+#apps_home #logo #deviceImg {
+	width: 321px;
+	height: 265px;
+}
+
+.insignia {
+	width: 15%;
+}
+
+.motto {
+	width: 85%;
+}
+
+#wifi_guest_settings .col-secondary .label-long,
+#wifi_primary_settings .col-secondary .label-long {
+	width: 70%;
+	padding-right: 0%;
+}
+
+#vpnSettingsClear {
+	width: 50%;
+    float: left;
+}
+
+#saveVpnSettings {
+	width: 50%;
+	float: right; 
+}
+
+.nil,
+.full {
+    width: 10%;
+    font-weight: bold;
+}
+
+.progress {
+    width: 78%;
+    float: left;
+}
+
+#port_filtering .button_container button.primary,
+#port_forward .button_container button.primary {
+	float: left;
+}
+
+/* Overlay changes */
+#ui-id-1 #app_container {
+	width: 666px;
+}
+
+#ui-id-1 select#securityQuestion {
+	background: #f7f7f7;
+}
+
+#ui-id-1 #help_wrapper #security table th{
+	text-align: center;
+}
+
+/* Safari browser specific styles */
+@media not all and (min-resolution:.001dpcm) { 
+	@media {
+
+		#ui-id-1 #app_container {
+			width: 666px;
+		}
+
+		div#uniform-GPSPortNumberSave {
+			margin-top: 0%;
+		}
+
+		#ui-id-1 select#securityQuestion {
+			background: #f7f7f7;
+		}
+	}
+}
+
+ol.OrderList, ul.UnorderedList {
+    margin-left: 15px;
+}
+ol.OrderList li {
+    padding: inherit;
+    margin: inherit;
+    list-style-type:decimal;
+  list-style-position: outside;
+}
+ul.UnorderedList li {
+    padding: inherit;
+    margin: inherit;
+    list-style-type:square;
+  list-style-position: outside;
+}
+
+#adv_lan_form div#sample {
+    display: inline;
+    margin-left: 10px;
+}
+
+div#data_plan_circle_inner {
+      bottom: inherit;
+      left: inherit;
+      display: block;
+      width: 40px;
+      height:40px;
+      line-height: 40px;
+      border: 5px solid white !important;
+      background-color: white;
+      color: black;
+}
+div#data_plan_circle_inner:before{content:""; display:block; position:absolute; border-radius: 50%; top:1px; left:1px; right:1px; 
+bottom:1px; border:2px solid black; z-index: 1;}
+
+#usedPercentage {margin-top: 14px !important;min-height: 33px;}
+div#data_plan_circle > * {
+	display: block;
+    margin: auto;
+    text-align: center;
+}

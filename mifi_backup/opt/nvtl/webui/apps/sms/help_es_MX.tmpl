@@ -1,0 +1,17 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<p>
+		Su Jetpack puede recibir mensajes de texto de su proveedor de servicios.
+	</p>
+	<p>
+		Para ver estos mensajes, desde el menú desplegable en la esquina superior derecha del sitio web de Administrador, seleccione Mensajes.
+	</p>
+	<p>
+		Los mensajes se enumerarán en orden por fecha. Los mensajes no leídos (nuevos) se indican con un ícono. Los mensajes se marcan automáticamente como leídos cuando se cierra la página de Mensajes.
+	</p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p> Este botón se encuentra al final de la lista de mensajes. Úselo según sea necesario para eliminar todos los mensajes. </p>
+	</tmpl_if>
+</div>

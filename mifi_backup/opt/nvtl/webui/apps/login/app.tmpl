@@ -1,0 +1,225 @@
+<script type="text/javascript">
+	/* <![CDATA[ */
+
+	$('#oKButton').click(function() {
+		$(".inline_error").remove();
+		var answer = $("#secAnswer").val();
+		$("#secAnswer").val("");
+		$.ajax({
+			url : "<tmpl_udf GET_URI('validate_secAnswer')>",
+			type : "POST",
+			data : {
+				secAnswer: answer,
+				gSecureToken : "<tmpl_var gSecureToken>"
+			},
+			dataType: "json",
+			success : function(data, textStatus, xhr) {
+				// If no network connected, success event still occurs.
+				// We need to implicitly see an xhr.status greater than 0 to know we've actually made contact.
+				if ( xhr.status > 0 ) {
+					$("#securityQuestionInfo").remove();
+					$("#securityAnswerLabel").remove();
+					$("#securityAnswerCol").remove();
+					$("#oKButton").remove();
+					$("#authInfo").show();
+					$("#inputPasswordLabel").show();
+					$("#inputPasswordCol").show();
+					$("#submitCol").show();
+					$('<div id="passwordResponse"><tmpl_var _("webui", "login_current_password_label")> ' + data.currentPassword +  '</div>').appendTo("#inputDefaultPassword");
+				}
+			},
+			error : function(xhr, textStatus, errorThrown) {
+				if( xhr.status == 500 ) {
+					$("#securityAnswerCol").closest("div.row").append("<div class='col inline_error' ><tmpl_var _('webui', 'login_security_answer_error_text')></div>");
+				} else {
+					location.replace('<tmpl_var gRedirectUrl>');
+				}
+			},
+			complete : function(xhr, textStatus) {
+			}
+		}); 
+	});
+
+	$(function()
+	{
+		// To prevent folks with javascript turned off from submitting the login form
+		// or entering a clear text password, we'll use javascript to append the
+		// inputPassword field and the submit button.
+		$('<label for="inputPassword"><tmpl_var _("webui", "login_label")></label>')
+			.appendTo("#inputPasswordLabel");
+
+		$('<input type="password" name="inputPassword" id="inputPassword" value="" autocomplete="off" class="password<tmpl_if authError> error</tmpl_if>" />')
+			.appendTo("#inputPasswordCol")
+			.focus();
+
+		$('<button type="submit" id="loginSubmit" class="primary"><tmpl_var _("webui", "login_btn")></button>')
+			.appendTo("#submitCol");
+
+		// We need to apply uniform, if available, to all the dynamically added elements above.
+		if (jQuery.uniform) {
+			// This is for uniform 1 and uniform 2 compatibility.
+			var uniformOptions = (typeof $.uniform.options !== "undefined") ? $.uniform.options : $.uniform.defaults;
+			if (uniformOptions.filter) {
+				$("#inputPasswordCol, #submitCol")
+					.find(uniformOptions.filter)
+					.uniform()
+					.closest("div.button")
+					.addClass("primary");
+			}
+		}
+
+		$('#loginSubmit').click(function(e) {
+			// If a password is entered, we must hash it before sending.
+			// If password field is empty, let the code behind handle any error.
+			if ($("#inputPassword").val() !== "") {
+				var secToken = "<tmpl_var secToken>";
+				if(secToken === "") {
+					$(".inline_error").remove();
+					$("#inputPassword").closest("div.row").append("<div class='col inline_error' id='clientSideAuthError'><tmpl_var _('webui', 'login_security_token_not_found_error_text')></div>");
+					return false;
+				} else {
+					$(".inline_error").remove();
+					var inputPw = $("#inputPassword").val();
+					var shaPw = Sha1.hash(inputPw + secToken);
+					$("#shaPassword").val(shaPw);
+					$('#inputPassword').val("");
+					$.ajax({
+						url : "<tmpl_udf GET_URI('submit_login')>",
+						type : "POST",
+						data : {
+							shaPassword: $("#shaPassword").val(),
+							gSecureToken : "<tmpl_var gSecureToken>"
+						},
+						dataType: "json",
+						success : function(data, textStatus, xhr) {
+							// If no network connected, success event still occurs.
+							// We need to implicitly see an xhr.status greater than 0 to know we've actually made contact.
+							if ( xhr.status > 0 ) {
+								var url = '<tmpl_var redirectLocation>';
+								var title = '<tmpl_var _("webui", "admin_settings_menu_text")>'
+								if(url == "<tmpl_udf GET_URI('set_passcode')>"){
+									modalPopup.destroyWindow();
+									modalPopup.loadPage(
+										title, url,
+										900, 700, null,function() { location.replace('<tmpl_var gRedirectUrl>') }
+									);
+								}else {
+									if(typeof redirect2 != 'undefined' && redirect2 != ""){
+										location.replace(redirect2);
+									} else {
+										location.replace('<tmpl_var gRedirectUrl>');
+									}
+								}
+							}
+						},
+						error : function(xhr, textStatus, errorThrown) {
+							if( xhr.status == 500) {
+								$(".inline_error").remove();
+								$("#inputPassword").closest("div.row").append("<div class='col inline_error' id='clientSideAuthError'><tmpl_udf GET_PO_TEXT('login_invalid_password_status', gProductName)></div>");
+							} else {
+								location.replace('<tmpl_var gRedirectUrl>');
+							}
+						},
+						complete : function(xhr, textStatus) {
+						}
+					});
+
+					var inputPw = $("#inputPassword").val();
+					var shaPw = Sha1.hash(inputPw + secToken);
+					$("#shaPassword").val(shaPw);
+					// We won't submit the plaintext password so take first part of token as a filler and place into input box.
+					$('#inputPassword').val(secToken.substr(0,inputPw.length));
+					return true;
+				}
+			} else{
+				$(".inline_error").remove();
+				$("#inputPassword").closest("div.row").append("<div class='col inline_error' id='clientSideAuthError'><tmpl_udf GET_PO_TEXT('login_invalid_password_status', gProductName)></div>");
+			}
+		});
+
+		$('#forgot_pass').click(function() {
+			$(".inline_error").remove();
+			if("<tmpl_var isDefaultPassword>" === "1") {
+				$("#inputDefaultPassword").html("");
+				$('<p><tmpl_udf GET_PO_TEXT("login_forgot_default_password_modal_text", gProductName)> <tmpl_if ShowDefaultAdminPassword> <tmpl_var _("webui", "login_forgot_default_password_modal_text1")> <tmpl_var defaultAdminPassword></tmpl_if> </p></label>')
+				.appendTo("#inputDefaultPassword");
+			} else {
+				$("#authInfo").hide();
+				$("#inputPasswordLabel").hide();
+				$("#inputPasswordCol").hide();
+				$("#submitCol").hide();
+				$("#forgot_password_area").hide();
+				$('<p><tmpl_var _("webui", "login_forgot_password_modal_line1_text")></p>').appendTo("#securityQuestionInfo");
+				$('<p><tmpl_var _("webui", "login_forgot_password_modal_question_text")> <tmpl_var securityQuestion></p>').appendTo("#securityQuestionInfo");
+				$('<label for="secAnswer"><p><tmpl_var _("webui", "login_forgot_password_modal_answer_text")></p>').appendTo("#securityAnswerLabel");
+				$('<input type="text" name="secAnswer" id="secAnswer" value="<tmpl_var secAnswer>"/>')
+					.appendTo("#securityAnswerCol")	
+
+				$('<button type="button" id="oKSubmit" class="secondary"><tmpl_var _("webui", "webui_modal_ok_button")></button>')
+					.appendTo("#oKButton");
+			}
+		});
+
+		//this is needed for IE10 Password cut off issue
+		$("input[type=password]").on("focus", function() {
+			$(this).val($(this).val());
+		});
+
+		$("#login-form").submit(function(e) {
+			e.preventDefault();
+		});
+	});
+	/* ]]> */
+</script>
+
+<form method="POST" id="login-form" action="<tmpl_udf GET_URI('login')>">
+	<fieldset class="first">
+		<input type="hidden" name="shaPassword" id="shaPassword" value="" />
+		<input type="hidden" name="gSecureToken" value="<tmpl_var gSecureToken>" />
+		<input type="hidden" name="gRedirectUrl" value="<tmpl_var gRedirectUrl>" />
+		<tmpl_if redirectLocation>
+			<input type="hidden" name="redirectLocation" value="<tmpl_var redirectLocation>" />
+		</tmpl_if>
+
+		<tmpl_if authInfo>
+			<p id="authInfo" class="form-info"><tmpl_var authInfo></p>
+		</tmpl_if>
+
+		<div class="table">
+			<div class="row clearfix">
+				<div id="inputPasswordLabel" class="col label"></div>
+				<div id="inputPasswordCol" class="col input"></div>
+				<div id="submitCol" class="col"></div>
+				<tmpl_if authError>
+					<div class="col inline_error">
+						<tmpl_var authError>
+					</div>
+				</tmpl_if>
+			</div>
+			<div id="inputDefaultPassword"></div>
+		</div><!-- /.table -->
+		<div class="table">
+			<div id="securityQuestionInfo"></div>
+			<div id="securityQuestionLabel"></div>
+			<div class="row clearfix">
+				<div id="securityAnswerLabel" class="col label"></div>
+				<div id="securityAnswerCol" class="col label"></div>
+				<div id="oKButton" class="col"></div>
+			</div>
+		</div><!-- /.table -->
+
+		<tmpl_if showForgotPassword>
+			<div id="forgot_password_area" class="clearfix">
+				<div class="button_container clearfix">
+					<button type="button" class="secondary" id="forgot_pass">
+						<tmpl_var _("webui", "login_forgot_password_btn")>
+					</button>
+				</div>
+			</div>
+		</tmpl_if>
+
+		<p class="warning">
+			<tmpl_var _("webui", "login_max_retries_warning_text")>
+		</p>
+	</fieldset>
+</form>

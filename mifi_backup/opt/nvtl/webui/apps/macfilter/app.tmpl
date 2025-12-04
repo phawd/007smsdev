@@ -1,0 +1,641 @@
+<tmpl_if isHidden>
+	 <div class="notification app error">
+			 <tmpl_var _("webui", "webui_app_hidden_text")>
+	 </div>
+<tmpl_else>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var isEdited = false;
+	var validated = false;
+	var isDeviceChecked = false;
+	var addDeviceCount = 0;
+	var addDeviceType = parseInt('<tmpl_var showDeviceTypeColumn>', 10);
+	var MaxAllowedDevices = ( isNaN(parseInt("<tmpl_var MaxAllowedDevices>")) ) ? 0 : parseInt("<tmpl_var MaxAllowedDevices>"); 
+	var MaxAllowedDevicesPerSave = ( isNaN(parseInt("<tmpl_var MaxAllowedDevicesPerSave>")) ) ? 0 : parseInt("<tmpl_var MaxAllowedDevicesPerSave>"); 
+	var clientListSize = -1;
+	var guestClientListSize = -1;
+	
+	$(function()
+	{	
+		var isToggelButton = $("#MacFilterEnable").is(':checked');
+		if(isToggelButton) {
+			grayOutYourDevice();
+		}
+
+		$(document).ajaxSuccess(function(e, xhr, settings) {			
+			if ((xhr.responseText) && (settings.dataType == "json")) {
+				try {			
+					var obj = jQuery.parseJSON(xhr.responseText || "null");
+					var listUpdated = false;
+					if (typeof obj.statusData.statusBarWiFiClientListSize !== "undefined") {
+			        		var primarySize = parseInt(obj.statusData.statusBarWiFiClientListSize);
+			        		if(primarySize != clientListSize) {
+			        		if(clientListSize !== -1) { //To ignore the first time data update
+			            			listUpdated = true;
+			            		}
+			            		clientListSize = primarySize;		
+			        		}
+			        	}
+
+			        	<tmpl_if GuestWifiSupported>
+			        	if ((typeof obj.statusData.statusBarGuestClientListSize !== "undefined")) {
+			            		var guestSize = parseInt(obj.statusData.statusBarGuestClientListSize);
+			            		if (guestClientListSize != guestSize) {
+			                	if(guestClientListSize !== -1) {//To ignore the first time data update
+			                		listUpdated = true;
+			                	}
+			                	guestClientListSize = guestSize;
+			            		}
+			        	}
+			    		</tmpl_if>
+					if(listUpdated) {
+						clearErrors();
+						$("#refreshAlert").show();
+						$("#success").hide();
+					}
+				} catch(e) {}
+		    	}
+		});
+		
+		// Setup the MAC Filter Toggle Button.
+		if(jQuery.fn.slideButton) {
+			$("#MacFilterEnable").slideButton({
+				change : function($input) {
+					macFilterToggle($input.is(":checked"), $input);
+				}
+			});
+		}
+
+		$(".deviceType").change(function () {
+			isEdited = true;
+		});	
+
+		$(".deviceNameColumn").change(function() {
+			isEdited = true;
+		});	
+
+		<!--Actions to be taken on the click event of MAC save button-->
+		$("#savechanges").on("click", function() {
+			$("#loader").addClass("loading");
+			$("#loader").show(0);
+			$("#MacFilterAddDevice").prop("disabled", true);
+			$("#refreshDevices").prop("disabled", true);
+			$("#savechanges").prop("disabled", true);
+			$(this).submit();
+		});
+
+		<tmpl_if MacFilterAddDeviceShow>
+		<tmpl_unless MacFilterAddDeviceLocked>
+		// Add items to MAC filter list
+		// Show form...
+		$("#MacFilterAddDevice").on("click", function() {
+			isEdited = true;
+			var totalDeviceCount = $("#macFilterTable tbody tr.deviceInformationRow").length;
+			var rowID = totalDeviceCount + 1;
+			var Row = $('<tr id="deviceInformationRow_' + rowID + '" class="deviceInformationRow">');
+			if(addDeviceType) {
+				Row.append('<td class="deviceType" id="deviceTypeIndex' + rowID +'"></td>');
+				var deviceTypeSelect = $('<label for="deviceTypeIndex' + rowID + '" style="display:none;"><tmpl_var _("webui", "adv_macfilter_table_header_type")></label><select class="deviceType" name="deviceTypeIndex' + rowID + '" id="deviceTypeIndex' + rowID + '">' + <tmpl_include "supported_devices_options.tmpl"> + '</select>');
+				Row.find('#deviceTypeIndex' + rowID).append(deviceTypeSelect);
+			}
+			Row.append('<td class="deviceNameColumn"><label for="hostNameIndex' + rowID + '" style="display:none;"><tmpl_var _("webui", "adv_macfilter_table_header_name")></label><input type="text" maxlength="32" name="hostNameIndex' + rowID + '" id="hostNameIndex'+ rowID + '"></td>');
+			Row.append('<td class="macAddressColumn" colspan="2"><label for="macAddressIndex' + rowID + '" style="display:none;"><tmpl_var _("webui", "adv_macfilter_table_header_macaddress")></label><input type="text" name="macAddressIndex' + rowID + '" id="macAddressIndex' + rowID + '" class = "macAddressText"></td>');
+			Row.append('<input type="hidden" name="statusIndex' + rowID + '" id="statusIndex' + rowID + '" value="" />');
+			Row.append('<td class="filter"><label for="filterIndex' + rowID + '" style="display:none;"><tmpl_var _("webui", "adv_macfilter_table_header_filter")></label><input type="checkbox" name="filterIndex' + rowID + '" id="filterIndex' + rowID + '" ></td>');
+			Row.append('<td>  </td>');
+			$("#macFilterTable tr.deviceFooterRow").before(Row);
+			$("#macFilterTable thead, #adv_macfilter_save_button").show(0);
+
+			addDeviceCount = addDeviceCount + 1;
+		
+			if(addDeviceCount == MaxAllowedDevicesPerSave ||  rowID >= MaxAllowedDevices) {
+				$("#MacFilterAddDevice").prop("disabled", true);
+			}
+			//Update Uniform
+			if (jQuery.uniform) {
+				// This is for uniform 1 and uniform 2 compatibility.
+				var uniformOptions = (typeof $.uniform.options !== "undefined") ? $.uniform.options : $.uniform.defaults;
+				if (uniformOptions.filter) {
+					Row.find(uniformOptions.filter).uniform();
+				}
+			}
+		});
+		</tmpl_unless>
+		</tmpl_if>
+
+		$("#macFilterForm").on("submit", function(e){
+			$("input").removeProp("disabled");
+			return (validated) ? true : validate(addDeviceCount);
+		});
+
+		$("#refreshDevices , #RefreshDevicestext").on("click", function(){
+			if(isEdited ) {	
+				modalPopup.createWindow(
+					'<tmpl_var _("webui", "adv_macfilter_refresh_confirm_modal_title")>',
+					'<tmpl_var _("webui", "adv_macfilter_refresh_confirm_modal_text")>',
+					430, "auto",
+					[
+						{
+							text: '<tmpl_var _("webui", "webui_modal_cancel_button")>',
+							className: "cancel"
+						},
+						{
+							text: '<tmpl_var _("webui", "webui_modal_confirm_button")>',
+							className: "primary",
+							trigger: function(){
+								location.reload();
+							}
+						}
+					]);
+			} else {
+				location.reload();
+			}
+		});
+		
+		// Dynamically capture count of filters applied -- we're delegating the bind here
+		$("#macFilterTable").on("click", "td.filter input[type=checkbox]", function() {			
+			$("#allowListCount").text($("#macFilterTable td.filter input:checked").length);
+			isEdited = true;
+		});
+
+	});
+
+	function validate(addDeviceCount)
+	{
+		clearErrors();
+		var valid = true;
+		var allowListCount = 0;
+		var isSelfChecked = false;
+
+		$("tr").each(function() {
+			var id = $(this).index() + 1;
+			var hostEl = $("#hostNameIndex" + id);
+			var hostName = hostEl.val();
+			var macEl = $("#macAddressIndex" + id);
+			var macAddress = macEl.val();
+			var isFilterChecked = $("#filterIndex" + id).is(':checked');
+			if(isFilterChecked ) allowListCount++;			
+			if ( (typeof hostName !== "undefined" && hostName.length != 0) || (typeof macAddress !== "undefined" && macAddress.length != 0) ) { //If any filter checked then increase the mac fitler device count
+
+				//Check is your device enabled filter or not
+				var deviceStatus = $(this).find("td.status span").html();
+				if( (typeof deviceStatus !== "undefined") &&
+					(deviceStatus == '<tmpl_var _("webui", "adv_macfilter_self_device_text")>') &&
+					(isFilterChecked)) {
+					isSelfChecked = true;
+				}
+		
+				//Need validate macAddress for Devices which added with add device button only
+				if( id > <tmpl_var SIZE(macFilterDevicesList)>) {
+					//Validate mac address
+					var macError = validateMacAddress(macEl);
+					if(macError !== "") {
+						valid = false;
+						$(this).find("td.macAddressColumn").append('<p class="error">' + macError + '</p>');
+					}
+				}
+				//Validate host name
+				if( (hostName.length > 0) && (!containsPrintable(hostName)) ) {
+					valid = false;
+					$(this).find("td.deviceNameColumn").append('<p class="error"><tmpl_var _("webui", "adv_macfilter_name_invalid_chars_error_text")></p>');
+				}
+			}
+		});
+
+		if(!valid) {
+			$("#globalError").append("<div class='notification app error'><p class='error'><tmpl_var _('webui', 'webui_save_code_failed_text')></p></div>");
+			$("#success").hide();
+		} else if( (allowListCount == 0) && ( $("#MacFilterEnable").is(':checked'))) {
+			$("#globalError").append("<div class='notification app error'><p class='error'><tmpl_var _('webui', 'adv_macfilter_list_empty_enable_error_text')></p></div>");
+			$("#success").hide();
+			valid = false;
+		} else if( (isSelfChecked == false) && ( $("#MacFilterEnable").is(':checked'))) {
+			$("#globalError").append('<div class="notification app error"><p class="error"><tmpl_var _("webui", "adv_macfilter_no_yourdevice_enable_error_text")></p></div>');
+			$("#success").hide();
+			valid = false;
+		} else {
+			validated = true;
+			$("#macFilterForm").submit();
+		}
+
+		if(!valid) {
+			<!-- Revert back MAC Filter onclick changes of savechanges button -->
+			$("#loader").hide(0);
+			$("#loader").removeClass("loading");
+			if((isSelfChecked == false) && ((allowListCount+1) < MaxAllowedDevices)  && (addDeviceCount < MaxAllowedDevicesPerSave)) {
+				$("#MacFilterAddDevice").prop("disabled", false);
+			}
+			$("#refreshDevices").prop("disabled", false);
+			$("#savechanges").prop("disabled", false);
+		}
+
+		if(!valid && allowListCount >= MaxAllowedDevices) {
+			$("#loader").removeClass("loading");
+		}
+
+		return false;
+	}
+
+	function validateMacAddress(macEl)
+	{
+		var errors = "";
+		var inputVal = macEl.val();
+
+		if( (inputVal.length == 0) ) {
+			errors = '<tmpl_var _("webui", "adv_macfilter_mac_addr_invalid_error_text")>';
+		} else if( !containsPrintable(inputVal) ) {
+			errors= '<tmpl_var _("webui", "adv_macfilter_mac_addr_invalid_error_text")>';
+		} else if(isDuplicate(macEl) ){
+			errors = "<tmpl_var _('webui', 'adv_macfilter_mac_addr_duplicate_error_text')>";
+		} else if( !isValidMacAddress(inputVal) ) {
+			errors = '<tmpl_var _("webui", "adv_macfilter_mac_addr_invalid_error_text")>';
+		} else {
+			inputVal = inputVal.replace(new RegExp("-","g"),":");
+			macEl.val(inputVal);
+		}
+
+		return errors;
+	}
+
+	function clearErrors()
+	{
+		$(".notification").remove();
+		$(".inline_error").remove();
+		$(".error").remove();
+	}
+
+	/**
+	 * containsPrintable()
+	 *
+	 * str: string - unicode string to test
+	 *
+	 * returns boolean
+	 *
+	 * Test if string contains printable characters and no control characters.
+	 */
+	function containsPrintable(str)
+	{
+		return /^[\u0020-\uFFFF]*$/.test(str);
+	}
+
+	function isDuplicate(inputEl)
+	{
+		var duplicate = false;
+		var inputId = inputEl.attr("id");
+		var inputVal = inputEl.val();
+		inputVal = inputVal.replace(new RegExp("-","g"),":");
+		$("tr").each(function() {
+			var localMacEl = $(this).find(".macAddressText");
+			var currentVal = localMacEl.val();
+			var localId = localMacEl.attr("id");
+			if(currentVal !== undefined && inputId !== localId) {
+				if(currentVal.toLowerCase() == inputVal.toLowerCase()) {
+					duplicate = true;
+					return false;
+				}
+			}
+		});
+
+		return duplicate;
+	}
+
+	function isValidMacAddress(str)
+	{
+		var regExPattern = /^([0-9a-fA-F]{2}[:-]){5}([0-9a-fA-F]{2})$/;
+		var isValid = true;
+
+		if (!(str.match(regExPattern)) || str.length != 17) {
+			isValid = false;
+		}
+
+		return isValid;
+	}
+
+	function macFilterToggle(bool, $toggleSwitchElement)
+	{
+		<tmpl_if MacFilterEnableShow>
+		<tmpl_unless MacFilterEnableLocked>
+		if(!bool) {
+			postToggle(bool, $toggleSwitchElement);
+		} else {		
+			var title = '<tmpl_var _("webui", "adv_macfilter_enable_confirm_modal_title")>';
+			var text = "";
+			if("<tmpl_var wifiSettingsWPS>" === "on") {
+				text = "<p><tmpl_udf GET_PO_TEXT( 'adv_macfilter_enable_with_wps_on_confirm_modal_text', gProductName)></p>";
+			} else {
+				text = "<p><tmpl_udf GET_PO_TEXT( 'adv_macfilter_enable_with_wps_off_confirm_modal_text', gProductName)></p>";
+			}
+			modalPopup.createWindow(
+				title,
+				text,
+				430, "auto",
+				[{
+					text : '<tmpl_var _("webui", "webui_modal_cancel_button")>',
+					className : "cancel",
+					trigger : function() {
+						undoChange($toggleSwitchElement);
+					}
+				}, {
+					text : '<tmpl_var _("webui", "adv_modal_turn_on_mac_filter_button")>',
+					className : "primary",
+					trigger : function() {
+						postToggle(bool, $toggleSwitchElement);
+					}
+				}],
+				null,
+				function() {
+					undoChange($toggleSwitchElement);
+				}
+			);
+		}
+		</tmpl_unless>
+		</tmpl_if>
+	}
+
+	function postToggle(bool, $toggleSwitchElement)
+	{
+		<tmpl_if MacFilterEnableShow>
+		<tmpl_unless MacFilterEnableLocked>
+		if(jQuery.fn.slideButton)
+			$toggleSwitchElement.slideButton("addLoader");
+		
+		isDeviceChecked = isSelfDeviceChecked();
+
+		if (!isDeviceChecked && bool) {
+			enableOwnDevice(bool, $toggleSwitchElement);
+		} else if (isDeviceChecked && bool) {
+			grayOutYourDevice();
+			toggleMACFilter(bool, $toggleSwitchElement);
+		} else {
+			unGrayOutYourDevice();
+			toggleMACFilter(bool, $toggleSwitchElement);
+		}
+		</tmpl_unless>
+		</tmpl_if>
+	}
+
+	function undoChange($el) {
+		if(jQuery.fn.slideButton) $el.slideButton("undo");
+	}
+
+	function unGrayOutYourDevice() {
+		$("tr").each(function() {                                 
+			var id = $(this).index() + 1;                             
+			var deviceStatus = $(this).find("td.status span").html();                    
+			var isFilterChecked = $("#filterIndex" + id).is(':checked');                                              
+			if (isFilterChecked == true && deviceStatus == '<tmpl_var _("webui", "adv_macfilter_self_device_text")>') {
+				$("#hostNameIndex" + id).prop("disabled", false);
+				$("#filterIndex" + id).prop("disabled", false);
+			}
+		});
+	}
+
+	function grayOutYourDevice() {
+		$("tr").each(function() {                                 
+			var id = $(this).index() + 1;                             
+			var deviceStatus = $(this).find("td.status span").html();                    
+			var isFilterChecked = $("#filterIndex" + id).is(':checked');                                              
+			if (isFilterChecked == true && deviceStatus == '<tmpl_var _("webui", "adv_macfilter_self_device_text")>') {
+				$("#hostNameIndex" + id).prop("disabled", true);
+				$("#filterIndex" + id).prop("disabled", true);
+        		}
+		});
+	}
+
+	function isSelfDeviceChecked() {
+		$("tr").each(function() {                                 
+			var id = $(this).index() + 1;                             
+			var deviceStatus = $(this).find("td.status span").html(); 
+			var isFilterChecked = $("#filterIndex" + id).is(':checked');                                     	  
+			if (isFilterChecked && deviceStatus == '<tmpl_var _("webui", "adv_macfilter_self_device_text")>' ) {
+				isDeviceChecked = true;      		
+			} else if (!isFilterChecked && deviceStatus == '<tmpl_var _("webui", "adv_macfilter_self_device_text")>') {
+				isDeviceChecked = false; 
+			}
+		});
+		return isDeviceChecked;                                                                                                    
+	} 
+
+	function enableOwnDevice(bool, $toggleSwitchElement) {
+		$("tr").each(function() {                                 
+			var id = $(this).index() + 1;                             
+			var deviceStatus = $(this).find("td.status span").html(); 
+			var isFilterChecked = $("#filterIndex" + id).is(':checked');                                               	  
+			if (!isFilterChecked && deviceStatus == '<tmpl_var _("webui", "adv_macfilter_self_device_text")>') {
+				$("#filterIndex" + id).prop("checked", true);
+
+				$("#hostNameIndex" + id).prop("disabled", true);
+				$("#filterIndex" + id).prop("disabled", true);
+				var macAddress = $("#macAddressIndex" + id).val();
+				// send checked value to backend
+				$.ajax({
+					url : '<tmpl_udf GET_URI("macfilter_enable_own_device")>',
+					type : "POST",
+					data : {
+						gSecureToken : "<tmpl_var gSecureToken>",
+						macAddress: macAddress,
+					},
+					dataType : "json",
+					success : function(data) {
+						$.uniform.update("#filterIndex" + id);
+						$("#allowListCount").text($("#macFilterTable td.filter input:checked").length);
+						toggleMACFilter(bool, $toggleSwitchElement);
+					},
+					error : function(xhr, textStatus, errorThrown) {
+						unGrayOutYourDevice();
+					},
+					complete : function(xhr, textStatus) {
+					}
+				});
+			}
+		});
+	}
+
+	function toggleMACFilter(bool, $toggleSwitchElement) {
+		<tmpl_if MacFilterEnableShow>
+		<tmpl_unless MacFilterEnableLocked>
+		var url = (bool) ? "<tmpl_udf GET_URI('macfilter_enable')>" : "<tmpl_udf GET_URI('macfilter_disable')>";
+		$.ajax({
+			url : url,
+			type : "POST",
+			data : {
+				gSecureToken : "<tmpl_var gSecureToken>"
+			},
+			dataType : "json",
+			success : function(data, textStatus, xhr) {
+				// If no network connected, success event still occurs.
+				// We need to implicitly see an xhr.status greater than 0 to know we've actually made contact.
+				if ( (xhr.readyState == 4 ) && (xhr.status == 0) ) {
+					undoChange($toggleSwitchElement);
+				}
+			},
+			error : function(xhr, textStatus, errorThrown) {
+				undoChange($toggleSwitchElement);
+				// If auth session has ended, force a new login with a fresh GET.
+				if( (xhr.status == 401) || (xhr.status == 403) || (xhr.status == 406) ) window.location.replace(window.location.href);
+			},
+			complete : function(xhr, textStatus) {
+				if(jQuery.fn.slideButton) $toggleSwitchElement.slideButton("removeLoader");
+			}
+		});
+		</tmpl_unless>
+		</tmpl_if>
+	}
+	/* ]]> */
+</script>
+<tmpl_if isLocked>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+	</div>
+</tmpl_if>
+<tmpl_if gPostSuccess>
+<div class="notification app success" id="success">
+	<div class="notification_inner">
+		<p>
+			<tmpl_var _("webui", "webui_save_code_success_text")>
+		</p>
+	</div>
+</div>
+</tmpl_if>
+
+<div id="globalError"></div>
+
+<div id="refreshAlert" style="display:none;">
+	<p class='RefreshDevicesList'><tmpl_var _('webui', 'adv_macfilter_device_list_not_updated_text')>
+		<a href='#' id='RefreshDevicestext'><tmpl_var _('webui', 'adv_macfilter_device_list_not_updated_refresh_text')></a>
+	</p>
+</div>
+
+<tmpl_if showIntroText>
+	<div class="scrimp">
+		<p>
+			<tmpl_var GET_PO_TEXT("adv_macfilter_help_text", gProductName)>
+		</p>
+
+		<p>
+			<tmpl_var _("webui", "adv_macfilter_sub_help_text")>
+		</p>
+	</div>
+</tmpl_if>
+
+<tmpl_if MacFilterEnableShow>
+	<div class="toggleSettingContainer scrimp">
+		<div class="toggleSettingContainerInner">
+			<div class="desc">
+				<tmpl_if showIntroText>
+					<p><tmpl_var _("webui", "adv_macfilter_title_text")></p>
+				<tmpl_else>
+					<p class="note" id="intro"><tmpl_udf GET_PO_TEXT("adv_macfilter_help_text", gProductName)></p>
+				</tmpl_if>	
+			</div>
+			<div class="toggle">
+				<input class="toggleSwitchCheckbox" type="checkbox" id="MacFilterEnable" name="MacFilterEnable"<tmpl_if IN_SET(MacFilterEnable, "true", "on", "1")> checked="checked"</tmpl_if><tmpl_if MacFilterEnableLocked> disabled="disabled"</tmpl_if> <tmpl_if isLocked> disabled="disabled"</tmpl_if>/> 
+			</div>
+		</div><!--/.toggleSettingContainerInner-->
+	</div><!--/.toggleSettingContainer-->
+</tmpl_if>
+
+<!-- Loader while MAC savingbutton clicked-->
+<div id="loader" style="display:none;"></div>
+
+<form id="macFilterForm" method="POST" action="<tmpl_udf GET_URI('macfilter')>">
+	<fieldset id="macFilterField" class="first">
+		<input type="hidden" name="gSecureToken" id="gSecureToken" value="<tmpl_var gSecureToken>" />
+		<table id="macFilterTable" class="devicesTable">
+			<colgroup>
+				<tmpl_if showDeviceTypeColumn>
+					<col class="deviceTypeColumn" />
+				</tmpl_if>
+				<col class="deviceNameColumn" />
+				<col class="macAddressColumn" />
+				<col class="status" />
+				<col class="filter" />
+				<col class="delete" />
+
+			</colgroup>
+			<thead <tmpl_unless macFilterDevicesList> style="display:none;"</tmpl_unless>>
+				<tr>
+					<tmpl_if showDeviceTypeColumn>
+						<th class="deviceTypeColumn"><tmpl_var _("webui", "adv_macfilter_table_header_type")></th>
+					</tmpl_if>
+					<th class="deviceNameColumn"><tmpl_var _("webui", "adv_macfilter_table_header_name")></th>
+					<th class="macAddressColumn"><tmpl_var _("webui", "adv_macfilter_table_header_macaddress")></th>
+					<th class="status"><tmpl_var _("webui", "adv_macfilter_table_header_status")></th>
+					<th class="filter"><tmpl_var _("webui", "adv_macfilter_table_header_filter")></th> 		
+					<th class="deleted"><tmpl_var _("webui", "adv_macfilter_table_header_delete")></th>
+				</tr>
+			</thead>
+			<tbody>
+			<tmpl_foreach macFilterDevicesList as item>
+				<tmpl_if (item.__index__ < deviceCount) >
+					<tr class="deviceInformationRow">
+						<tmpl_if showDeviceTypeColumn>
+							<td class="deviceTypeColumn">
+						            <select class="deviceType" id="deviceTypeIndex<tmpl_var (item.__index__ + 1)>" name="deviceTypeIndex<tmpl_var (item.__index__ + 1)>">
+						                <tmpl_include "supported_devices_options.tmpl">
+						            </select>
+						        </td>
+					    </tmpl_if>
+						<td class="deviceNameColumn">
+				                    <input type="text" maxlength="32" id="hostNameIndex<tmpl_var (item.__index__ + 1)>" name="hostNameIndex<tmpl_var (item.__index__ + 1)>" value="<tmpl_var item.displayName>" />
+				                </td>
+						<td class="macAddressColumn">
+							<div class="col label" style="display:none;"><tmpl_var _("webui", "adv_macfilter_table_header_macaddress")></div>
+							<span class="macAddress"><tmpl_var item.macAddress></span>
+							<input type="hidden" name="macAddressIndex<tmpl_var (item.__index__ + 1)>" id="macAddressIndex<tmpl_var (item.__index__ + 1)>" class = "macAddressText" value="<tmpl_var item.macAddress>" />
+							<tmpl_if macAddressError>
+								<p class="error">
+									<tmpl_var macAddressError>
+								</p>
+							</tmpl_if>
+						</td>
+						<td class="status">
+							<div class="col label" style="display:none;"><tmpl_var _("webui", "adv_macfilter_table_header_status")></div>
+							<span class="deviceStatus"><tmpl_var item.status></span>
+							<input type="hidden" name="statusIndex<tmpl_var (item.__index__ + 1)>" id="statusIndex<tmpl_var (item.__index__ + 1)>" value="<tmpl_var item.status>" />
+						</td>
+						<td class="filter">
+							<label for="filterIndex<tmpl_var (item.__index__ + 1)>" style="display:none;"><tmpl_var _("webui", "adv_macfilter_table_header_filter")></label>
+							<input type="checkbox" name="filterIndex<tmpl_var (item.__index__ + 1)>" id="filterIndex<tmpl_var (item.__index__ + 1)>"<tmpl_if IN_SET(item.filter, "on", "true", "1")> checked="checked"</tmpl_if>/>
+						</td>
+						
+						<td class="delete">
+							<tmpl_if IN_SET(item.status, _("webui", "adv_macfilter_offline_text"))>
+								<label for="DeleteIndex<tmpl_var (item.__index__ + 1)>" style="display:none;"><tmpl_var _("webui", "adv_macfilter_table_header_delete")></label>
+								<input type="checkbox" name="DeleteIndex<tmpl_var (item.__index__ + 1)>" id="DeleteIndex<tmpl_var (item.__index__ + 1)>"/>
+						    </tmpl_if>
+						</td>
+						
+					</tr>
+				</tmpl_if>
+			</tmpl_foreach>
+				<tr class="deviceFooterRow">
+					<tmpl_if showDeviceTypeColumn>
+						<td class="deviceTypeCol" colspan="4">
+					<tmpl_else>
+						<td class="deviceTypeCol" colspan="3">
+					</tmpl_if>
+						<tmpl_if MacFilterAddDeviceShow>
+							<button type="button" id="MacFilterAddDevice" class="secondary"<tmpl_if (deviceCount >= MaxAllowedDevices)> disabled="disabled"</tmpl_if> <tmpl_if MacFilterAddDeviceLocked> disabled="disabled" </tmpl_if> <tmpl_if isLocked> disabled="disabled"</tmpl_if>>
+								<tmpl_var _("webui", "adv_macfilter_add_device_button")></button>
+						</tmpl_if>
+
+						<button type="button" id="refreshDevices" class="secondary" <tmpl_if isLocked> disabled="disabled"</tmpl_if>>
+							<tmpl_var _("webui", "adv_macfilter_refresh_button")></button>
+						
+					</td>
+					<td class="filter">
+						<div class="col label" style="display:none;"><tmpl_var _("webui", "adv_macfilter_table_header_filter")></div>
+						<span id="allowListCount"><tmpl_var allowListCount></span>
+					</td>
+					<td>  </td>
+				</tr>
+			</tbody>
+		</table>
+	</fieldset>
+
+	<div id="adv_macfilter_save_button" class="button_container clearfix"<tmpl_unless macFilterDevicesList> style="display:none;"</tmpl_unless>>
+		<button type="submit" id="savechanges" class="primary"<tmpl_if isLocked> disabled="disabled"</tmpl_if>><tmpl_var _("webui", "webui_save_button")></button>
+	</div>
+</form>
+</tmpl_if>

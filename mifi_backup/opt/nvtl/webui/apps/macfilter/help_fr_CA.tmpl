@@ -1,0 +1,34 @@
+<!-- MAC Filter -->
+<div id="macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+	<h2>Vue d'ensemble</h2>
+	<p>La fonction Filtre MAC, lorsqu'elle est activée, empêche tout appareil ne figurant pas dans la liste de « Filtre par adresse MAC » d'accéder à ce réseau Wi-Fi. Le filtre ne s'applique qu'au réseau Wi-Fi et n'a pas d'impact sur les appareils USB. </p>
+	
+	<h2>Commande ACTIVER/DÉSACTIVER</h2>
+	<p>Utilisez cette commande pour activer/désactiver le Filtre MAC selon le besoin. Avant de l'activer, assurez-vous que certains appareils sont autorisés. Notez que lorsque le Filtre MAC est activé, tout Appareil connecté ne figurant pas dans la liste de « Filtre par adresse MAC » sera immédiatement déconnecté. </p>
+	
+	<h2>Liste d'appareils</h2>
+	
+	<p>Tous les appareils connus sont listés ici, sauf les appareils USB. Utilisez les cases à cocher pour inclure ou exclure les appareils de la liste « Filtre par adresse MAC ». </p>
+
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Utilisez le bouton Rafraîchir pour actualiser la liste selon le besoin. </p>
+		
+	<h2>Opération</h2>
+	
+	<h3>Blocage versus Filtre MAC</h3>
+	<p>L'interaction entre appareils « Bloqués » et « Filtre MAC » est la suivante : </p>
+	<div class="blockgroup">
+	<ul>
+	<li>Les appareils bloqués sont toujours bloqués à partir du réseau Wi-Fi, que le Filtre MAC soit activé ou désactivé. </li>
+	<li>Si le Filtre MAC est activé, et qu'un appareil figure dans la Liste d'appareils bloqués, mais non dans la liste de Filtre par adresse MAC, alors cet appareil ne pourra pas se connecter. Le Filtre MAC et le Blocage empêcheraient tous deux la connexion. </li>
+
+	<li>Si le Filtre MAC est activé, et qu'un appareil figure dans la liste de Filtre par adresse MAC, alors cet appareil pourra se connecter. Une fois connecté, l'appareil peut ensuite être bloqué s'il est retiré de la liste de Filtre par adresse MAC ou en utilisant la fonction « Bloquer ». En règle générale, la fonction « Bloquer » doit être utilisée pour un blocage temporaire et le Filtre MAC pour un blocage permanent. </li>
+	</ul>
+	</div>
+	
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+	<p>Utilisez ce bouton pour ajouter un nouvel appareil à la liste d'appareils. </p>
+
+ </div>
+<!--  macfilter  -->

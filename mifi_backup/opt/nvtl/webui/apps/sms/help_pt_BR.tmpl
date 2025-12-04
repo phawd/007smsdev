@@ -1,0 +1,20 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<h2>Visão geral</h2>
+	<p> Normalmente, essas mensagens de SMS são do seu provedor de serviços. Você não deve tentar responder; assim, uma recurso de não responder é oferecido. </p>
+	<h2>Conteúdo</h2>
+	<tmpl_if showMessageCounter>
+		<h3>Contadores de mensagens</h3>
+		<p> Os dois contadores na parte superior da tela indicam o número de mensagens não lidas (novas) e o número total de mensagens. </p>
+		<p> Observe que todas as mensagens ficam definidas como "lidas" após serem exibidas nesta tela. </p>
+	</tmpl_if>
+	<h3>Lista de mensagens</h3>
+	<p> Todas as mensagens estão listadas em ordem cronológica. As mensagens não lidas (novas) estão sinalizadas com um ícone. As mensagens ficam marcadas automaticamente como "lidas" após serem exibidas nesta página; ou seja, da próxima vez que a página for aberta, elas não serão mais mostradas como não lidas. </p>
+	<h3>Botão Excluir</h3>
+	<p> Cada mensagem tem um ícone individual de "Excluir". Use-o para excluir mensagens. </p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p> Esse botão se encontra ao final da lista de mensagens. Se necessário, use-o para excluir todas as mensagens. </p>
+	</tmpl_if>
+</div>

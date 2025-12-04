@@ -1,0 +1,302 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+	</div>
+<tmpl_else>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	$(function()
+	{
+		var localNumericFormat = "<tmpl_var localNumericFormat>";
+		var storeDataReceived = "<tmpl_var internetStatusDataReceived>";
+		var storeDataSent = "<tmpl_var internetStatusDataSent>";
+		var storeTotalSpace = "<tmpl_var sambaSettingsTotalSpace>";
+		var storeAvailableSpace = "<tmpl_var sambaSettingsAvailableSpace>";
+
+		$(document).ajaxSuccess(function(e, xhr, settings) {
+			if((xhr.responseText) && (settings.dataType == "json")){
+				try {
+					var obj = jQuery.parseJSON(xhr.responseText || "null");
+					if(typeof obj.statusData.statusBarSimStatus !== "undefined"){
+						if(obj.statusData.statusBarSimStatus == $.uiEnums.SIMSTATUS_READY){
+							if(typeof obj.statusData.statusBarConnectionState !== "undefined") {
+								switch (obj.statusData.statusBarConnectionState) {
+									case $.uiEnums.WANSTATE_NOSERVICE:
+									$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "network_no_service_text")>');
+									break;
+									case $.uiEnums.WANSTATE_INITIALIZING:
+									$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "webui_app_network_initializing_text")>');
+									break;
+									case $.uiEnums.WANSTATE_SEARCHING:
+									$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "network_searching_text")>');
+									break;
+									case $.uiEnums.WANSTATE_UNACTIVATED:
+									$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "webui_app_sim_status_not_activated_text")>');
+									break;
+									case $.uiEnums.WANSTATE_IDLE:
+									$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "network_ready_text")>');
+									break;
+									case $.uiEnums.WANSTATE_CONNECTING:
+									$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "webui_app_network_connecting_text")>');
+									break;
+									case $.uiEnums.WANSTATE_DISCONNECTING:
+									$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "webui_app_network_disconnecting_text")>');
+									break;
+									case $.uiEnums.WANSTATE_ACTIVATING:
+									$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "webui_app_sim_status_activation_started_text")>');
+									break;
+									case $.uiEnums.WANSTATE_PCO2:
+									case $.uiEnums.WANSTATE_PCO2_DISCONNECTED:
+									$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "webui_app_sim_status_account_restricted_text")>');
+									break;
+									case $.uiEnums.WANSTATE_PCO3:
+									$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "webui_app_sim_status_account_out_of_credit_text")>');
+									break;
+									case $.uiEnums.WANSTATE_PCO5:
+									$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "webui_app_sim_status_account_not_active_text")>');
+									break;
+									/*
+									case $.uiEnums.WANSTATE_CONNECTED:
+									case $.uiEnums.WANSTATE_DORMANT:
+									$("#internetStatusConnectionStatus").html(obj.statusData.statusBarConnectionState);
+									break;
+									*/
+									case $.uiEnums.WANSTATE_CONNECTED:
+									$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "webui_app_network_connected_text")>');
+									break;
+									case $.uiEnums.WANSTATE_DORMANT:
+									$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "webui_app_network_dormant_text")>');
+									break;
+
+									default:
+									$("#internetStatusConnectionStatus").html(obj.statusData.statusBarConnectionState);
+									break;
+								}
+							}							
+						}
+						else if(obj.statusData.statusBarSimStatus == $.uiEnums.SIMSTATUS_PUK_LOCKED){
+							if ( typeof obj.statusData.statusBarConnectionState !== "undefined") {
+								$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "status_current_sim_puk_locked_text")>'); 
+							}
+						}
+
+						else if(obj.statusData.statusBarSimStatus == $.uiEnums.SIMSTATUS_PIN_LOCKED){
+							if ( typeof obj.statusData.statusBarConnectionState !== "undefined") {
+								$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "status_current_sim_pin_locked_text")>');
+							}
+						}
+
+						else if(obj.statusData.statusBarSimStatus == $.uiEnums.SIMSTATUS_NOT_FOUND){                                             
+                            				$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "sim_status_no_sim_text")>');                    
+                        			}
+
+						else if(obj.statusData.statusBarSimStatus == $.uiEnums.SIMSTATUS_ERROR){                                             
+                            				$("#internetStatusConnectionStatus").html('<tmpl_var _("webui", "sim_status_error_text")>');                    
+                        			}
+					}
+
+					if(typeof obj.statusData.statusBarTechnology !== "undefined") {
+						switch (obj.statusData.statusBarTechnology) {
+							case $.uiEnums.WANTECH_NONE:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_None_text")>');
+								break;
+							case $.uiEnums.WANTECH_WIFI:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_WiFi_text")>');
+								break;
+							case $.uiEnums.WANTECH_GPRS:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_gprs_text")>');
+								break;
+							case $.uiEnums.WANTECH_1XRTT:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_1XRTT_text")>');
+								break;
+							case $.uiEnums.WANTECH_EVDO:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_evdo_revo_text")>');
+								break;
+							case $.uiEnums.WANTECH_UMTS:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_umts_text")>');
+								break;
+							case $.uiEnums.WANTECH_HSDPA:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_hsdpa_text")>');
+								break;
+							case $.uiEnums.WANTECH_EDGE:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_edge_text")>');
+								break;
+							case $.uiEnums.WANTECH_EVDO_REVA:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_evdo_reva_text")>');
+								break;
+							case $.uiEnums.WANTECH_HSUPA:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_hsupa_text")>');
+								break;
+							case $.uiEnums.WANTECH_HSPA_PLUS:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_hspa_plus_text")>');
+								break;
+							case $.uiEnums.WANTECH_LTE:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_lte_text")>');
+								break;
+							case $.uiEnums.WANTECH_LTE_CA:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_lte_plus_text")>');
+								break;
+							case $.uiEnums.WANTECH_HSPA_PLUS_DC:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_hspa_plus_dc_text")>');
+								break;
+							case $.uiEnums.WANTECH_EVDO_REVB:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_evdo_revb_text")>');
+								break;
+							case $.uiEnums.WANTECH_EVDO_EHRPD:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_evdo_ehrpd_text")>');
+								break;
+							case $.uiEnums.WANTECH_WIMAX:
+								$("#internetStatusTechnology").html('<tmpl_var _("webui", "wan_technology_wimax_text")>');
+								break;
+							default:
+								$("#internetStatusTechnology").html(obj.statusData.statusBarTechnology);
+								break;
+						}
+					}
+
+					if(typeof obj.statusData.statusBarBytesReceived !== "undefined") {
+						if(obj.statusData.statusBarBytesReceived != storeDataReceived) {
+							$("#internetStatusDataReceived").text(bytesToSize(obj.statusData.statusBarBytesReceived, 2));
+							storeDataReceived = obj.statusData.statusBarBytesReceived;
+						}
+					}
+
+					if(typeof obj.statusData.statusBarBytesTransmitted !== "undefined") {
+						if(obj.statusData.statusBarBytesTransmitted != storeDataSent) {
+							$("#internetStatusDataSent").text(bytesToSize(obj.statusData.statusBarBytesTransmitted, 2));
+							storeDataSent = obj.statusData.statusBarBytesTransmitted;
+						}
+					}
+
+					if(typeof obj.statusData.statusBarConnectionDuration !== "undefined") {
+						$("#internetStatusConnectedTime").text(formatConnectedDurationTime(obj.statusData.statusBarConnectionDuration) + "<tmpl_var _('webui', 'status_current_connection_time_text_label')>");
+					}
+				} catch(e) {}
+			}
+		});
+
+		<tmpl_unless InternetStatusViewSessionLocked>
+			$("#viewSessionLog").on("click", showMessageForViewingSessionLog);
+		</tmpl_unless>
+	});
+
+	function bytesToSize(bytes, precision)
+	{
+		var sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+		var posttxt = 0;
+		if (bytes == 0) return '0';
+		while( bytes >= 1024 ) {
+			posttxt++;
+			bytes = bytes / 1024;
+		}
+		return Number(bytes).toFixed(precision).replace(".", "<tmpl_var localNumericFormat>")+ " " + sizes[posttxt];
+	}
+
+	function formatConnectedDurationTime(seconds)
+	{
+		var days = Math.floor(seconds / 86400);
+		var hours = Math.floor((seconds - (days * 86400)) / 3600);
+		var minutes = Math.floor((seconds - (days * 86400) - (hours * 3600)) / 60);
+		var seconds = seconds - (days * 86400) - (hours * 3600) - (minutes * 60);
+		var time = "";
+
+		days = (days < 10) ? "0" + days : String(days);
+		hours = (hours < 10) ? "0" + hours : String(hours);
+		minutes = (minutes < 10) ? "0" + minutes : String(minutes);
+		time += days + ":" + hours + ":" + minutes + ":";
+		time += (seconds < 10) ? "0" + seconds : String(seconds);
+
+		return time;
+	}
+
+	<tmpl_unless InternetStatusViewSessionLocked>
+	function showMessageForViewingSessionLog()
+	{
+		modalPopup.createWindow('<tmpl_var _("webui", "status_current_internet_sessions_message_modal_title")>', '<p><tmpl_var _("webui", "status_current_internet_sessions_message_modal_text")></p>', 430, 250, [{
+			text : '<tmpl_var _("webui", "webui_modal_ok_button")>',
+			className : "primary",
+			trigger : function() {
+				window.open("<tmpl_udf GET_URI('session_log_info')>");
+			}
+		}], null, null); 
+	}
+	</tmpl_unless>
+	/* ]]> */
+</script>
+
+<tmpl_if isLocked>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+	</div>
+</tmpl_if>
+
+<fieldset class="first">
+	<div class="table">
+		<div class="row clearfix">
+			<div class="col label"><tmpl_var _("webui", "status_current_connection_status_label")></div>
+			<div class="col textCol" id="internetStatusConnectionStatus"><tmpl_var internetStatusConnectionStatus></div>
+		</div>
+		<div class="row clearfix">
+			<div class="col label"><tmpl_var _("webui", "status_current_network_name_label")></div>
+			<div class="col textCol" id="internetStatusNetworkName"><tmpl_var internetStatusNetworkName></div>
+		</div>
+		<div class="row clearfix">
+			<div class="col label"><tmpl_var _("webui", "status_current_technology_label")></div>
+			<div class="col textCol" id="internetStatusTechnology"><tmpl_var internetStatusTechnology></div>
+		</div>
+		<div class="row clearfix">
+			<div class="col label"><tmpl_var _("webui", "status_current_connection_time_label")></div>
+			<div class="col textCol" id="internetStatusConnectedTime"><tmpl_var internetStatusConnectedTime><tmpl_var _("webui", "status_current_connection_time_text_label")></div>
+		</div>
+		<div class="row clearfix">
+			<div class="col label"><tmpl_var _("webui", "status_current_received_label")></div>
+			<div class="col textCol" id="internetStatusDataReceived"><tmpl_var internetStatusDataReceived></div>
+		</div>
+		<div class="row clearfix">
+			<div class="col label"><tmpl_var _("webui", "status_current_transmitted_label")></div>
+			<div class="col textCol" id="internetStatusDataSent"><tmpl_var internetStatusDataSent></div>
+		</div>
+	</div><!-- /.table -->
+</fieldset>
+
+<fieldset>
+	<h3 class="sectionHead"><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h3>
+	<div class="table">
+		<div class="row clearfix">
+			<div class="col label"><tmpl_var _("webui", "status_current_ipv4_label")></div>
+			<div class="col textCol" id="internetStatusIPAddress"><tmpl_var internetStatusIPAddress></div>
+		</div>
+		<div class="row clearfix">
+			<div class="col label"><tmpl_var _("webui", "status_current_ipv4mask_label")></div>
+			<div class="col textCol" id="internetStatusSubnetMask"><tmpl_var internetStatusSubnetMask></div>
+		</div>
+		<div class="row clearfix">
+			<div class="col label"><tmpl_var _("webui", "status_current_ipv4gateway_label")></div>
+			<div class="col textCol" id="internetStatusGateway"><tmpl_var internetStatusGateway></div>
+		</div>
+		<div class="row clearfix">
+			<div class="col label"><tmpl_var _("webui", "status_current_ipv4dns_label")></div>
+			<div class="col textCol" id="internetStatusDNS"><tmpl_var internetStatusDNS></div>
+		</div>
+	</div><!-- /.table -->
+</fieldset>
+
+<fieldset class="last">
+	<h3 class="sectionHead"><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h3>
+	<div class="table">
+		<div class="row clearfix">
+			<div class="col label"><tmpl_var _("webui", "status_current_ipv6global_label")></div>
+			<div class="col textCol" id="internetStatusIP6Address"><tmpl_var internetStatusIPv6Address></div>
+		</div>
+	</div><!-- /.table -->
+</fieldset>
+
+<div class="tier_2_content logs clearfix">
+	<div id="log_container"></div>
+	<tmpl_if InternetStatusViewSessionShow>
+		<div class="button_container clearfix">
+			<button type="button" class="secondary clear" id="viewSessionLog" <tmpl_if InternetStatusViewSessionLocked>disabled="disabled"</tmpl_if> ><tmpl_var _("webui", "status_current_internet_session_btn")></button>
+		</div>
+	</tmpl_if>
+</div>
+</tmpl_if>

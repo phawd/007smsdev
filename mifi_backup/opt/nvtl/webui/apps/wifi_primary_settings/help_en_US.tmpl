@@ -1,0 +1,63 @@
+<!-- wifi_primary_settings -->
+<div id="wifi_primary_settings">
+	<h1>Wi-Fi - Primary Network </h1>
+	
+	<h2>Overview</h2>
+	<p>
+		To connect to the <tmpl_var _("webui", "webui_product_name_with_suffix")> primary Wi-Fi network, connected devices must use the Wi-Fi settings shown on this screen.
+		If you change these settings, existing connected devices may lose their connection.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_ssid_label")></h3>
+	<p>
+		You can use this field to change the primary network’s network name (SSID). The name can be up to 32 characters long.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_security_label")></h3>
+	<p>
+		Select the desired option for Wi-Fi security. 
+	</p>
+	<div class="blockgroup">
+	<ul>
+		<li><strong>None</strong> allows other people to monitor your WI-FI traffic and use your data plan to access the internet. If at all possible, using this options should be avoided.</li>
+		<li><strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> is the latest and most secure method, and should be used if possible. </li>
+		<li><strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> can be used if some of your older devices do not support WPA2.</li>
+	</ul>
+	</div>	
+	<p>
+		Normally these options can be left at their default values, but they can be changed if necessary to suit your particular environment.
+	</p>
+	<h3><tmpl_var _("webui", "wifi_primary_password_label")></h3>
+	<p>
+		Enter the Wi-Fi password in this field. You can also use the "Generate New Key" button to have a strong random password inserted into this field. Remember to save your changes if you use this option.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_ssid_label", gProductName)></h3>
+	<p>
+		If this setting is checked, the Wi-Fi name is not visible on the touchscreen. 
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_password_label", gProductName)></h3>
+	<p>
+		If this setting is checked, the Wi-Fi password is not visible on the touchscreen. 
+	</p>	
+
+	<h3><tmpl_var _("webui", "wifi_primary_broadcast_ssid_label")></h3>
+	<p>
+		If unchecked, the network name will need to be manually entered for a device to connect.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_wps_label")></h3>
+	<p>
+		Wi-Fi Protected Setup (WPS) allows compatible Wi-Fi devices to easily connect to your extended Wi-Fi network without entering the password. Select the checkbox to turn make WPS available.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_privacy_label")></h3>
+	<p>
+		If this setting is checked, each connected device is isolated from all other connected devices. This provides additional security if some connected devices are unknown or not completely trusted. For normal operation, this should be unchecked.
+	</p>
+
+</div>
+
+<!-- id="wifi_primary_settings" -->
+

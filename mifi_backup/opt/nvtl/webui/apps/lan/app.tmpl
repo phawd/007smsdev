@@ -1,0 +1,395 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+	</div>
+<tmpl_else>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var validated = false;
+	$(function()
+	{
+		if ("<tmpl_var reboot>" === "true") {
+			window.location = "<tmpl_udf GET_URI('restarting')>";
+		}
+
+		$("#dhcpServerEnable").on("change", function() {
+			if ($(this).is(":checked")) {
+				$("#sample").html("");
+				$("#dhcpRangeBegin").prop("disabled", false);
+				$("#dhcpServerLeaseTime").prop("disabled", false);
+				$("#reservedIP").prop("disabled", false);
+			} else {
+				$("#dhcpRangeBegin").prop("disabled", true);
+				$("#dhcpServerLeaseTime").prop("disabled", true);
+				$("#reservedIP").prop("disabled", true);
+
+				$("#sample").html('<tmpl_var _("webui", "adv_lan_dhcp_server_enabled_help_text")>');
+				if (jQuery.uniform) $.uniform.update("#sample");
+			}
+			<tmpl_if LANReservedIPAddressShow>
+				<tmpl_if LANReservedIPAddressLocked>
+					$("#reservedIP").prop("disabled", true);
+				</tmpl_if>
+			</tmpl_if>
+		});
+
+		$("#dhcpRangeBegin").on("change", function() {
+			<tmpl_if LANReservedIPAddressShow>
+				if("<tmpl_var reserveIpCount>" != "0") {
+					modalPopup.createWindow('<tmpl_var _("webui", "webui_app_warning_title")>', '<p><tmpl_var _("webui", "adv_lan_save_changes_confirm_modal_with_reservedip_text")></p>', 530, "auto", [{
+						text : '<tmpl_var _("webui", "webui_modal_ok_button")>',                                                         
+						className : "primary",                                                                                        
+						trigger : function(){ 
+						}                                                                                                          
+					}], null, function(){
+					});
+				}
+   			</tmpl_if>
+		});
+
+		$("#adv_lan_form").on("submit", function(e) {
+			return (validated) ? true : validate();
+		});
+
+		<tmpl_if LANReservedIPAddressShow>
+			<tmpl_unless LANReservedIPAddressLocked>
+				$("#reservedIP").click(function() {
+					window.location.href = "<tmpl_udf GET_URI('reserved_ip')>";
+				});
+			</tmpl_unless>
+		</tmpl_if>
+
+		function validate()
+		{
+			$(".notification_inner").parent().remove();
+			$("span.form-error").remove();
+			$("#adv_lan_form").find(".inline_error").remove();
+			var valid = true;
+			var ipEl = $("#ipAddress");
+			var subnetEl = $("#subnetMask");
+			var dhcpEl = $("#dhcpRangeBegin");
+			var isIpv6Active = $("#ipv6Active").is(":checked");
+			var dhcpEnabled = $("#dhcpServerEnable").is(":checked");
+			var dhcpleasetimeEl = $("#dhcpServerLeaseTime");
+			var ipaddress = ipEl.val();
+			var subnet = subnetEl.val();
+			var dhcp = dhcpEl.val();
+			var dhcpleasetime = dhcpleasetimeEl.val();
+			
+
+			var patt = /^(10\.(([0-1][0-9][0-9])|([2][0-4][0-9])|([2][5][0-5])|([0-9][0-9])|([0-9]))|172\.(3[01]|2[0-9]|1[6-9])|192\.168)\.(([0-1][0-9][0-9])|([2][0-4][0-9])|([2][5][0-5])|([0-9][0-9])|([0-9]))\.(([0-1][0-9][0-9])|([2][0-4][0-9])|([2][5][0-5])|([0-9][0-9])|([0-9]))$/;
+			var dhcpPatt = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+			var subnetpatt = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/;
+
+			var ipmatch = ipaddress.match(patt);
+			var subnetmatch = subnet.match(subnetpatt);
+
+
+			if (ipmatch == null) {
+				appendErrorMessage(ipEl.closest("div.row"), '<tmpl_var _("webui", "adv_lan_invalid_ip_address_error_text")>');
+				valid = false;
+			}
+
+			if(subnetmatch == null) {
+				appendErrorMessage(subnetEl.closest("div.row"), '<tmpl_var _("webui", "adv_lan_blank_subnet_mask_address_error_text")>');
+				valid = false;
+			}
+			else {
+				if (subnet === "255.0.0.0" || subnet === "255.255.0.0" || subnet === "255.255.255.0") {
+				// Subnet is valid
+				} else {
+					appendErrorMessage(subnetEl.closest("div.row"), '<tmpl_var _("webui", "adv_lan_supported_subnets_error_text")>');
+					valid = false;
+				}
+			}
+
+			if (dhcpEnabled) {
+				var dhcpmatch = dhcp.match(dhcpPatt);
+				if (dhcpmatch == null) {
+					appendErrorMessage(dhcpEl.closest("div.row"), '<tmpl_var _("webui", "adv_lan_blank_dhcp_begin_address_error_text")>');
+					valid = false;
+				}
+
+				
+			}
+
+			if (valid) {
+				var dhcpValue = "off";
+				if(dhcpEnabled) dhcpValue = "on";
+				if (ipaddress !== "<tmpl_var ipAddress>" || subnet !== "<tmpl_var subnetMask>" || dhcp !== "<tmpl_var dhcpRangeBegin>" || (("<tmpl_var ipv6Supported>" == "1") && (isIpv6Active != "<tmpl_var ipv6Active>")) || dhcpValue != "<tmpl_var dhcpServerEnable>") {
+					modalPopup.createWindow(
+						'<tmpl_var _("webui", "webui_modal_confirm_button")>',
+						'<p><tmpl_udf GET_PO_TEXT("adv_lan_save_changes_confirm_modal_without_reservedip_text", gProductName)></p>',
+						430, 250,
+						[
+							{
+								text : '<tmpl_var _("webui", "webui_modal_cancel_button")>',
+								className : "cancel",
+								trigger : function() {
+									validated = false;
+								}
+							},
+							{
+								text : '<tmpl_var _("webui", "webui_modal_confirm_button")>',
+								className : "primary",
+								trigger : function() {
+									validated = true;
+									$("#adv_lan_form").submit();
+								}
+							}
+						],
+						null,
+						function() {
+							validated = false;
+						}
+					);
+				} else {
+					validated = true;
+					$("#adv_lan_form").submit();
+				}
+				return false;
+			} else {
+				return false;
+			}
+		}
+
+		function appendErrorMessage(el, message)
+		{
+			el.append('<div class="col inline_error">' + message + '</div>');
+			$("#globalError").addClass("notification app error");
+			$("#globalError").html("<tmpl_var _('webui', 'webui_save_code_failed_text')>");
+			
+		}
+		
+
+	});
+	/* ]]> */
+</script>
+
+<tmpl_if isLocked>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+	</div>
+</tmpl_if>
+
+<tmpl_if errorCount>
+<div class="notification app error">
+	<div class="notification_inner">
+		<p>
+				<tmpl_var _("webui", "webui_save_code_failed_text")>
+		</p>
+	</div>
+</div>
+</tmpl_if>
+
+<tmpl_if gPostSuccess>
+<div class="notification app success">
+	<div class="notification_inner">
+		<p>
+				<tmpl_var _("webui", "webui_save_code_success_text")>
+		</p>
+	</div>
+</div>
+</tmpl_if>
+
+<div id="globalError"></div>
+
+<form id="adv_lan_form" method="POST" action="<tmpl_udf GET_URI('lan')>">
+	<fieldset class="first" id="advanced_lan_settings_1">
+		<h3 class="sectionHead"><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h3>
+		<div class="table">
+			<tmpl_unless IN_SET(ipAddress, "unknown")>
+				<div class="row clearfix">
+					<div class="col label">
+						<h4><label for="ipAddress"><tmpl_var _("webui", "adv_lan_ip4_address_label")></label></h4>
+					</div>
+					<div class="col input">
+						<input type="text" name="ipAddress" id="ipAddress" value="<tmpl_var ipAddress>"<tmpl_if ipAddressError> class="error"</tmpl_if> />
+					</div>
+				<tmpl_if ipAddressError>
+						<div class="col inline_error">
+							<tmpl_var ipAddressError>
+						</div>
+				</tmpl_if>
+				</div>
+			</tmpl_unless>
+
+			<tmpl_unless IN_SET(subnetMask, "unknown")>
+				<div class="row clearfix">
+					<div class="col label">
+						<h4><label for="subnetMask"><tmpl_var _("webui", "adv_lan_ip4_subnet_mask_label")></label></h4>
+					</div>
+					<div class="col input">
+						<input type="text" name="subnetMask" id="subnetMask" value="<tmpl_var subnetMask>"<tmpl_if subnetMaskError> class="error"</tmpl_if> />
+					</div>
+				<tmpl_if subnetMaskError>
+						<div class="col inline_error">
+							<tmpl_var subnetMaskError>
+						</div>
+				</tmpl_if>
+				</div>
+			</tmpl_unless>
+
+			<tmpl_unless IN_SET(macAddress, "unknown")>
+				<div class="row clearfix">
+					<div class="col label">
+						<h4><tmpl_var _("webui", "adv_lan_ip4_mac_address_label")></h4>
+					</div>
+					<div class="col input" id="macAddress">
+						<tmpl_var macAddress>
+					</div>
+				</div>
+			</tmpl_unless>
+
+			<tmpl_unless IN_SET(dhcpServerEnable, "unknown")>
+				<div class="row clearfix">
+					<div class="col label">
+						<h4><label for="dhcpServerEnable"><tmpl_var _("webui", "adv_lan_ip4_dhcp_enable_label")></label></h4>
+					</div>
+					<div class="col">
+						<input type="checkbox" name="dhcpServerEnable" id="dhcpServerEnable"<tmpl_if IN_SET(dhcpServerEnable, "on")> checked="checked"</tmpl_if><tmpl_if dhcpServerEnableError> class="error"</tmpl_if> />
+					</div>
+					<div class="help" id="sample">
+						<tmpl_unless  IN_SET(dhcpServerEnable, "on")>
+							<tmpl_var _("webui", "adv_lan_ip4_dhcp_help_text")>
+						</tmpl_unless>
+					</div>
+				<tmpl_if dhcpServerEnableError>
+						<div class="col inline_error">
+							<tmpl_var dhcpServerEnableError>
+						</div>
+				</tmpl_if>
+				</div>
+			</tmpl_unless>
+
+			<tmpl_unless IN_SET(dhcpRangeBegin, "unknown")>
+				<div class="row clearfix">
+					<div class="col label">
+						<h4><label for="dhcpServerLeaseTime"><tmpl_var _("webui", "adv_lan_ip4_dhcp_lease_time_label")></label></h4>
+					</div>
+					<div class="col input">
+						<input type="text" name="dhcpServerLeaseTime" id="dhcpServerLeaseTime" value="<tmpl_var dhcpServerLeaseTime>"<tmpl_unless IN_SET(dhcpServerEnable, "on")> disabled="disabled"</tmpl_unless><tmpl_if dhcpServerLeaseTimeError> class="error"</tmpl_if> />
+					</div>
+					<div class="col help" id="dhcpServerLeaseTimehelp">
+							<tmpl_var _("webui", "adv_lan_ip4_dhcp_lease_time_help_text")>
+					</div>
+					<tmpl_if dhcpServerLeaseTimeError>
+							<div class="col inline_error">
+								<tmpl_var dhcpServerLeaseTimeError>
+							</div>
+					</tmpl_if>
+				</div>
+			</tmpl_unless>
+
+			<tmpl_unless IN_SET(dhcpServerEnable, "unknown")>
+				<div class="row clearfix">
+					<div class="col label">
+						<h4><label for="dhcpRangeBegin"><tmpl_var _("webui", "adv_lan_ip4_dhcp_range_begin_label")></label></h4>
+					</div>
+					<div class="col input">
+						<input type="text" name="dhcpRangeBegin" id="dhcpRangeBegin"
+						  <tmpl_if dhcpRangeBeginError>
+						 	value="<tmpl_var dhcpRangeBeginErrorVal>"
+						  <tmpl_else>
+							value="<tmpl_var dhcpRangeBegin>"
+						  </tmpl_if>
+						  <tmpl_unless IN_SET(dhcpServerEnable, "on")> disabled="disabled"</tmpl_unless>
+						  <tmpl_if dhcpRangeBeginError> class="error"</tmpl_if> />
+					</div>
+				<tmpl_if dhcpRangeBeginError>
+						<div class="col inline_error">
+							<tmpl_var dhcpRangeBeginError>
+						</div>
+				</tmpl_if>
+				</div>
+			</tmpl_unless>
+
+			<tmpl_if IN_SET(dhcpServerEnable, "on")>
+					<div class="row clearfix">
+						<div class="col label">
+							<h4><tmpl_var _("webui", "adv_lan_ip4_current_dhcp_range_label")></h4>
+						</div>
+						<div class="col input" id="dhcpRange">
+							<tmpl_var dhcpRangeBegin> - <tmpl_var dhcpRangeEnd>
+						</div>
+					</div>
+			</tmpl_if>
+
+			<tmpl_if LANReservedIPAddressShow>
+				<div class="row clearfix">
+					<div class="col label">
+							<tmpl_var _("webui", "adv_lan_reservedIp_label")>
+						</div>
+					<div class="col input">
+						<button type="button" id="reservedIP" class="secondary" <tmpl_if LANReservedIPAddressLocked>disabled="disabled"</tmpl_if>>
+                            <tmpl_var _("webui", "adv_lan_reservedIp_button")>
+						</button>
+					</div>
+                        	</div>
+			</tmpl_if>
+
+			
+		</div><!-- /.table -->
+	</fieldset>
+
+<tmpl_if IN_SET(ipv6Supported, "1")>
+	<fieldset class="second" id="advanced_lan_settings_2">
+		<h3 class="sectionHead"><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h3>
+		<div class="table">
+			<tmpl_if showIPv6EnableOption>
+				<tmpl_unless IN_SET(ipv6Active, "unknown")>
+					<div class="row clearfix">
+						<div class="col label">
+							<h4><label for="ipv6Active"><tmpl_var _("webui", "adv_lan_ip6_enable_label")></label></h4>
+						</div>
+						<div class="col input">
+							<input type="checkbox" name="ipv6Active" id="ipv6Active"<tmpl_if IN_SET(ipv6Active, "on")> checked="checked"</tmpl_if> />
+						</div>
+						
+						<tmpl_if showIPv6EnableHelp>	
+							<br>
+							<br>
+							<div class="col">
+								<tmpl_var _("webui", "adv_lan_ip6_enable_help_text")>
+							</div>
+						</tmpl_if>
+
+						<tmpl_unless showIPv6EnableHelp>
+							<div class="col help">
+								<tmpl_var _("webui", "adv_lan_ip6_enable_help_text")>
+							</div>
+						</tmpl_unless>
+					</div>
+				</tmpl_unless>
+			</tmpl_if>
+			
+			<tmpl_unless IN_SET(linkLocalAddress, "unknown")>
+				<div class="row clearfix">
+					<div class="col label">
+						<h4><label for="linkLocal"><tmpl_var _("webui", "adv_lan_ip6_link_local_label")></label></h4>
+					</div>
+					<div class="col input" id="linkLocalAddress">
+						<tmpl_var linkLocalAddress>
+					</div>
+					<input type="hidden" name="linkLocalAddress"  value="<tmpl_var linkLocalAddress>" />
+				</div>
+			</tmpl_unless>
+		</div><!-- /.table -->
+	</fieldset>
+</tmpl_if>
+
+	<div class="button_container clearfix">																														
+		<input type="hidden" name="gSecureToken" id="gSecureToken" value="<tmpl_var gSecureToken>" />
+		<input type="hidden" name="macAddress"  value="<tmpl_var macAddress>" />
+		<input type="hidden" name="dhcpRangeEnd"  value="<tmpl_var dhcpRangeEnd>" />
+		<input type="hidden" name="linkLocalAddress"  value="<tmpl_var linkLocalAddress>" />
+		<input type="hidden" name="ipv6Supported"  value="<tmpl_var ipv6Supported>" />
+		<input type="hidden" name="reserveIpFeatureEnable"  value="<tmpl_var reserveIpFeatureEnable>" />
+		<input type="hidden" name="reserveIpCount"  value="<tmpl_var reserveIpCount>" />
+		<input type="hidden" name="dhcpNumAddrs" id="dhcpNumAddrs" value="<tmpl_var dhcpNumAddrs>" />
+		<button type="submit" class="primary" <tmpl_if isLocked> disabled="disabled"</tmpl_if> >
+			<tmpl_var _("webui", "webui_save_button")>
+		</button>
+		</div>
+</form>
+</tmpl_if><!-- isHidden -->

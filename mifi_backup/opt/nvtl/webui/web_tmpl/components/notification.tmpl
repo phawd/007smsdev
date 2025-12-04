@@ -1,0 +1,33 @@
+<div class="notifications_wrapper global">
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		var mifidisconnectlist = [{
+			"id" : "noResponse",
+			"title" : '<tmpl_var _("webui", "vzw_header_wifi_connection_lost_notification_header")>',
+			"severity" : "critical",
+			"text" : '<tmpl_udf GET_PO_TEXT("vzw_header_wifi_connection_lost_notification_text", gProductName)>'
+		}];
+		/* ]]> */
+	</script>
+</div>  
+
+
+<!--<tmpl_if errorCount>
+	<div class="notification app error">
+		<div class="notification_inner">
+			<p>
+				<tmpl_var _("webui", "notification_save_code_failure_text")>
+			</p>
+		</div>
+	</div>
+</tmpl_if>
+
+<tmpl_if gPostSuccess>
+	<div class="notification app success">
+		<div class="notification_inner">
+			<p>
+				<tmpl_var _("webui", "notification_save_code_success_text")>
+			</p>
+		</div>
+	</div>
+</tmpl_if>-->

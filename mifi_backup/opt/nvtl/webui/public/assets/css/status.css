@@ -1,0 +1,677 @@
+/* =============================================================================
+ Status Area Styles
+ ========================================================================== */
+.status_hide
+{
+	display: none;
+}
+
+/* #mobile_status_area exposed via mobile.css. */
+#mobile_status_area
+{
+	display: none;
+}
+
+#status_area
+{
+	top: 9px;
+	right: 0;
+	position: relative;
+}
+
+html.rtl #status_area
+{
+	right: auto;
+	left: 0;
+}
+
+#status_area ul.status,
+#mobile_status_area ul.status
+{
+	float: right;
+	margin-right: 20px;
+}
+
+html.rtl #status_area ul.status,
+html.rtl #mobile_status_area ul.status
+{
+	float: left;
+	margin-right: 0;
+	margin-left: 20px;
+}
+
+#status_area ul.status:first-child,
+#mobile_status_area ul.status:first-child
+{
+	margin-right: 0;
+}
+
+html.rtl #mobile_status_area ul#header_mobile_menu
+{
+	margin-left: 0;
+}
+
+#status_area ul.status li,
+#mobile_status_area ul.status li
+{
+	display: block;
+	float: left;
+	margin-left: 10px;
+}
+
+html.rtl #status_area ul.status li,
+html.rtl #mobile_status_area ul.status li
+{
+	float: right;
+	margin-left: 0;
+	margin-right: 10px;
+}
+
+#status_bar ul.status li span,
+#mobile_status_bar ul.status li span
+{
+	display: block !important;
+	white-space: nowrap;
+}
+
+#status_area ul.status li:first-child,
+#mobile_status_area ul.status li:first-child
+{
+	margin-left: 0;
+}
+
+html.rtl #status_area ul.status li:first-child,
+html.rtl #mobile_status_area ul.status li:first-child
+{
+	margin-right: 0;
+}
+
+ul.status li span.nopadding
+{
+	margin: 0;
+	padding: 0;
+}
+
+/* =============================================================================
+ status_login
+ ========================================================================== */
+#status_login
+{
+	margin-left: 20px;
+}
+
+#status_login li
+{
+	line-height: 1.143em; /* 16px */
+}
+
+#status_login .login a,
+#status_login .logout a,
+#status_login .home a
+{
+	display: block;
+	padding-right: 20px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	text-align: right;
+}
+
+html.rtl #status_login .login a,
+html.rtl #status_login .logout a,
+html.rtl #status_login .home a
+{
+	padding-right: 0;
+	padding-left: 20px;
+	text-align: left;
+}
+
+/* =============================================================================
+ status_bars
+ ========================================================================== */
+#status_bar
+{
+	margin: 9px 0;
+}
+
+#status_bar,
+#mobile_status_bar
+{
+	float: right;
+}
+
+html.rtl #status_bar,
+html.rtl #mobile_status_bar
+{
+	float: left;
+}
+
+#mobile_status_bar
+{
+	padding: 10px 0;
+}
+
+#status_bar ul.status li span,
+#mobile_status_bar ul.status li span
+{
+	background-image: url("../images/status/icn-sprite-status_icons.png");
+	background-repeat: no-repeat;
+}
+
+#status_bar ul.status li span.text,
+#mobile_status_bar ul.status li span.text
+{
+	background-image: none;
+	line-height: normal;
+}
+
+/* Limit the width of the operator name for mobile. */
+#mobile_status_bar ul.status li#item_mobile_statusBar_network span.text
+{
+	max-width: 10em;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+#statusBar_tech,
+#mobile_statusBar_tech
+{
+}
+
+#statusBar_tech.tech_none,
+#mobile_statusBar_tech.tech_none
+{
+	background-image: none !important;
+}
+
+#statusBar_tech.tech_1x,
+#mobile_statusBar_tech.tech_1x
+{
+	background-position: -386px -101px;
+	width: 19px;
+	height: 16px;
+}
+
+#statusBar_tech.tech_3g,
+#mobile_statusBar_tech.tech_3g
+{
+	background-position: -458px -101px;
+	width: 20px;
+	height: 16px;
+}
+#statusBar_tech.tech_2g,
+#mobile_statusBar_tech.tech_2g
+{
+	background-position: -790px -100px;
+	width: 35px;
+	height: 16px;
+}
+#statusBar_tech.tech_h,
+#mobile_statusBar_tech.tech_h
+{
+	background-position: -755px -101px;
+	width: 20px;
+	height: 16px;
+}
+#statusBar_tech.tech_e,
+#mobile_statusBar_tech.tech_e
+{
+	background-position:-722px -101px;
+	width: 20px;
+	height: 16px;
+}
+
+#statusBar_tech.tech_4glte,
+#mobile_statusBar_tech.tech_4glte
+{
+	background-position: -587px -100px;
+	width: 50px;
+	height: 16px;
+}
+
+#statusBar_tech.tech_4glte_slash,
+#mobile_statusBar_tech.tech_4glte_slash
+{
+	background-position: -520px -101px;
+	width: 52px;
+	height: 16px;
+}
+
+#statusBar_tech.tech_gsm,
+#mobile_statusBar_tech.tech_gsm
+{
+	background-position: -667px -101px;
+	/*background-position:-716px -101px;*/
+	width: 33px;
+	height: 16px;
+}
+
+#mobile_statusBar_tech
+{
+	margin-top: 0;
+}
+
+#statusBar_activity,
+#mobile_statusBar_activity
+{
+	width: 14px;
+	height: 16px;
+}
+
+#mobile_statusBar_activity
+{
+	margin-top: 0;
+}
+
+#statusBar_activity.activity_none,
+#statusBar_activity.activity_idle,
+#mobile_statusBar_activity.activity_none,
+#mobile_statusBar_activity.activity_idle
+{
+	/*background-position: -677px -172px; */
+	background-image: none !important; 
+	width:0px;
+	height:0px;
+}
+
+#statusBar_activity.activity_downlink,
+#mobile_statusBar_activity.activity_downlink
+{
+	background-position: -611px -172px;
+}
+
+#statusBar_activity.activity_uplink,
+#mobile_statusBar_activity.activity_uplink
+{
+	background-position: -597px -172px;
+}
+
+#statusBar_activity.activity_uplinkdownlink,
+#mobile_statusBar_activity.activity_uplinkdownlink
+{
+	background-image: url("../images/status/ani-status-activity.gif") !important;
+}
+/* Airplane Modes BEGIN */
+.airplane_airplanemodeon
+{
+	background-position: -458px -172px;
+	width: 20px;
+	height: 16px;
+}
+
+#statusBar_airplane.airplane_airplanemodeoff,
+#statusBar_airplane.airplane_lowbatteryoff,
+#statusBar_airplane.airplane_none
+{
+	background-image: none !important;
+}
+
+/* connected devices */
+#statusBar_connected_devices,
+#mobile_statusBar_connected_devices
+{
+	height: 16px;
+	background-position: -820px -172px;
+}
+
+#statusBar_connected_devices span,
+#mobile_statusBar_connected_devices span
+{
+	/*font-size: 0.714em;*/ /* 10px */
+	text-align: right;
+	padding-left: 20px;
+	line-height: 16px;
+	font-weight: normal;
+}
+
+html.rtl #statusBar_connected_devices span,
+html.rtl #mobile_statusBar_connected_devices span
+{
+	text-align: left;
+	padding-left: 0;
+	padding-right: 20px;
+}
+
+/* messages */
+/*
+#statusBar_sms,
+#mobile_statusBar_sms
+{
+	width: 16px;
+	height: 16px;
+	background-position: -892px -172px;
+}
+*/
+
+/* tethered usb */
+#statusBar_connected_devices.tethered_usb,
+#mobile_statusBar_connected_devices.tethered_usb
+{
+	width: 30px;
+	height: 16px;
+	background-position: -957px -172px;
+	margin-right: 20px;
+}
+
+/*
+#statusBar_connected_devices.tethered_usb_disconnected,
+#mobile_statusBar_connected_devices.tethered_usb_disconnected
+{
+	width: 30px;
+	height: 16px;
+	background-image: url("../images/status/ani-status-usb-tether-disconnected.gif") !important;
+}
+*/
+
+/* battery and charging */
+#statusBar_battery,
+#mobile_statusBar_battery
+{
+	width: 29px;
+	height: 16px;
+	padding-right: 45px;
+}
+
+/* low battery animation */
+#statusBar_battery.batt_low,
+#mobile_statusBar_battery.batt_low
+{
+	background-image: url("../images/status/ani-status-battery_low.gif") !important;
+	background-position: 29px 0px;
+}
+
+#statusBar_battery.batt_none,
+#mobile_statusBar_battery.batt_none
+{
+	background-position: 12px -388px;
+}
+
+#statusBar_battery.batt_0,
+#statusBar_battery.batt_1,
+#mobile_statusBar_battery.batt_1,
+#mobile_statusBar_battery.batt_0
+{
+	background-position: -58px -388px;
+}
+
+#statusBar_battery.batt_2,
+#mobile_statusBar_battery.batt_2
+{
+	background-position: -132px -388px;
+}
+
+#statusBar_battery.batt_3,
+#mobile_statusBar_battery.batt_3
+{
+	background-position: -204px -388px;
+}
+
+#statusBar_battery.batt_4,
+#mobile_statusBar_battery.batt_4
+{
+	background-position: -272px -388px;
+}
+
+/* AC Charging */
+#statusBar_battery.batt_chargingsourceac,
+#mobile_statusBar_battery.batt_chargingsourceac
+{
+	background-position: -493px -388px;
+}
+
+#statusBar_battery.batt_chargingsourceac_low,
+#mobile_statusBar_battery.batt_chargingsourceac_low
+{
+	background-position: -703px -388px;
+}
+
+#statusBar_battery.batt_chargingsourceac_0,
+#mobile_statusBar_battery.batt_chargingsourceac_0,
+#statusBar_battery.batt_chargingsourceac_1,
+#mobile_statusBar_battery.batt_chargingsourceac_1
+{
+	background-position: -777px -388px;
+}
+
+#statusBar_battery.batt_chargingsourceac_2,
+#mobile_statusBar_battery.batt_chargingsourceac_2
+{
+	background-position: -853px -388px;
+}
+
+#statusBar_battery.batt_chargingsourceac_3,
+#mobile_statusBar_battery.batt_chargingsourceac_3
+{
+	background-position: -924px -388px;
+}
+
+#statusBar_battery.batt_chargingsourceac_4,
+#mobile_statusBar_battery.batt_chargingsourceac_4
+{
+	background-position: -990px -388px;
+}
+
+/* USB Charging */
+#statusBar_battery.batt_chargingsourceusb,
+#mobile_statusBar_battery.batt_chargingsourceusb
+{
+	background-position: -599px -388px;
+}
+
+#statusBar_battery.batt_chargingsourceusb_low,
+#mobile_statusBar_battery.batt_chargingsourceusb_low
+{
+	background-position: -1075px -388px;
+}
+
+#statusBar_battery.batt_chargingsourceusb_0,
+#mobile_statusBar_battery.batt_chargingsourceusb_0,
+#statusBar_battery.batt_chargingsourceusb_1,
+#mobile_statusBar_battery.batt_chargingsourceusb_1
+{
+	background-position: -1140px -388px;
+}
+
+#statusBar_battery.batt_chargingsourceusb_2,
+#mobile_statusBar_battery.batt_chargingsourceusb_2
+{
+	background-position: -1280px -388px;
+}
+
+#statusBar_battery.batt_chargingsourceusb_3,
+#mobile_statusBar_battery.batt_chargingsourceusb_3
+{
+	background-position: -1283px -388px;
+}
+
+#statusBar_battery.batt_chargingsourceusb_4,
+#mobile_statusBar_battery.batt_chargingsourceusb_4
+{
+	background-position: -1349px -387px;
+}
+
+/* roaming/femto */
+#statusBar_femto_roam,
+#mobile_statusBar_femto_roam
+{
+	width: 24px;
+	height: 16px;
+}
+
+#mobile_statusBar_femto_roam
+{
+	margin-top: 0;
+}
+
+#statusBar_femto_roam.roam_none,
+#statusBar_femto_roam.femto_roam_none,
+#mobile_statusBar_femto_roam.roam_none,
+#mobile_statusBar_femto_roam.femto_roam_none
+{
+	background-image: none !important;
+	width:0px;
+	height:0px;
+}
+
+/* roaming animation */
+#statusBar_femto_roam.roam_flash,
+#mobile_statusBar_femto_roam.roam_flash
+{
+	background-image: url("../images/status/ani-status-roaming.gif") !important;
+}
+
+#statusBar_femto_roam.femto_on,
+#mobile_statusBar_femto_roam.femto_on
+{
+	background-position: -240px -172px;
+}
+
+#statusBar_femto_roam.roam_domestic,
+#mobile_statusBar_femto_roam.roam_domestic
+{
+	background-position: -96px -172px;
+}
+
+#statusBar_femto_roam.roam_international,
+#mobile_statusBar_femto_roam.roam_international
+{
+	background-position: -170px -172px;
+}
+
+/* rssi */
+#statusBar_rssi,
+#mobile_statusBar_rssi
+{
+	width: 23px;
+	height: 16px;
+}
+
+#statusBar_rssi.no_service,
+#mobile_statusBar_rssi.no_service
+{
+	background-position: -457px -27px;
+	height:20px;
+}
+
+#statusBar_rssi.rssi_0,
+#mobile_statusBar_rssi.rssi_0
+{
+	background-position: -458px -28px;
+}
+
+#statusBar_rssi.rssi_1,
+#mobile_statusBar_rssi.rssi_1
+{
+	background-position: -600px -30px;
+}
+
+#statusBar_rssi.rssi_2,
+#mobile_statusBar_rssi.rssi_2
+{
+	background-position: -672px -30px;
+}
+
+#statusBar_rssi.rssi_3,
+#mobile_statusBar_rssi.rssi_3
+{
+	background-position: -744px -30px;
+}
+
+#statusBar_rssi.rssi_4,
+#mobile_statusBar_rssi.rssi_4
+{
+	background-position: -816px -30px;
+}
+
+#statusBar_rssi.rssi_5,
+#mobile_statusBar_rssi.rssi_5
+{
+	background-position: -888px -30px;
+}
+
+#statusBar_rssi.sim_icon,
+#mobile_statusBar_rssi.sim_icon
+{
+	background-position: -28px -530px;
+}
+
+/* SIM Icons for rssi */
+#statusBar_rssi.sim_icon,
+#mobile_statusBar_rssi.sim_icon
+{
+	background-position: -25px -530px;
+	height: 20px;
+	margin: -2px 0;
+}
+
+#statusBar_rssi.sim_error,
+#mobile_statusBar_rssi.sim_error
+{
+	background-position: -97px -530px;
+	height: 20px;
+	margin: -2px 0;
+}
+
+#statusBar_rssi.sim_locked,
+#mobile_statusBar_rssi.sim_locked
+{
+	background-position: -169px -530px;
+	height: 20px;
+	margin: -2px 0;
+}
+
+#statusBar_rssi.sim_no_sim,
+#mobile_statusBar_rssi.sim_no_sim
+{
+	background-position: -241px -530px;
+	height: 20px;
+	margin: -2px 0;
+}
+.col-md-6{
+	width:50%;
+	float:left;
+}
+.universal_charging {
+    background-position: -1030px -169px;
+    height: 22px;
+    width: 22px;
+}
+.mass_storage{
+    background-position: -1093px -169px;
+    height: 22px;
+    width: 32px;
+}
+
+/* GPS */
+/*
+#statusBar_gps,
+#mobile_statusBar_gps
+{
+	width: 16px;
+	height: 18px;
+	margin: -1px 0;
+}
+
+#statusBar_gps.gps_gotfix,
+#mobile_statusBar_gps.gps_gotfix
+{
+	background-position: -316px -171px;
+}
+
+#statusBar_gps.gps_searching,
+#mobile_statusBar_gps.gps_searching
+{
+	background-image: url("../images/status/anim_status_gps_searching.gif") !important;
+}
+
+#statusBar_gps.gps_gpsoff,
+#statusBar_gps.gps_disabled,
+#statusBar_gps.gps_carrierdisabled,
+#statusBar_gps.gps_privacyagreementnotaccepted,
+#mobile_statusBar_gps.gps_gpsoff,
+#mobile_statusBar_gps.gps_disabled,
+#mobile_statusBar_gps.gps_carrierdisabled,
+#mobile_statusBar_gps.gps_privacyagreementnotaccepted
+{
+	background-image: none !important;
+}
+*/

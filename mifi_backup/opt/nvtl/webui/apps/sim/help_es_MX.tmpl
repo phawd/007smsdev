@@ -1,0 +1,39 @@
+<!-- SIM Lock -->
+<div id="adv_sim">
+        <h1><tmpl_var _("webui", "adv_sim_menu_text")></h1>
+        <h2>Descripción</h2>
+        <p> Desde esta página, puede bloquear y desbloquear la tarjeta SIM y cambiar el PIN de la SIM. </p>
+	<p> El bloqueo de la tarjeta SIM del <tmpl_var _("webui", "webui_product_name")> evita que el <tmpl_var _("webui", "webui_product_name")> y los dispositivos conectados se conecten a la red móvil. </p>
+	<p> Después de bloquear la tarjeta SIM, deberá ingresar el PIN para conectarse a la red móvil. También deberá ingresar el PIN si apaga y vuelve a encender su <tmpl_var _("webui", "webui_product_name")>. </p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_pin_lock_feature_label"), (size(_("webui", "adv_sim_pin_lock_feature_label")) - size(":")))>
+</h3>
+		<p> Este campo indica si el bloqueo de PIN de la tarjeta SIM está activado o desactivado. Cuando está activado, se debe ingresar el PIN de la tarjeta SIM para conectarse a la red móvil. </p>
+
+	<h3><tmpl_var truncate(_("webui", "adv_sim_status_label"), (size(_("webui", "adv_sim_status_label")) - size(":")))></h3>
+	<p>El campo indica el estado actual de la tarjeta SIM. Los valores posibles son: </p>
+	<div class="blockgroup">
+	        <ul>
+	        <li><b>Listo:</b> el bloqueo de PIN de la SIM está desactivado. </li>
+	        <li><b>Bloqueado con PIN:</b> el bloqueo con PIN de la SIM está activado y el <tmpl_var _("webui", "webui_product_name")> no puede conectarse a la red móvil. Ingrese el PIN de la SIM para dar acceso a Internet a los dispositivos conectados.</li>
+
+		<p>Nota: Si se ingresa el PIN incorrecto demasiadas veces, la tarjeta SIM se bloqueará con PUK.</p>
+	        <li><b>Bloqueado con PUK:</b> debido a demasiados intentos fallidos para desbloquear la tarjeta SIM de este <tmpl_var _("webui", "webui_product_name")>, ahora se requiere una clave de desbloqueo de PIN (PUK, por sus siglas en inglés).</li>
+
+		<p>Nota: Si se ingresa la clave PUK incorrecta demasiadas veces, la tarjeta SIM se bloqueará permanentemente y tendrá que ser reemplazada.</p>
+		
+	        <li><b>Desbloqueado:</b> el bloqueo del PIN de la SIM está activado y el PIN de la SIM se ha introducido correctamente.  </li>
+	        <li><b>Sin SIM:</b> no se detecta ninguna tarjeta SIM. Inserte una tarjeta SIM o asegúrese de que la tarjeta SIM esté colocada correctamente.</li>
+	        <li><b>Error de SIM:</b> se detectó una tarjeta SIM, pero esta no respondió como se esperaba y no se puede usar. </li>       
+	        </ul>
+	</div>
+        <h2>Acción deseada</h2>
+	<p>Seleccione lo que desee hacer: activar o desactivar el bloqueo de PIN o cambiar el PIN.</p>
+	<p>Nota: Al cambiar el PIN en una tarjeta SIM de Verizon Wireless, el nuevo PIN debe tener entre 4 y 8 dígitos.</p>
+	<h2>PIN Actual</h2>
+	<p>Deberá ingresar el PIN actual antes de poder activar o desactivar el bloqueo de PIN o cambiar el PIN.</p>
+
+	<p>Nota: Haga clic en el ícono de información [ícono] para ver el PIN predeterminado.</p>
+
+</div>
+<!-- id="adv_sim" -->
+
