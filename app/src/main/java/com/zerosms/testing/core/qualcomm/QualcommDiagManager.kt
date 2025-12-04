@@ -45,6 +45,10 @@ object QualcommDiagManager {
         )
     )
 
+    /**
+     * Returns a list of pre-configured profiles for enabling diagnostic ports on common devices.
+     * @return a list of [QualcommDiagProfile]
+     */
     fun getPresetProfiles(): List<QualcommDiagProfile> = presetProfiles
 
     /**
@@ -100,6 +104,14 @@ object QualcommDiagManager {
     }
 }
 
+/**
+ * Represents a pre-configured profile for enabling Qualcomm diagnostic ports.
+ *
+ * @property id Unique identifier for the profile.
+ * @property label User-friendly display name.
+ * @property description A short description of the device or use-case for this profile.
+ * @property variants A list of USB configuration values to try.
+ */
 data class QualcommDiagProfile(
     val id: String,
     val label: String,
@@ -107,6 +119,15 @@ data class QualcommDiagProfile(
     val variants: List<String>
 )
 
+/**
+ * Holds the result of an attempt to enable diagnostic ports.
+ *
+ * @property success True if the configuration was likely updated.
+ * @property message A summary message describing the outcome.
+ * @property activeConfig The active USB configuration after the attempt.
+ * @property details A log of commands that were executed.
+ * @property profileId The ID of the profile used, if any.
+ */
 data class QualcommDiagResult(
     val success: Boolean,
     val message: String,
