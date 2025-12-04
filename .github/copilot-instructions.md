@@ -9,15 +9,19 @@ Android SMS/MMS/RCS testing suite with RFC compliance (GSM 03.40, OMA MMS, GSMA 
 ```
 app/src/main/java/com/zerosms/testing/
 ├── core/
-│   ├── model/Models.kt      # Message, TestResult, MessageType, DeliveryStatus enums
+│   ├── model/Models.kt           # Message, TestResult, MessageType, DeliveryStatus enums
 │   ├── sms/SmsManagerWrapper.kt  # SMS operations, AT command fallback
-│   ├── at/AtCommandManager.kt    # Direct modem communication (root)
+│   ├── at/
+│   │   ├── AtCommandManager.kt   # Generic modem AT commands (root)
+│   │   ├── HidlAtciManager.kt    # HIDL-based AT (API 26+)
+│   │   └── MipcDeviceManager.kt  # MediaTek IPC protocol
 │   ├── root/RootAccessManager.kt # Root detection and execution
+│   ├── qualcomm/QualcommDiagManager.kt  # Diag USB mode control
 │   ├── mms/MmsManagerWrapper.kt  # MMS PDU encoding
 │   ├── rcs/RcsManagerWrapper.kt  # RCS Universal Profile
 │   ├── device/DeviceInfoManager.kt  # Chipset-specific modem detection
 │   ├── receiver/SmsReceiver.kt   # Incoming SMS capture (incl. Class 0/Type 0)
-│   └── Logger.kt            # Debug-only logging utility
+│   └── Logger.kt                 # Debug-only logging utility
 ├── ui/screens/              # Jetpack Compose screens (home/, monitor/, test/, settings/)
 └── ZeroSMSApplication.kt
 ```
@@ -136,30 +140,51 @@ adb devices                    # Verify device connected
 ./gradlew connectedAndroidTest # Run on-device tests
 ```
 
-## Agent Discovery & Learning
+## Device-Specific Guides
 
-When exploring unfamiliar areas of this codebase:
+For detailed device setup, discovery, and troubleshooting, see the dedicated guides:
 
-1. **Modem/Chipset Discovery**: Run `tools/zerosms_cli.py probe --deep --include-response` to discover available modem paths and AT command capabilities on the connected device
-2. **Carrier Behavior**: Use `docs/MEDIATEK_FLASH_SMS_RESEARCH.md` and `docs/SESSION_2_FINDINGS.md` for device-specific quirks
-3. **RFC Understanding**: `docs/RFC_COMPLIANCE.md` explains the "why" behind PDU encoding decisions
-4. **MMSC Profiles**: `core/mmsc/MmscConfigManager.kt` contains carrier presets - run `diag --profile <name>` to test configurations
+| Device Type | Guide                                                           | Description                                    |
+| ----------- | --------------------------------------------------------------- | ---------------------------------------------- |
+| **Android** | [docs/ANDROID_DEVICE_GUIDE.md](../docs/ANDROID_DEVICE_GUIDE.md) | Standard Android phones/tablets                |
+| **MiFi**    | [docs/MIFI_DEVICE_GUIDE.md](../docs/MIFI_DEVICE_GUIDE.md)       | Inseego MiFi 8800L, M2000, M2100 (Linux-based) |
 
-For independent capability testing:
+### Quick Device Type Detection
 
 ```bash
-# Discover what the connected device supports
-python3 tools/zerosms_cli.py probe --deep --include-response
-python3 tools/zerosms_cli.py usb --json  # USB vendor/product IDs
+# Step 1: Check if device responds to ADB
+adb devices -l
 
-# Test AT command availability without sending
-python3 tools/zerosms_cli.py diag --profile generic  # Enable diag ports first
+# Step 2: Detect OS type
+adb shell "cat /etc/os-release 2>/dev/null"       # Linux-based (MiFi)
+adb shell "getprop ro.build.product 2>/dev/null"  # Android
+
+# Step 3: Branch to appropriate guide
+# - MiFiOS2: See docs/MIFI_DEVICE_GUIDE.md
+# - Android: See docs/ANDROID_DEVICE_GUIDE.md
 ```
 
-## Documentation
+## Documentation Index
 
-- `docs/RFC_COMPLIANCE.md` - Protocol implementation details
-- `docs/ROOT_ACCESS_GUIDE.md` - AT commands, MMSC config
-- `docs/TESTING_GUIDE.md` - User testing workflows
-- `docs/MEDIATEK_FLASH_SMS_RESEARCH.md` - Device-specific findings
-- `docs/SESSION_2_FINDINGS.md` - Experimental session notes
+| Document                              | Purpose                                      |
+| ------------------------------------- | -------------------------------------------- |
+| `docs/ANDROID_DEVICE_GUIDE.md`        | Android device setup and AT commands         |
+| `docs/MIFI_DEVICE_GUIDE.md`           | MiFi device setup, CLI tools, carrier config |
+| `docs/MIFI_8800L_DEVICE_REFERENCE.md` | Comprehensive MiFi hardware catalog          |
+| `docs/RFC_COMPLIANCE.md`              | Protocol implementation details              |
+| `docs/ROOT_ACCESS_GUIDE.md`           | AT commands, MMSC config                     |
+| `docs/TESTING_GUIDE.md`               | User testing workflows                       |
+| `docs/MEDIATEK_FLASH_SMS_RESEARCH.md` | MediaTek device quirks                       |
+| `docs/SESSION_2_FINDINGS.md`          | Experimental session notes                   |
+
+## AI Agent Integration
+
+For AI agents working autonomously with devices:
+
+1. **Always use 30+ second timeouts** for device operations - modems are slow
+2. **Check prerequisites first**: `adb`, `fastboot`, `python3`, pyserial installed
+3. **Detect device type FIRST**: Android vs MiFiOS (Linux) requires different commands
+4. **Escalate gracefully**: ADB → fastboot → EDL → web interface → manual intervention
+5. **Log everything**: Use `python3 tools/zerosms_cli.py probe --deep --include-response > probe-log.txt`
+6. **Handle driver issues**: Windows devices may show "Unknown" status - need admin
+7. **Document findings**: Update `docs/SESSION_*_FINDINGS.md` with device-specific discoveries
