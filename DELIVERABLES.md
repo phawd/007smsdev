@@ -26,6 +26,7 @@ Successfully completed a comprehensive forensic analysis and automatic SMS frame
 ### 1. Forensic Analysis Tools
 
 #### `tools/nv_discovery.sh` (196 lines) ✅
+
 - **Purpose**: Comprehensive NV item enumeration (0-20,000)
 - **Features**:
   - Fast pass scanning (every 100th item)
@@ -35,6 +36,7 @@ Successfully completed a comprehensive forensic analysis and automatic SMS frame
   - Full filesystem exploration
 
 **Results**:
+
 ```
 ✓ 201 readable NV items discovered
 ✓ All items in 0-9900 range at 100-item intervals
@@ -43,6 +45,7 @@ Successfully completed a comprehensive forensic analysis and automatic SMS frame
 ```
 
 #### `tools/fs_exploration.sh` (238 lines) ✅
+
 - **Purpose**: Deep filesystem audit and program discovery
 - **Features**:
   - 15-phase exploration framework
@@ -53,6 +56,7 @@ Successfully completed a comprehensive forensic analysis and automatic SMS frame
   - Device node mapping
 
 **Results**:
+
 ```
 ✓ 160+ Novatel/Qualcomm utilities discovered
 ✓ 2,006 lines of detailed system state
@@ -62,6 +66,7 @@ Successfully completed a comprehensive forensic analysis and automatic SMS frame
 ```
 
 #### `tools/nv_forensic_audit.sh` (289 lines) ✅
+
 - **Purpose**: Comprehensive NV item audit
 - **Features**:
   - Full NV scan 0-10,000
@@ -71,6 +76,7 @@ Successfully completed a comprehensive forensic analysis and automatic SMS frame
   - Band preferences verification
 
 #### `tools/fast_audit.sh` (70 lines) ✅
+
 - **Purpose**: Quick device snapshot
 - **Features**:
   - 30-item NV sample (10 seconds runtime)
@@ -81,6 +87,7 @@ Successfully completed a comprehensive forensic analysis and automatic SMS frame
 ### 2. Automatic SMS Framework
 
 #### `tools/auto_flash_sms.sh` (53 lines) ✅
+
 - **Purpose**: Automatic Class 0 Flash SMS transmission
 - **Features**:
   - Sends 10× Flash SMS to configured target
@@ -90,6 +97,7 @@ Successfully completed a comprehensive forensic analysis and automatic SMS frame
   - Target: +15042147419
 
 #### `tools/auto_type0_sms.sh` (53 lines) ✅
+
 - **Purpose**: Automatic Type 0 Silent SMS transmission
 - **Features**:
   - Sends 10× Type 0 (PID 0x40) silent SMS
@@ -98,6 +106,7 @@ Successfully completed a comprehensive forensic analysis and automatic SMS frame
   - Full error handling
 
 #### `tools/sms_listener.sh` (45 lines) ✅
+
 - **Purpose**: Continuous SMS listener
 - **Features**:
   - 2-second polling interval
@@ -113,12 +122,14 @@ Successfully completed a comprehensive forensic analysis and automatic SMS frame
 ### Comprehensive Device Guides
 
 #### `docs/ANDROID_DEVICE_GUIDE.md`
+
 - Android device setup and discovery
 - Modem paths and AT command managers
 - SMS encoding (GSM 03.38) reference
 - Troubleshooting and common gotchas
 
 #### `docs/MIFI_DEVICE_GUIDE.md`
+
 - MiFi device overview and specifications
 - USB device discovery process
 - Native CLI tools (60+ commands)
@@ -128,6 +139,7 @@ Successfully completed a comprehensive forensic analysis and automatic SMS frame
 - Carrier unlock investigation
 
 #### `docs/MIFI_8800L_DEVICE_REFERENCE.md`
+
 - Comprehensive hardware catalog
 - Partition table (MTD layout)
 - Known Inseego models comparison
@@ -137,6 +149,7 @@ Successfully completed a comprehensive forensic analysis and automatic SMS frame
 ### Forensic Reference Documentation
 
 #### `docs/NV_DISCOVERY_REFERENCE.md` (290+ lines)
+
 - **Sections**:
   - NV item categorization (readable/protected/unresponsive)
   - Write capability analysis
@@ -149,12 +162,14 @@ Successfully completed a comprehensive forensic analysis and automatic SMS frame
   - Reference commands for all operations
 
 **Key Tables**:
+
 - 18 readable NV items with descriptions
 - 15+ inaccessible EFS paths documented
 - 100+ Novatel tools inventory
 - 200+ QMI library functions
 
 #### `docs/SESSION_FORENSIC_SUMMARY.md` (411 lines)
+
 - Complete session overview
 - Device status and capabilities
 - Forensic discovery results (detailed breakdown)
@@ -167,16 +182,19 @@ Successfully completed a comprehensive forensic analysis and automatic SMS frame
 ### Additional Documentation
 
 #### `docs/RFC_COMPLIANCE.md`
+
 - SMS protocol compliance (GSM 03.40)
 - MMS implementation (OMA MMS)
 - RCS specifications (GSMA RCS UP 2.4)
 
 #### `docs/ROOT_ACCESS_GUIDE.md`
+
 - AT command fundamentals
 - MMSC configuration
 - Root access techniques
 
 #### `docs/TESTING_GUIDE.md`
+
 - User testing workflows
 - Device interaction patterns
 - Verification procedures
@@ -186,12 +204,14 @@ Successfully completed a comprehensive forensic analysis and automatic SMS frame
 ## 🔍 Key Findings
 
 ### NV Item Analysis
+
 - **Pattern**: Every 100th item readable (0, 100, 200, ... 9900)
 - **Protection**: Most items protected by carrier/device locks (error 8193)
 - **SPC Requirement**: Service Programming Code needed for unlock items
 - **Writable Items**: Limited to configuration parameters (bands, APN, settings)
 
 ### Device Capabilities
+
 - **Root**: Full uid=0 access (default)
 - **Network**: LTE connected, all bands enabled (EFS: FF FF FF FF FF FF FF FF)
 - **SMS**: Fully operational (API, CLI, AT commands)
@@ -199,6 +219,7 @@ Successfully completed a comprehensive forensic analysis and automatic SMS frame
 - **Interface**: Multiple AT ports + DIAG interface + QMI protocol
 
 ### Qualcomm Ecosystem
+
 - **Tool Count**: 160+ utilities in `/opt/nvtl/bin`
 - **Categories**: Modem control, network config, SMS, GPS, WiFi, VPN, factory reset, firmware update
 - **Library Support**: 200+ QMI functions in libmal_qct.so
@@ -222,6 +243,7 @@ edf7039 - docs: Add comprehensive MiFi 8800L device documentation (previous)
 ## 🚀 Running the Tools
 
 ### On Device
+
 All scripts are pre-deployed to `/tmp/` on the MiFi device and ready to execute:
 
 ```bash
@@ -245,6 +267,7 @@ adb shell "sh /tmp/auto_type0_sms.sh"
 ```
 
 ### Results Retrieval
+
 ```bash
 # Pull reports from device
 adb pull /tmp/nv_discovery_report.txt
@@ -258,6 +281,7 @@ adb pull /tmp/fast_audit_report.txt
 ## 🔬 Investigation Vectors for Future Work
 
 ### Phase 1: SPC Code Discovery
+
 - **Goal**: Unlock carrier-restricted NV items
 - **Methods**:
   - EDL mode firmware extraction
@@ -266,23 +290,27 @@ adb pull /tmp/fast_audit_report.txt
 - **Payoff**: Full carrier lock bypass
 
 ### Phase 2: EDL Mode Access
+
 - **Goal**: Low-level device firmware access
 - **Entry Point**: `adb reboot edl` or Volume Up/Down + USB
 - **Access**: Qualcomm 9008 debugger (full memory R/W)
 - **Payoff**: Firmware modification, EFS direct access
 
 ### Phase 3: EFS Filesystem Expansion
+
 - **Goal**: Map all EFS paths and access methods
 - **Currently**: 2/15 known paths accessible
 - **Methods**: Library string extraction, binary analysis, trial EFS ops
 - **Payoff**: Full device configuration control
 
 ### Phase 4: DIAG Protocol Deep Dive
+
 - **Goal**: Exploit Qualcomm DIAG for advanced operations
 - **Methods**: Reverse engineering, packet capture, analysis
 - **Payoff**: Hardware-level device control
 
 ### Phase 5: Firmware Modification
+
 - **Goal**: Permanent device customization
 - **Challenges**: Firmware signing, carrier provisioning
 - **Payoff**: Custom modem behavior, feature unlock
@@ -305,6 +333,7 @@ adb pull /tmp/fast_audit_report.txt
 ## 📋 File Structure
 
 ### Scripts Location: `tools/`
+
 ```
 tools/
 ├── nv_discovery.sh              (196 lines) ✅ NEW
@@ -318,6 +347,7 @@ tools/
 ```
 
 ### Documentation Location: `docs/`
+
 ```
 docs/
 ├── SESSION_FORENSIC_SUMMARY.md       (411 lines) ✅ NEW
@@ -379,30 +409,35 @@ docs/
 ## 📝 Usage Examples
 
 ### Check NV Item Value
+
 ```bash
 adb shell "/opt/nvtl/bin/nwcli qmi_idl read_nv 550 0"
 # Returns: NV 550 (IMEI in BCD format)
 ```
 
 ### Test SMS Sending
+
 ```bash
 adb shell "/opt/nvtl/bin/sms_cli send"
 # Interactive prompt: Enter phone number, message text
 ```
 
 ### List All Modem Commands
+
 ```bash
 adb shell "/opt/nvtl/bin/modem2_cli help"
 # 140+ commands listed with descriptions
 ```
 
 ### Monitor SMS in Real-time
+
 ```bash
 adb shell "sh /tmp/sms_listener.sh"
 # Continuously polls inbox every 2 seconds
 ```
 
 ### Get Device Identifiers
+
 ```bash
 adb shell "/opt/nvtl/bin/modem2_cli get_info"
 # IMEI, IMSI, ICCID, firmware, roaming, etc.
@@ -423,6 +458,7 @@ adb shell "/opt/nvtl/bin/modem2_cli get_info"
 ## 📞 Support & Debugging
 
 All documentation in `docs/` directory includes:
+
 - Troubleshooting sections
 - Common error patterns
 - Resolution procedures

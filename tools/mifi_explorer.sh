@@ -1,7 +1,17 @@
 #!/bin/sh
 
 ########################################################################
-# MiFi 8800L Deep Exploration Script
+#
+# USAGE:
+#   Requires ADB access to a MiFi device (e.g., Inseego MiFi 8800L).
+#   Deploy and run with:
+#     adb push mifi_explorer.sh /tmp/ && adb shell sh /tmp/mifi_explorer.sh
+#
+# PREREQUISITES:
+#   - ADB installed and device connected
+#   - Device must be a MiFi running Linux (MiFiOS2)
+#   - Sufficient permissions to run shell scripts via ADB
+#
 #
 mkdir -p "$OUTPUT_DIR"
 chmod 700 "$OUTPUT_DIR"
@@ -19,14 +29,19 @@ chmod 700 "$OUTPUT_DIR"
 #   - All collected information is saved to /tmp/mifi_catalog/catalog.txt
 #
 # WARNING:
-#   This script performs sensitive system exploration and may expose
-#   device internals. Review the script and understand its actions
-#   before execution. Use at your own risk.
-########################################################################
-
-# MiFi 8800L Deep Exploration Script
-# This script catalogs the device filesystem and extracts key info
-
+if command -v /opt/nvtl/bin/modem2_cli >/dev/null 2>&1; then
+    /opt/nvtl/bin/modem2_cli get_info >> "$OUTPUT_DIR/catalog.txt" 2>&1
+    echo "" >> "$OUTPUT_DIR/catalog.txt"
+    /opt/nvtl/bin/modem2_cli get_state >> "$OUTPUT_DIR/catalog.txt" 2>&1
+    echo "" >> "$OUTPUT_DIR/catalog.txt"
+    /opt/nvtl/bin/modem2_cli sim_get_status >> "$OUTPUT_DIR/catalog.txt" 2>&1
+    echo "" >> "$OUTPUT_DIR/catalog.txt"
+    /opt/nvtl/bin/modem2_cli enabled_tech_get >> "$OUTPUT_DIR/catalog.txt" 2>&1
+    echo "" >> "$OUTPUT_DIR/catalog.txt"
+else
+    echo "modem2_cli not found at /opt/nvtl/bin/modem2_cli. Modem info will not be collected." | tee -a "$OUTPUT_DIR/catalog.txt" >&2
+    echo "" >> "$OUTPUT_DIR/catalog.txt"
+fi
 OUTPUT_DIR="/tmp/mifi_catalog"
 mkdir -p "$OUTPUT_DIR"
 
