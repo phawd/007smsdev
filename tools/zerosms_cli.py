@@ -93,7 +93,10 @@ def check_prerequisites() -> None:
     if platform.system().lower() == "windows":
         # Warn about missing pyserial for COM scan on Windows
         if list_ports is None:
-            print("[!] pyserial not installed; COM port scanning will be unavailable.", file=sys.stderr)
+            print(
+                "[!] pyserial not installed; COM port scanning will be unavailable.",
+                file=sys.stderr,
+            )
 
 
 def run_adb_command(args: List[str]) -> subprocess.CompletedProcess:
@@ -141,7 +144,7 @@ def send_at_command(device: str, command: str, timeout: int = 3) -> str:
 
 def send_text_payload(device: str, message: str, timeout: int = 10) -> str:
     baud = get_baud_for_device(device)
-    payload = (message.encode("utf-8") + b"\x1a")
+    payload = message.encode("utf-8") + b"\x1a"
     encoded = base64.b64encode(payload).decode("ascii")
     shell_cmd = (
         f"stty -F {device} {baud} cs8 -cstopb -parenb raw -echo; "
@@ -182,7 +185,9 @@ def enable_diag_ai() -> None:
                 return
         except Exception as exc:
             print(f"[!] Profile {key} failed: {exc}")
-    raise RuntimeError("AI diag probing failed for all presets. Try manual --profile selection.")
+    raise RuntimeError(
+        "AI diag probing failed for all presets. Try manual --profile selection."
+    )
 
 
 def send_sms_via_at(device: str, destination: str, message: str) -> None:
@@ -221,7 +226,9 @@ def build_arg_parser() -> argparse.ArgumentParser:
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
-    diag_parser = subparsers.add_parser("diag", help="Enable Qualcomm diagnostic USB mode via adb root")
+    diag_parser = subparsers.add_parser(
+        "diag", help="Enable Qualcomm diagnostic USB mode via adb root"
+    )
     diag_parser.add_argument(
         "--profile",
         choices=DIAG_PROFILES.keys(),
@@ -234,8 +241,12 @@ def build_arg_parser() -> argparse.ArgumentParser:
         help="Try all known profiles until one succeeds",
     )
 
-    sms_parser = subparsers.add_parser("sms", help="Send SMS via AT commands over adb root")
-    sms_parser.add_argument("destination", help="E.164 destination number, e.g. +15551234567")
+    sms_parser = subparsers.add_parser(
+        "sms", help="Send SMS via AT commands over adb root"
+    )
+    sms_parser.add_argument(
+        "destination", help="E.164 destination number, e.g. +15551234567"
+    )
     sms_parser.add_argument("message", help="Message body to send (text mode)")
     sms_parser.add_argument(
         "--device",
@@ -253,7 +264,9 @@ def build_arg_parser() -> argparse.ArgumentParser:
         help="Include deep-probing paths (MediaTek/Samsung) when auto-scanning",
     )
 
-    probe_parser = subparsers.add_parser("probe", help="Deep probe modem nodes for AT/SMS capability")
+    probe_parser = subparsers.add_parser(
+        "probe", help="Deep probe modem nodes for AT/SMS capability"
+    )
     probe_parser.add_argument(
         "--deep",
         action="store_true",
@@ -265,20 +278,34 @@ def build_arg_parser() -> argparse.ArgumentParser:
         help="Show the first AT response line for each device",
     )
 
-    usb_parser = subparsers.add_parser("usb", help="List USB devices (vendor/product IDs)")
+    usb_parser = subparsers.add_parser(
+        "usb", help="List USB devices (vendor/product IDs)"
+    )
     usb_parser.add_argument(
         "--json",
         action="store_true",
         help="Output JSON instead of text",
     )
 
-    usb_switch_parser = subparsers.add_parser("usb-switch", help="Run usb_modeswitch to flip a USB device")
-    usb_switch_parser.add_argument("--vendor", "-v", required=True, help="Vendor ID (hex, e.g. 0x05c6)")
-    usb_switch_parser.add_argument("--product", "-p", required=True, help="Product ID (hex, e.g. 0x90b4)")
-    usb_switch_parser.add_argument("--message", "-M", help="Message content (hex string) for usb_modeswitch")
-    usb_switch_parser.add_argument("--config", "-c", help="Path to usb_modeswitch config file")
+    usb_switch_parser = subparsers.add_parser(
+        "usb-switch", help="Run usb_modeswitch to flip a USB device"
+    )
+    usb_switch_parser.add_argument(
+        "--vendor", "-v", required=True, help="Vendor ID (hex, e.g. 0x05c6)"
+    )
+    usb_switch_parser.add_argument(
+        "--product", "-p", required=True, help="Product ID (hex, e.g. 0x90b4)"
+    )
+    usb_switch_parser.add_argument(
+        "--message", "-M", help="Message content (hex string) for usb_modeswitch"
+    )
+    usb_switch_parser.add_argument(
+        "--config", "-c", help="Path to usb_modeswitch config file"
+    )
 
-    com_parser = subparsers.add_parser("comscan", help="Enumerate desktop serial/COM ports using pyserial")
+    com_parser = subparsers.add_parser(
+        "comscan", help="Enumerate desktop serial/COM ports using pyserial"
+    )
     com_parser.add_argument(
         "--json",
         action="store_true",
@@ -307,13 +334,19 @@ def probe_modems(deep: bool = False) -> List[ProbeResult]:
         if path in seen:
             continue
         seen.add(path)
-        exists = run_root(f"if [ -c {path} ]; then echo EXISTS; fi").stdout.strip() == "EXISTS"
+        exists = (
+            run_root(f"if [ -c {path} ]; then echo EXISTS; fi").stdout.strip()
+            == "EXISTS"
+        )
         if not exists:
             results.append(ProbeResult(path, False, False, False, "missing"))
             continue
-        accessible = run_root(
-            f"if [ -r {path} ] && [ -w {path} ]; then echo ACCESS; fi"
-        ).stdout.strip() == "ACCESS"
+        accessible = (
+            run_root(
+                f"if [ -r {path} ] && [ -w {path} ]; then echo ACCESS; fi"
+            ).stdout.strip()
+            == "ACCESS"
+        )
         if not accessible:
             results.append(ProbeResult(path, True, False, False, "perm denied"))
             continue
@@ -345,7 +378,13 @@ def list_usb_devices() -> List[dict]:
                 device = parts[3].strip(":") if len(parts) > 3 else "??"
                 vid, pid = vid_pid.split(":") if ":" in vid_pid else ("0000", "0000")
                 devices.append(
-                    {"bus": bus, "device": device, "vid": vid, "pid": pid, "description": description}
+                    {
+                        "bus": bus,
+                        "device": device,
+                        "vid": vid,
+                        "pid": pid,
+                        "description": description,
+                    }
                 )
         return devices
 
@@ -400,11 +439,25 @@ def list_usb_devices() -> List[dict]:
     try:
         proc = run_shell("ls /sys/bus/usb/devices")
         for item in proc.stdout.split():
-            desc = run_shell(f"cat /sys/bus/usb/devices/{item}/product 2>/dev/null").stdout.strip()
-            vid = run_shell(f"cat /sys/bus/usb/devices/{item}/idVendor 2>/dev/null").stdout.strip()
-            pid = run_shell(f"cat /sys/bus/usb/devices/{item}/idProduct 2>/dev/null").stdout.strip()
+            desc = run_shell(
+                f"cat /sys/bus/usb/devices/{item}/product 2>/dev/null"
+            ).stdout.strip()
+            vid = run_shell(
+                f"cat /sys/bus/usb/devices/{item}/idVendor 2>/dev/null"
+            ).stdout.strip()
+            pid = run_shell(
+                f"cat /sys/bus/usb/devices/{item}/idProduct 2>/dev/null"
+            ).stdout.strip()
             if vid and pid:
-                devices.append({"bus": item, "device": item, "vid": vid, "pid": pid, "description": desc})
+                devices.append(
+                    {
+                        "bus": item,
+                        "device": item,
+                        "vid": vid,
+                        "pid": pid,
+                        "description": desc,
+                    }
+                )
     except Exception:
         pass
     return devices
@@ -416,7 +469,15 @@ def _flatten_spusb(items) -> List[dict]:
         vid = entry.get("vendor_id", "0000")
         pid = entry.get("product_id", "0000")
         desc = entry.get("_name", entry.get("device_name", "USB Device"))
-        flattened.append({"bus": entry.get("_name", ""), "device": entry.get("bsd_name", ""), "vid": vid, "pid": pid, "description": desc})
+        flattened.append(
+            {
+                "bus": entry.get("_name", ""),
+                "device": entry.get("bsd_name", ""),
+                "vid": vid,
+                "pid": pid,
+                "description": desc,
+            }
+        )
         children = entry.get("_items", [])
         flattened.extend(_flatten_spusb(children))
     return flattened
@@ -433,9 +494,13 @@ def _extract_vid_pid(identifier: str) -> Tuple[str, str]:
     return vid, pid
 
 
-def run_usb_modeswitch(vendor: str, product: str, message: Optional[str], config: Optional[str]) -> None:
+def run_usb_modeswitch(
+    vendor: str, product: str, message: Optional[str], config: Optional[str]
+) -> None:
     if shutil.which("usb_modeswitch") is None:
-        raise RuntimeError("usb_modeswitch binary not found. Install usb-modeswitch package first.")
+        raise RuntimeError(
+            "usb_modeswitch binary not found. Install usb-modeswitch package first."
+        )
     args = ["usb_modeswitch", "-v", _sanitize_hex(vendor), "-p", _sanitize_hex(product)]
     if message:
         args += ["-M", message]
@@ -454,7 +519,9 @@ def _sanitize_hex(value: str) -> str:
 
 def list_com_ports() -> List[dict]:
     if list_ports is None:
-        raise RuntimeError("pyserial is required for COM port scanning. Install with `pip install pyserial`.")
+        raise RuntimeError(
+            "pyserial is required for COM port scanning. Install with `pip install pyserial`."
+        )
     ports_info = []
     for port in list_ports.comports():
         ports_info.append(
@@ -475,7 +542,9 @@ def main() -> None:
             enable_diag_ai()
         else:
             if not enable_diag(args.profile):
-                raise RuntimeError("Selected profile did not activate diag mode. Try --ai.")
+                raise RuntimeError(
+                    "Selected profile did not activate diag mode. Try --ai."
+                )
     elif args.command == "sms":
         device = resolve_device_path(args.device, deep=args.deep or args.auto)
         print(f"[+] Detected modem device: {device}")
@@ -485,7 +554,15 @@ def main() -> None:
         if not results:
             print("No modem paths evaluated.")
         for result in results:
-            status = "OK" if result.responded else ("ACCESS" if result.accessible else ("MISSING" if not result.exists else "NO RESPONSE"))
+            status = (
+                "OK"
+                if result.responded
+                else (
+                    "ACCESS"
+                    if result.accessible
+                    else ("MISSING" if not result.exists else "NO RESPONSE")
+                )
+            )
             line = f"{result.path:<18} {status}"
             if args.include_response and result.response:
                 line += f" :: {result.response}"
@@ -496,7 +573,9 @@ def main() -> None:
             print(json.dumps(devices, indent=2))
         else:
             for dev in devices:
-                print(f"{dev['bus']}:{dev['device']} {dev['vid']}:{dev['pid']} {dev['description']}")
+                print(
+                    f"{dev['bus']}:{dev['device']} {dev['vid']}:{dev['pid']} {dev['description']}"
+                )
     elif args.command == "usb-switch":
         run_usb_modeswitch(args.vendor, args.product, args.message, args.config)
     elif args.command == "comscan":
