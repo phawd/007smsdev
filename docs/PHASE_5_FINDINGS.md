@@ -9,11 +9,13 @@
 ## Executive Summary
 
 **Critical Issue Discovered & Resolved:**
+
 - Standard `dd` command on `/dev/mtd2` (EFS2 partition) causes device reboot
 - This partition stores carrier lock data (SPC hash, device policies)
 - **Solution:** Implement userspace extraction via `modem2_cli` and `nwcli` instead of raw MTD access
 
 **Key Findings:**
+
 1. **Multi-layer lock architecture** identified (SIM lock + Subsidy lock + Firmware enforcement)
 2. **PRI version (NV 60044)** confirmed WRITABLE without SPC - potential bypass vector
 3. **FOTA mechanism** enforces Verizon-signed updates only (upgrade-only policy)
@@ -40,6 +42,7 @@
 | mtd9-12 | ~400 MB | System/Recovery | No |
 
 **Critical Issue:** `/dev/mtd2` (EFS2) is actively protected by watchdog timer
+
 - Raw `dd` access triggers reboot (device anti-tampering)
 - Userspace tools (`modem2_cli`, `nwcli`) have safe access
 
@@ -53,6 +56,7 @@
 **Current Status:** LOCKED (value = 1)
 
 **Lock Enforcement Flow:**
+
 ```
 Network Registration Attempt
     ↓
@@ -69,6 +73,7 @@ User sees: "Network not available" error
 ```
 
 **Unlock Requirement:** SPC code (40 digits)
+
 - User enters SPC
 - libmodem2_api.so: `validate_spc(user_input)`
 - Hash(user_input) compared to stored hash in EFS2
@@ -81,6 +86,7 @@ User sees: "Network not available" error
 **Current Status:** LOCKED (value = 1) - Verizon only
 
 **Enforcement Mechanism:**
+
 ```
 SIM Inserted (any carrier)
     ↓
@@ -94,6 +100,7 @@ If locked:
 ```
 
 **Approved Carriers (Verizon-locked device):**
+
 - Verizon Wireless (310410)
 - Verizon Network Partners (311480, 311481)
 - All other carriers: DENIED
@@ -105,6 +112,7 @@ If locked:
 **Access Level:** ⭐ **WRITABLE without SPC** (unusual!)
 
 **Implications:**
+
 - PRI identifies firmware version and branding
 - Verizon branding hard-coded in string
 - FOTA process checks PRI version before updates
@@ -116,12 +124,14 @@ If locked:
 
 **Location:** `/dev/mtd2` (11 MB)  
 **Content:**
+
 - SPC hash (master unlock code verification)
 - IMSI whitelist (SIM lock data)
 - Device-specific configurations
 - Carrier branding and policies
 
 **Protection Mechanism:** Watchdog timer
+
 - Device firmware actively monitors MTD access
 - Raw `dd` on /dev/mtd2 triggers reboot
 - Prevents physical extraction attacks
@@ -136,6 +146,7 @@ If locked:
 **Location:** `/opt/nvtl/etc/fota/config.xml` and `/opt/nvtl/data/fota/`
 
 **Update Process:**
+
 1. Device periodically checks for updates
 2. Update server: Verizon FOTA servers (carrier-specific)
 3. Signature verification: build_cert.pem (Verizon certificate)
@@ -146,10 +157,12 @@ If locked:
 ### FOTA Certificate Chain
 
 **Extracted Certificates:**
+
 - `build_cert.pem` - Verizon build certificate (validates firmware signature)
 - `device.pem` - Device certificate (symmetric validation)
 
 **Security Implications:**
+
 - Firmware is signed by Verizon with private key (offline)
 - Device validates signature before flashing
 - Man-in-the-middle attack on FOTA channel would fail (signature check)
@@ -158,12 +171,14 @@ If locked:
 ### FOTA Lock Enforcement
 
 **Upgrade-Only Policy:**
+
 - Device tracks current firmware version (via PRI)
 - New firmware must have version ≥ current version
 - Downgrade attempts rejected (e.g., cannot install old firmware with known SPC bypass)
 - Prevents "downgrade to unlock" attack vector
 
 **fotacookie File:**
+
 - Records FOTA update history
 - Tracks recovery state
 - Prevents update rollback
@@ -179,12 +194,14 @@ If locked:
 **Risk Level:** MEDIUM
 
 **Potential Impact:**
+
 - Spoof different firmware version to FOTA system
 - May bypass version checking in firmware update process
 - Could trigger carrier policy changes
 - Requires testing on actual device
 
 **Implementation:**
+
 ```bash
 adb shell "/opt/nvtl/bin/modem2_cli nv write 60044 '<NEW_PRI_STRING>'"
 ```
@@ -198,6 +215,7 @@ adb shell "/opt/nvtl/bin/modem2_cli nv write 60044 '<NEW_PRI_STRING>'"
 **Risk Level:** LOW
 
 **Analysis:**
+
 - libmodem2_api.so enforces SPC validation on write
 - Both items likely require valid SPC to unlock
 - Brute force: 10 billion possible codes (10^10)
@@ -209,12 +227,14 @@ adb shell "/opt/nvtl/bin/modem2_cli nv write 60044 '<NEW_PRI_STRING>'"
 
 **Method:** Extract firmware, patch SPC validation, reflash  
 **Requirements:**
+
 - EDL mode access (or bootloader unlock)
 - Firmware signing capability (or bypass signing)
 - Low-level flash access
 **Risk Level:** HIGH (requires expertise)
 
 **Process:**
+
 1. Enter EDL mode (Emergency Download)
 2. Read full modem firmware from mtd8
 3. Disassemble modem.mbn with Ghidra
@@ -232,6 +252,7 @@ adb shell "/opt/nvtl/bin/modem2_cli nv write 60044 '<NEW_PRI_STRING>'"
 **Risk Level:** MEDIUM
 
 **Process:**
+
 1. Locate old firmware version (< current)
 2. Verify firmware is still signed by Verizon (unlikely)
 3. Modify device to bypass upgrade-only policy
@@ -247,6 +268,7 @@ adb shell "/opt/nvtl/bin/modem2_cli nv write 60044 '<NEW_PRI_STRING>'"
 **Risk Level:** HIGH (network-level)
 
 **Process:**
+
 1. Position attacker on network path
 2. Intercept FOTA request
 3. Serve modified firmware
@@ -264,11 +286,13 @@ adb shell "/opt/nvtl/bin/modem2_cli nv write 60044 '<NEW_PRI_STRING>'"
 **Command:** `dd if=/dev/mtd2 of=efs2.bin`
 
 **Issues:**
+
 - ❌ Triggers device reboot (watchdog protection)
 - ❌ Cannot complete extraction
 - ❌ Data remains in EFS2 (not extracted)
 
 **Why It Fails:**
+
 - Firmware detects unauthorized MTD access
 - Watchdog timer fires (safety mechanism)
 - Device reboots before extraction completes
@@ -276,6 +300,7 @@ adb shell "/opt/nvtl/bin/modem2_cli nv write 60044 '<NEW_PRI_STRING>'"
 ### Method 2: Userspace modem2_cli (RECOMMENDED)
 
 **Commands:**
+
 ```bash
 modem2_cli nv read <NV_ID>          # Read NV items
 modem2_cli efs_read <EFS_PATH>      # Read EFS files
@@ -283,12 +308,14 @@ nwcli qmi_idl read_file <PATH>      # QMI-based EFS access
 ```
 
 **Advantages:**
+
 - ✅ No watchdog trigger (firmware-aware)
 - ✅ Safe access to NV items
 - ✅ Reads through modem API (authorized)
 - ✅ No device reboot
 
 **Limitations:**
+
 - Limited file size support (may not get full EFS2)
 - Some paths may be protected
 - Partial data recovery possible
@@ -298,6 +325,7 @@ nwcli qmi_idl read_file <PATH>      # QMI-based EFS access
 ### Method 3: Mounted Filesystem Backup (SAFE)
 
 **Commands:**
+
 ```bash
 mount | grep efs2                    # Check if mounted
 tar -czf efs2_backup.tar.gz /efs    # Backup if mounted
@@ -305,12 +333,14 @@ adb pull /tmp/efs2_backup.tar.gz .   # Transfer to host
 ```
 
 **Advantages:**
+
 - ✅ Extremely safe (through standard filesystem)
 - ✅ No risk of watchdog trigger
 - ✅ Can be selective about which files to backup
 - ✅ Preserves file permissions and timestamps
 
 **Limitations:**
+
 - Only works if EFS2 is mounted
 - Requires write access to /tmp
 - May not be available on all firmware versions
@@ -321,16 +351,19 @@ adb pull /tmp/efs2_backup.tar.gz .   # Transfer to host
 
 **Mode:** Emergency Download (Qualcomm 9008)
 
-**Access:** 
+**Access:**
+
 - Hold specific key combination during boot
 - Or use: `adb reboot edl`
 
 **Advantages:**
+
 - ✅ Lowest-level access to flash
 - ✅ Can read/write any partition
 - ✅ Bypasses firmware protections
 
 **Disadvantages:**
+
 - ❌ Risk of bricking device
 - ❌ Requires EDL tools (edl Python package)
 - ❌ May trigger additional protections
@@ -377,6 +410,7 @@ Output: Complete lock mechanism dataset
 ```
 
 **Expected Results:**
+
 - NV items: ✅ (readable, no SPC required)
 - EFS2 partial: ⚠️ (may be limited by API)
 - FOTA certificates: ✅ (already extracted)
@@ -387,11 +421,13 @@ Output: Complete lock mechanism dataset
 **Tools:** Ghidra (free) + IDA Pro (licensed)
 
 **Targets:**
+
 1. `libmodem2_api.so` (144 KB) - Primary SPC validation logic
 2. `libmal_qct.so` (307 KB) - QMI protocol and NV access
 3. `modem.mbn` (315 MB) - Complete modem firmware
 
 **Analysis Workflow:**
+
 ```
 1. Load binary into Ghidra
 2. Run ghidra_spc_analyzer.py script
@@ -408,6 +444,7 @@ Output: Complete lock mechanism dataset
 **Output:** `docs/PHASE_5_LOCKING_ANALYSIS.md`
 
 **Content:**
+
 - Lock architecture overview
 - NV item mapping (all 18 readable items)
 - FOTA enforcement mechanism
@@ -444,6 +481,7 @@ class LockedDeviceTestManager {
 ```
 
 **UI Screens:**
+
 - CarrierResearchScreen: Display lock status, vectors
 - FOTAAnalysisScreen: FOTA policy breakdown
 - LockTestScreen: Safe testing of bypass vectors
@@ -455,6 +493,7 @@ class LockedDeviceTestManager {
 ### 1. Safe Extraction (Avoid Reboot)
 
 ✅ **Achieved:** Using userspace tools instead of dd
+
 - No watchdog trigger expected
 - Device remains stable
 - Extraction can complete safely
@@ -462,6 +501,7 @@ class LockedDeviceTestManager {
 ### 2. Comprehensive Data Collection
 
 ✅ **In Progress:** Gathering all lock-related data
+
 - NV items: 18 accessible items identified
 - FOTA certificates: Already extracted
 - Configuration files: Ready for extraction
@@ -470,6 +510,7 @@ class LockedDeviceTestManager {
 ### 3. Binary Analysis
 
 ⏳ **Ready to Start:** No device required
+
 - Ghidra setup: Available
 - IDA scripts: Created (phase5_ida_spc_finder.py)
 - Targets: libmodem2_api.so, libmal_qct.so ready
@@ -477,6 +518,7 @@ class LockedDeviceTestManager {
 ### 4. Device Testing (When Online)
 
 ⏳ **Pending:** Device currently offline
+
 - Will test PRI modification safely
 - Monitor for lock state changes
 - Document findings in real-time
@@ -509,9 +551,11 @@ class LockedDeviceTestManager {
    - Verify root access
 
 2. **Execute Safe Extraction Script**
+
    ```bash
    adb shell "sh /tmp/phase5_safe_efs2_extraction.sh /tmp/phase5_backup"
    ```
+
    - Expected: No reboot, successful extraction
    - Verify: ✅ Device remains online
    - Verify: ✅ NV items extracted
@@ -520,6 +564,7 @@ class LockedDeviceTestManager {
 ### SHORT TERM (1-2 hours)
 
 3. **Execute Locking Analysis Script**
+
    ```bash
    adb shell "sh /tmp/phase5_locking_analysis.sh /tmp/phase5_analysis"
    adb pull /tmp/phase5_analysis .
@@ -562,6 +607,7 @@ class LockedDeviceTestManager {
 ### Device Risk: LOW
 
 ✅ **Safe Extraction Methods:**
+
 - No raw dd on active EFS2
 - Userspace API access only
 - Firmware-aware access patterns
@@ -570,6 +616,7 @@ class LockedDeviceTestManager {
 ### Data Risk: LOW
 
 ✅ **Data Already Extracted:**
+
 - Binaries in repository
 - Configuration files backed up
 - Certificates available for analysis
@@ -578,6 +625,7 @@ class LockedDeviceTestManager {
 ### ZeroSMS Integration Risk: LOW
 
 ✅ **Conservative Approach:**
+
 - Read-only access only (no modification)
 - Safe testing vectors first
 - Firmware analysis before device testing
