@@ -1,0 +1,13 @@
+Package: start-scripts-firmware-links
+Version: 1.0-r5
+Description: start-scripts-firmware-links version 1.0-r5
+ Start up script for firmware links
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: sdx20
+OE: start-scripts-firmware-links
+Homepage: http://codeaurora.org
+Recommends: update-rc.d
+Source: file://sdx20/firmware-links.sh file://firmware-links.service

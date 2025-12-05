@@ -1,0 +1,14 @@
+Package: system-core-usb
+Version: git-r19_perf
+Description: system-core version git-r19_perf
+ Android system/core components
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Apache-2.0
+Architecture: armv7a-vfp-neon
+OE: system-core
+Homepage: http://developer.android.com/
+Depends: libc6 (>= 2.22)
+Recommends: update-rc.d
+Source: file://system/core/

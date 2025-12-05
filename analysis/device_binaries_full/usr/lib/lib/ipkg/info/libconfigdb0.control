@@ -1,0 +1,14 @@
+Package: libconfigdb0
+Version: git-r5
+Description: configdb version git-r5
+ Qualcomm Data Configdb Module
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: sdx20
+OE: configdb
+Homepage: http://support.cdmatech.com
+Depends: libtime-genoff1 (>= git), libc6 (>= 2.22), diag (>= git), libxml0 (>= git), libdsutils1 (>= git), libglib-2.0-0 (>= 2.44.1)
+Provides: configdb
+Source: file://data/configdb

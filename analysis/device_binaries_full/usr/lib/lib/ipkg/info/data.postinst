@@ -1,0 +1,31 @@
+[ -n "$D" ] && OPT="-r $D" || OPT="-s"
+        update-rc.d $OPT -f netmgrd remove
+        update-rc.d $OPT netmgrd start 45 2 3 4 5 . stop 80 0 1 6 .
+
+        update-rc.d $OPT -f data-init remove
+        update-rc.d $OPT data-init start 97 2 3 4 5 . stop 15 0 1 6 .
+
+        if [ "sdx20" != "mdm9607" ]; then
+          update-rc.d $OPT -f start_ipacm_perf_le remove
+          update-rc.d $OPT start_ipacm_perf_le start 37 S . stop 63 0 1 6 .
+
+          update-rc.d $OPT -f start_ipacmdiag_le remove
+          update-rc.d $OPT start_ipacmdiag_le start 38 S . stop 62 0 1 6 .
+        fi
+
+        if [ base != "psm" ]; then
+           update-rc.d $OPT -f start_QCMAP_ConnectionManager_le remove
+           update-rc.d $OPT start_QCMAP_ConnectionManager_le start 39 S . stop 61 0 1 6 .
+
+           update-rc.d $OPT -f port_bridge remove
+           update-rc.d $OPT port_bridge start 38 S . stop 62 0 1 6 .
+
+           update-rc.d $OPT -f start_qti_le remove
+           update-rc.d $OPT start_qti_le start 40 S . stop 60 0 1 6 .
+
+           update-rc.d $OPT -f start_eMBMs_TunnelingModule_le remove
+           update-rc.d $OPT start_eMBMs_TunnelingModule_le start 70 2 3 4 5 . stop 30 0 1 6 .
+
+           update-rc.d $OPT -f start_stop_qmi_ip_multiclient remove
+           update-rc.d $OPT start_stop_qmi_ip_multiclient start 80 2 3 4 5 . stop 20 0 1 6 .
+	fi

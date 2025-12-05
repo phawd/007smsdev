@@ -1,0 +1,12 @@
+Package: system-conf
+Version: git-r3_perf
+Description: system-conf version git-r3_perf
+ Device specific config
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: ISC
+Architecture: armv7a-vfp-neon
+OE: system-conf
+Recommends: update-rc.d
+Source: file://mdm-init/ file://wlan_daemon.service file://001_open_ssid.patch

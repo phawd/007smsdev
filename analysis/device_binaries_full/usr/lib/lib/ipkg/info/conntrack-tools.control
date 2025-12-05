@@ -1,0 +1,15 @@
+Package: conntrack-tools
+Version: 1.0.1-r1
+Description: Tools for managing kernel packet filtering capabilities
+ The conntrack-tools are a set of free software tools for GNU/Linux that
+ allow system administrators interact, from user-space, with the in-kernel
+ Connection Tracking System.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+
+Architecture: armv7a-vfp-neon
+OE: conntrack-tools
+Homepage: http://www.netfilter.org/
+Depends: libnetfilter-conntrack3 (>= 0.9.1), libnfnetlink0 (>= 1.0.0), libc6 (>= 2.22)
+Source: http://netfilter.org/projects/conntrack-tools/files/conntrack-tools-1.0.1.tar.bz2 file://conntrack-tools-NULL.patch file://conntrack-tools-ipv6.patch

@@ -1,0 +1,14 @@
+Package: libcap2
+Version: 2.24-r0
+Description: Library for getting/setting POSIX.1e capabilities
+ Library for getting/setting POSIX.1e capabilities.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD | GPLv2
+Architecture: armv7a-vfp-neon
+OE: libcap
+Homepage: http://sites.google.com/site/fullycapable/
+Depends: libattr1 (>= 2.4.47), libc6 (>= 2.22)
+Provides: libcap
+Source: http://kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.24.tar.xz

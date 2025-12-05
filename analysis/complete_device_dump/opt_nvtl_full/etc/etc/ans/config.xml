@@ -1,0 +1,418 @@
+<Config>
+	<ExpiryDuration>8</ExpiryDuration>
+	<GlobalTechMode>18</GlobalTechMode> <!-- GlobalTechMode =  TECH_LTE | TECH_WCDMA -->
+	<LowBatteryPercentage>15</LowBatteryPercentage>
+	<Notifications>
+		<Notification id="startup">
+			<Category>System</Category>
+			<Label></Label>
+			<Title></Title>
+			<Text></Text>
+			<AudioAlertType>B1</AudioAlertType>
+			<Lifetime>transient</Lifetime>
+			<Severity>critical</Severity>
+		</Notification>
+		<Notification id="shutdown">
+			<Category>System</Category>
+			<Label></Label>
+			<Title></Title>
+			<Text></Text>
+			<AudioAlertType>B2</AudioAlertType>
+			<Lifetime>transient</Lifetime>
+			<Severity>critical</Severity>
+		</Notification>
+		<Notification id="battery10">
+			<Category>Battery</Category>
+			<Label>notification_battery_10_label</Label>
+			<Title>notification_battery_10_title</Title>
+			<Text>notification_battery_10_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>transient</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="batteryCritical">
+			<Category>Battery</Category>
+			<Label>notification_battery_critical_label</Label>
+			<Title>notification_battery_critical_title</Title>
+			<Text>notification_battery_critical_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>critical</Severity>
+		</Notification>
+		<Notification id="batteryCharging">
+			<Category>Battery</Category>
+			<Label>notification_battery_charging_label</Label>
+			<Title>notification_battery_charging_title</Title>
+			<Text>notification_battery_charging_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>transient</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="batteryFull">
+			<Category>Battery</Category>
+			<Label>notification_battery_full_label</Label>
+			<Title>notification_battery_full_title</Title>
+			<Text>notification_battery_full_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="lowCharger">
+			<Category>Battery</Category>
+			<Label>notification_low_charger_label</Label>
+			<Title>notification_low_charger_title</Title>
+			<Text>notification_low_charger_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="simNone">
+			<Category>Connection</Category>
+			<Label>notification_sim_none_label</Label>
+			<Title>notification_sim_none_title</Title>
+			<Text>notification_sim_none_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>critical</Severity>
+		</Notification>
+		<Notification id="simError">
+			<Category>Connection</Category>
+			<Label>notification_sim_error_label</Label>
+			<Title>notification_sim_error_title</Title>
+			<Text>notification_sim_error_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>critical</Severity>
+		</Notification>
+		<Notification id="simPINLocked">
+			<Category>Connection</Category>
+			<Label>notification_sim_pin_locked_label</Label>
+			<Title>notification_sim_pin_locked_title</Title>
+			<Text>notification_sim_pin_locked_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>critical</Severity>
+		</Notification>
+		<Notification id="simPUKLocked">
+			<Category>Connection</Category>
+			<Label>notification_sim_puk_locked_label</Label>
+			<Title>notification_sim_puk_locked_title</Title>
+			<Text>notification_sim_puk_locked_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>critical</Severity>
+		</Notification>
+		<Notification id="simNonVZW">
+			<Category>Connection</Category>
+			<Label>notification_sim_non_vzw_label</Label>
+			<Title>notification_sim_non_vzw_title</Title>
+			<Text>notification_sim_non_vzw_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>transient</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="PCO2">
+			<Category>Connection</Category>
+			<Label>notification_pco2_label</Label>
+			<Title>notification_pco2_title</Title>
+			<Text>notification_pco2_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>critical</Severity>
+		</Notification>
+		<Notification id="PCO3">
+			<Category>Connection</Category>
+			<Label>notification_pco3_label</Label>
+			<Title>notification_pco3_title</Title>
+			<Text>notification_pco3_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>critical</Severity>
+		</Notification>
+		<Notification id="PCO5">
+			<Category>Connection</Category>
+			<Label>notification_pco5_label</Label>
+			<Title>notification_pco5_title</Title>
+			<Text>notification_pco5_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>critical</Severity>
+		</Notification>
+		<Notification id="mnsAuto">
+			<Category>Connection</Category>
+			<Label>notification_mns_auto_label</Label>
+			<Title>notification_mns_auto_title</Title>
+			<Text>notification_mns_auto_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>transient</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="switchToGlobalMode">
+			<Category>Connection</Category>
+			<Label>notification_switch_to_global_mode_label</Label>
+			<Title>notification_switch_to_global_mode_title</Title>
+			<Text>notification_switch_to_global_mode_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>transient</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="noService">
+			<Category>Connection</Category>
+			<Label>notification_no_service_label</Label>
+			<Title>notification_no_service_title</Title>
+			<Text>notification_no_service_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="roaming">
+			<Category>Connection</Category>
+			<Label>notification_roaming_label</Label>
+			<Title>notification_roaming_title</Title>
+			<Text>notification_roaming_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="deviceJoinWiFi">
+			<Category>LAN</Category>
+			<Label>notification_device_join_wifi_label</Label>
+			<Title>notification_device_join_wifi_title</Title>
+			<Text>notification_device_join_wifi_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>transient</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="wifiDisabled">
+			<Category>LAN</Category>
+			<Label>notification_wifi_disabled_label</Label>
+			<Title>notification_wifi_disabled_title</Title>
+			<Text>notification_wifi_disabled_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>critical</Severity>
+		</Notification>
+		<Notification id="smsReceived">
+			<Category>System</Category>
+			<Label>notification_sms_received_label</Label>
+			<Title>notification_sms_received_title</Title>
+			<Text>notification_sms_received_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>transient</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="wdcpDone">
+			<Category>System</Category>
+			<Label>notification_wdcp_done_label</Label>
+			<Title>notification_wdcp_done_title</Title>
+			<Text>notification_wdcp_done_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>transient</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="ucOK">
+			<Category>UC</Category>
+			<Label>notification_uc_ok_label</Label>
+			<Title>notification_uc_ok_title</Title>
+			<Text>notification_uc_ok_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>transient</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="ucLowBattery">
+			<Category>UC</Category>
+			<Label>notification_uc_low_battery_label</Label>
+			<Title>notification_uc_low_battery_title</Title>
+			<Text>notification_uc_low_battery_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>transient</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="ucTerminated">
+			<Category>UC</Category>
+			<Label>notification_uc_terminated_label</Label>
+			<Title>notification_uc_terminated_title</Title>
+			<Text>notification_uc_terminated_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>critical</Severity>
+		</Notification>
+		<Notification id="usbModePrompt">
+			<Category>LAN</Category>
+			<Label>notification_usb_mode_prompt_label</Label>
+			<Title>notification_usb_mode_prompt_title</Title>
+			<Text>notification_usb_mode_prompt_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="usbMassStorage">
+			<Category>LAN</Category>
+			<Label>notification_usb_mass_storage_label</Label>
+			<Title>notification_usb_mass_storage_title</Title>
+			<Text>notification_usb_mass_storage_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="usbMassStorageFailure">
+			<Category>LAN</Category>
+			<Label>notification_usb_mass_storage_failure_label</Label>
+			<Title>notification_usb_mass_storage_failure_title</Title>
+			<Text>notification_usb_mass_storage_failure_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>transient</Lifetime>
+			<Severity>critical</Severity>
+		</Notification>
+		<Notification id="softwareUpdate">
+			<Category>System</Category>
+			<Label>notification_software_update_label</Label>
+			<Title>notification_software_update_title</Title>
+			<Text>notification_software_update_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="softwareUpdateSuccess">
+			<Category>System</Category>
+			<Label>notification_software_update_success_label</Label>
+			<Title>notification_software_update_success_title</Title>
+			<Text>notification_software_update_success_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="softwareUpdateFailure">
+			<Category>System</Category>
+			<Label>notification_software_update_failure_label</Label>
+			<Title>notification_software_update_failure_title</Title>
+			<Text>notification_software_update_failure_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="systemUpdateSuccess">
+			<Category>System</Category>
+			<Label>notification_system_update_success_label</Label>
+			<Title>notification_system_update_success_title</Title>
+			<Text>notification_system_update_success_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="systemUpdateFailure">
+			<Category>System</Category>
+			<Label>notification_system_update_failure_label</Label>
+			<Title>notification_system_update_failure_title</Title>
+			<Text>notification_system_update_failure_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>alert</Severity>
+		</Notification>
+		<Notification id="systemDiagnostics">
+			<Category>System</Category>
+			<Label>notification_system_diagnostics_label</Label>
+			<Title>notification_system_diagnostics_title</Title>
+			<Text>notification_system_diagnostics_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>critical</Severity>
+		</Notification>
+		<Notification id="autoVpnFailure">
+			<Category>System</Category>
+			<Label>notification_auto_vpn_failure_label</Label>
+			<Title>notification_auto_vpn_failure_title</Title>
+			<Text>notification_auto_vpn_failure_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>transient</Lifetime>
+			<Severity>critical</Severity>
+		</Notification>
+		<Notification id="highTemp">
+			<Category>System</Category>
+			<Label>notification_high_temp_label</Label>
+			<Title>notification_high_temp_title</Title>
+			<Text>notification_high_temp_text</Text>
+			<AudioAlertType>B3</AudioAlertType>
+			<Lifetime>state</Lifetime>
+			<Severity>critical</Severity>
+		</Notification>
+	</Notifications>
+	<SoundNotificationTypes>
+		<SoundNotificationType id="B1">
+			<Sound>
+				<!-- OnDuration and OffDuration are in milli-secs -->
+				<OnDuration>275</OnDuration>
+				<OffDuration>100</OffDuration>
+				<!-- Frequency is an ID defined in buzzer library. Current values are:
+				0=585HZ, 1=1KH, 2=1.75KH, 3=2KH, 4=2.342KHZ, 5=3KHZ, 6=3.5KHZ, 7=4KHZ, 8=5.26KHZ, 9=6KHZ -->
+				<Frequency>0</Frequency>
+				<!-- Number of times to buzz -->
+				<RepeatCount>1</RepeatCount>
+			</Sound>
+			<Sound>
+				<!-- OnDuration and OffDuration are in milli-secs -->
+				<OnDuration>150</OnDuration>
+				<OffDuration>100</OffDuration>
+				<!-- Frequency is an ID defined in buzzer library. Current values are:
+				0=585HZ, 1=1KH, 2=1.75KH, 3=2KH, 4=2.342KHZ, 5=3KHZ, 6=3.5KHZ, 7=4KHZ, 8=5.26KHZ, 9=6KHZ -->
+				<Frequency>1</Frequency>
+				<!-- Number of times to buzz -->
+				<RepeatCount>1</RepeatCount>
+			</Sound>
+		</SoundNotificationType>
+		<SoundNotificationType id="B2">
+			<Sound>
+				<!-- OnDuration and OffDuration are in milli-secs -->
+				<OnDuration>250</OnDuration>
+				<OffDuration>100</OffDuration>
+				<!-- Frequency is an ID defined in buzzer library. Current values are:
+				0=585HZ, 1=1KH, 2=1.75KH, 3=2KH, 4=2.342KHZ, 5=3KHZ, 6=3.5KHZ, 7=4KHZ, 8=5.26KHZ, 9=6KHZ -->
+				<Frequency>1</Frequency>
+				<!-- Number of times to buzz -->
+				<RepeatCount>1</RepeatCount>
+			</Sound>
+			<Sound>
+				<!-- OnDuration and OffDuration are in milli-secs -->
+				<OnDuration>150</OnDuration>
+				<OffDuration>100</OffDuration>
+				<!-- Frequency is an ID defined in buzzer library. Current values are:
+				0=585HZ, 1=1KH, 2=1.75KH, 3=2KH, 4=2.342KHZ, 5=3KHZ, 6=3.5KHZ, 7=4KHZ, 8=5.26KHZ, 9=6KHZ -->
+				<Frequency>0</Frequency>
+				<!-- Number of times to buzz -->
+				<RepeatCount>1</RepeatCount>
+			</Sound>
+		</SoundNotificationType>
+		<SoundNotificationType id="B3">
+			<Sound>
+				<!-- OnDuration and OffDuration are in milli-secs -->
+				<OnDuration>350</OnDuration>
+				<OffDuration>100</OffDuration>
+				<!-- Frequency is an ID defined in buzzer library. Current values are:
+				0=585HZ, 1=1KH, 2=1.75KH, 3=2KH, 4=2.342KHZ, 5=3KHZ, 6=3.5KHZ, 7=4KHZ, 8=5.26KHZ, 9=6KHZ -->
+				<Frequency>0</Frequency>
+				<!-- Number of times to buzz -->
+				<RepeatCount>1</RepeatCount>
+			</Sound>
+			<Sound>
+				<!-- OnDuration and OffDuration are in milli-secs -->
+				<OnDuration>400</OnDuration>
+				<OffDuration>100</OffDuration>
+				<!-- Frequency is an ID defined in buzzer library. Current values are:
+				0=585HZ, 1=1KH, 2=1.75KH, 3=2KH, 4=2.342KHZ, 5=3KHZ, 6=3.5KHZ, 7=4KHZ, 8=5.26KHZ, 9=6KHZ -->
+				<Frequency>0</Frequency>
+				<!-- Number of times to buzz -->
+				<RepeatCount>1</RepeatCount>
+			</Sound>
+			<Sound>
+				<!-- OnDuration and OffDuration are in milli-secs -->
+				<OnDuration>350</OnDuration>
+				<OffDuration>100</OffDuration>
+				<!-- Frequency is an ID defined in buzzer library. Current values are:
+				0=585HZ, 1=1KH, 2=1.75KH, 3=2KH, 4=2.342KHZ, 5=3KHZ, 6=3.5KHZ, 7=4KHZ, 8=5.26KHZ, 9=6KHZ -->
+				<Frequency>0</Frequency>
+				<!-- Number of times to buzz -->
+				<RepeatCount>1</RepeatCount>
+			</Sound>
+		</SoundNotificationType>
+	</SoundNotificationTypes>
+</Config>

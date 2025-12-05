@@ -1,0 +1,34 @@
+<Config>
+	<WiFi>
+		<NumOfIface>2</NumOfIface>            <!-- Number of max radios/interfaces possible -->
+		<SystemMaxClientsAllowed>15</SystemMaxClientsAllowed> 
+		<US24ChannelsList>1,2,3,4,5,6,7,8,9,10,11</US24ChannelsList>
+		<US5ChannelsList>36,40,44,48,149,153,157,161,165</US5ChannelsList>
+		<JP24ChannelsList>1,2,3,4,5,6,7,8,9,10,11,12,13,14</JP24ChannelsList>
+		<JP5ChannelsList>36,40,44,48</JP5ChannelsList>
+		<CountriesSupported>US,JP</CountriesSupported>
+		<APMaxInactivity>60</APMaxInactivity>
+		<MaxClientsAllowed>15</MaxClientsAllowed> 
+		<ModesAllowed>3601</ModesAllowed>          <!-- 3601 = 0B111000010001, i.e. (AC_5_ONLY, AC_5, AN, GN_2.4, BGN) modes are supported. -->
+		<WPSAvailable>1</WPSAvailable>
+		<BeaconInterval>100</BeaconInterval>
+		<Preamble>1</Preamble>  
+		<WPSDeviceName>MIFI</WPSDeviceName>
+		<WPSManfName>NVTL</WPSManfName>
+		<WPSModelName>BCM4359</WPSModelName>
+		<WPSDevType>6-0050F204-1</WPSDevType>
+		<WPSFriendlyName>MIFI-WPS-AP</WPSFriendlyName>
+		<WPSConfigMethod>label display virtual_push_button push_button keypad</WPSConfigMethod>
+		<WlanDriverName>nl80211</WlanDriverName>
+		<WiFiFWVersion>9.86.12</WiFiFWVersion>
+                <CYWWiFiFWVersion>13.35.178</CYWWiFiFWVersion>
+		<Interface index="1">
+			<Enabled>1</Enabled>                      <!-- Wifi Interface is enabled or not, on(1), off(0) -->
+			<Name>wlan0</Name>
+		</Interface>
+		<Interface index="2">
+			<Enabled>1</Enabled>                      <!-- Wifi interface is enabled or not, on(1), off(0) -->
+			<Name>wlan1</Name>
+		</Interface>
+	</WiFi>
+</Config>

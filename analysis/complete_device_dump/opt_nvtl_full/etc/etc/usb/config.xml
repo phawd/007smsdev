@@ -1,0 +1,38 @@
+<Config>
+    <USB>
+        <VendorID>1410</VendorID>
+        <ManufacturerString>Novatel Wireless</ManufacturerString>
+        <ProductString>MiFi 8800L</ProductString>
+        <SerialString>0123456789ABCDEF</SerialString>
+    </USB>
+    <FunctionList>
+        <DebugMode>
+            <OnlineMode>,serial,diag,ffs,blank5,blank6,blank7,blank8,blank9,blank10,blank11,acm,hid</OnlineMode>
+            <OnlineModeNoTether>rndis_gsi,serial,diag,ffs,blank5,blank6,blank7,blank8,blank9,blank10,blank11,acm,hid</OnlineModeNoTether>
+            <FactoryTestMode>,serial,diag,ffs,blank5,blank6,blank7,blank8,blank9,blank10,blank11,acm,hid</FactoryTestMode>
+            <LabTestMode>rmnet_gsi,blank1,serial,diag,ffs,blank5,blank6,blank7,blank8,blank9,blank10,blank11,acm,hid</LabTestMode>
+            <LowPowerMode>blank0,blank1,blank2,blank3,ffs,blank5,blank6,blank7,blank8,blank9,blank10,blank11,blank12,blank13,hid</LowPowerMode>
+        </DebugMode>
+        <EndUserMode>
+            <OnlineMode>,hid:acm:mass_storage</OnlineMode>
+            <LowPowerMode>hid</LowPowerMode>
+        </EndUserMode>
+        <EnterpriseMode>
+            <OnlineMode>,hid,serial</OnlineMode>
+        </EnterpriseMode>
+    </FunctionList>
+    <ProductID>
+        <DebugMode>B023</DebugMode>
+        <EndUserMode>B020</EndUserMode>
+        <EndUserModeLPM>B010</EndUserModeLPM>
+        <EnterpriseMode>B022</EnterpriseMode>
+    </ProductID>
+    <NetworkInterface>
+        <Mode>2</Mode>	                     <!-- 0(rndis), 1(ecm), 2(auto) -->
+        <IPAEnabled>0</IPAEnabled>           <!-- 1(enabled), 0(disabled)  -->
+	<AutoDetect>
+	    <SamplePeriod>10</SamplePeriod>  <!-- number of seconds to wait for pkts -->
+	    <Iterations>2</Iterations>       <!-- number of times to wait for pkts -->
+	</AutoDetect>
+    </NetworkInterface>
+</Config>

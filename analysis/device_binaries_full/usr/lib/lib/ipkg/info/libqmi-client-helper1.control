@@ -1,0 +1,14 @@
+Package: libqmi-client-helper1
+Version: git-r0
+Description: qmi-client-helper version git-r0
+ QMI Client Helper Module
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: sdx20
+OE: qmi-client-helper
+Homepage: http://support.cdmatech.com
+Depends: libtime-genoff1 (>= git), libdsutils1 (>= git), libconfigdb0 (>= git), diag (>= git), libxml0 (>= git), qmi (>= git), qmi-framework (>= git), libc6 (>= 2.22), libglib-2.0-0 (>= 2.44.1)
+Provides: qmi-client-helper
+Source: file://qmi/qmi_client_helper

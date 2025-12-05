@@ -1,0 +1,13 @@
+Package: diag
+Version: git-r10
+Description: diag version git-r10
+ Library and routing applications for diagnostic traffic
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: sdx20
+OE: diag
+Homepage: http://support.cdmatech.com
+Depends: libtime-genoff1 (>= git), libglib-2.0-0 (>= 2.44.1), libc6 (>= 2.22)
+Source: file://diag/ file://chgrp-diag file://chgrp-diag.service

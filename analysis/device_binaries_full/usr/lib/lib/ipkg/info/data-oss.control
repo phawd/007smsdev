@@ -1,0 +1,12 @@
+Package: data-oss
+Version: git-r4
+Description: data-oss version git-r4
+ Data Services Open Source
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: armv7a-vfp-neon
+OE: data-oss
+Depends: libglib-2.0-0 (>= 2.44.1), libc6 (>= 2.22)
+Source: file://data-oss

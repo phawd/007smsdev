@@ -1,0 +1,16 @@
+Package: libglib-2.0-0
+Version: 1:2.44.1-r0
+Description: A general-purpose utility library
+ GLib is a general-purpose utility library, which provides many useful
+ data types, macros, type conversions, string utilities, file utilities, a
+ main loop abstraction, and so on.
+Section: libs
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: LGPLv2+ & BSD & PD
+Architecture: armv7a-vfp-neon
+OE: glib-2.0
+Homepage: https://developer.gnome.org/glib/
+Depends: libffi6 (>= 3.2.1), libz1 (>= 1.2.8), libc6 (>= 2.22)
+Provides: glib-2.0
+Source: http://ftp.gnome.org/pub/GNOME/sources/glib/2.44/glib-2.44.1.tar.xz file://configure-libtool.patch file://fix-conflicting-rand.patch file://add-march-i486-into-CFLAGS-automatically.patch file://glib-2.0-configure-readlink.patch file://run-ptest file://ptest-paths.patch file://uclibc.patch file://0001-configure.ac-Do-not-use-readlink-when-cross-compilin.patch file://allow-run-media-sdX-drive-mount-if-username-root.patch file://0001-Remove-the-warning-about-deprecated-paths-in-schemas.patch

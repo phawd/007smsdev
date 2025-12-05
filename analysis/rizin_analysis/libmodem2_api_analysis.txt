@@ -1,0 +1,677 @@
+0x00003be8    1 12           sym._init
+0x00003c14    1 12           sym.imp.__cxa_finalize
+0x00003c20    1 12           sym.imp.memset
+0x00003c2c    1 12           sym.imp.strlen
+0x00003c38    1 12           sym.imp.strncat
+0x00003c44    1 12           sym.imp.snprintf
+0x00003c50    1 12           sym.imp.msgq_does_queue_exist
+0x00003c5c    1 12           sym.imp.mifi_dbg_get_level_name
+0x00003c68    1 12           sym.imp.mifi_dbg_log
+0x00003c74    1 12           sym.imp.msgq_send_sync
+0x00003c80    1 12           sym.imp.settings_get_setting
+0x00003c8c    1 12           sym.imp.mifi_dbg_syslog
+0x00003c98    1 12           sym.imp.strcmp
+0x00003ca4    1 12           sym.imp.memcpy
+0x00003cb0    1 12           sym.imp.file_read_as_int
+0x00003cbc    1 12           sym.imp.file_read
+0x00003cc8    1 12           sym.imp.strncpy
+0x00003cd4    1 12           sym.imp.msgq_send_sync_large_payload
+0x00003ce0    1 12           fcn.00003ce0
+0x00003cec    1 12           sym.imp.settings_set_setting
+0x00003cf8    1 12           sym.imp.msgq_send_async
+0x00003d04    1 12           sym.imp.strcpy
+0x00003d10    1 12           sym.imp.sem_open
+0x00003d1c    1 12           sym.imp.__errno_location
+0x00003d28    1 12           sym.imp.clock_gettime
+0x00003d34    1 12           sym.imp.sem_timedwait
+0x00003d40    1 12           sym.imp.watchdog_application_send_keep_alive
+0x00003d4c    1 12           sym.imp.sem_close
+0x00003d58    1 12           sym.imp.sem_post
+0x00003d64    1 12           sym.imp.sprintf
+0x00003d70    1 12           sym.imp.xmldata_getuint32_default
+0x00003d7c    1 12           sym.imp.xmldata_setuint32
+0x00003d88    1 12           sym.imp.xmldata_save
+0x00003d94    1 12           sym.imp.MsgBusSetInt32
+0x00003da0    1 12           sym.imp.xmldata_getuint32
+0x00003dac    1 12           sym.imp.xmldata_getstring
+0x00003db8    1 12           fcn.00003db8
+0x00003dc4    1 12           sym.imp.access
+0x00003dd0    1 12           sym.imp.mkdir
+0x00003ddc    1 12           sym.imp.open
+0x00003de8    1 12           sym.imp.write
+0x00003df4    1 12           sym.imp.fsync
+0x00003e00    1 12           sym.imp.close
+0x00003e0c    1 12           sym.imp.read
+0x00003e18    1 12           sym.imp.unlink
+0x00003e24    1 12           sym.imp.raise
+0x00003e30    1 28           entry0
+0x00003e54    3 80           sym.deregister_tm_clones
+0x00003eb4    3 84           sym.register_tm_clones
+0x00003f18    3 84           sym.__do_global_dtors_aux
+0x00003f80    4 68           entry.init0
+0x00003fd0   13 196          sym.translate_settings_result
+0x00004094   10 368          sym.convert_gid_to_string
+0x00004210    4 60           sym.modem2_api_is_running
+0x00004250    4 220          sym.modem2_refresh_events
+0x00004340   31 804          sym.modem2_get_certified_carrier
+0x000046a8    8 508          sym.modem2_get_info
+0x000048c0    4 260          sym.modem2_enable_power_save_mode
+0x000049d8    6 308          sym.modem2_get_current_state
+0x00004b20    6 308          sym.modem2_get_signal_stats
+0x00004c68    6 308          sym.modem2_get_voice_signal_stats
+0x00004db0    7 408          sym.modem2_get_service_info
+0x00004f5c    6 304          sym.modem2_validate_spc_code
+0x000050a0    6 308          sym.modem2_get_bsr_timers
+0x000051e8   10 388          sym.modem2_set_bsr_timers
+0x00005380   10 760          sym.modem2_get_diag_info
+0x000056bc    6 308          sym.modem2_get_refurbish_info
+0x00005804    6 292          sym.modem2_get_activation_date
+0x0000593c    6 308          sym.modem2_get_ddtm_state
+0x00005a84    6 304          sym.modem2_set_ddtm_state
+0x00005bc8    6 292          sym.modem2_get_cai_rev
+0x00005d00    4 260          sym.modem2_set_cai_rev
+0x00005e18    8 476          sym.modem2_read_modem_file
+0x00006008    7 444          sym.modem2_write_modem_file
+0x000061d8    6 344          sym.modem2_delete_modem_file
+0x00006344    6 292          sym.modem2_get_lbs_idle_mode_query_enabled
+0x0000647c    4 260          sym.modem2_set_lbs_idle_mode_query_enabled
+0x00006594    4 220          sym.modem2_reset_factory_default
+0x00006684    6 308          sym.modem2_get_operator_info
+0x000067cc    6 312          sym.modem2_get_network_time
+0x00006918    8 416          sym.modem2_get_time_info
+0x00006acc    6 308          sym.modem2_carrier_unlock_status
+0x00006c14   10 472          sym.modem2_carrier_unlock
+0x00006e0c    6 292          sym.modem2_get_supported_tech_modes
+0x00006f44    6 292          sym.modem2_get_active_tech_modes
+0x0000707c    6 272          sym.modem2_get_enabled_tech_modes
+0x000071ac    4 456          sym.modem2_set_enabled_tech_modes
+0x000073a0    6 292          sym.modem2_validate_home_network
+0x000074d8   18 488          sym.modem2_mns_get_max_timeout
+0x000076ec    6 308          sym.modem2_get_mns_info
+0x00007834    6 332          sym.modem2_is_manual_network_selected
+0x00007994    4 220          sym.modem2_start_network_operator_scan
+0x00007a84    7 388          sym.modem2_get_network_operator_list
+0x00007c1c    4 220          sym.modem2_clear_network_operator_list
+0x00007d0c    6 304          sym.modem2_select_manual_network
+0x00007e50    6 292          sym.modem2_validate_manual_network_selection
+0x00007f88   25 724          sym.modem2_roaming_get_enabled
+0x000082a8   28 984          sym.modem2_roaming_set_enabled
+0x000086c4    6 308          sym.modem2_roaming_get_eri
+0x0000880c    1 52           sym.modem2_roaming_get_sprint_settings
+0x00008840    1 52           sym.modem2_roaming_set_sprint_settings
+0x00008874    9 456          sym.modem2_get_tech_profile
+0x00008a50   16 620          sym.modem2_set_tech_profile
+0x00008cd0    8 400          sym.modem2_get_pri_tech_profile
+0x00008e74   16 588          sym.modem2_set_pri_tech_profile
+0x000090d4    8 400          sym.modem2_get_custom_tech_profile
+0x00009278   16 588          sym.modem2_set_custom_tech_profile
+0x000094d8    6 332          sym.modem2_get_active_tech_profile
+0x00009638    7 352          sym.modem2_set_active_tech_profile
+0x000097ac    6 336          sym.modem2_sim_enable_pin
+0x00009910    6 300          sym.modem2_sim_unlock_pin
+0x00009a50    7 368          sym.modem2_sim_unlock_puk
+0x00009bd4    7 368          sym.modem2_sim_change_pin
+0x00009d58    8 408          sym.modem2_sim_get_status
+0x00009f04    6 308          sym.modem2_sim_get_pin_info
+0x0000a04c    6 292          sym.modem2_sim_get_carrier
+0x0000a184    6 292          sym.modem2_sim_get_mnc_length
+0x0000a2bc    9 572          sym.modem2_sim_get_gid
+0x0000a518    6 484          sym.modem2_get_imsi
+0x0000a728    6 408          sym.modem2_sim_get_iccid
+0x0000a8e0    9 364          sym.modem2_set_pdn_ext_params
+0x0000aa60   11 444          sym.modem2_get_pdn_ext_params
+0x0000ac30    6 308          sym.modem2_get_mip_settings
+0x0000ad78   11 412          sym.modem2_set_mip_settings
+0x0000af28    6 308          sym.modem2_get_mip_profile
+0x0000b070    9 380          sym.modem2_set_mip_profile
+0x0000b200    6 292          sym.modem2_is_radio_enabled
+0x0000b338    4 256          sym.modem2_set_radio_enabled
+0x0000b44c    7 360          sym.modem2_get_lifetime_counters
+0x0000b5c8    4 320          sym.modem2_update_lifetime_counters
+0x0000b71c    6 332          sym.modem2_get_band_class_enabled
+0x0000b87c    6 332          sym.modem2_set_band_class_enabled
+0x0000b9dc    6 292          sym.modem2_get_active_band
+0x0000bb14    6 292          sym.modem2_get_ehrpd_enabled
+0x0000bc4c    4 260          sym.modem2_set_ehrpd_enabled
+0x0000bd64    6 292          sym.modem2_get_ehrpd_state
+0x0000be9c    4 260          sym.modem2_set_ehrpd_state
+0x0000bfb4    7 368          sym.modem2_set_mdn_and_min
+0x0000c138    8 364          sym.modem2_get_lte_band_enabled
+0x0000c2b8    6 332          sym.modem2_set_lte_band_enabled
+0x0000c418    6 308          sym.modem2_get_lte_band_priority
+0x0000c560   14 472          sym.modem2_set_lte_band_priority
+0x0000c74c    4 220          sym.modem2_check_lte_ca_status
+0x0000c83c    6 292          sym.modem2_get_volte_enabled
+0x0000c974    4 260          sym.modem2_set_volte_enabled
+0x0000ca8c    8 312          sym.modem2_get_ca_enabled
+0x0000cbd8    4 260          sym.modem2_set_ca_enabled
+0x0000ccf0   12 452          sym.modem2_get_ca_bands_enabled
+0x0000cec8    8 400          sym.modem2_set_ca_bands_enabled
+0x0000d06c   14 524          sym.modem2_get_ca_tri_bands_enabled
+0x0000d28c   10 472          sym.modem2_set_ca_tri_bands_enabled
+0x0000d478    8 312          sym.modem2_get_autonomous_gap_enabled
+0x0000d5c4    4 260          sym.modem2_set_autonomous_gap_enabled
+0x0000d6dc    7 312          sym.modem2_network_attach
+0x0000d828    8 312          sym.modem2_get_emergency_mode
+0x0000d974    8 328          sym.modem2_get_volte_session_config
+0x0000dad0    6 304          sym.modem2_set_volte_session_config
+0x0000dc14    4 284          sym.modem2_set_ims_registration_delay
+0x0000dd44    8 328          sym.modem2_get_ims_presence_config
+0x0000dea0    6 304          sym.modem2_set_ims_presence_config
+0x0000dfe4    8 312          sym.modem2_get_ims_lvc_enabled
+0x0000e130    6 292          sym.modem2_set_ims_lvc_enabled
+0x0000e268    4 260          sym.modem2_set_ims_sip_timer_oper_mode_a
+0x0000e380    8 328          sym.modem2_get_ims_sip_data
+0x0000e4dc    6 304          sym.modem2_set_ims_sip_data
+0x0000e620    8 328          sym.modem2_get_ims_sms_data
+0x0000e77c    6 304          sym.modem2_set_ims_sms_data
+0x0000e8c0    8 312          sym.modem2_get_1xrtt_cdma_ext_timer
+0x0000ea0c    4 260          sym.modem2_set_1xrtt_cdma_ext_timer
+0x0000eb24    8 312          sym.modem2_get_volte_hd_voice_enabled
+0x0000ec70    7 312          sym.modem2_set_volte_hd_voice_enabled
+0x0000edbc    8 312          sym.modem2_get_volte_amr_mode
+0x0000ef08    4 260          sym.modem2_set_volte_amr_mode
+0x0000f020    8 312          sym.modem2_get_volte_amr_wb_mode
+0x0000f16c    4 260          sym.modem2_set_volte_amr_wb_mode
+0x0000f284    8 312          sym.modem2_get_volte_dcmo_timer
+0x0000f3d0    4 260          sym.modem2_set_volte_dcmo_timer
+0x0000f4e8    8 320          sym.modem2_get_volte_dcmo_tdelay
+0x0000f63c    4 284          sym.modem2_set_volte_dcmo_tdelay
+0x0000f76c    8 312          sym.modem2_get_volte_silent_redial
+0x0000f8b8    7 312          sym.modem2_set_volte_silent_redial
+0x0000fa04    8 312          sym.modem2_get_volte_source_throttle_publish
+0x0000fb50    4 260          sym.modem2_set_volte_source_throttle_publish
+0x0000fc68    8 312          sym.modem2_get_volte_rcl_max_entries
+0x0000fdb4    4 260          sym.modem2_set_volte_rcl_max_entries
+0x0000fecc    8 320          sym.modem2_get_volte_hys
+0x00010020    4 284          sym.modem2_set_volte_hys
+0x00010150    8 312          sym.modem2_get_volte_tlte_911fail
+0x0001029c    4 260          sym.modem2_set_volte_tlte_911fail
+0x000103b4   10 400          sym.modem2_get_sd_config_ext_setting
+0x00010558    6 332          sym.modem2_set_sd_config_ext_setting
+0x000106b8   51 3084         sym.modem2_start_call
+0x000113d8   41 2804         sym.modem2_stop_call
+0x00011fcc   13 672          sym.modem2_get_call_status
+0x0001228c    6 292          sym.modem2_get_reject_cause_code
+0x000123c4    6 292          sym.modem2_get_world_mode_enabled
+0x000124fc    8 316          sym.modem2_get_pco_event
+0x0001264c    4 256          sym.modem2_set_lte_wifi_5ghz_coex
+0x00012760    4 264          sym.modem2_update_sim_status
+0x0001287c    4 276          sym.modem2_update_pin_status
+0x000129a4    4 252          sym.modem2_update_wwan_state
+0x00012ab4    4 252          sym.modem2_update_roam_state
+0x00012bc4    4 264          sym.modem2_update_network_operator
+0x00012ce0    4 252          sym.modem2_update_network_dbm
+0x00012df0    4 252          sym.modem2_update_network_bars
+0x00012f00    4 252          sym.modem2_update_network_rssi
+0x00013010    4 252          sym.modem2_update_network_ecio
+0x00013120    4 252          sym.modem2_update_network_sinr
+0x00013230    4 252          sym.modem2_update_network_snr
+0x00013340    4 252          sym.modem2_update_network_rsrq
+0x00013450    4 252          sym.modem2_update_network_rsrp
+0x00013560    4 276          sym.modem2_update_network_lac
+0x0001368c    4 284          sym.modem2_update_network_cell_id
+0x000137c0    4 292          sym.modem2_update_network_sid_nid
+0x000138f8    4 252          sym.modem2_update_network_service
+0x00013a08    4 252          sym.modem2_update_voice_service
+0x00013b18    4 252          sym.modem2_update_reg_state
+0x00013c28    4 268          sym.modem2_update_signal_cdma
+0x00013d48    4 264          sym.modem2_update_signal_hdr
+0x00013e64    4 268          sym.modem2_update_signal_gsm
+0x00013f84    4 268          sym.modem2_update_signal_wcdma
+0x000140a4    4 264          sym.modem2_update_signal_lte
+0x000141c0    4 252          sym.modem2_update_ddtm_status
+0x000142d0    4 268          sym.modem2_update_network_time
+0x000143f0    4 252          sym.modem2_update_plmn_mode
+0x00014500    4 320          sym.modem2_update_operator_name
+0x00014654    4 252          sym.modem2_update_network_extender
+0x00014764    4 276          sym.modem2_update_uati
+0x0001488c    4 340          sym.modem2_update_plmn_name
+0x000149f4    4 252          sym.modem2_update_oprt_mode
+0x00014b04   10 540          sym.modem2_update_wap_push_message
+0x00014d34    4 252          sym.modem2_update_sim_activation_status
+0x00014e44    4 252          sym.modem2_update_rf_band_conflict
+0x00014f54    4 252          sym.modem2_update_pip_tone
+0x00015064    4 252          sym.modem2_update_emergency_mode
+0x00015174    4 264          sym.modem2_update_cat_launch_browser
+0x00015290    4 264          sym.modem2_update_cat_display_text
+0x000153ac    4 212          sym.modem2_update_roam_ctrl
+0x00015494    4 248          sym.modem2_update_voice_registration_state
+0x000155a0    4 268          sym.modem2_update_voice_mcc_mnc
+0x000156c0    4 252          sym.modem2_update_voice_roam_state
+0x000157d0    4 264          sym.modem2_update_voice_plmn_name
+0x000158ec    4 276          sym.modem2_update_voice_lac
+0x00015a18    4 276          sym.modem2_update_voice_cell_id
+0x00015b44    4 248          sym.modem2_update_mns_info
+0x00015c50   18 1164         sym.modem2_enable_data_call
+0x0001614c    4 416          sym.modem2_update_call_response
+0x00016300    4 368          sym.modem2_update_connection_state
+0x00016484    4 252          sym.modem2_update_voice_enabled
+0x00016594   18 468          sym.modem2_labtest_get_enabled
+0x00016794    4 252          sym.modem2_update_reject_code
+0x000168a4    8 344          sym.modem2_update_pco_event
+0x00016a10    6 356          sym.modem2_get_call_throttle_status
+0x00016b88   11 676          sym.modem2_get_apn_from_database
+0x00016e4c    9 400          sym.modem2_get_custom_apn_from_database
+0x00016ff0    7 376          sym.modem2_set_custom_apn_to_database
+0x0001717c   16 588          sym.modem2_set_auto_apn_profile
+0x000173dc   12 476          sym.modem2_validate_apn
+0x000175d0   18 676          sym.modem2_run_raw_command
+0x00017890   57 748          sym.modem2_get_error_string
+0x00017bd4    7 144          sym.modem2_get_roam_settings
+0x00017c68   12 208          sym.modem2_set_roam_settings
+0x00017d40    7 140          sym.modem2_get_intl_roam_settings
+0x00017dd0   12 208          sym.modem2_set_intl_roam_settings
+0x00017ea8    7 152          sym.modem2_get_certified_carrier_settings
+0x00017f44    7 140          sym.modem2_get_mns_timeout_settings
+0x00017fd4    7 140          sym.modem2_get_labtest_settings
+0x00018064    7 140          sym.modem2_get_preftech_settings
+0x000180f4   12 208          sym.modem2_set_preftech_settings
+0x000181cc    3 332          sym.initialize_settings
+0x00018364    7 396          sym.powersave_notify
+0x0001852c    4 624          sym.modem2_factory_reset
+0x00018804    3 64           sym.initialize_factory_reset_func
+0x0001884c   34 296          sym.modem2_utils_convert_tech_to_string
+0x000189b4   26 232          sym.modem2_utils_convert_state_to_string
+0x00018acc   15 368          sym.modem2_write_persistent_file
+0x00018c50    8 232          sym.modem2_read_persistent_file
+0x00018d40    6 140          sym.modem2_delete_persistent_file
+0x00018dd4    2 220  -> 24   sym.__divsi3
+0x00018ddc    9 196          loc..divsi3_skip_div0_test
+0x00018eb0    2 32           sym.__aeabi_idivmod
+0x00018ed0    1 16           sym.__aeabi_idiv0
+0x00018ee0    1 8            sym._fini
+=== STRINGS ===
+     paddr      vaddr len size section type  string                                                                                   
+--------------------------------------------------------------------------------------------------------------------------------------
+0x00018ef0 0x00018ef0  10   11 .rodata ascii /modem2_mq
+0x00018efc 0x00018efc   8    9 .rodata ascii MDM_MAIN
+0x00018f08 0x00018f08  48   49 .rodata ascii [%s]:[%s] - Sending sync refresh MODEM2 process.
+0x00018f3c 0x00018f3c  41   42 .rodata ascii [%s]:[%s] - Getting certified carrier id.
+0x00018f68 0x00018f68  28   29 .rodata ascii modem2.cert_carrier.settings
+0x00018f88 0x00018f88  57   58 .rodata ascii [%s]:[%s] - settings_get_setting(%s) failed with code: %d
+0x00018fc4 0x00018fc4   7    8 .rodata ascii Verizon
+0x00018fcc 0x00018fcc   6    7 .rodata ascii Sprint
+0x00018fd4 0x00018fd4   4    5 .rodata ascii AT&T
+0x00018fdc 0x00018fdc   4    5 .rodata ascii Bell
+0x00018fe4 0x00018fe4   5    6 .rodata ascii Telus
+0x00018ff0 0x00018ff0  49   50 .rodata ascii [%s]:[%s] - Sending sync get info MODEM2 process.
+0x00019024 0x00019024  39   40 .rodata ascii /opt/nvtl/data/system/linux_pri_version
+0x0001904c 0x0001904c  58   59 .rodata ascii [%s]:[%s] - Sending sync powersave enabled MODEM2 process.
+0x00019088 0x00019088  58   59 .rodata ascii [%s]:[%s] - Sending sync get current state MODEM2 process.
+0x000190c4 0x000190c4  57   58 .rodata ascii [%s]:[%s] - Sending sync get signal stats MODEM2 process.
+0x00019100 0x00019100  57   58 .rodata ascii [%s]:[%s] - Sending sync get service info MODEM2 process.
+0x0001913c 0x0001913c  58   59 .rodata ascii [%s]:[%s] - Sending sync validate spc code MODEM2 process.
+0x00019178 0x00019178  55   56 .rodata ascii [%s]:[%s] - Sending sync get bsr timers MODEM2 process.
+0x000191b0 0x000191b0  55   56 .rodata ascii [%s]:[%s] - Sending sync set bsr timers MODEM2 process.
+0x000191e8 0x000191e8  54   55 .rodata ascii [%s]:[%s] - Sending sync get diag info MODEM2 process.
+0x00019220 0x00019220  20   21 .rodata ascii [%s]:[%s] - len: %d.
+0x00019238 0x00019238  24   25 .rodata ascii [%s]:[%s] - new len: %d.
+0x00019254 0x00019254  23   24 .rodata ascii [%s]:[%s] - string: %s.
+0x0001926c 0x0001926c  59   60 .rodata ascii [%s]:[%s] - Sending sync get refurbish info MODEM2 process.
+0x000192a8 0x000192a8  60   61 .rodata ascii [%s]:[%s] - Sending sync get activation date MODEM2 process.
+0x000192e8 0x000192e8  54   55 .rodata ascii [%s]:[%s] - Sending sync get ddtm info MODEM2 process.
+0x00019320 0x00019320  54   55 .rodata ascii [%s]:[%s] - Sending sync set ddtm info MODEM2 process.
+0x00019358 0x00019358  57   58 .rodata ascii [%s]:[%s] - Sending sync get cai rev info MODEM2 process.
+0x00019394 0x00019394  57   58 .rodata ascii [%s]:[%s] - Sending sync set cai rev info MODEM2 process.
+0x000193d0 0x000193d0  54   55 .rodata ascii [%s]:[%s] - Sending sync read efs file MODEM2 process.
+0x00019408 0x00019408  55   56 .rodata ascii [%s]:[%s] - Sending sync write efs file MODEM2 process.
+0x00019440 0x00019440  56   57 .rodata ascii [%s]:[%s] - Sending sync delete efs file MODEM2 process.
+0x0001947c 0x0001947c  68   69 .rodata ascii [%s]:[%s] - Sending sync lbs idle mode query enabled MODEM2 process.
+0x000194c4 0x000194c4  57   58 .rodata ascii [%s]:[%s] - Sending sync factory reset to MODEM2 process.
+0x00019500 0x00019500  61   62 .rodata ascii [%s]:[%s] - Sending sync get operator info to MODEM2 process.
+0x00019540 0x00019540  60   61 .rodata ascii [%s]:[%s] - Sending sync get network time to MODEM2 process.
+0x00019580 0x00019580  57   58 .rodata ascii [%s]:[%s] - Sending sync get time info to MODEM2 process.
+0x000195bc 0x000195bc  69   70 .rodata ascii [%s]:[%s] - Sending sync get carrier unlock status to MODEM2 process.
+0x00019604 0x00019604  58   59 .rodata ascii [%s]:[%s] - Sending sync carrier unlock to MODEM2 process.
+0x00019640 0x00019640  63   64 .rodata ascii [%s]:[%s] - MODEM_CARRIER_UNLOCK not performed, state=%d rc=%d\n
+0x00019680 0x00019680  68   69 .rodata ascii [%s]:[%s] - Sending sync get supported tech modes to MODEM2 process.
+0x000196c8 0x000196c8  66   67 .rodata ascii [%s]:[%s] - Sending sync get enabled tech modes to MODEM2 process.
+0x0001970c 0x0001970c  26   27 .rodata ascii modem2.technology.settings
+0x00019728 0x00019728  53   54 .rodata ascii [%s]:[%s] - Settings Update: Enabled Tech Modes: [%d]
+0x00019760 0x00019760  66   67 .rodata ascii [%s]:[%s] - Sending sync set enabled tech modes to MODEM2 process.
+0x000197a4 0x000197a4  60   61 .rodata ascii [%s]:[%s] - Sending sync validate roaming to MODEM2 process.
+0x000197e4 0x000197e4  43   44 .rodata ascii [%s]:[%s] - Getting MNS no service timeout.
+0x00019810 0x00019810  27   28 .rodata ascii modem2.mns_timeout.settings
+0x0001982c 0x0001982c  56   57 .rodata ascii [%s]:[%s] - Sending sync get mns info to MODEM2 process.
+0x00019868 0x00019868  60   61 .rodata ascii [%s]:[%s] - Sending sync get mns selected to MODEM2 process.
+0x000198a8 0x000198a8  58   59 .rodata ascii [%s]:[%s] - Sending sync start mns scan to MODEM2 process.
+0x000198e4 0x000198e4  56   57 .rodata ascii [%s]:[%s] - Sending sync get mns list to MODEM2 process.
+0x00019920 0x00019920  71   72 .rodata ascii [%s]:[%s] - Sending sync clear network operator list to MODEM2 process.
+0x00019968 0x00019968  65   66 .rodata ascii [%s]:[%s] - Sending sync select manual network to MODEM2 process.
+0x000199ac 0x000199ac  67   68 .rodata ascii [%s]:[%s] - Sending sync validate manual network to MODEM2 process.
+0x000199f0 0x000199f0  54   55 .rodata ascii [%s]:[%s] - Getting international roaming enable flag.
+0x00019a28 0x00019a28  20   21 .rodata ascii modem2.roam.settings
+0x00019a40 0x00019a40  25   26 .rodata ascii modem2.roam_intl.settings
+0x00019a5c 0x00019a5c  40   41 .rodata ascii [%s]:[%s] - Setting roaming enable flag.
+0x00019a88 0x00019a88  59   60 .rodata ascii [%s]:[%s] - Settings Update: Domestic roaming enabled: [%d]
+0x00019ac4 0x00019ac4  64   65 .rodata ascii [%s]:[%s] - Settings Update: International Roaming Enabled: [%d]
+0x00019b08 0x00019b08  56   57 .rodata ascii [%s]:[%s] - Sending sync get eri info to MODEM2 process.
+0x00019b44 0x00019b44  55   56 .rodata ascii [%s]:[%s] - Sending get tech profile to MODEM2 process.
+0x00019b7c 0x00019b7c  55   56 .rodata ascii [%s]:[%s] - Sending set tech profile to MODEM2 process.
+0x00019bb4 0x00019bb4  62   63 .rodata ascii [%s]:[%s] - Sending get active tech profile to MODEM2 process.
+0x00019bf4 0x00019bf4  62   63 .rodata ascii [%s]:[%s] - Sending set active tech profile to MODEM2 process.
+0x00019c34 0x00019c34  55   56 .rodata ascii [%s]:[%s] - Sending sync sim pin enable MODEM2 process.
+0x00019c6c 0x00019c6c  55   56 .rodata ascii [%s]:[%s] - Sending sync sim unlock pin MODEM2 process.
+0x00019ca4 0x00019ca4  55   56 .rodata ascii [%s]:[%s] - Sending sync sim unlock puk MODEM2 process.
+0x00019cdc 0x00019cdc  55   56 .rodata ascii [%s]:[%s] - Sending sync sim change pin MODEM2 process.
+0x00019d14 0x00019d14  55   56 .rodata ascii [%s]:[%s] - Sending sync sim get status MODEM2 process.
+0x00019d4c 0x00019d4c  57   58 .rodata ascii [%s]:[%s] - Sending sync sim get pin info MODEM2 process.
+0x00019d88 0x00019d88  52   53 .rodata ascii [%s]:[%s] - Sending sync get carrier MODEM2 process.
+0x00019dc0 0x00019dc0  58   59 .rodata ascii [%s]:[%s] - Sending sync get mnc length to MODEM2 process.
+0x00019dfc 0x00019dfc  53   54 .rodata ascii [%s]:[%s] - Sending sync get gid%d to MODEM2 process.
+0x00019e34 0x00019e34  57   58 .rodata ascii [%s]:[%s] - <modem2 api>gid%d[1] : 0x%2x, gid%d[2]: 0x%2x
+0x00019e70 0x00019e70  52   53 .rodata ascii [%s]:[%s] - Sending sync get imsi to MODEM2 process.
+0x00019ea8 0x00019ea8  35   36 .rodata ascii [%s]:[%s] - <modem2 api> imsi : %s 
+0x00019ecc 0x00019ecc  41   42 .rodata ascii [%s]:[%s] - <modem2 api> param imsi : %s 
+0x00019ef8 0x00019ef8  53   54 .rodata ascii [%s]:[%s] - Sending sync get iccid to MODEM2 process.
+0x00019f30 0x00019f30  42   43 .rodata ascii [%s]:[%s] - <modem2 api> param iccid : %s 
+0x00019f5c 0x00019f5c  48   49 .rodata ascii [%s]:[%s] - Sending sync pdn ext MODEM2 process.
+0x00019f90 0x00019f90  57   58 .rodata ascii [%s]:[%s] - Sending sync get mip settings MODEM2 process.
+0x00019fcc 0x00019fcc  57   58 .rodata ascii [%s]:[%s] - Sending sync set mip settings MODEM2 process.
+0x0001a008 0x0001a008  56   57 .rodata ascii [%s]:[%s] - Sending sync get mip profile MODEM2 process.
+0x0001a044 0x0001a044  56   57 .rodata ascii [%s]:[%s] - Sending sync set mip profile MODEM2 process.
+0x0001a080 0x0001a080  57   58 .rodata ascii [%s]:[%s] - Sending sync is radio enabled MODEM2 process.
+0x0001a0bc 0x0001a0bc  66   67 .rodata ascii [%s]:[%s] - Sending sync set radio enabled enabled MODEM2 process.
+0x0001a100 0x0001a100  62   63 .rodata ascii [%s]:[%s] - Sending sync get lifetime counters MODEM2 process.
+0x0001a140 0x0001a140  73   74 .rodata ascii [%s]:[%s] - Sending sync update lifetime counters enabled MODEM2 process.
+0x0001a18c 0x0001a18c  63   64 .rodata ascii [%s]:[%s] - Sending sync get band class enabled MODEM2 process.
+0x0001a1cc 0x0001a1cc  63   64 .rodata ascii [%s]:[%s] - Sending sync set band class enabled MODEM2 process.
+0x0001a20c 0x0001a20c  56   57 .rodata ascii [%s]:[%s] - Sending sync get active band MODEM2 process.
+0x0001a248 0x0001a248  58   59 .rodata ascii [%s]:[%s] - Sending sync get ehrpd enabled MODEM2 process.
+0x0001a284 0x0001a284  58   59 .rodata ascii [%s]:[%s] - Sending sync set ehrpd enabled MODEM2 process.
+0x0001a2c0 0x0001a2c0  56   57 .rodata ascii [%s]:[%s] - Sending sync get ehrpd state MODEM2 process.
+0x0001a2fc 0x0001a2fc  56   57 .rodata ascii [%s]:[%s] - Sending sync set ehrpd state MODEM2 process.
+0x0001a338 0x0001a338  52   53 .rodata ascii [%s]:[%s] - Sending sync set mdn min MODEM2 process.
+0x0001a370 0x0001a370  61   62 .rodata ascii [%s]:[%s] - Sending sync get lte band enabled MODEM2 process.
+0x0001a3b0 0x0001a3b0  61   62 .rodata ascii [%s]:[%s] - Sending sync set lte band enabled MODEM2 process.
+0x0001a3f0 0x0001a3f0  58   59 .rodata ascii [%s]:[%s] - Sending sync get lte band prio MODEM2 process.
+0x0001a42c 0x0001a42c  58   59 .rodata ascii [%s]:[%s] - Sending sync set lte band prio MODEM2 process.
+0x0001a468 0x0001a468  60   61 .rodata ascii [%s]:[%s] - Sending sync check lte ca status MODEM2 process.
+0x0001a4a8 0x0001a4a8  51   52 .rodata ascii [%s]:[%s] - Sending sync ca enabled MODEM2 process.
+0x0001a4dc 0x0001a4dc  54   55 .rodata ascii [%s]:[%s] - Sending sync volte enabled MODEM2 process.
+0x0001a514 0x0001a514  57   58 .rodata ascii [%s]:[%s] - Sending sync ca bands enabled MODEM2 process.
+0x0001a550 0x0001a550  65   66 .rodata ascii [%s]:[%s] - Sending sync get ca tri bands enabled MODEM2 process.
+0x0001a594 0x0001a594  65   66 .rodata ascii [%s]:[%s] - Sending sync set ca tri bands enabled MODEM2 process.
+0x0001a5d8 0x0001a5d8  67   68 .rodata ascii [%s]:[%s] - Sending sync get autonomous gap enabled MODEM2 process.
+0x0001a61c 0x0001a61c  59   60 .rodata ascii [%s]:[%s] - Sending sync set autonomous gap MODEM2 process.
+0x0001a658 0x0001a658  55   56 .rodata ascii [%s]:[%s] - Sending sync network attach MODEM2 process.
+0x0001a690 0x0001a690  50   51 .rodata ascii [%s]:[%s] - Sending sync emer mode MODEM2 process.
+0x0001a6c4 0x0001a6c4  61   62 .rodata ascii [%s]:[%s] - Sending sync volte session config MODEM2 process.
+0x0001a704 0x0001a704  60   61 .rodata ascii [%s]:[%s] - Sending sync ims presence config MODEM2 process.
+0x0001a744 0x0001a744  56   57 .rodata ascii [%s]:[%s] - Sending sync ims lvc enabled MODEM2 process.
+0x0001a780 0x0001a780  54   55 .rodata ascii [%s]:[%s] - Sending sync ims sip timer MODEM2 process.
+0x0001a7b8 0x0001a7b8  53   54 .rodata ascii [%s]:[%s] - Sending sync ims sip data MODEM2 process.
+0x0001a7f0 0x0001a7f0  53   54 .rodata ascii [%s]:[%s] - Sending sync ims sms data MODEM2 process.
+0x0001a828 0x0001a828  55   56 .rodata ascii [%s]:[%s] - Sending sync cdma ext timer MODEM2 process.
+0x0001a860 0x0001a860  49   50 .rodata ascii [%s]:[%s] - Sending sync hd voice MODEM2 process.
+0x0001a894 0x0001a894  49   50 .rodata ascii [%s]:[%s] - Sending sync amr mode MODEM2 process.
+0x0001a8c8 0x0001a8c8  52   53 .rodata ascii [%s]:[%s] - Sending sync amr wb mode MODEM2 process.
+0x0001a900 0x0001a900  57   58 .rodata ascii [%s]:[%s] - Sending sync volte dcmo timer MODEM2 process.
+0x0001a93c 0x0001a93c  67   68 .rodata ascii [%s]:[%s] - Sending sync get volte dcmo timer delay MODEM2 process.
+0x0001a980 0x0001a980  67   68 .rodata ascii [%s]:[%s] - Sending sync set volte dcmo timer delay MODEM2 process.
+0x0001a9c4 0x0001a9c4  60   61 .rodata ascii [%s]:[%s] - Sending sync volte silent redial MODEM2 process.
+0x0001aa04 0x0001aa04  70   71 .rodata ascii [%s]:[%s] - Sending sync volte source throttle publish MODEM2 process.
+0x0001aa4c 0x0001aa4c  62   63 .rodata ascii [%s]:[%s] - Sending sync volte max rcl entries MODEM2 process.
+0x0001aa8c 0x0001aa8c  51   52 .rodata ascii [%s]:[%s] - Sending sync tvolte hys MODEM2 process.
+0x0001aac0 0x0001aac0  53   54 .rodata ascii [%s]:[%s] - Sending sync tlte 911fail MODEM2 process.
+0x0001aaf8 0x0001aaf8  58   59 .rodata ascii [%s]:[%s] - Sending sync sd_config setting MODEM2 process.
+0x0001ab34 0x0001ab34  51   52 .rodata ascii [%s]:[%s] - Only IPV4 or IPV6 data calls available.
+0x0001ab68 0x0001ab68  30   31 .rodata ascii [%s]:[%s] - %s Start Data Call
+0x0001ab88 0x0001ab88  10   11 .rodata ascii /data_call
+0x0001ab94 0x0001ab94  49   50 .rodata ascii [%s]:[%s] - Error opening call semaphore errno=%d
+0x0001abc8 0x0001abc8  52   53 .rodata ascii [%s]:[%s] - Error timeout on call semaphore errno=%d
+0x0001ac00 0x0001ac00  76   77 .rodata ascii [%s]:[%s] - Error timeout unable to start data call in alloted time errno=%d
+0x0001ac50 0x0001ac50  51   52 .rodata ascii [%s]:[%s] - Sending sync start call MODEM2 process.
+0x0001ac84 0x0001ac84  30   31 .rodata ascii [%s]:[%s] - Call start Failed.
+0x0001aca4 0x0001aca4  15   16 .rodata ascii /data_call_sync
+0x0001acb4 0x0001acb4  54   55 .rodata ascii [%s]:[%s] - Error opening call sync semaphore errno=%d
+0x0001acec 0x0001acec  57   58 .rodata ascii [%s]:[%s] - Error timeout on call sync semaphore errno=%d
+0x0001ad28 0x0001ad28  79   80 .rodata ascii [%s]:[%s] - Error timeout unable to complete data call in alloted time errno=%d
+0x0001ad78 0x0001ad78  56   57 .rodata ascii [%s]:[%s] - Sending sync call get result MODEM2 process.
+0x0001adb4 0x0001adb4  48   49 .rodata ascii [%s]:[%s] - Error, call failed to connect, rc=%d
+0x0001ade8 0x0001ade8  69   70 .rodata ascii [%s]:[%s] - Error, call failed to connect, end_reason=%d wan_state=%d
+0x0001ae30 0x0001ae30  26   27 .rodata ascii [%s]:[%s] - Call Connected
+0x0001ae4c 0x0001ae4c  29   30 .rodata ascii [%s]:[%s] - %s Stop Data Call
+0x0001ae6c 0x0001ae6c  57   58 .rodata ascii [%s]:[%s] - Error timeout on stop call semaphore errno=%d
+0x0001aea8 0x0001aea8  75   76 .rodata ascii [%s]:[%s] - Error timeout unable to stop data call in alloted time errno=%d
+0x0001aef4 0x0001aef4  59   60 .rodata ascii [%s]:[%s] - Sending sync stop call MODEM2 process, uid: %s.
+0x0001af30 0x0001af30  28   29 .rodata ascii [%s]:[%s] - Call end failed.
+0x0001af50 0x0001af50  62   63 .rodata ascii [%s]:[%s] - Error timeout on stop call sync semaphore errno=%d
+0x0001af90 0x0001af90  88   89 .rodata ascii [%s]:[%s] - Error timeout unable to get stop data call response in alloted time errno=%d
+0x0001afec 0x0001afec  65   66 .rodata ascii [%s]:[%s] - Sending sync call get result MODEM2 process, uid: %s.
+0x0001b030 0x0001b030  51   52 .rodata ascii [%s]:[%s] - Error, call failed to disconnect, rc=%d
+0x0001b064 0x0001b064  57   58 .rodata ascii [%s]:[%s] - Call Disconnected, end_reason=%d wan_state=%d
+0x0001b0a0 0x0001b0a0  62   63 .rodata ascii [%s]:[%s] - Sending sync get reject cause code MODEM2 process.
+0x0001b0e0 0x0001b0e0  55   56 .rodata ascii [%s]:[%s] - Sending sync get world mode MODEM2 process.
+0x0001b118 0x0001b118  59   60 .rodata ascii [%s]:[%s] - Sending MODEM2_MSG_PCO_EVENT to MODEM2 process.
+0x0001b154 0x0001b154  72   73 .rodata ascii [%s]:[%s] - Sending MODEM2_MSG_SET_LTE_WIFI_5GHZ_COEX to MODEM2 process.
+0x0001b1a0 0x0001b1a0  50   51 .rodata ascii [%s]:[%s] - Sending set SIM status MODEM2 process.
+0x0001b1d4 0x0001b1d4  53   54 .rodata ascii [%s]:[%s] - Sending set PIN status to MODEM2 process.
+0x0001b20c 0x0001b20c  54   55 .rodata ascii [%s]:[%s] - Sending set WWAN status to MODEM2 process.
+0x0001b244 0x0001b244  54   55 .rodata ascii [%s]:[%s] - Sending set roam status to MODEM2 process.
+0x0001b27c 0x0001b27c  64   65 .rodata ascii [%s]:[%s] - Sending set network operator info to MODEM2 process.
+0x0001b2c0 0x0001b2c0  54   55 .rodata ascii [%s]:[%s] - Sending set network dbm to MODEM2 process.
+0x0001b2f8 0x0001b2f8  58   59 .rodata ascii [%s]:[%s] - Sending set network sig str to MODEM2 process.
+0x0001b334 0x0001b334  55   56 .rodata ascii [%s]:[%s] - Sending set network rssi to MODEM2 process.
+0x0001b36c 0x0001b36c  55   56 .rodata ascii [%s]:[%s] - Sending set network ecio to MODEM2 process.
+0x0001b3a4 0x0001b3a4  55   56 .rodata ascii [%s]:[%s] - Sending set network sinr to MODEM2 process.
+0x0001b3dc 0x0001b3dc  54   55 .rodata ascii [%s]:[%s] - Sending set network snr to MODEM2 process.
+0x0001b414 0x0001b414  55   56 .rodata ascii [%s]:[%s] - Sending set network rsrq to MODEM2 process.
+0x0001b44c 0x0001b44c  55   56 .rodata ascii [%s]:[%s] - Sending set network rsrp to MODEM2 process.
+0x0001b484 0x0001b484  54   55 .rodata ascii [%s]:[%s] - Sending set network lac to MODEM2 process.
+0x0001b4bc 0x0001b4bc  58   59 .rodata ascii [%s]:[%s] - Sending set network cell id to MODEM2 process.
+0x0001b4f8 0x0001b4f8  58   59 .rodata ascii [%s]:[%s] - Sending set network sid/nid to MODEM2 process.
+0x0001b534 0x0001b534  58   59 .rodata ascii [%s]:[%s] - Sending set network service to MODEM2 process.
+0x0001b570 0x0001b570  56   57 .rodata ascii [%s]:[%s] - Sending set voice service to MODEM2 process.
+0x0001b5ac 0x0001b5ac  61   62 .rodata ascii [%s]:[%s] - Sending set registration state to MODEM2 process.
+0x0001b5ec 0x0001b5ec  54   55 .rodata ascii [%s]:[%s] - Sending set cdma signal to MODEM2 process.
+0x0001b624 0x0001b624  53   54 .rodata ascii [%s]:[%s] - Sending set hdr signal to MODEM2 process.
+0x0001b65c 0x0001b65c  53   54 .rodata ascii [%s]:[%s] - Sending set gsm signal to MODEM2 process.
+0x0001b694 0x0001b694  55   56 .rodata ascii [%s]:[%s] - Sending set wcdma signal to MODEM2 process.
+0x0001b6cc 0x0001b6cc  53   54 .rodata ascii [%s]:[%s] - Sending set lte signal to MODEM2 process.
+0x0001b704 0x0001b704  54   55 .rodata ascii [%s]:[%s] - Sending set ddtm status to MODEM2 process.
+0x0001b73c 0x0001b73c  55   56 .rodata ascii [%s]:[%s] - Sending set network time to MODEM2 process.
+0x0001b774 0x0001b774  52   53 .rodata ascii [%s]:[%s] - Sending set plmn mode to MODEM2 process.
+0x0001b7ac 0x0001b7ac  56   57 .rodata ascii [%s]:[%s] - Sending set operator name to MODEM2 process.
+0x0001b7e8 0x0001b7e8  59   60 .rodata ascii [%s]:[%s] - Sending set network extender to MODEM2 process.
+0x0001b824 0x0001b824  52   53 .rodata ascii [%s]:[%s] - Sending set cdma uati to MODEM2 process.
+0x0001b85c 0x0001b85c  52   53 .rodata ascii [%s]:[%s] - Sending set plmn name to MODEM2 process.
+0x0001b894 0x0001b894  52   53 .rodata ascii [%s]:[%s] - Sending set oprt mode to MODEM2 process.
+0x0001b8cc 0x0001b8cc  51   52 .rodata ascii [%s]:[%s] - Sending set wap push to MODEM2 process.
+0x0001b900 0x0001b900  64   65 .rodata ascii [%s]:[%s] - Sending set sim activation status to MODEM2 process.
+0x0001b944 0x0001b944  66   67 .rodata ascii [%s]:[%s] - Sending set rf band conflict status to MODEM2 process.
+0x0001b988 0x0001b988  58   59 .rodata ascii [%s]:[%s] - Sending set pip tone status to MODEM2 process.
+0x0001b9c4 0x0001b9c4  64   65 .rodata ascii [%s]:[%s] - Sending set emergency mode status to MODEM2 process.
+0x0001ba08 0x0001ba08  68   69 .rodata ascii [%s]:[%s] - Sending set cat launch browser string to MODEM2 process.
+0x0001ba50 0x0001ba50  66   67 .rodata ascii [%s]:[%s] - Sending set cat display text string to MODEM2 process.
+0x0001ba94 0x0001ba94  65   66 .rodata ascii [%s]:[%s] - Sending set roam ctrl notification to MODEM2 process.
+0x0001bad8 0x0001bad8  67   68 .rodata ascii [%s]:[%s] - Sending set voice registration state to MODEM2 process.
+0x0001bb1c 0x0001bb1c  56   57 .rodata ascii [%s]:[%s] - Sending set voice mcc mnc to MODEM2 process.
+0x0001bb58 0x0001bb58  58   59 .rodata ascii [%s]:[%s] - Sending set voice plmn name to MODEM2 process.
+0x0001bb94 0x0001bb94  52   53 .rodata ascii [%s]:[%s] - Sending set voice lac to MODEM2 process.
+0x0001bbcc 0x0001bbcc  56   57 .rodata ascii [%s]:[%s] - Sending set voice cell id to MODEM2 process.
+0x0001bc08 0x0001bc08  61   62 .rodata ascii [%s]:[%s] - Sending set mns selection info to MODEM2 process.
+0x0001bc48 0x0001bc48  34   35 .rodata ascii [%s]:[%s] - %s Enable Data Call %d
+0x0001bc6c 0x0001bc6c  59   60 .rodata ascii [%s]:[%s] - Error timeout on enable call semaphore errno=%d
+0x0001bca8 0x0001bca8  77   78 .rodata ascii [%s]:[%s] - Error timeout unable to enable data call in alloted time errno=%d
+0x0001bcf8 0x0001bcf8  66   67 .rodata ascii [%s]:[%s] - Sending MODEM2_MSG_DATA_CALL_ENABLE to MODEM2 process.
+0x0001bd3c 0x0001bd3c  57   58 .rodata ascii [%s]:[%s] - Sending call response info to MODEM2 process.
+0x0001bd78 0x0001bd78  55   56 .rodata ascii [%s]:[%s] - Sending connection state to MODEM2 process.
+0x0001bdb0 0x0001bdb0  58   59 .rodata ascii [%s]:[%s] - Sending voice enabled state to MODEM2 process.
+0x0001bdec 0x0001bdec  46   47 .rodata ascii [%s]:[%s] - Getting lab test mode enable flag.
+0x0001be1c 0x0001be1c  23   24 .rodata ascii modem2.labtest.settings
+0x0001be34 0x0001be34  67   68 .rodata ascii [%s]:[%s] - Sending MODEM2_MSG_REJECT_CAUSE_CODE to MODEM2 process.
+0x0001be78 0x0001be78  74   75 .rodata ascii [%s]:[%s] - Sending MODEM2_MSG_GET_CALL_THROTTLE_STATUS to MODEM2 process.
+0x0001bec4 0x0001bec4  66   67 .rodata ascii [%s]:[%s] - from database mccmnc contents: %s, gid1: %s, gid2: %s.
+0x0001bf08 0x0001bf08  71   72 .rodata ascii [%s]:[%s] - Sending MODEM2_MSG_GET_APN_FROM_DATABASE to MODEM2 process.
+0x0001bf50 0x0001bf50  78   79 .rodata ascii [%s]:[%s] - Sending MODEM2_MSG_GET_CUSTOM_APN_FROM_DATABASE to MODEM2 process.
+0x0001bfa0 0x0001bfa0  76   77 .rodata ascii [%s]:[%s] - Sending MODEM2_MSG_SET_CUSTOM_APN_TO_DATABASE to MODEM2 process.
+0x0001bff4 0x0001bff4  62   63 .rodata ascii [%s]:[%s] - Sending MODEM2_MSG_VALIDATE_APN to MODEM2 process.
+0x0001c034 0x0001c034  65   66 .rodata ascii [%s]:[%s] - Sending MODEM2_MSG_RUN_RAW_COMMAND to MODEM2 process.
+0x0001c078 0x0001c078  18   19 .rodata ascii MDM_MAIN: success.
+0x0001c08c 0x0001c08c  24   25 .rodata ascii MDM_MAIN: general error.
+0x0001c0a8 0x0001c0a8  60   61 .rodata ascii MDM_MAIN: one or more bad parameters passed into a function.
+0x0001c0e8 0x0001c0e8  74   75 .rodata ascii MDM_MAIN: one or more buffer type parameters passed into API is too small.
+0x0001c134 0x0001c134  32   33 .rodata ascii MDM_MAIN: feature not supported.
+0x0001c158 0x0001c158  30   31 .rodata ascii MDM_MAIN: process not running.
+0x0001c178 0x0001c178  70   71 .rodata ascii MDM_MAIN: a device reset is required for the operation to take effect.
+0x0001c1c0 0x0001c1c0  34   35 .rodata ascii MDM_MAIN: feature not implemented.
+0x0001c1e4 0x0001c1e4  56   57 .rodata ascii MDM_MAIN: an error reading from the sim was encountered.
+0x0001c220 0x0001c220  32   33 .rodata ascii MDM_MAIN: authentication failed.
+0x0001c244 0x0001c244  30   31 .rodata ascii MDM_MAIN: WAN technology none.
+0x0001c264 0x0001c264  22   23 .rodata ascii MDM_MAIN: APN invalid.
+0x0001c27c 0x0001c27c  26   27 .rodata ascii MDM_MAIN: IP type invalid.
+0x0001c298 0x0001c298  35   36 .rodata ascii MDM_MAIN: APN alredy authenticated.
+0x0001c2bc 0x0001c2bc  28   29 .rodata ascii MDM_MAIN: APN not connected.
+0x0001c2dc 0x0001c2dc  46   47 .rodata ascii MDM_MAIN: APN still in use by another process.
+0x0001c30c 0x0001c30c  48   49 .rodata ascii MDM_MAIN: A network scan is already in progress.
+0x0001c340 0x0001c340  36   37 .rodata ascii MDM_MAIN: No scan results available.
+0x0001c368 0x0001c368  78   79 .rodata ascii MDM_MAIN: The linux PRI'd carrier does not match the modem defined carrier id.
+0x0001c3b8 0x0001c3b8  45   46 .rodata ascii MDM_MAIN: APN not found in Auto APN Database.
+0x0001c3e8 0x0001c3e8  49   50 .rodata ascii MDM_MAIN: The underlying modem command timed out.
+0x0001c41c 0x0001c41c  24   25 .rodata ascii MDM_MAIN: unknown error.
+0x0001c438 0x0001c438  17   18 .rodata ascii modem2_start_call
+0x0001c44c 0x0001c44c  16   17 .rodata ascii modem2_stop_call
+0x0001c460 0x0001c460  23   24 .rodata ascii modem2_enable_data_call
+0x0001c478 0x0001c478  27   28 .rodata ascii /Settings/Modem/RoamEnabled
+0x0001c494 0x0001c494  20   21 .rodata ascii modem2.roam.settings
+0x0001c4ac 0x0001c4ac  31   32 .rodata ascii /Settings/Modem/IntlRoamEnabled
+0x0001c4cc 0x0001c4cc  32   33 .rodata ascii /Settings/Modem/CertifiedCarrier
+0x0001c4f0 0x0001c4f0  26   27 .rodata ascii /Settings/Modem/MNSTimeout
+0x0001c50c 0x0001c50c  30   31 .rodata ascii /Settings/Modem/LabTestEnabled
+0x0001c52c 0x0001c52c  35   36 .rodata ascii /Settings/Modem/PreferredTechnology
+0x0001c550 0x0001c550  26   27 .rodata ascii modem2.technology.settings
+0x0001c56c 0x0001c56c  25   26 .rodata ascii modem2.roam_intl.settings
+0x0001c588 0x0001c588  28   29 .rodata ascii modem2.cert_carrier.settings
+0x0001c5a8 0x0001c5a8  27   28 .rodata ascii modem2.mns_timeout.settings
+0x0001c5c4 0x0001c5c4  23   24 .rodata ascii modem2.labtest.settings
+0x0001c5dc 0x0001c5dc  41   42 .rodata ascii [%s]:[%s] - powersave_notify state=NORMAL
+0x0001c608 0x0001c608   8    9 .rodata ascii MDM_MAIN
+0x0001c614 0x0001c614  42   43 .rodata ascii [%s]:[%s] - powersave_notify state=SUSPEND
+0x0001c640 0x0001c640  44   45 .rodata ascii [%s]:[%s] - powersave_notify state=DEEPSLEEP
+0x0001c670 0x0001c670  45   46 .rodata ascii [%s]:[%s] - %s: Starting modem2 factory reset
+0x0001c6a0 0x0001c6a0   8    9 .rodata ascii MDM_MAIN
+0x0001c6ac 0x0001c6ac  10   11 .rodata ascii /modem2_mq
+0x0001c6b8 0x0001c6b8  77   78 .rodata ascii [%s]:[%s] - %s: modem2 factory reset aborting, modem2 process is not running.
+0x0001c708 0x0001c708  62   63 .rodata ascii [%s]:[%s] - Sending sync auto factory reset to MODEM2 process.
+0x0001c748 0x0001c748  52   53 .rodata ascii [%s]:[%s] - %s: modem2 factory reset done with rc=%d
+0x0001c780 0x0001c780  20   21 .rodata ascii modem2_factory_reset
+0x0001c798 0x0001c798   4    5 .rodata ascii NONE
+0x0001c7a0 0x0001c7a0   4    5 .rodata ascii GPRS
+0x0001c7a8 0x0001c7a8   5    6 .rodata ascii 1xRTT
+0x0001c7b0 0x0001c7b0   4    5 .rodata ascii EVDO
+0x0001c7b8 0x0001c7b8   4    5 .rodata ascii UMTS
+0x0001c7c0 0x0001c7c0   5    6 .rodata ascii HSDPA
+0x0001c7c8 0x0001c7c8   4    5 .rodata ascii EDGE
+0x0001c7d0 0x0001c7d0   9   10 .rodata ascii EVDO RevA
+0x0001c7dc 0x0001c7dc   5    6 .rodata ascii HSUPA
+0x0001c7e4 0x0001c7e4   5    6 .rodata ascii HSPA+
+0x0001c7ec 0x0001c7ec   7    8 .rodata ascii HSPA+DC
+0x0001c7f8 0x0001c7f8   9   10 .rodata ascii EVDO RevB
+0x0001c804 0x0001c804   5    6 .rodata ascii eHRPD
+0x0001c80c 0x0001c80c   6    7 .rodata ascii LTE CA
+0x0001c814 0x0001c814   7    8 .rodata ascii Unknown
+0x0001c81c 0x0001c81c  20   21 .rodata ascii Unknown/Initializing
+0x0001c834 0x0001c834  12   13 .rodata ascii Initializing
+0x0001c844 0x0001c844   9   10 .rodata ascii Searching
+0x0001c850 0x0001c850   4    5 .rodata ascii Idle
+0x0001c858 0x0001c858  10   11 .rodata ascii Connecting
+0x0001c864 0x0001c864   9   10 .rodata ascii Connected
+0x0001c870 0x0001c870   7    8 .rodata ascii Dormant
+0x0001c878 0x0001c878  13   14 .rodata ascii Disconnecting
+0x0001c888 0x0001c888  10   11 .rodata ascii Activating
+0x0001c894 0x0001c894  10   11 .rodata ascii No Service
+0x0001c8a0 0x0001c8a0  13   14 .rodata ascii Not Activated
+0x0001c8b0 0x0001c8b0  21   22 .rodata ascii /opt/nvtl/data/modem2
+0x0001c8c8 0x0001c8c8   4    5 .rodata ascii %s%s
+=== IMPORTS ===
+nth      vaddr bind   type   lib name                                 
+----------------------------------------------------------------------
+  1 0x00003c08 WEAK   NOTYPE     __gmon_start__
+  2 0x00003e18 GLOBAL FUNC       unlink
+  3 0x00003e0c GLOBAL FUNC       read
+  4 0x00003e00 GLOBAL FUNC       close
+  5 ---------- WEAK   NOTYPE     _ITM_deregisterTMCloneTable
+  6 0x00003df4 GLOBAL FUNC       fsync
+  7 ---------- WEAK   NOTYPE     _ITM_registerTMCloneTable
+  8 0x00003c14 WEAK   FUNC       __cxa_finalize
+  9 ---------- WEAK   NOTYPE     _Jv_RegisterClasses
+ 10 0x00003c20 GLOBAL FUNC       memset
+ 11 0x00003c2c GLOBAL FUNC       strlen
+ 12 0x00003c38 GLOBAL FUNC       strncat
+ 13 0x00003c44 GLOBAL FUNC       snprintf
+ 14 0x00003c50 GLOBAL FUNC       msgq_does_queue_exist
+ 15 0x00003c5c GLOBAL FUNC       mifi_dbg_get_level_name
+ 16 0x00003c68 GLOBAL FUNC       mifi_dbg_log
+ 17 0x00003c74 GLOBAL FUNC       msgq_send_sync
+ 18 0x00003c80 GLOBAL FUNC       settings_get_setting
+ 19 0x00003c8c GLOBAL FUNC       mifi_dbg_syslog
+ 20 0x00003de8 GLOBAL FUNC       write
+ 21 0x00003c98 GLOBAL FUNC       strcmp
+ 22 0x00003ddc GLOBAL FUNC       open
+ 23 0x00003dd0 GLOBAL FUNC       mkdir
+ 24 0x00003ca4 GLOBAL FUNC       memcpy
+ 25 0x00003dc4 GLOBAL FUNC       access
+ 26 0x00003cb0 GLOBAL FUNC       file_read_as_int
+ 27 0x00003cbc GLOBAL FUNC       file_read
+ 28 0x00003cc8 GLOBAL FUNC       strncpy
+ 29 0x00003cd4 GLOBAL FUNC       msgq_send_sync_large_payload
+ 30 0x00003cec GLOBAL FUNC       settings_set_setting
+ 31 0x00003cf8 GLOBAL FUNC       msgq_send_async
+ 32 0x00003d04 GLOBAL FUNC       strcpy
+ 33 0x00003d10 GLOBAL FUNC       sem_open
+ 34 0x00003d1c GLOBAL FUNC       __errno_location
+ 35 0x00003d28 GLOBAL FUNC       clock_gettime
+ 36 0x00003d34 GLOBAL FUNC       sem_timedwait
+ 37 0x00003d40 GLOBAL FUNC       watchdog_application_send_keep_alive
+ 38 0x00003d4c GLOBAL FUNC       sem_close
+ 39 0x00003d58 GLOBAL FUNC       sem_post
+ 40 0x00003d64 GLOBAL FUNC       sprintf
+ 41 0x00003e24 GLOBAL FUNC       raise
+ 42 0x00003d70 GLOBAL FUNC       xmldata_getuint32_default
+ 43 0x00003d7c GLOBAL FUNC       xmldata_setuint32
+ 44 0x00003d88 GLOBAL FUNC       xmldata_save
+ 45 0x00003d94 GLOBAL FUNC       MsgBusSetInt32
+ 46 0x00003da0 GLOBAL FUNC       xmldata_getuint32
+ 47 0x00003dac GLOBAL FUNC       xmldata_getstring
+=== SECTIONS ===
+     paddr    size      vaddr   vsize align perm name                   type              flags         
+--------------------------------------------------------------------------------------------------------
+0x00000000     0x0 ----------     0x0   0x0 ----                        NULL              
+0x00000114    0x24 0x00000114    0x24   0x0 -r-- .note.gnu.build-id     NOTE              alloc
+0x00000138  0x1160 0x00000138  0x1160   0x0 -r-- .dynsym                DYNSYM            alloc
+0x00001298  0x1cec 0x00001298  0x1cec   0x0 -r-- .dynstr                STRTAB            alloc
+0x00002f84   0x7bc 0x00002f84   0x7bc   0x0 -r-- .gnu.hash              GNU_HASH          alloc
+0x00003740   0x22c 0x00003740   0x22c   0x0 -r-- .gnu.version           VERSYM            alloc
+0x0000396c    0x1c 0x0000396c    0x1c   0x0 -r-- .gnu.version_d         VERDEF            alloc
+0x00003988    0x60 0x00003988    0x60   0x0 -r-- .gnu.version_r         VERNEED           alloc
+0x000039e8    0x90 0x000039e8    0x90   0x0 -r-- .rel.dyn               REL               alloc
+0x00003a78   0x170 0x00003a78   0x170   0x0 -r-- .rel.plt               REL               alloc
+0x00003be8     0xc 0x00003be8     0xc   0x0 -r-x .init                  PROGBITS          alloc,execute
+0x00003bf4   0x23c 0x00003bf4   0x23c   0x0 -r-x .plt                   PROGBITS          alloc,execute
+0x00003e30 0x150b0 0x00003e30 0x150b0   0x0 -r-x .text                  PROGBITS          alloc,execute
+0x00018ee0     0x8 0x00018ee0     0x8   0x0 -r-x .fini                  PROGBITS          alloc,execute
+0x00018ee8  0x39e8 0x00018ee8  0x39e8   0x0 -r-- .rodata                PROGBITS          alloc
+0x0001c8d0     0x4 0x0001c8d0     0x4   0x0 -r-- .eh_frame              PROGBITS          alloc
+0x0001c8d4     0x8 0x0001c8d4     0x8   0x0 -r-- .eh_frame_hdr          PROGBITS          alloc
+0x0001c8dc   0x208 0x0001d8dc   0x208   0x0 -rw- .dynamic               DYNAMIC           write,alloc
+0x0001cae4     0x4 0x0001dae4     0x4   0x0 -rw- .data                  PROGBITS          write,alloc
+0x0001cae8     0x4 0x0001dae8     0x4   0x0 -rw- .init_array            INIT_ARRAY        write,alloc
+0x0001caec     0x4 0x0001daec     0x4   0x0 -rw- .fini_array            FINI_ARRAY        write,alloc
+0x0001caf0     0x4 0x0001daf0     0x4   0x0 -rw- .jcr                   PROGBITS          write,alloc
+0x0001caf4     0x0 0x0001daf4     0x0   0x0 -rw- .tm_clone_table        PROGBITS          write,alloc
+0x0001caf4   0x100 0x0001daf4   0x100   0x0 -rw- .got                   PROGBITS          write,alloc
+0x0001cbf4     0x0 0x0001dbf4     0x1   0x0 -rw- .bss                   NOBITS            write,alloc
+0x0001cbf4    0x12 ----------    0x12   0x0 ---- .comment               PROGBITS          merge,strings
+0x0001cc06   0xf66 ----------   0xf66   0x0 ---- .GCC.command.line      PROGBITS          merge,strings
+0x0001db6c    0x20 ----------    0x20   0x0 ---- .debug_frame           PROGBITS          
+0x0001db8c   0x155 ----------   0x155   0x0 ---- .debug_line            PROGBITS          
+0x0001dce1   0x250 ----------   0x250   0x0 ---- .debug_info            PROGBITS          
+0x0001df31    0x28 ----------    0x28   0x0 ---- .debug_abbrev          PROGBITS          
+0x0001df60    0x40 ----------    0x40   0x0 ---- .debug_aranges         PROGBITS          
+0x0001dfa0    0x1c ----------    0x1c   0x0 ---- .note.gnu.gold-version NOTE              
+0x0001dfbc    0x33 ----------    0x33   0x0 ---- .ARM.attributes        LOPROC+0x00000003 
+0x0001dff0  0x31c0 ----------  0x31c0   0x0 ---- .symtab                SYMTAB            
+0x000211b0  0x1cff ----------  0x1cff   0x0 ---- .strtab                STRTAB            
+0x00022eaf   0x181 ----------   0x181   0x0 ---- .shstrtab              STRTAB            

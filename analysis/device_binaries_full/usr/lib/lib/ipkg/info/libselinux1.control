@@ -1,0 +1,16 @@
+Package: libselinux1
+Version: 2.4-r0
+Description: SELinux library and simple utilities
+ libselinux provides an API for SELinux applications to get and set
+ process and file security contexts and to obtain security policy
+ decisions.  Required for any applications that use the SELinux API.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: PD
+Architecture: armv7a-vfp-neon
+OE: libselinux
+Homepage: https://github.com/SELinuxProject
+Depends: libpcre1 (>= 8.38), libc6 (>= 2.22)
+Provides: libselinux
+Source: https://raw.githubusercontent.com/wiki/SELinuxProject/selinux/files/releases/20150202/libselinux-2.4.tar.gz file://libselinux-drop-Wno-unused-but-set-variable.patch file://libselinux-make-O_CLOEXEC-optional.patch file://libselinux-make-SOCK_CLOEXEC-optional.patch file://libselinux-define-FD_CLOEXEC-as-necessary.patch file://libselinux-get-pywrap-depends-on-selinux.py.patch

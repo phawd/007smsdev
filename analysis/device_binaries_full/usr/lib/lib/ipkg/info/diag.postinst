@@ -1,0 +1,9 @@
+
+       if true; then
+        [ -n "$D" ] && OPT="-r $D" || OPT="-s"
+        update-rc.d $OPT -f start_diag_qshrink4_daemon remove
+        update-rc.d $OPT start_diag_qshrink4_daemon start 15 2 3 4 5 . stop 15 0 6 .
+
+        update-rc.d $OPT -f chgrp-diag remove
+        update-rc.d $OPT chgrp-diag start 15 2 3 4 5 .
+       fi

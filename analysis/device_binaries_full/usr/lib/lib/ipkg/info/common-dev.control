@@ -1,0 +1,14 @@
+Package: common-dev
+Version: git-r8
+Description: common version git-r8 - Development files
+ Common headers  This package contains symbolic links, header files, and
+ related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: armv7a-vfp-neon
+OE: common
+Homepage: http://support.cdmatech.com
+Depends: common (= git-r8)
+Source: file://android_compat/common/inc/

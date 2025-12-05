@@ -1,0 +1,14 @@
+Package: libsparse0
+Version: 1.0-r0
+Description: libsparse version 1.0-r0
+ Build Android libsprase
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Apache-2.0
+Architecture: armv7a-vfp-neon
+OE: libsparse
+Homepage: http://developer.android.com/
+Depends: libz1 (>= 1.2.8), libc6 (>= 2.22)
+Provides: libsparse
+Source: file://libsparse

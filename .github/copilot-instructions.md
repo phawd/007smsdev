@@ -2,189 +2,68 @@
 
 ## Project Overview
 
-Android SMS/MMS/RCS testing suite with RFC compliance (GSM 03.40, OMA MMS, GSMA RCS UP 2.4). Tests messaging protocols including Flash SMS (Class 0), Silent SMS (Type 0), and direct AT modem commands.
+ZeroSMS is a dual-purpose project:
+1.  **Android App**: A comprehensive SMS/MMS/RCS testing suite with RFC compliance (GSM 03.40, OMA MMS, GSMA RCS UP 2.4).
+2.  **Research Suite**: A set of Python tools and documentation for reverse-engineering modem firmware (specifically Inseego MiFi), analyzing NV items, and interacting with modems via AT commands.
 
 ## Architecture
 
-```
-app/src/main/java/com/zerosms/testing/
-├── core/
-│   ├── model/Models.kt           # Message, TestResult, MessageType, DeliveryStatus enums
-│   ├── sms/SmsManagerWrapper.kt  # SMS operations, AT command fallback
-│   ├── at/
-│   │   ├── AtCommandManager.kt   # Generic modem AT commands (root)
-│   │   ├── HidlAtciManager.kt    # HIDL-based AT (API 26+)
-│   │   └── MipcDeviceManager.kt  # MediaTek IPC protocol
-│   ├── root/RootAccessManager.kt # Root detection and execution
-│   ├── qualcomm/QualcommDiagManager.kt  # Diag USB mode control
-│   ├── mms/MmsManagerWrapper.kt  # MMS PDU encoding
-│   ├── rcs/RcsManagerWrapper.kt  # RCS Universal Profile
-│   ├── device/DeviceInfoManager.kt  # Chipset-specific modem detection
-│   ├── receiver/SmsReceiver.kt   # Incoming SMS capture (incl. Class 0/Type 0)
-│   └── Logger.kt                 # Debug-only logging utility
-├── ui/screens/              # Jetpack Compose screens (home/, monitor/, test/, settings/)
-└── ZeroSMSApplication.kt
-```
+### Android App (`app/`)
+- **Core Logic**: `com.zerosms.testing.core`
+    - `model/`: Data classes (`Message`, `TestResult`) and Enums (`MessageType`, `SmsEncoding`).
+    - `sms/`: `SmsManagerWrapper` handles Android SMS APIs.
+    - `at/`: `AtCommandManager` (Generic), `HidlAtciManager` (HIDL), `MipcDeviceManager` (MediaTek) for direct modem control.
+    - `root/`: `RootAccessManager` for executing root commands.
+- **UI**: Jetpack Compose in `com.zerosms.testing.ui`.
+- **State**: `StateFlow` used for reactive UI updates.
+
+### Research & Tools (`tools/`, `analysis/`)
+- **CLI**: `tools/zerosms_cli.py` is the primary entry point for desktop-based modem interaction via ADB.
+- **Analysis**: `analysis/` and `arm_analysis_tools/` contain scripts for binary analysis (Ghidra/IDA helpers) and NV item exploration.
+- **Docs**: `docs/` contains deep technical documentation on device specifics (MiFi, Android), RFC compliance, and reverse engineering findings.
 
 ## Critical Patterns
 
-### SMS Encoding (GSM 03.38)
+### Android Development
+- **SMS Encoding**: Always use `smsManager.calculateSmsInfo(text, SmsEncoding.AUTO)` before sending.
+- **Message Types**: New types must be added to `MessageType` enum, handled in `SmsManagerWrapper`, and added to UI.
+- **Logging**: Use `com.zerosms.testing.core.Logger` instead of `android.util.Log`.
+- **Root Access**: Check `RootAccessManager.hasRootAccess()` before attempting AT commands or direct device file access.
 
-Always use `calculateSmsInfo()` before sending to determine encoding and parts:
+### Research & CLI
+- **Modem Interaction**: Use `zerosms_cli.py` for reliable AT command execution and mode switching.
+    - Example: `python3 tools/zerosms_cli.py sms +15551234567 "Test" --auto`
+- **Device Discovery**: `python3 tools/zerosms_cli.py probe --deep` is essential for finding modem ports on new devices.
+- **Phase Tracking**: The project uses `PHASE_X_*.md` files in the root to track active research and reverse engineering tasks. Check the latest Phase file for current objectives.
 
-```kotlin
-val smsInfo = smsManager.calculateSmsInfo(text, SmsEncoding.AUTO)
-// GSM 7-bit: 160 chars single, 153 per part (concatenated)
-// UCS-2: 70 chars single, 67 per part (concatenated)
-```
+## Workflows
 
-### Message Type Flow
-
-1. Add enum to `MessageType` in `Models.kt`
-2. Implement in `SmsManagerWrapper.sendSms()` → dispatches by `message.type`
-3. Add UI card in `HomeScreen.kt`
-4. Document RFC in `docs/RFC_COMPLIANCE.md`
-
-### AT Commands (Root Required)
-
-`AtCommandManager` and `RootAccessManager` are singletons. SMS sending auto-falls back:
-
-```kotlin
-// SmsManagerWrapper tries AT commands first for Class 0/Type 0
-if (atCommandsAvailable && AtCommandManager.isInitialized()) {
-    // Direct modem PDU send
-} else {
-    // Standard Android SmsManager API
-}
-```
-
-Modem paths: `/dev/smd0`, `/dev/smd11`, `/dev/ttyUSB*` - detected via `DeviceInfoManager`
-
-### State Management
-
-Use `StateFlow` for reactive updates. UI collects with `collectAsState()`:
-
-```kotlin
-val messageStatus: Flow<Map<String, DeliveryStatus>> = _messageStatus.asStateFlow()
-```
-
-### Logging
-
-Use `Logger` object (not `Log.d` directly) - suppresses debug logs in release builds:
-
-```kotlin
-Logger.d(TAG, "Debug message")  // Only in BuildConfig.DEBUG
-Logger.e(TAG, "Error", exception)  // Always logged
-```
-
-## Build Commands
-
+### Android Build & Test
 ```bash
-./gradlew assembleDebug       # Debug APK
-./gradlew assembleRelease     # Release with ProGuard
-./gradlew installDebug        # Install on connected device
-./gradlew test                # Unit tests
-./gradlew connectedAndroidTest # Instrumentation tests (requires device)
+./gradlew assembleDebug        # Build Debug APK
+./gradlew installDebug         # Install on device
+./gradlew connectedAndroidTest # Run instrumentation tests (Device Required)
 ```
 
-## Tech Stack
+### Research & Analysis
+- **Probe Device**: `python3 tools/zerosms_cli.py probe --deep --include-response`
+- **Diag Mode**: `python3 tools/zerosms_cli.py diag --ai` (Auto-detects profile)
+- **Binary Analysis**: Use scripts in `arm_analysis_tools/` for Ghidra/IDA integration.
 
-- Kotlin 2.1.0, Compose BOM 2024.11.00, Material 3
-- Min SDK 24, Target/Compile SDK 35, Java 21
-- Coroutines + StateFlow, Navigation Compose
-- DataStore for preferences, WorkManager for background ops
-
-## Desktop CLI Helper
-
-`tools/zerosms_cli.py` mirrors app functionality via ADB:
-
-```bash
-python3 tools/zerosms_cli.py probe --deep  # Scan modem devices
-python3 tools/zerosms_cli.py sms +15551234567 "Hello" --auto  # Send via AT
-python3 tools/zerosms_cli.py diag --profile generic  # Enable Qualcomm diag
-```
-
-## Key Constants (SmsManagerWrapper)
-
-```kotlin
-SMS_MAX_LENGTH_GSM = 160      // Single part GSM 7-bit
-SMS_MAX_LENGTH_UNICODE = 70   // Single part UCS-2
-SMS_CONCAT_MAX_LENGTH_GSM = 153   // Per part with UDH
-SMS_CONCAT_MAX_LENGTH_UNICODE = 67
-```
+## Key Files & Directories
+- `app/src/main/java/com/zerosms/testing/core/model/Models.kt`: Central definitions for Message types and Enums.
+- `tools/zerosms_cli.py`: The "Swiss Army Knife" for modem interaction.
+- `docs/ANDROID_DEVICE_GUIDE.md`: Setup guide for Android devices.
+- `docs/MIFI_DEVICE_GUIDE.md`: Setup guide for Inseego MiFi devices (Linux-based).
+- `PHASE_*`: Current project status and plans.
 
 ## Common Gotchas
+- **Device Specifics**: Android and MiFi devices behave very differently. Check `docs/` for specific guides.
+- **Root Latency**: Root commands via ADB can be slow. Always use generous timeouts (30s+).
+- **Modem Paths**: `/dev/smd*` (Qualcomm), `/dev/ttyUSB*` (Generic), `/dev/at_mdm0` (MiFi). Auto-detect using `DeviceInfoManager` or CLI probe.
+- **Legacy Code**: `legacy/` contains reference implementations. Do not modify.
 
-- Flash SMS (`MessageClass.CLASS_0`) behavior varies by device/carrier
-- Silent SMS (`protocolId = 0x40`) may be blocked by carriers
-- RCS requires Google Play Services + carrier support
-- Root detection caches result - restart app after gaining root
-- `IncomingSmsDatabase` is in-memory only (no Room persistence yet)
-
-## Legacy Reference
-
-The original Java project lives in `legacy/silent-sms-flash1/` - use for:
-
-- Comparing behavior when porting features forward
-- Historical APK builds for compliance review
-- Groovy Gradle scripts reference (vs current Kotlin DSL)
-
-**Do not modify legacy/** - it's read-only reference material.
-
-## Testing Requirements
-
-**Device required**: Instrumentation tests (`connectedAndroidTest`) and all SMS/AT functionality require a real Android device connected via ADB. Emulators cannot send real SMS or access modem hardware.
-
-```bash
-adb devices                    # Verify device connected
-./gradlew connectedAndroidTest # Run on-device tests
-```
-
-## Device-Specific Guides
-
-For detailed device setup, discovery, and troubleshooting, see the dedicated guides:
-
-| Device Type | Guide                                                           | Description                                    |
-| ----------- | --------------------------------------------------------------- | ---------------------------------------------- |
-| **Android** | [docs/ANDROID_DEVICE_GUIDE.md](../docs/ANDROID_DEVICE_GUIDE.md) | Standard Android phones/tablets                |
-| **MiFi**    | [docs/MIFI_DEVICE_GUIDE.md](../docs/MIFI_DEVICE_GUIDE.md)       | Inseego MiFi 8800L, M2000, M2100 (Linux-based) |
-
-### Quick Device Type Detection
-
-```bash
-# Step 1: Check if device responds to ADB
-adb devices -l
-
-# Step 2: Detect OS type
-adb shell "cat /etc/os-release 2>/dev/null"       # Linux-based (MiFi)
-adb shell "getprop ro.build.product 2>/dev/null"  # Android
-
-# Step 3: Branch to appropriate guide
-# - MiFiOS2: See docs/MIFI_DEVICE_GUIDE.md
-# - Android: See docs/ANDROID_DEVICE_GUIDE.md
-```
-
-## Documentation Index
-
-| Document                              | Purpose                                      |
-| ------------------------------------- | -------------------------------------------- |
-| `docs/ANDROID_DEVICE_GUIDE.md`        | Android device setup and AT commands         |
-| `docs/MIFI_DEVICE_GUIDE.md`           | MiFi device setup, CLI tools, carrier config |
-| `docs/MIFI_8800L_DEVICE_REFERENCE.md` | Comprehensive MiFi hardware catalog          |
-| `docs/RFC_COMPLIANCE.md`              | Protocol implementation details              |
-| `docs/ROOT_ACCESS_GUIDE.md`           | AT commands, MMSC config                     |
-| `docs/TESTING_GUIDE.md`               | User testing workflows                       |
-| `docs/MEDIATEK_FLASH_SMS_RESEARCH.md` | MediaTek device quirks                       |
-| `docs/SESSION_2_FINDINGS.md`          | Experimental session notes                   |
-
-## AI Agent Integration
-
-For AI agents working autonomously with devices:
-
-1. **Always use 30+ second timeouts** for device operations - modems are slow
-2. **Check prerequisites first**: `adb`, `fastboot`, `python3`, pyserial installed
-3. **Detect device type FIRST**: Android vs MiFiOS (Linux) requires different commands
-4. **Escalate gracefully**: ADB → fastboot → EDL → web interface → manual intervention
-5. **Log everything**: Use `python3 tools/zerosms_cli.py probe --deep --include-response > probe-log.txt`
-6. **Handle driver issues**: Windows devices may show "Unknown" status - need admin
-7. **Document findings**: Update `docs/SESSION_*_FINDINGS.md` with device-specific discoveries
+## AI Agent Guidelines
+- **Context First**: Before suggesting code, check if the task relates to the Android App or the Research Tools.
+- **Device Awareness**: When writing scripts, handle both Android (ADB/Shell) and Linux (MiFi) environments.
+- **Safety**: Avoid commands that could brick a modem (e.g., raw NV writes) without explicit user confirmation.

@@ -1,0 +1,4 @@
+#!/bin/sh
+if [ -z "$D" ]; then
+	/etc/init.d/ipa_fws.sh stop
+fi

@@ -3,10 +3,7 @@
 # Target Binary: libmodem2_api.so (ARM 32/64-bit)
 # Usage: Load this script in Ghidra and run via Script Manager
 
-from ghidra.program.model.address import AddressSet
-from ghidra.program.model.symbol import SourceType
-from ghidra.program.model.listing import CodeUnit
-import sys
+
 
 class SPCFunctionAnalyzerGhidra:
     """Ghidra-based analyzer for SPC validation and bypass opportunities"""
@@ -67,12 +64,14 @@ class SPCFunctionAnalyzerGhidra:
                 if unit.getMnemonicString() == "ds":  # Data string
                     try:
                         value = unit.toString()
-                        if any(keyword.lower() in value.lower() for keyword in self.keywords):
+                        if any(keyword.lower() in value.lower()
+                               for keyword in self.keywords):
                             self.log(f"[+] Found string: '{value}' at {addr}")
                             string_count += 1
                             
                             # Find references to this string
-                            refs = self.program.getReferenceManager().getReferencesTo(addr)
+                            refs = self.program.getReferenceManager()\
+                                .getReferencesTo(addr)
                             for ref in refs:
                                 from_addr = ref.getFromAddress()
                                 func = self.listing.getFunctionContaining(from_addr)
@@ -81,14 +80,18 @@ class SPCFunctionAnalyzerGhidra:
                                     func_name = func.getName()
                                     
                                     # Check if already in list
-                                    if not any(f['address'] == func_entry for f in self.spc_functions):
+                                    if not any(f['address'] == func_entry
+                                               for f in self.spc_functions):
                                         self.spc_functions.append({
                                             'address': func_entry,
                                             'name': func_name,
                                             'type': 'string_ref',
                                             'size': func.getBody().getNumAddresses()
                                         })
-                                        self.log(f"[+] Found function via string: {func_name} at {func_entry}")
+                                        self.log(
+                                            f"[+] Found function via string: "
+                                            f"{func_name} at {func_entry}"
+                                        )
                     except:
                         pass
             
@@ -108,14 +111,20 @@ class SPCFunctionAnalyzerGhidra:
                 return False
             
             # Function metadata
-            self.log(f"[*] Function size: {func.getBody().getNumAddresses()} bytes")
+            self.log(
+                f"[*] Function size: {func.getBody().getNumAddresses()} "
+                f"bytes"
+            )
             
             # Analyze local variables
             frame = func.getStackFrame()
             if frame:
                 self.log(f"[*] Local variables/parameters:")
                 for var in frame.getStackVariables():
-                    self.log(f"    - {var.getName()} at offset {var.getStackOffset()}")
+                    self.log(
+                        f"    - {var.getName()} at offset "
+                        f"{var.getStackOffset()}"
+                    )
             
             # Find immediate values (potential hardcoded SPC codes)
             self.log(f"[*] Looking for immediate values...")
@@ -131,7 +140,9 @@ class SPCFunctionAnalyzerGhidra:
                             try:
                                 val = instr.getScalar(i).getValue()
                                 if 0 < val < 0x100000:
-                                    self.log(f"    [0x{addr}] Immediate: 0x{val:x}")
+                                    self.log(
+                                        f"    [0x{addr}] Immediate: 0x{val:x}"
+                                    )
                             except:
                                 pass
             

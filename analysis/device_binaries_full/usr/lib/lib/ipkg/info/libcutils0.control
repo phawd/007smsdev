@@ -1,0 +1,14 @@
+Package: libcutils0
+Version: 1.0-r1
+Description: libcutils version 1.0-r1
+ Build Android libcutils
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Apache-2.0
+Architecture: armv7a-vfp-neon
+OE: libcutils
+Homepage: http://developer.android.com/
+Depends: liblog0 (>= 1.0), libgcc1 (>= 4.9.3), libstdc++6 (>= 4.9.3), libc6 (>= 2.22)
+Provides: libcutils
+Source: file://libcutils

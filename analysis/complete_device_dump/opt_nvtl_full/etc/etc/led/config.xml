@@ -1,0 +1,29 @@
+<Config>
+    <Leds>
+		<Led id="2">
+			<DeviceState name="PowerSaveMode">
+				<Priority>1</Priority>
+				<SystemState>
+					<State>powerSaveModeOff</State>
+					<State>displayOff</State>
+				</SystemState>
+				<LedStateList>
+					<LedState>
+						<OnInterval>1000</OnInterval>
+						<OffInterval>5000</OffInterval>
+						<Color>BLUE</Color>
+					</LedState>
+			 	</LedStateList>
+			</DeviceState>
+		</Led>		
+	</Leds>
+	<BatteryLevelGoodThresholdLimit>70</BatteryLevelGoodThresholdLimit>
+	<BatteryLevelMediumThresholdLimit>30</BatteryLevelMediumThresholdLimit>
+	<BatteryLevelLowThresholdLimit>1</BatteryLevelLowThresholdLimit>
+	<SignalStrengthGoodThresholdLimit>4</SignalStrengthGoodThresholdLimit>
+	<SignalStrengthMediumThresholdLimit>2</SignalStrengthMediumThresholdLimit>
+	<SignalStrengthPoorThresholdLimit>1</SignalStrengthPoorThresholdLimit>
+	<DataUsageAvailableDataGoodThresholdLimit>80</DataUsageAvailableDataGoodThresholdLimit>
+	<DataUsageAvailableDataMediumThresholdLimit>89</DataUsageAvailableDataMediumThresholdLimit>
+	<DataUsageAvailableDataLowThresholdLimit>99</DataUsageAvailableDataLowThresholdLimit>
+</Config>

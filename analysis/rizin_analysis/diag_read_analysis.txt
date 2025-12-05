@@ -1,0 +1,579 @@
+0x000090b8    1 12           sym._init
+0x000090c4    1 16           fcn.000090c4
+0x000090d8    1 12           sym.imp.__libc_start_main
+0x000090e4    1 12           sym.imp.abort
+0x000090fc    1 12           sym.imp.write
+0x00009108    1 12           sym.imp.__errno_location
+0x00009114    1 12           sym.imp.lseek
+0x00009120    1 12           sym.imp.read
+0x0000912c    1 12           sym.imp.access
+0x00009138    1 12           sym.imp.mkdir
+0x00009144    1 12           sym.imp.malloc
+0x00009150    1 12           sym.imp.memcpy
+0x0000915c    1 12           sym.imp.mifi_dbg_get_level_name
+0x00009168    1 12           sym.imp.strerror
+0x00009174    1 12           sym.imp.mifi_dbg_syslog
+0x00009180    1 12           sym.imp.mifi_dbg_log
+0x0000918c    1 12           sym.imp.free
+0x00009198    1 12           sym.imp.rmdir
+0x000091a4    1 12           sym.imp.memset
+0x000091b0    1 12           sym.imp.strlen
+0x000091bc    1 12           sym.imp.opendir
+0x000091c8    1 12           sym.imp.closedir
+0x000091d4    1 12           sym.imp.readdir_r
+0x000091e0    1 12           sym.imp.strcmp
+0x000091ec    1 12           sym.imp.strcpy
+0x000091f8    1 12           sym.imp.sprintf
+0x00009204    1 12           sym.imp.unlink
+0x00009210    1 12           sym.imp.open
+0x0000921c    1 12           sym.imp.close
+0x00009228    1 12           sym.imp.sysfs_get_event_str
+0x00009234    1 12           sym.imp.strncmp
+0x00009240    1 12           sym.imp.sysfs_get_event_int
+0x0000924c    1 12           sym.imp.dlopen
+0x00009258    1 12           sym.imp.dlsym
+0x00009264    1 12           sym.imp.dlclose
+0x00009270    1 12           sym.imp.system
+0x0000927c    1 12           sym.imp.socket
+0x00009288    1 12           sym.imp.ioctl
+0x00009294    1 12           sym.imp.fopen
+0x000092a0    1 12           sym.imp.__isoc99_fscanf
+0x000092ac    1 12           sym.imp.fclose
+0x000092b8    1 12           sym.imp.nwqmi_nvtl_nv_item_write_cmd
+0x000092c4    1 12           sym.imp.dsm_set_persistent_mode
+0x000092d0    1 12           sym.imp.sleep
+0x000092dc    1 12           sym.imp.dsm_get_state
+0x000092e8    1 12           sym.imp.dsm_shutdown_device
+0x000092f4    1 12           sym.imp.dsm_reset_device
+0x00009300    1 12           sym.imp.popen
+0x0000930c    1 12           sym.imp.fread
+0x00009318    1 12           sym.imp.strstr
+0x00009324    1 12           sym.imp.strchr
+0x00009330    1 12           sym.imp.pclose
+0x0000933c    1 12           sym.imp.time
+0x00009348    1 12           sym.imp.fuel_gauge_cmd
+0x00009354    1 12           sym.imp.fuel_gauge_read_voltage
+0x00009360    1 12           sym.imp.fuel_gauge_read_current
+0x0000936c    1 12           sym.imp.fuel_gauge_check_bat_gd_interrupt
+0x00009378    1 12           sym.imp.fuel_gauge_check_soc_int_interrupt
+0x00009384    1 12           sym.imp.fuel_gauge_read_dataflash
+0x00009390    1 12           sym.imp.fuel_gauge_is_programming_done
+0x0000939c    1 12           sym.imp.fuel_gauge_read_temperature
+0x000093a8    1 12           sym.imp.fuel_gauge_read_batt_id
+0x000093b4    1 12           sym.imp.dsm_set_display_state
+0x000093c0    1 12           sym.imp.fprintf
+0x000093cc    1 12           sym.imp.usleep
+0x000093d8    1 12           sym.imp.nwqmi_nvtl_nv_item_read_cmd
+0x000093e4    1 12           sym.imp.exit
+0x000093f0    1 12           sym.imp.getpid
+0x000093fc    1 12           sym.imp.snprintf
+0x00009408    1 12           sym.imp.fgets
+0x00009414    1 12           sym.imp.mifi_dbg_start
+0x00009420    1 12           sym.imp.puts
+0x0000942c    1 12           sym.imp.pthread_create
+0x00009438    1 12           sym.imp.pthread_join
+0x00009444    1 12           sym.imp.mifi_dbg_stop
+0x00009450    1 12           sym.imp.__xstat
+0x0000945c    1 44           entry0
+0x00009498    1 28           fcn.00009498
+0x000094bc    1 36           fcn.000094bc
+0x00009524    1 36           entry.fini0
+0x0000954c    5 140  -> 88   entry.init0
+0x00009580    8 156          fcn.00009580
+0x0000961c    6 116          fcn.0000961c
+0x00009690    3 80           fcn.00009690
+0x000096e0   10 604          fcn.000096e0
+0x00009968   10 520          fcn.00009968
+0x00009b9c   10 548          fcn.00009b9c
+0x00009dec   10 612          fcn.00009dec
+0x0000a080    9 568          fcn.0000a080
+0x0000a2e8   23 1280         fcn.0000a2e8
+0x0000a824   10 548          fcn.0000a824
+0x0000aa74    7 672          fcn.0000aa74
+0x0000ad40    9 584          fcn.0000ad40
+0x0000afb4    7 496          fcn.0000afb4
+0x0000b1d0   12 924          fcn.0000b1d0
+0x0000b5b8   10 892          fcn.0000b5b8
+0x0000b980    8 224          fcn.0000b980
+0x0000ba68   10 488          fcn.0000ba68
+0x0000bc7c    6 128          fcn.0000bc7c
+0x0000bcfc   10 488          fcn.0000bcfc
+0x0000bf10   17 884          fcn.0000bf10
+0x0000c2e0   20 736          fcn.0000c2e0
+0x0000c5d0   15 900          fcn.0000c5d0
+0x0000c9ac   22 1084         fcn.0000c9ac
+0x0000ce38   19 876          fcn.0000ce38
+0x0000d1e4   18 956          fcn.0000d1e4
+0x0000d5f0   31 1684         fcn.0000d5f0
+0x0000dcec   31 1640         fcn.0000dcec
+0x0000e3b0   27 1388         fcn.0000e3b0
+0x0000e978   22 936          fcn.0000e978
+0x0000ed54    7 264          fcn.0000ed54
+0x0000ee68    9 628          fcn.0000ee68
+0x0000f10c   13 780          fcn.0000f10c
+0x0000f454   12 716          fcn.0000f454
+0x0000f768    6 268          fcn.0000f768
+0x0000f888   11 524          fcn.0000f888
+0x0000fac0   39 1340         fcn.0000fac0
+0x00010054   16 792          fcn.00010054
+0x000103ac   25 1268         fcn.000103ac
+0x000108f0    9 600          fcn.000108f0
+0x00010b78   12 748          fcn.00010b78
+0x00010e94   23 1156         fcn.00010e94
+0x00011368   20 964          fcn.00011368
+0x00011770   15 816          fcn.00011770
+0x00011ad8   19 944          fcn.00011ad8
+0x00011ec0   25 1180         fcn.00011ec0
+0x000123bc   14 772          fcn.000123bc
+0x00012700   20 1056         fcn.00012700
+0x00012b74   16 940          fcn.00012b74
+0x00012f64   18 1216         fcn.00012f64
+0x0001347c  101 2452         fcn.0001347c
+0x00013e7c   16 828          fcn.00013e7c
+0x000141ec   18 900          fcn.000141ec
+0x000145b4   40 1168         fcn.000145b4
+0x00014a88    4 268          fcn.00014a88
+0x00014ba0    6 308          fcn.00014ba0
+0x00014cdc   14 700          fcn.00014cdc
+0x00014fd0   15 652          fcn.00014fd0
+0x00015290   17 768          fcn.00015290
+0x000155e8   18 668          fcn.000155e8
+0x000158b0   17 704          fcn.000158b0
+0x00015ba8   17 704          fcn.00015ba8
+0x00015ea0   17 704          fcn.00015ea0
+0x00016198   17 704          fcn.00016198
+0x00016490   17 736          fcn.00016490
+0x000167a8   17 716          fcn.000167a8
+0x00016aac   19 760          fcn.00016aac
+0x00016ddc   17 704          fcn.00016ddc
+0x000170d4   12 548          fcn.000170d4
+0x00017324   20 704          fcn.00017324
+0x00017614   18 796          fcn.00017614
+0x00017964    8 296          fcn.00017964
+0x00017aac   35 1072         fcn.00017aac
+0x00017f50   14 940          fcn.00017f50
+0x00018364   13 812          fcn.00018364
+0x000186e4    6 244          fcn.000186e4
+0x000187ec   14 688          fcn.000187ec
+0x00018ae4   42 3320         fcn.00018ae4
+0x00019978    7 152          fcn.00019978
+0x00019a18    7 152          fcn.00019a18
+0x00019ab8   27 1676         fcn.00019ab8
+0x0001a1a0   15 892          fcn.0001a1a0
+0x0001a554   14 616          fcn.0001a554
+0x0001a7f4   11 768          fcn.0001a7f4
+0x0001ab3c  347 4792 -> 4424 fcn.0001ab3c
+0x0001c154    8 524          fcn.0001c154
+0x0001c394    7 528          fcn.0001c394
+0x0001c5e0    6 696          main
+0x0001c910   27 684  -> 508  fcn.0001c910
+0x0001cbc8    1 24           fcn.0001cbc8
+0x0001cbec    1 28           fcn.0001cbec
+0x0001cc08   11 496  -> 240  fcn.0001cc08
+0x0001cc50    3 108  -> 80   fcn.0001cc50
+0x0001cc64    2 20           fcn.0001cc64
+0x0001cccc    7 100          fcn.0001cccc
+0x0001cd30    1 16           fcn.0001cd30
+0x0001cd40    1 20           fcn.0001cd40
+0x0001cd54    1 20           fcn.0001cd54
+0x0001ce1c    1 16           fcn.0001ce1c
+0x0001ce2c    1 8            sym._fini
+=== STRINGS ===
+     paddr      vaddr len size section type  string                                                                                                                                                      
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+0x00014e38 0x0001ce38  35   36 .rodata ascii [%s]:[%s] - %s: write() failed: %s\n
+0x00014e5c 0x0001ce5c   8    9 .rodata ascii DIAGREAD
+0x00014e68 0x0001ce68  31   32 .rodata ascii [%s]:[%s] - %s: wrote %d bytes\n
+0x00014e90 0x0001ce90   5    6 .rodata ascii %s/%s
+0x00014e98 0x0001ce98  35   36 .rodata ascii [%s]:[%s] - %s: read() returned %d\n
+0x00014ebc 0x0001cebc  35   36 .rodata ascii [%s]:[%s] - %s: lseek() failed: %s\n
+0x00014ee0 0x0001cee0  35   36 .rodata ascii [%s]:[%s] - %s: offset=%d bytes=%d\n
+0x00014f04 0x0001cf04  38   39 .rodata ascii [%s]:[%s] - %s: rsp->bytes_written=%d\n
+0x00014f2c 0x0001cf2c  10   11 .rodata ascii high-speed
+0x00014f38 0x0001cf38  11   12 .rodata ascii super-speed
+0x00014f44 0x0001cf44  27   28 .rodata ascii /opt/nvtl/lib/libMifiapi.so
+0x00014f60 0x0001cf60  34   35 .rodata ascii [%s]:[%s] - diag_read: Loaded DLL\n
+0x00014f84 0x0001cf84  25   26 .rodata ascii MifiSys_DisableUSBConsole
+0x00014fa0 0x0001cfa0  24   25 .rodata ascii MifiSys_EnableUSBConsole
+0x00014fbc 0x0001cfbc  44   45 .rodata ascii [%s]:[%s] - diag_read: Calling function DLL\n
+0x00014fec 0x0001cfec  35   36 .rodata ascii [%s]:[%s] - diag_read: err code %x\n
+0x00015010 0x0001d010  15   16 .rodata ascii MifiReg_InitSDK
+0x00015020 0x0001d020  16   17 .rodata ascii MifiReg_CloseSDK
+0x00015034 0x0001d034  18   19 .rodata ascii MifiSys_SetSSHFlag
+0x00015048 0x0001d048  40   41 .rodata ascii [%s]:[%s] - diag_read: Stop FTP service\n
+0x00015074 0x0001d074  24   25 .rodata ascii /etc/init.d/vsftpd stop\n
+0x00015090 0x0001d090  41   42 .rodata ascii [%s]:[%s] - diag_read: Start FTP service\n
+0x000150bc 0x0001d0bc  25   26 .rodata ascii /etc/init.d/vsftpd start\n
+0x000150d8 0x0001d0d8  47   48 .rodata ascii [%s]:[%s] - diag_read: Invalid requested value\n
+0x00015108 0x0001d108  18   19 .rodata ascii /omapconf/password
+0x0001511c 0x0001d11c  23   24 .rodata ascii /omapconf/password/root
+0x00015134 0x0001d134  59   60 .rodata ascii [%s]:[%s] - diag_read: Cannot open the root password file.\n
+0x00015170 0x0001d170  50   51 .rodata ascii [%s]:[%s] - diag_read: Update root password error\n
+0x000151a4 0x0001d1a4  20   21 .rodata ascii /omapconf/wifi/macid
+0x000151bc 0x0001d1bc  65   66 .rodata ascii [%s]:[%s] - diag_read: Cannot open the wifi macid file for read.\n
+0x00015200 0x0001d200  14   15 .rodata ascii /omapconf/wifi
+0x00015210 0x0001d210  55   56 .rodata ascii [%s]:[%s] - Cannot open the wifi macid file for write.\n
+0x00015248 0x0001d248  36   37 .rodata ascii [%s]:[%s] - Update wifi macid error\n
+0x00015270 0x0001d270  27   28 .rodata ascii [%s]:[%s] - Sanity problem\n
+0x0001528c 0x0001d28c  21   22 .rodata ascii /omapconf/certificate
+0x000152a4 0x0001d2a4  24   25 .rodata ascii /omapconf/certificate/%d
+0x000152c0 0x0001d2c0  29   30 .rodata ascii /omapconf/certificate/%d/cert
+0x000152e0 0x0001d2e0  38   39 .rodata ascii [%s]:[%s] - Cannot open %s for write.\n
+0x00015308 0x0001d308  37   38 .rodata ascii [%s]:[%s] - Update certificate error\n
+0x00015330 0x0001d330  28   29 .rodata ascii /omapconf/certificate/%d/key
+0x00015350 0x0001d350  29   30 .rodata ascii [%s]:[%s] - Update key error\n
+0x00015370 0x0001d370  26   27 .rodata ascii /omapconf/wifi/calibration
+0x0001538c 0x0001d38c  61   62 .rodata ascii [%s]:[%s] - Cannot open the wifi calibration file for write.\n
+0x000153cc 0x0001d3cc  43   44 .rodata ascii [%s]:[%s] - Update wifi calibration error.\n
+0x000153f8 0x0001d3f8  33   34 .rodata ascii [%s]:[%s] - error opening socket\n
+0x0001541c 0x0001d41c   4    5 .rodata ascii eth1
+0x00015424 0x0001d424  28   29 .rodata ascii /opt/nvtl/etc/mifios-version
+0x0001544c 0x0001d44c   8    9 .rodata ascii LINUX-%s
+0x00015458 0x0001d458  29   30 .rodata ascii [%s]:[%s] - Date received %s\n
+0x00015478 0x0001d478  41   42 .rodata ascii echo "date %s" > /system/etc/default_date
+0x000154a4 0x0001d4a4  48   49 .rodata ascii runlevel | awk '{print $2}' > /root/runlevel.tmp
+0x000154d8 0x0001d4d8  18   19 .rodata ascii /root/runlevel.tmp
+0x000154f0 0x0001d4f0  24   25 .rodata ascii rm -f /root/runlevel.tmp
+0x0001550c 0x0001d50c  52   53 .rodata ascii [%s]:[%s] - Update NW_NV_LINUX_RUN_LEVEL_I error=%d\n
+0x00015544 0x0001d544  66   67 .rodata ascii [%s]:[%s] - Received the wrong response switching to run level %d\n
+0x00015588 0x0001d588  31   32 .rodata ascii [%s]:[%s] - Unknown run levels\n
+0x000155a8 0x0001d5a8  29   30 .rodata ascii /opt/nvtl/bin/wifi_diag.sh %d
+0x000155c8 0x0001d5c8  26   27 .rodata ascii [%s]:[%s] - %s: cmd %s NAL
+0x000155e4 0x0001d5e4  20   21 .rodata ascii /opt/nvtl/bin/wl ver
+0x000155fc 0x0001d5fc  29   30 .rodata ascii /opt/nvtl/bin/wl -i wlan0 ver
+0x0001561c 0x0001d61c   4    5 .rodata ascii FWID
+0x00015624 0x0001d624  34   35 .rodata ascii [%s]:[%s] - %s: fw_revision NAL %s
+0x00015648 0x0001d648  26   27 .rodata ascii /opt/nvtl/bin/wl txchain 1
+0x00015664 0x0001d664  35   36 .rodata ascii /opt/nvtl/bin/wl -i wlan0 txchain 1
+0x00015688 0x0001d688  26   27 .rodata ascii /opt/nvtl/bin/wl txchain 2
+0x000156a4 0x0001d6a4  35   36 .rodata ascii /opt/nvtl/bin/wl -i wlan0 txchain 2
+0x000156c8 0x0001d6c8  26   27 .rodata ascii /opt/nvtl/bin/wl txchain 3
+0x000156e4 0x0001d6e4  35   36 .rodata ascii /opt/nvtl/bin/wl -i wlan0 txchain 3
+0x00015708 0x0001d708  75   76 .rodata ascii /opt/nvtl/bin/wl down; /opt/nvtl/bin/wl rsdb_mode mimo; /opt/nvtl/bin/wl up
+0x00015754 0x0001d754 102  103 .rodata ascii /opt/nvtl/bin/wl -i wlan0 down; /opt/nvtl/bin/wl -i wlan0 rsdb_mode mimo; /opt/nvtl/bin/wl -i wlan0 up
+0x000157bc 0x0001d7bc  70   71 .rodata ascii /opt/nvtl/bin/wl down; /opt/nvtl/bin/wl rsdb_mode; /opt/nvtl/bin/wl up
+0x00015804 0x0001d804  97   98 .rodata ascii /opt/nvtl/bin/wl -i wlan0 down; /opt/nvtl/bin/wl -i wlan0 rsdb_mode; /opt/nvtl/bin/wl -i wlan0 up
+0x00015868 0x0001d868  26   27 .rodata ascii /opt/nvtl/bin/wl txpwr1 %d
+0x00015884 0x0001d884  35   36 .rodata ascii /opt/nvtl/bin/wl -i wlan0 txpwr1 %d
+0x000158a8 0x0001d8a8  82   83 .rodata ascii /opt/nvtl/bin/wl bss down;/opt/nvtl/bin/wl chanspec %d/%d; /opt/nvtl/bin/wl bss up
+0x000158fc 0x0001d8fc 109  110 .rodata ascii /opt/nvtl/bin/wl -i wlan0 bss down;/opt/nvtl/bin/wl -i wlan0 chanspec %d/%d; /opt/nvtl/bin/wl -i wlan0 bss up
+0x0001596c 0x0001d96c  13   14 .rodata ascii g 0 0 0 0 0 0
+0x0001597c 0x0001d97c   5    6 .rodata ascii gonly
+0x00015984 0x0001d984  13   14 .rodata ascii g 2 0 0 0 0 0
+0x00015994 0x0001d994  13   14 .rodata ascii g 1 0 1 0 0 0
+0x000159a4 0x0001d9a4 155  156 .rodata ascii /opt/nvtl/bin/iwconfig %s essid off;/opt/nvtl/bin/wmiconfig -i %s --wmode %s;/opt/nvtl/bin/wmiconfig -i %s --set_ht_cap %s;/opt/nvtl/bin/iwconfig %s commit
+0x00015a40 0x0001da40   5    6 .rodata ascii wlan1
+0x00015a48 0x0001da48  35   36 .rodata ascii /opt/nvtl/bin/iwconfig %s essid off
+0x00015a6c 0x0001da6c  67   68 .rodata ascii /opt/nvtl/bin/iwconfig %s essid on;/opt/nvtl/bin/iwconfig %s commit
+0x00015ab0 0x0001dab0  21   22 .rodata ascii /opt/nvtl/bin/wl down
+0x00015ac8 0x0001dac8  19   20 .rodata ascii ifconfig wlan0 down
+0x00015adc 0x0001dadc  19   20 .rodata ascii /opt/nvtl/bin/wl up
+0x00015af0 0x0001daf0  17   18 .rodata ascii ifconfig wlan0 up
+0x00015b04 0x0001db04  19   20 .rodata ascii [%s]:[%s] - %s:  %s
+0x00015b18 0x0001db18  34   35 .rodata ascii wl bss down; wl band a ;wl bss up;
+0x00015b3c 0x0001db3c  33   34 .rodata ascii wl bss down; wl band b ;wl bss up
+0x00015b60 0x0001db60  17   18 .rodata ascii %x:%x:%x:%x:%x:%x
+0x00015b74 0x0001db74  30   31 .rodata ascii wl pkteng_start %s tx %d %d %d
+0x00015b94 0x0001db94  39   40 .rodata ascii wl -i wlan0 pkteng_start %s tx %d %d %d
+0x00015bbc 0x0001dbbc  17   18 .rodata ascii wl pkteng_stop tx
+0x00015bd0 0x0001dbd0  26   27 .rodata ascii wl -i wlan0 pkteng_stop tx
+0x00015bec 0x0001dbec  10   11 .rodata ascii wl 5g_rate
+0x00015bf8 0x0001dbf8   6    7 .rodata ascii  -r %d
+0x00015c00 0x0001dc00   6    7 .rodata ascii  -b %d
+0x00015c08 0x0001dc08   6    7 .rodata ascii  -h %d
+0x00015c10 0x0001dc10   6    7 .rodata ascii  -v %d
+0x00015c18 0x0001dc18   6    7 .rodata ascii  -s %d
+0x00015c20 0x0001dc20  10   11 .rodata ascii wl 2g_rate
+0x00015c2c 0x0001dc2c   8    9 .rodata ascii  -r %.1f
+0x00015c38 0x0001dc38  14   15 .rodata ascii [%s]:[%s] - %s
+0x00015c48 0x0001dc48  99  100 .rodata ascii wl down; wl mpc 0; wl scansuppress 1; wl phy_txpwrctrl 0; wl country ALL; wl phy_watchdog 0 ; wl up
+0x00015cac 0x0001dcac  99  100 .rodata ascii wl down; wl mpc 0; wl scansuppress 1; wl phy_txpwrctrl 1; wl country ALL; wl phy_watchdog 0 ; wl up
+0x00015d10 0x0001dd10  65   66 .rodata ascii /opt/nvtl/bin/wl down; /opt/nvtl/bin/wl PM 0; /opt/nvtl/bin/wl up
+0x00015d54 0x0001dd54  92   93 .rodata ascii /opt/nvtl/bin/wl -i wlan0 down; /opt/nvtl/bin/wl -i wlan0 PM 0; /opt/nvtl/bin/wl -i wlan0 up
+0x00015db4 0x0001ddb4  65   66 .rodata ascii /opt/nvtl/bin/wl down; /opt/nvtl/bin/wl PM 1; /opt/nvtl/bin/wl up
+0x00015df8 0x0001ddf8  92   93 .rodata ascii /opt/nvtl/bin/wl -i wlan0 down; /opt/nvtl/bin/wl -i wlan0 PM 1; /opt/nvtl/bin/wl -i wlan0 up
+0x00015e58 0x0001de58  35   36 .rodata ascii [%s]:[%s] - dsm get state failed! \n
+0x00015e7c 0x0001de7c  31   32 .rodata ascii [%s]:[%s] - Not a valid Input \n
+0x00015e9c 0x0001de9c  32   33 .rodata ascii echo %d > /sys/class/gpio/export
+0x00015ec0 0x0001dec0  45   46 .rodata ascii echo "out" > /sys/class/gpio/gpio%d/direction
+0x00015ef0 0x0001def0  38   39 .rodata ascii echo %d > /sys/class/gpio/gpio%d/value
+0x00015f18 0x0001df18  28   29 .rodata ascii /sys/class/gpio/gpio%d/value
+0x00015f38 0x0001df38  30   31 .rodata ascii [%s]:[%s] - Not a valid Input\n
+0x00015f58 0x0001df58  38   39 .rodata ascii ls "/sys/bus/w1/devices/w1 bus master"
+0x00015f80 0x0001df80  55   56 .rodata ascii /sys/bus/w1/devices/w1 bus master/w1_master_slave_count
+0x00015fb8 0x0001dfb8  66   67 .rodata ascii [%s]:[%s] - Next cmd received within 5 secs of prev cmd, ignoring\n
+0x00015ffc 0x0001dffc  33   34 .rodata ascii /opt/nvtl/bin/nvtl_dhcp.sh start\n
+0x00016020 0x0001e020  17   18 .rodata ascii ifconfig eth0 up\n
+0x00016034 0x0001e034  21   22 .rodata ascii brctl addif br0 eth0\n
+0x0001604c 0x0001e04c  36   37 .rodata ascii [%s]:[%s] - rsp status %d mV %d mV.\n
+0x00016074 0x0001e074  41   42 .rodata ascii [%s]:[%s] - rsp status %d current %d mA.\n
+0x000160a0 0x0001e0a0  48   49 .rodata ascii [%s]:[%s] - rsp status %d interrupt occured %d.\n
+0x000160d4 0x0001e0d4  35   36 .rodata ascii [%s]:[%s] - rsp status %d value%d.\n
+0x000160f8 0x0001e0f8  40   41 .rodata ascii [%s]:[%s] - rsp status %d cmd status%d.\n
+0x00016124 0x0001e124  49   50 .rodata ascii [%s]:[%s] - rsp status %d temperature %d degree.\n
+0x00016158 0x0001e158  41   42 .rodata ascii [%s]:[%s] - rsp status %d battery id %d.\n
+0x00016184 0x0001e184  38   39 .rodata ascii /sys/mifi/nvitems_event/chrger_enabled
+0x000161ac 0x0001e1ac  44   45 .rodata ascii /opt/nvtl/bin/tests/lcd_pattern_test.sh %d &
+0x000161dc 0x0001e1dc  47   48 .rodata ascii /opt/nvtl/bin/tests/lcd_pattern_test.sh %d %d &
+0x0001620c 0x0001e20c  50   51 .rodata ascii /sys/bus/i2c/devices/0-0015/control/write_reg_addr
+0x00016244 0x0001e244  51   52 .rodata ascii /sys/bus/i2c/devices/0-0015/control/write_reg_value
+0x00016278 0x0001e278   4    5 .rodata ascii 0x30
+0x00016280 0x0001e280   4    5 .rodata ascii 0x84
+0x00016288 0x0001e288  57   58 .rodata ascii /sys/bus/i2c/drivers/smb347/0-0015/control/chg_set_ilimit
+0x000162c4 0x0001e2c4  23   24 .rodata ascii [%s]:[%s] - Ilim is %d\n
+0x000162dc 0x0001e2dc  25   26 .rodata ascii [%s]:[%s] - old value %d\n
+0x000162f8 0x0001e2f8  25   26 .rodata ascii [%s]:[%s] - new value %d\n
+0x00016314 0x0001e314  47   48 .rodata ascii [%s]:[%s] - %s: Exception - should not be here\n
+0x00016344 0x0001e344  75   76 .rodata ascii [%s]:[%s] - %s: Failed writing to chg control file value=%d, ilim value=%d\n
+0x00016390 0x0001e390  49   50 .rodata ascii [%s]:[%s] - NVTL - Set current limiter override.\n
+0x000163c4 0x0001e3c4  27   28 .rodata ascii [%s]:[%s] - Bad command %d\n
+0x000163e0 0x0001e3e0  36   37 .rodata ascii [%s]:[%s] - Current run level is %d\n
+0x00016408 0x0001e408  44   45 .rodata ascii [%s]:[%s] - Current limiter value set to %d\n
+0x00016438 0x0001e438  29   30 .rodata ascii [%s]:[%s] - Bad run level %d\n
+0x00016458 0x0001e458  40   41 .rodata ascii [%s]:[%s] - NVTL - SD card test command\n
+0x00016484 0x0001e484  30   31 .rodata ascii /opt/nvtl/bin/tests/sd_test.sh
+0x000164a4 0x0001e4a4  43   44 .rodata ascii [%s]:[%s] - System call failed, status = %d
+0x000164d0 0x0001e4d0  46   47 .rodata ascii [%s]:[%s] - SD test script failed, status = %d
+0x00016500 0x0001e500  52   53 .rodata ascii lsmod\t| grep %s | awk '{ print $1 }' > /root/acc.tmp
+0x00016538 0x0001e538  13   14 .rodata ascii /root/acc.tmp
+0x00016548 0x0001e548  19   20 .rodata ascii rm -f /root/acc.tmp
+0x0001655c 0x0001e55c  46   47 .rodata ascii [%s]:[%s] - NVTL - Accelerometer test command\n
+0x0001658c 0x0001e58c  35   36 .rodata ascii [%s]:[%s] - Device not in FTM mode\n
+0x000165b0 0x0001e5b0   5    6 .rodata ascii kxtj9
+0x000165b8 0x0001e5b8  42   43 .rodata ascii [%s]:[%s] - Reset the device into %d mode\n
+0x000165e4 0x0001e5e4   6    7 .rodata ascii reboot
+0x000165ec 0x0001e5ec  14   15 .rodata ascii /omapconf/boot
+0x000165fc 0x0001e5fc  16   17 .rodata ascii echo "umts" > %s
+0x00016610 0x0001e610  19   20 .rodata ascii /omapconf/boot/mode
+0x00016624 0x0001e624  13   14 .rodata ascii echo " " > %s
+0x00016634 0x0001e634  44   45 .rodata ascii [%s]:[%s] - Reset subcommand not supported.\n
+0x00016664 0x0001e664  37   38 .rodata ascii [%s]:[%s] - Read wifi macid error %d\n
+0x0001668c 0x0001e68c  21   22 .rodata ascii [%s]:[%s] - Read Mac\n
+0x000166a4 0x0001e6a4  15   16 .rodata ascii [%s]:[%s] - %x 
+0x000166b4 0x0001e6b4  13   14 .rodata ascii [%s]:[%s] - \n
+0x000166c4 0x0001e6c4  39   40 .rodata ascii [%s]:[%s] - Update wifi macid error %d\n
+0x000166ec 0x0001e6ec  26   27 .rodata ascii [%s]:[%s] - rsp status %d\n
+0x00016708 0x0001e708  28   29 .rodata ascii /sbin/sys_reboot bootloader\n
+0x00016728 0x0001e728  19   20 .rodata ascii [%s]:[%s] - cmd: %s
+0x0001673c 0x0001e73c  45   46 .rodata ascii [%s]:[%s] - Switch to fastboot mode error %d\n
+0x0001676c 0x0001e76c  38   39 .rodata ascii [%s]:[%s] - %s: malloc(%d) failed: %s\n
+0x00016794 0x0001e794  54   55 .rodata ascii [%s]:[%s] - %s: calling wifi_is_cypress() returned %d\n
+0x000167cc 0x0001e7cc  51   52 .rodata ascii [%s]:[%s] - ************PREPARED SSID= %s**********
+0x00016800 0x0001e800  48   49 .rodata ascii [%s]:[%s] - ************SAVED SSID= %s**********
+0x00016834 0x0001e834  31   32 .rodata ascii [%s]:[%s] - %s: calling read()\n
+0x00016854 0x0001e854  34   35 .rodata ascii [%s]:[%s] - %s: read() failed: %s\n
+0x00016878 0x0001e878  34   35 .rodata ascii [%s]:[%s] - %s: read() returned 0\n
+0x0001689c 0x0001e89c  22   23 .rodata ascii [%s]:[%s] - %s: nr=%d\n
+0x000168b4 0x0001e8b4  36   37 .rodata ascii [%s]:[%s] - %s: short read(): nr=%d\n
+0x000168dc 0x0001e8dc  61   62 .rodata ascii [%s]:[%s] - %s: msg_type=%08x: not %08x - discarding message\n
+0x0001691c 0x0001e91c  40   41 .rodata ascii [%s]:[%s] - %s: pkg->nw_diag_cmd=0x%02x\n
+0x00016948 0x0001e948  35   36 .rodata ascii [%s]:[%s] - %s: bad command (%04x)\n
+0x0001696c 0x0001e96c  36   37 .rodata ascii [%s]:[%s] - %s: malloc() failed: %s\n
+0x00016994 0x0001e994  91   92 .rodata ascii [%s]:[%s] - %s: nr=%d: invalid cmd: cmd_code=0x%02x s/b=0x%02x subsys_id=0x%02x s/b=0x%02x\n
+0x000169f0 0x0001e9f0  35   36 .rodata ascii [%s]:[%s] - %s: exiting while loop\n
+0x00016a14 0x0001ea14   9   10 .rodata ascii /dev/diag
+0x00016a20 0x0001ea20  38   39 .rodata ascii [%s]:[%s] - %s: /dev/diag open failed\n
+0x00016a48 0x0001ea48  45   46 .rodata ascii [%s]:[%s] - %s: fd=%d bind_params.proc_id=%d\n
+0x00016a78 0x0001ea78   4    5 .rodata ascii %s%d
+0x00016a80 0x0001ea80  25   26 .rodata ascii NVTL_DIAG_SYNC_EVENT_PKT_
+0x00016a9c 0x0001ea9c  35   36 .rodata ascii [%s]:[%s] - %s: ioctl() failed: %s\n
+0x00016ac0 0x0001eac0  43   44 .rodata ascii lspci | grep 'Class 0280' | cut -f 4 -d ":"
+0x00016aec 0x0001eaec  27   28 .rodata ascii [%s]:[%s] - Command is [%s]
+0x00016b08 0x0001eb08  41   42 .rodata ascii [%s]:[%s] - Failed to run the command %s.
+0x00016b34 0x0001eb34   4    5 .rodata ascii 4355
+0x00016b3c 0x0001eb3c  50   51 .rodata ascii nwnvitem -r -e NW_NV_MAC_ID_I | cut -b 13-14,16-17
+0x00016b70 0x0001eb70   5    6 .rodata ascii %s-%s
+0x00016b78 0x0001eb78   9   10 .rodata ascii Test-Diag
+0x00016b84 0x0001eb84  41   42 .rodata ascii Error Initializing debug logging, Exiting
+0x00016bb0 0x0001ebb0  54   55 .rodata ascii [%s]:[%s] - ************WLAN IS CYPRESS = %d**********
+0x00016be8 0x0001ebe8  33   34 .rodata ascii [%s]:[%s] - Starting MAIN thread\n
+0x00016c0c 0x0001ec0c  39   40 .rodata ascii [%s]:[%s] - pthread_create() error: %d\n
+0x00016c34 0x0001ec34  32   33 .rodata ascii [%s]:[%s] - Exiting MAIN thread\n
+0x00016c58 0x0001ec58  22   23 .rodata ascii diag_efs2_stat_handler
+0x00016c70 0x0001ec70  23   24 .rodata ascii diag_efs2_mkdir_handler
+0x00016c88 0x0001ec88  23   24 .rodata ascii diag_efs2_rmdir_handler
+0x00016ca0 0x0001eca0  25   26 .rodata ascii diag_efs2_opendir_handler
+0x00016cbc 0x0001ecbc  26   27 .rodata ascii diag_efs2_closedir_handler
+0x00016cd8 0x0001ecd8  25   26 .rodata ascii diag_efs2_readdir_handler
+0x00016cf4 0x0001ecf4  24   25 .rodata ascii diag_efs2_delete_handler
+0x00016d10 0x0001ed10  23   24 .rodata ascii diag_efs2_fstat_handler
+0x00016d28 0x0001ed28  22   23 .rodata ascii diag_efs2_open_handler
+0x00016d40 0x0001ed40  23   24 .rodata ascii diag_efs2_close_handler
+0x00016d58 0x0001ed58  22   23 .rodata ascii diag_efs2_read_handler
+0x00016d70 0x0001ed70  23   24 .rodata ascii diag_efs2_write_handler
+0x00016d88 0x0001ed88  20   21 .rodata ascii usb_get_type_handler
+0x00016da0 0x0001eda0  24   25 .rodata ascii usb_get_conn_pos_handler
+0x00016dbc 0x0001edbc  19   20 .rodata ascii usb_control_handler
+0x00016dd0 0x0001edd0  19   20 .rodata ascii ftp_control_handler
+0x00016de4 0x0001ede4  24   25 .rodata ascii new_root_control_handler
+0x00016e00 0x0001ee00  22   23 .rodata ascii wifi_get_macid_handler
+0x00016e18 0x0001ee18  22   23 .rodata ascii wifi_set_macid_handler
+0x00016e30 0x0001ee30  12   13 .rodata ascii cert_handler
+0x00016e40 0x0001ee40  11   12 .rodata ascii key_handler
+0x00016e4c 0x0001ee4c  15   16 .rodata ascii wifical_handler
+0x00016e5c 0x0001ee5c  18   19 .rodata ascii cert_clear_handler
+0x00016e70 0x0001ee70  17   18 .rodata ascii wifi_diag_handler
+0x00016e84 0x0001ee84  15   16 .rodata ascii version_handler
+0x00016e94 0x0001ee94  16   17 .rodata ascii set_date_handler
+0x00016ea8 0x0001eea8  21   22 .rodata ascii get_run_level_handler
+0x00016ec0 0x0001eec0  21   22 .rodata ascii set_run_level_handler
+0x00016ed8 0x0001eed8  21   22 .rodata ascii set_wifi_mode_handler
+0x00016ef0 0x0001eef0  28   29 .rodata ascii get_wifi_fw_revision_handler
+0x00016f10 0x0001ef10  21   22 .rodata ascii get_wifi_ssid_handler
+0x00016f28 0x0001ef28  21   22 .rodata ascii set_wifi_ssid_handler
+0x00016f40 0x0001ef40  26   27 .rodata ascii set_wifi_chainmask_handler
+0x00016f5c 0x0001ef5c  23   24 .rodata ascii set_wifi_init_mimo_siso
+0x00016f74 0x0001ef74  25   26 .rodata ascii set_wifi_tx_power_handler
+0x00016f90 0x0001ef90  24   25 .rodata ascii set_wifi_channel_handler
+0x00016fac 0x0001efac  22   23 .rodata ascii set_wifi_wmode_handler
+0x00016fc4 0x0001efc4  18   19 .rodata ascii wifi_sleep_handler
+0x00016fd8 0x0001efd8  22   23 .rodata ascii wifi_rf_toggle_handler
+0x00016ff0 0x0001eff0  21   22 .rodata ascii wifi_set_band_handler
+0x00017008 0x0001f008  25   26 .rodata ascii wifi_tx_pkt_trans_handler
+0x00017024 0x0001f024  26   27 .rodata ascii wifi_set_data_rate_handler
+0x00017040 0x0001f040  38   39 .rodata ascii wifi_set_txpwr_open_close_loop_handler
+0x00017068 0x0001f068  20   21 .rodata ascii wifi_maxperf_handler
+0x00017080 0x0001f080  19   20 .rodata ascii mifi_events_handler
+0x00017094 0x0001f094  17   18 .rodata ascii gpio_test_handler
+0x000170a8 0x0001f0a8  23   24 .rodata ascii diag_1wire_test_handler
+0x000170c0 0x0001f0c0  26   27 .rodata ascii diag_ethernet_test_handler
+0x000170dc 0x0001f0dc  30   31 .rodata ascii diag_nw_fuel_gauge_cmd_handler
+0x000170fc 0x0001f0fc  36   37 .rodata ascii diag_nw_fuel_gauge_read_vbat_handler
+0x00017124 0x0001f124  39   40 .rodata ascii diag_nw_fuel_gauge_read_current_handler
+0x0001714c 0x0001f14c  42   43 .rodata ascii diag_nw_fuel_gauge_read_bat_gd_int_handler
+0x00017178 0x0001f178  39   40 .rodata ascii diag_nw_fuel_gauge_read_soc_int_handler
+0x000171a0 0x0001f1a0  40   41 .rodata ascii diag_nw_fuel_gauge_read_register_handler
+0x000171cc 0x0001f1cc  37   38 .rodata ascii diag_nw_fuel_gauge_cmd_status_handler
+0x000171f4 0x0001f1f4  36   37 .rodata ascii diag_nw_fuel_gauge_read_temp_handler
+0x0001721c 0x0001f21c  27   28 .rodata ascii diag_nw_read_bat_id_handler
+0x00017238 0x0001f238  30   31 .rodata ascii diag_nw_display_on_off_handler
+0x00017258 0x0001f258  34   35 .rodata ascii diag_nw_charger_start_stop_handler
+0x0001727c 0x0001f27c  19   20 .rodata ascii diag_run_lcd_script
+0x00017290 0x0001f290  15   16 .rodata ascii current_lim_set
+0x000172a0 0x0001f2a0  25   26 .rodata ascii diag_nw_set_ilim_override
+0x000172bc 0x0001f2bc  17   18 .rodata ascii diag_sd_card_test
+0x000172d0 0x0001f2d0  34   35 .rodata ascii diag_nw_accelerometer_test_hanlder
+0x000172f4 0x0001f2f4  20   21 .rodata ascii reset_device_handler
+0x0001730c 0x0001f30c  26   27 .rodata ascii wifi_read_mac_addr_handler
+0x00017328 0x0001f328  27   28 .rodata ascii wifi_write_mac_addr_handler
+0x00017344 0x0001f344  32   33 .rodata ascii diag_nw_read_battery_voltage_cmd
+0x00017368 0x0001f368  29   30 .rodata ascii diag_nw_fastboot_mode_handler
+0x00017388 0x0001f388  14   15 .rodata ascii diag_read_loop
+0x00017398 0x0001f398  11   12 .rodata ascii diag_thread
+0x0001759e 0x0002059e  17   17 .data   ascii 7\a8\b9\tA\nB\vC\fD\rE\rF
+0x000175b0 0x000205b0   7    7 .data   ascii a\nb\vc\fd
+=== IMPORTS ===
+nth      vaddr bind   type   lib name                               
+--------------------------------------------------------------------
+  1 0x000090e4 GLOBAL FUNC       abort
+  2 0x00009438 GLOBAL FUNC       pthread_join
+  3 0x0000942c GLOBAL FUNC       pthread_create
+  4 0x00009420 GLOBAL FUNC       puts
+  5 0x00009408 GLOBAL FUNC       fgets
+  6 0x000093fc GLOBAL FUNC       snprintf
+  7 0x000090d8 GLOBAL FUNC       __libc_start_main
+  8 0x000093f0 GLOBAL FUNC       getpid
+  9 0x000093e4 GLOBAL FUNC       exit
+ 10 0x000090f0 WEAK   NOTYPE     __gmon_start__
+ 11 0x000093cc GLOBAL FUNC       usleep
+ 12 0x000093c0 GLOBAL FUNC       fprintf
+ 13 ---------- WEAK   NOTYPE     _ITM_deregisterTMCloneTable
+ 14 ---------- WEAK   NOTYPE     _ITM_registerTMCloneTable
+ 15 ---------- WEAK   NOTYPE     _Jv_RegisterClasses
+ 16 0x000090fc GLOBAL FUNC       write
+ 17 0x00009108 GLOBAL FUNC       __errno_location
+ 18 0x00009114 GLOBAL FUNC       lseek
+ 19 0x00009120 GLOBAL FUNC       read
+ 20 0x0000912c GLOBAL FUNC       access
+ 21 0x00009138 GLOBAL FUNC       mkdir
+ 22 0x0000933c GLOBAL FUNC       time
+ 23 0x00009144 GLOBAL FUNC       malloc
+ 24 0x00009150 GLOBAL FUNC       memcpy
+ 25 0x00009330 GLOBAL FUNC       pclose
+ 26 0x0000915c GLOBAL FUNC       mifi_dbg_get_level_name
+ 27 0x00009324 GLOBAL FUNC       strchr
+ 28 0x00009168 GLOBAL FUNC       strerror
+ 29 0x00009318 GLOBAL FUNC       strstr
+ 30 0x00009174 GLOBAL FUNC       mifi_dbg_syslog
+ 31 0x0000930c GLOBAL FUNC       fread
+ 32 0x00009180 GLOBAL FUNC       mifi_dbg_log
+ 33 0x0000918c GLOBAL FUNC       free
+ 34 0x00009198 GLOBAL FUNC       rmdir
+ 35 0x000091a4 GLOBAL FUNC       memset
+ 36 0x000091b0 GLOBAL FUNC       strlen
+ 37 0x000091bc GLOBAL FUNC       opendir
+ 38 0x000091c8 GLOBAL FUNC       closedir
+ 39 0x000091d4 GLOBAL FUNC       readdir_r
+ 40 0x000091e0 GLOBAL FUNC       strcmp
+ 41 0x000091ec GLOBAL FUNC       strcpy
+ 42 0x000091f8 GLOBAL FUNC       sprintf
+ 43 0x00009204 GLOBAL FUNC       unlink
+ 44 0x00009210 GLOBAL FUNC       open
+ 45 0x0000921c GLOBAL FUNC       close
+ 46 0x00009228 GLOBAL FUNC       sysfs_get_event_str
+ 47 0x00009234 GLOBAL FUNC       strncmp
+ 48 0x00009240 GLOBAL FUNC       sysfs_get_event_int
+ 49 0x0000924c GLOBAL FUNC       dlopen
+ 50 0x00009258 GLOBAL FUNC       dlsym
+ 51 0x00009264 GLOBAL FUNC       dlclose
+ 52 0x00009270 GLOBAL FUNC       system
+ 53 0x0000927c GLOBAL FUNC       socket
+ 54 0x00009288 GLOBAL FUNC       ioctl
+ 55 0x00009294 GLOBAL FUNC       fopen
+ 56 0x000092a0 GLOBAL FUNC       __isoc99_fscanf
+ 57 0x000092ac GLOBAL FUNC       fclose
+ 58 0x000092b8 GLOBAL FUNC       nwqmi_nvtl_nv_item_write_cmd
+ 59 0x000092c4 GLOBAL FUNC       dsm_set_persistent_mode
+ 60 0x000092d0 GLOBAL FUNC       sleep
+ 61 0x000092dc GLOBAL FUNC       dsm_get_state
+ 62 0x000092e8 GLOBAL FUNC       dsm_shutdown_device
+ 63 0x000092f4 GLOBAL FUNC       dsm_reset_device
+ 64 0x00009300 GLOBAL FUNC       popen
+ 65 0x00009348 GLOBAL FUNC       fuel_gauge_cmd
+ 66 0x00009354 GLOBAL FUNC       fuel_gauge_read_voltage
+ 67 0x00009360 GLOBAL FUNC       fuel_gauge_read_current
+ 68 0x0000936c GLOBAL FUNC       fuel_gauge_check_bat_gd_interrupt
+ 69 0x00009378 GLOBAL FUNC       fuel_gauge_check_soc_int_interrupt
+ 70 0x00009384 GLOBAL FUNC       fuel_gauge_read_dataflash
+ 71 0x00009390 GLOBAL FUNC       fuel_gauge_is_programming_done
+ 72 0x0000939c GLOBAL FUNC       fuel_gauge_read_temperature
+ 73 0x000093a8 GLOBAL FUNC       fuel_gauge_read_batt_id
+ 74 0x000093b4 GLOBAL FUNC       dsm_set_display_state
+ 75 0x000093d8 GLOBAL FUNC       nwqmi_nvtl_nv_item_read_cmd
+ 76 0x00009414 GLOBAL FUNC       mifi_dbg_start
+ 77 0x00009444 GLOBAL FUNC       mifi_dbg_stop
+ 78 0x00009450 GLOBAL FUNC       __xstat
+=== SECTIONS ===
+     paddr    size      vaddr   vsize align perm name                   type              flags            
+-----------------------------------------------------------------------------------------------------------
+0x00000000     0x0 ----------     0x0   0x0 ----                        NULL              
+0x00000154    0x13 0x00008154    0x13   0x0 -r-- .interp                PROGBITS          alloc
+0x00000168    0x20 0x00008168    0x20   0x0 -r-- .note.ABI-tag          NOTE              alloc
+0x00000188    0x24 0x00008188    0x24   0x0 -r-- .note.gnu.build-id     NOTE              alloc
+0x000001ac   0x550 0x000081ac   0x550   0x0 -r-- .dynsym                DYNSYM            alloc
+0x000006fc   0x604 0x000086fc   0x604   0x0 -r-- .dynstr                STRTAB            alloc
+0x00000d00    0x3c 0x00008d00    0x3c   0x0 -r-- .gnu.hash              GNU_HASH          alloc
+0x00000d3c    0xaa 0x00008d3c    0xaa   0x0 -r-- .gnu.version           VERSYM            alloc
+0x00000de8    0x70 0x00008de8    0x70   0x0 -r-- .gnu.version_r         VERNEED           alloc
+0x00000e58     0x8 0x00008e58     0x8   0x0 -r-- .rel.dyn               REL               alloc
+0x00000e60   0x258 0x00008e60   0x258   0x0 -r-- .rel.plt               REL               alloc,info
+0x000010b8     0xc 0x000090b8     0xc   0x0 -r-x .init                  PROGBITS          alloc,execute
+0x000010c4   0x398 0x000090c4   0x398   0x0 -r-x .plt                   PROGBITS          alloc,execute
+0x0000145c 0x139d0 0x0000945c 0x139d0   0x0 -r-x .text                  PROGBITS          alloc,execute
+0x00014e2c     0x8 0x0001ce2c     0x8   0x0 -r-x .fini                  PROGBITS          alloc,execute
+0x00014e34  0x2570 0x0001ce34  0x2570   0x0 -r-- .rodata                PROGBITS          alloc
+0x000173a4     0x0 0x0001f3a4     0x0   0x0 -r-- .ARM.extab             PROGBITS          alloc
+0x000173a4     0x8 0x0001f3a4     0x8   0x0 -r-- .ARM.exidx             LOPROC+0x00000001 alloc,link_order
+0x000173ac     0x4 0x0001f3ac     0x4   0x0 -r-- .eh_frame              PROGBITS          alloc
+0x000173b0     0x8 0x0001f3b0     0x8   0x0 -r-- .eh_frame_hdr          PROGBITS          alloc
+0x000173b8   0x1d0 0x000203b8   0x1d0   0x0 -rw- .dynamic               DYNAMIC           write,alloc
+0x00017588    0x34 0x00020588    0x34   0x0 -rw- .data                  PROGBITS          write,alloc
+0x000175bc     0x4 0x000205bc     0x4   0x0 -rw- .init_array            INIT_ARRAY        write,alloc
+0x000175c0     0x4 0x000205c0     0x4   0x0 -rw- .fini_array            FINI_ARRAY        write,alloc
+0x000175c4     0x4 0x000205c4     0x4   0x0 -rw- .jcr                   PROGBITS          write,alloc
+0x000175c8     0x0 0x000205c8     0x0   0x0 -rw- .tm_clone_table        PROGBITS          write,alloc
+0x000175c8   0x140 0x000205c8   0x140   0x0 -rw- .got                   PROGBITS          write,alloc
+0x00017708     0x0 0x00020708  0x2840   0x0 -rw- .bss                   NOBITS            write,alloc
+0x00017708    0x1c ----------    0x1c   0x0 ---- .note.gnu.gold-version NOTE              
+0x00017724    0x33 ----------    0x33   0x0 ---- .ARM.attributes        LOPROC+0x00000003 
+0x00017757   0x131 ----------   0x131   0x0 ---- .shstrtab              STRTAB            

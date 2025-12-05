@@ -1,0 +1,12 @@
+Package: loc-hal
+Version: git-r5
+Description: loc-hal version git-r5
+ GPS Loc HAL
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: armv7a-vfp-neon
+OE: loc-hal
+Depends: libgcc1 (>= 4.9.3), libtime-genoff1 (>= git), data-oss (>= git), libqmi-client-helper1 (>= git), libc6 (>= 2.22), libconfigdb0 (>= git), liblog0 (>= 1.0), libdsutils1 (>= git), libstdc++6 (>= 4.9.3), libcutils0 (>= 1.0), libgps-utils-so1 (>= git), qmi (>= git), qmi-framework (>= git), libloc-stub1 (>= git), libxml0 (>= git), diag (>= git), libglib-2.0-0 (>= 2.44.1), data (>= git), libloc-pla1 (>= git)
+Source: file://hardware/qcom/gps/

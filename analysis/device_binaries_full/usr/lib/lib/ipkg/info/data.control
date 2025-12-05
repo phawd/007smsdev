@@ -1,0 +1,13 @@
+Package: data
+Version: git-r26
+Description: data version git-r26
+ Qualcomm Technologies Data Modules (Excluding ConfigDB and DSUtils)
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: sdx20
+OE: data
+Homepage: http://support.cdmatech.com
+Depends: libgcc1 (>= 4.9.3), libtime-genoff1 (>= git), data-oss (>= git), libqmi-client-helper1 (>= git), libconfigdb0 (>= git), libdsutils1 (>= git), libc6 (>= 2.22), qmi (>= git), qmi-framework (>= git), libstdc++6 (>= 4.9.3), libglib-2.0-0 (>= 2.44.1), diag (>= git), libxml0 (>= git), libpugixml1 (>= 1.8)
+Source: file://data/ file://data-init file://QCMAP_ConnectionManagerd.service file://qtid.service

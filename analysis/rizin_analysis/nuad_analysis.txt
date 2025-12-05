@@ -1,0 +1,1919 @@
+0x0000a378    1 12           sym._init
+0x0000a384    1 16           fcn.0000a384
+0x0000a398    1 12           sym.imp.__libc_start_main
+0x0000a3a4    1 12           sym.imp.abort
+0x0000a3bc    1 12           sym.imp.clock_gettime
+0x0000a3c8    1 12           sym.imp.watchdog_application_send_keep_alive
+0x0000a3d4    1 12           sym.imp.fork
+0x0000a3e0    1 12           sym.imp.exit
+0x0000a3ec    1 12           sym.imp.umask
+0x0000a3f8    1 12           sym.imp.setsid
+0x0000a404    1 12           sym.imp.chdir
+0x0000a410    1 12           sym.imp.open
+0x0000a41c    1 12           sym.imp.dup2
+0x0000a428    1 12           sym.imp.close
+0x0000a434    1 12           sym.imp.write
+0x0000a440    1 12           sym.imp.memset
+0x0000a44c    1 12           sym.imp.sys_getLastSoftwareUpdateStatus
+0x0000a458    1 12           sym.imp.mifi_dbg_get_level_name
+0x0000a464    1 12           sym.imp.mifi_dbg_syslog
+0x0000a470    1 12           sym.imp.mifi_dbg_log
+0x0000a47c    1 12           sym.imp.snprintf
+0x0000a488    1 12           sym.imp.memcpy
+0x0000a494    1 12           sym.imp.strcmp
+0x0000a4a0    1 12           sym.imp.strlen
+0x0000a4ac    1 12           sym.imp.time
+0x0000a4b8    1 12           sym.imp.gmtime
+0x0000a4c4    1 12           sym.imp.strftime
+0x0000a4d0    1 12           sym.imp.gettimeofday
+0x0000a4dc    1 12           sym.imp.msgq_send_async
+0x0000a4e8    1 12           sym.imp.popen
+0x0000a4f4    1 12           sym.imp.pclose
+0x0000a500    1 12           sym.imp.pthread_self
+0x0000a50c    1 12           sym.imp.getpid
+0x0000a518    1 12           sym.imp.signal
+0x0000a524    1 12           sym.imp.mifi_dbg_start
+0x0000a530    1 12           sym.imp.pipe
+0x0000a53c    1 12           sym.imp.__errno_location
+0x0000a548    1 12           sym.imp.msgq_create
+0x0000a554    1 12           sym.imp.mifi_security_init
+0x0000a560    1 12           sym.imp.watchdog_application_register
+0x0000a56c    1 12           sym.imp.select
+0x0000a578    1 12           sym.imp.msgq_receive
+0x0000a584    1 12           sym.imp.msgq_resp_preprocess
+0x0000a590    1 12           sym.imp.msgq_resp_postprocess
+0x0000a59c    1 12           sym.imp.mq_close
+0x0000a5a8    1 12           sym.imp.mq_unlink
+0x0000a5b4    1 12           sym.imp.mifi_security_shutdown
+0x0000a5c0    1 12           sym.imp.mifi_dbg_stop
+0x0000a5cc    1 12           sym.imp.su_api_is_running
+0x0000a5d8    1 12           sym.imp.nua_api_sys_indication
+0x0000a5e4    1 12           sym.imp.MsgBus_Create
+0x0000a5f0    1 12           sym.imp.MsgBus_Connect
+0x0000a5fc    1 12           sym.imp.MsgBus_Release
+0x0000a608    1 12           sym.imp.MsgBus_SetCallback
+0x0000a614    1 12           sym.imp.MsgBus_Disconnect
+0x0000a620    1 12           sym.imp.MsgBus_Subscribe
+0x0000a62c    1 12           sym.imp.pthread_detach
+0x0000a638    1 12           sym.imp.nua_api_timer_timeout_ind
+0x0000a644    1 12           sym.imp.timer_delete
+0x0000a650    1 12           sym.imp.timer_create
+0x0000a65c    1 12           sym.imp.timer_settime
+0x0000a668    1 12           sym.imp.sys_getBatteryStatus
+0x0000a674    1 12           sym.imp.sys_changeSystemRunlevel
+0x0000a680    1 12           sym.imp.sys_registerDevicePowerDownHandoff
+0x0000a68c    1 12           sym.imp.system
+0x0000a698    1 12           sym.imp.sys_getHardwareInfo
+0x0000a6a4    1 12           sym.imp.sys_getSystemVersion
+0x0000a6b0    1 12           sym.imp.sys_validateHomeNetwork
+0x0000a6bc    1 12           sym.imp.sys_getCellularDataConnectionStatus
+0x0000a6c8    1 12           sym.imp.pthread_mutex_lock
+0x0000a6d4    1 12           sym.imp.pthread_mutex_unlock
+0x0000a6e0    1 12           sym.imp.fopen
+0x0000a6ec    1 12           sym.imp.fclose
+0x0000a6f8    1 12           sym.imp.strtoul
+0x0000a704    1 12           sym.imp.strtol
+0x0000a710    1 12           sym.imp.pthread_mutex_init
+0x0000a71c    1 12           sym.imp.MsgBusSetBinary
+0x0000a728    1 12           sym.imp.sleep
+0x0000a734    1 12           sym.imp.sys_getLastSuccessfulSoftwareUpdateInfo
+0x0000a740    1 12           sym.imp.sys_incrementSoftwareUpdateDeferCount
+0x0000a74c    1 12           sym.imp.sys_installSoftwareUpdate
+0x0000a758    1 12           sym.imp.sys_abortCurrentSoftwareUpdateSession
+0x0000a764    1 12           sym.imp.sys_setSoftwareUpdateInfo
+0x0000a770    1 12           sym.imp.sys_getCurrentSoftwareUpdateInfo
+0x0000a77c    1 12           sym.imp.sys_getSoftwareUpdateInfoByID
+0x0000a788    1 12           sym.imp.sys_getSoftwareUpdateMaxPackageSize
+0x0000a794    1 12           sym.imp.sys_getSourceVersionFromPkg
+0x0000a7a0    1 12           sym.imp.sys_getTargetVersionFromPkg
+0x0000a7ac    1 12           sym.imp.sys_validateSoftwareUpdatePackage
+0x0000a7b8    1 12           sym.imp.sys_createSoftwareUpdateSession
+0x0000a7c4    1 12           sym.imp.sys_terminateSoftwareUpdateSession
+0x0000a7d0    1 12           sym.imp.localtime
+0x0000a7dc    1 12           sym.imp.sys_setLastSoftwareUpdateCheckTime
+0x0000a7e8    1 12           sym.imp.mifi_security_aes128_decrypt
+0x0000a7f4    1 12           sym.imp.strtoull
+0x0000a800    1 12           sym.imp.mifi_security_decrypt_file
+0x0000a80c    1 12           sym.imp.nua_api_job_response_ind
+0x0000a818    1 12           sym.imp.fwrite
+0x0000a824    1 12           sym.imp.fprintf
+0x0000a830    1 12           sym.imp.mifi_security_encrypt_file
+0x0000a83c    1 12           sym.imp.strncat
+0x0000a848    1 12           sym.imp.nua_api_engine_ready_ind
+0x0000a854    1 12           sym.imp.msgq_resp_handler
+0x0000a860    1 12           sym.imp.pthread_create
+0x0000a86c    1 12           sym.imp.msgq_does_queue_exist
+0x0000a878    1 12           sym.imp.pthread_join
+0x0000a884    1 12           sym.imp.fflush
+0x0000a890    1 12           sym.imp.fileno
+0x0000a89c    1 12           sym.imp.fsync
+0x0000a8a8    1 12           sym.imp.strncmp
+0x0000a8b4    1 12           sym.imp.malloc
+0x0000a8c0    1 12           sym.imp.mifi_security_hmac_create_signature
+0x0000a8cc    1 12           sym.imp.free
+0x0000a8d8    1 12           sym.imp.curl_slist_append
+0x0000a8e4    1 12           sym.imp.curl_easy_setopt
+0x0000a8f0    1 12           sym.imp.fseek
+0x0000a8fc    1 12           sym.imp.curl_easy_perform
+0x0000a908    1 12           sym.imp.curl_easy_getinfo
+0x0000a914    1 12           sym.imp.curl_easy_reset
+0x0000a920    1 12           sym.imp.curl_slist_free_all
+0x0000a92c    1 12           sym.imp.curl_global_init
+0x0000a938    1 12           sym.imp.curl_easy_init
+0x0000a944    1 12           sym.imp.curl_easy_cleanup
+0x0000a950    1 12           sym.imp.curl_global_cleanup
+0x0000a95c    1 12           sym.imp.msgq_send
+0x0000a968    1 12           sym.imp.mifi_security_aes128_encrypt
+0x0000a974    1 12           sym.imp.settings_get_setting
+0x0000a980    1 12           sym.imp.xmldata_initialize
+0x0000a98c    1 12           sym.imp.xmldata_getstring_default
+0x0000a998    1 12           sym.imp.xmldata_getuint32_default
+0x0000a9a4    1 12           sym.imp.xmldata_getcount
+0x0000a9b0    1 12           sym.imp.xmldata_shutdown
+0x0000a9bc    1 12           sym.imp.MsgBusGet
+0x0000a9c8    1 12           sym.imp.settings_get_features
+0x0000a9d4    1 12           sym.imp.printf
+0x0000a9e0    1 12           sym.imp.xmlXPathEvalExpression
+0x0000a9ec    1 12           sym.imp.xmlNewNode
+0x0000a9f8    1 12           sym.imp.xmlDocCopyNode
+0x0000aa04    1 12           sym.imp.xmlAddChild
+0x0000aa10    1 12           sym.imp.xmlUnlinkNode
+0x0000aa1c    1 12           sym.imp.xmlFreeNode
+0x0000aa28    1 12           sym.imp.xmlXPathFreeObject
+0x0000aa34    1 12           sym.imp.strchr
+0x0000aa40    1 12           sym.imp.strdup
+0x0000aa4c    1 12           sym.imp.strrchr
+0x0000aa58    1 12           sym.imp.xmlNodeGetContent
+0x0000aa64    1 12           sym.imp.xmlStrlen
+0x0000aa70    1 12           sym.imp.xmlEncodeEntitiesReentrant
+0x0000aa7c    1 12           sym.imp.xmlEncodeSpecialChars
+0x0000aa88    1 12           sym.imp.xmlNodeSetContentLen
+0x0000aa94    1 12           sym.imp.fputs
+0x0000aaa0    1 12           sym.imp.xmlKeepBlanksDefault
+0x0000aaac    1 12           sym.imp.xmlReadFile
+0x0000aab8    1 12           sym.imp.xmlXPathNewContext
+0x0000aac4    1 12           sym.imp.xmlFreeDoc
+0x0000aad0    1 12           sym.imp.xmlSaveFormatFileEnc
+0x0000aadc    1 12           sym.imp.xmlXPathFreeContext
+0x0000aae8    1 12           sym.imp.opendir
+0x0000aaf4    1 12           sym.imp.remove
+0x0000ab00    1 12           sym.imp.readdir
+0x0000ab0c    1 12           sym.imp.closedir
+0x0000ab18    1 12           sym.imp.unlink
+0x0000ab24    1 12           sym.imp.rename
+0x0000ab30    1 12           sym.imp.strerror
+0x0000ab3c    1 12           sym.imp.fgets
+0x0000ab48    1 12           sym.imp.__xstat
+0x0000ab54    1 12           sym.imp.__lxstat
+0x0000ab60    1 44           entry0
+0x0000ab9c    1 28           fcn.0000ab9c
+0x0000abc0    1 36           fcn.0000abc0
+0x0000ac28    1 36           entry.fini0
+0x0000ac50    5 140  -> 88   entry.init0
+0x0000ac84    6 136          fcn.0000ac84
+0x0000ad0c   15 312          fcn.0000ad0c
+0x0000aec0   12 1100         fcn.0000aec0
+0x0000b3a0   24 1316         fcn.0000b3a0
+0x0000b958    8 660          fcn.0000b958
+0x0000bc40   11 148          fcn.0000bc40
+0x0000bcd4   11 148          fcn.0000bcd4
+0x0000bd68   17 1060         fcn.0000bd68
+0x0000c220   13 1024         fcn.0000c220
+0x0000c6a0   14 1180         fcn.0000c6a0
+0x0000cbe4    7 404          fcn.0000cbe4
+0x0000cf50    4 420          fcn.0000cf50
+0x0000d130    4 344          fcn.0000d130
+0x0000d2ac    8 316          fcn.0000d2ac
+0x0000d404    8 436          fcn.0000d404
+0x0000d5f4    6 532          fcn.0000d5f4
+0x0000d860   14 516          fcn.0000d860
+0x0000dab0   13 676          fcn.0000dab0
+0x0000ddb8    1 220          fcn.0000ddb8
+0x0000deb0    1 268          fcn.0000deb0
+0x0000dfd8   12 920          fcn.0000dfd8
+0x0000e3fc   15 1080         fcn.0000e3fc
+0x0000e8e0    9 304          fcn.0000e8e0
+0x0000ea2c   17 1092         fcn.0000ea2c
+0x0000ef00   56 1944         fcn.0000ef00
+0x0000f7bc    8 536          fcn.0000f7bc
+0x0000fa2c   12 356          fcn.0000fa2c
+0x0000fba0   10 1164         fcn.0000fba0
+0x000100b8   16 1792         fcn.000100b8
+0x000108a0   13 184          fcn.000108a0
+0x00010f38    9 504          fcn.00010f38
+0x00011170    8 472          fcn.00011170
+0x00011384   15 1540         fcn.00011384
+0x00011a64   19 1692         fcn.00011a64
+0x000121fc   13 840          fcn.000121fc
+0x000125d4    9 704          fcn.000125d4
+0x00012904   58 3076         fcn.00012904
+0x00013710   11 604          fcn.00013710
+0x000139c0   15 1072         fcn.000139c0
+0x00013e7c   12 1252         fcn.00013e7c
+0x00014428   63 2176         fcn.00014428
+0x00014dd8   11 564          fcn.00014dd8
+0x00015060   16 1848         fcn.00015060
+0x00015874   16 1340         fcn.00015874
+0x00015e60   21 1328         fcn.00015e60
+0x00016430   13 928          fcn.00016430
+0x00016844   24 1392         fcn.00016844
+0x00016e80    1 56           fcn.00016e80
+0x00016ebc   18 312          fcn.00016ebc
+0x0001700c    4 196          fcn.0001700c
+0x000170ec    4 64           fcn.000170ec
+0x00017234   11 788          fcn.00017234
+0x000175c0   35 2852         main
+0x000181f8    6 308          fcn.000181f8
+0x00018358   21 1000         fcn.00018358
+0x000189ac   15 1184         fcn.000189ac
+0x00018efc    4 192          fcn.00018efc
+0x0001919c   10 284          fcn.0001919c
+0x000192c8   13 1188         fcn.000192c8
+0x000197e0   21 2196         fcn.000197e0
+0x0001a14c   12 788          fcn.0001a14c
+0x0001a4a8    6 376          fcn.0001a4a8
+0x0001a658   10 628          fcn.0001a658
+0x0001a914    8 716          fcn.0001a914
+0x0001ac44   14 728          fcn.0001ac44
+0x0001af84    4 456          fcn.0001af84
+0x0001b194    7 396          fcn.0001b194
+0x0001b364    7 552          fcn.0001b364
+0x0001b5e8   18 1496         fcn.0001b5e8
+0x0001bca0    4 232          fcn.0001bca0
+0x0001bda4    6 576          fcn.0001bda4
+0x0001c050    4 340          fcn.0001c050
+0x0001c1e0   17 724          fcn.0001c1e0
+0x0001c508   23 1208         fcn.0001c508
+0x0001ca34    6 224          fcn.0001ca34
+0x0001cb34    6 224          fcn.0001cb34
+0x0001cc34    6 288          fcn.0001cc34
+0x0001cd80    9 408          fcn.0001cd80
+0x0001cf5c    7 528          fcn.0001cf5c
+0x0001d1c4   22 840          fcn.0001d1c4
+0x0001d578    1 40           sym.nua_get_settings_impl
+0x0001d5a0    1 40           sym.nua_set_settings_impl
+0x0001d5c8    3 108          sym.initialize_settings
+0x0001d648    1 28           fcn.0001d648
+0x0001d668    1 28           fcn.0001d668
+0x0001d688    4 240          fcn.0001d688
+0x0001d7a0   23 1280         fcn.0001d7a0
+0x0001dd34    9 288          fcn.0001dd34
+0x0001de60    4 304          fcn.0001de60
+0x0001dfb0    6 432          fcn.0001dfb0
+0x0001e1a0   10 668          fcn.0001e1a0
+0x0001e49c    9 372          fcn.0001e49c
+0x0001e630   13 856          fcn.0001e630
+0x0001e9ec    4 300          fcn.0001e9ec
+0x0001eb34    8 544          fcn.0001eb34
+0x0001edb4   30 2784         fcn.0001edb4
+0x0001fa80   28 2648         fcn.0001fa80
+0x000206a8   14 1176         fcn.000206a8
+0x00020c04   12 1028         fcn.00020c04
+0x000210b0   10 792          fcn.000210b0
+0x00021448   12 952          fcn.00021448
+0x0002189c   10 796          fcn.0002189c
+0x00021c3c   10 796          fcn.00021c3c
+0x00021fdc   15 1188         fcn.00021fdc
+0x0002254c   15 1212         fcn.0002254c
+0x00022aa4   14 1188         fcn.00022aa4
+0x00022fdc   19 712          fcn.00022fdc
+0x000232f4    4 88           fcn.000232f4
+0x00023350    4 88           fcn.00023350
+0x000233ac    4 88           fcn.000233ac
+0x00023408    4 88           fcn.00023408
+0x00023464    4 88           fcn.00023464
+0x000234c0    4 88           fcn.000234c0
+0x0002351c    4 80           fcn.0002351c
+0x00023570    4 80           fcn.00023570
+0x000235c4    4 80           fcn.000235c4
+0x00023618    4 80           fcn.00023618
+0x0002366c    7 132          fcn.0002366c
+0x000236f8    4 88           fcn.000236f8
+0x00023754    4 88           fcn.00023754
+0x000237b0    1 60           fcn.000237b0
+0x000237f0    4 80           fcn.000237f0
+0x00023844    4 80           fcn.00023844
+0x00023898    4 80           fcn.00023898
+0x000238ec    1 60           fcn.000238ec
+0x0002392c    4 120          fcn.0002392c
+0x000239ac    1 112          fcn.000239ac
+0x00023a24    1 112          fcn.00023a24
+0x00023a9c    1 112          fcn.00023a9c
+0x00023b14    1 52           fcn.00023b14
+0x00023b4c    4 104          fcn.00023b4c
+0x00023bbc    1 52           fcn.00023bbc
+0x00023bf4   10 584          fcn.00023bf4
+0x00023e7c    1 108          fcn.00023e7c
+0x00023ef0    1 108          fcn.00023ef0
+0x00023f64    1 108          fcn.00023f64
+0x00023fd8    1 108          fcn.00023fd8
+0x0002404c    1 108          fcn.0002404c
+0x000240c0    1 108          fcn.000240c0
+0x00024134    1 108          fcn.00024134
+0x000241a8    1 108          fcn.000241a8
+0x0002421c    1 108          fcn.0002421c
+0x00024290    1 108          fcn.00024290
+0x000244ec    4 336          fcn.000244ec
+0x0002466c    6 656          fcn.0002466c
+0x00024950    4 316          fcn.00024950
+0x00024abc    6 632          fcn.00024abc
+0x00024d8c    8 1148         fcn.00024d8c
+0x0002527c    4 336          fcn.0002527c
+0x000253fc    6 432          fcn.000253fc
+0x000255e0    1 120          fcn.000255e0
+0x0002565c    4 348          fcn.0002565c
+0x000257d8   10 896          fcn.000257d8
+0x00025bf0    5 112          fcn.00025bf0
+0x00025c60   12 1072         fcn.00025c60
+0x00026130   13 980          fcn.00026130
+0x000265ac   18 900          fcn.000265ac
+0x000269cc    1 48           fcn.000269cc
+0x000269fc   15 1244         fcn.000269fc
+0x00026f6c    3 232          fcn.00026f6c
+0x00027070   12 1144         fcn.00027070
+0x00027560    4 344          fcn.00027560
+0x000276f0    4 344          fcn.000276f0
+0x00027880   28 1448         fcn.00027880
+0x0002812c    4 224          fcn.0002812c
+0x0002822c    4 232          fcn.0002822c
+0x0002853c    4 232          fcn.0002853c
+0x00028744    4 368          fcn.00028744
+0x00028d34    6 1012         fcn.00028d34
+0x000291b0    7 408          fcn.000291b0
+0x00029388    4 368          fcn.00029388
+0x00029534    4 388          fcn.00029534
+0x000296e8    4 436          sym.nua_factory_reset_impl
+0x000298e0    3 64           sym.initialize_factory_reset_func
+0x00029e40    6 540          fcn.00029e40
+0x0002a0a0    6 492          fcn.0002a0a0
+0x0002a2c8   14 516          fcn.0002a2c8
+0x0002a4e4    8 608          fcn.0002a4e4
+0x0002aa84    8 636          fcn.0002aa84
+0x0002ad40   26 2564         fcn.0002ad40
+0x0002b8ac    6 504          fcn.0002b8ac
+0x0002bb00   24 1208         fcn.0002bb00
+0x0002c008   15 876          fcn.0002c008
+0x0002c3b4   13 632          fcn.0002c3b4
+0x0002c66c    6 384          fcn.0002c66c
+0x0002c818   13 936          fcn.0002c818
+0x0002cc24    7 612          fcn.0002cc24
+0x0002cee0    7 604          fcn.0002cee0
+0x0002d194    6 136          fcn.0002d194
+0x0002d21c    4 300          fcn.0002d21c
+0x0002d368    8 1148         fcn.0002d368
+0x0002d894    8 1344         fcn.0002d894
+0x0002de98   16 1300         fcn.0002de98
+0x0002e474    7 784          fcn.0002e474
+0x0002e7f4   13 1148         fcn.0002e7f4
+0x0002ecfc   12 1376         fcn.0002ecfc
+0x0002f308   19 1716         fcn.0002f308
+0x0002fa94   14 424          fcn.0002fa94
+0x0002fc68   27 1772         fcn.0002fc68
+0x00030430    6 124          fcn.00030430
+0x00030acc    3 300          fcn.00030acc
+0x00030c28    4 380          fcn.00030c28
+0x00030ddc    6 476          fcn.00030ddc
+0x00030ff8    6 476          fcn.00030ff8
+0x00031214    6 476          fcn.00031214
+0x00031430    9 644          fcn.00031430
+0x00031b48    6 468          fcn.00031b48
+0x00031f3c    3 272          fcn.00031f3c
+0x00032068    6 360          fcn.00032068
+0x000323d4    9 372          fcn.000323d4
+0x00032578    1 148          fcn.00032578
+0x00032610    1 248          fcn.00032610
+0x00032720   21 1188         fcn.00032720
+0x00032c1c    8 740          fcn.00032c1c
+0x00032f40   14 952          fcn.00032f40
+0x00033364   33 1960         fcn.00033364
+0x00033bf0   11 564          fcn.00033bf0
+0x00033e60    6 260          fcn.00033e60
+0x00033f84   50 1100         fcn.00033f84
+0x0003443c    6 712          fcn.0003443c
+0x00034758   16 628          fcn.00034758
+0x00034a24   38 2028         fcn.00034a24
+0x000359e8    4 176          fcn.000359e8
+0x00035aac    4 300          fcn.00035aac
+0x00035c10    1 112          fcn.00035c10
+0x00035cbc    1 32           fcn.00035cbc
+0x00035ce0    1 32           fcn.00035ce0
+0x00035d04    1 32           fcn.00035d04
+0x00035d28    1 32           fcn.00035d28
+0x00035d4c    1 36           fcn.00035d4c
+0x00035d74    1 44           fcn.00035d74
+0x00035da4    1 36           fcn.00035da4
+0x00035dcc    1 36           fcn.00035dcc
+0x00035df4    1 36           fcn.00035df4
+0x00035e1c    1 44           fcn.00035e1c
+0x00035e4c    6 820          fcn.00035e4c
+0x00036214    3 56           fcn.00036214
+0x00036254    3 64           fcn.00036254
+0x0003629c    1 44           fcn.0003629c
+0x000362cc    1 44           fcn.000362cc
+0x000362fc    1 36           fcn.000362fc
+0x00036324    1 36           fcn.00036324
+0x0003634c    1 40           fcn.0003634c
+0x00036378    1 40           fcn.00036378
+0x000363a4    1 40           fcn.000363a4
+0x000363d0    1 40           fcn.000363d0
+0x000363fc    1 40           fcn.000363fc
+0x00036428    1 40           fcn.00036428
+0x00036454    1 72           fcn.00036454
+0x000364a0    4 456          fcn.000364a0
+0x0003674c    1 40           fcn.0003674c
+0x00036778    1 40           fcn.00036778
+0x000367a4    1 40           fcn.000367a4
+0x000367d0    1 40           fcn.000367d0
+0x000367fc    1 40           fcn.000367fc
+0x00036828    1 40           fcn.00036828
+0x00036854    1 40           fcn.00036854
+0x000369d0   18 2232         fcn.000369d0
+0x0003739c   15 912          fcn.0003739c
+0x000377a8    4 88           fcn.000377a8
+0x0003780c    4 88           fcn.0003780c
+0x00037870    4 128          fcn.00037870
+0x00037900    9 1916         fcn.00037900
+0x000380fc   33 1660         fcn.000380fc
+0x00038844    9 572          fcn.00038844
+0x00038ab8   17 508          fcn.00038ab8
+0x00038cd0   30 1972         fcn.00038cd0
+0x00039584    1 72           fcn.00039584
+0x00039614    6 160          fcn.00039614
+0x000396b4   11 652          fcn.000396b4
+0x00039994    8 748          fcn.00039994
+0x00039ce8    6 536          fcn.00039ce8
+0x00039f48    8 524          fcn.00039f48
+0x0003a1a0    5 96           fcn.0003a1a0
+0x0003a200    7 232          fcn.0003a200
+0x0003a2f8   20 1416         fcn.0003a2f8
+0x0003a91c    6 360          fcn.0003a91c
+0x0003aab0    6 420          fcn.0003aab0
+0x0003ac88    6 120          fcn.0003ac88
+0x0003ad00    6 112          fcn.0003ad00
+0x0003ad70    4 300          fcn.0003ad70
+0x0003aec0    9 444          fcn.0003aec0
+0x0003b0b4   11 812          fcn.0003b0b4
+0x0003b454   21 684  -> 400  fcn.0003b454
+0x0003b700   11 392  -> 212  fcn.0003b700
+0x0003b724    1 40           fcn.0003b724
+0x0003b778    1 20           fcn.0003b778
+0x0003b794    1 12           fcn.0003b794
+0x0003b7a0   10 704  -> 204  fcn.0003b7a0
+0x0003b800    6 228          fcn.0003b800
+0x0003b9e0   17 216  -> 196  fcn.0003b9e0
+0x0003ba6c   19 788  -> 592  fcn.0003ba6c
+0x0003bc00   12 112          fcn.0003bc00
+0x0003bc80    7 136          fcn.0003bc80
+0x0003bd08    1 28           fcn.0003bd08
+0x0003bd24    1 20           fcn.0003bd24
+0x0003bd38    1 20           fcn.0003bd38
+0x0003bd9c    9 84           fcn.0003bd9c
+0x0003be54    1 16           fcn.0003be54
+0x0003be64    1 16           fcn.0003be64
+0x0003be74    1 8            sym._fini
+=== STRINGS ===
+     paddr      vaddr len size section type  string                                                                                                                                                                           
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+0x00033e84 0x0003be84   9   10 .rodata ascii /dev/null
+0x00033e94 0x0003be94  71   72 .rodata ascii [%s]:[%s] - %s: sys_getLastSoftwareUpdateStatus() failed rc=%d, ignore\n
+0x00033ee4 0x0003bee4  50   51 .rodata ascii [%s]:[%s] - %s: Found FOTA status:%d (%s), rec:%u\n
+0x00033f18 0x0003bf18  48   49 .rodata ascii [%s]:[%s] - %s: nua_reg_save_su_result() failed\n
+0x00033f4c 0x0003bf4c  62   63 .rodata ascii [%s]:[%s] - %s: nua_reg_save_su_loop_poll_interval(10) failed\n
+0x00033f8c 0x0003bf8c  54   55 .rodata ascii [%s]:[%s] - %s: Consecutive SU loop interval=[10] set\n
+0x00033fc4 0x0003bfc4  52   53 .rodata ascii [%s]:[%s] - %s: nua_reg_read_activity_info() failed\n
+0x00033ffc 0x0003bffc  42   43 .rodata ascii [%s]:[%s] - %s: Activity update_check=[0]\n
+0x00034028 0x0003c028  38   39 .rodata ascii [%s]:[%s] - %s: Activity dlfinish=[0]\n
+0x00034050 0x0003c050  12   13 .rodata ascii %m%d%Y%H%M%S
+0x00034060 0x0003c060  61   62 .rodata ascii [%s]:[%s] - %s: nua_sys_get_device_version() failed, rc=[%d]\n
+0x000340a0 0x0003c0a0  60   61 .rodata ascii [%s]:[%s] - %s: nua_cloud_report_activity() failed, rc=[%d]\n
+0x000340e0 0x0003c0e0  54   55 .rodata ascii [%s]:[%s] - %s: nua_reg_read_dlddd_record_no() failed\n
+0x00034118 0x0003c118  42   43 .rodata ascii [%s]:[%s] - %s: No SU record exists in DD\n
+0x00034144 0x0003c144  60   61 .rodata ascii [%s]:[%s] - %s: nua_dldd_read_su_record_by_index(%d) failed\n
+0x00034184 0x0003c184  58   59 .rodata ascii [%s]:[%s] - %s: nua_reg_read_su_trigger() failed, rc=[%d]\n
+0x000341c4 0x0003c1c4  37   38 .rodata ascii [%s]:[%s] - %s: Device under roaming\n
+0x000341ec 0x0003c1ec  39   40 .rodata ascii [%s]:[%s] - %s: Device roam check pass\n
+0x00034214 0x0003c214  40   41 .rodata ascii [%s]:[%s] - %s: Device data call not up\n
+0x00034240 0x0003c240  37   38 .rodata ascii [%s]:[%s] - %s: Data call check pass\n
+0x00034268 0x0003c268  58   59 .rodata ascii [%s]:[%s] - %s: nua_sys_get_device_info() failed, rc=[%d]\n
+0x000342a4 0x0003c2a4  11   12 .rodata ascii %s/%s/%s/%s
+0x000342b0 0x0003c2b0  52   53 .rodata ascii [%s]:[%s] - %s: nua_reg_read_test_mode_url() failed\n
+0x000342e8 0x0003c2e8   6    7 .rodata ascii custom
+0x000342f0 0x0003c2f0  14   15 .rodata ascii %s/%s/%s/%s/%s
+0x00034300 0x0003c300  41   42 .rodata ascii [%s]:[%s] - %s: Final URL=[%s], len=[%d]\n
+0x0003432c 0x0003c32c  61   62 .rodata ascii [%s]:[%s] - %s: nua_validate_su_conditions() failed, rc=[%d]\n
+0x0003436c 0x0003c36c  59   60 .rodata ascii [%s]:[%s] - %s: nua_determine_server_url() failed, rc=[%d]\n
+0x000343a8 0x0003c3a8  71   72 .rodata ascii [%s]:[%s] - %s: nua_cloud_start_update_check_session() failed, rc=[%d]\n
+0x000343f0 0x0003c3f0  49   50 .rodata ascii [%s]:[%s] - %s: nua_reg_save_su_trigger() failed\n
+0x00034424 0x0003c424  44   45 .rodata ascii [%s]:[%s] - %s: nua_reg_save_state() failed\n
+0x00034454 0x0003c454  80   81 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: nua_timer_delete(NUA_TIMER_ID_RETRY) failed, rc=[%d]\n
+0x000344a8 0x0003c4a8  56   57 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_RETRY - deleted\n
+0x000344e4 0x0003c4e4  46   47 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_RETRY\n
+0x00034514 0x0003c514  62   63 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: nua_timer_delete() failed, rc=[%d]\n
+0x00034554 0x0003c554  23   24 .rodata ascii nua_retry_alarm_handler
+0x0003456c 0x0003c56c  78   79 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: nua_timer_start(NUA_TIMER_ID_RETRY) failed,rc=[%d]\n
+0x000345bc 0x0003c5bc  71   72 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_RETRY - started, interval=[%u]\n
+0x00034604 0x0003c604  32   33 .rodata ascii [%s]:[%s] - %s: gmtime() failed\n
+0x00034628 0x0003c628  17   18 .rodata ascii %m-%d-%Y-%H:%M:%S
+0x0003463c 0x0003c63c  53   54 .rodata ascii [%s]:[%s] - %s: Couldn't save auto install timestamp\n
+0x00034674 0x0003c674  57   58 .rodata ascii [%s]:[%s] - %s: SU Auto-install new timestamp=[%s] saved\n
+0x000346b0 0x0003c6b0  61   62 .rodata ascii [%s]:[%s] - %s: nua_reg_save_su_loop_poll_interval(0) failed\n
+0x000346f0 0x0003c6f0  45   46 .rodata ascii [%s]:[%s] - %s: Couldn't save poll timestamp\n
+0x00034720 0x0003c720  41   42 .rodata ascii [%s]:[%s] - %s: New timestamp=[%s] saved\n
+0x0003474c 0x0003c74c  53   54 .rodata ascii [%s]:[%s] - %s: Couldn't save su condition timestamp\n
+0x00034784 0x0003c784   7    8 .rodata ascii Roaming
+0x0003478c 0x0003c78c   7    8 .rodata ascii No-data
+0x00034794 0x0003c794  59   60 .rodata ascii [%s]:[%s] - %s: SU condition [%s] new timestamp=[%s] saved\n
+0x000347d0 0x0003c7d0  57   58 .rodata ascii [%s]:[%s] - %s: Current time=[%ld] < recorded time=[%ld]\n
+0x0003480c 0x0003c80c  56   57 .rodata ascii [%s]:[%s] - %s: Previous timestamp is 0, saving new one\n
+0x00034848 0x0003c848  61   62 .rodata ascii [%s]:[%s] - %s: SU condition [%s] elapsed time=[%ld] seconds\n
+0x00034888 0x0003c888  49   50 .rodata ascii [%s]:[%s] - %s: Reset only SU Condition counters\n
+0x000348bc 0x0003c8bc  41   42 .rodata ascii [%s]:[%s] - %s: Reset all retry counters\n
+0x000348e8 0x0003c8e8  60   61 .rodata ascii [%s]:[%s] - %s: Cfg-short-retry value is zero, abort report\n
+0x00034928 0x0003c928  55   56 .rodata ascii [%s]:[%s] - %s: retries for reporting results disabled\n
+0x00034960 0x0003c960  62   63 .rodata ascii [%s]:[%s] - %s: Max retries exceeded. elapsed=[%u], max=[%u].\n
+0x000349a0 0x0003c9a0  67   68 .rodata ascii [%s]:[%s] - %s: nua_reg_save_report_retry_count(%d) failed, abort.\n
+0x000349e4 0x0003c9e4  43   44 .rodata ascii [%s]:[%s] - %s: Next retry in=[%u] seconds\n
+0x00034a10 0x0003ca10  56   57 .rodata ascii [%s]:[%s] - %s: Cfg-short-retry value is zero, abort DL\n
+0x00034a4c 0x0003ca4c  44   45 .rodata ascii [%s]:[%s] - %s: DL session retries disabled\n
+0x00034a7c 0x0003ca7c  63   64 .rodata ascii [%s]:[%s] - %s: nua_reg_save_dl_retry_count(%d) failed, abort.\n
+0x00034abc 0x0003cabc  22   23 .rodata ascii DL Retry times expired
+0x00034ad4 0x0003cad4  60   61 .rodata ascii [%s]:[%s] - %s: nua_session_create_result_from_err() failed\n
+0x00034b14 0x0003cb14  90   91 .rodata ascii [%s]:[%s] - %s: nua_retry_start_timer(%u, 0) failed, abort the update. is_dl_session=[%d]\n
+0x00034b70 0x0003cb70  86   87 .rodata ascii [%s]:[%s] - %s: DL session SU-condition retry time exceeded - elapsed=[%u], max=[%u].\n
+0x00034bc8 0x0003cbc8  19   20 .rodata ascii SU condition failed
+0x00034bdc 0x0003cbdc  90   91 .rodata ascii [%s]:[%s] - %s: Report session SU-condition retry time exceeded - elapsed=[%u], max=[%u].\n
+0x00034c38 0x0003cc38  63   64 .rodata ascii [%s]:[%s] - %s: Next retry in=[%u] seconds. is_dl_session=[%d]\n
+0x00034c78 0x0003cc78  52   53 .rodata ascii [%s]:[%s] - %s: SU_OPR_ERR_COMMS_FATAL - is_dl=[%d]\n
+0x00034cb0 0x0003ccb0  19   20 .rodata ascii communication error
+0x00034cc4 0x0003ccc4  48   49 .rodata ascii [%s]:[%s] - %s: SU_OPR_ERR_STORAGE - is_dl=[%d]\n
+0x00034cf8 0x0003ccf8  24   25 .rodata ascii registry operation error
+0x00034d14 0x0003cd14  58   59 .rodata ascii [%s]:[%s] - %s: SU_OPR_ERR_DEVICE_IN_ROAMING - is_dl=[%d]\n
+0x00034d50 0x0003cd50  61   62 .rodata ascii [%s]:[%s] - %s: SU_OPR_ERR_OTA_CALL_NOT_PRESENT - is_dl=[%d]\n
+0x00034d90 0x0003cd90  51   52 .rodata ascii [%s]:[%s] - %s: SU_OPR_ERR_DL_GENERAL - is_dl=[%d]\n
+0x00034dc4 0x0003cdc4  71   72 .rodata ascii [%s]:[%s] - %s: Should never happen, un-handled error=[%d]. is_dl=[%d]\n
+0x00034e0c 0x0003ce0c  46   47 .rodata ascii [%s]:[%s] - %s: nua_reg_save_state(%d) failed\n
+0x00034e3c 0x0003ce3c  40   41 .rodata ascii [%s]:[%s] - %s: run state machine again\n
+0x00034e68 0x0003ce68  23   24 .rodata ascii nua_session_err_actions
+0x00034e80 0x0003ce80  70   71 .rodata ascii [%s]:[%s] - %s: nua_public_notify_ready_for_download_to_apps() failed\n
+0x00034ec8 0x0003cec8  57   58 .rodata ascii [%s]:[%s] - %s: Scheduled NUA_JOB_REQ_REPORT_ACT_DLSTART\n
+0x00034f04 0x0003cf04  24   25 .rodata ascii nua_start_download_ready
+0x00034f20 0x0003cf20  13   14 .rodata ascii dl_retry_test
+0x00034f30 0x0003cf30  14   15 .rodata ascii dl_report_test
+0x00034f40 0x0003cf40  66   67 .rodata ascii [%s]:[%s] - %s: nua_read_su_record_from_dd() failed, abort report\n
+0x00034f84 0x0003cf84  57   58 .rodata ascii [%s]:[%s] - %s: nua_su_cond_retry_counter_reset() failed\n
+0x00034fc0 0x0003cfc0  58   59 .rodata ascii [%s]:[%s] - %s: nua_cloud_start_download_session() failed\n
+0x00034ffc 0x0003cffc  72   73 .rodata ascii [%s]:[%s] - %s: DL schedule success, file offset=[%u], retry_count=[%u]\n
+0x00035048 0x0003d048  62   63 .rodata ascii [%s]:[%s] - %s: nua_reg_read_su_result() failed, abort report\n
+0x00035088 0x0003d088  50   51 .rodata ascii [%s]:[%s] - %s: nua_cloud_report_results() failed\n
+0x000350bc 0x0003d0bc  65   66 .rodata ascii [%s]:[%s] - %s: Report-result schedule success, retry_count=[%u]\n
+0x00035100 0x0003d100  22   23 .rodata ascii nua_sucondition_update
+0x00035118 0x0003d118  53   54 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_AUTO_INSTALL\n
+0x00035150 0x0003d150  58   59 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: ignore timer, since state=[%s]\n
+0x0003518c 0x0003d18c  38   39 .rodata ascii [%s]:[%s] - %s: Starting auto install\n
+0x000351b4 0x0003d1b4  48   49 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_SU_POLL\n
+0x000351e8 0x0003d1e8  22   23 .rodata ascii nua_poll_alarm_handler
+0x00035200 0x0003d200  47   48 .rodata ascii [%s]:[%s] - %s: picked [SU loop] interval=[%u]\n
+0x00035230 0x0003d230  44   45 .rodata ascii [%s]:[%s] - %s: picked [test] interval=[%u]\n
+0x00035260 0x0003d260  45   46 .rodata ascii [%s]:[%s] - %s: picked [cloud] interval=[%u]\n
+0x00035290 0x0003d290  43   44 .rodata ascii [%s]:[%s] - %s: picked [cfg] interval=[%u]\n
+0x000352bc 0x0003d2bc  69   70 .rodata ascii [%s]:[%s] - %s: picked [SU record - Auto install Mins] interval=[%u]\n
+0x00035304 0x0003d304  63   64 .rodata ascii [%s]:[%s] - %s: picked [Cfg - Auto install Mins] interval=[%u]\n
+0x00035344 0x0003d344  57   58 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: Auto install feature disabled\n
+0x00035380 0x0003d380  74   75 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: Don't start timer in not applicable state=[%s]\n
+0x000353cc 0x0003d3cc  94   95 .rodata ascii [%s]:[%s] - %s: System time invalid, time now=[%ld] < time last=[%ld], schedule from cfg=[%u]\n
+0x0003542c 0x0003d42c  68   69 .rodata ascii [%s]:[%s] - %s: Starting auto install, elapsed=[%u], cfg_intvl=[%u]\n
+0x00035474 0x0003d474  88   89 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_AUTO_INSTALL already running. ignore intvl=[%u]\n
+0x000354d0 0x0003d4d0  86   87 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: nua_timer_start(NUA_TIMER_ID_AUTO_INSTALL) failed, rc=[%d]\n
+0x00035528 0x0003d528 102  103 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_AUTO_INSTALL started, intvl=[%u], elapsed_time=[%u], cfg=[%u]\n
+0x00035590 0x0003d590  41   42 .rodata ascii [%s]:[%s] - %s: polling feature disabled\n
+0x000355bc 0x0003d5bc  70   71 .rodata ascii [%s]:[%s] - %s: System time invalid, time now=[%ld] < time last=[%ld]\n
+0x00035604 0x0003d604  74   75 .rodata ascii [%s]:[%s] - %s: Scheduling check for update, elapsed=[%u], cfg_intvl=[%u]\n
+0x00035654 0x0003d654  47   48 .rodata ascii [%s]:[%s] - %s: Waiting for HOME(SU condition)\n
+0x00035684 0x0003d684  47   48 .rodata ascii [%s]:[%s] - %s: Waiting for Data(SU condition)\n
+0x000356b4 0x0003d6b4  60   61 .rodata ascii [%s]:[%s] - %s: nua_schedule_update_check() failed, rc=[%d]\n
+0x000356f4 0x0003d6f4  83   84 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_SU_POLL already running. ignore intvl=[%u]\n
+0x00035748 0x0003d748  81   82 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: nua_timer_start(NUA_TIMER_ID_SU_POLL) failed, rc=[%d]\n
+0x0003579c 0x0003d79c 108  109 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_SU_POLL started, intvl=[%u], elapsed_time=[%u], cfg_poll_intvl=[%u]\n
+0x0003580c 0x0003d80c  28   29 .rodata ascii [%s]:[%s] - %s: cleaning up\n
+0x0003582c 0x0003d82c  55   56 .rodata ascii [%s]:[%s] - %s: nua_fota_release_session_lock() failed\n
+0x00035864 0x0003d864  45   46 .rodata ascii [%s]:[%s] - %s: nua_reg_backup_tags() failed\n
+0x00035894 0x0003d894  49   50 .rodata ascii [%s]:[%s] - %s: nua_reg_reset_fota_tags() failed\n
+0x000358c8 0x0003d8c8  18   19 .rodata ascii /opt/nvtl/data/nua
+0x000358dc 0x0003d8dc  54   55 .rodata ascii [%s]:[%s] - %s: Trigger count, now=[%u], allowed=[%u]\n
+0x00035914 0x0003d914  65   66 .rodata ascii [%s]:[%s] - %s: nua_reg_save_auto_install_trigger_count() failed\n
+0x00035958 0x0003d958  66   67 .rodata ascii [%s]:[%s] - %s: nua_public_notify_update_confirm_to_apps() failed\n
+0x0003599c 0x0003d99c  53   54 .rodata ascii [%s]:[%s] - %s: cur=[%d][%s], prev=[%s], caller=[%s]\n
+0x000359d4 0x0003d9d4  49   50 .rodata ascii [%s]:[%s] - %s: nua_idle_state_clean_up() failed\n
+0x00035a08 0x0003da08  58   59 .rodata ascii [%s]:[%s] - %s: nua_idle_poll_check_next_attempt() failed\n
+0x00035a44 0x0003da44  65   66 .rodata ascii [%s]:[%s] - %s: nua_check_auto_install_trigger() failed, rc=[%d]\n
+0x00035a88 0x0003da88  54   55 .rodata ascii [%s]:[%s] - %s: nua_check_auto_install_timer() failed\n
+0x00035ac0 0x0003dac0  75   76 .rodata ascii [%s]:[%s] - %s: nua_public_notify_update_confirm_to_apps() failed, rc=[%d]\n
+0x00035b0c 0x0003db0c  69   70 .rodata ascii [%s]:[%s] - %s: Battery check failed, monitor based on msgbus events\n
+0x00035b54 0x0003db54  50   51 .rodata ascii [%s]:[%s] - %s: nua_start_download_ready() failed\n
+0x00035b88 0x0003db88  44   45 .rodata ascii [%s]:[%s] - %s: nua_start_download() failed\n
+0x00035bb8 0x0003dbb8  75   76 .rodata ascii [%s]:[%s] - %s: nua_get_firmware_update_results() failed to fetch results.\n
+0x00035c04 0x0003dc04  71   72 .rodata ascii [%s]:[%s] - %s: nua_reg_save_state(SU_STATE_INSTALL_COMPLETED) failed.\n
+0x00035c4c 0x0003dc4c  66   67 .rodata ascii [%s]:[%s] - %s: nua_public_notify_update_status_to_apps() failed.\n
+0x00035c90 0x0003dc90  49   50 .rodata ascii [%s]:[%s] - %s: nua_retry_counter_reset() failed\n
+0x00035cc4 0x0003dcc4  51   52 .rodata ascii [%s]:[%s] - %s: nua_start_report_session() failed.\n
+0x00035cf8 0x0003dcf8  59   60 .rodata ascii [%s]:[%s] - %s: Some thing wrong, state cannot be [%d][%s]\n
+0x00035d34 0x0003dd34  47   48 .rodata ascii [%s]:[%s] - %s: Cur state=[%s] is not download\n
+0x00035d64 0x0003dd64  58   59 .rodata ascii [%s]:[%s] - %s: Current operation is not of FOTA download\n
+0x00035da0 0x0003dda0  59   60 .rodata ascii [%s]:[%s] - %s: Not a fota download, ignore this progress \n
+0x00035ddc 0x0003dddc  62   63 .rodata ascii [%s]:[%s] - %s: nua_reg_save_dl_file_offset() failed, rc=[%d]\n
+0x00035e1c 0x0003de1c  32   33 .rodata ascii [%s]:[%s] - %s: total_size is 0\n
+0x00035e40 0x0003de40  71   72 .rodata ascii [%s]:[%s] - %s: nua_public_notify_download_progress_to_apps(%u) failed\n
+0x00035e88 0x0003de88  59   60 .rodata ascii [%s]:[%s] - %s: nua_reg_read_dl_progress() failed, rc=[%d]\n
+0x00035ec4 0x0003dec4  21   22 .rodata ascii [%s]:[%s] - %s: [%s]\n
+0x00035edc 0x0003dedc  41   42 .rodata ascii [%s]:[%s] - %s: Reporting result success\n
+0x00035f08 0x0003df08  19   20 .rodata ascii [%s]:[%s] - %s: %s\n
+0x00035f1c 0x0003df1c  60   61 .rodata ascii [%s]:[%s] - %s: nua_session_err_actions() failed, goto idle\n
+0x00035f5c 0x0003df5c  52   53 .rodata ascii [%s]:[%s] - %s: Give up. on critical error=[%d][%s]\n
+0x00035f94 0x0003df94  34   35 .rodata ascii [%s]:[%s] - %s: run state machine\n
+0x00035fb8 0x0003dfb8  37   38 .rodata ascii nua_job_process_report_results_finish
+0x00035fe0 0x0003dfe0  47   48 .rodata ascii [%s]:[%s] - %s: Not a fota download, goto idle\n
+0x00036010 0x0003e010  34   35 .rodata ascii Unable to find FOTA record in DLDD
+0x00036034 0x0003e034  65   66 .rodata ascii [%s]:[%s] - %s: nua_fota_verify_update_package() failed, rc=[%d]\n
+0x00036078 0x0003e078  24   25 .rodata ascii PKG verification failure
+0x00036094 0x0003e094  58   59 .rodata ascii [%s]:[%s] - %s: Scheduled NUA_JOB_REQ_REPORT_ACT_DLFINISH\n
+0x000360d0 0x0003e0d0  65   66 .rodata ascii [%s]:[%s] - %s: nua_session_err_actions() failed, report results\n
+0x00036114 0x0003e114  28   29 .rodata ascii Unable to process curl error
+0x00036134 0x0003e134  25   26 .rodata ascii Download file is oversize
+0x00036150 0x0003e150  31   32 .rodata ascii Unable to process storage error
+0x00036170 0x0003e170  42   43 .rodata ascii nua_job_process_pkg_download_finish_status
+0x0003619c 0x0003e19c  64   65 .rodata ascii [%s]:[%s] - %s: nua_dldd_read_activity_record_by_index() failed\n
+0x000361e0 0x0003e1e0  36   37 .rodata ascii [%s]:[%s] - %s: Invalid campaing_id\n
+0x00036208 0x0003e208  58   59 .rodata ascii [%s]:[%s] - %s: nua_dldd_read_su_record_by_index() failed\n
+0x00036244 0x0003e244  30   31 .rodata ascii Failed to read SU record in DD
+0x00036264 0x0003e264  25   26 .rodata ascii Invalid campaign ID in DD
+0x00036280 0x0003e280  61   62 .rodata ascii [%s]:[%s] - %s: nua_fota_get_max_supported_pkg_size() failed\n
+0x000362c0 0x0003e2c0  27   28 .rodata ascii Failed to read max pkg size
+0x000362dc 0x0003e2dc  56   57 .rodata ascii [%s]:[%s] - %s: Oversize package, max=[%u], actual=[%u]\n
+0x00036318 0x0003e318  23   24 .rodata ascii Pkg size exceeded limit
+0x00036330 0x0003e330  28   29 .rodata ascii Unable to get device version
+0x00036350 0x0003e350  49   50 .rodata ascii [%s]:[%s] - %s: Versions - Device=[%s], New=[%s]\n
+0x00036384 0x0003e384  46   47 .rodata ascii [%s]:[%s] - %s: Device already at new version\n
+0x000363b4 0x0003e3b4  25   26 .rodata ascii Already at newest version
+0x000363d0 0x0003e3d0  51   52 .rodata ascii [%s]:[%s] - %s: nua_dldd_parse_descriptor() failed\n
+0x00036404 0x0003e404  33   34 .rodata ascii [%s]:[%s] - %s: No records in DD\n
+0x00036428 0x0003e428  53   54 .rodata ascii [%s]:[%s] - %s: nua_process_activity_record() failed\n
+0x00036460 0x0003e460  47   48 .rodata ascii [%s]:[%s] - %s: nua_process_su_record() failed\n
+0x00036490 0x0003e490  54   55 .rodata ascii [%s]:[%s] - %s: nua_reg_save_dlddd_record_no() failed\n
+0x000364c8 0x0003e4c8  55   56 .rodata ascii [%s]:[%s] - %s: nua_fota_acquire_session_lock() failed\n
+0x00036500 0x0003e500  44   45 .rodata ascii [%s]:[%s] - %s: Give up. error=[%d][%s][%s]\n
+0x00036530 0x0003e530  63   64 .rodata ascii [%s]:[%s] - %s: nua_schedule_activity_report() failed, rc=[%d]\n
+0x00036570 0x0003e570  59   60 .rodata ascii [%s]:[%s] - %s: Scheduled NUA_JOB_REQ_REPORT_ACT_UPD_CHECK\n
+0x000365ac 0x0003e5ac  35   36 .rodata ascii nua_job_process_update_check_status
+0x000365d0 0x0003e5d0  58   59 .rodata ascii [%s]:[%s] - %s: Activity UPD_CHECK report status=[%d][%s]\n
+0x0003660c 0x0003e60c  56   57 .rodata ascii [%s]:[%s] - %s: Activity DLSTART report status=[%d][%s]\n
+0x00036648 0x0003e648  57   58 .rodata ascii [%s]:[%s] - %s: Activity DLFINISH report status=[%d][%s]\n
+0x00036684 0x0003e684  38   39 .rodata ascii nua_job_process_report_activity_finish
+0x000366ac 0x0003e6ac  59   60 .rodata ascii [%s]:[%s] - %s: Received resp for NUA_JOB_REQ_CHECK_UPDATE\n
+0x000366e8 0x0003e6e8  43   44 .rodata ascii [%s]:[%s] - %s: status type cannot be [%d]\n
+0x00036714 0x0003e714  41   42 .rodata ascii [%s]:[%s] - %s: Received progress update\n
+0x00036740 0x0003e740  41   42 .rodata ascii [%s]:[%s] - %s: Download finish response\n
+0x0003676c 0x0003e76c  47   48 .rodata ascii [%s]:[%s] - %s: Report results finish response\n
+0x0003679c 0x0003e79c  47   48 .rodata ascii [%s]:[%s] - %s: Unknown reference request [%d]\n
+0x000367cc 0x0003e7cc  23   24 .rodata ascii nua_power_on_msg_handle
+0x000367e4 0x0003e7e4  46   47 .rodata ascii [%s]:[%s] - %s: NUA_MSG_ENGINE_READY received\n
+0x00036814 0x0003e814  82   83 .rodata ascii [%s]:[%s] - %s: Cloud storage communication not enabled in configuration settings.
+0x00036868 0x0003e868  31   32 .rodata ascii [%s]:[%s] - %s: Event type: %d\n
+0x00036888 0x0003e888   7    8 .rodata ascii /nua_mq
+0x00036890 0x0003e890  62   63 .rodata ascii [%s]:[%s] - %s: Directory not present even after created once\n
+0x000368d0 0x0003e8d0   5    6 .rodata ascii %s %s
+0x000368d8 0x0003e8d8   9   10 .rodata ascii mkdir -p 
+0x000368e8 0x0003e8e8  59   60 .rodata ascii [%s]:[%s] - %s: Failed to create NUA data directory, rc:%d\n
+0x00036924 0x0003e924  52   53 .rodata ascii [%s]:[%s] - %s: Successfully created Data directory\n
+0x0003695c 0x0003e95c  37   38 .rodata ascii [%s]:[%s] - %s: Data directory found\n
+0x00036984 0x0003e984  64   65 .rodata ascii [%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+0x000369c8 0x0003e9c8  55   56 .rodata ascii [%s]:[%s] - Error opening signal pipe: %d, terminating.
+0x00036a00 0x0003ea00  47   48 .rodata ascii [%s]:[%s] - Error attaching to the message bus.
+0x00036a30 0x0003ea30  62   63 .rodata ascii [%s]:[%s] - Error initializing nua configuration, terminating.
+0x00036a70 0x0003ea70  57   58 .rodata ascii [%s]:[%s] - Error initializing nua settings, terminating.
+0x00036aac 0x0003eaac  57   58 .rodata ascii [%s]:[%s] - Error opening message queue: %d, terminating.
+0x00036ae8 0x0003eae8  55   56 .rodata ascii [%s]:[%s] - Error failed to start communication engine.
+0x00036b20 0x0003eb20  15   16 .rodata ascii nua_main_thread
+0x00036b30 0x0003eb30  57   58 .rodata ascii [%s]:[%s] - NUA data directory not present, terminating.\n
+0x00036b6c 0x0003eb6c  49   50 .rodata ascii [%s]:[%s] - nua_reg_init() failed , terminating.\n
+0x00036ba0 0x0003eba0  42   43 .rodata ascii [%s]:[%s] - Select returned %d, errno: %d.
+0x00036bcc 0x0003ebcc  46   47 .rodata ascii [%s]:[%s] - mq_receive returned %d, errno: %d.
+0x00036bfc 0x0003ebfc  34   35 .rodata ascii [%s]:[%s] - %s Server Terminating.
+0x00036c20 0x0003ec20  31   32 .rodata ascii nua_get_firmware_update_results
+0x00036c40 0x0003ec40  28   29 .rodata ascii nua_schedule_activity_report
+0x00036c60 0x0003ec60  26   27 .rodata ascii nua_read_su_record_from_dd
+0x00036c7c 0x0003ec7c  26   27 .rodata ascii nua_validate_su_conditions
+0x00036c98 0x0003ec98  24   25 .rodata ascii nua_determine_server_url
+0x00036cb4 0x0003ecb4  29   30 .rodata ascii nua_schedule_new_update_check
+0x00036cd4 0x0003ecd4  22   23 .rodata ascii nua_retry_delete_timer
+0x00036cec 0x0003ecec  23   24 .rodata ascii nua_retry_alarm_handler
+0x00036d04 0x0003ed04  21   22 .rodata ascii nua_retry_start_timer
+0x00036d1c 0x0003ed1c  34   35 .rodata ascii nua_session_create_result_from_err
+0x00036d40 0x0003ed40  21   22 .rodata ascii nua_get_utc_timestamp
+0x00036d58 0x0003ed58  34   35 .rodata ascii nua_su_auto_install_save_timestamp
+0x00036d7c 0x0003ed7c  24   25 .rodata ascii nua_poll_reset_timestamp
+0x00036d98 0x0003ed98  26   27 .rodata ascii nua_su_cond_save_timestamp
+0x00036db4 0x0003edb4  34   35 .rodata ascii nua_su_cond_calculate_elapsed_time
+0x00036dd8 0x0003edd8  31   32 .rodata ascii nua_su_cond_retry_counter_reset
+0x00036df8 0x0003edf8  23   24 .rodata ascii nua_retry_counter_reset
+0x00036e10 0x0003ee10  30   31 .rodata ascii nua_compute_report_retry_value
+0x00036e30 0x0003ee30  26   27 .rodata ascii nua_compute_dl_retry_value
+0x00036e4c 0x0003ee4c  23   24 .rodata ascii nua_compute_retry_logic
+0x00036e64 0x0003ee64  36   37 .rodata ascii nua_compute_su_condition_retry_logic
+0x00036e8c 0x0003ee8c  23   24 .rodata ascii nua_session_err_actions
+0x00036ea4 0x0003eea4  24   25 .rodata ascii nua_start_download_ready
+0x00036ec0 0x0003eec0  18   19 .rodata ascii nua_start_download
+0x00036ed4 0x0003eed4  24   25 .rodata ascii nua_start_report_session
+0x00036ef0 0x0003eef0  30   31 .rodata ascii nua_auto_install_alarm_handler
+0x00036f10 0x0003ef10  22   23 .rodata ascii nua_poll_alarm_handler
+0x00036f28 0x0003ef28  31   32 .rodata ascii nua_idle_poll_get_next_interval
+0x00036f48 0x0003ef48  26   27 .rodata ascii nua_find_auto_install_mins
+0x00036f64 0x0003ef64  28   29 .rodata ascii nua_check_auto_install_timer
+0x00036f84 0x0003ef84  32   33 .rodata ascii nua_idle_poll_check_next_attempt
+0x00036fa8 0x0003efa8  23   24 .rodata ascii nua_idle_state_clean_up
+0x00036fc0 0x0003efc0  30   31 .rodata ascii nua_check_auto_install_trigger
+0x00036fe0 0x0003efe0  17   18 .rodata ascii nua_state_machine
+0x00036ff4 0x0003eff4  32   33 .rodata ascii nua_is_fota_download_in_progress
+0x00037018 0x0003f018  31   32 .rodata ascii nua_job_process_pkg_dl_progress
+0x00037038 0x0003f038  37   38 .rodata ascii nua_job_process_report_results_finish
+0x00037060 0x0003f060  42   43 .rodata ascii nua_job_process_pkg_download_finish_status
+0x0003708c 0x0003f08c  27   28 .rodata ascii nua_process_activity_record
+0x000370a8 0x0003f0a8  21   22 .rodata ascii nua_process_su_record
+0x000370c0 0x0003f0c0  31   32 .rodata ascii nua_process_download_descriptor
+0x000370e0 0x0003f0e0  35   36 .rodata ascii nua_job_process_update_check_status
+0x00037104 0x0003f104  38   39 .rodata ascii nua_job_process_report_activity_finish
+0x0003712c 0x0003f12c  27   28 .rodata ascii nua_job_response_msg_handle
+0x00037148 0x0003f148  24   25 .rodata ascii nua_handle_event_message
+0x00037164 0x0003f164  30   31 .rodata ascii nua_start_communication_engine
+0x00037184 0x0003f184  23   24 .rodata ascii nua_post_internal_event
+0x0003719c 0x0003f19c  30   31 .rodata ascii verify_and_create_app_data_dir
+0x000371bc 0x0003f1bc  12   13 .rodata ascii nua.settings
+0x000371cc 0x0003f1cc  15   16 .rodata ascii modem2.wap.push
+0x000371dc 0x0003f1dc  17   18 .rodata ascii modem2.roam_state
+0x000371f0 0x0003f1f0  19   20 .rodata ascii ccm2.wan_connection
+0x00037204 0x0003f204  14   15 .rodata ascii modem2.service
+0x00037214 0x0003f214  13   14 .rodata ascii dsm.broadcast
+0x00037224 0x0003f224  39   40 .rodata ascii [%s]:[%s] - %s: Missing data on msgbus\n
+0x00037250 0x0003f250  53   54 .rodata ascii [%s]:[%s] - %s: NUA not running, discard roaming ind\n
+0x00037288 0x0003f288  60   61 .rodata ascii [%s]:[%s] - %s: NUA not running, discard DSM_CHARGER_DET_AC\n
+0x000372c8 0x0003f2c8  69   70 .rodata ascii [%s]:[%s] - %s: NUA not running, discard MSGBUS_DSM_BATTERY_CAPACITY\n
+0x00037310 0x0003f310  50   51 .rodata ascii [%s]:[%s] - %s: DSM_FOTA_UPDATE_SHUTDOWN received\n
+0x00037344 0x0003f344  48   49 .rodata ascii [%s]:[%s] - %s: DSM_FOTA_UPDATE_REBOOT received\n
+0x00037378 0x0003f378  49   50 .rodata ascii [%s]:[%s] - %s: Invalid handoff type:%d from DSM\n
+0x000373ac 0x0003f3ac  37   38 .rodata ascii [%s]:[%s] - %s: MsgBus_Create Failed\n
+0x000373d4 0x0003f3d4  38   39 .rodata ascii [%s]:[%s] - %s: MsgBus_Connect Failed\n
+0x000373fc 0x0003f3fc  42   43 .rodata ascii [%s]:[%s] - %s: MsgBus_SetCallback Failed\n
+0x00037428 0x0003f428  47   48 .rodata ascii [%s]:[%s] - %s: MsgBus_Subscribe failed for:%s\n
+0x00037458 0x0003f458   7    8 .rodata ascii NUA_MBH
+0x00037460 0x0003f460  40   41 .rodata ascii [%s]:[%s] - %s: MsgBus subscribed to:%s\n
+0x0003748c 0x0003f48c  33   34 .rodata ascii [%s]:[%s] - %s: Init MsgBus done\n
+0x000374b0 0x0003f4b0  46   47 .rodata ascii [%s]:[%s] - %s: Disable Message bus interface\n
+0x000374e0 0x0003f4e0  32   33 .rodata ascii msgbus_receive_roam_state_events
+0x00037504 0x0003f504  25   26 .rodata ascii msgbus_receive_dsm_events
+0x00037520 0x0003f520  12   13 .rodata ascii nua_mbh_init
+0x00037530 0x0003f530  14   15 .rodata ascii nua_mbh_deinit
+0x00037544 0x0003f544  51   52 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: Timer expired nua-id:%u\n
+0x00037578 0x0003f578  72   73 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: nua_api_timer_timeout_ind(%d) failed, rc= %d\n
+0x000375c4 0x0003f5c4  56   57 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: thread exit, timer nua-id:%d\n
+0x00037600 0x0003f600  45   46 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: caller_ref_id: %d\n
+0x00037630 0x0003f630  64   65 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: NUA Timer not found for ref id: [%u]\n
+0x00037674 0x0003f674  76   77 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: Found timer with nua-id:%u, ref-id:%u, os-id:%ld\n
+0x000376c4 0x0003f6c4  77   78 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: timer_delete(%ld) failed for nua-id:%d, ref id:%u\n
+0x00037714 0x0003f714  71   72 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: Timer deleted - nua-id:%u, caller_ref_id:%u\n
+0x0003775c 0x0003f75c  48   49 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: Input buffer is NULL\n
+0x00037790 0x0003f790  44   45 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: caller_ref_id:%d\n
+0x000377c0 0x0003f7c0  44   45 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: Timer CB is NULL\n
+0x000377f0 0x0003f7f0  54   55 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: Invalid timer interval:%lu\n
+0x00037828 0x0003f828  52   53 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: NUA Timers not available\n
+0x00037860 0x0003f860  59   60 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: timer_create() failed -- sig:%d\n
+0x0003789c 0x0003f89c  92   93 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: timer_settime() failed for caller-id:%u (interval:%lu), errno:%d\n
+0x000378fc 0x0003f8fc 116  117 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: Timer started - NUA id:%u, OS id:%ld, caller id:%u, interval:%lu, repeat:%u, obsolute:%u\n
+0x00037974 0x0003f974  61   62 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: NUA Timer not found for nua-id:%u\n
+0x000379b4 0x0003f9b4  63   64 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: nua-id:%u, caller-ref-id:%u timeout\n
+0x000379f4 0x0003f9f4  66   67 .rodata ascii [%s]:[%s] - [NUA_TIMER]%s: Error in NUA Timer CB:%p for nua-id:%d\n
+0x00037a38 0x0003fa38  16   17 .rodata ascii nua_timer_thread
+0x00037a4c 0x0003fa4c  20   21 .rodata ascii nua_timer_is_running
+0x00037a64 0x0003fa64  16   17 .rodata ascii nua_timer_delete
+0x00037a78 0x0003fa78  15   16 .rodata ascii nua_timer_start
+0x00037a88 0x0003fa88  28   29 .rodata ascii nua_timer_timeout_msg_handle
+0x00037aa8 0x0003faa8  31   32 .rodata ascii [%s]:[%s] - %s: Chg. connected\n
+0x00037acc 0x0003facc  47   48 .rodata ascii [%s]:[%s] - %s: Capacity=[%u] > threshold=[%u]\n
+0x00037afc 0x0003fafc  20   21 .rodata ascii [%s]:[%s] - %s: +++\n
+0x00037b14 0x0003fb14  53   54 .rodata ascii [%s]:[%s] - %s: sys_getBatteryStatus() failed, rc=%d\n
+0x00037b4c 0x0003fb4c  69   70 .rodata ascii [%s]:[%s] - %s: usb_tethered=[%u], chg_connected=[%u], capacity=[%u]\n
+0x00037b94 0x0003fb94  87   88 .rodata ascii [%s]:[%s] - %s: nua_sys_get_battery_status() failed, cannot proceed with install rc=%d\n
+0x00037bec 0x0003fbec  41   42 .rodata ascii [%s]:[%s] - %s: Battery check disabled!!\n
+0x00037c18 0x0003fc18  35   36 .rodata ascii [%s]:[%s] - %s: Battery check pass\n
+0x00037c3c 0x0003fc3c  62   63 .rodata ascii [%s]:[%s] - %s: Battery check failed(chg=[%u], capacity=[%u])\n
+0x00037c7c 0x0003fc7c  39   40 .rodata ascii [%s]:[%s] - %s: Battery check disabled\n
+0x00037ca4 0x0003fca4  33   34 .rodata ascii [%s]:[%s] - %s: Monitor disabled\n
+0x00037cc8 0x0003fcc8  63   64 .rodata ascii [%s]:[%s] - %s: Battery check failed (chg=[%u], capacity=[%u])\n
+0x00037d08 0x0003fd08  75   76 .rodata ascii [%s]:[%s] - %s: nua_public_notify_update_confirm_to_apps() failed, rc=[%d]\n
+0x00037d54 0x0003fd54  54   55 .rodata ascii [%s]:[%s] - %s: nua_check_auto_install_timer() failed\n
+0x00037d8c 0x0003fd8c  29   30 .rodata ascii [%s]:[%s] - %s: runlevel[%d]\n
+0x00037dac 0x0003fdac  59   60 .rodata ascii [%s]:[%s] - %s: sys_changeSystemRunlevel(%d) failed, rc=%d\n
+0x00037de8 0x0003fde8  29   30 .rodata ascii [%s]:[%s] - %s: Success [%d]\n
+0x00037e08 0x0003fe08  66   67 .rodata ascii [%s]:[%s] - %s: sys_registerDeviceShutdownHandoff() failed, rc=%d\n
+0x00037e4c 0x0003fe4c  10   11 .rodata ascii registered
+0x00037e58 0x0003fe58  13   14 .rodata ascii de-registered
+0x00037e68 0x0003fe68  29   30 .rodata ascii [%s]:[%s] - %s: Handoff=[%s]\n
+0x00037e88 0x0003fe88  31   32 .rodata ascii [%s]:[%s] - %s: Begin shutdown\n
+0x00037ea8 0x0003fea8   9   10 .rodata ascii telinit 0
+0x00037eb4 0x0003feb4  29   30 .rodata ascii [%s]:[%s] - %s: Begin Reboot\n
+0x00037ed4 0x0003fed4   9   10 .rodata ascii telinit 6
+0x00037ee0 0x0003fee0  72   73 .rodata ascii [%s]:[%s] - %s: nua_sys_change_runlevel(%d) failed, rc=[%d], try backup\n
+0x00037f2c 0x0003ff2c  74   75 .rodata ascii [%s]:[%s] - %s: Install on shutdown feature not supported, ignore handoff\n
+0x00037f78 0x0003ff78  65   66 .rodata ascii [%s]:[%s] - %s: Installation already started!!, ignore powerdown\n
+0x00037fbc 0x0003ffbc  60   61 .rodata ascii [%s]:[%s] - %s: NUA state[%d] != SU_STATE_INSTALL_POSTPONED\n
+0x00037ffc 0x0003fffc  65   66 .rodata ascii [%s]:[%s] - %s: Battery check failed, choosing regular powerdown\n
+0x00038040 0x00040040  60   61 .rodata ascii [%s]:[%s] - %s: Set boot pref to LPM!! (ac[%d], tether[%d])\n
+0x00038080 0x00040080  65   66 .rodata ascii [%s]:[%s] - %s: Set boot pref to shutdown!! (ac[%d], tether[%d])\n
+0x000380c4 0x000400c4  68   69 .rodata ascii [%s]:[%s] - %s: Starting installation, power-down handoff type=[%d]\n
+0x0003810c 0x0004010c  51   52 .rodata ascii [%s]:[%s] - %s: public_start_install failed, rc=%d\n
+0x00038140 0x00040140  58   59 .rodata ascii [%s]:[%s] - %s: nua_cache_refresh_settings() failed, rc=%d
+0x0003817c 0x0004017c  18   19 .rodata ascii [%s]:[%s] - %s:++\n
+0x00038190 0x00040190  32   33 .rodata ascii /opt/nvtl/data/nua/freset_cookie
+0x000381b4 0x000401b4  34   35 .rodata ascii [%s]:[%s] - %s: Starting clean up\n
+0x000381d8 0x000401d8  18   19 .rodata ascii /opt/nvtl/data/nua
+0x000381ec 0x000401ec  58   59 .rodata ascii [%s]:[%s] - %s: Failed to cleanup data directory, rc=[%d]\n
+0x00038228 0x00040228  29   30 .rodata ascii [%s]:[%s] - %s: Cleanup done\n
+0x00038248 0x00040248  19   20 .rodata ascii [%s]:[%s] - %s: ++\n
+0x0003825c 0x0004025c  54   55 .rodata ascii [%s]:[%s] - %s: Unable to create factory reset cookie\n
+0x00038294 0x00040294  52   53 .rodata ascii [%s]:[%s] - %s: sys_getHardwareInfo() failed, rc=%d\n
+0x000382d4 0x000402d4  28   29 .rodata ascii [%s]:[%s] - %s: outBuf=[%s]\n
+0x000382f4 0x000402f4  18   19 .rodata ascii /root/fake_version
+0x00038308 0x00040308  39   40 .rodata ascii [%s]:[%s] - %s: Read fake version=[%s]\n
+0x00038330 0x00040330  53   54 .rodata ascii [%s]:[%s] - %s: sys_getSystemVersion() failed, rc=%d\n
+0x00038374 0x00040374   6    7 .rodata ascii -%s-%s
+0x0003837c 0x0004037c  46   47 .rodata ascii [%s]:[%s] - %s: device version=[%s], len=[%d]\n
+0x000383ac 0x000403ac  49   50 .rodata ascii [%s]:[%s] - %s: NUA is not yet ready, drop event\n
+0x000383e0 0x000403e0  32   33 .rodata ascii [%s]:[%s] - %s: in service=[%u]\n
+0x00038404 0x00040404  31   32 .rodata ascii [%s]:[%s] - %s: connected=[%u]\n
+0x00038424 0x00040424  26   27 .rodata ascii [%s]:[%s] - %s: Home=[%u]\n
+0x00038440 0x00040440  62   63 .rodata ascii [%s]:[%s] - %s: nua_sys_validateHomeNetwork() failed, rc=[%d]\n
+0x00038480 0x00040480   4    5 .rodata ascii ROAM
+0x00038488 0x00040488   4    5 .rodata ascii HOME
+0x00038490 0x00040490  31   32 .rodata ascii [%s]:[%s] - %s: Roam status=%s\n
+0x000384b0 0x000404b0  70   71 .rodata ascii [%s]:[%s] - %s: sys_getCellularDataConnectionStatus() failed, rc=[%d]\n
+0x000384f8 0x000404f8  29   30 .rodata ascii [%s]:[%s] - %s: Data call up\n
+0x00038518 0x00040518  55   56 .rodata ascii [%s]:[%s] - %s: Data call not up, sys_call_status=[%d]\n
+0x00038550 0x00040550  41   42 .rodata ascii [%s]:[%s] - %s: NUA_SYS_SETTINGS_UPDATED\n
+0x0003857c 0x0004057c  42   43 .rodata ascii [%s]:[%s] - %s: NUA_SYS_APP_FACTORY_RESET\n
+0x000385a8 0x000405a8  41   42 .rodata ascii [%s]:[%s] - %s: NUA_SYS_POWER_INDICATION\n
+0x000385d4 0x000405d4  41   42 .rodata ascii [%s]:[%s] - %s: NUA_SYS_BATTERY_CAPACITY\n
+0x00038600 0x00040600  42   43 .rodata ascii [%s]:[%s] - %s: NUA_SYS_POWERDOWN_HANDOFF\n
+0x0003862c 0x0004062c  44   45 .rodata ascii [%s]:[%s] - %s: Unsupported system event:%d\n
+0x0003865c 0x0004065c  27   28 .rodata ascii nua_sys_battery_apply_rules
+0x00038678 0x00040678  26   27 .rodata ascii nua_sys_get_battery_status
+0x00038694 0x00040694  21   22 .rodata ascii nua_sys_battery_check
+0x000386ac 0x000406ac  33   34 .rodata ascii nua_sys_handle_battery_indication
+0x000386d0 0x000406d0  23   24 .rodata ascii nua_sys_change_runlevel
+0x000386e8 0x000406e8  42   43 .rodata ascii nua_sys_register_for_dsm_powerdown_handoff
+0x00038714 0x00040714  32   33 .rodata ascii nua_sys_execute_regular_shutdown
+0x00038738 0x00040738  25   26 .rodata ascii nua_sys_powerdown_handoff
+0x00038754 0x00040754  24   25 .rodata ascii nua_sys_settings_updated
+0x00038770 0x00040770  37   38 .rodata ascii nua_sys_execute_pending_factory_reset
+0x00038798 0x00040798  21   22 .rodata ascii nua_sys_factory_reset
+0x000387b0 0x000407b0  23   24 .rodata ascii nua_sys_get_device_info
+0x000387c8 0x000407c8  26   27 .rodata ascii nua_sys_get_device_version
+0x000387e4 0x000407e4  26   27 .rodata ascii nua_sys_service_indication
+0x00038800 0x00040800  28   29 .rodata ascii nua_sys_data_call_indication
+0x00038820 0x00040820  23   24 .rodata ascii nua_sys_roam_indication
+0x00038838 0x00040838  25   26 .rodata ascii nua_sys_is_device_roaming
+0x00038854 0x00040854  23   24 .rodata ascii nua_sys_is_data_call_up
+0x0003886c 0x0004086c  30   31 .rodata ascii nua_sys_indications_msg_handle
+0x0003888c 0x0004088c  12   13 .rodata ascii nua.settings
+0x0003889c 0x0004089c  31   32 .rodata ascii /opt/nvtl/data/nua/reg.xml_temp
+0x000388bc 0x000408bc  38   39 .rodata ascii [%s]:[%s] - %s: nua_xml_save() failed\n
+0x000388e8 0x000408e8  26   27 .rodata ascii /opt/nvtl/data/nua/reg.xml
+0x00038904 0x00040904   6    7 .rodata ascii <reg/>
+0x0003890c 0x0004090c  42   43 .rodata ascii [%s]:[%s] - %s: nua_xml_open_new() failed\n
+0x00038938 0x00040938  23   24 .rodata ascii /reg/testMode/serverUrl
+0x00038950 0x00040950  25   26 .rodata ascii /reg/testMode/serverAlias
+0x0003896c 0x0004096c  54   55 .rodata ascii [%s]:[%s] - %s: g_reg_tags[%d].xpath=[%s], value=[%s]\n
+0x000389a4 0x000409a4  48   49 .rodata ascii [%s]:[%s] - %s: nua_xml_write_value_ex() failed\n
+0x000389dc 0x000409dc  57   58 .rodata ascii [%s]:[%s] - %s: nua_xml_write_value() failed, xpath=[%s]\n
+0x00038a18 0x00040a18  49   50 .rodata ascii [%s]:[%s] - %s: xpath=[%s] not found in registry\n
+0x00038a4c 0x00040a4c  20   21 .rodata ascii /reg/suResult/reason
+0x00038a68 0x00040a68  38   39 .rodata ascii [%s]:[%s] - %s: nua_xml_open() failed\n
+0x00038a90 0x00040a90  49   50 .rodata ascii [%s]:[%s] - %s: nua_reg_write_str_value() failed\n
+0x00038ac4 0x00040ac4  43   44 .rodata ascii [%s]:[%s] - %s: nua_reg_save_file() failed\n
+0x00038af4 0x00040af4  49   50 .rodata ascii [%s]:[%s] - %s: Unknown data type specified=[%d]\n
+0x00038b28 0x00040b28  42   43 .rodata ascii [%s]:[%s] - %s: Invalid registry tag=[%s]\n
+0x00038b54 0x00040b54  56   57 .rodata ascii [%s]:[%s] - %s: nua_xml_read_value() failed, xpath=[%s]\n
+0x00038b90 0x00040b90  61   62 .rodata ascii [%s]:[%s] - %s: pthread_mutex_init failed for registry_mutex\n
+0x00038bd0 0x00040bd0  37   38 .rodata ascii [%s]:[%s] - %s: create registry file\n
+0x00038bf8 0x00040bf8  45   46 .rodata ascii [%s]:[%s] - %s: nua_reg_create_file() failed\n
+0x00038c28 0x00040c28  24   25 .rodata ascii /reg/activity/campaignID
+0x00038c44 0x00040c44  54   55 .rodata ascii [%s]:[%s] - %s: nua_reg_write_uint32_t_value() failed\n
+0x00038c7c 0x00040c7c  27   28 .rodata ascii /reg/activity/poll/interval
+0x00038c98 0x00040c98  24   25 .rodata ascii /reg/activity/poll/valid
+0x00038cb4 0x00040cb4  27   28 .rodata ascii /reg/activity/access/sigVer
+0x00038cd0 0x00040cd0  30   31 .rodata ascii /reg/activity/type/updateCheck
+0x00038cf0 0x00040cf0  27   28 .rodata ascii /reg/activity/type/dlFinish
+0x00038d0c 0x00040d0c  27   28 .rodata ascii /reg/activity/access/pubUrl
+0x00038d28 0x00040d28  61   62 .rodata ascii [%s]:[%s] - %s: nua_reg_write_str_value() failed, xpath=[%s]\n
+0x00038d68 0x00040d68  25   26 .rodata ascii /reg/activity/access/host
+0x00038d84 0x00040d84  26   27 .rodata ascii /reg/activity/access/rPath
+0x00038da0 0x00040da0  27   28 .rodata ascii /reg/activity/access/bucket
+0x00038dbc 0x00040dbc  25   26 .rodata ascii /reg/activity/access/akey
+0x00038dd8 0x00040dd8  25   26 .rodata ascii /reg/activity/access/skey
+0x00038df4 0x00040df4  53   54 .rodata ascii [%s]:[%s] - %s: nua_reg_read_uint32_t_value() failed\n
+0x00038e2c 0x00040e2c  20   21 .rodata ascii /reg/suResult/update
+0x00038e44 0x00040e44  22   23 .rodata ascii /reg/suResult/modemPRI
+0x00038e5c 0x00040e5c  22   23 .rodata ascii /reg/suResult/linuxPRI
+0x00038e74 0x00040e74  20   21 .rodata ascii /reg/dd/fotaRecordNo
+0x00038e8c 0x00040e8c  24   25 .rodata ascii /reg/dd/activityRecordNo
+0x00038ea8 0x00040ea8  24   25 .rodata ascii /reg/dd/totalRecordCount
+0x00038ec4 0x00040ec4  23   24 .rodata ascii /reg/poll/secSinceEpoch
+0x00038edc 0x00040edc  19   20 .rodata ascii /reg/poll/timeStamp
+0x00038ef0 0x00040ef0  30   31 .rodata ascii /reg/autoInstall/secSinceEpoch
+0x00038f10 0x00040f10  26   27 .rodata ascii /reg/autoInstall/timeStamp
+0x00038f2c 0x00040f2c  30   31 .rodata ascii /reg/retryCount/roamingSeconds
+0x00038f4c 0x00040f4c  32   33 .rodata ascii /reg/retryCount/roamingTimeStamp
+0x00038f70 0x00040f70  29   30 .rodata ascii /reg/retryCount/noDataSeconds
+0x00038f90 0x00040f90  31   32 .rodata ascii /reg/retryCount/noDataTimestamp
+0x00038fb0 0x00040fb0  56   57 .rodata ascii [%s]:[%s] - %s: Registry doesn't exists, create new one\n
+0x00038fec 0x00040fec  58   59 .rodata ascii [%s]:[%s] - %s: nua_xml_write_value_ex(xpath=[%s]) failed\n
+0x00039028 0x00041028  54   55 .rodata ascii [%s]:[%s] - %s: nua_xml_read_value(xpath=[%s]) failed\n
+0x00039060 0x00041060  59   60 .rodata ascii [%s]:[%s] - %s: nua_reg_write_str_value(xpath=[%s]) failed\n
+0x0003909c 0x0004109c  19   20 .rodata ascii /reg/state/previous
+0x000390b0 0x000410b0  55   56 .rodata ascii [%s]:[%s] - %s: Couldn't read state from registry=[%s]\n
+0x000390e8 0x000410e8  18   19 .rodata ascii /reg/state/current
+0x000390fc 0x000410fc  23   24 .rodata ascii /reg/debug/dlRetryLogic
+0x00039114 0x00041114  27   28 .rodata ascii /reg/debug/reportRetryLogic
+0x00039130 0x00041130  25   26 .rodata ascii /reg/debug/roamRetryLogic
+0x0003914c 0x0004114c  27   28 .rodata ascii /reg/debug/nodataRetryLogic
+0x00039168 0x00041168  30   31 .rodata ascii /reg/suLoopUpdateCheckInterval
+0x00039188 0x00041188  30   31 .rodata ascii /reg/suAutoInstallTriggerCount
+0x000391a8 0x000411a8  24   25 .rodata ascii /reg/retryCount/download
+0x000391c4 0x000411c4  20   21 .rodata ascii /reg/download/offset
+0x000391dc 0x000411dc  22   23 .rodata ascii /reg/download/progress
+0x000391f4 0x000411f4  22   23 .rodata ascii /reg/retryCount/report
+0x0003920c 0x0004120c  14   15 .rodata ascii /reg/suTrigger
+0x0003921c 0x0004121c  21   22 .rodata ascii /reg/testMode/enabled
+0x00039234 0x00041234  25   26 .rodata ascii /reg/testMode/cfgUrlIndex
+0x00039250 0x00041250  27   28 .rodata ascii /reg/testMode/pollInternval
+0x0003926c 0x0004126c  22   23 .rodata ascii /reg/testMode/fakeIMEI
+0x00039284 0x00041284  45   46 .rodata ascii [%s]:[%s] - %s: Unknown state specified=[%d]\n
+0x000392b4 0x000412b4  45   46 .rodata ascii [%s]:[%s] - %s: state transition [%s]-->[%s]\n
+0x000392e4 0x000412e4  17   18 .rodata ascii nua_reg_save_file
+0x000392f8 0x000412f8  19   20 .rodata ascii nua_reg_create_file
+0x0003930c 0x0004130c  28   29 .rodata ascii nua_reg_write_uint32_t_value
+0x0003932c 0x0004132c  23   24 .rodata ascii nua_reg_write_str_value
+0x00039344 0x00041344  22   23 .rodata ascii nua_reg_save_tag_value
+0x0003935c 0x0004135c  21   22 .rodata ascii convert_and_copy_data
+0x00039374 0x00041374  22   23 .rodata ascii nua_reg_read_tag_value
+0x0003938c 0x0004138c  27   28 .rodata ascii nua_reg_read_uint32_t_value
+0x000393a8 0x000413a8  12   13 .rodata ascii nua_reg_init
+0x000393b8 0x000413b8  26   27 .rodata ascii nua_reg_save_activity_info
+0x000393d4 0x000413d4  26   27 .rodata ascii nua_reg_read_activity_info
+0x000393f0 0x000413f0  22   23 .rodata ascii nua_reg_save_su_result
+0x00039408 0x00041408  22   23 .rodata ascii nua_reg_read_su_result
+0x00039420 0x00041420  28   29 .rodata ascii nua_reg_read_dlddd_record_no
+0x00039440 0x00041440  28   29 .rodata ascii nua_reg_save_dlddd_record_no
+0x00039460 0x00041460  27   28 .rodata ascii nua_reg_save_poll_timestamp
+0x0003947c 0x0004147c  35   36 .rodata ascii nua_reg_save_auto_install_timestamp
+0x000394a0 0x000414a0  29   30 .rodata ascii nua_reg_save_sucond_timestamp
+0x000394c0 0x000414c0  23   24 .rodata ascii nua_reg_reset_fota_tags
+0x000394d8 0x000414d8  19   20 .rodata ascii nua_reg_backup_tags
+0x000394ec 0x000414ec  18   19 .rodata ascii nua_reg_read_state
+0x00039500 0x00041500  18   19 .rodata ascii nua_reg_save_state
+0x0003951c 0x0004151c  51   52 .rodata ascii [%s]:[%s] - %s: Sending out %u(type=%s, bl_err=%s)\n
+0x00039550 0x00041550  12   13 .rodata ascii su.broadcast
+0x00039560 0x00041560  41   42 .rodata ascii [%s]:[%s] - %s: MsgBusSetBinary() failed\n
+0x0003958c 0x0004158c  72   73 .rodata ascii [%s]:[%s] - %s: Sending out MSGBUS_SU_UPDATE_LOW_BATTERY, capacity=[%u]\n
+0x000395d8 0x000415d8  62   63 .rodata ascii [%s]:[%s] - %s: nua_reg_read_su_result() failed, abort report\n
+0x00039618 0x00041618  13   14 .rodata ascii SU_OPR_ERR_OK
+0x00039628 0x00041628  69   70 .rodata ascii [%s]:[%s] - %s: Sending out MSGBUS_SU_UPDATE_STATUS, status=[%u][%s]\n
+0x00039670 0x00041670  57   58 .rodata ascii [%s]:[%s] - %s: Sending out MSGBUS_SU_READY_FOR_DOWNLOAD\n
+0x000396ac 0x000416ac  84   85 .rodata ascii [%s]:[%s] - %s: nua_fota_get_current_record_from_history() failed rc=[%d], continue\n
+0x00039704 0x00041704  86   87 .rodata ascii [%s]:[%s] - %s: Sending out MSGBUS_SU_UPDATE_STARTING (Est. update time = %d minutes)\n
+0x0003975c 0x0004175c  90   91 .rodata ascii [%s]:[%s] - %s: Sending out MSGBUS_SU_UPDATE_CONFIRM, est_upd_time=[%u], defer_count=[%u]\n
+0x000397b8 0x000417b8  65   66 .rodata ascii [%s]:[%s] - %s: Sending out MSGBUS_SU_DOWNLOAD_PROGRESS, prog=%d\n
+0x000397fc 0x000417fc  63   64 .rodata ascii [%s]:[%s] - %s: Sending out MSGBUS_SU_ASYNC_STATUS with err=%d\n
+0x0003983c 0x0004183c  57   58 .rodata ascii [%s]:[%s] - %s: nua_reg_save_su_result() failed, rc=[%d]\n
+0x00039878 0x00041878  31   32 .rodata ascii [%s]:[%s] - %s: Initiator=[%s]\n
+0x00039898 0x00041898  30   31 .rodata ascii [%s]:[%s] - %s: NUA not ready\n
+0x000398b8 0x000418b8  53   54 .rodata ascii [%s]:[%s] - %s: A NUA session is already in progress\n
+0x000398f0 0x000418f0  11   12 .rodata ascii NUA is busy
+0x00039900 0x00041900  60   61 .rodata ascii [%s]:[%s] - %s: nua_schedule_update_check() failed, rc=[%d]\n
+0x00039940 0x00041940  20   21 .rodata ascii su conditions failed
+0x00039958 0x00041958  67   68 .rodata ascii [%s]:[%s] - %s: Initiated update check with server, initiator=[%s]\n
+0x0003999c 0x0004199c  49   50 .rodata ascii [%s]:[%s] - %s: No update found for installation\n
+0x000399d0 0x000419d0  32   33 .rodata ascii No update found for installation
+0x000399f4 0x000419f4  83   84 .rodata ascii [%s]:[%s] - %s: nua_public_notify_update_start_to_apps() failed, rc=[%d], continue\n
+0x00039a48 0x00041a48  61   62 .rodata ascii [%s]:[%s] - %s: Waiting [%d] seconds to installation kickoff\n
+0x00039a88 0x00041a88  54   55 .rodata ascii [%s]:[%s] - %s: starting installation, boot pref=[%d]\n
+0x00039ac0 0x00041ac0  67   68 .rodata ascii [%s]:[%s] - %s: nua_fota_start_update_installation() failed, rc=%d\n
+0x00039b04 0x00041b04  24   25 .rodata ascii [%s]:[%s] - %s: success\n
+0x00039b20 0x00041b20  52   53 .rodata ascii [%s]:[%s] - %s: Install defer feature not supported\n
+0x00039b58 0x00041b58  40   41 .rodata ascii [%s]:[%s] - %s: Update already deferred\n
+0x00039b84 0x00041b84  67   68 .rodata ascii [%s]:[%s] - %s: Update is not ready for install, defer not allowed\n
+0x00039bc8 0x00041bc8  68   69 .rodata ascii [%s]:[%s] - %s: nua_sys_register_for_dsm_powerdown_handoff() failed\n
+0x00039c10 0x00041c10  44   45 .rodata ascii [%s]:[%s] - %s: nua_reg_save_state() failed\n
+0x00039c40 0x00041c40  42   43 .rodata ascii [%s]:[%s] - %s: Update has been deferred.\n
+0x00039c6c 0x00041c6c  44   45 .rodata ascii [%s]:[%s] - %s: Cannot change IOT test mode\n
+0x00039c9c 0x00041c9c  43   44 .rodata ascii [%s]:[%s] - %s: Test mode already disabled\n
+0x00039cc8 0x00041cc8  42   43 .rodata ascii [%s]:[%s] - %s: Test mode already enabled\n
+0x00039cf4 0x00041cf4  50   51 .rodata ascii [%s]:[%s] - %s: nua_reg_save_test_mode(%d) failed\n
+0x00039d28 0x00041d28   8    9 .rodata ascii Disabled
+0x00039d34 0x00041d34   7    8 .rodata ascii Enabled
+0x00039d3c 0x00041d3c  31   32 .rodata ascii [%s]:[%s] - %s: Test mode=[%s]\n
+0x00039d5c 0x00041d5c  43   44 .rodata ascii [%s]:[%s] - %s: Cannot change IOT test URL\n
+0x00039d88 0x00041d88  38   39 .rodata ascii [%s]:[%s] - %s: Invalid URL specified\n
+0x00039db0 0x00041db0   6    7 .rodata ascii custom
+0x00039db8 0x00041db8  58   59 .rodata ascii [%s]:[%s] - %s: nua_reg_save_test_mode_url(%s, %s) failed\n
+0x00039df4 0x00041df4  64   65 .rodata ascii [%s]:[%s] - %s: nua_reg_save_test_mode_cfg_url_index(%d) failed\n
+0x00039e38 0x00041e38  58   59 .rodata ascii [%s]:[%s] - %s: Success, Alias=[%s], URL=[%s], index=[%d]\n
+0x00039e74 0x00041e74  36   37 .rodata ascii [%s]:[%s] - %s: Test URL count=[%d]\n
+0x00039e9c 0x00041e9c  61   62 .rodata ascii [%s]:[%s] - %s: nua_sys_get_device_version() failed, rc=[%d]\n
+0x00039edc 0x00041edc  58   59 .rodata ascii [%s]:[%s] - %s: nua_sys_get_device_info() failed, rc=[%d]\n
+0x00039f18 0x00041f18  11   12 .rodata ascii %s/%s/%s/%s
+0x00039f24 0x00041f24  52   53 .rodata ascii [%s]:[%s] - %s: nua_reg_read_test_mode_url() failed\n
+0x00039f5c 0x00041f5c  72   73 .rodata ascii [%s]:[%s] - %s: Read test Alias=[%s], url=[%s], index=[%d], active=[%u]\n
+0x00039fa8 0x00041fa8  63   64 .rodata ascii [%s]:[%s] - %s: SU state is not SU_STATE_IDLE. Cannot set IMEI\n
+0x00039fe8 0x00041fe8  35   36 .rodata ascii [%s]:[%s] - %s: New test IMEI=[%s]\n
+0x0003a00c 0x0004200c  73   74 .rodata ascii [%s]:[%s] - %s: SU state is not SU_STATE_IDLE. Cannot set poll internval\n
+0x0003a058 0x00042058  39   40 .rodata ascii [%s]:[%s] - %s: New poll interval=[%u]\n
+0x0003a080 0x00042080  42   43 .rodata ascii [%s]:[%s] - %s: NUA_MSG_PUBLIC_GET_STATUS\n
+0x0003a0ac 0x000420ac  48   49 .rodata ascii [%s]:[%s] - %s: NUA_MSG_PUBLIC_CHECK_FOR_UPDATE\n
+0x0003a0e0 0x000420e0  53   54 .rodata ascii [%s]:[%s] - %s: NUA_MSG_PUBLIC_GET_DOWNLOAD_PROGRESS\n
+0x0003a118 0x00042118  45   46 .rodata ascii [%s]:[%s] - %s: NUA_MSG_PUBLIC_START_INSTALL\n
+0x0003a148 0x00042148  45   46 .rodata ascii [%s]:[%s] - %s: NUA_MSG_PUBLIC_DEFER_INSTALL\n
+0x0003a178 0x00042178  45   46 .rodata ascii [%s]:[%s] - %s: NUA_MSG_PUBLIC_SET_TEST_MODE\n
+0x0003a1a8 0x000421a8  45   46 .rodata ascii [%s]:[%s] - %s: NUA_MSG_PUBLIC_GET_TEST_MODE\n
+0x0003a1d8 0x000421d8  44   45 .rodata ascii [%s]:[%s] - %s: NUA_MSG_PUBLIC_SET_TEST_URL\n
+0x0003a208 0x00042208  44   45 .rodata ascii [%s]:[%s] - %s: NUA_MSG_PUBLIC_GET_TEST_URL\n
+0x0003a238 0x00042238  50   51 .rodata ascii [%s]:[%s] - %s: NUA_MSG_PUBLIC_GET_TEST_URL_COUNT\n
+0x0003a26c 0x0004226c  45   46 .rodata ascii [%s]:[%s] - %s: NUA_MSG_PUBLIC_SET_TEST_IMEI\n
+0x0003a29c 0x0004229c  54   55 .rodata ascii [%s]:[%s] - %s: NUA_MSG_PUBLIC_SET_TEST_POLL_INTERVAL\n
+0x0003a2d4 0x000422d4  44   45 .rodata ascii [%s]:[%s] - %s: Unsupported public event:%d\n
+0x0003a304 0x00042304  38   39 .rodata ascii nua_public_notify_comm_session_to_apps
+0x0003a32c 0x0004232c  37   38 .rodata ascii nua_public_notify_low_battery_to_apps
+0x0003a354 0x00042354  39   40 .rodata ascii nua_public_notify_update_status_to_apps
+0x0003a37c 0x0004237c  44   45 .rodata ascii nua_public_notify_ready_for_download_to_apps
+0x0003a3ac 0x000423ac  38   39 .rodata ascii nua_public_notify_update_start_to_apps
+0x0003a3d4 0x000423d4  40   41 .rodata ascii nua_public_notify_update_confirm_to_apps
+0x0003a400 0x00042400  43   44 .rodata ascii nua_public_notify_download_progress_to_apps
+0x0003a42c 0x0004242c  42   43 .rodata ascii nua_public_notify_async_err_status_to_apps
+0x0003a458 0x00042458  21   22 .rodata ascii nua_public_get_status
+0x0003a470 0x00042470  27   28 .rodata ascii nua_public_check_for_update
+0x0003a48c 0x0004248c  24   25 .rodata ascii nua_public_start_install
+0x0003a4a8 0x000424a8  24   25 .rodata ascii nua_public_defer_install
+0x0003a4c4 0x000424c4  24   25 .rodata ascii nua_public_set_test_mode
+0x0003a4e0 0x000424e0  23   24 .rodata ascii nua_public_set_test_url
+0x0003a4f8 0x000424f8  29   30 .rodata ascii nua_public_get_test_url_count
+0x0003a518 0x00042518  23   24 .rodata ascii nua_public_get_test_url
+0x0003a530 0x00042530  20   21 .rodata ascii public_set_test_imei
+0x0003a548 0x00042548  29   30 .rodata ascii public_set_test_poll_interval
+0x0003a568 0x00042568  25   26 .rodata ascii nua_public_api_msg_handle
+0x0003a584 0x00042584  72   73 .rodata ascii [%s]:[%s] - %s: sys_getLastSuccessfulSoftwareUpdateInfo() failed, rc=%d\n
+0x0003a5d4 0x000425d4  32   33 .rodata ascii [%s]:[%s] - %s: No record found\n
+0x0003a5fc 0x000425fc  31   32 .rodata ascii [%s]:[%s] - %s: update_date=%s\n
+0x0003a620 0x00042620  70   71 .rodata ascii [%s]:[%s] - %s: sys_incrementSoftwareUpdateDeferCount() failed, rc=%d\n
+0x0003a668 0x00042668  58   59 .rodata ascii [%s]:[%s] - %s: sys_installSoftwareUpdate() failed, rc=%d\n
+0x0003a6a4 0x000426a4  70   71 .rodata ascii [%s]:[%s] - %s: sys_abortCurrentSoftwareUpdateSession() failed, rc=%d\n
+0x0003a6ec 0x000426ec  58   59 .rodata ascii [%s]:[%s] - %s: sys_setSoftwareUpdateInfo() failed, rc=%d\n
+0x0003a728 0x00042728  65   66 .rodata ascii [%s]:[%s] - %s: sys_getCurrentSoftwareUpdateInfo() failed, rc=%d\n
+0x0003a76c 0x0004276c  62   63 .rodata ascii [%s]:[%s] - %s: sys_getSoftwareUpdateInfoByID() failed, rc=%d\n
+0x0003a7ac 0x000427ac  20   21 .rodata ascii [%s]:[%s] - %s: +++\n
+0x0003a7c4 0x000427c4  68   69 .rodata ascii [%s]:[%s] - %s: sys_getSoftwareUpdateMaxPackageSize() failed, rc=%d\n
+0x0003a80c 0x0004280c  28   29 .rodata ascii [%s]:[%s] - %s: max_size:%u\n
+0x0003a82c 0x0004282c  26   27 .rodata ascii [%s]:[%s] - %s: type=[%d]\n
+0x0003a848 0x00042848  62   63 .rodata ascii [%s]:[%s] - %s: sys_getSourceVersionFromPkg() failed, rc=[%d]\n
+0x0003a888 0x00042888  37   38 .rodata ascii [%s]:[%s] - %s: pkg src version=[%u]\n
+0x0003a8b0 0x000428b0  62   63 .rodata ascii [%s]:[%s] - %s: sys_getTargetVersionFromPkg() failed, rc=[%d]\n
+0x0003a8f0 0x000428f0  37   38 .rodata ascii [%s]:[%s] - %s: pkg tgt version=[%u]\n
+0x0003a918 0x00042918  46   47 .rodata ascii [%s]:[%s] - %s: invalid pkg version type=[%d]\n
+0x0003a948 0x00042948  38   39 .rodata ascii [%s]:[%s] - %s: Validating package...\n
+0x0003a970 0x00042970  58   59 .rodata ascii [%s]:[%s] - %s: nua_reg_read_su_trigger() failed, rc=[%d]\n
+0x0003a9ac 0x000429ac  21   22 .rodata ascii Novatel Wireless, Inc
+0x0003a9c4 0x000429c4  30   31 .rodata ascii /opt/nvtl/data/nua/upgrade.zip
+0x0003a9e4 0x000429e4  81   82 .rodata ascii [%s]:[%s] - %s: sys_validateSoftwareUpdatePackage() failed, rc=%d (record id:%u)\n
+0x0003aa38 0x00042a38  59   60 .rodata ascii [%s]:[%s] - %s: Package validation success, record id:[%u]\n
+0x0003aa74 0x00042a74  43   44 .rodata ascii [%s]:[%s] - %s: fota session lock acquired\n
+0x0003aaa0 0x00042aa0  44   45 .rodata ascii [%s]:[%s] - %s: fota session not available.\n
+0x0003aad0 0x00042ad0  52   53 .rodata ascii [%s]:[%s] - %s: fota_create_session() failed, rc=%d\n
+0x0003ab08 0x00042b08  34   35 .rodata ascii [%s]:[%s] - %s: FOTA lock cleared\n
+0x0003ab2c 0x00042b2c  51   52 .rodata ascii [%s]:[%s] - %s: fota_clear_session() failed, rc=%d\n
+0x0003ab60 0x00042b60  17   18 .rodata ascii %m-%d-%Y-%H:%M:%S
+0x0003ab74 0x00042b74  67   68 .rodata ascii [%s]:[%s] - %s: sys_setLastSoftwareUpdateCheckTime() failed, rc=%d\n
+0x0003abb8 0x00042bb8  37   38 .rodata ascii nua_fota_get_last_fw_update_timestamp
+0x0003abe0 0x00042be0  35   36 .rodata ascii nua_fota_step_up_update_defer_count
+0x0003ac04 0x00042c04  34   35 .rodata ascii nua_fota_start_update_installation
+0x0003ac28 0x00042c28  20   21 .rodata ascii nua_fota_end_session
+0x0003ac40 0x00042c40  33   34 .rodata ascii nua_fota_modify_record_in_history
+0x0003ac64 0x00042c64  40   41 .rodata ascii nua_fota_get_current_record_from_history
+0x0003ac90 0x00042c90  28   29 .rodata ascii nua_fota_get_matching_record
+0x0003acb0 0x00042cb0  35   36 .rodata ascii nua_fota_get_max_supported_pkg_size
+0x0003acd4 0x00042cd4  34   35 .rodata ascii nua_fota_read_version_from_package
+0x0003acf8 0x00042cf8  30   31 .rodata ascii nua_fota_verify_update_package
+0x0003ad18 0x00042d18  29   30 .rodata ascii nua_fota_acquire_session_lock
+0x0003ad38 0x00042d38  29   30 .rodata ascii nua_fota_release_session_lock
+0x0003ad58 0x00042d58  39   40 .rodata ascii nua_fota_save_time_of_last_update_check
+0x0003ad80 0x00042d80  40   41 .rodata ascii [%s]:[%s] - Enter nua_factory_reset_impl
+0x0003adb0 0x00042db0  56   57 .rodata ascii [%s]:[%s] - %s: nua_api_sys_indication() failed, rc= %d\n
+0x0003adec 0x00042dec  39   40 .rodata ascii [%s]:[%s] - Exit nua_factory_reset_impl
+0x0003ae14 0x00042e14  22   23 .rodata ascii nua_factory_reset_impl
+0x0003ae2c 0x00042e2c  55   56 .rodata ascii [%s]:[%s] - %s: Input exceeded buffer size, xpath=[%s]\n
+0x0003ae6c 0x00042e6c   4    5 .rodata ascii %s%s
+0x0003ae74 0x00042e74  18   19 .rodata ascii /access/public/url
+0x0003ae88 0x00042e88  41   42 .rodata ascii [%s]:[%s] - %s: Couldn't read xpath=[%s]\n
+0x0003aeb4 0x00042eb4  53   54 .rodata ascii [%s]:[%s] - %s: Value cannot be empty for xpath=[%s]\n
+0x0003aeec 0x00042eec  24   25 .rodata ascii /access/aws/signatureVer
+0x0003af08 0x00042f08  16   17 .rodata ascii /access/aws/host
+0x0003af1c 0x00042f1c  22   23 .rodata ascii /access/aws/bucketName
+0x0003af34 0x00042f34  24   25 .rodata ascii /access/aws/relativePath
+0x0003af50 0x00042f50  21   22 .rodata ascii /access/aws/accessKey
+0x0003af68 0x00042f68  21   22 .rodata ascii /access/aws/secretKey
+0x0003af80 0x00042f80  18   19 .rodata ascii /access/accessType
+0x0003af94 0x00042f94   6    7 .rodata ascii public
+0x0003afa0 0x00042fa0  59   60 .rodata ascii [%s]:[%s] - %s: Invalid access type value=[%s], xpath=[%s]\n
+0x0003afdc 0x00042fdc   8    9 .rodata ascii /enabled
+0x0003aff0 0x00042ff0  49   50 .rodata ascii [%s]:[%s] - %s: Invalid value=[%s] for xpath[%s]\n
+0x0003b024 0x00043024   9   10 .rodata ascii %s[%d]/%s
+0x0003b030 0x00043030  39   40 .rodata ascii [%s]:[%s] - %s: nua_xml_read_value(%s)\n
+0x0003b058 0x00043058  32   33 .rodata ascii 7GcZkMxD5V4G6bLwG8DpdXBIJFIWN6by
+0x0003b07c 0x0004307c  64   65 .rodata ascii [%s]:[%s] - %s: mifi_security_aes128_decrypt(imei_range) failed\n
+0x0003b0c0 0x000430c0   8    9 .rodata ascii %s[%d]%s
+0x0003b0cc 0x000430cc  18   19 .rodata ascii /descriptor/record
+0x0003b0e0 0x000430e0  16   17 .rodata ascii /deviceList/imei
+0x0003b0f4 0x000430f4  45   46 .rodata ascii [%s]:[%s] - %s: No IMEI listed in the record\n
+0x0003b124 0x00043124  42   43 .rodata ascii [%s]:[%s] - %s: IMEI tag count=[%d] found\n
+0x0003b150 0x00043150   6    7 .rodata ascii %s[%d]
+0x0003b158 0x00043158  39   40 .rodata ascii [%s]:[%s] - %s: Couldn't read IMEI[%d]\n
+0x0003b180 0x00043180  45   46 .rodata ascii [%s]:[%s] - %s: in=[%s], DDLD[%d]=[%s] found\n
+0x0003b1b0 0x000431b0  38   39 .rodata ascii [%s]:[%s] - %s: IMEI match=[%d] found\n
+0x0003b1d8 0x000431d8  22   23 .rodata ascii /deviceList/imei_range
+0x0003b1f0 0x000431f0  51   52 .rodata ascii [%s]:[%s] - %s: No imei_range listed in the record\n
+0x0003b224 0x00043224  48   49 .rodata ascii [%s]:[%s] - %s: IMEI-Range tag count=[%d] found\n
+0x0003b258 0x00043258   5    6 .rodata ascii start
+0x0003b260 0x00043260  50   51 .rodata ascii [%s]:[%s] - %s: nua_dldd_read_imei_range() failed\n
+0x0003b298 0x00043298  43   44 .rodata ascii [%s]:[%s] - %s: nua_dldd_read_imei_range()\n
+0x0003b2c4 0x000432c4  45   46 .rodata ascii [%s]:[%s] - %s: Empty IMEI-Range tag at [%d]\n
+0x0003b2f4 0x000432f4  61   62 .rodata ascii [%s]:[%s] - %s: device imei=[%llu], start=[%llu], end=[%llu]\n
+0x0003b334 0x00043334  44   45 .rodata ascii [%s]:[%s] - %s: IMEI-Range match=[%d] found\n
+0x0003b364 0x00043364  33   34 .rodata ascii /opt/nvtl/data/nua/dl_desc.secure
+0x0003b388 0x00043388  52   53 .rodata ascii [%s]:[%s] - %s: File=[NUA_DD_SECURE_PATH] not found\n
+0x0003b3c0 0x000433c0  38   39 .rodata ascii /opt/nvtl/etc/nua/dldd-device_pkey.pem
+0x0003b3e8 0x000433e8  28   29 .rodata ascii JJ7LDHM37SaXXUbWrxQXKJV7abQ0
+0x0003b408 0x00043408  38   39 .rodata ascii /opt/nvtl/etc/nua/dldd-server_cert.pem
+0x0003b430 0x00043430  26   27 .rodata ascii /opt/nvtl/data/nua/dl_desc
+0x0003b44c 0x0004344c  14   15 .rodata ascii /tmp/dldd_temp
+0x0003b45c 0x0004345c  52   53 .rodata ascii [%s]:[%s] - %s: mifi_security_decrypt_file() failed\n
+0x0003b494 0x00043494  12   13 .rodata ascii /typeVersion
+0x0003b4a4 0x000434a4  11   12 .rodata ascii /campaignID
+0x0003b4b0 0x000434b0  22   23 .rodata ascii /futureCheckinInterval
+0x0003b4c8 0x000434c8  13   14 .rodata ascii /activityType
+0x0003b4d8 0x000434d8  54   55 .rodata ascii [%s]:[%s] - %s: No activity type listed in the record\n
+0x0003b510 0x00043510  11   12 .rodata ascii updateCheck
+0x0003b51c 0x0004351c  14   15 .rodata ascii downloadFinish
+0x0003b52c 0x0004352c  11   12 .rodata ascii %s[%d]/type
+0x0003b538 0x00043538  42   43 .rodata ascii [%s]:[%s] - %s: record=[%d] doesn't match\n
+0x0003b564 0x00043564  11   12 .rodata ascii /descriptor
+0x0003b570 0x00043570  13   14 .rodata ascii /fileRevision
+0x0003b580 0x00043580  12   13 .rodata ascii /descVersion
+0x0003b590 0x00043590  60   61 .rodata ascii [%s]:[%s] - %s: DLDD - File revision=[%s], FMT version=[%s]\n
+0x0003b5d0 0x000435d0  38   39 .rodata ascii [%s]:[%s] - %s: nua_xml_open() failed\n
+0x0003b5f8 0x000435f8  33   34 .rodata ascii [%s]:[%s] - %s: No records found\n
+0x0003b61c 0x0004361c   4    5 .rodata ascii fota
+0x0003b624 0x00043624   8    9 .rodata ascii activity
+0x0003b630 0x00043630  73   74 .rodata ascii [%s]:[%s] - %s: DD records - total=[%u], fota_index=[%u], act_index=[%u]\n
+0x0003b67c 0x0004367c  44   45 .rodata ascii [%s]:[%s] - %s: Failed to parse record=[%d]\n
+0x0003b6ac 0x000436ac  48   49 .rodata ascii [%s]:[%s] - %s: SU record no=[%d], read success\n
+0x0003b6e0 0x000436e0  54   55 .rodata ascii [%s]:[%s] - %s: Activity record no=[%d], read success\n
+0x0003b718 0x00043718  22   23 .rodata ascii save_su_target_version
+0x0003b730 0x00043730  23   24 .rodata ascii save_su_upd_description
+0x0003b748 0x00043748  16   17 .rodata ascii save_su_pkg_name
+0x0003b75c 0x0004375c  24   25 .rodata ascii parse_access_node_public
+0x0003b778 0x00043778  18   19 .rodata ascii parse_leaf_element
+0x0003b78c 0x0004378c  17   18 .rodata ascii parse_access_node
+0x0003b7a0 0x000437a0  27   28 .rodata ascii parse_su_report_result_node
+0x0003b7bc 0x000437bc  24   25 .rodata ascii nua_dldd_read_imei_range
+0x0003b7d8 0x000437d8  19   20 .rodata ascii nua_dldd_match_imei
+0x0003b7ec 0x000437ec  27   28 .rodata ascii nua_dldd_decrypt_descriptor
+0x0003b808 0x00043808  30   31 .rodata ascii nua_dldd_parse_activity_record
+0x0003b828 0x00043828  24   25 .rodata ascii nua_dldd_parse_su_record
+0x0003b844 0x00043844  33   34 .rodata ascii nua_dldd_get_index_by_record_type
+0x0003b868 0x00043868  21   22 .rodata ascii nua_dldd_get_revision
+0x0003b880 0x00043880  25   26 .rodata ascii nua_dldd_parse_descriptor
+0x0003b89c 0x0004389c  32   33 .rodata ascii nua_dldd_read_su_record_by_index
+0x0003b8c0 0x000438c0  38   39 .rodata ascii nua_dldd_read_activity_record_by_index
+0x0003b8ec 0x000438ec  63   64 .rodata ascii [%s]:[%s] - %s: nua_api_job_response_ind() failed, reason=[%s]\n
+0x0003b930 0x00043930  11   12 .rodata ascii %s_%u_%s_%s
+0x0003b93c 0x0004393c  42   43 .rodata ascii [%s]:[%s] - %s: Activity cookie name=[%s]\n
+0x0003b968 0x00043968  11   12 .rodata ascii %s/%s.plain
+0x0003b974 0x00043974  18   19 .rodata ascii /opt/nvtl/data/nua
+0x0003b988 0x00043988   5    6 .rodata ascii %s/%s
+0x0003b994 0x00043994  50   51 .rodata ascii [%s]:[%s] - %s: fopen(%s) failed to create cookie\n
+0x0003b9c8 0x000439c8  39   40 .rodata ascii <?xml version="1.0" encoding="UTF-8"?>\n
+0x0003b9f0 0x000439f0  11   12 .rodata ascii <activity>\n
+0x0003b9fc 0x000439fc  14   15 .rodata ascii <swv>%s</swv>\n
+0x0003ba0c 0x00043a0c  11   12 .rodata ascii </activity>
+0x0003ba18 0x00043a18  58   59 .rodata ascii [%s]:[%s] - %s: nua_file_sync_and_close() failed, rc=[%d]\n
+0x0003ba54 0x00043a54  40   41 .rodata ascii /opt/nvtl/etc/nua/report-device_pkey.pem
+0x0003ba80 0x00043a80  28   29 .rodata ascii EsMMfIjboKKKx7zhNldevIsKR0dO
+0x0003baa0 0x00043aa0  40   41 .rodata ascii /opt/nvtl/etc/nua/report-device_cert.pem
+0x0003bacc 0x00043acc  40   41 .rodata ascii /opt/nvtl/etc/nua/report-server_cert.pem
+0x0003baf8 0x00043af8  23   24 .rodata ascii /tmp/report_cookie_temp
+0x0003bb10 0x00043b10  61   62 .rodata ascii [%s]:[%s] - %s: mifi_security_encrypt_file() failed, rc=[%d]\n
+0x0003bb50 0x00043b50  29   30 .rodata ascii %s_%u_%s_fota_report_%d_%d_%d
+0x0003bb70 0x00043b70  40   41 .rodata ascii [%s]:[%s] - %s: report cookie name=[%s]\n
+0x0003bb9c 0x00043b9c   9   10 .rodata ascii <result>\n
+0x0003bba8 0x00043ba8  44   45 .rodata ascii <downloadRetryCount>%u</downloadRetryCount>\n
+0x0003bbd8 0x00043bd8  40   41 .rodata ascii <reportRetryCount>%u</reportRetryCount>\n
+0x0003bc04 0x00043c04  40   41 .rodata ascii <updateFailReason>%s</updateFailReason>\n
+0x0003bc30 0x00043c30  44   45 .rodata ascii <modemPRIFailReason>%d</modemPRIFailReason>\n
+0x0003bc60 0x00043c60  44   45 .rodata ascii <linuxPRIFailReason>%d</linuxPRIFailReason>\n
+0x0003bc90 0x00043c90   9   10 .rodata ascii </result>
+0x0003bc9c 0x00043c9c  32   33 .rodata ascii xX1jvjFNZ7MinOCQWOaKYe3s0Qdu9Fw6
+0x0003bcc0 0x00043cc0  58   59 .rodata ascii [%s]:[%s] - %s: mifi_security_aes128_decrypt(akey) failed\n
+0x0003bcfc 0x00043cfc  34   35 .rodata ascii [%s]:[%s] - %s: New Akey buffered\n
+0x0003bd20 0x00043d20  32   33 .rodata ascii dK8D0WeEmEfSwuaJFyELbvh9OBflyqDM
+0x0003bd44 0x00043d44  58   59 .rodata ascii [%s]:[%s] - %s: mifi_security_aes128_decrypt(skey) failed\n
+0x0003bd80 0x00043d80  34   35 .rodata ascii [%s]:[%s] - %s: New Skey buffered\n
+0x0003bda4 0x00043da4  44   45 .rodata ascii [%s]:[%s] - %s: transfer is already active.\n
+0x0003bdd4 0x00043dd4  17   18 .rodata ascii nua_cloud_io busy
+0x0003bde8 0x00043de8  25   26 .rodata ascii [%s]:[%s] - %s: url=[%s]\n
+0x0003be04 0x00043e04  33   34 .rodata ascii /opt/nvtl/data/nua/dl_desc.secure
+0x0003be28 0x00043e28  51   52 .rodata ascii [%s]:[%s] - %s: nua_cloud_io_action_start() failed\n
+0x0003be5c 0x00043e5c  32   33 .rodata ascii nua_cloud_io thread start failed
+0x0003be80 0x00043e80  32   33 .rodata ascii [%s]:[%s] - %s: cur_offset=[%u]\n
+0x0003bea4 0x00043ea4  53   54 .rodata ascii [%s]:[%s] - %s: nua_cloud_decrypt_aws_keys() failed.\n
+0x0003bedc 0x00043edc  29   30 .rodata ascii /opt/nvtl/data/nua/pkg.secure
+0x0003befc 0x00043efc  30   31 .rodata ascii /opt/nvtl/data/nua/upgrade.zip
+0x0003bf1c 0x00043f1c  35   36 .rodata ascii [%s]:[%s] - %s: update status=[%u]\n
+0x0003bf40 0x00043f40  57   58 .rodata ascii [%s]:[%s] - %s: nua_cloud_create_report_cookie() failed.\n
+0x0003bf7c 0x00043f7c  22   23 .rodata ascii cookie creation failed
+0x0003bf98 0x00043f98  25   26 .rodata ascii aws key decryption failed
+0x0003bfb4 0x00043fb4   7    8 .rodata ascii checkin
+0x0003bfbc 0x00043fbc  12   13 .rodata ascii fota_dlready
+0x0003bfcc 0x00043fcc  13   14 .rodata ascii fota_dlfinish
+0x0003bfdc 0x00043fdc  42   43 .rodata ascii [%s]:[%s] - %s: Unknown activity request.\n
+0x0003c008 0x00044008  24   25 .rodata ascii unknown activity request
+0x0003c024 0x00044024  59   60 .rodata ascii [%s]:[%s] - %s: nua_cloud_create_activity_cookie() failed.\n
+0x0003c060 0x00044060  47   48 .rodata ascii [%s]:[%s] - %s: Uploading activity cookie=[%s]\n
+0x0003c090 0x00044090  43   44 .rodata ascii [%s]:[%s] - %s: NUA_JOB_REQ_REPORT_RESULTS\n
+0x0003c0bc 0x000440bc  41   42 .rodata ascii [%s]:[%s] - %s: unknown job request=[%d]\n
+0x0003c0e8 0x000440e8  53   54 .rodata ascii [%s]:[%s] - %s: unknown IO thread response type=[%d]\n
+0x0003c120 0x00044120  75   76 .rodata ascii [%s]:[%s] - %s: Ignore file offset=[%u] while downloading descriptor file.\n
+0x0003c16c 0x0004416c  51   52 .rodata ascii [%s]:[%s] - %s: DLDD file download status=[%d][%s]\n
+0x0003c1a0 0x000441a0  52   53 .rodata ascii [%s]:[%s] - %s: PKG Download offset=[%f] total=[%f]\n
+0x0003c1d8 0x000441d8  63   64 .rodata ascii [%s]:[%s] - %s: PKG Download operation finish. status=[%d][%s]\n
+0x0003c218 0x00044218  71   72 .rodata ascii [%s]:[%s] - %s: Activity=[%d] upload operation finish. status=[%d][%s]\n
+0x0003c260 0x00044260  46   47 .rodata ascii [%s]:[%s] - %s: Report result status=[%d][%s]\n
+0x0003c290 0x00044290  51   52 .rodata ascii [%s]:[%s] - %s: unknown reference job request=[%u]\n
+0x0003c2c4 0x000442c4  50   51 .rodata ascii [%s]:[%s] - %s: nua_api_job_response_ind() failed\n
+0x0003c2f8 0x000442f8  57   58 .rodata ascii [%s]:[%s] - %s: Started thread ID:[%lu], process ID=[%d]\n
+0x0003c334 0x00044334 175  176 .rodata ascii [%s]:[%s] - %s: nua_cloud_req_t=[%ld],nua_cloud_io_status_t=[%ld], nua_job_req_report_results_t=[%ld],nua_job_req_update_check_t=[%ld],nua_job_req_start_pkg_download_t=[%ld] \n
+0x0003c3e4 0x000443e4  13   14 .rodata ascii /nua_cloud_mq
+0x0003c3f4 0x000443f4  62   63 .rodata ascii [%s]:[%s] - %s: Error opening message queue: %d, terminating.\n
+0x0003c434 0x00044434   9   10 .rodata ascii nua_cloud
+0x0003c440 0x00044440  16   17 .rodata ascii nua_cloud_thread
+0x0003c454 0x00044454  50   51 .rodata ascii [%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+0x0003c488 0x00044488  31   32 .rodata ascii [%s]:[%s] - %s: Thread Exiting.
+0x0003c4a8 0x000444a8  37   38 .rodata ascii [%s]:[%s] - %s: Error creating thread
+0x0003c4d0 0x000444d0  39   40 .rodata ascii [%s]:[%s] - %s: Thread created TID: %lu
+0x0003c4f8 0x000444f8  45   46 .rodata ascii [%s]:[%s] - %s: NUA Cloud thread not running\n
+0x0003c528 0x00044528  51   52 .rodata ascii [%s]:[%s] - %s: Terminate Thread Example, TID: %lu.
+0x0003c55c 0x0004455c  79   80 .rodata ascii [%s]:[%s] - %s: msgq_send_sync(NUA_JOB_REQ_START_PKG_DOWNLOAD) failed, rc=[%d]\n
+0x0003c5ac 0x000445ac  73   74 .rodata ascii [%s]:[%s] - %s: msgq_send_sync(NUA_JOB_REQ_CHECK_UPDATE) failed, rc=[%d]\n
+0x0003c5f8 0x000445f8  75   76 .rodata ascii [%s]:[%s] - %s: msgq_send_sync(NUA_JOB_REQ_REPORT_RESULTS) failed, rc=[%d]\n
+0x0003c644 0x00044644  52   53 .rodata ascii [%s]:[%s] - %s: NUA Cloud, invalid activity request\n
+0x0003c67c 0x0004467c  50   51 .rodata ascii [%s]:[%s] - %s: msgq_send_async() failed, rc=[%d]\n
+0x0003c6b0 0x000446b0  79   80 .rodata ascii [%s]:[%s] - %s: msgq_send_sync(NUA_JOB_REQ_REPORT_ACT_DLSTART) failed, rc=[%d]\n
+0x0003c700 0x00044700  81   82 .rodata ascii [%s]:[%s] - %s: msgq_send_sync(NUA_JOB_REQ_REPORT_ACT_UPD_CHECK) failed, rc=[%d]\n
+0x0003c754 0x00044754  72   73 .rodata ascii [%s]:[%s] - %s: msgq_send_sync(NUA_CLOUD_MSG_IO_STATUS) failed, rc=[%d]\n
+0x0003c7a0 0x000447a0  20   21 .rodata ascii nua_cloud_send_error
+0x0003c7b8 0x000447b8  32   33 .rodata ascii nua_cloud_create_activity_cookie
+0x0003c7dc 0x000447dc  30   31 .rodata ascii nua_cloud_create_report_cookie
+0x0003c7fc 0x000447fc  26   27 .rodata ascii nua_cloud_decrypt_aws_keys
+0x0003c818 0x00044818  30   31 .rodata ascii nua_cloud_job_req_check_update
+0x0003c838 0x00044838  36   37 .rodata ascii nua_cloud_job_req_start_pkg_download
+0x0003c860 0x00044860  32   33 .rodata ascii nua_cloud_job_req_report_results
+0x0003c884 0x00044884  33   34 .rodata ascii nua_cloud_job_req_report_activity
+0x0003c8a8 0x000448a8  24   25 .rodata ascii nua_cloud_handle_job_req
+0x0003c8c4 0x000448c4  26   27 .rodata ascii nua_cloud_handle_io_status
+0x0003c8e0 0x000448e0  23   24 .rodata ascii nua_cloud_state_machine
+0x0003c8f8 0x000448f8  19   20 .rodata ascii nua_cloud_terminate
+0x0003c90c 0x0004490c  32   33 .rodata ascii nua_cloud_start_download_session
+0x0003c930 0x00044930  36   37 .rodata ascii nua_cloud_start_update_check_session
+0x0003c958 0x00044958  24   25 .rodata ascii nua_cloud_report_results
+0x0003c974 0x00044974  25   26 .rodata ascii nua_cloud_report_activity
+0x0003c990 0x00044990  33   34 .rodata ascii nua_cloud_report_activity_dlstart
+0x0003c9b4 0x000449b4  34   35 .rodata ascii nua_cloud_report_activity_dlfinish
+0x0003c9d8 0x000449d8  23   24 .rodata ascii nua_cloud_io_status_ind
+0x0003c9f0 0x000449f0  57   58 .rodata ascii [%s]:[%s] - %s: nua_cloud_io_status_ind() failed rc=[%d]\n
+0x0003ca30 0x00044a30  43   44 .rodata ascii [%s]:[%s] - %s: dlnow=[%ld], dltotal=[%ld]\n
+0x0003ca5c 0x00044a5c  34   35 .rodata ascii [%s]:[%s] - %s: inHostname: empty\n
+0x0003ca80 0x00044a80   8    9 .rodata ascii https://
+0x0003ca90 0x00044a90   7    8 .rodata ascii http://
+0x0003ca98 0x00044a98  24   25 .rodata ascii %a, %d %b %Y %H:%M:%S %z
+0x0003cab4 0x00044ab4  18   19 .rodata ascii %s failed, rc=[%d]
+0x0003cac8 0x00044ac8  19   20 .rodata ascii [%s]:[%s] - %s: %s\n
+0x0003cadc 0x00044adc  20   21 .rodata ascii Memory alloc failure
+0x0003caf4 0x00044af4   5    6 .rodata ascii %s/%s
+0x0003cafc 0x00044afc   6    7 .rodata ascii /%s/%s
+0x0003cb04 0x00044b04  12   13 .rodata ascii %s\n\n%s\n%s\n%s
+0x0003cb18 0x00044b18  24   25 .rodata ascii application/octet-stream
+0x0003cb34 0x00044b34  10   11 .rodata ascii %s\n\n\n%s\n%s
+0x0003cb44 0x00044b44  21   22 .rodata ascii HMAC signature failed
+0x0003cb5c 0x00044b5c  34   35 .rodata ascii [%s]:[%s] - %s: Success, sig=[%s]\n
+0x0003cb80 0x00044b80  24   25 .rodata ascii extract_host_name_only()
+0x0003cb9c 0x00044b9c  31   32 .rodata ascii [%s]:[%s] - %s: Host name=[%s]\n
+0x0003cbbc 0x00044bbc   8    9 .rodata ascii Host: %s
+0x0003cbc8 0x00044bc8   8    9 .rodata ascii Date: %s
+0x0003cbd4 0x00044bd4  16   17 .rodata ascii Content-Type: %s
+0x0003cbe8 0x00044be8  24   25 .rodata ascii Authorization: AWS %s:%s
+0x0003cc04 0x00044c04  18   19 .rodata ascii CURLOPT_HTTPHEADER
+0x0003cc18 0x00044c18  38   39 .rodata ascii [%s]:[%s] - %s: file not present=[%s]\n
+0x0003cc40 0x00044c40  21   22 .rodata ascii Upload file not found
+0x0003cc5c 0x00044c5c  37   38 .rodata ascii [%s]:[%s] - %s: fopen() failed, [%s]\n
+0x0003cc84 0x00044c84  23   24 .rodata ascii Cannot open upload file
+0x0003cc9c 0x00044c9c  14   15 .rodata ascii CURLOPT_UPLOAD
+0x0003ccac 0x00044cac  11   12 .rodata ascii CURLOPT_PUT
+0x0003ccb8 0x00044cb8  16   17 .rodata ascii CURLOPT_READDATA
+0x0003cccc 0x00044ccc  24   25 .rodata ascii CURLOPT_INFILESIZE_LARGE
+0x0003cce8 0x00044ce8  70   71 .rodata ascii [%s]:[%s] - %s: Offset=[%u] > actual size=[%ld], start from file size\n
+0x0003cd38 0x00044d38  44   45 .rodata ascii [%s]:[%s] - %s: fopen() failed on file=[%s]\n
+0x0003cd68 0x00044d68  28   29 .rodata ascii Unable to open download file
+0x0003cd88 0x00044d88  34   35 .rodata ascii [%s]:[%s] - %s: fseek(%u) failed.\n
+0x0003cdac 0x00044dac  12   13 .rodata ascii fseek failed
+0x0003cdbc 0x00044dbc  17   18 .rodata ascii libcurl-agent/1.0
+0x0003cdd0 0x00044dd0  17   18 .rodata ascii CURLOPT_USERAGENT
+0x0003cde4 0x00044de4  21   22 .rodata ascii CURLOPT_WRITEFUNCTION
+0x0003cdfc 0x00044dfc  17   18 .rodata ascii CURLOPT_WRITEDATA
+0x0003ce10 0x00044e10  19   20 .rodata ascii CURLOPT_RESUME_FROM
+0x0003ce24 0x00044e24  23   24 .rodata ascii CURLOPT_LOW_SPEED_LIMIT
+0x0003ce3c 0x00044e3c  22   23 .rodata ascii CURLOPT_LOW_SPEED_TIME
+0x0003ce54 0x00044e54  24   25 .rodata ascii CURLOPT_XFERINFOFUNCTION
+0x0003ce70 0x00044e70  20   21 .rodata ascii CURLOPT_XFERINFODATA
+0x0003ce88 0x00044e88  18   19 .rodata ascii CURLOPT_NOPROGRESS
+0x0003ce9c 0x00044e9c  50   51 .rodata ascii [%s]:[%s] - %s: inOffset=[%u], actual offset=[%u]\n
+0x0003ced0 0x00044ed0  19   20 .rodata ascii CURLOPT_ERRORBUFFER
+0x0003cee4 0x00044ee4  22   23 .rodata ascii CURLOPT_SSL_VERIFYPEER
+0x0003cefc 0x00044efc  43   44 .rodata ascii [%s]:[%s] - %s: disable_cert_verify is set\n
+0x0003cf28 0x00044f28  22   23 .rodata ascii CURLOPT_SSL_VERIFYHOST
+0x0003cf40 0x00044f40  11   12 .rodata ascii CURLOPT_URL
+0x0003cf4c 0x00044f4c  57   58 .rodata ascii [%s]:[%s] - %s: Found data for http error=[%ld], saving.\n
+0x0003cf88 0x00044f88  33   34 .rodata ascii /opt/nvtl/data/nua/cloud_err_data
+0x0003cfac 0x00044fac  54   55 .rodata ascii [%s]:[%s] - %s: curl error=[%s], retry after 2 second\n
+0x0003cfe4 0x00044fe4  22   23 .rodata ascii CURLINFO_RESPONSE_CODE
+0x0003cffc 0x00044ffc  15   16 .rodata ascii HTTP code=[%ld]
+0x0003d00c 0x0004500c  55   56 .rodata ascii [%s]:[%s] - %s: Success, ref-req=[%d], HTTP code=[%ld]\n
+0x0003d044 0x00045044  60   61 .rodata ascii [%s]:[%s] - %s: Failed HTTP status ref-req=[%d], code=[%ld]\n
+0x0003d084 0x00045084  61   62 .rodata ascii [%s]:[%s] - %s: file=[%s], bucket=[%s], host=[%s], path=[%s]\n
+0x0003d0c4 0x000450c4  59   60 .rodata ascii [%s]:[%s] - %s: nua_cloud_io_create_aws_signature() failed\n
+0x0003d100 0x00045100  61   62 .rodata ascii [%s]:[%s] - %s: nua_cloud_io_aws_create_http_header() failed\n
+0x0003d140 0x00045140   8    9 .rodata ascii Download
+0x0003d14c 0x0004514c   6    7 .rodata ascii Upload
+0x0003d154 0x00045154  58   59 .rodata ascii [%s]:[%s] - %s: Action=[%s] failed, status=[%s], url=[%s]\n
+0x0003d190 0x00045190  75   76 .rodata ascii [%s]:[%s] - %s: Action=[%s] success, status=[%s], file_size=[%u], url=[%s]\n
+0x0003d1dc 0x000451dc  15   16 .rodata ascii NUA_IO_ACT_DOWN
+0x0003d1ec 0x000451ec  13   14 .rodata ascii NUA_IO_ACT_UP
+0x0003d1fc 0x000451fc  36   37 .rodata ascii [%s]:[%s] - %s: started action=[%s]\n
+0x0003d224 0x00045224  48   49 .rodata ascii [%s]:[%s] - %s: nua_cloud_io_aws_setup() failed\n
+0x0003d258 0x00045258  29   30 .rodata ascii [%s]:[%s] - %s: Headers=[%p]\n
+0x0003d278 0x00045278  13   14 .rodata ascii Invalid input
+0x0003d288 0x00045288  33   34 .rodata ascii [%s]:[%s] - %s: final - url=[%s]\n
+0x0003d2ac 0x000452ac  59   60 .rodata ascii [%s]:[%s] - %s: nua_cloud_io_setup_upload_options() failed\n
+0x0003d2e8 0x000452e8  29   30 .rodata ascii [%s]:[%s] - %s: fhandle=[%p]\n
+0x0003d308 0x00045308  59   60 .rodata ascii [%s]:[%s] - %s: nua_cloud_io_setup_common_options() failed\n
+0x0003d344 0x00045344  57   58 .rodata ascii [%s]:[%s] - %s: Started thread ID:[%lu], process ID=[%d]\n
+0x0003d380 0x00045380  16   17 .rodata ascii /nua_cloud_io_mq
+0x0003d394 0x00045394  62   63 .rodata ascii [%s]:[%s] - %s: Error opening message queue: %d, terminating.\n
+0x0003d3d4 0x000453d4  51   52 .rodata ascii [%s]:[%s] - %s: curl_global_init() failed, rc=[%d]\n
+0x0003d408 0x00045408  40   41 .rodata ascii [%s]:[%s] - %s: curl_easy_init() failed\n
+0x0003d434 0x00045434  56   57 .rodata ascii [%s]:[%s] - %s: mq_receive() failed, rc=[%d], errno=[%d]
+0x0003d470 0x00045470  32   33 .rodata ascii [%s]:[%s] - %s: Thread Exiting.\n
+0x0003d494 0x00045494  55   56 .rodata ascii [%s]:[%s] - %s: msgq_send() failed, rc=[%d], errno=[%d]
+0x0003d4cc 0x000454cc  38   39 .rodata ascii [%s]:[%s] - %s: Error creating thread\n
+0x0003d4f4 0x000454f4  33   34 .rodata ascii [%s]:[%s] - %s: created TID:[%lu]
+0x0003d518 0x00045518  19   20 .rodata ascii [%s]:[%s] - %s: +++
+0x0003d52c 0x0004552c  24   25 .rodata ascii nua_cloud_io_send_status
+0x0003d548 0x00045548  26   27 .rodata ascii nua_cloud_io_send_progress
+0x0003d564 0x00045564  24   25 .rodata ascii nua_cloud_io_xferinfo_cb
+0x0003d580 0x00045580  22   23 .rodata ascii extract_host_name_only
+0x0003d598 0x00045598  33   34 .rodata ascii nua_cloud_io_create_aws_signature
+0x0003d5bc 0x000455bc  35   36 .rodata ascii nua_cloud_io_aws_create_http_header
+0x0003d5e0 0x000455e0  33   34 .rodata ascii nua_cloud_io_setup_upload_options
+0x0003d604 0x00045604  35   36 .rodata ascii nua_cloud_io_setup_download_options
+0x0003d628 0x00045628  33   34 .rodata ascii nua_cloud_io_setup_common_options
+0x0003d64c 0x0004564c  39   40 .rodata ascii nua_cloud_io_save_server_error_response
+0x0003d674 0x00045674  25   26 .rodata ascii nua_cloud_io_perform_curl
+0x0003d690 0x00045690  22   23 .rodata ascii nua_cloud_io_aws_setup
+0x0003d6a8 0x000456a8  25   26 .rodata ascii nua_cloud_io_print_status
+0x0003d6c4 0x000456c4  19   20 .rodata ascii nua_cloud_io_action
+0x0003d6d8 0x000456d8  26   27 .rodata ascii nua_cloud_io_action_thread
+0x0003d6f4 0x000456f4  25   26 .rodata ascii nua_cloud_io_action_start
+0x0003d710 0x00045710  17   18 .rodata ascii nua_cloud_io_init
+0x0003d724 0x00045724  21   22 .rodata ascii nua_cloud_io_shutdown
+0x0003d740 0x00045740  20   21 .rodata ascii [%s]:[%s] - %s: +++\n
+0x0003d758 0x00045758  62   63 .rodata ascii [%s]:[%s] - %s: nua_sys_get_device_info(IMEI) failed, rc=[%d]\n
+0x0003d798 0x00045798  32   33 .rodata ascii 7GcZkMxD5V4G6bLwG8DpdXBIJFIWN6by
+0x0003d7bc 0x000457bc  54   55 .rodata ascii [%s]:[%s] - %s: mifi_security_aes128_encrypt() failed\n
+0x0003d7f4 0x000457f4  35   36 .rodata ascii [%s]:[%s] - %s: encrypted=[%s][%d]\n
+0x0003d818 0x00045818  12   13 .rodata ascii nua.settings
+0x0003d828 0x00045828  41   42 .rodata ascii [%s]:[%s] - %s: Failed to read (%s) rc=%d
+0x0003d854 0x00045854  30   31 .rodata ascii [%s]:[%s] - %s: NUA settings:\n
+0x0003d874 0x00045874  32   33 .rodata ascii [%s]:[%s] - %s: fumo_enabled: %d
+0x0003d898 0x00045898  48   49 .rodata ascii [%s]:[%s] - %s: powersave feature not supported\n
+0x0003d8cc 0x000458cc  58   59 .rodata ascii [%s]:[%s] - %s: Power on trigger - elapsed=[%u], cfg=[%u]\n
+0x0003d908 0x00045908  28   29 .rodata ascii /opt/nvtl/etc/nua/config.xml
+0x0003d928 0x00045928  53   54 .rodata ascii [%s]:[%s] - %s: Failed to open configuration file: %s
+0x0003d960 0x00045960  19   20 .rodata ascii /Config/modelString
+0x0003d978 0x00045978  26   27 .rodata ascii /Config/bootupDelayForWwan
+0x0003d994 0x00045994  36   37 .rodata ascii /Config/backend/cloudStorage/enabled
+0x0003d9bc 0x000459bc  39   40 .rodata ascii /Config/backend/cloudStorage/ddFileName
+0x0003d9e4 0x000459e4   7    8 .rodata ascii dl_desc
+0x0003d9ec 0x000459ec  39   40 .rodata ascii /Config/backend/cloudStorage/ddFileSize
+0x0003da14 0x00045a14  49   50 .rodata ascii /Config/backend/cloudStorage/connectionTimeoutSec
+0x0003da48 0x00045a48  46   47 .rodata ascii /Config/backend/cloudStorage/disableCertVerify
+0x0003da78 0x00045a78  49   50 .rodata ascii /Config/backend/cloudStorage/production/url/value
+0x0003daac 0x00045aac  44   45 .rodata ascii https://mifiupdates.novatelwireless.com/prod
+0x0003dadc 0x00045adc  37   38 .rodata ascii /Config/backend/cloudStorage/test/url
+0x0003db04 0x00045b04  77   78 .rodata ascii [%s]:[%s] - %s: No. of test URL exceeded max limit. found=[%d] > allowed=[%d]
+0x0003db54 0x00045b54  36   37 .rodata ascii [%s]:[%s] - %s: Test URL count=[%d]\n
+0x0003db7c 0x00045b7c  12   13 .rodata ascii %s[%d]/value
+0x0003db8c 0x00045b8c  12   13 .rodata ascii %s[%d]/alias
+0x0003db9c 0x00045b9c  45   46 .rodata ascii /Config/backend/cloudStorage/key/ddDecryption
+0x0003dbcc 0x00045bcc  49   50 .rodata ascii /Config/backend/cloudStorage/key/resultEncryption
+0x0003dc00 0x00045c00  46   47 .rodata ascii /Config/softwareUpdate/retry/maxRoamingRetries
+0x0003dc30 0x00045c30  45   46 .rodata ascii /Config/softwareUpdate/retry/maxNoDataRetries
+0x0003dc60 0x00045c60  47   48 .rodata ascii /Config/softwareUpdate/retry/maxDownloadRetries
+0x0003dc90 0x00045c90  45   46 .rodata ascii /Config/softwareUpdate/retry/maxReportRetries
+0x0003dcc0 0x00045cc0  50   51 .rodata ascii /Config/softwareUpdate/retry/shortRetryIntervalSec
+0x0003dcf4 0x00045cf4  49   50 .rodata ascii /Config/softwareUpdate/retry/longRetryIntervalSec
+0x0003dd28 0x00045d28  43   44 .rodata ascii /Config/softwareUpdate/supportPriOnlyUpdate
+0x0003dd54 0x00045d54  47   48 .rodata ascii /Config/softwareUpdate/preInstallKickOffWaitSec
+0x0003dd84 0x00045d84  39   40 .rodata ascii /Config/softwareUpdate/pollIntervalDays
+0x0003ddac 0x00045dac  35   36 .rodata ascii /Config/softwareUpdate/installDefer
+0x0003ddd0 0x00045dd0  41   42 .rodata ascii /Config/softwareUpdate/installAtPowerDown
+0x0003ddfc 0x00045dfc  51   52 .rodata ascii /Config/softwareUpdate/installAtPowerUpTriggerCount
+0x0003de30 0x00045e30  53   54 .rodata ascii /Config/softwareUpdate/SUCheckCondition/DenyIfRoaming
+0x0003de68 0x00045e68  56   57 .rodata ascii /Config/softwareUpdate/SUCheckCondition/DenyIfNoCoverage
+0x0003dea4 0x00045ea4  56   57 .rodata ascii /Config/softwareUpdate/SUCheckCondition/DenyIfNoDataCall
+0x0003dee0 0x00045ee0  43   44 .rodata ascii /Config/softwareUpdate/BatteryCheck/Enabled
+0x0003df0c 0x00045f0c  48   49 .rodata ascii /Config/softwareUpdate/BatteryCheck/MinThreshold
+0x0003df40 0x00045f40  50   51 .rodata ascii /Config/softwareUpdate/BatteryCheck/MonitorEnabled
+0x0003df74 0x00045f74  45   46 .rodata ascii /Config/softwareUpdate/version/platformPrefix
+0x0003dfa4 0x00045fa4  45   46 .rodata ascii /Config/softwareUpdate/version/noModemVersion
+0x0003dfd4 0x00045fd4  49   50 .rodata ascii /Config/softwareUpdate/autoInstall/minutesAfterDL
+0x0003e008 0x00046008  14   15 .rodata ascii settings.ready
+0x0003e018 0x00046018  65   66 .rodata ascii [%s]:[%s] - %s: settings sub-system is not ready. retries left %d
+0x0003e05c 0x0004605c  60   61 .rodata ascii [%s]:[%s] - %s: settings sub-system initialized successfully
+0x0003e09c 0x0004609c  77   78 .rodata ascii [%s]:[%s] - %s: Failed to initialize settings. Settings sub-system not ready?
+0x0003e0ec 0x000460ec  76   77 .rodata ascii [%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+0x0003e13c 0x0004613c  47   48 .rodata ascii [%s]:[%s] - NUA (fota) disabled in features.xml
+0x0003e16c 0x0004616c  81   82 .rodata ascii [%s]:[%s] - Failed to initialize settings. nua_cache_refresh_settings returned %d
+0x0003e1c0 0x000461c0  18   19 .rodata ascii nua_cache_set_imei
+0x0003e1d4 0x000461d4  26   27 .rodata ascii nua_cache_refresh_settings
+0x0003e1f0 0x000461f0  26   27 .rodata ascii nua_is_powersave_supported
+0x0003e20c 0x0004620c  33   34 .rodata ascii nua_check_poweron_install_trigger
+0x0003e230 0x00046230  15   16 .rodata ascii nua_config_init
+0x0003e240 0x00046240  17   18 .rodata ascii nua_settings_init
+0x0003e254 0x00046254  13   14 .rodata ascii OUT_OF_BOUNDS
+0x0003e268 0x00046268  13   14 .rodata ascii SU_OPR_ERR_OK
+0x0003e278 0x00046278  15   16 .rodata ascii SU_OPR_ERR_CALL
+0x0003e288 0x00046288  17   18 .rodata ascii SU_OPR_ERR_BUFFER
+0x0003e29c 0x0004629c  27   28 .rodata ascii SU_OPR_ERR_FEATURE_DISABLED
+0x0003e2b8 0x000462b8  28   29 .rodata ascii SU_OPR_ERR_MEM_ALLOC_FIALURE
+0x0003e2d8 0x000462d8  18   19 .rodata ascii SU_OPR_ERR_STORAGE
+0x0003e2ec 0x000462ec  28   29 .rodata ascii SU_OPR_ERR_DEVICE_IN_ROAMING
+0x0003e30c 0x0004630c  29   30 .rodata ascii SU_OPR_ERR_NO_MOBILE_COVERAGE
+0x0003e32c 0x0004632c  31   32 .rodata ascii SU_OPR_ERR_BATT_LOW_FOR_INSTALL
+0x0003e34c 0x0004634c  28   29 .rodata ascii SU_OPR_ERR_OTA_CALL_DISABLED
+0x0003e36c 0x0004636c  26   27 .rodata ascii SU_OPR_ERR_OTA_CALL_FAILED
+0x0003e388 0x00046388  32   33 .rodata ascii SU_OPR_ERR_OTA_CALL_CONNECT_PROG
+0x0003e3ac 0x000463ac  29   30 .rodata ascii SU_OPR_ERR_OTA_CALL_DNS_QUERY
+0x0003e3cc 0x000463cc  31   32 .rodata ascii SU_OPR_ERR_OTA_CALL_NOT_PRESENT
+0x0003e3ec 0x000463ec  27   28 .rodata ascii SU_OPR_ERR_SYS_INTF_FAILURE
+0x0003e408 0x00046408  24   25 .rodata ascii SU_OPR_ERR_DM_NO_UPD_PKG
+0x0003e424 0x00046424  31   32 .rodata ascii SU_OPR_ERR_ROAMING_OR_EMERGENCY
+0x0003e444 0x00046444  29   30 .rodata ascii SU_OPR_ERR_WIFI_NOT_AVAILABLE
+0x0003e464 0x00046464  26   27 .rodata ascii SU_OPR_ERR_DL_FILE_TOO_BIG
+0x0003e480 0x00046480  24   25 .rodata ascii SU_OPR_ERR_DL_CURL_RANGE
+0x0003e49c 0x0004649c  22   23 .rodata ascii SU_OPR_ERR_DL_CURL_API
+0x0003e4b4 0x000464b4  21   22 .rodata ascii SU_OPR_ERR_DL_GENERAL
+0x0003e4cc 0x000464cc  21   22 .rodata ascii SU_OPR_ERR_DL_NETWORK
+0x0003e4e4 0x000464e4  35   36 .rodata ascii SU_OPR_ERR_DL_PKG_VALIDATION_FAILED
+0x0003e508 0x00046508  17   18 .rodata ascii SU_OPR_ERR_CANCEL
+0x0003e51c 0x0004651c  21   22 .rodata ascii SU_OPR_ERR_DM_GENERAL
+0x0003e534 0x00046534  21   22 .rodata ascii SU_OPR_ERR_DM_NETWORK
+0x0003e54c 0x0004654c  25   26 .rodata ascii SU_OPR_ERR_DM_IN_PROGRESS
+0x0003e568 0x00046568  23   24 .rodata ascii SU_OPR_ERR_DM_SU_CANCEL
+0x0003e580 0x00046580  23   24 .rodata ascii SU_OPR_ERR_DM_TREE_NODE
+0x0003e598 0x00046598  20   21 .rodata ascii SU_OPR_ERR_BOOTSTRAP
+0x0003e5b0 0x000465b0  20   21 .rodata ascii SU_OPR_ERR_SYNML_CMD
+0x0003e5c8 0x000465c8  14   15 .rodata ascii SU_OPR_ERR_NIA
+0x0003e5d8 0x000465d8  15   16 .rodata ascii SU_OPR_ERR_AUTH
+0x0003e5e8 0x000465e8  16   17 .rodata ascii SU_OPR_ERR_COMMS
+0x0003e5fc 0x000465fc  22   23 .rodata ascii SU_OPR_ERR_COMMS_FATAL
+0x0003e614 0x00046614  16   17 .rodata ascii SU_OPR_ERR_ABORT
+0x0003e628 0x00046628  20   21 .rodata ascii SU_OPR_ERR_UNDEFINED
+0x0003e640 0x00046640  19   20 .rodata ascii SU_OPR_ERR_DD_PARSE
+0x0003e654 0x00046654  15   16 .rodata ascii SU_OPR_ERR_HTTP
+0x0003e664 0x00046664  19   20 .rodata ascii SU_OPR_ERR_HTTP_400
+0x0003e678 0x00046678  19   20 .rodata ascii SU_OPR_ERR_HTTP_401
+0x0003e68c 0x0004668c  19   20 .rodata ascii SU_OPR_ERR_HTTP_402
+0x0003e6a0 0x000466a0  19   20 .rodata ascii SU_OPR_ERR_HTTP_403
+0x0003e6b4 0x000466b4  19   20 .rodata ascii SU_OPR_ERR_HTTP_404
+0x0003e6c8 0x000466c8  19   20 .rodata ascii SU_OPR_ERR_HTTP_405
+0x0003e6dc 0x000466dc  19   20 .rodata ascii SU_OPR_ERR_HTTP_406
+0x0003e6f0 0x000466f0  19   20 .rodata ascii SU_OPR_ERR_HTTP_407
+0x0003e704 0x00046704  19   20 .rodata ascii SU_OPR_ERR_HTTP_408
+0x0003e718 0x00046718  19   20 .rodata ascii SU_OPR_ERR_HTTP_409
+0x0003e72c 0x0004672c  19   20 .rodata ascii SU_OPR_ERR_HTTP_500
+0x0003e740 0x00046740  19   20 .rodata ascii SU_OPR_ERR_HTTP_501
+0x0003e754 0x00046754  19   20 .rodata ascii SU_OPR_ERR_HTTP_502
+0x0003e768 0x00046768  19   20 .rodata ascii SU_OPR_ERR_HTTP_503
+0x0003e77c 0x0004677c  17   18 .rodata ascii SU_STATE_NOTREADY
+0x0003e790 0x00046790  14   15 .rodata ascii SU_STATE_READY
+0x0003e7a0 0x000467a0  13   14 .rodata ascii SU_STATE_IDLE
+0x0003e7b0 0x000467b0  19   20 .rodata ascii SU_STATE_NI_SESSION
+0x0003e7c4 0x000467c4  24   25 .rodata ascii SU_STATE_CHECKING_UPDATE
+0x0003e7e0 0x000467e0  27   28 .rodata ascii SU_STATE_READY_FOR_DOWNLOAD
+0x0003e7fc 0x000467fc  20   21 .rodata ascii SU_STATE_DOWNLOADING
+0x0003e814 0x00046814  26   27 .rodata ascii SU_STATE_READY_FOR_INSTALL
+0x0003e830 0x00046830  26   27 .rodata ascii SU_STATE_INSTALL_POSTPONED
+0x0003e84c 0x0004684c  33   34 .rodata ascii SU_STATE_BATT_TOO_LOW_FOR_INSTALL
+0x0003e870 0x00046870  28   29 .rodata ascii SU_STATE_INSTALL_IN_PROGRESS
+0x0003e890 0x00046890  26   27 .rodata ascii SU_STATE_INSTALL_COMPLETED
+0x0003e8ac 0x000468ac  26   27 .rodata ascii SU_STATE_REPORTING_RESULTS
+0x0003e8cc 0x000468cc  14   15 .rodata ascii [%s]:[%s] - %s
+0x0003e8e0 0x000468e0  37   38 .rodata ascii Printing NUA configuration settings:\n
+0x0003e908 0x00046908  28   29 .rodata ascii bootup_wwan_delay_secs=[%u]\n
+0x0003e928 0x00046928  27   28 .rodata ascii backend.cloud.enabled=[%u]\n
+0x0003e944 0x00046944  32   33 .rodata ascii backend.cloud.conn_timeout=[%u]\n
+0x0003e968 0x00046968  39   40 .rodata ascii backend.cloud.disable_cert_verify=[%u]\n
+0x0003e990 0x00046990  32   33 .rodata ascii backend.cloud.dd_file_name=[%s]\n
+0x0003e9b4 0x000469b4  36   37 .rodata ascii backend.cloud.dd_file_size_max=[%u]\n
+0x0003e9dc 0x000469dc  34   35 .rodata ascii backend.cloud.url.production=[%s]\n
+0x0003ea00 0x00046a00  36   37 .rodata ascii backend.cloud.url_test[%u]=[%s][%s]\n
+0x0003ea28 0x00046a28  26   27 .rodata ascii backend.cloud.key.dd=[%s]\n
+0x0003ea44 0x00046a44  32   33 .rodata ascii backend.cloud.key.result_d=[%s]\n
+0x0003ea68 0x00046a68  32   33 .rodata ascii su.retry.max_retry_no_data=[%u]\n
+0x0003ea8c 0x00046a8c  29   30 .rodata ascii su.retry.max_retry_roam=[%u]\n
+0x0003eaac 0x00046aac  33   34 .rodata ascii su.retry.max_retry_download=[%u]\n
+0x0003ead0 0x00046ad0  31   32 .rodata ascii su.retry.max_retry_report=[%u]\n
+0x0003eaf0 0x00046af0  31   32 .rodata ascii su.retry.retry_short_secs=[%u]\n
+0x0003eb10 0x00046b10  30   31 .rodata ascii su.retry.retry_long_secs=[%u]\n
+0x0003eb30 0x00046b30  34   35 .rodata ascii su.pri_only_update_supported=[%u]\n
+0x0003eb54 0x00046b54  30   31 .rodata ascii su.pre_install_wait_secs=[%u]\n
+0x0003eb74 0x00046b74  34   35 .rodata ascii su.su_device_poll_timer_days=[%u]\n
+0x0003eb98 0x00046b98  32   33 .rodata ascii su.install_defer_supported=[%u]\n
+0x0003ebbc 0x00046bbc  29   30 .rodata ascii su.install_at_powerdown=[%u]\n
+0x0003ebdc 0x00046bdc  27   28 .rodata ascii su.install_at_powerup=[%u]\n
+0x0003ebf8 0x00046bf8  33   34 .rodata ascii su.su_conds.deny_if_roaming=[%u]\n
+0x0003ec1c 0x00046c1c  37   38 .rodata ascii su.su_conds.deny_if_no_coverage=[%u]\n
+0x0003ec44 0x00046c44  38   39 .rodata ascii su.su_conds.deny_if_no_data_call=[%u]\n
+0x0003ec6c 0x00046c6c  27   28 .rodata ascii su.batt_check.enabled=[%u]\n
+0x0003ec88 0x00046c88  33   34 .rodata ascii su.batt_check.min_threshold=[%u]\n
+0x0003ecac 0x00046cac  35   36 .rodata ascii su.batt_check.monitor_enabled=[%u]\n
+0x0003ecd0 0x00046cd0  28   29 .rodata ascii su.ver.platform_prefix=[%s]\n
+0x0003ecf0 0x00046cf0  29   30 .rodata ascii su.ver.no_modem_version=[%u]\n
+0x0003ed10 0x00046d10  24   25 .rodata ascii su.ai.min_after_dl=[%u]\n
+0x0003ed2c 0x00046d2c  53   54 .rodata ascii [%s]:[%s] - %s: NUA_TEST_DL_RETRY_LOGIC, enable=[%d]\n
+0x0003ed68 0x00046d68  57   58 .rodata ascii [%s]:[%s] - %s: NUA_TEST_REPORT_RETRY_LOGIC, enable=[%d]\n
+0x0003eda4 0x00046da4  55   56 .rodata ascii [%s]:[%s] - %s: NUA_TEST_ROAM_RETRY_LOGIC, enable=[%d]\n
+0x0003eddc 0x00046ddc  57   58 .rodata ascii [%s]:[%s] - %s: NUA_TEST_NODATA_RETRY_LOGIC, enable=[%d]\n
+0x0003ee18 0x00046e18  38   39 .rodata ascii [%s]:[%s] - %s: NUA_TEST_GET_DEV_INFO\n
+0x0003ee40 0x00046e40  41   42 .rodata ascii [%s]:[%s] - %s: NUA_TEST_GET_ROAM_STATUS\n
+0x0003ee6c 0x00046e6c  41   42 .rodata ascii [%s]:[%s] - %s: NUA_TEST_GET_CALL_STATUS\n
+0x0003ee98 0x00046e98  37   38 .rodata ascii [%s]:[%s] - %s: NUA_TEST_GET_VERSION\n
+0x0003eec0 0x00046ec0  37   38 .rodata ascii [%s]:[%s] - %s: Unsupported event:%d\n
+0x0003eee8 0x00046ee8  19   20 .rodata ascii nua_test_msg_handle
+0x0003eefc 0x00046efc  62   63 .rodata ascii [%s]:[%s] - %s: xmlXPathEvalExpression() failed, xparent=[%s]\n
+0x0003ef40 0x00046f40  51   52 .rodata ascii [%s]:[%s] - %s: Unable to insert node=[%s] at [%s]\n
+0x0003ef74 0x00046f74  47   48 .rodata ascii [%s]:[%s] - %s: Unable to create node path=[%s]
+0x0003efa4 0x00046fa4  32   33 .rodata ascii [%s]:[%s] - %s: Null parameters\n
+0x0003efc8 0x00046fc8  37   38 .rodata ascii [%s]:[%s] - %s: Invalid input values\n
+0x0003eff0 0x00046ff0  60   61 .rodata ascii [%s]:[%s] - %s: xmlXPathEvalExpression() failed, XPath=[%s]\n
+0x0003f030 0x00047030  62   63 .rodata ascii [%s]:[%s] - %s: xmlXPathNodeSetIsEmpty() is true , XPath=[%s]\n
+0x0003f070 0x00047070  55   56 .rodata ascii [%s]:[%s] - %s: xmlNodeGetContent() failed, XPath=[%s]\n
+0x0003f0a8 0x000470a8  59   60 .rodata ascii [%s]:[%s] - %s: XPath=[%s] value len=[%ld] > buf size=[%d]\n
+0x0003f0e8 0x000470e8  39   40 .rodata ascii [%s]:[%s] - %s: XPath=[%s], value=[%s]\n
+0x0003f110 0x00047110  64   65 .rodata ascii [%s]:[%s] - %s: xmlEncodeEntitiesReentrant() failed, XPath=[%s]\n
+0x0003f154 0x00047154  59   60 .rodata ascii [%s]:[%s] - %s: xmlEncodeSpecialChars() failed, XPath=[%s]\n
+0x0003f190 0x00047190  57   58 .rodata ascii [%s]:[%s] - %s: XPath=[%s], encoded=[%s], org_value=[%s]\n
+0x0003f1cc 0x000471cc  53   54 .rodata ascii [%s]:[%s] - %s: unable to get node count, XPath=[%s]\n
+0x0003f208 0x00047208  42   43 .rodata ascii [%s]:[%s] - %s: fopen() failed, file=[%s]\n
+0x0003f234 0x00047234  39   40 .rodata ascii [%s]:[%s] - %s: xmlReadFile(%s) failed\n
+0x0003f25c 0x0004725c  44   45 .rodata ascii [%s]:[%s] - %s: xmlXPathNewContext() failed\n
+0x0003f28c 0x0004728c  27   28 .rodata ascii [%s]:[%s] - %s: fname=[%s]\n
+0x0003f2a8 0x000472a8   5    6 .rodata ascii UTF-8
+0x0003f2b0 0x000472b0  45   46 .rodata ascii [%s]:[%s] - %s: xmlSaveFormatFile(%s) failed\n
+0x0003f2e0 0x000472e0  45   46 .rodata ascii [%s]:[%s] - %s: fname=[%s] saved, bytes=[%d]\n
+0x0003f310 0x00047310  19   20 .rodata ascii nua_xml_insert_node
+0x0003f324 0x00047324  24   25 .rodata ascii nua_xml_create_node_path
+0x0003f340 0x00047340  20   21 .rodata ascii nua_xml_do_operation
+0x0003f358 0x00047358  22   23 .rodata ascii nua_xml_get_node_count
+0x0003f370 0x00047370  16   17 .rodata ascii nua_xml_open_new
+0x0003f384 0x00047384  12   13 .rodata ascii nua_xml_open
+0x0003f394 0x00047394  12   13 .rodata ascii nua_xml_save
+0x0003f3a4 0x000473a4  26   27 .rodata ascii /opt/nvtl/data/nua/reg.xml
+0x0003f3c4 0x000473c4  26   27 .rodata ascii [%s]:[%s] - %s: Skip=[%s]\n
+0x0003f3e0 0x000473e0  32   33 .rodata ascii [%s]:[%s] - %s: Opened dir=[%s]\n
+0x0003f40c 0x0004740c   5    6 .rodata ascii %s/%s
+0x0003f414 0x00047414  37   38 .rodata ascii [%s]:[%s] - %s: stat failed for=[%s]\n
+0x0003f43c 0x0004743c  43   44 .rodata ascii [%s]:[%s] - %s: Entering sub directory: %s\n
+0x0003f468 0x00047468  30   31 .rodata ascii [%s]:[%s] - %s: Deleting=[%s]\n
+0x0003f488 0x00047488  52   53 .rodata ascii [%s]:[%s] - %s: Remove failed on=[%s], erronno=[%d]\n
+0x0003f4c0 0x000474c0  18   19 .rodata ascii /opt/nvtl/data/nua
+0x0003f4d4 0x000474d4  52   53 .rodata ascii [%s]:[%s] - %s: Remove failed for=[%s], erronno[%d]\n
+0x0003f50c 0x0004750c  49   50 .rodata ascii [%s]:[%s] - %s: unlink failed ret=%d for file:%s\n
+0x0003f540 0x00047540  33   34 .rodata ascii [%s]:[%s] - %s: Removed file: %s\n
+0x0003f564 0x00047564  43   44 .rodata ascii [%s]:[%s] - %s: rename(%s, %s) failed=[%s]\n
+0x0003f590 0x00047590  30   31 .rodata ascii [%s]:[%s] - %s: fsyncing=[%s]\n
+0x0003f5b4 0x000475b4  36   37 .rodata ascii [%s]:[%s] - %s: File not found [%s]\n
+0x0003f5dc 0x000475dc  45   46 .rodata ascii [%s]:[%s] - %s: Read str=[%s] from file=[%s]\n
+0x0003f60c 0x0004760c  42   43 .rodata ascii [%s]:[%s] - %s: Cannot open dir, errno:%d\n
+0x0003f638 0x00047638  36   37 .rodata ascii [%s]:[%s] - %s: syncing %s complete\n
+0x0003f664 0x00047664  47   48 .rodata ascii [%s]:[%s] - %s: fopen() creation failed for %s\n
+0x0003f694 0x00047694  64   65 .rodata ascii [%s]:[%s] - %s: file (%s) write failed expected:%d, returned:%d\n
+0x0003f6d8 0x000476d8  53   54 .rodata ascii [%s]:[%s] - %s: unlink failed for:%s rc=%d, errno:%d\n
+0x0003f710 0x00047710  33   34 .rodata ascii [%s]:[%s] - %s: File created :%s\n
+0x0003f734 0x00047734  21   22 .rodata ascii nua_file_is_delete_ok
+0x0003f74c 0x0004774c  16   17 .rodata ascii nua_dir_clean_up
+0x0003f760 0x00047760  15   16 .rodata ascii nua_file_remove
+0x0003f770 0x00047770  13   14 .rodata ascii nua_file_move
+0x0003f780 0x00047780  22   23 .rodata ascii nua_read_str_from_file
+0x0003f798 0x00047798  23   24 .rodata ascii nua_file_sync_and_close
+0x0003f7b0 0x000477b0  15   16 .rodata ascii nua_file_create
+0x0003fa90 0x00048a90  18   19 .data   ascii /reg/state/current
+0x0003fb8f 0x00048b8f  17   18 .data   ascii SU_STATE_NOTREADY
+0x0003fd98 0x00048d98  19   20 .data   ascii /reg/state/previous
+0x0003fe97 0x00048e97  17   18 .data   ascii SU_STATE_NOTREADY
+0x000400a0 0x000490a0  19   20 .data   ascii /reg/poll/timeStamp
+0x000403a8 0x000493a8  23   24 .data   ascii /reg/poll/secSinceEpoch
+0x000406b0 0x000496b0  24   25 .data   ascii /reg/activity/campaignID
+0x000409b8 0x000499b8  30   31 .data   ascii /reg/activity/type/updateCheck
+0x00040cc0 0x00049cc0  27   28 .data   ascii /reg/activity/type/dlFinish
+0x00040fc8 0x00049fc8  24   25 .data   ascii /reg/activity/poll/valid
+0x000412d0 0x0004a2d0  27   28 .data   ascii /reg/activity/poll/interval
+0x000415d8 0x0004a5d8  27   28 .data   ascii /reg/activity/access/pubUrl
+0x000418e0 0x0004a8e0  27   28 .data   ascii /reg/activity/access/sigVer
+0x00041be8 0x0004abe8  25   26 .data   ascii /reg/activity/access/host
+0x00041ef0 0x0004aef0  26   27 .data   ascii /reg/activity/access/rPath
+0x000421f8 0x0004b1f8  27   28 .data   ascii /reg/activity/access/bucket
+0x00042500 0x0004b500  25   26 .data   ascii /reg/activity/access/akey
+0x00042808 0x0004b808  25   26 .data   ascii /reg/activity/access/skey
+0x00042b10 0x0004bb10  30   31 .data   ascii /reg/suLoopUpdateCheckInterval
+0x00042e18 0x0004be18  14   15 .data   ascii /reg/suTrigger
+0x00043120 0x0004c120  30   31 .data   ascii /reg/suAutoInstallTriggerCount
+0x00043428 0x0004c428  24   25 .data   ascii /reg/retryCount/download
+0x00043730 0x0004c730  20   21 .data   ascii /reg/download/offset
+0x00043a38 0x0004ca38  22   23 .data   ascii /reg/download/progress
+0x00043d40 0x0004cd40  22   23 .data   ascii /reg/retryCount/report
+0x00044048 0x0004d048  32   33 .data   ascii /reg/retryCount/roamingTimeStamp
+0x00044350 0x0004d350  30   31 .data   ascii /reg/retryCount/roamingSeconds
+0x00044658 0x0004d658  31   32 .data   ascii /reg/retryCount/noDataTimestamp
+0x00044960 0x0004d960  29   30 .data   ascii /reg/retryCount/noDataSeconds
+0x00044c68 0x0004dc68  26   27 .data   ascii /reg/autoInstall/timeStamp
+0x00044f70 0x0004df70  30   31 .data   ascii /reg/autoInstall/secSinceEpoch
+0x00045278 0x0004e278  20   21 .data   ascii /reg/dd/fotaRecordNo
+0x00045580 0x0004e580  24   25 .data   ascii /reg/dd/activityRecordNo
+0x00045888 0x0004e888  24   25 .data   ascii /reg/dd/totalRecordCount
+0x00045b90 0x0004eb90  23   24 .data   ascii /reg/debug/dlRetryLogic
+0x00045e98 0x0004ee98  27   28 .data   ascii /reg/debug/reportRetryLogic
+0x000461a0 0x0004f1a0  25   26 .data   ascii /reg/debug/roamRetryLogic
+0x000464a8 0x0004f4a8  27   28 .data   ascii /reg/debug/nodataRetryLogic
+0x000467b0 0x0004f7b0  21   22 .data   ascii /reg/testMode/enabled
+0x00046ab8 0x0004fab8  23   24 .data   ascii /reg/testMode/serverUrl
+0x00046dc0 0x0004fdc0  25   26 .data   ascii /reg/testMode/serverAlias
+0x000470c8 0x000500c8  25   26 .data   ascii /reg/testMode/cfgUrlIndex
+0x000473d0 0x000503d0  27   28 .data   ascii /reg/testMode/pollInternval
+0x000476d8 0x000506d8  22   23 .data   ascii /reg/testMode/fakeIMEI
+0x000479e0 0x000509e0  20   21 .data   ascii /reg/suResult/update
+0x00047be4 0x00050be4  24   25 .data   ascii /reg/suResult/old/update
+0x00047ce8 0x00050ce8  22   23 .data   ascii /reg/suResult/modemPRI
+0x00047eec 0x00050eec  26   27 .data   ascii /reg/suResult/old/modemPRI
+0x00047ff0 0x00050ff0  22   23 .data   ascii /reg/suResult/linuxPRI
+0x000481f4 0x000511f4  26   27 .data   ascii /reg/suResult/old/linuxPRI
+0x000482f8 0x000512f8  20   21 .data   ascii /reg/suResult/reason
+0x000483f7 0x000513f7  22   23 .data   ascii FOTA_RESULT_NO_UPGRADE
+0x000484fc 0x000514fc  24   25 .data   ascii /reg/suResult/old/reason
+0x00048600 0x00051600  28   29 .data   ascii /reg/suResult/reasonLinuxPRI
+0x000486ff 0x000516ff  22   23 .data   ascii FOTA_RESULT_NO_UPGRADE
+0x00048804 0x00051804  32   33 .data   ascii /reg/suResult/old/reasonLinuxPRI
+0x00048908 0x00051908  28   29 .data   ascii /reg/suResult/reasonModemPRI
+0x00048a07 0x00051a07  22   23 .data   ascii FOTA_RESULT_NO_UPGRADE
+0x00048b0c 0x00051b0c  32   33 .data   ascii /reg/suResult/old/reasonModemPRI
+0x00048f1c 0x00051f1c  12   13 .data   ascii /typeVersion
+0x00049028 0x00052028  11   12 .data   ascii /campaignID
+0x00049134 0x00052134   8    9 .data   ascii /version
+0x00049240 0x00052240  18   19 .data   ascii /updateDescription
+0x0004934c 0x0005234c   8    9 .data   ascii /pkgName
+0x00049458 0x00052458   5    6 .data   ascii /size
+0x00049564 0x00052564  20   21 .data   ascii /estimatedUpdateTime
+0x00049670 0x00052670  14   15 .data   ascii /securePackage
+0x0004977c 0x0005277c  16   17 .data   ascii /autoInstallMins
+0x00049888 0x00052888   9   10 .data   ascii /download
+0x00049994 0x00052994  14   15 .data   ascii /report/result
+=== IMPORTS ===
+nth      vaddr bind   type   lib name                                    
+-------------------------------------------------------------------------
+  1 0x0000ab3c GLOBAL FUNC       fgets
+  2 0x0000a3a4 GLOBAL FUNC       abort
+  3 0x0000a398 GLOBAL FUNC       __libc_start_main
+  4 0x0000a3b0 WEAK   NOTYPE     __gmon_start__
+  5 ---------- WEAK   NOTYPE     _ITM_deregisterTMCloneTable
+  6 0x0000aa94 GLOBAL FUNC       fputs
+  7 ---------- WEAK   NOTYPE     _ITM_registerTMCloneTable
+  8 ---------- WEAK   NOTYPE     _Jv_RegisterClasses
+  9 0x0000a3bc GLOBAL FUNC       clock_gettime
+ 10 0x0000a3c8 GLOBAL FUNC       watchdog_application_send_keep_alive
+ 11 0x0000a3d4 GLOBAL FUNC       fork
+ 12 0x0000a3e0 GLOBAL FUNC       exit
+ 13 0x0000a3ec GLOBAL FUNC       umask
+ 14 0x0000a3f8 GLOBAL FUNC       setsid
+ 15 0x0000aae8 GLOBAL FUNC       opendir
+ 16 0x0000a404 GLOBAL FUNC       chdir
+ 17 0x0000ab00 GLOBAL FUNC       readdir
+ 18 0x0000a410 GLOBAL FUNC       open
+ 19 0x0000aaf4 GLOBAL FUNC       remove
+ 20 0x0000a41c GLOBAL FUNC       dup2
+ 21 0x0000ab18 GLOBAL FUNC       unlink
+ 22 0x0000a428 GLOBAL FUNC       close
+ 23 0x0000ab0c GLOBAL FUNC       closedir
+ 24 0x0000ab30 GLOBAL FUNC       strerror
+ 25 0x0000a434 GLOBAL FUNC       write
+ 26 0x0000ab24 GLOBAL FUNC       rename
+ 27 0x0000a440 GLOBAL FUNC       memset
+ 28 0x0000a44c GLOBAL FUNC       sys_getLastSoftwareUpdateStatus
+ 29 0x0000a458 GLOBAL FUNC       mifi_dbg_get_level_name
+ 30 0x0000a464 GLOBAL FUNC       mifi_dbg_syslog
+ 31 0x0000a470 GLOBAL FUNC       mifi_dbg_log
+ 32 0x0000a47c GLOBAL FUNC       snprintf
+ 33 0x0000aa34 GLOBAL FUNC       strchr
+ 34 0x0000aa4c GLOBAL FUNC       strrchr
+ 35 0x0000aa40 GLOBAL FUNC       strdup
+ 36 0x0000a488 GLOBAL FUNC       memcpy
+ 37 0x0000a494 GLOBAL FUNC       strcmp
+ 38 0x0000a4a0 GLOBAL FUNC       strlen
+ 39 0x0000a9d4 GLOBAL FUNC       printf
+ 40 0x0000a8f0 GLOBAL FUNC       fseek
+ 41 0x0000a4ac GLOBAL FUNC       time
+ 42 0x0000a4b8 GLOBAL FUNC       gmtime
+ 43 0x0000a4c4 GLOBAL FUNC       strftime
+ 44 0x0000a4d0 GLOBAL FUNC       gettimeofday
+ 45 0x0000a878 GLOBAL FUNC       pthread_join
+ 46 0x0000a890 GLOBAL FUNC       fileno
+ 47 0x0000a884 GLOBAL FUNC       fflush
+ 48 0x0000a89c GLOBAL FUNC       fsync
+ 49 0x0000a8a8 GLOBAL FUNC       strncmp
+ 50 0x0000a8b4 GLOBAL FUNC       malloc
+ 51 0x0000a8cc GLOBAL FUNC       free
+ 52 0x0000a824 GLOBAL FUNC       fprintf
+ 53 0x0000a818 GLOBAL FUNC       fwrite
+ 54 0x0000a83c GLOBAL FUNC       strncat
+ 55 0x0000a860 GLOBAL FUNC       pthread_create
+ 56 0x0000a7d0 GLOBAL FUNC       localtime
+ 57 0x0000a7f4 GLOBAL FUNC       strtoull
+ 58 0x0000a4dc GLOBAL FUNC       msgq_send_async
+ 59 0x0000a4e8 GLOBAL FUNC       popen
+ 60 0x0000a4f4 GLOBAL FUNC       pclose
+ 61 0x0000a500 GLOBAL FUNC       pthread_self
+ 62 0x0000a50c GLOBAL FUNC       getpid
+ 63 0x0000a518 GLOBAL FUNC       signal
+ 64 0x0000a524 GLOBAL FUNC       mifi_dbg_start
+ 65 0x0000a530 GLOBAL FUNC       pipe
+ 66 0x0000a53c GLOBAL FUNC       __errno_location
+ 67 0x0000a548 GLOBAL FUNC       msgq_create
+ 68 0x0000a554 GLOBAL FUNC       mifi_security_init
+ 69 0x0000a560 GLOBAL FUNC       watchdog_application_register
+ 70 0x0000a56c GLOBAL FUNC       select
+ 71 0x0000a578 GLOBAL FUNC       msgq_receive
+ 72 0x0000a584 GLOBAL FUNC       msgq_resp_preprocess
+ 73 0x0000a590 GLOBAL FUNC       msgq_resp_postprocess
+ 74 0x0000a59c GLOBAL FUNC       mq_close
+ 75 0x0000a5a8 GLOBAL FUNC       mq_unlink
+ 76 0x0000a5b4 GLOBAL FUNC       mifi_security_shutdown
+ 77 0x0000a5c0 GLOBAL FUNC       mifi_dbg_stop
+ 78 0x0000a5cc GLOBAL FUNC       su_api_is_running
+ 79 0x0000a5d8 GLOBAL FUNC       nua_api_sys_indication
+ 80 0x0000a5e4 GLOBAL FUNC       MsgBus_Create
+ 81 0x0000a5f0 GLOBAL FUNC       MsgBus_Connect
+ 82 0x0000a5fc GLOBAL FUNC       MsgBus_Release
+ 83 0x0000a608 GLOBAL FUNC       MsgBus_SetCallback
+ 84 0x0000a614 GLOBAL FUNC       MsgBus_Disconnect
+ 85 0x0000a620 GLOBAL FUNC       MsgBus_Subscribe
+ 86 0x0000a62c GLOBAL FUNC       pthread_detach
+ 87 0x0000a638 GLOBAL FUNC       nua_api_timer_timeout_ind
+ 88 0x0000a644 GLOBAL FUNC       timer_delete
+ 89 0x0000a650 GLOBAL FUNC       timer_create
+ 90 0x0000a65c GLOBAL FUNC       timer_settime
+ 91 0x0000a668 GLOBAL FUNC       sys_getBatteryStatus
+ 92 0x0000a674 GLOBAL FUNC       sys_changeSystemRunlevel
+ 93 0x0000a680 GLOBAL FUNC       sys_registerDevicePowerDownHandoff
+ 94 0x0000a68c GLOBAL FUNC       system
+ 95 0x0000a698 GLOBAL FUNC       sys_getHardwareInfo
+ 96 0x0000a6a4 GLOBAL FUNC       sys_getSystemVersion
+ 97 0x0000a6b0 GLOBAL FUNC       sys_validateHomeNetwork
+ 98 0x0000a6bc GLOBAL FUNC       sys_getCellularDataConnectionStatus
+ 99 0x0000a6c8 GLOBAL FUNC       pthread_mutex_lock
+100 0x0000a6d4 GLOBAL FUNC       pthread_mutex_unlock
+101 0x0000a6e0 GLOBAL FUNC       fopen
+102 0x0000a6ec GLOBAL FUNC       fclose
+103 0x0000a6f8 GLOBAL FUNC       strtoul
+104 0x0000a704 GLOBAL FUNC       strtol
+105 0x0000a710 GLOBAL FUNC       pthread_mutex_init
+106 0x0000a71c GLOBAL FUNC       MsgBusSetBinary
+107 0x0000a728 GLOBAL FUNC       sleep
+108 0x0000a734 GLOBAL FUNC       sys_getLastSuccessfulSoftwareUpdateInfo
+109 0x0000a740 GLOBAL FUNC       sys_incrementSoftwareUpdateDeferCount
+110 0x0000a74c GLOBAL FUNC       sys_installSoftwareUpdate
+111 0x0000a758 GLOBAL FUNC       sys_abortCurrentSoftwareUpdateSession
+112 0x0000a764 GLOBAL FUNC       sys_setSoftwareUpdateInfo
+113 0x0000a770 GLOBAL FUNC       sys_getCurrentSoftwareUpdateInfo
+114 0x0000a77c GLOBAL FUNC       sys_getSoftwareUpdateInfoByID
+115 0x0000a788 GLOBAL FUNC       sys_getSoftwareUpdateMaxPackageSize
+116 0x0000a794 GLOBAL FUNC       sys_getSourceVersionFromPkg
+117 0x0000a7a0 GLOBAL FUNC       sys_getTargetVersionFromPkg
+118 0x0000a7ac GLOBAL FUNC       sys_validateSoftwareUpdatePackage
+119 0x0000a7b8 GLOBAL FUNC       sys_createSoftwareUpdateSession
+120 0x0000a7c4 GLOBAL FUNC       sys_terminateSoftwareUpdateSession
+121 0x0000a7dc GLOBAL FUNC       sys_setLastSoftwareUpdateCheckTime
+122 0x0000a7e8 GLOBAL FUNC       mifi_security_aes128_decrypt
+123 0x0000a800 GLOBAL FUNC       mifi_security_decrypt_file
+124 0x0000a80c GLOBAL FUNC       nua_api_job_response_ind
+125 0x0000a830 GLOBAL FUNC       mifi_security_encrypt_file
+126 0x0000a848 GLOBAL FUNC       nua_api_engine_ready_ind
+127 0x0000a854 GLOBAL FUNC       msgq_resp_handler
+128 0x0000a86c GLOBAL FUNC       msgq_does_queue_exist
+129 0x0000a8c0 GLOBAL FUNC       mifi_security_hmac_create_signature
+130 0x0000a8d8 GLOBAL FUNC       curl_slist_append
+131 0x0000a8e4 GLOBAL FUNC       curl_easy_setopt
+132 0x0000a8fc GLOBAL FUNC       curl_easy_perform
+133 0x0000a908 GLOBAL FUNC       curl_easy_getinfo
+134 0x0000a914 GLOBAL FUNC       curl_easy_reset
+135 0x0000a920 GLOBAL FUNC       curl_slist_free_all
+136 0x0000a92c GLOBAL FUNC       curl_global_init
+137 0x0000a938 GLOBAL FUNC       curl_easy_init
+138 0x0000a944 GLOBAL FUNC       curl_easy_cleanup
+139 0x0000a950 GLOBAL FUNC       curl_global_cleanup
+140 0x0000a95c GLOBAL FUNC       msgq_send
+141 0x0000a968 GLOBAL FUNC       mifi_security_aes128_encrypt
+142 0x0000a974 GLOBAL FUNC       settings_get_setting
+143 0x0000a980 GLOBAL FUNC       xmldata_initialize
+144 0x0000a98c GLOBAL FUNC       xmldata_getstring_default
+145 0x0000a998 GLOBAL FUNC       xmldata_getuint32_default
+146 0x0000a9a4 GLOBAL FUNC       xmldata_getcount
+147 0x0000a9b0 GLOBAL FUNC       xmldata_shutdown
+148 0x0000a9bc GLOBAL FUNC       MsgBusGet
+149 0x0000a9c8 GLOBAL FUNC       settings_get_features
+150 0x0000a9e0 GLOBAL FUNC       xmlXPathEvalExpression
+151 0x0000a9ec GLOBAL FUNC       xmlNewNode
+152 0x0000a9f8 GLOBAL FUNC       xmlDocCopyNode
+153 0x0000aa04 GLOBAL FUNC       xmlAddChild
+154 0x0000aa10 GLOBAL FUNC       xmlUnlinkNode
+155 0x0000aa1c GLOBAL FUNC       xmlFreeNode
+156 0x0000aa28 GLOBAL FUNC       xmlXPathFreeObject
+157 0x0000aa58 GLOBAL FUNC       xmlNodeGetContent
+158 0x0000aa64 GLOBAL FUNC       xmlStrlen
+159 0x0000aa70 GLOBAL FUNC       xmlEncodeEntitiesReentrant
+160 0x0000aa7c GLOBAL FUNC       xmlEncodeSpecialChars
+161 0x0000aa88 GLOBAL FUNC       xmlNodeSetContentLen
+162 ---------- GLOBAL OBJ        xmlFree
+163 0x0000aaa0 GLOBAL FUNC       xmlKeepBlanksDefault
+164 0x0000aaac GLOBAL FUNC       xmlReadFile
+165 0x0000aab8 GLOBAL FUNC       xmlXPathNewContext
+166 0x0000aac4 GLOBAL FUNC       xmlFreeDoc
+167 0x0000aad0 GLOBAL FUNC       xmlSaveFormatFileEnc
+168 0x0000aadc GLOBAL FUNC       xmlXPathFreeContext
+169 0x0000ab48 GLOBAL FUNC       __xstat
+170 0x0000ab54 GLOBAL FUNC       __lxstat
+=== SECTIONS ===
+     paddr    size      vaddr   vsize align perm name                   type              flags            
+-----------------------------------------------------------------------------------------------------------
+0x00000000     0x0 ----------     0x0   0x0 ----                        NULL              
+0x00000154    0x13 0x00008154    0x13   0x0 -r-- .interp                PROGBITS          alloc
+0x00000168    0x20 0x00008168    0x20   0x0 -r-- .note.ABI-tag          NOTE              alloc
+0x00000188    0x24 0x00008188    0x24   0x0 -r-- .note.gnu.build-id     NOTE              alloc
+0x000001ac   0xb60 0x000081ac   0xb60   0x0 -r-- .dynsym                DYNSYM            alloc
+0x00000d0c   0xedf 0x00008d0c   0xedf   0x0 -r-- .dynstr                STRTAB            alloc
+0x00001bec    0x50 0x00009bec    0x50   0x0 -r-- .gnu.hash              GNU_HASH          alloc
+0x00001c3c   0x16c 0x00009c3c   0x16c   0x0 -r-- .gnu.version           VERSYM            alloc
+0x00001da8    0x90 0x00009da8    0x90   0x0 -r-- .gnu.version_r         VERNEED           alloc
+0x00001e38    0x10 0x00009e38    0x10   0x0 -r-- .rel.dyn               REL               alloc
+0x00001e48   0x530 0x00009e48   0x530   0x0 -r-- .rel.plt               REL               alloc,info
+0x00002378     0xc 0x0000a378     0xc   0x0 -r-x .init                  PROGBITS          alloc,execute
+0x00002384   0x7dc 0x0000a384   0x7dc   0x0 -r-x .plt                   PROGBITS          alloc,execute
+0x00002b60 0x31314 0x0000ab60 0x31314   0x0 -r-x .text                  PROGBITS          alloc,execute
+0x00033e74     0x8 0x0003be74     0x8   0x0 -r-x .fini                  PROGBITS          alloc,execute
+0x00033e7c  0xb944 0x0003be7c  0xb944   0x0 -r-- .rodata                PROGBITS          alloc
+0x0003f7c0     0x0 0x000477c0     0x0   0x0 -r-- .ARM.extab             PROGBITS          alloc
+0x0003f7c0     0x8 0x000477c0     0x8   0x0 -r-- .ARM.exidx             LOPROC+0x00000001 alloc,link_order
+0x0003f7c8     0x4 0x000477c8     0x4   0x0 -r-- .eh_frame              PROGBITS          alloc
+0x0003f7cc     0x8 0x000477cc     0x8   0x0 -r-- .eh_frame_hdr          PROGBITS          alloc
+0x0003f7d8   0x290 0x000487d8   0x290   0x0 -rw- .dynamic               DYNAMIC           write,alloc
+0x0003fa68  0xa35c 0x00048a68  0xa35c   0x0 -rw- .data                  PROGBITS          write,alloc
+0x00049dc4     0x4 0x00052dc4     0x4   0x0 -rw- .init_array            INIT_ARRAY        write,alloc
+0x00049dc8     0x4 0x00052dc8     0x4   0x0 -rw- .fini_array            FINI_ARRAY        write,alloc
+0x00049dcc     0x4 0x00052dcc     0x4   0x0 -rw- .jcr                   PROGBITS          write,alloc
+0x00049dd0     0x0 0x00052dd0     0x0   0x0 -rw- .tm_clone_table        PROGBITS          write,alloc
+0x00049dd0   0x2c8 0x00052dd0   0x2c8   0x0 -rw- .got                   PROGBITS          write,alloc
+0x0004a098     0x0 0x00053098  0x28f8   0x0 -rw- .bss                   NOBITS            write,alloc
+0x0004a098    0x1c ----------    0x1c   0x0 ---- .note.gnu.gold-version NOTE              
+0x0004a0b4    0x33 ----------    0x33   0x0 ---- .ARM.attributes        LOPROC+0x00000003 
+0x0004a0e7   0x131 ----------   0x131   0x0 ---- .shstrtab              STRTAB            

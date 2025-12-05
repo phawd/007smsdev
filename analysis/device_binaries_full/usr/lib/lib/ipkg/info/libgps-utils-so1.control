@@ -1,0 +1,13 @@
+Package: libgps-utils-so1
+Version: git-r1
+Description: gps-utils version git-r1
+ GPS Utils
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: sdx20
+OE: gps-utils
+Depends: libgcc1 (>= 4.9.3), libloc-stub1 (>= git), libc6 (>= 2.22), liblog0 (>= 1.0), libcutils0 (>= 1.0), libstdc++6 (>= 4.9.3), libglib-2.0-0 (>= 2.44.1), libloc-pla1 (>= git)
+Provides: gps-utils
+Source: file://hardware/qcom/gps/utils/

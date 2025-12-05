@@ -1,0 +1,23 @@
+Ghidra Deep Analysis Results
+======================================================================
+
+
+NV_Functions
+----------------------------------------------------------------------
+{}
+
+
+QMI_Functions
+----------------------------------------------------------------------
+{}
+
+
+Strings
+----------------------------------------------------------------------
+{'SPC': [{'address': '000092f3', 'value': 'modem2_validate_spc_code'}, {'address': '00024940', 'value': 'validate_spc'}, {'address': '00024950', 'value': 'Enable the SPC code'}, {'address': '00025c54', 'value': 'SPC code: '}, {'address': '00029008', 'value': 'cmd_validate_spc'}], 'CARRIER': [{'address': '000094e8', 'value': 'modem2_carrier_unlock_status'}, {'address': '00009505', 'value': 'modem2_carrier_unlock'}, {'address': '00009844', 'value': 'modem2_sim_get_carrier'}, {'address': '000237c8', 'value': 'get the carrier agreate enabled status'}, {'address': '00023800', 'value': 'set the carrier agreate enabled status'}], 'UNLOCK': [{'address': '000094e8', 'value': 'modem2_carrier_unlock_status'}, {'address': '00009505', 'value': 'modem2_carrier_unlock'}, {'address': '000097d4', 'value': 'modem2_sim_unlock_pin'}, {'address': '000097ea', 'value': 'modem2_sim_unlock_puk'}, {'address': '00023e70', 'value': 'unlock_carrier'}], 'validate': [{'address': '000092f3', 'value': 'modem2_validate_spc_code'}, {'address': '0000959b', 'value': 'modem2_validate_home_network'}, {'address': '00009633', 'value': 'modem2_validate_manual_network_selection'}, {'address': '0000a1af', 'value': 'modem2_validate_apn'}, {'address': '00024654', 'value': 'mns_validate'}]}
+
+
+Unlock_Functions
+----------------------------------------------------------------------
+{'.*validate_spc.*': [{'address': 'EXTERNAL:00000010', 'name': u'modem2_validate_spc_code'}, {'address': '0000b4d0', 'name': u'modem2_validate_spc_code'}, {'address': '0002c04c', 'name': u'modem2_validate_spc_code'}], '.*unlock.*': [{'address': 'EXTERNAL:00000029', 'name': u'modem2_carrier_unlock_status'}, {'address': 'EXTERNAL:0000002a', 'name': u'modem2_carrier_unlock'}, {'address': 'EXTERNAL:00000046', 'name': u'modem2_sim_unlock_pin'}, {'address': 'EXTERNAL:00000047', 'name': u'modem2_sim_unlock_puk'}, {'address': '0000b5fc', 'name': u'modem2_carrier_unlock_status'}, {'address': '0000b608', 'name': u'modem2_carrier_unlock'}, {'address': '0000b758', 'name': u'modem2_sim_unlock_pin'}, {'address': '0000b764', 'name': u'modem2_sim_unlock_puk'}, {'address': '0002c0b4', 'name': u'modem2_carrier_unlock_status'}, {'address': '0002c0b8', 'name': u'modem2_carrier_unlock'}, {'address': '0002c128', 'name': u'modem2_sim_unlock_pin'}, {'address': '0002c12c', 'name': u'modem2_sim_unlock_puk'}], '.*carrier.*': [{'address': 'EXTERNAL:00000029', 'name': u'modem2_carrier_unlock_status'}, {'address': 'EXTERNAL:0000002a', 'name': u'modem2_carrier_unlock'}, {'address': 'EXTERNAL:0000004b', 'name': u'modem2_sim_get_carrier'}, {'address': '0000b5fc', 'name': u'modem2_carrier_unlock_status'}, {'address': '0000b608', 'name': u'modem2_carrier_unlock'}, {'address': '0000b794', 'name': u'modem2_sim_get_carrier'}, {'address': '0002c0b4', 'name': u'modem2_carrier_unlock_status'}, {'address': '0002c0b8', 'name': u'modem2_carrier_unlock'}, {'address': '0002c13c', 'name': u'modem2_sim_get_carrier'}], '.*lock_status.*': [{'address': 'EXTERNAL:00000029', 'name': u'modem2_carrier_unlock_status'}, {'address': '0000b5fc', 'name': u'modem2_carrier_unlock_status'}, {'address': '0002c0b4', 'name': u'modem2_carrier_unlock_status'}]}
+

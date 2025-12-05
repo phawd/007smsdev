@@ -1,0 +1,13 @@
+Package: diag-reboot-app
+Version: git-r5
+Description: diag-reboot-app version git-r5
+ Reboot Diag
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: sdx20
+OE: diag-reboot-app
+Homepage: http://support.cdmatech.com
+Depends: libglib-2.0-0 (>= 2.44.1), diag (>= git), libc6 (>= 2.22)
+Source: file://mdm-ss-mgr/diag-reboot-app/ file://diag-reboot-app.service

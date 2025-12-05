@@ -1,0 +1,14 @@
+Package: qmi-framework
+Version: git-r8
+Description: qmi-framework version git-r8
+ QMI Framework Library
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: sdx20
+OE: qmi-framework
+Homepage: http://support.cdmatech.com
+Depends: libtime-genoff1 (>= git), libdsutils1 (>= git), libconfigdb0 (>= git), diag (>= git), libxml0 (>= git), qmi (>= git), libc6 (>= 2.22), libglib-2.0-0 (>= 2.44.1)
+Recommends: update-rc.d
+Source: file://qmi-framework file://irsc_util.service

@@ -1,0 +1,13 @@
+Package: powerapp
+Version: git-r9
+Description: powerapp version git-r9
+ Powerapp tools
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Apache-2.0
+Architecture: armv7a-vfp-neon
+OE: powerapp
+Homepage: http://codeaurora.org/
+Depends: libc6 (>= 2.22)
+Source: file://system/core/powerapp/

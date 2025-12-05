@@ -1,0 +1,14 @@
+Package: libmincrypt0
+Version: git-r0
+Description: libmincrypt version git-r0
+ Build Android libmincrypt
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Apache-2.0
+Architecture: armv7a-vfp-neon
+OE: libmincrypt
+Homepage: http://developer.android.com/
+Depends: libc6 (>= 2.22)
+Provides: libmincrypt
+Source: file://libmincrypt

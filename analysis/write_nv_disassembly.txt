@@ -1,0 +1,30 @@
+======================================================================
+NWCLI WRITE_NV BUG ANALYSIS
+======================================================================
+
+[+] Loaded nwcli: 25500 bytes
+[+] Found 'write_nv' string at offset 0x4404 (addr 0x14404)
+
+[+] Searching for references to 0x14404...
+[+] Found 0 potential references
+
+======================================================================
+SEARCHING FOR QMI WRITE FUNCTION
+======================================================================
+[+] Found 'nwqmi_nvtl_nv_item_write_cmd' at offset 0x808
+[+] Address: 0x10808
+[+] Found 0 references to QMI write function
+
+======================================================================
+ANALYSIS COMPLETE
+======================================================================
+
+Next steps:
+1. Identify which function is write_nv handler (look for string comparison)
+2. Trace argv[2] (NV item ID parameter) through function
+3. Find where 550 is transformed to 60044
+4. Check for: array indexing bug, parameter swap, or hardcoded offset
+
+To fix:
+- If bug is simple offset, patch with LIEF
+- If bug is complex, bypass nwcli and call libmal_qct.so directly

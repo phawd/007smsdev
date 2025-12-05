@@ -1,0 +1,12 @@
+<Config>
+	<!-- Server check in URL -->
+	<CheckInURL>https://rdd-preprod.vzw.com/upload/hotspotdata</CheckInURL>
+	<!-- Client data usage information upload check in template -->
+	<CheckInTemplate>checkin.txt</CheckInTemplate>
+	<!-- Interval between failed check in interval in minutes -->
+	<CheckInRetryInterval>30</CheckInRetryInterval>
+	<!-- Number of  retries for failed check in -->
+	<CheckInFailedRetriesCount>3</CheckInFailedRetriesCount>
+	<!-- Check In Request Time out in seconds to keep the request up. 0 to mean no timeout -->
+	<CheckInRequestTimeout>60</CheckInRequestTimeout>
+</Config>

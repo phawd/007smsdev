@@ -1,0 +1,1337 @@
+Package: acl
+Version: 2.2.52
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: ans
+Version: 1.0
+Depends: ccm2, dmdb-api, dsm, mifi-buzzer, mifi-common, mifi-config, mifi-debug, mifi-usb-api, mifi-watchdog, modem2, settings, sms, ui-support, wifi, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: atfwd-daemon
+Version: git-r3
+Depends: qmi (>= git), qmi-framework (>= git), libc6 (>= 2.22)
+Status: install user installed
+Architecture: sdx20
+Installed-Time: 1647434454
+
+Package: attr
+Version: 2.4.47
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: avahi
+Version: 0.6.31
+Depends: libdaemon, expat, libcap
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: bckrst
+Version: 1.0
+Depends: mifi-common, mifi-debug, mifi-msgbus, settings, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: bsdiff
+Version: 4.3
+Depends: bzip2
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: busybox
+Version: 1.26.2
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: bzip2
+Version: 1.0.6
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: c-ares
+Version: 1.10.0
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: cc
+Version: 1.0
+Depends: mifi-common, mifi-debug, mifi-msgbus, modem-device-qmi, kernel-modules, settings, sys-interface-v2, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: ccm2
+Version: 1.0
+Depends: dmdb-api, dsm, emd, mifi-common, mifi-debug, mifi-msgbus, mifi-usb-api, modem2, kernel-modules, router2, settings, wifi, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: cdra
+Version: 1.0
+Depends: libpcre, sys-interface-v2, ui-support, xmldata, yajl
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: common-dev
+Version: git-r8
+Depends: common (= git-r8)
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: conntrack-tools
+Version: 1.0.1-r1
+Depends: libnetfilter-conntrack3 (>= 0.9.1), libnfnetlink0 (>= 1.0.0), libc6 (>= 2.22)
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: ctpp2
+Version: 2.8.4
+Status: unknown ok installed
+Architecture: arm
+Installed-Time: 1647434448
+
+Package: cumclient
+Version: 1.0
+Depends: libcumsdkc, mifi-config, mifi-nua, settings
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: data
+Version: git-r26
+Depends: libgcc1 (>= 4.9.3), libtime-genoff1 (>= git), data-oss (>= git), libqmi-client-helper1 (>= git), libconfigdb0 (>= git), libdsutils1 (>= git), libc6 (>= 2.22), qmi (>= git), qmi-framework (>= git), libstdc++6 (>= 4.9.3), libglib-2.0-0 (>= 2.44.1), diag (>= git), libxml0 (>= git), libpugixml1 (>= 1.8)
+Status: install user installed
+Architecture: sdx20
+Installed-Time: 1647434454
+
+Package: data-ipa-cfg-mgr
+Version: git-r4
+Depends: libgcc1 (>= 4.9.3), libnetfilter-conntrack3 (>= 0.9.1), libxml2 (>= 2.9.2), libstdc++6 (>= 4.9.3), libc6 (>= 2.22), libglib-2.0-0 (>= 2.44.1)
+Recommends: update-rc.d
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: data-oss
+Version: git-r4
+Depends: libglib-2.0-0 (>= 2.44.1), libc6 (>= 2.22)
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: db
+Version: 4.4.20.NC
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: devui
+Version: 1.0
+Depends: devui-model
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: devui-framework
+Version: 1.0
+Depends: factory-reset, libxml2, mifi-common, mifi-debug, mifi-events, mifi-msgbus, settings, ui-support, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: devui-model
+Version: 1.0
+Depends: devui-framework, dua, libxml2, mifi-common, mifi-debug, mifi-events, mifi-msgbus, settings, sys-interface-v2, webui, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: dhcp
+Version: 4.1.2
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: diag
+Version: git-r10
+Depends: libtime-genoff1 (>= git), libglib-2.0-0 (>= 2.44.1), libc6 (>= 2.22)
+Status: install user installed
+Architecture: sdx20
+Installed-Time: 1647434454
+
+Package: diag-read
+Version: 1.0
+Depends: dsm, mifi-events, mifi-msgbus, modem-device-qmi, nvtl-kernel-tests
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: diag-reboot-app
+Version: git-r5
+Depends: libglib-2.0-0 (>= 2.44.1), diag (>= git), libc6 (>= 2.22)
+Status: install user installed
+Architecture: sdx20
+Installed-Time: 1647434454
+
+Package: dmdb
+Version: 1.0
+Depends: ccm2, dmdb-api, mifi-common, mifi-debug, mifi-events, mifi-msgbus, mifi-usb-api, kernel-modules, router2, settings, sqlite, wifi, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: dmdb-api
+Version: 1.0
+Depends: mifi-common, mifi-debug, mifi-msgbus, kernel-modules, powersave, settings, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: dnsmasq
+Version: 2.70
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: dropbear
+Version: 2016.74
+Depends: rc-once, zlib
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: dsm
+Version: 1.0
+Depends: mifi-common, mifi-debug, mifi-events, mifi-msgbus, modem-device-qmi, kernel-modules, settings, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: dua
+Version: 1.0
+Depends: gps, mifi-common, mifi-debug, mifi-msgbus, sms, sqlite, sys-interface-v2, ui-support, webui, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: e2fsprogs
+Version: 1.43.4
+Depends: util-linux-ng
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: ebtables
+Version: v2.0.10+4
+Depends: kernel-modules
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: emd
+Version: 1.0
+Depends: mifi-common, mifi-debug, mifi-msgbus, router2, settings
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: ethtool
+Version: 4.8
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: evtest
+Version: 1.31
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: expat
+Version: 2.1.1
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: factory-reset
+Version: 1.0
+Depends: dsm, mifi-common, mifi-debug, mifi-msgbus, kernel-modules, settings, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: fatest-ui
+Version: 1.0
+Depends: led, libxml2, mifi-buzzer, mifi-common, mifi-debug, mifi-events, mifi-msgbus, settings, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: figlet
+Version: 2.2.5
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: file-sharing
+Version: 1.0
+Depends: mifi-common, mifi-debug, mifi-msgbus, kernel-modules, router2, settings, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: fontconfig
+Version: 2.11.1
+Depends: expat, freetype
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: fota
+Version: 0.1
+Depends: dsm, factory-reset, mifi-common, mifi-debug, mifi-msgbus, modem-device-qmi, kernel-modules, settings, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: freetype
+Version: 2.6.3
+Depends: zlib
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: gcclibs
+Version: 4.9.3
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: gdb
+Version: 7.9.50.20150706
+Depends: ncurses
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: gdbserver
+Version: 7.9.50.20150706
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: gettext
+Version: 0.19.1
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: glib
+Version: 2.52.1
+Depends: libffi, libpcre, zlib
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: glibc
+Version: 4.9.3
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: gps
+Version: 1.0
+Depends: ccm2, mifi-common, mifi-debug, mifi-msgbus, mifi-usb-api, modem-device-qmi, kernel-modules, powersave, router2, settings, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: gpsstatus-cgi
+Version: 1.0
+Depends: gps, sms, sys-interface-v2, ui-support, webui
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: icu
+Version: 52.1
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: ifrename
+Version: 1:30.pre9-r0
+Depends: libc6 (>= 2.22)
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: inetutils
+Version: 1.5
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: init-mss
+Version: git-r7
+Depends: libc6 (>= 2.22)
+Recommends: update-rc.d
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: inotify-tools
+Version: 3.13
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: ipa-fws
+Version: git-r3
+Status: install user installed
+Architecture: sdx20
+Installed-Time: 1647434454
+
+Package: iperf
+Version: 2.0.9
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: ipkg
+Version: 0.99.163
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: iproute2
+Version: 4.10.0
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: iptables
+Version: 1.4.12.1-r3
+Depends: libnfnetlink0 (>= 1.0.0), libc6 (>= 2.22)
+Recommends: kernel-module-nf-defrag-ipv4, kernel-module-nf-conntrack, kernel-module-ipt-masquerade, kernel-module-x-tables, kernel-module-nf-nat, kernel-module-nf-conntrack-ipv4, kernel-module-iptable-nat, kernel-module-ip-tables, kernel-module-iptable-filter
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: iw
+Version: 3.6-r1
+Depends: libnl-3-200 (>= 3.2.25), libnl-3-genl (>= 3.2.25), libc6 (>= 2.22)
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: kernel-crash-log
+Version: 1.0
+Depends: mifi-common, mifi-debug
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: kernel-modules
+Version: 3.18.71
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: ldd
+Version: 2.7
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: led
+Version: 1.0
+Depends: ans, dsm, mifi-config, mifi-msgbus, kernel-modules, powersave, settings, ui-support
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: libbsd
+Version: 0.8.2
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: libcap
+Version: 2.25
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: libcap2
+Version: 2.24-r0
+Depends: libattr1 (>= 2.4.47), libc6 (>= 2.22)
+Provides: libcap
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: libcgi
+Version: 1.0
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: libcgicc
+Version: 3.2.9
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: libconfigdb0
+Version: git-r5
+Depends: libtime-genoff1 (>= git), libc6 (>= 2.22), diag (>= git), libxml0 (>= git), libdsutils1 (>= git), libglib-2.0-0 (>= 2.44.1)
+Provides: configdb
+Status: install user installed
+Architecture: sdx20
+Installed-Time: 1647434454
+
+Package: libcumsdkc
+Version: 1.0.0
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: libcurl
+Version: 7.52.1
+Depends: openssl, zlib
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: libcutils0
+Version: 1.0-r1
+Depends: liblog0 (>= 1.0), libgcc1 (>= 4.9.3), libstdc++6 (>= 4.9.3), libc6 (>= 2.22)
+Provides: libcutils
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: libdaemon
+Version: 0.14
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: libdaemon0
+Version: 0.14-r0
+Depends: libc6 (>= 2.22)
+Provides: libdaemon
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: libdsutils1
+Version: git-r7
+Depends: libtime-genoff1 (>= git), diag (>= git), libc6 (>= 2.22), libglib-2.0-0 (>= 2.44.1)
+Provides: dsutils
+Status: install user installed
+Architecture: sdx20
+Installed-Time: 1647434454
+
+Package: libelf
+Version: 0.168
+Depends: zlib
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: libext4-utils0
+Version: git-r1
+Depends: libgcc1 (>= 4.9.3), libcutils0 (>= 1.0), libstdc++6 (>= 4.9.3), liblog0 (>= 1.0), libselinux1 (>= 2.4), libz1 (>= 1.2.8), libc6 (>= 2.22), libsparse0 (>= 1.0)
+Provides: ext4-utils
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: libffi
+Version: 3.2.1
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: libglib-2.0-0
+Version: 1:2.44.1-r0
+Depends: libffi6 (>= 3.2.1), libz1 (>= 1.2.8), libc6 (>= 2.22)
+Provides: glib-2.0
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: libgmp
+Version: 6.0.0a
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: libgps-utils-so1
+Version: git-r1
+Depends: libgcc1 (>= 4.9.3), libloc-stub1 (>= git), libc6 (>= 2.22), liblog0 (>= 1.0), libcutils0 (>= 1.0), libstdc++6 (>= 4.9.3), libglib-2.0-0 (>= 2.44.1), libloc-pla1 (>= git)
+Provides: gps-utils
+Status: install user installed
+Architecture: sdx20
+Installed-Time: 1647434454
+
+Package: libiconv
+Version: 1.12
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: libjpeg
+Version: 9a
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: libkmod
+Version: 22
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: liblog0
+Version: 1.0-r1
+Depends: libgcc1 (>= 4.9.3), libstdc++6 (>= 4.9.3), libc6 (>= 2.22)
+Provides: liblog
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: liblzo
+Version: 2.08
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: libmincrypt0
+Version: git-r0
+Depends: libc6 (>= 2.22)
+Provides: libmincrypt
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: libnetfilter-conntrack3
+Version: 0.9.1-r0
+Depends: libc6 (>= 2.22), libnfnetlink0 (>= 1.0.0)
+Provides: libnetfilter-conntrack
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: libnfnetlink0
+Version: 1.0.0-r0
+Depends: libc6 (>= 2.22)
+Provides: libnfnetlink
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: libnl3
+Version: 3.2.28
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: libpcap
+Version: 1.8.1
+Depends: libnl3
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: libpcre
+Version: 8.39
+Depends: bzip2, zlib
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: libpng
+Version: 1.5.8
+Depends: zlib
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: libpopt
+Version: 1.15
+Depends: libiconv
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: libpugixml1
+Version: 1.8-r0
+Depends: libgcc1 (>= 4.9.3), libstdc++6 (>= 4.9.3), libc6 (>= 2.22)
+Provides: pugixml
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: libqmi-client-helper1
+Version: git-r0
+Depends: libtime-genoff1 (>= git), libdsutils1 (>= git), libconfigdb0 (>= git), diag (>= git), libxml0 (>= git), qmi (>= git), qmi-framework (>= git), libc6 (>= 2.22), libglib-2.0-0 (>= 2.44.1)
+Provides: qmi-client-helper
+Status: install user installed
+Architecture: sdx20
+Installed-Time: 1647434454
+
+Package: libselinux1
+Version: 2.4-r0
+Depends: libpcre1 (>= 8.38), libc6 (>= 2.22)
+Provides: libselinux
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: libsparse0
+Version: 1.0-r0
+Depends: libz1 (>= 1.2.8), libc6 (>= 2.22)
+Provides: libsparse
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434453
+
+Package: libtime-genoff1
+Version: git-r0
+Depends: libc6 (>= 2.22)
+Provides: time-genoff
+Status: install user installed
+Architecture: sdx20
+Installed-Time: 1647434454
+
+Package: libxml0
+Version: git-r9
+Depends: libtime-genoff1 (>= git), diag (>= git), libc6 (>= 2.22), libglib-2.0-0 (>= 2.44.1)
+Provides: xmllib
+Status: install user installed
+Architecture: sdx20
+Installed-Time: 1647434454
+
+Package: libxml2
+Version: 2.9.4
+Depends: zlib
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: loc-hal
+Version: git-r5
+Depends: libgcc1 (>= 4.9.3), libtime-genoff1 (>= git), data-oss (>= git), libqmi-client-helper1 (>= git), libc6 (>= 2.22), libconfigdb0 (>= git), liblog0 (>= 1.0), libdsutils1 (>= git), libstdc++6 (>= 4.9.3), libcutils0 (>= 1.0), libgps-utils-so1 (>= git), qmi (>= git), qmi-framework (>= git), libloc-stub1 (>= git), libxml0 (>= git), diag (>= git), libglib-2.0-0 (>= 2.44.1), data (>= git), libloc-pla1 (>= git)
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434454
+
+Package: lpm
+Version: 1.0
+Depends: devui-framework, lpm-model
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: lpm-model
+Version: 1.0
+Depends: devui-framework, dsm, libxml2, mifi-common, mifi-debug, mifi-events, mifi-msgbus, settings, webui, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: ltrace
+Version: 0.7.3
+Depends: libelf
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: mifi-buzzer
+Version: 1.0
+Depends: mifi-debug, mifi-msgbus, kernel-modules
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: mifi-common
+Version: 1.0
+Depends: mifi-debug
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: mifi-config
+Version: 1.0
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: mifi-debug
+Version: 1.0
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: mifi-display
+Version: 1.0
+Depends: dsm, mifi-debug, mifi-msgbus, kernel-modules, zlib
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: mifi-events
+Version: 1.0
+Depends: mifi-debug, kernel-modules
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: mifi-msgbus
+Version: 1.0
+Depends: mifi-common, mifi-debug, mifi-watchdog
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: mifi-nua
+Version: 1.0
+Depends: mifi-common, mifi-debug, mifi-msgbus, settings, sys-interface-v2, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: mifi-omadm
+Version: 0.1
+Depends: mifi-common, mifi-debug, mifi-msgbus, modem-device-qmi, settings, sys-interface-v2
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: mifi-rootpass
+Version: 1.0
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: mifi-update-agent
+Version: 0.1
+Depends: led, mifi-debug, modem-device-qmi, kernel-modules, powersave, zlib
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: mifi-usb
+Version: 1.0
+Depends: ccm2, dsm, mifi-usb-api, router2
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: mifi-usb-api
+Version: 1.0
+Depends: factory-reset, mifi-common, mifi-debug, mifi-msgbus, kernel-modules, settings, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: mifi-watchdog
+Version: 1.0
+Depends: mifi-common, mifi-debug, kernel-modules, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: modem-at-server
+Version: 1.0
+Depends: ans, ccm2, dmdb-api, fota, gps, mifi-common, mifi-debug, mifi-msgbus, mifi-watchdog, modem2, modem-device-qmi, kernel-modules, router2, settings, sms, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: modem-device-qmi
+Version: 1.0
+Depends: mifi-common, mifi-debug, mifi-msgbus, kernel-modules, settings, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: modem2
+Version: 1.0
+Depends: dmdb-api, mifi-common, mifi-debug, mifi-msgbus, modem-device-qmi, kernel-modules, powersave, settings, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: mtd-utils
+Version: 1.5.2
+Depends: zlib
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: ncurses
+Version: 5.9
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: ntpclient
+Version: 365
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: nvtl-acm-lib
+Version: 1.0
+Depends: mifi-common, mifi-debug, mifi-events, kernel-modules
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: nvtl-fcgi
+Version: 2.4.0
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: nvtl-gpio-lib
+Version: 1.0
+Depends: mifi-common, mifi-debug, mifi-events, kernel-modules
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: nvtl-i18n
+Version: 1.1
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: nvtl-kernel-tests
+Version: 1.0
+Depends: kernel-modules
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: nvtl-lighttpd
+Version: 1.4.35
+Depends: libpcre, nvtl-fcgi, sysser-fcgi, ui-support, webui, webui-cgi, zlib
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: nvtl-rootfs
+Version: 1.0.0
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: nwqmi
+Version: 1.0
+Depends: mifi-common, mifi-debug, kernel-modules, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: openssl
+Version: 1.0.2d
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434450
+
+Package: openvpn
+Version: 2.4.3
+Depends: liblzo
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: os-release
+Version: 1.0
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: powerapp
+Version: git-r9
+Depends: libc6 (>= 2.22)
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434454
+
+Package: powersave
+Version: 1.0
+Depends: dsm, mifi-common, mifi-debug, mifi-events, mifi-msgbus, modem-device-qmi, nvtl-acm-lib, nvtl-gpio-lib, kernel-modules, settings, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: ppp
+Version: 2.4.5
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: presentation
+Version: 1.0
+Depends: nvtl-i18n, themes
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: qmi
+Version: git-r13
+Depends: libtime-genoff1 (>= git), libc6 (>= 2.22), libconfigdb0 (>= git), diag (>= git), libxml0 (>= git), libdsutils1 (>= git), libglib-2.0-0 (>= 2.44.1)
+Status: install user installed
+Architecture: sdx20
+Installed-Time: 1647434454
+
+Package: qmi-framework
+Version: git-r8
+Depends: libtime-genoff1 (>= git), libdsutils1 (>= git), libconfigdb0 (>= git), diag (>= git), libxml0 (>= git), qmi (>= git), libc6 (>= 2.22), libglib-2.0-0 (>= 2.44.1)
+Recommends: update-rc.d
+Status: install user installed
+Architecture: sdx20
+Installed-Time: 1647434454
+
+Package: qt5
+Version: 5.5.0
+Depends: fontconfig, freetype, glib, icu, libjpeg, libpng, tslib, udev, zlib
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: radvd
+Version: 2.13
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: rc-once
+Version: 1.0.0
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: readline
+Version: 6.2
+Depends: ncurses
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: rng-tools
+Version: 5
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: rootfs
+Version: 1.0.0
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: router2
+Version: 1.0
+Depends: dmdb-api, mifi-common, mifi-debug, mifi-msgbus, modem2, modem-device-qmi, settings, sqlite
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: samba
+Version: 3.6.25
+Depends: libpopt, readline
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434452
+
+Package: sensor-api
+Version: 1.0
+Depends: mifi-common, mifi-debug, kernel-modules, powersave, settings, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: settings
+Version: 1.0
+Depends: mifi-common, mifi-config, mifi-debug, mifi-msgbus, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: sms
+Version: 1.0
+Depends: factory-reset, libiconv, mifi-common, mifi-debug, mifi-msgbus, modem2, kernel-modules, settings, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: sqlite
+Version: 3160200
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: start-scripts-firmware-links
+Version: 1.0-r5
+Recommends: update-rc.d
+Status: install user installed
+Architecture: sdx20
+Installed-Time: 1647434454
+
+Package: start-scripts-ipa-fws
+Version: 1.0-r2
+Recommends: update-rc.d
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434454
+
+Package: strace
+Version: 4.14
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434452
+
+Package: sudo
+Version: 1.7.2p6
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434452
+
+Package: sys-interface-v2
+Version: 2.0
+Depends: ans, ccm2, dmdb-api, dsm, factory-reset, file-sharing, fota, gps, led, mifi-common, mifi-config, mifi-debug, mifi-usb-api, mifi-watchdog, modem2, powersave, router2, sensor-api, settings, sms, vpn-api, wifi, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: sysser-fcgi
+Version: 1.0
+Depends: gps, nvtl-fcgi, sms, sys-interface-v2, ui-support, webui
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: sysstat
+Version: 11.0.7
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434452
+
+Package: system-conf
+Version: git-r3_perf
+Recommends: update-rc.d
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434454
+
+Package: system-core
+Version: git-r19_perf
+Depends: libgcc1 (>= 4.9.3), libc6 (>= 2.22), liblog0 (>= 1.0), libcutils0 (>= 1.0), libunwind0 (>= 1.0), libstdc++6 (>= 4.9.3), libglib-2.0-0 (>= 2.44.1)
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434454
+
+Package: system-core-adbd
+Version: git-r19_perf
+Depends: libgcc1 (>= 4.9.3), libcutils0 (>= 1.0), libstdc++6 (>= 4.9.3), liblog0 (>= 1.0), libselinux1 (>= 2.4), libz1 (>= 1.2.8), libext4-utils0 (>= git), libc6 (>= 2.22), libglib-2.0-0 (>= 2.44.1), libsparse0 (>= 1.0), system-core (>= git), libmincrypt0 (>= git)
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434454
+
+Package: system-core-usb
+Version: git-r19_perf
+Depends: libc6 (>= 2.22)
+Recommends: update-rc.d
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434454
+
+Package: sysvinit
+Version: 2.88dsf
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434452
+
+Package: tcpdump
+Version: 4.9.0
+Depends: libpcap
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434452
+
+Package: termcap
+Version: 1.3.1
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434452
+
+Package: tftp-server
+Version: git-r1
+Depends: libglib-2.0-0 (>= 2.44.1), libc6 (>= 2.22)
+Recommends: update-rc.d
+Status: install user installed
+Architecture: sdx20
+Installed-Time: 1647434454
+
+Package: themes
+Version: 1.0
+Depends: nvtl-i18n
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: tslib
+Version: 1.1
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: udev
+Version: 182
+Depends: libkmod
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: ui-support
+Version: 1.0
+Depends: libiconv, libxml2, mifi-common, mifi-debug, mifi-msgbus, xmldata
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: unzip
+Version: 5.52
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434452
+
+Package: util-linux-ng
+Version: 2.29.2
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: vpn
+Version: 1.0
+Depends: ccm2, dmdb-api, factory-reset, mifi-common, mifi-debug, mifi-msgbus, router2, settings, vpn-api
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434452
+
+Package: vpn-api
+Version: 1.0
+Depends: factory-reset, mifi-common, mifi-debug, mifi-msgbus, settings
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: vsftpd
+Version: 2.1.0
+Depends: libcap
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434452
+
+Package: wdcp
+Version: 1.0
+Depends: devui-framework, dua, gps, libpcre, sms, sqlite, sys-interface-v2, ui-support, webui, xmldata, yajl
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434452
+
+Package: webui
+Version: 1.0
+Depends: libcgicc, libiconv, nvtl-fcgi, settings, sqlite, ui-support
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: webui-apps
+Version: 1.0
+Depends: cumclient, devui-framework, dua, gps, sms, sys-interface-v2, ui-support, webui
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434452
+
+Package: webui-cgi
+Version: 1.0
+Depends: gps, sms, sys-interface-v2, ui-support, webui
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434451
+
+Package: wifi
+Version: 1.0
+Depends: dmdb-api, mifi-common, mifi-debug, mifi-msgbus, powersave, router2, settings
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: wifi-driver
+Version: 1.0
+Depends: libnl3, kernel-modules
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434453
+
+Package: wireless-tools
+Version: 1:30.pre9-r0
+Depends: libc6 (>= 2.22)
+Status: unknown ok installed
+Architecture: armv7a-vfp-neon
+Installed-Time: 1647434454
+
+Package: xmldata
+Version: 1.0
+Depends: libxml2, mifi-common, mifi-debug
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+
+Package: xz
+Version: 5.2.2
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434453
+
+Package: yajl
+Version: 1.0.11
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434449
+
+Package: zip
+Version: 3.0
+Depends: bzip2
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434453
+
+Package: zlib
+Version: 1.2.11
+Status: unknown ok installed
+Architecture: armel
+Installed-Time: 1647434448
+

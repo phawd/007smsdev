@@ -1,0 +1,14 @@
+Package: libext4-utils0
+Version: git-r1
+Description: ext4-utils version git-r1
+ EXT4 UTILS
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Apache-2.0
+Architecture: armv7a-vfp-neon
+OE: ext4-utils
+Homepage: http://developer.android.com/
+Depends: libgcc1 (>= 4.9.3), libcutils0 (>= 1.0), libstdc++6 (>= 4.9.3), liblog0 (>= 1.0), libselinux1 (>= 2.4), libz1 (>= 1.2.8), libc6 (>= 2.22), libsparse0 (>= 1.0)
+Provides: ext4-utils
+Source: file://ext4_utils

@@ -1,0 +1,23 @@
+Ghidra Deep Analysis Results
+======================================================================
+
+
+NV_Functions
+----------------------------------------------------------------------
+{}
+
+
+QMI_Functions
+----------------------------------------------------------------------
+{'qmi_client.*': [{'address': 'EXTERNAL:0000000b', 'params': 0, 'name': u'qmi_client_send_msg_async'}, {'address': 'EXTERNAL:00000010', 'params': 0, 'name': u'qmi_client_notifier_init'}, {'address': 'EXTERNAL:00000011', 'params': 0, 'name': u'qmi_client_get_service_list'}, {'address': 'EXTERNAL:00000015', 'params': 0, 'name': u'qmi_client_init'}, {'address': 'EXTERNAL:00000016', 'params': 0, 'name': u'qmi_client_release'}]}
+
+
+Strings
+----------------------------------------------------------------------
+{'UNLOCK': [{'address': '0001059c', 'value': 'pthread_mutex_unlock'}]}
+
+
+Unlock_Functions
+----------------------------------------------------------------------
+{'.*unlock.*': [{'address': 'EXTERNAL:00000014', 'name': u'pthread_mutex_unlock'}, {'address': '00010a64', 'name': u'pthread_mutex_unlock'}, {'address': '00015064', 'name': u'pthread_mutex_unlock'}]}
+

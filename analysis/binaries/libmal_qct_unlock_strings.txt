@@ -1,0 +1,31 @@
+
+[%s]:[%s] - %s: BLOCKED
+[%s]:[%s] - %s: Encoding sms failed is vz device: %d, sim_carrier: %d
+[%s]:[%s] - %s: Failed to Get Modem SPC code. Err: %d
+[%s]:[%s] - %s: Failed to validate SPC code. Err: %d
+[%s]:[%s] - %s: Get Modem SPC code successfully
+[%s]:[%s] - %s: Getting auth password = %s
+[%s]:[%s] - %s: Getting auth pref = %d
+[%s]:[%s] - %s: Invalid SPC code
+[%s]:[%s] - %s: nwqmi_nvtl_nv_item_read_cmd(DSM_NW_NV_IMEI_I) failed
+[%s]:[%s] - %s: PERMANENTLY BLOCKED
+[%s]:[%s] - %s: pin unblocks = %d
+[%s]:[%s] - %s: Setting auth pref = %d
+[%s]:[%s] - %s: UNBLOCKED
+[%s]:[%s] - Modify Profile: prof_idx=%d, prof_type= %d apn=%s, user=%s, pwd=%s, auth_pref=%d
+[1_ALL_BLOCKS] 
+[4_ALL_BLOCKS] 
+[5_ALL_BLOCKS] 
+Authenticating
+dsm_modem_get_imei
+modem2_modem_carrier_unlock
+modem2_modem_get_carrier_from_sim
+modem2_modem_get_carrier_unlock_status
+modem2_modem_get_certified_carrier_id
+modem2_modem_get_spc_validate_limit
+modem2_modem_unblock_pin
+modem2_modem_validate_apn_ip_family
+modem2_modem_validate_spc
+nwqmi_dms_validate_spc
+nwqmi_uim_unblock_pin
+

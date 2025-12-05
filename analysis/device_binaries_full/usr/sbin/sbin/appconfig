@@ -1,0 +1,267 @@
+#!/bin/sh
+
+#
+# This script performs the following operations
+#
+# I.  create
+#       Creates an encrypted backup of the files in /sysconf directory.
+#	all files in /sysconf are added to a zip file
+#	the zip file is then encrypted using aes128 
+#           
+#
+# II.  restore
+#       Does the inverse of create function. 
+#	It decrypts a backup .bin file to a .zip file
+#	It then extracts the .zip file into /sysconf
+#
+# III.  factory_reset
+#       This function performs a factory reset by removing any file not named like *_def*.xml from /sysconf
+#
+# Error codes:
+#	1	argument error
+#	2	encryption error
+#	3	decryption error
+#	4	zip creation error
+#	5	zip extraction error
+#	6	missing directory error
+#	7	missing file error
+#
+
+SYSCONFDIR=/sysconf
+SYSCONFFILE=sys_config.xml
+OMADM_DIR=/opt/nvtl/omadm
+WDCP_DIR=/opt/nvtl/data/wdcp
+OMA_REGCONF=$OMADM_DIR/reg.conf
+OMA_DL_PKG=$OMADM_DIR/upgrade.zip
+OMA_DL_DD_INFO=$OMADM_DIR/dldd_info
+OMA_DL_PKG_DESC=$OMADM_DIR/pkg_description
+OMA_DL_PKG_NAME=$OMADM_DIR/pkg_name
+OMA_DL_RESUME_DAT=$OMADM_DIR/dlresume.dat
+OMA_STAGING_DIR=$OMADM_DIR/staging
+WDCP_RESTORE_ACE_DEFAULTS_FILE=$WDCP_DIR/restore_ace_defaults
+SIDELOAD_PKG=$OMADM_DIR/pkg_sideload.enc
+SIDELOAD_PKG_TEMP=$OMADM_DIR/decrypted_temp
+SIDELOAD_LOCK=$OMADM_DIR/sideload_lock
+SA_DL_URL=$OMADM_DIR/dl_url
+SA_READ_RECEIPT=$OMADM_DIR/read_receipt
+
+cleanup_oma_dl_contents()
+{
+    rm -f $OMA_REGCONF \
+          $OMA_DL_PKG \
+          $OMA_DL_DD_INFO \
+          $OMA_DL_PKG_DESC \
+          $OMA_DL_PKG_NAME \
+          $OMA_DL_RESUME_DAT \
+          $SIDELOAD_PKG \
+          $SIDELOAD_PKG_TEMP \
+          $SIDELOAD_LOCK \
+          $SA_DL_URL \
+          $SA_READ_RECEIPT
+
+    rm -rf $OMA_STAGING_DIR
+}
+
+#
+# factory_reset()
+#
+# Performs a factory reset by removing all files in /sysconf that do not have
+# _def*.xml as the end of the filename.
+#
+factory_reset()
+{
+    CWD=`pwd`
+
+    cd $SYSCONFDIR
+    rm -rf `find . -maxdepth 1 -type f ! -iname "*_def*.xml" ! -name wifi_cal.bin ! -name bdata.bin ! -name config_def.sash \
+     ! -name license.xml ! -name sys_def_cust.tmpl ! -name sys_def_cust.xml ! -name ui_def_cust.tmpl ! -name ui_def_cust.xml \
+     ! -name nvitem_cust.xml ! -name pri_cust_version.txt ! -name features.xml ! -name volte_status.text`
+    cd $CWD
+    cleanup_oma_dl_contents;
+    echo "true" > $WDCP_RESTORE_ACE_DEFAULTS_FILE
+    return 0
+}
+
+#
+#Creates a zip package containing all configuration xml files.
+#
+create_backup()
+{
+    FILEPATH=$1
+
+    TEMP_ZIP_FILE="/tmp/sysconfig.zip"
+    CWD=`pwd`
+    FILE=`basename $FILEPATH` 
+    DIR=`dirname $FILEPATH`
+
+    #Remove pre-existing backup file if exists
+    if [ -f $FILEPATH ] ; then
+        rm -f $FILEPATH
+    fi
+
+    #Remove pre-existing temporary backup file if exists
+    if [ -f $TEMP_ZIP_FILE ] ; then
+        rm -f $TEMP_ZIP_FILE
+    fi
+
+    #Make sure destination directory exists
+    if [ ! -d $DIR ] ; then
+	#6 missing directory error        
+	return 6; 
+    fi
+
+    #move to /sysconf directory and create a backup of all the files
+    cd $SYSCONFDIR
+    zip -r "$TEMP_ZIP_FILE" . -i "*"  > /dev/null 2>&1
+    RETVAL=$?
+    if [ $RETVAL -ne 0 ] ; then
+	#4	zip creation error
+	echo "ZIP FILE GENERATION FAILED"
+        return 4;
+    fi
+
+    #now encrypt the zip file with the right name
+    nvtl_encrypt encrypt $TEMP_ZIP_FILE "$FILEPATH" > /dev/null 2>&1
+    RETVAL=$?
+    if [ $RETVAL -ne 0 ] ; then
+	#2	encryption error
+	echo "ENCRYPTION FAILED!"
+        return 2;
+    fi
+    
+    #remove the temporary zip file
+    rm $TEMP_ZIP_FILE 
+
+    cd $CWD
+    return 0
+}
+
+#
+# Restores configuration from an uploaded backup
+#
+restore_backup()
+{
+    FILEPATH=$1
+    TEMP_ZIP_FILE="/tmp/sysconfig.zip"
+    FILE=`basename $TEMP_ZIP_FILE` 
+    DIR=`dirname $TEMP_ZIP_FILE`
+
+    MPWD=`pwd`
+
+    #Verify uploaded configuration zip package exists
+    if [ ! -f $FILEPATH ] ; then
+	#7	missing file error
+        echo "BACKUP FILE DOES NOT EXIST!"
+        return 7;
+    fi
+
+    #first decrypt the bundle into a zip file
+    nvtl_encrypt decrypt "$FILEPATH" "$TEMP_ZIP_FILE"
+    RETVAL=$?
+    if [ $RETVAL -ne 0 ] ; then
+	#rm -rf $FILEPATH
+	#3	decryption error
+	echo "DECRYPTION FAILED!"
+        return 3;
+    fi
+
+    #Verify uploaded configuration zip package exists
+    if [ ! -f $TEMP_ZIP_FILE ] ; then
+        echo "FAILED TO GET ZIP FILE AFTER DECRYPTION!"
+        #7	missing file error
+        return 7;
+    fi
+
+    #copy the zip file to syconf dir
+    mv $TEMP_ZIP_FILE "$SYSCONFDIR/$FILE" > /dev/null 2>&1
+    
+    #Unzip package
+    cd $SYSCONFDIR
+    unzip -o "$FILE" > /dev/null 2>&1
+    RETVAL=$?
+    if [ $RETVAL -ne 0 ] ; then
+	echo "CORRUPTED BACKUP FILE"
+	rm $FILE
+	#5	zip extraction error
+        return 5;
+    fi
+
+    #remove the unencrypted zip file
+    rm $FILE > /dev/null 2>&1
+
+    #return to starting directory
+    cd $MPWD
+
+    return 0
+}
+
+
+######################################################
+#
+#How we were called ?
+#
+
+case $1 in 
+	create)
+	        case $2 in
+	            "")
+	            exit 5;
+	            ;;
+	        esac
+	        create_backup $2;
+	        RETVAL=$?;
+	        if [ $RETVAL -ne 0 ] ; then
+	            exit $RETVAL;
+	        fi
+	        ;;
+	backup)
+	        case $2 in
+	            "")
+	            exit 5;
+	            ;;
+	        esac
+	        create_backup $2;
+	        RETVAL=$?;
+	        if [ $RETVAL -ne 0 ] ; then
+	            exit $RETVAL;
+	        fi
+	        ;;
+	upload)
+	        case $2 in
+	            "")
+	            exit 5;
+	            ;;
+	        esac
+	        restore_backup $2;
+	        RETVAL=$?;
+	        if [ $RETVAL -ne 0 ] ; then
+	            exit $RETVAL;
+	        fi
+	        ;;
+	restore)
+		case $2 in
+	            "")
+	            exit 5;
+	            ;;
+	        esac
+	        restore_backup $2;
+	        RETVAL=$?;
+	        if [ $RETVAL -ne 0 ] ; then
+	            exit $RETVAL;
+	        fi
+	        ;;
+	reset)
+        	factory_reset; 
+        	RETVAL=$?;
+        	if [ $RETVAL -ne 0 ] ; then
+                	exit $RETVAL;
+        	fi
+        	;;
+	*)
+		#echo "Usage: $0 {create(backup)|upload(restore)|reset}";
+		exit 5; 
+		;;
+esac
+
+exit 0
+

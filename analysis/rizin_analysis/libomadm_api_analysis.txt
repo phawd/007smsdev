@@ -1,0 +1,601 @@
+0x000020c0    1 12           sym._init
+0x000020ec    1 12           sym.imp.__cxa_finalize
+0x000020f8    1 12           sym.imp.msgq_does_queue_exist
+0x00002104    1 12           sym.imp.mifi_dbg_get_level_name
+0x00002110    1 12           sym.imp.mifi_dbg_syslog
+0x0000211c    1 12           sym.imp.mifi_dbg_log
+0x00002128    1 12           sym.imp.memset
+0x00002134    1 12           sym.imp.memcpy
+0x00002140    1 12           sym.imp.msgq_send_sync
+0x0000214c    1 12           sym.imp.snprintf
+0x00002158    1 12           sym.imp.settings_get_setting
+0x00002164    1 12           sym.imp.settings_set_setting
+0x00002170    1 12           sym.imp.msgq_send_async
+0x0000217c    1 12           sym.imp.msgq_send_sync_to
+0x00002188    1 12           sym.imp.strncpy
+0x00002194    1 12           fcn.00002194
+0x000021a0    1 12           sym.imp.strncmp
+0x000021ac    1 12           sym.imp.memcmp
+0x000021b8    1 12           fcn.000021b8
+0x000021c4    1 12           fcn.000021c4
+0x000021d0    1 12           sym.imp.router2_dns_lookup_cust_apn
+0x000021dc    1 12           sym.imp.unlink
+0x000021e8    1 12           sym.imp.fflush
+0x000021f4    1 12           sym.imp.fileno
+0x00002200    1 12           sym.imp.fsync
+0x0000220c    1 12           sym.imp.fclose
+0x00002218    1 12           sym.imp.open
+0x00002224    1 12           sym.imp.__errno_location
+0x00002230    1 12           sym.imp.close
+0x0000223c    1 12           sym.imp.fopen
+0x00002248    1 12           sym.imp.fwrite
+0x00002254    1 12           fcn.00002254
+0x00002260    1 12           sym.imp.fgets
+0x0000226c    1 12           sym.imp.fread
+0x00002278    1 12           sym.imp.strlen
+0x00002284    1 12           sym.imp.xmldata_getuint32_default
+0x00002290    1 12           sym.imp.xmldata_setuint32
+0x0000229c    1 12           sym.imp.xmldata_save
+0x000022a8    1 12           sym.imp.MsgBusSetInt32
+0x000022b4    1 12           fcn.000022b4
+0x000022c0    1 12           sym.imp.__xstat
+0x000022cc    1 12           sym.imp.__lxstat
+0x000022d8    1 28           entry0
+0x000022fc    3 80           sym.deregister_tm_clones
+0x0000235c    3 84           sym.register_tm_clones
+0x000023c0    3 84           sym.__do_global_dtors_aux
+0x00002428    4 68           entry.init0
+0x00002478    7 448          dbg.omadm_public_msg_ind
+0x0000266c    4 60           dbg.su_api_is_running
+0x000026ac    8 692          dbg.su_api_get_status
+0x000029c8   11 892          dbg.su_api_check_for_update
+0x00002dcc    8 752          dbg.su_api_get_download_progress
+0x00003134    6 500          dbg.su_api_start_install
+0x00003374    9 688          dbg.su_api_screen_alert_choice
+0x0000368c    6 524          dbg.su_api_postpone_install
+0x000038e4   18 540          dbg.su_api_get_settings
+0x00003b3c   16 372          dbg.su_api_set_settings
+0x00003cc8    8 536          dbg.omadm_get_cfg_settings
+0x00003f30    6 524          dbg.omadm_set_cfg_settings
+0x0000418c    8 692          dbg.omadm_bl_evt_msg_ind
+0x000044ac   11 760          dbg.omadm_ipl_msg_ind
+0x00004810    7 552          dbg.omadm_test_auto_install
+0x00004a88    4 340          dbg.omadm_trigger_auto_install
+0x00004c10    4 356          dbg.omadm_timer_timeout_ind
+0x00004da8    4 348          dbg.omadm_ipl_validate_fota_package
+0x00004f30    6 512          dbg.omadm_ipl_get_max_pkg_size
+0x00005178    6 544          dbg.omadm_ipl_get_time
+0x000053e0    6 512          dbg.omadm_ipl_get_wan_coverage
+0x00005628    6 512          dbg.omadm_ipl_get_emergency_mode
+0x00005870    6 512          dbg.omadm_ipl_get_voice_call_status
+0x00005ab8    6 532          dbg.omadm_ipl_set_alarm
+0x00005d14    6 524          dbg.omadm_ipl_delete_alarm
+0x00005f68    6 532          dbg.omadm_ipl_get_device_info
+0x000061c4    6 564          dbg.omadm_ipl_get_subscriber_info
+0x00006440    6 532          dbg.omadm_ipl_get_version
+0x0000669c    6 532          dbg.omadm_ipl_get_version_from_pkg
+0x000068f8    6 512          dbg.omadm_ipl_get_install_complete_status
+0x00006b40    6 512          dbg.omadm_ipl_get_roaming_status
+0x00006d88    6 512          dbg.omadm_ipl_get_serving_system
+0x00006fd0    6 564          dbg.omadm_ipl_get_wan_profile_settings
+0x0000724c    6 532          dbg.omadm_ipl_set_wan_profile_settings
+0x000074a8   38 1328         dbg.omadm_ipl_get_wan_profile_param
+0x00007a64   38 1496         dbg.omadm_ipl_set_wan_profile_param
+0x000080e4    6 564          dbg.omadm_ipl_get_ims_settings
+0x00008360    6 532          dbg.omadm_ipl_set_ims_settings
+0x000085bc   25 844          dbg.omadm_ipl_get_ims_param
+0x0000895c   49 1844         dbg.omadm_ipl_set_ims_param
+0x00009164    6 564          dbg.omadm_ipl_get_volte_settings
+0x000093e0    6 532          dbg.omadm_ipl_set_volte_settings
+0x0000963c   16 744          dbg.omadm_ipl_get_volte_param
+0x00009978   26 1164         dbg.omadm_ipl_set_volte_param
+0x00009e88    6 564          dbg.omadm_ipl_get_modem_ex_settings
+0x0000a104    6 532          dbg.omadm_ipl_set_modem_ex_settings
+0x0000a360   16 744          dbg.omadm_ipl_get_modem_ex_param
+0x0000a69c   26 1164         dbg.omadm_ipl_set_modem_ex_param
+0x0000abac    6 624          dbg.omadm_ipl_get_lte_band_enabled
+0x0000ae74    4 500          dbg.omadm_ipl_set_lte_band_enabled
+0x0000b0a4    8 696          dbg.omadm_ipl_get_ca_enabled
+0x0000b3c4    4 464          dbg.omadm_ipl_set_ca_enabled
+0x0000b5d0    9 812          dbg.omadm_ipl_get_ca_bands_enabled
+0x0000b954    4 636          dbg.omadm_ipl_set_ca_bands_enabled
+0x0000bc0c    8 536          dbg.omadm_ipl_get_autonomous_gap_enabled
+0x0000be6c    6 512          dbg.omadm_ipl_set_autonomous_gap_enabled
+0x0000c0b4    8 396          dbg.verify_on_off_opr_input
+0x0000c278    6 576          dbg.omadm_ipl_set_modem_to_persisten_lpm
+0x0000c500    6 576          dbg.omadm_ipl_set_modem_attach
+0x0000c788    6 568          dbg.omadm_ipl_set_data_call
+0x0000ca08    4 408          dbg.omadm_ipl_disconnect_data_usage_apn_call
+0x0000cbdc    6 600          dbg.omadm_ipl_get_ota_call_status
+0x0000ce8c    4 416          dbg.omadm_ipl_ota_start_call
+0x0000d068    4 416          dbg.omadm_ipl_ota_stop_call
+0x0000d244   21 1748         dbg.omadm_ipl_ota_dns_query
+0x0000da24    4 444          dbg.omadm_ipl_get_sdm_version
+0x0000dc20    4 452          dbg.omadm_ipl_set_sdm_version
+0x0000de24    8 692          dbg.omadm_ipl_get_last_fw_update_timestamp
+0x0000e144   10 600          dbg.omadm_ipl_register_powerdown_handoff
+0x0000e3f4    7 540          dbg.omadm_ipl_get_first_use_date
+0x0000e65c    7 540          dbg.omadm_ipl_get_uptime
+0x0000e8c4    7 564          dbg.omadm_ipl_get_battery_info
+0x0000eb40    7 564          dbg.omadm_ipl_get_memory_info
+0x0000edbc    7 564          dbg.omadm_ipl_get_wan_stats
+0x0000f038    7 564          dbg.omadm_ipl_get_dns_servers
+0x0000f2b4    7 564          dbg.omadm_ipl_opr_wan_pref_mode
+0x0000f530    7 564          dbg.omadm_ipl_opr_mobile_data
+0x0000f7ac    7 564          dbg.omadm_ipl_opr_roaming_access
+0x0000fa28    7 564          dbg.omadm_ipl_opr_gps
+0x0000fca4    7 564          dbg.omadm_ipl_opr_dhcp
+0x0000ff20    7 564          dbg.omadm_ipl_opr_wifi
+0x0001019c    8 688          dbg.omadm_ipl_set_checkin_value
+0x000104b4    6 520          dbg.omadm_ipl_get_checkin_value
+0x00010704    6 520          dbg.omadm_ipl_get_checkin_date
+0x00010954    6 532          dbg.omadm_sys_indications
+0x00010bb8   12 1064         dbg.omadm_sys_wap_push_ind
+0x00011080   20 928          dbg.omadm_sys_ota_call_state_ind
+0x000114bc    6 472          dbg.omadm_sys_settings_updated_ind
+0x000116e0    6 472          dbg.omadm_sys_full_factory_reset_ind
+0x00011904    6 472          dbg.omadm_sys_app_factory_reset_ind
+0x00011b28    6 472          dbg.omadm_sys_fota_backup_ind
+0x00011d4c    6 472          dbg.omadm_sys_backup_dm_fr_settings_ind
+0x00011f70    6 472          dbg.omadm_sys_restore_dm_fr_settings_ind
+0x00012194    9 656          dbg.omadm_sys_power_ind
+0x0001248c    6 484          dbg.omadm_sys_battery_capacity_ind
+0x000126bc    9 648          dbg.omadm_sys_dsm_powerdown_handoff_ind
+0x000129ac   12 692          dbg.omadm_sys_roam_ind
+0x00012cd0    6 360          dbg.omadm_file_remove
+0x00012e64    6 120          dbg.omadm_file_is_exists
+0x00012edc    6 384          dbg.omadm_file_sync_and_close
+0x00013090   11 808          dbg.omadm_file_create
+0x00013420    4 300          dbg.omadm_file_read_str
+0x00013570    6 500          dbg.omadm_file_read_bin
+0x000137a4    4 300          dbg.omadm_wap_push_received_by_proxy
+0x000138f0    9 624          dbg.omadm_ipl_get_current_sess_init_mode
+0x00013ba8    7 148          dbg.omadm_get_settings_impl
+0x00013c40   12 208          dbg.omadm_set_settings_impl
+0x00013d18    3 108          dbg.initialize_settings
+0x00013d98    4 444          dbg.omadm_factory_reset_impl
+0x00013fa8    3 64           dbg.initialize_factory_reset_func
+0x00013ff0    1 16           sym.__stat
+0x00014000    1 16           sym.__lstat
+0x00014010    1 8            sym._fini
+=== STRINGS ===
+     paddr      vaddr len size section type  string                                                                                                                
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+0x00014018 0x00014018   9   10 .rodata ascii /omadm_mq
+0x00014024 0x00014024  36   37 .rodata ascii [%s]:[%s] - %s: process not running\n
+0x0001404c 0x0001404c   5    6 .rodata ascii OMADM
+0x00014054 0x00014054  49   50 .rodata ascii [%s]:[%s] - %s: Sending OMADM_MSG_PUBLIC to main\n
+0x00014088 0x00014088  34   35 .rodata ascii [%s]:[%s] - %s: Input buffer NULL\n
+0x000140ac 0x000140ac  57   58 .rodata ascii [%s]:[%s] - %s: Sent OMADM_MSG_PUBLIC_GET_STATUS to main\n
+0x000140e8 0x000140e8  58   59 .rodata ascii [%s]:[%s] - %s: OMADM_MSG_PUBLIC_GET_STATUS failed, rc=%d\n
+0x00014124 0x00014124  50   51 .rodata ascii [%s]:[%s] - %s: Input string exceeded allowed len\n
+0x0001415c 0x0001415c  68   69 .rodata ascii [%s]:[%s] - %s: Sent OMADM_MSG_PUBLIC_CHECK_FOR_UPDATE (%s) to main\n
+0x000141a4 0x000141a4  64   65 .rodata ascii [%s]:[%s] - %s: OMADM_MSG_PUBLIC_CHECK_FOR_UPDATE failed, rc=%d\n
+0x000141e8 0x000141e8  68   69 .rodata ascii [%s]:[%s] - %s: Sent OMADM_MSG_PUBLIC_GET_DOWNLOAD_PROGRESS to main\n
+0x00014230 0x00014230  69   70 .rodata ascii [%s]:[%s] - %s: OMADM_MSG_PUBLIC_GET_DOWNLOAD_PROGRESS failed, rc=%d\n
+0x00014278 0x00014278  29   30 .rodata ascii [%s]:[%s] - %s: returning:%d\n
+0x00014298 0x00014298  60   61 .rodata ascii [%s]:[%s] - %s: Sent OMADM_MSG_PUBLIC_START_INSTALL to main\n
+0x000142d8 0x000142d8  61   62 .rodata ascii [%s]:[%s] - %s: OMADM_MSG_PUBLIC_START_INSTALL failed, rc=%d\n
+0x00014318 0x00014318  30   31 .rodata ascii [%s]:[%s] - %s: Invalid value\n
+0x00014338 0x00014338  71   72 .rodata ascii [%s]:[%s] - %s: Sent OMADM_MSG_PUBLIC_SCREEN_ALERT_CHOICE, accept=[%u]\n
+0x00014380 0x00014380  69   70 .rodata ascii [%s]:[%s] - %s: OMADM_MSG_PUBLIC_SCREEN_ALERT_CHOICE failed, rc=[%d]\n
+0x000143c8 0x000143c8  73   74 .rodata ascii [%s]:[%s] - %s: Sent OMADM_MSG_PUBLIC_POSTPONE_INSTALL (%u mins) to main\n
+0x00014414 0x00014414  64   65 .rodata ascii [%s]:[%s] - %s: OMADM_MSG_PUBLIC_POSTPONE_INSTALL failed, rc=%d\n
+0x00014458 0x00014458  14   15 .rodata ascii omadm.settings
+0x00014468 0x00014468  51   52 .rodata ascii [%s]:[%s] - %s: settings_get_setting result code:%d
+0x0001449c 0x0001449c  47   48 .rodata ascii [%s]:[%s] - Settings Update: FUMO Enabled: [%d]
+0x000144cc 0x000144cc  60   61 .rodata ascii [%s]:[%s] - %s: Sending OMADM_MSG_GET_CFG_SETTTINGS to main\n
+0x0001450c 0x0001450c  40   41 .rodata ascii [%s]:[%s] - %s: Invalid input data size\n
+0x00014538 0x00014538  63   64 .rodata ascii [%s]:[%s] - %s: Sending OMADM_MSG_FROM_BL_EVT_STREAMER to main\n
+0x00014578 0x00014578  54   55 .rodata ascii [%s]:[%s] - %s: Sending OMADM_MSG_FROM_BL_IPL to main\n
+0x000145b0 0x000145b0  30   31 .rodata ascii [%s]:[%s] - %s: Invalid input\n
+0x000145d0 0x000145d0  60   61 .rodata ascii [%s]:[%s] - %s: Sending OMADM_MSG_TEST_AUTO_INSTALL to main\n
+0x00014610 0x00014610  63   64 .rodata ascii [%s]:[%s] - %s: Sending OMADM_MSG_TRIGGER_AUTO_INSTALL to main\n
+0x00014650 0x00014650  56   57 .rodata ascii [%s]:[%s] - %s: Sending OMADM_MSG_TIMER_TIMEOUT to main\n
+0x0001468c 0x0001468c  60   61 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_VALIDATE_FOTA_PKG to main\n
+0x000146cc 0x000146cc  58   59 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_VALIDATE_FOTA_PKG failed, rc=%d\n
+0x00014708 0x00014708  59   60 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_MAX_PKG_SIZE to main\n
+0x00014744 0x00014744  57   58 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_MAX_PKG_SIZE failed, rc=%d\n
+0x00014780 0x00014780  58   59 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_SYSTEM_TIME to main\n
+0x000147bc 0x000147bc  56   57 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_SYSTEM_TIME failed, rc=%d\n
+0x000147f8 0x000147f8  66   67 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_WAN_COVERAGE_STATUS to main\n
+0x0001483c 0x0001483c  64   65 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_WAN_COVERAGE_STATUS failed, rc=%d\n
+0x00014880 0x00014880  68   69 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_EMERGENCY_MODE_STATUS to main\n
+0x000148c8 0x000148c8  66   67 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_EMERGENCY_MODE_STATUS failed, rc=%d\n
+0x0001490c 0x0001490c  64   65 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_VOICE_CALL_STATUS to main\n
+0x00014950 0x00014950  62   63 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_VOICE_CALL_STATUS failed, rc=%d\n
+0x00014990 0x00014990  47   48 .rodata ascii [%s]:[%s] - [OMADM_TIMER]%s: Input buffer NULL\n
+0x000149c0 0x000149c0  65   66 .rodata ascii [%s]:[%s] - [OMADM_TIMER]%s: Sending OMADM_IPL_SET_ALARM to main\n
+0x00014a04 0x00014a04  63   64 .rodata ascii [%s]:[%s] - [OMADM_TIMER]%s: OMADM_IPL_SET_ALARM failed, rc=%d\n
+0x00014a44 0x00014a44  50   51 .rodata ascii [%s]:[%s] - [OMADM_TIMER]%s: Invalid alarm id: %d\n
+0x00014a78 0x00014a78  68   69 .rodata ascii [%s]:[%s] - [OMADM_TIMER]%s: Sending OMADM_IPL_DELETE_ALARM to main\n
+0x00014ac0 0x00014ac0  66   67 .rodata ascii [%s]:[%s] - [OMADM_TIMER]%s: OMADM_IPL_DELETE_ALARM failed, rc=%d\n
+0x00014b04 0x00014b04  65   66 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_STATIC_DEVICE_INFO to main\n
+0x00014b48 0x00014b48  63   64 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_STATIC_DEVICE_INFO failed, rc=%d\n
+0x00014b88 0x00014b88  62   63 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_SUBSCRIBER_INFO to main\n
+0x00014bc8 0x00014bc8  62   63 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_SUBSCRIBER_INFO failed, rc=[%d]\n
+0x00014c08 0x00014c08  60   61 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_SW_FW_VERSION to main\n
+0x00014c48 0x00014c48  58   59 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_SW_FW_VERSION failed, rc=%d\n
+0x00014c84 0x00014c84  63   64 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_VERSION_FROM_PKG to main\n
+0x00014cc4 0x00014cc4  61   62 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_VERSION_FROM_PKG failed, rc=%d\n
+0x00014d04 0x00014d04  70   71 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_INSTALL_COMPLETE_STATUS to main\n
+0x00014d4c 0x00014d4c  68   69 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_INSTALL_COMPLETE_STATUS failed, rc=%d\n
+0x00014d94 0x00014d94  61   62 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_ROAMING_STATUS to main\n
+0x00014dd4 0x00014dd4  59   60 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_ROAMING_STATUS failed, rc=%d\n
+0x00014e10 0x00014e10  61   62 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_SERVING_SYSTEM to main\n
+0x00014e50 0x00014e50  59   60 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_SERVING_SYSTEM failed, rc=%d\n
+0x00014e8c 0x00014e8c  69   70 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_MODEM_PROFILE_SETTINGS to main\n
+0x00014ed4 0x00014ed4  67   68 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_MODEM_PROFILE_SETTINGS failed, rc=%d\n
+0x00014f18 0x00014f18  69   70 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_SET_MODEM_PROFILE_SETTINGS to main\n
+0x00014f60 0x00014f60  67   68 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_SET_MODEM_PROFILE_SETTINGS failed, rc=%d\n
+0x00014fa4 0x00014fa4  65   66 .rodata ascii [%s]:[%s] - %s: Get/Set not supported on OMADM_IPL_PROF_PARAM_ID\n
+0x00014fe8 0x00014fe8  50   51 .rodata ascii [%s]:[%s] - %s: Invalid Profile type:%d specified\n
+0x0001501c 0x0001501c  55   56 .rodata ascii [%s]:[%s] - %s: Invalid Profile parameter:%d specified\n
+0x00015054 0x00015054  67   68 .rodata ascii [%s]:[%s] - %s: omadm_ipl_get_modem_profile_settings failed, rc=%d\n
+0x00015098 0x00015098  50   51 .rodata ascii [%s]:[%s] - %s: Failed read APN parameter type:%d\n
+0x000150cc 0x000150cc  30   31 .rodata ascii [%s]:[%s] - %s: *data is NULL\n
+0x000150ec 0x000150ec  40   41 .rodata ascii [%s]:[%s] - %s: Invalid delay type (%d)\n
+0x00015118 0x00015118  45   46 .rodata ascii [%s]:[%s] - %s: Unsupported parameter, rc=%d\n
+0x00015148 0x00015148  65   66 .rodata ascii [%s]:[%s] - %s: omadm_ipl_set_wan_profile_settings failed, rc=%d\n
+0x0001518c 0x0001518c  59   60 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_IMS_SETTINGS to main\n
+0x000151c8 0x000151c8  57   58 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_IMS_SETTINGS failed, rc=%d\n
+0x00015204 0x00015204  59   60 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_SET_IMS_SETTINGS to main\n
+0x00015240 0x00015240  57   58 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_SET_IMS_SETTINGS failed, rc=%d\n
+0x0001527c 0x0001527c  51   52 .rodata ascii [%s]:[%s] - %s: Invalid IMS parameter:%d specified\n
+0x000152b0 0x000152b0  57   58 .rodata ascii [%s]:[%s] - %s: omadm_ipl_get_ims_settings failed, rc=%d\n
+0x000152ec 0x000152ec  45   46 .rodata ascii [%s]:[%s] - %s: Failed read IMS parameter:%d\n
+0x0001531c 0x0001531c  54   55 .rodata ascii [%s]:[%s] - %s: omadm_ipl_get_ims_param failed, rc=%d\n
+0x00015354 0x00015354  64   65 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_IMS_PARAM_DOMAIN value:%s already set\n
+0x00015398 0x00015398  63   64 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_IMS_PARAM_SIPT1 value:%u already set\n
+0x000153d8 0x000153d8  63   64 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_IMS_PARAM_SIPTF value:%u already set\n
+0x00015418 0x00015418  63   64 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_IMS_PARAM_SIPT2 value:%u already set\n
+0x00015458 0x00015458  67   68 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_IMS_PARAM_SMSFORMAT value:%u already set\n
+0x0001549c 0x0001549c  37   38 .rodata ascii [%s]:[%s] - %s: Writing smsformat:%u\n
+0x000154c4 0x000154c4  78   79 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_IMS_PARAM_SMS_OVER_IP_NW_IND value:[%u] already set\n
+0x00015514 0x00015514  47   48 .rodata ascii [%s]:[%s] - %s: Writing smsOverIPNetworks:[%u]\n
+0x00015544 0x00015544  57   58 .rodata ascii [%s]:[%s] - %s: omadm_ipl_set_ims_settings failed, rc=%d\n
+0x00015580 0x00015580  66   67 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_DCMO_VOLTE_SETTINGS to main\n
+0x000155c4 0x000155c4  64   65 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_DCMO_VOLTE_SETTINGS failed, rc=%d\n
+0x00015608 0x00015608  66   67 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_SET_DCMO_VOLTE_SETTINGS to main\n
+0x0001564c 0x0001564c  64   65 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_SET_DCMO_VOLTE_SETTINGS failed, rc=%d\n
+0x00015690 0x00015690  53   54 .rodata ascii [%s]:[%s] - %s: Invalid VOLTE parameter:%d specified\n
+0x000156c8 0x000156c8  59   60 .rodata ascii [%s]:[%s] - %s: omadm_ipl_get_volte_settings failed, rc=%d\n
+0x00015704 0x00015704  47   48 .rodata ascii [%s]:[%s] - %s: Failed read VOLTE parameter:%d\n
+0x00015734 0x00015734  56   57 .rodata ascii [%s]:[%s] - %s: omadm_ipl_get_volte_param failed, rc=%d\n
+0x00015770 0x00015770  67   68 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_VOLTE_PARAM_HDVOICE value:%u already set\n
+0x000157b4 0x000157b4  67   68 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_VOLTE_PARAM_AMR_SET value:%u already set\n
+0x000157f8 0x000157f8  69   70 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_VOLTE_PARAM_AMRWB_SET value:%u already set\n
+0x00015840 0x00015840  59   60 .rodata ascii [%s]:[%s] - %s: omadm_ipl_set_volte_settings failed, rc=%d\n
+0x0001587c 0x0001587c  70   71 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_MODEM_EXTENDED_SETTINGS to main\n
+0x000158c4 0x000158c4  70   71 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_SET_MODEM_EXTENDED_SETTINGS to main\n
+0x0001590c 0x0001590c  68   69 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_SET_MODEM_EXTENDED_SETTINGS failed, rc=%d\n
+0x00015954 0x00015954  62   63 .rodata ascii [%s]:[%s] - %s: Invalid extended modem parameter:%d specified\n
+0x00015994 0x00015994  62   63 .rodata ascii [%s]:[%s] - %s: omadm_ipl_get_modem_ex_settings failed, rc=%d\n
+0x000159d4 0x000159d4  56   57 .rodata ascii [%s]:[%s] - %s: Failed read Modem extended parameter:%d\n
+0x00015a10 0x00015a10  59   60 .rodata ascii [%s]:[%s] - %s: omadm_ipl_get_modem_ex_param failed, rc=%d\n
+0x00015a4c 0x00015a4c  66   67 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_EX_PARAM_TBSR_CDMA value:%u already set\n
+0x00015a90 0x00015a90  63   64 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_EX_PARAM_T_MPSR value:%u already set\n
+0x00015ad0 0x00015ad0  64   65 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_EX_PARAM_T_1XRTT value:%u already set\n
+0x00015b14 0x00015b14  62   63 .rodata ascii [%s]:[%s] - %s: omadm_ipl_set_modem_ex_settings failed, rc=%d\n
+0x00015b54 0x00015b54  24   25 .rodata ascii [%s]:[%s] - %s: band=%d\n
+0x00015b70 0x00015b70  64   65 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_LTE_BAND_SETTINGS to main\n
+0x00015bb4 0x00015bb4  78   79 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_LTE_BAND_SETTINGS failed to read band:%d, rc=%d\n
+0x00015c04 0x00015c04  34   35 .rodata ascii [%s]:[%s] - %s: band=%d enable=%d\n
+0x00015c28 0x00015c28  64   65 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_SET_LTE_BAND_SETTINGS to main\n
+0x00015c6c 0x00015c6c  84   85 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_SET_LTE_BAND_SETTINGS failed to set band:%d to: %d, rc=%d\n
+0x00015cc4 0x00015cc4  23   24 .rodata ascii [%s]:[%s] - %s: Called\n
+0x00015cdc 0x00015cdc  68   69 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_CARRIER_AGGR_SETTINGS to main\n
+0x00015d24 0x00015d24  92   93 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_CARRIER_AGGR_SETTINGS failed to read Global CA enabled, rc=%d\n
+0x00015d84 0x00015d84  35   36 .rodata ascii [%s]:[%s] - %s: return, enabled:%d\n
+0x00015da8 0x00015da8  26   27 .rodata ascii [%s]:[%s] - %s: Enable:%d\n
+0x00015dc4 0x00015dc4  68   69 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_SET_CARRIER_AGGR_SETTINGS to main\n
+0x00015e0c 0x00015e0c  94   95 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_SET_CARRIER_AGGR_SETTINGS failed to set Global CA Enabled=%d, rc=%d\n
+0x00015e6c 0x00015e6c  58   59 .rodata ascii [%s]:[%s] - %s: no_of_bands=%d band2=%d band2=%d band3=%d\n
+0x00015ea8 0x00015ea8 108  109 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_CARRIER_AGGR_SETTINGS failed to read no_of_bands:%d b1:%d, b2:%d, b3:%d rc=%d\n
+0x00015f18 0x00015f18  68   69 .rodata ascii [%s]:[%s] - %s: no_of_bands=%d band2=%d band2=%d band3=%d enable=%d\n
+0x00015f60 0x00015f60 116  117 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_SET_CARRIER_AGGR_SETTINGS failed for no_of_bands:%d b1:%d, b2:%d, b3:%d, enable:%d ,rc=%d\n
+0x00015fd8 0x00015fd8  70   71 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_AUTONOMOUS_GAP_SETTINGS to main\n
+0x00016020 0x00016020  68   69 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_AUTONOMOUS_GAP_SETTINGS failed, rc=%d\n
+0x00016068 0x00016068  46   47 .rodata ascii [%s]:[%s] - %s: Out of range should be 0 or 1\n
+0x00016098 0x00016098  70   71 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_SET_AUTONOMOUS_GAP_SETTINGS to main\n
+0x000160e0 0x000160e0  68   69 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_SET_AUTONOMOUS_GAP_SETTINGS failed, rc=%d\n
+0x00016128 0x00016128  39   40 .rodata ascii [%s]:[%s] - %s: Invalid operation (%d)\n
+0x00016150 0x00016150  36   37 .rodata ascii [%s]:[%s] - %s: plpm: %d, delay: %d\n
+0x00016178 0x00016178  58   59 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_MODEM_OPERATION to main\n
+0x000161b4 0x000161b4  55   56 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_MODEM_OPERATION failed rc=%d\n
+0x000161ec 0x000161ec  37   38 .rodata ascii [%s]:[%s] - %s: attach:%d, delay: %d\n
+0x00016214 0x00016214  35   36 .rodata ascii [%s]:[%s] - %s: call:%d, delay: %d\n
+0x00016238 0x00016238  56   57 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_SET_DATA_CALL to main\n
+0x00016274 0x00016274  53   54 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_SET_DATA_CALL failed rc=%d\n
+0x000162ac 0x000162ac  20   21 .rodata ascii [%s]:[%s] - %s: +++\n
+0x000162c4 0x000162c4  73   74 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_DISCONNECT_DATA_USAGE_APN_CALL to main\n
+0x00016310 0x00016310  70   71 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_DISCONNECT_DATA_USAGE_APN_CALL failed rc=%d\n
+0x00016358 0x00016358  43   44 .rodata ascii [%s]:[%s] - [OMADM_CALL_START] %s: Called \n
+0x00016384 0x00016384  49   50 .rodata ascii [%s]:[%s] - [OMADM_CALL_START] %s: Invalid input\n
+0x000163b8 0x000163b8  81   82 .rodata ascii [%s]:[%s] - [OMADM_CALL_START] %s: Sending OMADM_IPL_OTA_GET_CALL_STATUS to main\n
+0x0001640c 0x0001640c  73   74 .rodata ascii [%s]:[%s] - [OMADM_CALL_START] %s: OMADM_IPL_OTA_CALL_STATUSfailed rc=%d\n
+0x00016458 0x00016458  40   41 .rodata ascii [%s]:[%s] - [OMADM_CALL_START] %s: +++ \n
+0x00016484 0x00016484  76   77 .rodata ascii [%s]:[%s] - [OMADM_CALL_START] %s: Sending OMADM_IPL_OTA_START_CALL to main\n
+0x000164d4 0x000164d4  73   74 .rodata ascii [%s]:[%s] - [OMADM_CALL_START] %s: OMADM_IPL_OTA_START_CALL failed rc=%d\n
+0x00016520 0x00016520  39   40 .rodata ascii [%s]:[%s] - [OMADM_CALL_STOP] %s: +++ \n
+0x00016548 0x00016548  74   75 .rodata ascii [%s]:[%s] - [OMADM_CALL_STOP] %s: Sending OMADM_IPL_OTA_STOP_CALL to main\n
+0x00016594 0x00016594  71   72 .rodata ascii [%s]:[%s] - [OMADM_CALL_STOP] %s: OMADM_IPL_OTA_STOP_CALL failed rc=%d\n
+0x000165dc 0x000165dc  37   38 .rodata ascii [%s]:[%s] - [OMADM_CALL_DNS] %s: +++\n
+0x00016604 0x00016604  47   48 .rodata ascii [%s]:[%s] - [OMADM_CALL_DNS] %s: Invalid input\n
+0x00016634 0x00016634  51   52 .rodata ascii [%s]:[%s] - [OMADM_CALL_DNS] %s: Invalid Host name\n
+0x00016668 0x00016668  53   54 .rodata ascii [%s]:[%s] - [OMADM_CALL_DNS] %s: OTA call not preset\n
+0x000166a0 0x000166a0  58   59 .rodata ascii [%s]:[%s] - [OMADM_CALL_DNS] %s: Invalid DNS reslove conf\n
+0x000166dc 0x000166dc  53   54 .rodata ascii [%s]:[%s] - [OMADM_CALL_DNS] %s: process not running\n
+0x00016714 0x00016714  73   74 .rodata ascii [%s]:[%s] - [OMADM_CALL_DNS] %s: Server:%s, ifc:%s, ifcv6:%s, timeout:%d\n
+0x00016760 0x00016760  65   66 .rodata ascii [%s]:[%s] - [OMADM_CALL_DNS] %s: Calling DNS API with timeout:%d\n
+0x000167a4 0x000167a4  71   72 .rodata ascii [%s]:[%s] - [OMADM_CALL_DNS] %s: DNS resolve success (ipaddr_count:%d)\n
+0x000167ec 0x000167ec 106  107 .rodata ascii [%s]:[%s] - [OMADM_CALL_DNS] %s: router2_dns_lookup_cust_apn(timeout=%d) failed, [rc:%d, ipaddr_count:%d]\n
+0x00016858 0x00016858  24   25 .rodata ascii [%s]:[%s] - %s: Called \n
+0x00016874 0x00016874  58   59 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_SDM_VERSION to main\n
+0x000168b0 0x000168b0  55   56 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_SDM_VERSION failed rc=%d\n
+0x000168e8 0x000168e8  58   59 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_SET_SDM_VERSION to main\n
+0x00016924 0x00016924  55   56 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_SET_SDM_VERSION failed rc=%d\n
+0x0001695c 0x0001695c  71   72 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_GET_LAST_FW_UPDATE_TIMESTAMP to main\n
+0x000169a4 0x000169a4  48   49 .rodata ascii [%s]:[%s] - %s: SU_ERR_HISTORY_RECORD_NOT_FOUND\n
+0x000169d8 0x000169d8  68   69 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_LAST_FW_UPDATE_TIMESTAMP failed rc=%d\n
+0x00016a20 0x00016a20  73   74 .rodata ascii [%s]:[%s] - %s: Sending OMADM_IPL_REGISTER_PWR_DOWN_HANDOFF [%d] to main\n
+0x00016a6c 0x00016a6c  65   66 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_REGISTER_PWR_DOWN_HANDOFF failed rc=%d\n
+0x00016ab0 0x00016ab0  60   61 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_FIRST_USE_DATE failed rc=[%d]\n
+0x00016af0 0x00016af0  52   53 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_UPTIME failed rc=[%d]\n
+0x00016b28 0x00016b28  58   59 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_BATTERY_INFO failed rc=[%d]\n
+0x00016b64 0x00016b64  57   58 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_MEMORY_INFO failed rc=[%d]\n
+0x00016ba0 0x00016ba0  55   56 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_WAN_STATS failed rc=[%d]\n
+0x00016bd8 0x00016bd8  49   50 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_DNS failed rc=[%d]\n
+0x00016c0c 0x00016c0c  59   60 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_OPR_WAN_PREF_MODE failed rc=[%d]\n
+0x00016c48 0x00016c48  57   58 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_OPR_MOBILE_DATA failed rc=[%d]\n
+0x00016c84 0x00016c84  53   54 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_OPR_ROAMING failed rc=[%d]\n
+0x00016cbc 0x00016cbc  49   50 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_OPR_GPS failed rc=[%d]\n
+0x00016cf0 0x00016cf0  50   51 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_OPR_DHCP failed rc=[%d]\n
+0x00016d24 0x00016d24  50   51 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_OPR_WIFI failed rc=[%d]\n
+0x00016d58 0x00016d58  59   60 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_SET_CHECKIN_VALUE failed rc=[%d]\n
+0x00016d94 0x00016d94  59   60 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_CHECKIN_VALUE failed rc=[%d]\n
+0x00016dd0 0x00016dd0  58   59 .rodata ascii [%s]:[%s] - %s: OMADM_IPL_GET_CHECKIN_DATE failed rc=[%d]\n
+0x00016e0c 0x00016e0c  45   46 .rodata ascii [%s]:[%s] - %s: Sending OMADM_MSG_SYSTEM_IND\n
+0x00016e3c 0x00016e3c  33   34 .rodata ascii [%s]:[%s] - %s: Invalid data len\n
+0x00016e60 0x00016e60  37   38 .rodata ascii [%s]:[%s] - %s: Msg data len %u > %d\n
+0x00016e88 0x00016e88  83   84 .rodata ascii [%s]:[%s] - %s: Sending OMADM_SYS_WAP_MSG (seq=[%d], total=[%d], ref=[%d]) to main\n
+0x00016edc 0x00016edc  47   48 .rodata ascii [%s]:[%s] - %s: OMADM_SYS_WAP_MSG failed rc=%d\n
+0x00016f0c 0x00016f0c  44   45 .rodata ascii [%s]:[%s] - %s: Invalid call type specified\n
+0x00016f3c 0x00016f3c  35   36 .rodata ascii [%s]:[%s] - %s: Invalid call state\n
+0x00016f60 0x00016f60  29   30 .rodata ascii OMADM_SYS_OTA_IPV4_CALL_STATE
+0x00016f80 0x00016f80  29   30 .rodata ascii OMADM_SYS_OTA_IPV6_CALL_STATE
+0x00016fa0 0x00016fa0  46   47 .rodata ascii [%s]:[%s] - %s: Sending %s (state:%d) to main\n
+0x00016fd0 0x00016fd0  32   33 .rodata ascii [%s]:[%s] - %s: %s failed rc=%d\n
+0x00016ff4 0x00016ff4  59   60 .rodata ascii [%s]:[%s] - %s: Sending OMADM_SYS_SETTINGS_UPDATED to main\n
+0x00017030 0x00017030  56   57 .rodata ascii [%s]:[%s] - %s: OMADM_SYS_SETTINGS_UPDATED failed rc=%d\n
+0x0001706c 0x0001706c  61   62 .rodata ascii [%s]:[%s] - %s: Sending OMADM_SYS_FULL_FACTORY_RESET to main\n
+0x000170ac 0x000170ac  58   59 .rodata ascii [%s]:[%s] - %s: OMADM_SYS_FULL_FACTORY_RESET failed rc=%d\n
+0x000170e8 0x000170e8  60   61 .rodata ascii [%s]:[%s] - %s: Sending OMADM_SYS_APP_FACTORY_RESET to main\n
+0x00017128 0x00017128  57   58 .rodata ascii [%s]:[%s] - %s: OMADM_SYS_APP_FACTORY_RESET failed rc=%d\n
+0x00017164 0x00017164  58   59 .rodata ascii [%s]:[%s] - %s: Sending OMADM_SYS_FOTA_BACKUP_IND to main\n
+0x000171a0 0x000171a0  55   56 .rodata ascii [%s]:[%s] - %s: OMADM_SYS_FOTA_BACKUP_IND failed rc=%d\n
+0x000171d8 0x000171d8  64   65 .rodata ascii [%s]:[%s] - %s: Sending OMADM_SYS_BACKUP_FR_DM_SETTINGS to main\n
+0x0001721c 0x0001721c  61   62 .rodata ascii [%s]:[%s] - %s: OMADM_SYS_BACKUP_FR_DM_SETTINGS failed rc=%d\n
+0x0001725c 0x0001725c  65   66 .rodata ascii [%s]:[%s] - %s: Sending OMADM_SYS_RESTORE_FR_DM_SETTINGS to main\n
+0x000172a0 0x000172a0  62   63 .rodata ascii [%s]:[%s] - %s: OMADM_SYS_RESTORE_FR_DM_SETTINGS failed rc=%d\n
+0x000172e0 0x000172e0  52   53 .rodata ascii [%s]:[%s] - %s: Invalid omadm_sys_power_e specified\n
+0x00017318 0x00017318  64   65 .rodata ascii [%s]:[%s] - %s: Sending OMADM_SYS_POWER_INDICATION (%d) to main\n
+0x0001735c 0x0001735c  56   57 .rodata ascii [%s]:[%s] - %s: OMADM_SYS_POWER_INDICATION failed rc=%d\n
+0x00017398 0x00017398  64   65 .rodata ascii [%s]:[%s] - %s: Sending OMADM_SYS_BATTERY_CAPACITY (%u) to main\n
+0x000173dc 0x000173dc  56   57 .rodata ascii [%s]:[%s] - %s: OMADM_SYS_BATTERY_CAPACITY failed rc=%d\n
+0x00017418 0x00017418  64   65 .rodata ascii [%s]:[%s] - %s: Invalid omadm_sys_powerdown_handoff_e specified\n
+0x0001745c 0x0001745c  64   65 .rodata ascii [%s]:[%s] - %s: Sending OMADM_SYS_POWERDOWN_HANDOFF(%u) to main\n
+0x000174a0 0x000174a0  57   58 .rodata ascii [%s]:[%s] - %s: OMADM_SYS_POWERDOWN_HANDOFF failed rc=%d\n
+0x000174dc 0x000174dc  48   49 .rodata ascii [%s]:[%s] - %s: Invalid home value:%d specified\n
+0x00017510 0x00017510   4    5 .rodata ascii HOME
+0x00017518 0x00017518   4    5 .rodata ascii ROAM
+0x00017520 0x00017520  63   64 .rodata ascii [%s]:[%s] - %s: Sending OMADM_SYS_ROAM_INDICATION (%s) to main\n
+0x00017560 0x00017560  55   56 .rodata ascii [%s]:[%s] - %s: OMADM_SYS_ROAM_INDICATION failed rc=%d\n
+0x00017598 0x00017598  49   50 .rodata ascii [%s]:[%s] - %s: unlink failed ret=%d for file:%s\n
+0x000175cc 0x000175cc  33   34 .rodata ascii [%s]:[%s] - %s: Removed file: %s\n
+0x000175f0 0x000175f0  20   21 .rodata ascii /opt/nvtl/data/omadm
+0x00017608 0x00017608  42   43 .rodata ascii [%s]:[%s] - %s: Cannot open dir, errno:%d\n
+0x00017634 0x00017634  36   37 .rodata ascii [%s]:[%s] - %s: syncing %s complete\n
+0x00017660 0x00017660  47   48 .rodata ascii [%s]:[%s] - %s: fopen() creation failed for %s\n
+0x00017690 0x00017690  64   65 .rodata ascii [%s]:[%s] - %s: file (%s) write failed expected:%d, returned:%d\n
+0x000176d4 0x000176d4  53   54 .rodata ascii [%s]:[%s] - %s: unlink failed for:%s rc=%d, errno:%d\n
+0x0001770c 0x0001770c  33   34 .rodata ascii [%s]:[%s] - %s: File created :%s\n
+0x00017734 0x00017734  36   37 .rodata ascii [%s]:[%s] - %s: File not found [%s]\n
+0x0001775c 0x0001775c  45   46 .rodata ascii [%s]:[%s] - %s: Read str=[%s] from file=[%s]\n
+0x00017790 0x00017790  67   68 .rodata ascii [%s]:[%s] - %s: Read error [%s], read=[%u] bytes but expected=[%u]\n
+0x000177d4 0x000177d4  41   42 .rodata ascii [%s]:[%s] - %s: Read [%u] from file=[%s]\n
+0x00017800 0x00017800  19   20 .rodata ascii /omadm_wap_proxy_mq
+0x00017814 0x00017814  51   52 .rodata ascii [%s]:[%s] - %s: msgq_send_async() failed, err=[%d]\n
+0x00017848 0x00017848  20   21 .rodata ascii omadm_public_msg_ind
+0x00017860 0x00017860  17   18 .rodata ascii su_api_get_status
+0x00017874 0x00017874  23   24 .rodata ascii su_api_check_for_update
+0x0001788c 0x0001788c  28   29 .rodata ascii su_api_get_download_progress
+0x000178ac 0x000178ac  20   21 .rodata ascii su_api_start_install
+0x000178c4 0x000178c4  26   27 .rodata ascii su_api_screen_alert_choice
+0x000178e0 0x000178e0  23   24 .rodata ascii su_api_postpone_install
+0x000178f8 0x000178f8  19   20 .rodata ascii su_api_get_settings
+0x0001790c 0x0001790c  22   23 .rodata ascii omadm_get_cfg_settings
+0x00017924 0x00017924  22   23 .rodata ascii omadm_set_cfg_settings
+0x0001793c 0x0001793c  20   21 .rodata ascii omadm_bl_evt_msg_ind
+0x00017954 0x00017954  17   18 .rodata ascii omadm_ipl_msg_ind
+0x00017968 0x00017968  23   24 .rodata ascii omadm_test_auto_install
+0x00017980 0x00017980  26   27 .rodata ascii omadm_trigger_auto_install
+0x0001799c 0x0001799c  23   24 .rodata ascii omadm_timer_timeout_ind
+0x000179b4 0x000179b4  31   32 .rodata ascii omadm_ipl_validate_fota_package
+0x000179d4 0x000179d4  26   27 .rodata ascii omadm_ipl_get_max_pkg_size
+0x000179f0 0x000179f0  18   19 .rodata ascii omadm_ipl_get_time
+0x00017a04 0x00017a04  26   27 .rodata ascii omadm_ipl_get_wan_coverage
+0x00017a20 0x00017a20  28   29 .rodata ascii omadm_ipl_get_emergency_mode
+0x00017a40 0x00017a40  31   32 .rodata ascii omadm_ipl_get_voice_call_status
+0x00017a60 0x00017a60  19   20 .rodata ascii omadm_ipl_set_alarm
+0x00017a74 0x00017a74  22   23 .rodata ascii omadm_ipl_delete_alarm
+0x00017a8c 0x00017a8c  25   26 .rodata ascii omadm_ipl_get_device_info
+0x00017aa8 0x00017aa8  29   30 .rodata ascii omadm_ipl_get_subscriber_info
+0x00017ac8 0x00017ac8  21   22 .rodata ascii omadm_ipl_get_version
+0x00017ae0 0x00017ae0  30   31 .rodata ascii omadm_ipl_get_version_from_pkg
+0x00017b00 0x00017b00  37   38 .rodata ascii omadm_ipl_get_install_complete_status
+0x00017b28 0x00017b28  28   29 .rodata ascii omadm_ipl_get_roaming_status
+0x00017b48 0x00017b48  28   29 .rodata ascii omadm_ipl_get_serving_system
+0x00017b68 0x00017b68  34   35 .rodata ascii omadm_ipl_get_wan_profile_settings
+0x00017b8c 0x00017b8c  34   35 .rodata ascii omadm_ipl_set_wan_profile_settings
+0x00017bb0 0x00017bb0  31   32 .rodata ascii omadm_ipl_get_wan_profile_param
+0x00017bd0 0x00017bd0  31   32 .rodata ascii omadm_ipl_set_wan_profile_param
+0x00017bf0 0x00017bf0  26   27 .rodata ascii omadm_ipl_get_ims_settings
+0x00017c0c 0x00017c0c  26   27 .rodata ascii omadm_ipl_set_ims_settings
+0x00017c28 0x00017c28  23   24 .rodata ascii omadm_ipl_get_ims_param
+0x00017c40 0x00017c40  23   24 .rodata ascii omadm_ipl_set_ims_param
+0x00017c58 0x00017c58  28   29 .rodata ascii omadm_ipl_get_volte_settings
+0x00017c78 0x00017c78  28   29 .rodata ascii omadm_ipl_set_volte_settings
+0x00017c98 0x00017c98  25   26 .rodata ascii omadm_ipl_get_volte_param
+0x00017cb4 0x00017cb4  25   26 .rodata ascii omadm_ipl_set_volte_param
+0x00017cd0 0x00017cd0  31   32 .rodata ascii omadm_ipl_get_modem_ex_settings
+0x00017cf0 0x00017cf0  31   32 .rodata ascii omadm_ipl_set_modem_ex_settings
+0x00017d10 0x00017d10  28   29 .rodata ascii omadm_ipl_get_modem_ex_param
+0x00017d30 0x00017d30  28   29 .rodata ascii omadm_ipl_set_modem_ex_param
+0x00017d50 0x00017d50  30   31 .rodata ascii omadm_ipl_get_lte_band_enabled
+0x00017d70 0x00017d70  30   31 .rodata ascii omadm_ipl_set_lte_band_enabled
+0x00017d90 0x00017d90  24   25 .rodata ascii omadm_ipl_get_ca_enabled
+0x00017dac 0x00017dac  24   25 .rodata ascii omadm_ipl_set_ca_enabled
+0x00017dc8 0x00017dc8  30   31 .rodata ascii omadm_ipl_get_ca_bands_enabled
+0x00017de8 0x00017de8  30   31 .rodata ascii omadm_ipl_set_ca_bands_enabled
+0x00017e08 0x00017e08  36   37 .rodata ascii omadm_ipl_get_autonomous_gap_enabled
+0x00017e30 0x00017e30  36   37 .rodata ascii omadm_ipl_set_autonomous_gap_enabled
+0x00017e58 0x00017e58  23   24 .rodata ascii verify_on_off_opr_input
+0x00017e70 0x00017e70  36   37 .rodata ascii omadm_ipl_set_modem_to_persisten_lpm
+0x00017e98 0x00017e98  26   27 .rodata ascii omadm_ipl_set_modem_attach
+0x00017eb4 0x00017eb4  23   24 .rodata ascii omadm_ipl_set_data_call
+0x00017ecc 0x00017ecc  40   41 .rodata ascii omadm_ipl_disconnect_data_usage_apn_call
+0x00017ef8 0x00017ef8  29   30 .rodata ascii omadm_ipl_get_ota_call_status
+0x00017f18 0x00017f18  24   25 .rodata ascii omadm_ipl_ota_start_call
+0x00017f34 0x00017f34  23   24 .rodata ascii omadm_ipl_ota_stop_call
+0x00017f4c 0x00017f4c  23   24 .rodata ascii omadm_ipl_ota_dns_query
+0x00017f64 0x00017f64  25   26 .rodata ascii omadm_ipl_get_sdm_version
+0x00017f80 0x00017f80  25   26 .rodata ascii omadm_ipl_set_sdm_version
+0x00017f9c 0x00017f9c  38   39 .rodata ascii omadm_ipl_get_last_fw_update_timestamp
+0x00017fc4 0x00017fc4  36   37 .rodata ascii omadm_ipl_register_powerdown_handoff
+0x00017fec 0x00017fec  28   29 .rodata ascii omadm_ipl_get_first_use_date
+0x0001800c 0x0001800c  20   21 .rodata ascii omadm_ipl_get_uptime
+0x00018024 0x00018024  26   27 .rodata ascii omadm_ipl_get_battery_info
+0x00018040 0x00018040  25   26 .rodata ascii omadm_ipl_get_memory_info
+0x0001805c 0x0001805c  23   24 .rodata ascii omadm_ipl_get_wan_stats
+0x00018074 0x00018074  25   26 .rodata ascii omadm_ipl_get_dns_servers
+0x00018090 0x00018090  27   28 .rodata ascii omadm_ipl_opr_wan_pref_mode
+0x000180ac 0x000180ac  25   26 .rodata ascii omadm_ipl_opr_mobile_data
+0x000180c8 0x000180c8  28   29 .rodata ascii omadm_ipl_opr_roaming_access
+0x000180e8 0x000180e8  17   18 .rodata ascii omadm_ipl_opr_gps
+0x000180fc 0x000180fc  18   19 .rodata ascii omadm_ipl_opr_dhcp
+0x00018110 0x00018110  18   19 .rodata ascii omadm_ipl_opr_wifi
+0x00018124 0x00018124  27   28 .rodata ascii omadm_ipl_set_checkin_value
+0x00018140 0x00018140  27   28 .rodata ascii omadm_ipl_get_checkin_value
+0x0001815c 0x0001815c  26   27 .rodata ascii omadm_ipl_get_checkin_date
+0x00018178 0x00018178  21   22 .rodata ascii omadm_sys_indications
+0x00018190 0x00018190  22   23 .rodata ascii omadm_sys_wap_push_ind
+0x000181a8 0x000181a8  28   29 .rodata ascii omadm_sys_ota_call_state_ind
+0x000181c8 0x000181c8  30   31 .rodata ascii omadm_sys_settings_updated_ind
+0x000181e8 0x000181e8  32   33 .rodata ascii omadm_sys_full_factory_reset_ind
+0x0001820c 0x0001820c  31   32 .rodata ascii omadm_sys_app_factory_reset_ind
+0x0001822c 0x0001822c  25   26 .rodata ascii omadm_sys_fota_backup_ind
+0x00018248 0x00018248  35   36 .rodata ascii omadm_sys_backup_dm_fr_settings_ind
+0x0001826c 0x0001826c  36   37 .rodata ascii omadm_sys_restore_dm_fr_settings_ind
+0x00018294 0x00018294  19   20 .rodata ascii omadm_sys_power_ind
+0x000182a8 0x000182a8  30   31 .rodata ascii omadm_sys_battery_capacity_ind
+0x000182c8 0x000182c8  35   36 .rodata ascii omadm_sys_dsm_powerdown_handoff_ind
+0x000182ec 0x000182ec  18   19 .rodata ascii omadm_sys_roam_ind
+0x00018300 0x00018300  17   18 .rodata ascii omadm_file_remove
+0x00018314 0x00018314  25   26 .rodata ascii omadm_file_sync_and_close
+0x00018330 0x00018330  17   18 .rodata ascii omadm_file_create
+0x00018344 0x00018344  19   20 .rodata ascii omadm_file_read_str
+0x00018358 0x00018358  19   20 .rodata ascii omadm_file_read_bin
+0x0001836c 0x0001836c  32   33 .rodata ascii omadm_wap_push_received_by_proxy
+0x00018390 0x00018390  36   37 .rodata ascii omadm_ipl_get_current_sess_init_mode
+0x000183b8 0x000183b8  26   27 .rodata ascii /Settings/OMADM/EnableFUMO
+0x000183d4 0x000183d4  14   15 .rodata ascii omadm.settings
+0x000183e4 0x000183e4  18   19 .rodata ascii [%s]:[%s] - %s: ++
+0x000183f8 0x000183f8   5    6 .rodata ascii OMADM
+0x00018400 0x00018400  66   67 .rodata ascii [%s]:[%s] - %s: omadm_sys_full_factory_reset_ind() failed, rc= %d\n
+0x00018444 0x00018444  23   24 .rodata ascii [%s]:[%s] - %s: success
+0x0001845c 0x0001845c  24   25 .rodata ascii omadm_factory_reset_impl
+=== IMPORTS ===
+nth      vaddr bind   type   lib name                        
+-------------------------------------------------------------
+  1 0x000020e0 WEAK   NOTYPE     __gmon_start__
+  2 ---------- WEAK   NOTYPE     _ITM_deregisterTMCloneTable
+  3 ---------- WEAK   NOTYPE     _ITM_registerTMCloneTable
+  4 0x000020ec WEAK   FUNC       __cxa_finalize
+  5 ---------- WEAK   NOTYPE     _Jv_RegisterClasses
+  6 0x000020f8 GLOBAL FUNC       msgq_does_queue_exist
+  7 0x00002104 GLOBAL FUNC       mifi_dbg_get_level_name
+  8 0x00002110 GLOBAL FUNC       mifi_dbg_syslog
+  9 0x0000211c GLOBAL FUNC       mifi_dbg_log
+ 10 0x00002128 GLOBAL FUNC       memset
+ 11 0x00002260 GLOBAL FUNC       fgets
+ 12 0x00002134 GLOBAL FUNC       memcpy
+ 13 0x00002140 GLOBAL FUNC       msgq_send_sync
+ 14 0x0000226c GLOBAL FUNC       fread
+ 15 0x0000214c GLOBAL FUNC       snprintf
+ 16 0x00002278 GLOBAL FUNC       strlen
+ 17 0x00002158 GLOBAL FUNC       settings_get_setting
+ 18 0x00002164 GLOBAL FUNC       settings_set_setting
+ 19 0x00002170 GLOBAL FUNC       msgq_send_async
+ 20 0x0000217c GLOBAL FUNC       msgq_send_sync_to
+ 21 0x00002188 GLOBAL FUNC       strncpy
+ 22 0x000021a0 GLOBAL FUNC       strncmp
+ 23 0x000021ac GLOBAL FUNC       memcmp
+ 24 0x000021d0 GLOBAL FUNC       router2_dns_lookup_cust_apn
+ 25 0x000021dc GLOBAL FUNC       unlink
+ 26 0x000021e8 GLOBAL FUNC       fflush
+ 27 0x000021f4 GLOBAL FUNC       fileno
+ 28 0x00002200 GLOBAL FUNC       fsync
+ 29 0x0000220c GLOBAL FUNC       fclose
+ 30 0x00002218 GLOBAL FUNC       open
+ 31 0x00002224 GLOBAL FUNC       __errno_location
+ 32 0x00002230 GLOBAL FUNC       close
+ 33 0x0000223c GLOBAL FUNC       fopen
+ 34 0x00002248 GLOBAL FUNC       fwrite
+ 35 0x00002284 GLOBAL FUNC       xmldata_getuint32_default
+ 36 0x00002290 GLOBAL FUNC       xmldata_setuint32
+ 37 0x0000229c GLOBAL FUNC       xmldata_save
+ 38 0x000022a8 GLOBAL FUNC       MsgBusSetInt32
+ 39 0x000022c0 GLOBAL FUNC       __xstat
+ 40 0x000022cc GLOBAL FUNC       __lxstat
+=== SECTIONS ===
+     paddr    size      vaddr   vsize align perm name                   type              flags         
+--------------------------------------------------------------------------------------------------------
+0x00000000     0x0 ----------     0x0   0x0 ----                        NULL              
+0x00000114    0x24 0x00000114    0x24   0x0 -r-- .note.gnu.build-id     NOTE              alloc
+0x00000138   0x900 0x00000138   0x900   0x0 -r-- .dynsym                DYNSYM            alloc
+0x00000a38   0xfb3 0x00000a38   0xfb3   0x0 -r-- .dynstr                STRTAB            alloc
+0x000019ec   0x3b0 0x000019ec   0x3b0   0x0 -r-- .gnu.hash              GNU_HASH          alloc
+0x00001d9c   0x120 0x00001d9c   0x120   0x0 -r-- .gnu.version           VERSYM            alloc
+0x00001ebc    0x1c 0x00001ebc    0x1c   0x0 -r-- .gnu.version_d         VERDEF            alloc
+0x00001ed8    0x40 0x00001ed8    0x40   0x0 -r-- .gnu.version_r         VERNEED           alloc
+0x00001f18    0x58 0x00001f18    0x58   0x0 -r-- .rel.dyn               REL               alloc
+0x00001f70   0x150 0x00001f70   0x150   0x0 -r-- .rel.plt               REL               alloc
+0x000020c0     0xc 0x000020c0     0xc   0x0 -r-x .init                  PROGBITS          alloc,execute
+0x000020cc   0x20c 0x000020cc   0x20c   0x0 -r-x .plt                   PROGBITS          alloc,execute
+0x000022d8 0x11d38 0x000022d8 0x11d38   0x0 -r-x .text                  PROGBITS          alloc,execute
+0x00014010     0x8 0x00014010     0x8   0x0 -r-x .fini                  PROGBITS          alloc,execute
+0x00014018  0x4460 0x00014018  0x4460   0x0 -r-- .rodata                PROGBITS          alloc
+0x00018478     0x4 0x00018478     0x4   0x0 -r-- .eh_frame              PROGBITS          alloc
+0x0001847c     0x8 0x0001847c     0x8   0x0 -r-- .eh_frame_hdr          PROGBITS          alloc
+0x00018484   0x288 0x00019484   0x288   0x0 -rw- .dynamic               DYNAMIC           write,alloc
+0x0001870c     0x4 0x0001970c     0x4   0x0 -rw- .data                  PROGBITS          write,alloc
+0x00018710     0x4 0x00019710     0x4   0x0 -rw- .init_array            INIT_ARRAY        write,alloc
+0x00018714     0x4 0x00019714     0x4   0x0 -rw- .fini_array            FINI_ARRAY        write,alloc
+0x00018718     0x4 0x00019718     0x4   0x0 -rw- .jcr                   PROGBITS          write,alloc
+0x0001871c     0x0 0x0001971c     0x0   0x0 -rw- .tm_clone_table        PROGBITS          write,alloc
+0x0001871c    0xd4 0x0001971c    0xd4   0x0 -rw- .got                   PROGBITS          write,alloc
+0x000187f0     0x0 0x000197f0     0x1   0x0 -rw- .bss                   NOBITS            write,alloc
+0x000187f0    0x12 ----------    0x12   0x0 ---- .comment               PROGBITS          merge,strings
+0x00018802  0x14c5 ----------  0x14c5   0x0 ---- .GCC.command.line      PROGBITS          merge,strings
+0x00019cc7  0x59a1 ----------  0x59a1   0x0 ---- .debug_info            PROGBITS          
+0x0001f668   0x4c3 ----------   0x4c3   0x0 ---- .debug_abbrev          PROGBITS          
+0x0001fb2b    0x60 ----------    0x60   0x0 ---- .debug_aranges         PROGBITS          
+0x0001fb8b  0x1c60 ----------  0x1c60   0x0 ---- .debug_line            PROGBITS          
+0x000217eb  0x55fc ----------  0x55fc   0x0 ---- .debug_str             PROGBITS          merge,strings
+0x00026de8   0xf04 ----------   0xf04   0x0 ---- .debug_frame           PROGBITS          
+0x00027cec    0x1c ----------    0x1c   0x0 ---- .note.gnu.gold-version NOTE              
+0x00027d08    0x33 ----------    0x33   0x0 ---- .ARM.attributes        LOPROC+0x00000003 
+0x00027d3c  0x2170 ----------  0x2170   0x0 ---- .symtab                SYMTAB            
+0x00029eac  0x14ee ----------  0x14ee   0x0 ---- .strtab                STRTAB            
+0x0002b39a   0x18c ----------   0x18c   0x0 ---- .shstrtab              STRTAB            

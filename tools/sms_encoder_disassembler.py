@@ -57,7 +57,8 @@ SMS_TARGET_FUNCTIONS = [
 ]
 
 
-def disassemble_function(binary_data: bytes, address: int, size: int, func_name: str) -> dict:
+def disassemble_function(binary_data: bytes, address: int, size: int,
+                         func_name: str) -> dict:
     """Disassemble a function and analyze its structure."""
     
     # Try ARM mode first, then Thumb
@@ -67,7 +68,6 @@ def disassemble_function(binary_data: bytes, address: int, size: int, func_name:
         
         instructions = []
         call_targets = []
-        string_refs = []
         data_refs = []
         
         for insn in md.disasm(binary_data[address:address+size], address):
@@ -110,7 +110,8 @@ def disassemble_function(binary_data: bytes, address: int, size: int, func_name:
                 "data_refs": data_refs[:10],  # Limit to first 10
                 "instructions": instructions[:50],  # First 50 instructions
                 "prologue": instructions[:5] if instructions else [],
-                "epilogue": instructions[-5:] if len(instructions) >= 5 else instructions
+                "epilogue": (instructions[-5:] if len(instructions) >= 5
+                             else instructions)
             }
     
     return {"name": func_name, "error": "Failed to disassemble"}
@@ -150,7 +151,10 @@ def analyze_sms_encoder(library_path: str) -> dict:
                 }
         
         # Find all SMS-related functions
-        sms_keywords = ['sms', 'pdu', 'cdma', 'gsm', 'wms', 'encode', 'decode', 'message']
+        sms_keywords = [
+            'sms', 'pdu', 'cdma', 'gsm', 'wms', 'encode', 'decode',
+            'message'
+        ]
         for name, info in func_map.items():
             if any(kw in name.lower() for kw in sms_keywords):
                 results["all_sms_functions"].append({
@@ -163,7 +167,10 @@ def analyze_sms_encoder(library_path: str) -> dict:
         for func_name in SMS_TARGET_FUNCTIONS:
             if func_name in func_map:
                 info = func_map[func_name]
-                print(f"Disassembling {func_name} @ {hex(info['address'])} (size={info['size']})")
+                print(
+                    f"Disassembling {func_name} @ {hex(info['address'])} "
+                    f"(size={info['size']})"
+                )
                 
                 disasm = disassemble_function(
                     binary_data, 
@@ -177,31 +184,44 @@ def analyze_sms_encoder(library_path: str) -> dict:
         results["encoding_flow"] = {
             "gsm_pdu_chain": [
                 "SmsEncodeMessage -> EncodeSms -> PDU_Encode_Sms",
-                "PDU_Encode_Sms -> wms_ts_encode_submit -> wms_ts_pack_gw_7_bit_chars"
+                "PDU_Encode_Sms -> wms_ts_encode_submit -> "
+                "wms_ts_pack_gw_7_bit_chars"
             ],
             "cdma_chain": [
                 "SmsEncodeMessage -> CDMA_Encode_Message_IS637",
-                "CDMA_Encode_Message -> wms_ts_encode_CDMA_tl -> Encode_UserData"
+                "CDMA_Encode_Message -> wms_ts_encode_CDMA_tl -> "
+                "Encode_UserData"
             ],
             "decode_chain": [
                 "wms_ts_decode -> PDU_Decode_Sms / CDMA_Decode_Message",
-                "PDU_Decode_Sms -> PDU_Decode_Sms_Deliver / PDU_Decode_Sms_Submit"
+                "PDU_Decode_Sms -> PDU_Decode_Sms_Deliver / "
+                "PDU_Decode_Sms_Submit"
             ]
         }
         
         results["summary"] = {
             "total_sms_functions": len(results["all_sms_functions"]),
             "disassembled_count": len(results["target_functions"]),
-            "pdu_encode_size": func_map.get("PDU_Encode_Sms", {}).get('size', 0),
-            "cdma_encode_size": func_map.get("CDMA_Encode_Message_IS637", {}).get('size', 0),
+            "pdu_encode_size": (
+                func_map.get("PDU_Encode_Sms", {}).get('size', 0)
+            ),
+            "cdma_encode_size": (
+                func_map.get("CDMA_Encode_Message_IS637", {})
+                .get('size', 0)
+            ),
         }
     
     return results
 
 
 def main():
-    library_path = "mifi_backup/proprietary_analysis/libraries_full/lib/libsms_encoder.so"
-    output_path = "mifi_backup/proprietary_analysis/SMS_ENCODER_DISASSEMBLY.json"
+    library_path = (
+        "mifi_backup/proprietary_analysis/libraries_full/lib/"
+        "libsms_encoder.so"
+    )
+    output_path = (
+        "mifi_backup/proprietary_analysis/SMS_ENCODER_DISASSEMBLY.json"
+    )
     
     # Check for custom paths
     if len(sys.argv) > 1:
@@ -230,10 +250,22 @@ def main():
     print("\n" + "=" * 70)
     print("SMS Encoder Analysis Summary")
     print("=" * 70)
-    print(f"Total SMS Functions: {results['summary'].get('total_sms_functions', 0)}")
-    print(f"Disassembled Functions: {results['summary'].get('disassembled_count', 0)}")
-    print(f"PDU_Encode_Sms size: {results['summary'].get('pdu_encode_size', 0)} bytes")
-    print(f"CDMA_Encode_Message_IS637 size: {results['summary'].get('cdma_encode_size', 0)} bytes")
+    print(
+        f"Total SMS Functions: "
+        f"{results['summary'].get('total_sms_functions', 0)}"
+    )
+    print(
+        f"Disassembled Functions: "
+        f"{results['summary'].get('disassembled_count', 0)}"
+    )
+    print(
+        f"PDU_Encode_Sms size: "
+        f"{results['summary'].get('pdu_encode_size', 0)} bytes"
+    )
+    print(
+        f"CDMA_Encode_Message_IS637 size: "
+        f"{results['summary'].get('cdma_encode_size', 0)} bytes"
+    )
     
     print("\n--- Encoding Flow ---")
     for chain_type, chains in results.get("encoding_flow", {}).items():
@@ -243,8 +275,12 @@ def main():
     
     print("\n--- Disassembled Functions ---")
     for func in results.get("target_functions", [])[:10]:
-        print(f"  {func.get('name', 'unknown'):40} @ {func.get('address', '?'):10} "
-              f"({func.get('instruction_count', 0)} instructions, {func.get('mode', '?')} mode)")
+        print(
+            f"  {func.get('name', 'unknown'):40} @ "
+            f"{func.get('address', '?'):10} "
+            f"({func.get('instruction_count', 0)} instructions, "
+            f"{func.get('mode', '?')} mode)"
+        )
 
 
 if __name__ == "__main__":

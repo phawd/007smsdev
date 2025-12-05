@@ -1,0 +1,14 @@
+Package: tftp-server
+Version: git-r1
+Description: tftp-server version git-r1
+ tftp_server server module
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: sdx20
+OE: tftp-server
+Homepage: http://support.cdmatech.com
+Depends: libglib-2.0-0 (>= 2.44.1), libc6 (>= 2.22)
+Recommends: update-rc.d
+Source: file://tftp/

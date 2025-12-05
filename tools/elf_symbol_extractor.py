@@ -4,22 +4,20 @@ ELF Symbol Extractor for ARM Binaries
 Phase 6A: Automated symbol extraction from MiFi proprietary libraries
 """
 
-import os
 import sys
 import json
-import struct
 from pathlib import Path
 from collections import defaultdict
 
 try:
     from elftools.elf.elffile import ELFFile
     from elftools.elf.sections import SymbolTableSection
-    from elftools.elf.dynamic import DynamicSection
     from elftools.elf.relocation import RelocationSection
     HAS_ELFTOOLS = True
 except ImportError:
     HAS_ELFTOOLS = False
     print("Warning: pyelftools not installed. Using fallback parsing.")
+
 
 class ELFSymbolExtractor:
     """Extract and analyze symbols from ARM ELF binaries"""
@@ -76,7 +74,10 @@ class ELFSymbolExtractor:
                             'bind': symbol['st_info']['bind'],
                             'visibility': symbol['st_other']['visibility'],
                             'section': symbol['st_shndx'],
-                            'table': 'dynsym' if '.dynsym' in section.name else 'symtab'
+                            'table': (
+                                'dynsym' if '.dynsym' in section.name
+                                else 'symtab'
+                            )
                         }
                         
                         if section.name == '.dynsym':
@@ -131,14 +132,22 @@ class ELFSymbolExtractor:
     def _compile_results(self) -> dict:
         """Compile all extracted data into a structured result"""
         # Filter for SPC/unlock related items
-        spc_keywords = ['spc', 'unlock', 'carrier', 'validate', 'nv_', 'dms_', 'lock', 'imei']
+        spc_keywords = [
+            'spc', 'unlock', 'carrier', 'validate', 'nv_', 'dms_', 'lock',
+            'imei'
+        ]
         
         def is_relevant(name: str) -> bool:
             name_lower = name.lower()
             return any(kw in name_lower for kw in spc_keywords)
         
-        relevant_symbols = [s for s in self.dynamic_symbols if is_relevant(s['name'])]
-        all_functions = [s for s in self.dynamic_symbols if s['type'] == 'STT_FUNC' and s['name']]
+        relevant_symbols = [
+            s for s in self.dynamic_symbols if is_relevant(s['name'])
+        ]
+        all_functions = [
+            s for s in self.dynamic_symbols
+            if s['type'] == 'STT_FUNC' and s['name']
+        ]
         
         return {
             'metadata': self.metadata,
@@ -210,9 +219,14 @@ def main():
     """Main entry point"""
     import argparse
     
-    parser = argparse.ArgumentParser(description='ELF Symbol Extractor for ARM binaries')
+    parser = argparse.ArgumentParser(
+        description='ELF Symbol Extractor for ARM binaries'
+    )
     parser.add_argument('path', help='Path to .so file or directory containing .so files')
-    parser.add_argument('-o', '--output', help='Output JSON file', default='symbols_analysis.json')
+    parser.add_argument(
+        '-o', '--output', help='Output JSON file',
+        default='symbols_analysis.json'
+    )
     parser.add_argument('--filter', help='Filter symbols by keyword', default=None)
     parser.add_argument('--verbose', '-v', action='store_true', help='Verbose output')
     
@@ -255,12 +269,20 @@ def main():
         print(f"Library: {lib_name}")
         print(f"{'='*60}")
         print(f"Total dynamic symbols: {lib_data.get('total_dynamic_symbols', 'N/A')}")
-        print(f"Total exported functions: {len(lib_data.get('all_exported_functions', []))}")
+        print(
+            f"Total exported functions: "
+            f"{len(lib_data.get('all_exported_functions', []))}"
+        )
         
         if lib_data.get('spc_related_symbols'):
-            print(f"\nSPC-Related Symbols ({len(lib_data['spc_related_symbols'])}):")
+            print(
+                f"\nSPC-Related Symbols "
+                f"({len(lib_data['spc_related_symbols'])}):")
             for sym in lib_data['spc_related_symbols']:
-                print(f"  - {sym['name']} @ {sym['value']} (type: {sym['type']})")
+                print(
+                    f"  - {sym['name']} @ {sym['value']} "
+                    f"(type: {sym['type']})"
+                )
         
         if lib_data.get('function_categories'):
             print(f"\nFunction Categories:")

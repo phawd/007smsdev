@@ -1,0 +1,13 @@
+Package: init-mss
+Version: git-r7
+Description: init-mss version git-r7
+ Modem init
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: armv7a-vfp-neon
+OE: init-mss
+Depends: libc6 (>= 2.22)
+Recommends: update-rc.d
+Source: file://mdm-ss-mgr/init_mss/ file://init_sys_mss.service

@@ -1,0 +1,14 @@
+Package: liblog0
+Version: 1.0-r1
+Description: liblog version 1.0-r1
+ Build Android liblog
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Apache-2.0
+Architecture: armv7a-vfp-neon
+OE: liblog
+Homepage: http://developer.android.com/
+Depends: libgcc1 (>= 4.9.3), libstdc++6 (>= 4.9.3), libc6 (>= 2.22)
+Provides: liblog
+Source: file://liblog file://50-log.rules

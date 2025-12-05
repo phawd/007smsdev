@@ -11,8 +11,9 @@ Based on reverse engineering analysis of:
 
 FINDINGS:
 ---------
-The MiFi 8800L uses a STATIC DEFAULT SPC (000000), not an IMEI-derived algorithm.
-The SPC is validated at the Qualcomm baseband processor level via QMI DMS protocol.
+The MiFi 8800L uses a STATIC DEFAULT SPC (000000), not an
+IMEI-derived algorithm. The SPC is validated at the Qualcomm baseband
+processor level via QMI DMS protocol.
 
 USAGE:
 ------
@@ -26,7 +27,7 @@ import subprocess
 import argparse
 import re
 import sys
-from typing import Optional, Dict, Tuple
+from typing import Dict, Tuple
 from dataclasses import dataclass
 
 
@@ -34,7 +35,8 @@ from dataclasses import dataclass
 # SPC CONSTANTS (from reverse engineering)
 # ==============================================================================
 
-# Default SPC for Qualcomm devices (validated via XDA research + device testing)
+# Default SPC for Qualcomm devices (validated via XDA research +
+# device testing)
 DEFAULT_SPC = "000000"
 
 # Unlock password (12 hex F's) - used with some unlock tools

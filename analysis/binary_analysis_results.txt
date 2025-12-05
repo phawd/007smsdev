@@ -1,0 +1,184 @@
+
+======================================================================
+Analyzing: f:/repo/zerosms/binaries/nwcli
+======================================================================
+Size: 25500 bytes
+
+Command strings (107):
+  __bss_start
+  __ctype_b_loc
+  __gmon_start__
+  __isoc99_sscanf
+  __libc_start_main
+  __xstat
+  _edata
+  _end
+  _fini
+  _init
+  abort
+  aeabi
+  alaska_call
+  atoi
+  delete
+  exit
+  factory_restore
+  fclose
+  fflush
+  fgetc
+  file
+  fileno
+  fopen
+  fread
+  free
+  fsync
+  fwrite
+  get_eri
+  get_model
+  get_pco
+  get_reg_state
+  help
+  main
+  malloc
+  memcpy
+  memset
+  mifi_dbg_start
+  mifi_dbg_stop
+  nwqmi_close
+  nwqmi_gps_register_event_reporting
+  nwqmi_gps_set_session_operation
+  nwqmi_gps_start_fix_req
+  nwqmi_init
+  nwqmi_nas_get_serving_system
+  nwqmi_nas_get_sig_info
+  nwqmi_nas_get_sig_str
+  nwqmi_nvtl_factory_restore
+  nwqmi_nvtl_file_delete
+  nwqmi_nvtl_file_read
+  nwqmi_nvtl_file_write
+  nwqmi_nvtl_get_eri
+  nwqmi_nvtl_get_model_number_cmd
+  nwqmi_nvtl_get_pco_value
+  nwqmi_nvtl_modem_pwr_down_cmd
+  nwqmi_nvtl_nv_item_read_cmd
+  nwqmi_nvtl_nv_item_write_cmd
+  nwqmi_nvtl_register_event_reporting
+  nwqmi_nvtl_test_cmd
+  nwqmi_nvtl_verify_registration_state
+  nwqmi_open
+  nwqmi_open_ipv6
+  nwqmi_open_one
+  nwqmi_print_nas_serving_system
+  nwqmi_print_nas_sig_info
+  nwqmi_print_nas_sig_str
+  nwqmi_wds6_get_call_status
+  nwqmi_wds6_start_call
+  nwqmi_wds6_stop_call
+  nwqmi_wds_get_call_status
+  nwqmi_wds_start_call
+  nwqmi_wds_stop_call
+  opened
+  printf
+  putchar
+  puts
+  pwr_down
+  qmi_idl
+  qmi_linux_get_conn_id_by_name
+  qmi_service_connection_init
+  qmi_service_init
+
+First 30 instructions at 0x10000:
+
+Found 'write_nv' at file offset 0x4404
+
+======================================================================
+Analyzing: f:/repo/zerosms/binaries/modem2_cli
+======================================================================
+Size: 148920 bytes
+
+Command strings (639):
+  __bss_start
+  __gmon_start__
+  __isoc99_scanf
+  __libc_start_main
+  _edata
+  _end
+  _fini
+  _init
+  abort
+  access
+  active_band_get
+  active_tech_get
+  aeabi
+  atoi
+  band_class_get_enabled
+  band_class_set_enabled
+  bsr_get_timers
+  bsr_set_timers
+  ca_bands_get_enabled
+  ca_bands_set_enabled
+  ca_get_enabled
+  ca_set_enabled
+  ca_tri_bands_get_enabled
+  ca_tri_bands_set_enabled
+  cai_get
+  cai_set
+  call_get_status
+  call_start
+  call_stop
+  calloc
+  check_lte_ca_status
+  close
+  cmd_1xrtt_get_ext_timer
+  cmd_1xrtt_set_ext_timer
+  cmd_active_band_get
+  cmd_band_class_get_enabled
+  cmd_band_class_set_enabled
+  cmd_ca_bands_get_enabled
+  cmd_ca_bands_set_enabled
+  cmd_ca_get_enabled
+  cmd_ca_set_enabled
+  cmd_ca_tri_bands_get_enabled
+  cmd_ca_tri_bands_set_enabled
+  cmd_check_lte_ca_status
+  cmd_clear_mns_list
+  cmd_delete_efs_file
+  cmd_ehrpd_get_enabled
+  cmd_ehrpd_get_state
+  cmd_ehrpd_set_enabled
+  cmd_ehrpd_set_state
+  cmd_emergency_get_mode
+  cmd_enable_powersave
+  cmd_factory_reset
+  cmd_get_activation_date
+  cmd_get_active_tech
+  cmd_get_apn_from_database
+  cmd_get_autonomous_gap_enabled
+  cmd_get_bsr_timers
+  cmd_get_cached_time
+  cmd_get_cai_rev
+  cmd_get_call_status
+  cmd_get_call_throttle_status
+  cmd_get_carrier_unlock
+  cmd_get_custom_apn_from_database
+  cmd_get_ddtm_state
+  cmd_get_diag_info
+  cmd_get_enabled_tech
+  cmd_get_imsi
+  cmd_get_info
+  cmd_get_lbs_idle
+  cmd_get_mns_info
+  cmd_get_mns_list
+  cmd_get_network_time
+  cmd_get_oper_info
+  cmd_get_pco_event
+  cmd_get_refurb_info
+  cmd_get_service_info
+  cmd_get_signal
+  cmd_get_state
+  cmd_get_sup_tech
+
+First 30 instructions at 0x10000:
+
+Found 'unlock_carrier' at file offset 0x1be70
+
+Found 'unlock_carrier_lock' at file offset 0x211c0

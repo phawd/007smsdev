@@ -1,0 +1,17 @@
+# Aliases extracted from modules themselves.
+alias crypto-ansi_cprng ansi_cprng
+alias ansi_cprng ansi_cprng
+alias crypto-stdrng ansi_cprng
+alias stdrng ansi_cprng
+alias i2c:fusb302 fusb30x_whole
+alias of:N*T*Cfairchild,fusb302* fusb30x_whole
+alias spi:spidev spidev
+alias of:N*T*Cqcom,spi-msm-codec-slave* spidev
+alias of:N*T*Crohm,dh2228fv* spidev
+alias of:N*T*Ccy,cyttsp5_i2c_adapter* cyttsp5_i2c
+alias i2c:pt_i2c_adapter cyttsp5_i2c
+alias i2c:bq27520 bq27520_battery_nvtl
+alias i2c:smb1351-charger smb1351_charger_nvtl
+alias i2c:smb1351-charger smb1351_charger_nvtl
+alias ip6t_physdev xt_physdev
+alias ipt_physdev xt_physdev

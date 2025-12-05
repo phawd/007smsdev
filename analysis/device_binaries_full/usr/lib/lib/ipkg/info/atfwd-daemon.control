@@ -1,0 +1,13 @@
+Package: atfwd-daemon
+Version: git-r3
+Description: atfwd-daemon version git-r3
+ Daemon to handle AT commands
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: sdx20
+OE: atfwd-daemon
+Homepage: http://support.cdmatech.com
+Depends: qmi (>= git), qmi-framework (>= git), libc6 (>= 2.22)
+Source: file://mdm-ss-mgr/atfwd-daemon/

@@ -1,0 +1,13 @@
+Package: system-core-adbd
+Version: git-r19_perf
+Description: system-core version git-r19_perf
+ Android system/core components
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Apache-2.0
+Architecture: armv7a-vfp-neon
+OE: system-core
+Homepage: http://developer.android.com/
+Depends: libgcc1 (>= 4.9.3), libcutils0 (>= 1.0), libstdc++6 (>= 4.9.3), liblog0 (>= 1.0), libselinux1 (>= 2.4), libz1 (>= 1.2.8), libext4-utils0 (>= git), libc6 (>= 2.22), libglib-2.0-0 (>= 2.44.1), libsparse0 (>= 1.0), system-core (>= git), libmincrypt0 (>= git)
+Source: file://system/core/

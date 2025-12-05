@@ -1,0 +1,15 @@
+if true; then
+         update-alternatives --install /etc/init.d/firmware-links.sh firmware-links.sh firmware-links.sh 60
+         [ -n "$D" ] && OPT="-r $D" || OPT="-s"
+         # remove all rc.d-links potentially created from alternatives
+         update-rc.d $OPT -f firmware-links.sh remove
+         update-rc.d $OPT firmware-links.sh multiuser
+       fi
+if type update-rc.d >/dev/null 2>/dev/null; then
+	if [ -n "$D" ]; then
+		OPT="-r $D"
+	else
+		OPT="-s"
+	fi
+	update-rc.d $OPT firmware-links.sh start 37 S .
+fi

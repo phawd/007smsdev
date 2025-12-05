@@ -1,0 +1,63 @@
+<Config>
+	<Carrier>Verizon Wireless</Carrier>
+	<Sdm>
+		<ServerURL>https://4g2.vzwdm.com</ServerURL>
+		<ServerPort>443</ServerPort>
+		<TestServerURL>https://ivzwmdmv.iot.motive.com/</TestServerURL>
+		<TestServerPort>443</TestServerPort>
+		<ConfigVersion>B14.NVT.MIFI8800L.0</ConfigVersion>
+		<DevType>mifi</DevType>
+		<SyncLTEAndEhrpdProfiles>0</SyncLTEAndEhrpdProfiles>
+		<techModeAutomaticOnly>1</techModeAutomaticOnly>
+		<FactoryReset>
+			<Enable>1</Enable> <!-- If enabled then disable factory reset setting in modem2 config file -->
+			<LTEProfileList>1,2,3,4</LTEProfileList>
+			<EHRPDProfileList>0,100,101,102,103</EHRPDProfileList>
+			<BandConf>
+				<Enable>0</Enable>
+				<LteBandList>2,5</LteBandList>
+				<CaMaster>2</CaMaster>
+				<CaBandList>2-2,2-4,2-13,4-4,4-13,2-5,4-5,13-4-2,13-4-4,13-2-2,5-4-2,5-4-4,5-2-2</CaBandList>
+			</BandConf>
+			<ConnmoMisc>1</ConnmoMisc>
+			<AutonomousGap>0</AutonomousGap>
+			<saveAndRestoreForMcfg>1</saveAndRestoreForMcfg>			
+		</FactoryReset>
+		<Diag>
+			<Enable>1</Enable>
+			<ServerURL>https://otadm.vzw.com/omadm/push</ServerURL>
+			<ServerPort>443</ServerPort>
+			<TestServerURL>https://otadm-iot.vzw.com/omadm/push</TestServerURL>
+			<TestServerPort>443</TestServerPort>			
+		</Diag>
+		<ScreenAlert>
+			<Enable>1</Enable>
+			<AutoAccept>0</AutoAccept>
+		</ScreenAlert>	
+	</Sdm>	
+	<EnableFUMO>1</EnableFUMO>
+	<SUCheckCondition>
+		<DenyIfRoaming>0</DenyIfRoaming>
+		<DenyIfNoCoverage>0</DenyIfNoCoverage>
+	</SUCheckCondition>
+	<BatteryCheck>
+		<Enabled>1</Enabled>
+		<MinThreshold>10</MinThreshold>
+		<MonitorEnabled>1</MonitorEnabled>		
+	</BatteryCheck>
+	<AutoInstall>
+		<Enabled>1</Enabled>
+		<IntervalMin>2880</IntervalMin>
+		<InstallWindowOpen>02</InstallWindowOpen>
+		<InstallWindowEnd>04</InstallWindowEnd>
+	</AutoInstall>
+	<ActivityTimer>
+		<Value>60</Value>
+	</ActivityTimer>
+	<BootupWwanWaitInterval>30</BootupWwanWaitInterval>
+	<IsUpdatePostponeSupported>1</IsUpdatePostponeSupported>
+	<InstallAtPowerDown>1</InstallAtPowerDown>
+	<InstallAtPowerUpTriggerCount>1</InstallAtPowerUpTriggerCount>
+	<UseIntenetCallForDm>0</UseIntenetCallForDm>	
+</Config>
+
