@@ -1,0 +1,102 @@
+# Pre-commit hooks for ZeroSMS Testing Suite
+# Install: pip install pre-commit
+# Setup: pre-commit install
+# Run manually: pre-commit run --all-files
+
+repos:
+  # General file checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: '^legacy/'
+      - id: end-of-file-fixer
+        exclude: '^legacy/'
+      - id: check-yaml
+        exclude: '^legacy/'
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+        args: ['--fix=lf']
+        exclude: '^legacy/'
+
+  # Python formatting and linting
+  - repo: https://github.com/psf/black
+    rev: 24.1.1
+    hooks:
+      - id: black
+        language_version: python3.11
+        exclude: '^legacy/'
+        args: ['--line-length=100']
+
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.1.14
+    hooks:
+      - id: ruff
+        exclude: '^legacy/'
+        args: ['--fix', '--exit-non-zero-on-fix']
+
+  # Python type checking
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.8.0
+    hooks:
+      - id: mypy
+        exclude: '^legacy/'
+        additional_dependencies: ['types-all']
+        args: ['--ignore-missing-imports', '--allow-untyped-decorators']
+
+  # Security - detect secrets
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets
+        args: ['--baseline', '.secrets.baseline']
+        exclude: '^legacy/|\.lock$|\.gradle$'
+
+  # Kotlin/Android linting (optional - requires ktlint installed)
+  # Uncomment when ktlint is configured in project
+  # - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+  #   rev: v2.11.0
+  #   hooks:
+  #     - id: ktlint
+  #       exclude: '^legacy/'
+
+  # Markdown linting
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.38.0
+    hooks:
+      - id: markdownlint
+        args: ['--fix']
+        exclude: '^legacy/'
+
+  # YAML linting
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.33.0
+    hooks:
+      - id: yamllint
+        args: ['-d', '{extends: default, rules: {line-length: {max: 120}}}']
+        exclude: '^legacy/'
+
+# Configuration
+default_language_version:
+  python: python3.11
+
+# Exclude paths
+exclude: |
+  (?x)^(
+    legacy/.*|
+    \.venv/.*|
+    \.gradle/.*|
+    build/.*|
+    \.idea/.*|
+    __pycache__/.*|
+    .*\.lock$|
+    .*\.apk$|
+    .*\.aab$|
+    gradlew\.bat$
+  )$
+
+# Run hooks on commit
+fail_fast: false

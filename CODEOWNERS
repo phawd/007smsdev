@@ -1,0 +1,52 @@
+# Code Owners for ZeroSMS Testing Suite
+# This file defines who should review pull requests for specific areas of the codebase
+# Learn more: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Global fallback - all files not matched by rules below
+* @phawd
+
+# Core Android Application
+/app/src/main/java/com/zerosms/testing/core/ @phawd
+/app/src/main/java/com/zerosms/testing/ui/ @phawd
+
+# SMS/MMS/RCS Protocol Implementations
+/app/src/main/java/com/zerosms/testing/core/sms/ @phawd
+/app/src/main/java/com/zerosms/testing/core/mms/ @phawd
+/app/src/main/java/com/zerosms/testing/core/rcs/ @phawd
+/app/src/main/java/com/zerosms/testing/core/at/ @phawd
+
+# Python CLI Tools
+/tools/*.py @phawd
+
+# Build and Configuration
+*.gradle @phawd
+*.gradle.kts @phawd
+/gradle/ @phawd
+gradle.properties @phawd
+settings.gradle.kts @phawd
+build.gradle.kts @phawd
+
+# Documentation
+*.md @phawd
+/docs/ @phawd
+README.md @phawd
+CONTRIBUTING.md @phawd
+SECURITY.md @phawd
+GEMINI.md @phawd
+
+# GitHub Workflows and Actions
+/.github/workflows/ @phawd
+/.github/*.md @phawd
+
+# Security and CI/CD
+SECURITY.md @phawd
+/.github/workflows/python-ci.yml @phawd
+/.github/workflows/android-ci.yml @phawd
+/.github/pre-commit-config.yaml @phawd
+
+# RFC Compliance Documentation
+/docs/RFC_COMPLIANCE.md @phawd
+/docs/ROOT_ACCESS_GUIDE.md @phawd
+
+# Legacy Reference (read-only, minimal changes expected)
+/legacy/ @phawd
