@@ -93,7 +93,10 @@ def check_prerequisites() -> None:
     if platform.system().lower() == "windows":
         # Warn about missing pyserial for COM scan on Windows
         if list_ports is None:
-            print("[!] pyserial not installed; COM port scanning will be unavailable.", file=sys.stderr)
+            print(
+                "[!] pyserial not installed; COM port scanning will be unavailable.",
+                file=sys.stderr,
+            )
 
 
 def run_adb_command(args: List[str]) -> subprocess.CompletedProcess:
@@ -141,7 +144,7 @@ def send_at_command(device: str, command: str, timeout: int = 3) -> str:
 
 def send_text_payload(device: str, message: str, timeout: int = 10) -> str:
     baud = get_baud_for_device(device)
-    payload = (message.encode("utf-8") + b"\x1a")
+    payload = message.encode("utf-8") + b"\x1a"
     encoded = base64.b64encode(payload).decode("ascii")
     shell_cmd = (
         f"stty -F {device} {baud} cs8 -cstopb -parenb raw -echo; "
@@ -285,7 +288,9 @@ def build_arg_parser() -> argparse.ArgumentParser:
         help="Show the first AT response line for each device",
     )
 
-    usb_parser = subparsers.add_parser("usb", help="List USB devices (vendor/product IDs)")
+    usb_parser = subparsers.add_parser(
+        "usb", help="List USB devices (vendor/product IDs)"
+    )
     usb_parser.add_argument(
         "--json",
         action="store_true",
@@ -341,7 +346,10 @@ def probe_modems(deep: bool = False) -> List[ProbeResult]:
         if path in seen:
             continue
         seen.add(path)
-        exists = run_root(f"if [ -c {path} ]; then echo EXISTS; fi").stdout.strip() == "EXISTS"
+        exists = (
+            run_root(f"if [ -c {path} ]; then echo EXISTS; fi").stdout.strip()
+            == "EXISTS"
+        )
         if not exists:
             results.append(ProbeResult(path, False, False, False, "missing"))
             continue
@@ -499,7 +507,9 @@ def _extract_vid_pid(identifier: str) -> Tuple[str, str]:
     return vid, pid
 
 
-def run_usb_modeswitch(vendor: str, product: str, message: Optional[str], config: Optional[str]) -> None:
+def run_usb_modeswitch(
+    vendor: str, product: str, message: Optional[str], config: Optional[str]
+) -> None:
     if shutil.which("usb_modeswitch") is None:
         raise RuntimeError(
             "usb_modeswitch binary not found. Install usb-modeswitch "

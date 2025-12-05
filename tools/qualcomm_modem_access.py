@@ -1,4 +1,3 @@
-
 import sys
 import serial
 import time
@@ -6,25 +5,48 @@ import serial.tools.list_ports
 
 import subprocess
 
+
 def enable_diag_port(device_type):
-    print(f"\n[INFO] Attempting to enable diagnostic/AT ports for {device_type} device...")
+    print(
+        f"\n[INFO] Attempting to enable diagnostic/AT ports for {device_type} device..."
+    )
     if device_type == "qualcomm":
         print("- Qualcomm: You can enable diag/AT ports with:")
-        print("  adb shell su -c 'setprop persist.sys.usb.config diag,serial_cdev,rmnet,adb'")
+        print(
+            "  adb shell su -c 'setprop persist.sys.usb.config diag,serial_cdev,rmnet,adb'"
+        )
         print("  (You may need to reboot or replug USB)")
         try:
-            subprocess.run(["adb", "shell", "su", "-c", "setprop persist.sys.usb.config diag,serial_cdev,rmnet,adb"], check=False)
+            subprocess.run(
+                [
+                    "adb",
+                    "shell",
+                    "su",
+                    "-c",
+                    "setprop persist.sys.usb.config diag,serial_cdev,rmnet,adb",
+                ],
+                check=False,
+            )
         except Exception:
             pass
     elif device_type == "mtk":
-        print("- MediaTek: Use AT+EUSBAUDIO or AT+ESWUL to enable diagnostic/AT ports (varies by model)")
-        print("  Example: Send 'AT+EUSBAUDIO=2' or 'AT+ESWUL=1' via AT command interface.")
+        print(
+            "- MediaTek: Use AT+EUSBAUDIO or AT+ESWUL to enable diagnostic/AT ports (varies by model)"
+        )
+        print(
+            "  Example: Send 'AT+EUSBAUDIO=2' or 'AT+ESWUL=1' via AT command interface."
+        )
         print("  Some devices require engineering mode apps or special USB drivers.")
     elif device_type == "samsung":
-        print("- Samsung: Use *#0808# in dialer to set USB config, or use Samsung USB diagnostic tools.")
+        print(
+            "- Samsung: Use *#0808# in dialer to set USB config, or use Samsung USB diagnostic tools."
+        )
     else:
-        print("- Generic: Refer to device documentation or try enabling serial/diag via AT commands or system properties.")
+        print(
+            "- Generic: Refer to device documentation or try enabling serial/diag via AT commands or system properties."
+        )
     print()
+
 
 def list_serial_ports():
     print("Available serial ports:")
@@ -43,7 +65,9 @@ def list_serial_ports():
     print()
     return list(ports)
 
+
 # Example usage: python qualcomm_modem_access.py /dev/smd0 "AT+CSQ"
+
 
 def send_at_command(device_path, command, baudrate=115200, timeout=2, wait=0.5):
     try:
@@ -54,6 +78,7 @@ def send_at_command(device_path, command, baudrate=115200, timeout=2, wait=0.5):
             return response
     except Exception as e:
         return f"Error: {e}"
+
 
 def initialize_modem(device_path, modem_type, baudrate=115200):
     # Basic initialization for different modem types
@@ -69,6 +94,7 @@ def initialize_modem(device_path, modem_type, baudrate=115200):
         print("[INFO] Initializing generic modem...")
         print(send_at_command(device_path, "ATE0", baudrate))
 
+
 def send_sms(device_path, modem_type, phone_number, message, baudrate=115200):
     print(f"[INFO] Sending SMS to {phone_number} via {modem_type} modem...")
     # Set text mode
@@ -78,7 +104,7 @@ def send_sms(device_path, modem_type, phone_number, message, baudrate=115200):
     # Send SMS
     try:
         with serial.Serial(device_path, baudrate, timeout=5) as ser:
-            ser.write(b'AT+CMGF=1\r')
+            ser.write(b"AT+CMGF=1\r")
             time.sleep(0.5)
             ser.write(f'AT+CMGS="{phone_number}"\r'.encode())
             time.sleep(0.5)
@@ -89,14 +115,23 @@ def send_sms(device_path, modem_type, phone_number, message, baudrate=115200):
     except Exception as e:
         print(f"Error: {e}")
 
+
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python qualcomm_modem_access.py <device_path> <AT_command|'sms'> [args...]")
+        print(
+            "Usage: python qualcomm_modem_access.py <device_path> <AT_command|'sms'> [args...]"
+        )
         print("\nExamples:")
         print("  python qualcomm_modem_access.py /dev/smd0 AT+CSQ")
-        print("  python qualcomm_modem_access.py /dev/ttyUSB0 sms <modem_type> <phone_number> <message>")
-        print("  python qualcomm_modem_access.py scan   # List all serial ports and USB IDs")
-        print("  python qualcomm_modem_access.py enable <device_type>   # Enable diag/AT ports (qualcomm, mtk, samsung, generic)")
+        print(
+            "  python qualcomm_modem_access.py /dev/ttyUSB0 sms <modem_type> <phone_number> <message>"
+        )
+        print(
+            "  python qualcomm_modem_access.py scan   # List all serial ports and USB IDs"
+        )
+        print(
+            "  python qualcomm_modem_access.py enable <device_type>   # Enable diag/AT ports (qualcomm, mtk, samsung, generic)"
+        )
         sys.exit(1)
 
     if sys.argv[1].lower() == "scan":
@@ -116,11 +151,15 @@ def main():
     action = sys.argv[2] if len(sys.argv) > 2 else None
     baudrate = 115200
     if not action:
-        print("No command specified. Use 'scan' to list ports or provide AT command/SMS arguments.")
+        print(
+            "No command specified. Use 'scan' to list ports or provide AT command/SMS arguments."
+        )
         sys.exit(1)
     if action.lower() == "sms":
         if len(sys.argv) < 6:
-            print("Usage: python qualcomm_modem_access.py <device_path> sms <modem_type> <phone_number> <message>")
+            print(
+                "Usage: python qualcomm_modem_access.py <device_path> sms <modem_type> <phone_number> <message>"
+            )
             sys.exit(1)
         modem_type = sys.argv[3].lower()  # qualcomm, mtk, generic
         phone_number = sys.argv[4]
@@ -137,6 +176,7 @@ def main():
         print(f"Sending '{command}' to {device_path} at {baudrate} baud...")
         result = send_at_command(device_path, command, baudrate)
         print("Response:\n" + result)
+
 
 if __name__ == "__main__":
     main()
