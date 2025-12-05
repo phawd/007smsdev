@@ -1,0 +1,147 @@
+#adv_reserved_ip table.devicesTable .checkbox
+{
+	margin: 0;
+}
+
+#adv_reserved_ip table.devicesTable .macAddressColumn
+{
+	width: 23%;
+	margin: 0;
+}
+
+#adv_reserved_ip table.devicesTable .deviceTypeColumn
+{
+	width: 12%;
+	margin: 0;
+}
+#adv_reserved_ip table.devicesTable .deviceName
+{
+	width: 19%;
+	margin: 0;
+}
+
+#adv_reserved_ip table.devicesTable .ipaddress
+{
+	width: 22%;
+	margin: 0;
+}
+
+#adv_reserved_ip table.devicesTable .ipaddress.reserved
+{
+	width: 25%;
+	margin: 0;
+}
+
+#adv_reserved_ip table.devicesTable .macAddressColumn input 
+{
+	width: 100%;
+	margin: 0;
+}
+
+#adv_reserved_ip table.devicesTable select,
+#adv_reserved_ip table.devicesTable .deviceTypeColumn input, 
+#adv_reserved_ip table.devicesTable .ipaddress input, 
+#adv_reserved_ip table.devicesTable .deviceName input
+{
+	width: 80%;
+	margin: 0;
+}
+
+@media screen and (max-width: 520px)
+{
+	/* Force table to not be like tables anymore */
+	#adv_reserved_ip table.devicesTable,
+	#adv_reserved_ip thead,
+	#adv_reserved_ip tfoot,
+	#adv_reserved_ip tbody,
+	#adv_reserved_ip tr,
+	#adv_reserved_ip th,
+	#adv_reserved_ip td
+	{
+		display: block;
+	}
+
+	#adv_reserved_ip thead,
+	#adv_reserved_ip tfoot,
+	#adv_reserved_ip colgroup
+	{
+		display: none !important;
+	}
+
+	#adv_reserved_ip table.devicesTable col,
+	#adv_reserved_ip table.devicesTable td
+	{
+		width: auto !important;
+	}
+
+	/* Contain floats for rows */
+	#adv_reserved_ip table.devicesTable tr.reserveIPInfoRow td:before,
+	#adv_reserved_ip table.devicesTable tr.reserveIPInfoRow td:after
+	{
+		content: "";
+		display: table;
+	}
+
+	#adv_reserved_ip table.devicesTable tr.reserveIPInfoRow td:after
+	{
+		clear: both;
+	}
+
+	#adv_reserved_ip table.devicesTable tr.reserveIPInfoRow td
+	{
+		zoom: 1;
+	}
+
+	#adv_reserved_ip table.devicesTable tr.reserveIPInfoRow
+	{
+		height: auto;
+		min-height: 0;
+		padding: 15px 0;
+	}
+
+	html.rtl #adv_reserved_ip th,
+	html.rtl #adv_reserved_ip td
+	{
+		float: right;
+	}
+
+	#adv_reserved_ip .devicesTable td label,
+	#adv_reserved_ip .devicesTable .label
+	{
+		display: block !important;
+		float: left;
+		margin-right: 10px;
+		font-weight: bold;
+		text-align: left;
+	}
+
+	html.rtl #adv_reserved_ip .devicesTable td label,
+	html.rtl #adv_reserved_ip .devicesTable td .label
+	{
+		float: right;
+		margin-right: 0;
+		margin-left: 10px;
+		text-align: right;
+	}
+
+	#adv_reserved_ip .devicesTable td input,
+	#adv_reserved_ip .devicesTable td select,
+	#adv_reserved_ip .devicesTable td .selector,
+	#adv_reserved_ip .devicesTable td .checker
+	{
+		float: right;
+	}
+
+	html.rtl #adv_reserved_ip .devicesTable td input,
+	html.rtl #adv_reserved_ip .devicesTable td select,
+	html.rtl #adv_reserved_ip .devicesTable td .selector,
+	html.rtl #adv_reserved_ip .devicesTable td .checker
+	{
+		float: left;
+	}
+
+	#adv_reserved_ip tr.reserveIPInfoRow td input
+	{
+		width: 190px;
+	}
+}

@@ -1,0 +1,332 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+	</div>
+<tmpl_else>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	//messages -- entities decoded
+	var retrievalStartText = $("<i/>").html('<tmpl_var _("webui", "data_usage_retrieval_start_text")>').text();
+	var retrievalErrorText = $("<i/>").html('<tmpl_var _("webui", "data_usage_retrieval_error_text")>').text();
+
+	//constants
+	var USAGE_INFORMATION_STATE_RETRIEVING = "retrieving";
+	var USAGE_INFORMATION_STATE_AVAILABLE	=	"available";
+	var USAGE_INFORMATION_STATE_UNAVAILABLE	=	"unavailable";
+	var VZW_ACCOUNT_TYPE_LINE	=	"LINE";
+	var VZW_ACCOUNT_TYPE_SHARED	= "SHARED";
+	var VZW_ACCOUNT_TYPE_UNLIMITED = "UNLIMITED";
+
+	//convenience variables
+	var date = new Date();
+	var timeoutMaxWait;
+	var timeoutQuery;
+	var lastRequestTime = 0;
+	var delayTime = 3000; // 3 seconds
+	var retrievalDelay = 2000; // 2 seconds
+	var maxRetrievalSec = 15000; // 15 seconds
+	var stopPolling = false;
+	var usageList = [];
+	var usageColors= [ "#FFBC3D", "#ED7000", "#4bb2c5", "#00AC3E", "#0088CE","#ED7000"] //Yellow, Orange,light blue, Green, 
+	var macUsage = [];
+	var macLabel = [];
+	var pieChartHeaderText = "";
+
+	$(function()
+	{
+		//as soon as we load, there might be possibility of:
+		//1. SIM not present ; or
+		//2. check if information is ok to be queried at all.
+
+		//app-logic related variables
+		var statusBarSimStatus = '<tmpl_var isSimReady>';
+		
+		var simOk = "false";
+		if(statusBarSimStatus) {
+			simOk = "true";
+		}
+
+		if(simOk == "false") {
+			$("#retrieval_status").removeClass("loading").text(retrievalErrorText);
+			$("#data_plan_circle_not_available").html('<tmpl_var _("webui", "webui_inline_help_icon")>');
+			$("#data_plan_circle_not_available").show();
+
+		} else {
+			//start loop to wait for data usage info to become available
+			triggerUsageRetrieval();
+		}
+
+		<tmpl_if !isLocked>
+			$("#refresh, #refresh_unlimited").click(function() {
+					window.location.reload();
+			});
+		</tmpl_if>
+		$("#getdatausage").click(function() {
+				triggerUsageRetrieval();
+		});
+		$("#duLearnMore").on("click", function() 
+		{
+			var row = '<div id="usage_graph">';
+			row +="<div id='usage_header'>" + pieChartHeaderText + "</div>";
+			var usageCount = 0;
+			for (var index = 0; index < usageList.length; index++) {
+		        usageCount = index+1;
+				var barId = 'myBar' + usageCount;
+		        row += '<div id="'+ barId +'"></div>';
+		    }
+		    row += '</div>';
+			$("body").append(row);
+			for (var index = 0; index < usageList.length; index++) {
+		        usageCount = index+1;
+				var barId = 'myBar' + usageCount;
+		        row += '<div id="'+ barId +'"></div>';
+		        $('#'+ barId).LineProgressbar({
+					percentage: usageList[index][1],
+					percentageName : usageList[index][0],
+					fillBackgroundColor: usageColors[index],
+					height: '20px',
+					width: '80%'
+		    	});
+				
+		    }
+			
+			modalPopup.createWindow('<tmpl_var _("webui", "webui_modal_title_confirm_text")>',
+				$("#usage_graph").show(),
+				900, 700,
+				[], null,
+				function(){
+					$("#usage_graph").hide()
+				}
+			);
+		});
+	});
+
+	function getPieChart() {
+	
+		var plot8 = $.jqplot('pie_chart', [macUsage], {
+	    	title :{
+	    		text: pieChartHeaderText,
+	    		textColor: '#000000',
+	    		fontSize: '15px',
+	    		textAlign: 'left'
+	    	},
+	    	seriesColors: usageColors,
+	        grid: {
+	            drawBorder: false, 
+	            drawGridlines: false,
+	            background: '#E0E0E0',
+	            shadow:false
+	        },
+	        seriesDefaults:{
+	            renderer:$.jqplot.PieRenderer,
+	            rendererOptions: {
+	                showDataLabels: true,
+	                dataLabelPositionFactor : 1.6,
+	                startAngle: 0,
+	                highlightMouseOver: false,
+			        highlightMouseDown: false,
+			        highlightColor: null,
+			        dataLabels: macLabel
+	            }
+	        },
+	        legend: {
+	            show: false
+	        }
+	    });   
+	}
+
+	function triggerUsageRetrieval()
+	{
+		$("#retrieval_status").addClass('loading').text(retrievalStartText);
+		$.ajax({
+			url : "<tmpl_udf GET_URI('data_usage_retrieve')>",
+			type : "GET",
+			dataType : "json",
+			success : function(data) {
+				maxRetrievalSec = data["maxRetrievalDuration"]*1000;
+				// Let's give some time before first checking usage
+				setTimeout(kickOff, retrievalDelay);
+			},
+			error : function(xhr, textStatus, errorThrown) {
+				//something went wrong with the trigger, simply revert to proper message
+				$("#retrieval_status").removeClass("loading").text(retrievalErrorText);
+				$("#data_plan_circle_not_available").html('<tmpl_var _("webui", "webui_inline_help_icon")>');
+				$("#data_plan_circle_not_available").show();
+			}
+		});
+	}
+
+	function kickOff()
+	{
+		timeoutMaxWait = setTimeout(function(){
+			$("#retrieval_status").removeClass("loading").text(retrievalErrorText);
+			$("#data_plan_circle_not_available").html('<tmpl_var _("webui", "webui_inline_help_icon")>');
+			$("#data_plan_circle_not_available").show();
+			clearTimeout(timeoutMaxWait);
+			clearTimeout(timeoutQuery);
+			stopPolling = true;
+		}, maxRetrievalSec);
+		backYet();
+	}
+
+	function backYet()
+	{
+		$.ajax({
+			url : "<tmpl_udf GET_URI('data_usage_info')>",
+			type : "GET",
+			dataType : "json",
+			timeout : maxRetrievalSec,
+			success: function(data, textStatus, xhr) {
+				// If no network connected, success event still occurs.
+				// We need to implicitly see an xhr.status greater than 0 to know we've actually made contact.
+				if ( (xhr.readyState == 4 ) && (xhr.status > 0) ) {
+					if( (data["usageInformationState"] !== 0) && (data["usageInformationState"] == USAGE_INFORMATION_STATE_AVAILABLE) ) {
+						$("#retrieval_status").hide();
+						clearTimeout(timeoutMaxWait);
+						clearTimeout(timeoutQuery);
+						stopPolling = true;
+						
+						if(data["allowance"].toUpperCase() === VZW_ACCOUNT_TYPE_UNLIMITED) {
+							if(data["planType"].toUpperCase() === VZW_ACCOUNT_TYPE_SHARED) {
+								$("#usageTitle").html('<tmpl_var _("webui", "data_usage_my_plan_text")>' + ' ' +'<tmpl_var _("webui", "data_usage_unlimited_shared_plan_text")>');
+								$("#planTitle").html('<strong><span class="usage_data">' + data["lineUsage"] + ' ' + data["unit"] + '</span></strong> <tmpl_var _("webui", "data_usage_used_by_text")>');
+								$("#totalUsage").html('<strong><span class="usage_data">' + data["totalShrUsage"] + ' ' + data["unit"] + '</span></strong> <tmpl_var _("webui", "data_usage_total_usage_text")>');
+								$("#usedPercentage").html('<tmpl_var _("webui", "data_usage_unlimited_shared_plan_circle_text")>' );
+								$("#usedPercentage").addClass("duUnlimitedShared");
+								$("#remainingUsageColor").hide();
+								
+							} else {
+								$("#usageTitle").html('<tmpl_var _("webui", "data_usage_my_plan_text")>' + ' ' +'<tmpl_var _("webui", "data_usage_unlimited_data_plan_text")>');
+								$("#planTitle").html('<strong><span class="usage_data">' + data["totalShrUsage"] + ' ' + data["unit"] + ' ' +'</span></strong> <tmpl_var _("webui", "data_usage_used_text")>');
+								$("#usedPercentage").html('<tmpl_var _("webui", "data_usage_unlimited_plan_text")>' );
+								$("#usedPercentage").css("cssText","margin-top:35px !important; min-height:50px;");
+								$("#lineUsageColor").hide();
+								$("#totalUsageColor").hide();
+								$("#remainingUsageColor").hide();
+																
+							}
+							$("#remainingData").hide();
+							$("#remainingText").hide();
+							
+						} else {
+							if(data["planType"].toUpperCase() === VZW_ACCOUNT_TYPE_SHARED) {
+								$("#usageTitle").html('<tmpl_var _("webui", "data_usage_my_plan_text")>' + ' ' +'<span class="usage_data">' + data["allowance"] + ' ' + data["unit"] + '</span> <tmpl_var _("webui", "data_usage_shared_allowance_description_text")>');
+								$("#planTitle").html('<strong><span class="usage_data">' + data["lineUsage"] + ' ' + data["unit"] + '</span></strong> <tmpl_var _("webui", "data_usage_used_by_text")>');
+								$("#totalUsage").html('<strong><span class="usage_data">' + data["totalShrUsage"] + ' ' + data["unit"] + '</span></strong> <tmpl_var _("webui", "data_usage_total_usage_text")>');
+								$("#remainingUsageColor").hide();
+								
+							} else {
+								$("#usageTitle").html('<tmpl_var _("webui", "data_usage_my_plan_text")>' + ' ' +'<span class="usage_data">'+ data["allowance"] + ' ' + data["unit"] + '</span> <tmpl_var _("webui", "data_usage_allowance_description_text")>');
+								$("#planTitle").html('<strong><span class="usage_data">' + data["totalShrUsage"] + ' ' + data["unit"] + '</span></strong> <br><tmpl_var _("webui", "data_usage_used_text")>');
+								$("#lineUsageColor").hide();
+								$("#totalUsageColor").hide();
+								$("#remainingUsageColor").hide();								
+							}
+							
+							$("#usedPercentage").html('<span class="usage_data">' + data["barPercentageTotalShrUsage"] + '%'+'</span>' );
+							$("#remainingData").html('<span class="usage_data">' + data["remainingUsage"] + ' ' + data["unit"] + ' ' + '<tmpl_var _("webui", "data_usage_of_data_remaining_text")>' +'</span>');
+							$("#remainingText").html('<tmpl_var _("webui", "data_usage_remaining_text")>');
+							$("#dataUsageTitle").html('<tmpl_var _("webui", "data_usage_header_text")>' + ' ' +'<span class="usage_data">' + data["remainingUsage"] + ' ' + data["unit"] + '</span> <tmpl_var _("webui", "data_usage_remaining_text")>');
+							$("#remainingUsage").html('<strong><span class="usage_data">' + data["remainingUsage"] + ' ' + data["unit"] + '</span></strong> <tmpl_var _("webui", "data_usage_data_remaining_text")>');	
+						}
+						$("#totalUsagePercentage").attr('style', 'width: ' + data["barPercentageTotalShrUsage"] + '%');
+						$("#lineUsagePercentage").attr('style', 'width: ' + data["barPercentageLineUsage"] + '%');
+						$("#data_plan_circle_inner").html('<span class="usage_data">' +data["daysLeft"] +'</span>');
+						$("#data_plan_circle_outer").html('<tmpl_var _("webui", "data_usage_days_to_go_text")>');
+						$("#deviceUsage").html('<tmpl_var _("webui", "data_usage_usage_estimated_text")>' + ' ' + '<strong><tmpl_var _("webui", "data_usage_end_date_description_text")> <span class="usage_data">' + data["cycleEndDt"] + '</span></strong>');
+						$("#data_plan_wrapper").show();
+						<tmpl_if showPieChart>
+							pieChartHeaderText = "<tmpl_var _('webui', 'data_usage_connected_device_usage_text')>" + data["cycleEndDt"];
+							if(data["totalShrUsage"] == 0 || data["usageListEmpty"] == true) {
+								usageColors= ["#ffffff"];
+								macUsage = [100];
+								macLabel =[""];
+							} else {
+								var deviceList = data["connectedDevicesUsageList"];
+							    $.each(deviceList, function(index, macList) {
+							    	 usageList.push([macList.hostName, macList.macPercentage]); 
+								});
+								for (var index = 0; index < usageList.length; index++) {
+						    		macUsage.push(usageList[index][1])
+						            macLabel.push(usageList[index][0]);
+							    }
+							}
+							$("#pie_chart_container").show();
+						    $("#duLearnMore").html('<tmpl_var _("webui", "data_usage_learn_more_text")>');
+							getPieChart();
+						</tmpl_if>
+					}
+				}
+			},
+			complete : function(xhr, textStatus) {
+				if(stopPolling == false) {
+					// Long Polling, until timeout.
+					// timeout doesn't seem to kick in if no network response is returned.
+					// All this delay nonsense is for Window's benefit.
+					var diff = date.getTime() - lastRequestTime;
+					var delay = (diff > delayTime) ? 0 : delayTime - diff;
+					lastRequestTime = date.getTime();
+					setTimeout(backYet, delay);
+				}
+			}
+		});
+	}
+	/* ]]> */
+</script>
+<tmpl_if isLocked>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+	</div>
+</tmpl_if>
+
+<form method="POST" id="data_usage-form" action="<tmpl_udf GET_URI('data_usage')>">
+	<h3 class="subSectionHead"> <tmpl_var _("webui", "data_usage_menu_text")></h3>
+	<fieldset class="first">
+			<div id="data_plan_circle_not_available" class="tooltip" style="display:none;"></div>
+			<div id="retrieval_status" class="usage_status"></div>
+
+		<div id="data_plan_wrapper" class="progress_bar_wrapper clearfix" style="display:none;">
+			<div id="data_plan_circle">
+				<h2 id="usedPercentage"></h2>
+				<div id="remainingData"></div>
+				<div id="remainingText"></div>
+		        <div id="data_plan_circle_inner"></div>
+		        <div id="data_plan_circle_outer"></div>
+		    </div>
+			<div id="data_plan_usage_bar_col" class="clearfix">
+				<div id="status_title" class="data_usage_status clearfix">
+					<h2 class="title" id="usageTitle"></h2>
+				</div>
+				<div id="dataUsageTitle"></div>
+				<div id="data_plan_usage_bar_header" class="clearfix">
+					<div id="lineUsageDetails">
+						<div class="lineUsageColor" id="lineUsageColor"></div>
+						<div class="totalusage" id="planTitle"></div>
+					</div>
+					<div id="totalUsageDetails">
+						<div class="totalUsageColor" id="totalUsageColor"></div>
+						<div class="totalusage" id="totalUsage"></div>
+					</div>
+					<div id="remainingUsageDetails">
+						<div class="remainingUsageColor" id="remainingUsageColor"></div>
+						<div class="remainingusage" id="remainingUsage"></div>
+					</div>
+				</div>
+
+				<div id="data_plan_usage_bar" class="data_usage progress_bar ui-progressbar">
+					<div id="totalUsagePercentage" class="ui-widget-header" style="width:<tmpl_var barPercentageTotalShrUsage>%;"></div>
+					<div id="lineUsagePercentage" class="ui-widget-header-line" style="width:<tmpl_var barPercentageLineUsage>%;"></div>
+				</div>
+
+				<div id="data_plan_usage_bar_footer" class="clearfix">
+					<div class="lineUsage" id="deviceUsage" x-ms-format-detection="none"></div>
+				</div>
+			</div>
+		</div>
+		<div id="pie_chart_container" style="display:none;">
+			<div id="pie_chart"></div>
+			<div id="duLearnMore"></div>
+		<div>
+	</fieldset>
+</form>
+</tmpl_if>

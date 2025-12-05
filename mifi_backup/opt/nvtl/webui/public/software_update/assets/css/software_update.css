@@ -1,0 +1,62 @@
+#ProgressBarZeroPercent
+{
+    float: left;
+}
+
+#ProgressBarHundredPercent
+{
+    float: right;
+}
+
+#software_update table#softwareUpdates col.name
+{
+	width: 50%;
+}
+
+#software_update table#softwareUpdates col.date,
+#software_update table#softwareUpdates col.package
+{
+	width: 20%;
+}
+
+#software_update table#softwareUpdates col.result
+{
+	width: 10%;
+}
+
+#software_update table#softwareUpdates th.name,
+#software_update table#softwareUpdates td.name,
+#software_update table#softwareUpdates th.package,
+#software_update table#softwareUpdates td.package
+{
+	word-break: break-all;
+}
+
+#UpdateStatusIndicator table td
+{
+	padding: 10px !important;
+	border: 0px !important;
+}
+
+#UpdateStatusIndicator table tbody tr
+{
+	border:0px !important;
+}
+
+#UpdateStatusIndicator table tbody tr:hover
+{
+	background-color: #fff !important;
+}
+
+#HistoryTableToggle
+{
+	font-size: 14px !important;
+}
+
+@media screen and (max-width: 940px)      
+{                                   
+#installButtonsLabel                
+{                                  
+        display: none !important;  
+}                                  
+}

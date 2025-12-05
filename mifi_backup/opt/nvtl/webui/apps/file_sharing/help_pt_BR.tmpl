@@ -1,0 +1,51 @@
+<!-- mass_storage -->
+<div id="mass_storage">
+	<h1><tmpl_var _("webui","file_sharing_menu_text")></h1>
+	<h2>Visão geral</h2>
+	<p> Um dispositivo USB de armazenamento em massa (pen drive) pode ser conectado à porta USB C do <tmpl_var _("webui", "webui_product_name_with_suffix")> e compartilhado com os dispositivos conectados pela rede Wi-Fi <tmpl_var _("webui", "webui_product_name_with_suffix")>. </p>
+	<p> Para se conectar à(s) pasta(s) compartilhada(s) a partir do seu computador, procure ou vá até a rede, e pesquise "<tmpl_var HostName>". Todas as pastas compartilhadas estão listadas neste dispositivo de rede. </p>
+	
+	<h2>Controle liga/desliga do Compartilhamento de MiFi</h2>
+	<p> Use este controle para ativar ou desativar este recurso conforme necessidade. </p>
+
+	<div class="blockgroup">
+		<ul>
+			<li> Se ativado, quando um dispositivo USB de armazenamento em massa for conectado ao <tmpl_var _("webui", "webui_product_name")>, será exibido um aviso na tela de toque do <tmpl_var _("webui", "webui_product_name_with_suffix")>, solicitando que você confirme que o conteúdo do dispositivo USB de armazenamento em massa pode ser compartilhado. O compartilhamento não iniciará até que essa confirmação seja realizada. </li>
+
+			<li> Se desativado, todo e qualquer dispositivo USB de armazenamento em massa conectado ao <tmpl_var _("webui", "webui_product_name")> será ignorado. </li>
+		</ul>
+	</div>
+
+	<h2><tmpl_udf GET_PO_TEXT("file_sharing_display_toggle_label", gProductName)></h2>
+	<p> Essa configuração pode ser utilizada para ocultar o recurso de Compartilhamento de MiFi de usuários <tmpl_var _("webui", "webui_product_name")> que tenham acesso à tela de toque do <tmpl_var _("webui", "webui_product_name_with_suffix")>, mas não a esta interface da web. </p>
+
+	<div class="blockgroup">
+		<ul>
+			<li> Se ativado, o aplicativo "Compartilhamento de MiFi" aparece listado no menu principal da tela de toque do <tmpl_var _("webui", "webui_product_name_with_suffix")>, e também é explicado no aplicativo de ajuda na IU de exibição. </li>
+
+			<li> Se desativado, o aplicativo Compartilhamento de MiFi e o conteúdo de ajuda relacionado a esse aplicativo não aparecem no menu da tela de toque do <tmpl_var _("webui", "webui_product_name_with_suffix")>. </li>
+		</ul>
+	</div>
+
+	<h2><tmpl_var _("webui","file_sharing_setting_sub_header_text")></h2>
+	<p> Essas configurações podem ser alteradas a qualquer momento e serão aplicadas da próxima vez que o recurso Compartilhamento de MiFi for usado. </p>
+
+	<h3>Conteúdo a compartilhar</h3>
+	<p> Essa configuração define quais pastas e arquivos do dispositivo USB de armazenamento em massa são compartilhados como pastas de rede. </p>
+	<p> A opção padrão é "Todas as pastas e arquivos", o que significa que todo o conteúdo USB está disponível para os dispositivos conectados. </p>
+	<p> Caso deseje compartilhar apenas uma parte do conteúdo do USB, você pode escolher a outra opção "Pastas de nível superior especificadas" e, então, especificar as pastas a serem compartilhadas com a configuração a seguir. </p>
+
+	<h3>Pastas de nível superior especificadas</h3>
+	<p> Essa configuração ficará esmaecida se a configuração "Conteúdo a compartilhar" estiver definida como "<tmpl_var _("webui","file_sharing_share_type_all_folders_text")>". Caso contrário, você pode editar esse campo para especificar quais pastas devem ser compartilhadas. Os nomes predefinidos das pastas são "Público" e "Compartilhado". </p>
+	<p> Observe que as pastas especificadas aqui devem estar no nível superior da estrutura da pasta; não é possível especificar um caminho para a pasta, como "Projetos/2015/Resumo". </p>
+
+	<h3>Tipo de acesso</h3>
+	<p> Selecione a opção desejada para <tmpl_var _("webui","file_sharing_share_access_type_read_only_text")> ou <tmpl_var _("webui","file_sharing_share_access_type_read_write_text")> acessar as pastas compartilhadas. </p>
+	<p> Se o dispositivo USB de armazenamento em massa estiver usando os sistemas de arquivo NTFS ou HFS+, o acesso será <tmpl_var _("webui","file_sharing_share_access_type_read_only_text")> independentemente dessa configuração. </p>
+
+	<h3>Acesso à rede</h3>
+	<p> Use essas caixas de seleção para definir se os usuários das redes Wi-Fi primárias ou de convidados terão acesso às pastas compartilhadas. </p>
+
+</div>
+
+<!-- id="mass_storage" -->

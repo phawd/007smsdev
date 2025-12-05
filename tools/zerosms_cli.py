@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Helper CLI for enabling Qualcomm diagnostic ports and sending SMS via AT commands
-using adb + root access. This mirrors the ZeroSMS in-app functionality for users who
-prefer a desktop workflow.
+Helper CLI for enabling Qualcomm diagnostic ports and sending SMS via AT
+commands using adb + root access. This mirrors the ZeroSMS in-app
+functionality for users who prefer a desktop workflow.
 """
 
 import argparse
 import base64
 import json
-import os
+
 import platform
 import shutil
 import shlex
@@ -158,11 +158,15 @@ def send_text_payload(device: str, message: str, timeout: int = 10) -> str:
 def enable_diag(profile_key: str) -> bool:
     if profile_key not in DIAG_PROFILES:
         valid = ", ".join(DIAG_PROFILES.keys())
-        raise ValueError(f"Unknown profile '{profile_key}'. Valid profiles: {valid}")
+        raise ValueError(
+            f"Unknown profile '{profile_key}'. Valid profiles: {valid}"
+        )
 
     profile = DIAG_PROFILES[profile_key]
     variants = profile["variants"]
-    print(f"[+] Enabling diag profile '{profile_key}' ({profile['label']})...")
+    print(
+        f"[+] Enabling diag profile '{profile_key}' ({profile['label']})..."
+    )
     for variant in variants:
         for prop in DIAG_PROPERTIES:
             print(f"    setprop {prop} {variant}")
@@ -172,7 +176,9 @@ def enable_diag(profile_key: str) -> bool:
         if variant.split(",")[0] in current:
             print(f"[+] Active USB config: {current}")
             return True
-        print(f"[!] sys.usb.config still {current}, trying next variant...")
+        print(
+            f"[!] sys.usb.config still {current}, trying next variant..."
+        )
     return False
 
 
@@ -186,7 +192,8 @@ def enable_diag_ai() -> None:
         except Exception as exc:
             print(f"[!] Profile {key} failed: {exc}")
     raise RuntimeError(
-        "AI diag probing failed for all presets. Try manual --profile selection."
+        "AI diag probing failed for all presets. Try manual --profile "
+        "selection."
     )
 
 
@@ -217,7 +224,8 @@ def send_sms_via_at(device: str, destination: str, message: str) -> None:
 
 def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="ZeroSMS desktop helper for enabling Qualcomm diag and sending SMS via AT commands.",
+        description="ZeroSMS desktop helper for enabling Qualcomm diag and "
+        "sending SMS via AT commands.",
     )
     parser.add_argument(
         "--adb-non-root",
@@ -244,24 +252,25 @@ def build_arg_parser() -> argparse.ArgumentParser:
     sms_parser = subparsers.add_parser(
         "sms", help="Send SMS via AT commands over adb root"
     )
-    sms_parser.add_argument(
-        "destination", help="E.164 destination number, e.g. +15551234567"
-    )
+    sms_parser.add_argument("destination", help="E.164 destination number, e.g. +15551234567")
     sms_parser.add_argument("message", help="Message body to send (text mode)")
     sms_parser.add_argument(
         "--device",
         default=None,
-        help=f"Modem device file (default: first available from {', '.join(DEFAULT_TTY_PATHS)})",
+        help=f"Modem device file (default: first available from "
+        f"{', '.join(DEFAULT_TTY_PATHS)})",
     )
     sms_parser.add_argument(
         "--auto",
         action="store_true",
-        help="AI probing: scan all modem nodes for a responsive AT port before sending",
+        help="AI probing: scan all modem nodes for a responsive AT port "
+        "before sending",
     )
     sms_parser.add_argument(
         "--deep",
         action="store_true",
-        help="Include deep-probing paths (MediaTek/Samsung) when auto-scanning",
+        help="Include deep-probing paths (MediaTek/Samsung) when "
+        "auto-scanning",
     )
 
     probe_parser = subparsers.add_parser(
@@ -270,7 +279,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
     probe_parser.add_argument(
         "--deep",
         action="store_true",
-        help="Include extended chipset paths (MediaTek, Samsung, diag) during probe",
+        help="Include extended chipset paths (MediaTek, Samsung, diag) "
+        "during probe",
     )
     probe_parser.add_argument(
         "--include-response",
@@ -297,7 +307,8 @@ def build_arg_parser() -> argparse.ArgumentParser:
         "--product", "-p", required=True, help="Product ID (hex, e.g. 0x90b4)"
     )
     usb_switch_parser.add_argument(
-        "--message", "-M", help="Message content (hex string) for usb_modeswitch"
+        "--message", "-M", help="Message content (hex string) for "
+        "usb_modeswitch"
     )
     usb_switch_parser.add_argument(
         "--config", "-c", help="Path to usb_modeswitch config file"
@@ -322,7 +333,8 @@ def resolve_device_path(device_arg: Optional[str], deep: bool = False) -> str:
         if result.exists and result.accessible and result.responded:
             return result.path
     raise RuntimeError(
-        "No modem devices found. Pass --device explicitly once diag mode exposes /dev/smd*."
+        "No modem devices found. Pass --device explicitly once diag "
+        "mode exposes /dev/smd*."
     )
 
 
@@ -342,10 +354,8 @@ def probe_modems(deep: bool = False) -> List[ProbeResult]:
             results.append(ProbeResult(path, False, False, False, "missing"))
             continue
         accessible = (
-            run_root(
-                f"if [ -r {path} ] && [ -w {path} ]; then echo ACCESS; fi"
-            ).stdout.strip()
-            == "ACCESS"
+            run_root(f"if [ -r {path} ] && [ -w {path} ]; then echo ACCESS; fi")
+            .stdout.strip() == "ACCESS"
         )
         if not accessible:
             results.append(ProbeResult(path, True, False, False, "perm denied"))
@@ -373,19 +383,23 @@ def list_usb_devices() -> List[dict]:
             if "ID" in parts:
                 idx = parts.index("ID")
                 vid_pid = parts[idx + 1]
-                description = " ".join(parts[idx + 2 :]) if len(parts) > idx + 2 else ""
-                bus = parts[1] if len(parts) > 1 else "??"
-                device = parts[3].strip(":") if len(parts) > 3 else "??"
-                vid, pid = vid_pid.split(":") if ":" in vid_pid else ("0000", "0000")
-                devices.append(
-                    {
-                        "bus": bus,
-                        "device": device,
-                        "vid": vid,
-                        "pid": pid,
-                        "description": description,
-                    }
+                description = (
+                    " ".join(parts[idx + 2 :]) if len(parts) > idx + 2 else ""
                 )
+                bus = parts[1] if len(parts) > 1 else "??"
+                device = (
+                    parts[3].strip(":") if len(parts) > 3 else "??"
+                )
+                vid, pid = (
+                    vid_pid.split(":") if ":" in vid_pid else ("0000", "0000")
+                )
+                devices.append({
+                    "bus": bus,
+                    "device": device,
+                    "vid": vid,
+                    "pid": pid,
+                    "description": description
+                })
         return devices
 
     if system == "darwin":
@@ -405,12 +419,13 @@ def list_usb_devices() -> List[dict]:
         return devices
 
     if system == "windows":
-        ps = [
-            "Get-PnpDevice -PresentOnly | Where-Object {$_.InstanceId -like 'USB*'} | "
-            "Select-Object InstanceId,Class,DeviceID,Name | ConvertTo-Json"
-        ]
+        ps_cmd = (
+            "Get-PnpDevice -PresentOnly | Where-Object {$_.InstanceId -like "
+            "'USB*'} | Select-Object InstanceId,Class,DeviceID,Name | "
+            "ConvertTo-Json"
+        )
         proc = subprocess.run(
-            ["powershell", "-NoProfile", "-Command", ps[0]],
+            ["powershell", "-NoProfile", "-Command", ps_cmd],
             capture_output=True,
             text=True,
             check=False,
@@ -428,7 +443,9 @@ def list_usb_devices() -> List[dict]:
                         "device": entry.get("DeviceID", ""),
                         "vid": vid,
                         "pid": pid,
-                        "description": entry.get("Name") or entry.get("Class") or "",
+                        "description": (
+                            entry.get("Name") or entry.get("Class") or ""
+                        ),
                     }
                 )
         except Exception:
@@ -449,15 +466,13 @@ def list_usb_devices() -> List[dict]:
                 f"cat /sys/bus/usb/devices/{item}/idProduct 2>/dev/null"
             ).stdout.strip()
             if vid and pid:
-                devices.append(
-                    {
-                        "bus": item,
-                        "device": item,
-                        "vid": vid,
-                        "pid": pid,
-                        "description": desc,
-                    }
-                )
+                devices.append({
+                    "bus": item,
+                    "device": item,
+                    "vid": vid,
+                    "pid": pid,
+                    "description": desc
+                })
     except Exception:
         pass
     return devices
@@ -469,15 +484,13 @@ def _flatten_spusb(items) -> List[dict]:
         vid = entry.get("vendor_id", "0000")
         pid = entry.get("product_id", "0000")
         desc = entry.get("_name", entry.get("device_name", "USB Device"))
-        flattened.append(
-            {
-                "bus": entry.get("_name", ""),
-                "device": entry.get("bsd_name", ""),
-                "vid": vid,
-                "pid": pid,
-                "description": desc,
-            }
-        )
+        flattened.append({
+            "bus": entry.get("_name", ""),
+            "device": entry.get("bsd_name", ""),
+            "vid": vid,
+            "pid": pid,
+            "description": desc
+        })
         children = entry.get("_items", [])
         flattened.extend(_flatten_spusb(children))
     return flattened
@@ -499,9 +512,13 @@ def run_usb_modeswitch(
 ) -> None:
     if shutil.which("usb_modeswitch") is None:
         raise RuntimeError(
-            "usb_modeswitch binary not found. Install usb-modeswitch package first."
+            "usb_modeswitch binary not found. Install usb-modeswitch "
+            "package first."
         )
-    args = ["usb_modeswitch", "-v", _sanitize_hex(vendor), "-p", _sanitize_hex(product)]
+    args = [
+        "usb_modeswitch", "-v", _sanitize_hex(vendor), "-p",
+        _sanitize_hex(product)
+    ]
     if message:
         args += ["-M", message]
     if config:
@@ -520,13 +537,16 @@ def _sanitize_hex(value: str) -> str:
 def list_com_ports() -> List[dict]:
     if list_ports is None:
         raise RuntimeError(
-            "pyserial is required for COM port scanning. Install with `pip install pyserial`."
+            "pyserial is required for COM port scanning. Install with "
+            "`pip install pyserial`."
         )
     ports_info = []
     for port in list_ports.comports():
-        ports_info.append(
-            {"device": port.device, "description": port.description, "hwid": port.hwid}
-        )
+        ports_info.append({
+            "device": port.device,
+            "description": port.description,
+            "hwid": port.hwid
+        })
     return ports_info
 
 
@@ -546,7 +566,9 @@ def main() -> None:
                     "Selected profile did not activate diag mode. Try --ai."
                 )
     elif args.command == "sms":
-        device = resolve_device_path(args.device, deep=args.deep or args.auto)
+        device = resolve_device_path(
+            args.device, deep=args.deep or args.auto
+        )
         print(f"[+] Detected modem device: {device}")
         send_sms_via_at(device, args.destination, args.message)
     elif args.command == "probe":
@@ -555,13 +577,10 @@ def main() -> None:
             print("No modem paths evaluated.")
         for result in results:
             status = (
-                "OK"
-                if result.responded
-                else (
-                    "ACCESS"
-                    if result.accessible
-                    else ("MISSING" if not result.exists else "NO RESPONSE")
-                )
+                "OK" if result.responded
+                else ("ACCESS" if result.accessible
+                      else ("MISSING" if not result.exists
+                            else "NO RESPONSE"))
             )
             line = f"{result.path:<18} {status}"
             if args.include_response and result.response:
@@ -574,17 +593,23 @@ def main() -> None:
         else:
             for dev in devices:
                 print(
-                    f"{dev['bus']}:{dev['device']} {dev['vid']}:{dev['pid']} {dev['description']}"
+                    f"{dev['bus']}:{dev['device']} {dev['vid']}:{dev['pid']} "
+                    f"{dev['description']}"
                 )
     elif args.command == "usb-switch":
-        run_usb_modeswitch(args.vendor, args.product, args.message, args.config)
+        run_usb_modeswitch(
+            args.vendor, args.product, args.message, args.config
+        )
     elif args.command == "comscan":
         ports = list_com_ports()
         if args.json:
             print(json.dumps(ports, indent=2))
         else:
             for port in ports:
-                print(f"{port['device']:<15} {port['description']} ({port['hwid']})")
+                print(
+                    f"{port['device']:<15} {port['description']} "
+                    f"({port['hwid']})"
+                )
     else:
         parser.error("Unsupported command")
 

@@ -1,0 +1,49 @@
+<!-- wifi_guest_settings -->
+<div id="wifi_guest_settings">	
+	<h1>Wi-Fi - Red de invitados </h1>
+	<p>
+		La red Wi-Fi para Invitados se puede utilizar para proporcionar acceso temporal a Internet a través de la red Wi-Fi del <tmpl_var _("webui", "webui_product_name")>. Para conectarse a la red Wi-Fi de Invitados, los dispositivos conectados deben usar la configuración de Wi-Fi que se muestra en esta pantalla.
+	</p>
+	
+	<p>
+		La red de Invitados está desactivada de manera predeterminada. Para activarla, diríjase a Wi-Fi > Configuración (Settings) > Selección de banda (Band Selection) y asigne al menos una banda a la red de Invitados.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_guest_ssid_label")></h3>
+	<p> Puede usar este campo para cambiar el nombre de red de la red de Invitados (SSID). El nombre puede tener hasta 32 caracteres.
+	 </p>
+	
+	<h3><tmpl_var _("webui", "wifi_guest_security_label")></h3>
+	<p> Seleccione la opción deseada para seguridad de Wi-Fi. </p>
+	
+	<div class="blockgroup">
+	<ul>
+		<li><strong>Ninguno</strong> permitirá que otras personas monitoreen su tráfico de WI-FI y usen su plan de datos para acceder a Internet. Si es posible, debe evitarse el uso de estas opciones.</li>
+		<li><strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> Personal PSK (AES) es el método más reciente y seguro, y debe usarse si es posible. </li>
+		<li> El modo mixto <strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> se puede usar si algunos de sus dispositivos más antiguos no son compatibles con WPA2. </li>
+	</ul>
+	</div>
+
+	<p>
+		Normalmente, estas opciones se pueden dejar en sus valores predeterminados, pero se pueden cambiar si es necesario para adaptarse a su entorno particular.
+	</p>
+	<h3><tmpl_var _("webui", "wifi_primary_password_label")></h3>
+	<p>
+		Ingrese la contraseña de Wi-Fi en este campo. También puede usar el botón “Generar nueva clave” para insertar una contraseña aleatoria segura en este campo. Recuerde guardar sus cambios si usa esta opción.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_ssid_label", gProductName)></h3>
+	<p> Si este parámetro está seleccionado, este nombre de Wi-Fi no será visible en la pantalla táctil. </p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_password_label", gProductName)></h3>
+	<p> Si este parámetro está seleccionado, esta contraseña de Wi-Fi no será visible en la pantalla táctil. </p>	
+
+	<h3><tmpl_var _("webui", "wifi_guest_wps_label")></h3>
+	<p> La configuración protegida de Wi-Fi (WPS) permite que los dispositivos compatibles de Wi-Fi se conecten fácilmente a su red Wi-Fi extendida sin ingresar la contraseña. Seleccione la casilla de verificación para activar la WPS. </p>
+
+	<h3><tmpl_var _("webui", "wifi_guest_privacy_label")></h3>
+	<p> Si se marca esta configuración, cada dispositivo conectado se aísla de todos los demás dispositivos conectados. Esto ofrece una seguridad adicional si algunos dispositivos conectados son desconocidos o no se confía completamente en ellos. Para el funcionamiento normal, esta opción no debería marcarse. </p>
+
+</div>
+
+<!-- id="wifi_guest_settings" -->

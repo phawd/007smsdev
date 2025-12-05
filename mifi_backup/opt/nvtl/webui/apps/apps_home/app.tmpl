@@ -1,0 +1,930 @@
+<script type="text/javascript">
+    var clientListSize = parseInt("<tmpl_var connectedPrimaryDevicesCount>");
+    var guestClientListSize = parseInt("<tmpl_var connectedGuestDevicesCount>");
+    var totalWiFiClients = clientListSize + guestClientListSize;
+    var guestWiFiStatus = parseInt("<tmpl_var GuestWifiEnabled>");
+    var gettingData = false;
+    var loginValue = <tmpl_var gIsLoggedIn>;
+    var isRoaming = ("<tmpl_var isRoaming>" == "1") ? true : false;
+    var noService = ("<tmpl_var noService>" == "1") ? true : false;
+    var isNonVerizon = ("<tmpl_var isNonVerizon>" == "1") ? true : false;
+    var pollingRate = 2000; // 2 secs
+    var checkForUpdateClicked = false;
+    var softwareUpdateStatus = <tmpl_var updateStatus>;
+    var softwareUpdateStatusVal = <tmpl_var value>;
+    var configUpdateVersion = "<tmpl_var version>";
+    var sambaEnabled = ("<tmpl_var mifiShareEnabled>" == "1") ? true : false;
+    var sambaStatus = ("<tmpl_var mifiShareInUse>" == "1") ? true : false;
+    var isPopupClosed = false;
+
+    //Data Usage related stuff
+    var retrievalStartText = $("<i/>").html('<tmpl_var _("webui", "data_usage_retrieval_start_text")>').text();
+    var retrievalErrorText = $("<i/>").html('<tmpl_var _("webui", "data_usage_retrieval_error_text")>').text();
+
+    //constants
+    var USAGE_INFORMATION_STATE_AVAILABLE   =   "available";
+    var VZW_ACCOUNT_TYPE_LINE   =   "LINE";
+    var VZW_ACCOUNT_TYPE_SHARED = "SHARED";
+    var VZW_ACCOUNT_TYPE_UNLIMITED = "UNLIMITED";
+
+    //convenience variables
+    var date = new Date();
+    var timeoutMaxWait;
+    var lastRequestTime = 0;
+    var delayTime = 3000; // 3 seconds
+    var retrievalDelay = 2000; // 2 seconds
+    var maxRetrievalSec = 15000; // 15 seconds
+    var stopPolling = false;
+    var redirect2 = "";
+
+    $(function()
+    {
+        toggleButtons(loginValue);
+
+        $(document).ajaxSuccess(function(e, xhr, settings) {
+            if ((xhr.responseText) && (settings.dataType == "json")) {
+                try {
+                    var obj = jQuery.parseJSON(xhr.responseText || "null");
+                    if ((typeof obj.loginStatus !== "undefined") && (loginValue !== obj.loginStatus)) {
+                        loginValue = obj.loginStatus;
+                        toggleButtons(loginValue);
+                    }
+                    var refreshDevicesCalled = false;
+
+                    if (typeof obj.statusData.statusBarWiFiClientListSize !== "undefined") {
+                        var primarySize = parseInt(obj.statusData.statusBarWiFiClientListSize);
+
+                        if(primarySize != clientListSize) {
+                            clientListSize = primarySize;
+                            if(!gettingData) {
+                                refreshDevices();
+                            }
+                            refreshDevicesCalled = true;
+                        }
+                    }
+
+                    <tmpl_if GuestWifiSupported>
+                        if (typeof obj.statusData.statusBarGuestWifiEnabled !== "undefined") {
+                            var guestWifi = parseInt(obj.statusData.statusBarGuestWifiEnabled);
+                            if (guestWiFiStatus != guestWifi) {
+                                guestWiFiStatus = guestWifi;
+                            }
+                        }
+                        if (guestWiFiStatus && (typeof obj.statusData.statusBarGuestClientListSize !== "undefined")) {
+                            var guestSize = parseInt(obj.statusData.statusBarGuestClientListSize);
+                            
+                            if (guestClientListSize != guestSize) {
+                                guestClientListSize = guestSize;
+                                if (!refreshDevicesCalled) refreshDevices();
+                            }
+                        }
+                    </tmpl_if>
+
+                    if (typeof obj.statusData.statusBarSdCardStatus !== "undefined") {
+                        var smbEnabled = (obj.statusData.statusBarSdCardStatus == "SmbOn") ? true : false;
+
+                        if (sambaEnabled != smbEnabled) {
+                            sambaEnabled = smbEnabled;
+                        }
+                    }
+                    if (sambaEnabled && (typeof obj.statusData.statusBarSdCardInUse !== "undefined")) {
+                        var smbStatus = parseInt(obj.statusData.statusBarSdCardInUse);
+                        if(sambaStatus != smbStatus) {
+                            sambaStatus = smbStatus;
+                            if(sambaStatus) {
+                                $("#smbEnable").addClass('greenColor').html('<tmpl_var _("webui", "apps_home_on_text")>');
+                                $("#smbStatus").html('<tmpl_var _("webui", "apps_home_mifi_share_device_connected_text")>');
+                                $("#ejectButton").prop("disabled", false);
+                            } else {
+                                $("#smbEnable").removeClass('greenColor').html('<tmpl_var _("webui", "apps_home_off_text")>');
+                                $("#smbStatus").html('');
+                                $("#ejectButton").prop("disabled", true);
+                            }
+                        }
+                    }
+
+                    if(typeof obj.statusData.statusBarSimStatus !== "undefined"){
+                        if(obj.statusData.statusBarSimStatus == $.uiEnums.SIMSTATUS_READY){
+                            if(typeof obj.statusData.statusBarConnectionState !== "undefined") {
+                                noService = false;
+                                $("#internetStatus").removeClass('greenColor')
+                                switch (obj.statusData.statusBarConnectionState) {
+                                    case $.uiEnums.WANSTATE_NOSERVICE:
+                                    $("#internetStatus").html('<tmpl_var _("webui", "network_no_service_text")>');
+                                    noService = true;
+                                    break;
+                                    case $.uiEnums.WANSTATE_INITIALIZING:
+                                    $("#internetStatus").html('<tmpl_var _("webui", "webui_app_network_initializing_text")>');
+                                    break;
+                                    case $.uiEnums.WANSTATE_SEARCHING:
+                                    $("#internetStatus").html('<tmpl_var _("webui", "network_searching_text")>');
+                                    noService = true;
+                                    break;
+                                    case $.uiEnums.WANSTATE_UNACTIVATED:
+                                    $("#internetStatus").html('<tmpl_var _("webui", "webui_app_sim_status_not_activated_text")>');
+                                    break;
+                                    case $.uiEnums.WANSTATE_IDLE:
+                                    $("#internetStatus").addClass('greenColor').html('<tmpl_var _("webui", "network_ready_text")>');
+                                    break;
+                                    case $.uiEnums.WANSTATE_CONNECTING:
+                                    $("#internetStatus").html('<tmpl_var _("webui", "webui_app_network_connecting_text")>');
+                                    break;
+                                    case $.uiEnums.WANSTATE_DISCONNECTING:
+                                    $("#internetStatus").html('<tmpl_var _("webui", "webui_app_network_disconnecting_text")>');
+                                    break;
+                                    case $.uiEnums.WANSTATE_ACTIVATING:
+                                    $("#internetStatus").html('<tmpl_var _("webui", "webui_app_sim_status_activation_started_text")>');
+                                    break;
+                                    case $.uiEnums.WANSTATE_PCO2:
+                                    case $.uiEnums.WANSTATE_PCO2_DISCONNECTED:
+                                    $("#internetStatus").html('<tmpl_var _("webui", "webui_app_sim_status_account_restricted_text")>');
+                                    break;
+                                    case $.uiEnums.WANSTATE_PCO3:
+                                    $("#internetStatus").html('<tmpl_var _("webui", "webui_app_sim_status_account_out_of_credit_text")>');
+                                    break;
+                                    case $.uiEnums.WANSTATE_PCO5:
+                                    $("#internetStatus").html('<tmpl_var _("webui", "webui_app_sim_status_account_not_active_text")>');
+                                    break;
+                                    case $.uiEnums.WANSTATE_CONNECTED:
+                                    case $.uiEnums.WANSTATE_DORMANT:
+                                    $("#internetStatus").addClass('greenColor').html(obj.statusData.statusBarConnectionState);
+                                    break;
+                                    default:
+                                    $("#internetStatus").html(obj.statusData.statusBarConnectionState);
+                                    break;
+                                }
+                            }
+                            if (typeof obj.statusData.statusBarRoaming !== "undefined") {
+                                isRoaming = (obj.statusData.statusBarRoaming === $.uiEnums.ROAMNONE) ? false : true;
+                            }                          
+                        }
+                        else if(obj.statusData.statusBarSimStatus == $.uiEnums.SIMSTATUS_PUK_LOCKED){
+                            if ( typeof obj.statusData.statusBarConnectionState !== "undefined") {
+                                $("#internetStatus").html('<tmpl_var _("webui", "status_current_sim_puk_locked_text")>'); 
+                            }
+                        }
+
+                        else if(obj.statusData.statusBarSimStatus == $.uiEnums.SIMSTATUS_PIN_LOCKED){
+                            if ( typeof obj.statusData.statusBarConnectionState !== "undefined") {
+                                $("#internetStatus").html('<tmpl_var _("webui", "status_current_sim_pin_locked_text")>');
+                            }
+                        }
+
+                        else if(obj.statusData.statusBarSimStatus == $.uiEnums.SIMSTATUS_NOT_FOUND){                                             
+                            $("#internetStatus").html('<tmpl_var _("webui", "sim_status_no_sim_text")>');                    
+                        }
+
+                        else if(obj.statusData.statusBarSimStatus == $.uiEnums.SIMSTATUS_ERROR){                                             
+                            $("#internetStatus").html('<tmpl_var _("webui", "sim_status_error_text")>');                    
+                        }
+                    }
+
+                    if(typeof obj.statusData.statusBarNetwork !== "undefined") {
+                        $("#networkName").text(obj.statusData.statusBarNetwork);
+                    }
+
+                    if(typeof obj.statusData.statusBarTechnology !== "undefined") {
+                        switch (obj.statusData.statusBarTechnology) {
+                            case $.uiEnums.WANTECH_NONE:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_None_text")>');
+                                break;
+                            case $.uiEnums.WANTECH_WIFI:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_WiFi_text")>');
+                                break;
+                            case $.uiEnums.WANTECH_GPRS:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_gprs_text")>');
+                                break;
+                            case $.uiEnums.WANTECH_1XRTT:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_1XRTT_text")>');
+                                break;
+                            case $.uiEnums.WANTECH_EVDO:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_evdo_revo_text")>');
+                                break;
+                            case $.uiEnums.WANTECH_UMTS:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_umts_text")>');
+                                break;
+                            case $.uiEnums.WANTECH_HSDPA:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_hsdpa_text")>');
+                                break;
+                            case $.uiEnums.WANTECH_EDGE:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_edge_text")>');
+                                break;
+                            case $.uiEnums.WANTECH_EVDO_REVA:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_evdo_reva_text")>');
+                                break;
+                            case $.uiEnums.WANTECH_HSUPA:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_hsupa_text")>');
+                                break;
+                            case $.uiEnums.WANTECH_HSPA_PLUS:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_hspa_plus_text")>');
+                                break;
+                            case $.uiEnums.WANTECH_LTE:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_lte_text")>');
+                                break;
+                            case $.uiEnums.WANTECH_LTE_CA:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_lte_plus_text")>');
+                                break;
+                            case $.uiEnums.WANTECH_HSPA_PLUS_DC:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_hspa_plus_dc_text")>');
+                                break;
+                            case $.uiEnums.WANTECH_EVDO_REVB:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_evdo_revb_text")>');
+                                break;
+                            case $.uiEnums.WANTECH_EVDO_EHRPD:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_evdo_ehrpd_text")>');
+                                break;
+                            case $.uiEnums.WANTECH_WIMAX:
+                                $("#technology").html('<tmpl_var _("webui", "wan_technology_wimax_text")>');
+                                break;
+                            default:
+                                $("#technology").html(obj.statusData.statusBarTechnology);
+                                break;
+                        }
+                    }
+
+                    if(typeof obj.statusData.statusBarConnectionDuration !== "undefined") {
+                        $("#connectedTime").text(formatConnectedDurationTime(obj.statusData.statusBarConnectionDuration));
+                    }
+                } catch(e) {}
+            }
+
+        });
+        
+        $(".tile").not( "#logo,#dataUsage" ).on("click", function(e) {
+            var url = $(this).find("a.navigationLink").attr('href');
+            if("<tmpl_var gIsLoggedIn>" == "0") {
+                redirect2 = url;
+                e.preventDefault();
+                var width = 700;
+                var height = 500;
+                var loginurl = '<tmpl_udf GET_URI("login")>';
+                var title = '<tmpl_var _("webui", "vzw_header_login_link")>';
+                loadHtmlPage(title, loginurl, width, height);
+            } else {
+                location.replace(url);
+            }
+        });
+
+        if ((softwareUpdateStatus == 1) && (!checkForUpdateClicked)) {
+            $("#checkForUpdate").prop("disabled", true);
+            checkForUpdateClicked = true;
+            modalPopup.createWindow("<tmpl_var _('webui', 'apps_home_software_update_text')>", "<p><tmpl_udf GET_PO_TEXT( 'apps_home_check_for_update_popup_text', gProductName, gProductNumber)><br><table class='popuptable'><td class='loading'></td><td><tmpl_var _('webui', 'apps_home_please_wait_text')></td></table>", 430, "auto", null, null,
+                function(){
+                    isPopupClosed = true;
+                });
+            getSoftwareUpdateStatus();
+        }
+
+        var statusBarSimStatus = '<tmpl_var simStatus>';
+        
+        var simOk = "false";
+        if(statusBarSimStatus === "<tmpl_var _('webui', 'sim_status_ready_text')>") {
+            simOk = "true";
+        }
+
+        if(simOk == "false") {
+            dataUsageNotAvailable();
+        } else {
+            //start loop to wait for data usage info to become available
+            triggerUsageRetrieval();
+        }
+
+        refreshDevices();
+
+        $("#ejectButton").on("click", function(e) {
+            $("#ejectButton").prop("disabled", true);
+            $.ajax({
+                url : "<tmpl_udf GET_URI('apps_home_eject_mifi_share')>",
+                type : "POST",
+                data : { gSecureToken : "<tmpl_var gSecureToken>" },
+                dataType : "json",
+                success : function(data, textStatus, xhr) {
+                    $("#smbStatus").html('');
+                    $("#smbEnable").removeClass('greenColor').html('<tmpl_var _("webui", "apps_home_off_text")>');
+                    showPopup("<tmpl_var _('webui', 'apps_home_mifi_share_popup_title')>", "<p><tmpl_var _('webui', 'apps_home_mifi_share_popup_text')></p>");
+                },
+                error : function(xhr, textStatus, errorThrown) {
+                    //undoChange($toggleSwitchElement);
+                    // If auth session has ended, force a new login with a fresh GET.
+                    if( (xhr.status == 401) || (xhr.status == 403) || (xhr.status == 406) ) window.location.replace(window.location.href);
+                }
+            });
+
+            e.stopPropagation();
+        });           
+
+        $("#checkForUpdate").on("click", function(e) {
+            if(!checkForUpdateClicked) {
+                checkForUpdate();
+            }
+
+            e.stopPropagation();
+        });
+    });
+
+    function toggleButtons(loginStatus)
+    {
+        if(loginStatus) {
+            $("#primaryPwd").show();
+            $("#guestPwd").show();
+            $(".roundedButton").show();
+        } else {
+            $("#primaryPwd").hide();
+            $("#guestPwd").hide();
+            $(".roundedButton").hide();
+        }
+    }
+
+    function checkForUpdate()
+    {
+        if (isRoaming) {
+            showPopup("<tmpl_var _('webui', 'software_update_check_for_update_roaming_header_text')>", "<p><tmpl_var _('webui', 'software_update_roaming_error_text')></p>");
+        } else if (noService){
+            showPopup("<tmpl_var _('webui', 'software_update_check_for_update_cannot_connect_header_text')>", "<p><tmpl_var _('webui', 'software_update_connection_error_text')></p>");
+        } else if (isNonVerizon){
+            showPopup("<tmpl_var _('webui', 'software_update_check_for_update_non_verizon_header_text')>", "<p><tmpl_var _('webui', 'software_update_non_verizon_network_error_text')></p>");
+        } else {
+            $("#checkForUpdate").prop("disabled", true);
+            checkForUpdateClicked = true;
+            modalPopup.createWindow("<tmpl_var _('webui', 'apps_home_software_update_text')>", "<p><tmpl_udf GET_PO_TEXT( 'apps_home_check_for_update_popup_text', gProductName, gProductNumber)></p><br><table class='popuptable'><td class='loading'></td><td><tmpl_var _('webui', 'apps_home_please_wait_text')></td></table>", 430, "auto", null, null,
+                function(){
+                    isPopupClosed = true;
+                });
+            $.ajax({
+                url : "<tmpl_udf GET_URI('apps_home_check_for_update')>",
+                type : "POST",
+                data : { gSecureToken : "<tmpl_var gSecureToken>" },
+                dataType : "json",
+                success : function(data, textStatus, xhr) {
+                    getSoftwareUpdateStatus();
+                },
+                error : function(xhr, textStatus, errorThrown) {
+                    checkForUpdateClicked = false;
+                    showPopup("<tmpl_var _('webui', 'software_update_check_for_update_text')>", "<p><tmpl_var _('webui', 'software_update_connection_error_text')></p>");
+                }
+            });
+        }
+    }
+
+    function getSoftwareUpdateStatus()
+    {
+        var title;
+        var text;
+        $.ajax({
+            url : '<tmpl_udf GET_URI("apps_home_software_update_status")>',
+            type : "GET",
+            dataType : "json",
+            success : function(data) {
+                if (data) {
+                    softwareUpdateStatus = data.updateStatus;
+                    softwareUpdateStatusVal = data.value;
+                    configUpdateVersion = data.version;
+                }
+                if(checkForUpdateClicked) {
+                    if (softwareUpdateStatus === 2) { // WEBUI_SOFTWARE_UPDATE_CONFIGURATION_UPDATED
+                        checkForUpdateClicked = false;
+                        title = "<tmpl_var _('webui', 'apps_home_software_update_text')>";
+                        text = "<p><tmpl_udf GET_PO_TEXT( 'apps_home_config_update_popup_text', gProductName, gProductNumber, configUpdateVersion)></p>";
+                    } else if (softwareUpdateStatus === 3) { // WEBUI_SOFTWARE_UPDATE_NOT_AVAILABLE
+                        checkForUpdateClicked = false;
+                        title = "<tmpl_var _('webui', 'apps_home_software_update_text')>";
+                        text = "<p><tmpl_udf GET_PO_TEXT( 'apps_home_no_update_available_popup_text', gProductName, gProductNumber)></p>";
+                    } else if (softwareUpdateStatus === 4) { // WEBUI_SOFTWARE_UPDATE_AVAILABLE
+                        checkForUpdateClicked = false;
+                        title = "<tmpl_var _('webui', 'apps_home_software_update_available_text')>";
+                        text = "<p><tmpl_udf GET_PO_TEXT('apps_home_software_update_available_popup_text', gProductName, gProductNumber)></p>";
+                    } else if (softwareUpdateStatus === 9) { // WEBUI_SOFTWARE_UPDATE_ERROR
+                        if (softwareUpdateStatusVal === 0) { // WEBUI_SOFTWARE_UPDATE_CHECK_FAILED_ERROR
+                            checkForUpdateClicked = false;
+                            title = "<tmpl_var _('webui', 'apps_home_software_update_error_text')>";
+                            text = "<p><tmpl_var _('webui', 'apps_home_software_update_error_popup_text')></p>";
+                        } else if (softwareUpdateStatusVal === 4) { // WEBUI_SOFTWARE_UPDATE_ROAMING_ERROR
+                            checkForUpdateClicked = false;
+                            title = "<tmpl_var _('webui', 'apps_home_software_update_error_text')>";
+                            text = "<p><tmpl_var _('webui', 'apps_home_software_update_error_popup_text')></p>";
+                        } else if (softwareUpdateStatusVal === 5) { // WEBUI_SOFTWARE_UPDATE_NETWORK_COVERAGE_ERROR
+                            checkForUpdateClicked = false;
+                            title = "<tmpl_var _('webui', 'apps_home_software_update_error_text')>";
+                            text = "<p><tmpl_var _('webui', 'apps_home_software_update_error_popup_text')></p>"
+                        }
+                    }
+                }
+            },
+            error : function(xhr, textStatus, errorThrown) {
+                checkForUpdateClicked = false;
+            },
+            complete : function() {
+                if(checkForUpdateClicked) {
+                    setTimeout(getSoftwareUpdateStatus, pollingRate);
+                } else {                    
+                    $("#checkForUpdate").prop("disabled", false);
+                    if(!isPopupClosed) {
+                        isPopupClosed = false;
+                        modalPopup.destroyWindow();
+                    }
+                    showPopup(title, text);
+                }
+            }
+        });
+    }
+
+    function showPopup(title, msg)
+    {
+        modalPopup.createWindow(title, msg, 430, "auto", [{
+            text : '<tmpl_var _("webui", "webui_modal_ok_button")>',
+            className : "primary",
+            trigger: function() {
+            }
+        }], null, function(){
+        });
+    }
+
+    function formatConnectedDurationTime(seconds)
+    {
+        var days = Math.floor(seconds / 86400);
+        var hours = Math.floor((seconds - (days * 86400)) / 3600);
+        var minutes = Math.floor((seconds - (days * 86400) - (hours * 3600)) / 60);
+        var seconds = seconds - (days * 86400) - (hours * 3600) - (minutes * 60);
+        var time = "";
+
+        days = (days < 10) ? "0" + days : String(days);
+        hours = (hours < 10) ? "0" + hours : String(hours);
+        minutes = (minutes < 10) ? "0" + minutes : String(minutes);
+        time += days + " days, " + hours + " hrs, " + minutes + " min";
+        //time += (seconds < 10) ? "0" + seconds : String(seconds);
+
+        return time;
+    }
+
+    /**
+     * refreshDevices()
+     *
+     * Empty the connected table, reset the layout, and get new data.
+     */
+    function refreshDevices()
+    {
+        gettingData = true;
+        // Remove old data rows.
+        $("#connectedDevicesTable tbody").empty();
+        $("#noConnectedDevices").hide();
+        // Showing the loaders.
+        $("#ConnectedDevicesUpdatingData").show();
+        // Get the devices data.
+        getDevicesdata();
+    }
+
+    /**
+     * getDeviceData()
+     *
+     * Kicks off the AJAX call to get new data about connected, connected guest devices
+     *
+     * Once we have data back, it will kick off the Build Table methods.
+     */
+    function getDevicesdata()
+    {
+        $.ajax({
+            url : "<tmpl_udf GET_URI('apps_home_connected_devices_refresh')>",
+            type : "GET",
+            dataType : "json",
+            success : function(data) {
+                //check if there is data. if so, make the table. if not, show no devices message.
+                $("#ConnectedDevicesUpdatingData").hide();
+
+                if(data["connectedDevicesList"].length > 0){
+                    clientListSize = parseInt(data["wifiDevicesCount"]);
+                    buildTableFromJson(data["connectedDevicesList"]);
+                    $("#connectedDevicesTable").show();
+                } else {
+                    // Ideally this case should never occur.                    
+                    $("#connectedDevicesTable thead").hide();
+                    $("#noConnectedDevices").show();
+                }
+
+                if(totalWiFiClients != data["wifiDevicesCount"]) {
+                    totalWiFiClients = data["wifiDevicesCount"];
+                }
+                if(totalWiFiClients == 0) {
+                    var txt = '<tmpl_var _("webui", "connected_devices_menu_text")>';
+                    $("#connectedDevicesHeader").html(txt);                    
+                } else {
+                    var txt = '<tmpl_var _("webui", "connected_devices_menu_text")> ' + ": " + totalWiFiClients;
+                    $("#connectedDevicesHeader").html(txt);
+                }
+                gettingData = false;
+            },
+            error : function(xhr, textStatus, errorThrown) {
+                if( (xhr.status == 401) || (xhr.status == 403) || (xhr.status == 406) ) {
+                    $("#ConnectedDevicesUpdatingData").hide();
+                    $("#connectedDevicesTable thead").hide();
+                    $("#noConnectedDevices").show();
+                }
+                gettingData = false;
+            }
+        });
+    }
+
+    /**
+     * buildTableFromJson()
+     *
+     * data: object - AJAX result
+     *
+     * Builds new rows using AJAX result data. Gives rows appropriate attributes and event handling.
+     * These rows are replace rows in the existing tbody elements.
+     */
+    function buildTableFromJson(data)
+    {
+        $('#connectedDevicesTable thead').show();
+        
+
+        //Loop each row of Devices.
+        $.each(data, function(id, value) {
+            var newRow;
+            var displayName = this.name;
+            displayName = (displayName == "") ? this.hostname : displayName;
+            displayName = ((displayName == "")||(typeof displayName == "undefined")) ? "Unknown" : displayName;
+            // Remove any entity encoding. It's not needed because jQuery will post as plain text.
+            var decoded = $('<div/>').html(displayName).text();
+            displayName = decoded;
+
+            newRow = $('<tr id="deviceDetails_' + id + '" class="deviceInformationRow">');
+            newRow.append('<td class="deviceName">' + displayName + '</td>');
+            newRow.append('<td class="networkType">' + this.networkType + '</td>');
+            $('#connectedDevicesTable tbody').append(newRow);
+        });
+
+        updateUniformElements($("#connectedDevicesTable tbody"));
+    }
+
+        /**
+     * updateUniformElements()
+     *
+     * $el: object - jQuery DOM object
+     *
+     * If using the Uniform jQuery plugin, reapply uniform features to specific form elements in the DOM
+     */
+    function updateUniformElements($el)
+    {
+        if (jQuery.uniform) {
+            // This is for uniform 1 and uniform 2 compatibility.
+            var uniformOptions = (typeof $.uniform.options !== "undefined") ? $.uniform.options : $.uniform.defaults;
+            if (uniformOptions.filter) {
+                if (typeof $el !== "undefined") {
+                    $el.find(uniformOptions.filter).uniform();
+                } else {
+                    $(uniformOptions.filter).uniform();
+                }
+            }
+        }
+    }
+
+    function triggerUsageRetrieval()
+    {
+        $("#retrieval_status").addClass('loading').text(retrievalStartText);
+        $.ajax({
+            url : "<tmpl_udf GET_URI('apps_home_data_usage_retrieve')>",
+            type : "GET",
+            dataType : "json",
+            success : function(data) {
+                maxRetrievalSec = data["maxRetrievalDuration"]*1000;
+                // Let's give some time before first checking usage
+                setTimeout(kickOff, retrievalDelay);
+            },
+            error : function(xhr, textStatus, errorThrown) {
+                //something went wrong with the trigger, simply revert to proper message
+                dataUsageNotAvailable();
+            }
+        });
+    }
+
+    function kickOff()
+    {
+        timeoutMaxWait = setTimeout(function(){
+            dataUsageNotAvailable();
+            clearTimeout(timeoutMaxWait);
+            stopPolling = true;
+        }, maxRetrievalSec);
+        backYet();
+    }
+
+    function backYet()
+    {
+        $.ajax({
+            url : "<tmpl_udf GET_URI('apps_home_data_usage_info')>",
+            type : "GET",
+            dataType : "json",
+            timeout : maxRetrievalSec,
+            success: function(data, textStatus, xhr) {
+                // If no network connected, success event still occurs.
+                // We need to implicitly see an xhr.status greater than 0 to know we've actually made contact.
+                if ( (xhr.readyState == 4 ) && (xhr.status > 0) ) {
+                    if( (data["usageInformationState"] !== 0) && (data["usageInformationState"] == USAGE_INFORMATION_STATE_AVAILABLE) ) {
+                        $("#retrieval_status").hide();
+                        clearTimeout(timeoutMaxWait);
+                        stopPolling = true;
+                        
+                        if(data["allowance"].toUpperCase() === VZW_ACCOUNT_TYPE_UNLIMITED) {
+                            if(data["planType"].toUpperCase() === VZW_ACCOUNT_TYPE_SHARED) {
+                                $("#usageTitle").html('<tmpl_var _("webui", "apps_home_data_usage_text")>' + ' ' +'<span class="usage_data">' + data["totalShrUsage"] + ' ' + data["unit"] + ' ' + '<tmpl_var _("webui", "apps_home_data_used_text")> </span>');
+                                $("#usedPercentage").html('<tmpl_var _("webui", "apps_home_unlimite_shared_plan_text")>' );
+                                $("#usedPercentage").css("cssText","line-height: 1.3em !important;");
+                                $("#remainingData").hide();
+                                $("#remainingText").hide();
+                                $("#totalUsagePercentage").attr('style', 'width: 0%');
+                            } else {
+                                $("#usageTitle").html('<tmpl_var _("webui", "apps_home_data_usage_text")>' + ' ' +'<span class="usage_data">' + data["totalShrUsage"] + ' ' + data["unit"] + ' ' + '<tmpl_var _("webui", "apps_home_data_used_text")> </span>');
+                                $("#usedPercentage").html('<tmpl_var _("webui", "apps_home_unlimite_plan_text")>' );
+                                $("#usedPercentage").css("cssText","margin-top:35px !important; min-height:50px;");
+                                $("#remainingData").hide();
+                                $("#remainingText").hide();
+                                $("#totalUsagePercentage").attr('style', 'width: 0%');
+                            }
+                        } else {
+                            $("#usageTitle").html('<tmpl_var _("webui", "apps_home_data_usage_text")>' + ' ' +'<span class="usage_data">' + data["remainingUsage"] + ' ' + data["unit"] + ' ' + '<tmpl_var _("webui", "apps_home_remaining_text")> </span>');
+                            $("#usedPercentage").html('<span class="usage_data">' + data["barPercentageTotalShrUsage"] + '%'+'</span>' );
+                            $("#totalUsagePercentage").attr('style', 'width: ' + data["barPercentageTotalShrUsage"] + '%');
+                            $("#remainingData").html('<span class="usage_data">' + data["remainingUsage"] + ' ' + data["unit"] + ' ' + '<tmpl_var _("webui", "data_usage_of_data_remaining_text")>' +'</span>');
+                            $("#remainingText").html('<tmpl_var _("webui", "data_usage_remaining_text")>');
+                        }
+                        $("#deviceUsage").html('<tmpl_var _("webui", "apps_home_cycle_ends_text")>' + ' ' + '<strong>' +data["cycleEndDt"] + '</strong>');           
+                        $("#data_plan_circle_inner").html('<span class="usage_data">' +data["daysLeft"] +'</span>');
+                        $("#data_plan_circle_outer").html('<tmpl_var _("webui", "data_usage_days_to_go_text")>');
+                        $("#data_plan_circle").css("border-color", "green");
+                        $("#data_plan_circle").show();
+                        $("#data_plan_usage_bar_col").show();
+                    }
+                }
+            },
+            complete : function(xhr, textStatus) {
+                if(stopPolling == false) {
+                    // Long Polling, until timeout.
+                    // timeout doesn't seem to kick in if no network response is returned.
+                    // All this delay nonsense is for Window's benefit.
+                    var diff = date.getTime() - lastRequestTime;
+                    var delay = (diff > delayTime) ? 0 : delayTime - diff;
+                    lastRequestTime = date.getTime();
+                    setTimeout(backYet, delay);
+                }
+            }
+        });
+    }
+
+    function dataUsageNotAvailable()
+    {
+        $("#retrieval_status").removeClass('loading').text('');
+        $("#retrieval_status").css("padding-top", "0px");
+        $("#usageTitle").html('<tmpl_var _("webui", "apps_home_data_usage_text")>');
+        $("#deviceUsage").html('<tmpl_var _("webui", "apps_home_data_usage_not_available_text")>');
+        $("#totalUsagePercentage").attr('style', 'width: 0%');
+        $("#data_plan_circle").hide();
+        $("#data_plan_usage_bar_col").show();
+        $("#data_plan_usage_bar").hide();
+    }
+
+</script>
+
+<fieldset id="home" class="clearfix">
+    <div id="logo" class="tile">
+        <img id="deviceImg" src="/assets/images/heros/jetpack-hero.png"/>
+    </div>
+    <div id="dataUsage" class="tile two_x">
+        <div id="duProgressBar">
+            <h1> <tmpl_var _("webui", "apps_home_welcome_text")> </h1>
+            <div class="duDetails">
+                <div id="retrieval_status" class="usage_status"></div>
+
+                <div id="data_plan_wrapper" class="progress_bar_wrapper clearfix">
+                    <div id="data_plan_usage_bar_col" class="clearfix" style="display:none;">
+                        <div id="status_title" class="data_usage_status clearfix">
+                            <h3 class="title" id="usageTitle"></h3>
+                        </div>
+
+                        <div id="data_plan_usage_bar" class="data_usage progress_bar ui-progressbar">
+                            <div id="totalUsagePercentage" class="ui-widget-header" style="width:<tmpl_var barPercentageTotalShrUsage>%;"></div>
+                        </div>
+
+                        <div id="data_plan_usage_bar_footer" class="clearfix">
+                            <div class="lineUsage" id="deviceUsage" x-ms-format-detection="none"></div>
+                        </div>
+                    </div>
+                </div>
+                <tmpl_if showUsageUnavailableText>
+                    <p class="note"><tmpl_var _("webui", "data_usage_not_available_text")></p>
+                </tmpl_if>
+            </div>
+        </div>
+        <div id="duCircle">
+            <div id="data_plan_circle" style="display:none;">
+                <h3 id="usedPercentage"></h3>
+                <div id="remainingData"></div>
+                <div id="remainingText"></div>
+                <div id="data_plan_circle_inner"></div>
+                <div id="data_plan_circle_outer"></div>
+            </div>
+        </div>
+      <!--  <div>
+            <a href="<tmpl_udf GET_URI('data_usage')>" class="navigationLink">
+                <img src="/assets/images/icons/navigation_arrow.png"/>
+            </a>
+            </div> -->
+    </div>
+    <div id="wifi" class="tile">
+        <h2> <tmpl_var _("webui", "wifi_settings_top_menu_text")> </h2>
+        <div class="tileContent">
+            <div class="row label">
+                <tmpl_var _("webui", "apps_home_primary_network_label")>
+                <tmpl_if primaryWiFiEnabled>                    
+                    <span class="greenColor"><tmpl_var _("webui", "apps_home_on_text")></span>
+                <tmpl_else>
+                    <span><tmpl_var _("webui", "apps_home_off_text")></span>
+                </tmpl_if>
+            </div>
+            <div class="row text">
+                <tmpl_var _("webui", "apps_home_wifi_ssid_text")> <tmpl_var primarySSID>
+            </div>
+            <div id="primaryPwd" class="row text" style="<tmpl_if gIsLoggedIn> display:block <tmpl_else> display:none </tmpl_if>">
+                <tmpl_var _("webui", "apps_home_wifi_password_text")> <tmpl_var primaryPwd>
+            </div>
+            <div class="row label">
+                <tmpl_var _("webui", "apps_home_guest_network_label")>
+                <tmpl_if guestWiFiEnabled>
+                    <span class="greenColor"><tmpl_var _("webui", "apps_home_on_text")></span>
+                <tmpl_else>
+                    <span><tmpl_var _("webui", "apps_home_off_text")></span>
+                </tmpl_if>
+            </div>
+            <div class="row text">
+                <tmpl_var _("webui", "apps_home_wifi_ssid_text")> <tmpl_var guestSSID>
+            </div>
+            <div id="guestPwd" class="row text" style="<tmpl_if gIsLoggedIn> display:block <tmpl_else> display:none </tmpl_if>">
+                <tmpl_var _("webui", "apps_home_wifi_password_text")> <tmpl_var guestPwd>
+            </div>
+        </div>
+        <div>
+            <a href="<tmpl_udf GET_URI('wifi_advanced_settings')>" class="navigationLink">
+                <img src="/assets/images/icons/navigation_arrow.png"/>
+            </a>
+        </div>
+    </div>
+    <div id="connectedDevices" class="tile">
+        <h2 id="connectedDevicesHeader"> <tmpl_var _("webui", "connected_devices_menu_text")> <tmpl_var wifiDevicesCount> </h2>
+        <div class="tileContent">
+            <div id="noConnectedDevices" class="row text">
+              <tmpl_var _("webui", "apps_home_no_devices_connected_text")>
+            </div>
+            <p id="ConnectedDevicesUpdatingData" class="loading" style="display:none;">
+                <tmpl_var _("webui", "connected_devices_searching_for_devices_text")>
+            </p>    
+            <table id="connectedDevicesTable" class="devicesTable" style="display:none;">
+                <colgroup>
+                    <col class="deviceName" />
+                    <col class="networkType" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th><tmpl_var _("webui", "connected_device_label")></th>
+                        <th><tmpl_var _("webui", "connected_device_network_label")></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="deviceInformationRow">
+                        <td class="deviceName">&nbsp;</td>
+                        <td class="networkType">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <a href="<tmpl_udf GET_URI('connected_devices')>" class="navigationLink">
+                <img src="/assets/images/icons/navigation_arrow.png"/>
+            </a>
+        </div>
+    </div>
+    <div id="mifiShare" class="tile">
+        <h2> <tmpl_var _("webui", "file_sharing_menu_text")> </h2>      
+        <div class="tileContent">
+            <div class="tileInnerText">
+                <div class="row label">
+                    <tmpl_var _("webui", "apps_home_mifi_share_text")>
+                    <tmpl_if mifiShareInUse>
+                        <span id="smbEnable" class="row text greenColor">
+                            <tmpl_var _("webui", "apps_home_on_text")>
+                        </span>
+                        <div id="smbStatus" class="row text">
+                            <tmpl_var _("webui", "apps_home_mifi_share_device_connected_text")>
+                        </div>
+                    <tmpl_else>
+                        <span id="smbEnable" class="row text">
+                            <tmpl_var _("webui", "apps_home_off_text")>
+                        </span>
+                    </tmpl_if>
+                </div>
+            </div> 
+            <!-- <button id="ejectButton" class="roundedButton" <tmpl_unless mifiShareInUse> disabled="disabled" </tmpl_unless> > <tmpl_var _("webui", "apps_home_mifi_share_eject_text")> </button> -->
+        </div>
+        <div>
+            <button id="ejectButton" class="roundedButton" <tmpl_unless mifiShareInUse> disabled="disabled" </tmpl_unless> > <tmpl_var _("webui", "apps_home_mifi_share_eject_text")> </button>
+            <a href="<tmpl_udf GET_URI('file_sharing')>" class="navigationLink">
+                <img src="/assets/images/icons/navigation_arrow.png"/>
+            </a>
+        </div>
+    </div>
+    <div id="settings" class="tile">
+        <h2> <tmpl_udf GET_PO_TEXT("settings_group_title_text", gProductName)> </h2>
+        <div class="tileContent">
+            <div class="tileInnerText">
+                <div class="row label">
+                    <tmpl_var _("webui", "apps_home_mobile_network_label")>
+                    <tmpl_if cellularDataEnabled>
+                        <span class="greenColor"><tmpl_var _("webui", "apps_home_on_text")></span>
+                    <tmpl_else>
+                        <span><tmpl_var _("webui", "apps_home_off_text")></span>
+                    </tmpl_if>
+                </div>
+                <div class="row label">
+                    <tmpl_var _("webui", "apps_home_port_filtering_label")>
+                    <tmpl_if portFilteringEnabled>
+                        <span class="greenColor"><tmpl_var _("webui", "apps_home_on_text")></span>
+                    <tmpl_else>
+                        <span><tmpl_var _("webui", "apps_home_off_text")></span>
+                    </tmpl_if>
+                </div>
+                <p> <tmpl_var _("webui", "apps_home_port_filtering_text")> </p>
+
+                <div class="row label">
+                    <tmpl_var _("webui", "apps_home_gps_label")>
+                    <tmpl_if gpsEnabled>
+                        <span class="greenColor"><tmpl_var _("webui", "apps_home_on_text")></span>
+                    <tmpl_else>
+                        <span><tmpl_var _("webui", "apps_home_off_text")></span>
+                    </tmpl_if>
+                </div>
+                <div class="row label">
+                    <tmpl_var _("webui", "apps_home_software_update_label")>
+                </div>
+                <tmpl_var _("webui", "apps_home_last_update_text")> 
+                <tmpl_if SystemUpdateHappened>
+                    <span> <tmpl_var LastSystemUpdateDate> <tmpl_var _("webui", "webui_app_at_text")> <tmpl_var LastSystemUpdateTime> </span>
+                <tmpl_else>
+                    <span> <tmpl_var _("webui", "software_update_last_update_never_text")> </span>
+                </tmpl_if>
+            </div>
+            <!-- <button id="checkForUpdate" class="roundedButton"> <tmpl_var _("webui", "apps_home_check_for_update_text")> </button> -->
+        </div>
+        <div>
+            <button id="checkForUpdate" class="roundedButton"> <tmpl_var _("webui", "apps_home_check_for_update_text")> </button>
+            <a href="<tmpl_udf GET_URI('preferences')>" class="navigationLink">
+                <img src="/assets/images/icons/navigation_arrow.png"/>
+            </a>
+        </div>     
+    </div>
+    <div id="about" class="tile">
+        <h2> <tmpl_var _("webui", "about_group_side_menu_text")> </h2>
+        <div class="tileContent">
+            <div class="row label">
+                <tmpl_var _("webui", "apps_home_internet_status_label")>
+                <span id="internetStatus" class="row text">
+                    <tmpl_var internetStatus>
+                </span>
+            </div>
+            <div class="row text">
+                <tmpl_var _("webui", "apps_home_network_name_text")> <span id="networkName"> <tmpl_var networkName> </span>
+            </div>
+            <div class="row text">
+                <tmpl_var _("webui", "apps_home_technology_text")> <span id="technology"> <tmpl_var technology> </span>
+            </div>
+            <div class="row text">
+                <tmpl_var _("webui", "apps_home_time_connected_text")> <span id="connectedTime"> <tmpl_var connectedTime> </span>
+            </div>
+        </div>
+        <div>
+            <a href="<tmpl_udf GET_URI('status_current')>" class="navigationLink">
+                <img src="/assets/images/icons/navigation_arrow.png"/>
+            </a>
+        </div>
+    </div>
+    <div id="help" class="tile">
+        <h2> <tmpl_var _("webui", "help_menu_text")> </h2>
+        <div class="tileContent">
+            <div class="row label">
+                <tmpl_var _("webui", "apps_home_help_topics_text")>
+            </div>
+            <div class="text">
+                <ul>
+                    <li> <a href="<tmpl_udf GET_URI('help_faq_help')>#overview" class="helpAnchor"> <tmpl_var _("webui", "apps_home_overview_link")> </a>  </li>
+                    <li> <a href="<tmpl_udf GET_URI('help_faq_help')>#setup" class="helpAnchor"><tmpl_var _("webui", "apps_home_setup_link")> </a> </li>
+                    <li><a href="<tmpl_udf GET_URI('help_faq_help')>#tips" class="helpAnchor"> <tmpl_var _("webui", "apps_home_tips_link")> </a> </li>
+                    <li> <a href="<tmpl_udf GET_URI('help_faq_help')>#security" class="helpAnchor"><tmpl_udf GET_PO_TEXT("apps_home_security_features_link", gProductName)> </a> </li>
+                </ul>
+                <ul>
+                    <li><a href="<tmpl_udf GET_EXTERNAL_URI('provider_support_site_consumer')>" target="_blank"><tmpl_var _("webui", "apps_home_device_support_text")></a></li>
+                    <li><a href="<tmpl_udf GET_EXTERNAL_URI('provider_coverage_map')>" target="_blank"><tmpl_var _("webui", "apps_home_coverage_map_reference_text")></a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <a href="<tmpl_udf GET_URI('help_faq')>" class="navigationLink">
+                <img src="/assets/images/icons/navigation_arrow.png"/>
+            </a>
+        </div>
+    </div>
+</fieldset>

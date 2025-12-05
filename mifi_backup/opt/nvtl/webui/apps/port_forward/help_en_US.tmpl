@@ -1,0 +1,60 @@
+<!-- Port Forwarding -->
+<div id="port_forward">
+	<h1>Port Forwarding</h1>
+	<h2>Overview</h2>
+	<p>The Port Forwarding feature allows incoming traffic from the internet to be forwarded to a particular computer or device on your Wi-Fi network. Normally, the built-in firewall blocks incoming traffic from the internet. 
+You use Port Forwarding to allow internet users to access any server you are running on your computer, such as a Web, FTP, or email server. Some online games require Port Forwarding to work properly.</p>
+<p><strong>Warning:</strong> Using Port Forwarding creates a security risk. So only use it when required.</p>
+<p><strong>Note:</strong> Some mobile networks provide you with an IP address on their own network rather than an internet IP address. In this case, Port Forwarding cannot be used because internet users cannot reach your IP address. </p>
+
+<h2>Port Forwarding Applications</h2>
+<p>A number of common server applications are listed. To use any of these applications, follow this procedure:</p>
+
+	<ol class="OrderList">		
+		<li>Install the application on a computer which is connected to this device's Wi-Fi network.</li>
+		<li>On the computer, check its IP address for the Wi-Fi network. Alternatively, you can check the computer's IP address on the Connected Devices screen.</li>
+		<li>On this screen, enter the computer's IP Address in the <strong>Application IP Address</strong> field beside the application.</li>
+		<li>Turn on the application by selecting its checkbox.</li>
+		<li>Save your changes.</li>
+	</ol>
+
+		<p>On the <strong>Internet Status</strong> screen, make a note of the internet IP address of the Jetpack.</p>
+		<p>Ask users on the internet to connect to the internet IP address of the Jetpack. These connection requests will be forwarded to the IP address specified in step 3.</p>
+
+	<h2>Custom Applications</h2>
+	<p>This feature allows you to define your own applications. Once defined, these applications can be turned on or off in the same way as pre-defined applications. To define an application, you need to know the ports and protocol (TCP or UDP) used by the application for incoming traffic. To start, click the <strong>Add Custom Application</strong> button, then provide the following data. 
+	</p>
+	<h3>The On Checkbox</h3>
+	<p>Use this to turn on an application after you have defined it.
+	</p>
+	<h3>Application Name</h3>
+	<p>
+		Enter a name for the application you are defining.
+	</p>
+
+	<h3>IP Address</h3>
+	<p>
+		Enter the IP address of the connected device which will receive this traffic.
+	</p>
+
+	<h3>Port Type and Port Numbers</h3>
+		<p>Each application has its own port range. Enter the beginning and end of the port range for each application.
+		</p>
+		<div class="blockgroup">
+			<ul>
+				<li>Under Port Type, select either <strong>Range</strong> or  <strong>Translate</strong>.</li>
+				<li>For a port range, enter the beginning of the range in the <strong>From</strong> field and the end of the range in the <strong>To</strong> field.</li>
+				<li>For a translate port, enter the port number in both the <strong>Ext</strong> and <strong>Int</strong> fields.</li>
+			</ul>
+		</div>
+	<h3>Protocol</h3>
+	<p>
+		For each port range, select the protocol (TCP, UDP, or TCP/UDP) used by that port range.
+	</p>
+		
+	<h3>Delete</h3>
+	<p>Use this checkbox to delete a custom application.
+	</p>
+</div>
+<!-- id="port_forward" -->
+

@@ -1,0 +1,462 @@
+========================================
+
+PHASE 4: TIER 1/2 PROTECTION BYPASS
+
+Started: Thu Dec  4 21:22:24 UTC 2025
+
+========================================
+
+
+
+=== PHASE 1: SPC CODE SEARCH ===
+
+Searching for hardcoded SPC codes in firmware/libraries...
+
+
+
+Checking running processes for SPC data...
+
+
+
+Checking common SPC locations...
+
+/opt/nvtl/etc/wifi/nvram.txt
+
+/opt/nvtl/etc/wifi/cyfmac89459-pcie.txt
+
+/opt/nvtl/etc/devui/config.xml
+
+/opt/nvtl/etc/omadm/tree.xml
+
+/etc/ssl/certs/cacerts.pem
+
+/etc/data/netmgr_config.xml
+
+/etc/termcap
+
+
+
+Searching binary strings for SPC patterns...
+
+modem2_validate_spc_code
+
+validate_spc
+
+Enable the SPC code
+
+SPC code: 
+
+cmd_validate_spc
+
+
+
+=== PHASE 2: TIER 1/2 WRITE CAPABILITY ===
+
+Attempting high-numbered NV item writes (likely less protected)...
+
+
+
+Testing NV items known to be protected...
+
+NV 5 (potential carrier lock):
+
+  Result: command [write_nv]
+
+
+
+60044 - Old value=[PRI.90029477 REV 151 Alpine VERIZON]
+
+New value set
+
+60044 - Read back new value=[NVTL rocks!!]
+
+Wrote old value back
+
+
+
+NV 550 (IMEI):
+
+  Result: command [write_nv]
+
+
+
+60044 - Old value=[PRI.90029477 REV 151 Alpine VERIZON]
+
+New value set
+
+60044 - Read back new value=[NVTL rocks!!]
+
+Wrote old value back
+
+
+
+Testing high-numbered items (>60000)...
+
+NV 60500: READABLE, write: command [write_nv]
+
+NV 61000: READABLE, write: command [write_nv]
+
+NV 61500: READABLE, write: command [write_nv]
+
+NV 62000: READABLE, write: command [write_nv]
+
+NV 62500: READABLE, write: command [write_nv]
+
+NV 63000: READABLE, write: command [write_nv]
+
+NV 63500: READABLE, write: command [write_nv]
+
+NV 64000: READABLE, write: command [write_nv]
+
+NV 64500: READABLE, write: command [write_nv]
+
+NV 65000: READABLE, write: command [write_nv]
+
+NV 65535: READABLE, write: command [write_nv]
+
+
+
+=== PHASE 3: DIRECT MEMORY ACCESS VECTORS ===
+
+Testing /dev/mem and /dev/kmem for modem state access...
+
+
+
+/dev/mem: READABLE
+
+od: invalid type string 'x1z'; 4294967295-byte integral type is not supported
+
+
+
+MTD (flash) partition analysis...
+
+
+
+=== PHASE 4: LIBRARY WRITE FUNCTIONS ===
+
+Extracting symbols from modem libraries...
+
+
+
+libmodem2_api.so symbols (write-related):
+
+
+
+libsms_encoder.so symbols (PDU encoding):
+
+
+
+Checking for QMI write functions...
+
+
+
+=== PHASE 5: DIAG PROTOCOL ANALYSIS ===
+
+Analyzing Qualcomm DIAG protocol access...
+
+
+
+/dev/diag: ACCESSIBLE (Qualcomm diagnostic interface)
+
+DIAG device major:minor: 243, 0
+
+
+
+DIAG commands available (from diag_read strings):
+
+0x30
+
+0x84
+
+
+
+=== PHASE 6: AT COMMAND SERVER VECTORS ===
+
+Analyzing modem_at_server for write capabilities...
+
+
+
+modem_at_server_cli: AVAILABLE
+
+Attempting AT-based NV access...
+
+command [help]
+
+
+
+  ---------------------------------------------------------------------------
+
+ help                      - Prints out usage and command listing.
+
+ print_error_codes         - Prints out all the error codes and their descriptions.
+
+ is_running                - Tells if the associated process is running.
+
+ update_request            - Test sending an AT command request from modem.
+
+ update_usage_info         - Test sending an usage data event.
+
+ update_omadm_info         - Test sending an omadm status event.
+
+  ---------------------------------------------------------------------------
+
+
+
+
+
+=== PHASE 7: EFS FILE MODIFICATION ===
+
+Testing EFS write capability on known paths...
+
+
+
+Attempting to write to /nv/item_files/modem/mmode/lte_bandpref...
+
+  WRITABLE: Band preference modification successful
+
+  Verification: command [read_file]
+
+
+
+Attempting to read file:[/nv/item_files/modem/mmode/lte_bandpref]
+
+File read success, (Total bytes read:8)
+
+Success
+
+
+
+Testing device_config.xml write...
+
+  WRITABLE: device_config.xml modification successful
+
+
+
+=== PHASE 8: FOTA FIRMWARE MODIFICATION ===
+
+Analyzing FOTA firmware update process...
+
+
+
+FOTA tools available:
+
+/opt/nvtl/bin/fota.sh
+
+/opt/nvtl/bin/fota_cli
+
+/opt/nvtl/bin/fota_interruption.sh
+
+/opt/nvtl/bin/fota_linux_pri.sh
+
+/opt/nvtl/bin/fota_pmode.sh
+
+/opt/nvtl/bin/fota_pmode_watchdog.sh
+
+/opt/nvtl/bin/fota_pmode_watchdog_init.sh
+
+/opt/nvtl/bin/fotad
+
+
+
+FOTA configuration:
+
+
+
+Checking FOTA firmware storage...
+
+
+
+=== PHASE 9: PROCESS MEMORY INSPECTION ===
+
+Analyzing running modem processes for exploitable state...
+
+
+
+Modem processes:
+
+   70 root       0:00 [diag_real_time_]
+
+   71 root       0:00 [diag_wq]
+
+   72 root       0:00 [DIAG_USB_diag]
+
+   73 root       0:00 [diag_cntl_wq]
+
+   74 root       0:00 [diag_dci_wq]
+
+
+
+Process 1187 memory map:
+
+00008000-00036000 r-xp 00000000 00:0e 601        /opt/nvtl/bin/modem2d
+
+00036000-00037000 rw-p 0002e000 00:0e 601        /opt/nvtl/bin/modem2d
+
+b64cc000-b65a8000 r-xp 00000000 00:0e 2532       /usr/lib/libiconv.so.2.4.0
+
+b65a8000-b65a9000 rw-p 000db000 00:0e 2532       /usr/lib/libiconv.so.2.4.0
+
+b6872000-b688f000 r-xp 00000000 00:0e 1411       /opt/nvtl/lib/libmodem2_api.so
+
+
+
+=== PHASE 10: LIBRARY WRITE CAPABILITY CHAIN ===
+
+Tracing library dependencies for write operations...
+
+
+
+Library dependencies:
+
+	libwatchdog_api.so => /opt/nvtl/lib/libwatchdog_api.so (0xb6f8c000)
+
+	libmifi_config.so => /opt/nvtl/lib/libmifi_config.so (0xb6f89000)
+
+	libsettings_api.so => /opt/nvtl/lib/libsettings_api.so (0xb6f85000)
+
+	libxmldata_api.so => /opt/nvtl/lib/libxmldata_api.so (0xb6f51000)
+
+	libmifimsgbus.so => /opt/nvtl/lib/libmifimsgbus.so (0xb6f80000)
+
+	libmifi_debug.so => /opt/nvtl/lib/libmifi_debug.so (0xb6e06000)
+
+	libqmi_client_qmux.so.1 => /usr/lib/libqmi_client_qmux.so.1 (0xb6db7000)
+
+	libqmi.so.1 => /usr/lib/libqmi.so.1 (0xb6ca2000)
+
+	libqmiidl.so.1 => /usr/lib/libqmiidl.so.1 (0xb6c9d000)
+
+	libqmiservices.so.1 => /usr/lib/libqmiservices.so.1 (0xb6c7c000)
+
+	libqmi_cci.so.1 => /usr/lib/libqmi_cci.so.1 (0xb6a34000)
+
+	libqmi_csi.so.1 => /usr/lib/libqmi_csi.so.1 (0xb6a2c000)
+
+	libqmi_sap.so.1 => /usr/lib/libqmi_sap.so.1 (0xb6a27000)
+
+	libqmi_common_so.so.1 => /usr/lib/libqmi_common_so.so.1 (0xb6a24000)
+
+	libqmi_encdec.so.1 => /usr/lib/libqmi_encdec.so.1 (0xb6a1e000)
+
+	libnwqmi.so => /lib/libnwqmi.so (0xb69b4000)
+
+	libmal_qct.so => /opt/nvtl/lib/libmal_qct.so (0xb6974000)
+
+	libdsm_api.so => /opt/nvtl/lib/libdsm_api.so (0xb692a000)
+
+	libacm.so => /opt/nvtl/lib/libacm.so (0xb6926000)
+
+	libgpio.so => /opt/nvtl/lib/libgpio.so (0xb6921000)
+
+	libpowersave_api.so => /opt/nvtl/lib/libpowersave_api.so (0xb691b000)
+
+	libdmdb_api.so => /opt/nvtl/lib/libdmdb_api.so (0xb690a000)
+
+	libmodem2_api.so => /opt/nvtl/lib/libmodem2_api.so (0xb6839000)
+
+	libiconv.so.2 => /usr/lib/libiconv.so.2 (0xb647c000)
+
+
+
+Exported functions in libmodem2_api.so:
+
+
+
+=== PHASE 11: CARRIER CONFIG ANALYSIS ===
+
+Analyzing carrier configuration for lock bypass...
+
+
+
+Carrier configuration files:
+
+/opt/nvtl/etc/cc/carrier_customization.xml
+
+
+
+Device settings that might control locks:
+
+		<RoamEnabled>1</RoamEnabled>
+
+		<IntlRoamEnabled>1</IntlRoamEnabled>
+
+		<CertifiedCarrier>AUTO</CertifiedCarrier>
+
+		<!-- The carrier name for which the modem is certified  
+
+		<!-- 0(off) 1(connect when a client connects), 2(connect on service) 3(connect on service, not roaming) -->
+
+			<!-- after this many attempts, webUI access is locked till system restart -->
+
+	<Notifications><Notification id="startup"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces/><WakeDisplayEnabled>0</WakeDisplayEnabled></Notification><Notification id="shutdown"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces/><WakeDisplayEnabled>0</WakeDisplayEnabled></Notification><Notification id="battery10"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="batteryCritical"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="batteryCharging"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="batteryFull"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="lowCharger"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="simNone"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="simError"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="simPINLocked"><Enabled>1</Enabled><AudioAlertEnabled>0</AudioAlertEnabled><DisplaySurfaces>browser</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="simPUKLocked"><Enabled>1</Enabled><AudioAlertEnabled>0</AudioAlertEnabled><DisplaySurfaces>browser</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="simNonVZW"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="PCO2"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="PCO3"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="PCO5"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="mnsAuto"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="switchToGlobalMode"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="noService"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="roaming"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="deviceJoinWiFi"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="wifiDisabled"><Enabled>1</Enabled><AudioAlertEnabled>0</AudioAlertEnabled><DisplaySurfaces>lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="smsReceived"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="wdcpDone"><Enabled>1</Enabled><AudioAlertEnabled>0</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="ucOK"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="ucLowBattery"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="ucTerminated"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="usbModePrompt"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="usbMassStorage"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="usbMassStorageFailure"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="softwareUpdate"><Enabled>1</Enabled><AudioAlertEnabled>0</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="softwareUpdateSuccess"><Enabled>1</Enabled><AudioAlertEnabled>0</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="softwareUpdateFailure"><Enabled>1</Enabled><AudioAlertEnabled>0</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="systemUpdateSuccess"><Enabled>1</Enabled><AudioAlertEnabled>0</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="systemUpdateFailure"><Enabled>1</Enabled><AudioAlertEnabled>0</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="systemDiagnostics"><Enabled>1</Enabled><AudioAlertEnabled>0</AudioAlertEnabled><DisplaySurfaces>lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="highTemp"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification><Notification id="autoVpnFailure"><Enabled>1</Enabled><AudioAlertEnabled>1</AudioAlertEnabled><DisplaySurfaces>browser lcd</DisplaySurfaces><WakeDisplayEnabled>1</WakeDisplayEnabled></Notification></Notifications></ANS>
+
+
+
+=== PHASE 12: HIDDEN WRITE INTERFACES ===
+
+Searching for undocumented write/modify programs...
+
+
+
+Programs that might have write access:
+
+
+
+Checking for shell functions that enable writes...
+
+
+
+=== PHASE 13: KERNEL MODULES ===
+
+Checking loaded kernel modules for modem access...
+
+
+
+Loaded modules (modem-related):
+
+
+
+Module parameters:
+
+
+
+=== PHASE 14: FINDINGS SUMMARY ===
+
+
+
+Completed: Thu Dec  4 21:22:25 UTC 2025
+
+
+
+Key investigation results:
+
+  - SPC code search: Completed
+
+  - TIER 1/2 write testing: Completed
+
+  - Memory access vectors: Checked
+
+  - Library exploitation: Analyzed
+
+  - DIAG protocol: Assessed
+
+  - AT command vectors: Evaluated
+
+  - EFS write capability: Tested
+
+  - FOTA chain: Examined
+
+  - Process memory: Inspected
+
+  - Library chains: Traced
+
+  - Carrier configs: Analyzed
+
+  - Hidden interfaces: Searched
+
+  - Kernel modules: Reviewed
+
+
+
+Next steps: Review findings and implement successful exploitation vectors
+

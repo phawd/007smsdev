@@ -1,0 +1,31 @@
+<div id="notification_preferences">
+	<h1><tmpl_var _("webui", "preferences_notifications_sub_header_text")></h1>
+	<p>This screen contains many options which allow you to set the behaviour of the <tmpl_var _("webui", "webui_product_name")> to better meet your needs.
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_stealth_mode_label"), (size(_("webui", "preferences_stealth_mode_label")) - size(":")))></h3>
+	<p>If this option is checked, then the LED and audio capabilities of the <tmpl_var _("webui", "webui_product_name")> are turned off.
+	The <tmpl_var _("webui", "webui_product_name")> screen will only turn on when the user turns it on. 
+	However, the startup process is not affected by this setting.
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_led_enabled_label"), (size(_("webui", "preferences_led_enabled_label")) - size(":")))></h3>
+	<p>
+	If this setting is checked, the LED will remain off.   
+ 	If this setting is unchecked, LED will blink slowly as a "sign of life".  This setting is grayed out if Stealth mode is on.
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_alert_screen_enabled_label"), (size(_("webui", "preferences_alert_screen_enabled_label")) - size(":")))></h3>
+	<p>If checked, the screen will turn on when an alert message is displayed. If this is not helpful, you can turn this off.
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_audio_enabled_label"), (size(_("webui", "preferences_audio_enabled_label")) - size(":")))></h3>
+	<p>If checked, then the <tmpl_var _("webui", "webui_product_name")> will signal startup, shutdown, and various events using audio alerts.
+	If unchecked, the <tmpl_var _("webui", "webui_product_name")> will operate silently.
+	This setting is grayed out if Stealth mode is on.
+	</p>
+
+	<h3><tmpl_var _("webui", "preferences_audio_alerts_label")></h3>
+	<p>These settings can be used to specify which events trigger an audio alert. These settings are grayed out if audio is turned off, either by the Stealth setting or by the "Turn on audio" setting above.
+	</p>
+</div>

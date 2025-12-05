@@ -1,0 +1,168 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+	</div>
+<tmpl_else>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var validated = false;
+	$(function()
+	{
+		$("#dmzActive").on("change", function() {
+			if ($(this).is(":checked")) {
+				if("<tmpl_var portForwardingEnabled>" == "1") {
+					showWarningMessage();
+				} else {
+					$("#dmzIpAddress").prop("disabled", false);
+				}
+			} else {
+				$("#dmzIpAddress").prop("disabled", true);
+				if (jQuery.uniform) $.uniform.update("#dmzIpAddress");
+			}
+		});
+
+		function showWarningMessage() {
+            		modalPopup.createWindow('<tmpl_var _("webui", "webui_app_warning_title")>', '<p><tmpl_var _("webui", "adv_firewall_modal_text")></p>', 530, "auto", [{
+				text : '<tmpl_var _("webui", "webui_modal_ok_button")>',                                                         
+				className : "primary",                                                                                        
+				trigger : function(){                                                                                         
+						$("#dmzActive").prop("checked", false);
+						if (jQuery.uniform) $.uniform.update("#dmzActive");
+				}                                                                                                          
+			}], null, function(){
+				$("#dmzActive").prop("checked", false);
+				if (jQuery.uniform) $.uniform.update("#dmzActive");
+			});
+		}
+
+		if(jQuery.fn.slideButton) {
+			$("#vpnPassthroughEnable").slideButton("ajaxToggle", {
+				checkUrl : "<tmpl_udf GET_URI('firewall_enable')>",
+				uncheckUrl : "<tmpl_udf GET_URI('firewall_disable')>",
+				data : {gSecureToken : "<tmpl_var gSecureToken>"}
+			});
+
+			$("#ipv6TransparentEnable").slideButton("ajaxToggle", {
+				checkUrl : "<tmpl_udf GET_URI('firewall_ipv6_enable')>",
+				uncheckUrl : "<tmpl_udf GET_URI('firewall_ipv6_disable')>",
+				data : {gSecureToken : "<tmpl_var gSecureToken>"}
+			});
+		}
+	});
+	/* ]]> */
+</script>
+
+<tmpl_if isLocked>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+	</div>
+</tmpl_if>
+
+<tmpl_if errorCount>
+<div class="notification app error">
+	<div class="notification_inner">
+		<p>
+				<tmpl_var _("webui", "webui_save_code_failed_text")>
+		</p>
+	</div>
+</div>
+</tmpl_if>
+
+<tmpl_if gPostSuccess>
+<div class="notification app success">
+	<div class="notification_inner">
+		<p>
+				<tmpl_var _("webui", "webui_save_code_success_text")>
+		</p>
+	</div>
+</div>
+</tmpl_if>
+
+<p id="firewallIntroText" class="note">
+	<tmpl_var _("webui", "adv_firewall_intro")>
+</p>
+
+<div class="toggleSettingContainer scrimp">
+	<tmpl_unless IN_SET(linkLocalAddress, "unknown")>
+		<div class="toggleSettingContainerInner">
+			<div class="desc">
+				<h4><label for="vpnPassthroughEnable"><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></label></h4>
+				<p><tmpl_var _("webui", "adv_firewall_vpn_passthrough_help_text")></p>
+			</div>
+			<div class="toggle">
+				<input class="toggleSwitchCheckbox" type="checkbox" id="vpnPassthroughEnable" name="vpnPassthroughEnable"<tmpl_if IN_SET(routerSettingsVpnPassthrough, "on")> checked="checked"</tmpl_if> <tmpl_if isLocked>disabled="disabled"</tmpl_if> />
+			</div>
+		</div><!--/.toggleSettingContainerInner-->
+	</tmpl_unless>
+
+	<tmpl_if ipv6Supported>
+		<tmpl_unless IN_SET(ipv6TransparentEnable, "unknown")>
+			<div class="toggleSettingContainerInner">
+				<div class="desc">
+					<h4><label for="ipv6TransparentEnable"><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></label></h4>
+					<p><tmpl_var _("webui", "adv_firewall_ipv6_transparent_help_text")></p>
+				</div>
+				<div class="toggle">
+					<input class="toggleSwitchCheckbox" type="checkbox" id="ipv6TransparentEnable" name="ipv6TransparentEnable"<tmpl_if IN_SET(ipv6TransparentEnable, "on")> checked="checked"</tmpl_if> <tmpl_if isLocked>disabled="disabled"</tmpl_if> <tmpl_unless ipv6Active> disabled="disabled"</tmpl_unless> />
+				</div>
+			</div><!--/.toggleSettingContainerInner-->
+		</tmpl_unless>
+	</tmpl_if>
+</div><!--/.toggleSettingContainer-->
+
+<tmpl_if isIpPassthroughActive>
+	<h3 class="sectionHead"><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h3>
+	<p class="warning">
+		<tmpl_var _("webui", "adv_firewall_ip_passthrough_active_warning_text")>
+	</p>
+<tmpl_else>
+	<form id="adv_firewall_form" method="POST" action="<tmpl_udf GET_URI('firewall')>">
+		<fieldset class="first" id="advanced_lan_settings_1">
+			<h3 class="sectionHead"><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h3>
+			<div class="table">
+				<tmpl_unless IN_SET(dmzActive, "unknown")>
+					<div class="row clearfix">
+						<div class="col label">
+							<h4><label for="dmzActive"><tmpl_var _("webui", "adv_firewall_dmz_enable_label")></label></h4>
+						</div>
+						<div class="col input">
+							<input type="checkbox" name="dmzActive" id="dmzActive"<tmpl_if IN_SET(dmzActive, "on")> checked="checked"</tmpl_if> />
+						</div>
+					</div>
+					<div class="row clearfix">
+						
+						<div class="col label">
+							<tmpl_if showToolTip>
+								<div class="col tooltip tooltip-help" id="sample" title="<tmpl_var _('webui', 'adv_firewall_dmz_ip_help_text')>">
+									<tmpl_var _("webui", "webui_inline_help_icon")>
+								</div>
+							</tmpl_if>
+							<h4><label for="dmzIpAddress"><tmpl_var _("webui", "adv_firewall_dmz_ip_address_label")></label></h4>
+						</div>
+						<div class="col input">
+							<input type="text" name="dmzIpAddress" id="dmzIpAddress" value="<tmpl_var dmzIpAddress>" <tmpl_unless IN_SET(dmzActive, "on")> disabled="disabled"</tmpl_unless> <tmpl_if dmzIpAddressError> class="error"</tmpl_if> />
+						</div>
+						<tmpl_unless showToolTip>
+							<div class="col help" id="sample">
+								<tmpl_var _("webui", "adv_firewall_dmz_ip_help_text")>
+							</div>
+						</tmpl_unless>
+						<tmpl_if dmzIpAddressError>
+								<div class="col inline_error">
+									<tmpl_var dmzIpAddressError>
+								</div>
+						</tmpl_if>
+					</div>
+				</tmpl_unless>
+			</div><!-- /.table -->
+		</fieldset>
+
+		<div class="button_container clearfix">
+			<input type="hidden" name="gSecureToken" id="gSecureToken" value="<tmpl_var gSecureToken>" />
+			<button type="submit" class="primary" <tmpl_if isLocked>disabled="disabled"</tmpl_if> >
+				<tmpl_var _("webui", "webui_save_button")>
+			</button>
+		</div>
+	</form>
+</tmpl_if>
+</tmpl_if><!-- isHidden -->

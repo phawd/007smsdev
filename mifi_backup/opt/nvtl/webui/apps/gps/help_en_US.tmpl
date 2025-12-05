@@ -1,0 +1,58 @@
+<div id="gps_status">
+	<h1><tmpl_var _("webui", "gps_status_menu_text")></h1>
+	<h2>Overview</h2>
+	<p>
+		This <tmpl_var _("webui", "webui_product_name")> device incorporates a GPS receiver. The GPS receiver can determine your current location, often even indoors. <tmpl_if GPSOverWiFiEnableShow>The current location is shown on this page, and the location information can be shared with connected computers by using the GPS over Wi-Fi feature.</tmpl_if>
+	</p>
+
+	<h2>GPS Controls</h2>
+
+	<h3><tmpl_var _("webui", "gps_status_enable_label")></h3>
+		<p>
+			Use this ON/OFF control to turn the GPS feature on or off as needed.
+		</p>
+		<h3><tmpl_udf GET_PO_TEXT("gps_status_startup_state_label", gProductName)></h3>
+		<p>If on, the GPS receiver will turn off once the <tmpl_var _("webui", "webui_product_name")> is shut down. You will need to turn it on again the next time the GPS receiver is needed.</p>
+		<h2><tmpl_var _("webui", "gps_status_map_section_header_text")></h2>
+		<p>
+			If the GPS receiver has not yet obtained a fix (location), a <strong>Searching</strong> status appears. Once a fix has been obtained, the following information is displayed along with a Google map showing the current location.
+		</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_latitude_label"), (size(_("webui", "gps_status_latitude_label")) - size(":")))></h3>
+		<p>
+			The Latitude for the last location fix.
+		</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_longitude_label"), (size(_("webui", "gps_status_longitude_label")) - size(":")))></h3>
+		<p>
+			The Longitude for the last location fix.
+		</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_altitude_label"), (size(_("webui", "gps_status_altitude_label")) - size(":")))></h3>
+		<p>
+			The Altitude for the last location fix.
+		</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_accuracy_label"), (size(_("webui", "gps_status_accuracy_label")) - size(":")))></h3>
+		<p>
+			This is a measure of the accuracy of the horizontal position obtained by the GPS receiver.
+		</p>
+		<tmpl_if GPSOverWiFiEnableShow>
+			<tmpl_if GPSPortNumberShow>		
+				<h2><tmpl_var _("webui", "gps_status_enable_sub_header_text")></h2>
+			
+				<h3><tmpl_var truncate(_("webui", "gps_status_gps_over_wifi_label"), (size(_("webui", "gps_status_gps_over_wifi_label")) - size(":")))></h3>
+				<p>GPS data is provided by the <tmpl_var  _("webui", "webui_product_name")> in the form of a National Marine Electronics Association (NMEA) text stream. 
+				</p>
+				<p>Using a NMEA (GPS) port is a standard method for applications to access a GPS data stream in Windows and other computing platforms. To create this port, you must download and install the GPS over Wi-Fi driver for your platform. This driver will create the NMEA port, obtain GPS data from the <tmpl_var  _("webui", "webui_product_name")>, and make this GPS data available to NMEA-aware applications.
+				</p>
+
+				<h3><tmpl_var truncate(_("webui", "gps_status_port_number_label"), (size(_("webui", "gps_status_port_number_label")) - size(":")))></h3>
+				<p>
+				This is the port number used by the driver software on your computer to establish a connection to this device and obtain the GPS data. This connection port should not be changed unless it is interfering with another application.
+				</p>
+			</tmpl_if>
+		</tmpl_if>
+		<h3><tmpl_var _("webui", "gps_status_wifi_driver_download_link")></h3>
+		<p>
+			Use this to access the download page for the the available drivers. <tmpl_if GPSOverWiFiEnableShow>These drivers are needed to use the GPS over Wi-Fi feature.</tmpl_if>
+		</p>
+					
+</div>
+

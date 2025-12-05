@@ -1,0 +1,20 @@
+<div id="notification_preferences">
+	<h1><tmpl_var _("webui", "preferences_notifications_sub_header_text")></h1>
+	<p>Esta pantalla contiene muchas opciones que le permiten definir el comportamiento del <tmpl_var _("webui", "webui_product_name")> para satisfacer mejor sus necesidades. </p>
+	
+	<h3><tmpl_var truncate(_("webui", "preferences_stealth_mode_label"), (size(_("webui", "preferences_stealth_mode_label")) - size(":")))></h3>
+	<p>Si se marca esta opción, las capacidades de LED y audio del <tmpl_var _("webui", "webui_product_name")> se desactivan. La pantalla del <tmpl_var _("webui", "webui_product_name")> solo se encenderá cuando el usuario la encienda. Sin embargo, el proceso de arranque no se ve afectado por esta configuración. </p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_led_enabled_label"), (size(_("webui", "preferences_led_enabled_label")) - size(":")))></h3>
+	<p>Si este parámetro está seleccionado, el LED permanecerá apagado.    Si este parámetro no está seleccionado, el LED parpadeará lentamente como una "señal de vida".  Este parámetro aparece en color gris si el modo Sigiloso está activado.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_alert_screen_enabled_label"), (size(_("webui", "preferences_alert_screen_enabled_label")) - size(":")))></h3>
+	<p>Si se selecciona, la pantalla se encenderá cuando se muestre un mensaje de alerta. Si esto no es útil para usted, puede desactivarlo. </p>
+	
+	<h3><tmpl_var truncate(_("webui", "preferences_audio_enabled_label"), (size(_("webui", "preferences_audio_enabled_label")) - size(":")))></h3>
+	<p>Si está marcada, el <tmpl_var _("webui", "webui_product_name")> indicará el arranque, el apagado y distintos eventos usando alertas sonoras. Si no está marcada, el <tmpl_var _("webui", "webui_product_name")> operará silenciosamente. Esta configuración aparece en gris y el modo Oculto está activado. </p>
+
+	<h3><tmpl_var _("webui", "preferences_audio_alerts_label")></h3>
+	<p>Estos parámetros se pueden utilizar para especificar qué eventos inician las alertas de audio. Aparecen en color gris si el audio se encuentra desactivado, ya sea debido al modo silencioso o por el parámetro "Activar audio" mencionado arriba. </p>
+	
+</div>

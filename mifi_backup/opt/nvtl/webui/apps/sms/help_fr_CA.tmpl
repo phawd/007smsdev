@@ -1,0 +1,20 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<h2>Vue d'ensemble</h2>
+	<p> Ces messages SMS proviennent normalement de votre fournisseur de service. Vous n'êtes pas censé(e) y répondre, c'est pourquoi aucune fonctionnalité de réponse n'est offerte. </p>
+	<h2>Contenu</h2>
+	<tmpl_if showMessageCounter>
+		<h3>Compteurs de messages</h3>
+		<p> Deux compteurs en haut de l'écran indiquent le nombre de (nouveaux) messages non lus et le nombre total de messages. </p>
+		<p> Notez que tous les messages sont marqués comme lus une fois qu'ils ont été affichés sur cet écran. </p>
+	</tmpl_if>
+	<h3>Liste de messages</h3>
+	<p> Tous les messages sont affichés par ordre chronologique. Les messages non lus (nouveaux) sont marqués d'une icône. Les messages sont automatiquement marqués comme lus une fois qu'ils ont été affichés sur cette page. Ainsi, la prochaine fois que vous vous rendrez sur la page, ils ne seront plus marqués comme non lus. </p>
+	<h3>Bouton Supprimer</h3>
+	<p> Chaque message est accompagné d'une icône Supprimer individuelle. Utilisez-la pour supprimer des messages. </p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p> Ce bouton se trouve à la fin de la liste de messages. Utilisez-le au besoin pour supprimer tous les messages. </p>
+	</tmpl_if>
+</div>

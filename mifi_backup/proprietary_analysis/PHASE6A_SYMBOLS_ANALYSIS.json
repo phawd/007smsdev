@@ -1,0 +1,6330 @@
+{
+  "libfota_api.so": {
+    "metadata": {
+      "filename": "libfota_api.so",
+      "arch": "EM_ARM",
+      "bits": 32,
+      "endian": "little",
+      "type": "ET_DYN",
+      "entry": "0x0",
+      "sections": [
+        {
+          "name": "",
+          "type": "SHT_NULL",
+          "addr": "0x0",
+          "size": 0
+        },
+        {
+          "name": ".note.gnu.build-id",
+          "type": "SHT_NOTE",
+          "addr": "0x114",
+          "size": 36
+        },
+        {
+          "name": ".dynsym",
+          "type": "SHT_DYNSYM",
+          "addr": "0x138",
+          "size": 912
+        },
+        {
+          "name": ".dynstr",
+          "type": "SHT_STRTAB",
+          "addr": "0x4c8",
+          "size": 1723
+        },
+        {
+          "name": ".gnu.hash",
+          "type": "SHT_GNU_HASH",
+          "addr": "0xb84",
+          "size": 348
+        },
+        {
+          "name": ".gnu.version",
+          "type": "SHT_GNU_versym",
+          "addr": "0xce0",
+          "size": 114
+        },
+        {
+          "name": ".gnu.version_d",
+          "type": "SHT_GNU_verdef",
+          "addr": "0xd54",
+          "size": 28
+        },
+        {
+          "name": ".gnu.version_r",
+          "type": "SHT_GNU_verneed",
+          "addr": "0xd70",
+          "size": 32
+        },
+        {
+          "name": ".rel.dyn",
+          "type": "SHT_REL",
+          "addr": "0xd90",
+          "size": 88
+        },
+        {
+          "name": ".rel.plt",
+          "type": "SHT_REL",
+          "addr": "0xde8",
+          "size": 128
+        },
+        {
+          "name": ".init",
+          "type": "SHT_PROGBITS",
+          "addr": "0xe68",
+          "size": 12
+        },
+        {
+          "name": ".plt",
+          "type": "SHT_PROGBITS",
+          "addr": "0xe74",
+          "size": 212
+        },
+        {
+          "name": ".text",
+          "type": "SHT_PROGBITS",
+          "addr": "0xf48",
+          "size": 22956
+        },
+        {
+          "name": ".fini",
+          "type": "SHT_PROGBITS",
+          "addr": "0x68f4",
+          "size": 8
+        },
+        {
+          "name": ".rodata",
+          "type": "SHT_PROGBITS",
+          "addr": "0x68fc",
+          "size": 3196
+        },
+        {
+          "name": ".eh_frame",
+          "type": "SHT_PROGBITS",
+          "addr": "0x7578",
+          "size": 4
+        },
+        {
+          "name": ".eh_frame_hdr",
+          "type": "SHT_PROGBITS",
+          "addr": "0x757c",
+          "size": 8
+        },
+        {
+          "name": ".dynamic",
+          "type": "SHT_DYNAMIC",
+          "addr": "0x8584",
+          "size": 496
+        },
+        {
+          "name": ".data",
+          "type": "SHT_PROGBITS",
+          "addr": "0x8774",
+          "size": 4
+        },
+        {
+          "name": ".init_array",
+          "type": "SHT_INIT_ARRAY",
+          "addr": "0x8778",
+          "size": 4
+        },
+        {
+          "name": ".fini_array",
+          "type": "SHT_FINI_ARRAY",
+          "addr": "0x877c",
+          "size": 4
+        },
+        {
+          "name": ".jcr",
+          "type": "SHT_PROGBITS",
+          "addr": "0x8780",
+          "size": 4
+        },
+        {
+          "name": ".tm_clone_table",
+          "type": "SHT_PROGBITS",
+          "addr": "0x8784",
+          "size": 0
+        },
+        {
+          "name": ".got",
+          "type": "SHT_PROGBITS",
+          "addr": "0x8784",
+          "size": 108
+        },
+        {
+          "name": ".bss",
+          "type": "SHT_NOBITS",
+          "addr": "0x87f0",
+          "size": 1
+        },
+        {
+          "name": ".comment",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 18
+        },
+        {
+          "name": ".GCC.command.line",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 3695
+        },
+        {
+          "name": ".note.gnu.gold-version",
+          "type": "SHT_NOTE",
+          "addr": "0x0",
+          "size": 28
+        },
+        {
+          "name": ".ARM.attributes",
+          "type": "SHT_ARM_ATTRIBUTES",
+          "addr": "0x0",
+          "size": 51
+        },
+        {
+          "name": ".symtab",
+          "type": "SHT_SYMTAB",
+          "addr": "0x0",
+          "size": 3152
+        },
+        {
+          "name": ".strtab",
+          "type": "SHT_STRTAB",
+          "addr": "0x0",
+          "size": 1993
+        },
+        {
+          "name": ".shstrtab",
+          "type": "SHT_STRTAB",
+          "addr": "0x0",
+          "size": 319
+        }
+      ]
+    },
+    "total_dynamic_symbols": 57,
+    "total_symbols": 197,
+    "total_relocations": 27,
+    "spc_related_symbols": [
+      {
+        "name": "fota_validate_update_pkg",
+        "value": "0x3c00",
+        "size": 1160,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      }
+    ],
+    "all_exported_functions": [
+      {
+        "name": "mifi_dbg_get_level_name",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "mifi_dbg_syslog",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "mifi_dbg_log",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "strlen",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "__ctype_b_loc",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "msgq_does_queue_exist",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "memset",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "msgq_send_sync",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "snprintf",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "strsep",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "strtoul",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "memcpy",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "msgq_send_sync_to",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "fota_get_target_version_from_package",
+        "address": "0x27fc",
+        "size": 52
+      },
+      {
+        "name": "fota_decrypt_pkg",
+        "address": "0x5254",
+        "size": 1588
+      },
+      {
+        "name": "fota_clear_session",
+        "address": "0x1a68",
+        "size": 584
+      },
+      {
+        "name": "fota_get_last_successful_record",
+        "address": "0x2bf0",
+        "size": 756
+      },
+      {
+        "name": "fota_abort_current_sess",
+        "address": "0x4688",
+        "size": 796
+      },
+      {
+        "name": "_fini",
+        "address": "0x68f4",
+        "size": 0
+      },
+      {
+        "name": "fota_get_max_allowed_pkg_size",
+        "address": "0x13a8",
+        "size": 572
+      },
+      {
+        "name": "fota_get_source_version_from_package",
+        "address": "0x27c8",
+        "size": 52
+      },
+      {
+        "name": "fota_set_time_of_last_update_check",
+        "address": "0x31b4",
+        "size": 584
+      },
+      {
+        "name": "fota_get_time_of_last_update_check",
+        "address": "0x2ee4",
+        "size": 720
+      },
+      {
+        "name": "fota_get_record_by_id",
+        "address": "0x4bd0",
+        "size": 556
+      },
+      {
+        "name": "initialize_settings",
+        "address": "0x66ac",
+        "size": 128
+      },
+      {
+        "name": "fota_api_is_running",
+        "address": "0x1368",
+        "size": 64
+      },
+      {
+        "name": "fota_get_current_sess_record",
+        "address": "0x49a4",
+        "size": 556
+      },
+      {
+        "name": "fota_cfg_save_new_record",
+        "address": "0x1cb0",
+        "size": 996
+      },
+      {
+        "name": "fota_validate_update_pkg",
+        "address": "0x3c00",
+        "size": 1160
+      },
+      {
+        "name": "fota_incr_install_defer_count",
+        "address": "0x500c",
+        "size": 584
+      },
+      {
+        "name": "fota_sua_update_start",
+        "address": "0x640c",
+        "size": 592
+      },
+      {
+        "name": "fota_sideload_prepare_package",
+        "address": "0x61c0",
+        "size": 588
+      },
+      {
+        "name": "fota_start_installation",
+        "address": "0x4088",
+        "size": 768
+      },
+      {
+        "name": "fota_stop_in_recovery",
+        "address": "0x4500",
+        "size": 392
+      },
+      {
+        "name": "initialize_factory_reset_func",
+        "address": "0x68ac",
+        "size": 72
+      },
+      {
+        "name": "fota_create_session",
+        "address": "0x1820",
+        "size": 584
+      },
+      {
+        "name": "fota_get_update_status",
+        "address": "0x2830",
+        "size": 960
+      },
+      {
+        "name": "fota_get_full_update_history",
+        "address": "0x33fc",
+        "size": 2052
+      },
+      {
+        "name": "fota_cfg_get_current_record",
+        "address": "0x2094",
+        "size": 936
+      },
+      {
+        "name": "fota_get_test_settings_impl",
+        "address": "0x665c",
+        "size": 40
+      },
+      {
+        "name": "fota_get_sideload_max_allowed_pkg_size",
+        "address": "0x15e4",
+        "size": 572
+      },
+      {
+        "name": "fota_factory_reset_impl",
+        "address": "0x672c",
+        "size": 384
+      },
+      {
+        "name": "fota_do_factory_reset",
+        "address": "0x4388",
+        "size": 376
+      },
+      {
+        "name": "fota_do_file_operation",
+        "address": "0x5d10",
+        "size": 1200
+      },
+      {
+        "name": "fota_set_test_settings_impl",
+        "address": "0x6684",
+        "size": 40
+      },
+      {
+        "name": "_init",
+        "address": "0xe68",
+        "size": 0
+      },
+      {
+        "name": "fota_modify_record_by_id",
+        "address": "0x4dfc",
+        "size": 528
+      },
+      {
+        "name": "fota_sideload_start_installation",
+        "address": "0x5888",
+        "size": 1160
+      }
+    ],
+    "function_categories": {
+      "firmware_update": [
+        "fota_get_target_version_from_package",
+        "fota_decrypt_pkg",
+        "fota_clear_session",
+        "fota_get_last_successful_record",
+        "fota_abort_current_sess",
+        "fota_get_max_allowed_pkg_size",
+        "fota_get_source_version_from_package",
+        "fota_set_time_of_last_update_check",
+        "fota_get_time_of_last_update_check",
+        "fota_get_record_by_id",
+        "fota_api_is_running",
+        "fota_get_current_sess_record",
+        "fota_cfg_save_new_record",
+        "fota_validate_update_pkg",
+        "fota_incr_install_defer_count",
+        "fota_sua_update_start",
+        "fota_sideload_prepare_package",
+        "fota_start_installation",
+        "fota_stop_in_recovery",
+        "fota_create_session",
+        "fota_get_update_status",
+        "fota_get_full_update_history",
+        "fota_cfg_get_current_record",
+        "fota_get_test_settings_impl",
+        "fota_get_sideload_max_allowed_pkg_size",
+        "fota_factory_reset_impl",
+        "fota_do_factory_reset",
+        "fota_do_file_operation",
+        "fota_set_test_settings_impl",
+        "fota_modify_record_by_id",
+        "fota_sideload_start_installation"
+      ]
+    }
+  },
+  "libmal_qct.so": {
+    "metadata": {
+      "filename": "libmal_qct.so",
+      "arch": "EM_ARM",
+      "bits": 32,
+      "endian": "little",
+      "type": "ET_DYN",
+      "entry": "0x0",
+      "sections": [
+        {
+          "name": "",
+          "type": "SHT_NULL",
+          "addr": "0x0",
+          "size": 0
+        },
+        {
+          "name": ".note.gnu.build-id",
+          "type": "SHT_NOTE",
+          "addr": "0x114",
+          "size": 36
+        },
+        {
+          "name": ".dynsym",
+          "type": "SHT_DYNSYM",
+          "addr": "0x138",
+          "size": 7184
+        },
+        {
+          "name": ".dynstr",
+          "type": "SHT_STRTAB",
+          "addr": "0x1d48",
+          "size": 11575
+        },
+        {
+          "name": ".gnu.hash",
+          "type": "SHT_GNU_HASH",
+          "addr": "0x4a80",
+          "size": 1908
+        },
+        {
+          "name": ".gnu.version",
+          "type": "SHT_GNU_versym",
+          "addr": "0x51f4",
+          "size": 898
+        },
+        {
+          "name": ".gnu.version_d",
+          "type": "SHT_GNU_verdef",
+          "addr": "0x5578",
+          "size": 28
+        },
+        {
+          "name": ".gnu.version_r",
+          "type": "SHT_GNU_verneed",
+          "addr": "0x5594",
+          "size": 48
+        },
+        {
+          "name": ".rel.dyn",
+          "type": "SHT_REL",
+          "addr": "0x55c4",
+          "size": 120
+        },
+        {
+          "name": ".rel.plt",
+          "type": "SHT_REL",
+          "addr": "0x563c",
+          "size": 1960
+        },
+        {
+          "name": ".init",
+          "type": "SHT_PROGBITS",
+          "addr": "0x5de4",
+          "size": 12
+        },
+        {
+          "name": ".plt",
+          "type": "SHT_PROGBITS",
+          "addr": "0x5df0",
+          "size": 2960
+        },
+        {
+          "name": ".text",
+          "type": "SHT_PROGBITS",
+          "addr": "0x6980",
+          "size": 187816
+        },
+        {
+          "name": ".fini",
+          "type": "SHT_PROGBITS",
+          "addr": "0x34728",
+          "size": 8
+        },
+        {
+          "name": ".rodata",
+          "type": "SHT_PROGBITS",
+          "addr": "0x34730",
+          "size": 38952
+        },
+        {
+          "name": ".eh_frame",
+          "type": "SHT_PROGBITS",
+          "addr": "0x3df58",
+          "size": 4
+        },
+        {
+          "name": ".eh_frame_hdr",
+          "type": "SHT_PROGBITS",
+          "addr": "0x3df5c",
+          "size": 8
+        },
+        {
+          "name": ".dynamic",
+          "type": "SHT_DYNAMIC",
+          "addr": "0x3e000",
+          "size": 368
+        },
+        {
+          "name": ".data",
+          "type": "SHT_PROGBITS",
+          "addr": "0x3e170",
+          "size": 24
+        },
+        {
+          "name": ".init_array",
+          "type": "SHT_INIT_ARRAY",
+          "addr": "0x3e188",
+          "size": 4
+        },
+        {
+          "name": ".fini_array",
+          "type": "SHT_FINI_ARRAY",
+          "addr": "0x3e18c",
+          "size": 4
+        },
+        {
+          "name": ".jcr",
+          "type": "SHT_PROGBITS",
+          "addr": "0x3e190",
+          "size": 4
+        },
+        {
+          "name": ".tm_clone_table",
+          "type": "SHT_PROGBITS",
+          "addr": "0x3e194",
+          "size": 0
+        },
+        {
+          "name": ".got",
+          "type": "SHT_PROGBITS",
+          "addr": "0x3e194",
+          "size": 1036
+        },
+        {
+          "name": ".bss",
+          "type": "SHT_NOBITS",
+          "addr": "0x3e5a0",
+          "size": 4384
+        },
+        {
+          "name": ".comment",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 18
+        },
+        {
+          "name": ".GCC.command.line",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 5091
+        },
+        {
+          "name": ".debug_frame",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 64
+        },
+        {
+          "name": ".debug_line",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 1321
+        },
+        {
+          "name": ".debug_info",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 1444
+        },
+        {
+          "name": ".debug_abbrev",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 215
+        },
+        {
+          "name": ".debug_aranges",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 160
+        },
+        {
+          "name": ".debug_loc",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 122
+        },
+        {
+          "name": ".debug_str",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 779
+        },
+        {
+          "name": ".note.gnu.gold-version",
+          "type": "SHT_NOTE",
+          "addr": "0x0",
+          "size": 28
+        },
+        {
+          "name": ".ARM.attributes",
+          "type": "SHT_ARM_ATTRIBUTES",
+          "addr": "0x0",
+          "size": 51
+        },
+        {
+          "name": ".symtab",
+          "type": "SHT_SYMTAB",
+          "addr": "0x0",
+          "size": 22864
+        },
+        {
+          "name": ".strtab",
+          "type": "SHT_STRTAB",
+          "addr": "0x0",
+          "size": 17764
+        },
+        {
+          "name": ".shstrtab",
+          "type": "SHT_STRTAB",
+          "addr": "0x0",
+          "size": 407
+        }
+      ]
+    },
+    "total_dynamic_symbols": 449,
+    "total_symbols": 1429,
+    "total_relocations": 260,
+    "spc_related_symbols": [
+      {
+        "name": "nv_system",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_NOTYPE",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      },
+      {
+        "name": "iconv_close",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      },
+      {
+        "name": "iconv_open",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      },
+      {
+        "name": "nwqmi_nvtl_nv_item_read_cmd",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      },
+      {
+        "name": "nwqmi_dms_get_device_hwrev",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      },
+      {
+        "name": "nwqmi_dms_get_device_revid",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      },
+      {
+        "name": "nwqmi_dms_get_factory_sku",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      },
+      {
+        "name": "nwqmi_dms_get_device_serial_numbers",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      },
+      {
+        "name": "nwqmi_uim_unblock_pin",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      },
+      {
+        "name": "nwqmi_dms_validate_spc",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      },
+      {
+        "name": "nwqmi_dms_get_operating_mode",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      },
+      {
+        "name": "nwqmi_dms_set_operating_mode",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      },
+      {
+        "name": "nwqmi_nvtl_nv_item_write_cmd",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      },
+      {
+        "name": "nwqmi_dms_get_device_time",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_modem_get_spc_validate_limit",
+        "value": "0x2788c",
+        "size": 216,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "dsm_modem_get_imei",
+        "value": "0x32b84",
+        "size": 316,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_modem_carrier_unlock",
+        "value": "0x29f4c",
+        "size": 788,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_modem_get_carrier_unlock_status",
+        "value": "0x29d80",
+        "size": 460,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_modem_unblock_pin",
+        "value": "0x17800",
+        "size": 396,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_modem_validate_spc",
+        "value": "0x27964",
+        "size": 328,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_modem_get_carrier_from_sim",
+        "value": "0x18c04",
+        "size": 1384,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_modem_validate_apn_ip_family",
+        "value": "0x2b258",
+        "size": 1200,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "fota_modem_write_nv_item",
+        "value": "0x337e4",
+        "size": 60,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_modem_get_certified_carrier_id",
+        "value": "0x18b44",
+        "size": 192,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      }
+    ],
+    "all_exported_functions": [
+      {
+        "name": "memset",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_init",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_register_callback",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_open_one",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_gps_set_event_mask",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_enable_events",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_unregister_callback",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_close",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "ntohl",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "socket",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "htons",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "gethostbyname",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "inet_addr",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "inet_ntoa",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "connect",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "ftime",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "send",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "select",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "recv",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "gmtime_r",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "shutdown",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "close",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "strncpy",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "exit",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_gps_inject_xtra_time",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "fopen",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "fseek",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "fread",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "fclose",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_gps_inject_xtra_part",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "access",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "mkdir",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "sleep",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "memcpy",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_gps_set_service_state",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_gps_set_session_operation",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_gps_start_fix_req",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_gps_stop_fix_req",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_gps_force_xtra_dl",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_disable_events",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_uim_get_iccid",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_get_3gpp2_subscription_info",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_get_system_info",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_get_accolc",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_get_device_config",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_get_mip_mode",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_get_mip_settings",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_get_active_mip_profile",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_read_mip_profile",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "__errno_location",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_get_dns_settings",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_get_scrm",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "iconv",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_get_sig_str",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "iconv_close",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_get_tx_rx_info",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_get_call_dormancy_status",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "iconv_open",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_get_mac_index",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_get_runtime_settings",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_get_hdr_color_code",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_get_cdma_position_info",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_get_system_selection_preference",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_get_rf_band",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "sprintf",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "fflush",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "__ctype_b_loc",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "strcmp",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_convert_ecio",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_get_plmn_name",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_decode_plmn_name",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "snprintf",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "strcat",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "strlen",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "strcpy",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_convert_mcc_mnc",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_convert_sinr",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_convert_snr",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "mktime",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "ctime_r",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_unpack_7_bit_chars",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_get_uicc_plmn",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "memcmp",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_nv_item_read_cmd",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_get_model_number_cmd",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_dms_get_device_hwrev",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_dms_get_device_revid",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_dms_get_factory_sku",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_dms_get_device_serial_numbers",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_get_eri",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_read_pri_version",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "atoi",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "strncmp",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_get_3gpp2_mdn_min",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_uim_read_msisdn",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_get_home_network_info",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_do_initial_probe",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_open",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_uim_set_pin_protection",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_uim_get_pin_status",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_uim_verify_pin",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_uim_unblock_pin",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_uim_change_pin",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_uim_read_mnc_length",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_uim_get_imsi",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_uim_read_gid",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "htonl",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_get_profile",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_modify_profile",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_set_system_selection_preference",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_get_lte_attach_pdn_list",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_set_lte_attach_pdn_list",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_set_mip_settings",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_dms_validate_spc",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_modify_mip_profile",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_dms_get_operating_mode",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_dms_set_operating_mode",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_nv_item_write_cmd",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_set_3gpp2_subscription_info",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_file_read",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_file_write",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nmqmi_nvtl_get_lte_ca_status",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_ims_get_volte_enabled",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_ims_set_volte_enabled",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_get_ca_option",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_set_ca_option",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_get_ca_bands_config",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "inet_ntop",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_set_ca_bands_config",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_get_ca_tri_bands_config",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_set_ca_tri_bands_config",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nmqmi_nvtl_get_autonomous_gap_enabled",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nmqmi_nvtl_set_autonomous_gap_enabled",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_initiate_attach_req",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_ims_setting_get_voip_config_req",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "inet_pton",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_ims_setting_set_voip_config_req",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_ims_setting_get_presence_config_req",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_ims_setting_set_presence_config_req",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_ims_get_lvc_enabled",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_ims_set_lvc_enabled",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_ims_setting_set_sip_config_req",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "time",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_ims_bind_subscription",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_ims_get_sms_format",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_ims_get_sms_over_ip",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_ims_set_sms_format",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_ims_set_sms_over_ip",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_ims_setting_set_reg_mgr_extended_config_req",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_get_default_profile_num",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_set_default_profile_num",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_calculate_signal_bars",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_read_otksk_counter",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_read_bsr_timers",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_write_bsr_timers",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_extnd_info_cmd",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_get_refurbish_info",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_get_activation_date",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_set_ddtm_state",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_file_delete",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_dms_get_device_time",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_get_serving_system",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_perform_network_scan",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "__isoc99_sscanf",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_start_call",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_open_wdsadmin",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wdsadmin_start_call",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_open_wdsota",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wdsota_start_call",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_open_ipv6",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds6_start_call",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_open_wdsota_ipv6",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wdsota_ipv6_start_call",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_stop_call",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wdsadmin_stop_call",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wdsota_stop_call",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds6_stop_call",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wdsota_ipv6_stop_call",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_get_iface",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wdsadmin_get_runtime_settings",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wdsadmin_get_iface",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wdsota_get_runtime_settings",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wdsota_get_iface",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds6_get_runtime_settings",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds6_get_iface",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wdsota_ipv6_get_runtime_settings",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wdsota_ipv6_get_iface",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds_get_call_status",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wdsadmin_get_call_status",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wdsota_get_call_status",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wds6_get_call_status",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wdsota_ipv6_get_call_status",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nas_set_rtre_config",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_factory_restore",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_uim_read_pnn",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_uim_read_3g_spn",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_imsa_get_voip_srv_status",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_imsa_get_volte_srv_status",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_get_pco_value",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_coex_set_lte_5ghz",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wms_get_routes",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wms_set_message_waiting",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wms_list",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wms_read",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wms_delete_msg",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wms_send",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wms_get_msg_protocol",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_wms_get_message_waiting",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "xmldata_initialize",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "xmldata_getint32_default",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_modem_pwr_down_cmd",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "nwqmi_nvtl_fota_factory_backup",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "__xstat",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "raise",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "modem2_modem_get_active_tech_profile",
+        "address": "0x27420",
+        "size": 216
+      },
+      {
+        "name": "modem2_modem_get_spc_validate_limit",
+        "address": "0x2788c",
+        "size": 216
+      },
+      {
+        "name": "modem2_modem_set_lbs_idle_mode_query",
+        "address": "0x298e0",
+        "size": 448
+      },
+      {
+        "name": "modem2_modem_get_imsi",
+        "address": "0x17bf0",
+        "size": 224
+      },
+      {
+        "name": "modem2_modem_set_ims_sms_legacy_data",
+        "address": "0x22524",
+        "size": 620
+      },
+      {
+        "name": "modem2_modem_set_ims_sdx20_data",
+        "address": "0x21bbc",
+        "size": 712
+      },
+      {
+        "name": "modem2_modem_get_cai_rev",
+        "address": "0x28f08",
+        "size": 324
+      },
+      {
+        "name": "omadm_modem_init",
+        "address": "0x33b34",
+        "size": 612
+      },
+      {
+        "name": "modem2_modem_update_static_data",
+        "address": "0x1700c",
+        "size": 184
+      },
+      {
+        "name": "modem2_modem_get_lifetime_counters",
+        "address": "0x1bab0",
+        "size": 520
+      },
+      {
+        "name": "modem2_modem_update_system_data",
+        "address": "0x1729c",
+        "size": 184
+      },
+      {
+        "name": "modem2_modem_get_ims_presence_config",
+        "address": "0x207ec",
+        "size": 688
+      },
+      {
+        "name": "modem2_modem_get_volte_service_status",
+        "address": "0x2e184",
+        "size": 408
+      },
+      {
+        "name": "sms_modem_initialize",
+        "address": "0x2ea60",
+        "size": 672
+      },
+      {
+        "name": "modem2_modem_get_active_band",
+        "address": "0x1c99c",
+        "size": 1084
+      },
+      {
+        "name": "modem2_modem_get_operator_name",
+        "address": "0x2d94c",
+        "size": 588
+      },
+      {
+        "name": "modem2_modem_set_enabled_tech_modes",
+        "address": "0x2a4d4",
+        "size": 1324
+      },
+      {
+        "name": "modem2_modem_calculate_signal_bars",
+        "address": "0x27704",
+        "size": 212
+      },
+      {
+        "name": "gps_modem_xtra_data_inject_request",
+        "address": "0x858c",
+        "size": 468
+      },
+      {
+        "name": "modem2_modem_get_ims_sms_legacy_data",
+        "address": "0x21ecc",
+        "size": 624
+      },
+      {
+        "name": "fota_modem_deinit",
+        "address": "0x338a0",
+        "size": 24
+      },
+      {
+        "name": "_init",
+        "address": "0x5de4",
+        "size": 0
+      },
+      {
+        "name": "usb_modem_set_default_mode",
+        "address": "0x33710",
+        "size": 40
+      },
+      {
+        "name": "modem2_modem_set_pdn_ext_params",
+        "address": "0x18114",
+        "size": 828
+      },
+      {
+        "name": "dsm_modem_get_imei",
+        "address": "0x32b84",
+        "size": 316
+      },
+      {
+        "name": "time_packet_to_host",
+        "address": "0x6eb8",
+        "size": 100
+      },
+      {
+        "name": "modem2_modem_get_refurbish_info",
+        "address": "0x28b78",
+        "size": 288
+      },
+      {
+        "name": "modem2_modem_set_ddtm_state",
+        "address": "0x28d54",
+        "size": 436
+      },
+      {
+        "name": "dsm_modem_is_persistent_runlevel",
+        "address": "0x327a0",
+        "size": 740
+      },
+      {
+        "name": "modem2_modem_verify_pin",
+        "address": "0x17668",
+        "size": 408
+      },
+      {
+        "name": "modem2_modem_sim_get_mnc_length",
+        "address": "0x17b18",
+        "size": 216
+      },
+      {
+        "name": "modem_util_get_wms_message_mode",
+        "address": "0x2e9bc",
+        "size": 60
+      },
+      {
+        "name": "modem2_modem_get_ca_bands_enabled",
+        "address": "0x1f200",
+        "size": 424
+      },
+      {
+        "name": "modem2_modem_set_volte_amr_wb_mode",
+        "address": "0x2391c",
+        "size": 428
+      },
+      {
+        "name": "sms_modem_read_sms_msg",
+        "address": "0x2f438",
+        "size": 652
+      },
+      {
+        "name": "modem2_modem_get_connection_state",
+        "address": "0x2c9f4",
+        "size": 1240
+      },
+      {
+        "name": "modem2_modem_get_ims_lvc_enabled",
+        "address": "0x20d34",
+        "size": 380
+      },
+      {
+        "name": "modem2_modem_set_ca_enabled",
+        "address": "0x1f01c",
+        "size": 484
+      },
+      {
+        "name": "modem2_modem_powersave",
+        "address": "0x277d8",
+        "size": 180
+      },
+      {
+        "name": "modem2_modem_get_volte_dcmo_timer",
+        "address": "0x23ac8",
+        "size": 748
+      },
+      {
+        "name": "modem2_modem_set_cai_rev",
+        "address": "0x2904c",
+        "size": 312
+      },
+      {
+        "name": "modem2_modem_get_ehrpd_state",
+        "address": "0x1d258",
+        "size": 508
+      },
+      {
+        "name": "modem2_modem_get_band_class_enable",
+        "address": "0x1c0b0",
+        "size": 864
+      },
+      {
+        "name": "modem2_modem_is_radio_enabled",
+        "address": "0x1b4f8",
+        "size": 936
+      },
+      {
+        "name": "modem2_modem_set_volte_amr_mode",
+        "address": "0x23570",
+        "size": 428
+      },
+      {
+        "name": "modem2_modem_network_attach",
+        "address": "0x1fc20",
+        "size": 388
+      },
+      {
+        "name": "decode_sms",
+        "address": "0x303bc",
+        "size": 2448
+      },
+      {
+        "name": "modem2_modem_load_if_necessary",
+        "address": "0x16b28",
+        "size": 28
+      },
+      {
+        "name": "modem2_modem_get_lte_band_priority",
+        "address": "0x1e498",
+        "size": 652
+      },
+      {
+        "name": "modem2_modem_mns_set_auto_mode",
+        "address": "0x2b0f4",
+        "size": 356
+      },
+      {
+        "name": "modem2_modem_update_lifetime_counters",
+        "address": "0x1bcb8",
+        "size": 1016
+      },
+      {
+        "name": "modem2_modem_get_volte_dcmo_tdelay",
+        "address": "0x23f28",
+        "size": 516
+      },
+      {
+        "name": "modem2_modem_get_pco",
+        "address": "0x2e31c",
+        "size": 616
+      },
+      {
+        "name": "usb_modem_get_mac_id",
+        "address": "0x336c0",
+        "size": 40
+      },
+      {
+        "name": "modem2_modem_set_ims_registration_delay",
+        "address": "0x20680",
+        "size": 364
+      },
+      {
+        "name": "modem2_modem_get_diag_info",
+        "address": "0x27e08",
+        "size": 3440
+      },
+      {
+        "name": "gps_modem_cleanup",
+        "address": "0x6dd8",
+        "size": 224
+      },
+      {
+        "name": "modem2_modem_get_ims_sms_sdx20_data",
+        "address": "0x2213c",
+        "size": 872
+      },
+      {
+        "name": "modem2_modem_set_volte_hd_voice_enabled",
+        "address": "0x231d0",
+        "size": 428
+      },
+      {
+        "name": "gps_modem_initialize",
+        "address": "0x6b20",
+        "size": 696
+      },
+      {
+        "name": "modem2_modem_set_band_class_enable",
+        "address": "0x1c410",
+        "size": 1420
+      },
+      {
+        "name": "modem2_modem_activate_apns",
+        "address": "0x1916c",
+        "size": 2112
+      },
+      {
+        "name": "modem2_modem_get_volte_hd_voice_enabled",
+        "address": "0x23010",
+        "size": 448
+      },
+      {
+        "name": "modem2_modem_set_volte_hys",
+        "address": "0x24ed4",
+        "size": 496
+      },
+      {
+        "name": "modem2_modem_sim_get_gid",
+        "address": "0x17cd0",
+        "size": 508
+      },
+      {
+        "name": "modem2_modem_delete_file",
+        "address": "0x29564",
+        "size": 412
+      },
+      {
+        "name": "modem2_modem_set_ehrpd_enabled",
+        "address": "0x1cff4",
+        "size": 612
+      },
+      {
+        "name": "modem2_modem_get_tech_profile",
+        "address": "0x25bc8",
+        "size": 4020
+      },
+      {
+        "name": "modem2_modem_get_emergency_mode",
+        "address": "0x1fda4",
+        "size": 568
+      },
+      {
+        "name": "dsm_modem_get_default_mode",
+        "address": "0x32f38",
+        "size": 380
+      },
+      {
+        "name": "modem2_modem_get_ims_legacy_data",
+        "address": "0x2118c",
+        "size": 772
+      },
+      {
+        "name": "fota_modem_delete_file",
+        "address": "0x33770",
+        "size": 52
+      },
+      {
+        "name": "modem2_modem_set_lte_band_priority",
+        "address": "0x1e724",
+        "size": 640
+      },
+      {
+        "name": "modem2_modem_set_ims_sip_data",
+        "address": "0x21e84",
+        "size": 72
+      },
+      {
+        "name": "modem2_modem_set_volte_dcmo_tdelay",
+        "address": "0x2412c",
+        "size": 380
+      },
+      {
+        "name": "gps_modem_set_event_report",
+        "address": "0x8fe0",
+        "size": 80
+      },
+      {
+        "name": "modem2_modem_set_volte_source_throttle_publish",
+        "address": "0x247fc",
+        "size": 372
+      },
+      {
+        "name": "modem2_modem_get_volte_source_throttle_publish",
+        "address": "0x245f4",
+        "size": 520
+      },
+      {
+        "name": "modem2_modem_set_ims_sip_timer_oper_mode_a",
+        "address": "0x21020",
+        "size": 364
+      },
+      {
+        "name": "modem2_modem_read_file",
+        "address": "0x29184",
+        "size": 560
+      },
+      {
+        "name": "modem2_modem_check_lte_ca_status",
+        "address": "0x1e9a4",
+        "size": 372
+      },
+      {
+        "name": "modem2_modem_set_autonomous_gap_enabled",
+        "address": "0x1fa10",
+        "size": 528
+      },
+      {
+        "name": "modem2_modem_get_lte_support",
+        "address": "0x275dc",
+        "size": 296
+      },
+      {
+        "name": "modem2_modem_get_enabled_tech_modes",
+        "address": "0x2a260",
+        "size": 628
+      },
+      {
+        "name": "powersave_modem_deinit",
+        "address": "0x33690",
+        "size": 48
+      },
+      {
+        "name": "modem2_modem_get_lte_band_enabled",
+        "address": "0x1dd28",
+        "size": 644
+      },
+      {
+        "name": "modem2_modem_select_network",
+        "address": "0x2abc0",
+        "size": 1332
+      },
+      {
+        "name": "gps_modem_stop_gps",
+        "address": "0x8f80",
+        "size": 48
+      },
+      {
+        "name": "modem2_modem_stop_ip_data_call",
+        "address": "0x2bcc4",
+        "size": 968
+      },
+      {
+        "name": "modem2_modem_get_pdn_layer3_data",
+        "address": "0x2c08c",
+        "size": 2408
+      },
+      {
+        "name": "sms_modem_send_sms_msg",
+        "address": "0x2f7d8",
+        "size": 1136
+      },
+      {
+        "name": "dsm_modem_get_wifi2_mac",
+        "address": "0x32dfc",
+        "size": 316
+      },
+      {
+        "name": "gps_modem_xtra_time_inject_result",
+        "address": "0x7c1c",
+        "size": 300
+      },
+      {
+        "name": "dsm_modem_power_down",
+        "address": "0x326c4",
+        "size": 220
+      },
+      {
+        "name": "fota_modem_init",
+        "address": "0x33858",
+        "size": 72
+      },
+      {
+        "name": "modem2_modem_init",
+        "address": "0x16b44",
+        "size": 756
+      },
+      {
+        "name": "modem2_modem_enable_pin",
+        "address": "0x17354",
+        "size": 284
+      },
+      {
+        "name": "sms_modem_get_voice_mail_info",
+        "address": "0x2fd60",
+        "size": 412
+      },
+      {
+        "name": "powersave_modem_init_modem",
+        "address": "0x3341c",
+        "size": 628
+      },
+      {
+        "name": "modem2_modem_set_tech_profile",
+        "address": "0x26b7c",
+        "size": 2212
+      },
+      {
+        "name": "modem2_modem_get_bsr_timers",
+        "address": "0x27aac",
+        "size": 452
+      },
+      {
+        "name": "modem2_modem_set_ims_sms_sdx20_data",
+        "address": "0x22790",
+        "size": 1088
+      },
+      {
+        "name": "dsm_modem_set_default_mode",
+        "address": "0x330b4",
+        "size": 240
+      },
+      {
+        "name": "modem2_modem_prepare_for_factory_reset",
+        "address": "0x2cecc",
+        "size": 1316
+      },
+      {
+        "name": "dsm_modem_init",
+        "address": "0x31f00",
+        "size": 944
+      },
+      {
+        "name": "usb_modem_init",
+        "address": "0x33738",
+        "size": 28
+      },
+      {
+        "name": "modem2_modem_get_1xrtt_cdma_ext_timer",
+        "address": "0x22c18",
+        "size": 588
+      },
+      {
+        "name": "modem2_modem_carrier_unlock",
+        "address": "0x29f4c",
+        "size": 788
+      },
+      {
+        "name": "dsm_modem_set_state",
+        "address": "0x323a4",
+        "size": 800
+      },
+      {
+        "name": "gps_modem_xtra_data_inject_result",
+        "address": "0x8760",
+        "size": 220
+      },
+      {
+        "name": "modem2_modem_set_ca_tri_bands_enabled",
+        "address": "0x1f6ec",
+        "size": 412
+      },
+      {
+        "name": "modem2_modem_set_ehrpd_state",
+        "address": "0x1d454",
+        "size": 504
+      },
+      {
+        "name": "modem2_modem_get_lbs_idle_mode_query",
+        "address": "0x29700",
+        "size": 480
+      },
+      {
+        "name": "dsm_modem_deinit",
+        "address": "0x322b0",
+        "size": 244
+      },
+      {
+        "name": "dsm_modem_get_wifi1_mac",
+        "address": "0x32cc0",
+        "size": 316
+      },
+      {
+        "name": "modem2_modem_get_volte_session_config",
+        "address": "0x1ffdc",
+        "size": 888
+      },
+      {
+        "name": "modem2_modem_wait_for_detach",
+        "address": "0x186a8",
+        "size": 1084
+      },
+      {
+        "name": "qmi_event_handler",
+        "address": "0x14cfc",
+        "size": 2768
+      },
+      {
+        "name": "modem2_modem_get_ehrpd_enabled",
+        "address": "0x1cdd8",
+        "size": 540
+      },
+      {
+        "name": "modem2_modem_get_operator_name_from_sim",
+        "address": "0x2db98",
+        "size": 1112
+      },
+      {
+        "name": "modem2_modem_get_eri_info",
+        "address": "0x18450",
+        "size": 348
+      },
+      {
+        "name": "modem2_modem_get_carrier_unlock_status",
+        "address": "0x29d80",
+        "size": 460
+      },
+      {
+        "name": "fota_modem_write_file",
+        "address": "0x337a4",
+        "size": 64
+      },
+      {
+        "name": "modem2_modem_change_pin",
+        "address": "0x1798c",
+        "size": 396
+      },
+      {
+        "name": "modem2_modem_enable_roaming",
+        "address": "0x185ac",
+        "size": 252
+      },
+      {
+        "name": "modem2_modem_get_volte_amr_wb_mode",
+        "address": "0x2371c",
+        "size": 512
+      },
+      {
+        "name": "modem2_modem_get_ims_sdx20_data",
+        "address": "0x21490",
+        "size": 856
+      },
+      {
+        "name": "modem2_modem_update_sim_data",
+        "address": "0x170c4",
+        "size": 200
+      },
+      {
+        "name": "modem2_modem_set_ims_test_mode",
+        "address": "0x18b1c",
+        "size": 40
+      },
+      {
+        "name": "modem2_modem_deinit",
+        "address": "0x2e6c8",
+        "size": 288
+      },
+      {
+        "name": "fota_modem_backup_start",
+        "address": "0x33820",
+        "size": 28
+      },
+      {
+        "name": "gps_modem_xtra_time_inject_request",
+        "address": "0x7a48",
+        "size": 468
+      },
+      {
+        "name": "modem2_modem_get_mip_profile",
+        "address": "0x1a4b0",
+        "size": 1824
+      },
+      {
+        "name": "modem2_modem_set_lte_wifi_coex",
+        "address": "0x2e674",
+        "size": 84
+      },
+      {
+        "name": "modem2_modem_get_ims_sms_data",
+        "address": "0x224a4",
+        "size": 128
+      },
+      {
+        "name": "modem2_modem_get_device_time",
+        "address": "0x29aa0",
+        "size": 296
+      },
+      {
+        "name": "sms_modem_cleanup",
+        "address": "0x2ed00",
+        "size": 224
+      },
+      {
+        "name": "modem2_modem_set_ims_lvc_enabled",
+        "address": "0x20eb0",
+        "size": 368
+      },
+      {
+        "name": "modem2_modem_set_volte_rcl_max_entries",
+        "address": "0x24b78",
+        "size": 372
+      },
+      {
+        "name": "modem2_modem_get_pdn_ext_params",
+        "address": "0x17ecc",
+        "size": 584
+      },
+      {
+        "name": "modem2_modem_set_volte_silent_redial",
+        "address": "0x24478",
+        "size": 380
+      },
+      {
+        "name": "modem2_modem_set_sd_config_ext_setting",
+        "address": "0x25798",
+        "size": 1072
+      },
+      {
+        "name": "gps_modem_force_xtra",
+        "address": "0x8fb0",
+        "size": 48
+      },
+      {
+        "name": "modem2_modem_set_ca_bands_enabled",
+        "address": "0x1f3a8",
+        "size": 412
+      },
+      {
+        "name": "encode_sms",
+        "address": "0x30d4c",
+        "size": 3012
+      },
+      {
+        "name": "modem2_modem_get_ca_tri_bands_enabled",
+        "address": "0x1f544",
+        "size": 424
+      },
+      {
+        "name": "modem2_modem_send_initial_events",
+        "address": "0x16e38",
+        "size": 468
+      },
+      {
+        "name": "modem2_modem_sim_get_iccid",
+        "address": "0x90bc",
+        "size": 224
+      },
+      {
+        "name": "modem2_modem_set_volte_enabled",
+        "address": "0x1ecb0",
+        "size": 484
+      },
+      {
+        "name": "modem2_modem_set_volte_dcmo_timer",
+        "address": "0x23db4",
+        "size": 372
+      },
+      {
+        "name": "modem2_modem_set_bsr_timers",
+        "address": "0x27c70",
+        "size": 408
+      },
+      {
+        "name": "modem2_modem_write_file",
+        "address": "0x293b4",
+        "size": 432
+      },
+      {
+        "name": "modem2_modem_get_volte_hys",
+        "address": "0x24cec",
+        "size": 488
+      },
+      {
+        "name": "sms_modem_get_sms_list",
+        "address": "0x2f15c",
+        "size": 732
+      },
+      {
+        "name": "modem2_modem_unblock_pin",
+        "address": "0x17800",
+        "size": 396
+      },
+      {
+        "name": "modem2_modem_validate_spc",
+        "address": "0x27964",
+        "size": 328
+      },
+      {
+        "name": "sms_modem_delete_sms_msg",
+        "address": "0x2f6c4",
+        "size": 276
+      },
+      {
+        "name": "dsm_modem_set_persistent_runlevel",
+        "address": "0x32a84",
+        "size": 256
+      },
+      {
+        "name": "modem2_modem_get_ims_sip_data",
+        "address": "0x217e8",
+        "size": 252
+      },
+      {
+        "name": "modem2_modem_start_ip_data_call",
+        "address": "0x2b708",
+        "size": 1468
+      },
+      {
+        "name": "modem2_modem_get_volte_silent_redial",
+        "address": "0x242a8",
+        "size": 464
+      },
+      {
+        "name": "modem2_modem_get_volte_tlte_911fail",
+        "address": "0x250c4",
+        "size": 520
+      },
+      {
+        "name": "sms_modem_get_sms_format",
+        "address": "0x2fc48",
+        "size": 280
+      },
+      {
+        "name": "modem2_modem_get_volte_amr_mode",
+        "address": "0x2337c",
+        "size": 500
+      },
+      {
+        "name": "modem2_modem_set_ims_sms_data",
+        "address": "0x22bd0",
+        "size": 72
+      },
+      {
+        "name": "modem2_modem_reset_sim_data",
+        "address": "0x1718c",
+        "size": 272
+      },
+      {
+        "name": "modem2_modem_get_mip_settings",
+        "address": "0x199ac",
+        "size": 1368
+      },
+      {
+        "name": "modem2_modem_perform_network_scan",
+        "address": "0x2aa00",
+        "size": 448
+      },
+      {
+        "name": "modem2_modem_get_volte_rcl_max_entries",
+        "address": "0x24970",
+        "size": 520
+      },
+      {
+        "name": "usb_modem_deinit",
+        "address": "0x33754",
+        "size": 28
+      },
+      {
+        "name": "modem2_modem_get_time_zone_info",
+        "address": "0x29bc8",
+        "size": 440
+      },
+      {
+        "name": "modem2_modem_factory_reset",
+        "address": "0x2d3f0",
+        "size": 396
+      },
+      {
+        "name": "gps_modem_start_gps",
+        "address": "0x8dd0",
+        "size": 432
+      },
+      {
+        "name": "modem2_modem_set_1xrtt_cdma_ext_timer",
+        "address": "0x22e64",
+        "size": 428
+      },
+      {
+        "name": "modem2_modem_get_sd_config_ext_setting",
+        "address": "0x2553c",
+        "size": 604
+      },
+      {
+        "name": "omadm_modem_deinit",
+        "address": "0x33d98",
+        "size": 48
+      },
+      {
+        "name": "modem2_modem_set_ims_legacy_data",
+        "address": "0x218e4",
+        "size": 728
+      },
+      {
+        "name": "modem2_modem_get_carrier_from_sim",
+        "address": "0x18c04",
+        "size": 1384
+      },
+      {
+        "name": "modem2_modem_get_ims_test_mode",
+        "address": "0x18ae4",
+        "size": 56
+      },
+      {
+        "name": "modem2_modem_is_lte",
+        "address": "0x2e5f8",
+        "size": 72
+      },
+      {
+        "name": "modem2_modem_run_raw_command",
+        "address": "0x2e640",
+        "size": 52
+      },
+      {
+        "name": "modem2_modem_restore_from_factory_reset",
+        "address": "0x2d57c",
+        "size": 976
+      },
+      {
+        "name": "modem2_modem_get_ca_enabled",
+        "address": "0x1ee94",
+        "size": 392
+      },
+      {
+        "name": "modem2_modem_set_volte_session_config",
+        "address": "0x20354",
+        "size": 812
+      },
+      {
+        "name": "modem2_modem_is_3gpp2",
+        "address": "0x2e584",
+        "size": 116
+      },
+      {
+        "name": "modem2_modem_set_active_tech_profile",
+        "address": "0x274f8",
+        "size": 228
+      },
+      {
+        "name": "modem2_modem_validate_apn_ip_family",
+        "address": "0x2b258",
+        "size": 1200
+      },
+      {
+        "name": "modem2_modem_set_radio_enabled",
+        "address": "0x1b8a0",
+        "size": 528
+      },
+      {
+        "name": "fota_modem_write_nv_item",
+        "address": "0x337e4",
+        "size": 60
+      },
+      {
+        "name": "modem2_modem_set_mip_settings",
+        "address": "0x19f04",
+        "size": 1452
+      },
+      {
+        "name": "parse_fix",
+        "address": "0x883c",
+        "size": 400
+      },
+      {
+        "name": "modem2_modem_set_ims_presence_config",
+        "address": "0x20a9c",
+        "size": 664
+      },
+      {
+        "name": "modem2_modem_get_activation_date",
+        "address": "0x28c98",
+        "size": 188
+      },
+      {
+        "name": "modem2_modem_get_voip_service_status",
+        "address": "0x2dff0",
+        "size": 404
+      },
+      {
+        "name": "gps_modem_set_powersave_state",
+        "address": "0x9030",
+        "size": 56
+      },
+      {
+        "name": "usb_modem_get_default_mode",
+        "address": "0x336e8",
+        "size": 40
+      },
+      {
+        "name": "modem2_modem_set_mdn_and_min",
+        "address": "0x1d64c",
+        "size": 1756
+      },
+      {
+        "name": "modem2_modem_get_volte_enabled",
+        "address": "0x1eb18",
+        "size": 408
+      },
+      {
+        "name": "fota_modem_backup_end",
+        "address": "0x3383c",
+        "size": 28
+      },
+      {
+        "name": "_fini",
+        "address": "0x34728",
+        "size": 0
+      },
+      {
+        "name": "modem2_modem_set_volte_tlte_911fail",
+        "address": "0x252cc",
+        "size": 624
+      },
+      {
+        "name": "modem2_modem_get_pin_status",
+        "address": "0x17470",
+        "size": 504
+      },
+      {
+        "name": "modem2_modem_get_certified_carrier_id",
+        "address": "0x18b44",
+        "size": 192
+      },
+      {
+        "name": "modem2_modem_set_mip_profile",
+        "address": "0x1abd0",
+        "size": 2344
+      },
+      {
+        "name": "modem2_modem_set_lte_band_enabled",
+        "address": "0x1dfac",
+        "size": 1260
+      },
+      {
+        "name": "modem2_modem_get_autonomous_gap_enabled",
+        "address": "0x1f888",
+        "size": 392
+      }
+    ],
+    "function_categories": {
+      "qmi_interface": [
+        "nwqmi_init",
+        "nwqmi_register_callback",
+        "nwqmi_open_one",
+        "nwqmi_gps_set_event_mask",
+        "nwqmi_enable_events",
+        "nwqmi_unregister_callback",
+        "nwqmi_close",
+        "nwqmi_gps_inject_xtra_time",
+        "nwqmi_gps_inject_xtra_part",
+        "nwqmi_gps_set_service_state",
+        "nwqmi_gps_set_session_operation",
+        "nwqmi_gps_start_fix_req",
+        "nwqmi_gps_stop_fix_req",
+        "nwqmi_gps_force_xtra_dl",
+        "nwqmi_disable_events",
+        "nwqmi_uim_get_iccid",
+        "nwqmi_nas_get_3gpp2_subscription_info",
+        "nwqmi_nas_get_system_info",
+        "nwqmi_nas_get_accolc",
+        "nwqmi_nas_get_device_config",
+        "nwqmi_wds_get_mip_mode",
+        "nwqmi_wds_get_mip_settings",
+        "nwqmi_wds_get_active_mip_profile",
+        "nwqmi_wds_read_mip_profile",
+        "nwqmi_wds_get_dns_settings",
+        "nwqmi_wds_get_scrm",
+        "nwqmi_nas_get_sig_str",
+        "nwqmi_nas_get_tx_rx_info",
+        "nwqmi_wds_get_call_dormancy_status",
+        "nwqmi_nvtl_get_mac_index",
+        "nwqmi_wds_get_runtime_settings",
+        "nwqmi_nas_get_hdr_color_code",
+        "nwqmi_nas_get_cdma_position_info",
+        "nwqmi_nas_get_system_selection_preference",
+        "nwqmi_nas_get_rf_band",
+        "nwqmi_nas_convert_ecio",
+        "nwqmi_get_plmn_name",
+        "nwqmi_decode_plmn_name",
+        "nwqmi_nas_convert_mcc_mnc",
+        "nwqmi_nas_convert_sinr",
+        "nwqmi_nas_convert_snr",
+        "nwqmi_unpack_7_bit_chars",
+        "nwqmi_nvtl_get_uicc_plmn",
+        "nwqmi_nvtl_nv_item_read_cmd",
+        "nwqmi_nvtl_get_model_number_cmd",
+        "nwqmi_dms_get_device_hwrev",
+        "nwqmi_dms_get_device_revid",
+        "nwqmi_dms_get_factory_sku",
+        "nwqmi_dms_get_device_serial_numbers",
+        "nwqmi_nvtl_get_eri",
+        "nwqmi_nvtl_read_pri_version",
+        "nwqmi_get_3gpp2_mdn_min",
+        "nwqmi_uim_read_msisdn",
+        "nwqmi_nvtl_get_home_network_info",
+        "nwqmi_do_initial_probe",
+        "nwqmi_open",
+        "nwqmi_uim_set_pin_protection",
+        "nwqmi_uim_get_pin_status",
+        "nwqmi_uim_verify_pin",
+        "nwqmi_uim_unblock_pin",
+        "nwqmi_uim_change_pin",
+        "nwqmi_uim_read_mnc_length",
+        "nwqmi_uim_get_imsi",
+        "nwqmi_uim_read_gid",
+        "nwqmi_wds_get_profile",
+        "nwqmi_wds_modify_profile",
+        "nwqmi_nas_set_system_selection_preference",
+        "nwqmi_wds_get_lte_attach_pdn_list",
+        "nwqmi_wds_set_lte_attach_pdn_list",
+        "nwqmi_wds_set_mip_settings",
+        "nwqmi_dms_validate_spc",
+        "nwqmi_wds_modify_mip_profile",
+        "nwqmi_dms_get_operating_mode",
+        "nwqmi_dms_set_operating_mode",
+        "nwqmi_nvtl_nv_item_write_cmd",
+        "nwqmi_nas_set_3gpp2_subscription_info",
+        "nwqmi_nvtl_file_read",
+        "nwqmi_nvtl_file_write",
+        "nwqmi_ims_get_volte_enabled",
+        "nwqmi_ims_set_volte_enabled",
+        "nwqmi_nvtl_get_ca_option",
+        "nwqmi_nvtl_set_ca_option",
+        "nwqmi_nvtl_get_ca_bands_config",
+        "nwqmi_nvtl_set_ca_bands_config",
+        "nwqmi_nvtl_get_ca_tri_bands_config",
+        "nwqmi_nvtl_set_ca_tri_bands_config",
+        "nwqmi_nas_initiate_attach_req",
+        "nwqmi_nvtl_ims_setting_get_voip_config_req",
+        "nwqmi_nvtl_ims_setting_set_voip_config_req",
+        "nwqmi_nvtl_ims_setting_get_presence_config_req",
+        "nwqmi_nvtl_ims_setting_set_presence_config_req",
+        "nwqmi_ims_get_lvc_enabled",
+        "nwqmi_ims_set_lvc_enabled",
+        "nwqmi_nvtl_ims_setting_set_sip_config_req",
+        "nwqmi_ims_bind_subscription",
+        "nwqmi_ims_get_sms_format",
+        "nwqmi_ims_get_sms_over_ip",
+        "nwqmi_ims_set_sms_format",
+        "nwqmi_ims_set_sms_over_ip",
+        "nwqmi_nvtl_ims_setting_set_reg_mgr_extended_config_req",
+        "nwqmi_wds_get_default_profile_num",
+        "nwqmi_wds_set_default_profile_num",
+        "nwqmi_calculate_signal_bars",
+        "nwqmi_nvtl_read_otksk_counter",
+        "nwqmi_read_bsr_timers",
+        "nwqmi_write_bsr_timers",
+        "nwqmi_nvtl_extnd_info_cmd",
+        "nwqmi_nvtl_get_refurbish_info",
+        "nwqmi_nvtl_get_activation_date",
+        "nwqmi_nas_set_ddtm_state",
+        "nwqmi_nvtl_file_delete",
+        "nwqmi_dms_get_device_time",
+        "nwqmi_nas_get_serving_system",
+        "nwqmi_nas_perform_network_scan",
+        "nwqmi_wds_start_call",
+        "nwqmi_open_wdsadmin",
+        "nwqmi_wdsadmin_start_call",
+        "nwqmi_open_wdsota",
+        "nwqmi_wdsota_start_call",
+        "nwqmi_open_ipv6",
+        "nwqmi_wds6_start_call",
+        "nwqmi_open_wdsota_ipv6",
+        "nwqmi_wdsota_ipv6_start_call",
+        "nwqmi_wds_stop_call",
+        "nwqmi_wdsadmin_stop_call",
+        "nwqmi_wdsota_stop_call",
+        "nwqmi_wds6_stop_call",
+        "nwqmi_wdsota_ipv6_stop_call",
+        "nwqmi_wds_get_iface",
+        "nwqmi_wdsadmin_get_runtime_settings",
+        "nwqmi_wdsadmin_get_iface",
+        "nwqmi_wdsota_get_runtime_settings",
+        "nwqmi_wdsota_get_iface",
+        "nwqmi_wds6_get_runtime_settings",
+        "nwqmi_wds6_get_iface",
+        "nwqmi_wdsota_ipv6_get_runtime_settings",
+        "nwqmi_wdsota_ipv6_get_iface",
+        "nwqmi_wds_get_call_status",
+        "nwqmi_wdsadmin_get_call_status",
+        "nwqmi_wdsota_get_call_status",
+        "nwqmi_wds6_get_call_status",
+        "nwqmi_wdsota_ipv6_get_call_status",
+        "nwqmi_nas_set_rtre_config",
+        "nwqmi_nvtl_factory_restore",
+        "nwqmi_uim_read_pnn",
+        "nwqmi_uim_read_3g_spn",
+        "nwqmi_imsa_get_voip_srv_status",
+        "nwqmi_imsa_get_volte_srv_status",
+        "nwqmi_nvtl_get_pco_value",
+        "nwqmi_coex_set_lte_5ghz",
+        "nwqmi_wms_get_routes",
+        "nwqmi_wms_set_message_waiting",
+        "nwqmi_wms_list",
+        "nwqmi_wms_read",
+        "nwqmi_wms_delete_msg",
+        "nwqmi_wms_send",
+        "nwqmi_wms_get_msg_protocol",
+        "nwqmi_wms_get_message_waiting",
+        "nwqmi_nvtl_modem_pwr_down_cmd",
+        "nwqmi_nvtl_fota_factory_backup"
+      ],
+      "modem_control": [
+        "modem2_modem_get_active_tech_profile",
+        "modem2_modem_get_spc_validate_limit",
+        "modem2_modem_set_lbs_idle_mode_query",
+        "modem2_modem_get_imsi",
+        "modem2_modem_set_ims_sms_legacy_data",
+        "modem2_modem_set_ims_sdx20_data",
+        "modem2_modem_get_cai_rev",
+        "modem2_modem_update_static_data",
+        "modem2_modem_get_lifetime_counters",
+        "modem2_modem_update_system_data",
+        "modem2_modem_get_ims_presence_config",
+        "modem2_modem_get_volte_service_status",
+        "modem2_modem_get_active_band",
+        "modem2_modem_get_operator_name",
+        "modem2_modem_set_enabled_tech_modes",
+        "modem2_modem_calculate_signal_bars",
+        "modem2_modem_get_ims_sms_legacy_data",
+        "modem2_modem_set_pdn_ext_params",
+        "modem2_modem_get_refurbish_info",
+        "modem2_modem_set_ddtm_state",
+        "modem2_modem_verify_pin",
+        "modem2_modem_sim_get_mnc_length",
+        "modem2_modem_get_ca_bands_enabled",
+        "modem2_modem_set_volte_amr_wb_mode",
+        "modem2_modem_get_connection_state",
+        "modem2_modem_get_ims_lvc_enabled",
+        "modem2_modem_set_ca_enabled",
+        "modem2_modem_powersave",
+        "modem2_modem_get_volte_dcmo_timer",
+        "modem2_modem_set_cai_rev",
+        "modem2_modem_get_ehrpd_state",
+        "modem2_modem_get_band_class_enable",
+        "modem2_modem_is_radio_enabled",
+        "modem2_modem_set_volte_amr_mode",
+        "modem2_modem_network_attach",
+        "modem2_modem_load_if_necessary",
+        "modem2_modem_get_lte_band_priority",
+        "modem2_modem_mns_set_auto_mode",
+        "modem2_modem_update_lifetime_counters",
+        "modem2_modem_get_volte_dcmo_tdelay",
+        "modem2_modem_get_pco",
+        "modem2_modem_set_ims_registration_delay",
+        "modem2_modem_get_diag_info",
+        "modem2_modem_get_ims_sms_sdx20_data",
+        "modem2_modem_set_volte_hd_voice_enabled",
+        "modem2_modem_set_band_class_enable",
+        "modem2_modem_activate_apns",
+        "modem2_modem_get_volte_hd_voice_enabled",
+        "modem2_modem_set_volte_hys",
+        "modem2_modem_sim_get_gid",
+        "modem2_modem_delete_file",
+        "modem2_modem_set_ehrpd_enabled",
+        "modem2_modem_get_tech_profile",
+        "modem2_modem_get_emergency_mode",
+        "modem2_modem_get_ims_legacy_data",
+        "modem2_modem_set_lte_band_priority",
+        "modem2_modem_set_ims_sip_data",
+        "modem2_modem_set_volte_dcmo_tdelay",
+        "modem2_modem_set_volte_source_throttle_publish",
+        "modem2_modem_get_volte_source_throttle_publish",
+        "modem2_modem_set_ims_sip_timer_oper_mode_a",
+        "modem2_modem_read_file",
+        "modem2_modem_check_lte_ca_status",
+        "modem2_modem_set_autonomous_gap_enabled",
+        "modem2_modem_get_lte_support",
+        "modem2_modem_get_enabled_tech_modes",
+        "modem2_modem_get_lte_band_enabled",
+        "modem2_modem_select_network",
+        "modem2_modem_stop_ip_data_call",
+        "modem2_modem_get_pdn_layer3_data",
+        "modem2_modem_init",
+        "modem2_modem_enable_pin",
+        "modem2_modem_set_tech_profile",
+        "modem2_modem_get_bsr_timers",
+        "modem2_modem_set_ims_sms_sdx20_data",
+        "modem2_modem_prepare_for_factory_reset",
+        "modem2_modem_get_1xrtt_cdma_ext_timer",
+        "modem2_modem_carrier_unlock",
+        "modem2_modem_set_ca_tri_bands_enabled",
+        "modem2_modem_set_ehrpd_state",
+        "modem2_modem_get_lbs_idle_mode_query",
+        "modem2_modem_get_volte_session_config",
+        "modem2_modem_wait_for_detach",
+        "modem2_modem_get_ehrpd_enabled",
+        "modem2_modem_get_operator_name_from_sim",
+        "modem2_modem_get_eri_info",
+        "modem2_modem_get_carrier_unlock_status",
+        "modem2_modem_change_pin",
+        "modem2_modem_enable_roaming",
+        "modem2_modem_get_volte_amr_wb_mode",
+        "modem2_modem_get_ims_sdx20_data",
+        "modem2_modem_update_sim_data",
+        "modem2_modem_set_ims_test_mode",
+        "modem2_modem_deinit",
+        "modem2_modem_get_mip_profile",
+        "modem2_modem_set_lte_wifi_coex",
+        "modem2_modem_get_ims_sms_data",
+        "modem2_modem_get_device_time",
+        "modem2_modem_set_ims_lvc_enabled",
+        "modem2_modem_set_volte_rcl_max_entries",
+        "modem2_modem_get_pdn_ext_params",
+        "modem2_modem_set_volte_silent_redial",
+        "modem2_modem_set_sd_config_ext_setting",
+        "modem2_modem_set_ca_bands_enabled",
+        "modem2_modem_get_ca_tri_bands_enabled",
+        "modem2_modem_send_initial_events",
+        "modem2_modem_sim_get_iccid",
+        "modem2_modem_set_volte_enabled",
+        "modem2_modem_set_volte_dcmo_timer",
+        "modem2_modem_set_bsr_timers",
+        "modem2_modem_write_file",
+        "modem2_modem_get_volte_hys",
+        "modem2_modem_unblock_pin",
+        "modem2_modem_validate_spc",
+        "modem2_modem_get_ims_sip_data",
+        "modem2_modem_start_ip_data_call",
+        "modem2_modem_get_volte_silent_redial",
+        "modem2_modem_get_volte_tlte_911fail",
+        "modem2_modem_get_volte_amr_mode",
+        "modem2_modem_set_ims_sms_data",
+        "modem2_modem_reset_sim_data",
+        "modem2_modem_get_mip_settings",
+        "modem2_modem_perform_network_scan",
+        "modem2_modem_get_volte_rcl_max_entries",
+        "modem2_modem_get_time_zone_info",
+        "modem2_modem_factory_reset",
+        "modem2_modem_set_1xrtt_cdma_ext_timer",
+        "modem2_modem_get_sd_config_ext_setting",
+        "modem2_modem_set_ims_legacy_data",
+        "modem2_modem_get_carrier_from_sim",
+        "modem2_modem_get_ims_test_mode",
+        "modem2_modem_is_lte",
+        "modem2_modem_run_raw_command",
+        "modem2_modem_restore_from_factory_reset",
+        "modem2_modem_get_ca_enabled",
+        "modem2_modem_set_volte_session_config",
+        "modem2_modem_is_3gpp2",
+        "modem2_modem_set_active_tech_profile",
+        "modem2_modem_validate_apn_ip_family",
+        "modem2_modem_set_radio_enabled",
+        "modem2_modem_set_mip_settings",
+        "modem2_modem_set_ims_presence_config",
+        "modem2_modem_get_activation_date",
+        "modem2_modem_get_voip_service_status",
+        "modem2_modem_set_mdn_and_min",
+        "modem2_modem_get_volte_enabled",
+        "modem2_modem_set_volte_tlte_911fail",
+        "modem2_modem_get_pin_status",
+        "modem2_modem_get_certified_carrier_id",
+        "modem2_modem_set_mip_profile",
+        "modem2_modem_set_lte_band_enabled",
+        "modem2_modem_get_autonomous_gap_enabled"
+      ],
+      "sms_functions": [
+        "sms_modem_initialize",
+        "sms_modem_read_sms_msg",
+        "sms_modem_send_sms_msg",
+        "sms_modem_get_voice_mail_info",
+        "sms_modem_cleanup",
+        "sms_modem_get_sms_list",
+        "sms_modem_delete_sms_msg",
+        "sms_modem_get_sms_format"
+      ],
+      "firmware_update": [
+        "fota_modem_deinit",
+        "fota_modem_delete_file",
+        "fota_modem_init",
+        "fota_modem_write_file",
+        "fota_modem_backup_start",
+        "fota_modem_write_nv_item",
+        "fota_modem_backup_end"
+      ],
+      "data_service": [
+        "dsm_modem_get_imei",
+        "dsm_modem_is_persistent_runlevel",
+        "dsm_modem_get_default_mode",
+        "dsm_modem_get_wifi2_mac",
+        "dsm_modem_power_down",
+        "dsm_modem_set_default_mode",
+        "dsm_modem_init",
+        "dsm_modem_set_state",
+        "dsm_modem_deinit",
+        "dsm_modem_get_wifi1_mac",
+        "dsm_modem_set_persistent_runlevel"
+      ]
+    }
+  },
+  "libmodem2_api.so": {
+    "metadata": {
+      "filename": "libmodem2_api.so",
+      "arch": "EM_ARM",
+      "bits": 32,
+      "endian": "little",
+      "type": "ET_DYN",
+      "entry": "0x0",
+      "sections": [
+        {
+          "name": "",
+          "type": "SHT_NULL",
+          "addr": "0x0",
+          "size": 0
+        },
+        {
+          "name": ".note.gnu.build-id",
+          "type": "SHT_NOTE",
+          "addr": "0x114",
+          "size": 36
+        },
+        {
+          "name": ".dynsym",
+          "type": "SHT_DYNSYM",
+          "addr": "0x138",
+          "size": 4448
+        },
+        {
+          "name": ".dynstr",
+          "type": "SHT_STRTAB",
+          "addr": "0x1298",
+          "size": 7404
+        },
+        {
+          "name": ".gnu.hash",
+          "type": "SHT_GNU_HASH",
+          "addr": "0x2f84",
+          "size": 1980
+        },
+        {
+          "name": ".gnu.version",
+          "type": "SHT_GNU_versym",
+          "addr": "0x3740",
+          "size": 556
+        },
+        {
+          "name": ".gnu.version_d",
+          "type": "SHT_GNU_verdef",
+          "addr": "0x396c",
+          "size": 28
+        },
+        {
+          "name": ".gnu.version_r",
+          "type": "SHT_GNU_verneed",
+          "addr": "0x3988",
+          "size": 96
+        },
+        {
+          "name": ".rel.dyn",
+          "type": "SHT_REL",
+          "addr": "0x39e8",
+          "size": 144
+        },
+        {
+          "name": ".rel.plt",
+          "type": "SHT_REL",
+          "addr": "0x3a78",
+          "size": 368
+        },
+        {
+          "name": ".init",
+          "type": "SHT_PROGBITS",
+          "addr": "0x3be8",
+          "size": 12
+        },
+        {
+          "name": ".plt",
+          "type": "SHT_PROGBITS",
+          "addr": "0x3bf4",
+          "size": 572
+        },
+        {
+          "name": ".text",
+          "type": "SHT_PROGBITS",
+          "addr": "0x3e30",
+          "size": 86192
+        },
+        {
+          "name": ".fini",
+          "type": "SHT_PROGBITS",
+          "addr": "0x18ee0",
+          "size": 8
+        },
+        {
+          "name": ".rodata",
+          "type": "SHT_PROGBITS",
+          "addr": "0x18ee8",
+          "size": 14824
+        },
+        {
+          "name": ".eh_frame",
+          "type": "SHT_PROGBITS",
+          "addr": "0x1c8d0",
+          "size": 4
+        },
+        {
+          "name": ".eh_frame_hdr",
+          "type": "SHT_PROGBITS",
+          "addr": "0x1c8d4",
+          "size": 8
+        },
+        {
+          "name": ".dynamic",
+          "type": "SHT_DYNAMIC",
+          "addr": "0x1d8dc",
+          "size": 520
+        },
+        {
+          "name": ".data",
+          "type": "SHT_PROGBITS",
+          "addr": "0x1dae4",
+          "size": 4
+        },
+        {
+          "name": ".init_array",
+          "type": "SHT_INIT_ARRAY",
+          "addr": "0x1dae8",
+          "size": 4
+        },
+        {
+          "name": ".fini_array",
+          "type": "SHT_FINI_ARRAY",
+          "addr": "0x1daec",
+          "size": 4
+        },
+        {
+          "name": ".jcr",
+          "type": "SHT_PROGBITS",
+          "addr": "0x1daf0",
+          "size": 4
+        },
+        {
+          "name": ".tm_clone_table",
+          "type": "SHT_PROGBITS",
+          "addr": "0x1daf4",
+          "size": 0
+        },
+        {
+          "name": ".got",
+          "type": "SHT_PROGBITS",
+          "addr": "0x1daf4",
+          "size": 256
+        },
+        {
+          "name": ".bss",
+          "type": "SHT_NOBITS",
+          "addr": "0x1dbf4",
+          "size": 1
+        },
+        {
+          "name": ".comment",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 18
+        },
+        {
+          "name": ".GCC.command.line",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 3942
+        },
+        {
+          "name": ".debug_frame",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 32
+        },
+        {
+          "name": ".debug_line",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 341
+        },
+        {
+          "name": ".debug_info",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 592
+        },
+        {
+          "name": ".debug_abbrev",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 40
+        },
+        {
+          "name": ".debug_aranges",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 64
+        },
+        {
+          "name": ".note.gnu.gold-version",
+          "type": "SHT_NOTE",
+          "addr": "0x0",
+          "size": 28
+        },
+        {
+          "name": ".ARM.attributes",
+          "type": "SHT_ARM_ATTRIBUTES",
+          "addr": "0x0",
+          "size": 51
+        },
+        {
+          "name": ".symtab",
+          "type": "SHT_SYMTAB",
+          "addr": "0x0",
+          "size": 12736
+        },
+        {
+          "name": ".strtab",
+          "type": "SHT_STRTAB",
+          "addr": "0x0",
+          "size": 7423
+        },
+        {
+          "name": ".shstrtab",
+          "type": "SHT_STRTAB",
+          "addr": "0x0",
+          "size": 385
+        }
+      ]
+    },
+    "total_dynamic_symbols": 278,
+    "total_symbols": 796,
+    "total_relocations": 64,
+    "spc_related_symbols": [
+      {
+        "name": "clock_gettime",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_get_certified_carrier",
+        "value": "0x4340",
+        "size": 872,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_validate_apn",
+        "value": "0x173dc",
+        "size": 500,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_carrier_unlock",
+        "value": "0x6c14",
+        "size": 504,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_sim_unlock_puk",
+        "value": "0x9a50",
+        "size": 388,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_sim_unlock_pin",
+        "value": "0x9910",
+        "size": 320,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_get_certified_carrier_settings",
+        "value": "0x17ea8",
+        "size": 156,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_carrier_unlock_status",
+        "value": "0x6acc",
+        "size": 328,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_validate_spc_code",
+        "value": "0x4f5c",
+        "size": 324,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_sim_get_carrier",
+        "value": "0xa04c",
+        "size": 312,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_validate_home_network",
+        "value": "0x73a0",
+        "size": 312,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      },
+      {
+        "name": "modem2_validate_manual_network_selection",
+        "value": "0x7e50",
+        "size": 312,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": 12,
+        "table": "dynsym"
+      }
+    ],
+    "all_exported_functions": [
+      {
+        "name": "unlink",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "read",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "close",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "fsync",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "memset",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "strlen",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "strncat",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "snprintf",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "msgq_does_queue_exist",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "mifi_dbg_get_level_name",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "mifi_dbg_log",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "msgq_send_sync",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "settings_get_setting",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "mifi_dbg_syslog",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "write",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "strcmp",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "open",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "mkdir",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "memcpy",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "access",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "file_read_as_int",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "file_read",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "strncpy",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "msgq_send_sync_large_payload",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "settings_set_setting",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "msgq_send_async",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "strcpy",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "sem_open",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "__errno_location",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "clock_gettime",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "sem_timedwait",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "watchdog_application_send_keep_alive",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "sem_close",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "sem_post",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "sprintf",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "raise",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "xmldata_getuint32_default",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "xmldata_setuint32",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "xmldata_save",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "MsgBusSetInt32",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "xmldata_getuint32",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "xmldata_getstring",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "modem2_get_volte_amr_wb_mode",
+        "address": "0xf020",
+        "size": 332
+      },
+      {
+        "name": "modem2_get_certified_carrier",
+        "address": "0x4340",
+        "size": 872
+      },
+      {
+        "name": "modem2_update_pco_event",
+        "address": "0x168a4",
+        "size": 364
+      },
+      {
+        "name": "modem2_get_active_band",
+        "address": "0xb9dc",
+        "size": 312
+      },
+      {
+        "name": "modem2_roaming_get_sprint_settings",
+        "address": "0x880c",
+        "size": 52
+      },
+      {
+        "name": "modem2_read_modem_file",
+        "address": "0x5e18",
+        "size": 496
+      },
+      {
+        "name": "modem2_set_volte_silent_redial",
+        "address": "0xf8b8",
+        "size": 332
+      },
+      {
+        "name": "modem2_roaming_get_eri",
+        "address": "0x86c4",
+        "size": 328
+      },
+      {
+        "name": "modem2_get_ims_sms_data",
+        "address": "0xe620",
+        "size": 348
+      },
+      {
+        "name": "modem2_set_ims_sip_timer_oper_mode_a",
+        "address": "0xe268",
+        "size": 280
+      },
+      {
+        "name": "modem2_update_network_sinr",
+        "address": "0x13120",
+        "size": 272
+      },
+      {
+        "name": "modem2_start_network_operator_scan",
+        "address": "0x7994",
+        "size": 240
+      },
+      {
+        "name": "modem2_get_volte_tlte_911fail",
+        "address": "0x10150",
+        "size": 332
+      },
+      {
+        "name": "modem2_validate_apn",
+        "address": "0x173dc",
+        "size": 500
+      },
+      {
+        "name": "modem2_sim_get_gid",
+        "address": "0xa2bc",
+        "size": 604
+      },
+      {
+        "name": "modem2_get_info",
+        "address": "0x46a8",
+        "size": 536
+      },
+      {
+        "name": "modem2_set_ehrpd_enabled",
+        "address": "0xbc4c",
+        "size": 280
+      },
+      {
+        "name": "modem2_set_sd_config_ext_setting",
+        "address": "0x10558",
+        "size": 352
+      },
+      {
+        "name": "modem2_set_ims_registration_delay",
+        "address": "0xdc14",
+        "size": 304
+      },
+      {
+        "name": "modem2_update_network_service",
+        "address": "0x138f8",
+        "size": 272
+      },
+      {
+        "name": "_init",
+        "address": "0x3be8",
+        "size": 0
+      },
+      {
+        "name": "modem2_get_voice_signal_stats",
+        "address": "0x4c68",
+        "size": 328
+      },
+      {
+        "name": "modem2_get_band_class_enabled",
+        "address": "0xb71c",
+        "size": 352
+      },
+      {
+        "name": "modem2_set_volte_amr_wb_mode",
+        "address": "0xf16c",
+        "size": 280
+      },
+      {
+        "name": "modem2_set_volte_hd_voice_enabled",
+        "address": "0xec70",
+        "size": 332
+      },
+      {
+        "name": "modem2_update_roam_state",
+        "address": "0x12ab4",
+        "size": 272
+      },
+      {
+        "name": "modem2_update_voice_lac",
+        "address": "0x158ec",
+        "size": 300
+      },
+      {
+        "name": "modem2_update_voice_enabled",
+        "address": "0x16484",
+        "size": 272
+      },
+      {
+        "name": "modem2_get_network_operator_list",
+        "address": "0x7a84",
+        "size": 408
+      },
+      {
+        "name": "modem2_utils_convert_tech_to_string",
+        "address": "0x1884c",
+        "size": 360
+      },
+      {
+        "name": "modem2_set_lbs_idle_mode_query_enabled",
+        "address": "0x647c",
+        "size": 280
+      },
+      {
+        "name": "modem2_update_network_ecio",
+        "address": "0x13010",
+        "size": 272
+      },
+      {
+        "name": "modem2_update_pip_tone",
+        "address": "0x14f54",
+        "size": 272
+      },
+      {
+        "name": "modem2_set_volte_session_config",
+        "address": "0xdad0",
+        "size": 324
+      },
+      {
+        "name": "modem2_refresh_events",
+        "address": "0x4250",
+        "size": 240
+      },
+      {
+        "name": "modem2_get_mip_profile",
+        "address": "0xaf28",
+        "size": 328
+      },
+      {
+        "name": "modem2_get_supported_tech_modes",
+        "address": "0x6e0c",
+        "size": 312
+      },
+      {
+        "name": "modem2_update_connection_state",
+        "address": "0x16300",
+        "size": 388
+      },
+      {
+        "name": "modem2_set_volte_source_throttle_publish",
+        "address": "0xfb50",
+        "size": 280
+      },
+      {
+        "name": "modem2_get_bsr_timers",
+        "address": "0x50a0",
+        "size": 328
+      },
+      {
+        "name": "modem2_update_cat_display_text",
+        "address": "0x15290",
+        "size": 284
+      },
+      {
+        "name": "modem2_update_reject_code",
+        "address": "0x16794",
+        "size": 272
+      },
+      {
+        "name": "modem2_get_time_info",
+        "address": "0x6918",
+        "size": 436
+      },
+      {
+        "name": "modem2_get_mip_settings",
+        "address": "0xac30",
+        "size": 328
+      },
+      {
+        "name": "modem2_get_lte_band_priority",
+        "address": "0xc418",
+        "size": 328
+      },
+      {
+        "name": "modem2_get_volte_source_throttle_publish",
+        "address": "0xfa04",
+        "size": 332
+      },
+      {
+        "name": "modem2_get_volte_dcmo_tdelay",
+        "address": "0xf4e8",
+        "size": 340
+      },
+      {
+        "name": "modem2_update_operator_name",
+        "address": "0x14500",
+        "size": 340
+      },
+      {
+        "name": "modem2_update_voice_cell_id",
+        "address": "0x15a18",
+        "size": 300
+      },
+      {
+        "name": "modem2_api_is_running",
+        "address": "0x4210",
+        "size": 64
+      },
+      {
+        "name": "modem2_get_cai_rev",
+        "address": "0x5bc8",
+        "size": 312
+      },
+      {
+        "name": "modem2_carrier_unlock",
+        "address": "0x6c14",
+        "size": 504
+      },
+      {
+        "name": "modem2_get_sd_config_ext_setting",
+        "address": "0x103b4",
+        "size": 420
+      },
+      {
+        "name": "modem2_sim_unlock_puk",
+        "address": "0x9a50",
+        "size": 388
+      },
+      {
+        "name": "modem2_set_autonomous_gap_enabled",
+        "address": "0xd5c4",
+        "size": 280
+      },
+      {
+        "name": "modem2_update_network_time",
+        "address": "0x142d0",
+        "size": 288
+      },
+      {
+        "name": "modem2_sim_unlock_pin",
+        "address": "0x9910",
+        "size": 320
+      },
+      {
+        "name": "modem2_set_active_tech_profile",
+        "address": "0x9638",
+        "size": 372
+      },
+      {
+        "name": "modem2_get_labtest_settings",
+        "address": "0x17fd4",
+        "size": 144
+      },
+      {
+        "name": "modem2_clear_network_operator_list",
+        "address": "0x7c1c",
+        "size": 240
+      },
+      {
+        "name": "modem2_stop_call",
+        "address": "0x113d8",
+        "size": 3060
+      },
+      {
+        "name": "modem2_set_volte_tlte_911fail",
+        "address": "0x1029c",
+        "size": 280
+      },
+      {
+        "name": "modem2_update_network_extender",
+        "address": "0x14654",
+        "size": 272
+      },
+      {
+        "name": "modem2_set_ims_lvc_enabled",
+        "address": "0xe130",
+        "size": 312
+      },
+      {
+        "name": "modem2_sim_enable_pin",
+        "address": "0x97ac",
+        "size": 356
+      },
+      {
+        "name": "modem2_reset_factory_default",
+        "address": "0x6594",
+        "size": 240
+      },
+      {
+        "name": "modem2_set_band_class_enabled",
+        "address": "0xb87c",
+        "size": 352
+      },
+      {
+        "name": "modem2_get_call_throttle_status",
+        "address": "0x16a10",
+        "size": 376
+      },
+      {
+        "name": "modem2_get_mns_info",
+        "address": "0x76ec",
+        "size": 328
+      },
+      {
+        "name": "modem2_set_tech_profile",
+        "address": "0x8a50",
+        "size": 640
+      },
+      {
+        "name": "modem2_set_lte_band_priority",
+        "address": "0xc560",
+        "size": 492
+      },
+      {
+        "name": "modem2_get_ehrpd_enabled",
+        "address": "0xbb14",
+        "size": 312
+      },
+      {
+        "name": "modem2_set_volte_dcmo_tdelay",
+        "address": "0xf63c",
+        "size": 304
+      },
+      {
+        "name": "modem2_update_voice_roam_state",
+        "address": "0x156c0",
+        "size": 272
+      },
+      {
+        "name": "modem2_get_apn_from_database",
+        "address": "0x16b88",
+        "size": 708
+      },
+      {
+        "name": "modem2_get_pdn_ext_params",
+        "address": "0xaa60",
+        "size": 464
+      },
+      {
+        "name": "modem2_update_network_bars",
+        "address": "0x12df0",
+        "size": 272
+      },
+      {
+        "name": "modem2_set_enabled_tech_modes",
+        "address": "0x71ac",
+        "size": 500
+      },
+      {
+        "name": "modem2_update_sim_activation_status",
+        "address": "0x14d34",
+        "size": 272
+      },
+      {
+        "name": "initialize_settings",
+        "address": "0x181cc",
+        "size": 408
+      },
+      {
+        "name": "modem2_update_sim_status",
+        "address": "0x12760",
+        "size": 284
+      },
+      {
+        "name": "modem2_update_plmn_name",
+        "address": "0x1488c",
+        "size": 360
+      },
+      {
+        "name": "modem2_get_ca_bands_enabled",
+        "address": "0xccf0",
+        "size": 472
+      },
+      {
+        "name": "modem2_sim_change_pin",
+        "address": "0x9bd4",
+        "size": 388
+      },
+      {
+        "name": "modem2_utils_convert_state_to_string",
+        "address": "0x189b4",
+        "size": 280
+      },
+      {
+        "name": "modem2_update_voice_service",
+        "address": "0x13a08",
+        "size": 272
+      },
+      {
+        "name": "modem2_update_call_response",
+        "address": "0x1614c",
+        "size": 436
+      },
+      {
+        "name": "modem2_get_emergency_mode",
+        "address": "0xd828",
+        "size": 332
+      },
+      {
+        "name": "modem2_get_volte_amr_mode",
+        "address": "0xedbc",
+        "size": 332
+      },
+      {
+        "name": "modem2_get_volte_dcmo_timer",
+        "address": "0xf284",
+        "size": 332
+      },
+      {
+        "name": "modem2_write_persistent_file",
+        "address": "0x18acc",
+        "size": 388
+      },
+      {
+        "name": "modem2_get_ca_tri_bands_enabled",
+        "address": "0xd06c",
+        "size": 544
+      },
+      {
+        "name": "modem2_get_operator_info",
+        "address": "0x6684",
+        "size": 328
+      },
+      {
+        "name": "modem2_get_certified_carrier_settings",
+        "address": "0x17ea8",
+        "size": 156
+      },
+      {
+        "name": "modem2_set_bsr_timers",
+        "address": "0x51e8",
+        "size": 408
+      },
+      {
+        "name": "modem2_update_cat_launch_browser",
+        "address": "0x15174",
+        "size": 284
+      },
+      {
+        "name": "modem2_carrier_unlock_status",
+        "address": "0x6acc",
+        "size": 328
+      },
+      {
+        "name": "modem2_get_pri_tech_profile",
+        "address": "0x8cd0",
+        "size": 420
+      },
+      {
+        "name": "modem2_set_mdn_and_min",
+        "address": "0xbfb4",
+        "size": 388
+      },
+      {
+        "name": "modem2_set_ehrpd_state",
+        "address": "0xbe9c",
+        "size": 280
+      },
+      {
+        "name": "modem2_get_reject_cause_code",
+        "address": "0x1228c",
+        "size": 312
+      },
+      {
+        "name": "modem2_delete_persistent_file",
+        "address": "0x18d40",
+        "size": 148
+      },
+      {
+        "name": "modem2_set_volte_enabled",
+        "address": "0xc974",
+        "size": 280
+      },
+      {
+        "name": "modem2_factory_reset",
+        "address": "0x1852c",
+        "size": 728
+      },
+      {
+        "name": "modem2_set_mip_profile",
+        "address": "0xb070",
+        "size": 400
+      },
+      {
+        "name": "modem2_update_oprt_mode",
+        "address": "0x149f4",
+        "size": 272
+      },
+      {
+        "name": "modem2_set_custom_apn_to_database",
+        "address": "0x16ff0",
+        "size": 396
+      },
+      {
+        "name": "modem2_set_intl_roam_settings",
+        "address": "0x17dd0",
+        "size": 216
+      },
+      {
+        "name": "modem2_read_persistent_file",
+        "address": "0x18c50",
+        "size": 240
+      },
+      {
+        "name": "modem2_update_mns_info",
+        "address": "0x15b44",
+        "size": 268
+      },
+      {
+        "name": "modem2_update_lifetime_counters",
+        "address": "0xb5c8",
+        "size": 340
+      },
+      {
+        "name": "modem2_set_ca_bands_enabled",
+        "address": "0xcec8",
+        "size": 420
+      },
+      {
+        "name": "modem2_set_volte_rcl_max_entries",
+        "address": "0xfdb4",
+        "size": 280
+      },
+      {
+        "name": "modem2_update_wwan_state",
+        "address": "0x129a4",
+        "size": 272
+      },
+      {
+        "name": "modem2_get_pco_event",
+        "address": "0x124fc",
+        "size": 336
+      },
+      {
+        "name": "modem2_update_signal_cdma",
+        "address": "0x13c28",
+        "size": 288
+      },
+      {
+        "name": "modem2_roaming_set_sprint_settings",
+        "address": "0x8840",
+        "size": 52
+      },
+      {
+        "name": "modem2_get_signal_stats",
+        "address": "0x4b20",
+        "size": 328
+      },
+      {
+        "name": "modem2_get_current_state",
+        "address": "0x49d8",
+        "size": 328
+      },
+      {
+        "name": "modem2_set_1xrtt_cdma_ext_timer",
+        "address": "0xea0c",
+        "size": 280
+      },
+      {
+        "name": "modem2_set_volte_dcmo_timer",
+        "address": "0xf3d0",
+        "size": 280
+      },
+      {
+        "name": "modem2_update_voice_mcc_mnc",
+        "address": "0x155a0",
+        "size": 288
+      },
+      {
+        "name": "modem2_get_activation_date",
+        "address": "0x5804",
+        "size": 312
+      },
+      {
+        "name": "modem2_get_ddtm_state",
+        "address": "0x593c",
+        "size": 328
+      },
+      {
+        "name": "modem2_update_uati",
+        "address": "0x14764",
+        "size": 296
+      },
+      {
+        "name": "modem2_update_network_rsrp",
+        "address": "0x13450",
+        "size": 272
+      },
+      {
+        "name": "modem2_check_lte_ca_status",
+        "address": "0xc74c",
+        "size": 240
+      },
+      {
+        "name": "modem2_get_volte_silent_redial",
+        "address": "0xf76c",
+        "size": 332
+      },
+      {
+        "name": "modem2_update_network_rsrq",
+        "address": "0x13340",
+        "size": 272
+      },
+      {
+        "name": "modem2_is_radio_enabled",
+        "address": "0xb200",
+        "size": 312
+      },
+      {
+        "name": "modem2_is_manual_network_selected",
+        "address": "0x7834",
+        "size": 352
+      },
+      {
+        "name": "modem2_set_pri_tech_profile",
+        "address": "0x8e74",
+        "size": 608
+      },
+      {
+        "name": "modem2_get_ca_enabled",
+        "address": "0xca8c",
+        "size": 332
+      },
+      {
+        "name": "modem2_get_ims_sip_data",
+        "address": "0xe380",
+        "size": 348
+      },
+      {
+        "name": "modem2_update_pin_status",
+        "address": "0x1287c",
+        "size": 296
+      },
+      {
+        "name": "powersave_notify",
+        "address": "0x18364",
+        "size": 456
+      },
+      {
+        "name": "modem2_update_signal_wcdma",
+        "address": "0x13f84",
+        "size": 288
+      },
+      {
+        "name": "modem2_update_voice_plmn_name",
+        "address": "0x157d0",
+        "size": 284
+      },
+      {
+        "name": "modem2_get_active_tech_modes",
+        "address": "0x6f44",
+        "size": 312
+      },
+      {
+        "name": "modem2_set_ims_sms_data",
+        "address": "0xe77c",
+        "size": 324
+      },
+      {
+        "name": "modem2_update_roam_ctrl",
+        "address": "0x153ac",
+        "size": 232
+      },
+      {
+        "name": "modem2_get_volte_rcl_max_entries",
+        "address": "0xfc68",
+        "size": 332
+      },
+      {
+        "name": "modem2_update_network_sid_nid",
+        "address": "0x137c0",
+        "size": 312
+      },
+      {
+        "name": "modem2_get_service_info",
+        "address": "0x4db0",
+        "size": 428
+      },
+      {
+        "name": "modem2_set_radio_enabled",
+        "address": "0xb338",
+        "size": 276
+      },
+      {
+        "name": "modem2_get_lte_band_enabled",
+        "address": "0xc138",
+        "size": 384
+      },
+      {
+        "name": "modem2_set_roam_settings",
+        "address": "0x17c68",
+        "size": 216
+      },
+      {
+        "name": "initialize_factory_reset_func",
+        "address": "0x18804",
+        "size": 72
+      },
+      {
+        "name": "modem2_select_manual_network",
+        "address": "0x7d0c",
+        "size": 324
+      },
+      {
+        "name": "modem2_sim_get_pin_info",
+        "address": "0x9f04",
+        "size": 328
+      },
+      {
+        "name": "modem2_get_volte_hd_voice_enabled",
+        "address": "0xeb24",
+        "size": 332
+      },
+      {
+        "name": "modem2_get_enabled_tech_modes",
+        "address": "0x707c",
+        "size": 304
+      },
+      {
+        "name": "modem2_update_network_rssi",
+        "address": "0x12f00",
+        "size": 272
+      },
+      {
+        "name": "modem2_enable_data_call",
+        "address": "0x15c50",
+        "size": 1276
+      },
+      {
+        "name": "modem2_get_imsi",
+        "address": "0xa518",
+        "size": 528
+      },
+      {
+        "name": "modem2_get_ehrpd_state",
+        "address": "0xbd64",
+        "size": 312
+      },
+      {
+        "name": "modem2_update_emergency_mode",
+        "address": "0x15064",
+        "size": 272
+      },
+      {
+        "name": "modem2_update_network_operator",
+        "address": "0x12bc4",
+        "size": 284
+      },
+      {
+        "name": "modem2_update_signal_lte",
+        "address": "0x140a4",
+        "size": 284
+      },
+      {
+        "name": "modem2_get_custom_apn_from_database",
+        "address": "0x16e4c",
+        "size": 420
+      },
+      {
+        "name": "modem2_get_preftech_settings",
+        "address": "0x18064",
+        "size": 144
+      },
+      {
+        "name": "modem2_get_tech_profile",
+        "address": "0x8874",
+        "size": 476
+      },
+      {
+        "name": "modem2_get_volte_enabled",
+        "address": "0xc83c",
+        "size": 312
+      },
+      {
+        "name": "modem2_get_lbs_idle_mode_query_enabled",
+        "address": "0x6344",
+        "size": 312
+      },
+      {
+        "name": "modem2_set_ims_presence_config",
+        "address": "0xdea0",
+        "size": 324
+      },
+      {
+        "name": "modem2_enable_power_save_mode",
+        "address": "0x48c0",
+        "size": 280
+      },
+      {
+        "name": "modem2_validate_spc_code",
+        "address": "0x4f5c",
+        "size": 324
+      },
+      {
+        "name": "modem2_set_ims_sip_data",
+        "address": "0xe4dc",
+        "size": 324
+      },
+      {
+        "name": "modem2_set_pdn_ext_params",
+        "address": "0xa8e0",
+        "size": 384
+      },
+      {
+        "name": "modem2_update_wap_push_message",
+        "address": "0x14b04",
+        "size": 560
+      },
+      {
+        "name": "modem2_get_1xrtt_cdma_ext_timer",
+        "address": "0xe8c0",
+        "size": 332
+      },
+      {
+        "name": "modem2_roaming_get_enabled",
+        "address": "0x7f88",
+        "size": 800
+      },
+      {
+        "name": "modem2_get_refurbish_info",
+        "address": "0x56bc",
+        "size": 328
+      },
+      {
+        "name": "modem2_sim_get_mnc_length",
+        "address": "0xa184",
+        "size": 312
+      },
+      {
+        "name": "modem2_set_mip_settings",
+        "address": "0xad78",
+        "size": 432
+      },
+      {
+        "name": "modem2_get_ims_lvc_enabled",
+        "address": "0xdfe4",
+        "size": 332
+      },
+      {
+        "name": "modem2_get_active_tech_profile",
+        "address": "0x94d8",
+        "size": 352
+      },
+      {
+        "name": "modem2_set_ca_tri_bands_enabled",
+        "address": "0xd28c",
+        "size": 492
+      },
+      {
+        "name": "modem2_set_lte_band_enabled",
+        "address": "0xc2b8",
+        "size": 352
+      },
+      {
+        "name": "modem2_sim_get_status",
+        "address": "0x9d58",
+        "size": 428
+      },
+      {
+        "name": "modem2_sim_get_carrier",
+        "address": "0xa04c",
+        "size": 312
+      },
+      {
+        "name": "modem2_get_call_status",
+        "address": "0x11fcc",
+        "size": 704
+      },
+      {
+        "name": "modem2_update_network_snr",
+        "address": "0x13230",
+        "size": 272
+      },
+      {
+        "name": "modem2_set_lte_wifi_5ghz_coex",
+        "address": "0x1264c",
+        "size": 276
+      },
+      {
+        "name": "modem2_get_volte_session_config",
+        "address": "0xd974",
+        "size": 348
+      },
+      {
+        "name": "modem2_set_custom_tech_profile",
+        "address": "0x9278",
+        "size": 608
+      },
+      {
+        "name": "modem2_validate_home_network",
+        "address": "0x73a0",
+        "size": 312
+      },
+      {
+        "name": "modem2_get_autonomous_gap_enabled",
+        "address": "0xd478",
+        "size": 332
+      },
+      {
+        "name": "modem2_get_ims_presence_config",
+        "address": "0xdd44",
+        "size": 348
+      },
+      {
+        "name": "modem2_run_raw_command",
+        "address": "0x175d0",
+        "size": 704
+      },
+      {
+        "name": "modem2_set_preftech_settings",
+        "address": "0x180f4",
+        "size": 216
+      },
+      {
+        "name": "modem2_update_ddtm_status",
+        "address": "0x141c0",
+        "size": 272
+      },
+      {
+        "name": "modem2_set_ddtm_state",
+        "address": "0x5a84",
+        "size": 324
+      },
+      {
+        "name": "modem2_update_network_dbm",
+        "address": "0x12ce0",
+        "size": 272
+      },
+      {
+        "name": "modem2_update_network_lac",
+        "address": "0x13560",
+        "size": 300
+      },
+      {
+        "name": "modem2_update_plmn_mode",
+        "address": "0x143f0",
+        "size": 272
+      },
+      {
+        "name": "modem2_set_volte_amr_mode",
+        "address": "0xef08",
+        "size": 280
+      },
+      {
+        "name": "modem2_set_auto_apn_profile",
+        "address": "0x1717c",
+        "size": 608
+      },
+      {
+        "name": "modem2_mns_get_max_timeout",
+        "address": "0x74d8",
+        "size": 532
+      },
+      {
+        "name": "modem2_get_intl_roam_settings",
+        "address": "0x17d40",
+        "size": 144
+      },
+      {
+        "name": "modem2_delete_modem_file",
+        "address": "0x61d8",
+        "size": 364
+      },
+      {
+        "name": "modem2_set_ca_enabled",
+        "address": "0xcbd8",
+        "size": 280
+      },
+      {
+        "name": "modem2_validate_manual_network_selection",
+        "address": "0x7e50",
+        "size": 312
+      },
+      {
+        "name": "modem2_update_rf_band_conflict",
+        "address": "0x14e44",
+        "size": 272
+      },
+      {
+        "name": "modem2_labtest_get_enabled",
+        "address": "0x16594",
+        "size": 512
+      },
+      {
+        "name": "modem2_get_custom_tech_profile",
+        "address": "0x90d4",
+        "size": 420
+      },
+      {
+        "name": "modem2_get_roam_settings",
+        "address": "0x17bd4",
+        "size": 148
+      },
+      {
+        "name": "modem2_update_network_cell_id",
+        "address": "0x1368c",
+        "size": 308
+      },
+      {
+        "name": "modem2_update_reg_state",
+        "address": "0x13b18",
+        "size": 272
+      },
+      {
+        "name": "modem2_update_voice_registration_state",
+        "address": "0x15494",
+        "size": 268
+      },
+      {
+        "name": "modem2_get_diag_info",
+        "address": "0x5380",
+        "size": 828
+      },
+      {
+        "name": "modem2_get_network_time",
+        "address": "0x67cc",
+        "size": 332
+      },
+      {
+        "name": "modem2_network_attach",
+        "address": "0xd6dc",
+        "size": 332
+      },
+      {
+        "name": "modem2_get_world_mode_enabled",
+        "address": "0x123c4",
+        "size": 312
+      },
+      {
+        "name": "modem2_roaming_set_enabled",
+        "address": "0x82a8",
+        "size": 1052
+      },
+      {
+        "name": "modem2_get_error_string",
+        "address": "0x17890",
+        "size": 836
+      },
+      {
+        "name": "modem2_update_signal_gsm",
+        "address": "0x13e64",
+        "size": 288
+      },
+      {
+        "name": "modem2_set_cai_rev",
+        "address": "0x5d00",
+        "size": 280
+      },
+      {
+        "name": "modem2_sim_get_iccid",
+        "address": "0xa728",
+        "size": 440
+      },
+      {
+        "name": "modem2_start_call",
+        "address": "0x106b8",
+        "size": 3360
+      },
+      {
+        "name": "modem2_write_modem_file",
+        "address": "0x6008",
+        "size": 464
+      },
+      {
+        "name": "modem2_get_volte_hys",
+        "address": "0xfecc",
+        "size": 340
+      },
+      {
+        "name": "modem2_set_volte_hys",
+        "address": "0x10020",
+        "size": 304
+      },
+      {
+        "name": "_fini",
+        "address": "0x18ee0",
+        "size": 0
+      },
+      {
+        "name": "modem2_get_lifetime_counters",
+        "address": "0xb44c",
+        "size": 380
+      },
+      {
+        "name": "modem2_get_mns_timeout_settings",
+        "address": "0x17f44",
+        "size": 144
+      },
+      {
+        "name": "modem2_update_signal_hdr",
+        "address": "0x13d48",
+        "size": 284
+      }
+    ],
+    "function_categories": {
+      "modem_control": [
+        "modem2_get_volte_amr_wb_mode",
+        "modem2_get_certified_carrier",
+        "modem2_update_pco_event",
+        "modem2_get_active_band",
+        "modem2_roaming_get_sprint_settings",
+        "modem2_read_modem_file",
+        "modem2_set_volte_silent_redial",
+        "modem2_roaming_get_eri",
+        "modem2_get_ims_sms_data",
+        "modem2_set_ims_sip_timer_oper_mode_a",
+        "modem2_update_network_sinr",
+        "modem2_start_network_operator_scan",
+        "modem2_get_volte_tlte_911fail",
+        "modem2_validate_apn",
+        "modem2_sim_get_gid",
+        "modem2_get_info",
+        "modem2_set_ehrpd_enabled",
+        "modem2_set_sd_config_ext_setting",
+        "modem2_set_ims_registration_delay",
+        "modem2_update_network_service",
+        "modem2_get_voice_signal_stats",
+        "modem2_get_band_class_enabled",
+        "modem2_set_volte_amr_wb_mode",
+        "modem2_set_volte_hd_voice_enabled",
+        "modem2_update_roam_state",
+        "modem2_update_voice_lac",
+        "modem2_update_voice_enabled",
+        "modem2_get_network_operator_list",
+        "modem2_utils_convert_tech_to_string",
+        "modem2_set_lbs_idle_mode_query_enabled",
+        "modem2_update_network_ecio",
+        "modem2_update_pip_tone",
+        "modem2_set_volte_session_config",
+        "modem2_refresh_events",
+        "modem2_get_mip_profile",
+        "modem2_get_supported_tech_modes",
+        "modem2_update_connection_state",
+        "modem2_set_volte_source_throttle_publish",
+        "modem2_get_bsr_timers",
+        "modem2_update_cat_display_text",
+        "modem2_update_reject_code",
+        "modem2_get_time_info",
+        "modem2_get_mip_settings",
+        "modem2_get_lte_band_priority",
+        "modem2_get_volte_source_throttle_publish",
+        "modem2_get_volte_dcmo_tdelay",
+        "modem2_update_operator_name",
+        "modem2_update_voice_cell_id",
+        "modem2_api_is_running",
+        "modem2_get_cai_rev",
+        "modem2_carrier_unlock",
+        "modem2_get_sd_config_ext_setting",
+        "modem2_sim_unlock_puk",
+        "modem2_set_autonomous_gap_enabled",
+        "modem2_update_network_time",
+        "modem2_sim_unlock_pin",
+        "modem2_set_active_tech_profile",
+        "modem2_get_labtest_settings",
+        "modem2_clear_network_operator_list",
+        "modem2_stop_call",
+        "modem2_set_volte_tlte_911fail",
+        "modem2_update_network_extender",
+        "modem2_set_ims_lvc_enabled",
+        "modem2_sim_enable_pin",
+        "modem2_reset_factory_default",
+        "modem2_set_band_class_enabled",
+        "modem2_get_call_throttle_status",
+        "modem2_get_mns_info",
+        "modem2_set_tech_profile",
+        "modem2_set_lte_band_priority",
+        "modem2_get_ehrpd_enabled",
+        "modem2_set_volte_dcmo_tdelay",
+        "modem2_update_voice_roam_state",
+        "modem2_get_apn_from_database",
+        "modem2_get_pdn_ext_params",
+        "modem2_update_network_bars",
+        "modem2_set_enabled_tech_modes",
+        "modem2_update_sim_activation_status",
+        "modem2_update_sim_status",
+        "modem2_update_plmn_name",
+        "modem2_get_ca_bands_enabled",
+        "modem2_sim_change_pin",
+        "modem2_utils_convert_state_to_string",
+        "modem2_update_voice_service",
+        "modem2_update_call_response",
+        "modem2_get_emergency_mode",
+        "modem2_get_volte_amr_mode",
+        "modem2_get_volte_dcmo_timer",
+        "modem2_write_persistent_file",
+        "modem2_get_ca_tri_bands_enabled",
+        "modem2_get_operator_info",
+        "modem2_get_certified_carrier_settings",
+        "modem2_set_bsr_timers",
+        "modem2_update_cat_launch_browser",
+        "modem2_carrier_unlock_status",
+        "modem2_get_pri_tech_profile",
+        "modem2_set_mdn_and_min",
+        "modem2_set_ehrpd_state",
+        "modem2_get_reject_cause_code",
+        "modem2_delete_persistent_file",
+        "modem2_set_volte_enabled",
+        "modem2_factory_reset",
+        "modem2_set_mip_profile",
+        "modem2_update_oprt_mode",
+        "modem2_set_custom_apn_to_database",
+        "modem2_set_intl_roam_settings",
+        "modem2_read_persistent_file",
+        "modem2_update_mns_info",
+        "modem2_update_lifetime_counters",
+        "modem2_set_ca_bands_enabled",
+        "modem2_set_volte_rcl_max_entries",
+        "modem2_update_wwan_state",
+        "modem2_get_pco_event",
+        "modem2_update_signal_cdma",
+        "modem2_roaming_set_sprint_settings",
+        "modem2_get_signal_stats",
+        "modem2_get_current_state",
+        "modem2_set_1xrtt_cdma_ext_timer",
+        "modem2_set_volte_dcmo_timer",
+        "modem2_update_voice_mcc_mnc",
+        "modem2_get_activation_date",
+        "modem2_get_ddtm_state",
+        "modem2_update_uati",
+        "modem2_update_network_rsrp",
+        "modem2_check_lte_ca_status",
+        "modem2_get_volte_silent_redial",
+        "modem2_update_network_rsrq",
+        "modem2_is_radio_enabled",
+        "modem2_is_manual_network_selected",
+        "modem2_set_pri_tech_profile",
+        "modem2_get_ca_enabled",
+        "modem2_get_ims_sip_data",
+        "modem2_update_pin_status",
+        "modem2_update_signal_wcdma",
+        "modem2_update_voice_plmn_name",
+        "modem2_get_active_tech_modes",
+        "modem2_set_ims_sms_data",
+        "modem2_update_roam_ctrl",
+        "modem2_get_volte_rcl_max_entries",
+        "modem2_update_network_sid_nid",
+        "modem2_get_service_info",
+        "modem2_set_radio_enabled",
+        "modem2_get_lte_band_enabled",
+        "modem2_set_roam_settings",
+        "modem2_select_manual_network",
+        "modem2_sim_get_pin_info",
+        "modem2_get_volte_hd_voice_enabled",
+        "modem2_get_enabled_tech_modes",
+        "modem2_update_network_rssi",
+        "modem2_enable_data_call",
+        "modem2_get_imsi",
+        "modem2_get_ehrpd_state",
+        "modem2_update_emergency_mode",
+        "modem2_update_network_operator",
+        "modem2_update_signal_lte",
+        "modem2_get_custom_apn_from_database",
+        "modem2_get_preftech_settings",
+        "modem2_get_tech_profile",
+        "modem2_get_volte_enabled",
+        "modem2_get_lbs_idle_mode_query_enabled",
+        "modem2_set_ims_presence_config",
+        "modem2_enable_power_save_mode",
+        "modem2_validate_spc_code",
+        "modem2_set_ims_sip_data",
+        "modem2_set_pdn_ext_params",
+        "modem2_update_wap_push_message",
+        "modem2_get_1xrtt_cdma_ext_timer",
+        "modem2_roaming_get_enabled",
+        "modem2_get_refurbish_info",
+        "modem2_sim_get_mnc_length",
+        "modem2_set_mip_settings",
+        "modem2_get_ims_lvc_enabled",
+        "modem2_get_active_tech_profile",
+        "modem2_set_ca_tri_bands_enabled",
+        "modem2_set_lte_band_enabled",
+        "modem2_sim_get_status",
+        "modem2_sim_get_carrier",
+        "modem2_get_call_status",
+        "modem2_update_network_snr",
+        "modem2_set_lte_wifi_5ghz_coex",
+        "modem2_get_volte_session_config",
+        "modem2_set_custom_tech_profile",
+        "modem2_validate_home_network",
+        "modem2_get_autonomous_gap_enabled",
+        "modem2_get_ims_presence_config",
+        "modem2_run_raw_command",
+        "modem2_set_preftech_settings",
+        "modem2_update_ddtm_status",
+        "modem2_set_ddtm_state",
+        "modem2_update_network_dbm",
+        "modem2_update_network_lac",
+        "modem2_update_plmn_mode",
+        "modem2_set_volte_amr_mode",
+        "modem2_set_auto_apn_profile",
+        "modem2_mns_get_max_timeout",
+        "modem2_get_intl_roam_settings",
+        "modem2_delete_modem_file",
+        "modem2_set_ca_enabled",
+        "modem2_validate_manual_network_selection",
+        "modem2_update_rf_band_conflict",
+        "modem2_labtest_get_enabled",
+        "modem2_get_custom_tech_profile",
+        "modem2_get_roam_settings",
+        "modem2_update_network_cell_id",
+        "modem2_update_reg_state",
+        "modem2_update_voice_registration_state",
+        "modem2_get_diag_info",
+        "modem2_get_network_time",
+        "modem2_network_attach",
+        "modem2_get_world_mode_enabled",
+        "modem2_roaming_set_enabled",
+        "modem2_get_error_string",
+        "modem2_update_signal_gsm",
+        "modem2_set_cai_rev",
+        "modem2_sim_get_iccid",
+        "modem2_start_call",
+        "modem2_write_modem_file",
+        "modem2_get_volte_hys",
+        "modem2_set_volte_hys",
+        "modem2_get_lifetime_counters",
+        "modem2_get_mns_timeout_settings",
+        "modem2_update_signal_hdr"
+      ]
+    }
+  },
+  "libsms_encoder.so": {
+    "metadata": {
+      "filename": "libsms_encoder.so",
+      "arch": "EM_ARM",
+      "bits": 32,
+      "endian": "little",
+      "type": "ET_DYN",
+      "entry": "0x0",
+      "sections": [
+        {
+          "name": "",
+          "type": "SHT_NULL",
+          "addr": "0x0",
+          "size": 0
+        },
+        {
+          "name": ".note.gnu.build-id",
+          "type": "SHT_NOTE",
+          "addr": "0x114",
+          "size": 36
+        },
+        {
+          "name": ".dynsym",
+          "type": "SHT_DYNSYM",
+          "addr": "0x138",
+          "size": 2416
+        },
+        {
+          "name": ".dynstr",
+          "type": "SHT_STRTAB",
+          "addr": "0xaa8",
+          "size": 3410
+        },
+        {
+          "name": ".gnu.hash",
+          "type": "SHT_GNU_HASH",
+          "addr": "0x17fc",
+          "size": 1036
+        },
+        {
+          "name": ".gnu.version",
+          "type": "SHT_GNU_versym",
+          "addr": "0x1c08",
+          "size": 302
+        },
+        {
+          "name": ".gnu.version_d",
+          "type": "SHT_GNU_verdef",
+          "addr": "0x1d38",
+          "size": 28
+        },
+        {
+          "name": ".gnu.version_r",
+          "type": "SHT_GNU_verneed",
+          "addr": "0x1d54",
+          "size": 80
+        },
+        {
+          "name": ".rel.dyn",
+          "type": "SHT_REL",
+          "addr": "0x1da4",
+          "size": 104
+        },
+        {
+          "name": ".rel.plt",
+          "type": "SHT_REL",
+          "addr": "0x1e0c",
+          "size": 944
+        },
+        {
+          "name": ".init",
+          "type": "SHT_PROGBITS",
+          "addr": "0x21bc",
+          "size": 12
+        },
+        {
+          "name": ".plt",
+          "type": "SHT_PROGBITS",
+          "addr": "0x21c8",
+          "size": 1436
+        },
+        {
+          "name": ".text",
+          "type": "SHT_PROGBITS",
+          "addr": "0x2764",
+          "size": 62556
+        },
+        {
+          "name": ".fini",
+          "type": "SHT_PROGBITS",
+          "addr": "0x11bc0",
+          "size": 8
+        },
+        {
+          "name": ".rodata",
+          "type": "SHT_PROGBITS",
+          "addr": "0x11bc8",
+          "size": 1216
+        },
+        {
+          "name": ".eh_frame",
+          "type": "SHT_PROGBITS",
+          "addr": "0x12088",
+          "size": 4
+        },
+        {
+          "name": ".eh_frame_hdr",
+          "type": "SHT_PROGBITS",
+          "addr": "0x1208c",
+          "size": 8
+        },
+        {
+          "name": ".dynamic",
+          "type": "SHT_DYNAMIC",
+          "addr": "0x13094",
+          "size": 536
+        },
+        {
+          "name": ".data",
+          "type": "SHT_PROGBITS",
+          "addr": "0x132ac",
+          "size": 84
+        },
+        {
+          "name": ".init_array",
+          "type": "SHT_INIT_ARRAY",
+          "addr": "0x13300",
+          "size": 8
+        },
+        {
+          "name": ".fini_array",
+          "type": "SHT_FINI_ARRAY",
+          "addr": "0x13308",
+          "size": 8
+        },
+        {
+          "name": ".jcr",
+          "type": "SHT_PROGBITS",
+          "addr": "0x13310",
+          "size": 4
+        },
+        {
+          "name": ".tm_clone_table",
+          "type": "SHT_PROGBITS",
+          "addr": "0x13314",
+          "size": 0
+        },
+        {
+          "name": ".got",
+          "type": "SHT_PROGBITS",
+          "addr": "0x13314",
+          "size": 516
+        },
+        {
+          "name": ".bss",
+          "type": "SHT_NOBITS",
+          "addr": "0x13518",
+          "size": 3248
+        },
+        {
+          "name": ".comment",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 18
+        },
+        {
+          "name": ".GCC.command.line",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 4475
+        },
+        {
+          "name": ".debug_frame",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 32
+        },
+        {
+          "name": ".debug_line",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 341
+        },
+        {
+          "name": ".debug_info",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 592
+        },
+        {
+          "name": ".debug_abbrev",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 40
+        },
+        {
+          "name": ".debug_aranges",
+          "type": "SHT_PROGBITS",
+          "addr": "0x0",
+          "size": 64
+        },
+        {
+          "name": ".note.gnu.gold-version",
+          "type": "SHT_NOTE",
+          "addr": "0x0",
+          "size": 28
+        },
+        {
+          "name": ".ARM.attributes",
+          "type": "SHT_ARM_ATTRIBUTES",
+          "addr": "0x0",
+          "size": 51
+        },
+        {
+          "name": ".symtab",
+          "type": "SHT_SYMTAB",
+          "addr": "0x0",
+          "size": 5584
+        },
+        {
+          "name": ".strtab",
+          "type": "SHT_STRTAB",
+          "addr": "0x0",
+          "size": 3718
+        },
+        {
+          "name": ".shstrtab",
+          "type": "SHT_STRTAB",
+          "addr": "0x0",
+          "size": 385
+        }
+      ]
+    },
+    "total_dynamic_symbols": 151,
+    "total_symbols": 349,
+    "total_relocations": 131,
+    "spc_related_symbols": [
+      {
+        "name": "libiconv_open",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      },
+      {
+        "name": "libiconv_close",
+        "value": "0x0",
+        "size": 0,
+        "type": "STT_FUNC",
+        "bind": "STB_GLOBAL",
+        "visibility": "STV_DEFAULT",
+        "section": "SHN_UNDEF",
+        "table": "dynsym"
+      }
+    ],
+    "all_exported_functions": [
+      {
+        "name": "memcpy",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "strncpy",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "time",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "localtime",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "strlen",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "calloc",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "free",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "memset",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "libiconv_open",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "libiconv",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "libiconv_close",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "sprintf",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "__isoc99_sscanf",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "mifi_dbg_get_level_name",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "mifi_dbg_log",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "malloc",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "qsort",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "bsearch",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "raise",
+        "address": "0x0",
+        "size": 0
+      },
+      {
+        "name": "IsConfiguredForGsm",
+        "address": "0x2adc",
+        "size": 88
+      },
+      {
+        "name": "wms_ts_decode_timestamp",
+        "address": "0xd574",
+        "size": 1068
+      },
+      {
+        "name": "wms_ts_encode_udh_special_sm",
+        "address": "0xc37c",
+        "size": 288
+      },
+      {
+        "name": "wms_ts_decode_gw_validity",
+        "address": "0xe3e0",
+        "size": 208
+      },
+      {
+        "name": "b_packw",
+        "address": "0x72c8",
+        "size": 656
+      },
+      {
+        "name": "wms_ts_build_ucs2_to_gsm_table",
+        "address": "0xa794",
+        "size": 220
+      },
+      {
+        "name": "wms_ts_encode_timestamp",
+        "address": "0xbaf0",
+        "size": 1824
+      },
+      {
+        "name": "wms_ts_cdma_encode_subaddress",
+        "address": "0x10724",
+        "size": 388
+      },
+      {
+        "name": "wms_ts_unpack_ascii",
+        "address": "0x7b00",
+        "size": 236
+      },
+      {
+        "name": "CDMA_Decode_Ack",
+        "address": "0xa3b8",
+        "size": 184
+      },
+      {
+        "name": "PDU_Decode_Sms_Deliver",
+        "address": "0x6274",
+        "size": 1364
+      },
+      {
+        "name": "wms_ts_encode_gw_validity",
+        "address": "0xcae8",
+        "size": 188
+      },
+      {
+        "name": "wms_ts_decode_address",
+        "address": "0xb298",
+        "size": 356
+      },
+      {
+        "name": "wms_ts_encode_deliver",
+        "address": "0xcba4",
+        "size": 700
+      },
+      {
+        "name": "wms_ts_decode_sc_address",
+        "address": "0xb3fc",
+        "size": 228
+      },
+      {
+        "name": "CDMA_Encode_Message_IS637",
+        "address": "0xa4f4",
+        "size": 224
+      },
+      {
+        "name": "wms_ts_decode_submit_report_error",
+        "address": "0xf4d4",
+        "size": 528
+      },
+      {
+        "name": "EncodeSmsEx",
+        "address": "0x35b8",
+        "size": 636
+      },
+      {
+        "name": "wms_ts_encode_dcs",
+        "address": "0xb818",
+        "size": 728
+      },
+      {
+        "name": "get_new_transaction_id",
+        "address": "0x6f7c",
+        "size": 100
+      },
+      {
+        "name": "wms_ts_encode_CDMA_tl",
+        "address": "0x108a8",
+        "size": 1588
+      },
+      {
+        "name": "GetEmailEmptySubjectDelimieter",
+        "address": "0x34c8",
+        "size": 192
+      },
+      {
+        "name": "wms_ts_is_gsm_char",
+        "address": "0xa870",
+        "size": 172
+      },
+      {
+        "name": "Encode_ReplyOption",
+        "address": "0x96e8",
+        "size": 320
+      },
+      {
+        "name": "b_unpackb",
+        "address": "0x7558",
+        "size": 528
+      },
+      {
+        "name": "DecodeSmsEx",
+        "address": "0x3d94",
+        "size": 804
+      },
+      {
+        "name": "wms_ts_decode_relative_time",
+        "address": "0xfde0",
+        "size": 696
+      },
+      {
+        "name": "wms_ts_ascii_to_bcd",
+        "address": "0xaf74",
+        "size": 208
+      },
+      {
+        "name": "wms_ts_decode_command",
+        "address": "0xee4c",
+        "size": 508
+      },
+      {
+        "name": "GetMessageMetrics",
+        "address": "0x40b8",
+        "size": 1296
+      },
+      {
+        "name": "Encode_MessageId",
+        "address": "0x8ca4",
+        "size": 332
+      },
+      {
+        "name": "DecodeSms",
+        "address": "0x3ab0",
+        "size": 740
+      },
+      {
+        "name": "PDU_Decode_Sms_Submit",
+        "address": "0x67c8",
+        "size": 1740
+      },
+      {
+        "name": "comp_ucs2_to_gsm_item",
+        "address": "0xa71c",
+        "size": 120
+      },
+      {
+        "name": "Encode_Priority",
+        "address": "0x959c",
+        "size": 332
+      },
+      {
+        "name": "CDMA_Decode_Sent_Message",
+        "address": "0xa0e0",
+        "size": 728
+      },
+      {
+        "name": "Encode_Callback",
+        "address": "0x9828",
+        "size": 800
+      },
+      {
+        "name": "wms_ts_decode_deliver",
+        "address": "0xe4b0",
+        "size": 652
+      },
+      {
+        "name": "nvtl_ascii2addr",
+        "address": "0x4cd0",
+        "size": 400
+      },
+      {
+        "name": "wms_ts_cdma_decode_subaddress",
+        "address": "0x11110",
+        "size": 408
+      },
+      {
+        "name": "PDU_Decode_Sms",
+        "address": "0x5f8c",
+        "size": 744
+      },
+      {
+        "name": "check7bitascii",
+        "address": "0x4fa4",
+        "size": 128
+      },
+      {
+        "name": "PDU_Encode_Sms",
+        "address": "0x52f0",
+        "size": 3120
+      },
+      {
+        "name": "_init",
+        "address": "0x21bc",
+        "size": 0
+      },
+      {
+        "name": "_fini",
+        "address": "0x11bc0",
+        "size": 0
+      },
+      {
+        "name": "SmsGetMessageMetrics",
+        "address": "0x4754",
+        "size": 72
+      },
+      {
+        "name": "wms_ts_pack_ascii",
+        "address": "0x79d4",
+        "size": 300
+      },
+      {
+        "name": "WMSTS_Init",
+        "address": "0xa70c",
+        "size": 16
+      },
+      {
+        "name": "wms_ts_decode_CDMA_tl",
+        "address": "0x112a8",
+        "size": 2060
+      },
+      {
+        "name": "SWAP16",
+        "address": "0x297c",
+        "size": 92
+      },
+      {
+        "name": "CDMA_Encode_Message",
+        "address": "0x9b48",
+        "size": 1080
+      },
+      {
+        "name": "wms_ts_bcd_to_ascii",
+        "address": "0xae54",
+        "size": 288
+      },
+      {
+        "name": "wms_ts_unpack_gw_7_bit_chars",
+        "address": "0xb648",
+        "size": 464
+      },
+      {
+        "name": "b_unpackw",
+        "address": "0x7768",
+        "size": 620
+      },
+      {
+        "name": "GetEmailSubjectStartDelimiter",
+        "address": "0x3348",
+        "size": 192
+      },
+      {
+        "name": "ascii2hex_int",
+        "address": "0x5194",
+        "size": 156
+      },
+      {
+        "name": "SmsDecodeMessage",
+        "address": "0x469c",
+        "size": 64
+      },
+      {
+        "name": "GetEmailSubjectEndDelimiter",
+        "address": "0x3408",
+        "size": 192
+      },
+      {
+        "name": "wms_ts_cdma_encode_address",
+        "address": "0x104f0",
+        "size": 564
+      },
+      {
+        "name": "EncodeSms",
+        "address": "0x3834",
+        "size": 636
+      },
+      {
+        "name": "CDMA_Decode_Message_IS637",
+        "address": "0xa5d4",
+        "size": 312
+      },
+      {
+        "name": "wms_ts_decode",
+        "address": "0xf6e4",
+        "size": 408
+      },
+      {
+        "name": "wms_ts_decode_dcs",
+        "address": "0xd278",
+        "size": 764
+      },
+      {
+        "name": "wms_ts_decode_user_data_header",
+        "address": "0xde2c",
+        "size": 784
+      },
+      {
+        "name": "IsConfiguredForIS637",
+        "address": "0x2b34",
+        "size": 56
+      },
+      {
+        "name": "wms_ts_encode_gw_user_data",
+        "address": "0xc7b0",
+        "size": 824
+      },
+      {
+        "name": "SmsMsgDataToSmsMsgDataEx",
+        "address": "0x2b6c",
+        "size": 632
+      },
+      {
+        "name": "nvtl_smsenc_init",
+        "address": "0x45c8",
+        "size": 16
+      },
+      {
+        "name": "nvtl_smsenc_fini",
+        "address": "0x45d8",
+        "size": 20
+      },
+      {
+        "name": "wms_ts_decode_gw_user_data",
+        "address": "0xe13c",
+        "size": 676
+      },
+      {
+        "name": "wms_ts_ascii_to_default",
+        "address": "0xad44",
+        "size": 136
+      },
+      {
+        "name": "GetMessageProperties",
+        "address": "0x305c",
+        "size": 688
+      },
+      {
+        "name": "byteswap",
+        "address": "0x5230",
+        "size": 192
+      },
+      {
+        "name": "wms_ts_ucs2_to_gsm",
+        "address": "0xa9d4",
+        "size": 500
+      },
+      {
+        "name": "Encode_UserData",
+        "address": "0x8df0",
+        "size": 1152
+      },
+      {
+        "name": "wms_ts_pack_gw_7_bit_chars",
+        "address": "0xb4e0",
+        "size": 360
+      },
+      {
+        "name": "wms_ts_decode_udh_special_sm",
+        "address": "0xdb10",
+        "size": 328
+      },
+      {
+        "name": "CDMA_Decode_MsgId",
+        "address": "0xa470",
+        "size": 132
+      },
+      {
+        "name": "SmsEncodeMessage",
+        "address": "0x4664",
+        "size": 56
+      },
+      {
+        "name": "wms_ts_default_gsm_to_ucs2",
+        "address": "0xabc8",
+        "size": 380
+      },
+      {
+        "name": "wms_ts_pack_gw_user_data",
+        "address": "0x1022c",
+        "size": 708
+      },
+      {
+        "name": "ascii2hex",
+        "address": "0x50b4",
+        "size": 224
+      },
+      {
+        "name": "SmsMsgDataExToSmsMsgData",
+        "address": "0x2de4",
+        "size": 632
+      },
+      {
+        "name": "nvtl_addr2ascii",
+        "address": "0x4e60",
+        "size": 324
+      },
+      {
+        "name": "Encode_Validity",
+        "address": "0x9270",
+        "size": 812
+      },
+      {
+        "name": "SmsSetMessageFormat",
+        "address": "0x4634",
+        "size": 48
+      },
+      {
+        "name": "CDMA_Decode_Message",
+        "address": "0x9f80",
+        "size": 352
+      },
+      {
+        "name": "wms_ts_is_extended_gsm_char",
+        "address": "0xa91c",
+        "size": 184
+      },
+      {
+        "name": "UnicodeToAscii",
+        "address": "0x479c",
+        "size": 172
+      },
+      {
+        "name": "SmsDecodeMessageEx",
+        "address": "0x4714",
+        "size": 64
+      },
+      {
+        "name": "wms_ts_encode",
+        "address": "0xd1a0",
+        "size": 216
+      },
+      {
+        "name": "local_log",
+        "address": "0x5f20",
+        "size": 108
+      },
+      {
+        "name": "wms_ts_decode_deliver_report_error",
+        "address": "0xe8f0",
+        "size": 476
+      },
+      {
+        "name": "hex2ascii",
+        "address": "0x5024",
+        "size": 144
+      },
+      {
+        "name": "wms_ts_encode_sc_address",
+        "address": "0xb230",
+        "size": 104
+      },
+      {
+        "name": "wms_ts_cdma_decode_address",
+        "address": "0x10edc",
+        "size": 564
+      },
+      {
+        "name": "wms_ts_decode_submit_report_ack",
+        "address": "0xf2ec",
+        "size": 488
+      },
+      {
+        "name": "wms_ts_encode_smsp",
+        "address": "0xfb74",
+        "size": 620
+      },
+      {
+        "name": "Latin1ToUnicode",
+        "address": "0x49a0",
+        "size": 172
+      },
+      {
+        "name": "b_packb",
+        "address": "0x6fe0",
+        "size": 744
+      },
+      {
+        "name": "SetMessageFormat",
+        "address": "0x330c",
+        "size": 60
+      },
+      {
+        "name": "uasmsu_ascii2dtmf",
+        "address": "0x4a4c",
+        "size": 344
+      },
+      {
+        "name": "IsBigEndian",
+        "address": "0x2904",
+        "size": 120
+      },
+      {
+        "name": "Encode_Address",
+        "address": "0x8af8",
+        "size": 428
+      },
+      {
+        "name": "wms_ts_decode_submit",
+        "address": "0xf048",
+        "size": 676
+      },
+      {
+        "name": "UnicodeToLatin1",
+        "address": "0x4848",
+        "size": 172
+      },
+      {
+        "name": "dtmf2uasmsu_ascii",
+        "address": "0x4ba4",
+        "size": 300
+      },
+      {
+        "name": "wms_ts_encode_address",
+        "address": "0xb044",
+        "size": 492
+      },
+      {
+        "name": "SmsEncodeMessageEx",
+        "address": "0x46dc",
+        "size": 56
+      },
+      {
+        "name": "wms_ts_encode_relative_time",
+        "address": "0x10098",
+        "size": 404
+      },
+      {
+        "name": "wms_ts_encode_user_data_header",
+        "address": "0xc624",
+        "size": 396
+      },
+      {
+        "name": "wms_ts_decode_status_report",
+        "address": "0xeacc",
+        "size": 896
+      },
+      {
+        "name": "wms_ts_decode_smsp",
+        "address": "0xf87c",
+        "size": 760
+      },
+      {
+        "name": "wms_ts_decode_deliver_report_ack",
+        "address": "0xe73c",
+        "size": 436
+      },
+      {
+        "name": "GetStatusCode",
+        "address": "0x3588",
+        "size": 48
+      },
+      {
+        "name": "CDMA_Decode_BearerData",
+        "address": "0x7bec",
+        "size": 3852
+      },
+      {
+        "name": "SmsGetMessageProperties",
+        "address": "0x460c",
+        "size": 40
+      },
+      {
+        "name": "AsciiToUnicode",
+        "address": "0x48f4",
+        "size": 172
+      },
+      {
+        "name": "wms_ts_default_to_ascii",
+        "address": "0xadcc",
+        "size": 136
+      },
+      {
+        "name": "wms_ts_encode_submit",
+        "address": "0xce60",
+        "size": 832
+      }
+    ],
+    "function_categories": {}
+  }
+}

@@ -1,0 +1,31 @@
+<!-- Status Logs -->
+<div id="status_logs">
+	<h1><tmpl_var _("webui", "status_logs_menu_text")></h1>
+	<h2>Vue d'ensemble</h2>
+	<p> L'information des registres peut servir au dépannage, mais elle n'est pas nécessaire pour le fonctionnement normal. </p>
+	
+	<h2>Réglages</h2>
+	<h3><tmpl_var _("webui", "status_logs_enable_logs_label")></h3>
+	<p>Activer les registres en fonction des besoins.</p>
+	<h3><tmpl_var _("webui", "status_logs_delete_sys_logs_label")></h3>
+	<p>Ce réglage détermine pendant combien de temps les données du registre du système sont conservées. Sélectionnez l'option souhaitée.</p>
+	<p>Il est à noter que si le registre est plein, les données les plus anciennes sont supprimées, peu importe ce réglage.</p>
+	
+	<h2>Données du registre</h2>
+	<p>Les onglets fournis vous permettent de sélectionner le type de données de registre à consulter. </p>
+	<h3><tmpl_var _("webui", "status_logs_mobile_network_log_href")></h3>
+	<p>Ce registre contient des données sur les connexions au réseau mobile. </p>
+	<h3><tmpl_var _("webui", "status_logs_system_log_href")></h3>
+	<p>Ce registre consigne les évènements, sauf les connexions aux données mobiles, survenus sur cet appareil. </p>
+	
+	<h2>Boutons</h2>
+	
+	<h3><tmpl_var _("webui", "status_logs_clear_log_btn")></h3>
+	<p>Si vous cliquez sur ce bouton, toutes les données des registres seront supprimées. Ceci facilite la lecture des nouvelles données.</p>
+	<h3><tmpl_var _("webui", "status_logs_refresh_btn")></h3>
+	<p>Utilisez ce bouton pour mettre à jour les données du registre qui sont affichées.</p>
+	<h3><tmpl_var _("webui", "status_logs_download_btn")></h3>
+	<p>Utilisez ce bouton si vous souhaitez télécharger les données de registre sur votre ordinateur ou appareil connecté.</p>
+	
+</div>
+<!-- end Status Logs -->

@@ -1,0 +1,559 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+	</div>
+<tmpl_else>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var mnsStatus;
+	var noneFoundRow;
+	var tech;
+	var id;
+	var connectionType = "<tmpl_var isEnabled>";
+	var mnsIsEnabledBool = parseInt("<tmpl_var isEnabledBool>");
+
+	$(function()
+	{
+		$(document).ajaxSuccess(function(e, xhr, settings) {
+			if ((xhr.responseText) && (settings.dataType == "json")) {
+				try {
+					var obj = jQuery.parseJSON(xhr.responseText || "null");
+					if ( typeof obj.statusData.statusBarTechnology !== "undefined") {
+						var name = obj.statusData.statusBarNetwork;
+						var currentTech = obj.statusData.statusBarTechnology;
+						var currentId = obj.statusData.statusBarNetworkID;
+						var temp = '<tmpl_var _("webui", "adv_mns_current_network_label")>  ' + name;
+
+						if (id != undefined) {
+							temp += '  ' + currentTech + '  (' + id + ')';
+						}
+
+						$("#statusHeaderArea").attr('title', temp);
+						$("#currentNetworkStatus").html(temp);
+						if (mnsIsEnabledBool && tech !== currentTech && id !== currentId) {
+							getScanningStatus();
+							tech = currentTech;
+							name = $("<div/>").html(name).text(); //decode the html text.  This removes the framework encoding.
+							if (id != undefined && id != "") {
+								$("#currentlySelectedNetwork").text(name + " " + tech + " (" + id + ")");
+							} else {
+								if (name != undefined && name != "") {
+									$("#currentlySelectedNetwork").text(name);
+								} else {
+									$("#currentlySelectedNetwork").text(name + " " + tech);
+								}
+							}
+						}
+					}
+				} catch(e) {
+				}
+			}
+		});
+
+		noneFoundRow = $("#networkListTable tbody tr").first().clone();
+
+		if ("<tmpl_var scanStatus>" != "" && mnsStatus != "disabled") {
+			if (mnsIsEnabledBool) {
+				$("#beforeScanText").hide();
+				$("#scanStatus").hide();
+			}
+			getScanningStatus();
+		}
+
+		<tmpl_if MNSNetworkScanShow>
+			<tmpl_unless MNSNetworkScanLocked>
+				$("#scanForNetworks").on("click", showConfirmation);
+			</tmpl_unless>
+		</tmpl_if>
+
+		<tmpl_if MNSRevertToAutomaticShow>
+				<tmpl_unless MNSRevertToAutomaticLocked>
+				$('#revertMns').on("click", function(){
+					setMnsDisabled();
+					location.reload('<tmpl_udf GET_URI("wwan_settings")>')
+				});
+			</tmpl_unless>
+		</tmpl_if>
+
+
+		$("#refreshList").on("click", function() {
+			showConfirmation();
+			if(mnsIsEnabledBool) {
+				$("#introText").hide();
+			} else {
+				$("#introText").show();
+			}
+			
+		});
+
+		$("#noNetworksFound").hide();
+	});
+
+	function showConfirmation()
+	{
+		modalPopup.createWindow(
+			"<tmpl_var _('webui', 'adv_mns_scan_for_networks_confirm_modal_title')>",
+			"<p><tmpl_var _('webui', 'adv_mns_scan_for_networks_confirm_modal_text')></p>",
+			450, 250,
+			[
+				{
+					text : "<tmpl_var _('webui', 'adv_mns_scan_for_networks_confirm_modal_cancel_btn')>",
+					className : "cancel"
+				},
+				{
+					text : "<tmpl_var _('webui', 'adv_mns_scan_for_networks_confirm_modal_confirm_btn')>",
+					className : "primary",
+					trigger : function() {
+						$("#beforeScanText").hide();
+						$("#scanStatus").show();
+						setMnsSearching(0);
+						startScanning();
+					}
+				}
+			]);
+	}
+
+	function availableNetworkSelected(index)
+	{
+		var selectedNetworkRow = $("#selected_network_check_tr" + index);
+		id = selectedNetworkRow.data("id");
+		tech = selectedNetworkRow.data("tech");
+		var name = selectedNetworkRow.data("name");
+
+		connectToNetwork(name, tech, id);
+	}
+
+	function setMnsEnabled(bool)
+	{
+		//console.log(" +++ In setMnsEnabled() +++ ");
+		$.ajax({
+			url : (bool) ? "<tmpl_udf GET_URI('mns_enable_mns')>" : "<tmpl_udf GET_URI('mns_disable_mns')>",
+			type : "POST",
+			dataType : "json",
+			data : {
+				gSecureToken : "<tmpl_var gSecureToken>"
+			},
+			success : cancelMNS,
+			error : function(xhr, textStatus, errorThrown) {
+				// If auth session has ended, force a new login with a fresh GET.
+				if( (xhr.status == 401) || (xhr.status == 403) || (xhr.status == 406) ) window.location.replace(window.location.href);
+			}
+		});
+	}
+
+	function cancelMNS()
+	{
+		$.ajax({
+			url : "<tmpl_udf GET_URI('mns_cancel_mns')>",
+			type : "POST",
+			dataType : "json",
+			data : {
+				gSecureToken : "<tmpl_var gSecureToken>"
+			},
+			success : function(data) {
+				$("#networkListTableHeader, #networkListTable").hide();
+                $("#cancelMns, #finishState").hide();
+                $("#scanForNetworks").show();
+                $("#beforeScanText").show();
+                getScanningStatus();
+			},
+			error : function(xhr, textStatus, errorThrown) {
+				// If auth session has ended, force a new login with a fresh GET.
+				if( (xhr.status == 401) || (xhr.status == 403) || (xhr.status == 406) ) window.location.replace(window.location.href);
+			}
+		});
+	}
+
+	function getScanningStatus()
+	{
+		//console.log(" +++ In getScanningStatus() +++ ");
+		$("introText, #scanStatus").hide();
+		$("#noNetworksFound").hide();
+		$.ajax({
+			url : "<tmpl_udf GET_URI('mns_get_scan_status')>",
+			type : "GET",
+			dataType : "json",
+			success : function(data)
+			{
+				//$("#scanStatus").text(data["scanStatusText"]);
+				if((typeof data["scanStatus"] == "undefined") || (data["scanStatus"] == "")) {
+					$("#mnsData").hide();
+					$("#simError").show();
+				} else {
+					$("#mnsData").show();
+					$("#simError").hide();
+					mnsIsEnabledBool = data["isEnabledBool"];
+
+					 //If network selected from UI and it is not processed from Modem then need to poll status
+					if(mnsStatus == "selected"  && !mnsIsEnabledBool) {
+						setTimeout(getScanningStatus, 20000);
+					}  else {
+						if(mnsStatus == "selected" ) {
+							$("#networkListTableHeader h2")
+							.removeClass("loading")
+							.addClass("found");
+							$("#networkListTableHeader").hide();			
+							mnsStatus = "";
+						}
+						if (data["scanStatus"] == $.uiEnums.MNSSTATUS_NO_SCAN) {
+							$("#scanStatus").html("<tmpl_var _('webui', 'adv_mns_no_scan_status_text')><tmpl_var _('webui', 'adv_mns_scan_status_helper_text')>");
+						} else if (data["scanStatus"] == $.uiEnums.MNSSTATUS_SCAN_COMPLETE) {
+							$("#scanStatus").html("<tmpl_var _('webui', 'adv_mns_scan_complete_status_text')><tmpl_var _('webui', 'adv_mns_scan_status_helper_text')>");
+						} else if (data["scanStatus"] == $.uiEnums.MNSSTATUS_SCANNING) {
+							$("#scanStatus").html("<tmpl_var _('webui', 'adv_mns_scanning_status_text')><tmpl_var _('webui', 'adv_mns_scan_status_helper_text')>");
+						}
+
+						connectionType = data["isEnabled"];
+						$("#isEnabled").text(data["isEnabled"]);
+					
+						if(mnsIsEnabledBool && data["scanStatus"] != $.uiEnums.MNSSTATUS_NO_SCAN) {//2084/2085
+							$("#currentNetworkStatus").show();
+						} else {
+							$("#currentNetworkStatus").hide();
+						}
+						if(mnsIsEnabledBool && data["scanStatus"] == $.uiEnums.MNSSTATUS_NO_SCAN) {
+							setNetworkSelected(data["internetStatusNetworkName"], data["internetStatusTechnology"], data["internetStatusNetworkID"]);
+						} else if (data["scanStatus"] == $.uiEnums.MNSSTATUS_SCAN_COMPLETE && mnsStatus != "disabled") {
+							setMnsSearching(1);
+							getAvailableNetworks();
+						} else if (data["scanStatus"] == $.uiEnums.MNSSTATUS_SCANNING) {
+							//console.log (" +++ +++ +++ Polling triggered +++ +++ +++ ");
+							setMnsSearching(0);
+							setTimeout(getScanningStatus, 20000);
+						}
+					}
+				}
+			},
+			error : function(xhr, textStatus, errorThrown) {
+				// If auth session has ended, force a new login with a fresh GET.
+				if( (xhr.status == 401) || (xhr.status == 403) || (xhr.status == 406) ) window.location.replace(window.location.href);
+				setMnsSearching(0);
+				setTimeout(getScanningStatus, 20000);
+			}
+		});
+	}
+
+	function startScanning()
+	{
+		$("#noNetworksFound").hide();
+		//console.log (" +++ In startScanning() +++ ");
+		var url = "<tmpl_udf GET_URI('mns_start_scan')>";
+		$.post(url, {gSecureToken : "<tmpl_var gSecureToken>"}, getScanningStatus, "json");
+	}
+
+	function getAvailableNetworks()
+	{
+		//console.log (" +++ In getAvailableNetworks() +++ ");
+		var url = "<tmpl_udf GET_URI('mns_get_available_networks')>";
+		var request = $.get(url, function(data) {
+				//console.log (" +++ got getAvailableNetworks() response [" + JSON.stringify(data)  + "] +++ ");
+				if (data["availablenetworks"] && data["availablenetworks"].length > 0) {
+					$("#networkListTable, #refreshList").show();
+					buildTableFromJson(data);
+					setNetworksFound();
+				} else {
+					//console.log (" +++ no networks found +++ ");
+					setNetworksFound();
+					$("#noNetworksFound").show();
+					$("#refreshList").html("<tmpl_var _('webui', 'adv_mns_scan_again_networks_btn')>");
+					if(mnsIsEnabledBool) {
+						<tmpl_if MNSRevertToAutomaticShow>
+							$('#revertMns').show(0);
+						</tmpl_if>
+					}
+					$("#refreshList").show();
+					$("#isEnabled").hide();
+
+				}
+			}, "json"
+		);
+
+		request.success(function(result) {
+			//console.log (" ***** getAvailableNetworks() : success ***** ");
+		});
+
+		request.error(function(jqXHR, textStatus, errorThrown) {
+			//console.log(" !!!!! textStatus[" + textStatus + "] errorThrown[" + errorThrown.message + "]");
+		});
+	}
+
+	function connectToNetwork(name, tech, id)
+	{
+		$.ajax({
+			url : "<tmpl_udf GET_URI('mns_connect_to_network')>",
+			type : "POST",
+			dataType : "json",
+			data : {
+				networkid : id,
+				networktech : tech,
+				gSecureToken : "<tmpl_var gSecureToken>"
+			},
+			success : function(data) {
+				connectionType = data["isEnabled"];
+				$("#isEnabled").text(data["isEnabled"]);
+				mnsStatus = "selected";
+				$("#networkListTableHeader h2")
+				.html('<tmpl_var _("webui", "adv_mns_connecting_to_network_status_text")>')
+				.removeClass("found")
+				.addClass("loading");
+
+				$("#networkListTableHeader").show();
+
+				$("#noNetworksFound").hide();
+				getScanningStatus();
+			},
+			error : function(xhr, textStatus, errorThrown) {
+				// If auth session has ended, force a new login with a fresh GET.
+				if( (xhr.status == 401) || (xhr.status == 403) || (xhr.status == 406) ) window.location.replace(window.location.href);
+			}
+		});
+	}
+
+	function setMnsSearching(isScanCompleted)
+	{
+		if ($(".mnsButton").closest("div.button").length > 0) {
+			// uniform
+			$(".mnsButton").closest("div.button").hide();
+		} else {
+			// not uniform
+			$(".mnsButton").hide();
+		}
+
+		$("#scanForNetworks, #beforeScanText, #finishState").hide();
+		$("#refreshList, #networkListTable").hide();
+
+		$("#networkListTableHeader h2")
+			.html('<tmpl_var _("webui", "adv_mns_scanning_for_available_networks_status_text")>')
+			.removeClass("found")
+			.addClass("loading");
+
+		$("#networkListTableHeader").show();
+		$("#isEnabled").hide();
+		if(isScanCompleted) {
+			$("#scanStatus").html('<tmpl_var _("webui", "adv_mns_scan_complete_status_text")><tmpl_var _("webui", "adv_mns_scan_status_helper_text")>');
+			if(mnsIsEnabledBool) {
+				$("#scanStatus").hide();
+				$("#isEnabled").hide();
+			} else {
+				$("#scanStatus").show();
+				$("#isEnabled").show();
+			}
+			$("#introText").hide();
+		}
+
+		mnsStatus = "searching";
+	}
+
+	//Set DOM Elements to fixed styles
+	function setNetworksFound()
+	{
+		$("#networkListTable").attr('summary', '<tmpl_var _("webui", "adv_mns_available_networks_status_text")>');
+
+		$("#networkListTableHeader h2")
+			.html('<tmpl_var _("webui", "adv_mns_available_networks_label")>')
+			.removeClass("loading")
+			.addClass("found");
+
+		$("#refreshList").html("<tmpl_var _('webui', 'adv_mns_refresh_btn')>");
+		$("#refreshList").closest("div.button").show();
+		$("#networkListTableHeader").show();
+
+		if(mnsIsEnabledBool) {
+			<tmpl_if MNSRevertToAutomaticShow>
+				$('#revertMns').show(0);
+			</tmpl_if>
+		}
+
+		mnsStatus = "found";
+	}
+
+	function setNetworkSelected(name, tech, id)
+	{
+		if($(".mnsButton").closest("div.button").length > 0) {
+			// uniform
+			<tmpl_if MNSRevertToAutomaticShow>
+					$("#revertMns").closest("div.button").show();
+			</tmpl_if>
+		} else {
+			// not uniform
+			<tmpl_if MNSRevertToAutomaticShow>
+				$("#revertMns").show();
+			</tmpl_if>
+			<tmpl_if MNSRevertToAutomaticShow>
+				$("#scanForNetworks").html("<tmpl_var _('webui', 'adv_mns_scan_for_different_network_btn')>");
+				$("#scanForNetworks").show();
+			</tmpl_if>
+		}
+
+		$("#beforeScanText, #networkListTableHeader, #networkListTable, #refreshList, #introText").hide();
+		$("#finishState").show();
+		name = $("<div/>").html(name).text(); //decode the html text.  This removes the framework encoding.
+		if(tech != "") {
+			if (id != undefined && id != "") {
+				$("#currentlySelectedNetwork").text(name + " " + tech + " (" + id + ")");
+			} else {
+				$("#currentlySelectedNetwork").text(name + " " + tech);
+			}
+		}
+		$("#scanStatus").hide();
+		mnsStatus = "selected";
+	}
+
+	function setMnsDisabled()
+	{
+		if($("#revertMns").closest("div.button").length > 0) {
+			// uniform
+			$("#revertMns").closest("div.button").hide();
+		} else {
+			// not uniform
+			$("#revertMns").hide();
+		}
+
+		mnsStatus = "disabled";
+		setMnsEnabled(false);
+	}
+
+	function buildTableFromJson(data)
+	{
+		var tableBody = $("#networkListTable tbody");
+		tableBody.find("tr").remove();
+
+		$.each(data["availablenetworks"], function(i, value) {
+			var index = ((i + 1) % 2 == 0) ? "even" : "odd";
+
+			var tableRow = $('<tr id="selected_network_check_tr' + i + '" data-index="' + i + '" data-id="' + this.id + '" data-tech="' + this.technology + '" data-name="' + this.longName + '" class="' + index + ' open">' +
+				'<td>' + this.longName + '</td>' +
+				'<td>' + this.id + '</td>' +
+				'<td>' + this.technology + '</td>' +
+				'<td id="selected_network_check_' + i + '"></td>' +
+			'</tr>');
+
+			if (this.status == $.uiEnums.MNSSTATUS_AVAILABLE || this.status == $.uiEnums.MNSSTATUS_CURRENT) {
+				var selectButton = $('<button type="button" class="secondary selectNetwork" id="selectNetworkButton_' + i + '"><tmpl_var _("webui", "adv_mns_select_network_btn")></button>')
+				.on("click", function() { availableNetworkSelected(i); });
+				tableRow.find("#selected_network_check_" + i).append(selectButton);
+			} else {
+				tableRow.find("#selected_network_check_" + i).text(this.status);
+			}
+
+			//Now append the row to the Table.
+			tableBody.append(tableRow);
+		});
+
+		//Update the buttons now that they are pinned to DOM
+		if (jQuery.uniform) {
+			// This is for uniform 1 and uniform 2 compatibility.
+			var uniformOptions = (typeof $.uniform.options !== "undefined") ? $.uniform.options : $.uniform.defaults;
+			if (uniformOptions.filter) {
+				$("#networkListTable").find(uniformOptions.filter).uniform();
+			}
+		}
+	}
+	/* ]]> */
+</script>
+
+<tmpl_if isLocked>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+	</div>
+</tmpl_if>
+
+
+<tmpl_if showTitle>
+<div id="pageHeadRow" class="clearfix">
+	<div id="pageHeadCol">
+		<h1 class="pageHead settings adv-mns"><tmpl_var _("webui", "adv_mns_page_header")></h1>
+	</div>
+	<a title='<tmpl_if parent.pageTitle><tmpl_var parent.pageTitle><tmpl_else><tmpl_var parent.title></tmpl_if> <tmpl_var _("webui", "tabs_help_word")>' class="helpLink parent" href="<tmpl_var gHelpURL>"></a>
+</div>
+</tmpl_if>
+
+<p  id="introText" class="note">
+	<tmpl_var _("webui", "adv_mns_intro")>
+</p><!-- /.note -->
+
+
+<div id="mnsData" <tmpl_if IN_SET(scanStatus, "")> style="display:none;" </tmpl_if>>
+	<div><!-- open scanStatus div -->
+		<p id="statusHeaderArea" title='<tmpl_var _("webui", "adv_mns_current_network_label")>'>
+			<span id="scanStatus" style="display:none;"><tmpl_var scanStatusText><tmpl_var _("webui", "adv_mns_scan_status_helper_text")></span><span id="isEnabled" style="display:none;" ><tmpl_var isEnabled></span>
+		</p>
+		<p style="display:none;" id="currentNetworkStatus" title='<tmpl_var _("webui", "adv_mns_current_network_status_hover_text")>'>
+			<tmpl_var _("webui", "adv_mns_current_network_label")>
+		</p>
+	</div><!-- close scanStatus div -->
+	<tmpl_if IN_SET(isAllowed, "1", "on", "true")>
+	<br />
+	<fieldset class="first">
+		<div id="networkListTableHeader" style="display:none;">
+			<h2 class="found sectionHead"><tmpl_var _("webui", "adv_mns_available_networks_subhead")></h2>
+		</div>
+
+		<table id="networkListTable" summary='<tmpl_var _("webui", "adv_mns_available_networks_table_subhead")>'<tmpl_unless IN_SET(showNetworkTable, "1", "true")> style="display:none;"</tmpl_unless>>
+			<colgroup>
+				<col class="longName" />
+				<col class="id" />
+				<col class="tech" />
+				<col class="selected" />
+			</colgroup>
+			<thead id="networkListHeader">
+				<tr>
+					<th><tmpl_var _("webui", "adv_mns_network_name_label")></th>
+					<th><tmpl_var _("webui", "adv_mns_network_id_label")></th>
+					<th><tmpl_var _("webui", "adv_mns_network_technology_label")></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="none odd">
+					<td colspan="4">
+						<tmpl_var _("webui", "adv_mns_no_networks_found_text")>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div id="noNetworksFound"<tmpl_if IN_SET(showNetworkTable, "1", "true")> style="display:none;"</tmpl_if>>
+			<tmpl_var _("webui", "adv_mns_no_networks_found_text")>
+		</div>
+
+		<div class="table" id="finishState" style="display:none;">
+			<div class="label">
+				<tmpl_var _("webui", "adv_mns_final_selected_network_label")>
+			</div>
+			<div class="input" id="currentlySelectedNetwork"></div>
+		</div><!-- /.table -->
+
+		<div class="button_container clearfix">
+			<div class = "row clearfix">
+				<button type="button" class="secondary refresh" id="refreshList"<tmpl_unless IN_SET(showNetworkTable, "1", "true")> style="display:none;"</tmpl_unless>>
+					<tmpl_if IN_SET (isEnabled, _("webui", "adv_mns_enabled_status_option"))>
+						<tmpl_var _("webui", "adv_mns_refresh_list_btn")>
+					<tmpl_else>
+						<tmpl_var _("webui", "adv_mns_refresh_btn")>
+					</tmpl_if>
+				</button>
+				<tmpl_if MNSRevertToAutomaticShow>
+					<button type="submit" class="secondary mnsButton" id="revertMns" style="display:none;" <tmpl_if MNSRevertToAutomaticLocked> disabled="disabled"</tmpl_if><tmpl_if isLocked> disabled="disabled"</tmpl_if>>
+						<tmpl_var _("webui", "adv_mns_revert_to_automatic_btn")>
+					</button>
+				</tmpl_if>
+				<tmpl_if MNSNetworkScanShow>
+					<button type="submit" class="secondary mnsButton" id="scanForNetworks"<tmpl_if MNSNetworkScanLocked> disabled="disabled"</tmpl_if> <tmpl_if isLocked> disabled="disabled"</tmpl_if>>
+						<tmpl_var _("webui", "adv_mns_scan_for_networks_btn")>
+					</button>
+				</tmpl_if>
+			</div>	
+		</div>
+	</fieldset>
+	<tmpl_else>
+		<p>
+			<tmpl_var _("webui", "adv_mns_not_supported_text")>
+		</p>
+	</div><!-- close scanStatus div -->
+	</tmpl_if>
+</div>
+<div class="error" id="simError" <tmpl_unless IN_SET(scanStatus, "")> style="display:none;" </tmpl_unless>>
+	<p><tmpl_var _("webui", "adv_mns_sim_error_line1_text")></p>
+	<p><tmpl_var _("webui", "adv_mns_sim_error_line2_text")></p>
+</div>
+</tmpl_if><!-- isHidden -->

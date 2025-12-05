@@ -1,0 +1,41 @@
+<div id="gps_status">
+	<h1><tmpl_var _("webui", "gps_status_menu_text")></h1>
+	<h2>Vue d'ensemble</h2>
+	<p> Cet appareil <tmpl_var  _("webui", "webui_product_name")> comprend un récepteur GPS. Le récepteur GPS peut déterminer votre emplacement actuel, souvent même lorsque vous êtes à l'intérieur. L'emplacement actuel s'affiche sur cette page et les informations de localisation peuvent être partagées avec les ordinateurs connectés à l'aide de la fonctionnalité GPS en Wi-Fi. </p>
+
+	<h2>Utiliser le GPS</h2>
+
+	<h3><tmpl_var _("webui", "gps_status_enable_label")></h3>
+		<p> Utilisez cette commande ACTIVER/DÉSACTIVER pour activer/désactiver le Wi-Fi selon le besoin. </p>
+	<h3><tmpl_udf GET_PO_TEXT("gps_status_startup_state_label", gProductName)></h3>
+		<p>Ce réglage détermine lorsque le récepteur GPS s'arrêtera, une fois activé. </p>
+		<p> Si ACTIVER, le récepteur GPS s'arrêtera dès la mise hors tension du <tmpl_var _("webui", "webui_product_name")>. Vous devrez réactiver cette option la prochaine fois que vous aurez besoin du récepteur GPS. </p>
+				
+		<h3>État du GPS</h3>
+		<p> Si le récepteur GPS n'a pas encore obtenu d'emplacement fixe, l'état <strong>Recherche en cours</strong> apparaît. Une fois l'emplacement fixe obtenu, les informations ci-dessous sur l'emplacement actuel s'affichent et une carte Google apparaît pour représenter visuellement l'emplacement actuel. </p>
+		<h2><tmpl_var _("webui", "gps_status_map_section_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "gps_status_latitude_label"), (size(_("webui", "gps_status_latitude_label")) - size(":")))></h3>
+		<p> Latitude pour le dernier emplacement fixe. </p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_longitude_label"), (size(_("webui", "gps_status_longitude_label")) - size(":")))></h3>
+		<p> Longitude pour le dernier emplacement fixe. </p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_altitude_label"), (size(_("webui", "gps_status_altitude_label")) - size(":")))></h3>
+		<p> Altitude pour le dernier emplacement fixe. </p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_accuracy_label"), (size(_("webui", "gps_status_accuracy_label")) - size(":")))></h3>
+		<p> Il s'agit d'une mesure de la précision de l'emplacement horizontal obtenu par le récepteur GPS. </p>
+		<tmpl_if wifiSupported>
+			<tmpl_if showNmeaOverWifiSupport>		
+				<h2><tmpl_var _("webui", "gps_status_enable_sub_header_text")></h2>
+			
+				<h3><tmpl_var truncate(_("webui", "gps_status_gps_over_wifi_label"), (size(_("webui", "gps_status_gps_over_wifi_label")) - size(":")))></h3>
+				<p>Les données GPS sont fournies par le <tmpl_var  _("webui", "webui_product_name")> sous forme d'un flux de texte de la National Marine Electronics Association (NMEA). </p>
+				<p>L'utilisation du port NMEA (GPS) constitue pour les applications une méthode d'accès standard à un flux de données GPS sous Windows et d'autres environnements informatiques. Pour créer ce port, vous devez télécharger et installer le pilote GPS en Wi-Fi pour votre environnement. Ce pilote créera le port NMEA, acquerra les données GPS en provenance du <tmpl_var  _("webui", "webui_product_name")> et rendra ces données GPS accessibles aux applications compatibles NMEA. </p>
+
+				<h3><tmpl_var truncate(_("webui", "gps_status_port_number_label"), (size(_("webui", "gps_status_port_number_label")) - size(":")))></h3>
+				<p> Il s'agit du numéro de port utilisé par les logiciels pilotes sur votre ordinateur pour établir une connexion avec cet appareil et obtenir les données GPS. À moins que vous ayez une bonne raison de le faire, vous ne devriez pas modifier le numéro de port. </p>
+			</tmpl_if>
+		</tmpl_if>
+		<h3><tmpl_var _("webui", "gps_status_wifi_driver_download_link")></h3>
+		<p> Utilisez ceci pour accéder à la page de téléchargement des pilotes offerts. Ces pilotes sont nécessaires pour utiliser la fonctionnalité GPS en Wi-Fi. </p>
+					
+</div>
+

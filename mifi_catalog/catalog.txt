@@ -1,0 +1,1171 @@
+=== MiFi 8800L Deep Exploration ===
+Date: Tue Jan 20 15:02:56 UTC 1970
+
+=== SYSTEM INFO ===
+processor	: 0
+model name	: ARMv7 Processor rev 5 (v7l)
+BogoMIPS	: 38.40
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xc07
+CPU revision	: 5
+
+Hardware	: Qualcomm Technologies, Inc SDX20
+Revision	: 0000
+Serial		: 0000000000000000
+Processor	: ARMv7 Processor rev 5 (v7l)
+
+Linux version 3.18.71 (builder@nvtlsdselbld07) (gcc version 4.9.3 (GCC) ) #1 PREEMPT Wed Mar 16 05:35:12 PDT 2022
+
+MemTotal:         374220 kB
+MemFree:          141188 kB
+MemAvailable:     255884 kB
+Buffers:               0 kB
+Cached:           108084 kB
+SwapCached:            0 kB
+Active:           132856 kB
+Inactive:          30888 kB
+Active(anon):      55668 kB
+Inactive(anon):      120 kB
+Active(file):      77188 kB
+Inactive(file):    30768 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                20 kB
+Writeback:             0 kB
+AnonPages:         55684 kB
+Mapped:            26356 kB
+Shmem:               128 kB
+Slab:              36184 kB
+SReclaimable:      15884 kB
+SUnreclaim:        20300 kB
+KernelStack:        2864 kB
+PageTables:         2448 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      187108 kB
+Committed_AS:    1237316 kB
+VmallocTotal:     516096 kB
+VmallocUsed:       55952 kB
+VmallocChunk:     383996 kB
+
+=== PARTITIONS ===
+dev:    size   erasesize  name
+mtd0: 00280000 00040000 "sbl"
+mtd1: 00280000 00040000 "mibib"
+mtd2: 00b00000 00040000 "efs2"
+mtd3: 00200000 00040000 "tz"
+mtd4: 00100000 00040000 "rpm"
+mtd5: 00200000 00040000 "aboot"
+mtd6: 01400000 00040000 "boot"
+mtd7: 00080000 00040000 "scrub"
+mtd8: 04d00000 00040000 "modem"
+mtd9: 00100000 00040000 "misc"
+mtd10: 01400000 00040000 "recovery"
+mtd11: 00100000 00040000 "fotacookie"
+mtd12: 17380000 00040000 "system"
+
+Filesystem                Size      Used Available Use% Mounted on
+ubi0:rootfs             324.7M    102.6M    222.1M  32% /
+devtmpfs                174.0M      8.0K    174.0M   0% /dev
+/dev/ubi1_0              56.5M     30.3M     26.2M  54% /firmware
+
+rootfs on / type rootfs (rw)
+ubi0:rootfs on / type ubifs (rw,relatime,bulk_read,chk_data_crc)
+devtmpfs on /dev type devtmpfs (rw,relatime,size=178220k,nr_inodes=44555,mode=755)
+proc on /proc type proc (rw,relatime)
+none on /tmp type ramfs (rw,relatime)
+none on /sys type sysfs (rw,relatime)
+none on /run type ramfs (rw,relatime)
+none on /var/log type ramfs (rw,relatime)
+none on /run type ramfs (rw,relatime)
+none on /var/lock type ramfs (rw,relatime)
+none on /sys/kernel/debug type debugfs (rw,relatime)
+ramfs on /opt/nvtl/tmp type ramfs (rw,relatime)
+devpts on /dev/pts type devpts (rw,relatime,mode=600)
+/dev/ubi1_0 on /firmware type ubifs (ro,relatime,bulk_read,chk_data_crc)
+adb on /dev/usb-ffs/adb type functionfs (rw,relatime)
+tracefs on /sys/kernel/debug/tracing type tracefs (rw,relatime)
+
+=== MODEM INFO ===
+cmd_get_info returned 0 (MDM_MAIN: success.)
+
+FW Version:[SDx20ALP-1.22.11  1  [2020-04-13 08:37:23]]
+HW Version:[4]
+Model:[MIFI8800L]
+fid:[FA020922G20904]
+mdn:[12562392208]
+min:[]
+imei:[990016878573987]
+imei sv:[1]
+imsi:[310410465469221]
+iccid:[89014107334654628585]
+meid:[]
+esn:[0]
+sid:[]
+home_sid:[]
+nid:[]
+home_nid:[]
+Prl Version:[0]
+Eri Version:[0]
+Eri Indication:[0]
+Eri Alert:[0]
+Pri Version:[151]
+Manufacture:[Inseego]
+Manufacture OUI:[0015FF]
+Pri Version Full:[151]
+
+cmd_get_state returned 0 (MDM_MAIN: success.)
+state:[Searching]
+reg state:[2]
+
+Current Signal
+
+tech:[0] (NONE)
+roam:[0]
+rssi:[0]
+dbm:[0]
+bars:[0]
+ecio:[0]
+sinr:[0]
+rsrq:[0]
+snr:[0]
+rsrp:[0]
+tx power:[0]
+radio temp[0]
+oper name:[]
+oper id:[000000]
+cell id:[0]
+lac:[]
+femto:[0]
+p_rev:[0]
+sid:[0]
+nid:[0]
+
+cmd_sim_get_status returned 0 (MDM_MAIN: success.)
+status is:[3] (SIM_READY)
+retries is:[3]
+unblocks is:[10]
+
+cmd_get_enabled_tech returned 0 (MDM_MAIN: success.)
+
+Enabled tech modes:[18] ( UMTS LTE)
+
+=== USB INFO ===
+command [get_config]
+
+usb_get_config returned 0 (USB: success.)
+vid=[1410]
+man=[Novatel Wireless]
+prod=[MiFi 8800L]
+ser=[0123456789ABCDEF]
+dm_olm_func=[,serial,diag,ffs,blank5,blank6,blank7,blank8,blank9,blank10,blank11,acm,hid]
+dm_olm_nt_func=[rndis_gsi,serial,diag,ffs,blank5,blank6,blank7,blank8,blank9,blank10,blank11,acm,hid]
+dm_ftm_func=[,serial,diag,ffs,blank5,blank6,blank7,blank8,blank9,blank10,blank11,acm,hid]
+dm_ltm_func=[rmnet_gsi,blank1,serial,diag,ffs,blank5,blank6,blank7,blank8,blank9,blank10,blank11,acm,hid]
+dm_lpm_func=[blank0,blank1,blank2,blank3,ffs,blank5,blank6,blank7,blank8,blank9,blank10,blank11,blank12,blank13,hid]
+eum_olm_func=[,hid:acm:mass_storage]
+eum_lpm_func=[hid]
+ent_olm_func=[,hid,serial]
+dm_pid=[B023]
+eum_pid=[B020]
+eum_lpm_pid=[B010]
+ent_pid=[B022]
+nwif_mode=[2][AUTO]
+ipa_enabled=[0]
+auto_sample_period=[10]
+auto_iterations=[2]
+
+command [get_state]
+
+usb_get_state returned 0 (USB: success.)
+usb_default_mode=[0][Debug]
+enterprise_mode_enabled=[0]
+mac_addr_host=[00:15:FF:85:73:98]
+mac_addr_dev=[00:15:FF:85:73:99]
+start_mode=[3][Online]
+net_if_name=[rndis0]
+net_if_func_name=[rndis_gsi]
+pid=[B023]
+function_list=[rndis_gsi,serial,diag,ffs,blank5,blank6,blank7,blank8,blank9,blank10,blank11,acm,hid]
+usb_gadget_configured=[1]
+auto_detect_running=[0]
+usb_resumed_not_configured=[0]
+usb_tether_change_pending=[0]
+temp_tether=[0][Invalid]
+
+=== NETWORK ===
+br0       Link encap:Ethernet  HWaddr 18:EE:86:AF:C8:74  
+          inet addr:192.168.11.1  Bcast:192.168.11.255  Mask:255.255.255.0
+          inet6 addr: fe80::44f0:f9ff:fefa:66ef/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1270 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:280 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:152028 (148.4 KiB)  TX bytes:25598 (24.9 KiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:9834 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:9834 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:1531593 (1.4 MiB)  TX bytes:1531593 (1.4 MiB)
+
+rmnet_ipa0 Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  
+          UP RUNNING  MTU:2000  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+
+rndis0    Link encap:Ethernet  HWaddr 00:15:FF:85:73:99  
+          inet addr:169.254.3.1  Bcast:169.254.3.255  Mask:255.255.255.0
+          inet6 addr: fe80::215:ffff:fe85:7399/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:1401 errors:0 dropped:5 overruns:0 frame:0
+          TX packets:291 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:190269 (185.8 KiB)  TX bytes:43140 (42.1 KiB)
+
+wlan0     Link encap:Ethernet  HWaddr 18:EE:86:AF:C8:74  
+          inet addr:169.254.1.1  Bcast:169.254.1.255  Mask:255.255.255.0
+          inet6 addr: fe80::1aee:86ff:feaf:c874/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:373 errors:0 dropped:47 overruns:0 carrier:0
+          collisions:0 txqueuelen:5000 
+          RX bytes:0 (0.0 B)  TX bytes:44744 (43.6 KiB)
+
+wlan1     Link encap:Ethernet  HWaddr 18:EE:86:AF:C8:75  
+          inet addr:169.254.2.1  Bcast:169.254.2.255  Mask:255.255.255.0
+          inet6 addr: fe80::1aee:86ff:feaf:c875/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:369 errors:0 dropped:49 overruns:0 carrier:0
+          collisions:0 txqueuelen:5000 
+          RX bytes:0 (0.0 B)  TX bytes:44219 (43.1 KiB)
+
+wlan2     Link encap:Ethernet  HWaddr 18:EE:86:AF:C8:74  
+          inet6 addr: fe80::1aee:86ff:feaf:c874/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:10 errors:0 dropped:4 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:788 (788.0 B)
+
+
+nameserver 127.0.0.1
+
+=== DEVICE NODES ===
+crw-------    1 root     root      247,   0 Jan 20 14:42 /dev/at_mdm0
+crw-------    1 root     root      240,   0 Jan 20 14:42 /dev/at_usb0
+crw-------    1 root     root      240,   1 Jan 20 14:42 /dev/at_usb1
+crw-------    1 root     root      243,   0 Jan 20 14:42 /dev/diag
+crw-------    1 root     root      247,   9 Jan 20 14:42 /dev/smd11
+crw-------    1 root     root      247,  10 Jan 20 14:42 /dev/smd21
+crw-------    1 root     root      247,   5 Jan 20 14:42 /dev/smd22
+crw-------    1 root     root      247,   7 Jan 20 14:42 /dev/smd7
+crw-------    1 root     root      247,   8 Jan 20 14:42 /dev/smd8
+crw-------    1 root     root      247,   3 Jan 20 14:42 /dev/smdcntl0
+crw-------    1 root     root      247,   6 Jan 20 14:42 /dev/smdcntl8
+crw-------    1 root     root      245,   0 Jan 20 14:42 /dev/ttyHS0
+crw--w----    1 root     root      244,   0 Jan 20 14:42 /dev/ttyHSL0
+crw--w----    1 root     root      244,   0 Jan 20 14:42 /dev/ttyHSL0
+
+=== PROCESSES ===
+PID   USER     TIME   COMMAND
+    1 root       0:03 init [3]
+    2 root       0:00 [kthreadd]
+    3 root       0:00 [ksoftirqd/0]
+    5 root       0:00 [kworker/0:0H]
+    6 root       0:00 [kworker/u2:0]
+    7 root       0:00 [rcu_preempt]
+    8 root       0:00 [rcu_sched]
+    9 root       0:00 [rcu_bh]
+   10 root       0:00 [khelper]
+   11 root       0:00 [kdevtmpfs]
+   12 root       0:00 [netns]
+   13 root       0:00 [perf]
+   14 root       0:00 [msm_watchdog]
+   15 root       0:00 [smd_channel_clo]
+   16 root       0:00 [dsps_smd_trans_]
+   17 root       0:00 [lpass_smd_trans]
+   18 root       0:00 [mpss_smd_trans_]
+   19 root       0:00 [wcnss_smd_trans]
+   20 root       0:00 [rpm_smd_trans_g]
+   21 root       0:00 [smem_native_mps]
+   23 root       0:00 [rpm_requests]
+   24 root       0:00 [mpss_smem_glink]
+   25 root       0:00 [smem_native_rpm]
+   26 root       0:00 [rpm_smem_glink_]
+   27 root       0:00 [kworker/u2:1]
+   28 root       0:00 [ipa_usb_wq]
+   29 root       0:00 [deferwq]
+   30 root       0:00 [mpm]
+   31 root       0:00 [kworker/u2:2]
+   32 root       0:00 [writeback]
+   33 root       0:00 [crypto]
+   34 root       0:00 [bioset]
+   35 root       0:00 [kblockd]
+   44 root       0:00 [system]
+   45 root       0:00 [ipa_power_mgmt]
+   46 root       0:00 [transport_power]
+   47 root       0:00 [ipa_rm_wq]
+   48 root       0:00 [devfreq_wq]
+   49 root       0:00 [power_off_alarm]
+   50 root       0:00 [kswapd0]
+   51 root       0:00 [fsnotify_mark]
+   59 root       0:00 [glink_ssr_wq]
+   60 root       0:00 [glink_lbsrv]
+   61 root       0:00 [glink_xprt_wq]
+   62 root       0:00 [IPCRTR_mpss_smd]
+   63 root       0:00 [IPCRTR]
+   64 root       0:00 [glink_pkt_wq]
+   65 root       0:00 [k_hsuart]
+   66 root       0:00 [msm_serial_hs_0]
+   67 root       0:00 [msm_serial_hs_0]
+   68 root       0:00 [hwrng]
+   70 root       0:00 [diag_real_time_]
+   71 root       0:00 [diag_wq]
+   72 root       0:00 [DIAG_USB_diag]
+   73 root       0:00 [diag_cntl_wq]
+   74 root       0:00 [diag_dci_wq]
+   75 root       0:00 [DIAG_SMD_MODEM_]
+   76 root       0:00 [DIAG_SMD_MODEM_]
+   77 root       0:00 [DIAG_SMD_MODEM_]
+   78 root       0:00 [DIAG_SMD_MODEM_]
+   79 root       0:00 [DIAG_SMD_MODEM_]
+   80 root       0:00 [DIAG_SMD_LPASS_]
+   81 root       0:00 [DIAG_SMD_LPASS_]
+   82 root       0:00 [DIAG_SMD_LPASS_]
+   83 root       0:00 [DIAG_SMD_LPASS_]
+   84 root       0:00 [DIAG_SMD_LPASS_]
+   85 root       0:00 [DIAG_SMD_WCNSS_]
+   86 root       0:00 [DIAG_SMD_WCNSS_]
+   87 root       0:00 [DIAG_SMD_WCNSS_]
+   88 root       0:00 [DIAG_SMD_WCNSS_]
+   89 root       0:00 [DIAG_SMD_WCNSS_]
+   90 root       0:00 [DIAG_SMD_SENSOR]
+   91 root       0:00 [DIAG_SMD_SENSOR]
+   92 root       0:00 [DIAG_SMD_SENSOR]
+   93 root       0:00 [DIAG_SMD_SENSOR]
+   94 root       0:00 [DIAG_SMD_SENSOR]
+   95 root       0:00 [DIAG_SOCKMODEM_]
+   96 root       0:00 [DIAG_SOCKMODEM_]
+   97 root       0:00 [DIAG_SOCKMODEM_]
+   98 root       0:00 [DIAG_SOCKMODEM_]
+   99 root       0:00 [DIAG_SOCKMODEM_]
+  100 root       0:00 [DIAG_SOCKLPASS_]
+  101 root       0:00 [DIAG_SOCKLPASS_]
+  102 root       0:00 [DIAG_SOCKLPASS_]
+  103 root       0:00 [DIAG_SOCKLPASS_]
+  104 root       0:00 [DIAG_SOCKLPASS_]
+  105 root       0:00 [DIAG_SOCKWCNSS_]
+  106 root       0:00 [DIAG_SOCKWCNSS_]
+  107 root       0:00 [DIAG_SOCKWCNSS_]
+  108 root       0:00 [DIAG_SOCKWCNSS_]
+  109 root       0:00 [DIAG_SOCKWCNSS_]
+  110 root       0:00 [DIAG_SOCKSENSOR]
+  111 root       0:00 [DIAG_SOCKSENSOR]
+  112 root       0:00 [DIAG_SOCKSENSOR]
+  113 root       0:00 [DIAG_SOCKSENSOR]
+  114 root       0:00 [DIAG_SOCKSENSOR]
+  115 root       0:00 [DIAG_CNTL_SOCKE]
+  116 root       0:00 [usbnet]
+  118 root       0:00 [sharedmem_qmi_w]
+  119 root       0:00 [qmi_hndl0000000]
+  120 root       0:00 [msm_ipc_router]
+  121 root       0:00 [k_sm_usb]
+  125 root       0:00 [k_gserial]
+  126 root       0:00 [k_ipa_usb]
+  127 root       0:00 [uether]
+  128 root       0:00 [k_gbridge]
+  129 root       0:00 [therm_core:noti]
+  130 root       0:00 [therm_core:noti]
+  131 root       0:00 [therm_core:noti]
+  132 root       0:00 [therm_core:noti]
+  133 root       0:00 [therm_core:noti]
+  134 root       0:00 [therm_core:noti]
+  135 root       0:00 [therm_core:noti]
+  136 root       0:00 [therm_core:noti]
+  137 root       0:00 [therm_core:noti]
+  138 root       0:00 [therm_core:noti]
+  139 root       0:00 [irq/42-tsens_in]
+  140 root       0:00 [irq/43-tsens_cr]
+  141 root       0:00 [cfinteractive]
+  142 root       0:00 [soc:modem_etm0]
+  143 root       0:00 [qmi_svc_event_w]
+  144 root       0:00 [soc:rpm_etm0]
+  145 root       0:00 [ipv6_addrconf]
+  146 root       0:00 [krfcommd]
+  147 root       0:00 [kworker/u2:3]
+  148 root       0:00 [kworker/u2:4]
+  149 root       0:00 [irq/202-modem]
+  150 root       0:00 [k_sm_usb]
+  151 root       0:00 [irq/45-hs_phy_i]
+  152 root       0:00 [irq/46-ss_phy_i]
+  153 root       0:00 [irq/47-msm_dwc3]
+  154 root       0:00 [usb_bam_wq]
+  156 root       0:00 [ubi_bgt0d]
+  157 root       0:00 [ubifs_bgt0_0]
+  176 root       0:00 udevd --daemon
+  223 root       0:00 /sbin/syslogd -z 5000 -q 5000 -o 3 -m 0 -f /etc/syslog.conf
+  226 root       0:00 [ipa_interrupt_w]
+  228 root       0:00 [ipawq15]
+  232 root       0:00 [iparepwq15]
+  233 root       0:00 [ipawq49]
+  234 root       0:00 [iparepwq49]
+  235 root       0:00 [ipawq13]
+  236 root       0:00 [iparepwq13]
+  237 root       0:00 [ipa_A7_svc]
+  239 root       0:00 [qmi_hndl0000000]
+  240 root       0:00 [clnt_req]
+  242 root       0:00 [clnt_req]
+  243 root       0:00 [clnt_resp]
+  284 root       0:00 [irq/125-smb1351]
+  289 root       0:00 [kworker/u3:0]
+  290 root       0:00 [kworker/u3:1]
+  300 root       0:00 [irq/133-1-0024]
+  306 root       0:00 [irq/132-soc-int]
+  340 root       0:00 [ubi_bgt1d]
+  431 root       0:00 ipacm_perf
+  438 root       0:00 ipacm
+  442 root       0:00 ipacmdiag
+  446 root       0:00 /usr/bin/qti
+  454 root       0:00 /usr/bin/port_bridge
+  462 root       0:00 /usr/bin/netmgrd
+  466 root       0:00 /sbin/tftp_server
+  553 root       0:00 /usr/sbin/rngd
+  559 root       0:00 [mpss_IPCRTR]
+  565 root       0:00 udevd --daemon
+  566 root       0:00 [qmi_hndl0000000]
+  656 root       0:00 [ipawq14]
+  657 root       0:00 [iparepwq14]
+  658 root       0:00 [ipawq50]
+  659 root       0:00 [iparepwq50]
+  686 root       0:00 {syslogd_monitor} /bin/sh /opt/nvtl/bin/syslogd_monitor.sh
+  705 root       0:00 /opt/nvtl/bin/mifi_debugd
+  714 root       0:00 /opt/nvtl/bin/msgbusd
+  721 root       0:00 /opt/nvtl/bin/settingsd
+  722 root       0:01 /opt/nvtl/bin/dsmd
+  798 root       0:00 /opt/nvtl/bin/watchdogd
+  833 root       0:00 /opt/nvtl/bin/usbd
+  839 root       0:00 /opt/nvtl/bin/router2d
+  842 root       0:00 /opt/nvtl/bin/devuid
+  843 root       0:00 /opt/nvtl/bin/webuid -c /opt/nvtl/etc/webui/config.xml -m /opt/nvtl/etc/webui/menu_layout.json -r /etc/lighttpd/mod_rewrite.conf -p /etc/lighttpd/mod_proxy.conf -l en_US UTF-8 -l es_MX UTF-8
+  999 root       0:11 /sbin/adbd
+ 1002 root       0:00 nvtl_dnsd br0 53 /etc/dns_cache.txt
+ 1062 lighttpd   0:00 /usr/sbin/lighttpd -f /etc/lighttpd/lighttpd.conf
+ 1065 lighttpd   0:00 /opt/nvtl/bin/sysser.fcgi
+ 1069 root       0:20 /opt/nvtl/bin/devuiappd
+ 1075 root       0:00 /opt/nvtl/bin/ansd
+ 1080 root       0:00 [kworker/u2:6]
+ 1105 root       0:00 [kworker/u2:7]
+ 1116 root       0:00 /opt/nvtl/bin/duad
+ 1117 root       0:00 /opt/nvtl/bin/wifid
+ 1159 root       0:00 /opt/nvtl/bin/powersaved
+ 1176 root       0:00 /opt/nvtl/bin/factory_resetd
+ 1190 root       0:00 /opt/nvtl/bin/fotad
+ 1205 root       0:00 /opt/nvtl/bin/modem2d
+ 1210 root       0:00 /opt/nvtl/bin/ccm2d
+ 1238 root       0:00 /opt/nvtl/bin/gpsd
+ 1249 root       0:00 /opt/nvtl/bin/file_sharingd
+ 1294 root       0:00 /opt/nvtl/bin/smsd
+ 1324 root       0:02 /opt/nvtl/bin/dmdbd
+ 1362 root       0:00 /opt/nvtl/bin/modem_at_serverd
+ 1382 root       0:00 /opt/nvtl/bin/diag_read
+ 1399 root       0:00 /opt/nvtl/bin/omadm_cli listen
+ 1414 root       0:00 /opt/nvtl/bin/vpnd
+ 1437 root       0:00 /opt/nvtl/bin/ledd
+ 1577 root       0:00 /opt/nvtl/bin/omadmd
+ 1584 root       0:00 /opt/nvtl/bin/wdcp
+ 1591 root       0:00 /sbin/getty 115200 ttyHSL0 vt100
+ 1592 root       0:00 /sbin/getty 115200 ttyGS0 vt100
+ 1593 root       0:00 /sbin/getty 115200 ttyGS1 vt100
+ 1605 root       0:00 /opt/nvtl/bin/cdra
+ 1748 root       0:00 [cfg80211]
+ 1759 root       0:02 [brcmf_rpm_threa]
+ 1760 root       0:00 udevd --daemon
+ 1796 root       0:00 [kworker/0:4]
+ 1797 root       0:00 [irq/135-brcmf_p]
+ 1798 root       0:00 [msgbuf_txflow]
+ 1883 root       0:00 /opt/nvtl/bin/hostapd /tmp/wifi/hostapd/wlan0_hostapd.conf -f /tmp/wifi/hostapd/wlan0_hostapd.log
+ 1894 root       0:00 /opt/nvtl/bin/hostapd /tmp/wifi/hostapd/wlan1_hostapd.conf -f /tmp/wifi/hostapd/wlan1_hostapd.log
+ 2315 root       0:00 dhcpd -f -cf /opt/nvtl/tmp/router2/dhcpd.conf -lf /opt/nvtl/tmp/router2/dhcpd.leases
+ 2865 root       0:01 [kworker/0:0]
+ 2866 root       0:06 [kworker/0:1]
+ 2958 root       0:00 [kworker/u2:5]
+ 3248 root       0:00 [kworker/0:2]
+ 3459 root       0:00 sleep 40
+ 3461 root       0:00 /bin/sh -c chmod +x /tmp/mifi_explorer.sh; /tmp/mifi_explorer.sh
+ 3464 root       0:00 {mifi_explorer.s} /bin/sh /tmp/mifi_explorer.sh
+ 3482 root       0:00 ps aux
+
+=== NETWORK PORTS ===
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 192.168.11.1:11010      0.0.0.0:*               LISTEN      1238/gpsd
+tcp        0      0 127.0.0.1:5037          0.0.0.0:*               LISTEN      999/adbd
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      1062/lighttpd
+tcp        0      0 :::80                   :::*                    LISTEN      1062/lighttpd
+
+=== NVTL BINARIES ===
+total 10904
+drwxr-xr-x    3 root     root         13416 Mar 16  2022 .
+drwxr-xr-x   11 root     root           736 Jan 20 14:42 ..
+-rwxr-xr-x    1 root     root         12424 Apr  1  2017 ans_cli
+-rwxr-xr-x    1 root     root        127416 Apr  1  2017 ansd
+-rwxr-xr-x    1 root     root           501 Apr  1  2017 bckrst.sh
+-rwxr-xr-x    1 root     root          7108 Apr  1  2017 bckrst_cli
+-rwxr-xr-x    1 root     root         10704 Apr  1  2017 bckrstd
+-rwxr--r--    1 root     root          6188 Apr  1  2017 buzzer_cli
+-rwxr-xr-x    1 root     root           469 Apr  1  2017 cc.sh
+-rwxr-xr-x    1 root     root         10680 Apr  1  2017 cc_cli
+-rwxr-xr-x    1 root     root         28280 Apr  1  2017 ccd
+-rwxr-xr-x    1 root     root           485 Apr  1  2017 ccm2.sh
+-rwxr-xr-x    1 root     root         31568 Apr  1  2017 ccm2_cli
+-rwxr-xr-x    1 root     root        113812 Apr  1  2017 ccm2d
+-rwxr-xr-x    1 root     root         36704 Apr  1  2017 cdra
+-rwxr-xr-x    1 root     root          8476 Apr  1  2017 cdra_cli
+-rwxr-xr-x    1 root     root          1805 Apr  1  2017 check_md5.sh
+-rwxr-xr-x    1 root     root          1668 Apr  1  2017 check_recovery_image.sh
+-rwxr-xr-x    1 root     root          1432 Apr  1  2017 create_device_sym_links.sh
+-rwxr-xr-x    1 root     root         10213 Apr  1  2017 ctrlxfer.sh
+-rwxr-xr-x    1 root     root        151520 Apr  1  2017 cumclient
+-rwxr-xr-x    1 root     root           517 Apr  1  2017 cumclient.sh
+-rwxr-xr-x    1 root     root         46560 Apr  1  2017 cumclient_cli
+-rwxr-xr-x    1 root     root          5771 Apr  1  2017 customize_xml.sh
+-rwxr-xr-x    1 root     root         16612 Apr  1  2017 devui_cli
+-rwxr-xr-x    1 root     root       1599300 Apr  1  2017 devuiappd
+-rwxr-xr-x    1 root     root         21456 Apr  1  2017 devuid
+-rwxr-xr-x    1 root     root         97632 Apr  1  2017 diag_read
+-rwxr-xr-x    1 root     root           958 Apr  1  2017 diag_read.sh
+-rwxr-xr-x    1 root     root           485 Apr  1  2017 dmdb.sh
+-rwxr-xr-x    1 root     root         46408 Apr  1  2017 dmdb_cli
+-rwxr-xr-x    1 root     root        152396 Apr  1  2017 dmdbd
+-rwxr-xr-x    1 root     root           501 Apr  1  2017 dsm.sh
+-rwxr-xr-x    1 root     root         19500 Apr  1  2017 dsm_cli
+-rwxr-xr-x    1 root     root        106240 Apr  1  2017 dsmd
+-rwxr-xr-x    1 root     root          9076 Apr  1  2017 dua_cli
+-rwxr-xr-x    1 root     root        114204 Apr  1  2017 duad
+-rwxr-xr-x    1 root     root         21520 Apr  1  2017 emd
+-rwxr-xr-x    1 root     root           486 Apr  1  2017 emd.sh
+-rwxr-xr-x    1 root     root         10592 Apr  1  2017 emd_cli
+-rwxr-xr-x    1 root     root           557 Apr  1  2017 factory_reset.sh
+-rwxr-xr-x    1 root     root          7548 Apr  1  2017 factory_reset_cli
+-rwxr-xr-x    1 root     root         26888 Apr  1  2017 factory_resetd
+-rwxr-xr-x    1 root     root           549 Apr  1  2017 file_sharing.sh
+-rwxr-xr-x    1 root     root         16252 Apr  1  2017 file_sharing_cli
+-rwxr-xr-x    1 root     root         35952 Apr  1  2017 file_sharingd
+-rwxr-xr-x    1 root     root           777 Apr  1  2017 fix_log_files.sh
+-rwxr-xr-x    1 root     root           485 Apr  1  2017 fota.sh
+-rwxr-xr-x    1 root     root         27632 Apr  1  2017 fota_cli
+-rwxr-xr-x    1 root     root          1418 Apr  1  2017 fota_interruption.sh
+-rwxr-xr-x    1 root     root          9114 Apr  1  2017 fota_linux_pri.sh
+-rwxr-xr-x    1 root     root         18355 Apr  1  2017 fota_pmode.sh
+-rwxr-xr-x    1 root     root          1704 Apr  1  2017 fota_pmode_watchdog.sh
+-rwxr-xr-x    1 root     root           701 Apr  1  2017 fota_pmode_watchdog_init.sh
+-rwxr-xr-x    1 root     root        130752 Apr  1  2017 fotad
+-rwxr-xr-x    1 root     root           477 Apr  1  2017 gps.sh
+-rwxr-xr-x    1 root     root         13592 Apr  1  2017 gps_cli
+-rwxr-xr-x    1 root     root         48776 Apr  1  2017 gpsd
+-rwxr-xr-x    1 root     root        638632 Apr  1  2017 hostapd
+-rwxr-xr-x    1 root     root         35332 Apr  1  2017 hostapd_cli
+-rwxr-xr-x    1 root     root          7824 Apr  1  2017 kernel_crash_log
+-rwxr-xr-x    1 root     root          3216 Apr  1  2017 kernel_crash_log.sh
+-rwxr-xr-x    1 root     root          7252 Apr  1  2017 led_cli
+-rwxr-xr-x    1 root     root        163104 Apr  1  2017 ledd
+-rwxr-xr-x    1 root     root          2541 Apr  1  2017 list_threads.sh
+-rwxr-xr-x    1 root     root          7460 Apr  1  2017 load_kernel_modules.sh
+-rwxr-xr-x    1 root     root          1883 Apr  1  2017 log_pub_cert.pem
+-rwxr-xr-x    1 root     root           726 Apr  1  2017 low_volt_monitor.sh
+-rwxr-xr-x    1 root     root        274896 Apr  1  2017 lpmappd
+-rwxr-xr-x    1 root     root         14372 Apr  1  2017 mifi_debug_cli
+-rwxr-xr-x    1 root     root         19748 Apr  1  2017 mifi_debugd
+-rwxr-xr-x    1 root     root           777 Apr  1  2017 mifi_debugd.sh
+-rwxr-xr-x    1 root     root           782 Apr  1  2017 mifi_display_animation.sh
+-rwxr-xr-x    1 root     root         16936 Apr  1  2017 mifi_display_png
+-rwxr-xr-x    1 root     root          6332 Apr  1  2017 mifi_rootpass
+-rwxr-xr-x    1 root     root           488 Apr  1  2017 mifi_rootpass.sh
+-rwxr-xr-x    1 root     root         35492 Apr  1  2017 mifi_sua_device
+-rwxr-xr-x    1 root     root        212336 Apr  1  2017 mifi_upi
+-rwxr-xr-x    1 root     root          5520 Apr  1  2017 mifi_upi_disp
+-rwxr-xr-x    1 root     root           501 Apr  1  2017 modem2.sh
+-rwxr-xr-x    1 root     root        148920 Apr  1  2017 modem2_cli
+-rwxr-xr-x    1 root     root        192020 Apr  1  2017 modem2d
+-rwxr-xr-x    1 root     root           573 Apr  1  2017 modem_at_server.sh
+-rwxr-xr-x    1 root     root         10572 Apr  1  2017 modem_at_server_cli
+-rwxr-xr-x    1 root     root         27156 Apr  1  2017 modem_at_serverd
+-rwxr-xr-x    1 root     root         15532 Apr  1  2017 msgbus_cli
+-rwxr-xr-x    1 root     root         27024 Apr  1  2017 msgbusd
+-rwxr-xr-x    1 root     root          1269 Apr  1  2017 nand_write_rate.sh
+-rwxr-xr-x    1 root     root         11876 Apr  1  2017 nbnsd
+-rwxr-xr-x    1 root     root           590 Apr  1  2017 nua.sh
+-rwxr-xr-x    1 root     root         32072 Apr  1  2017 nua_cli
+-rwxr-xr-x    1 root     root         24622 Apr  1  2017 nua_upi.sh
+-rwxr-xr-x    1 root     root        304880 Apr  1  2017 nuad
+-rwxr-xr-x    1 root     root          6104 Apr  1  2017 nvtl_acm_test
+-rwxr-xr-x    1 root     root          1045 Apr  1  2017 nvtl_ans.sh
+-rwxr-xr-x    1 root     root          1663 Apr  1  2017 nvtl_avahi.sh
+-rwxr-xr-x    1 root     root          1196 Apr  1  2017 nvtl_cdra.sh
+-rwxr-xr-x    1 root     root           990 Apr  1  2017 nvtl_check_webserver.sh
+-rwxr-xr-x    1 root     root           571 Apr  1  2017 nvtl_chrt_ui.sh
+-rwxr-xr-x    1 root     root           626 Apr  1  2017 nvtl_deviceui.sh
+-rwxr-xr-x    1 root     root          1923 Apr  1  2017 nvtl_devui.sh
+-rwxr-xr-x    1 root     root         10460 Apr  1  2017 nvtl_dns_resolver
+-rwxr-xr-x    1 root     root         13468 Apr  1  2017 nvtl_dnsd
+-rwxr-xr-x    1 root     root           998 Apr  1  2017 nvtl_dua.sh
+-rwxr-xr-x    1 root     root          8728 Apr  1  2017 nvtl_encrypt
+-rwxr-xr-x    1 root     root          1916 Apr  1  2017 nvtl_fatest_ui.sh
+-rwxr-xr-x    1 root     root         19136 Apr  1  2017 nvtl_gpio_test
+-rwxr-xr-x    1 root     root          1727 Apr  1  2017 nvtl_led.sh
+-rwxr-xr-x    1 root     root          8392 Apr  1  2017 nvtl_log
+-rwxr-xr-x    1 root     root          1949 Apr  1  2017 nvtl_lpm.sh
+-rwxr-xr-x    1 root     root         14901 Apr  1  2017 nvtl_memusage.sh
+-rwxr-xr-x    1 root     root           341 Apr  1  2017 nvtl_modfastcgi_init.sh
+-rwxr-xr-x    1 root     root          1147 Apr  1  2017 nvtl_msgbus.sh
+-rwxr-xr-x    1 root     root          1222 Apr  1  2017 nvtl_nmbd.sh
+-rwxr-xr-x    1 root     root           375 Apr  1  2017 nvtl_redirect_init.sh
+-rwxr-xr-x    1 root     root           795 Apr  1  2017 nvtl_runlevel.sh
+-rwxr-xr-x    1 root     root          2224 Apr  1  2017 nvtl_samba.sh
+-rwxr-xr-x    1 root     root          1220 Apr  1  2017 nvtl_smbd.sh
+-rwxr-xr-x    1 root     root          8477 Apr  1  2017 nvtl_usb_flash.sh
+-rwxr-xr-x    1 root     root          1061 Apr  1  2017 nvtl_watchdog.sh
+-rwxr-xr-x    1 root     root          1864 Apr  1  2017 nvtl_wdcp.sh
+-rwxr-xr-x    1 root     root          5209 Apr  1  2017 nvtl_webserver.sh
+-rwxr-xr-x    1 root     root          6671 Apr  1  2017 nvtl_xml.sh
+-rwxr-xr-x    1 root     root         25500 Apr  1  2017 nwcli
+-rwxr-xr-x    1 root     root          9676 Apr  1  2017 nwnvitem
+-rwxr-xr-x    1 root     root           629 Apr  1  2017 omadm.sh
+-rwxr-xr-x    1 root     root         78232 Apr  1  2017 omadm_cli
+-rwxr-xr-x    1 root     root         23608 Apr  1  2017 omadm_ipl_cli
+-rwxr-xr-x    1 root     root           678 Apr  1  2017 omadm_restore.sh
+-rwxr-xr-x    1 root     root           523 Apr  1  2017 omadm_wap_proxy.sh
+-rwxr-xr-x    1 root     root         14724 Apr  1  2017 omadm_wap_proxyd
+-rwxr-xr-x    1 root     root        339916 Apr  1  2017 omadmd
+-rwxr-xr-x    1 root     root           565 Apr  1  2017 powersave.sh
+-rwxr-xr-x    1 root     root         10848 Apr  1  2017 powersave_cli
+-rwxr-xr-x    1 root     root         55972 Apr  1  2017 powersaved
+-rwxr-xr-x    1 root     root           792 Apr  1  2017 program_fotacookie.sh
+-rwxr-xr-x    1 root     root           519 Apr  1  2017 router2.sh
+-rwxr-xr-x    1 root     root         44116 Apr  1  2017 router2_cli
+-rwxr-xr-x    1 root     root        207460 Apr  1  2017 router2d
+-rwxr-xr-x    1 root     root           490 Apr  1  2017 save_var_log.sh
+-rwxr-xr-x    1 root     root          3318 Apr  1  2017 save_var_log_files.sh
+-rwxr-xr-x    1 root     root           268 Apr  1  2017 save_var_log_files_init.sh
+-rwxr-xr-x    1 root     root          2815 Apr  1  2017 save_var_log_files_timer.sh
+-rwxr-xr-x    1 root     root           519 Apr  1  2017 settings.sh
+-rwxr-xr-x    1 root     root         10368 Apr  1  2017 settings_cli
+-rwxr-xr-x    1 root     root         23080 Apr  1  2017 settingsd
+-rwxr-xr-x    1 root     root           306 Apr  1  2017 smb_otg_off.sh
+-rwxr-xr-x    1 root     root           227 Apr  1  2017 smb_usb3_ftm.sh
+-rwxr-xr-x    1 root     root           477 Apr  1  2017 sms.sh
+-rwxr-xr-x    1 root     root         15540 Apr  1  2017 sms_cli
+-rwxr-xr-x    1 root     root         45420 Apr  1  2017 smsd
+-rwxr-xr-x    1 root     root          9929 Apr  1  2017 srtemplate.txt
+-rwxr-xr-x    1 root     root           530 Apr  1  2017 stop_process.sh
+-rwxr-xr-x    1 root     root         14999 Apr  1  2017 storelogs.lib
+-rwxr-xr-x    1 root     root         26129 Apr  1  2017 storelogs.sh
+-rwxr-xr-x    1 root     root          1062 Apr  1  2017 sua_display_png.sh
+-rwxr-xr-x    1 root     root         13455 Apr  1  2017 sua_flash_device.sh
+-rwxr-xr-x    1 root     root          1706 Apr  1  2017 sua_start_update.sh
+-rwxr-xr-x    1 root     root        176436 Apr  1  2017 sysintcli
+-rwxr-xr-x    1 root     root           673 Apr  1  2017 syslogd_monitor.sh
+-rwxr-xr-x    1 root     root        236600 Apr  1  2017 sysser.fcgi
+-rwxr-xr-x    1 root     root          4141 Apr  1  2017 test_touch_during_boot.sh
+drwxr-xr-x    2 root     root          3080 Mar 16  2022 tests
+-rwxr-xr-x    1 root     root          1954 Apr  1  2017 update_ipk.sh
+-rwxr-xr-x    1 root     root           772 Apr  1  2017 uploadfile.sh
+-rwxr-xr-x    1 root     root           996 Apr  1  2017 usb.sh
+-rwxr-xr-x    1 root     root         13204 Apr  1  2017 usb_cli
+-rwxr-xr-x    1 root     root          1018 Apr  1  2017 usb_start.sh
+-rwxr-xr-x    1 root     root           337 Apr  1  2017 usb_start_init.sh
+-rwxr-xr-x    1 root     root         68140 Apr  1  2017 usbd
+-rwxr-xr-x    1 root     root           477 Apr  1  2017 vpn.sh
+-rwxr-xr-x    1 root     root         27076 Apr  1  2017 vpn_cli
+-rwxr-xr-x    1 root     root        105016 Apr  1  2017 vpnd
+-rwxr-xr-x    1 root     root          7488 Apr  1  2017 watchdog_cli
+-rwxr-xr-x    1 root     root         12504 Apr  1  2017 watchdogd
+-rwxr-xr-x    1 root     root        423356 Apr  1  2017 wdcp
+-rwxr-xr-x    1 root     root         21468 Apr  1  2017 webui_cli
+-rwxr-xr-x    1 root     root        105328 Apr  1  2017 webuid
+-rwxr-xr-x    1 root     root         18631 Apr  1  2017 wifi.sh
+-rwxr-xr-x    1 root     root         39708 Apr  1  2017 wifi_cli
+-rwxr-xr-x    1 root     root         10912 Apr  1  2017 wifi_diag.sh
+-rwxr-xr-x    1 root     root        117272 Apr  1  2017 wifid
+-rwxr-xr-x    1 root     root       2766984 Apr  1  2017 wl
+-rwxr-xr-x    1 root     root          6352 Apr  1  2017 xmldata_cli
+-rwxr-xr-x    1 root     root         22652 Apr  1  2017 xmlmergecust
+-rwxr-xr-x    1 root     root          4472 Apr  1  2017 xmlvalidate
+
+=== NVTL LIBRARIES ===
+total 4828
+drwxr-xr-x    5 root     root          4176 Mar 16  2022 .
+drwxr-xr-x   11 root     root           736 Jan 20 14:42 ..
+drwxr-xr-x    2 root     root          1200 Mar 16  2022 factory_reset
+-rwxr-xr-x    1 root     root        171560 Apr  1  2017 libMGA.so
+-rwxr-xr-x    1 root     root         13380 Apr  1  2017 libacm.so
+-rwxr-xr-x    1 root     root         22592 Apr  1  2017 libans_api.so
+-rwxr-xr-x    1 root     root         10256 Apr  1  2017 libbckrst_api.so
+-rwxr-xr-x    1 root     root          4904 Apr  1  2017 libbuzzer_api.so
+-rwxr-xr-x    1 root     root         16652 Apr  1  2017 libcc_api.so
+-rwxr-xr-x    1 root     root         49040 Apr  1  2017 libccm2_api.so
+-rwxr-xr-x    1 root     root          6416 Apr  1  2017 libcdra_api.so
+-rwxr-xr-x    1 root     root         52140 Apr  1  2017 libcdra_upload.so
+-rwxr-xr-x    1 root     root        151768 Apr  1  2017 libcumclient_api.so
+-rwxr-xr-x    1 root     root         44136 Apr  1  2017 libdevui_api.so
+-rwxr-xr-x    1 root     root        323376 Apr  1  2017 libdevui_model_api.so
+-rwxr-xr-x    1 root     root         75396 Apr  1  2017 libdmdb_api.so
+-rwxr-xr-x    1 root     root         42452 Apr  1  2017 libdsm_api.so
+-rwxr-xr-x    1 root     root          8416 Apr  1  2017 libdua_api.so
+-rwxr-xr-x    1 root     root         21620 Apr  1  2017 libemd_api.so
+-rwxr-xr-x    1 root     root         12888 Apr  1  2017 libfactory_reset_api.so
+-rwxr-xr-x    1 root     root         16216 Apr  1  2017 libfile_sharing_api.so
+-rwxr-xr-x    1 root     root         41244 Apr  1  2017 libfota_api.so
+-rwxr--r--    1 root     root         30636 Apr  1  2017 libfuel_gauge.so
+-rwxr-xr-x    1 root     root         15808 Apr  1  2017 libgpio.so
+-rwxr-xr-x    1 root     root         23096 Apr  1  2017 libgps_api.so
+-rwxr-xr-x    1 root     root         15556 Apr  1  2017 libled_api.so
+-rwxr-xr-x    1 root     root         29580 Apr  1  2017 liblpm_model_api.so
+-rwxr-xr-x    1 root     root        307292 Apr  1  2017 libmal_qct.so
+-rwxr-xr-x    1 root     root          6928 Apr  1  2017 libmifi_config.so
+-rwxr-xr-x    1 root     root         29060 Apr  1  2017 libmifi_debug.so
+-rwxr-xr-x    1 root     root         10736 Apr  1  2017 libmifi_leds.so
+-rwxr-xr-x    1 root     root         28496 Apr  1  2017 libmifi_mtd.so
+-rwxr-xr-x    1 root     root         39372 Apr  1  2017 libmifi_upi_fs.so
+-rwxr-xr-x    1 root     root         16172 Apr  1  2017 libmifi_upi_image.so
+-rwxr-xr-x    1 root     root         13604 Apr  1  2017 libmifimsgbus.so
+-rwxr-xr-x    1 root     root        144888 Apr  1  2017 libmodem2_api.so
+-rwxr-xr-x    1 root     root         13904 Apr  1  2017 libmodem_at_server_api.so
+-rwxr-xr-x    1 root     root         57860 Apr  1  2017 libnua_api.so
+-rwxr-xr-x    1 root     root        178968 Apr  1  2017 libomadm_api.so
+-rwxr-xr-x    1 root     root       1722916 Apr  1  2017 libomadm_bl.so
+-rwxr-xr-x    1 root     root         22048 Apr  1  2017 libpowersave_api.so
+-rwxr-xr-x    1 root     root        115688 Apr  1  2017 librouter2_api.so
+-rwxr-xr-x    1 root     root         56556 Apr  1  2017 libsensor_api.so
+-rwxr-xr-x    1 root     root         15576 Apr  1  2017 libsettings_api.so
+-rwxr-xr-x    1 root     root         20996 Apr  1  2017 libsms_api.so
+-rwxr-xr-x    1 root     root         91848 Apr  1  2017 libsms_encoder.so
+-rw-r--r--    1 root     root        294828 Apr  1  2017 libsysintclient.so
+-rwxr-xr-x    1 root     root         18480 Apr  1  2017 libusb_api.so
+-rwxr-xr-x    1 root     root         53508 Apr  1  2017 libvpn_api.so
+-rwxr-xr-x    1 root     root         13556 Apr  1  2017 libwatchdog_api.so
+-rwxr-xr-x    1 root     root        201348 Apr  1  2017 libwebui_api.so
+-rwxr-xr-x    1 root     root         80232 Apr  1  2017 libwifi_api.so
+-rwxr-xr-x    1 root     root         83580 Apr  1  2017 libxmldata_api.so
+drwxr-xr-x    2 root     root           616 Mar 16  2022 powersave
+drwxr-xr-x    2 root     root          1944 Mar 16  2022 settings
+
+=== KEY CONFIGS ===
+--- /sysconf/features.xml ---
+<Features>
+	<USBTethering>1</USBTethering>				<!-- USB Tethering support -->
+	<RadioTechnologies>95</RadioTechnologies> 		<!-- Enabled Radio technologies, bitmask of GSM(0x01),WCDMA(0x02),CDMA(0x04),EVDO(0x08),LTE(0x10),WiFi(0x40)-->
+	<WiFiAccessPoint>1</WiFiAccessPoint>			<!-- WiFi access point -->
+	<WiFiDualSsid>1</WiFiDualSsid> 				<!-- second WiFi SSID -->
+	<WiFiStation>0</WiFiStation>				<!-- WiFi station mode -->
+	<GPS>1</GPS>						<!-- location -->
+	<PowerSave>1</PowerSave> 				<!-- sleep mode -->
+	<IPv6>1</IPv6>						<!-- IPv6 -->
+	<DataDownloadAcceleration>0</DataDownloadAcceleration>	<!-- data acceleration for downloads ( proprietary Novatel Technology ) -->
+	<SMSMobileTerminated>1</SMSMobileTerminated>		<!-- mobile terminated SMS -->
+	<SMSMobileOriginated>0</SMSMobileOriginated>		<!-- mobile originated SMS -->
+	<Voice>0</Voice>					<!-- voice -->
+	<ParentalControl>0</ParentalControl>			<!-- parental controls for web traffic -->
+	<TR069>0</TR069>					<!-- TR069 -->
+	<WDCP>1</WDCP>						<!-- WDCP , Verizon Wireless proprietary remote management technology -->
+	<Ethernet>0</Ethernet>					<!-- ethernet -->
+	<SmartAgent>0</SmartAgent>				<!-- Smart agent, Novatel Wireless proprietary remote management technology -->
+	<OneWire>0</OneWire>					<!-- 1-wire -->	
+	<Accelerometer>0</Accelerometer>			<!-- accelerometer -->
+	<BatteryPack>1</BatteryPack> 				<!-- charge external devices -->
+	<USBSerial>0</USBSerial>				<!-- USB Serial device -->
+	<IPPassthrough>0</IPPassthrough>			<!-- IP Passthrough -->
+	<Webui>1</Webui> 					<!-- http server & web UI -->
+	<Deviceui>1</Deviceui> 					<!-- LCD UI -->
+	<VPN>1</VPN>						<!-- virtual private network -->
+	<DNS>1</DNS>						<!-- domain name server -->
+	<OMADM>1</OMADM>					<!-- OMADM agent -->
+	<OMADMFumo>1</OMADMFumo>				<!-- OMADM - FOTA functionality -->
+	<NUA>0</NUA>				                <!-- NUA agent supporting Novatel FOTA -->
+	<FOTA>1</FOTA>                                          <!-- Firmware update service for agents -->
+	<ANS>1</ANS>                       			<!-- Alerts and Notifications ( visual and aural ) on webUI and device -->
+	<FileSharing>1</FileSharing>                       	<!-- File Sharing of attached removable media contents -->
+	<DUS>1</DUS>                       			<!-- Data usage monitor service -->
+	<DUA>1</DUA>                       			<!-- Data usage agent -->
+	<SAM>0</SAM>                       			<!-- Site access monitor service -->
+	<LED>1</LED>						<!-- LED service -->
+	<CDRA>1</CDRA>						<!-- CDRA , Verizon Wireless proprietary client data usage reporting technology -->
+	<PCO>1</PCO>						<!-- PCO, Verizon Wireless proprietary sim configuration functionality -->
+        <AutoAPN>0</AutoAPN>                                    <!-- Configuring APN automatically based on the SIM card data -->
+	<CC>0</CC>						<!-- Carrier customization feature support -->
+	<CUMCLIENT>0</CUMCLIENT>						<!-- Cumulocity Client -->
+</Features> 
+
+--- /sysconf/settings.xml (truncated) ---
+<?xml version="1.0"?>
+<Settings>
+	<Header>
+		<!-- file header (read only) for use by tool - do not change -->
+		<SettingsTemplateVersion>1.0</SettingsTemplateVersion>
+		<!-- to match a settings file with a FW. To be used by the tool for validation -->
+	</Header>
+	<!-- all settings -->
+	<Watchdog>
+		<Enabled>1</Enabled>
+		<!-- 1(on), 0(off) -->
+		<Interval>60</Interval>
+		<!-- interval, in seconds(minimum 60), at which watchdog system shall check for registered apps' keepalives -->
+	</Watchdog>
+	<Modem>
+		<RoamEnabled>0</RoamEnabled>
+		<!-- 1(on), 0(off) -->
+		<IntlRoamEnabled>1</IntlRoamEnabled>
+		<!-- 1(on), 0(off) -->
+		<LabTestEnabled>0</LabTestEnabled>
+		<!-- indicates whether this is the lab test PRI or not -->
+		<MNSTimeout>120</MNSTimeout>
+		<!-- when using MNS, the amount of no service time (seconds) before reverting to auto mode -->
+		<CertifiedCarrier>Verizon</CertifiedCarrier>
+		<!-- The carrier name for which the modem is certified  
+		                                             valid options are: Verizon, Sprint, AT&T, Bell, Telus, GSM, AUTO -->
+		<PreferredTechnology>18</PreferredTechnology>
+		<!-- Preferred network technology, is a bitmap of possible modem2_tech_modes_e values. default: 31(global). -->
+	</Modem>
+	<WiFi>
+		<!-- all wifi settings -->
+		<WiFiSettings>
+			<Enabled>1</Enabled>
+			<!-- Wifi functionality is enabled -->
+			<Country>US</Country>
+			<!-- Country code -->
+		</WiFiSettings>
+		<APSettings>
+			<APEnabled>1</APEnabled>
+			<!-- Wifi AP functionality is enabled -->
+			<MaxClients>15</MaxClients>
+			<!-- min-value: 1, max-value: 15 -->
+		</APSettings>
+		<STASettings>
+			<STAEnabled>0</STAEnabled>
+			<!-- Wifi STA functionality is enabled -->
+		</STASettings>
+		<APProfiles>
+			<APProfile index="1">
+				<Enabled>1</Enabled>
+				<!-- Wifi active 1(on), 0(off) -->
+				<Name>Profile1</Name>
+				<!-- Name of the profile -->
+				<Ssid>8800</Ssid>
+				<!-- -->
+				<SsidBroadcast>0</SsidBroadcast>
+				<!-- Ignore SSID Broadcast 0(on), 1(off) -->
+				<StationPrivacy>0</StationPrivacy>
+				<!-- 1(on), 0(off) -->
+				<InterfaceFeatureMask>1</InterfaceFeatureMask>
+				<!-- Depends upon what features are enables. -->
+				<WPS>0</WPS>
+				<!-- 1(on), 0(off) -->
+				<Channel>0</Channel>
+				<!-- channel number. values (). for automatic, use 0-->
+				<Bandwidth>1</Bandwidth>
+				<!-- 1=(20 MHz), 2=(40 MHz)-->
+				<Mode>1</Mode>
+				<!-- band + width + data-rate (a,b,g,n,) right now -->
+				<SecurityType>3</SecurityType>
+				<!-- security mode. values: -->
+				<EncryptionType>4</EncryptionType>
+				<!-- encryption mode. values: (1,2,3,4,5) -->
+				<Passphrase>yoyoyoyo</Passphrase>
+				<!-- Passphrase for WPA/WPA2/WPAMIX -->
+				<WepAuthType>1</WepAuthType>
+				<!-- Wifi WEP authentication Open=1, shared=2 -->
+				<WepIndex>0</WepIndex>
+				<!-- WEP Key index -->
+				<WepKey0/>
+				<!-- WEP Key 0 -->
+				<WepKey1/>
+				<!-- WEP Key 1 -->
+				<WepKey2/>
+				<!-- WEP Key 2 -->
+				<WepKey3/>
+				<!-- WEP Key 3 -->
+			</APProfile>
+			<APProfile index="2">
+				<Enabled>1</Enabled>
+				<!-- Wifi active 1(on), 0(off) -->
+				<Name>Profile2</Name>
+				<!-- Name of the profile -->
+				<Ssid>8800</Ssid>
+				<!-- -->
+				<SsidBroadcast>0</SsidBroadcast>
+				<!-- Ignore SSID Broadcast 0(on), 1(off) -->
+				<StationPrivacy>0</StationPrivacy>
+				<!-- 1(on), 0(off) -->
+				<InterfaceFeatureMask>1</InterfaceFeatureMask>
+				<!-- Depends upon what features are enables. -->
+				<WPS>0</WPS>
+				<!-- 1(on), 0(off) -->
+				<Channel>0</Channel>
+				<!-- channel number. values (). for automatic, use 0-->
+				<Bandwidth>3</Bandwidth>
+				<!-- 1=(20 MHz), 2=(40 MHz, 3=(80 MHz) -->
+				<Mode>11</Mode>
+				<!-- 11=AC_5, 10=AN, 7=AC_2.4, 5=GN_2.4, 1=BGN -->
+				<SecurityType>3</SecurityType>
+				<!-- security encryption mode. values: -->
+				<EncryptionType>4</EncryptionType>
+				<!-- encryption mode. values: (1,2,3,4,5) -->
+				<Passphrase>yoyoyoyo</Passphrase>
+				<!-- Passphrase for WPA/WPA2/WPAMIX -->
+				<WepAuthType>1</WepAuthType>
+				<!-- Wifi WEP authentication Open=1, shared=2 -->
+				<WepIndex>0</WepIndex>
+				<!-- WEP Key index -->
+				<WepKey0/>
+				<!-- WEP Key 0 -->
+				<WepKey1/>
+				<!-- WEP Key 1 -->
+				<WepKey2/>
+				<!-- WEP Key 2 -->
+				<WepKey3/>
+				<!-- WEP Key 3 -->
+			</APProfile>
+			<APProfile index="3">
+				<Enabled>0</Enabled>
+				<!-- Wifi active 1(on), 0(off) -->
+				<Name>Profile3</Name>
+				<!-- Name of the profile -->
+				<Ssid>Verizon-MiFi8800L-Guest-C875</Ssid>
+				<!-- -->
+				<SsidBroadcast>0</SsidBroadcast>
+				<!-- Ignore SSID Broadcast 0(on), 1(off) -->
+				<StationPrivacy>1</StationPrivacy>
+				<!-- 1(on), 0(off) -->
+				<InterfaceFeatureMask>21</InterfaceFeatureMask>
+				<!-- Depends upon what features are enables,WL,II,WP,FP -->
+				<WPS>1</WPS>
+				<!-- 1(on), 0(off) -->
+				<Channel>0</Channel>
+				<!-- channel number. values (). for automatic, use 0-->
+				<Bandwidth>1</Bandwidth>
+				<!-- 1=(20 MHz), 2=(40 MHz)-->
+				<Mode>1</Mode>
+				<!-- 11=AC_5, 10=AN, 7=AC_2.4, 5=GN_2.4, 1=BGN -->
+				<SecurityType>3</SecurityType>
+				<!-- security encryption mode. values: -->
+				<EncryptionType>4</EncryptionType>
+				<!-- encryption mode. values: (1,2,3,4,5) -->
+				<Passphrase>5abe3e55</Passphrase>
+				<!-- Passphrase for WPA/WPA2/WPAMIX -->
+				<WepAuthType>1</WepAuthType>
+				<!-- Wifi WEP authentication Open=1, shared=2 -->
+				<WepIndex>0</WepIndex>
+				<!-- WEP Key index -->
+				<WepKey0/>
+				<!-- WEP Key 0 -->
+				<WepKey1/>
+				<!-- WEP Key 1 -->
+				<WepKey2/>
+				<!-- WEP Key 2 -->
+				<WepKey3/>
+				<!-- WEP Key 3 -->
+			</APProfile>
+			<APProfile index="4">
+				<Enabled>0</Enabled>
+				<!-- Wifi active 1(on), 0(off) -->
+				<Name>Profile4</Name>
+				<!-- Name of the profile -->
+				<Ssid>Verizon-MiFi8800L-Guest-C875</Ssid>
+				<!-- -->
+				<SsidBroadcast>0</SsidBroadcast>
+				<!-- Ignore SSID Broadcast 0(on), 1(off) -->
+				<StationPrivacy>1</StationPrivacy>
+				<!-- 1(on), 0(off) -->
+				<InterfaceFeatureMask>21</InterfaceFeatureMask>
+				<!-- Depends upon what features are enables,WL,II,WP,FP -->
+				<WPS>1</WPS>
+				<!-- 1(on), 0(off) -->
+				<Channel>0</Channel>
+				<!-- channel number. values (). for automatic, use 0-->
+				<Bandwidth>3</Bandwidth>
+				<!-- 1=(20 MHz), 2=(40 MHz, 3=(80 MHz) -->
+				<Mode>11</Mode>
+				<!-- band + width + data-rate (a,b,g,n,) right now -->
+				<SecurityType>3</SecurityType>
+				<!-- security encryption mode. values: -->
+				<EncryptionType>4</EncryptionType>
+				<!-- encryption mode. values: (1,2,3,4,5) -->
+				<Passphrase>5abe3e55</Passphrase>
+				<!-- Passphrase for WPA/WPA2/WPAMIX -->
+				<WepAuthType>1</WepAuthType>
+				<!-- Wifi WEP authentication Open=1, shared=2 -->
+				<WepIndex>0</WepIndex>
+				<!-- WEP Key index -->
+				<WepKey0/>
+
+=== WEB UI APPS ===
+total 0
+drwxr-xr-x   48 root     root          3544 Mar 16  2022 .
+drwxr-xr-x    5 root     root           360 Mar 16  2022 ..
+drwxr-xr-x    2 root     root           368 Mar 16  2022 apps_home
+drwxr-xr-x    2 root     root           584 Mar 16  2022 backup_restore
+drwxr-xr-x    2 root     root           600 Mar 16  2022 connected_devices
+drwxr-xr-x    2 root     root           368 Mar 16  2022 customer_care
+drwxr-xr-x    2 root     root           440 Mar 16  2022 data_usage
+drwxr-xr-x    2 root     root           296 Mar 16  2022 debug_logs
+drwxr-xr-x    2 root     root           512 Mar 16  2022 device_info
+drwxr-xr-x    2 root     root           936 Mar 16  2022 device_preferences
+drwxr-xr-x    2 root     root           296 Mar 16  2022 field_test_info
+drwxr-xr-x    2 root     root           752 Mar 16  2022 file_sharing
+drwxr-xr-x    2 root     root           584 Mar 16  2022 firewall
+drwxr-xr-x    2 root     root           656 Mar 16  2022 gps
+drwxr-xr-x    2 root     root           512 Mar 16  2022 help_faq
+drwxr-xr-x    2 root     root           552 Mar 16  2022 lab_test_info
+drwxr-xr-x    2 root     root           584 Mar 16  2022 lan
+drwxr-xr-x    2 root     root           584 Mar 16  2022 login
+drwxr-xr-x    2 root     root           744 Mar 16  2022 macfilter
+drwxr-xr-x    2 root     root           584 Mar 16  2022 manual_dns
+drwxr-xr-x    2 root     root           656 Mar 16  2022 mns
+drwxr-xr-x    2 root     root           440 Mar 16  2022 notification_preferences
+drwxr-xr-x    2 root     root           296 Mar 16  2022 pco
+drwxr-xr-x    2 root     root           584 Mar 16  2022 port_filtering
+drwxr-xr-x    2 root     root           584 Mar 16  2022 port_forward
+drwxr-xr-x    2 root     root           528 Mar 16  2022 reserved_ip
+drwxr-xr-x    2 root     root           296 Mar 16  2022 resetting
+drwxr-xr-x    2 root     root           296 Mar 16  2022 restarting
+drwxr-xr-x    2 root     root           440 Mar 16  2022 session_log_info
+drwxr-xr-x    2 root     root           528 Mar 16  2022 set_passcode
+drwxr-xr-x    2 root     root           584 Mar 16  2022 settings_virtual
+drwxr-xr-x    2 root     root           296 Mar 16  2022 shutdown
+drwxr-xr-x    2 root     root           296 Mar 16  2022 sideload_software_install
+drwxr-xr-x    2 root     root           296 Mar 16  2022 sideload_software_update
+drwxr-xr-x    2 root     root           584 Mar 16  2022 sim
+drwxr-xr-x    2 root     root           584 Mar 16  2022 sms
+drwxr-xr-x    2 root     root           296 Mar 16  2022 software_install
+drwxr-xr-x    2 root     root           824 Mar 16  2022 software_update
+drwxr-xr-x    2 root     root           656 Mar 16  2022 status_current
+drwxr-xr-x    2 root     root           584 Mar 16  2022 status_diagnostics
+drwxr-xr-x    2 root     root           672 Mar 16  2022 status_logs
+drwxr-xr-x    2 root     root           304 Mar 16  2022 under_construction
+drwxr-xr-x    2 root     root           960 Mar 16  2022 user_preferences
+drwxr-xr-x    2 root     root           440 Mar 16  2022 vpn
+drwxr-xr-x    2 root     root          1200 Mar 16  2022 wifi_advanced_settings
+drwxr-xr-x    2 root     root           528 Mar 16  2022 wifi_guest_settings
+drwxr-xr-x    2 root     root           528 Mar 16  2022 wifi_primary_settings
+drwxr-xr-x    2 root     root           768 Mar 16  2022 wwan_settings
+
+=== CRON JOBS ===
+cat: can't open '/var/spool/cron/crontabs/*': No such file or directory
+
+=== INIT SCRIPTS ===
+total 164
+drwxr-xr-x    2 root     root          2904 Mar 16  2022 .
+drwxr-xr-x   30 root     root          5808 Jan  1 00:36 ..
+-rwxr-xr-x    1 root     root          3172 Sep 20  2017 adbd
+-rwxr-xr-x    1 root     root          1360 Sep  1  2015 avahi-daemon
+-rwxr-xr-x    1 root     root           203 Mar 30  2018 chgrp-diag
+-rwxr-xr-x    1 root     root           982 Mar 30  2018 data-init
+-rwxr-xr-x    1 root     root          1150 Apr  1  2017 dropbear
+-rwxr-xr-x    1 root     root          2190 Apr  1  2017 find_partitions.sh
+-rwxr-xr-x    1 root     root          4483 Mar 30  2018 firmware-links.sh
+-rwxr-xr-x    1 root     root           926 Apr  1  2017 halt
+-rwxr-xr-x    1 root     root           295 Mar 30  2018 init_irsc_util
+-rwxr-xr-x    1 root     root           378 Mar 30  2018 init_sys_mss
+-rwxr-xr-x    1 root     root           545 Mar 30  2018 ipa_fws.sh
+-rwxr-xr-x    1 root     root           632 Mar 30  2018 netmgrd
+-rwxr-xr-x    1 root     root           717 Mar 30  2018 port_bridge
+-rwxr-xr-x    1 root     root          4248 Apr  1  2017 rc
+-rwxr-xr-x    1 root     root          2856 Apr  1  2017 rcS
+-rwxr-xr-x    1 root     root           402 Apr  1  2017 reboot
+-rwxr-xr-x    1 root     root           160 Mar 30  2018 reset_reboot_cookie
+-rwxr-xr-x    1 root     root           624 Apr  1  2017 rngd
+-rwxr-xr-x    1 root     root           582 Apr  1  2017 runlevel.sh
+-rwxr-xr-x    1 root     root           954 Apr  1  2017 samba
+-rwxr-xr-x    1 root     root           853 Mar 30  2018 start_QCMAP_ConnectionManager_le
+-rwxr-xr-x    1 root     root           393 Mar 30  2018 start_atfwd_daemon
+-rwxr-xr-x    1 root     root           777 Mar 30  2018 start_eMBMs_TunnelingModule_le
+-rwxr-xr-x    1 root     root          2127 Jun 15  2018 start_ipacm_le
+-rwxr-xr-x    1 root     root           695 Mar 30  2018 start_ipacm_perf_le
+-rwxr-xr-x    1 root     root          2150 Mar 30  2018 start_ipacmdiag_le
+-rwxr-xr-x    1 root     root           692 Mar 30  2018 start_qti_le
+-rwxr-xr-x    1 root     root          2512 Apr  1  2017 start_shortcut_fe_le
+-rwxr-xr-x    1 root     root           686 Mar 30  2018 start_stop_qmi_ip_multiclient
+-rwxr-xr-x    1 root     root           713 Mar 30  2018 start_stop_qti_ppp_le
+-rwxr-xr-x    1 root     root           429 Apr  1  2017 sync.init
+-rwxr-xr-x    1 root     root           194 Apr  1  2017 sync.sh
+-rwxr-xr-x    1 root     root           509 Apr  1  2017 syslogd
+-rwxr-xr-x    1 root     root           580 Mar 30  2018 tftp_server.sh
+-rwxr-xr-x    1 root     root          2108 Sep  1  2015 udev
+-rwxr-xr-x    1 root     root          6207 Sep 20  2017 usb
+-rwxr-xr-x    1 root     root           635 Apr  1  2017 vsftpd
+-rwxr-xr-x    1 root     root          3172 Sep 20  2017 wlan
+
+=== USERS ===
+################################################################################
+# @file  /etc/passwd
+# @brief Define passwords for each user.
+#
+# ------------------------------------------------------------------------------
+# Copyright (C) 2007 QUALCOMM Incorporated. 
+# All Rights Reserved. QUALCOMM Proprietary and Confidential.
+# ------------------------------------------------------------------------------
+################################################################################
+root:x:0:0:root:/root:/bin/sh
+daemon:*:1:1:daemon:/usr/sbin:/bin/sh
+bin:*:2:2:bin:/bin:/bin/sh
+sys:*:3:3:sys:/dev:/bin/sh
+sync:*:4:100:sync:/bin:/bin/sync
+man:*:6:100:man:/var/catman:/bin/sh
+uucp:*:10:10:uucp:/var/spool/uucp:/bin/sh
+proxy:*:13:13:proxy:/bin:/bin/sh
+majordom:*:30:31:majordom:/usr/lib/majordomo:/bin/sh
+postgres:*:31:32:postgres:/var/postgres:/bin/sh
+www-data:*:33:33:www-data:/var/www:/bin/sh
+backup:*:34:34:backup:/var/backup:/bin/sh
+dos:*:35:35:dos emulation:/var/dos:/bin/sh
+nobody:*:99:3003:nobody:/tmp:/bin/sh
+mifi:x:1001:3003:Mifi User,,,:/home/mifi:/bin/sh
+lighttpd:*:4000:4000:lighttpd web server:/home/lighttpd:/bin/false
+twonky:*:1002:1002:twonky server:/opt/twonky:/bin/sh
+
+=== ENVIRONMENT ===
+CONSOLE=/dev/console
+SHLVL=5
+LD_LIBRARY_PATH=:/opt/nvtl/lib
+HOME=/
+runlevel=3
+INIT_VERSION=sysvinit-2.88
+TERM=linux
+PATH=/sbin:/usr/sbin:/bin:/usr/bin:/opt/nvtl/bin
+RUNLEVEL=3
+PREVLEVEL=7
+SHELL=/bin/sh
+previous=7
+PWD=/
+
+=== KERNEL MODULES ===
+brcmfmac 254542 0 - Live 0xbf1a1000 (O)
+cfg80211 574923 1 brcmfmac, Live 0xbf0dd000 (O)
+brcmutil 7953 1 brcmfmac, Live 0xbf025000 (O)
+compat 92314 2 brcmfmac,cfg80211, Live 0xbf0bb000 (O)
+ramoops 2452 0 - Live 0xbf00a000
+shortcut_fe_cm 7004 0 - Live 0xbf0b8000
+shortcut_fe_ipv6 66321 1 shortcut_fe_cm, Live 0xbf0a2000
+shortcut_fe 67146 1 shortcut_fe_cm, Live 0xbf08c000
+bq27520_battery_nvtl 10807 0 - Live 0xbf085000
+msm_mnd_buzzer 6309 0 - Live 0xbf080000
+cyttsp5_i2c 5151 0 - Live 0xbf07b000
+cyttsp5_loader 9690 0 - Live 0xbf075000
+cyttsp5_device_access 55852 0 - Live 0xbf062000
+cyttsp5 178775 3 cyttsp5_i2c,cyttsp5_loader,cyttsp5_device_access, Live 0xbf02d000
+fusb30x_whole 86523 0 - Live 0xbf00e000
+smb1351_charger_nvtl 33538 2 - Live 0xbf000000
+

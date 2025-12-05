@@ -1,0 +1,424 @@
+<tmpl_if isHidden>
+   <div class="notification app error">
+       <tmpl_var _("webui", "webui_app_hidden_text")>
+   </div>
+<tmpl_else>
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		$(function()
+		{
+			$("#SIMPinAction").change(function() {
+				var selectedValue = $(this).find(":selected").val();
+				if (selectedValue == "changePin") {
+					<tmpl_if SIMPinNewShow>	
+						$(this).closest(".table").find(".changePin").show();
+						<tmpl_if SIMPinNewLocked>
+							$(this).closest(".table").find(".changePin").prop("disabled", true);
+						<tmpl_else>
+							$(this).closest(".table").find(".changePin").prop("disabled", false);
+						</tmpl_if>
+					</tmpl_if>
+				} else {
+					$(this).closest(".table").find(".changePin").hide();
+				}
+			});
+			<tmpl_if IN_SET(wrongPIN, "true")>
+				$(".error").show();
+			</tmpl_if>
+			<tmpl_if IN_SET(simStatusValue, SIMSTATUS_PUK_LOCKED)>
+				$(".notification.app.error").hide();
+				$(".error").hide();
+				<tmpl_if IN_SET(wrongPUK, "true")>
+					$(".notification.app.error").show();
+					$(".error").show();
+				</tmpl_if>
+			</tmpl_if>
+		});
+		/* ]]> */
+	</script>
+	<tmpl_if isLocked>
+	    <div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+	    </div>
+	</tmpl_if>
+
+	<tmpl_if errorCount>
+		<div class="notification app error">
+			<div class="notification_inner">
+				<p>
+					<tmpl_var _("webui", "webui_save_code_failed_text")>
+				</p>
+			</div>
+		</div>
+	</tmpl_if>
+
+	<tmpl_if gPostSuccess>
+		<div class="notification app success">
+			<div class="notification_inner">
+				<p>
+					<tmpl_var _("webui", "webui_save_code_success_text")>
+				</p>
+			</div>
+		</div>
+	</tmpl_if>
+	<tmpl_if IN_SET(wrongPIN, "true")>
+		<div class="notification app error">
+			<div class="notification_inner">
+				<p>
+					<tmpl_var _("webui", "adv_sim_invalid_pin_error_text")>
+				</p>
+			</div>
+		</div>
+	</tmpl_if>
+	<tmpl_if IN_SET(wrongPUK, "true")>
+		<div class="notification app error">
+			<div class="notification_inner">
+				<p>
+					<tmpl_var _("webui", "adv_sim_invalid_puk_error_text")>
+				</p>
+			</div>
+		</div>
+	</tmpl_if>
+
+	<tmpl_if IN_SET(simStatusValue, SIMSTATUS_PUK_LOCKED)>
+		<div class="note">
+			<p><tmpl_var _("webui", "adv_sim_puk_locked_intro_text")></p>
+		</div>
+	<tmpl_else>
+		<div class="note">
+			<p><tmpl_udf GET_PO_TEXT("adv_sim_intro_text", gProductName)></p>
+		</div>
+	</tmpl_if>
+
+	<form method="POST" action="<tmpl_udf GET_URI('sim')>">
+		<fieldset class="first">
+			<input type="hidden" name="gSecureToken" id="gSecureToken" value="<tmpl_var gSecureToken>" />
+			<div class="table">
+				<tmpl_if IN_SET(simStatusValue, SIMSTATUS_READY, SIMSTATUS_UNLOCKED, SIMSTATUS_PIN_LOCKED, SIMSTATUS_PUK_LOCKED)>
+					<div class="row clearfix">
+						<div class="col label">
+							<tmpl_if showToolTip>
+								<div class="tooltip tooltip-help" title="<tmpl_var _('webui', 'adv_sim_pin_lock_feature_tool_tip_text')>">
+									<tmpl_var _("webui", "webui_inline_help_icon")>
+								</div>
+							</tmpl_if>
+							<tmpl_var _("webui", "adv_sim_pin_lock_feature_label")>
+						</div>
+						<div class="col input" id="pinLockFeature"><tmpl_var pinLockFeature></div>
+						<div class="col help">
+							<tmpl_udf GET_PO_TEXT("adv_sim_pin_lock_feature_help_text", gProductName)>
+						</div>
+					</div>					
+				</tmpl_if>
+				<div class="row clearfix">
+					<div class="col label">
+						<tmpl_if showToolTip>
+							<div class="tooltip tooltip-help" title="<tmpl_var _('webui', 'adv_sim_status_tool_tip_text')>">
+								<tmpl_var _("webui", "webui_inline_help_icon")>
+							</div>
+						</tmpl_if>
+						<tmpl_var _("webui", "adv_sim_status_label")>
+					</div>
+					<div class="col input" id="simStatus"><tmpl_var simStatus>
+					<tmpl_if IN_SET(simStatusValue, SIMSTATUS_NOT_FOUND)>
+					<div class="col help">
+						<p class="error"><tmpl_udf GET_PO_TEXT("adv_sim_current_sim_status_help_text", gProductName)></p>
+					</div>
+					</div>
+					</tmpl_if>
+				</div>
+			</div><!-- /.table-->
+
+		<tmpl_if IN_SET(simStatusValue, SIMSTATUS_PIN_LOCKED)>
+			<div class="table">
+				<tmpl_if SIMPinCurrentShow>
+					<div class="row clearfix">
+						<div class="col label">
+							<tmpl_if showToolTip>
+								<div class="tooltip tooltip-help" title="<tmpl_var _('webui', 'adv_sim_enter_current_pin_tool_tip_text')>">
+									<tmpl_var _("webui", "webui_inline_help_icon")> 
+								</div>
+							</tmpl_if>
+							<label for="SIMPinCurrent"><tmpl_var _("webui", "adv_sim_enter_current_pin_label")></label>
+						</div>
+						<div class="col input">
+							<input type="text" class="pin" maxlength="8" id="SIMPinCurrent" name="SIMPinCurrent"<tmpl_if SIMPinCurrentError> class="error"</tmpl_if> <tmpl_if SIMPinCurrentLocked> disabled="disable"</tmpl_if>/>
+						</div>
+						<div class="col help">
+							<tmpl_var _("webui", "adv_sim_default_pin_help_text")>
+						</div>
+						<tmpl_if SIMPinCurrentError>
+							<div class="col inline_error">
+								<tmpl_var SIMPinCurrentError>
+							</div>
+						</tmpl_if>
+					</div>
+				</tmpl_if>
+			</div><!-- /.table-->
+
+			<p class="error" style="display:none;">
+				<span id="simPinCounter"><tmpl_var simPinCounter></span><tmpl_var _("webui", "adv_sim_invalid_pin_counter_text")>
+			</p>
+
+			<p class="warning">
+				<tmpl_udf GET_PO_TEXT("adv_sim_invalid_pin_warning_text", gProductName)>
+			</p>
+
+			<div class="button_container clearfix">
+				<button type="submit" class="primary"<tmpl_if isLocked> disabled="disabled"</tmpl_if>>
+					<tmpl_var _("webui", "adv_sim_unlock_button")>
+				</button>
+			</div>
+		</tmpl_if>
+
+		<tmpl_if IN_SET(simStatusValue, SIMSTATUS_PUK_LOCKED)>
+			<div class="table">
+				<tmpl_if SIMPukCurrentShow> 
+					<div class="row clearfix">
+						<div class="col label">
+							<h4><label for="SIMPukCurrent"><tmpl_var _("webui", "adv_sim_puk_code_label")></label></h4>
+						</div>
+						<div class="col input">
+							<input type="text" class="puk" maxlength="8" id="SIMPukCurrent" name="SIMPukCurrent"<tmpl_if SIMPukCurrentLocked> disabled="disabled" </tmpl_if><tmpl_if SIMPukCurrentError> class="error"</tmpl_if> />
+						</div>
+						<tmpl_if SIMPukCurrentError>
+							<div class="col inline_error">
+								<tmpl_var SIMPukCurrentError>
+							</div>
+						</tmpl_if>
+					</div>
+				</tmpl_if>
+
+				<tmpl_if SIMPinNewShow>
+					<div class="row clearfix">
+						<div class="col label">
+							<h4><label for="SIMPinNew"><tmpl_var _("webui", "adv_sim_new_pin_label")></label></h4>
+						</div>
+						<div class="col input">
+							<input type="text" class="pin" maxlength="8" id="SIMPinNew" name="SIMPinNew"<tmpl_if SIMPinNewError> class="error"</tmpl_if> <tmpl_if SIMPinNewLocked> disabled="disabled" </tmpl_if>/>
+						</div>
+						<tmpl_if SIMPinNewError>
+							<div class="col inline_error">
+								<tmpl_var SIMPinNewError>
+							</div>
+						</tmpl_if>
+					</div>
+				</tmpl_if>
+
+				<tmpl_if SIMPinNewConfirmShow>
+					<div class="row clearfix">
+						<div class="col label">
+							<h4><label for="SIMPinNewConfirm"><tmpl_var _("webui", "adv_sim_confirm_new_pin_label")></label></h4>
+						</div>
+						<div class="col input">
+							<input type="text" class="pin" maxlength="8" id="SIMPinNewConfirm" name="SIMPinNewConfirm"<tmpl_if SIMPinNewConfirmLocked> disabled="disabled" </tmpl_if><tmpl_if SIMPinNewConfirmError> class="error"</tmpl_if> />
+						</div>
+						<tmpl_if SIMPinNewConfirmError>
+							<div class="col inline_error">
+								<tmpl_var SIMPinNewConfirmError>
+							</div>
+						</tmpl_if>
+					</div>
+				</tmpl_if>
+			</div><!-- /.table-->
+
+			<div class="error" style="display:none;">
+				<p>
+					<span id="simPukCounter"><tmpl_var simPukCounter></span><tmpl_var _("webui", "adv_sim_invalid_puk_counter_text")>
+				</p>
+			</div>
+
+			<p class="warning">
+				<tmpl_var _("webui", "adv_sim_invalid_puk_warning_text")>
+			</p>
+			
+			<div class="button_container clearfix">
+				<button type="submit" class="primary"<tmpl_if isLocked> disabled="disabled"</tmpl_if>>
+					<tmpl_var _("webui", "webui_save_button")>
+				</button>
+			</div>
+		</tmpl_if>
+
+		<tmpl_if IN_SET(simStatusValue, SIMSTATUS_READY)>
+			<div class="table">
+				<tmpl_if SIMPinActionShow>
+					<div class="row clearfix">
+						<div class="col label">
+							<h4><label for="SIMPinAction"><tmpl_var _("webui", "adv_sim_desired_action_label")></label></h4>
+						</div>
+						<div class="col input">
+							<select name="SIMPinAction" id="SIMPinAction"<tmpl_if SIMPinActionError> class="error"</tmpl_if><tmpl_if SIMPinActionLocked> disabled="disabled" </tmpl_if>>
+								<option value="enablePinLock"><tmpl_var _("webui", "adv_sim_enable_pin_lock_option")></option>
+							</select>
+						</div>
+						<tmpl_if SIMPinActionError>
+							<div class="col inline_error">
+								<tmpl_var SIMPinActionError>
+							</div>
+						</tmpl_if>
+					</div>
+				</tmpl_if>
+
+				<tmpl_if SIMPinCurrentShow>
+					<div class="row clearfix">
+						<div class="col label">
+							<tmpl_if showToolTip>
+								<div class="tooltip tooltip-help" title="<tmpl_var _('webui', 'adv_sim_enter_current_pin_tool_tip_text')>">
+									<tmpl_var _("webui", "webui_inline_help_icon")>
+								</div>
+							</tmpl_if>
+
+							<label for="SIMPinCurrent"><tmpl_var _("webui", "adv_sim_current_pin_label")></label>
+						</div>
+						<div class="col input">
+							<input type="text" class="pin" maxlength="8" id="SIMPinCurrent" name="SIMPinCurrent"<tmpl_if SIMPinCurrentLocked> disabled="disabled" </tmpl_if><tmpl_if SIMPinCurrentError> class="error"</tmpl_if> />
+						</div>
+						<div class="col help">
+							<tmpl_var _("webui", "adv_sim_default_pin_help_text")>
+						</div>
+						<tmpl_if SIMPinCurrentError>
+							<div class="col inline_error">
+								<tmpl_var SIMPinCurrentError>
+							</div>
+						</tmpl_if>
+					</div>
+				</tmpl_if>
+			<tmpl_if SIMPinNewShow>
+				<div class="row clearfix changePin" style="display:none;">
+					<div class="col label">
+						<h4><label for="SIMPinNew"><tmpl_var _("webui", "adv_sim_new_pin_label")></label></h4>
+					</div>
+					<div class="col input">
+						<input type="text" class="pin" maxlength="8" id="SIMPinNew" name="SIMPinNew"<tmpl_if SIMPinNewLocked> disabled="disabled" </tmpl_if><tmpl_if SIMPinNewError> class="error"</tmpl_if> />
+					</div>
+					<tmpl_if SIMPinNewError>
+						<div class="col inline_error">
+							<tmpl_var SIMPinNewError>
+						</div>
+					</tmpl_if>
+				</div>
+			</tmpl_if>
+
+			<tmpl_if SIMPinNewConfirmShow>
+				<div class="row clearfix changePin" style="display:none;">
+					<div class="col label">
+						<h4><label for="SIMPinNewConfirm"><tmpl_var _("webui", "adv_sim_confirm_new_pin_label")></label></h4>
+					</div>
+					<div class="col input">
+						<input type="text" class="pin" maxlength="8" id="SIMPinNewConfirm" name="SIMPinNewConfirm"<tmpl_if SIMPinNewConfirmLocked> disabled="disabled" </tmpl_if><tmpl_if SIMPinNewConfirmError> class="error"</tmpl_if> />
+					</div>
+					<tmpl_if SIMPinNewConfirmdError>
+						<div class="col inline_error">
+							<tmpl_var SIMPinNewConfirmError>
+						</div>
+					</tmpl_if>
+				</div>
+			</tmpl_if>
+			</div><!-- /.table-->
+
+			<p class="error" style="display:none;">
+				<span id="simPinCounter2"><tmpl_var simPinCounter></span><tmpl_var _("webui", "adv_sim_invalid_pin_counter_text")>
+			</p>
+
+			<p class="warning">
+				<tmpl_udf GET_PO_TEXT("adv_sim_invalid_pin_warning_text", gProductName)>
+			</p>
+			
+			<div class="button_container clearfix">
+				<button type="submit" class="primary"<tmpl_if isLocked> disabled="disabled"</tmpl_if>>
+					<tmpl_var _("webui", "webui_save_button")>
+				</button>
+			</div>
+		</tmpl_if>
+
+		<tmpl_if IN_SET(simStatusValue, SIMSTATUS_UNLOCKED)>
+			<div class="table">
+			<tmpl_if SIMPinActionShow>
+				<div class="row clearfix">
+					<div class="col label">
+						<h4><label for="SIMPinAction"><tmpl_var _("webui", "adv_sim_desired_action_label")></label></h4>
+					</div>
+					<div class="col input">
+						<select name="SIMPinAction" id="SIMPinAction"<tmpl_if SIMPinActionLocked> disabled="disabled"</tmpl_if><tmpl_if SIMPinActionError> class="error"</tmpl_if>>
+							<option value="disablePinLock"><tmpl_var _("webui", "adv_sim_disable_pin_option")></option>
+							<option value="changePin" <tmpl_if isChangePin>  selected="selected"</tmpl_if>><tmpl_var _("webui", "adv_sim_change_pin_option")></option>
+						</select>
+					</div>
+				</div>
+			</tmpl_if>
+			<tmpl_if SIMPinCurrentShow>
+				<div class="row clearfix">
+					<div class="col label">
+						<tmpl_if showToolTip>
+							<div class="tooltip tooltip-help" title="<tmpl_var _('webui', 'adv_sim_enter_current_pin_tool_tip_text')>">
+								<tmpl_var _("webui", "webui_inline_help_icon")>
+							</div>
+							</tmpl_if>
+						<label for="SIMPinCurrent"><tmpl_var _("webui", "adv_sim_enter_current_pin_label")></label>
+					</div>
+					<div class="col input">
+						<input type="text" class="pin" maxlength="8" id="SIMPinCurrent" name="SIMPinCurrent"<tmpl_if SIMPinCurrentLocked> disabled="disabled"</tmpl_if><tmpl_if SIMPinCurrentError> class="error"</tmpl_if> />
+					</div>
+					<div class="col help">
+						<tmpl_var _("webui", "adv_sim_default_pin_help_text")>
+					</div>
+					<tmpl_if SIMPinCurrentError>
+						<div class="col inline_error">
+							<tmpl_var SIMPinCurrentError>
+						</div>
+					</tmpl_if>
+				</div>
+			</tmpl_if>
+			<tmpl_if SIMPinNewShow>
+				<div class="row clearfix changePin"<tmpl_unless isChangePin> style="display:none;"</tmpl_unless>>
+					<div class="col label">
+						<h4><label for="SIMPinNew"><tmpl_var _("webui", "adv_sim_new_pin_label")></label></h4>
+					</div>
+					<div class="col input">
+						<input type="text" class="pin" maxlength="8" id="SIMPinNew" name="SIMPinNew"<tmpl_if SIMPinNewLocked> disabled="disabled"</tmpl_if><tmpl_if SIMPinNewError> class="error"</tmpl_if> />
+					</div>
+					<tmpl_if SIMPinNewError>
+						<div class="col inline_error">
+							<tmpl_var SIMPinNewError>
+						</div>
+					</tmpl_if>
+				</div>
+			</tmpl_if>
+			<tmpl_if SIMPinNewConfirmShow>
+				<div class="row clearfix changePin"<tmpl_unless isChangePin> style="display:none;"</tmpl_unless>>
+					<div class="col label">
+						<h4><label for="confirmNewPinLocked"><tmpl_var _("webui", "adv_sim_confirm_new_pin_label")></label></h4>
+					</div>
+					<div class="col input">
+						<input type="text" class="pin" maxlength="8" id="SIMPinNewConfirm" name="SIMPinNewConfirm"<tmpl_if SIMPinNewConfirmLocked> disabled="disabled"</tmpl_if><tmpl_if SIMPinNewConfirmError> class="error"</tmpl_if> />
+					</div>
+					<tmpl_if SIMPinNewConfirmError>
+						<div class="col inline_error">
+							<tmpl_var SIMPinNewConfirmError>
+						</div>
+					</tmpl_if>
+				</div>
+			</tmpl_if>
+			</div><!-- /.table-->
+
+			<p class="error" style="display:none;">
+				<span id="simPinCounter2"><tmpl_var simPinCounter></span><tmpl_var _("webui", "adv_sim_invalid_pin_counter_text")>
+			</p>
+
+			<p class="warning">
+				<tmpl_udf GET_PO_TEXT("adv_sim_invalid_pin_warning_text", gProductName)>
+			</p>
+
+			<div class="button_container clearfix">
+				<button type="submit" class="primary"<tmpl_if isLocked> disabled="disabled"</tmpl_if>>
+					<tmpl_if IN_SET(simStatusValue, SIMSTATUS_PIN_LOCKED, SIMSTATUS_PUK_LOCKED)>
+						<tmpl_var _("webui", "adv_sim_unlock_button")>
+					<tmpl_else>
+						<tmpl_var _("webui", "webui_save_button")>
+					</tmpl_if>
+				</button>
+			</div>
+		</tmpl_if>
+		</fieldset>
+	</form>
+</tmpl_if>

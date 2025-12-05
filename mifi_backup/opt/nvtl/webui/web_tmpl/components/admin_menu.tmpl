@@ -1,0 +1,142 @@
+<script type="text/javascript">
+	var smsTitle = '<tmpl_var _("webui", "sms_menu_text")>'; <tmpl_comment> This is used as header for SMS popup when clicked from sms notification</tmpl_comment>
+	$(function()
+	{
+		// Menu Accordion.
+		$("#admin_menu, #administrator").on("click", function() 
+		{
+			showHideAdminMenu();
+		});
+
+		$("#restart_jetpack").on("click", function() 
+		{
+			showHideAdminMenu();
+			var msg = '<p><tmpl_udf GET_PO_TEXT("restart_jetpack_confirmation_text", gProductName)></p>';
+			var url = '<tmpl_udf GET_URI("restarting")>';
+			showRestartSignoutModal(msg, url);
+		});
+
+		$("#logout, .logout").on("click", function() 
+		{
+			showHideAdminMenu();
+			var msg = '<p><tmpl_var _("webui", "admin_menu_login_confirmation_text")></p>';
+			var url = '<tmpl_udf GET_URI("logout")>';
+			var title = '<tmpl_var _("webui", "admin_menu_logout_title_text")>';
+			var rightButton = '<tmpl_var _("webui","admin_menu_logout_confirm_button")>';
+			var leftButton = '<tmpl_var _("webui", "webui_modal_cancel_button")>';
+			showRestartSignoutModal(msg, url, title, rightButton, leftButton);
+		});
+
+		$("#sms, #messages").on("click", function() 
+		{
+			showHideAdminMenu();
+			var url = '<tmpl_udf GET_URI("sms")>';
+			var title = '<tmpl_var _("webui", "sms_menu_text")>';
+			loadHtmlPage(title, url);
+		});
+
+		$("#admin_settings").on("click", function() 
+		{
+			var width = 700;
+			var height = 700;
+
+			showHideAdminMenu();
+			var url = '<tmpl_udf GET_URI("set_passcode")>';
+			
+			<tmpl_if IN_SET(gIsLoggedIn, "1", "true")>
+				var title = '<tmpl_var _("webui", "admin_settings_menu_text")>';
+			<tmpl_else>
+				var title = '<tmpl_var _("webui", "vzw_header_login_link")>';
+			</tmpl_if>
+			loadHtmlPage(title, url, width, height);
+		});
+
+		$("#login, .login").on("click", function() 
+		{
+			var width = 700;
+			var height = 500;
+
+			showHideAdminMenu();
+			var url = '<tmpl_udf GET_URI("login")>';
+			var title = '<tmpl_var _("webui", "vzw_header_login_link")>';
+			loadHtmlPage(title, url, width, height);
+		});
+		
+	});
+
+	function showHideAdminMenu()
+	{
+		if ($(".sub_menu").hasClass("active_sub_menu")) {
+			$(".sub_menu").removeClass("active_sub_menu");
+			$("#header").css("overflow", "hidden");
+			$("a.helpLink").css("position","unset");
+		} else {
+			$(".sub_menu").addClass("active_sub_menu");
+			$("#header").css("overflow", "visible");
+		}
+	}
+
+	function showRestartSignoutModal(msg, url, title, rightButton, leftButton)
+	{
+		var title = title || '<tmpl_var _("webui", "webui_modal_title")>';
+		var leftButton = leftButton || '<tmpl_var _("webui", "webui_modal_cancel_button")>';
+		var rightButton = rightButton || '<tmpl_var _("webui", "webui_modal_confirm_button")>';
+		modalPopup.createWindow(
+			title,
+			msg,
+			430, 200,
+			[
+				{
+					text: leftButton,
+					className: "cancel"
+				},
+				{
+					text: rightButton,
+					className: "primary",
+					trigger: function(){
+						location.replace(url);
+					}
+				}
+			]
+		);
+	}
+
+	function loadHtmlPage(title, url, popupWidth, poputHeight)
+	{
+		var width = popupWidth || 900;
+		var height = poputHeight || 700;
+
+		modalPopup.loadPage(
+			title,
+			url,
+			width, 
+			height, 
+			function() {
+			// Uniform Init -- We're using Uniform 2+.
+			var uniEl = "select, textarea, input:not(.toggleSettingContainer input:checkbox)";
+			// Instantiate Uniform on page load.
+			$(uniEl).uniform();
+			}, 
+			function() {
+				if(typeof gRedirectUrl != 'undefined'&& gRedirectUrl != ""){
+					location.replace('<tmpl_var gRedirectUrl>') 
+				}
+			}
+		);
+	}
+
+	/* ]]> */
+</script>
+<ul id="admin_navigation">
+	<li id="administrator"><tmpl_var _("webui", "vzw_header_administrator_link")></li>
+	<li id="sms"><tmpl_var _("webui", "sms_menu_text")></li>
+	<li id="admin_settings"><tmpl_var _("webui", "admin_settings_menu_text")></li>
+	<li id="restart_jetpack"><tmpl_udf GET_PO_TEXT("restart_jetpack_text", gProductName)></li>
+	<tmpl_unless IN_SET(gPageId, "login")>
+		<tmpl_if IN_SET(gIsLoggedIn, "1", "true")>
+				<li id="logout"><tmpl_var _("webui", "vzw_header_logout_link")></li>
+		<tmpl_else>
+				<li id="login"><tmpl_var _("webui", "vzw_header_login_link")></li>
+		</tmpl_if>
+	</tmpl_unless>
+</ul>

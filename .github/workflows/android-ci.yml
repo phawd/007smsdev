@@ -2,15 +2,25 @@ name: Android CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main", "master" ]
+    paths:
+      - 'app/**'
+      - '**/*.kt'
+      - '**/*.kts'
+      - '**/*.gradle'
+      - 'gradle/**'
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main", "master" ]
+    paths:
+      - 'app/**'
+      - '**/*.kt'
+      - '**/*.kts'
+      - '**/*.gradle'
+      - 'gradle/**'
 
 jobs:
   android-build:
     runs-on: ubuntu-latest
-    if: |
-      contains(github.event.head_commit.message, 'android') || always()
     steps:
       - uses: actions/checkout@v4
 
@@ -27,6 +37,9 @@ jobs:
             ~/.gradle/caches
             ~/.gradle/wrapper
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+
+      - name: Grant execute for gradlew
+        run: chmod +x ./gradlew || true
 
       - name: Build Debug APK
         run: ./gradlew assembleDebug --no-daemon || true

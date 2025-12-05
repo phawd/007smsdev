@@ -1,0 +1,48 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_menu_text")></h1>
+        <h2>Vue d'ensemble</h2>
+        <p>La carte SIM insérée dans votre <tmpl_var _("webui", "webui_product_name")> peut être verrouillée à l'aide d'un NIP. Si la carte SIM est verrouillée, vous devez entrer le NIP avant de vous connecter au réseau mobile. Une fois entré, le NIP est mémorisé jusqu'au prochain arrêt. </p>
+
+	<p> Cette page vous permet non seulement d'entrer le NIP de la carte SIM lorsque c'est nécessaire, mais aussi de déverrouiller votre carte SIM ou de modifier le NIP de votre carte SIM. Habituellement, vous devez fournir le NIP existant pour modifier la carte SIM. </p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_pin_lock_feature_label"), (size(_("webui", "adv_sim_pin_lock_feature_label")) - size(":")))>
+</h3>
+		<p>Ce champ indique si la fonction de verrouillage par NIP est utilisée ou non. Si la fonction est « Activée », le verrouillage par NIP a été activé et le NIP de la carte SIM doit être saisi pour se connecter au réseau mobile. Si la fonction est « Désactivée », la fonction de verrouillage du NIP n'est pas activée et le NIP de la carte SIM n'est pas requis. </p>
+
+	<h3><tmpl_var truncate(_("webui", "adv_sim_status_label"), (size(_("webui", "adv_sim_status_label")) - size(":")))></h3>
+	<p>Ce champ indique l'état actuel de la carte SIM. Les valeurs possibles sont les suivantes : </p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>Prête : C'est l'état normal. Le NIP de la carte SIM n'est pas utilisé. </li>
+	        <li>NIP verrouillé : Le NIP de la carte SIM doit être entré avant de pouvoir utiliser le réseau mobile.</li>
+	        <li>Code PUK verrouillé : Le code PUK de la carte SIM doit être entré pour pouvoir continuer. Votre fournisseur de service peut vous fournir le code PUK.</li>
+	        <li>Déverrouillé : Le NIP de la carte SIM est requis, mais a déjà été entré. </li>
+	        <li>Pas de carte SIM : Aucune carte SIM n'a été détectée. Si vous avez une carte SIM, vérifiez qu'elle est insérée correctement.</li>
+	        <li>Erreur de la carte SIM : Une carte SIM a été détectée, mais elle n'a pas répondu comme prévu et ne peut être utilisée. </li>       
+	        </ul>
+	</div>
+        <h2>Opérations de la carte SIM</h2>
+        <p>Les actions possibles dépendent de l'état de la carte SIM. Toutes les opérations possibles sont listées et expliquées ci-dessous. </p>
+
+		<h3>Verrouillage par NIP</h3>
+		<p>Si la carte SIM est actuellement verrouillée par NIP, on vous demandera d'entrer le NIP. Il est à noter que si un NIP incorrect est entré trop de fois, la carte SIM sera verrouillée par le code PUK. Un compteur sur la page indique après combien de tentatives infructueuses le verrouillage par code PUK sera activé. Une fois le verrouillage par code PUK activé, vous devrez obtenir le code PUK auprès de votre fournisseur de service. </p>
+		<h3>Verrouillage par code PUK</h3>
+		<p>Si la carte SIM est actuellement verrouillée par code PUK, la seule opération possible est d'entrer le code PUK. Il est à noter que si un code PUK incorrect est entré trop de fois, la carte SIM sera inutilisable de façon permanente. Vous devrez vous procurer une nouvelle carte SIM. Un compteur sur la page indique le nombre de tentatives restantes. </p>
+		<h3><tmpl_var _("webui", "adv_sim_enable_pin_lock_option")></h3>
+		<p>Cela règle la carte SIM de manière à ce qu'un NIP soit requis au démarrage pour la connexion au réseau mobile. Pour effectuer cette opération, vous devez entrer le NIP actuel. </p>
+
+		<h3><tmpl_var _("webui", "adv_sim_disable_pin_option")></h3>
+		<p>Vous pouvez utiliser ce réglage pour désactiver un verrouillage par NIP qui a été activé au préalable, de sorte que la saisie d'un NIP ne soit plus requise pour se connecter au réseau mobile. Pour effectuer cette opération, vous devez entrer le NIP actuel. </p>
+		<h3><tmpl_var _("webui", "adv_sim_change_pin_option")></h3>
+		<p>Pour modifier le NIP existant, sélectionnez cette option, puis entrez les données requises : </p>
+		<div class="blockgroup">
+			<ul>
+			<li>NIP actuel</li>
+			<li>Nouveau NIP</li>
+			<li>Confirmer le nouveau NIP</li>
+			</ul>
+		</div>
+		<p>Le nouveau NIP doit être composé de 4, 6 ou 8 chiffres, selon votre carte SIM. </p>
+</div>
+<!-- id="sim" -->
+

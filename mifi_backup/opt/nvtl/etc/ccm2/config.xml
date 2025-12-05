@@ -1,0 +1,12 @@
+<Config>
+	<AirPlaneMode>
+		<WiFiDisabled>1</WiFiDisabled> 			            <!-- disable wifi in airplane mode --> 
+		<CellDataDisabled>1</CellDataDisabled> 			    <!-- disable cell data in airplane mode --> 
+	</AirPlaneMode>
+	<AutoConnectInterval>10</AutoConnectInterval> 			<!-- unit(seconds) --> 
+	<Interfaces>
+		<USB>rndis0</USB> <!--  USB interface name -->
+		<USB2>ecm0</USB2> <!--  USB2 interface name -->
+		<Ethernet>eth0</Ethernet> <!--  Ethernet interface name -->
+	</Interfaces>
+</Config>

@@ -1,0 +1,67 @@
+<script type="text/javascript">
+	/* <![CDATA[ */
+	$(function()
+	{
+		// Monitor and update badge counts in menu.
+		var $navConnDev = $("#navigation li.connected-devices");
+		var $navSMS = $("#navigation li.messages");
+
+		$(document).ajaxSuccess(function(e, xhr, settings)
+		{
+			if((xhr.responseText) && (settings.dataType == "json")) {
+				try {
+					var obj = jQuery.parseJSON(xhr.responseText || "null");
+
+					if((typeof obj.statusData.statusBarMaxWiFiClientListSize !== "undefined") &&
+					   (typeof obj.statusData.statusBarClientListSize !== "undefined")) {
+								 
+								var primaryClientListSize = parseInt(obj.statusData.statusBarWiFiClientListSize);
+								var guestClientListSize = parseInt(obj.statusData.statusBarGuestClientListSize);
+								var counts = "";
+								var totalAllowedClients = parseInt(obj.statusData.statusBarMaxWiFiClientListSize);
+								var totalConnectedClients = primaryClientListSize;
+								if (( typeof obj.statusData.statusBarGuestWifiEnabled !== "undefined") && (parseInt(obj.statusData.statusBarGuestWifiEnabled) > 0) ) {
+									totalConnectedClients = totalConnectedClients + guestClientListSize;
+								}
+						if (totalConnectedClients >= totalAllowedClients) {
+							updateBadge($navConnDev, '<tmpl_var _("webui", "status_bar_connected_devices_max")>'); // Max
+						} else {
+							updateBadge($navConnDev, totalConnectedClients);
+						}
+					}
+
+					if(typeof obj.statusData.statusBarSmsUnreadCount !== "undefined") {
+						updateBadge($navSMS, obj.statusData.statusBarSmsUnreadCount);
+					}
+				} catch(e) {}
+			}
+		});
+	});
+
+	function updateBadge($el, count)
+	{
+		var theCount = (count) ? count : 0;
+		var linkWrap = $el.find(".linkWrap");
+		$el.find("div.badge").remove();
+		linkWrap.removeClass("roomForBadge");
+		if( (theCount > 0) || isNaN(theCount) ) {
+			linkWrap.addClass("roomForBadge");
+			$el.prepend('<div class="badge">' + theCount + '</div>');
+		}
+	}
+	/* ]]> */
+</script>
+
+<tmpl_foreach gMenuLayout as menuItem>
+	<tmpl_if menuItem.__first__><ul id="navigation" class="clearfix"></tmpl_if>
+	<li class="menuitem <tmpl_var menuItem.itemClass><tmpl_if menuItem.__first__> first</tmpl_if><tmpl_if menuItem.__last__> last</tmpl_if>
+	<tmpl_foreach menuItem.children as child>
+		<tmpl_foreach child.children as grandchild>
+			<tmpl_if IN_SET(gPageId, menuItem.pageId, child.pageId, grandchild.pageId)> active</tmpl_if>
+		</tmpl_foreach>
+		<tmpl_if IN_SET(gPageId, menuItem.pageId, child.pageId)> active</tmpl_if>
+	</tmpl_foreach>
+	<tmpl_if IN_SET(gPageId, menuItem.pageId)> active</tmpl_if>
+	"><a href="<tmpl_var menuItem.url>" class="linkWrap <tmpl_var menuItem.itemClass>"><tmpl_if menuItem.menutitle><tmpl_var menuItem.menutitle><tmpl_else><tmpl_var menuItem.title></tmpl_if></a></li>
+	<tmpl_if menuItem.__last__></ul><!-- /#navigation --></tmpl_if>
+</tmpl_foreach>

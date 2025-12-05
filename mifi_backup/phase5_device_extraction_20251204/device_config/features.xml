@@ -1,0 +1,43 @@
+<Features>
+	<USBTethering>1</USBTethering>				<!-- USB Tethering support -->
+	<RadioTechnologies>95</RadioTechnologies> 		<!-- Enabled Radio technologies, bitmask of GSM(0x01),WCDMA(0x02),CDMA(0x04),EVDO(0x08),LTE(0x10),WiFi(0x40)-->
+	<WiFiAccessPoint>1</WiFiAccessPoint>			<!-- WiFi access point -->
+	<WiFiDualSsid>1</WiFiDualSsid> 				<!-- second WiFi SSID -->
+	<WiFiStation>0</WiFiStation>				<!-- WiFi station mode -->
+	<GPS>1</GPS>						<!-- location -->
+	<PowerSave>1</PowerSave> 				<!-- sleep mode -->
+	<IPv6>1</IPv6>						<!-- IPv6 -->
+	<DataDownloadAcceleration>0</DataDownloadAcceleration>	<!-- data acceleration for downloads ( proprietary Novatel Technology ) -->
+	<SMSMobileTerminated>1</SMSMobileTerminated>		<!-- mobile terminated SMS -->
+	<SMSMobileOriginated>1</SMSMobileOriginated>		<!-- mobile originated SMS -->
+	<Voice>0</Voice>					<!-- voice -->
+	<ParentalControl>0</ParentalControl>			<!-- parental controls for web traffic -->
+	<TR069>0</TR069>					<!-- TR069 -->
+	<WDCP>1</WDCP>						<!-- WDCP , Verizon Wireless proprietary remote management technology -->
+	<Ethernet>0</Ethernet>					<!-- ethernet -->
+	<SmartAgent>0</SmartAgent>				<!-- Smart agent, Novatel Wireless proprietary remote management technology -->
+	<OneWire>0</OneWire>					<!-- 1-wire -->	
+	<Accelerometer>0</Accelerometer>			<!-- accelerometer -->
+	<BatteryPack>1</BatteryPack> 				<!-- charge external devices -->
+	<USBSerial>0</USBSerial>				<!-- USB Serial device -->
+	<IPPassthrough>0</IPPassthrough>			<!-- IP Passthrough -->
+	<Webui>1</Webui> 					<!-- http server & web UI -->
+	<Deviceui>1</Deviceui> 					<!-- LCD UI -->
+	<VPN>1</VPN>						<!-- virtual private network -->
+	<DNS>1</DNS>						<!-- domain name server -->
+	<OMADM>1</OMADM>					<!-- OMADM agent -->
+	<OMADMFumo>1</OMADMFumo>				<!-- OMADM - FOTA functionality -->
+	<NUA>0</NUA>				                <!-- NUA agent supporting Novatel FOTA -->
+	<FOTA>1</FOTA>                                          <!-- Firmware update service for agents -->
+	<ANS>1</ANS>                       			<!-- Alerts and Notifications ( visual and aural ) on webUI and device -->
+	<FileSharing>1</FileSharing>                       	<!-- File Sharing of attached removable media contents -->
+	<DUS>1</DUS>                       			<!-- Data usage monitor service -->
+	<DUA>1</DUA>                       			<!-- Data usage agent -->
+	<SAM>0</SAM>                       			<!-- Site access monitor service -->
+	<LED>1</LED>						<!-- LED service -->
+	<CDRA>1</CDRA>						<!-- CDRA , Verizon Wireless proprietary client data usage reporting technology -->
+	<PCO>1</PCO>						<!-- PCO, Verizon Wireless proprietary sim configuration functionality -->
+        <AutoAPN>0</AutoAPN>                                    <!-- Configuring APN automatically based on the SIM card data -->
+	<CC>0</CC>						<!-- Carrier customization feature support -->
+	<CUMCLIENT>0</CUMCLIENT>						<!-- Cumulocity Client -->
+</Features> 

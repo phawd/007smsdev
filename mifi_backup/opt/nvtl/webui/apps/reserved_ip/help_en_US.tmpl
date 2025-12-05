@@ -1,0 +1,42 @@
+<!-- Reserved IP Addresses -->
+<div id="reserved_ip">
+		<h1>Reserved IP Addresses</h1>
+
+		<h2>Overview</h2>
+		<p>This feature can be used to ensure that a connected device will always be allocated the same IP Address by the <tmpl_var _("webui", "webui_product_name")>. Click this button to access the setup screen for this feature.
+		</p>
+
+		<h3>DHCP Address Range</h3>
+		<p>The current DHCP address range is displayed here. All reserved IP addresses must be within this range.
+		</p>
+
+		<h2>Reserved IP Address Table</h2>
+		<p>Initially this table will be empty and hidden. To add a row to this table, click the "Add Reserved IP" button. Add as many rows as needed. Each row has the following fields.
+		</p>
+
+		<h3>Enable</h3>
+		<p>Use this checkbox to enable or disable each entry (row) as needed. If enabled, the specified IP address will be assigned to the specified device. If disabled, the IP address is available for any connected device.
+		</p>
+
+		<h3>Device Type</h3>
+		<p>Select the most suitable option for the connected device.
+		</p>
+
+		<h3>Device Name</h3>
+		<p>If desired, you can enter a descriptive name for the connected device. This field may be left blank.
+		</p>
+
+		<h3>MAC Address</h3>
+		<p>This field is essential. Enter the MAC address of the connected device. If the connected device has more than one network interface (for example, both Wi-Fi and Ethernet), enter the MAC address of the interface which will be used to connect to the <tmpl_var _("webui", "webui_product_name")>.
+		</p>
+
+		<h3>IP Address</h3>
+		<p>Enter the IP address which you wish to be assigned to this connected device. This IP address must be within the DHCP address range shown above.
+		</p>
+
+		<h3>Delete</h3>
+		<p>Use this option to delete an entry (row) from the table when needed. Selected rows are deleted when you click "Save Changes".
+		</p>
+
+</div>
+<!-- id="reserved_ip" -->

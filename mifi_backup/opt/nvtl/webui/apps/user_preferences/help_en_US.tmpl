@@ -1,0 +1,27 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+	<p>This screen contains many options which allow you to set the behaviour of the <tmpl_var _("webui", "webui_product_name")> to better meet your needs.
+	</p>
+	<h3>Language</h3>
+	<p>Select the desired language. </p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+	<p>
+		Specify the format in which the date is displayed on the Admin website.
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+	<p>
+		Specify the format in which the time is displayed on the Admin website.
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+	<p>
+		Select the unit to be used for the GPS altitude and accuracy.
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+	<p>
+		Specify how decimal numbers are displayed. Period (.) or Comma (,) can be selected for use as the decimal point.
+	</p>
+</div>

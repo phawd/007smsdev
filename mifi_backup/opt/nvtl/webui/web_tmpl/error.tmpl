@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lte IE 8]><html class="ie8 oldie<tmpl_if IN_SET(gLangDirection, "rtl")> rtl</tmpl_if>" lang="<tmpl_var gHtmlLang>"<tmpl_if IN_SET(gLangDirection, "rtl")> dir="<tmpl_var gLangDirection>"</tmpl_if>><![endif]-->
+<!--[if gt IE 8]><!--><html class="<tmpl_if IN_SET(gLangDirection, "rtl")> rtl</tmpl_if>" lang="<tmpl_var gHtmlLang>"<tmpl_if IN_SET(gLangDirection, "rtl")> dir="<tmpl_var gLangDirection>"</tmpl_if>><!--<![endif]-->
+	<head>
+		<tmpl_include "meta.tmpl">
+		<tmpl_if IN_SET(gHttpStatusCode, "400")>
+			<title><tmpl_var _("webui", "common_message_400")></title>
+		<tmpl_elsif IN_SET(gHttpStatusCode, "401")>
+			<title><tmpl_var _("webui", "common_message_401")></title>
+		<tmpl_elsif IN_SET(gHttpStatusCode, "403")>
+			<title><tmpl_var _("webui", "common_message_403")></title>
+		<tmpl_elsif IN_SET(gHttpStatusCode, "404")>
+			<title><tmpl_var _("webui", "common_message_404")></title>
+		<tmpl_elsif IN_SET(gHttpStatusCode, "405")>
+			<title><tmpl_var _("webui", "common_message_405")></title>
+		<tmpl_elsif IN_SET(gHttpStatusCode, "500")>
+			<title><tmpl_var _("webui", "common_message_500")></title>
+		</tmpl_if>
+		<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/fonts.css" />
+		<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/messages.css" />
+	</head>
+	<body id="<tmpl_var gPageId>" class="error_page">
+		<div id="container">
+			<div id="container_inner">
+				<div id="header">
+					<div id="header_inner">
+						<a id="carrier_logo" href="<tmpl_udf GET_URI('apps_home')>" title="<tmpl_var _("webui", "error_tmpl_vzw_logo_hover_text")>">
+							<img src="/<tmpl_var gBaseAssetsPath>/images/logos/verizon_wireless.png" alt="Verizon Wireless" />
+						</a>
+					</div>
+				</div>
+
+				<div id="main" role="main">
+					<div id="main_inner">
+
+						<div id="app_container">
+							<div id="app_inner">
+
+								<tmpl_include "noscript.tmpl">
+
+								<div id="app_content">
+									<tmpl_if IN_SET(gHttpStatusCode, "400")>
+										<h1><strong>400</strong> - <tmpl_var _("webui", "common_message_badRequest")></h1>
+										<h2><tmpl_var _("webui", "common_message_unknownRequest")></h2>
+									<tmpl_elsif IN_SET(gHttpStatusCode, "401")>
+										<h1><strong>401</strong> - <tmpl_var _("webui", "common_message_unauthorized")></h1>
+										<h2><tmpl_var _("webui", "common_message_unverified")></h2>
+										<h2><tmpl_var _("webui", "common_message_credentialError")></h2>
+									<tmpl_elsif IN_SET(gHttpStatusCode, "403")>
+										<h1><strong>403</strong> - <tmpl_var _("webui", "common_message_forbidden")></h1>
+										<h2><tmpl_var _("webui", "common_message_objectNoAccess")></h2>
+									<tmpl_elsif IN_SET(gHttpStatusCode, "404")>
+										<h1><strong>404</strong> - <tmpl_var _("webui", "common_message_pageNotFound")></h1>
+										<h2><tmpl_var _("webui", "common_message_pageNotFoundVerbose")></h2>
+									<tmpl_elsif IN_SET(gHttpStatusCode, "405")>
+										<h1><strong>405</strong> - <tmpl_var _("webui", "common_message_methodNotAllowed")></h1>
+										<h2><tmpl_var _("webui", "common_message_methodNotAllowedVerbose")></h2>
+										<h2><tmpl_var _("webui", "common_message_methodNotAllowedVerbose_part2")></h2>
+									<tmpl_elsif IN_SET(gHttpStatusCode, "500")>
+										<h1><strong>500</strong> - <tmpl_var _("webui", "common_message_internalServerError")></h1>
+										<h2><tmpl_var _("webui", "common_message_internalServerErrorVerbose")></h2>
+									</tmpl_if>
+
+									<tmpl_if gHttpStatusErrorMsg>
+										<h2><tmpl_var gHttpStatusErrorMsg></h2>
+									</tmpl_if>
+
+									<a class="gohome" href="/"><tmpl_var _("webui", "error_tmpl_home_link")></a>
+								</div> <!-- /#app_content -->
+
+							</div>
+						</div> <!-- /#app_container -->
+
+					</div>  <!-- /#main_inner -->
+				</div> <!-- /#main -->
+
+			</div> <!-- /#container_inner -->
+			<div id="push"></div> <!-- for sticky footer -->
+		</div> <!-- /#container -->
+
+		<tmpl_include "footer.tmpl">
+	</body>
+</html>

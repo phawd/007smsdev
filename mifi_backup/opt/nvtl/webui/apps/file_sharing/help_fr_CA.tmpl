@@ -1,0 +1,49 @@
+<!-- mass_storage -->
+<div id="mass_storage">
+	<h1><tmpl_var _("webui","file_sharing_menu_text")></h1>
+	<h2>Vue d'ensemble</h2>
+	<p> Un dispositif de stockage de masse USB (clé USB) peut être connecté au port USB C du MiFi et partagé avec des appareils connectés via le réseau Wi-Fi du MiFi. </p>
+	<p> Pour vous connecter au(x) dossier(s) partagé(s) à partir de votre ordinateur, parcourez le réseau ou lancez une recherche pour trouver « <tmpl_var HostName> ». Une liste des dossiers partagés apparaîtra sous cet appareil du réseau. </p>
+	
+	<h2>Commande d'activation/de désactivation du partage MiFi</h2>
+	<p> Utilisez cette commande pour activer/désactiver cette fonction selon le besoin. </p>
+
+	<div class="blockgroup">
+		<ul>
+			<li> Si elle est activée, lorsqu'un dispositif de stockage de masse USB est connecté au MiFi, une invite du système apparaît à l'écran du MiFi pour vous demander de confirmer si le contenu de cet appareil doit être partagé. Le partage ne commencera pas tant que cela n'a pas été confirmé. </li>
+
+			<li> Si cette fonction est désactivée, tout dispositif de stockage de masse USB connecté au MiFi sera ignoré. </li>
+		</ul>
+	</div>
+
+	<h2><tmpl_udf GET_PO_TEXT("file_sharing_display_toggle_label", gProductName)></h2>
+	<p> Ce réglage peut être utilisé pour masquer la fonction de partage MiFi pour les utilisateurs du MiFi qui ont accès à l'écran du MiFi, mais pas à cette interface Web. </p>
+
+	<div class="blockgroup">
+		<ul>
+			<li> Si cette fonction est activée, l'application « Partage MiFi » apparaît dans le menu principal de l'écran du MiFi, et est également décrite dans l'application d'aide de l'interface utilisateur d'affichage. </li>
+
+			<li> Si cette fonction est désactivée, l'application Partage MiFi et le contenu de l'aide associé sont masqués dans le menu de l'écran tactile. </li>
+		</ul>
+	</div>
+
+	<h2><tmpl_var _("webui","file_sharing_setting_sub_header_text")></h2>
+	<p> Ces réglages peuvent être modifiés à tout moment et seront appliqués la prochaine fois que la fonction Partage MiFi est utilisée. </p>
+
+	<h3>Contenu à partager</h3>
+	<p> Ce réglage détermine quels dossiers et fichiers du dispositif de stockage de masse USB sont partagés en tant que dossiers du réseau. </p>
+	<p> L'option par défaut est « Tous les dossiers et fichiers », c'est-à-dire que l'ensemble du contenu du dispositif USB est accessible aux appareils connectés. </p>
+	<p> Si vous souhaitez partager uniquement une partie du contenu du dispositif USB, vous pouvez sélectionner l'autre option « Dossiers de premier niveau spécifiés », puis spécifier les dossiers à partager à l'aide du réglage suivant. </p>
+
+	<h3>Dossiers de premier niveau spécifiés</h3>
+	<p> Ce réglage est grisé si le réglage « Contenu à partager » est défini sur « <tmpl_var _("webui","file_sharing_share_type_all_folders_text")> ». Vous pouvez modifier ce champ pour spécifier quels dossiers doivent être partagés. Par défaut, ces dossiers sont appelés « Publics » et « Partagés ». </p>
+	<p> Notez que les dossiers spécifiés ici doivent figurer au premier niveau de la structure de dossiers; vous ne pouvez pas indiquer un chemin de dossier de type « Projets/2015/Récapitulatif ». </p>
+
+	<h3>Type d'accès</h3>
+	<p> Sélectionnez l'option souhaitée pour l'accès <tmpl_var _("webui","file_sharing_share_access_type_read_only_text")> ou <tmpl_var _("webui","file_sharing_share_access_type_read_write_text")> aux dossiers partagés. </p>
+	<p> Si le dispositif de stockage de masse USB utilise les systèmes de fichiers NTFS ou EFS+, l'accès sera <tmpl_var _("webui","file_sharing_share_access_type_read_only_text")>, quel que soit ce réglage. </p>
+
+	<h3>Accès au réseau</h3>
+	<p> Utilisez ces cases à cocher pour déterminer si les utilisateurs du réseau Wi-Fi primaire ou invité ont accès aux dossiers partagés. </p>
+
+</div> 

@@ -1,334 +1,278 @@
-# Contributing to ZeroSMS
+# Contributing to ZeroSMS Testing Suite
 
-Thank you for your interest in contributing to ZeroSMS! This document provides guidelines and instructions for contributing to the project.
+Thank you for your interest in contributing to ZeroSMS! This document provides guidelines and best practices for contributing to the project.
 
 ## Table of Contents
+
+- [Code of Conduct](#code-of-conduct)
 - [Getting Started](#getting-started)
-- [Development Setup](#development-setup)
-- [Testing](#testing)
-- [Hardware Requirements](#hardware-requirements)
-- [Code Style](#code-style)
-- [Commit Guidelines](#commit-guidelines)
+- [Development Workflow](#development-workflow)
+- [Coding Standards](#coding-standards)
+- [Testing Requirements](#testing-requirements)
 - [Pull Request Process](#pull-request-process)
-- [Security](#security)
+- [RFC Compliance](#rfc-compliance)
+
+## Code of Conduct
+
+We are committed to providing a welcoming and inclusive environment. All contributors are expected to:
+- Be respectful and constructive in discussions
+- Focus on the technical merits of contributions
+- Help maintain a safe and productive community
 
 ## Getting Started
 
-ZeroSMS is an Android SMS/MMS/RCS testing suite with RFC compliance. It includes both Android application code (Kotlin) and Python CLI tools for desktop workflows.
-
 ### Prerequisites
-- **Android development**: Android Studio, JDK 17+, Android SDK 24-35
-- **Python development**: Python 3.11+, pip
-- **Optional**: Root access on Android device for AT command testing
-- **Optional**: ADB for device debugging
 
-## Development Setup
+**For Android Development**:
+- Android Studio Arctic Fox or later
+- JDK 17 (Temurin recommended)
+- Android SDK 24-35
+- Physical Android device for SMS/MMS/RCS testing (emulators have limitations)
 
-### Android Setup
+**For Python Tools**:
+- Python 3.11+
+- `pip install pyserial` for AT command tools
+
+### Fork and Clone
+
+1. Fork the repository on GitHub
+2. Clone your fork:
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/zerosms.git
+   cd zerosms
+   ```
+3. Add upstream remote:
+   ```bash
+   git remote add upstream https://github.com/phawd/zerosms.git
+   ```
+
+### Build and Test
+
+**Android**:
 ```bash
-# Clone the repository
-git clone https://github.com/phawd/zerosms.git
-cd zerosms
-
-# Build the project
 ./gradlew assembleDebug
-
-# Install on connected device
-./gradlew installDebug
-
-# Run tests
 ./gradlew testDebugUnitTest
 ```
 
-### Python Setup
+**Python**:
 ```bash
-# Set up virtual environment
-python3 -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-
-# Install development dependencies
-pip install black ruff mypy pytest pip-audit bandit
-
-# Optional: Install pyserial for USB device enumeration
-pip install pyserial
-
-# Run Python tools
 python3 tools/zerosms_cli.py --help
+pytest  # If tests exist
 ```
 
-### IDE Configuration
-**Android Studio:**
-- Open project in Android Studio
-- Sync Gradle files
-- Enable Kotlin plugin
-- Configure code style: Settings → Editor → Code Style → Kotlin (use official style guide)
+## Development Workflow
 
-**VS Code (for Python):**
-- Install Python extension
-- Install Pylance for type checking
-- Configure formatters: black, ruff
+### Branching Strategy
 
-## Testing
+- `master` - Stable releases
+- `develop` - Integration branch for features
+- `feature/*` - New features
+- `fix/*` - Bug fixes
+- `docs/*` - Documentation updates
+- `tools/*` - CLI and tooling improvements
 
-### Android Tests
-```bash
-# Unit tests (fast, no device required)
-./gradlew testDebugUnitTest
+### Making Changes
 
-# Instrumentation tests (requires connected device)
-./gradlew connectedAndroidTest
+1. Create a feature branch:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
 
-# Run specific test
-./gradlew test --tests "com.zerosms.testing.core.sms.SmsManagerWrapperTest"
-```
+2. Make your changes following [Coding Standards](#coding-standards)
 
-### Python Tests
-```bash
-# Run all tests
-pytest
+3. Test your changes thoroughly
 
-# Run with verbose output
-pytest -v
+4. Commit with descriptive messages:
+   ```bash
+   git commit -m "feat: Add support for GSM 7-bit Extended characters"
+   ```
 
-# Run specific test file
-pytest tests/test_cli.py
+5. Push to your fork:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
 
-# Run tests with coverage
-pytest --cov=tools --cov-report=html
-```
+6. Open a Pull Request
 
-### Hardware-Dependent Tests
-Tests requiring actual device hardware should be marked and excluded from CI:
+## Coding Standards
 
-**Python:**
-```python
-@pytest.mark.hardware
-def test_real_sms_sending():
-    # Test that sends actual SMS
-    pass
-```
+### Kotlin (Android)
 
-**Kotlin:**
+- Follow [Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html)
+- Use Jetpack Compose for UI components
+- Prefer coroutines and `StateFlow` for async operations
+- Document public APIs with KDoc comments
+- Use meaningful variable names (avoid abbreviations)
+
+**Example**:
 ```kotlin
-@Ignore("Requires real device")
-@Test
-fun testAtCommandExecution() {
-    // Test that executes AT commands
+/**
+ * Calculates SMS encoding information based on message content.
+ *
+ * @param text The message text to analyze
+ * @param encoding Requested encoding (AUTO, GSM_7BIT, UCS2)
+ * @return SmsInfo containing encoding type and part count
+ */
+fun calculateSmsInfo(text: String, encoding: SmsEncoding): SmsInfo {
+    // Implementation
 }
 ```
 
-## Hardware Requirements
+### Python (Tools)
 
-### Minimum Requirements
-- Android device running Android 7.0 (API 24) or higher
-- SIM card for SMS/MMS testing
-- ADB connection for debugging
+- Follow PEP 8 style guide (enforced by `black`)
+- Use type hints for function signatures
+- Write docstrings for modules, classes, and public functions
+- Prefer f-strings for string formatting
 
-### Recommended Hardware
-- Qualcomm Snapdragon device for AT command testing
-- Root access for direct modem communication
-- Multiple devices for cross-platform testing
+**Example**:
+```python
+def send_at_command(device: str, command: str, timeout: int = 5) -> str:
+    """
+    Send AT command to modem device.
 
-### Supported Chipsets
-- Qualcomm Snapdragon (most features)
-- MediaTek (limited AT command support)
-- Samsung Exynos (limited features)
+    Args:
+        device: Path to serial device (e.g., /dev/smd0)
+        command: AT command string (without AT prefix)
+        timeout: Read timeout in seconds
 
-### Testing Without Hardware
-For development without physical devices:
-- Use mocks for hardware-dependent functionality
-- Write unit tests that don't require SMS/modem access
-- Use Android Emulator for UI testing (SMS sending will be simulated)
+    Returns:
+        Raw response from modem
 
-## Code Style
-
-### Kotlin/Android
-- Follow [Android Kotlin Style Guide](https://developer.android.com/kotlin/style-guide)
-- Use ktlint for formatting: `./gradlew ktlintFormat`
-- Run detekt for static analysis: `./gradlew detekt`
-- Use meaningful variable names and comments for complex logic
-- Keep functions focused and small
-
-### Python
-- Follow [PEP 8](https://peps.python.org/pep-0008/)
-- Use black for formatting: `black .`
-- Use ruff for linting: `ruff check .`
-- Add type hints for function signatures
-- Use docstrings for public functions
-
-### Documentation
-- Update `README.md` for user-facing changes
-- Update `docs/` for technical documentation
-- Add inline comments for complex logic
-- Document RFC compliance in `docs/RFC_COMPLIANCE.md`
-
-## Commit Guidelines
-
-### Commit Message Format
-Use [Conventional Commits](https://www.conventionalcommits.org/) format:
-
-```
-<type>(<scope>): <subject>
-
-<body>
-
-<footer>
+    Raises:
+        SerialException: If device communication fails
+    """
+    # Implementation
 ```
 
-**Types:**
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation changes
-- `style`: Code style (formatting, whitespace)
-- `refactor`: Code refactoring
-- `test`: Adding or updating tests
-- `chore`: Maintenance tasks
+### Commit Messages
 
-**Examples:**
-```
-feat(sms): Add Flash SMS (Class 0) support
+Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
-Implements GSM 03.40 Class 0 message delivery with
-automatic popup on compatible devices.
+- `feat:` - New feature
+- `fix:` - Bug fix
+- `docs:` - Documentation changes
+- `style:` - Code style changes (formatting, no logic change)
+- `refactor:` - Code refactoring
+- `test:` - Test additions or updates
+- `chore:` - Build system or dependency updates
 
-Closes #123
+## Testing Requirements
 
----
+### Unit Tests
 
-fix(at): Handle modem timeout errors
+- Write unit tests for all new business logic
+- Aim for >80% code coverage on core protocol implementations
+- Mock external dependencies (SmsManager, network, etc.)
 
-Adds retry logic and better error handling for AT
-command timeouts on MediaTek devices.
-
----
-
-docs(readme): Update installation instructions
-
-Clarifies root access requirements and adds troubleshooting
-section for common setup issues.
+**Android Example**:
+```kotlin
+@Test
+fun `calculateSmsInfo should detect GSM 7-bit encoding`() {
+    val text = "Hello World"
+    val info = smsManager.calculateSmsInfo(text, SmsEncoding.AUTO)
+    assertEquals(SmsEncoding.GSM_7BIT, info.encoding)
+    assertEquals(1, info.partCount)
+}
 ```
 
-### Commit Best Practices
-- Make atomic commits (one logical change per commit)
-- Write clear, descriptive commit messages
-- Reference related issues with `Fixes #123` or `Closes #456`
-- Keep commits focused and reviewable
+### Integration Tests
+
+- Test with real Android devices when possible
+- Document device-specific behavior (MediaTek, Qualcomm quirks)
+- Include carrier-specific test results in PR description
+
+### Test Data
+
+- Never commit real phone numbers or PII
+- Use test numbers like `+15551234567`
+- Document test scenarios in `docs/TESTING_GUIDE.md`
 
 ## Pull Request Process
 
-### Before Opening a PR
-1. **Sync with main branch**: `git pull origin master`
-2. **Run local checks**:
+### Before Submitting
+
+1. **Run Local Checks**:
    ```bash
-   # Python checks
-   black --check .
-   ruff check .
-   mypy .
-   pytest
+   # Python
+   black . && ruff check . && mypy .
    
-   # Android checks
-   ./gradlew assembleDebug
-   ./gradlew testDebugUnitTest
-   ./gradlew ktlintCheck
-   ./gradlew detekt
+   # Android
+   ./gradlew assembleDebug testDebugUnitTest
    ```
-3. **Update documentation** if behavior changes
-4. **Add tests** for new functionality
 
-### PR Title and Description
-**Title:** Use conventional commits format
-```
-feat(sms): Add Silent SMS (Type 0) support
-```
+2. **Update Documentation**:
+   - Update `README.md` if adding user-facing features
+   - Update `docs/RFC_COMPLIANCE.md` for protocol changes
+   - Add inline code comments for complex logic
 
-**Description template:**
-```markdown
-## Description
-Brief description of changes
+3. **Write Descriptive PR**:
+   - Explain the problem being solved
+   - Describe your solution approach
+   - Include test results and device compatibility
+   - Reference related issues with `Fixes #123`
 
-## Motivation
-Why is this change needed?
+### PR Review Criteria
 
-## Changes Made
-- Change 1
-- Change 2
+Your PR will be reviewed for:
+- **RFC Compliance**: Correct implementation of SMS/MMS/RCS standards
+- **Code Quality**: Readability, maintainability, performance
+- **Test Coverage**: Adequate unit and integration tests
+- **Documentation**: Clear comments and updated docs
+- **Security**: No vulnerabilities or hardcoded secrets
+- **Compatibility**: Works across Android versions and device types
 
-## Testing
-- [ ] Unit tests added/updated
-- [ ] Manual testing on device
-- [ ] CI passes
+### CI Checks
 
-## Checklist
-- [ ] Code follows style guidelines
-- [ ] Documentation updated
-- [ ] Tests pass locally
-- [ ] No new warnings/errors
+All PRs must pass:
+- Python CI (linting, type checks, tests)
+- Android CI (build, unit tests)
+- Security scans (bandit, pip-audit, detect-secrets)
 
-Fixes #123
-```
+*Note*: Some checks currently use `|| true` and won't block merges. We're establishing a baseline and will enforce stricter checks in future releases.
 
-### Review Process
-1. CI must pass (Python CI and Android CI)
-2. At least one approval required
-3. All review comments addressed
-4. No merge conflicts
+## RFC Compliance
 
-### After Merge
-- Delete feature branch
-- Update related issues
-- Monitor CI on main branch
+### SMS (GSM 03.40, 3GPP TS 23.040)
 
-## Security
+When implementing SMS features:
+- Always reference the relevant RFC/3GPP section in code comments
+- Test with multiple encodings (GSM 7-bit, 8-bit, UCS-2)
+- Validate message classes (0-3) and protocol identifiers
+- Test concatenation for multi-part messages
 
-### Reporting Vulnerabilities
-**DO NOT** open public issues for security vulnerabilities. See `SECURITY.md` for reporting procedures.
+### MMS (OMA MMS, WAP-209)
 
-### Security Best Practices
-- Never commit credentials, API keys, or tokens
-- Use environment variables for sensitive data
-- Run security scans before committing:
-  ```bash
-  bandit -r .           # Python security scan
-  pip-audit             # Dependency vulnerabilities
-  ```
-- Review `SECURITY.md` for detailed security guidelines
+For MMS implementations:
+- Follow OMA MMS Encapsulation Protocol for PDU encoding
+- Test with various media types (image, video, audio, vCard)
+- Validate MMSC configuration for major carriers
+- Check message size limits and compression
 
-### Dangerous Operations
-Operations that interact with real hardware or send actual SMS messages MUST:
-1. Require explicit confirmation flags (`--confirm`, `--yes`, `--force`)
-2. Display clear warnings before execution
-3. Be documented in `GEMINI.md`
+### RCS (GSMA RCS UP 2.4)
 
-Example:
-```python
-@click.option('--confirm', is_flag=True, required=True,
-              help='Required to confirm SMS sending')
-def send_sms(phone: str, message: str, confirm: bool):
-    if not confirm:
-        raise click.UsageError("--confirm flag required")
-```
+For RCS features:
+- Implement capability discovery before attempting RCS
+- Gracefully fallback to SMS/MMS when RCS unavailable
+- Follow GSMA UP 2.4 specifications for group chat and file transfer
+
+### Helpful Resources
+
+- `docs/RFC_COMPLIANCE.md` - Detailed compliance matrix
+- `docs/ROOT_ACCESS_GUIDE.md` - AT command implementation
+- `docs/MEDIATEK_FLASH_SMS_RESEARCH.md` - Device-specific findings
 
 ## Getting Help
 
-### Resources
-- **README**: Project overview and quick start
-- **GEMINI.md**: CI and automation guidelines
-- **docs/**: Technical documentation and RFCs
-- **GitHub Issues**: Bug reports and feature requests
-- **GitHub Discussions**: Questions and community support
-
-### Common Issues
-1. **Build failures**: Clean and rebuild: `./gradlew clean assembleDebug`
-2. **Python import errors**: Activate virtual environment and reinstall dependencies
-3. **Device not detected**: Check ADB connection: `adb devices`
-4. **AT commands fail**: Verify root access and modem paths
-
-### Contact
-- Open an issue for bugs or feature requests
-- Use GitHub Discussions for questions
-- Tag maintainers for urgent issues
+- **Issues**: Open an issue for bugs or feature requests
+- **Discussions**: Use GitHub Discussions for questions
+- **Documentation**: Check `docs/` directory for technical details
+- **Code Review**: Tag maintainers for review feedback
 
 ## License
-By contributing to ZeroSMS, you agree that your contributions will be licensed under the project's license.
 
-Thank you for contributing to ZeroSMS! 🚀
+By contributing to ZeroSMS, you agree that your contributions will be licensed under the MIT License.
+
+---
+
+*Thank you for contributing to ZeroSMS! Your efforts help improve messaging protocol compliance and testing for the Android ecosystem.*

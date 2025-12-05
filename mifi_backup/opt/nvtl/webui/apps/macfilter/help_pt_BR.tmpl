@@ -1,0 +1,34 @@
+<!-- MAC Filter -->
+<div id="adv_macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+	<h2>Visão geral</h2>
+	<p>O recurso de filtro MAC, se ativado, impedirá o acesso a esta rede Wi-Fi por qualquer dispositivo que não esteja incluído na lista "Filtro de Endereços MAC". O filtro é aplicado apenas à rede Wi-Fi e não tem efeito em dispositivos USB. </p>
+	
+	<h2>Controle Liga/Desliga</h2>
+	<p>Use este controle para ativar ou desativar o Filtro MAC de acordo com a necessidade. Antes de ativá-lo, é preciso ter certeza de que alguns dispositivos são permitidos. Observe que, quando o Filtro MAC está ativado, qualquer dispositivo conectado que não esteja na lista "Filtro de Endereços MAC" será desconectado imediatamente. </p>
+	
+	<h2>Lista de dispositivos</h2>
+	
+	<p>Todos os dispositivos conhecidos estão listados aqui, exceto os dispositivos USB. Use as caixas de seleção fornecidas para incluir ou excluir dispositivos da lista "Filtro de Endereços MAC". </p>
+
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Use o botão Atualizar para atualizar a lista conforme a necessidade. </p>
+		
+	<h2>Operação</h2>
+	
+	<h3>Bloqueio x Filtro MAC</h3>
+	<p>A interação entre os dispositivos "Bloqueados" e o "Filtro MAC" é: </p>
+	<div class="blockgroup">
+	<ul>
+	<li>Os dispositivos bloqueados estarão sempre bloqueados na rede Wi-Fi, independentemente de o Filtro MAC estar ativado ou desativado. </li>
+	<li>Se o Filtro MAC estiver ativado e um dispositivo estiver na lista de Bloqueio, mas não na lista Filtro de Endereços MAC, ele não poderá se conectar. O Filtro MAC e o Bloqueio impedem a conexão. </li>
+
+	<li>Se o Filtro MAC estiver ativado e um dispositivo estiver na lista Filtro de Endereços MAC, ele poderá se conectar. Após a conexão, ele pode ser bloqueado pela remoção da lista Filtro de Endereços MAC ou pelo uso do recurso de "Bloqueio". De forma geral, o "Bloqueio" deve ser usado para um bloqueio temporário e o Filtro MAC, para um bloqueio permanente. </li>
+	</ul>
+	</div>
+	
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+	<p>Use este botão para adicionar um novo dispositivo à lista de dispositivos. </p>
+
+ </div>
+<!--  adv_macfilter  -->

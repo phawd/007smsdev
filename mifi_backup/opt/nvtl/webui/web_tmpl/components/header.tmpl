@@ -1,0 +1,103 @@
+<script type="text/javascript">
+	var loginStatus = 0;
+	var homeUrl = "/" 
+	$(function()
+	{
+		$(document).ajaxSuccess(function(e, xhr, settings) {
+				if ((xhr.responseText) && (settings.dataType == "json")) {
+					try {
+						var obj = jQuery.parseJSON(xhr.responseText || "null");
+
+						if (typeof obj.loginStatus !== "undefined") {
+							var loginValue = obj.loginStatus;
+							if(loginStatus === 1 && loginValue === 0){
+								showLoginDialog('<p><tmpl_var _("webui", "webui_session_expire_text")></p>');
+							}
+							loginStatus = obj.loginStatus;
+						}
+
+					} catch(e) {}
+				}
+		});
+	});
+
+	function showLoginDialog(msg)
+	{
+		modalPopup.createWindow('<tmpl_var _("webui", "webui_app_warning_title")>', msg, 430, "auto", [{
+			text : '<tmpl_var _("webui", "webui_modal_ok_button")>',
+			className : "primary",
+            trigger : function() {
+            	location.replace(homeUrl);
+
+            }
+		}],
+		function(){
+                $("button.ui-dialog-titlebar-close").remove();
+        },
+        function(){
+                location.replace(homeUrl);
+        });
+	}
+
+	/* ]]> */
+</script>
+
+<div id="header">
+	<div id="header_inner" class="clearfix">
+		<a id="carrier_logo" href="<tmpl_udf GET_URI('apps_home')>" title="<tmpl_udf GET_PO_TEXT('vzw_header_go_home_link', gProductName)>">
+			<img src="/<tmpl_var gBaseAssetsPath>/images/logos/verizon_wireless.png" alt="Verizon Wireless" />
+			<div class="row clearfix">
+				<div class="col productName">
+					<h3><tmpl_udf GET_PO_TEXT("status_bar_carrier_logo_sub_chunk_product_name_text", gProductName)></h3>
+				</div>
+				<div class="col productNumber">
+					<h3><tmpl_udf GET_PO_TEXT("status_bar_carrier_logo_sub_chunk_product_number_text", gProductNumber)></h3>
+				</div>
+			</div>
+		</a>
+		<div id="status_area">
+			<tmpl_unless IN_SET(gPageId, "login")>
+				<ul id="status_login" class="status clearfix">
+					<a id="admin_menu">
+						<tmpl_if IN_SET(gIsLoggedIn, "1", "true")>
+							<h4><tmpl_var _("webui", "vzw_header_logout_link")></h4>
+						<tmpl_else>
+							<h4><tmpl_var _("webui", "vzw_header_login_link")></h4>
+						</tmpl_if>
+					</a>
+				</ul>
+				<div class="sub_menu">
+					<tmpl_include "admin_menu.tmpl">
+				</div>
+			</tmpl_unless>
+
+			<div id="status_bar" class="clearfix"></div>
+		</div><!-- /#status_area -->
+
+		<div id="mobile_status_area" class="status clearfix">
+			<div id="mobile_status_area_inner">
+				<ul id="header_mobile_menu" class="status clearfix">
+					<tmpl_if gMenuLayout>
+						<li class="mobile">
+							<a id="toggle_mobile_menu" class="closed" href="#">menu</a>
+						</li>
+					<tmpl_else>
+						<li class="mobile">
+							<a id="mobile_home_header_link" href="<tmpl_udf GET_URI('apps_home')>">home</a>
+						</li>
+					</tmpl_if>
+				</ul>
+
+				<div id="mobile_status_bar" class="clearfix"></div>
+			</div>
+		</div> <!-- /#mobile_status_area-->
+	</div><!-- /#header-inner -->
+</div><!-- /#header -->
+
+<tmpl_if gMenuLayout>
+	<div id="mobile_menu" class="mobile mobile_panel">
+		<div id="mobile_menu_inner">
+			<tmpl_include "mobile_menu.tmpl">
+		</div>
+	</div> <!-- /#mobile_menu-->
+</tmpl_if>

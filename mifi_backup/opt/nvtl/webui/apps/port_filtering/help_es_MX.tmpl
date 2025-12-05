@@ -1,0 +1,31 @@
+<!-- Port Filtering -->
+<div id="port_filtering">
+	<h1>Filtrado de puertos</h1>
+	<h2>Descripción</h2>
+	<p> Use la función de Filtrado de puertos según sea necesario para bloquear el tráfico saliente de internet. Si se habilita esta configuración, solo el tráfico de las aplicaciones seleccionadas puede acceder a internet. El tráfico se identifica por números de puerto. Algunas aplicaciones están predefinidas. Puede definir aplicaciones adicionales, pero debe conocer los detalles del tráfico usado y generado por las aplicaciones que desea definir. </p>
+
+	<h2>Aplicaciones</h2>
+	<p>Use las casillas de verificación para permitir el acceso a internet para cada aplicación mientras la función de filtrado de puertos esté activada. El tráfico de las aplicaciones seleccionadas puede acceder a internet. De lo contrario, el tráfico estará bloqueado. </p>
+	<h2>Aplicaciones personalizadas</h2>
+	<p>Esta función le permite definir sus propias aplicaciones (hasta 10). Una vez definidas, estas aplicaciones se pueden activar y desactivar de la misma manera que las aplicaciones predefinidas. Para definir una aplicación, debe conocer los puertos y el protocolo (TCP, UDP) usados por la aplicación para el tráfico saliente. Para comenzar, haga clic en el botón <strong>Agregar aplicación personalizada</strong> y luego ingrese los datos siguientes. </p>
+	<p>Tenga en cuenta que los cambios a una Aplicación personalizada no se guardan hasta que se usa el botón "Guardar cambios" para guardar el contenido de toda la página.</p>
+	
+	<h3>La casilla de verificación Activado</h3>
+	<p>Use la casilla de verificación Activado para activar una aplicación después de haberla definido. Si se selecciona, el tráfico de esta aplicación podrá acceder a internet. De lo contrario, el tráfico estará bloqueado. </p>
+	<h3>Nombre de la aplicación</h3>
+	<p> Ingrese un nombre para la aplicación que está definiendo. </p>
+	<h3>Rango de puertos (puerto inicial/puerto final)</h3>
+		<p> Cada aplicación posee su propio rango de puertos. Ingrese el comienzo y el final del rango de puertos para cada aplicación. </p>
+		<div class="blockgroup">
+			<ul>
+				<li>Para un único puerto, ingrese el número de puerto en los campos <strong>Puerto inicial</strong> y <strong>puerto final</strong>.</li>
+				<li>Para un rango de puertos, ingrese el comienzo del rango en el campo <strong>Puerto inicial</strong> y el fin del rango en el campo <strong>Puerto final</strong>. </li>
+			</ul>
+		</div>
+	<h3>Protocolo</h3>
+	<p> Para cada rango de puertos, seleccione el protocolo (TCP o UDP) usado por ese rango de puertos. </p>
+	<h3>Eliminar</h3>
+	<p>Use esta casilla de verificación para eliminar una aplicación personalizada. </p>
+</div>
+<!-- id="port_filtering" -->
+		

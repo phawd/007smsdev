@@ -1,0 +1,29 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+	<h2>Descripción</h2>
+		<p>Un firewall protege sus dispositivos conectados contra el tráfico entrante malicioso de Internet. El firewall no puede desactivarse, pero las siguientes configuraciones estarán disponibles: </p>
+			
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+		<p>Esta función permite que se conecte el software del cliente VPN en dispositivos conectados, a través de su <tmpl_var _("webui", "webui_product_name")>, a servidores VPN remotos. Normalmente, esta opción debe dejarse habilitada. </p>
+
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+			<p>Normalmente, el firewall bloquea las solicitudes entrantes de conexión de IPv6 destinadas a un dispositivo conectado con IPv6. </p>
+			<p> Si desea permitir que estas solicitudes de conexión entrantes lleguen al dispositivo conectado previsto, active esta configuración.</p> 
+
+			<p>Nota: El Modo transparente solo debe activarse cuando sea necesario, ya que reduce la protección provista por el firewall del <tmpl_var _("webui", "webui_product_name")>. </p>
+	</tmpl_if>
+			
+	<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+		<p>Seleccione esta opción para dirigir todo el tráfico que normalmente estaría bloqueado por el firewall a un dispositivo conectado específico.</p> 
+
+		<p>Por seguridad, esta función debe estar desactivada a menos que sea absolutamente necesario.</p>
+	<h3>Dirección de IP de destino</h3>
+		<p>Ingrese la dirección de IP del dispositivo conectado que desea establecer como dispositivo DMZ (destino DMZ) en este campo.
+Puede ver las direcciones de IP de los dispositivos conectados en la pantalla de dispositivos conectados.
+		</p>
+			
+</div>
+<!-- id="firewall" -->
+

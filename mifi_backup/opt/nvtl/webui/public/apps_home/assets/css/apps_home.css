@@ -1,0 +1,331 @@
+/* =============================================================================
+ HOME APP
+ ========================================================================== */
+
+.basic #app_inner {
+	padding: 20px 20px;
+	background-color: #F6F6F6;
+}
+
+.dialog_page #app_inner {
+	padding: 20px 0px 20px 0px;
+	background-color: white;
+}
+
+/* Tile layout styles */
+.tile {
+	float: left;
+	width: 321px;
+    min-width: 100px;
+	height: 360px;
+	padding: 18px;
+    text-align: left;
+    position: relative;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    box-shadow: 1px 1px 2px 0.4px #A0A0A0;
+}
+
+#logo.tile {
+	padding: 0px;
+}
+
+#logo.tile,
+#dataUsage.tile,
+#mifiShare.tile,
+#help.tile {
+	margin-right: 0;
+}
+
+#logo.tile,
+#dataUsage.tile {
+	height: 266px;
+}
+
+#settings.tile,
+#about.tile,
+#help.tile {
+	margin-bottom: 0;
+}
+
+.navigationLink img {
+	width: 35px;
+    height: 35px;
+}
+
+#home h2 {
+	color: black;
+	border-bottom: 4px solid black;
+	margin-bottom: 8px;
+	padding-bottom: 8px;
+	width: 285px;
+}
+
+.tileContent {
+	height: 260px;
+	overflow: auto;
+	padding-bottom: 5px;
+}
+
+.tileInnerText {
+	min-height: 130px;
+}
+
+.two_x {
+	width: 662px;
+    min-width: 220px;
+}
+
+.roundedButton {
+	margin-top: 5px;
+	background-color: #000 !important;
+	color: #fff;
+	border: medium none !important;
+	border-radius: 20px;
+	padding: 6px 20px;
+}
+
+#duProgressBar {
+	width: 69%;
+	height: 238px;
+	float: left;
+}
+
+#data_plan_circle {
+	float: right;
+	margin-top: 40px;
+}
+
+.duDetails {
+	padding-top: 0px;
+	margin-top: 25px;
+}
+
+#data_plan_usage_bar {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#duCircle{
+	height: 218px;
+	padding-right: 30px;
+}
+
+#usedPercentage {
+    font-size: 18px;
+    padding: 11px 11px 0px 11px;
+}
+
+#retrieval_status.loading {
+	height: 150px;
+	padding-top: 0px;
+    padding-left: 0px;
+}
+
+.progress_bar_wrapper #data_plan_usage_bar_col .lineUsage {
+    width: 100%;
+}
+
+.progress_bar_wrapper #data_plan_usage_bar_col .title {
+    font-weight: normal; 
+}
+
+#home div.row
+{
+	display: table-row;
+	width: 99%;
+}
+
+#home div.label {
+	font-weight: bold;
+	font-size: 1em;
+	line-height: 2.1em;
+}
+
+#home div.text {
+	font-weight: normal;
+	font-size: 1em;
+	line-height: 2em;
+}
+
+table.devicesTable th {
+	text-align: left;
+	padding-left: 0px;
+}
+
+table.devicesTable tr {
+    height: 30px;
+    border-bottom: none;
+}
+
+table.devicesTable td.networkType {
+    text-align: left;
+}
+
+table.devicesTable tr:first-child {
+    border-top: none;
+}
+
+table.devicesTable tr:hover {
+	background-color: none;
+}
+
+table.popuptable {
+	border-collapse: separate;
+}
+
+#home .navigationLink {
+	float: right;
+	margin-top: 3px;
+}
+
+#dataUsage .navigationLink {
+	margin-top: -3px;
+}
+
+#home ul li {
+	text-decoration: underline;
+}
+
+#home ul li:first-child {
+	margin-top: 10px;
+}
+
+.greenColor {
+	color: green;
+}
+
+table.devicesTable td.networkType {
+    padding-left: 0px;
+}
+
+@media screen and (max-width: 940px) {
+    .tile {
+        width: 28.6%;
+    }
+
+    .two_x {
+        width: 61.7%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tile {
+        width: 49.3%;
+    }
+
+    .two_x {
+        width: 100%;
+    }
+
+    .progress_bar_wrapper #data_plan_usage_bar_col .lineUsage {
+	    text-align: left;
+	}
+
+	#logo {
+	    width: 265px;
+	}
+
+	#settings,
+	#connectedDevices {
+	    margin-right: 0;
+	}
+
+	#mifiShare.tile {
+	    margin-right: 10px;
+	}
+}
+
+@media screen and (max-width: 680px) {
+    .tile {
+        width: 44.3%;
+        margin: 8px;
+    }
+
+    .two_x {
+        width: 94.2%;
+    }
+
+    .progress_bar_wrapper #data_plan_usage_bar_col .lineUsage {
+	    text-align: left;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#app_container #app_inner {
+		padding-top: 126px;
+	}
+
+    .tile {
+	    width: 100%;
+        min-width: 285px;
+        margin: 5px 0px;
+    }
+
+    .two_x {
+	    width: 97%;
+        min-width: 285px;
+    }
+
+    #data_plan_circle {
+    	width: 110px;
+    	height: 110px;
+    }
+    .duDetails {
+    	margin-top: 5px;
+	}
+
+	.progress_bar_wrapper #data_plan_usage_bar_col .lineUsage {
+	    text-align: left;
+	}
+
+	.tileContent {
+		height: 175px;
+	}
+
+	#home .navigationLink {
+		margin-top: 85px;
+	}
+
+	#home #dataUsage .navigationLink {
+		margin-top: -25px;
+		margin-right: -145px;
+
+	}
+}
+
+@media screen and (max-width: 420px) {
+	#data_plan_circle {
+	    width: 85px;
+	    height: 120px;
+	}
+
+	#duProgressBar {
+		width: 68%;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.tile {
+	    width: 97%;
+    }
+
+	#home #dataUsage .navigationLink {
+		margin-right: -125px;
+		position: relative;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	#home h2 {
+		width: 100%;
+	}
+
+	#home #dataUsage .navigationLink {
+		margin-right: -130px;
+		position: relative;
+	}
+}

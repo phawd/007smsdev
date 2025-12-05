@@ -1,0 +1,73 @@
+<!-- mass_storage -->
+<div id="mass_storage">
+	<h1><tmpl_var _("webui","file_sharing_menu_text")></h1>
+	<h2>Descripción</h2>
+	<p>
+	Puede compartir archivos con los dispositivos conectados a la red Wi-Fi de su <tmpl_var _("webui", "webui_product_name")>
+ cuando conecta un dispositivo de almacenamiento masivo USB (memoria USB) al puerto USB C de su <tmpl_var _("webui", "webui_product_name")>.
+	</p>
+	<p>
+	Para ver el contenido compartido desde su computadora, navegue o busque en la red “JetpackMiFi8800”. Toda carpeta compartida se enumerará en este dispositivo de red.
+	</p>
+	<p> Nota: Si cambia el nombre compartido (ver más abajo), busque ese nombre. </p>
+	
+	<h2>Activar y desactivar MiFi Share y compartir archivos</h2>
+	<p>
+		MiFi Share solo se puede activar y desactivar desde el sitio web de Administrador. Diríjase a la página MiFi Share y presione el interruptor MiFi Share.. 
+	</p>
+	<p>
+	Cuando MiFi esté activado y haya una memoria USB conectada al <tmpl_var _("webui", "webui_product_name")>, la pantalla del dispositivo de almacenamiento masivo USB se mostrará en el <tmpl_var _("webui", "webui_product_name")>. Presione Compartir para dar acceso a los dispositivos conectados al contenido del dispositivo USB.
+	</p>
+	</div>
+
+	<h2><tmpl_udf GET_PO_TEXT("file_sharing_display_toggle_label", gProductName)></h2>
+	<p> Esta configuración se puede usar para ocultar la función MiFi Share de los usuarios <tmpl_var _("webui", "webui_product_name")> que tienen acceso a la pantalla táctil <tmpl_var _("webui", "webui_product_name_with_suffix")> pero no a esta interfaz web. </p>
+
+	<div class="blockgroup">
+		<ul>
+			<li>
+			Si se encuentra activada, la aplicación MiFi Share figura en el menú principal de la pantalla táctil del Jetpack, y se explica también en la aplicación de ayuda en la interfaz del usuario.
+			</li>
+			
+			<li>
+			Si se encuentra desactivada, tanto la aplicación MiFi Share como el contenido de ayuda relacionado con esta aplicación permanecen ocultos en el menú de la pantalla táctil del Jetpack.
+			</li>
+		</ul>
+	</div>
+
+	<h2><tmpl_var _("webui","file_sharing_setting_sub_header_text")></h2>
+	<p> Estas configuraciones se pueden cambiar en cualquier momento y se aplicarán la próxima vez que se use la función MiFi Share. </p>
+
+	<h3>Nombre de recurso compartido</h3>
+	<p> El nombre del recurso compartido es el nombre del dispositivo de almacenamiento masivo USB. Busque este nombre cuando busque el contenido compartido desde un dispositivo conectado.</p>
+
+	<h3>Compartir</h3>
+	<p> Para dar acceso a los dispositivos conectados a todo lo que se encuentra en la memoria USB, seleccione “Todas las carpetas y todos los archivos”. </p> 
+
+	<p>Para limitar qué dispositivos compartidos pueden acceder, seleccione “Carpetas de nivel superior especificadas”. Luego, ingrese los nombres de las carpetas que se compartirán en el campo. (Las carpetas predeterminadas llamadas Público y Compartido ya está en la lista. Se pueden eliminar).
+	</p>
+
+	<h3>Los dispositivos conectados pueden</h3>
+	<p> Esta configuración aparecerá en gris si la configuración "Contenido para compartir" se ajusta en "<tmpl_var _("webui","file_sharing_share_type_all_folders_text")>". De lo contrario, puede editar este campo para especificar qué carpetas deben compartirse. Los nombres predeterminados de las carpetas son "Público" y "Compartido". </p>
+	<p> Tenga en cuenta que las carpetas especificadas aquí deben estar en el nivel superior de la estructura de carpetas; no puede especificar una ruta de carpeta como "Proyectos/2015/Resumen". </p>
+
+	<h3>Tipo de acceso</h3>
+	<p> Seleccione la opción deseada para acceso <tmpl_var _("webui","file_sharing_share_access_type_read_only_text")> o <tmpl_var _("webui","file_sharing_share_access_type_read_write_text")> a las carpetas compartidas. </p>
+	<p> Si el dispositivo de almacenamiento masivo USB está usando los sistemas de archivo NTFS o HFS+, el acceso será <tmpl_var _("webui","file_sharing_share_access_type_read_only_text")> independientemente de esta configuración. </p>
+
+	<tmpl_if SwapToggleButtonAction>
+		<h3>Compartir con red principal</h3>
+		<p>
+		Cuando está marcada, el dispositivo de almacenamiento masivo USB está visible y su contenido está disponible para todos los dispositivos conectados a la red principal. 
+		</p>
+		<h3>Compartir con red de invitados</h3>
+		<p>
+		Cuando está marcada, el dispositivo de almacenamiento masivo USB está visible y su contenido está disponible para todos los dispositivos conectados a la red de invitados.
+		</p>
+	<tmpl_else>
+		<h3>Acceso a la red</h3>
+		<p> Use estas casillas de verificación para determinar si los usuarios en las redes Principal o Wi-Fi de invitados tienen acceso a las carpetas compartidas. </p>
+	</tmpl_if>
+</div>
+
+<!-- id="mass_storage" -->

@@ -1,0 +1,51 @@
+/* -------------------------------------------------------------
+ *	RESET CSS
+ *
+ * Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+ * modified by: John Scott
+ * modified date: 8/1/2012
+ * Code licensed under the BSD License:
+ * http://developer.yahoo.net/yui/license.txt
+ * version: 2.5.2
+ * -------------------------------------------------------------
+ */
+html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#000;background:#fff;}
+html{color:#000;background:#fff;}
+html,body,input,select,textarea{font-size: 100%;} /* Fixes exaggerated text resizing in IE6 and IE7 */
+html,body,button,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,figure,fieldset,legend,input,select,textarea,p,blockquote,th,td,label{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+button,legend,fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,b,th,var{font-style:normal;font-weight:normal;}
+li{list-style-type:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+/* Redeclare monospace font family: h5bp.com/j */
+pre,code,kbd,samp{font-family:monospace,serif;_font-family:'couriernew',monospace;font-size:1em;}
+/* Improve readability of pre-formatted text in all browsers */
+pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word;}
+q{quotes:none;}
+q:before,q:after{content:"";content: none;}
+abbr,acronym {border:none;font-variant:normal;}
+small{font-size:85%;}
+/* to preserve line-height and selector appearance */
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}
+sup{top:-0.5em;}
+sub{bottom:-0.25em;}
+label{cursor:default;}
+legend{*margin-left:-7px;padding:0;white-space:normal;}
+/* Hide Dotted Outlines */
+a:focus,a:hover,a:active,*{outline:none;}
+button,input,select,textarea{vertical-align:baseline;*vertical-align:middle;}
+button,input{line-height: normal;}
+button,input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button;*overflow:visible;}
+button[disabled],input[disabled]{cursor:default;}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*width:13px;*height:13px;}
+/*input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}
+input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none;}*/
+/* Remove inner padding and border in FF3/4: h5bp.com/l */
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
+textarea{overflow:auto;vertical-align:top;resize:vertical;}
+img{-ms-interpolation-mode:bicubic;vertical-align:middle;}
+/* Correct overflow not hidden in IE9 */
+svg:not(:root){overflow:hidden;}

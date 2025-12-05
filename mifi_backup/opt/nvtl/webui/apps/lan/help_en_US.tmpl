@@ -1,0 +1,60 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+	<h2>Overview</h2>
+		<p>These settings apply to your local area network or LAN. For this device, the LAN consists of this device and all connected devices (including the Ethernet connected devices, if they exist). 
+		</p>
+			
+	<h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+		<p>
+			The IP address for this device, as seen from the local network.
+			Normally, you can use the default value.
+		</p>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+		<p>
+			The default value 255.255.255.0 is standard for small (class "C") networks.
+			If you change the LAN IP Address, make sure you use the correct Subnet Mask.
+		</p>
+			
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+		<p>
+			The MAC address is a unique network identifier, assigned when a network device is manufactured.
+			This read-only field displays the MAC Address for the Wi-Fi and USB interfaces on this device.
+		</p>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+		<p>Normally, this should be left checked. The DHCP server allocates an IP address to each connected device. If the DHCP Server was turned off, then each connected device would need to be assigned a fixed IP address.
+		</p>
+
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+		<p>This field determines how often connected devices must renew the IP address assigned to them by the DHCP server. Normally, this can be left at the default value, but if you have special requirements you can change this value.
+		</p>
+
+
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>If you wish to change the IP address range used by the DHCP server, you can do so by changing this value. This option is for expert users only.
+		</p>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+		<p>This indicates the range of IP addresses which may be allocated to connected devices. If using a fixed IP address on a connected device, you should use an IP address that is outside this range. 
+		</p>
+	<tmpl_if LANReservedIPAddressShow>		
+	<h3><tmpl_var truncate(_("webui", "adv_lan_reservedIp_button"), (size(_("webui", "adv_lan_reservedIp_button")) - size(":")))></h3>
+		<p>This feature can be used to ensure that a connected device will always be allocated the same IP Address by the <tmpl_var _("webui", "webui_product_name")>. Click this button to access the setup screen for this feature.
+		</p>
+	</tmpl_if>
+		
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>If some of your connected devices support IPv6, this setting should be turned on.
+			IPv6 connected devices will then be able to make IPv6 connections to the internet.
+			</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+			<p>This is the IPv6 address of this device. The Link-Local address is used for IPv6 communication between devices on the same network. </p>
+	</tmpl_if>	
+			
+</div>
+<!-- id="lan" -->
+

@@ -1,0 +1,55 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>Esta muestra el estado de conexión para la conexión a internet por medio de la red móvil. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>El nombre de la red móvil a la cual este dispositivo está conectado actualmente. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>La tecnología de red utilizada para la conexión actual. LTE es la tecnología más rápida disponible. </p> 
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+	-->
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>Para la sesión de internet actual, el período transcurrido desde que se estableció la conexión. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))>
+</h3>
+	<p>Para la sesión actual de internet, la cantidad de datos recibidos. Este contador empieza de cero cuando se establece la conexión. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>Para la sesión actual de internet, la cantidad de datos transmitidos. Este contador empieza de cero cuando se establece la conexión. </p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+	<p> La dirección de IP de internet asignada a este dispositivo. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))>
+</h3>
+	<p> La máscara de red asociada con la dirección de IP anterior. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	<p> La dirección de IP de la pasarela asociada con la dirección de IP anterior. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))>
+</h3>
+	<p> El servidor del nombre de dominio actualmente usado por este dispositivo. </p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+	<p>La dirección de IPv6 global para el <tmpl_var _("webui", "webui_product_name")> se muestra aquí. Quedará en blanco si el IPv6 está desactivado o si no está admitido por la conexión de red actual. </p>
+
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+	<p>El registro de la sesión contiene los siguientes datos:</p>
+	<p>- Fecha/hora   (cuándo comenzó la conexión)</p>
+	<p>- Duración (con el mismo formato que la información de sesión actual)</p>
+	<p>- Datos recibidos (mismo formato que la sesión actual)</p>
+	<p>- Datos transmitidos (mismo formato que la sesión actual)</p>
+	<p>- Datos totales  (suma de Rx y Tx, formato en cuanto a la información de sesión actual)</p>
+	<p>- Estado de itinerancia (itinerancia/parcial/en blanco) En blanco = red doméstica</p>
+	<p>- Dirección IPv4 (dirección IP WWAN IPv4)</p>
+	<p>- Dirección IPv6 (dirección IP WWAN IPv6)</p>
+
+	<p><strong>Nota: </strong>Los registros de sesiones de Internet se muestran en orden por fecha.</p>
+
+</div> 
+<!-- id="status_internet" -->
+

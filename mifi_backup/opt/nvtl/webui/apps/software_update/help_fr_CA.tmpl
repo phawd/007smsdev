@@ -1,0 +1,45 @@
+<!-- Software Update -->
+<div id="software_update">
+
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+
+	<h2>Vue d'ensemble</h2>
+
+		<p> Les mises à jour logicielles sont transmises automatiquement sur le réseau mobile. Cette page vous permet de surveiller ces mises à jour. </p>
+
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+
+	<h3>Version actuelle du logiciel</h3>
+	
+		<p> Ce champ indique la version du logiciel actuellement installée sur cet appareil. </p>
+
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var truncate(_("webui", "software_update_current_software_configuration_version_label"), (size(_("webui", "software_update_current_software_configuration_version_label")) - size(":")))></h3>
+		
+			<p> Ce numéro de version est lié au composant de gestion des appareils. Le composant logiciel de gestion des appareils est automatiquement mis à jour selon le besoin. </p>
+		</tmpl_if>
+	</tmpl_if>
+	
+	<h2><tmpl_var truncate(_("webui", "software_update_check_for_update_sub_header_text"), (size(_("webui", "software_update_check_for_update_sub_header_text"))))></h2>
+
+	<h3><tmpl_var truncate(_("webui", "software_update_check_for_update_time_label"), (size(_("webui", "software_update_check_for_update_time_label")) - size(":")))></h3>
+
+		<p> Ce champ indique la date de dernière vérification du MiFi pour déterminer si une mise à jour est disponible. Vous pouvez vérifier manuellement l'existence d'une telle mise à jour au moyen du bouton « Vérifier les mises à jour ». </p>
+	
+	<h3>Bouton Vérifier les mises à jour</h3>
+		<p> Vous pouvez utiliser ce bouton pour vérifier si une mise à jour est disponible pour votre MiFi. Cela n'est normalement pas nécessaire dans la mesure où les mises à jour sont automatiquement poussées vers le MiFi. Si vous procédez à cette vérification et qu'une mise à jour est disponible, celle-ci est automatiquement téléchargée. </p>
+
+	<h3><tmpl_var truncate(_("webui", "software_update_check_for_update_status_label"), (size(_("webui", "software_update_check_for_update_status_label")) - size(":")))></h3>
+
+		<p> Cette section est normalement vide, mais si vous vérifiez l'existence d'une mise à jour, le résultat de cette vérification y est affiché. De même, si une mise à jour est téléchargée, la progression du téléchargement y est affichée. </p>
+	
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+		
+		<p> Ce panneau présente les détails de la dernière mise à jour logicielle. </p>
+	
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+	
+		<p> Il peut être ouvert en cliquant sur le lien/l'entête. L'historique des mises à jour du système contient des détails sur les <tmpl_var SoftwareUpdateHistoryCount> dernières mises à jour qui ont été téléchargées et installées sur cet appareil. Si aucune mise à jour n'a été installée, ce panneau affichera la version actuelle du logiciel. </p>
+</div>
+<!-- end Software Update -->

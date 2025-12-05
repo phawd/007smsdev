@@ -1,218 +1,218 @@
 # GEMINI Integration Guide
 
-## Index
-1. [Purpose](#purpose)
-2. [CI workflows added](#ci-workflows-added)
-3. [Running GEMINI checks locally](#running-gemini-checks-locally)
-4. [Safety and dangerous operations](#safety-and-dangerous-operations)
-5. [GEMINI-specific conventions](#gemini-specific-conventions)
+## Overview
+
+This document describes how GEMINI (Google's AI assistant) integrates with the ZeroSMS Testing Suite repository to maintain code quality, ensure RFC compliance, and streamline development workflows.
 
 ## Purpose
-This file explains how GEMINI (automation) integrates with this repository and what it expects from contributors.
 
-GEMINI is an AI-powered automation system that helps maintain code quality, run tests, and ensure security standards across the ZeroSMS project. It interacts with CI workflows, performs code reviews, and validates changes before they are merged.
+GEMINI assists with:
+- **Code Review**: Automated analysis of pull requests for RFC compliance, security vulnerabilities, and best practices
+- **CI/CD Integration**: Monitoring and responding to GitHub Actions workflow failures
+- **Documentation**: Maintaining up-to-date technical documentation aligned with code changes
+- **Issue Triage**: Helping categorize and prioritize issues based on RFC standards and project goals
+- **Code Generation**: Generating compliant SMS/MMS/RCS protocol implementations following GSM, OMA, and GSMA specifications
 
-## CI workflows added
+## CI/CD Workflows
 
-### Python CI (`.github/workflows/python-ci.yml`)
-Runs linters, type checks, tests, and dependency audits for Python code in the `tools/` directory.
+### Python CI (`python-ci.yml`)
 
-**Checks performed:**
-- **Black**: Code formatting verification
-- **Ruff**: Fast Python linting
-- **Mypy**: Static type checking
-- **Pytest**: Unit test execution
-- **pip-audit**: Dependency vulnerability scanning
-- **Bandit**: Security issue detection
+Runs on every push and pull request to main/master branches:
 
-### Android CI (`.github/workflows/android-ci.yml`)
-Builds Android APK and runs static checks for Kotlin/Java code.
+**Linting & Formatting**:
+- `black --check .` - Code formatting validation
+- `ruff check .` - Fast Python linter
+- `mypy .` - Static type checking
 
-**Checks performed:**
-- **Gradle build**: Compiles debug APK
-- **Unit tests**: Runs Android unit tests
-- **ktlint**: Kotlin code style checking
-- **detekt**: Static code analysis for Kotlin
+**Testing**:
+- `pytest -q` - Run Python test suite
 
-## Running GEMINI checks locally
+**Security & Auditing**:
+- `pip-audit --progress` - Scan dependencies for known vulnerabilities
+- `bandit -r .` - Security issue scanner for Python code
+- `detect-secrets scan` - Detect hardcoded secrets and credentials
 
-### Python checks
-```bash
-# Set up virtual environment
-python3 -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+**Note**: All checks use `|| true` to avoid blocking merges initially. This allows the team to establish a baseline and address issues incrementally.
 
-# Install dependencies
-pip install -r requirements.txt  # If requirements.txt exists
-pip install black ruff mypy pytest pip-audit bandit
+### Android CI (`android-ci.yml`)
 
-# Run individual checks
-black --check .           # Format checking
-black .                   # Auto-format
-ruff check .              # Linting
-mypy .                    # Type checking
-pytest                    # Run tests
-pip-audit                 # Dependency audit
-bandit -r .               # Security scan
+Triggers on changes to Kotlin code, Gradle files, or app directory:
+
+**Build & Test**:
+- `./gradlew assembleDebug` - Build debug APK
+- `./gradlew testDebugUnitTest` - Run unit tests
+
+**Code Quality**:
+- `./gradlew ktlintCheck` - Kotlin linting (if configured)
+- `./gradlew detekt` - Static analysis for Kotlin (if configured)
+
+**Optimizations**:
+- Gradle dependency caching for faster builds
+- Path filtering to run only when Android code changes
+
+## GEMINI Safety & Conventions
+
+### Security Principles
+
+1. **No Secret Commits**: GEMINI will never commit secrets, API keys, or credentials
+2. **Vulnerability Awareness**: Security scans (bandit, pip-audit) are reviewed before merge
+3. **Minimal Permissions**: GEMINI operates with read-only access to most systems
+4. **Audit Trail**: All GEMINI-suggested changes are reviewed by human maintainers
+
+### Code Conventions
+
+**SMS/MMS/RCS Compliance**:
+- All SMS encoding must reference GSM 03.38 and 3GPP TS 23.040
+- MMS implementations follow OMA MMS Encapsulation Protocol
+- RCS features adhere to GSMA RCS Universal Profile 2.4
+
+**Kotlin Style**:
+- Follow official Kotlin coding conventions
+- Use Jetpack Compose best practices for UI
+- Prefer coroutines and StateFlow for asynchronous operations
+
+**Python Style**:
+- PEP 8 compliance (enforced by black and ruff)
+- Type hints for all public functions
+- Docstrings for modules, classes, and functions
+
+**Testing Requirements**:
+- Android: Minimum unit test coverage for core protocol logic
+- Python: Test coverage for CLI tools and AT command implementations
+- Integration tests require real Android devices (see `TESTING_GUIDE.md`)
+
+### Documentation Standards
+
+- **RFC References**: Always cite RFC/spec section when implementing protocol features
+- **Code Comments**: Explain *why*, not *what* (code should be self-documenting)
+- **Commit Messages**: Use conventional commits format (feat:, fix:, docs:, etc.)
+- **PR Descriptions**: Include test results, device compatibility notes, and RFC compliance checklist
+
+## GEMINI Interaction Workflow
+
+### Pull Request Review
+
+1. **Automated Analysis**: GEMINI scans PR diff for:
+   - RFC compliance violations
+   - Security vulnerabilities
+   - Test coverage gaps
+   - Documentation updates needed
+
+2. **Feedback Generation**: Comments inline with code suggestions:
+   ```
+   🤖 GEMINI: This SMS encoding violates GSM 03.38 section 6.2.1
+   - Issue: UCS-2 encoding used for GSM 7-bit compatible text
+   - Suggestion: Use `SmsEncoding.AUTO` to optimize encoding selection
+   - Ref: core/sms/SmsManagerWrapper.kt:calculateSmsInfo()
+   ```
+
+3. **Human Review**: Maintainers review GEMINI suggestions and approve/modify
+
+### Issue Triage
+
+GEMINI helps categorize issues:
+- **RFC Compliance**: Tags issues related to protocol violations
+- **Security**: Flags potential security vulnerabilities
+- **Device Compatibility**: Identifies device-specific bugs (MediaTek, Qualcomm, etc.)
+- **Priority**: Suggests priority based on impact and complexity
+
+### CI Failure Response
+
+When workflows fail:
+1. GEMINI analyzes logs from GitHub Actions
+2. Identifies root cause (build error, test failure, linting issue)
+3. Suggests fix or opens draft PR with potential solution
+4. Escalates to maintainers if issue is complex
+
+## Developer Workflows
+
+### Before Committing
+
+1. **Run Local Checks**:
+   ```bash
+   # Python
+   black . && ruff check . && mypy .
+   
+   # Android
+   ./gradlew assembleDebug testDebugUnitTest
+   ```
+
+2. **Review GEMINI Feedback**: Check PR comments before requesting review
+
+3. **Update Documentation**: Ensure `docs/RFC_COMPLIANCE.md` reflects protocol changes
+
+### Requesting GEMINI Assistance
+
+Use GitHub issue templates or PR comments:
+
+```
+@gemini-bot Please review this MMS PDU encoding implementation for 
+OMA MMS Encapsulation Protocol compliance (WAP-209 section 7.3.34)
 ```
 
-### Android checks
-```bash
-# Build project
-./gradlew assembleDebug
+### GEMINI Limitations
 
-# Run tests
-./gradlew testDebugUnitTest
+**What GEMINI Can Do**:
+- Review code for compliance and best practices
+- Suggest fixes for common issues
+- Generate boilerplate protocol implementations
+- Analyze CI/CD logs and suggest debugging steps
 
-# Run static analysis
-./gradlew ktlintCheck
-./gradlew detekt
+**What GEMINI Cannot Do**:
+- Test on physical Android devices (requires human testing)
+- Make carrier-specific configuration decisions (needs operator knowledge)
+- Override human maintainer decisions
+- Commit directly to main/master (all changes via PR)
 
-# Fix formatting issues
-./gradlew ktlintFormat
-```
+## Configuration Files
 
-## Safety and dangerous operations
+### Pre-Commit Hooks (`.github/pre-commit-config.yaml`)
 
-**CRITICAL**: ZeroSMS includes functionality that can interact with real hardware and send actual SMS messages. To prevent accidental execution of dangerous operations, the following rules MUST be followed:
+Automated checks before commits:
+- Python: black, ruff, mypy
+- Secrets detection
+- File size limits
+- Trailing whitespace cleanup
 
-### Required confirmation flags
-Dangerous operations MUST require explicit confirmation flags:
-- `--confirm` or `--yes`: For operations that send real SMS/MMS messages
-- `--force`: For operations that modify system settings or modem configurations
-- `--allow-hardware`: For tests that require actual device hardware
+### Code Owners (`CODEOWNERS`)
 
-### Examples
-```bash
-# ❌ WRONG - Will not execute without confirmation
-python3 tools/zerosms_cli.py sms +15551234567 "Test message"
+Defines reviewers for different areas:
+- Core SMS/MMS/RCS logic: Lead developers
+- Documentation: Technical writers + GEMINI
+- CI/CD: DevOps team
+- Python tools: Script maintainers
 
-# ✅ CORRECT - Explicit confirmation required
-python3 tools/zerosms_cli.py sms +15551234567 "Test message" --confirm
+## Metrics & Monitoring
 
-# ❌ WRONG - Dangerous diag mode without confirmation
-python3 tools/zerosms_cli.py diag --profile generic
+GEMINI tracks:
+- CI success rate trend
+- Test coverage changes
+- Security vulnerability discoveries
+- RFC compliance issue frequency
+- Average time to merge PRs
 
-# ✅ CORRECT - Explicit confirmation for hardware changes
-python3 tools/zerosms_cli.py diag --profile generic --confirm
-```
+## Future Enhancements
 
-### Hardware-dependent tests
-GEMINI automation will NOT run hardware-dependent tests by default. Mark such tests appropriately:
+- **Automated RFC Compliance Reports**: Generate compliance matrix on release
+- **Device Lab Integration**: GEMINI-driven automated testing on physical devices
+- **Performance Benchmarking**: Track SMS encoding efficiency across Android versions
+- **Carrier Profile Validation**: Verify MMSC configurations against carrier specs
 
-**Python:**
-```python
-import pytest
+## Resources
 
-@pytest.mark.hardware
-def test_sms_sending():
-    # Test requires real device
-    pass
-```
+- **RFC Database**: https://www.rfc-editor.org/
+- **3GPP Specs**: https://www.3gpp.org/specifications
+- **GSMA RCS**: https://www.gsma.com/futurenetworks/rcs/
+- **OMA MMS**: https://www.openmobilealliance.org/
 
-**Kotlin/Android:**
-```kotlin
-import org.junit.Ignore
+## Contact
 
-@Ignore("Requires real device")
-@Test
-fun testSmsDelivery() {
-    // Test requires real device
-}
-```
+For questions about GEMINI integration:
+- Open an issue with `gemini` label
+- Review `CONTRIBUTING.md` for guidelines
+- Check `SECURITY.md` for vulnerability reporting
 
-### CI behavior
-- Hardware tests are skipped in CI by default
-- Mock interfaces should be used for hardware-dependent functionality
-- Integration tests requiring real devices should be marked and run manually
+---
 
-## GEMINI-specific conventions
-
-### Code style
-**Python:**
-- Use **black** for formatting (line length: 88 characters)
-- Use **ruff** for linting (replaces flake8, isort, pyupgrade)
-- Use **mypy** for type hints and static type checking
-- Follow PEP 8 naming conventions
-
-**Kotlin:**
-- Use **ktlint** for formatting (official Kotlin style guide)
-- Use **detekt** for static analysis
-- Follow Android Kotlin Style Guide
-
-### Testing requirements
-- Add tests for new functionality
-- Use mocks for hardware interfaces to enable CI coverage
-- Keep tests fast and deterministic
-- Avoid flaky tests that depend on timing or external services
-
-### Commit messages
-Follow conventional commits format:
-```
-type(scope): description
-
-[optional body]
-
-[optional footer]
-```
-
-**Types:**
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation only
-- `style`: Code style changes (formatting, no logic change)
-- `refactor`: Code refactoring
-- `test`: Adding or updating tests
-- `chore`: Maintenance tasks
-
-**Examples:**
-```
-feat(sms): Add support for Flash SMS (Class 0)
-fix(at): Handle modem timeout errors gracefully
-docs(readme): Update installation instructions
-test(mms): Add unit tests for PDU encoding
-```
-
-### Pull request guidelines
-1. Run local checks before opening PR
-2. Ensure CI passes (both Python and Android workflows)
-3. Include test coverage for new code
-4. Update documentation if behavior changes
-5. Reference related issues with `Fixes #123` or `Closes #456`
-
-### Security practices
-- Never commit credentials, API keys, or secrets
-- Use environment variables for sensitive configuration
-- Run `pip-audit` and `bandit` before committing Python changes
-- Review `SECURITY.md` for vulnerability reporting procedures
-- GEMINI will automatically scan for common security issues
-
-### File structure conventions
-```
-zerosms/
-├── .github/
-│   └── workflows/          # CI workflow definitions
-├── app/                    # Android application code
-├── docs/                   # Documentation files
-├── tools/                  # Python CLI tools
-├── GEMINI.md              # This file
-├── CONTRIBUTING.md        # Contribution guidelines
-├── SECURITY.md            # Security policy
-└── README.md              # Project overview
-```
-
-## Getting help
-
-If you encounter issues with GEMINI automation or CI checks:
-1. Check this documentation first
-2. Review CI logs in GitHub Actions tab
-3. Run checks locally to reproduce issues
-4. Consult the `CONTRIBUTING.md` for setup instructions
-5. Open an issue with `[GEMINI]` prefix in the title
-
-## References
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [Black Documentation](https://black.readthedocs.io/)
-- [Ruff Documentation](https://docs.astral.sh/ruff/)
-- [ktlint Style Guide](https://pinterest.github.io/ktlint/)
-- [Conventional Commits](https://www.conventionalcommits.org/)
+*Last Updated: 2025-12-04*
+*GEMINI Version: Compatible with GitHub Copilot Workspace*

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lte IE 8]><html class="no-js ie8 oldie<tmpl_if IN_SET(gLangDirection, "rtl")> rtl</tmpl_if>" lang="<tmpl_var gHtmlLang>"<tmpl_if IN_SET(gLangDirection, "rtl")> dir="<tmpl_var gLangDirection>"</tmpl_if>><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js<tmpl_if IN_SET(gLangDirection, "rtl")> rtl</tmpl_if>" lang="<tmpl_var gHtmlLang>"<tmpl_if IN_SET(gLangDirection, "rtl")> dir="<tmpl_var gLangDirection>"</tmpl_if>><!--<![endif]-->
+	<head>
+		<tmpl_include "meta.tmpl">
+		<title><tmpl_include "admin_title.tmpl"></title>
+		<tmpl_include "links.tmpl">
+		<tmpl_include "scripts.tmpl">
+	</head>
+	<body id="<tmpl_var gPageId>" class="page">
+		<div id="container">
+			<div id="container_inner">
+				<tmpl_include "notification.tmpl">
+				<tmpl_include "header.tmpl">
+				<div id="main" role="main">
+					<div id="main_inner" class="clearfix">
+
+						<div id="sidebar" class="left">
+							<div id="sidebar_inner">
+								<tmpl_unless IN_SET(gPageId,'screen_sharing_host_nonadmin')><tmpl_include "menu.tmpl">
+								<tmpl_else>
+									<ul id="navigation" class="clearfix">
+										<li class="menuitem <tmpl_if IN_SET(gPageId, 'apps_home')> active</tmpl_if>">
+											<a href="<tmpl_var GET_URI('apps_home')>" class="linkWrap menu-home"><tmpl_udf GET_PO_TEXT("menu_apps_home_text", gProductName)></a>
+										</li>
+									</ul>
+								</tmpl_unless>
+							</div>
+						</div> <!-- /#sidebar-->
+
+						<div id="app_container">
+							<div id="app_inner">
+								<tmpl_include "noscript.tmpl">
+								<div id="app_content">
+									<tmpl_include "app.tmpl">
+								</div>
+							</div>
+						</div> <!-- /#app_container -->
+
+					</div>  <!-- /#main_inner -->
+				</div> <!-- /#main -->
+
+			</div> <!-- /#container_inner -->
+			<div id="push"></div> <!-- for sticky footer -->
+		</div> <!-- /#container -->
+
+		<tmpl_include "footer.tmpl">
+	</body>
+</html>

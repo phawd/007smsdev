@@ -1,0 +1,330 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+	</div>
+<tmpl_else>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	$(function()
+	{
+		if ("<tmpl_var reboot>" === "true") {
+			showModal();
+		}
+
+		if("<tmpl_var versionFileError>" === "") {
+			$("#deviceInfoForm").hide();
+		}
+
+		$("#changeLink").on("click", function(e){
+			e.preventDefault();
+			if($("#deviceInfoForm").is(":visible")) {
+				$("#deviceInfoForm").hide();
+			} else {
+				$("#deviceInfoForm").show();
+			}
+		});
+
+		<tmpl_if showToggleSoftwareComponentSection>
+		$("#showSoftwareComponent").on("click", function(){
+			$("#systemVersionInfo").slideToggle();
+			if ($("#showSoftwareComponent").html() === '<tmpl_var _("webui", "device_info_hide_software_components_sub_header_text")>') {
+                $("#showSoftwareComponent").html('<tmpl_var _("webui", "device_info_show_software_components_sub_header_text")>');
+			} else {
+				$("#showSoftwareComponent").html('<tmpl_var _("webui", "device_info_hide_software_components_sub_header_text")>');
+			}
+		});
+		</tmpl_if>
+
+		<tmpl_if displayRestore>
+			$("#restoreFactory").click(function(e){
+				e.preventDefault();
+				var title = '<tmpl_var _("webui", "webui_modal_title")>';
+				var msg = '<p><tmpl_var _("webui", "device_info_restore_factory_modal_text")></p>';
+				makeModal(title, msg, false);
+			});
+		</tmpl_if>
+
+		<tmpl_if DeviceInfoRestartShow>
+			<tmpl_unless DeviceInfoRestartLocked>
+				$("#restartDevice").on("click", function(e){
+					e.preventDefault();
+					var title = '<tmpl_var _("webui", "webui_modal_title")>';
+					var msg = '<p><tmpl_var _("webui", "device_info_restart_modal_text")></p>';
+					makeModal(title, msg, true);
+				});
+			</tmpl_unless>
+		</tmpl_if>
+	});
+
+	<tmpl_if DeviceInfoRestartShow>
+		function makeModal(title, msg, bool)
+		{
+			modalPopup.createWindow(
+				title,
+				msg,
+				430, "auto",
+				[
+					{
+						text: '<tmpl_var _("webui", "webui_modal_cancel_button")>',
+						className: "cancel"
+					},
+					{
+						text: '<tmpl_var _("webui", "webui_modal_confirm_button")>',
+						className: "primary",
+						trigger: function(){
+							if(bool)
+							 	location.replace('<tmpl_udf GET_URI("restarting")>');
+							else
+								restoreDefaults();
+						}
+					}
+				]
+			);
+		}
+
+		<tmpl_if displayRestore>
+			function restoreDefaults()
+			{
+				$.ajax({
+					url : "<tmpl_udf GET_URI('device_info_restore_defaults')>",
+					type : "POST",
+					data : {
+						gSecureToken : "<tmpl_var gSecureToken>"
+					},
+					dataType : "json",
+					success : function(data, textStatus, xhr) {
+						location.replace('<tmpl_udf GET_URI("restarting")>');
+					}
+				});
+			}
+		</tmpl_if>
+	</tmpl_if>
+
+	function showModal()
+	{
+		modalPopup.createWindow(
+			'<tmpl_var _("webui", "device_info_restart_modal_title")>',
+			'<tmpl_var _("webui", "device_info_restart_message_text")>',
+			430, "auto",
+			[
+				{
+					text: '<tmpl_var _("webui", "webui_modal_ok_button")>',
+					className: "primary",
+					trigger: function() {
+						window.location = '<tmpl_udf GET_URI("restarting")>';
+					}
+				}
+			]);
+	}
+	/* ]]> */
+</script>
+
+<tmpl_if isLocked>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+	</div>
+</tmpl_if>
+
+<fieldset class="first">
+	<div class="table">
+		<tmpl_unless IN_SET(manufacturer, "unknown")>
+			<div class="row clearfix">
+				<div class="col label"><tmpl_var _("webui", "device_info_manufacturer_label")></div>
+				<div class="col textCol" id="manufacturer"><tmpl_var manufacturer></div>
+			</div><!-- /.row -->
+		</tmpl_unless>
+
+		<tmpl_unless IN_SET(model, "unknown")>
+			<div class="row clearfix">
+				<div class="col label"><tmpl_var _("webui", "device_info_model_label")></div>
+				<div class="col textCol" id="model"><tmpl_var model></div>
+			</div><!-- /.row -->
+		</tmpl_unless>
+
+		<tmpl_if showRadioTechnologies>
+			<tmpl_unless IN_SET(radioTech, "unknown")>
+				<div class="row clearfix">
+					<div class="col label"><tmpl_var _("webui", "device_info_radio_technology_label")></div>
+					<div class="col textCol" id="radioTech"><tmpl_var radioTech></div>
+				</div><!-- /.row -->
+			</tmpl_unless>
+		</tmpl_if>
+
+		<tmpl_if showIMEI>
+			<tmpl_unless IN_SET(imei, "unknown")>
+				<div class="row clearfix">
+					<div class="col label"><tmpl_var _("webui", "device_info_imei_label")></div>
+					<div class="col textCol" id="imei"><tmpl_var imei></div>
+				</div><!-- /.row -->
+			</tmpl_unless>
+		</tmpl_if>
+
+		<tmpl_if showMeid>
+			<div class="row clearfix">
+				<div class="col label"><tmpl_var _("webui", "device_info_meid_label")></div>
+				<div class="col textCol" id="meid"><tmpl_var meid></div>
+			</div><!-- /.row -->
+		</tmpl_if>
+
+		<tmpl_if showICCID>
+			<tmpl_unless IN_SET(iccid, "unknown")>
+				<div class="row clearfix">
+					<div class="col label"><tmpl_var _("webui", "device_info_iccid_label")></div>
+					<div class="col textCol" id="iccid"><tmpl_var iccid></div>
+				</div><!-- /.row -->
+			</tmpl_unless>
+		</tmpl_if>
+
+		<tmpl_if showMDN>
+			<tmpl_unless IN_SET(wirelessnumber, "unknown")>
+				<div class="row clearfix">
+					<div class="col label"><tmpl_var _("webui", "device_info_wirelessnumber_label")></div>
+					<div class="col textCol" id="wirelessnumber"><tmpl_var wirelessnumber></div>
+				</div><!-- /.row -->
+			</tmpl_unless>
+		</tmpl_if>
+
+		<tmpl_if showHWVersion>
+			<tmpl_unless IN_SET(hwVersion, "unknown")>
+				<div class="row clearfix">
+					<div class="col label"><tmpl_var _("webui", "device_info_hardware_version_label")></div>
+					<div class="col textCol" id="hwVersion"><tmpl_var hwVersion></div>
+				</div><!-- /.row -->
+			</tmpl_unless>
+		</tmpl_if>
+
+		<tmpl_if ShowModemVersionAboveComponentsSection>
+		<tmpl_unless IN_SET(modemVersion, "unknown")>
+			<div class="row clearfix">
+				<div class="col label"><tmpl_var _("webui", "device_info_modem_version_label")></div>
+				<div class="col textCol" id="modemVersion"><tmpl_var modemVersion></div>
+			</div><!-- /.row -->
+		</tmpl_unless>
+		</tmpl_if>
+
+		<tmpl_unless IN_SET(globalOsVersion, "unknown")>
+			<div class="row clearfix">
+				<div class="col label"><tmpl_var _("webui", "device_info_global_os_version_label")></div>
+				<div class="col textCol" id="globalOsVersion"><tmpl_var globalOsVersion></div>
+			</div><!-- /.row -->
+		</tmpl_unless>
+
+		<tmpl_if showSDMVersion>
+			<tmpl_unless IN_SET(sdmVersion, "unknown")>
+				<div class="row clearfix">
+					<div class="col label">
+						<tmpl_var _("webui", "device_info_global_sdm_version_label")>
+					</div>
+					<div class="col input" id="sdmVersion">
+						<tmpl_var sdmVersion>
+					</div>
+				</div>
+			</tmpl_unless>
+		</tmpl_if>
+
+		<tmpl_if showSoftwareComponent>
+			<h3 id="showSoftwareComponent" class="<tmpl_unless showToggleSoftwareComponentSection>sectionHead<tmpl_else>hideShowSection</tmpl_unless>"><tmpl_var _("webui", "device_info_show_software_components_sub_header_text")></h3>
+		</tmpl_if>
+		<div class="row clearfix" id="systemVersionInfo"<tmpl_if showSoftwareComponent> <tmpl_if showToggleSoftwareComponentSection> style="display:none;" </tmpl_if> </tmpl_if>>
+			<div class="col <tmpl_if showToggleSoftwareComponentSection>sub_table</tmpl_if>">
+				<div class="table">
+					<tmpl_if showMifiOsVersion>
+						<tmpl_unless IN_SET(osVersion, "unknown")>
+							<div class="row clearfix">
+								<div class="col label"><tmpl_var _("webui", "device_info_os_version_label")></div>
+								<div class="col textCol" id="osVersion"><tmpl_var osVersion></div>
+							</div><!-- /.row -->
+						</tmpl_unless>
+					</tmpl_if>
+
+					<tmpl_if showModemVersion>
+					<tmpl_unless IN_SET(modemVersion, "unknown")>
+						<div class="row clearfix">
+							<div class="col label"><tmpl_var _("webui", "device_info_modem_version_label")></div>
+							<div class="col textCol" id="modemVersion"><tmpl_var modemVersion></div>
+						</div><!-- /.row -->
+					</tmpl_unless>
+					</tmpl_if>
+
+                    <tmpl_if showWifiFwVersion>
+						<tmpl_unless IN_SET(wifiVersion, "unknown")>
+							<div class="row clearfix">
+								<div class="col label"><tmpl_var _("webui", "device_info_wifi_version_label")></div>
+								<div class="col textCol" id="wifiVersion"><tmpl_var wifiVersion></div>
+							</div><!-- /.row -->
+						</tmpl_unless>
+					</tmpl_if>
+					<tmpl_unless IN_SET(webUiVersion, "unknown")>
+						<div class="row clearfix">
+							<div class="col label"><tmpl_var _("webui", "device_info_web_ui_version_label")></div>
+							<div class="col textCol" id="webUiVersion"><tmpl_var webUiVersion></div>
+						</div><!-- /.row -->
+					</tmpl_unless>
+
+                    <tmpl_if showLcdVersion>
+						<tmpl_unless IN_SET(lcdUiVersion, "unknown")>
+							<div class="row clearfix">
+								<div class="col label"><tmpl_var _("webui", "device_info_lcd_ui_version_label")></div>
+								<div class="col textCol" id="lcdUiVersion"><tmpl_var lcdUiVersion></div>
+							</div><!-- /.row -->
+						</tmpl_unless>
+					</tmpl_if>
+
+					<tmpl_unless IN_SET(priVersion, "unknown")>
+						<div class="row clearfix">
+							<div class="col label"><tmpl_var _("webui", "device_info_pri_version_label")></div>
+							<div class="col textCol" id="priVersion"><tmpl_var priVersion></div>
+						</div>
+					</tmpl_unless>
+
+					<tmpl_if showPRICustomization>
+						<tmpl_unless IN_SET(priCustomization, "unknown")>
+							<div class="row clearfix">
+								<div class="col label"><tmpl_var _("webui", "device_info_pri_customization_label")></div>
+								<div class="col textCol" id="priCustomization">
+									<p>
+										<tmpl_var priCustomization> <tmpl_var priCustomizationVersionInfo><br />
+										<a href="#" id="changeLink"><tmpl_var _("webui", "device_info_pri_customization_change_link")></a>
+									</p>
+									<form id="deviceInfoForm" method="POST" action="<tmpl_udf GET_URI('device_info')>" enctype="multipart/form-data">
+										<div class="table">
+											<div class="row clearfix">
+												<div class="col label">
+													<h4><label for="versionFile"><tmpl_var _("webui", "device_info_file_select_label")></label><h4>
+												</div>
+												<div class="col input">
+													<input type="file" name="versionFile" id="versionFile"<tmpl_if versionFileError> class="error"</tmpl_if> />
+												</div>
+												<tmpl_if versionFileError>
+													<div class="col inline_error"><tmpl_var versionFileError></div>
+												</tmpl_if>
+												<div id="fileUploadButton" class="col buttonCol">
+													<input type="hidden" name="gSecureToken" value="<tmpl_var gSecureToken>" />
+													<button type="submit" id="uploadFile" class="secondary"><tmpl_var _("webui", "device_info_file_upload_button")></button>
+												</div>
+											</div><!-- /.row -->
+										</div><!-- /.table -->
+									</form>
+								</div>
+							</div><!-- /.row -->
+						</tmpl_unless>
+					</tmpl_if>
+				</div><!-- /.table -->
+			</div><!-- subtable -->
+		</div><!-- /.row -->
+	</div><!-- /.table -->
+
+	<tmpl_if DeviceInfoRestartShow>
+		<div class="button_container clearfix">
+			<button type="button" id="restartDevice" class="secondary"<tmpl_if isLocked>  disabled="disabled" </tmpl_if><tmpl_if DeviceInfoRestartLocked> disabled="disabled" </tmpl_if>><tmpl_var _("webui", "device_info_restart_device_button")></button>
+		</div>
+	</tmpl_if>
+
+	<tmpl_if displayRestore>
+		<div class="button_container clearfix">
+		<button type="submit" id="restoreFactory" class="multi"><tmpl_var _("webui", "device_info_restore_factory_button")></button>
+		</div>
+	</tmpl_if>
+	<tmpl_var _("webui", "device_info_footer_trademark_text")>
+</fieldset>
+</tmpl_if>

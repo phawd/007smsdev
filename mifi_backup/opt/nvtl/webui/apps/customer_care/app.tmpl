@@ -1,0 +1,60 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+	</div>
+<tmpl_else>
+
+<tmpl_if isLocked>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+	</div>
+</tmpl_if>
+
+	<p class="headerNote"><tmpl_var _("webui", "customer_care_intro_text")></p>
+
+	<tmpl_if showPhoneNumber>
+		<fieldset class="first">
+			<h3 class="sectionHead"><tmpl_var _("webui", "customer_care_wireless_number_sub_header_text")></h3>
+			<p id="modemInfoPhoneNumber" x-ms-format-detection="none" ><tmpl_var modemInfoPhoneNumber></p>
+		</fieldset>
+	</tmpl_if>
+
+	<tmpl_if (SIZE(supportSectionList) > 0)>
+		<tmpl_foreach supportSectionList as item>
+			<tmpl_if (SIZE(item.content) > 0)>
+				<fieldset<tmpl_if item.__last__> class="last"</tmpl_if>>
+					<h3 class="sectionHead"><tmpl_var _("webui", item.title)></h3>
+
+					<div class="table">
+						<tmpl_if showModelNumber>
+							<div class="row clearfix">
+								<div class="col label"><tmpl_var _("webui", "customer_care_model_label")></div>
+								<div class="col input"><tmpl_var modelNumber></div>
+							</div>
+						</tmpl_if>
+
+						<tmpl_foreach item.content as item_content>
+							<div class="row clearfix">
+								<tmpl_if (IN_SET(item_content.datatype, "url"))>
+									<div class="col">
+										<a target="_blank" href="<tmpl_var _("webui", item_content.url)>"><tmpl_var _("webui", item_content.text)></a>
+									</div>
+								</tmpl_if>
+
+								<tmpl_if (IN_SET(item_content.datatype, "label"))>
+									<div class="col label"><tmpl_var _("webui", item_content.label)></div>
+									<div class="col input" x-ms-format-detection="none"><tmpl_var _("webui", item_content.value)></div>
+								</tmpl_if>
+
+								<tmpl_if (IN_SET(item_content.datatype, "text"))>
+									<div class="col"><tmpl_var _("webui", item_content.text)></div>
+								</tmpl_if>
+							</div>
+						</tmpl_foreach>
+					</div><!-- /.table -->
+
+				</fieldset>
+			</tmpl_if>
+		</tmpl_foreach>
+	</tmpl_if>
+</tmpl_if>
