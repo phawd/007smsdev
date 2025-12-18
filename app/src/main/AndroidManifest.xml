@@ -45,13 +45,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ZeroSMS"
-        android:name=".ZeroSMSApplication">
+        android:theme="@style/Theme.SmsTest"
+        android:name=".SmsTestApplication">
         
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.ZeroSMS"
+            android:theme="@style/Theme.SmsTest"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -86,8 +86,8 @@
             android:name=".core.receiver.DeliveryReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.zerosms.testing.SMS_DELIVERED" />
-                <action android:name="com.zerosms.testing.SMS_SENT" />
+                <action android:name="com.smstest.app.SMS_DELIVERED" />
+                <action android:name="com.smstest.app.SMS_SENT" />
             </intent-filter>
         </receiver>
 
