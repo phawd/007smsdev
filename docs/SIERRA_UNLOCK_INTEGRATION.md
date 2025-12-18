@@ -1,6 +1,6 @@
 # Sierra Wireless Unlock Integration
 
-This document describes the integration of B.Kerler's Sierra Wireless unlock algorithms into the ZeroSMS toolkit for Inseego MiFi devices.
+This document describes the integration of B.Kerler's Sierra Wireless unlock algorithms into the SMS Test toolkit for Inseego MiFi devices.
 
 ## Overview
 
@@ -22,7 +22,7 @@ The Sierra Wireless unlock algorithms use challenge-response cryptography to unl
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│ ZeroSMS mifi_controller.py                                  │
+│ SMS Test mifi_controller.py                                  │
 ├─────────────────────────────────────────────────────────────┤
 │ unlock_carrier_sierra()  ← High-level unlock function       │
 │ get_carrier_unlock_status() ← Check retry counter           │
@@ -340,7 +340,7 @@ Replace locked firmware with unlocked version:
 ## File Structure
 
 ```
-zerosms/
+007smsdev/
 ├── tools/
 │   ├── mifi_controller.py         (1,504 lines → 1,700+ lines)
 │   │   ├── get_carrier_unlock_status()
@@ -368,7 +368,7 @@ zerosms/
 
 - Original: <https://github.com/bkerler/sierrakeygen>
 - Author: B.Kerler 2019-2023
-- ZeroSMS adapter: GPLv3 compatible
+- SMS Test adapter: GPLv3 compatible
 
 **Carrier Locks**: Legal status varies by country
 
@@ -398,7 +398,7 @@ zerosms/
    - Firmware: SDx20ALP-1.22.11
    - Carrier: Verizon (VID 1410, PID B023)
 
-4. **ZeroSMS Project Documentation**
+4. **SMS Test Project Documentation**
    - MIFI_DEVICE_GUIDE.md: MiFi-specific commands
    - ROOT_ACCESS_GUIDE.md: AT commands and root access
    - SESSION_4_FINDINGS.md: Reverse engineering notes
@@ -450,16 +450,16 @@ zerosms/
 4. **Automation**
    - Auto-detect device generation from firmware
    - Batch unlock for multiple devices
-   - Integration with zerosms_cli.py
+   - Integration with smstest_cli.py
 
 5. **Android App Integration**
-   - Add unlock UI to ZeroSMS app
+   - Add unlock UI to SMS Test app
    - Real-time unlock status display
    - Safety warnings and backup prompts
 
 ## Conclusion
 
-The Sierra Wireless unlock algorithms have been successfully integrated into the ZeroSMS toolkit. However, **algorithm compatibility with Qualcomm SDX20 (MiFi 8800L) remains unverified and HIGHLY UNCERTAIN**.
+The Sierra Wireless unlock algorithms have been successfully integrated into the SMS Test toolkit. However, **algorithm compatibility with Qualcomm SDX20 (MiFi 8800L) remains unverified and HIGHLY UNCERTAIN**.
 
 **DO NOT ATTEMPT UNLOCK ON PRODUCTION DEVICE WITHOUT VERIFICATION!**
 
@@ -468,5 +468,5 @@ Further research via Ghidra decompilation and firmware analysis is required to i
 ---
 
 **Last Updated**: Session 5
-**Authors**: B.Kerler (original algorithm), ZeroSMS Project (adapter)
+**Authors**: B.Kerler (original algorithm), SMS Test Project (adapter)
 **Status**: EXPERIMENTAL - Verification Required

@@ -31,7 +31,7 @@ C:\Tools\ghidra_11.2\ghidraRun.bat
 **Initial Setup**:
 
 1. Create new project: File → New Project → Non-Shared
-2. Import nwcli: File → Import File → f:\repo\zerosms\binaries\nwcli
+2. Import nwcli: File → Import File → f:\repo\007smsdev\binaries\nwcli
 3. Language: ARM:LE:32:v7 (32-bit Little Endian)
 4. Auto-analyze: Yes (default options)
 
@@ -130,28 +130,28 @@ def get_oper_info():
 
 ## File Locations
 
-**Binaries**: `f:\repo\zerosms\binaries\`
+**Binaries**: `f:\repo\007smsdev\binaries\`
 
 - nwcli (25KB) - **HAS BUG**
 - modem2_cli (145KB) - unlock_carrier_lock here
 
-**Code**: `f:\repo\zerosms\tools\`
+**Code**: `f:\repo\007smsdev\tools\`
 
 - mifi_controller.py (1,504 lines, 61 functions)
 
-**Analysis**: `f:\repo\zerosms\analysis\`
+**Analysis**: `f:\repo\007smsdev\analysis\`
 
 - IMPLEMENTATION_STATUS.md (150+ function catalog)
 - binary_analysis_results.txt
 - write_nv_disassembly.txt
 
-**Docs**: `f:\repo\zerosms\docs\`
+**Docs**: `f:\repo\007smsdev\docs\`
 
 - BINARY_ANALYSIS.md (tool guide)
 - SESSION_4_FINAL_SUMMARY.md (this session recap)
 - MIFI_DEVICE_GUIDE.md (device reference)
 
-**Backups**: `f:\repo\zerosms\`
+**Backups**: `f:\repo\007smsdev\`
 
 - nv550_backup.txt ← **CRITICAL: IMEI backup**
 
@@ -179,8 +179,8 @@ adb shell "/opt/nvtl/bin/modem2_cli get_signal"
 adb shell "/opt/nvtl/bin/nwcli qmi_idl read_nv 550 0" | grep "08 9a"
 
 # Use Python controller (safe commands only)
-python f:\repo\zerosms\tools\mifi_controller.py get-info
-python f:\repo\zerosms\tools\mifi_controller.py scan
+python f:\repo\007smsdev\tools\mifi_controller.py get-info
+python f:\repo\007smsdev\tools\mifi_controller.py scan
 ```
 
 ## DO NOT DO (Until Bug Fixed)

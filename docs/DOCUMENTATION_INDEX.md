@@ -416,7 +416,7 @@ Located in `../analysis/`
 
 ### Tools
 
-**Python CLI** (`../tools/zerosms_cli.py`):
+**Python CLI** (`../tools/smstest_cli.py`):
 
 - Unified command-line interface
 - Safe operation wrappers
@@ -462,7 +462,7 @@ Located in `../analysis/`
 
 1. Read **SAFE_OPERATIONS_GUIDE.md** for safety guidelines
 2. Review **QUICK_REFERENCE.md** for command syntax
-3. Study `../tools/zerosms_cli.py` for integration examples
+3. Study `../tools/smstest_cli.py` for integration examples
 4. Implement safeguards in your automation scripts
 
 ### For Researchers
@@ -520,10 +520,10 @@ Located in `../analysis/`
 
 ## 📧 Contact & Contributions
 
-**Project Repository**: `f:\repo\zerosms`  
-**Documentation**: `f:\repo\zerosms\docs\`  
-**Analysis Scripts**: `f:\repo\zerosms\analysis\`  
-**Tools**: `f:\repo\zerosms\tools\`  
+**Project Repository**: `f:\repo\007smsdev`  
+**Documentation**: `f:\repo\007smsdev\docs\`  
+**Analysis Scripts**: `f:\repo\007smsdev\analysis\`  
+**Tools**: `f:\repo\007smsdev\tools\`  
 
 **Contributions Welcome**:
 

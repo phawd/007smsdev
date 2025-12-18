@@ -145,23 +145,23 @@ Once extraction completes successfully on device:
 
 ```bash
 # Create local directory
-New-Item -ItemType Directory -Force -Path "F:\repo\zerosms\mifi_backup\filesystem" -ErrorAction SilentlyContinue
+New-Item -ItemType Directory -Force -Path "F:\repo\007smsdev\mifi_backup\filesystem" -ErrorAction SilentlyContinue
 
 # Pull backup directory
-adb pull "/tmp/phase5_backup/" "F:\repo\zerosms\mifi_backup\filesystem\"
+adb pull "/tmp/phase5_backup/" "F:\repo\007smsdev\mifi_backup\filesystem\"
 
 # Alternative: Pull compressed archive (faster)
 adb shell "cd /tmp && tar -czf phase5_backup.tar.gz phase5_backup/"
-adb pull "/tmp/phase5_backup.tar.gz" "F:\repo\zerosms\mifi_backup\filesystem\"
+adb pull "/tmp/phase5_backup.tar.gz" "F:\repo\007smsdev\mifi_backup\filesystem\"
 ```
 
 ### Method 2: Pull Individual Files (Selective)
 
 ```bash
 # Just the critical MTD partitions
-adb pull "/tmp/phase5_backup/mtd0_sbl" "F:\repo\zerosms\mifi_backup\filesystem\"
-adb pull "/tmp/phase5_backup/mtd2_efs2" "F:\repo\zerosms\mifi_backup\filesystem\"
-adb pull "/tmp/phase5_backup/mtd8_modem" "F:\repo\zerosms\mifi_backup\filesystem\"
+adb pull "/tmp/phase5_backup/mtd0_sbl" "F:\repo\007smsdev\mifi_backup\filesystem\"
+adb pull "/tmp/phase5_backup/mtd2_efs2" "F:\repo\007smsdev\mifi_backup\filesystem\"
+adb pull "/tmp/phase5_backup/mtd8_modem" "F:\repo\007smsdev\mifi_backup\filesystem\"
 ```
 
 ---
@@ -275,7 +275,7 @@ Proceed with offline analysis using already-extracted binaries:
 1. Analyze FOTA mechanism using extracted firmware
 2. Research carrier lock protection layers
 3. Compile all findings into `PHASE_5_FINDINGS.md`
-4. Begin ZeroSMS integration design
+4. Begin SMS Test integration design
 
 ### Tertiary (When Device Reconnects)
 
@@ -316,7 +316,7 @@ adb shell "du -sh /tmp/phase5_backup/"
 adb shell "ls -la /tmp/phase5_backup/mtd*" | wc -l
 
 # Transfer data
-adb pull "/tmp/phase5_backup/" "F:\repo\zerosms\mifi_backup\filesystem\"
+adb pull "/tmp/phase5_backup/" "F:\repo\007smsdev\mifi_backup\filesystem\"
 
 # Emergency: Remove and restart
 adb shell "rm -rf /tmp/phase5_backup"

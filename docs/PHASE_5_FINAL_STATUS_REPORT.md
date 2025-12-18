@@ -251,7 +251,7 @@ Initialization Chain:
 
 ---
 
-## ZeroSMS Integration Recommendations
+## SMS Test Integration Recommendations
 
 ### Phase 6 Roadmap (Next Phase)
 
@@ -268,7 +268,7 @@ PHASE 6B: Exploit Development (1-2 days)
   [ ] Create proof-of-concept
   [ ] Document successful method
 
-PHASE 6C: ZeroSMS Integration (2-3 days)
+PHASE 6C: SMS Test Integration (2-3 days)
   [ ] Create modem unlock module
   [ ] Integrate with CLI tools
   [ ] Add UI support for unlock
@@ -379,7 +379,7 @@ dynamic tracing, EFS2 mapping, exploit vectors identified
 1. **Ghidra Analysis** of `nwqmi_dms_validate_spc()` in libmal_qct.so
 2. **EFS2 Modification Testing** if SPC algorithm analysis inconclusive
 3. **Proof-of-Concept Development** for chosen exploit vector
-4. **ZeroSMS Integration** of successful unlock method
+4. **SMS Test Integration** of successful unlock method
 
 ### ⏭️ NEXT SESSION
 

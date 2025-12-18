@@ -1,10 +1,10 @@
-# ZeroSMS Testing Suite
+# SMS Test Testing Suite
 
 Comprehensive SMS, MMS, and RCS testing application with full RFC compliance for Android.
 
 ## Overview
 
-ZeroSMS is a professional-grade testing tool designed to validate messaging protocols against industry standards. It provides extensive testing capabilities for:
+SMS Test is a professional-grade testing tool designed to validate messaging protocols against industry standards. It provides extensive testing capabilities for:
 
 - **SMS (Short Message Service)** - GSM 03.40, GSM 03.38, 3GPP TS 23.040
 - **MMS (Multimedia Messaging Service)** - OMA MMS Encapsulation Protocol, WAP-209
@@ -137,7 +137,7 @@ This script can be used to:
 
 ```
 app/
-├── src/main/java/com/zerosms/testing/
+├── src/main/java/com/007smsdev/testing/
 │   ├── core/
 │   │   ├── model/         # Data models for messages and tests
 │   │   ├── sms/           # SMS manager with RFC compliance
@@ -148,7 +148,7 @@ app/
 │   │   ├── screens/       # Composable UI screens
 │   │   ├── navigation/    # Navigation graph
 │   │   └── theme/         # Material 3 theming
-│   └── ZeroSMSApplication.kt
+│   └── SMS TestApplication.kt
 └── AndroidManifest.xml
 ```
 
@@ -157,7 +157,7 @@ app/
 The original “silent-sms-flash1” Java project has been imported verbatim under
 `legacy/silent-sms-flash1`. This snapshot retains its Groovy Gradle scripts,
 drawables, documentation, and historical APK builds for compliance review. It
-is intentionally isolated from the primary ZeroSMS module—treat it as a
+is intentionally isolated from the primary SMS Test module—treat it as a
 read-only reference when comparing behaviors or porting features forward.
 
 ## Key Components
@@ -323,15 +323,15 @@ This script can be used to:
 
 ### Desktop Helper (Python)
 
-ZeroSMS ships with a lightweight helper script for desktop automation (`tools/zerosms_cli.py`). It mirrors the APK’s Qualcomm diag toggle and AT-based SMS sending via adb:
+SMS Test ships with a lightweight helper script for desktop automation (`tools/smstest_cli.py`). It mirrors the APK’s Qualcomm diag toggle and AT-based SMS sending via adb:
 
-- `python3 tools/zerosms_cli.py diag --profile inseego-m2000` — enable diag ports for a given preset
-- `python3 tools/zerosms_cli.py diag --ai` — AI mode cycles every preset until diag is active
-- `python3 tools/zerosms_cli.py sms +15551234567 "Hello" --auto --deep` — auto-select modem and send SMS
-- `python3 tools/zerosms_cli.py probe --deep --include-response` — deep AT scan (Qualcomm/MediaTek/Samsung)
-- `python3 tools/zerosms_cli.py usb --json` — enumerate USB vendor/product IDs (uses `lsusb`/system profiler)
-- `python3 tools/zerosms_cli.py usb-switch -v 0x05c6 -p 0x90b4` — run `usb_modeswitch` for dongles and MiFi
-- `python3 tools/zerosms_cli.py comscan` — list desktop COM ports via pySerial (great for USB modem drivers)
+- `python3 tools/smstest_cli.py diag --profile inseego-m2000` — enable diag ports for a given preset
+- `python3 tools/smstest_cli.py diag --ai` — AI mode cycles every preset until diag is active
+- `python3 tools/smstest_cli.py sms +15551234567 "Hello" --auto --deep` — auto-select modem and send SMS
+- `python3 tools/smstest_cli.py probe --deep --include-response` — deep AT scan (Qualcomm/MediaTek/Samsung)
+- `python3 tools/smstest_cli.py usb --json` — enumerate USB vendor/product IDs (uses `lsusb`/system profiler)
+- `python3 tools/smstest_cli.py usb-switch -v 0x05c6 -p 0x90b4` — run `usb_modeswitch` for dongles and MiFi
+- `python3 tools/smstest_cli.py comscan` — list desktop COM ports via pySerial (great for USB modem drivers)
 - Add `--adb-non-root` when the connected device cannot provide `su`
 
 The helper assumes `adb` is installed. Commands that touch modem nodes may still require root; non-root mode attempts the same calls without `su` but may lack permissions.
@@ -383,7 +383,7 @@ exit                 # Exit CLI
 
 ### Quick Start
 
-1. Launch ZeroSMS application
+1. Launch SMS Test application
 2. Grant required permissions
 3. Select test category (SMS/MMS/RCS)
 4. Configure test parameters
@@ -476,4 +476,4 @@ For issues, questions, or contributions, please open an issue on the repository.
 
 ---
 
-**ZeroSMS** - Professional messaging protocol testing for Android is an Android application that allows users to send silent SMS messages without notifying the recipient. This can be useful for various purposes, such as network testing or discreet communication. This is not meant for public distribution and should be used responsibly.
+**SMS Test** - Professional messaging protocol testing for Android is an Android application that allows users to send silent SMS messages without notifying the recipient. This can be useful for various purposes, such as network testing or discreet communication. This is not meant for public distribution and should be used responsibly.

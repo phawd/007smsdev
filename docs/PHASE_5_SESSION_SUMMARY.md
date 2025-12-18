@@ -193,7 +193,7 @@ MTD Partitions: 13 total
 - [ ] FOTA certificate analysis
 - [ ] Binary reverse engineering (libmodem2_api.so)
 - [ ] PRI version bypass exploitation
-- [ ] ZeroSMS integration
+- [ ] SMS Test integration
 
 ## Session Statistics
 
@@ -277,7 +277,7 @@ Based on Phase 4+5 findings:
 
 ### Tertiary (Lower Priority)
 
-5. ZeroSMS integration
+5. SMS Test integration
    - Create modem lock module
    - Implement unlock mechanisms
    - Test on device

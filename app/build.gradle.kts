@@ -5,12 +5,12 @@ plugins {
 }
 
 android {
-    namespace = "com.zerosms.testing"
+    namespace = "com.smstest.app"
     compileSdk = 35
 
     defaultConfig {
         buildConfigField("String", "APIFY_API_KEY", "\"apify_api_LcA85Ft1nCmHpYYJbrd6kQ6bl16es71wsCAY\"")
-        applicationId = "com.zerosms.testing"
+        applicationId = "com.smstest.app"
         minSdk = 24
         targetSdk = 35
         versionCode = 1

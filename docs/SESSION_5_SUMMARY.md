@@ -2,13 +2,13 @@
 
 ## Objective
 
-Integrate B.Kerler's Sierra Wireless unlock algorithms into ZeroSMS toolkit for MiFi device carrier unlock capability.
+Integrate B.Kerler's Sierra Wireless unlock algorithms into SMS Test toolkit for MiFi device carrier unlock capability.
 
 ## What Was Done
 
 ### 1. Created `sierra_adapter.py` (700+ lines)
 
-**Location**: `f:\repo\zerosms\tools\sierra_adapter.py`
+**Location**: `f:\repo\007smsdev\tools\sierra_adapter.py`
 
 **Components**:
 
@@ -37,7 +37,7 @@ Integrate B.Kerler's Sierra Wireless unlock algorithms into ZeroSMS toolkit for 
 
 ### 2. Updated `mifi_controller.py` (+200 lines)
 
-**Location**: `f:\repo\zerosms\tools\mifi_controller.py`
+**Location**: `f:\repo\007smsdev\tools\mifi_controller.py`
 
 **New Functions**:
 
@@ -71,11 +71,11 @@ Integrate B.Kerler's Sierra Wireless unlock algorithms into ZeroSMS toolkit for 
 
 #### `SIERRA_UNLOCK_INTEGRATION.md` (400+ lines)
 
-**Location**: `f:\repo\zerosms\docs\SIERRA_UNLOCK_INTEGRATION.md`
+**Location**: `f:\repo\007smsdev\docs\SIERRA_UNLOCK_INTEGRATION.md`
 
 **Contents**:
 
-- Architecture diagram (ZeroSMS → sierra_adapter → algorithm tables → MiFi)
+- Architecture diagram (SMS Test → sierra_adapter → algorithm tables → MiFi)
 - Challenge-response process (4-step workflow)
 - Algorithm technical details (SierraAlgo encryption primitive)
 - Device generation mapping table (MDM8200 → SDX75)
@@ -91,7 +91,7 @@ Integrate B.Kerler's Sierra Wireless unlock algorithms into ZeroSMS toolkit for 
 
 ### 4. Created Test Script
 
-**Location**: `f:\repo\zerosms\tools\test_sierra_integration.py`
+**Location**: `f:\repo\007smsdev\tools\test_sierra_integration.py`
 
 **Tests**:
 
@@ -315,12 +315,12 @@ success, output = unlock_carrier_sierra(
 ## File Inventory
 
 ```
-zerosms/
+007smsdev/
 ├── tools/
 │   ├── mifi_controller.py         (1,504 → 1,700+ lines) ✓ Updated
 │   ├── sierra_adapter.py          (700+ lines) ✓ NEW
 │   ├── test_sierra_integration.py (300+ lines) ✓ NEW
-│   └── zerosms_cli.py             (unchanged)
+│   └── smstest_cli.py             (unchanged)
 │
 ├── docs/
 │   ├── SIERRA_UNLOCK_INTEGRATION.md  (400+ lines) ✓ NEW
@@ -392,7 +392,7 @@ zerosms/
 
 ## Conclusion
 
-Successfully integrated Sierra Wireless unlock algorithms into ZeroSMS toolkit with comprehensive safety checks and testing. Implementation is complete and passing all tests (8/8 algorithm verification, 6/6 integration tests).
+Successfully integrated Sierra Wireless unlock algorithms into SMS Test toolkit with comprehensive safety checks and testing. Implementation is complete and passing all tests (8/8 algorithm verification, 6/6 integration tests).
 
 **CRITICAL**: Algorithm compatibility with Qualcomm SDX20 (MiFi 8800L) remains **UNVERIFIED** and **HIGHLY UNCERTAIN**. Sierra algorithms were designed for Sierra Wireless chipsets, not Qualcomm chipsets.
 

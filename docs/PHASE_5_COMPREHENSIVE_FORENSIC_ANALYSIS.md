@@ -203,7 +203,7 @@ done
 1. Ghidra analysis of libmal_qct.so
 2. Find SPC validation algorithm
 3. Test algorithm against known device (IMEI 990016878573987)
-4. Create SPC calculator for ZeroSMS integration
+4. Create SPC calculator for SMS Test integration
 ```
 
 ---
@@ -358,7 +358,7 @@ nwqmi_nas_get_signal_strength(void) → signal_data_t
 
 ---
 
-## Part 6: ZeroSMS Integration Roadmap
+## Part 6: SMS Test Integration Roadmap
 
 ### 6.1 Immediate Tasks (Phase 5C)
 
@@ -391,10 +391,10 @@ nwqmi_nas_get_signal_strength(void) → signal_data_t
 [ ] Document all 4 exploit vectors
 [ ] Provide exact command sequences
 [ ] Include risk assessments
-[ ] Provide ZeroSMS integration code examples
+[ ] Provide SMS Test integration code examples
 ```
 
-### 6.2 ZeroSMS Code Integration (Example)
+### 6.2 SMS Test Code Integration (Example)
 
 **Python Unlock Module:**
 

@@ -1,6 +1,6 @@
 ---
 name: Issue Template
-about: Create a report to help us improve ZeroSMS
+about: Create a report to help us improve SMS Test
 title: ''
 labels: ''
 assignees: ''
@@ -48,7 +48,7 @@ assignees: ''
 - **Android Version**: <!-- e.g., Android 13 -->
 - **Chipset**: <!-- e.g., Qualcomm Snapdragon 8 Gen 2 -->
 - **Carrier**: <!-- e.g., Verizon -->
-- **ZeroSMS Version**: <!-- e.g., 1.2.3 or commit hash -->
+- **SMS Test Version**: <!-- e.g., 1.2.3 or commit hash -->
 - **Root Access**: <!-- Yes/No -->
 
 ### Logs
@@ -109,7 +109,7 @@ assignees: ''
 
 ### Current Behavior
 
-<!-- How ZeroSMS currently implements this -->
+<!-- How SMS Test currently implements this -->
 
 ### Expected Behavior (Per RFC)
 
@@ -180,5 +180,5 @@ Before submitting:
 4. Review CONTRIBUTING.md for contribution guidelines
 5. Check docs/ directory for existing documentation
 
-Thank you for helping improve ZeroSMS!
+Thank you for helping improve SMS Test!
 -->

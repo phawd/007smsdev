@@ -30,14 +30,14 @@ Start-Process -FilePath "F:\download\ghidra_11.4.3_PUBLIC_20251203\ghidra_11.4.3
 
 1. File → New Project
 2. Select "Non-Shared Project"
-3. Project Directory: `F:\repo\zerosms\analysis\ghidra_projects`
+3. Project Directory: `F:\repo\007smsdev\analysis\ghidra_projects`
 4. Project Name: `mifi_8800l_analysis`
 5. Click "Finish"
 
 ### 3. Import libmal_qct.so
 
 1. File → Import File
-2. Navigate to: `F:\repo\zerosms\analysis\binaries\libmal_qct.so`
+2. Navigate to: `F:\repo\007smsdev\analysis\binaries\libmal_qct.so`
 3. Format: **ELF (Executable and Linkable Format)**
 4. Language: **ARM:LE:32:v7** (ARM 32-bit little-endian, ARMv7)
 5. Click "OK" → "OK" (accept default options)
@@ -58,7 +58,7 @@ Start-Process -FilePath "F:\download\ghidra_11.4.3_PUBLIC_20251203\ghidra_11.4.3
 
 Repeat steps 1-8 above for:
 
-- File: `F:\repo\zerosms\analysis\binaries\nwcli`
+- File: `F:\repo\007smsdev\analysis\binaries\nwcli`
 - Same settings: ELF, ARM:LE:32:v7
 
 ---

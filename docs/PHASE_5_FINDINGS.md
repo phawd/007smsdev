@@ -451,9 +451,9 @@ Output: Complete lock mechanism dataset
 - Certificate chain analysis
 - Bypass vectors (5 identified)
 - Risk assessment for each vector
-- Recommendations for ZeroSMS integration
+- Recommendations for SMS Test integration
 
-### Phase 5D: ZeroSMS Integration
+### Phase 5D: SMS Test Integration
 
 **New Modules to Create:**
 
@@ -535,7 +535,7 @@ class LockedDeviceTestManager {
 | Locking Analysis Script | ✅ Created | Ready for testing |
 | Binary Analysis Tools | ✅ Ready | Awaiting execution |
 | FOTA Analysis | ✅ Data Collected | 70% |
-| ZeroSMS Integration | ⏳ Pending | Ready for Phase 5C |
+| SMS Test Integration | ⏳ Pending | Ready for Phase 5C |
 | Device Extraction | ⏳ Blocked | Device offline |
 | Device Testing | ⏳ Blocked | Awaiting device connection |
 
@@ -589,7 +589,7 @@ class LockedDeviceTestManager {
 
 ### LONG TERM (4-8 hours)
 
-7. **ZeroSMS Integration**
+7. **SMS Test Integration**
    - Create CarrierUnlockManager.kt
    - Create FOTAAnalysisManager.kt
    - Add UI screens
@@ -622,7 +622,7 @@ class LockedDeviceTestManager {
 - Certificates available for analysis
 - No new extraction risks
 
-### ZeroSMS Integration Risk: LOW
+### SMS Test Integration Risk: LOW
 
 ✅ **Conservative Approach:**
 
@@ -636,7 +636,7 @@ class LockedDeviceTestManager {
 ## Appendix: File Structure
 
 ```
-zerosms/
+007smsdev/
 ├── tools/
 │   ├── phase5_safe_efs2_extraction.sh   ← Use this (safe method)
 │   ├── phase5_locking_analysis.sh       ← Analyzes lock mechanisms

@@ -7,7 +7,7 @@ Full automation script for Inseego MiFi 8800L device control.
 Supports IMEI modification, carrier config, band enable, roaming, APN,
 and more.
 
-Author: ZeroSMS Project
+Author: SMS Test Project
 License: MIT
 
 PROPRIETARY FUNCTIONS DOCUMENTED:

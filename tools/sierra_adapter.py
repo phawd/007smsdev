@@ -6,7 +6,7 @@ Sierra Wireless Unlock Algorithm Adapter for MiFi Devices
 Adapts B.Kerler's Sierra Wireless unlock algorithms for Inseego MiFi devices.
 
 Original Author: B.Kerler 2019-2023 (GPLv3)
-Adapter: ZeroSMS Project 2024
+Adapter: SMS Test Project 2024
 License: GPLv3
 
 WARNING: This module implements carrier unlock algorithms.

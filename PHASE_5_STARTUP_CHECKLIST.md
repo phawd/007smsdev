@@ -101,7 +101,7 @@ ARM Analysis Tools: 0 MB (not yet downloaded)
 ```bash
 adb push tools/phase5_filesystem_extraction.sh /tmp/
 adb shell sh /tmp/phase5_filesystem_extraction.sh /tmp/phase5_backup
-adb pull /tmp/phase5_backup "F:\repo\zerosms\mifi_backup\filesystem\"
+adb pull /tmp/phase5_backup "F:\repo\007smsdev\mifi_backup\filesystem\"
 ```
 
 **Expected Output:**
@@ -124,10 +124,10 @@ adb pull /tmp/phase5_backup "F:\repo\zerosms\mifi_backup\filesystem\"
 adb shell "cd /tmp && tar -xzf /opt_nvtl_backup.tar.gz opt/nvtl/lib"
 
 # Or pull directly from device
-adb pull "/opt/nvtl/lib/libmodem2_api.so" "F:\repo\zerosms\mifi_backup\binaries\"
-adb pull "/opt/nvtl/lib/libmal_qct.so" "F:\repo\zerosms\mifi_backup\binaries\"
-adb pull "/opt/nvtl/lib/libsms_encoder.so" "F:\repo\zerosms\mifi_backup\binaries\"
-adb pull "/opt/nvtl/bin/modem2_cli" "F:\repo\zerosms\mifi_backup\binaries\"
+adb pull "/opt/nvtl/lib/libmodem2_api.so" "F:\repo\007smsdev\mifi_backup\binaries\"
+adb pull "/opt/nvtl/lib/libmal_qct.so" "F:\repo\007smsdev\mifi_backup\binaries\"
+adb pull "/opt/nvtl/lib/libsms_encoder.so" "F:\repo\007smsdev\mifi_backup\binaries\"
+adb pull "/opt/nvtl/bin/modem2_cli" "F:\repo\007smsdev\mifi_backup\binaries\"
 ```
 
 **Expected Binaries:**
@@ -147,7 +147,7 @@ adb pull "/opt/nvtl/bin/modem2_cli" "F:\repo\zerosms\mifi_backup\binaries\"
 
 ```bash
 adb push tools/phase5_carrier_lock_analysis.sh /tmp/
-adb shell sh /tmp/phase5_carrier_lock_analysis.sh 2>&1 | tee "F:\repo\zerosms\phase5_analysis_output.txt"
+adb shell sh /tmp/phase5_carrier_lock_analysis.sh 2>&1 | tee "F:\repo\007smsdev\phase5_analysis_output.txt"
 ```
 
 **Analysis Sections:**
@@ -177,7 +177,7 @@ adb shell sh /tmp/phase5_download_arm_tools.sh
 
 # Option B: Use local extraction if already available
 # Extract binaries from opt_nvtl_backup.tar.gz
-tar -xzf "F:\repo\zerosms\mifi_backup\opt_nvtl_backup.tar.gz" -C "F:\repo\zerosms\mifi_backup\"
+tar -xzf "F:\repo\007smsdev\mifi_backup\opt_nvtl_backup.tar.gz" -C "F:\repo\007smsdev\mifi_backup\"
 ```
 
 **Expected Tools:**
@@ -244,15 +244,15 @@ tar -xzf "F:\repo\zerosms\mifi_backup\opt_nvtl_backup.tar.gz" -C "F:\repo\zerosm
 4. FOTA analysis
 5. Bypass vectors identified
 6. Recommended exploitation sequence
-7. ZeroSMS integration opportunities
+7. SMS Test integration opportunities
 
 **Deliverable:** PHASE_5_FINDINGS.md (15-20 KB)
 
 **Time Estimate:** 2-3 hours (writing/organizing)
 
-### Stage 9: ZeroSMS Integration (OPTIONAL)
+### Stage 9: SMS Test Integration (OPTIONAL)
 
-**Goal:** Implement carrier unlock testing features in ZeroSMS app  
+**Goal:** Implement carrier unlock testing features in SMS Test app  
 **Modules to Create:**
 
 ```kotlin
@@ -265,7 +265,7 @@ core/carrier/LockedDeviceTestManager.kt
 ui/screens/carrier/CarrierResearchScreen.kt
 
 // CLI enhancements
-tools/zerosms_cli.py (new subcommands)
+tools/smstest_cli.py (new subcommands)
 ```
 
 **Time Estimate:** 4-6 hours (implementation + testing)
@@ -394,8 +394,8 @@ tar -xzf mtd_backup.tar.gz -C mifi_backup/
 **Resolution:** Extract existing tar.gz files:
 
 ```bash
-tar -xzf "F:\repo\zerosms\mifi_backup\opt_nvtl_backup.tar.gz" -C "F:\repo\zerosms\mifi_backup\"
-tar -xzf "F:\repo\zerosms\mifi_backup\firmware_backup.tar.gz" -C "F:\repo\zerosms\mifi_backup\"
+tar -xzf "F:\repo\007smsdev\mifi_backup\opt_nvtl_backup.tar.gz" -C "F:\repo\007smsdev\mifi_backup\"
+tar -xzf "F:\repo\007smsdev\mifi_backup\firmware_backup.tar.gz" -C "F:\repo\007smsdev\mifi_backup\"
 ```
 
 ---
@@ -412,7 +412,7 @@ tar -xzf "F:\repo\zerosms\mifi_backup\firmware_backup.tar.gz" -C "F:\repo\zerosm
 | 6. Binary analysis (offline) | 60 min | 95 min | ⏳ Pending |
 | 7. FOTA research (offline) | 180 min | 275 min | ⏳ Pending |
 | 8. Phase 5 findings doc | 120 min | 395 min | ⏳ Pending |
-| 9. ZeroSMS integration | 360 min | 755 min | ⏳ Optional |
+| 9. SMS Test integration | 360 min | 755 min | ⏳ Optional |
 
 **Total Phase 5 Duration:** 6-7 hours (with device), +2-4 hours for binary analysis and writing
 
@@ -421,12 +421,12 @@ tar -xzf "F:\repo\zerosms\mifi_backup\firmware_backup.tar.gz" -C "F:\repo\zerosm
 ## File Organization
 
 ```
-f:\repo\zerosms\
+f:\repo\007smsdev\
 ├── tools/
 │   ├── phase5_filesystem_extraction.sh       ✅ Ready
 │   ├── phase5_carrier_lock_analysis.sh       ✅ Ready
 │   ├── phase5_download_arm_tools.sh          ✅ Ready
-│   └── zerosms_cli.py                        ✅ Existing
+│   └── smstest_cli.py                        ✅ Existing
 ├── mifi_backup/
 │   ├── filesystem/                           ⚠️ Empty (needs extraction)
 │   ├── binaries/                             ⚠️ Empty (needs extraction)
@@ -495,8 +495,8 @@ adb shell sh /tmp/phase5_carrier_lock_analysis.sh > phase5_analysis.txt 2>&1
 ### Extract Existing Backups
 
 ```bash
-tar -xzf "F:\repo\zerosms\mifi_backup\opt_nvtl_backup.tar.gz" -C "F:\repo\zerosms\mifi_backup\"
-tar -xzf "F:\repo\zerosms\mifi_backup\firmware_backup.tar.gz" -C "F:\repo\zerosms\mifi_backup\"
+tar -xzf "F:\repo\007smsdev\mifi_backup\opt_nvtl_backup.tar.gz" -C "F:\repo\007smsdev\mifi_backup\"
+tar -xzf "F:\repo\007smsdev\mifi_backup\firmware_backup.tar.gz" -C "F:\repo\007smsdev\mifi_backup\"
 ```
 
 ---
@@ -514,7 +514,7 @@ tar -xzf "F:\repo\zerosms\mifi_backup\firmware_backup.tar.gz" -C "F:\repo\zerosm
 2. Execute Stage 2-4 (extraction and analysis)
 3. Proceed with offline binary analysis using Ghidra
 4. Document all findings in PHASE_5_FINDINGS.md
-5. Prepare ZeroSMS integration modules
+5. Prepare SMS Test integration modules
 
 ---
 

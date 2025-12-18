@@ -31,7 +31,7 @@ This guide covers Inseego MiFi device (MiFi 8800L, M2000, M2100) setup, discover
 
 ```bash
 # VID 1410 = Novatel/Inseego
-python3 tools/zerosms_cli.py usb --json | grep -i 1410
+python3 tools/smstest_cli.py usb --json | grep -i 1410
 
 # Windows PowerShell
 Get-PnpDevice | Where-Object { $_.InstanceId -like '*1410*' }
@@ -457,7 +457,7 @@ adb reboot edl               # From ADB if available
 ### Check for EDL Device
 
 ```bash
-python3 tools/zerosms_cli.py usb --json | grep -E "05C6|9008"
+python3 tools/smstest_cli.py usb --json | grep -E "05C6|9008"
 # Windows: Look for "Qualcomm HS-USB QDLoader 9008" in Device Manager
 ```
 
@@ -555,7 +555,7 @@ ipconfig /renew "Ethernet X"    # Renew DHCP
 
 - Check Device Manager for yellow ! icons
 - Install Qualcomm USB drivers or use generic usbser.sys
-- Try: `python3 tools/zerosms_cli.py comscan --json`
+- Try: `python3 tools/smstest_cli.py comscan --json`
 
 ## AI Agent Integration Notes
 
@@ -565,7 +565,7 @@ For AI agents (Gemini, Claude, GPT) working autonomously:
 2. **Check prerequisites first**: `adb`, `fastboot`, `python3`, pyserial installed
 3. **Detect device type FIRST**: Android vs MiFiOS (Linux) requires different commands
 4. **Escalate gracefully**: ADB → fastboot → EDL → web interface → manual intervention
-5. **Log everything**: Use `python3 tools/zerosms_cli.py probe --deep --include-response > probe-log.txt`
+5. **Log everything**: Use `python3 tools/smstest_cli.py probe --deep --include-response > probe-log.txt`
 6. **Handle driver issues**: Windows devices may show "Unknown" status - need admin
 7. **Network vs USB**: MiFi devices often prefer Wi-Fi connection over USB tethering for admin access
 8. **Document findings**: Update `docs/SESSION_*_FINDINGS.md` with device-specific discoveries

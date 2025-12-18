@@ -265,7 +265,7 @@ Next Actions:          5 min  (device check)
 Device extraction:    30 min  (parallel with offline work)
 Offline analysis:   2-4 hrs  (binary + FOTA research)
 Documentation:     2-3 hrs  (compile findings)
-Integration:       4-6 hrs  (ZeroSMS modules)
+Integration:       4-6 hrs  (SMS Test modules)
 Git commit:        30 min   (final)
 ─────────────────────────────
 Total Phase 5:     6-8 hrs   (or 3-4 hrs if device stays offline)
@@ -298,7 +298,7 @@ When Phase 5 is complete, the following will be committed to git:
 - [ ] mifi_backup/binaries/ (4 files)
 - [ ] mifi_backup/filesystem/ (when extracted)
 
-### ZeroSMS Modules (NEW)
+### SMS Test Modules (NEW)
 - [ ] core/carrier/CarrierUnlockManager.kt
 - [ ] core/carrier/FOTAAnalysisManager.kt
 - [ ] core/carrier/LockedDeviceTestManager.kt

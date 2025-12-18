@@ -7,7 +7,7 @@
 
 # Keep messaging classes
 -keep class android.telephony.** { *; }
--keep class com.zerosms.testing.** { *; }
+-keep class com.smstest.app.** { *; }
 
 # Uncomment this to preserve the line number information for
 # debugging stack traces.

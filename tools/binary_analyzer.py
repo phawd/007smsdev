@@ -12,7 +12,7 @@ Key Analysis Targets:
 - libmal_qct.so: Direct QMI NV write functions
 - libsms_encoder.so: PDU manipulation for Flash/Silent SMS
 
-Author: ZeroSMS Project
+Author: SMS Test Project
 License: MIT
 """
 
@@ -335,7 +335,7 @@ def analyze_nwcli(binary_path: str):
     results = analyzer.analyze_nwcli_write_nv()
 
     # Export for Ghidra
-    analyzer.export_ghidra_script("f:/repo/zerosms/analysis/nwcli_ghidra.py")
+    analyzer.export_ghidra_script("f:/repo/007smsdev/analysis/nwcli_ghidra.py")
 
     return results
 
@@ -359,7 +359,7 @@ def analyze_modem2_cli(binary_path: str):
 
     # Export for Ghidra
     analyzer.export_ghidra_script(
-        "f:/repo/zerosms/analysis/modem2_cli_ghidra.py")
+        "f:/repo/007smsdev/analysis/modem2_cli_ghidra.py")
 
     return results
 
@@ -382,7 +382,7 @@ def analyze_libmal_qct(binary_path: str):
 
     # Export
     analyzer.export_ghidra_script(
-        "f:/repo/zerosms/analysis/libmal_qct_ghidra.py")
+        "f:/repo/007smsdev/analysis/libmal_qct_ghidra.py")
 
     return {"functions": target_funcs}
 

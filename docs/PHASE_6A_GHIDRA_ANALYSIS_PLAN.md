@@ -44,7 +44,7 @@ Reverse-engineer the SPC validation algorithm and all proprietary lock-related l
 6. Identify if SPC is IMEI-derived, static, or random
 7. Document all proprietary function flows
 8. Prepare Python code for SPC calculation if derivable
-9. Document findings for ZeroSMS integration
+9. Document findings for SMS Test integration
 
 ---
 
@@ -53,7 +53,7 @@ Reverse-engineer the SPC validation algorithm and all proprietary lock-related l
 - SPC algorithm documentation (step-by-step logic)
 - Call graph diagrams for all lock-related functions
 - Python SPC calculator (if possible)
-- Technical report for ZeroSMS integration
+- Technical report for SMS Test integration
 
 ---
 

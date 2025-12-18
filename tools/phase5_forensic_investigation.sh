@@ -245,7 +245,7 @@ NEXT STEPS:
 2. Reverse-engineer SPC validation function
 3. Test EFS2 modification via QMI write
 4. Document all findings in technical report
-5. Integrate exploit into ZeroSMS framework
+5. Integrate exploit into SMS Test framework
 
 FILES GENERATED:
 ================
@@ -284,5 +284,5 @@ echo "  - binaries_strings/modem2_cli_strings.txt"
 echo "  - carrier_config/sysconf_settings.xml"
 echo "  - FORENSIC_ANALYSIS_REPORT.txt"
 echo ""
-echo "Ready for host analysis and ZeroSMS integration"
+echo "Ready for host analysis and SMS Test integration"
 echo "========================================="

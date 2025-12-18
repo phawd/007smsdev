@@ -1,5 +1,5 @@
 #!/bin/sh
-# Automatic Type 0 Silent SMS (PID=0x40) sender for ZeroSMS testing
+# Automatic Type 0 Silent SMS (PID=0x40) sender for SMS Test testing
 # Usage: adb push auto_type0_sms.sh /tmp && adb shell sh /tmp/auto_type0_sms.sh [iterations]
 
 ITERATIONS=${1:-10}

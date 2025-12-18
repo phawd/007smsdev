@@ -1,4 +1,4 @@
-# ZeroSMS Testing Guide
+# SMS Test Testing Guide
 
 ## Quick Start
 
@@ -7,7 +7,7 @@
 ```bash
 # Clone repository
 git clone https://github.com/itds-consulting/android-silent-ping-sms.git
-cd zerosms
+cd 007smsdev
 
 # Build debug APK
 ./gradlew assembleDebug
@@ -18,7 +18,7 @@ cd zerosms
 
 ### 2. Grant Permissions
 
-On first launch, ZeroSMS will request:
+On first launch, SMS Test will request:
 - SMS send/receive permissions
 - Phone state access
 - Storage access (for MMS attachments)
@@ -28,7 +28,7 @@ On first launch, ZeroSMS will request:
 
 ### 3. Basic Test
 
-1. Open ZeroSMS app
+1. Open SMS Test app
 2. Select "SMS Testing" from home screen
 3. Enter a phone number
 4. Type test message
@@ -446,7 +446,7 @@ Common violations detected:
 
 ## API Integration
 
-For automated testing, integrate with ZeroSMS:
+For automated testing, integrate with SMS Test:
 
 ```kotlin
 // Example: Programmatic test execution

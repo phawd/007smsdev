@@ -1,7 +1,7 @@
 # Phase 4 Research - Complete Index
 
 **Generated:** December 4, 2025  
-**Project:** ZeroSMS Advanced Testing Suite  
+**Project:** SMS Test Advanced Testing Suite  
 **Focus:** Carrier Lock Bypass Investigation (MiFi 8800L)
 
 ---
@@ -34,7 +34,7 @@
    - Actual command results
 
 3. **Integration planning:** [`docs/PHASE_4_INTEGRATION_PLAN.md`](./docs/PHASE_4_INTEGRATION_PLAN.md)
-   - Proposed ZeroSMS modules
+   - Proposed SMS Test modules
    - UI/UX recommendations
    - Build integration guide
 
@@ -66,7 +66,7 @@ SESSION_4_MANIFEST.txt                ~8 KB     Complete deliverables list
 ```
 PHASE_4_TIER_BYPASS_FINDINGS.md       ~10 KB    Technical analysis
 PHASE_4_NV60044_IMPLEMENTATION.md     ~9 KB     Exploit step-by-step
-PHASE_4_INTEGRATION_PLAN.md           ~12 KB    ZeroSMS integration
+PHASE_4_INTEGRATION_PLAN.md           ~12 KB    SMS Test integration
 ```
 
 ### Research Tools (`tools/` folder)
@@ -187,7 +187,7 @@ Extract hardcoded SPC or bypass
 
 ---
 
-## Integration with ZeroSMS
+## Integration with SMS Test
 
 ### Proposed New Modules
 
@@ -215,9 +215,9 @@ Extract hardcoded SPC or bypass
 ### CLI Enhancements
 
 ```bash
-python3 tools/zerosms_cli.py bypass --nv 60044 --read
-python3 tools/zerosms_cli.py bypass --nv 60044 --write "new_value"
-python3 tools/zerosms_cli.py qmi --service NV --command read_nv
+python3 tools/smstest_cli.py bypass --nv 60044 --read
+python3 tools/smstest_cli.py bypass --nv 60044 --write "new_value"
+python3 tools/smstest_cli.py qmi --service NV --command read_nv
 ```
 
 ---
@@ -301,7 +301,7 @@ python3 tools/zerosms_cli.py qmi --service NV --command read_nv
 2. probe-log-phase4.txt (raw data verification)
 3. PHASE_4_NV60044_IMPLEMENTATION.md (exploitation guide)
 
-**For ZeroSMS Developers:**
+**For SMS Test Developers:**
 
 1. PHASE_4_EXECUTIVE_SUMMARY.md (overview)
 2. PHASE_4_INTEGRATION_PLAN.md (implementation guide)
@@ -338,12 +338,12 @@ Key objectives for Phase 5:
 
 ## Contact & Contribution
 
-This research is part of the ZeroSMS advanced testing suite. For questions, improvements, or additional research:
+This research is part of the SMS Test advanced testing suite. For questions, improvements, or additional research:
 
 1. Review the relevant documentation files
 2. Execute the investigation scripts on test devices
 3. Document findings in SESSION_5_FINDINGS.md
-4. Submit improvements via standard ZeroSMS PR process
+4. Submit improvements via standard SMS Test PR process
 
 ---
 

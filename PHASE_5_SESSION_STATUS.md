@@ -106,7 +106,7 @@
 ## File Organization
 
 ```
-f:\repo\zerosms\
+f:\repo\007smsdev\
 ├── docs/
 │   ├── PHASE_5_RESEARCH_PLAN.md              ✅ NEW
 │   ├── PHASE_4_*.md                          ✅ (previous)
@@ -120,7 +120,7 @@ f:\repo\zerosms\
 │   ├── phase5_filesystem_extraction.sh       ✅ (previous)
 │   ├── phase5_carrier_lock_analysis.sh       ✅ (previous)
 │   ├── phase5_download_arm_tools.sh          ✅ (previous)
-│   └── zerosms_cli.py
+│   └── smstest_cli.py
 ├── mifi_backup/
 │   ├── binaries/
 │   │   ├── libmodem2_api.so                 ✅ EXTRACTED
@@ -149,7 +149,7 @@ f:\repo\zerosms\
 | 5.3 | Offline Binary Analysis | ⏳ READY | 60 min | Can proceed anytime |
 | 5.4 | FOTA Analysis | ⏳ READY | 120 min | Data available, can start |
 | 5.5 | Phase 5 Findings Doc | ⏳ READY | 120 min | Template ready |
-| 5.6 | ZeroSMS Integration | ⏳ PENDING | 360 min | Awaiting findings |
+| 5.6 | SMS Test Integration | ⏳ PENDING | 360 min | Awaiting findings |
 
 **Total Phase 5 Duration:** 6-8 hours (3-4 hours if device stays disconnected)
 
@@ -192,7 +192,7 @@ adb pull /opt/nvtl/lib/ mifi_backup/binaries/
 ```bash
 # Analyze FOTA mechanism (firmware update)
 # Research carrier lock bypass vectors
-# Plan ZeroSMS integration
+# Plan SMS Test integration
 ```
 
 ---

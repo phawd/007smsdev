@@ -2,7 +2,7 @@
 
 ## 🎯 Session Goal - ACHIEVED ✅
 
-**User Requirement:** "Proceed with phase 5. After committing your past work to zerosms, with emphasis on both locking, fota, and making sure we have original copies of the unit's filesystem downloaded by default... VERY IMPORTANT: the device reboots when a standard dd is ran to extract the efs partition. another way must be found."
+**User Requirement:** "Proceed with phase 5. After committing your past work to 007smsdev, with emphasis on both locking, fota, and making sure we have original copies of the unit's filesystem downloaded by default... VERY IMPORTANT: the device reboots when a standard dd is ran to extract the efs partition. another way must be found."
 
 **Result:** ✅ **ALL REQUIREMENTS MET**
 
@@ -207,7 +207,7 @@ Lock State: Status 0 (needs EFS2 analysis)
 
 - [ ] FOTA downgrade evaluation
 - [ ] Network-level attack research
-- [ ] ZeroSMS module integration
+- [ ] SMS Test module integration
 
 ## 📚 How to Navigate Documentation
 

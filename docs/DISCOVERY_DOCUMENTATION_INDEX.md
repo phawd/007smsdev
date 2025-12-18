@@ -1,7 +1,7 @@
-# ZeroSMS Extended Discovery Documentation Index
+# SMS Test Extended Discovery Documentation Index
 
 **Last Updated**: December 4, 2025  
-**Project**: ZeroSMS - Android SMS/MMS/RCS Testing Suite with Extended Device Research  
+**Project**: SMS Test - Android SMS/MMS/RCS Testing Suite with Extended Device Research  
 **Status**: Session 3 Complete - Writable NV Item Confirmed
 
 ## Quick Navigation
@@ -44,7 +44,7 @@
 
 #### Primary Discovery Tools
 
-- `zerosms_cli.py` - Main Python CLI tool (probe, sms send, diag control)
+- `smstest_cli.py` - Main Python CLI tool (probe, sms send, diag control)
 - `nv_extended_audit.sh` - Extended NV enumeration (0-30K range)
 - `program_discovery.sh` - Comprehensive program discovery
 - `nv_forensic_audit.sh` - Full forensic NV audit (201 items)

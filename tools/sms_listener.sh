@@ -1,5 +1,5 @@
 #!/bin/sh
-# Continuous SMS listener and logger for ZeroSMS testing
+# Continuous SMS listener and logger for SMS Test testing
 # Monitors incoming SMS and logs with detailed metadata
 # Usage: adb push sms_listener.sh /tmp && adb shell sh /tmp/sms_listener.sh
 

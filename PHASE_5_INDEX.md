@@ -124,13 +124,13 @@
 4. Perform offline binary analysis (Path A)
 5. Complete FOTA analysis
 6. Document all findings
-7. Develop ZeroSMS integration modules
+7. Develop SMS Test integration modules
 8. Commit to git
 ```
 
 **Time:** 6-8 hours total  
 **Tools:** ADB, Ghidra, Python  
-**Deliverables:** Full Phase 5 research + ZeroSMS modules
+**Deliverables:** Full Phase 5 research + SMS Test modules
 
 ### Path C: Device-First (Parallel Operations)
 
@@ -149,7 +149,7 @@ PARALLEL PATH 2 (while device operations running):
 MERGE:
 5. Combine findings
 6. Document in PHASE_5_FINDINGS.md
-7. Develop ZeroSMS modules
+7. Develop SMS Test modules
 8. Commit all work
 ```
 
@@ -194,7 +194,7 @@ MERGE:
 - [ ] SPC analysis findings
 - [ ] FOTA analysis findings
 - [ ] Combined Phase 5 findings report
-- [ ] ZeroSMS integration design
+- [ ] SMS Test integration design
 
 **Status:** Can start after initial binary analysis
 
@@ -220,7 +220,7 @@ MERGE:
 ## 📂 File Organization
 
 ```
-f:\repo\zerosms\
+f:\repo\007smsdev\
 │
 ├── 📋 Phase 5 Checklists & Status
 │   ├── PHASE_5_STARTUP_CHECKLIST.md         ✅ NEW
@@ -245,7 +245,7 @@ f:\repo\zerosms\
 │   ├── phase5_filesystem_extraction.sh      ✅ (previous)
 │   ├── phase5_carrier_lock_analysis.sh      ✅ (previous)
 │   ├── phase5_download_arm_tools.sh         ✅ (previous)
-│   ├── zerosms_cli.py                       ✅ (existing)
+│   ├── smstest_cli.py                       ✅ (existing)
 │   └── ...
 │
 ├── 💾 mifi_backup/ (Device Data)
@@ -260,8 +260,8 @@ f:\repo\zerosms\
 │   ├── filesystem/                          ⏳ TODO
 │   └── ...
 │
-├── 📱 app/ (ZeroSMS Android App)
-│   ├── src/main/java/com/zerosms/
+├── 📱 app/ (SMS Test Android App)
+│   ├── src/main/java/com/007smsdev/
 │   │   ├── core/
 │   │   │   └── carrier/                     ⏳ NEW MODULES TODO
 │   │   │       ├── CarrierUnlockManager.kt
@@ -320,13 +320,13 @@ f:\repo\zerosms\
 
 - [ ] Hardcoded SPC code discovered or bypass technique found
 - [ ] Complete exploitation chain documented
-- [ ] ZeroSMS integration modules implemented
+- [ ] SMS Test integration modules implemented
 - [ ] Responsible disclosure plan created
 
 ### Phase 5 Completion
 
 - [ ] All findings documented in PHASE_5_FINDINGS.md
-- [ ] ZeroSMS modules committed to git
+- [ ] SMS Test modules committed to git
 - [ ] All deliverables archived and tagged
 
 ---

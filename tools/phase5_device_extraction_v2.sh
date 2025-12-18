@@ -201,7 +201,7 @@ Next Steps:
 2. Parse NV items: Determine current lock status
 3. Analyze FOTA certificates: Identify bypass path
 4. Binary analysis: libmodem2_api.so SPC validation logic
-5. ZeroSMS integration: Implement unlock mechanism
+5. SMS Test integration: Implement unlock mechanism
 
 MANIFEST
 

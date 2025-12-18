@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ZeroSMS"
+rootProject.name = "SmsTest"
 include(":app")

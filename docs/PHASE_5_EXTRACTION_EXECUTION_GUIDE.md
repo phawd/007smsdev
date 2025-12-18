@@ -22,7 +22,7 @@ If no device listed → Device offline. See "Device Recovery" section below.
 ### Step 2: Verify Extraction Scripts
 
 ```powershell
-cd f:\repo\zerosms
+cd f:\repo\007smsdev
 ls tools/phase5_*.sh
 ```
 
@@ -357,7 +357,7 @@ After extraction:
 | Binary analysis | 2-4 hours | ⏳ |
 | FOTA analysis | 1-2 hours | ⏳ |
 | Documentation | 1-2 hours | ⏳ |
-| ZeroSMS integration | 3-4 hours | ⏳ |
+| SMS Test integration | 3-4 hours | ⏳ |
 | **Total** | **7-12 hours** | ⏳ |
 
 ---

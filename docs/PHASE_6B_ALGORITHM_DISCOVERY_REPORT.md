@@ -309,11 +309,11 @@ Encode_Address() + Encode_UserData() + Encode_MessageId()
 
 ## 10. Conclusion
 
-Phase 6B successfully cataloged the complete proprietary library ecosystem of the MiFi 8800L. The device is fully unlocked and capable of carrier switching. The SMS encoding pipeline is fully documented with 78 functions available for analysis. All discovered algorithms are implementable in the ZeroSMS Android app for cross-platform compatibility testing.
+Phase 6B successfully cataloged the complete proprietary library ecosystem of the MiFi 8800L. The device is fully unlocked and capable of carrier switching. The SMS encoding pipeline is fully documented with 78 functions available for analysis. All discovered algorithms are implementable in the SMS Test Android app for cross-platform compatibility testing.
 
 **Next Steps:**
 
-1. Implement GSM PDU encoder in ZeroSMS based on `PDU_Encode_Sms` structure
+1. Implement GSM PDU encoder in SMS Test based on `PDU_Encode_Sms` structure
 2. Add CDMA IS-637 support using `CDMA_Encode_Message_IS637` as reference
 3. Test Flash SMS (Class 0) via direct AT commands
 4. Validate encoding against actual device output

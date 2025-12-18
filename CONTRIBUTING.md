@@ -1,6 +1,6 @@
-# Contributing to ZeroSMS Testing Suite
+# Contributing to SMS Test Testing Suite
 
-Thank you for your interest in contributing to ZeroSMS! This document provides guidelines and best practices for contributing to the project.
+Thank you for your interest in contributing to SMS Test! This document provides guidelines and best practices for contributing to the project.
 
 ## Table of Contents
 
@@ -38,12 +38,12 @@ We are committed to providing a welcoming and inclusive environment. All contrib
 1. Fork the repository on GitHub
 2. Clone your fork:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/zerosms.git
-   cd zerosms
+   git clone https://github.com/YOUR_USERNAME/007smsdev.git
+   cd 007smsdev
    ```
 3. Add upstream remote:
    ```bash
-   git remote add upstream https://github.com/phawd/zerosms.git
+   git remote add upstream https://github.com/phawd/007smsdev.git
    ```
 
 ### Build and Test
@@ -56,7 +56,7 @@ We are committed to providing a welcoming and inclusive environment. All contrib
 
 **Python**:
 ```bash
-python3 tools/zerosms_cli.py --help
+python3 tools/smstest_cli.py --help
 pytest  # If tests exist
 ```
 
@@ -271,8 +271,8 @@ For RCS features:
 
 ## License
 
-By contributing to ZeroSMS, you agree that your contributions will be licensed under the MIT License.
+By contributing to SMS Test, you agree that your contributions will be licensed under the MIT License.
 
 ---
 
-*Thank you for contributing to ZeroSMS! Your efforts help improve messaging protocol compliance and testing for the Android ecosystem.*
+*Thank you for contributing to SMS Test! Your efforts help improve messaging protocol compliance and testing for the Android ecosystem.*

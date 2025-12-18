@@ -1,4 +1,4 @@
-# ZeroSMS Comprehensive Session - Final Deliverables
+# SMS Test Comprehensive Session - Final Deliverables
 
 ## Session Achievement Summary
 
@@ -343,7 +343,7 @@ tools/
 ├── nv_forensic_audit.sh         (289 lines)
 ├── sms_listener.sh              (45 lines)
 ├── fast_audit.sh                (70 lines)
-└── zerosms_cli.py               (existing)
+└── smstest_cli.py               (existing)
 ```
 
 ### Documentation Location: `docs/`
