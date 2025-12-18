@@ -30,7 +30,7 @@ Confirmed Capabilities:
    Size: 9 KB | Content: Step-by-step NV 60044 exploit guide
 
 4. docs/PHASE_4_INTEGRATION_PLAN.md
-   Size: 12 KB | Content: ZeroSMS integration recommendations
+   Size: 12 KB | Content: SMS Test integration recommendations
 
 5. probe-log-phase4.txt
    Size: 15 KB | Content: Raw device investigation output
@@ -109,7 +109,7 @@ New UI screen: Advanced Testing
   - High NV item scanner
   - QMI service enumeration
 
-CLI enhancements to zerosms_cli.py:
+CLI enhancements to smstest_cli.py:
   - bypass --nv <id> --read
   - bypass --nv <id> --write <value>
   - qmi --service <id> --command <cmd>
@@ -186,7 +186,7 @@ Phase 4: COMPLETE ✓
 Phase 5: READY FOR PLANNING
 
 All objectives achieved. Deliverables ready for security research
-community, ZeroSMS platform enhancement, and responsible disclosure.
+community, SMS Test platform enhancement, and responsible disclosure.
 
 Session archived: 2025-12-04
 Device: MiFi 8800L (Verizon)

@@ -12,7 +12,7 @@ Key Analysis Targets:
 - libmal_qct.so: Direct QMI NV write functions
 - libsms_encoder.so: PDU manipulation for Flash/Silent SMS
 
-Author: ZeroSMS Project
+Author: SMS Test Project
 License: MIT
 """
 

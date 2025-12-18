@@ -38,7 +38,7 @@
 
 - **PHASE_4_TIER_BYPASS_FINDINGS.md** - Technical analysis of all discovered protection gaps
 - **PHASE_4_NV60044_IMPLEMENTATION.md** - Step-by-step guide to exploit NV 60044 writes
-- **PHASE_4_INTEGRATION_PLAN.md** - How to integrate findings into ZeroSMS platform
+- **PHASE_4_INTEGRATION_PLAN.md** - How to integrate findings into SMS Test platform
 
 ### 4. Created Proof-of-Concept (Already Tested)
 
@@ -158,7 +158,7 @@ Use SPC to unlock Tier 2 items → Full carrier unlock
 
 ---
 
-## Integration with ZeroSMS
+## Integration with SMS Test
 
 ### Proposed New Modules
 
@@ -184,13 +184,13 @@ fun injectQmiCommand(packet: ByteArray): Boolean
 - High NV item scanner
 - QMI service enumeration
 
-### Updated zerosms_cli.py
+### Updated smstest_cli.py
 
 ```bash
 # New commands:
-python3 tools/zerosms_cli.py bypass --nv 60044 --read
-python3 tools/zerosms_cli.py bypass --nv 60044 --write "new_value"
-python3 tools/zerosms_cli.py qmi --service NV --command read_nv
+python3 tools/smstest_cli.py bypass --nv 60044 --read
+python3 tools/smstest_cli.py bypass --nv 60044 --write "new_value"
+python3 tools/smstest_cli.py qmi --service NV --command read_nv
 ```
 
 ---
@@ -226,7 +226,7 @@ python3 tools/zerosms_cli.py qmi --service NV --command read_nv
 5. **Develop full carrier unlock**
    - If SPC found: Document default codes
    - If SPC not found: Prepare EFS modification toolkit
-   - Create complete carrier unlock module for ZeroSMS
+   - Create complete carrier unlock module for SMS Test
 
 ---
 
@@ -307,7 +307,7 @@ Phase 4 investigation has **successfully identified exploitable weaknesses** in 
 
 1. Validating PRI override in real network conditions
 2. Locating SPC code or firmware bypass method
-3. Developing production-grade carrier unlock module for ZeroSMS
+3. Developing production-grade carrier unlock module for SMS Test
 
 ---
 

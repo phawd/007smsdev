@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-We actively support the following versions of ZeroSMS Testing Suite with security updates:
+We actively support the following versions of SMS Test Testing Suite with security updates:
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -16,7 +16,7 @@ We actively support the following versions of ZeroSMS Testing Suite with securit
 
 ### How to Report
 
-If you discover a security vulnerability in ZeroSMS, please report it privately:
+If you discover a security vulnerability in SMS Test, please report it privately:
 
 1. **Email**: Send details to the repository maintainer via GitHub's private vulnerability reporting feature
 2. **Include**:
@@ -41,7 +41,7 @@ If you discover a security vulnerability in ZeroSMS, please report it privately:
 
 ### Root Access and AT Commands
 
-ZeroSMS includes functionality for direct modem access via AT commands, which requires root privileges. This is intended for:
+SMS Test includes functionality for direct modem access via AT commands, which requires root privileges. This is intended for:
 - **Professional Testing**: SMS/MMS/RCS protocol validation
 - **Research**: Modem behavior analysis
 - **Debugging**: Carrier-specific issue investigation
@@ -59,7 +59,7 @@ ZeroSMS includes functionality for direct modem access via AT commands, which re
 
 ### SMS/MMS Content
 
-ZeroSMS handles potentially sensitive messaging data:
+SMS Test handles potentially sensitive messaging data:
 - **No Telemetry**: We do not collect or transmit message content
 - **Local Storage**: Incoming SMS monitor stores messages in-memory only
 - **No Cloud**: All testing occurs on-device
@@ -71,12 +71,12 @@ ZeroSMS handles potentially sensitive messaging data:
 
 ### Secrets and Credentials
 
-**What ZeroSMS Stores**:
+**What SMS Test Stores**:
 - MMSC URLs and configurations (carrier-specific)
 - APN settings (for MMS testing)
 - Local preferences via Android DataStore
 
-**What ZeroSMS Does NOT Store**:
+**What SMS Test Does NOT Store**:
 - Phone numbers (beyond temporary test data)
 - Personal messages
 - Account credentials
@@ -116,14 +116,14 @@ When a security issue is fixed:
 
 Flash SMS messages bypass inbox and display directly:
 - **Risk**: Can be used for phishing or spoofing
-- **Mitigation**: ZeroSMS is for testing only; educate users on Flash SMS risks
+- **Mitigation**: SMS Test is for testing only; educate users on Flash SMS risks
 - **Detection**: Incoming SMS monitor logs Class 0 messages for analysis
 
 ### Silent SMS (Type 0)
 
 Silent SMS messages don't trigger notifications:
 - **Risk**: Used for location tracking by network operators
-- **Mitigation**: ZeroSMS logs all incoming Type 0 messages for transparency
+- **Mitigation**: SMS Test logs all incoming Type 0 messages for transparency
 - **Disclosure**: Users should understand network operator Silent SMS capabilities
 
 ### AT Command Risks
@@ -161,7 +161,7 @@ All code changes undergo:
 
 ## Compliance
 
-ZeroSMS is designed for:
+SMS Test is designed for:
 - **Research**: Academic and professional protocol testing
 - **Development**: SMS/MMS/RCS implementation validation
 - **Compliance**: RFC and 3GPP specification verification

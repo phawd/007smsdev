@@ -1,6 +1,6 @@
 ## Bootloader Unlock & Fastboot Access
 
-ZeroSMS supports advanced device operations that may require access to fastboot or bootloader modes, especially for Qualcomm, MediaTek, and other chipsets. This is essential for:
+SMS Test supports advanced device operations that may require access to fastboot or bootloader modes, especially for Qualcomm, MediaTek, and other chipsets. This is essential for:
 
 - Unlocking the bootloader (required for root, custom recovery, or firmware modifications)
 - Flashing custom images or recovery
@@ -55,7 +55,7 @@ ZeroSMS supports advanced device operations that may require access to fastboot 
 
 ## Overview
 
-ZeroSMS includes advanced features that require root access on Android devices. These features enable direct modem communication via AT commands, allowing operators to:
+SMS Test includes advanced features that require root access on Android devices. These features enable direct modem communication via AT commands, allowing operators to:
 
 - Send SMS via AT commands for enhanced control
 - Monitor incoming Class 0 (Flash) and Type 0 (Silent) SMS
@@ -113,7 +113,7 @@ AT commands (Attention commands) are a standard command set for controlling mode
 
 ### Supported AT Commands
 
-ZeroSMS uses the following AT commands:
+SMS Test uses the following AT commands:
 
 | Command | Purpose | Example |
 |---------|---------|---------|
@@ -126,7 +126,7 @@ ZeroSMS uses the following AT commands:
 
 ### Modem Device Detection
 
-ZeroSMS automatically searches for modem devices in priority order, including expanded support for Qualcomm and Inseego devices:
+SMS Test automatically searches for modem devices in priority order, including expanded support for Qualcomm and Inseego devices:
 
 **Qualcomm/Inseego/Netgear/Generic Snapdragon:**
 
@@ -146,7 +146,7 @@ ZeroSMS automatically searches for modem devices in priority order, including ex
 - **Root access** is required to open these device files.
 - **SELinux** may need to be set to permissive mode (`setenforce 0`) on some devices to allow access.
 - Some ports may be disabled by default; use `setprop persist.sys.usb.config diag,serial_cdev,rmnet,adb` or similar to enable diagnostic/AT ports (requires root).
-- Not all ports will respond to AT commands; ZeroSMS will auto-detect the correct one.
+- Not all ports will respond to AT commands; SMS Test will auto-detect the correct one.
 
 **Note:** Device paths vary by manufacturer:
 
@@ -164,23 +164,23 @@ ZeroSMS automatically searches for modem devices in priority order, including ex
 
 ### Qualcomm Diagnostic Ports
 
-Some Qualcomm/Snapdragon devices gate the AT/diag interfaces behind USB configuration flags such as `diag`, `diag_mdm`, or `serial_cdev`. Root-only capability is provided in the Settings screen’s Root Access card via the **“Enable Qualcomm Diag Ports”** button. Choose the preset that matches your hardware (Generic Snapdragon, Inseego MiFi, etc.) and ZeroSMS will run the corresponding `setprop` sequence to update `sys.usb.config`, `persist.sys.usb.config`, and `persist.vendor.usb.config`. Common combinations include `diag,serial_cdev,rmnet,dpl,qdss,adb`, `diag,serial_cdev,adb`, and `diag,diag_mdm,adb`. After the command completes, confirm the diag profile by running `getprop sys.usb.config` in an ADB shell and verifying it contains one of the diag strings. USB reconnection may be required for the new mode to take effect.
+Some Qualcomm/Snapdragon devices gate the AT/diag interfaces behind USB configuration flags such as `diag`, `diag_mdm`, or `serial_cdev`. Root-only capability is provided in the Settings screen’s Root Access card via the **“Enable Qualcomm Diag Ports”** button. Choose the preset that matches your hardware (Generic Snapdragon, Inseego MiFi, etc.) and SMS Test will run the corresponding `setprop` sequence to update `sys.usb.config`, `persist.sys.usb.config`, and `persist.vendor.usb.config`. Common combinations include `diag,serial_cdev,rmnet,dpl,qdss,adb`, `diag,serial_cdev,adb`, and `diag,diag_mdm,adb`. After the command completes, confirm the diag profile by running `getprop sys.usb.config` in an ADB shell and verifying it contains one of the diag strings. USB reconnection may be required for the new mode to take effect.
 
 Prefer automating from a desktop? Use the bundled Python helper:
 
 ```bash
 # From the repo root
-python3 tools/zerosms_cli.py diag --ai                 # AI diag probing
-python3 tools/zerosms_cli.py probe --deep --include-response   # Deep modem scan
-python3 tools/zerosms_cli.py usb --json                        # List USB VID/PIDs (lsusb/system profiler)
-python3 tools/zerosms_cli.py usb-switch -v 0x05c6 -p 0x90b4    # Run usb_modeswitch for dongles
-python3 tools/zerosms_cli.py comscan                           # Enumerate desktop COM ports
-python3 tools/zerosms_cli.py sms +15551234567 "Hello" --auto   # Auto-pick responsive modem
+python3 tools/smstest_cli.py diag --ai                 # AI diag probing
+python3 tools/smstest_cli.py probe --deep --include-response   # Deep modem scan
+python3 tools/smstest_cli.py usb --json                        # List USB VID/PIDs (lsusb/system profiler)
+python3 tools/smstest_cli.py usb-switch -v 0x05c6 -p 0x90b4    # Run usb_modeswitch for dongles
+python3 tools/smstest_cli.py comscan                           # Enumerate desktop COM ports
+python3 tools/smstest_cli.py sms +15551234567 "Hello" --auto   # Auto-pick responsive modem
 ```
 
 The script calls `adb shell su -c ...` under the hood, so adb/USB debugging and root are still required.
 
-ZeroSMS has been tested with Inseego devices such as:
+SMS Test has been tested with Inseego devices such as:
 
 - **Inseego MiFi M2100** (Snapdragon 8cx); diag mode exposes `/dev/smd0`.
 - **Inseego MiFi M2000** (Snapdragon X55); use diag configs `diag,diag_mdm,adb`.
@@ -190,7 +190,7 @@ You can adapt the same process to other NOVAtel/Inseego models that share Qualco
 
 ### PDU Mode Encoding
 
-AT commands use PDU (Protocol Data Unit) mode for SMS. ZeroSMS automatically:
+AT commands use PDU (Protocol Data Unit) mode for SMS. SMS Test automatically:
 
 1. **Encodes phone numbers** in BCD (Binary Coded Decimal)
 2. **Sets message class** for Flash SMS (Class 0)
@@ -282,7 +282,7 @@ MMSC (Multimedia Messaging Service Center) is the gateway server for MMS. Each c
 
 ### Carrier Presets
 
-ZeroSMS includes presets for major carriers:
+SMS Test includes presets for major carriers:
 
 #### United States
 
@@ -357,7 +357,7 @@ To verify MMSC settings:
 **Problem:** Root permission denied
 
 - **Solution:** Grant root access when prompted by root manager
-- **Check:** ZeroSMS should appear in Magisk/SuperSU app list
+- **Check:** SMS Test should appear in Magisk/SuperSU app list
 
 ### AT Command Issues
 

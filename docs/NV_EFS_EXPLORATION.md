@@ -124,7 +124,7 @@ Based on Qualcomm EFS research and 5G NR-CA guides:
 
 ## Binaries Pulled for Analysis
 
-All binaries stored in `f:\repo\zerosms\binaries\`:
+All binaries stored in `f:\repo\007smsdev\binaries\`:
 
 | Binary | Size | Purpose |
 |--------|------|---------|

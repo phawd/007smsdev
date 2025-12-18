@@ -1,4 +1,4 @@
-# ZeroSMS Advanced Features - Implementation Summary
+# SMS Test Advanced Features - Implementation Summary
 
 ## Features Implemented
 
@@ -28,7 +28,7 @@
 - **Capabilities**:
   - Runs root `setprop` commands to push diag-capable USB configs (`diag`, `diag_mdm`, `serial_cdev`)
   - Reads `sys.usb.config` and persistent USB props to verify diagnostic mode
-  - Provides device-specific presets (Generic Snapdragon, Inseego MiFi, fallback serial-only) in Settings > Root Access and via the desktop helper (`tools/zerosms_cli.py`)
+  - Provides device-specific presets (Generic Snapdragon, Inseego MiFi, fallback serial-only) in Settings > Root Access and via the desktop helper (`tools/smstest_cli.py`)
   - Desktop helper also scans USB vendor/product IDs, invokes `usb_modeswitch`, enumerates COM ports, and can operate with/without adb root
 
 ### ✅ Incoming SMS Database
@@ -142,7 +142,7 @@
 
 ### New Packages
 ```
-app/src/main/java/com/zerosms/testing/
+app/src/main/java/com/007smsdev/testing/
 ├── core/
 │   ├── root/              # NEW: Root access management
 │   ├── at/                # NEW: AT command interface
@@ -184,12 +184,12 @@ User → SettingsScreen → MmscConfigManager.saveMmscConfig()
 ## Integration Points
 
 ### App Initialization
-In `ZeroSMSApplication.onCreate()` or `MainActivity.onCreate()`:
+In `SMS TestApplication.onCreate()` or `MainActivity.onCreate()`:
 ```kotlin
 val smsManager = SmsManagerWrapper(context)
 lifecycleScope.launch {
     val atAvailable = smsManager.initializeAtCommands()
-    Log.i("ZeroSMS", "AT commands: $atAvailable")
+    Log.i("SMS Test", "AT commands: $atAvailable")
 }
 ```
 
@@ -242,7 +242,7 @@ mmscManager.saveMmscConfig(config)
 
 1. **Root Access**:
    - Root device with Magisk
-   - Install ZeroSMS APK
+   - Install SMS Test APK
    - Grant root permission when prompted
    - Check Settings → Advanced Features → Root Access Card
 

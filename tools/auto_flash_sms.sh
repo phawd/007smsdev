@@ -1,5 +1,5 @@
 #!/bin/sh
-# Automatic Flash SMS (Class 0) sender for ZeroSMS testing
+# Automatic Flash SMS (Class 0) sender for SMS Test testing
 # Usage: adb push auto_flash_sms.sh /tmp && adb shell sh /tmp/auto_flash_sms.sh [iterations]
 
 ITERATIONS=${1:-10}

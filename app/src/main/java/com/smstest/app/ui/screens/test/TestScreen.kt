@@ -224,7 +224,7 @@ fun PermissionCard(
             Spacer(Modifier.height(8.dp))
             
             Text(
-                "ZeroSMS needs SMS permissions to send and receive test messages.",
+                "SMS Test needs SMS permissions to send and receive test messages.",
                 style = MaterialTheme.typography.bodySmall
             )
             

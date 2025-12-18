@@ -163,7 +163,7 @@ Next Steps:
 2. Analyze NV items for lock status
 3. Parse FOTA certificates
 4. Perform binary analysis on libmodem2_api.so
-5. Document findings for ZeroSMS integration
+5. Document findings for SMS Test integration
 SUMMARY
 
 echo "Summary created."

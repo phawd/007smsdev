@@ -18,7 +18,7 @@ ZeroSMS is a dual-purpose project:
 - **State**: `StateFlow` used for reactive UI updates.
 
 ### Research & Tools (`tools/`, `analysis/`)
-- **CLI**: `tools/zerosms_cli.py` is the primary entry point for desktop-based modem interaction via ADB.
+- **CLI**: `tools/smstest_cli.py` is the primary entry point for desktop-based modem interaction via ADB.
 - **Analysis**: `analysis/` and `arm_analysis_tools/` contain scripts for binary analysis (Ghidra/IDA helpers) and NV item exploration.
 - **Docs**: `docs/` contains deep technical documentation on device specifics (MiFi, Android), RFC compliance, and reverse engineering findings.
 
@@ -31,9 +31,9 @@ ZeroSMS is a dual-purpose project:
 - **Root Access**: Check `RootAccessManager.hasRootAccess()` before attempting AT commands or direct device file access.
 
 ### Research & CLI
-- **Modem Interaction**: Use `zerosms_cli.py` for reliable AT command execution and mode switching.
-    - Example: `python3 tools/zerosms_cli.py sms +15551234567 "Test" --auto`
-- **Device Discovery**: `python3 tools/zerosms_cli.py probe --deep` is essential for finding modem ports on new devices.
+- **Modem Interaction**: Use `smstest_cli.py` for reliable AT command execution and mode switching.
+    - Example: `python3 tools/smstest_cli.py sms +15551234567 "Test" --auto`
+- **Device Discovery**: `python3 tools/smstest_cli.py probe --deep` is essential for finding modem ports on new devices.
 - **Phase Tracking**: The project uses `PHASE_X_*.md` files in the root to track active research and reverse engineering tasks. Check the latest Phase file for current objectives.
 
 ## Workflows
@@ -46,13 +46,13 @@ ZeroSMS is a dual-purpose project:
 ```
 
 ### Research & Analysis
-- **Probe Device**: `python3 tools/zerosms_cli.py probe --deep --include-response`
-- **Diag Mode**: `python3 tools/zerosms_cli.py diag --ai` (Auto-detects profile)
+- **Probe Device**: `python3 tools/smstest_cli.py probe --deep --include-response`
+- **Diag Mode**: `python3 tools/smstest_cli.py diag --ai` (Auto-detects profile)
 - **Binary Analysis**: Use scripts in `arm_analysis_tools/` for Ghidra/IDA integration.
 
 ## Key Files & Directories
 - `app/src/main/java/com/zerosms/testing/core/model/Models.kt`: Central definitions for Message types and Enums.
-- `tools/zerosms_cli.py`: The "Swiss Army Knife" for modem interaction.
+- `tools/smstest_cli.py`: The "Swiss Army Knife" for modem interaction.
 - `docs/ANDROID_DEVICE_GUIDE.md`: Setup guide for Android devices.
 - `docs/MIFI_DEVICE_GUIDE.md`: Setup guide for Inseego MiFi devices (Linux-based).
 - `PHASE_*`: Current project status and plans.

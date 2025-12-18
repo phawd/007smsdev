@@ -1,4 +1,4 @@
-# Code Owners for ZeroSMS Testing Suite
+# Code Owners for SMS Test Suite
 # This file defines who should review pull requests for specific areas of the codebase
 # Learn more: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 
@@ -6,14 +6,14 @@
 * @phawd
 
 # Core Android Application
-/app/src/main/java/com/zerosms/testing/core/ @phawd
-/app/src/main/java/com/zerosms/testing/ui/ @phawd
+/app/src/main/java/com/smstest/app/core/ @phawd
+/app/src/main/java/com/smstest/app/ui/ @phawd
 
 # SMS/MMS/RCS Protocol Implementations
-/app/src/main/java/com/zerosms/testing/core/sms/ @phawd
-/app/src/main/java/com/zerosms/testing/core/mms/ @phawd
-/app/src/main/java/com/zerosms/testing/core/rcs/ @phawd
-/app/src/main/java/com/zerosms/testing/core/at/ @phawd
+/app/src/main/java/com/smstest/app/core/sms/ @phawd
+/app/src/main/java/com/smstest/app/core/mms/ @phawd
+/app/src/main/java/com/smstest/app/core/rcs/ @phawd
+/app/src/main/java/com/smstest/app/core/at/ @phawd
 
 # Python CLI Tools
 /tools/*.py @phawd

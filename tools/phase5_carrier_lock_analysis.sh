@@ -284,7 +284,7 @@ echo "1. Analyze extracted binaries offline with IDA/Ghidra"
 echo "2. Search for hardcoded SPC codes in firmware"
 echo "3. Test identified bypass vectors"
 echo "4. Document complete exploitation chain"
-echo "5. Develop ZeroSMS carrier unlock module"
+echo "5. Develop SMS Test carrier unlock module"
 echo
 
 echo "=========================================";

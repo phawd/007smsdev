@@ -9,12 +9,12 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 
 /**
- * Command Line Interface for ZeroSMS testing
+ * Command Line Interface for SMS Test testing
  * Provides CLI access to main app functionality
  */
 class CommandLineInterface(private val context: Context) {
     
-    private val tag = "ZeroSMS_CLI"
+    private val tag = "SMS Test_CLI"
     
     companion object {
         const val ANSI_RESET = "\u001B[0m"
@@ -43,7 +43,7 @@ class CommandLineInterface(private val context: Context) {
     private fun showWelcome() {
         println("$ANSI_CLEAR_SCREEN$ANSI_HOME")
         println("${ANSI_BOLD}${ANSI_BLUE}╔══════════════════════════════════════════╗$ANSI_RESET")
-        println("${ANSI_BOLD}${ANSI_BLUE}║          ZeroSMS CLI Interface           ║$ANSI_RESET")
+        println("${ANSI_BOLD}${ANSI_BLUE}║          SMS Test CLI Interface           ║$ANSI_RESET")
         println("${ANSI_BOLD}${ANSI_BLUE}║    Silent SMS/MMS/RCS Testing Suite      ║$ANSI_RESET")
         println("${ANSI_BOLD}${ANSI_BLUE}╚══════════════════════════════════════════╝$ANSI_RESET")
         println()
@@ -77,7 +77,7 @@ class CommandLineInterface(private val context: Context) {
         val reader = BufferedReader(InputStreamReader(System.`in`))
         
         while (true) {
-            print("${ANSI_GREEN}zerosms> $ANSI_RESET")
+            print("${ANSI_GREEN}smstest> $ANSI_RESET")
             val input = reader.readLine()?.trim()
             
             if (input.isNullOrEmpty()) continue

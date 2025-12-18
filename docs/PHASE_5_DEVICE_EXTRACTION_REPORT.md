@@ -313,7 +313,7 @@ State: [0]
 2. **Priority:** Analyze PRI version for bypass vector (NV 60044)
 3. **Secondary:** Binary analysis of libmodem2_api.so
 4. **Follow-up:** FOTA certificate chain analysis
-5. **Integration:** ZeroSMS module development based on findings
+5. **Integration:** SMS Test module development based on findings
 
 ## Conclusion
 

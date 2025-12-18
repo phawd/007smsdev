@@ -2,7 +2,7 @@ package com.smstest.app
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.zerosms.testing.core.root.RootAccessManager
+import com.smstest.app.core.root.RootAccessManager
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test

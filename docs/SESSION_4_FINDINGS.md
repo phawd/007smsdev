@@ -325,10 +325,10 @@ adb shell "/opt/nvtl/bin/modem2_cli lifetime_counters_get"
 ```bash
 # Download Ghidra 11.0+ from https://ghidra-sre.org
 # Import binaries already pulled:
-# - f:\repo\zerosms\binaries\nwcli (25KB)
-# - f:\repo\zerosms\binaries\libmal_qct.so (307KB)
-# - f:\repo\zerosms\binaries\modem2_cli (size TBD)
-# - f:\repo\zerosms\binaries\libsms_encoder.so (92KB)
+# - f:\repo\007smsdev\binaries\nwcli (25KB)
+# - f:\repo\007smsdev\binaries\libmal_qct.so (307KB)
+# - f:\repo\007smsdev\binaries\modem2_cli (size TBD)
+# - f:\repo\007smsdev\binaries\libsms_encoder.so (92KB)
 ```
 
 ### QPST Alternative (Windows)
@@ -398,22 +398,22 @@ adb reboot
 
 **Created:**
 
-- `f:\repo\zerosms\nv550_backup.txt` - NV 550 backup (IMEI 990016878573987)
-- `f:\repo\zerosms\docs\SESSION_4_FINDINGS.md` - This document
+- `f:\repo\007smsdev\nv550_backup.txt` - NV 550 backup (IMEI 990016878573987)
+- `f:\repo\007smsdev\docs\SESSION_4_FINDINGS.md` - This document
 
 **Modified:**
 
-- `f:\repo\zerosms\tools\mifi_controller.py` - Fixed APN timeout in connect_to_network()
+- `f:\repo\007smsdev\tools\mifi_controller.py` - Fixed APN timeout in connect_to_network()
 
 **Binaries Available for Analysis:**
 
-- `f:\repo\zerosms\binaries\nwcli` (25KB)
-- `f:\repo\zerosms\binaries\libmal_qct.so` (307KB)
-- `f:\repo\zerosms\binaries\modem2_cli` (size TBD)
-- `f:\repo\zerosms\binaries\libsms_encoder.so` (92KB)
-- `f:\repo\zerosms\binaries\libsms_api.so` (21KB)
-- `f:\repo\zerosms\binaries\libmodem2_api.so` (145KB)
-- `f:\repo\zerosms\binaries\sms_cli` (15KB)
+- `f:\repo\007smsdev\binaries\nwcli` (25KB)
+- `f:\repo\007smsdev\binaries\libmal_qct.so` (307KB)
+- `f:\repo\007smsdev\binaries\modem2_cli` (size TBD)
+- `f:\repo\007smsdev\binaries\libsms_encoder.so` (92KB)
+- `f:\repo\007smsdev\binaries\libsms_api.so` (21KB)
+- `f:\repo\007smsdev\binaries\libmodem2_api.so` (145KB)
+- `f:\repo\007smsdev\binaries\sms_cli` (15KB)
 
 ---
 

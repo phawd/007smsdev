@@ -3,7 +3,7 @@ package com.smstest.app.core.model
 import java.util.Date
 
 /**
- * Message types supported by ZeroSMS
+ * Message types supported by SMS Test
  */
 enum class MessageType {
     SMS_TEXT,           // Standard SMS text message (GSM 03.40)

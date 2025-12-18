@@ -1,6 +1,6 @@
 # Comprehensive Ghidra Analysis Script - extract_all_info.py
 # @category Analysis
-# @author ZeroSMS Research
+# @author SMS Test Research
 
 from ghidra.app.decompiler import DecompInterface
 from ghidra.util.task import ConsoleTaskMonitor

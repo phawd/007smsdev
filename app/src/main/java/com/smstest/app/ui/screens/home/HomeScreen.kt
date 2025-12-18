@@ -146,7 +146,7 @@ fun HomeScreen(
                         runCatching { BuildConfig::class.java.getField("GIT_COMMIT").get(null) as? String }
                             .getOrNull() ?: "n/a"
                     }
-                    Text("ZeroSMS v${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE}) • $commit")
+                    Text("SMS Test v${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE}) • $commit")
                 },
                 actions = {
                     IconButton(onClick = onNavigateToSettings) {

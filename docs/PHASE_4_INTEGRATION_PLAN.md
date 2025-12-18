@@ -1,4 +1,4 @@
-# Phase 4 Research Completion: Integration with ZeroSMS
+# Phase 4 Research Completion: Integration with SMS Test
 
 **Date:** 2025-12-04  
 **Status:** Phase 4 (Tier Bypass) Investigation Complete  
@@ -34,7 +34,7 @@ Current Protection Model:
 Vulnerability: Carrier lock metadata is in unprotected region!
 ```
 
-**Implication for ZeroSMS:**
+**Implication for SMS Test:**
 
 - Add NV 60044 read/write to test harness
 - Capability to override carrier identification
@@ -61,7 +61,7 @@ Direct attack: App → /dev/smd11 (raw QMI packets)
 Implication: Can bypass nwcli validation entirely
 ```
 
-**Implication for ZeroSMS:**
+**Implication for SMS Test:**
 
 - Potential for raw QMI command injection
 - Could send unsupported message types directly
@@ -91,7 +91,7 @@ Protection layers:
   4. Modem firmware ← Does NOT re-validate
 ```
 
-**Implication for ZeroSMS:**
+**Implication for SMS Test:**
 
 - SPC bypass possible via direct QMI injection
 - Modem doesn't protect >60000 items (design choice)
@@ -99,7 +99,7 @@ Protection layers:
 
 ---
 
-## Integration with ZeroSMS Architecture
+## Integration with SMS Test Architecture
 
 ### New Testing Modules (Proposed)
 
@@ -272,7 +272,7 @@ fun AdvancedTestingScreen(viewModel: TestViewModel) {
 2. Identify bypass vectors or default codes
 3. Develop full carrier unlock toolkit
 
-**Deliverable:** Complete carrier unlock module for ZeroSMS
+**Deliverable:** Complete carrier unlock module for SMS Test
 
 ---
 
@@ -291,17 +291,17 @@ docs/
 
 ## Tool Enhancements Required
 
-### zerosms_cli.py Updates
+### smstest_cli.py Updates
 
 ```python
 # New subcommand: bypass
-python3 tools/zerosms_cli.py bypass --nv 60044 --read
+python3 tools/smstest_cli.py bypass --nv 60044 --read
 # Output: PRI.90029477 REV 151 Alpine VERIZON
 
-python3 tools/zerosms_cli.py bypass --nv 60044 --write "PRI.90029477 REV 151 Alpine AT&T....."
+python3 tools/smstest_cli.py bypass --nv 60044 --write "PRI.90029477 REV 151 Alpine AT&T....."
 # Output: Write successful, toggle radio to apply
 
-python3 tools/zerosms_cli.py qmi --service NV --command read_nv --nv 60044
+python3 tools/smstest_cli.py qmi --service NV --command read_nv --nv 60044
 # Direct QMI interface
 ```
 
@@ -309,14 +309,14 @@ python3 tools/zerosms_cli.py qmi --service NV --command read_nv --nv 60044
 
 **Files to create:**
 
-- `src/main/java/com/zerosms/testing/core/carrier/CarrierTestManager.kt`
-- `src/main/java/com/zerosms/testing/core/qmi/QmiProtocolManager.kt`
-- `src/main/java/com/zerosms/testing/core/smd/DirectSmdInterface.kt`
+- `src/main/java/com/007smsdev/testing/core/carrier/CarrierTestManager.kt`
+- `src/main/java/com/007smsdev/testing/core/qmi/QmiProtocolManager.kt`
+- `src/main/java/com/007smsdev/testing/core/smd/DirectSmdInterface.kt`
 
 **Files to modify:**
 
-- `src/main/java/com/zerosms/testing/ui/screens/HomeScreen.kt` (add test card)
-- `src/main/java/com/zerosms/testing/core/model/Models.kt` (add CarrierBypass test type)
+- `src/main/java/com/007smsdev/testing/ui/screens/HomeScreen.kt` (add test card)
+- `src/main/java/com/007smsdev/testing/core/model/Models.kt` (add CarrierBypass test type)
 
 ---
 
@@ -350,7 +350,7 @@ python3 tools/zerosms_cli.py qmi --service NV --command read_nv --nv 60044
 
 ## Success Metrics
 
-### For ZeroSMS Platform
+### For SMS Test Platform
 
 | Metric | Target | Current Status |
 |--------|--------|-----------------|
@@ -406,7 +406,7 @@ Phase 5 planning should reference these findings
 
 Phase 4 investigation has successfully identified multiple attack vectors for Tier 2 carrier lock bypass on the MiFi 8800L. The primary discovery - **NV 60044 is writable without SPC code** - provides a clear path for carrier metadata override testing.
 
-The ZeroSMS platform is now positioned to:
+The SMS Test platform is now positioned to:
 
 1. Test carrier lock bypass mechanisms
 2. Validate SPC protection effectiveness

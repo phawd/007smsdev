@@ -334,7 +334,7 @@ Note: If CRC-based, SPC derivable from IMEI
 
 ---
 
-## Recommendations for ZeroSMS Integration
+## Recommendations for SMS Test Integration
 
 ### Phase 5C: SPC Code Analysis
 
@@ -362,7 +362,7 @@ TODO:
    - Write via nwcli qmi_idl write_file
 3. Test on device (non-destructive)
 4. Verify SMS/data allowed after modification
-5. Document for ZeroSMS UI integration
+5. Document for SMS Test UI integration
 ```
 
 ### Phase 5E: Dynamic Analysis via strace/ltrace
@@ -374,7 +374,7 @@ TODO:
 2. Identify all QMI service calls
 3. Map exact QMI message format for validation
 4. Attempt direct QMI message injection
-5. Create modem protocol fuzzer for ZeroSMS
+5. Create modem protocol fuzzer for SMS Test
 ```
 
 ---
@@ -395,7 +395,7 @@ TODO:
 2. Search for cross-references to strings: "SPC", "carrier", "unlock"
 3. Identify the SPC validation function signature
 4. Determine algorithm (CRC, hash, lookup table)
-5. Create exploitation tools for ZeroSMS integration
+5. Create exploitation tools for SMS Test integration
 
 ---
 
@@ -428,7 +428,7 @@ TODO:
 | SPC algorithm reverse-engineering | ⏳ TODO | - | Ghidra dependency |
 | Layer 1 PoC exploit | ⏳ TODO | - | QMI write testing required |
 | Device testing | ⏳ TODO | - | Non-destructive validation |
-| ZeroSMS integration | ⏳ TODO | - | UI/CLI tool development |
+| SMS Test integration | ⏳ TODO | - | UI/CLI tool development |
 
 ---
 

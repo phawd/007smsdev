@@ -41,13 +41,13 @@ object LogExporter {
             
             val dateFormat = SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.US)
             val timestamp = dateFormat.format(Date())
-            val fileName = "zerosms_logs_$timestamp.txt"
+            val fileName = "smstest_logs_$timestamp.txt"
             
             val logFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US)
             
             val content = buildString {
                 appendLine("========================================")
-                appendLine("ZeroSMS Activity Log Export")
+                appendLine("SMS Test Activity Log Export")
                 appendLine("Generated: ${logFormat.format(Date())}")
                 appendLine("Total Entries: ${activityLogs.size}")
                 appendLine("========================================")
@@ -95,7 +95,7 @@ object LogExporter {
             
             val dateFormat = SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.US)
             val timestamp = dateFormat.format(Date())
-            val fileName = "zerosms_results_$timestamp.csv"
+            val fileName = "smstest_results_$timestamp.csv"
             
             val csvContent = buildString {
                 // CSV Header
@@ -140,7 +140,7 @@ object LogExporter {
         return try {
             val dateFormat = SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.US)
             val timestamp = dateFormat.format(Date())
-            val fileName = "zerosms_summary_$timestamp.txt"
+            val fileName = "smstest_summary_$timestamp.txt"
             
             val passed = results.count { it.status == TestStatus.PASSED }
             val failed = results.count { it.status == TestStatus.FAILED }
@@ -149,7 +149,7 @@ object LogExporter {
             
             val content = buildString {
                 appendLine("========================================")
-                appendLine("ZeroSMS Test Results Summary")
+                appendLine("SMS Test Test Results Summary")
                 appendLine("Generated: ${SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US).format(Date())}")
                 appendLine("========================================")
                 appendLine()
@@ -216,7 +216,7 @@ object LogExporter {
         val shareIntent = Intent(Intent.ACTION_SEND).apply {
             type = mimeType
             putExtra(Intent.EXTRA_STREAM, uri)
-            putExtra(Intent.EXTRA_SUBJECT, "ZeroSMS Export: $fileName")
+            putExtra(Intent.EXTRA_SUBJECT, "SMS Test Export: $fileName")
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }
         

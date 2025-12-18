@@ -227,7 +227,7 @@ fun SettingsScreen(
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(
-                            "ZeroSMS Testing Suite",
+                            "SMS Test Testing Suite",
                             style = MaterialTheme.typography.titleMedium
                         )
                         Text(

@@ -1,6 +1,6 @@
-# Android Device Guide for ZeroSMS
+# Android Device Guide for SMS Test
 
-This guide covers Android device setup, discovery, and SMS/AT command operations for the ZeroSMS testing suite.
+This guide covers Android device setup, discovery, and SMS/AT command operations for the SMS Test testing suite.
 
 ## Device Requirements
 
@@ -20,8 +20,8 @@ adb shell getprop ro.build.product  # Device codename
 ### Step 2: Probe Modem Hardware
 
 ```bash
-python3 tools/zerosms_cli.py probe --deep --include-response  # Scan all modem paths
-python3 tools/zerosms_cli.py usb --json        # USB vendor/product IDs for chipset ID
+python3 tools/smstest_cli.py probe --deep --include-response  # Scan all modem paths
+python3 tools/smstest_cli.py usb --json        # USB vendor/product IDs for chipset ID
 ```
 
 ### Step 3: Check Root & Modem Access
@@ -45,7 +45,7 @@ Modem paths are auto-detected via `DeviceInfoManager`.
 
 ## AT Command Managers
 
-ZeroSMS supports multiple AT command backends for different chipsets:
+SMS Test supports multiple AT command backends for different chipsets:
 
 | Manager | Description | Requirements |
 |---------|-------------|--------------|
@@ -70,10 +70,10 @@ if (atCommandsAvailable && AtCommandManager.isInitialized()) {
 
 ```bash
 # Auto-cycle all known profiles
-python3 tools/zerosms_cli.py diag --ai
+python3 tools/smstest_cli.py diag --ai
 
 # Specify profile
-python3 tools/zerosms_cli.py diag --profile generic
+python3 tools/smstest_cli.py diag --profile generic
 ```
 
 ### Reboot Device
@@ -87,7 +87,7 @@ adb shell su -c "reboot"       # Root reboot if needed
 
 ```bash
 # Qualcomm default
-python3 tools/zerosms_cli.py usb-switch -v 0x05c6 -p 0x90b4
+python3 tools/smstest_cli.py usb-switch -v 0x05c6 -p 0x90b4
 ```
 
 ### In-App Diag Management
@@ -122,7 +122,7 @@ SMS_CONCAT_MAX_LENGTH_UNICODE = 67
 ### CLI SMS Operations
 
 ```bash
-python3 tools/zerosms_cli.py sms +15551234567 "Hello" --auto  # Send via AT
+python3 tools/smstest_cli.py sms +15551234567 "Hello" --auto  # Send via AT
 ```
 
 ## Troubleshooting
@@ -162,7 +162,7 @@ adb reboot  # Reboot to apply
 
 - Check Device Manager for yellow ! icons
 - Install Qualcomm USB drivers or use generic usbser.sys
-- Try: `python3 tools/zerosms_cli.py comscan --json`
+- Try: `python3 tools/smstest_cli.py comscan --json`
 
 ## Common Gotchas
 

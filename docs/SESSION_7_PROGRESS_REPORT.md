@@ -35,7 +35,7 @@
 | qmi_test_service_test | 14,264 bytes | QMI test tool | ✅ Collected |
 | qmi_ip_multiclient | 112,364 bytes | QMI IP client | ✅ Collected |
 
-**Storage**: `F:\repo\zerosms\analysis\binaries\`
+**Storage**: `F:\repo\007smsdev\analysis\binaries\`
 
 ---
 
@@ -52,7 +52,7 @@ $matches = [regex]::Matches($text, 'cmd_[a-zA-Z0-9_]+')
 # Result: 196 unique commands extracted
 ```
 
-**Storage**: `F:\repo\zerosms\analysis\modem2_cli_commands.txt` (197 lines)
+**Storage**: `F:\repo\007smsdev\analysis\modem2_cli_commands.txt` (197 lines)
 
 **Verification**: ✅ Matches Session 4 initial discovery (196 commands)
 

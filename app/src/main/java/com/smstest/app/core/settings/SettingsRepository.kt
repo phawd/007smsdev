@@ -9,7 +9,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-private val Context.dataStore by preferencesDataStore(name = "zerosms_settings")
+private val Context.dataStore by preferencesDataStore(name = "smstest_settings")
 
 object SettingsRepository {
     private val FLASH_DEST_NUMBER = stringPreferencesKey("flash_destination_number")

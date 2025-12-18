@@ -1,4 +1,4 @@
-# ZeroSMS Project - Session 4 Summary
+# SMS Test Project - Session 4 Summary
 
 ## Major Accomplishments
 
@@ -152,7 +152,7 @@ Actual: Wrote to NV item 60044 (PRI Version)
 
 ## File Inventory
 
-### Binaries Pulled (f:\repo\zerosms\binaries\)
+### Binaries Pulled (f:\repo\007smsdev\binaries\)
 
 - nwcli (25KB)
 - modem2_cli (145KB)
@@ -162,7 +162,7 @@ Actual: Wrote to NV item 60044 (PRI Version)
 - libmodem2_api.so (145KB)
 - sms_cli (15KB)
 
-### Analysis Scripts (f:\repo\zerosms\analysis\)
+### Analysis Scripts (f:\repo\007smsdev\analysis\)
 
 - quick_analyze.py
 - analyze_write_nv_bug.py
@@ -171,12 +171,12 @@ Actual: Wrote to NV item 60044 (PRI Version)
 - modem2_cli_cmd_functions.txt
 - IMPLEMENTATION_STATUS.md
 
-### Tools (f:\repo\zerosms\tools\)
+### Tools (f:\repo\007smsdev\tools\)
 
 - mifi_controller.py (1,504 lines, 61 functions)
-- zerosms_cli.py (desktop CLI helper)
+- smstest_cli.py (desktop CLI helper)
 
-### Documentation (f:\repo\zerosms\docs\)
+### Documentation (f:\repo\007smsdev\docs\)
 
 - BINARY_ANALYSIS.md (comprehensive tool guide)
 - SESSION_4_FINDINGS.md (testing results)

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Helper CLI for enabling Qualcomm diagnostic ports and sending SMS via AT
-commands using adb + root access. This mirrors the ZeroSMS in-app
+commands using adb + root access. This mirrors the SMS Test in-app
 functionality for users who prefer a desktop workflow.
 """
 
@@ -224,7 +224,7 @@ def send_sms_via_at(device: str, destination: str, message: str) -> None:
 
 def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="ZeroSMS desktop helper for enabling Qualcomm diag and "
+        description="SMS Test desktop helper for enabling Qualcomm diag and "
         "sending SMS via AT commands.",
     )
     parser.add_argument(

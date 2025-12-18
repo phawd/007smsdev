@@ -589,7 +589,7 @@ nm -D libmodem2_api.so | grep -i "spc\|unlock\|validate"
 2. Analyze with provided tools
 3. Identify SPC validation function
 4. Test bypass vectors
-5. Document findings for ZeroSMS integration
+5. Document findings for SMS Test integration
 
 EOF
 

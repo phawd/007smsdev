@@ -113,7 +113,7 @@ Integrated findings from 5 sources:
 
 ## Binaries Pulled
 
-All stored in `f:\repo\zerosms\binaries\`:
+All stored in `f:\repo\007smsdev\binaries\`:
 
 | Binary | Size | Purpose | Analysis Status |
 |--------|------|---------|-----------------|

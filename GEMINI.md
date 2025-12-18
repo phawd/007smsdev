@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document describes how GEMINI (Google's AI assistant) integrates with the ZeroSMS Testing Suite repository to maintain code quality, ensure RFC compliance, and streamline development workflows.
+This document describes how GEMINI (Google's AI assistant) integrates with the SMS Test Testing Suite repository to maintain code quality, ensure RFC compliance, and streamline development workflows.
 
 ## Purpose
 

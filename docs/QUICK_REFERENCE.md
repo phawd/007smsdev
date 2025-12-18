@@ -263,7 +263,7 @@ nwcli write_nv 0xEA64 <NCK>  # May brick device!
 .\analysis\extract_cli_commands.py
 ```
 
-### Python Integration (zerosms_cli.py)
+### Python Integration (smstest_cli.py)
 
 ```python
 from tools.mifi_controller import MiFiController
@@ -319,7 +319,7 @@ nwcli read_nv 0xEAAC 1  # 0x00 = unlocked
 nwcli read_nv 0xEA62 1  # 0x00 = unlocked
 
 # Python method
-python3 tools/zerosms_cli.py status
+python3 tools/smstest_cli.py status
 ```
 
 ### Safe Unlock Procedure
@@ -400,7 +400,7 @@ print('SPC retries:', mifi.get_spc_retries())
 
 ### Project Files
 
-- Repository: `f:\repo\zerosms`
+- Repository: `f:\repo\007smsdev`
 - Documentation: `docs/`
 - Analysis scripts: `analysis/`
 - Python tools: `tools/`
