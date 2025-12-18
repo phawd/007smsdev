@@ -1,0 +1,114 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+	<h2>نظرة عامة</h2>
+	<p>تنطبق هذه الإعدادات على شبكتك المحلية أو شبكة LAN. بالنسبة لهذا الجهاز، تتكون شبكة LAN من هذا الجهاز وجميع الأجهزة المتصلة (بما في ذلك أجهزة Ethernet المتصلة، إن وجدت).</p>
+
+	<tmpl_if showIPPTEnable>
+	<h3>IP Passthrough</h3>
+    <p>
+            في حالة استخدامها ، تقوم ميزات IP Passthrough بتعيين عنوان IP للإنترنت لجهاز متصل واحد.
+    </p>
+    <ul>
+            <li>يجب أن يكون جهاز العبور هو الجهاز الوحيد على الواجهة المحددة. سيتم تجاهل الأجهزة الأخرى الموجودة على هذه الواجهة ، ولن يكون لها اتصال بالإنترنت.
+            </li>
+            <li>تعمل الأجهزة الموجودة على الواجهة أو الواجهات الأخرى بشكل طبيعي.
+            </li>
+            <li>عند تمكين IP passthrough ، لا يمكن استخدام الميزات التالية:
+            <ul>
+                    <li>إعادة توجيه المنفذ </li>
+                    <li>ترشيح المنفذ </li>
+                    <li>DMZ </li>
+            </ul>
+    </li></ul>
+    <li>
+            عندما يتم تمكين IP Passthrough ، فإن ملف <tmpl_var _("webui", "webui_product_name")> يجب إعادة التشغيل. عادةً ما يعني هذا أنه سيتم تعيين عنوان IP جديد للإنترنت إلى <tmpl_var _("webui", "webui_product_name")> بعد إعادة التشغيل.
+    </li>
+
+    <h3>قم بتمكين عبور IP</h3>
+    <p>
+            استخدم خانة الاختيار هذه لتشغيل ميزةIP Passthrough أو إيقاف تشغيلها حسب الحاجة.
+    </p>
+    <tmpl_if showIPPTInterface>
+    <h3>واجهة العبور</h3>
+    <p>
+            حدد الواجهة التي يستخدمها جهاز الشبكة الذي ترغب في أن يصبح جهاز عبور IP.
+            ملاحظة: عند تمكين IPPT على واجهة ، سيتم تعطيل كافة الواجهات الأخرى.
+    </p>
+    </tmpl_if>
+    </tmpl_if>
+
+    <h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+	<tmpl_if LANIPAddressShow>			
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+		<p>
+			عنوان IP لهذا الجهاز، كما يظهر من الشبكة المحلية.
+			عادة، يمكنك استخدام القيمة الافتراضية.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if LANSubnetMaskShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+		<p>
+			القيمة الافتراضية 255.255.255.0 هي قياسية للشبكات الصغيرة (الفئة "C").
+			إذا قمت بتغيير عنوان IP لشبكة LAN، تأكد من استخدام قناع الشبكة الفرعية الصحيح لنطاق عناوين IP لعنوان IP الخاص بشبكة LAN..
+		</p>
+	</tmpl_if>
+		
+	<tmpl_if LANMacAddressShow>	
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+		<p>
+			عنوان MAC هو معرف شبكة فريد، يتم تعيينه عند تصنيع جهاز شبكة.
+			يعرض هذا الحقل القابل للقراءة فقط عنوان MAC للواجهات على هذا الجهاز.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPEnableShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+		<p>عادة، يجب ترك هذا محددًا. يخصص خادم DHCP عنوان IP لكل جهاز متصل. إذا تم إيقاف تشغيل خادم DHCP، فسيلزم تعيين عنوان IP ثابت لكل جهاز متصل.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if LANLANDHCPLeaseTimeShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+		<p>عدد الدقائق التي يجب أن تجدد خلالها الأجهزة المتصلة عنوان IP المعين لها بواسطة خادم DHCP. عادةً، يمكن ترك هذا ثابتًا على القيمة الافتراضية، ولكن إذا كانت لديك متطلبات خاصة، فيمكنك تغيير هذه القيمة.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPStartAddressShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>بداية نطاق عناوين IP الذي يستعمله خادم DHCP. إذا تم تعيين IP على جهاز العميل، فاستخدم عنوان IP خارج نطاق DHCP هذا؛ وإذا تم تعيين عنوان IP باستخدام حجز IP، فسيكون عادةً داخل هذا النطاق. ملاحظة: يُسمح للمستخدمين الخبراء فقط بتغيير هذا الإعداد.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPEndAddressShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+		<p>نهاية نطاق عنوان IP الذي يستعمله خادم DHCP. إذا تم تعيين IP على جهاز العميل، فاستخدم عنوان IP خارج نطاق DHCP هذا؛ وإذا تم تعيين عنوان IP باستخدام حجز IP، فسيكون عادةً داخل هذا النطاق. ملاحظة: يُسمح للمستخدمين الخبراء فقط بتغيير هذا الإعداد. 
+		</p>
+	</tmpl_if>
+
+	<tmpl_if LANReservedIPAddressShow>		
+	<h3><tmpl_var truncate(_("webui", "adv_lan_reservedIp_button"), (size(_("webui", "adv_lan_reservedIp_button")) - size(":")))></h3>
+		<p>يمكن استخدام هذه الميزة لضمان تخصيص جهاز متصل دائمًا لعنوان IP نفسه بواسطة <tmpl_var _("webui", "webui_product_name")>. انقر فوق هذا الزر للوصول إلى شاشة الإعداد لهذه الميزة.
+		</p>
+	</tmpl_if>
+		
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>إذا كانت بعض أجهزتك المتصلة تدعم IPv6، فيجب تشغيل هذا الإعداد.
+			ستتمكن الأجهزة المتصلة عبر IPv6 من إجراء اتصالات IPv6 بالإنترنت.
+			</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+			<p>هذا هو عنوان IPv6 لهذا الجهاز. يتم استخدام عنوان الارتباط المحلي لاتصال IPv6 بين الأجهزة الموجودة على نفس الشبكة. </p>
+	</tmpl_if>
+	<tmpl_if showLANDeviceName>
+                <h2><tmpl_var _("webui", "adv_lan_web_management_header_text")></h2>
+                <h3><tmpl_var truncate(_("webui", "adv_lan_url_name_label"), (size(_("webui", "adv_lan_url_name_label")) - size(":")))></h3>
+                <p> يعتمد عنوان URL للوصول إلى واجهة مستخدم إدارة الويب المحلية للجهاز على اسم الجهاز في صفحة تفضيلات المستخدم.</p>
+        </tmpl_if>
+</div>
+<!-- id="lan" -->
+

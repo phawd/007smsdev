@@ -1,0 +1,46 @@
+<!-- Port Forwarding -->
+<div id="port_forward">
+	<h1>Portvidarebefordran</h1>
+	<h2>Översikt</h2>
+	<p>Funktionen portvidarebefordran gör att inkommande trafik från internet kan vidarebefordras till en viss dator eller enhet i ditt Wi-Fi-nätverk. Normalt sett blockerar den inbyggda brandväggen inkommande trafik från internet. Du använder portvidarebefordran för att tillåta internetanvändare att komma åt alla servrar som du kör på din dator, till exempel en webb-, FTP- eller e-postserver. För vissa onlinespel måste portvidarebefordran användas för att spelen ska fungera korrekt. Observera att användning av portvidarebefordran skapar en säkerhetsrisk och bör förbli avstängd när den inte krävs.</p>
+<p><strong>Obs!</strong> Vissa mobila trådlösa nätverk ger dig en IP-adress i sitt eget nätverk i stället för en internet-IP-adress. I detta fall kan portvidarebefordran inte användas eftersom internetanvändare inte kan nå din IP-adress.</p>
+
+	<h2>Portvidarebefordrande applikationer</h2>
+	<h3>Kryssrutor för applikationer</h3>
+		<p>Ett antal vanliga serverapplikationer listas. Följ denna procedur för att använda någon av dessa applikationer:</p>
+		<ol>
+			<li>Installera applikationen på en dator som är ansluten till den här enhetens Wi-Fi-nätverk.</li>
+			<li>På datorn kontrollerar du dess IP-adress för Wi-Fi-nätverket. Alternativt kan du kontrollera datorns IP-adress på skärmen Anslutna enheter.</li>
+			<li>På den här skärmen anger du datorns IP-adress i fältet <strong>Ansluten enhets IP-adress</strong> bredvid applikationen.</li>
+			<li>Sätt på den här applikationen på den här skärmen genom att markera dess kryssruta.</li>
+			<li>Spara dina ändringar.</li>
+			<li>Anteckna den här enhetens internet-IP-adress på skärmen <strong>Nuvarande status</strong>.</li>
+			<li>Be användare på internet att ansluta till den här enhetens internet-IP-adress. Dessa anslutningsförfrågningar kommer att vidarebefordras till den IP-adress som specificeras i steg 3.</li>
+		</ol>
+
+	<h2>Anpassade applikationer</h2>
+	<p>Den här funktionen ger dig möjlighet att definiera dina egna applikationer. När de har definierats kan dessa applikationer slås på eller av på samma sätt som fördefinierade applikationer. För att definiera en applikation behöver du känna till vilka portar och protokoll (TCP, UDP) som används av applikationen för inkommande trafik. För att starta, klicka på knappen <strong>Lägg till anpassad applikation</strong>, ange sedan följande data.</p>
+	<h3>Kryssruta för applikationer</h3>
+	<p>Använd denna för att aktivera en applikation efter det att du har definierat den.</p>
+	<h3>Applikationsnamn</h3>
+	<p>Ange ett lämpligt namn på den applikation som du definierar.</p>
+
+	<h3>Ansluten enhets IP-adress</h3>
+	<p>Ange IP-adressen för den anslutna enhet som kommer att ta emot denna trafik.</p>
+
+	<h3>Porttyp och portnummer</h3>
+		<p>Varje applikation har sitt eget portintervall. Ange början och slutet på portintervallet för varje applikation.</p>
+		<div class="blockgroup">
+			<ul>
+				<li>För ett portintervall anger du början på intervallet i fältet <strong>Från</strong> och slutet på intervallet i fältet <strong>Till</strong>.</li>
+				<li>För en översättningsport, ange portnumret både i fältet <strong>Ext</strong> och <strong>Int</strong>.</li>
+			</ul>
+		</div>
+	<h3>Protokoll</h3>
+	<p>För varje portintervall, välj vilket protokoll (TCP eller UDP) som används av det portintervallet.</p>
+		
+	<h3>Radera</h3>
+	<p>Använd den här kryssrutan för att radera ett anpassat program.</p>
+</div>
+<!-- id="port_forward" -->
+

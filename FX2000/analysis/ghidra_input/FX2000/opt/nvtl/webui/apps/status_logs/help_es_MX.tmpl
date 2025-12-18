@@ -1,0 +1,36 @@
+<!-- Status Logs -->
+<div id="status_logs">
+	<h1><tmpl_var _("webui", "status_logs_menu_text")></h1>
+	<h2>Descripción general</h2>
+	<p>
+		La información del registro es útil para la resolución de problemas, pero no es necesaria para el funcionamiento normal.
+	</p>
+	
+	<h2>Ajustes</h2>
+	<h3><tmpl_var truncate(_("webui", "status_logs_enable_logs_label"), (size(_("webui", "status_logs_enable_logs_label")) - size(":")))></h3>
+	<p>Marque esta casilla para activar los registros según sea necesario.</p>
+	<h3><tmpl_var truncate(_("webui", "status_logs_delete_sys_logs_label"), (size(_("webui", "status_logs_delete_sys_logs_label")) - size(":")))></h3>
+	<p>Utilice la lista desplegable para seleccionar cuándo se borran los registros. Seleccione la opción deseada.</p>
+	<p>Tenga en cuenta que si el registro está lleno, se eliminan los datos más antiguos, independientemente de los ajustes.</p>
+	
+	<h2>Datos de registro</h2>
+	<p>Las pestañas proporcionadas le permiten seleccionar el tipo de datos de registro que desea ver.
+	</p>
+	<h3><tmpl_var _("webui", "status_logs_mobile_network_log_href")></h3>
+	<p>Este registro contiene datos sobre las conexiones a la red móvil.
+	</p>
+	<h3><tmpl_var _("webui", "status_logs_system_log_href")></h3>
+	<p>Este registro registra eventos, distintos de las conexiones de datos móviles, que ocurrieron en este dispositivo.
+	</p>
+	
+	<h2>Botones</h2>
+	
+	<h3><tmpl_var _("webui", "status_logs_clear_log_btn")></h3>
+	<p>Al hacer clic en este botón, se eliminarán todos los datos de registro existentes. Esto hace que los datos nuevos sean más fáciles de leer.</p>
+	<h3><tmpl_var _("webui", "status_logs_refresh_btn")></h3>
+	<p>Utilice este botón para actualizar los datos de registro que se muestran.</p>
+	<h3><tmpl_var _("webui", "status_logs_download_btn")></h3>
+	<p>Utilice este botón si desea descargar datos de registro a su computadora o dispositivo conectado.</p>
+	
+</div>
+<!-- end Status Logs -->

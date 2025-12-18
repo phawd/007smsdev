@@ -1,0 +1,803 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+GLIBC_2.4
+libc.so.6
+libwifi_api.so
+wifi_log_internal_config
+msgq_does_queue_exist
+msgq_send_async
+wifi_api_is_running
+wifi_get_ap_profile
+mifi_dbg_get_level_name
+mifi_dbg_log
+settings_get_setting
+mifi_dbg_syslog
+wifi_set_ap_profile
+wifi_get_capabilities
+settings_set_setting
+wifi_get_ap_settings
+wifi_set_ap_settings
+wifi_get_ap_profile_count
+wifi_get_sta_settings
+wifi_set_sta_settings
+wifi_get_wlan_settings
+wifi_set_wlan_settings
+xmldata_initialize
+xmldata_getint32
+xmldata_getstring
+parse_channels_from_list
+xmldata_getcount
+xmldata_shutdown
+wifi_get_mac
+msgq_send_sync
+wifi_start_wps_session
+wifi_stop_wps_session
+wifi_set_enabled
+wifi_get_enabled
+wifi_get_sta_enabled
+wifi_set_sta_enabled
+wifi_get_ap_enabled
+wifi_set_ap_enabled
+__ctype_b_loc
+__isoc99_sscanf
+GLIBC_2.7
+wifi_ap_get_interface_sta_list
+wifi_ap_get_internal_sta_list
+wifi_get_error_string
+wifi_ap_get_associate_sta_list
+wifi_ap_apply_profiles
+wifi_update_blacklist_mac
+wifi_mac_filter_db_updated
+wifi_get_pindex_from_intf
+wifi_get_ap_chlist2_4
+wifi_get_ap_chlist5
+wifi_get_ap_profile_settings
+wifi_set_ap_profile_settings
+xmldata_setstring
+xmldata_setint32
+xmldata_save
+MsgBusSetInt32
+wifi_get_ap_mode_settings
+wifi_get_ap_profile_count_settings
+wifi_set_ap_mode_settings
+wifi_get_sta_mode_settings
+wifi_set_sta_mode_settings
+wifi_get_wlan_data_settings
+wifi_set_wlan_data_settings
+initialize_settings
+powersave_notify
+wifi_set_power_save_enabled
+__bss_start
+librt.so.1
+libpthread.so.0
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+librouter2_api.so
+libdmdb_api.so
+libmificommon.so
+libmifi_debug.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+H	KxD	J{D
+/wifi_mq
+[%s]:[%s] - Invalid wifi profile index or NULL profile.
+wifi.ap_profile.settings
+[%s]:[%s] - settings_get_setting(%s) failed with code: %d
+[%s]:[%s] - Invalid profile pointer passed to set AP profile.
+[%s]:[%s] - Failed to verify the profile settings.
+[%s]:[%s] - %s
+Invalid profile index.
+Invalid profile status.
+Invalid Profile name.
+Invalid SSID length.
+Invalid broadcast SSID status.
+Invalid WPS status.
+Invalid Wifi privacy.
+Invalid Interface feature mask.
+Invalid Wifi mode.
+[%s]:[%s] - Invalid Wifi mode, device doesn't support %s mode.
+[%s]:[%s] - Invalid Channel configured.
+Invalid Channel Width.
+[%s]:[%s] - Invalid Channel width configured for given mode.
+Invalid Wifi Security.
+Invalid Wifi Encryption
+Invalid Wifi WEP authentication.
+Invalid WEP index configured.
+[%s]:[%s] -  Invalid WEP key at index %d
+Invalid WPA passphrase.
+[%s]:[%s] - Settings Update: WiFi Profile Index: [%d]
+[%s]:[%s] - Settings Update: WiFi Profile Enabled: [%d]
+[%s]:[%s] - Settings Update: WiFi Profile Name: [%s]
+[%s]:[%s] - Settings Update: WiFi Profile SSID: [%s]
+[%s]:[%s] - Settings Update: WiFi Profile Ignore Broadcast Ssid: [%d]
+[%s]:[%s] - Settings Update: WiFi Profile Privacy Enabled: [%d]
+[%s]:[%s] - Settings Update: WiFi Profile Interface Feature Mask: [%d]
+[%s]:[%s] - Settings Update: WiFi Profile WPS Enabled: [%d]
+[%s]:[%s] - Settings Update: WiFi Profile Channel: [%d]
+[%s]:[%s] - Settings Update: WiFi Profile Channel Bandwidth: [%d]
+[%s]:[%s] - Settings Update: WiFi Profile Mode: [%d]
+[%s]:[%s] - Settings Update: WiFi Profile Security Type: [%d]
+[%s]:[%s] - Settings Update: WiFi Profile Encryption Type: [%d]
+[%s]:[%s] - Settings Update: WiFi Profile Passphrase: [%s]
+[%s]:[%s] - Settings Update: WiFi Profile Authentication Type: [%d]
+[%s]:[%s] - Invalid wifi AP settings NULL pointer.
+wifi.ap.settings
+[%s]:[%s] - NULL pointer passed wifi AP settings.
+[%s]:[%s] - Failed to get the device capabilities.
+Invalid AP enabled value.
+Invalid Max clients value given.
+[%s]:[%s] - Settings Update: WiFi Access Point Enabled: [%d]
+[%s]:[%s] - Settings Update: WiFi Max Clients: [%d]
+[%s]:[%s] - Invalid pointer sent to read AP profile count.
+wifi.ap_profile_count.settings
+[%s]:[%s] - Invalid wifi STA settings NULL pointer.
+wifi.sta.settings
+[%s]:[%s] - NULL pointer passed wifi STA settings.
+Invalid STA enabled value is given.
+[%s]:[%s] - Settings Update: WiFi Station Enabled: [%d]
+[%s]:[%s] - Invalid wifi settings NULL pointer.
+wifi.wlan.settings
+[%s]:[%s] - NULL pointer passed wifi settings.
+Invalid Wifi enabled value is given.
+Invalid country code is given.
+[%s]:[%s] - Invalid country code is configured.
+[%s]:[%s] - Settings Update: WiFi Enabled: [%d]
+[%s]:[%s] - Settings Update: WiFi Country Code: [%s]
+[%s]:[%s] - Invalid wifi capability pointer passed. 
+/opt/nvtl/etc/wifi/config.xml
+/Config/WiFi/SystemMaxClientsAllowed
+/Config/WiFi/US24ChannelsList
+/Config/WiFi/US5ChannelsList
+/Config/WiFi/JP24ChannelsList
+/Config/WiFi/JP5ChannelsList
+/Config/WiFi/GB24ChannelsList
+/Config/WiFi/GB5ChannelsList
+/Config/WiFi/AU24ChannelsList
+/Config/WiFi/AU5ChannelsList
+/Config/WiFi/CountriesSupported
+/Config/WiFi/Interface
+/Config/WiFi/ModesAllowed
+/Config/WiFi/WPSAvailable
+/Config/WiFi/MaxClientsAllowed
+[%s]:[%s] - Failed to open configuration file: %s
+[%s]:[%s] - Invalid mac address buffer or the interface number.
+[%s]:[%s] - Invalid Wifi profile index.
+[%s]:[%s] - Invalid Wifi AP profile index during stop WPS.
+[%s]:[%s] - No change in the Wifi feature.
+[%s]:[%s] - Invalid Wifi status during get.
+[%s]:[%s] - NULL pointer given for wifi feature status get.
+Invalid Wifi STA enabled value is given.
+[%s]:[%s] - Wifi STA mode is not supported.
+[%s]:[%s] - NULL pointer given for wifi AP status get.
+Invalid Wifi AP enabled value is given.
+[%s]:[%s] - AP status is unchanged.
+%02x:%02x:%02x:%02x:%02x:%02x
+[%s]:[%s] - Invalid pointer passed for getting sta list or ifname, return rc=WIFI_ERR
+/opt/nvtl/bin/hostapd_cli -i %s list_sta
+[%s]:[%s] - Getting STA list CMD[%s].
+[%s]:[%s] - Failed to launch the %s command. Return WIFI_ERR
+[%s]:[%s] - wifi_get_interface_sta_list: fgets(line)=%s
+[%s]:[%s] - wifi_get_interface_sta_list: %02X:%02X:%02X:%02X:%02X:%02X
+[%s]:[%s] - wifi_get_interface_sta_list: sta_list->count =%d
+[%s]:[%s] - wifi_get_interface_sta_list: returned rc= WIFI_SUCCESS
+[%s]:[%s] - wifi_ap_get_internal_sta_list: returned rc= %d %s
+[%s]:[%s] - sync send msg of WIFI_MSG_GET_STA_LIST: did not completed in time, wait for 1s and get it from global database
+[%s]:[%s] - wifi_ap_get_associate_sta_list: returned rc= %d %s
+[%s]:[%s] - Failed to read Wifi profile count error:%d
+[%s]:[%s] - Failed to get the capabilities.
+[%s]:[%s] - Failed to read Wifi profile for %d index, error:%d
+[%s]:[%s] - %d Wifi AP profiles are active, maximum active profiles can be %d.
+[%s]:[%s] - wifi_api.c:Both active profiles with index %d mode=%d and %d mode=%d are configured in same Wifi frequencies.
+[%s]:[%s] - Wifi AP profiles applied successfully.
+[%s]:[%s] - Invalid WIFI interface given to get profile index.
+[%s]:[%s] - NULL pointer passed.
+[%s]:[%s] -  Failed to get the Wifi Settings.
+[%s]:[%s] -  Incorrect WEP key.
+[%s]:[%s] -  Incorrect WEP key length 
+[%s]:[%s] -  Incorrect HEX WEP key 
+[%s]:[%s] -  Incorrect ASCII WEP key 
+WIFI: success.
+WIFI: general error.
+WIFI: one or more bad parameters passed into a function.
+WIFI: one or more buffer type parameters passed into API is too small.
+WIFI: the feature is unsupported.
+WIFI: process not running.
+WIFI: a device reset is required for the operation to take effect.
+WIFI: API not implemented for the platform.
+WIFI: unknown error.
+BGNPLUSAX
+ACNPLUSAX
+[%s]:[%s] - Invalid args ! Not able to parse the channel list.
+[%s]:[%s] - Getting Wifi Profile.
+[%s]:[%s] - Invalid data passed for Wifi profile during get.
+[%s]:[%s] - Insufficient length Wifi profile during get.
+[%s]:[%s] - Invalid profile index %d
+/Settings/WiFi/APProfiles/APProfile[%d]/Name
+/Settings/WiFi/APProfiles/APProfile[%d]/Ssid
+/Settings/WiFi/APProfiles/APProfile[%d]/WepKey0
+/Settings/WiFi/APProfiles/APProfile[%d]/WepKey1
+/Settings/WiFi/APProfiles/APProfile[%d]/WepKey2
+/Settings/WiFi/APProfiles/APProfile[%d]/WepKey3
+/Settings/WiFi/APProfiles/APProfile[%d]/Enabled
+/Settings/WiFi/APProfiles/APProfile[%d]/SsidBroadcast
+/Settings/WiFi/APProfiles/APProfile[%d]/StationPrivacy
+/Settings/WiFi/APProfiles/APProfile[%d]/InterfaceFeatureMask
+/Settings/WiFi/APProfiles/APProfile[%d]/WPS
+/Settings/WiFi/APProfiles/APProfile[%d]/Channel
+/Settings/WiFi/APProfiles/APProfile[%d]/Mode
+/Settings/WiFi/APProfiles/APProfile[%d]/SecurityType
+/Settings/WiFi/APProfiles/APProfile[%d]/EncryptionType
+/Settings/WiFi/APProfiles/APProfile[%d]/Passphrase
+/Settings/WiFi/APProfiles/APProfile[%d]/WepAuthType
+/Settings/WiFi/APProfiles/APProfile[%d]/WepIndex
+/Settings/WiFi/APProfiles/APProfile[%d]/Bandwidth
+[%s]:[%s] - Setting Wifi Profile.
+[%s]:[%s] - Invalid data passed for Wifi profile during set.
+[%s]:[%s] - Insufficient length Wifi profile during set.
+wifi.ap_profile.settings
+[%s]:[%s] - Invalid data passed for AP mode get settings.
+/Settings/WiFi/APSettings/APEnabled
+/Settings/WiFi/APSettings/MaxClients
+[%s]:[%s] - Invalid data passed to get AP profile count.
+Settings/WiFi/APProfiles/APProfile
+[%s]:[%s] - Invalid data passed for AP mode set settings.
+wifi.ap.settings
+[%s]:[%s] - Invalid data passed for STA mode get settings.
+/Settings/WiFi/STASettings/STAEnabled
+[%s]:[%s] - Invalid data passed for STA mode set settings.
+wifi.sta.settings
+[%s]:[%s] - Invalid data passed for Wifi get settings.
+/Settings/WiFi/WiFiSettings/Enabled
+/Settings/WiFi/WiFiSettings/Country
+[%s]:[%s] - Invalid data passed for Wifi set settings.
+wifi.enabled.settings
+wifi.ap_profile_count.settings
+wifi.wlan.settings
+[%s]:[%s] - powersave_notify state=NORMAL, starting Wifi.
+[%s]:[%s] - powersave_notify state=SUSPEND
+[%s]:[%s] - powersave_notify state=DEEPSLEEP, turning off Wifi.
+wifi.wlan.settings
+[%s]:[%s] - Wifi is turned off by the user, need not to bring it up.
+[%s]:[%s] - Wifi status changing due to powersave.
+/wifi_mq
+GCC: (GNU) 8.2.0
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/watchdog/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/config
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/router2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dmdb/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/logging/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/xmldata/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/mal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi-framework
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/loc-hal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi/loc_sdx55
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/usr/src/linux/usr/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dsm/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/powersave/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/src
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/src/../include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/wifi_driver/qca639x/HOSTAP_REL_2_7/src/ap
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel/config/../.
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/loc-api
+-iprefix /opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/bin/arm-oe-linux-gnueabi/../../lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/
+-D WIFI_DRIVER_SUPPORTS_HOSTAPD
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/src/wifi_api.c
+-mfpu=neon
+-mfloat-abi=hard
+-mcpu=arm10tdmi
+-mtls-dialect=gnu
+-march=armv5t
+-auxbase-strip wifi_api.o
+-Wno-restrict
+-Wno-sizeof-pointer-memaccess
+-Wformat-overflow=0
+-frecord-gcc-switches
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/src/wifi_settings.c
+-auxbase-strip wifi_settings.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/src/wifi_powersave.c
+-auxbase-strip wifi_powersave.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/src
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/include
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits/types
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/netinet
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/inc
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+wifi_api.c
+stddef.h
+struct_FILE.h
+sys_errlist.h
+stdint-uintn.h
+pthreadtypes-32.h
+unistd.h
+getopt_core.h
+wifi_api.h
+dmdb_mb.h
+iiiiiiii
+hhhhhhhhhhhhh
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/src
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/include
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits/types
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/inc
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/netinet
+wifi_settings.c
+stddef.h
+struct_FILE.h
+sys_errlist.h
+stdint-uintn.h
+unistd.h
+getopt_core.h
+settings_api.h
+wifi_api.h
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/src
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/include
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits/types
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/inc
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/netinet
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/powersave/inc
+wifi_powersave.c
+stddef.h
+struct_FILE.h
+sys_errlist.h
+stdint-uintn.h
+pthreadtypes-32.h
+wifi_api.h
+unistd.h
+getopt_core.h
+dmdb_mb.h
+powersave_api.h
+daylight
+WIFI_MODE_AC_2G
+iprofile
+pthread_t
+_shortbuf
+_IO_lock_t
+WIFI_ENCRYPTION_128_BIT
+wifi_get_error_string
+wifi_sta_settings
+_IO_buf_end
+WIFI_SECURITY_OWE_TRANSITION
+modes_allowed
+wifi_stop_wps_session
+DMDB_MACFILTER_BOTH
+wifi_ap_profile
+MSGQ_PAYLOAD_WRITE
+wifi_set_ap_settings
+_IO_write_end
+unsigned int
+_freeres_list
+do_reset
+wifi_security_e
+wifi_ap_get_associate_sta_list
+WIFI_MSG_GET_CAPABILITIES
+sta_list
+wifi_ap_profile_t
+profile_index
+_old_offset
+wifi_iface_associated_sta_t
+_markers
+MSGQ_RESP_NONE
+WIFI_MSG_SET_AP_SETTINGS
+chan2_4Ghz_au
+DMDB_MACFILTER_BLACKLIST
+parse_channels_from_list
+WIFI_MSG_UPDATE_BLACKLIST_MAC
+wifi_bandwidth_e
+block_reason
+_ISlower
+_freeres_buf
+WIFI_MSG_NONE
+is_running
+MSGQ_PAYLOAD_NONE
+__u6_addr16
+WIFI_MSG_SET_STA_SETTINGS
+WIFI_AUTH_OPEN
+wifi_msg_type_e
+WIFI_MSG_GET_STA_LIST
+wifi_encryption_e
+wifi_ap_settings_t
+uint32_t
+wps_avail
+mac_addr
+wifi_api_is_running
+WIFI_MSG_SET_WLAN_SETTINGS
+WIFI_MODE_AC_5G
+wifi_ap_profile_by_index_type
+chan5Ghz_us
+wifi_auth_mode_e
+wifi_wep_auth_t
+wifi_set_sta_enabled
+wifi_get_mac
+long long unsigned int
+WIFI_MSG_START_WPS_SESSION
+msgq_payload_type_e
+sync_queue_name
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/wifi
+__u6_addr8
+wifi_mode
+wifi_ap_apply_profiles
+WIFI_WPS_PBC_METHOD
+WIFI_BANDWIDTH_80
+WIFI_ENCRYPTION_AES
+WIFI_MSG_GET_IFACE_MAC
+__uint16_t
+WIFI_MODE_GN_2G
+sys_errlist
+_IO_backup_base
+auth_type
+WIFI_WPS_PIN_METHOD
+chan5Ghz_gb
+WIFI_MODE_ACN_PLUS_AX_5G
+sys_nerr
+WIFI_SECURITY_WPA2
+WIFI_SECURITY_WPA3
+wifi_mac_block_event_t
+MSGQ_RESP_SYNCHRONOUS
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/src/wifi_api.c
+wifi_update_blacklist_mac
+system_max_clients
+wifi_set_ap_enabled
+WIFI_MSG_SET_INTERFACE_SETTINGS
+WIFI_MSG_MAX
+_ISxdigit
+WIFI_MODE_MAX
+_IO_read_base
+WIFI_MSG_GET_PINDEX
+_IO_save_end
+__timezone
+wifi_wlan_settings_t
+wifi_wps_method
+wifi_intarray_str
+settings
+wifi_settings
+in6addr_loopback
+WIFI_MSG_APPLY_AP_PROFILE
+wifi_iface
+__daylight
+wifi_get_ap_profile
+wifi_wps_method_e
+_IO_marker
+dmdb_macfilter_type_e
+_IO_read_ptr
+wifi_capability
+num_radios
+WIFI_AUTH_SHARED
+chan2_4Ghz_us
+long long int
+wifi_ap_get_internal_sta_list
+WIFI_ENCRYPTION_TKIP
+WIFI_MODE_A_5G
+profiles
+unsigned char
+wifi_encryption
+wifi_capabilities_by_intf_type
+_IO_write_base
+chan5Ghz_jp
+payload_type
+WIFI_MSG_STOP_WPS_SESSION
+WIFI_MSG_SET_ENABLED
+chan2_4Ghz_gb
+_IScntrl
+countries_allowed
+wifi_iface_e
+channellist
+__u6_addr32
+WIFI_MODE_AC_ONLY_5G
+wifi_iface_t
+_ISdigit
+wlan_settings
+wifi_validate_channel_width
+payload_socket_name
+__quad_t
+wifi_get_ap_enabled
+WIFI_MODE_AN_5G
+_ISspace
+wifi_ap_settings
+in6addr_any
+WIFI_SECURITY_WPA2MIX
+wifi_set_ap_profile
+wifi_parse_line
+GNU C17 8.2.0 -mfpu=neon -mfloat-abi=hard -mfpu=neon -mfloat-abi=hard -mcpu=arm10tdmi -mtls-dialect=gnu -marm -march=armv5t -g -frecord-gcc-switches -fpic
+WIFI_SECURITY_NONE
+WIFI_MSG_MAC_DB_UPDATED
+long unsigned int
+_vtable_offset
+wifi_mac_filter_db_updated
+wifi_set_sta_settings
+DMDB_MACFILTER_NONE
+sta_settings
+wifi_max_iface
+wifi_validate_channel
+DMDB_MACFILTER_WHITELIST
+uint16_t
+wps_enabled
+WIFI_SECURITY_WPA
+wifi_convert_mode_to_str
+wifi_get_wlan_settings
+country_code
+WIFI_MODE_N_5G
+__uint32_t
+wifi_get_sta_settings
+channel_bandwidth
+wifi_set_enabled
+MSGQ_PAYLOAD_READ
+block_event
+_IO_save_base
+_ISpunct
+_IO_read_end
+wifi_wps_session
+_ISprint
+sec_type
+short int
+WIFI_MODE_BGN_2G
+long int
+capabilities
+wifi_get_ap_profile_count
+WIFI_SECURITY_MAX
+enc_type
+wifi_wps_session_on_intf
+WIFI_ENCRYPTION_64_BIT
+_IO_wide_data
+chan2_4Ghz_jp
+WIFI_MODE_G_2G
+__environ
+ignore_bcast_ssid
+wifi_get_ap_chlist5
+wepindex
+wifi_wps_session_t
+wifi_validate_WEP_key
+wifi_start_wps_session
+WIFI_SECURITY_WPA3_TRANSITION
+__uint8_t
+_ISgraph
+wifi_get_ap_settings
+wifi_auth_mode
+WIFI_MODE_N_2G
+wifi_set_wlan_settings
+WIFI_MODE_BGN_PLUS_AX_2G
+_IO_buf_base
+wifi_get_enabled
+WIFI_MSG_LOG_INTERNAL_STATUS
+_wide_data
+wifi_msg_type
+wifi_wep_auth
+in6_addr
+ap_settings
+wps_session
+_IO_codecvt
+_codecvt
+wifi_get_ap_chlist2_4
+wifi_security
+_IO_FILE
+_ISalpha
+WIFI_ENCRYPTION_TKIP_AES
+wifi_mode_e
+MSGQ_RESP_MAX
+wifi_get_capabilities
+privacy_enabled
+WIFI_MODE_B_2G
+__tzname
+_IO_write_ptr
+WIFI_BANDWIDTH_20
+wifi_ap_get_interface_sta_list
+_ISalnum
+error_code
+max_clients
+MSGQ_RESP_CALLBACK
+WIFI_IFACE_1
+msgq_resp_type
+WIFI_ENCRYPTION_NONE
+wifi_sta_settings_t
+payload_buffer_size
+wifi_get_sta_enabled
+_ISblank
+chan5Ghz_au
+passphrase
+signed char
+iface_feature_mask
+short unsigned int
+wifi_validate_mode
+WIFI_IFACE_2
+WIFI_SECURITY_OWE
+WIFI_SECURITY_WEP
+wifi_bandwidth
+MSGQ_RESP_SYNCHRONOUS_LARGE_PAYLOAD
+_ISupper
+timezone
+wifi_capability_t
+wifi_log_internal_config
+WIFI_MODE_BG_2G
+_cur_column
+msgq_resp_type_e
+__off64_t
+_unused2
+WIFI_BANDWIDTH_40
+wifi_get_pindex_from_intf
+register_settings
+wifi_set_wlan_data_settings
+stasettings
+wifi_get_ap_profile_settings
+wifi_get_ap_profile_count_settings
+initialize_settings
+wifi_get_ap_mode_settings
+wifi_set_sta_mode_settings
+wifi_set_ap_mode_settings
+wifi_get_wlan_data_settings
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/src/wifi_settings.c
+wifi_set_ap_profile_settings
+wifi_get_sta_mode_settings
+func_ptr
+POWERSAVE_DEEPSLEEP
+POWERSAVE_NORMAL
+wifi_set_power_save_enabled
+powersave_state_e
+POWERSAVE_SUSPEND
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/src/wifi_powersave.c
+powersave_notify
+POWERSAVE_DEEPSLEEP_HIGH_TEMP
+gold 1.16
+call_weak_fn
+crtstuff.c
+__TMC_LIST__
+deregister_tm_clones
+register_tm_clones
+__do_global_dtors_aux
+completed.11339
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+wifi_api.c
+wifi_validate_mode
+wifi_convert_mode_to_str
+wifi_validate_channel
+wifi_validate_channel_width
+wifi_validate_WEP_key
+wifi_parse_line
+wifi_intarray_str
+wifi_settings.c
+wifi_powersave.c
+__FRAME_END__
+__dso_handle
+__TMC_END__
+_DYNAMIC
+_GLOBAL_OFFSET_TABLE_
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+wifi_log_internal_config
+msgq_does_queue_exist
+msgq_send_async
+wifi_api_is_running
+wifi_get_ap_profile
+mifi_dbg_get_level_name
+mifi_dbg_log
+settings_get_setting
+mifi_dbg_syslog
+wifi_set_ap_profile
+wifi_get_capabilities
+settings_set_setting
+wifi_get_ap_settings
+wifi_set_ap_settings
+wifi_get_ap_profile_count
+wifi_get_sta_settings
+wifi_set_sta_settings
+wifi_get_wlan_settings
+wifi_set_wlan_settings
+xmldata_initialize
+xmldata_getint32
+xmldata_getstring
+parse_channels_from_list
+xmldata_getcount
+xmldata_shutdown
+wifi_get_mac
+msgq_send_sync
+wifi_start_wps_session
+wifi_stop_wps_session
+wifi_set_enabled
+wifi_get_enabled
+wifi_get_sta_enabled
+wifi_set_sta_enabled
+wifi_get_ap_enabled
+wifi_set_ap_enabled
+__ctype_b_loc
+__isoc99_sscanf
+wifi_ap_get_interface_sta_list
+wifi_ap_get_internal_sta_list
+wifi_get_error_string
+wifi_ap_get_associate_sta_list
+wifi_ap_apply_profiles
+wifi_update_blacklist_mac
+wifi_mac_filter_db_updated
+wifi_get_pindex_from_intf
+wifi_get_ap_chlist2_4
+wifi_get_ap_chlist5
+wifi_get_ap_profile_settings
+wifi_set_ap_profile_settings
+xmldata_setstring
+xmldata_setint32
+xmldata_save
+MsgBusSetInt32
+wifi_get_ap_mode_settings
+wifi_get_ap_profile_count_settings
+wifi_set_ap_mode_settings
+wifi_get_sta_mode_settings
+wifi_set_sta_mode_settings
+wifi_get_wlan_data_settings
+wifi_set_wlan_data_settings
+initialize_settings
+powersave_notify
+wifi_set_power_save_enabled
+__bss_start
+.init_array
+.fini_array
+.debug_abbrev
+.comment
+.rel.plt
+.ARM.attributes
+.debug_aranges
+.debug_str
+.eh_frame_hdr
+.gnu.version_r
+.debug_info
+.rel.dyn
+.gnu.version
+.note.gnu.gold-version
+.debug_line
+.GCC.command.line
+.eh_frame
+.debug_frame
+.tm_clone_table
+.note.gnu.build-id
+.gnu.version_d
+.dynamic
+.shstrtab

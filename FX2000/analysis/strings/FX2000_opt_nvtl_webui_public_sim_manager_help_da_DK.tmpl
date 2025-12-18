@@ -1,0 +1,102 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_manager_menu_text")></h1>
+        <h2>Oversigt</h2>
+        <p>Simkortet inde i din <tmpl_var _("webui", "webui_product_name")> kan l
+ses op med en pinkode. Hvis simkortet er l
+st, skal du indtaste pinkoden, f
+r du opretter forbindelse til mobilnetv
+rst er indtastet, huskes pinkoden indtil n
+ste nedlukning.</p>
+	<p>Ud over at g
+re det muligt at indtaste pinkoden for simkortet, n
+r det er n
+dvendigt, giver denne side dig ogs
+ mulighed for at l
+se simkortet op eller 
+ndre simkortets pinkode. Du skal angive den eksisterende pinkode for at 
+ndre simkortet. For et Novatel Wireless-simkort er standardpinkoden tilg
+ngelig fra din tjenesteudbyder.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_pin_lock_feature_label"), (size(_("webui", "adv_sim_manager_pin_lock_feature_label")) - size(":")))></h3>
+		<p>Feltet angiver, om pinkode-l
+sefunktionen er i brug eller ej. Hvis den er sl
+et "Til", er pinkodel
+et til, og simkortets pinkode skal indtastes for at oprette forbindelse til mobilnetv
+rket. Hvis den er sl
+et "Fra", er pinkodel
+sefunktionen sl
+et fra og simkortets pinkode er ikke p
+vet.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_status_label"), (size(_("webui", "adv_sim_manager_status_label")) - size(":")))></h3>
+	<p>Feltet viser simkortets aktuelle status. Mulige v
+rdier er:</p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>Klar - dette er normal tilstand. Simkortets pinkode bruges ikke.</li>
+	        <li>Pinkodel
+st - simkortets pinkode skal indtastes, f
+r du kan bruge mobilnetv
+rket.</li>
+	        <li>Pukkodel
+st - simkortets pukkode skal indtastes for at forts
+tte. PUK kan f
+s fra din tjenesteudbyder.</li>
+	        <li>Ikke l
+st - simkortets pinkode er p
+vet, men er allerede indtastet.</li>
+	        <li>Intet simkort - intet simkort fundet. Hvis du har et simkort, skal du kontrollere, at det er indsat korrekt.</li>
+	        <li>Simkortfejl - et simkort blev registreret, men det svarede ikke som forventet og kan ikke bruges.</li>       
+	        </ul>
+        <h2>Simkort-handlinger</h2>
+        <p>De tilg
+ngelige handlinger afh
+nger af den aktuelle status for simkortet. Alle de mulige handlinger er vist og forklaret nedenfor.</p>
+		<h3>Pinkodel
+fremt simkortet er pinkodel
+st, bliver du bedt om at indtaste pinkoden. Bem
+rk, at hvis der indtastes en forkert pinkode for mange gange, bliver simkortet pukkodel
+st. En t
+ siden angiver, hvor mange forkerte indtastninger der vil for
+rsage pukkodel
+rst er pukkodel
+st, skal du anmode om pukkoden fra din tjenesteudbyder.</p>
+		<h3>Pukkodel
+fremt simkortet er pukkodel
+st, kan det kun l
+ses op ved hj
+lp af pukkoden. Bem
+rk, at hvis der indtastes en forkert puk for mange gange, bliver simkortet ubrugeligt permanent. Du skal da anskaffe et nyt simkort. En t
+ siden viser, hvor mange indtastningsfors
+g der er tilbage.</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_enable_pin_lock_option")></h3>
+		<p>Dette indstiller simkortet, s
+ indtastning af en pinkode kr
+ves ved opstart for at oprette forbindelse til mobilnetv
+rket. For at udf
+re denne handling skal du indtaste den nuv
+rende pinkode.</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_disable_pin_option")></h3>
+		<p>Du kan bruge denne indstilling til at slukke for en pinkodel
+s, der tidligere var sl
+et til, s
+ det ikke l
+ngere er n
+dvendigt at indtaste en pinkode for at oprette forbindelse til mobilnetv
+rket. For at udf
+re denne handling skal du indtaste den nuv
+rende pinkode.</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_change_pin_option")></h3>
+		<p>For at 
+ndre den eksisterende pinkode skal du v
+lge denne indstilling og derefter indtaste de kr
+vede data:</p>
+		<div class="blockgroup">
+			<li>Nuv
+rende pinkode</li>
+			<li>Ny pinkode</li>
+			<li>Bekr
+ft den nye pinkode</li>
+			</ul>
+		</div>
+		<p><tmpl_var _("webui", "adv_sim_manager_name_text")></p>
+<!-- id="sim" -->

@@ -1,0 +1,47 @@
+<Config>
+	<!-- power state machine configuration -->
+	<PSM>
+		<BatteryEnabled>1</BatteryEnabled> <!-- 1(enabled), 0(disabled)  -->
+		<BatteryChargingStatisticsEnabled>1</BatteryChargingStatisticsEnabled> <!-- 1(enabled), 0(disabled) -->
+		<LPMEnabled>1</LPMEnabled> <!-- 1(enabled), 0(disabled)  -->
+		<BootOnlineWithChargerEnabled>0</BootOnlineWithChargerEnabled> <!-- 1(enabled), 0(disabled)  -->
+		<PowerButtonLongPressShutdown>0</PowerButtonLongPressShutdown> <!-- 1(shutdown), 0(reboot)  -->
+		<LPMChargingCompleteShutdownEnabled>0</LPMChargingCompleteShutdownEnabled> <!-- 1(enabled), 0(disabled) -->
+		<MIFIDisplaySupported>1</MIFIDisplaySupported> <!-- 1(LCD Display Support), 0(Not Supported) -->
+		<UIControlsShutdownEnabled>1</UIControlsShutdownEnabled> <!-- 1(enabled), 0(disabled) -->
+		<NoNwqmiDefaultRunlevel>2</NoNwqmiDefaultRunlevel>
+	</PSM>
+	<!-- charging state machine configuration -->
+	<CSM>
+		<!-- Current Configuration(in milliamps) -->
+		<MaxInputCurrentAC>2000</MaxInputCurrentAC>
+		<MaxInputCurrentUSB>500</MaxInputCurrentUSB>
+		<ChargeCurrentConfigEnabled>1</ChargeCurrentConfigEnabled> <!-- 1(enabled), 0(disabled)  -->
+		<ChargeCurrentLow>500</ChargeCurrentLow>
+		<ChargeCurrentMedium>1000</ChargeCurrentMedium>
+		<ChargeCurrentHigh>3400</ChargeCurrentHigh>
+		<!-- Temperature Configuration(in deci-centigrade) -->
+		<ChargeCurrentTemperatureThreshold>170</ChargeCurrentTemperatureThreshold>
+		<ChargeInhibitTemperatureWhileWiFi>450</ChargeInhibitTemperatureWhileWiFi>
+		<!-- Voltage Configuration(in micro-volts) -->
+		<ChargeCurrentVoltageThreshold>4140000</ChargeCurrentVoltageThreshold>
+		<FloatVoltageTemperatureThreshold>500</FloatVoltageTemperatureThreshold>
+		<FloatVoltageLow>4040000</FloatVoltageLow>
+		<FloatVoltageHigh>4300000</FloatVoltageHigh>
+		<BatteryPackType>1</BatteryPackType> <!-- 0(DCP), 1(TypeC) -->
+		<UsbNetDevEnabled>0</UsbNetDevEnabled> <!-- 1(enabled), 0(disabled)  -->
+		<InvalidChargerDetectEnabled>1</InvalidChargerDetectEnabled> <!-- 1(enabled), 0(disabled)  -->
+	</CSM>
+	<!-- battery monitor thread configuration -->
+	<BMT>
+		<!-- use /sys/class/power_supply/smb1351-charger/present instead of batt_id adc -->
+		<MinBatteryID>1</MinBatteryID>
+		<MaxBatteryID>1</MaxBatteryID>
+		<!-- Battery Temperature Configuration(in deci-centigrade) -->
+		<TemperatureMonitorEnabled>2</TemperatureMonitorEnabled> <!-- 0=disabled, 1=adc, 2=fuelgauge  -->
+		<!-- Battery Capacity Configuration(in micro-volts) -->
+		<CapacityMonitorEnabled>2</CapacityMonitorEnabled> <!-- 0=disabled, 1=adc, 2=fuelgauge  -->
+		<!-- Time period in seconds for logging Battery Metrics -->
+		<BatteryLogPeriod>20</BatteryLogPeriod>
+	</BMT>
+</Config>

@@ -1,0 +1,879 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+GLIBC_2.4
+libc.so.6
+libsensor_api.so
+sensor_is_running
+msgq_does_queue_exist
+sensor_get_error_string
+gpio1_get_stored_value
+xmldata_getint32_default
+gpio2_get_stored_value
+gpio1_get_stored_dir
+gpio2_get_stored_dir
+gpio1_store_dir
+xmldata_setint32
+xmldata_save
+MsgBusSetInt32
+gpio2_store_dir
+gpio1_store_value
+gpio2_store_value
+gpio1_get_enabled
+gpio1_set_enabled
+gpio2_get_enabled
+gpio2_set_enabled
+gpio1_get_settings
+xmldata_getstring
+gpio1_set_settings
+xmldata_setstring
+gpio2_get_settings
+gpio2_set_settings
+gpio1_get_out_trigger
+gpio1_set_out_trigger
+gpio2_get_out_trigger
+gpio2_set_out_trigger
+initialize_settings
+initialize_accelerometer_settings
+initialize_usb_serial_settings
+initialize_ignition_settings
+sensor_factory_reset_impl
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+initialize_factory_reset_func
+gpiopin1_set_storedval
+settings_set_setting
+gpiopin2_set_storedval
+gpiopin1_set_storedmod
+gpiopin2_set_storedmod
+gpio_get_wakeup
+msgq_send_sync
+__errno_location
+libpthread.so.0
+strerror
+gpio_set_wakeup
+gpiopin1_get_enable
+settings_get_setting
+gpiopin1_set_enable
+msgq_send_async
+gpiopin2_get_enable
+gpiopin2_set_enable
+gpiopin1_get_custom_settings
+gpiopin1_set_custom_settings
+gpiopin2_get_custom_settings
+gpiopin2_set_custom_settings
+gpiopin1_get_out_trigger
+gpiopin1_set_out_trigger
+gpiopin2_get_out_trigger
+gpiopin2_set_out_trigger
+gpio_get_value
+gpio_set_value
+gpio_get_direction
+gpio_set_direction
+gpiopin1_get_storedval
+gpiopin2_get_storedval
+tcgetattr
+gpiopin1_get_storedmod
+gpiopin2_get_storedmod
+cfsetospeed
+powersave_notify
+cfsetispeed
+accelerometer_is_running
+accelerometer_get_enabled
+tcsetattr
+accelerometer_set_enabled
+accelerometer_get_last_data_axis
+accelerometer_get_server_config
+accelerometer_set_server_config
+accelerometer_get_driver_behaviour_threshold_config
+accelerometer_set_driver_behaviour_threshold_config
+accelerometer_get_autocal_config
+accelerometer_set_autocal_config
+accelerometer_get_device_config
+accelerometer_set_device_config
+accelerometer_get_motion_detect_config
+accelerometer_set_motion_detect_config
+accelerometer_get_error_string
+accelerometer_powersave_on
+accel_get_enabled
+accel_set_enabled
+accel_get_server_settings
+accel_set_server_settings
+accel_get_driver_behaviour_threshold_value
+strtok_r
+accel_get_driver_behaviour_threshold
+accel_build_threshold_string
+accel_set_driver_behaviour_threshold
+accel_get_autocal
+accel_set_autocal
+accel_get_device_settings
+accel_set_device_settings
+accel_get_motion_detect_settings
+accel_set_motion_detect_settings
+g_usb_serial
+g_usb_serial_settings
+serial_port
+usb_ser_settings
+usb_serial_is_running
+usb_serial_get_enabled
+usb_serial_set_enabled
+usb_serial_get_threshold_settings
+usb_serial_set_threshold_settings
+usb_serial_get_device_settings
+usb_serial_set_device_settings
+usb_serial_connect
+usb_serial_disconnect
+usb_serial_get_device_list
+msgq_send_sync_large_payload
+usb_serial_reset_device
+usb_serial_settings_init
+usb_serial_set_param
+usb_serial_send
+usb_serial_receive
+MsgBusSetBinary
+usb_serial_get_settings
+usb_serial_set_settings
+usb_serial_set_default_settings
+usb_serial_connected_devices
+usb_serial_get_error_string
+xmldata_getint32
+ignition_is_running
+ignition_get_enabled
+ignition_set_enabled
+ignition_get_time_shutdown_settings
+ignition_set_time_shutdown_settings
+ignition_get_voltage_shutdown_settings
+ignition_set_voltage_shutdown_settings
+ignition_get_timeout
+ignition_set_timeout
+ignition_get_both_shutdowns_settings
+ignition_set_both_shutdowns_settings
+ignition_get_voltage
+ignition_set_voltage
+ignition_get_error_string
+igtn_get_enabled
+igtn_set_enabled
+igtn_get_time_shutdown_enabled
+igtn_set_time_shutdown_enabled
+igtn_get_vol_shutdown_enabled
+igtn_set_vol_shutdown_enabled
+igtn_get_both_shutdown_enabled
+igtn_set_both_shutdown_enabled
+igtn_get_timeout
+igtn_set_timeout
+igtn_get_voltage_level
+igtn_set_voltage_level
+__bss_start
+librt.so.1
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libbluetooth_api.so
+H	KxD	J{D
+/sensor_mq
+SENSOR: success.
+SENSOR: general error.
+SENSOR: one or more bad parameters passed into a function.
+SENSOR: one or more buffer type parameters passed into API is too small.
+SENSOR: the feature is unsupported.
+SENSOR: process not running.
+SENSOR: a device reset is required for the operation to take effect.
+SENSOR: API not implemented for the platform.
+SENSOR: user defined error message.
+SENSOR: unknown error.
+/Settings/Sensor/Gpio/gpio1_value
+/Settings/Sensor/Gpio/gpio2_value
+/Settings/Sensor/Gpio/gpio1_dir
+/Settings/Sensor/Gpio/gpio2_dir
+gpio1_dir
+gpio2_dir
+gpio1_value
+gpio2_value
+/Settings/Sensor/Gpio/gpio1_enabled
+gpio1.enabled.settings
+/Settings/Sensor/Gpio/gpio2_enabled
+gpio2.enabled.settings
+/Settings/Sensor/Gpio/gpio1_name
+/Settings/Sensor/Gpio/gpio1_low_state_name
+/Settings/Sensor/Gpio/gpio1_high_state_name
+/Settings/Sensor/Gpio/gpio1_alert_trigger
+gpio1.settings
+/Settings/Sensor/Gpio/gpio2_name
+/Settings/Sensor/Gpio/gpio2_low_state_name
+/Settings/Sensor/Gpio/gpio2_high_state_name
+/Settings/Sensor/Gpio/gpio2_alert_trigger
+gpio2.settings
+/Settings/Sensor/Gpio/gpio1_output_trigger
+gpio1.out.trigger
+/Settings/Sensor/Gpio/gpio2_output_trigger
+gpio2.out.trigger
+[%s]:[%s] - Enter sensor_factory_reset_impl
+[%s]:[%s] - Exit sensor_factory_reset_impl
+gpio1_value
+[%s]:[%s] - %s(%s) failed with code: %d
+gpio2_value
+gpio1_dir
+gpio2_dir
+/sensor_mq
+[%s]:[%s] - gpio_get_wakeup::msgq_send_sync failed: %s
+[%s]:[%s] - gpio_set_wakeup::msgq_send_sync failed: %s
+gpio1.enabled.settings
+[%s]:[%s] -  Settings Update: gpio1 enabled: [%d]
+[%s]:[%s] - [%d]:Failed to set gpio1 val to settings xml
+[%s]:[%s] - [%d]:Failed to set gpio1 dir to settings xml
+[%s]:[%s] -  wakeup success
+[%s]:[%s] -  wakeup failure
+[%s]:[%s] - sensor_enable::msgq_send_async failed: %s
+gpio2.enabled.settings
+[%s]:[%s] - Settings Update: gpio2 enabled: [%d]
+[%s]:[%s] - [%d]:Failed to set gpio2 val to settings xml
+[%s]:[%s] - [%d]:Failed to set gpio2 dir to settings xml
+[%s]:[%s] -  2wakeup success
+[%s]:[%s] -  2wakeup failure
+gpio1.settings
+[%s]:[%s] - Settings Update: gpio1_name:[%s]
+[%s]:[%s] - Settings Update: gpio1_low_state_name:[%s]
+[%s]:[%s] - Settings Update: gpio1_high_state_name:[%s]
+[%s]:[%s] - Settings Update: gpio1_alert_trigger:[%s]
+[%s]:[%s] - sensor_gpio1_custom_settings::msgq_send_async failed: %s
+gpio2.settings
+[%s]:[%s] - Settings Update: gpio2_name:[%s]
+[%s]:[%s] - Settings Update: gpio2_low_state_name:[%s]
+[%s]:[%s] - Settings Update: gpio2_high_state_name:[%s]
+[%s]:[%s] - Settings Update: gpio2_alert_trigger:[%s]
+[%s]:[%s] - sensor_gpio2_custom_settings::msgq_send_async failed: %s
+gpio1.out.trigger
+[%s]:[%s] -  Settings Update: gpio1 out trigger manual-0 cloud-1 : [%d]
+gpio2.out.trigger
+[%s]:[%s] -  Settings Update: gpio2 out trigger manual-0 cloud-1 : [%d]
+[%s]:[%s] - gpio_get_value::msgq_send_sync failed: %s
+[%s]:[%s] - [%d]:Failed to get gpio1 enable settings
+[%s]:[%s] - [%d]:Failed to get gpio2 enable settings
+[%s]:[%s] -  Settings Update: gpio1 value : [%d]
+[%s]:[%s] -  Settings Update: gpio2 value : [%d]
+[%s]:[%s] - gpio_set_value::msgq_send_sync failed: %s
+[%s]:[%s] - gpio_get_direction::msgq_send_sync failed: %s
+[%s]:[%s] -  Settings Update: gpio1 direction : [%d]
+[%s]:[%s] -  Settings Update: gpio2 direction : [%d]
+[%s]:[%s] - gpio_set_direction::msgq_send_sync failed: %s
+[%s]:[%s] - enter Set wakeup for input direction
+gpiopin1_set_storedval
+gpiopin2_set_storedval
+gpiopin1_set_storedmod
+gpiopin2_set_storedmod
+gpiopin1_get_enable
+gpiopin2_get_enable
+gpiopin1_get_custom_settings
+gpiopin2_get_custom_settings
+gpiopin1_get_out_trigger
+gpiopin2_get_out_trigger
+gpiopin1_get_storedval
+gpiopin2_get_storedval
+gpiopin1_get_storedmod
+gpiopin2_get_storedmod
+[%s]:[%s] - powersave_notify state=NORMAL, starting accelerometer.
+[%s]:[%s] - powersave_notify state=SUSPEND
+[%s]:[%s] - powersave_notify state=DEEPSLEEP, turning off accelerometer.
+/accelerometer_mq
+accel.enable.settings
+[%s]:[%s] - %s(%s) failed with code: %d
+[%s]:[%s] - %s: Settings Update: Accelerometer enabled: [%d]
+[%s]:[%s] - %s accelerometer_enable::msgq_send_async failed: %s
+accel.server.settings
+[%s]:[%s] - (%s)Settings Update: Enabled: [%d], port: [%d]
+[%s]:[%s] - Sending set server over TCP message to ACCELEROMETER process.
+[%s]:[%s] - %s: Invalid driver behaviou index: %d
+accel.driver_behaviour.threshold.settings
+accel.auto_calibration.settings
+[%s]:[%s] - Sending ACCELEROMETER auto calibration init for proc thread.
+/accelerometer_proc_mq
+accel.device.settings
+[%s]:[%s] - Sending ACCELEROMETER device configurations updating thread.
+accel.motion_detect.settings
+[%s]:[%s] - Sending ACCELEROMETER any motion detect receviced invalid values. threshold:[%d], count:[%d], hold_time:[%d]
+[%s]:[%s] - Sending ACCELEROMETER motion detect configurations updating thread.
+ACCEL: success.
+ACCEL: general error.
+ACCEL: one or more bad parameters passed into a function.
+ACCEL: one or more buffer type parameters passed into API is too small.
+ACCEL: the feature is unsupported.
+ACCEL: process not running.
+ACCEL: a device reset is required for the operation to take effect.
+ACCEL: API not implemented for the platform.
+ACCEL: user defined error message.
+ACCEL: unknown error.
+[%s]:[%s] - Sending ACCELEROMETER Powersave event.
+accelerometer_get_enabled
+accelerometer_get_server_config
+accelerometer_set_server_config
+accelerometer_get_driver_behaviour_threshold_config
+accelerometer_set_driver_behaviour_threshold_config
+accelerometer_get_autocal_config
+accelerometer_set_autocal_config
+accelerometer_get_device_config
+accelerometer_set_device_config
+accelerometer_get_motion_detect_config
+accelerometer_set_motion_detect_config
+/Settings/Sensor/Accelerometer/Enabled
+accel.enable.settings
+/Settings/Sensor/Accelerometer/Server/Enabled
+/Settings/Sensor/Accelerometer/Server/Port
+accel.server.settings
+/Settings/Sensor/Accelerometer/DriverBehavior/Braking/threshold
+/Settings/Sensor/Accelerometer/DriverBehavior/Braking/set_time
+/Settings/Sensor/Accelerometer/DriverBehavior/Braking/clear_time
+/Settings/Sensor/Accelerometer/DriverBehavior/Braking/max_time
+/Settings/Sensor/Accelerometer/DriverBehavior/Acceleration/threshold
+/Settings/Sensor/Accelerometer/DriverBehavior/Acceleration/set_time
+/Settings/Sensor/Accelerometer/DriverBehavior/Acceleration/clear_time
+/Settings/Sensor/Accelerometer/DriverBehavior/Acceleration/max_time
+/Settings/Sensor/Accelerometer/DriverBehavior/LeftTurn/threshold
+/Settings/Sensor/Accelerometer/DriverBehavior/LeftTurn/set_time
+/Settings/Sensor/Accelerometer/DriverBehavior/LeftTurn/clear_time
+/Settings/Sensor/Accelerometer/DriverBehavior/LeftTurn/max_time
+/Settings/Sensor/Accelerometer/DriverBehavior/RightTurn/threshold
+/Settings/Sensor/Accelerometer/DriverBehavior/RightTurn/set_time
+/Settings/Sensor/Accelerometer/DriverBehavior/RightTurn/clear_time
+/Settings/Sensor/Accelerometer/DriverBehavior/RightTurn/max_time
+/Settings/Sensor/Accelerometer/DriverBehavior/Vertical/threshold
+/Settings/Sensor/Accelerometer/DriverBehavior/Vertical/set_time
+/Settings/Sensor/Accelerometer/DriverBehavior/Vertical/clear_time
+/Settings/Sensor/Accelerometer/DriverBehavior/Vertical/max_time
+/Settings/Sensor/Accelerometer/DriverBehavior/Magnitude/threshold
+/Settings/Sensor/Accelerometer/DriverBehavior/Magnitude/set_time
+/Settings/Sensor/Accelerometer/DriverBehavior/Magnitude/clear_time
+/Settings/Sensor/Accelerometer/DriverBehavior/Magnitude/max_time
+accel.driver_behaviour.threshold.settings
+/Settings/Sensor/Accelerometer/AutoCalibration/enabled
+/Settings/Sensor/Accelerometer/AutoCalibration/power_up
+/Settings/Sensor/Accelerometer/AutoCalibration/quality_factor
+accel.auto_calibration.settings
+/Settings/Sensor/Accelerometer/sample_rate
+/Settings/Sensor/Accelerometer/g_range
+/Settings/Sensor/Accelerometer/mode
+accel.device.settings
+/Settings/Sensor/Accelerometer/AnyMotion/threshold
+/Settings/Sensor/Accelerometer/AnyMotion/count
+/Settings/Sensor/Accelerometer/AnyMotion/hold_time
+accel.motion_detect.settings
+ps aux| grep usb_serial | grep -v grep| wc -l
+[%s]:[%s] - %s:%d usb_serial is not running
+usb_serial.enable.settings
+[%s]:[%s] - %s(%s) failed with code: %d
+[%s]:[%s] - %s: Settings Update: Accelerometer enabled: [%d]
+/usb_serial_mq
+[%s]:[%s] - %s usb_serial_enable::msgq_send_async failed: %s
+[%s]:[%s] - %s - BEGIN
+[%s]:[%s] - %s valid settings
+[%s]:[%s] - %s usb_serial_is_running
+usb_serial.threshold.settings
+[%s]:[%s] - %s: Settings Update: get thershold time: [%d]
+[%s]:[%s] - %s: Settings Update: getthershold buffer_size: [%d]
+[%s]:[%s] - %s - END
+[%s]:[%s] - %s: Settings Update: set thershold time: [%d]
+[%s]:[%s] - %s: Settings Update: set thershold buffer_size: [%d]
+usb_serial.device.settings
+[%s]:[%s] - %s settings_get_setting succeeded
+[%s]:[%s] - %s: Settings Update: Usb Serial Device Name:[%s]
+[%s]:[%s] - %s: Settings Update: Usb Serial Port number:[%d]
+[%s]:[%s] - %s: Settings Update: Usb Serial App Name:[%s]
+[%s]:[%s] - %s: Settings Update: Usb Serial Time out:[%d]
+[%s]:[%s] - %s: Settings Update: Usb Serial Baud Rate:[%d]
+[%s]:[%s] - %s: Settings Update: Usb Serial Parity Mode(0-None 1-EVEN 2-ODD):[%d]
+[%s]:[%s] - %s: Settings Update: Usb Serial Stop Bits:[%d]
+[%s]:[%s] - %s: Settings Update: Usb Serial Data Bits:[%d]
+[%s]:[%s] - %s: Settings Update: Usb Serial Flow Control(0-None 1-XONXOFF 2-RTSCTS):[%d]
+[%s]:[%s] - %s: Settings Update: Usb Serial PID:[%s]
+[%s]:[%s] - %s: Settings Update: Usb Serial VID:[%s]
+[%s]:[%s] - %s: Settings Update: Usb Serial Interface number:[%s]
+[%s]:[%s] - %s: Settings Update: Usb Serial Manufacturer:[%s]
+[%s]:[%s] - %s: Settings Update: Usb Serial Product:[%s]
+[%s]:[%s] - %s: Settings Update: Usb Serial Auto launch app:[%s]
+[%s]:[%s] - %s usb_serial_device_settings::msgq_send_async failed: %s
+[%s]:[%s] - %s: shmget failed
+[%s]:[%s] - %s: shmat failed
+[%s]:[%s] - %s Memory attached at %X
+[%s]:[%s] - %s config_update set to 1
+[%s]:[%s] - %s: shmdt failed
+[%s]:[%s] - %s returning
+[%s]:[%s] - %s usb_serial_connect::msgq_send_async failed: %s
+[%s]:[%s] - %s usb_serial_disconnect::msgq_send_async failed: %s
+[%s]:[%s] - [%s]: usb_serial_get_device_list::msgq_send_sync failed: %s
+[%s]:[%s] - %s usb_serial_reset_device::msgq_send_async failed: %s
+[%s]:[%s] - %s:Failed to get usb serial remote_access settings
+[%s]:[%s] - %s:Failed to get usb serial device settings
+[%s]:[%s] - %s: SENSOR USB Serial initialized with the following settings: 
+[%s]:[%s] - %s: Settings remote_access:[%d]
+[%s]:[%s] - %s:Device node %s doesn't exist
+[%s]:[%s] - %s:Error %i from tcgetattr: %s
+[%s]:[%s] - %s: Assigned dynamic RX buffer size :%d
+[%s]:[%s] - %s: Assigned default RX buffer size :%d
+[%s]:[%s] - %s: Assigned dynamic RX time out :%d ms
+[%s]:[%s] - %s: Assigned default RX time out :%d ms
+[%s]:[%s] - %s:Error %i from tcsetattr: %s
+/dev/ttyUSB0
+[%s]:[%s] - %s:Device node ttyUSB0 doesn't exist
+[%s]:[%s] - %s:Device node ttyUSB0 open success 
+[%s]:[%s] - %s:Device node ttyUSB0 get attr success 
+[%s]:[%s] - %s: port name %s send_msg: %s
+[%s]:[%s] - %s: send_msg[%d]:%c send_msg[%d]:%d
+[%s]:[%s] - %s:port name %s send_msg: %s
+[%s]:[%s] - %s: Dynamically allocating user defined %d memory for reception
+[%s]:[%s] - %s: Dynamically allocating default %d memory for reception
+[%s]:[%s] - %s:serial port:%d
+[%s]:[%s] - %s:is_USB_connected:%d, 
+[%s]:[%s] - %s: Error reading: %s
+[%s]:[%s] - %s:port name %s read_buf: %s
+usb_serial.data_message
+[%s]:[%s] -   usb_serial_get_settings device_name: [%s]
+[%s]:[%s] -  usb_serial_get_settings baud_rate: [%d], stop_bits[%d]
+1 after  usb_serial_get_settings  %s %d
+2 after usb_serial_get_settings %s %d
+echo hi>>/tmp/aswin
+[%s]:[%s] -  in api set api the address of usb_ser_settings %p
+[%s]:[%s] - usb_serial_set_settings  device_name: [%s]
+1 usb_serial_set_settings %d
+USERIAL: success.
+USERIAL: general error.
+USERIAL: one or more bad parameters passed into a function.
+USERIAL: one or more buffer type parameters passed into API is too small.
+USERIAL: the feature is unsupported.
+USERIAL: process not running.
+USERIAL: a device reset is required for the operation to take effect.
+USERIAL: API not implemented for the platform.
+USERIAL: unknown error.
+usb_serial_is_running
+usb_serial_get_enabled
+usb_serial_get_threshold_settings
+usb_serial_set_threshold_settings
+usb_serial_get_device_settings
+usb_serial_set_device_settings
+usb_serial_set_param
+usb_serial_send
+usb_serial_receive
+/Settings/Sensor/USBSerial/remote_access
+[%s]:[%s] - %s: %d 
+usb_serial.enable.settings
+[%s]:[%s] - %s - BEGIN
+[%s]:[%s] - %s valid param
+[%s]:[%s] - %s settings success
+[%s]:[%s] - %s getting xml data
+/Settings/Sensor/USBSerial/Device/name
+/Settings/Sensor/USBSerial/Device/port
+/Settings/Sensor/USBSerial/Device/app
+/Settings/Sensor/USBSerial/Device/timeout
+/Settings/Sensor/USBSerial/Device/baud
+/Settings/Sensor/USBSerial/Device/parity
+/Settings/Sensor/USBSerial/Device/stop_bits
+/Settings/Sensor/USBSerial/Device/data_bits
+/Settings/Sensor/USBSerial/Device/flow_control
+/Settings/Sensor/USBSerial/Device/pid
+/Settings/Sensor/USBSerial/Device/vid
+/Settings/Sensor/USBSerial/Device/interface
+/Settings/Sensor/USBSerial/Device/manufacturer
+/Settings/Sensor/USBSerial/Device/product
+/Settings/Sensor/USBSerial/Device/auto_launch
+usb_serial.device.settings
+/Settings/Sensor/USBSerial/Threshold/time
+/Settings/Sensor/USBSerial/Threshold/buffer_size
+[%s]:[%s] - %s: Settings Update: get thershold time: [%d] buffer_size: [%d]
+usb_serial.threshold.settings
+usb_serial_get_remote_access
+usb_serial_get_setting
+usb_serial_get_threshold_setting
+usb_serial_set_threshold_setting
+/ignition_mq
+ignition.enable.settings
+[%s]:[%s] - %s(%s) failed with code: %d
+[%s]:[%s] - %s: Settings Update: Ignition enabled: [%d]
+[%s]:[%s] - %s ignition_enable::msgq_send_async failed: %s
+ignition.igtn_time_shtdn_enabled.settings
+[%s]:[%s] - %s: Settings Update: Ignition shutdown enabled: [%d]
+ignition.igtn_volatge_shtdn_enabled.settings
+[%s]:[%s] - %s: Settings Update: Ignition internal battery timed shutdown enabled: [%d]
+ignition.timeout.settings
+[%s]:[%s] - %s: Settings Update: Ignition timeout: [%d]
+[%s]:[%s] - Sending time based shutdown to ignition process.
+[%s]:[%s] - %s ignition_settings::msgq_send_async failed: %s
+ignition.igtn_both_shtdn_enabled.settings
+[%s]:[%s] - %s: Settings Update: Ignition external battery timed shutdown enabled: [%d]
+[%s]:[%s] - ISSUE WITH LIMITS FROM SET FUNCTION IN IGNITION_API.C.
+ignition.voltage_level.settings
+[%s]:[%s] - %s: Settings Update: Ignition voltage_level: [%d]
+[%s]:[%s] - Sending voltage based shutdown to ignition process.
+IGTN: success.
+IGTN: general error.
+IGTN: one or more bad parameters passed into a function.
+IGTN: one or more buffer type parameters passed into API is too small.
+IGTN: the feature is unsupported.
+IGTN: process not running.
+IGTN: a device reset is required for the operation to take effect.
+IGTN: API not implemented for the platform.
+IGTN: unknown error.
+ignition_get_enabled
+ignition_get_time_shutdown_settings
+ignition_get_voltage_shutdown_settings
+ignition_get_both_shutdowns_settings
+/Settings/Sensor/Ignition/enabled
+ignition.enable.settings
+/Settings/Sensor/Ignition/igtn_time_shtdn_enabled
+ignition.igtn_time_shtdn_enabled.settings
+/Settings/Sensor/Ignition/igtn_vol_shtdn_enabled
+ignition.igtn_volatge_shtdn_enabled.settings
+/Settings/Sensor/Ignition/igtn_both_shtdn_enabled
+ignition.igtn_both_shtdn_enabled.settings
+/Settings/Sensor/Ignition/timeout
+ignition.timeout.settings
+/Settings/Sensor/Ignition/voltage_level
+ignition.voltage_level.settings
+GCC: (GNU) 8.2.0
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/watchdog/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/config
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/xmldata/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/logging/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/mal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi-framework
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/loc-hal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi/loc_sdx55
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/usr/src/linux/usr/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dsm/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/powersave/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/src
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/src/../include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/src/accelerometer
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/src/usb_serial
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/src/ignition
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/factory_reset/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/bluetooth_peripheral/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel/config/../.
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-iprefix /opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/bin/arm-oe-linux-gnueabi/../../lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/src/sensor_api.c
+-mfpu=neon
+-mfloat-abi=hard
+-mcpu=arm10tdmi
+-mtls-dialect=gnu
+-march=armv5t
+-auxbase-strip sensor_api.o
+-frecord-gcc-switches
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/src/sensor_settings.c
+-auxbase-strip sensor_settings.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/src/sensor_factory_reset.c
+-auxbase-strip sensor_factory_reset.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/src/gpio_api.c
+-auxbase-strip gpio_api.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/src/sensor_powersave.c
+-auxbase-strip sensor_powersave.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/src/accelerometer/accel_api.c
+-auxbase-strip accel_api.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/src/accelerometer/accel_settings.c
+-auxbase-strip accel_settings.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/src/usb_serial/usb_serial_api.c
+-auxbase-strip usb_serial_api.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/src/usb_serial/usb_serial_settings.c
+-auxbase-strip usb_serial_settings.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/src/ignition/ignition_api.c
+-auxbase-strip ignition_api.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/src/ignition/ignition_settings.c
+-auxbase-strip ignition_settings.o
+gold 1.16
+call_weak_fn
+crtstuff.c
+__TMC_LIST__
+deregister_tm_clones
+register_tm_clones
+__do_global_dtors_aux
+completed.11339
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+sensor_api.c
+sensor_settings.c
+sensor_factory_reset.c
+gpio_api.c
+translate_sensor_settings_error_code
+__func__.8593
+__func__.8599
+__func__.8605
+__func__.8611
+__func__.8629
+__func__.8643
+__func__.8657
+__func__.8669
+__func__.8681
+__func__.8693
+__func__.8735
+__func__.8741
+__func__.8747
+__func__.8753
+sensor_powersave.c
+accel_api.c
+translate_accelerometer_settings_error_code
+__func__.8991
+__func__.9008
+__func__.9015
+__func__.9024
+__func__.9033
+__func__.9039
+__func__.9046
+__func__.9052
+__func__.9059
+__func__.9065
+__func__.9072
+accel_settings.c
+usb_serial_api.c
+translate_usb_serial_settings_error_code
+__func__.8939
+__func__.8945
+__func__.8957
+__func__.8963
+__func__.8969
+__func__.8979
+__func__.9009
+__func__.9018
+__func__.9032
+usb_serial_settings.c
+usb_serial_get_remote_access
+__func__.8721
+usb_serial_set_remote_access
+usb_serial_get_setting
+__func__.8734
+usb_serial_set_setting
+usb_serial_get_threshold_setting
+__func__.8746
+usb_serial_set_threshold_setting
+ignition_api.c
+translate_ignition_settings_error_code
+__func__.8903
+__func__.8915
+__func__.8927
+__func__.8949
+ignition_settings.c
+__FRAME_END__
+__dso_handle
+__TMC_END__
+_DYNAMIC
+_GLOBAL_OFFSET_TABLE_
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+sensor_is_running
+msgq_does_queue_exist
+sensor_get_error_string
+gpio1_get_stored_value
+xmldata_getint32_default
+gpio2_get_stored_value
+gpio1_get_stored_dir
+gpio2_get_stored_dir
+gpio1_store_dir
+xmldata_setint32
+xmldata_save
+MsgBusSetInt32
+gpio2_store_dir
+gpio1_store_value
+gpio2_store_value
+gpio1_get_enabled
+gpio1_set_enabled
+gpio2_get_enabled
+gpio2_set_enabled
+gpio1_get_settings
+xmldata_getstring
+gpio1_set_settings
+xmldata_setstring
+gpio2_get_settings
+gpio2_set_settings
+gpio1_get_out_trigger
+gpio1_set_out_trigger
+gpio2_get_out_trigger
+gpio2_set_out_trigger
+initialize_settings
+initialize_accelerometer_settings
+initialize_usb_serial_settings
+initialize_ignition_settings
+sensor_factory_reset_impl
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+initialize_factory_reset_func
+gpiopin1_set_storedval
+settings_set_setting
+gpiopin2_set_storedval
+gpiopin1_set_storedmod
+gpiopin2_set_storedmod
+gpio_get_wakeup
+msgq_send_sync
+__errno_location
+strerror
+gpio_set_wakeup
+gpiopin1_get_enable
+settings_get_setting
+gpiopin1_set_enable
+msgq_send_async
+gpiopin2_get_enable
+gpiopin2_set_enable
+gpiopin1_get_custom_settings
+gpiopin1_set_custom_settings
+gpiopin2_get_custom_settings
+gpiopin2_set_custom_settings
+gpiopin1_get_out_trigger
+gpiopin1_set_out_trigger
+gpiopin2_get_out_trigger
+gpiopin2_set_out_trigger
+gpio_get_value
+gpio_set_value
+gpio_get_direction
+gpio_set_direction
+gpiopin1_get_storedval
+gpiopin2_get_storedval
+tcgetattr
+gpiopin1_get_storedmod
+gpiopin2_get_storedmod
+cfsetospeed
+powersave_notify
+cfsetispeed
+accelerometer_is_running
+accelerometer_get_enabled
+tcsetattr
+accelerometer_set_enabled
+accelerometer_get_last_data_axis
+accelerometer_get_server_config
+accelerometer_set_server_config
+accelerometer_get_driver_behaviour_threshold_config
+accelerometer_set_driver_behaviour_threshold_config
+accelerometer_get_autocal_config
+accelerometer_set_autocal_config
+accelerometer_get_device_config
+accelerometer_set_device_config
+accelerometer_get_motion_detect_config
+accelerometer_set_motion_detect_config
+accelerometer_get_error_string
+accelerometer_powersave_on
+accel_get_enabled
+accel_set_enabled
+accel_get_server_settings
+accel_set_server_settings
+accel_get_driver_behaviour_threshold_value
+strtok_r
+accel_get_driver_behaviour_threshold
+accel_build_threshold_string
+accel_set_driver_behaviour_threshold
+accel_get_autocal
+accel_set_autocal
+accel_get_device_settings
+accel_set_device_settings
+accel_get_motion_detect_settings
+accel_set_motion_detect_settings
+g_usb_serial
+g_usb_serial_settings
+serial_port
+usb_ser_settings
+usb_serial_is_running
+usb_serial_get_enabled
+usb_serial_set_enabled
+usb_serial_get_threshold_settings
+usb_serial_set_threshold_settings
+usb_serial_get_device_settings
+usb_serial_set_device_settings
+usb_serial_connect
+usb_serial_disconnect
+usb_serial_get_device_list
+msgq_send_sync_large_payload
+usb_serial_reset_device
+usb_serial_settings_init
+usb_serial_set_param
+usb_serial_send
+usb_serial_receive
+MsgBusSetBinary
+usb_serial_get_settings
+usb_serial_set_settings
+usb_serial_set_default_settings
+usb_serial_connected_devices
+usb_serial_get_error_string
+xmldata_getint32
+ignition_is_running
+ignition_get_enabled
+ignition_set_enabled
+ignition_get_time_shutdown_settings
+ignition_set_time_shutdown_settings
+ignition_get_voltage_shutdown_settings
+ignition_set_voltage_shutdown_settings
+ignition_get_timeout
+ignition_set_timeout
+ignition_get_both_shutdowns_settings
+ignition_set_both_shutdowns_settings
+ignition_get_voltage
+ignition_set_voltage
+ignition_get_error_string
+igtn_get_enabled
+igtn_set_enabled
+igtn_get_time_shutdown_enabled
+igtn_set_time_shutdown_enabled
+igtn_get_vol_shutdown_enabled
+igtn_set_vol_shutdown_enabled
+igtn_get_both_shutdown_enabled
+igtn_set_both_shutdown_enabled
+igtn_get_timeout
+igtn_set_timeout
+igtn_get_voltage_level
+igtn_set_voltage_level
+__bss_start
+.init_array
+.fini_array
+.comment
+.rel.plt
+.ARM.attributes
+.eh_frame_hdr
+.gnu.version_r
+.rel.dyn
+.gnu.version
+.note.gnu.gold-version
+.GCC.command.line
+.eh_frame
+.tm_clone_table
+.note.gnu.build-id
+.gnu.version_d
+.dynamic
+.shstrtab

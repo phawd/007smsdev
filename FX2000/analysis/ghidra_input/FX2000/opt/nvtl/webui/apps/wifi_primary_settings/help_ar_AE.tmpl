@@ -1,0 +1,73 @@
+<!-- wifi_primary_settings -->
+<div id="wifi_primary_settings">
+	<h1>Wi-Fi - الشبكة الأساسية</h1>
+	
+	<h2>نظرة عامة</h2>
+	<p>
+		للاتصال بشبكة Wi-Fi <tmpl_var _("webui", "webui_product_name_with_suffix")> الأساسية، يجب أن تستخدم الأجهزة المتصلة إعدادات Wi-Fi الموضحة على هذه الشاشة. إذا قمت بتغيير هذه الإعدادات، فقد تفقد الأجهزة المتصلة الموجودة اتصالها.
+	</p>
+	
+	<h3><tmpl_var _("webui", "wifi_primary_ssid_label")></h3>
+	<p>	
+		يؤدي هذا إلى تعيين اسم الشبكة أو SSID لشبكة Wi-Fi. أدخل اسمًا مناسبًا. يمكن أن يصل طول الاسم إلى 32 حرفًا.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_security_label")></h3>
+	<p>
+		حدد الخيار المطلوب لأمان Wi-Fi.
+	</p>
+
+	<ul>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> يتيح لأشخاص آخرين مراقبة حركة Wi-Fi الخاصة بك واستخدام خطة البيانات الخاصة بك للوصول إلى الإنترنت. إذا كان ذلك ممكنًا، فيجب تجنب استخدام هذا الخيار.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> هي أحدث الطرق وأكثرها أمانًا، ويجب استخدامها إن أمكن.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> يمكن استخدامها إذا كانت بعض أجهزتك القديمة لا تدعم WPA2.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> يمكن استخدامها لأجهزة الشكوى WPA2 و WPA3.
+		</li>
+	</ul>	
+	
+	<h3><tmpl_var _("webui", "wifi_primary_password_label")></h3>
+	<p>
+		أدخل كلمة مرور Wi-Fi في هذا الحقل. يمكنك أيضًا استخدام الزر "Generate New Key (إنشاء مفتاح جديد)" لإدخال كلمة مرور عشوائية قوية في هذا الحقل. تذكر حفظ تغييراتك إذا كنت تستخدم هذا الخيار.
+	</p>
+
+	<p>
+		يتم إخفاء هذه الإعدادات بشكل افتراضي، ولكن يمكنك النقر فوق العنوان/الرابط لجعلها مرئية. عادة يمكن ترك هذه الخيارات عند قيمها الافتراضية، ولكن يمكن تغييرها إذا لزم الأمر لتناسب بيئتك الخاصة.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_ssid_label", gProductName)></h3>
+	<p>
+		إذا تم تحديد هذا الإعداد، فسيكون اسم Wi-Fi قابلاً للقراءة على شاشة اللمس <tmpl_var _("webui", "webui_product_name_with_suffix")>، باستخدام خيار القائمة "Wi-Fi". في حالة عدم التحديد، يظهر الاسم على أنه ******.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_password_label", gProductName)></h3>
+	<p>
+		إذا تم تحديد هذا الإعداد، فستكون كلمة مرور Wi-Fi قابلة للقراءة على شاشة اللمس لـ <tmpl_var _("webui", "webui_product_name_with_suffix")>، باستخدام خيار القائمة "Wi-Fi". في حالة عدم التحديد، تظهر كلمة المرور على أنها ******.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_broadcast_ssid_label")></h3>
+	<p>
+		إذا تم تحديد هذا الإعداد، فستظهر شبكة Wi-Fi هذه في قائمة شبكات Wi-Fi المتاحة على أجهزتك المتصلة. في حالة عدم التحديد، ستكون هذه الشبكة غير مرئية.
+	</p>
+	
+	<tmpl_if showWiFiPrimaryWPS>
+		<h3><tmpl_var _("webui", "wifi_primary_wps_label")></h3>
+		<p>
+			يعد إعداد Wi-Fi المحمي (WPS) نظامًا يسمح لأجهزة Wi-Fi بالاتصال بشبكة Wi-Fi دون الحاجة إلى إدخال مفتاح الشبكة يدويًا. إذا كنت ترغب في استخدام WPS، فحدد هذا الخيار.
+		</p>
+	</tmpl_if>
+
+	<h3><tmpl_var _("webui", "wifi_primary_privacy_label")></h3>
+	<p>
+		إذا تم تحديد هذا الإعداد، فسيتم عزل كل جهاز متصل عن جميع الأجهزة المتصلة الأخرى. يوفر ذلك أمانًا إضافيًا إذا كانت بعض الأجهزة المتصلة غير معروفة أو غير موثوق بها تمامًا. للتشغيل العادي، يجب إلغاء تحديد هذا.
+	</p>
+</div>
+
+<!-- id="wifi_primary_settings" -->
+

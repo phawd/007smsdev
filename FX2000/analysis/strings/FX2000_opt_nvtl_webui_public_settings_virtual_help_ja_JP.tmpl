@@ -1,0 +1,16 @@
+<div id="settings_virtual">
+	<tmpl_if appsList>
+<div class="blockgroup">
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title>
+<tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+	</tmpl_if>
+	<tmpl_if showBackButton>
+	</tmpl_if>
+	<tmpl_unless showBackButton>
+	</tmpl_unless>

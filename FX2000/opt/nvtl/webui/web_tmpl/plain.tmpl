@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lte IE 8]><html class="no-js ie8 oldie<tmpl_if IN_SET(gLangDirection, "rtl")> rtl</tmpl_if>" lang="<tmpl_var gHtmlLang>"<tmpl_if IN_SET(gLangDirection, "rtl")> dir="<tmpl_var gLangDirection>"</tmpl_if>><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js<tmpl_if IN_SET(gLangDirection, "rtl")> rtl</tmpl_if>" lang="<tmpl_var gHtmlLang>"<tmpl_if IN_SET(gLangDirection, "rtl")> dir="<tmpl_var gLangDirection>"</tmpl_if>><!--<![endif]-->
+	<head>
+		<tmpl_include "meta.tmpl">
+		<title><tmpl_include "admin_title.tmpl"></title>
+		<tmpl_include "links.tmpl">
+		<tmpl_include "scripts.tmpl">
+	</head>
+	<body id="<tmpl_var gPageId>" class="basic">
+		<div id="container" role="region" class="container">
+			<tmpl_include "noscript.tmpl">
+			<tmpl_include "app.tmpl">
+		</div> <!-- /#container -->
+	</body>
+</html>

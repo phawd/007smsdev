@@ -1,0 +1,165 @@
+<!-- Port Filtering -->
+<div id="port_filtering">
+	<h1>Filtro sulle porte</h1>
+	<h2>Panoramica</h2>
+	<p>
+		Utilizza la funzione di filtro sulle porte per bloccare il traffico Internet in uscita in base alle tue esigenze. Se questa impostazione è attiva, solo il traffico proveniente dalle applicazioni selezionate può accedere a Internet. Il traffico è identificato dai numeri di porta. 
+Alcune applicazioni sono predefinite. Hai la facoltà di definire applicazioni aggiuntive, ma è necessario conoscere i dettagli del traffico utilizzato e generato dalle applicazioni che desideri definire. 
+	</p>
+
+	<h2>Applicazioni</h2>
+	<h3>Caselle di controllo dell'applicazione</h3>
+	<p>Utilizza queste caselle di controllo per consentire l'accesso a Internet per ogni applicazione mentre la funzione di filtro sulle porte è attiva. Il traffico proveniente dalle applicazioni selezionate può accedere a Internet. Altrimenti, il traffico è bloccato. 
+	</p>
+	<p>La seguente tabella mostra i numeri di porta e le informazioni sul protocollo per ciascuna delle applicazioni di filtro delle porte elencata.</p>
+
+	<table class="portFilteringTable" id="">
+	 	<thead>
+			<tr class="">
+				<th class=""> Nome dell’applicazione</th>
+				<th class="">Porta</th>
+				<th class="">TCP*</th>
+				<th class="">STCP*</th>
+				<th class="">UDP*</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td> POP3</td>
+				<td> 110</td>
+				<td> Sì</td>
+				<td> No</td>
+				<td> Assegnato</td>
+			</tr>
+
+			<tr>
+				<td> POP3S</td>
+				<td> 995</td>
+				<td> Sì</td>
+				<td> No</td>
+				<td> Sì</td>
+			</tr>
+
+			<tr>
+				<td> IMAP</td>
+				<td> 143</td>
+				<td> Sì</td>
+				<td> No</td>
+				<td> Assegnato</td>
+			</tr>
+
+			<tr>
+				<td> IMAPS</td>
+				<td> 993</td>
+				<td> Sì</td>
+				<td> No</td>
+				<td> Assegnato</td>
+			</tr>
+
+			<tr>
+				<td> SMTP</td>
+				<td> 25</td>
+				<td> Sì</td>
+				<td> No</td>
+				<td> Assegnato</td>
+			</tr>
+
+			<tr>
+				<td> SecureSMTP</td>
+				<td> 465</td>
+				<td> Sì</td>
+				<td> No</td>
+				<td> No</td>
+			</tr>
+
+			<tr>
+				<td> Controllo FTP (comando)</td>
+				<td> 21</td>
+				<td> Sì</td>
+				<td> Sì</td>
+				<td> Assegnato</td>
+			</tr>
+
+			<tr>
+				<td> Trasferimento dati FTP</td>
+				<td> 20</td>
+				<td> Sì</td>
+				<td> Sì</td>
+				<td> Assegnato</td>
+			</tr>
+
+			<tr>
+				<td> HTTP</td>
+				<td> 80</td>
+				<td> Sì</td>
+				<td> Sì</td>
+				<td> Assegnato</td>
+			</tr>
+
+			<tr>
+				<td> HTTPS</td>
+				<td> 443</td>
+				<td> Sì</td>
+				<td> Sì</td>
+				<td> Assegnato</td>
+			</tr>
+
+			<tr>
+				<td> Telnet</td>
+				<td> 23</td>
+				<td> Sì</td>
+				<td> No</td>
+				<td> Assegnato</td>
+			</tr>
+			
+		</tbody>
+
+	</table>
+
+	<p><b>Sì</b> indica che il protocollo è standardizzato per il numero di porta.</p>
+	<p><b>No</b> indica che il protocollo non è standardizzato per il numero di porta.</p>
+	<p><b>Assegnato</b> indica che il numero di porta è assegnato dalla IANA (Internet Assigned Numbers Authority) per l'utilizzo del protocollo, ma potrebbe non essere standardizzato.</p>
+
+	<h2>Applicazioni personalizzate</h2>
+	<p>Questa funzione ti consente di definire le tue applicazioni, fino a un massimo di 10. Una volta definite, queste applicazioni possono essere attivate e disattivate nello stesso modo delle applicazioni predefinite. Per definire un'applicazione, è necessario conoscere le porte e il protocollo (TCP, UDP) utilizzati dall'applicazione per il traffico in uscita. Per iniziare, fai clic sul pulsante <strong>Aggiungi applicazione personalizzata</strong>, quindi fornisci i seguenti dati. 
+	</p>
+	<p>Si noti che eventuali modifiche a un'applicazione personalizzata non vengono salvate fino a quando non viene utilizzato il pulsante "Salva modifiche" per salvare l'intero contenuto della pagina.</p>
+	
+	<h3>Casella di controllo dell'applicazione</h3>
+	<p>Utilizza questa casella di controllo per attivare un'applicazione dopo averla definita. Se selezionata, il traffico proveniente da questa applicazione può accedere a Internet. Altrimenti, il traffico è bloccato. 
+	</p>
+	<h3>Nome dell'applicazione</h3>
+	<p>
+		Immetti un nome adatto per l'applicazione che stai definendo.
+	</p>
+	<h3>Intervallo porte (Porta iniziale/Porta finale)</h3>
+		<p>
+			Ogni applicazione dispone del proprio intervallo di porte.
+			Immetti l'inizio e la fine dell'intervallo di porte per ciascuna applicazione.
+		</p>
+		<div class="blockgroup">
+			<ul>
+				<li>Per una singola porta, immetti il numero della porta sia nel campo <strong>Porta iniziale</strong> che <strong>Porta finale</strong>.</li>
+				<li>Per un intervallo di porte, immetti l'inizio dell'intervallo nel campo <strong>Porta iniziale</strong> e la fine dell'intervallo nel campo <strong>Porta finale</strong>. </li>
+			</ul>
+		</div>
+	<h3>Porta iniziale</h3>
+	<p>
+		Immettere l'inizio dell'intervallo di numeri di porta utilizzati dal traffico in uscita per l'applicazione personalizzata che si intende aggiungere.
+	</p>
+	<h3>Porta finale</h3>
+	<p>
+		Immettere la fine dell'intervallo di numeri di porta utilizzati dall'applicazione.
+		<b>NOTA:</b> Se l’applicazione utilizza una singola porta invece di un intervallo, digitarla
+	</p>
+	<h3>Protocollo</h3>
+	<p>
+		Selezionare il protocollo utilizzato dall'intervallo di porte dall'elenco a discesa (TCP, UDP o entrambi). 
+	</p>
+	<h3>Elimina</h3>
+	<p>Utilizza questa casella di controllo per eliminare un'applicazione personalizzata.
+	</p>
+	<p>NOTA: Fai di nuovo clic sulla scheda Filtro porte per rimuovere le applicazioni personalizzate eliminate dalla visualizzazione sullo schermo. </p>
+</div>
+<!-- id="port_filtering" -->
+		

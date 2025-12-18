@@ -1,0 +1,16 @@
+<!-- Internet  Sessions -->
+<div id="session_log_info">
+	<h1><tmpl_var _("webui", "session_log_info_menu_text")></h1>
+	<p>The session log contains the following data:</p>
+	<p>- Date & Time : The date and time the Internet session began.</p>
+	<p>- Duration : The total amount of time for the Internet session.</p>
+	<p>- Received Data : The amount of data received for the Internet session. This counter starts at zero when the connection is established.</p>
+	<p>- Transmitted Data : The amount of data transmitted for the Internet session. This counter starts at zero when the connection is established.</p>
+	<p>- Total Data : The total amount of data for the Internet session. This is the sum of Received Data and Transmitted Data.</p>
+	<tmpl_if RoamingStatusShow>
+		<p>- Roaming (Roaming / Partial / blank) Blank = home network</p>
+	</tmpl_if>
+	<p>- IPv4  The IP address for the session.</p>
+	<p>- IPv6  The global IPv6 address for the session (blank if IPv6 is turned off or is not supported by the current network connection or carrier).</p>
+	<p>Log is in date order. </p>
+	<p>User cannot change the order, and there are no options relating to the session log.</p>

@@ -1,0 +1,62 @@
+<!-- MAC Filter -->
+<div id="macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+bersicht</h2>
+	<p>Wenn die MAC-Filterfunktion aktiviert ist, verhindert sie den Zugriff auf dieses WLAN-Netzwerk durch ein Ger
+t, das nicht in der Liste 
+MAC-Adressfilter
+hrt ist. Der Filter gilt nur f
+r das WLAN-Netzwerk und hat keinen Einfluss auf USB-Ger
+	<h2>EIN/AUS-Steuerung</h2>
+	<p>Mit diesem Regler k
+nnen Sie den MAC-Filter je nach Bedarf aktivieren oder deaktivieren. Bevor Sie den Filter aktivieren, m
+ssen Sie sicherstellen, dass einige Ger
+te zugelassen sind. Beachten Sie, dass beim Aktivieren des MAC-Filters alle verbundenen Ger
+te getrennt werden, die nicht in der Liste 
+MAC-Adressfilter
+hrt sind.</p>
+	<h2>Ger
+teliste</h2>
+	<p>Alle bekannten Ger
+te sind hier aufgelistet, ausgenommen die USB-Ger
+ber die Kontrollk
+stchen k
+nnen Sie Ger
+te in die Liste 
+MAC-Adressfilter
+ aufnehmen bzw. davon ausschlie
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+ber die Aktualisierungsschaltfl
+nnen Sie die Liste nach Bedarf aktualisieren.</p>
+	<h2>Betrieb</h2>
+	<h3>Gesperrte Ger
+te vs. MAC-Filter</h3>
+	<p>Die Interaktion zwischen 
+gesperrten
+ten und dem 
+MAC-Filter
+ ist wie folgt:</p>
+	<div class="blockgroup">
+	<li>Gesperrte Ger
+te werden immer vom WLAN-Netzwerk blockiert, unabh
+ngig davon, ob der MAC-Filter aktiviert oder deaktiviert ist.</li>
+	<li>Wenn der MAC-Filter aktiviert ist und ein Ger
+t in der Liste 
+Gesperrt
+hrt wird, nicht aber in der Liste 
+MAC-Adressfilter
+, kann es keine Verbindung herstellen. Sowohl der MAC-Filter als auch die Sperrung w
+rden eine Verbindung verhindern.</li>
+	<li>Wenn der MAC-Filter aktiviert ist und sich ein Ger
+t in der MAC-Adressfilterliste befindet, kann das Ger
+t eine Verbindung herstellen. Nachdem die Verbindung hergestellt wurde, kann es dann entweder durch Entfernen aus der Liste des MAC-Adressfilters oder durch Verwendung der Funktion 
+ gesperrt werden. Im Allgemeinen sollte eine Sperre nur vor
+bergehend genutzt werden, und der MAC-Filter, wenn Sie ein Ger
+t dauerhaft sperren m
+chten.</li>
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+gen Sie ein neues Ger
+ber diese Schaltfl
+che zur Ger
+teliste hinzu.</p>
+<!--  macfilter  -->

@@ -1,0 +1,60 @@
+<!-- MAC Filter -->
+<div id="macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+	<h2>Yleiskatsaus</h2>
+	<p>Jos MAC Filter (MAC-suodatin) -ominaisuus on kytketty p
+lle, se est
+n Wi-Fi-verkkoon kaikilta laitteilta, jotka eiv
+MAC Address Filter
+ (MAC-osoitesuodatin) -luetteloon. Suodatin koskee vain Wi-Fi-verkkoa, eik
+ ole vaikutusta USB-laitteisiin.</p>
+LLE / POIS P
+din</h2>
+ voit kytke
+ MAC-suodattimen p
+lle tai pois p
+ tarpeen mukaan. Ennen kuin kytket sen p
+lle, sinun on varmistettava, ett
+ jotkin laitteet ovat sallittuja. Huomaa, ett
+ kun MAC-suodatin on kytketty p
+lle, kaikkien yhdistettyjen laitteiden, jotka eiv
+MAC Address Filter
+ (MAC-osoitesuodatin) -luettelossa, yhteys katkaistaan v
+sti.</p>
+	<h2>Laiteluettelo</h2>
+	<p>Kaikki tunnetut laitteet on lueteltu t
+, USB-laitteita lukuun ottamatta. Annettuja valintaruutuja k
+ voit sis
+ laitteita 
+MAC Address Filter
+ (MAC-osoitesuodatin) -luetteloon tai sulkea niit
+ pois.</p>
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+ luettelo tarvittaessa p
+ivityspainikkeella.</p>
+	<h3>Estetty vs. MAC-suodatin</h3>
+ (Estetty) -tilaan asetettujen laitteiden ja 
+MAC Filter
+ (MAC-suodatin) -toiminnon v
+linen vuorovaikutus on seuraavanlainen:</p>
+	<div class="blockgroup">
+	<li>Estetyt laitteet estet
+n aina Wi-Fi-verkosta riippumatta siit
+, onko MAC-suodatin kytketty p
+lle vai pois p
+	<li>Jos MAC-suodatin on kytketty p
+lle ja laite on estettyjen laitteiden luettelossa, mutta ei MAC-osoitesuodattimien luettelossa, se ei voi muodostaa yhteytt
+ MAC Filter (MAC-suodatin) ett
+ Block (Est
+t yhteyden muodostamisen.</li>
+	<li>Jos MAC-suodatin on kytketty p
+lle ja laite on MAC-osoitesuodattimien luettelossa, laite voi muodostaa yhteyden. Kun laite on muodostanut yhteyden, se voidaan est
+ joko poistamalla se MAC-osoitesuodattimien luettelosta tai k
+) -ominaisuutta. Yleens
+) -toimintoa tulisi k
+liaikaiseen estoon ja MAC Filter (MAC-suodatin) -toimintoa pysyv
+n estoon.</li>
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+ painikkeella voit lis
+ uuden laitteen laiteluetteloon.</p>
+<!--  macfilter  -->

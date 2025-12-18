@@ -1,0 +1,31 @@
+<!-- Status Logs -->
+<div id="status_logs">
+	<h1><tmpl_var _("webui", "status_logs_menu_text")></h1>
+	<h2>Översikt</h2>
+	<p>Logginformationen är användbar för felsökning, men krävs inte för normal drift.</p>
+	
+	<h2>Inställningar</h2>
+	<h3><tmpl_var _("webui", "status_logs_enable_logs_label")></h3>
+	<p>Aktivera loggarna efter behov.</p>
+	<h3><tmpl_var _("webui", "status_logs_delete_sys_logs_label")></h3>
+	<p>Denna inställning bestämmer hur länge systemets loggdata behålls. Välj önskat alternativ.</p>
+	<p>Observera att om loggen är full raderas de äldsta data, oberoende av denna inställning.</p>
+	
+	<h2>Loggdata</h2>
+	<p>De flikar som tillhandahålls låter dig välja vilken typ av loggdata som ska visas.</p>
+	<h3><tmpl_var _("webui", "status_logs_mobile_network_log_href")></h3>
+	<p>Denna logg innehåller data om anslutningar till mobilnätet.</p>
+	<h3><tmpl_var _("webui", "status_logs_system_log_href")></h3>
+	<p>Den här loggen registrerar händelser – andra än mobildataanslutningar - som inträffat på den här enheten.</p>
+	
+	<h2>Knappar</h2>
+	
+	<h3><tmpl_var _("webui", "status_logs_clear_log_btn")></h3>
+	<p>Om man klickar på den här knappen kommer alla befintliga loggdata att raderas. Detta gör det lättare att läsa nya data.</p>
+	<h3><tmpl_var _("webui", "status_logs_refresh_btn")></h3>
+	<p>Använd den för att uppdatera de loggdata som visas.</p>
+	<h3><tmpl_var _("webui", "status_logs_download_btn")></h3>
+	<p>Använd den här knappen om du vill ladda ned loggdata till din dator eller anslutna enhet.</p>
+	
+</div>
+<!-- end Status Logs -->

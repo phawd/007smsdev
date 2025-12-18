@@ -1,0 +1,117 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+			Dans la plupart des configurations, le <tmpl_var _("webui", "webui_product_name")> est utilis
+ avec un IP et une carte
+SIM dynamiques et le nom du point d
+s (APN) est disponible sur le r
+seau, par exemple
+: Internet. Toutefois, si vous 
+tes sur un r
+seau priv
+, vous devrez peut-
+APN sur cet onglet pour que le r
+seau puisse communiquer avec le <tmpl_var _("webui", "webui_product_name")>.
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Pr
+rence de connexion</h3>
+lectionnez l
+option souhait
+e pour contr
+ler le moment o
+ le <tmpl_var _("webui", "webui_product_name")> 
+tablira une connexion de donn
+seau mobile.
+	</tmpl_if>
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>Utilisez ce param
+tre pour activer ou d
+sactiver l
+rance internationale et nationale selon les besoins. Des frais de donn
+es suppl
+mentaires peuvent s
+appliquer en cas d
+rance.</p>
+	</tmpl_if>
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+			La valeur par d
+faut est 
+<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>
+. Le <tmpl_var _("webui", "webui_product_name")> s
+lectionnera la meilleure technologie disponible. 
+			Si vous le souhaitez, vous pouvez modifier cela pour limiter les technologies de r
+seau qui seront utilis
+	</tmpl_if>
+lection manuelle du r
+seau</h3>
+		Cette fonctionnalit
+est disponible que lorsque l
+activation de la s
+lection automatique du r
+seau est d
+e. Cela peut 
+tre utile si plusieurs r
+seaux sont disponibles et que vous avez une pr
+rence relative 
+ celui utilis
+		Cliquez sur le bouton 
+lectionner un r
+seau manuellement
+ pour analyser les r
+seaux disponibles
+; vous pouvez ensuite choisir le r
+seau souhait
+	<tmpl_if showApnSettings>
+		<tmpl_if ShowAdvancedSettingsToggleButton>
+			<h2>Param
+tres avanc
+				Utilisez cet en-t
+te/ce lien pour afficher ou masquer les param
+tres avanc
+s selon vos besoins.
+		</tmpl_if>
+			<tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))>
+APN est pr
+configur
+; vous ne devez pas le modifier 
+ moins d
+avoir un compte d
+entreprise (avec votre propre APN).
+			Si vous devez modifier l
+APN, saisissez la valeur fournie par votre fournisseur de services de r
+seau mobile.
+		<tmpl_if showApnAuthenticationSettings>
+				<tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))>
+			</h3>
+			<div class="blockgroup">
+				<p>S
+lectionnez l
+option sp
+e par votre fournisseur de services.
+				</p>
+				<ul>
+					<li>Aucun</li>
+					<li>PAP</li>
+					<li>CHAP</li>
+				</ul>
+			</div>
+				<tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))>
+			</h3>
+				Si l
+authentification est <strong>Aucun</strong>, ce champ peut 
+tre laiss
+				Sinon, entrez la valeur sp
+e par votre fournisseur de services.
+				<tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))>
+			</h3>
+				Si l
+authentification est <strong>Aucun</strong>, ce champ peut 
+tre laiss
+				Sinon, entrez la valeur sp
+e par votre fournisseur de services.
+		</tmpl_if>
+	</tmpl_if>

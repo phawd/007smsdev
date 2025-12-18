@@ -1,0 +1,671 @@
+<tmpl_comment>Modernizr 2.7.2 is suppose to load after styles but before other script libraries, according to the documentation.</tmpl_comment>
+<script type="text/javascript" src="/<tmpl_var gBaseAssetsPath>/script/libraries/modernizr.min.js"></script>
+<tmpl_comment>jQuery v1.12.4</tmpl_comment>
+<script type="text/javascript" src="/<tmpl_var gBaseAssetsPath>/script/jquery/jquery.js"></script>
+<tmpl_comment>jQuery UI - v1.12.1</tmpl_comment>
+<script type="text/javascript" src="/<tmpl_var gBaseAssetsPath>/script/jquery/jquery-ui.min.js"></script>
+<tmpl_if IN_SET(gLangDirection, "rtl")> 
+	<script type="text/javascript" src="/<tmpl_var gBaseAssetsPath>/script/jquery/jquery.ui.slider-rtl.min.js"></script>
+</tmpl_if>
+<tmpl_if IN_SET("data_usage", gPageId)>
+	<script type="text/javascript" src="/<tmpl_var gBaseAssetsPath>/script/jquery/jquery.jqplot.min.js"></script>
+	<script type="text/javascript" src="/<tmpl_var gBaseAssetsPath>/script/jquery/jqplot.pieRenderer.min.js"></script>
+	<script type="text/javascript" src="/<tmpl_var gBaseAssetsPath>/script/jquery/jquery.lineProgressbar.min.js"></script>
+</tmpl_if>
+<script type="text/javascript" src="/<tmpl_var gBaseAssetsPath>/script/mifienums.js"></script>
+<script type="text/javascript" src="/<tmpl_var gBaseAssetsPath>/script/libraries/modalPopup.min.js"></script>
+<tmpl_comment>Uniform v2.1.1</tmpl_comment>
+<script type="text/javascript" src="/<tmpl_var gBaseAssetsPath>/script/jquery/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="/<tmpl_var gBaseAssetsPath>/script/libraries/sha.min.js"></script>
+<script type="text/javascript" src="/<tmpl_var gBaseAssetsPath>/script/jquery/jquery.slidebutton.min.js?v=<tmpl_var gBaseAssetsPath>"></script>
+<script type="text/javascript" src="/<tmpl_var gBaseAssetsPath>/script/jquery/jquery.duvel.statusbar.min.js?v=<tmpl_var gBaseAssetsPath>"></script>
+<script type="text/javascript" src="/<tmpl_var gBaseAssetsPath>/script/notifications.js?v=<tmpl_var gBaseAssetsPath>"></script>
+
+<tmpl_if IN_SET("ipsec_vpn", gPageId)>
+	<script type="text/javascript" src="/<tmpl_var gBaseAssetsPath>/script/ipsec_vpn.js"></script>
+</tmpl_if>
+
+<tmpl_comment>Inline Scripts. Use for instantiating on every page with this component.</tmpl_comment>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var GLOBAL_PARAMETERS = {};
+	GLOBAL_PARAMETERS["rtl"] = <tmpl_if IN_SET(gLangDirection, "rtl")> true; <tmpl_else> false; </tmpl_if>
+	$(function()
+	{
+		<tmpl_if IN_SET(loginRequired, 1)>
+			var url = '<tmpl_udf GET_URI("login")>';
+			var title = "<tmpl_var _('webui', 'vzw_header_login_link')>";
+			var loadPopup = modalPopup.loadPage(
+				title,
+				url,
+				700, "auto", null, null, function() { location.replace('<tmpl_udf GET_URI("apps_home")>') }
+			);
+
+		</tmpl_if>
+		var currentYear = new Date().getFullYear();
+		$("#copyYear").html(currentYear);
+		// Init status bar
+		$.statusBar({
+			statusBars : {
+				headerStatusBar : {
+					name : "headerStatusBar",
+					structure : {
+						statusBar_roamingFemto_grp : {
+							statusBar_femto_roam : ["statusBarFemtoCellStatus", "statusBarRoaming"]
+						},
+						statusBar_connected_devices_grp : {
+							statusBar_connected_devices : ["statusBarWiFiClientListSize", "statusBarWiFiEnabled"]
+						},
+						statusBar_activity_grp : {
+							statusBar_activity : ["statusBarTrafficStatus"]
+						},
+						statusBar_tech_grp_2 : {
+								statusBar_tech_2 : ["statusBarSim2Technology", "statusBarSim2TechnologyText"]
+						},
+						statusBar_network_grp_2 : {
+								statusBar_network_2 : ["statusBarSim2Network", "statusBarSim2NetworkID"],
+								statusBar_rssi_2 : ["statusBarSim2SignalBars"]
+						},
+						statusBar_sim_grp_2: {
+							statusBar_sim_2: ["statusBarSim2Status", "statusBarSim2CarrierBlockedStatus", "statusBarSim2ConnectionState"]
+						},
+						statusBar_tech_grp : {
+							statusBar_tech : ["statusBarTechnology", "statusBarTechnologyText"]
+						},
+						statusBar_network_grp : {							
+							statusBar_network : ["statusBarNetwork", "statusBarNetworkID"],
+							statusBar_rssi : ["statusBarSignalBars"]
+						},
+						statusBar_sim_grp: {
+							statusBar_sim: ["statusBarSimStatus", "statusBarSimCarrierBlockedStatus", "statusBarConnectionState"]
+						},
+						statusBar_airplane_grp : {
+							statusBar_airplane : ["statusBarAirplaneMode"]
+				},
+                        statusBar_ethernet_grp : {
+                                statusBar_ethernet : ["statusBarEthernetPortEnabled"]
+						}
+					}
+				}
+
+			},
+			simNoSimText            : '<tmpl_var _("webui", "status_bar_sim_status_no_sim_text")>',
+			simPinLockedText        : '<tmpl_var _("webui", "status_bar_sim_status_pin_locked_text")>',
+			simPukLockedText        : '<tmpl_var _("webui", "status_bar_sim_status_puk_locked_text")>',
+			simInvalidText          : '<tmpl_var _("webui", "status_bar_sim_status_invalid_sim_text")>',
+			simRestrictedText       : '<tmpl_var _("webui", "status_bar_sim_status_restricted_sim_text")>',
+			simErrorText            : '<tmpl_var _("webui", "status_bar_sim_status_sim_error_text")>',
+			simPairLockedText       : '<tmpl_var _("webui", "status_bar_sim_status_paring_invalid_text")>',
+			wanNoServiceText        : '<tmpl_var _("webui", "status_bar_no_service_text")>',
+			wanSearchingText        : '<tmpl_var _("webui", "status_bar_searching_text")>',
+			connectedDevicesMaxText : '<tmpl_var _("webui", "status_bar_connected_devices_max")>',
+			successCallback         : statusBarSuccess,
+			errorCallback           : statusBarError,
+			timeoutCallback         : statusBarError
+		});
+
+		if ($("html").hasClass("rtl")) {
+		$( ".tooltip-help" ).tooltip({
+			tooltipClass: "uitooltip",
+			position: {
+					my: "right top",
+					at: "left+5 top-5"
+			},
+			open: function() {
+					$(this).removeAttr( "title" );
+			}
+		});
+		} else {
+		$( ".tooltip-help" ).tooltip({
+			tooltipClass: "uitooltip",
+			position: {
+				my: "left top",
+				at: "right+5 top-5"
+				},
+				open: function () {
+					$(this).removeAttr("title");
+			}
+		});
+		}
+		
+		
+		$(".ui-helper-hidden-accessible").css({"position": "absolute", "left":"-999em"});
+
+		var animationDuration = 100;
+		var tier1Items = $(".tier_1 #navigationTabsOne .tabitem");
+		var tier1StartPosition = 0;
+		var tier1EndPosition = 0;
+		var totalTier1TabsWidth = 0;
+		var tier1TabsWidthArray = [];
+		var tier1TabsWidth = $(".tier_1 .tabs").width();
+		var tier1HasActiveClass = false;
+		tier1Items.each(function(idx, element) {
+			tier1TabsWidthArray.push($(this).outerWidth(true));
+			totalTier1TabsWidth += $(this).outerWidth(true);
+
+			if (totalTier1TabsWidth < tier1TabsWidth) {
+				tier1EndPosition += 1;
+				if (!tier1HasActiveClass) {
+					tier1HasActiveClass = $(this).hasClass("active");
+				}
+			}
+
+		});
+
+		// if(totalTier1TabsWidth < tier1TabsWidth) {
+		// 	$("#tier1.arrow").css("display", "none");
+		// } else {
+			// $("#tier1.right-move").click(function() {
+			// 	if (tier1EndPosition != tier1TabsWidthArray.length) {
+			// 		var movableWidth = 0;
+			// 		for (var i = tier1StartPosition; i < tier1EndPosition; i++) {
+			// 			movableWidth += tier1TabsWidthArray[i];
+			// 		}
+
+			// 		tier1Items.animate({"left": "-=" + movableWidth + "px"}, animationDuration);
+
+			// 		tier1StartPosition = tier1EndPosition;
+			// 		tier1Items.each(function(idx, element) {
+			// 			if (idx == tier1StartPosition && totalTier1TabsWidth < tier1TabsWidth) {
+			// 				tier1EndPosition = tier1StartPosition + 1;
+			// 			}
+			// 		});
+			// 	}
+			// });
+
+			// $("#tier1.left-move").click(function() {
+			// 	if (tier1StartPosition != 0) {
+			// 		var movableWidth = 0;
+			// 		tier1EndPosition = tier1StartPosition;
+			// 		var newtier1StartPosition = 0;
+			// 		for (var i = tier1StartPosition - 1; i >= 0; i--) {
+			// 			if (movableWidth <= tier1TabsWidth) {
+			// 				movableWidth += tier1TabsWidthArray[i];
+			// 				newtier1StartPosition = i;
+			// 			}
+			// 		}
+
+			// 		tier1Items.animate({"left": "+=" + movableWidth + "px"}, animationDuration);
+			// 		tier1StartPosition = newtier1StartPosition;
+			// 	}
+			// });
+		// }
+
+		// if (!tier1HasActiveClass) {
+		// 	$("#tier1.right-move").trigger("click");
+		// }
+
+		// var tier2Items = $(".tier_2 #navigationTabsTwo .tabitem");
+		// var tier2StartPosition = 0;
+		// var tier2EndPosition = 0;
+		// var totalTier2TabsWidth = 0;
+		// var tier2TabsWidthArray = [];
+		// var tier2TabsWidth = $(".tier_2 .tabs").width();
+		// var tier2HasActiveClass = false;
+		// tier2Items.each(function(idx, element) {
+		// 	if (!$(this).hasClass("settings-advanced-bengal-advanced")) {
+		// 		tier2TabsWidthArray.push($(this).outerWidth(true));
+		// 		totalTier2TabsWidth += $(this).outerWidth(true);
+		// 		if (totalTier2TabsWidth < tier2TabsWidth) {
+		// 			tier2EndPosition += 1;
+		// 			if (!tier2HasActiveClass) {
+		// 				tier2HasActiveClass = $(this).hasClass("active");
+		// 			}
+		// 		}
+		// 	}
+		// });
+
+		// if(totalTier2TabsWidth < tier2TabsWidth) {
+		// 	$("#tier2.arrow").css("display", "none");
+		// } else {
+			// $("#tier2.right-move").click(function(){
+			// 	if (tier2EndPosition != tier2TabsWidthArray.length) {
+			// 		var movableWidth = 0;
+			// 		for (var i = tier2StartPosition; i < tier2EndPosition; i++) {
+			// 			movableWidth += tier2TabsWidthArray[i];
+			// 		}
+
+			// 		tier2Items.animate({"left": "-=" + movableWidth + "px"}, animationDuration);
+
+			// 		tier2StartPosition = tier2EndPosition;
+			// 		tier2Items.each(function(idx, element) {
+			// 			if (idx == tier2StartPosition && totalTier2TabsWidth < tier2TabsWidth) {
+			// 				tier2EndPosition = tier2StartPosition + 1;
+			// 			}
+			// 		});
+			// 	}
+			// });
+			
+			// $("#tier2.left-move").click(function(){
+			// 	if (tier2StartPosition != 0) {
+			// 		var movableWidth = 0;
+			// 		tier2EndPosition = tier2StartPosition;
+			// 		var newtier2StartPosition = 0;
+			// 		for (var i = tier2StartPosition - 1; i >= 0; i--) {
+			// 			if (movableWidth <= tier2TabsWidth) {
+			// 				movableWidth += tier2TabsWidthArray[i];
+			// 				newtier2StartPosition = i;
+			// 			}
+			// 		}
+
+			// 		tier2Items.animate({"left": "+=" + movableWidth + "px"}, animationDuration);
+			// 		tier2StartPosition = newtier2StartPosition;
+			// 	}
+			// });
+		// }
+
+		// if (!tier2HasActiveClass) {
+		// 	$("#tier2.right-move").trigger("click");
+		// }
+		
+	});
+
+	<tmpl_if IN_SET("wifi_settings", gPageId)>
+	var validated = false;
+	var willDisconnect = false;
+	var wificombined = {
+		setDisconnect : function(isDisconnect)
+		{
+			if (isDisconnect && willDisconnect) {
+				$("#intro_lost_connection").show();
+				$("#intro").hide();
+			} else {
+				if (!isDisconnect && willDisconnect) {
+					willDisconnect = false;
+					$("#intro_lost_connection").hide();
+					$("#intro").show();
+				}
+			}
+		}
+	};
+	</tmpl_if>
+
+	// statusBar ajax success callback.
+	function statusBarSuccess()
+	{
+		$("#status_bar").show();
+		<tmpl_if IN_SET("wifi_settings", gPageId)>
+			wificombined.setDisconnect(false);
+		</tmpl_if>
+	}
+
+	// statusBar ajax error/timeout callback.
+	function statusBarError()
+	{
+		$("#status_bar").hide();
+		if (typeof notifications !== "undefined") notifications.showMiFiUnreachableMessage();
+		<tmpl_if IN_SET("wifi_settings", gPageId)>
+			wificombined.setDisconnect(true);
+		</tmpl_if>
+	}
+
+	// Open and close mobile slide out panels.
+	function toggleMobilePanels($el, scrollToTop)
+	{
+		if (typeof scrollToTop === "undefined") scrollToTop = false;
+		var $otherPanels = $(".mobile_panel").not($el);
+		var panelWidth = "-" + $el.outerWidth(true) + "px";
+		if ($("html").hasClass("rtl")) {
+			var cssOptions = { "right" : panelWidth, "display" : "block" };
+			var animOptionsShow = { "right" : "0px" };
+			var animOptionsHide = { "right" : panelWidth };
+		} else {
+			var cssOptions = { "left" : panelWidth, "display" : "block" };
+			var animOptionsShow = { "left" : "0px" };
+			var animOptionsHide = { "left" : panelWidth };
+		}
+		if ($el.is(":hidden")) {
+			$el.css(cssOptions);
+			setTimeout(function(){
+				$el.animate(animOptionsShow, {
+					duration: 150,
+					complete : function(){
+						closeMobilePanels($otherPanels, scrollToTop);
+					}
+				});
+			}, 20);
+		} else {
+			$el.animate(animOptionsHide, {
+				duration: 150,
+				complete : function(){
+					setTimeout(function(){
+						$el.hide(0);
+					}, 20);
+					closeMobilePanels($otherPanels, scrollToTop);
+				}
+			});
+		}
+	}
+
+	// Close mobile slide out panels.
+	function closeMobilePanels($el, scrollToTop)
+	{
+		$el.each(function(i) {
+			var $myEl = $(this);
+			if (!$myEl.is(":hidden")) {
+				var panelWidth = "-" + $myEl.outerWidth(true) + "px";
+				if ($("html").hasClass("rtl")) {
+					var animOptionsHide = { "right" : panelWidth };
+				} else {
+					var animOptionsHide = { "left" : panelWidth };
+				}
+				$myEl.animate(animOptionsHide, {
+					duration: 150,
+					complete : function(){
+						setTimeout(function(){
+							$myEl.hide(0);
+							if (scrollToTop) window.scrollTo(0, 0);
+						}, 20);
+					}
+				});
+			}
+		});
+	}
+
+	// For tables that are wider than the display, we need to be able to scroll the table horizontally.
+	// This function works with a div wrapped around a table. This div uses the class "wideTableWrapper".
+	// The wrapper div needs to determine its width dynamically. This function determines this width based on the parent div.
+	function adjustWideTableWrap($wrapper, $parent)
+	{
+		var ws = $(window).width();
+		$wrapper.width($parent.width());
+		$(window).on("resize", function() {
+			if ( ws != $(window).width() ) {
+				ws = $(window).width();
+				$wrapper.width($parent.width());
+			}
+		});
+	}
+
+	$(function()
+	{
+		// Determine wideTableWrap div width dynamically.
+		adjustWideTableWrap($("div.wideTableWrap"), $("div.wideTableWrap").parents("div"));
+
+		// Add status bars to page
+		$("#status_bar").statusBar("attach", "headerStatusBar");
+		$("#mobile_status_bar").statusBar("attach", "mobileStatusBar");
+
+		// Open and close mobile menu panel.
+		// $("#toggle_mobile_menu").on("click", function(e) {
+		// 	toggleMobilePanels($("#mobile_menu"));
+		// 	$(this).toggleClass("opened closed");
+		// });
+
+		// Close Mobile Panels when help/login/logout/adminsettings/restart/messages link is clicked.
+		// $("#mobile_menu .helpLink, #mobile_menu .login, #mobile_menu .logout,  #mobile_menu .admin_settings,  #mobile_menu .restart_jetpack,  #mobile_menu #messages").on("click", function(e) {
+		// 	e.preventDefault();
+		// 	closeMobilePanels($("#mobile_menu"), false);
+		// 	$("#toggle_mobile_menu").removeClass("opened closed").addClass("closed");
+		// });
+
+		// Close mobile panels when clicking outside of them.
+		// $(document).on("click", function(e) {
+		// 	var container = $(".mobile");
+		// 	if (!container.is(e.target) // if the target of the click isn't the container...
+		// 		&& container.has(e.target).length === 0) // ... nor a descendant of the container
+		// 	{
+		// 		closeMobilePanels($("#mobile_menu"), false);
+		// 		$("#toggle_mobile_menu").removeClass("opened closed").addClass("closed");
+		// 	}
+		// });
+
+		// Hide mobile menu on window width resize, in case the menu is visible when the user changes orientation.
+		var $hamburger = $(".hamburger");
+		var $mobileMenu = $("#mobile_menu");
+		$("#hamburger:after").hide(0);
+		$hamburger.on("click", function (e) {
+			if ($("#overlay").length == 0) {
+				$('<div id="overlay" class="hidden-md" />').insertAfter('#hamburger');
+				$("#hamburger:after").show(0);
+			}
+
+			$hamburger.toggleClass("is-active");
+			if ($hamburger.hasClass('is-active')) {
+				$("html").css("overflow", "hidden");
+				$('#hamburger').css('width', '250px');
+				$('#overlay').show();
+			   // console.log("active");
+				$mobileMenu.css({
+					display: "block",
+					width: "250px"
+		});
+			} else {
+			   //console.log("Closed");
+				$mobileMenu.css({
+					width: "0px",
+					display: "none"
+				});
+				$('#hamburger').css('width', '');
+				$('#overlay').hide();
+				$("html").css("overflow", "inherit");
+			}
+
+			$("#mobile_menu").find("span.active").each(function () {
+				$(this).addClass("down");
+		});
+		});
+		// Close mobile panels when clicking outside of them.
+		$(document).on("click", function(e) {
+			var container = $("#hamburger");
+			if (!container.is(e.target) // if the target of the click isn't the container...
+				&& container.has(e.target).length === 0) // ... nor a descendant of the container
+			{
+				if ($hamburger.hasClass('is-active')) {
+				 //   console.log("active");
+					$mobileMenu.css({
+						width: "0px",
+						display: "none"
+					});
+					$hamburger.toggleClass("is-active");
+					$('#hamburger').css('width', '');
+					$('#overlay').hide();
+					$("html").css("overflow", "inherit");
+				}
+			}
+		});
+
+		// Close Mobile Panels when help/login/logout/adminsettings/restart/messages link is clicked.
+		$("#mobile_menu .helpLink, #mobile_menu .login, #mobile_menu .logout,  #mobile_menu .admin_settings,  #mobile_menu .restart_jetpack,  #mobile_menu #messages").on("click", function(e) {
+			e.preventDefault();
+			if ($hamburger.hasClass('is-active')) {
+				 //   console.log("active");
+					$mobileMenu.css({
+						width: "0px",
+						display: "none"
+					});
+					$hamburger.toggleClass("is-active");
+					$('#hamburger').css('width', '');
+					$('#overlay').hide();
+					$("html").css("overflow", "inherit");
+				}
+		});
+		
+
+		$(window).on("resize", function() {
+			if (($(window).width() <= 1024)) {
+				$("#hamburger").show();
+				if ($('.hamburger').hasClass("is-active")) {
+					$("html").css("overflow", "inherit");
+					$('#hamburger').css('width', '');
+				$("#mobile_menu").hide(0);
+				$("#toggle_mobile_menu").removeClass("opened closed").addClass("closed");
+					$(".hamburger").toggleClass("is-active");
+					if ($("#overlay").length > 0) {
+						$('#overlay').hide();
+					}
+				}
+			} else {
+				$("#mobile_menu, #hamburger").hide(0);
+			}
+		});
+
+		// Menu Accordion.
+		$("#mobile_navigation a.parent").on("click", function(e) {
+			e.preventDefault();
+			var closer = ($("html").hasClass("rtl")) ? "left" : "right";
+			var $icon = $(this).find("span.indicator");
+			var $target = $(this).next("ul");
+			var level = $target.attr("class");
+			var $siblings = $(this).closest("ul").find("ul." + level);
+			var $nonTargetSiblings = $siblings.not($target);
+			if ($target.is(":visible")) {
+				$icon.removeClass("down active").addClass(closer);
+				$target.slideUp();
+			} else {
+				$siblings.prev("a.parent").find("span.indicator").removeClass("down active").addClass(closer);
+				if ($nonTargetSiblings.length == 0) {
+					$icon.removeClass(closer + " active").addClass("down");
+					$target.slideDown();
+				} else {
+					$nonTargetSiblings.slideUp(400, function() {
+					$icon.removeClass(closer + " active").addClass("down");
+					$target.slideDown();
+					});
+				}
+			}
+		});
+
+		// Uniform Init -- We're using Uniform 2+.
+		if(jQuery.uniform) {
+			var uniEl = "select, textarea, input:not(.toggleSettingContainer input:checkbox)";
+
+			// As of Uniform 2+, only properties of $.uniform.defaults will be global.
+			$.uniform.defaults.selectAutoWidth = false;
+			$.uniform.defaults.resetSelector = 'input[type="reset"]';
+			$.uniform.defaults.fileButtonHtml = '<tmpl_var _("webui", "scripts_choose_file_btn_text")>';
+			$.uniform.defaults.fileDefaultHtml = '<tmpl_var _("webui", "scripts_no_file_selected_default_text")>';
+			$.uniform.defaults.filter = uniEl;
+
+			// Instantiate Uniform on page load.
+			$(uniEl).uniform();
+
+			// If using uniform on buttons, we need to add the button element class to the div wrapper.
+			$("button.primary").closest("div.button").addClass("primary");
+			$("button.secondary").closest("div.button").addClass("secondary");
+			$("button.multi").closest("div.button").addClass("multi");
+			$("button.cancel").closest("div.button").addClass("cancel");
+		}
+
+		// If Internet Explorer is in compatibility mode or IE7, display a warning.
+		if( (navigator.userAgent.indexOf("MSIE 7.0") > -1)
+			|| ( (document.documentMode) && (document.documentMode == 7) ) ) {
+			modalPopup.createWindow(
+				"<tmpl_var _('webui', 'compat_mode_confirm_modal_title')>",
+				"<p><tmpl_udf GET_PO_TEXT('compat_mode_confirm_modal_text', gProductName, gProductNumber)></p>",
+				430, 300,
+				[
+					{
+						text : "<tmpl_var _('webui', 'compat_mode_confirm_modal_confirm_btn')>",
+						className : "primary"
+					}
+				]
+			);
+		}
+
+		// Add events to all of our help links to open a modal popup displaying help information
+		$(document).on("click","a.helpLink, a.helpBtn, a.helpAnchor", function(e) { 
+				e.preventDefault();
+			// Add an element for help
+			var url = $(this).attr("href");		
+			var loadUrl = url.replace(/#/, " #");
+			var hw = $('<div id="help_wrapper"></div>').appendTo('body').load(loadUrl, function(response, status, xhr) {
+				if (status === "error") {
+					$(this).html("<p><tmpl_var _('webui', 'scripts_help_content_not_found_error_text')></p>");
+				}
+
+				modalPopup.createWindow(
+					"<tmpl_var _('webui', 'scripts_help_modal_title')>",
+					$(this),
+					750, 'auto',
+					[],
+					null,
+					function() { hw.remove(); }
+				);
+			});
+		});
+
+		//Adding a class to check box parent
+		$('input[type="checkbox"]').parents('.input').addClass('m_chkbox_widthauto');
+
+		// fixedFooter(); // Call on Body Load
+		Breadcrumb();
+		$(window).bind('resize', function() {
+			// Call on Body Resize
+			//fixedFooter();
+			Breadcrumb();
+		});
+
+		function fixedFooter() 
+		{
+			var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+			if (!isMobile) {
+				// Check #main Height and align Footer at the Bottom
+				var $mainHeight = $("#main").height();
+				if ($mainHeight <= 600) {
+					$(".footer").addClass("footer_fixed");
+					$("#main").css("padding-bottom","86px")
+				} else{
+					$(".footer").removeClass("footer_fixed");
+					$("#main").css("padding-bottom","inherit")
+				}
+			}
+		}
+		function Breadcrumb() {
+			var bodyID = $("body").attr("id");
+			if (bodyID != "apps_home") {
+		/* Breadcrumb for Mobile UI */
+		$(".breadcrumb").remove();
+				if (($(window).width() <= 1024)){
+					//Home
+					var homelinkText = $('.menu-home-mobile.first').find('a').text().split(" ").pop(); //TODO Validate with RTL
+					var home = '<a href ="/">' + homelinkText + '</a>'
+					var r = /<(\w+)[^>]*>.*<\/\1>/gi;
+					if ($("#mobile_navigation").find("li.parent.active").length > 0 ) {
+						var url = $("#mobile_navigation").find("li.parent.active").find("a.parent").attr("href");
+						var menuLink = $("#mobile_navigation").find("li.parent.active").find("a.parent").html().replace(r, "");
+					}
+					var activeParent = '<a href ="' + url + '">' + menuLink + '</a>'
+					var homeLink = "" + home + "&nbsp;&raquo;&nbsp;" + activeParent + "";
+
+					// console.log(homeLink);
+		if (!url) {
+						homeLink = home;
+		}
+		$("#pageHeadCol").append('<div class="breadcrumb">' + homeLink + '</div>');
+		var activeTab;
+		var menuLength = $("ul[id^='navigationTabs']").length;
+		if (!menuLength) {
+			activeTab = $("h1.pageHead").text();
+			$(".breadcrumb").append(' &nbsp;&raquo;&nbsp;' + activeTab + '</span>');
+		} else {
+			if (menuLength > 1) {
+				$("ul[id^='navigationTabs']").each(function (i) {
+					if (i > 0) {
+						activeTab = $(this).find('li.active a').html();
+						$("h1.pageHead").html(activeTab); // Change H1 to Active Section
+					} else {
+						activeTab = $(this).find('li.active').html();
+					}
+					$(".breadcrumb").append(' &nbsp;&raquo;&nbsp;' + activeTab + '</span>');
+				});
+			} else {
+				$("ul[id^='navigationTabs']").each(function (i) {
+					activeTab = $(this).find('li.active a').html();
+					$(".breadcrumb").append(' &nbsp;&raquo;&nbsp;' + activeTab + '</span>');
+					$("h1.pageHead").html(activeTab); // Change H1 to Active Section
+				});
+						}
+			}
+		}
+	}
+}
+	});
+
+/* ]]> */
+</script>
+
+<tmpl_comment>Loop through and link any application scripts.</tmpl_comment>
+<tmpl_foreach gJsList as js>
+	<script type="text/javascript" src="<tmpl_var js.jsPath>"></script>
+</tmpl_foreach>

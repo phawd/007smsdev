@@ -1,0 +1,39 @@
+<div id="device_info">
+	<h1><tmpl_udf GET_PO_TEXT("device_info_menu_text", gProductName)></h1>
+						
+	<h2><tmpl_var truncate(_("webui", "device_info_manufacturer_label"), (size(_("webui", "device_info_manufacturer_label")) - size(":")))></h2>
+		<p>Der Hersteller dieses Gerät.</p>
+	<h2><tmpl_var truncate(_("webui", "device_info_model_label"), (size(_("webui", "device_info_model_label")) - size(":")))></h2>
+		<p>Die offizielle Modellbezeichnung und -nummer für dieses Gerät.</p>
+			
+	<tmpl_if showSDMVersion>
+		<h2><tmpl_var truncate(_("webui", "device_info_global_sdm_version_label"), (size(_("webui", "device_info_global_sdm_version_label")) - size(":")))></h2>
+		<p>Diese Versionsnummer bezieht sich auf die Geräteverwaltungskomponente. Die Softwarekomponente für die Geräteverwaltung wird bei Bedarf automatisch aktualisiert.</p>
+	</tmpl_if>
+	<div class="blockgroup">
+		<h3><tmpl_var truncate(_("webui", "device_info_modem_version_label"), (size(_("webui", "device_info_modem_version_label")) - size(":")))></h3>
+		<p>Für die 4G-Modemkomponente ist das die Version der derzeit installierten Firmware (Software).</p>
+		<tmpl_if showWifiFwVersion>
+			<h3>WLAN-Firmwareversion</h3>
+			<p>Für die WLAN-Komponente ist das die Version der derzeit installierten Firmware (Software).</p>
+		</tmpl_if>
+		<tmpl_if showMifiOsVersion>
+			<h3><tmpl_var truncate(_("webui", "device_info_os_version_label"), (size(_("webui", "device_info_os_version_label")) - size(":")))></h3>
+			<p>Dies ist die Versionsnummer für das Betriebssystem und seine Komponenten.</p>
+		</tmpl_if>
+		<tmpl_if ShowWebUiVersion>
+			<h3><tmpl_var truncate(_("webui", "device_info_web_ui_version_label"), (size(_("webui", "device_info_web_ui_version_label")) - size(":")))></h3>
+			<p>Die Versionsnummer für die Jetpack-Webschnittstelle.</p>
+		</tmpl_if>
+		<tmpl_if showLcdVersion>
+			<h3><tmpl_var truncate(_("webui", "device_info_lcd_ui_version_label"), (size(_("webui", "device_info_lcd_ui_version_label")) - size(":")))></h3>
+			<p>Die Versionsnummer für die Software, die den Gerätebildschirm und die Benutzerinteraktion mit dem Bildschirminhalt steuert.</p>
+		</tmpl_if>
+		<h3><tmpl_var truncate(_("webui", "device_info_cute_version_label"), (size(_("webui", "device_info_cute_version_label")) - size(":")))></h3>
+		<p>Die Version der derzeit installierten Software. Das ist die Hauptversionsnummer, die folgenden Versionsinformationen beziehen sich auf verschiedene Softwarekomponenten.</p>
+		<h3><tmpl_var truncate(_("webui", "device_info_pri_version_label"), (size(_("webui", "device_info_pri_version_label")) - size(":")))></h3>
+		<p>Das bezeichnet die Konfigurationsversion, die derzeit auf dieses Gerät angewendet wird.</p>
+	</div>
+
+</div>
+	

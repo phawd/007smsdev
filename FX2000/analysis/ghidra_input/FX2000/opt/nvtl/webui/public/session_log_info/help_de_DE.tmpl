@@ -1,0 +1,19 @@
+<!-- Internet  Sessions -->
+<div id="session_log_info">
+	<h1><tmpl_var _("webui", "session_log_info_menu_text")></h1>
+
+	<p>Folgende Daten sind im Sitzungsprotokoll enthalten:</p>
+	<p>- Datum und Uhrzeit (wann die Verbindung gestartet wurde)</p>
+	<p>- Dauer (gleiches Format wie die Informationen zur aktuellen Sitzung)</p>
+	<p>- Empfangen (Format wie für die aktuelle Sitzung)</p>
+	<p>- Übermittelt (Format wie für die aktuelle Sitzung)</p>
+	<p>- Datenvolumen insgesamt (Summe von Rx und Tx, Format wie für aktuelle Sitzungsinformationen)</p>
+	<tmpl_if RoamingStatusShow>
+		<p>- Roaming (Roaming / Teilweise / leer) Leer = Heimnetzwerk </p>
+	</tmpl_if>
+	<p>- IPv4 (IPv4-WWAN-IP-Adresse)</p>
+	<p>- IPv6 (IPv6-WWAN-IP-Adresse)</p>
+
+	<p>Das Protokoll ist nach Datum geordnet.</p>
+	<p>Der Benutzer kann die Reihenfolge nicht ändern, und es gibt keine Optionen in Bezug auf das Sitzungsprotokoll.</p>
+</div>

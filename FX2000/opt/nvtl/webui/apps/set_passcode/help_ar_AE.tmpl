@@ -1,0 +1,33 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>كلمة مرور المسؤول</h1>
+	<h2>نظرة عامة</h2>
+	<p>تستخدم كلمة مرور المسؤول لتسجيل الدخول إلى موقع مسؤول <tmpl_var _("webui", "webui_product_name")> هذا. تتيح صفحة <em>كلمة مرور المسؤول</em> لك بتغيير كلمة مرور المسؤول وتعيين بعض خيارات الأمان المتعلقة بكلمة مرور المسؤول.</p>
+
+
+	<h2>تغيير كلمة مرور مسؤول <tmpl_var _("webui", "webui_product_name")></h2>
+	<p>للتغيير إلى كلمة مرور المسؤول الحالية، يجب عليك أولاً إدخال كلمة مرور المسؤول الحالية في الحقل أدناه. بعد ذلك، سيتم التحديث وتوفير خيار تعيين كلمة مرور مسؤول جديدة وسؤال أمان للاستخدام في حالة ضياع كلمة مرور المسؤول.</p>
+
+	<h3>كلمة مرور مسؤول<tmpl_var _("webui", "webui_product_name")> الحالية</h3>
+	<p>أدخِل كلمة مرور مسؤول <tmpl_var _("webui", "webui_product_name")> الحالية في هذا الحقل. لاحظ أنه إذا أدخلت قيمة غير صحيحة عدة مرات، فسيتم حظرك من الوصول إلى موقع مسؤول <tmpl_var _("webui", "webui_product_name")> هذا. لإزالة هذا الحظر، يجب أن يتولى <tmpl_var _("webui", "webui_product_name")> إعادة تشغيله.</p>
+	<tmpl_if showDisplayPascode>
+		<h2>عرض كلمة مرور مسؤول <tmpl_var _("webui", "webui_product_name")></h2>
+		<p>في حالة تشغيل هذا الإعداد، فسيتم عرض *********. في حالة إيقاف تشغيل هذا الإعداد، يمكن قراءة كلمة مرور المسؤول على شاشة Jetpack.</p>
+	</tmpl_if>
+
+	<h2>تغيير كلمة مرور مسؤول <tmpl_var _("webui", "webui_product_name")></h2>
+	<h3>كلمة مرور المسؤول الجديدة</h3>
+	<p>أدخل كلمة مرور المسؤول الجديدة باستخدام الأحرف والأرقام ورموز علامات الترقيم القياسية فقط. يجب أن تتكون كلمة المرور من 8 أحرف على الأقل.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p>أعد إدخال كلمة مرور المسؤول الجديدة في هذا الحقل.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>يتم استخدام سؤال الأمان هذا في حالة فقدان كلمة مرور المسؤول، واستخدام الخيار "I forgot the Admin Password (لقد نسيت كلمة مرور المسؤول)". حدد السؤال المطلوب، وأجِب عنه في الحقل الوارد أدناه.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>قدم إجابة لسؤال الأمان المحدد أعلاه. لاحظ أن الإجابات حساسة لحالة الأحرف.</p>
+
+</div>
+<!-- id="set_passcode" -->
+

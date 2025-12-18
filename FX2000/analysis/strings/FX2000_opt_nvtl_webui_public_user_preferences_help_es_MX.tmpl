@@ -1,0 +1,28 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+	<p>Esta pantalla contiene muchas opciones que le permiten configurar el comportamiento de dispositivo para satisfacer mejor sus necesidades.</p>
+	<tmpl_if showDeviceName>
+                <h3><tmpl_var truncate(_("webui", "preferences_device_name_label"),(size(_("webui", "preferences_device_name_label")) - size(":")))></h3>
+                <p>
+                        El Nombre del dispositivo indica el nombre de la red del dispositivo y la URL para acceder a la interfaz de usuario de administraci
+n web local del dispositivo.
+                </p>
+        </tmpl_if>
+	<h3>Idioma</h3>
+	<p>Seleccione el idioma deseado. </p>
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+	<p> Especifique el formato en el cual se muestra la fecha en esta interfaz web. </p>
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+	<p> Especifique el formato en el cual se muestra la hora en esta interfaz web. </p>
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+	<p> Seleccione la unidad que se utilizar
+ para la altitud y la precisi
+n del GPS. </p>
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+	<p> Especifique c
+mo se muestran los decimales. Se puede seleccionar punto (.) o coma (,) para usar como unidad decimal. </p>
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+			El indicador de Ethernet se muestra en la barra de estado cuando el puerto de Ethernet est
+ habilitado; oculto de lo contrario
+	</tmpl_if>

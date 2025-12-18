@@ -1,0 +1,72 @@
+<!-- wifi_primary_settings -->
+<div id="wifi_primary_settings">
+	<h1>Wi-Fi-プライマリーネットワーク</h1>
+	
+	<h2>概要</h2>
+	<p>
+		<tmpl_var _("webui", "webui_product_name_with_suffix")> プライマリーWi-Fiネットワークに接続するには、接続されたデバイスがこの画面に表示されるWi-Fi設定を使用する必要があります。 これらの設定を変更すると、既存の接続済みデバイスの接続が失われる可能性があります。
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_ssid_label")></h3>
+	<p>
+		Wi-Fiネットワークのネットワーク名またはSSIDを設定します。 適切な名前を入力します。 名前は最高32文字まで入力できます。
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_security_label")></h3>
+	<p>
+		Wi-Fiセキュリティの目的のオプションを選択します。
+	</p>
+
+	<ul>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> 第三者があなたのWi-Fiトラフィックを監視し、あなたのデータプランを使用してインターネットにアクセスすることを許可します。 可能な限り、このオプションの使用は避けてください。
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> は最新かつ最も安全な方法であり、可能であれば使用してください。
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> 古いデバイスの一部がWPA2をサポートしていない場合に使用できます。
+		</li>
+		<li>
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> WPA2およびWPA3苦情デバイスに使用できます。
+		</li>
+	</ul>	
+	
+	<h3><tmpl_var _("webui", "wifi_primary_password_label")></h3>
+	<p>
+		このフィールドにWi-Fiパスワードを入力してください。 また、「新しいキーの生成」ボタンを使用して、強力なランダムパスワードをこのフィールドに挿入することもできます。 このオプションを使用する場合は、変更を保存してください。
+	</p>
+
+	<p>
+		これらの設定はデフォルトでは非表示になっていますが、見出し/リンクをクリックして表示することができます。 通常、これらのオプションはデフォルト値のままにすることができますが、必要に応じて、特定の環境に合わせて調整できます。
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_ssid_label", gProductName)></h3>
+	<p>
+		この設定がチェックされている場合、Wi-Fi名は <tmpl_var _("webui", "webui_product_name_with_suffix")> タッチ画面、「Wi-Fi」メニューオプションを使用して読み取り可能です。 オフの場合、名前は******と表示されます。
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_password_label", gProductName)></h3>
+	<p>
+		この設定がチェックされている場合、Wi-Fiパスワードは <tmpl_var _("webui", "webui_product_name_with_suffix")> タッチ画面、「Wi-Fi」メニューオプションを使用して読み取り可能です。 オフの場合、パスワードは******と表示されます。
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_broadcast_ssid_label")></h3>
+	<p>
+		この設定がオンの場合、このWi-Fiネットワークは、接続されたデバイスで利用可能なWi-Fiネットワークのリストに表示されます。 オフにすると、このネットワークは非表示になります。
+	</p>
+	
+	<tmpl_if showWiFiPrimaryWPS>
+	<h3><tmpl_var _("webui", "wifi_primary_wps_label")></h3>
+	<p>
+		Wi-Fi Protected Setup（WPS）は、手動でネットワークキーを入力しなくてもWi-FiデバイスがWi-Fiネットワークに接続できるようにするシステムです。 WPSを使用する場合は、このオプションをオンにします。
+	</p>
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_primary_privacy_label")></h3>
+	<p>
+		この設定をオンにすると、接続されている各デバイスは、他のすべての接続済みのデバイスから分離されます。 これにより、接続済みのデバイスが不明であるか、完全に信頼されていない場合に、さらにセキュリティが強化されます。 通常の操作では、これをオフにする必要があります。
+	</p>	
+</div>
+
+<!-- id="wifi_primary_settings" -->
+

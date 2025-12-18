@@ -1,0 +1,18 @@
+<!-- Internet  Sessions -->
+<div id="session_log_info">
+	<h1><tmpl_var _("webui", "session_log_info_menu_text")></h1>
+
+	<p>Le journal de la session contient les données suivantes :</p>
+	<p>– Date et heure : la date et l’heure de début de la session Internet.</p>
+	<p>– Durée : la durée totale de la session Internet.</p>
+	<p>– Données reçues : la quantité de données reçues pour la session Internet. Une fois la connexion établie, ce compteur part de zéro.</p>
+	<p>– Données transmises : la quantité de données transmises pour la session Internet. Une fois la connexion établie, ce compteur part de zéro.</p>
+	<p>– Données totales : la quantité de données totales de la session Internet. Il s’agit de la somme des données reçues et des données transmises.</p>
+	<tmpl_if RoamingStatusShow>
+		<p>– Itinérance (itinérance/partiel/vide) vide = réseau domestique</p>
+	</tmpl_if>
+	<p>– IPv4  L’adresse IP pour la session.</p>
+	<p>– IPv6  L’adresse IPv6 globale pour la session (vide si l’IPv6 est désactivé ou n’est pas pris en charge par la connexion réseau ou l’opérateur actuel).</p>
+	<p>Les journaux sont classés par ordre chronologique. </p>
+	<p>L’utilisateur ne peut pas modifier l’ordre et il n’y a pas d’options relatives au journal de la session.</p>
+</div>

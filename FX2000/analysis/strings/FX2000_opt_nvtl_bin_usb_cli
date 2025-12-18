@@ -1,0 +1,169 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+usb_get_error_string
+usb_is_running
+usb_get_usb_tethering_feature
+usb_get_tether_enabled
+usb_set_tether_enabled
+usb_set_tether_enabled_temp
+usb_get_config
+convert_nwif_mode
+usb_get_state
+convert_default_mode
+convert_start_mode
+convert_temp_tether
+usb_start
+usb_stop
+usb_restart
+usb_mode_switch
+mifi_dbg_start
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+librt.so.1
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libfactory_reset_api.so
+librouter2_api.so
+libdmdb_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libwifi_api.so
+libccm2_api.so
+libemd_api.so
+libusb_api.so
+libcom_subsystem_api.so
+libcrypto.so.1.1
+libssl.so.1.1
+libpcap.so.1
+H	KxD	J{D
+Prints out usage and command listing
+print_error_codes
+Prints out error codes and descriptions
+is_running
+Tells if the associated process is running
+get_usb_tethering_feature
+Get USB tethering feature
+get_tether_enabled
+Get USB tether enabled setting
+set_tether_enabled
+Set USB tether enabled setting
+set_tether_enabled_temp
+Set USB tether enabled temporary setting
+get_config
+Get USB configuration
+get_state
+Get USB state
+Start USB gadget device
+Stop USB gadget device
+Restart USB gadget device
+mode_switch
+Switch USB modes
+ ---------------------------------------------------------------------------
+ %-25s - %s
+ ---------------------------------------------------------------------------
+%4d (%s)
+usb_is_running returned %d (%s)
+usb_get_usb_tethering_feature returned %d (%s)
+usb_tethering_feature=[%d]
+usb_get_tether_enabled returned %d (%s)
+tether_enabled=[%d]
+What is tether_enabled (1=on, 0=off): 
+usb_set_tether_enabled returned %d (%s)
+What is tether_enabled_temp (%d=on, %d=off): 
+usb_set_tether_enabled_temp returned %d (%s)
+usb_get_config returned %d (%s)
+vid=[%s]
+man=[%s]
+prod=[%s]
+ser=[%s]
+dm_olm_func=[%s]
+dm_olm_nt_func=[%s]
+dm_ftm_func=[%s]
+dm_ltm_func=[%s]
+dm_lpm_func=[%s]
+eum_olm_func=[%s]
+eum_lpm_func=[%s]
+ent_olm_func=[%s]
+dm_pid=[%s]
+eum_pid=[%s]
+eum_lpm_pid=[%s]
+ent_pid=[%s]
+nwif_mode=[%d][%s]
+ipa_enabled=[%d]
+auto_sample_period=[%d]
+auto_iterations=[%d]
+usb_get_state returned %d (%s)
+usb_default_mode=[%d][%s]
+enterprise_mode_enabled=[%d]
+mac_addr_host=[%s]
+mac_addr_dev=[%s]
+start_mode=[%d][%s]
+net_if_name=[%s]
+net_if_func_name=[%s]
+pid=[%s]
+function_list=[%s]
+usb_gadget_configured=[%d]
+auto_detect_running=[%d]
+usb_resumed_not_configured=[%d]
+usb_tether_change_pending=[%d]
+temp_tether=[%d][%s]
+What is start mode (%d=LPM, %d=FTM, %d=Online, %d=LTM): 
+usb_start returned %d (%s)
+usb_stop returned %d (%s)
+usb_restart returned %d (%s)
+What is switch mode (%d=EUM, %d=DBG, %d=ENT %d=P_ENT): 
+What is reboot (0 | 1): 
+usb_mode_switch returned %d (%s)
+command [%s]
+command [%s] not found.
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

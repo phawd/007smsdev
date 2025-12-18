@@ -1,0 +1,18 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<h2>Översikt</h2>
+	<p>Dessa SMS-meddelanden kommer normalt från din tjänsteleverantör. Du ska inte försöka svara och följaktligen finns det inte någon svarfunktion.</p>
+	<h2>Innehåll</h2>
+	<tmpl_if showMessageCounter>
+		<h3>Meddelanderäknare</h3>
+		<p>Två räknare upptill på skärmen indikerar antalet olästa (nya) meddelanden och det totala antalet meddelanden.</p>	
+		<p>Observera att alla meddelanden markeras som ”lästa” när de visas på den här skärmen.</p>
+	</tmpl_if>
+	<h3>Meddelandelista</h3>
+	<p>Alla meddelanden listas i datumordning. Olästa (nya) meddelanden indikeras med en ikon. Meddelanden markeras automatiskt som ”lästa” när de visas på den här sidan, så nästa gång sidan besöks kommer de inte längre att visas som olästa.</p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p>Den här knappen finns i slutet av meddelandelistan. Använd den efter behov för att radera alla meddelanden.</p>
+	</tmpl_if>
+</div>

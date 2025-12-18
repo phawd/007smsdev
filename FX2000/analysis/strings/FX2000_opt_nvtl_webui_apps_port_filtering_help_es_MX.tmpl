@@ -1,0 +1,179 @@
+<!-- Port Filtering -->
+<div id="port_filtering">
+	<h1>Filtrado de puertos</h1>
+	<h2>Descripci
+n general</h2>
+		Use la funci
+n de Filtrado de puertos seg
+n sea necesario para bloquear el tr
+fico saliente de Internet. Si se desactiva esta configuraci
+n, solo el tr
+fico de las aplicaciones seleccionadas puede acceder a Internet. El tr
+fico se identifica por n
+meros de puerto. 
+Algunas aplicaciones est
+n predefinidas. Puede definir aplicaciones adicionales, pero debe conocer los detalles del tr
+fico usado y generado por las aplicaciones que desea definir. 
+	<h2>Aplicaciones</h2>
+	<h3>Casillas de verificaci
+n de la aplicaci
+	<p>Use estas casillas de verificaci
+n a fin de permitir el acceso a Internet para cada aplicaci
+n mientras est
+ activada la funci
+n de Filtrado de puertos. El tr
+fico de las aplicaciones seleccionadas puede acceder a Internet. De lo contrario, el tr
+fico estar
+ bloqueado. 
+	<p>La siguiente tabla proporciona n
+meros de puerto e informaci
+n de protocolo para cada aplicaci
+n de filtrado de puertos detallada.</p>
+	<table class="portFilteringTable" id="">
+	 	<thead>
+			<tr class="">
+				<th class=""> Nombre de la aplicaci
+n</th>     
+		<th class="">Puerto</th>     
+		<th class="">TCP*</th>     
+		<th class="">STCP*</th>
+	     <th class="">UDP*</th>
+			</tr>
+		</thead>
+		<tbody>
+				<td> POP3</td>
+				<td> 110</td>
+				<td> S
+				<td> No</td>
+				<td> Asignado</td>
+			</tr>
+				<td> POP3S</td>
+				<td> 995</td>
+				<td> S
+				<td> No</td>
+				<td> S
+			</tr>
+				<td> IMAP</td>
+				<td> 143</td>
+				<td> S
+				<td> No</td>
+				<td> Asignado</td>
+			</tr>
+				<td> IMAPS</td>
+				<td> 993</td>
+				<td> S
+				<td> No</td>
+				<td> Asignado</td>
+			</tr>
+				<td> SMTP</td>
+				<td> 25</td>
+				<td> S
+				<td> No</td>
+				<td> Asignado</td>
+			</tr>
+				<td> SecureSMTP</td>
+				<td> 465</td>
+				<td> S
+				<td> No</td>
+				<td> No</td>
+			</tr>
+				<td> Control FTP (comando)</td>
+				<td> 21</td>
+				<td> S
+				<td> S
+				<td> Asignado</td>
+			</tr>
+				<td> Transferencia de datos del FTP</td>
+				<td> 20</td>
+				<td> S
+				<td> S
+				<td> Asignado</td>
+			</tr>
+				<td> HTTP</td>
+				<td> 80</td>
+				<td> S
+				<td> S
+				<td> Asignado</td>
+			</tr>
+				<td> HTTPS</td>
+				<td> 443</td>
+				<td> S
+				<td> S
+				<td> Asignado</td>
+			</tr>
+				<td> Telnet</td>
+				<td> 23</td>
+				<td> S
+				<td> No</td>
+				<td> Asignado</td>
+			</tr>
+		</tbody>
+	</table>
+	<p><b>S
+</b> indica que el protocolo est
+ estandarizado para el n
+mero de puerto.</p>
+	<p><b>No </b>indica que el protocolo no est
+ estandarizado para el n
+mero de puerto.</p>
+	<p><b>Asignado</b> indica que el n
+mero de puerto lo asigna la IANA (Autoridad de N
+meros Asignados en Internet) para el uso del protocolo, pero que es posible que no est
+ estandarizado.</p>
+	<h2>Aplicaciones personalizadas</h2>
+	<p>Esta funci
+n le permite definir sus propias aplicaciones (hasta 10). Una vez definidas, estas aplicaciones se pueden activar o desactivar de la misma manera que las aplicaciones predefinidas. Para definir una aplicaci
+n, debe conocer los puertos y el protocolo (TCP, UDP) usados por la aplicaci
+n para el tr
+fico saliente. Para comenzar, haga clic en el bot
+n <strong>Agregar aplicaci
+n personalizada</strong>, y luego proporcione los siguientes datos. 
+	<p>Tenga en cuenta que los cambios a una aplicaci
+n personalizada no se guardan hasta que se usa el bot
+Guardar cambios
+ para guardar todo el contenido de la p
+gina.</p>
+	<h3>Casilla de verificaci
+n de la aplicaci
+	<p>Use esta casilla de verificaci
+n para activar una aplicaci
+s de definirla. Si se selecciona, el tr
+fico de esta aplicaci
+n puede acceder a Internet. De lo contrario, el tr
+fico estar
+ bloqueado. 
+	<h3>Nombre de la aplicaci
+		Ingrese un nombre adecuado para la aplicaci
+n que define.
+	<h3>Rango de puertos (puerto inicial/puerto final)</h3>
+			Cada aplicaci
+n posee su propio rango de puertos.
+			Ingrese el comienzo y el final del rango de puertos para cada aplicaci
+		<div class="blockgroup">
+				<li>Para un 
+nico puerto, ingrese el n
+mero de puerto en los campos <strong>Puerto inicial</strong> y <strong>Puerto final</strong>.</li>
+				<li>Para un rango de puertos, ingrese el comienzo del rango en el campo <strong>Puerto inicial</strong> y el fin del rango en el campo <strong>Puerto final</strong>. </li>
+			</ul>
+		</div>
+	<h3>Iniciar puerto</h3>
+		Ingrese el comienzo del rango de n
+meros de puerto usado por el tr
+fico saliente para la aplicaci
+n personalizada que se est
+ agregando.
+	<h3>Puerto final</h3>
+		Ingrese el final del rango de n
+meros de puerto usado por la aplicaci
+		<b>NOTA:</b> Si la aplicaci
+n utiliza un solo puerto en lugar de un rango, escriba 
+un solo puerto
+	<h3>Protocolo</h3>
+		Seleccione el protocolo utilizado por el rango de puertos desde la lista desplegable (TCP, UDP o ambos). 
+	<h3>Eliminar</h3>
+	<p>Use esta casilla de verificaci
+n para eliminar una aplicaci
+n personalizada.
+	<p>NOTA: Haga clic en la pesta
+a Filtrado de puertos nuevamente para quitar las aplicaciones personalizadas eliminadas de la vista en la pantalla. </p>
+<!-- id="port_filtering" -->

@@ -1,0 +1,88 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+<tmpl_else>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	$(function()
+		checkForDisabled();
+		$("#internetProfileManualDns").change(checkForDisabled);
+	function checkForDisabled()
+		if ($("#internetProfileManualDns").is(":checked")) {
+			$("#internetProfileDnsAddress1, #internetProfileDnsAddress2").prop("disabled", false);
+		} else {
+			$("#internetProfileDnsAddress1, #internetProfileDnsAddress2").prop("disabled", true);
+			$(".inline_error").remove();
+			$("#internetProfileDnsAddress1").val("");
+			$("#internetProfileDnsAddress2").val("");
+		if (jQuery.uniform) $.uniform.update()
+	/* ]]> */
+</script>
+<tmpl_if errorCount>
+	<div class="notification app error">
+		<div class="notification_inner">
+				<tmpl_var _("webui", "webui_save_code_failed_text")>
+		</div>
+</tmpl_if>
+<tmpl_if gPostSuccess>
+	<div class="notification app success">
+		<div class="notification_inner">
+				<tmpl_var _("webui", "webui_save_code_success_text")>
+		</div>
+</tmpl_if>
+<tmpl_if isLocked>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+</tmpl_if>
+<tmpl_if showHeaderText>
+	<h2 class="sectionHead"><tmpl_var _("webui", "adv_manual_dns_menu_text")></h2>
+</tmpl_if>
+<div class="note">
+	<p><tmpl_udf GET_PO_TEXT("adv_manual_dns_intro_text", gProductName)></p>
+<form method="POST" action="<tmpl_udf GET_URI('manual_dns')>">
+	<fieldset class="first">
+		<div class="table">
+			<div class="form-group">
+				<label for="internetProfileManualDns"><tmpl_var _("webui", "adv_manual_dns_enable_label")></label>
+				<input type="checkbox" name="internetProfileManualDns" id="internetProfileManualDns"<tmpl_if IN_SET(internetProfileManualDns, "on")> checked="checked"</tmpl_if> />
+			</div>
+			<div class="form-group">
+					<label for="internetProfileDnsAddress1"><tmpl_var _("webui", "adv_manual_dns_address1_label")></label>
+				<tmpl_if showPlaceHolderText>
+						<input type="text" name="internetProfileDnsAddress1" id="internetProfileDnsAddress1" value="<tmpl_var internetProfileDnsAddress1>" placeholder='<tmpl_var _("webui", "adv_manual_dns_address1_help_text")>' <tmpl_if internetProfileDnsAddress1Error> class="error"</tmpl_if><tmpl_if IN_SET(internetProfileManualDns, "off")> disabled="disabled"</tmpl_if> />
+				<tmpl_else>
+						<input type="text" name="internetProfileDnsAddress1" id="internetProfileDnsAddress1" value="<tmpl_var internetProfileDnsAddress1>" <tmpl_if internetProfileDnsAddress1Error> class="error"</tmpl_if><tmpl_if IN_SET(internetProfileManualDns, "off")> disabled="disabled"</tmpl_if> />
+					<div class="help">
+						<tmpl_var _("webui", "adv_manual_dns_address1_help_text")>
+					</div>
+				</tmpl_if>
+				<tmpl_if internetProfileDnsAddress1Error>
+					<div class="inline_error">
+						<tmpl_var internetProfileDnsAddress1Error>
+					</div>
+				</tmpl_if>
+			</div>
+			<div class="form-group">
+					<label for="internetProfileDnsAddress2"><tmpl_var _("webui", "adv_manual_dns_address2_label")></label>
+				<tmpl_if showPlaceHolderText>
+						<input type="text" name="internetProfileDnsAddress2" id="internetProfileDnsAddress2" value="<tmpl_var internetProfileDnsAddress2>" placeholder='<tmpl_var _("webui", "adv_manual_dns_address2_help_text")>' <tmpl_if internetProfileDnsAddress2Error> class="error"</tmpl_if><tmpl_if IN_SET(internetProfileManualDns, "off")> disabled="disabled"</tmpl_if> />
+				<tmpl_else>
+						<input type="text" name="internetProfileDnsAddress2" id="internetProfileDnsAddress2" value="<tmpl_var internetProfileDnsAddress2>" <tmpl_if internetProfileDnsAddress2Error> class="error"</tmpl_if><tmpl_if IN_SET(internetProfileManualDns, "off")> disabled="disabled"</tmpl_if> />
+					<div class="help">
+						<tmpl_var _("webui", "adv_manual_dns_address2_help_text")>
+					</div>
+				</tmpl_if>
+				<tmpl_if internetProfileDnsAddress2Error>
+					<div class="inline_error">
+						<tmpl_var internetProfileDnsAddress2Error>
+					</div>
+				</tmpl_if>
+			</div>
+		</div><!-- /.table -->
+	</fieldset>
+	<div class="button_container align-field clearfix">
+		<input type="hidden" name="gSecureToken" id="gSecureToken" value="<tmpl_var gSecureToken>" />
+		<button type="submit" id="submit" class="primary" <tmpl_if isLocked>disabled="disabled"</tmpl_if> >
+			<tmpl_var _("webui", "webui_save_button")>
+		</button>
+</tmpl_if>

@@ -1,0 +1,3 @@
+<tmpl_foreach languageOptions as option>
+	<option value="<tmpl_var option.val>"<tmpl_if IN_SET(language, option.val)> selected="selected"</tmpl_if>><tmpl_var option.label></option>
+</tmpl_foreach>

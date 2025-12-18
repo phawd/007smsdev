@@ -1,0 +1,53 @@
+<div id="device_info">
+	<h1><tmpl_udf GET_PO_TEXT("device_info_menu_text", gProductName)></h1>
+	<h3><tmpl_var truncate(_("webui", "device_info_manufacturer_label"), (size(_("webui", "device_info_manufacturer_label")) - size(":")))></h3>
+		<p>Tillverkaren av denna <tmpl_var _("webui", "webui_product_name")>.</p>
+	<h3><tmpl_var truncate(_("webui", "device_info_model_label"), (size(_("webui", "device_info_model_label")) - size(":")))></h3>
+		<p>Det officiella modellnamnet och numret f
+r enheten.</p>
+	<h3><tmpl_var truncate(_("webui", "device_info_global_os_version_label"), (size(_("webui", "device_info_global_os_version_label")) - size(":")))></h3>
+	<p>Versionen av f
+rvarande installerad programvara. Detta 
+r huvudversionsnumret. F
+ljande versionsinformation avser olika programvarukomponenter.</p>
+	<tmpl_if showSDMVersion>
+		<h3><tmpl_var truncate(_("webui", "device_info_global_sdm_version_label"), (size(_("webui", "device_info_global_sdm_version_label")) - size(":")))></h3>
+		<p>Detta versionsnummer avser enhetens hanteringskomponent. Programvarukomponenten f
+r enhetshantering uppdateras automatiskt vid behov.</p>
+	</tmpl_if>
+	<div class="blockgroup">
+		<tmpl_if showMifiOsVersion>
+			<h4><tmpl_var truncate(_("webui", "device_info_os_version_label"), (size(_("webui", "device_info_os_version_label")) - size(":")))></h4>
+			<p>Detta 
+r versionsnumret f
+r OS (operativsystemet) och dess komponenter.</p>
+		</tmpl_if>
+			<h4><tmpl_var truncate(_("webui", "device_info_modem_version_label"), (size(_("webui", "device_info_modem_version_label")) - size(":")))></h4>
+r 4G-modemkomponenten 
+r detta versionen av den inbyggda programvara (firmware) som f
+rvarande 
+r installerad.</p>
+		<tmpl_if showWifiFwVersion>
+			<h4>Version av inbyggd programvara f
+r Wi-Fi</h4>
+r Wi-Fi-komponenten 
+r detta versionen av den inbyggda programvara (firmware) som f
+rvarande 
+r installerad.</p>
+		</tmpl_if>
+		<h4><tmpl_var truncate(_("webui", "device_info_web_ui_version_label"), (size(_("webui", "device_info_web_ui_version_label")) - size(":")))></h4>
+			<p>Versionsnumret f
+r webbgr
+nssnittet Jetpack.</p>
+		<tmpl_if showLcdVersion>
+			<h4><tmpl_var truncate(_("webui", "device_info_lcd_ui_version_label"), (size(_("webui", "device_info_lcd_ui_version_label")) - size(":")))></h4>
+			<p>Versionsnumret f
+r den programvara som styr enhetens sk
+rm och anv
+ndarens interaktion med sk
+llet.</p>
+		</tmpl_if>
+		<h4><tmpl_var truncate(_("webui", "device_info_pri_version_label"), (size(_("webui", "device_info_pri_version_label")) - size(":")))></h4>
+			<p>Detta identifierar den konfigurationsversion som f
+rvarande till
+r enheten.</p>

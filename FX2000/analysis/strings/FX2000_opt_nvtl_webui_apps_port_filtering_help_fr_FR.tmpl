@@ -1,0 +1,212 @@
+<!-- Port Filtering -->
+<div id="port_filtering">
+	<h1>Filtrage des ports</h1>
+	<h2>Vue d
+ensemble</h2>
+		Utilisez la fonctionnalit
+ de filtrage des ports si n
+cessaire pour bloquer le trafic Internet sortant. Si ce param
+tre est activ
+, seul le trafic des applications s
+lectionn
+es permet d
+ Internet. Le trafic est identifi
+ par des num
+ros de port. 
+Certaines applications sont pr
+finies. Vous pouvez d
+finir des applications suppl
+mentaires, mais vous devez conna
+tre les d
+tails du trafic utilis
+ par les applications que vous souhaitez d
+	<h2>Applications</h2>
+	<h3>Cases 
+ cocher de l
+application</h3>
+	<p>Utilisez ces cases 
+ cocher pour permettre l
+ Internet pour chaque application lorsque la fonctionnalit
+ de filtrage des ports est activ
+e. Le trafic des applications s
+lectionn
+es peut acc
+ Internet. Sinon, le trafic est bloqu
+	<p>Le tableau suivant fournit les num
+ros de port et les informations de protocole pour chaque application de filtrage de port r
+	<table class="portFilteringTable" id="">
+	 	<thead>
+			<tr class="">
+				<th class=""> Nom de l
+application</th>
+				<th class="">Port</th>
+				<th class="">TCP*</th>
+				<th class="">STCP*</th>
+				<th class="">UDP*</th>
+			</tr>
+		</thead>
+		<tbody>
+				<td> POP3</td>
+				<td> 110</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Attribu
+			</tr>
+				<td> POP3S</td>
+				<td> 995</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Oui</td>
+			</tr>
+				<td> IMAP</td>
+				<td> 143</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Attribu
+			</tr>
+				<td> IMAPS</td>
+				<td> 993</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Attribu
+			</tr>
+				<td> SMTP</td>
+				<td> 25</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Attribu
+			</tr>
+				<td> SecureSMTP</td>
+				<td> 465</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Non</td>
+			</tr>
+				<td> Contr
+FTP (commande)</td>
+				<td> 21</td>
+				<td> Oui</td>
+				<td> Oui</td>
+				<td> Attribu
+			</tr>
+				<td> Transfert de donn
+FTP</td>
+				<td> 20</td>
+				<td> Oui</td>
+				<td> Oui</td>
+				<td> Attribu
+			</tr>
+				<td> HTTP</td>
+				<td> 80</td>
+				<td> Oui</td>
+				<td> Oui</td>
+				<td> Attribu
+			</tr>
+				<td> HTTPS</td>
+				<td> 443</td>
+				<td> Oui</td>
+				<td> Oui</td>
+				<td> Attribu
+			</tr>
+				<td> Telnet</td>
+				<td> 23</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Attribu
+			</tr>
+		</tbody>
+	</table>
+	<p><b>Oui</b> indique que le protocole est standardis
+ pour le num
+ro de port.</p>
+	<p><b>Non</b> indique que le protocole n
+est pas standardis
+ pour le num
+ro de port.</p>
+	<p><b>Attribu
+</b> indique que le num
+ro de port est attribu
+IANA (Internet Assigned Numbers Authority) pour l
+utilisation du protocole, mais peut ne pas 
+tre standardis
+	<h2>Applications personnalis
+	<p>Cette fonctionnalit
+ vous permet de d
+finir vos propres applications (jusqu
+ 10). Une fois d
+finies, ces applications peuvent 
+tre activ
+es de la m
+re que les applications pr
+finies. Pour d
+finir une application, vous devez conna
+tre les ports et le protocole (TCP, UDP) utilis
+application pour le trafic sortant. Pour commencer, cliquez sur le bouton <strong>Ajouter une application personnalis
+e</strong>, puis fournissez les donn
+es suivantes. 
+	<p>Veuillez noter que toute modification apport
+ une application personnalis
+est pas enregistr
+e tant que le bouton 
+Enregistrer les modifications
+ pour sauvegarder l
+ du contenu de la page.</p>
+	<h3>Case 
+ cocher de l
+application</h3>
+	<p>Utilisez cette case 
+ cocher pour activer une application apr
+finie. Si elle est s
+lectionn
+e, le trafic de cette application peut acc
+ Internet. Sinon, le trafic est bloqu
+	<h3>Nom de l
+application</h3>
+		Saisissez un nom appropri
+application que vous d
+finissez.
+	<h3>Plage de ports (port de d
+marrage/port de fin)</h3>
+			Chaque application a sa propre plage de ports.
+			Indiquez le d
+but et la fin de la plage de ports pour chaque application.
+		<div class="blockgroup">
+				<li>Pour un port unique, saisissez le num
+ro de port dans les champs <strong>Port de d
+marrage</strong> et <strong>Port de fin</strong>.</li>
+				<li>Pour la plage de ports, saisissez le d
+but de la plage dans le champ <strong>Port de d
+marrage</strong> et la fin de la plage dans le champ <strong>Port de fin</strong>. </li>
+			</ul>
+		</div>
+	<h3>Port de d
+marrage</h3>
+		Saisissez le d
+but de la plage de num
+ros de port utilis
+s par le trafic sortant pour l
+application personnalis
+	<h3>Port de fin</h3>
+		Saisissez la fin de la plage de num
+ros de port utilis
+application.
+		<b>REMARQUE
+:</b> si l
+application utilise un seul port au lieu d
+une plage, saisissez le m
+me port de d
+marrage.
+	<h3>Protocole</h3>
+lectionnez le protocole utilis
+ par la plage de ports dans la liste d
+roulante (TCP, UDP ou les deux). 
+	<h3>Supprimer</h3>
+	<p>Utilisez cette case 
+ cocher pour supprimer une application personnalis
+	<p>REMARQUE
+: cliquez 
+ nouveau sur l
+Filtrage de port pour effacer les applications personnalis
+es supprim
+cran. </p>
+<!-- id="port_filtering" -->

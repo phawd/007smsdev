@@ -1,0 +1,259 @@
+/lib/ld-linux-armhf.so.3
+strerror
+GLIBC_2.4
+libc.so.6
+tcgetattr
+tcsetattr
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+libpthread.so.0
+MsgBusSetInt32
+mifi_dbg_get_level_name
+mifi_dbg_log
+gps_modem_set_event_report
+gps_modem_start_gps
+powersave_wakelock_acquire
+gps_modem_stop_gps
+powersave_wakelock_release
+gps_modem_force_xtra
+mifi_dbg_syslog
+MsgBusSetBinary
+router2_get_ip_passthrough
+gps_modem_xtra_time_inject_request
+gps_modem_xtra_data_inject_request
+ccm2_wan_get_current_wan
+gps_modem_xtra_time_inject_result
+gps_modem_xtra_data_inject_result
+gps_modem_set_powersave_state
+xmldata_initialize
+xmldata_getint32_default
+xmldata_getstring
+xmldata_shutdown
+MsgBusGet
+settings_get_features
+gps_get_privacy_setting
+gps_get_mode
+gps_get_default_status
+gps_set_privacy_setting
+gps_get_nmea_over_tcp
+pthread_self
+mifi_dbg_start
+__errno_location
+msgq_create
+gps_modem_initialize
+watchdog_application_register
+msgq_receive
+msgq_resp_handler
+mq_close
+mq_unlink
+gps_modem_cleanup
+mifi_dbg_stop
+gps_update_usb_status
+gps_update_wan_connection
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+msgq_send_async
+router2_get_bridge_iface_name
+ifc_get_address
+setsockopt
+inet_addr
+shutdown
+pthread_create
+msgq_does_queue_exist
+pthread_join
+agps_connect
+__ctype_b_loc
+strptime
+__bss_start
+libmifimsgbus.so
+libxmldata_api.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+librouter2_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libwifi_api.so
+libccm2_api.so
+libstdc++.so.6
+libgps_api.so
+libMGA.so
+H	KxD	J{D
+/dev/null
+gps.engine.status
+[%s]:[%s] - %s: GPS not enabled
+[%s]:[%s] - [%s] [%d]
+[%s]:[%s] - %s
+[%s]:[%s] - %s: Fix session already started!
+[%s]:[%s] - [%s] end. rc: %d
+[%s]:[%s] - Modem GPS Fix Session Not Start Yet
+[%s]:[%s] - %s: stopping gps anyway
+[%s]:[%s] - %s: stopping gps
+[%s]:[%s] - %s: end. rc: %d
+[%s]:[%s] - [%s] [%d] [%d]
+[%s]:[%s] - First fix acquired [lat: %lf, lon: %lf]
+gps.engine.fix
+[%s]:[%s] - [%s] [lat: %lf, lon: %lf] [%d]
+[%s]:[%s] - [%s] [%s] [%d]
+/opt/nvtl/etc/gps/config.xml
+/Config/GPSChannel
+/Config/GPSDevPath
+/Config/GPSEnablePath
+[%s]:[%s] - GPS v1 initialized with the following configurations: 
+[%s]:[%s] - GPS Communication Channel: %d
+[%s]:[%s] - GPS Communication device path: %s
+[%s]:[%s] - GPS Communication device enable path: %s
+[%s]:[%s] - Failed to open configuration file: %s
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - Failed to initialize settings. GPS DISABLED in features.xml
+[%s]:[%s] - Settings initialized, GPS is enabled in features.xml
+[%s]:[%s] - Failed to initialize gps privacy policy settings. %d
+[%s]:[%s] - GPS privacy policy accepted.
+[%s]:[%s] - GPS privacy policy not accepted.
+[%s]:[%s] - Failed to initialize gps startup type settings. %d
+[%s]:[%s] - GPS default mode: %d
+[%s]:[%s] - Failed to initialize gps default status settings. %d
+[%s]:[%s] - GPS default status: Active.
+[%s]:[%s] - GPS default status: Inactive.
+[%s]:[%s] - Failed to set gps privacy policy settings. %d
+[%s]:[%s] - Failed to initialize gps nmea over tcp settings. %d
+[%s]:[%s] - NMEA over TCP enabled on port %d.
+[%s]:[%s] - NMEA over TCP disabled.
+[%s]:[%s] - %s Process Start v1 with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - %s: Starting main loop, run: %d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - Error initializing gps configuration, terminating.
+[%s]:[%s] - Error initializing gps settings, terminating.
+[%s]:[%s] - Error opening message queue: %d, terminating.
+[%s]:[%s] - Error attaching to modem: %d, terminating.
+[%s]:[%s] - Error attaching to stand alone GPS: %d, terminating.
+gps_main_thread
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s Server Terminating.
+validate_gps_enabled
+get_status
+force_xtra
+get_last_fix
+set_privacy_setting
+configure_nmea_over_tcp
+set_supl_mode
+handle_gps_state
+handle_gps_fix
+handle_gps_nmea
+handle_nmea_start_request
+handle_nmea_stop_request
+usb.attached_to_bridge
+ccm2.wan_connection
+[%s]:[%s] - %s: MsgBus_Create Failed
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe Refresh Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+[%s]:[%s] - %s: Received data in nmea_stream [%s]
+[%s]:[%s] - NMEA over TCP client connect %d
+[%s]:[%s] - NMEA over TCP client disconnect %d
+[%s]:[%s] - %s: Got bridge interface: %s, result code: %d, retries: %d.
+[%s]:[%s] - %s: Failed to get bridge interface: %s, result code: %d, retries: %d.
+[%s]:[%s] - %s: Falling back to default bridge interface: %s.
+[%s]:[%s] - %s: socket creation failed %d.
+[%s]:[%s] - %s: bridge interface ip %s, saddr %d.
+[%s]:[%s] - %s: bind failed %d.
+[%s]:[%s] - %s: listen failed %d.
+[%s]:[%s] - %s: Start with pthread ID:%lu, process ID:%d.
+/nmea_stream_mq
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+[%s]:[%s] - %s: error starting nmea streaming service, retrying...
+[%s]:[%s] - %s: unexpected select rc: %d
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: %s client connected: %d.
+[%s]:[%s] - %s: Kick watchdog here
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Terminate Thread, TID: %lu.
+nmea_stream
+/dev/ttyS2
+online-live1.services.u-blox.com
+AtTmoniQiESn-B267pEdnw
+[%s]:[%s] - %s: Begin field[%s]
+[%s]:[%s] - GPRMC sentence is found and going to parse it's data
+%H%M%S%d%m%y
+[%s]:[%s] - GPGGA sentence is found and going to parse it's data
+[%s]:[%s] - GPGSA sentence is found and going to parse it's data
+[%s]:[%s] - %s: End type:[%d]
+[%s]:[%s] - %s: Failed to open GPS enable path:[%s]
+[%s]:[%s] - %s: Failed to write GPS enable value:[%d]
+[%s]:[%s] - %s: Start with pthread ID:%lu, process ID:%d.
+/stand_alone_gps_mq
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: error stoping stand alone GPS.
+[%s]:[%s] - %s: error starting stand alone GPS.
+[%s]:[%s] - %s: Failed to open GPS device path:[%s]
+[%s]:[%s] - %s: Kick watchdog here
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Terminate Thread, TID: %lu.
+[%s]:[%s] - %s stand_alone_gps_start::msgq_send_async failed: %s
+[%s]:[%s] - %s stand_alone_update_wan_status::msgq_send_async failed: %s
+nmea_parse_data
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.data.rel.ro.local
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

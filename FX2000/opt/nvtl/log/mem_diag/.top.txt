@@ -1,0 +1,1121 @@
+Mem: 227612K used, 571952K free, 108K shrd, 0K buff, 22956K cached
+CPU:  0.0% usr  8.3% sys  0.0% nic 83.3% idle  0.0% io  0.0% irq  8.3% sirq
+Load average: 0.08 0.04 0.01 1/425 493
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  493   943 root     R     2868  0.3   0  8.3 top -b -n 4 -d 3
+  584     1 mifi     S     277m 35.2   0  0.0 /usr/bin/netmgrd
+ 1314     1 root     S     162m 20.6   0  0.0 /opt/nvtl/bin/modem2d
+ 1686     1 root     S    77056  9.5   0  0.0 /opt/nvtl/bin/deviceagentd
+  838     1 root     S    74016  9.2   0  0.0 /opt/nvtl/bin/dsmd
+  534     1 root     S    67676  8.4   0  0.0 ipacm
+ 1257     1 root     S    61288  7.6   0  0.0 /opt/nvtl/bin/powersaved
+ 1333     1 root     S    59256  7.3   0  0.0 /opt/nvtl/bin/sim_mgrd
+ 1384     1 root     S    59248  7.3   0  0.0 /opt/nvtl/bin/gpsd
+ 1413     1 root     S    58708  7.3   0  0.0 /opt/nvtl/bin/smsd
+ 1911     1 root     S    56824  7.0   0  0.0 qmuxbridge
+ 1445     1 root     S    53816  6.6   0  0.0 /opt/nvtl/bin/dmdbd
+ 1345     1 root     S    50868  6.3   0  0.0 /opt/nvtl/bin/ccm2d
+ 1237     1 root     S    50412  6.2   0  0.0 /opt/nvtl/bin/wifid
+ 1763     1 root     S    46000  5.7   0  0.0 /opt/nvtl/bin/nuad
+ 1315     1 root     S    45516  5.6   0  0.0 duad
+  523     1 root     S    42572  5.2   0  0.0 ipacm_perf
+  695     1 root     S    40672  5.0   0  0.0 qti
+ 1748     1 root     S    38392  4.7   0  0.0 /opt/nvtl/bin/cloud_engined
+ 1274     1 root     S    37492  4.6   0  0.0 /opt/nvtl/bin/factory_resetd
+ 1793     1 root     S    37220  4.6   0  0.0 /opt/nvtl/bin/webuid -c /opt/nvtl/data/branding/etc/webui/config.xml -m /opt/nvtl/etc/webui/menu_layout.json -r /etc/lighttpd/mod_rewrite.conf -p /etc/lighttpd/mod_proxy.conf -l en_US UTF-8 -l es_MX UTF-8 -l fr_FR UTF-8 -l fr_CA UTF-8 -l ar_AE UTF-8 -l de_DE UTF-8 -l it_IT UTF-8 -l ja_JP UTF-8
+ 1506     1 root     S    36576  4.5   0  0.0 /opt/nvtl/bin/ledd
+ 1185     1 root     S    35488  4.4   0  0.0 /opt/nvtl/bin/ansd
+ 1093     1 root     S    34288  4.2   0  0.0 /opt/nvtl/bin/router2d
+ 1094     1 root     S    34260  4.2   0  0.0 /opt/nvtl/bin/usbd
+ 1480     1 root     S    33528  4.1   0  0.0 /opt/nvtl/bin/vpnd
+ 1099     1 root     S    32900  4.0   0  0.0 /opt/nvtl/bin/wan_mgrd
+  848     1 root     S    32788  4.0   0  0.0 /opt/nvtl/bin/mifi_healthd
+ 1355     1 root     S    31840  3.9   0  0.0 /sbin/adbd
+  591     1 1000     S    29632  3.6   0  0.0 /sbin/tftp_server
+  837     1 root     S    28948  3.6   0  0.0 /opt/nvtl/bin/settingsd
+ 1892  1891 lighttpd S    27152  3.3   0  0.0 /opt/nvtl/bin/sysser.fcgi
+ 1687     1 root     S    25068  3.1   0  0.0 /opt/nvtl/bin/emd
+ 1302     1 root     S    23808  2.9   0  0.0 /opt/nvtl/bin/fotad
+ 1507     1 root     S    23576  2.9   0  0.0 /opt/nvtl/bin/diag_read diag_read
+  572     1 root     S    23344  2.9   0  0.0 /usr/bin/port_bridge at_mdm0 at_usb0
+ 1893  1891 lighttpd S    20292  2.5   0  0.0 /opt/nvtl/bin/restapi.fcgi
+ 1666     1 root     S    18820  2.3   0  0.0 /opt/nvtl/bin/nua_timer_watchdogd
+  558     1 root     S    15208  1.8   0  0.0 ipacmdiag
+ 1106     1 root     S     9368  1.1   0  0.0 /opt/nvtl/bin/devuid
+ 1941  1237 root     S     9040  1.1   0  0.0 /opt/nvtl/bin/hostapd /tmp/wifi/hostapd/wlan0_hostapd.conf -f /tmp/wifi/hostapd/wlan0_hostapd.log
+ 1960  1237 root     S     9028  1.1   0  0.0 /opt/nvtl/bin/hostapd /tmp/wifi/hostapd/wlan1_hostapd.conf -f /tmp/wifi/hostapd/wlan1_hostapd.log
+  799     1 root     S     8040  1.0   0  0.0 /opt/nvtl/bin/msgbusd
+  986     1 root     S     8028  1.0   0  0.0 /opt/nvtl/bin/mifi_watchdogd
+ 2337     1 root     S     5860  0.7   0  0.0 dhcpd -f -cf /opt/nvtl/tmp/router2/dhcpd.conf -lf /opt/nvtl/tmp/router2/dhcpd.leases
+ 1891     1 lighttpd S     5816  0.7   0  0.0 /usr/sbin/lighttpd -f /etc/lighttpd/lighttpd.conf
+ 3560     1 root     S     4808  0.6   0  0.0 dhcpd6 -6 -f -cf /opt/nvtl/tmp/router2/dhcpd6.conf -lf /opt/nvtl/tmp/router2/dhcpd6.leases bridge0
+  765     1 root     S     3252  0.4   0  0.0 {syslogd_monitor} /bin/sh /opt/nvtl/bin/syslogd_monitor.sh
+  943     1 root     S     2868  0.3   0  0.0 {nvtl_mem_diag.s} /bin/sh /opt/nvtl/bin/nvtl_mem_diag.sh daemon 1024 10 15 5 60 30 15 3 2 1 0 5
+ 1912     1 root     S     2868  0.3   0  0.0 /sbin/getty 115200 ttyMSM0 vt100
+32694   765 root     S     2736  0.3   0  0.0 sleep 40
+  262     1 root     S     2408  0.3   0  0.0 udevd --daemon
+  287   262 root     S     2408  0.3   0  0.0 udevd --daemon
+  288   262 root     S     2408  0.3   0  0.0 udevd --daemon
+  711     1 root     S     2280  0.2   0  0.0 /usr/sbin/rngd
+  318     1 root     S     2152  0.2   0  0.0 /sbin/syslogd -z 1024 -q 1024 -o 10 -m 0 -f /etc/syslog.conf
+ 3609     1 root     S     1804  0.2   0  0.0 dnsmasq -k --interface=bridge0 --strict-order --clear-on-reload --user=root --group=root --no-poll
+  783     1 root     S     1724  0.2   0  0.0 /opt/nvtl/bin/mifi_debugd
+ 3537     1 root     S     1648  0.2   0  0.0 radvd -C /opt/nvtl/tmp/router2/radvd.conf -m syslog
+ 3540  3537 root     S     1648  0.2   0  0.0 radvd -C /opt/nvtl/tmp/router2/radvd.conf -m syslog
+    1     0 root     S     1476  0.1   0  0.0 init [3]
+  680     1 root     S     1456  0.1   0  0.0 qrtr-ns
+  527     1 root     S     1316  0.1   0  0.0 /sbin/init_mss
+ 1889     2 root     SW<      0  0.0   0  0.0 [scheduler_threa]
+    9     2 root     IW       0  0.0   0  0.0 [rcu_preempt]
+    8     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+  236     2 root     SW       0  0.0   0  0.0 [ubi_bgt0d]
+  237     2 root     SW       0  0.0   0  0.0 [ubifs_bgt0_0]
+  662     2 root     SW       0  0.0   0  0.0 [qrtr_rx]
+16920     2 root     IW       0  0.0   0  0.0 [kworker/u2:3]
+12489     2 root     SW       0  0.0   0  0.0 [kworker/u2:2]
+ 9229     2 root     SW       0  0.0   0  0.0 [kworker/u2:4]
+13231     2 root     SW       0  0.0   0  0.0 [kworker/u2:11]
+ 1866     2 root     SW       0  0.0   0  0.0 [wlan_logging_th]
+ 4628     2 root     IW       0  0.0   0  0.0 [kworker/u2:1]
+16366     2 root     SW       0  0.0   0  0.0 [kworker/u2:0]
+16959     2 root     SW       0  0.0   0  0.0 [kworker/u2:12]
+  549     2 root     IW<      0  0.0   0  0.0 [kworker/u3:18]
+25637     2 root     SW       0  0.0   0  0.0 [kworker/u2:5]
+25176     2 root     IW       0  0.0   0  0.0 [kworker/u2:7]
+   15     2 root     SW       0  0.0   0  0.0 [msm_watchdog]
+    4     2 root     IW       0  0.0   0  0.0 [kworker/0:0]
+   81     2 root     SW       0  0.0   0  0.0 [hwrng]
+30717     2 root     SW       0  0.0   0  0.0 [kworker/u2:10]
+  547     2 root     IW<      0  0.0   0  0.0 [kworker/u3:16]
+    2     0 root     SW       0  0.0   0  0.0 [kthreadd]
+31293     2 root     IW       0  0.0   0  0.0 [kworker/0:1]
+   12     2 root     SW       0  0.0   0  0.0 [kdevtmpfs]
+  348     2 root     SW       0  0.0   0  0.0 [ubi_bgt1d]
+32241     2 root     IW       0  0.0   0  0.0 [kworker/0:2]
+    3     2 root     IW<      0  0.0   0  0.0 [rcu_gp]
+    5     2 root     IW<      0  0.0   0  0.0 [kworker/0:0H]
+    7     2 root     IW<      0  0.0   0  0.0 [mm_percpu_wq]
+   10     2 root     IW       0  0.0   0  0.0 [rcu_sched]
+   11     2 root     IW       0  0.0   0  0.0 [rcu_bh]
+   13     2 root     IW<      0  0.0   0  0.0 [netns]
+   18     2 root     IW<      0  0.0   0  0.0 [ipa_usb_wq]
+   19     2 root     SW       0  0.0   0  0.0 [qmp_aop]
+   21     2 root     SW       0  0.0   0  0.0 [oom_reaper]
+   22     2 root     IW<      0  0.0   0  0.0 [writeback]
+   23     2 root     SW       0  0.0   0  0.0 [kcompactd0]
+   24     2 root     IW<      0  0.0   0  0.0 [crypto]
+   25     2 root     IW<      0  0.0   0  0.0 [kblockd]
+   26     2 root     SW       0  0.0   0  0.0 [irq/42-arm-smmu]
+   27     2 root     SW       0  0.0   0  0.0 [irq/35-tsens-up]
+   28     2 root     SW       0  0.0   0  0.0 [irq/36-tsens-cr]
+   29     2 root     SW       0  0.0   0  0.0 [system]
+   30     2 root     IW<      0  0.0   0  0.0 [ipa_power_mgmt]
+   31     2 root     IW<      0  0.0   0  0.0 [transport_power]
+   32     2 root     IW<      0  0.0   0  0.0 [ipa_pm_activate]
+   33     2 root     IW<      0  0.0   0  0.0 [ipa_eth]
+   34     2 root     IW<      0  0.0   0  0.0 [devfreq_wq]
+   35     2 root     IW<      0  0.0   0  0.0 [cfg80211]
+   36     2 root     IW<      0  0.0   0  0.0 [watchdogd]
+   37     2 root     SW       0  0.0   0  0.0 [kauditd]
+   38     2 root     SW       0  0.0   0  0.0 [kswapd0]
+   77     2 root     SW       0  0.0   0  0.0 [irq/32-smp2p]
+   78     2 root     IW<      0  0.0   0  0.0 [k_hsuart]
+   79     2 root     SW       0  0.0   0  0.0 [msm_serial_hs_0]
+   80     2 root     SW       0  0.0   0  0.0 [msm_serial_hs_0]
+   83     2 root     IW<      0  0.0   0  0.0 [diag_real_time_]
+   84     2 root     IW<      0  0.0   0  0.0 [diag_wq]
+   86     2 root     IW<      0  0.0   0  0.0 [DIAG_USB_diag]
+   87     2 root     IW<      0  0.0   0  0.0 [diag_cntl_wq]
+   88     2 root     IW<      0  0.0   0  0.0 [diag_dci_wq]
+   89     2 root     IW<      0  0.0   0  0.0 [MODEM_CNTL]
+   90     2 root     IW<      0  0.0   0  0.0 [MODEM_DATA]
+   91     2 root     IW<      0  0.0   0  0.0 [MODEM_CMD]
+   92     2 root     IW<      0  0.0   0  0.0 [MODEM_DCI]
+   93     2 root     IW<      0  0.0   0  0.0 [MODEM_DCI_CMD]
+   94     2 root     IW<      0  0.0   0  0.0 [LPASS_CNTL]
+   95     2 root     IW<      0  0.0   0  0.0 [LPASS_DATA]
+   96     2 root     IW<      0  0.0   0  0.0 [LPASS_CMD]
+   97     2 root     IW<      0  0.0   0  0.0 [LPASS_DCI]
+   98     2 root     IW<      0  0.0   0  0.0 [LPASS_DCI_CMD]
+   99     2 root     IW<      0  0.0   0  0.0 [WCNSS_CNTL]
+  100     2 root     IW<      0  0.0   0  0.0 [WCNSS_DATA]
+  101     2 root     IW<      0  0.0   0  0.0 [WCNSS_CMD]
+  102     2 root     IW<      0  0.0   0  0.0 [WCNSS_DCI]
+  103     2 root     IW<      0  0.0   0  0.0 [WCNSS_DCI_CMD]
+  104     2 root     IW<      0  0.0   0  0.0 [SENSORS_CNTL]
+  105     2 root     IW<      0  0.0   0  0.0 [SENSORS_DATA]
+  106     2 root     IW<      0  0.0   0  0.0 [SENSORS_CMD]
+  107     2 root     IW<      0  0.0   0  0.0 [SENSORS_DCI]
+  108     2 root     IW<      0  0.0   0  0.0 [SENSORS_DCI_CMD]
+  109     2 root     IW<      0  0.0   0  0.0 [DIAG_CTRL]
+  110     2 root     IW<      0  0.0   0  0.0 [DIAG_DATA]
+  111     2 root     IW<      0  0.0   0  0.0 [DIAG_CMD]
+  112     2 root     IW<      0  0.0   0  0.0 [DIAG_DCI_DATA]
+  113     2 root     IW<      0  0.0   0  0.0 [DIAG_DCI_CMD]
+  114     2 root     IW<      0  0.0   0  0.0 [CDSP_CNTL]
+  115     2 root     IW<      0  0.0   0  0.0 [CDSP_DATA]
+  116     2 root     IW<      0  0.0   0  0.0 [CDSP_CMD]
+  117     2 root     IW<      0  0.0   0  0.0 [CDSP_DCI]
+  118     2 root     IW<      0  0.0   0  0.0 [CDSP_DCI_CMD]
+  119     2 root     IW<      0  0.0   0  0.0 [NPU_CNTL]
+  120     2 root     IW<      0  0.0   0  0.0 [NPU_DATA]
+  121     2 root     IW<      0  0.0   0  0.0 [NPU_CMD]
+  122     2 root     IW<      0  0.0   0  0.0 [NPU_DCI]
+  123     2 root     IW<      0  0.0   0  0.0 [NPU_DCI_CMD]
+  124     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  125     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  126     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  127     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  128     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  130     2 root     IW<      0  0.0   0  0.0 [diag_mhi_MDM]
+  131     2 root     IW<      0  0.0   0  0.0 [DIAG_USB_diag_m]
+  132     2 root     IW<      0  0.0   0  0.0 [diag_mhi_MDM_DC]
+  133     2 root     IW<      0  0.0   0  0.0 [diag_dci_MDM_DC]
+  134     2 root     SW       0  0.0   0  0.0 [qseecom-unreg-l]
+  135     2 root     IW<      0  0.0   0  0.0 [atlantic-fwd]
+  136     2 root     SW       0  0.0   0  0.0 [irq/43-arm-smmu]
+  137     2 root     IW<      0  0.0   0  0.0 [mhi_w]
+  143     2 root     IW<      0  0.0   0  0.0 [k_ipa_usb]
+  146     2 root     SW       0  0.0   0  0.0 [irq/194-soc-upd]
+  147     2 root     SW       0  0.0   0  0.0 [irq/195-soc-rea]
+  148     2 root     SW       0  0.0   0  0.0 [irq/196-bsoc-de]
+  149     2 root     SW       0  0.0   0  0.0 [irq/197-msoc-de]
+  150     2 root     SW       0  0.0   0  0.0 [irq/198-msoc-lo]
+  151     2 root     SW       0  0.0   0  0.0 [irq/199-msoc-em]
+  152     2 root     SW       0  0.0   0  0.0 [irq/200-msoc-hi]
+  153     2 root     SW       0  0.0   0  0.0 [irq/201-msoc-fu]
+  154     2 root     SW       0  0.0   0  0.0 [irq/202-vbatt-l]
+  155     2 root     SW       0  0.0   0  0.0 [irq/203-vbatt-p]
+  156     2 root     SW       0  0.0   0  0.0 [irq/204-esr-del]
+  157     2 root     SW       0  0.0   0  0.0 [irq/205-batt-mi]
+  158     2 root     SW       0  0.0   0  0.0 [irq/206-batt-id]
+  159     2 root     SW       0  0.0   0  0.0 [irq/207-batt-te]
+  160     2 root     SW       0  0.0   0  0.0 [irq/208-batt-te]
+  161     2 root     SW       0  0.0   0  0.0 [irq/209-batt-te]
+  162     2 root     SW       0  0.0   0  0.0 [irq/210-ima-rdy]
+  163     2 root     SW       0  0.0   0  0.0 [irq/211-ima-xcp]
+  164     2 root     SW       0  0.0   0  0.0 [irq/212-dma-xcp]
+  165     2 root     SW       0  0.0   0  0.0 [irq/213-dma-gra]
+  166     2 root     SW       0  0.0   0  0.0 [irq/214-mem-att]
+  167     2 root     SW       0  0.0   0  0.0 [irq/149-bcl-lvl]
+  168     2 root     SW       0  0.0   0  0.0 [irq/150-bcl-lvl]
+  169     2 root     SW       0  0.0   0  0.0 [irq/151-bcl-lvl]
+  170     2 root     IW<      0  0.0   0  0.0 [ipv6_addrconf]
+  183     2 root     SW       0  0.0   0  0.0 [irq/216-chgr-er]
+  185     2 root     SW       0  0.0   0  0.0 [irq/217-chg-sta]
+  187     2 root     SW       0  0.0   0  0.0 [irq/223-otg-fai]
+  189     2 root     SW       0  0.0   0  0.0 [irq/226-high-du]
+  190     2 root     SW       0  0.0   0  0.0 [irq/227-input-c]
+  191     2 root     SW       0  0.0   0  0.0 [irq/229-switche]
+  192     2 root     SW       0  0.0   0  0.0 [irq/230-bat-tem]
+  193     2 root     SW       0  0.0   0  0.0 [irq/231-bat-ov]
+  194     2 root     SW       0  0.0   0  0.0 [irq/232-bat-low]
+  195     2 root     SW       0  0.0   0  0.0 [irq/233-bat-the]
+  196     2 root     SW       0  0.0   0  0.0 [irq/234-bat-ter]
+  197     2 root     SW       0  0.0   0  0.0 [irq/237-usbin-c]
+  198     2 root     SW       0  0.0   0  0.0 [irq/238-usbin-v]
+  199     2 root     SW       0  0.0   0  0.0 [irq/239-usbin-u]
+  200     2 root     SW       0  0.0   0  0.0 [irq/240-usbin-o]
+  201     2 root     SW       0  0.0   0  0.0 [irq/241-usbin-p]
+  202     2 root     SW       0  0.0   0  0.0 [irq/243-usbin-s]
+  203     2 root     SW       0  0.0   0  0.0 [irq/244-usbin-i]
+  204     2 root     SW       0  0.0   0  0.0 [irq/246-dcin-uv]
+  205     2 root     SW       0  0.0   0  0.0 [irq/247-dcin-ov]
+  206     2 root     SW       0  0.0   0  0.0 [irq/248-dcin-pl]
+  207     2 root     SW       0  0.0   0  0.0 [irq/250-dcin-po]
+  208     2 root     SW       0  0.0   0  0.0 [irq/251-dcin-en]
+  209     2 root     SW       0  0.0   0  0.0 [irq/252-typec-o]
+  210     2 root     SW       0  0.0   0  0.0 [irq/254-typec-c]
+  211     2 root     SW       0  0.0   0  0.0 [irq/255-typec-v]
+  212     2 root     SW       0  0.0   0  0.0 [irq/257-typec-a]
+  213     2 root     SW       0  0.0   0  0.0 [irq/258-typec-l]
+  214     2 root     SW       0  0.0   0  0.0 [irq/260-wdog-sn]
+  215     2 root     SW       0  0.0   0  0.0 [irq/261-wdog-ba]
+  216     2 root     SW       0  0.0   0  0.0 [irq/263-aicl-do]
+  217     2 root     SW       0  0.0   0  0.0 [irq/264-smb-en]
+  218     2 root     SW       0  0.0   0  0.0 [irq/265-temp-ch]
+  219     2 root     SW       0  0.0   0  0.0 [irq/119-qcom,te]
+  220     2 root     SW       0  0.0   0  0.0 [irq/129-qcom,te]
+  221     2 root     IW<      0  0.0   0  0.0 [etr_pcie]
+  228     2 root     SW       0  0.0   0  0.0 [irq/141-sig-tx]
+  229     2 root     SW       0  0.0   0  0.0 [irq/142-sig-rx]
+  230     2 root     SW       0  0.0   0  0.0 [irq/60-pwr_even]
+  231     2 root     SW       0  0.0   0  0.0 [irq/59-dp_hs_ph]
+  232     2 root     SW       0  0.0   0  0.0 [irq/61-dm_hs_ph]
+  233     2 root     SW       0  0.0   0  0.0 [irq/62-ss_phy_i]
+  234     2 root     SW       0  0.0   0  0.0 [irq/44-arm-smmu]
+  235     2 root     IW<      0  0.0   0  0.0 [usb_bam_wq]
+  316     2 root     SW       0  0.0   0  0.0 [irq/48-arm-smmu]
+  320     2 root     SW       0  0.0   0  0.0 [irq/49-arm-smmu]
+  322     2 root     SW       0  0.0   0  0.0 [irq/50-arm-smmu]
+  358     2 root     IW<      0  0.0   0  0.0 [ipa_interrupt_w]
+  360     2 root     IW<      0  0.0   0  0.0 [ipawq36]
+  363     2 root     IW<      0  0.0   0  0.0 [iparepwq36]
+  364     2 root     IW<      0  0.0   0  0.0 [ipawq33]
+  365     2 root     IW<      0  0.0   0  0.0 [iparepwq33]
+  366     2 root     IW<      0  0.0   0  0.0 [ipawq32]
+  368     2 root     IW<      0  0.0   0  0.0 [iparepwq32]
+  369     2 root     IW<      0  0.0   0  0.0 [ipa_ut_dbgfs]
+  371     2 root     IW<      0  0.0   0  0.0 [clnt_req]
+  628     2 root     IW<      0  0.0   0  0.0 [at_usb0]
+  630     2 root     IW<      0  0.0   0  0.0 [at_usb1]
+  634     2 root     IW<      0  0.0   0  0.0 [rmnet_ctrl]
+  639     2 root     IW<      0  0.0   0  0.0 [android_mbim]
+  641     2 root     IW<      0  0.0   0  0.0 [dpl_ctrl]
+  644     2 root     IW<      0  0.0   0  0.0 [gps]
+  646     2 root     IW<      0  0.0   0  0.0 [qdss]
+  651     2 root     IW<      0  0.0   0  0.0 [qdss_mdm]
+  660     2 root     SW       0  0.0   0  0.0 [glink_modem]
+  687     2 root     SW       0  0.0   0  0.0 [kworker/u2:9]
+  688     2 root     IW<      0  0.0   0  0.0 [kworker/0:1H]
+  901     2 root     IW<      0  0.0   0  0.0 [ipawq34]
+  902     2 root     IW<      0  0.0   0  0.0 [iparepwq34]
+  903     2 root     IW<      0  0.0   0  0.0 [ipawq35]
+  904     2 root     IW<      0  0.0   0  0.0 [iparepwq35]
+ 1390     2 root     SW       0  0.0   0  0.0 [file-storage]
+ 1596     2 root     SW       0  0.0   0  0.0 [irq/45-arm-smmu]
+ 1865     2 root     IW<      0  0.0   0  0.0 [cds_recovery_wo]
+ 1867     2 root     SW       0  0.0   0  0.0 [irq/159-mhi]
+ 1869     2 root     SW       0  0.0   0  0.0 [qrtr_rx]
+32265     2 root     IW       0  0.0   0  0.0 [kworker/u2:6]
+Mem: 227792K used, 571772K free, 108K shrd, 0K buff, 22980K cached
+CPU:  0.3% usr  3.9% sys  0.0% nic 95.0% idle  0.0% io  0.0% irq  0.6% sirq
+Load average: 0.08 0.04 0.00 1/425 500
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  493   943 root     R     2868  0.3   0  0.9 top -b -n 4 -d 3
+ 1889     2 root     SW<      0  0.0   0  0.6 [scheduler_threa]
+25176     2 root     IW       0  0.0   0  0.6 [kworker/u2:7]
+ 1314     1 root     S     162m 20.6   0  0.3 /opt/nvtl/bin/modem2d
+ 1445     1 root     S    53816  6.6   0  0.3 /opt/nvtl/bin/dmdbd
+ 1099     1 root     S    32900  4.0   0  0.3 /opt/nvtl/bin/wan_mgrd
+  837     1 root     S    28948  3.6   0  0.3 /opt/nvtl/bin/settingsd
+  584     1 mifi     S     277m 35.2   0  0.0 /usr/bin/netmgrd
+ 1686     1 root     S    77056  9.5   0  0.0 /opt/nvtl/bin/deviceagentd
+  838     1 root     S    74016  9.2   0  0.0 /opt/nvtl/bin/dsmd
+  534     1 root     S    67676  8.4   0  0.0 ipacm
+ 1257     1 root     S    61288  7.6   0  0.0 /opt/nvtl/bin/powersaved
+ 1333     1 root     S    59256  7.3   0  0.0 /opt/nvtl/bin/sim_mgrd
+ 1384     1 root     S    59248  7.3   0  0.0 /opt/nvtl/bin/gpsd
+ 1413     1 root     S    58708  7.3   0  0.0 /opt/nvtl/bin/smsd
+ 1911     1 root     S    56824  7.0   0  0.0 qmuxbridge
+ 1345     1 root     S    50868  6.3   0  0.0 /opt/nvtl/bin/ccm2d
+ 1237     1 root     S    50412  6.2   0  0.0 /opt/nvtl/bin/wifid
+ 1763     1 root     S    46000  5.7   0  0.0 /opt/nvtl/bin/nuad
+ 1315     1 root     S    45516  5.6   0  0.0 duad
+  523     1 root     S    42572  5.2   0  0.0 ipacm_perf
+  695     1 root     S    40672  5.0   0  0.0 qti
+ 1748     1 root     S    38392  4.7   0  0.0 /opt/nvtl/bin/cloud_engined
+ 1274     1 root     S    37492  4.6   0  0.0 /opt/nvtl/bin/factory_resetd
+ 1793     1 root     S    37220  4.6   0  0.0 /opt/nvtl/bin/webuid -c /opt/nvtl/data/branding/etc/webui/config.xml -m /opt/nvtl/etc/webui/menu_layout.json -r /etc/lighttpd/mod_rewrite.conf -p /etc/lighttpd/mod_proxy.conf -l en_US UTF-8 -l es_MX UTF-8 -l fr_FR UTF-8 -l fr_CA UTF-8 -l ar_AE UTF-8 -l de_DE UTF-8 -l it_IT UTF-8 -l ja_JP UTF-8
+ 1506     1 root     S    36576  4.5   0  0.0 /opt/nvtl/bin/ledd
+ 1185     1 root     S    35488  4.4   0  0.0 /opt/nvtl/bin/ansd
+ 1093     1 root     S    34288  4.2   0  0.0 /opt/nvtl/bin/router2d
+ 1094     1 root     S    34260  4.2   0  0.0 /opt/nvtl/bin/usbd
+ 1480     1 root     S    33528  4.1   0  0.0 /opt/nvtl/bin/vpnd
+  848     1 root     S    32788  4.0   0  0.0 /opt/nvtl/bin/mifi_healthd
+ 1355     1 root     S    31840  3.9   0  0.0 /sbin/adbd
+  591     1 1000     S    29632  3.6   0  0.0 /sbin/tftp_server
+ 1892  1891 lighttpd S    27152  3.3   0  0.0 /opt/nvtl/bin/sysser.fcgi
+ 1687     1 root     S    25068  3.1   0  0.0 /opt/nvtl/bin/emd
+ 1302     1 root     S    23808  2.9   0  0.0 /opt/nvtl/bin/fotad
+ 1507     1 root     S    23576  2.9   0  0.0 /opt/nvtl/bin/diag_read diag_read
+  572     1 root     S    23344  2.9   0  0.0 /usr/bin/port_bridge at_mdm0 at_usb0
+ 1893  1891 lighttpd S    20292  2.5   0  0.0 /opt/nvtl/bin/restapi.fcgi
+ 1666     1 root     S    18820  2.3   0  0.0 /opt/nvtl/bin/nua_timer_watchdogd
+  558     1 root     S    15208  1.8   0  0.0 ipacmdiag
+ 1106     1 root     S     9368  1.1   0  0.0 /opt/nvtl/bin/devuid
+ 1941  1237 root     S     9040  1.1   0  0.0 /opt/nvtl/bin/hostapd /tmp/wifi/hostapd/wlan0_hostapd.conf -f /tmp/wifi/hostapd/wlan0_hostapd.log
+ 1960  1237 root     S     9028  1.1   0  0.0 /opt/nvtl/bin/hostapd /tmp/wifi/hostapd/wlan1_hostapd.conf -f /tmp/wifi/hostapd/wlan1_hostapd.log
+  799     1 root     S     8040  1.0   0  0.0 /opt/nvtl/bin/msgbusd
+  986     1 root     S     8028  1.0   0  0.0 /opt/nvtl/bin/mifi_watchdogd
+ 2337     1 root     S     5860  0.7   0  0.0 dhcpd -f -cf /opt/nvtl/tmp/router2/dhcpd.conf -lf /opt/nvtl/tmp/router2/dhcpd.leases
+ 1891     1 lighttpd S     5816  0.7   0  0.0 /usr/sbin/lighttpd -f /etc/lighttpd/lighttpd.conf
+ 3560     1 root     S     4808  0.6   0  0.0 dhcpd6 -6 -f -cf /opt/nvtl/tmp/router2/dhcpd6.conf -lf /opt/nvtl/tmp/router2/dhcpd6.leases bridge0
+  765     1 root     S     3252  0.4   0  0.0 {syslogd_monitor} /bin/sh /opt/nvtl/bin/syslogd_monitor.sh
+  943     1 root     S     2868  0.3   0  0.0 {nvtl_mem_diag.s} /bin/sh /opt/nvtl/bin/nvtl_mem_diag.sh daemon 1024 10 15 5 60 30 15 3 2 1 0 5
+ 1912     1 root     S     2868  0.3   0  0.0 /sbin/getty 115200 ttyMSM0 vt100
+32694   765 root     S     2736  0.3   0  0.0 sleep 40
+  262     1 root     S     2408  0.3   0  0.0 udevd --daemon
+  287   262 root     S     2408  0.3   0  0.0 udevd --daemon
+  288   262 root     S     2408  0.3   0  0.0 udevd --daemon
+  711     1 root     S     2280  0.2   0  0.0 /usr/sbin/rngd
+  318     1 root     S     2152  0.2   0  0.0 /sbin/syslogd -z 1024 -q 1024 -o 10 -m 0 -f /etc/syslog.conf
+ 3609     1 root     S     1804  0.2   0  0.0 dnsmasq -k --interface=bridge0 --strict-order --clear-on-reload --user=root --group=root --no-poll
+  783     1 root     S     1724  0.2   0  0.0 /opt/nvtl/bin/mifi_debugd
+ 3537     1 root     S     1648  0.2   0  0.0 radvd -C /opt/nvtl/tmp/router2/radvd.conf -m syslog
+ 3540  3537 root     S     1648  0.2   0  0.0 radvd -C /opt/nvtl/tmp/router2/radvd.conf -m syslog
+    1     0 root     S     1476  0.1   0  0.0 init [3]
+  680     1 root     S     1456  0.1   0  0.0 qrtr-ns
+  527     1 root     S     1316  0.1   0  0.0 /sbin/init_mss
+    9     2 root     RW       0  0.0   0  0.0 [rcu_preempt]
+    8     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+  236     2 root     SW       0  0.0   0  0.0 [ubi_bgt0d]
+  237     2 root     SW       0  0.0   0  0.0 [ubifs_bgt0_0]
+  662     2 root     SW       0  0.0   0  0.0 [qrtr_rx]
+16920     2 root     IW       0  0.0   0  0.0 [kworker/u2:3]
+12489     2 root     SW       0  0.0   0  0.0 [kworker/u2:2]
+ 9229     2 root     SW       0  0.0   0  0.0 [kworker/u2:4]
+13231     2 root     SW       0  0.0   0  0.0 [kworker/u2:11]
+ 1866     2 root     SW       0  0.0   0  0.0 [wlan_logging_th]
+ 4628     2 root     IW       0  0.0   0  0.0 [kworker/u2:1]
+16366     2 root     SW       0  0.0   0  0.0 [kworker/u2:0]
+16959     2 root     SW       0  0.0   0  0.0 [kworker/u2:12]
+  549     2 root     IW<      0  0.0   0  0.0 [kworker/u3:18]
+25637     2 root     SW       0  0.0   0  0.0 [kworker/u2:5]
+   15     2 root     SW       0  0.0   0  0.0 [msm_watchdog]
+    4     2 root     IW       0  0.0   0  0.0 [kworker/0:0]
+   81     2 root     SW       0  0.0   0  0.0 [hwrng]
+30717     2 root     SW       0  0.0   0  0.0 [kworker/u2:10]
+  547     2 root     IW<      0  0.0   0  0.0 [kworker/u3:16]
+    2     0 root     SW       0  0.0   0  0.0 [kthreadd]
+31293     2 root     IW       0  0.0   0  0.0 [kworker/0:1]
+   12     2 root     SW       0  0.0   0  0.0 [kdevtmpfs]
+  348     2 root     SW       0  0.0   0  0.0 [ubi_bgt1d]
+32241     2 root     IW       0  0.0   0  0.0 [kworker/0:2]
+    3     2 root     IW<      0  0.0   0  0.0 [rcu_gp]
+    5     2 root     IW<      0  0.0   0  0.0 [kworker/0:0H]
+    7     2 root     IW<      0  0.0   0  0.0 [mm_percpu_wq]
+   10     2 root     IW       0  0.0   0  0.0 [rcu_sched]
+   11     2 root     IW       0  0.0   0  0.0 [rcu_bh]
+   13     2 root     IW<      0  0.0   0  0.0 [netns]
+   18     2 root     IW<      0  0.0   0  0.0 [ipa_usb_wq]
+   19     2 root     SW       0  0.0   0  0.0 [qmp_aop]
+   21     2 root     SW       0  0.0   0  0.0 [oom_reaper]
+   22     2 root     IW<      0  0.0   0  0.0 [writeback]
+   23     2 root     SW       0  0.0   0  0.0 [kcompactd0]
+   24     2 root     IW<      0  0.0   0  0.0 [crypto]
+   25     2 root     IW<      0  0.0   0  0.0 [kblockd]
+   26     2 root     SW       0  0.0   0  0.0 [irq/42-arm-smmu]
+   27     2 root     SW       0  0.0   0  0.0 [irq/35-tsens-up]
+   28     2 root     SW       0  0.0   0  0.0 [irq/36-tsens-cr]
+   29     2 root     SW       0  0.0   0  0.0 [system]
+   30     2 root     IW<      0  0.0   0  0.0 [ipa_power_mgmt]
+   31     2 root     IW<      0  0.0   0  0.0 [transport_power]
+   32     2 root     IW<      0  0.0   0  0.0 [ipa_pm_activate]
+   33     2 root     IW<      0  0.0   0  0.0 [ipa_eth]
+   34     2 root     IW<      0  0.0   0  0.0 [devfreq_wq]
+   35     2 root     IW<      0  0.0   0  0.0 [cfg80211]
+   36     2 root     IW<      0  0.0   0  0.0 [watchdogd]
+   37     2 root     SW       0  0.0   0  0.0 [kauditd]
+   38     2 root     SW       0  0.0   0  0.0 [kswapd0]
+   77     2 root     SW       0  0.0   0  0.0 [irq/32-smp2p]
+   78     2 root     IW<      0  0.0   0  0.0 [k_hsuart]
+   79     2 root     SW       0  0.0   0  0.0 [msm_serial_hs_0]
+   80     2 root     SW       0  0.0   0  0.0 [msm_serial_hs_0]
+   83     2 root     IW<      0  0.0   0  0.0 [diag_real_time_]
+   84     2 root     IW<      0  0.0   0  0.0 [diag_wq]
+   86     2 root     IW<      0  0.0   0  0.0 [DIAG_USB_diag]
+   87     2 root     IW<      0  0.0   0  0.0 [diag_cntl_wq]
+   88     2 root     IW<      0  0.0   0  0.0 [diag_dci_wq]
+   89     2 root     IW<      0  0.0   0  0.0 [MODEM_CNTL]
+   90     2 root     IW<      0  0.0   0  0.0 [MODEM_DATA]
+   91     2 root     IW<      0  0.0   0  0.0 [MODEM_CMD]
+   92     2 root     IW<      0  0.0   0  0.0 [MODEM_DCI]
+   93     2 root     IW<      0  0.0   0  0.0 [MODEM_DCI_CMD]
+   94     2 root     IW<      0  0.0   0  0.0 [LPASS_CNTL]
+   95     2 root     IW<      0  0.0   0  0.0 [LPASS_DATA]
+   96     2 root     IW<      0  0.0   0  0.0 [LPASS_CMD]
+   97     2 root     IW<      0  0.0   0  0.0 [LPASS_DCI]
+   98     2 root     IW<      0  0.0   0  0.0 [LPASS_DCI_CMD]
+   99     2 root     IW<      0  0.0   0  0.0 [WCNSS_CNTL]
+  100     2 root     IW<      0  0.0   0  0.0 [WCNSS_DATA]
+  101     2 root     IW<      0  0.0   0  0.0 [WCNSS_CMD]
+  102     2 root     IW<      0  0.0   0  0.0 [WCNSS_DCI]
+  103     2 root     IW<      0  0.0   0  0.0 [WCNSS_DCI_CMD]
+  104     2 root     IW<      0  0.0   0  0.0 [SENSORS_CNTL]
+  105     2 root     IW<      0  0.0   0  0.0 [SENSORS_DATA]
+  106     2 root     IW<      0  0.0   0  0.0 [SENSORS_CMD]
+  107     2 root     IW<      0  0.0   0  0.0 [SENSORS_DCI]
+  108     2 root     IW<      0  0.0   0  0.0 [SENSORS_DCI_CMD]
+  109     2 root     IW<      0  0.0   0  0.0 [DIAG_CTRL]
+  110     2 root     IW<      0  0.0   0  0.0 [DIAG_DATA]
+  111     2 root     IW<      0  0.0   0  0.0 [DIAG_CMD]
+  112     2 root     IW<      0  0.0   0  0.0 [DIAG_DCI_DATA]
+  113     2 root     IW<      0  0.0   0  0.0 [DIAG_DCI_CMD]
+  114     2 root     IW<      0  0.0   0  0.0 [CDSP_CNTL]
+  115     2 root     IW<      0  0.0   0  0.0 [CDSP_DATA]
+  116     2 root     IW<      0  0.0   0  0.0 [CDSP_CMD]
+  117     2 root     IW<      0  0.0   0  0.0 [CDSP_DCI]
+  118     2 root     IW<      0  0.0   0  0.0 [CDSP_DCI_CMD]
+  119     2 root     IW<      0  0.0   0  0.0 [NPU_CNTL]
+  120     2 root     IW<      0  0.0   0  0.0 [NPU_DATA]
+  121     2 root     IW<      0  0.0   0  0.0 [NPU_CMD]
+  122     2 root     IW<      0  0.0   0  0.0 [NPU_DCI]
+  123     2 root     IW<      0  0.0   0  0.0 [NPU_DCI_CMD]
+  124     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  125     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  126     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  127     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  128     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  130     2 root     IW<      0  0.0   0  0.0 [diag_mhi_MDM]
+  131     2 root     IW<      0  0.0   0  0.0 [DIAG_USB_diag_m]
+  132     2 root     IW<      0  0.0   0  0.0 [diag_mhi_MDM_DC]
+  133     2 root     IW<      0  0.0   0  0.0 [diag_dci_MDM_DC]
+  134     2 root     SW       0  0.0   0  0.0 [qseecom-unreg-l]
+  135     2 root     IW<      0  0.0   0  0.0 [atlantic-fwd]
+  136     2 root     SW       0  0.0   0  0.0 [irq/43-arm-smmu]
+  137     2 root     IW<      0  0.0   0  0.0 [mhi_w]
+  143     2 root     IW<      0  0.0   0  0.0 [k_ipa_usb]
+  146     2 root     SW       0  0.0   0  0.0 [irq/194-soc-upd]
+  147     2 root     SW       0  0.0   0  0.0 [irq/195-soc-rea]
+  148     2 root     SW       0  0.0   0  0.0 [irq/196-bsoc-de]
+  149     2 root     SW       0  0.0   0  0.0 [irq/197-msoc-de]
+  150     2 root     SW       0  0.0   0  0.0 [irq/198-msoc-lo]
+  151     2 root     SW       0  0.0   0  0.0 [irq/199-msoc-em]
+  152     2 root     SW       0  0.0   0  0.0 [irq/200-msoc-hi]
+  153     2 root     SW       0  0.0   0  0.0 [irq/201-msoc-fu]
+  154     2 root     SW       0  0.0   0  0.0 [irq/202-vbatt-l]
+  155     2 root     SW       0  0.0   0  0.0 [irq/203-vbatt-p]
+  156     2 root     SW       0  0.0   0  0.0 [irq/204-esr-del]
+  157     2 root     SW       0  0.0   0  0.0 [irq/205-batt-mi]
+  158     2 root     SW       0  0.0   0  0.0 [irq/206-batt-id]
+  159     2 root     SW       0  0.0   0  0.0 [irq/207-batt-te]
+  160     2 root     SW       0  0.0   0  0.0 [irq/208-batt-te]
+  161     2 root     SW       0  0.0   0  0.0 [irq/209-batt-te]
+  162     2 root     SW       0  0.0   0  0.0 [irq/210-ima-rdy]
+  163     2 root     SW       0  0.0   0  0.0 [irq/211-ima-xcp]
+  164     2 root     SW       0  0.0   0  0.0 [irq/212-dma-xcp]
+  165     2 root     SW       0  0.0   0  0.0 [irq/213-dma-gra]
+  166     2 root     SW       0  0.0   0  0.0 [irq/214-mem-att]
+  167     2 root     SW       0  0.0   0  0.0 [irq/149-bcl-lvl]
+  168     2 root     SW       0  0.0   0  0.0 [irq/150-bcl-lvl]
+  169     2 root     SW       0  0.0   0  0.0 [irq/151-bcl-lvl]
+  170     2 root     IW<      0  0.0   0  0.0 [ipv6_addrconf]
+  183     2 root     SW       0  0.0   0  0.0 [irq/216-chgr-er]
+  185     2 root     SW       0  0.0   0  0.0 [irq/217-chg-sta]
+  187     2 root     SW       0  0.0   0  0.0 [irq/223-otg-fai]
+  189     2 root     SW       0  0.0   0  0.0 [irq/226-high-du]
+  190     2 root     SW       0  0.0   0  0.0 [irq/227-input-c]
+  191     2 root     SW       0  0.0   0  0.0 [irq/229-switche]
+  192     2 root     SW       0  0.0   0  0.0 [irq/230-bat-tem]
+  193     2 root     SW       0  0.0   0  0.0 [irq/231-bat-ov]
+  194     2 root     SW       0  0.0   0  0.0 [irq/232-bat-low]
+  195     2 root     SW       0  0.0   0  0.0 [irq/233-bat-the]
+  196     2 root     SW       0  0.0   0  0.0 [irq/234-bat-ter]
+  197     2 root     SW       0  0.0   0  0.0 [irq/237-usbin-c]
+  198     2 root     SW       0  0.0   0  0.0 [irq/238-usbin-v]
+  199     2 root     SW       0  0.0   0  0.0 [irq/239-usbin-u]
+  200     2 root     SW       0  0.0   0  0.0 [irq/240-usbin-o]
+  201     2 root     SW       0  0.0   0  0.0 [irq/241-usbin-p]
+  202     2 root     SW       0  0.0   0  0.0 [irq/243-usbin-s]
+  203     2 root     SW       0  0.0   0  0.0 [irq/244-usbin-i]
+  204     2 root     SW       0  0.0   0  0.0 [irq/246-dcin-uv]
+  205     2 root     SW       0  0.0   0  0.0 [irq/247-dcin-ov]
+  206     2 root     SW       0  0.0   0  0.0 [irq/248-dcin-pl]
+  207     2 root     SW       0  0.0   0  0.0 [irq/250-dcin-po]
+  208     2 root     SW       0  0.0   0  0.0 [irq/251-dcin-en]
+  209     2 root     SW       0  0.0   0  0.0 [irq/252-typec-o]
+  210     2 root     SW       0  0.0   0  0.0 [irq/254-typec-c]
+  211     2 root     SW       0  0.0   0  0.0 [irq/255-typec-v]
+  212     2 root     SW       0  0.0   0  0.0 [irq/257-typec-a]
+  213     2 root     SW       0  0.0   0  0.0 [irq/258-typec-l]
+  214     2 root     SW       0  0.0   0  0.0 [irq/260-wdog-sn]
+  215     2 root     SW       0  0.0   0  0.0 [irq/261-wdog-ba]
+  216     2 root     SW       0  0.0   0  0.0 [irq/263-aicl-do]
+  217     2 root     SW       0  0.0   0  0.0 [irq/264-smb-en]
+  218     2 root     SW       0  0.0   0  0.0 [irq/265-temp-ch]
+  219     2 root     SW       0  0.0   0  0.0 [irq/119-qcom,te]
+  220     2 root     SW       0  0.0   0  0.0 [irq/129-qcom,te]
+  221     2 root     IW<      0  0.0   0  0.0 [etr_pcie]
+  228     2 root     SW       0  0.0   0  0.0 [irq/141-sig-tx]
+  229     2 root     SW       0  0.0   0  0.0 [irq/142-sig-rx]
+  230     2 root     SW       0  0.0   0  0.0 [irq/60-pwr_even]
+  231     2 root     SW       0  0.0   0  0.0 [irq/59-dp_hs_ph]
+  232     2 root     SW       0  0.0   0  0.0 [irq/61-dm_hs_ph]
+  233     2 root     SW       0  0.0   0  0.0 [irq/62-ss_phy_i]
+  234     2 root     SW       0  0.0   0  0.0 [irq/44-arm-smmu]
+  235     2 root     IW<      0  0.0   0  0.0 [usb_bam_wq]
+  316     2 root     SW       0  0.0   0  0.0 [irq/48-arm-smmu]
+  320     2 root     SW       0  0.0   0  0.0 [irq/49-arm-smmu]
+  322     2 root     SW       0  0.0   0  0.0 [irq/50-arm-smmu]
+  358     2 root     IW<      0  0.0   0  0.0 [ipa_interrupt_w]
+  360     2 root     IW<      0  0.0   0  0.0 [ipawq36]
+  363     2 root     IW<      0  0.0   0  0.0 [iparepwq36]
+  364     2 root     IW<      0  0.0   0  0.0 [ipawq33]
+  365     2 root     IW<      0  0.0   0  0.0 [iparepwq33]
+  366     2 root     IW<      0  0.0   0  0.0 [ipawq32]
+  368     2 root     IW<      0  0.0   0  0.0 [iparepwq32]
+  369     2 root     IW<      0  0.0   0  0.0 [ipa_ut_dbgfs]
+  371     2 root     IW<      0  0.0   0  0.0 [clnt_req]
+  628     2 root     IW<      0  0.0   0  0.0 [at_usb0]
+  630     2 root     IW<      0  0.0   0  0.0 [at_usb1]
+  634     2 root     IW<      0  0.0   0  0.0 [rmnet_ctrl]
+  639     2 root     IW<      0  0.0   0  0.0 [android_mbim]
+  641     2 root     IW<      0  0.0   0  0.0 [dpl_ctrl]
+  644     2 root     IW<      0  0.0   0  0.0 [gps]
+  646     2 root     IW<      0  0.0   0  0.0 [qdss]
+  651     2 root     IW<      0  0.0   0  0.0 [qdss_mdm]
+  660     2 root     SW       0  0.0   0  0.0 [glink_modem]
+  687     2 root     SW       0  0.0   0  0.0 [kworker/u2:9]
+  688     2 root     IW<      0  0.0   0  0.0 [kworker/0:1H]
+  901     2 root     IW<      0  0.0   0  0.0 [ipawq34]
+  902     2 root     IW<      0  0.0   0  0.0 [iparepwq34]
+  903     2 root     IW<      0  0.0   0  0.0 [ipawq35]
+  904     2 root     IW<      0  0.0   0  0.0 [iparepwq35]
+ 1390     2 root     SW       0  0.0   0  0.0 [file-storage]
+ 1596     2 root     SW       0  0.0   0  0.0 [irq/45-arm-smmu]
+ 1865     2 root     IW<      0  0.0   0  0.0 [cds_recovery_wo]
+ 1867     2 root     SW       0  0.0   0  0.0 [irq/159-mhi]
+ 1869     2 root     SW       0  0.0   0  0.0 [qrtr_rx]
+32265     2 root     IW       0  0.0   0  0.0 [kworker/u2:6]
+Mem: 227792K used, 571772K free, 108K shrd, 0K buff, 22996K cached
+CPU:  0.0% usr  1.3% sys  0.0% nic 98.3% idle  0.0% io  0.0% irq  0.3% sirq
+Load average: 0.08 0.04 0.00 1/425 500
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  493   943 root     R     2868  0.3   0  0.8 top -b -n 4 -d 3
+ 1889     2 root     SW<      0  0.0   0  0.4 [scheduler_threa]
+    9     2 root     IW       0  0.0   0  0.2 [rcu_preempt]
+25176     2 root     IW       0  0.0   0  0.2 [kworker/u2:7]
+  584     1 mifi     S     277m 35.2   0  0.0 /usr/bin/netmgrd
+ 1314     1 root     S     162m 20.6   0  0.0 /opt/nvtl/bin/modem2d
+ 1686     1 root     S    77056  9.5   0  0.0 /opt/nvtl/bin/deviceagentd
+  838     1 root     S    74016  9.2   0  0.0 /opt/nvtl/bin/dsmd
+  534     1 root     S    67676  8.4   0  0.0 ipacm
+ 1257     1 root     S    61288  7.6   0  0.0 /opt/nvtl/bin/powersaved
+ 1333     1 root     S    59256  7.3   0  0.0 /opt/nvtl/bin/sim_mgrd
+ 1384     1 root     S    59248  7.3   0  0.0 /opt/nvtl/bin/gpsd
+ 1413     1 root     S    58708  7.3   0  0.0 /opt/nvtl/bin/smsd
+ 1911     1 root     S    56824  7.0   0  0.0 qmuxbridge
+ 1445     1 root     S    53816  6.6   0  0.0 /opt/nvtl/bin/dmdbd
+ 1345     1 root     S    50868  6.3   0  0.0 /opt/nvtl/bin/ccm2d
+ 1237     1 root     S    50412  6.2   0  0.0 /opt/nvtl/bin/wifid
+ 1763     1 root     S    46000  5.7   0  0.0 /opt/nvtl/bin/nuad
+ 1315     1 root     S    45516  5.6   0  0.0 duad
+  523     1 root     S    42572  5.2   0  0.0 ipacm_perf
+  695     1 root     S    40672  5.0   0  0.0 qti
+ 1748     1 root     S    38392  4.7   0  0.0 /opt/nvtl/bin/cloud_engined
+ 1274     1 root     S    37492  4.6   0  0.0 /opt/nvtl/bin/factory_resetd
+ 1793     1 root     S    37220  4.6   0  0.0 /opt/nvtl/bin/webuid -c /opt/nvtl/data/branding/etc/webui/config.xml -m /opt/nvtl/etc/webui/menu_layout.json -r /etc/lighttpd/mod_rewrite.conf -p /etc/lighttpd/mod_proxy.conf -l en_US UTF-8 -l es_MX UTF-8 -l fr_FR UTF-8 -l fr_CA UTF-8 -l ar_AE UTF-8 -l de_DE UTF-8 -l it_IT UTF-8 -l ja_JP UTF-8
+ 1506     1 root     S    36576  4.5   0  0.0 /opt/nvtl/bin/ledd
+ 1185     1 root     S    35488  4.4   0  0.0 /opt/nvtl/bin/ansd
+ 1093     1 root     S    34288  4.2   0  0.0 /opt/nvtl/bin/router2d
+ 1094     1 root     S    34260  4.2   0  0.0 /opt/nvtl/bin/usbd
+ 1480     1 root     S    33528  4.1   0  0.0 /opt/nvtl/bin/vpnd
+ 1099     1 root     S    32900  4.0   0  0.0 /opt/nvtl/bin/wan_mgrd
+  848     1 root     S    32788  4.0   0  0.0 /opt/nvtl/bin/mifi_healthd
+ 1355     1 root     S    31840  3.9   0  0.0 /sbin/adbd
+  591     1 1000     S    29632  3.6   0  0.0 /sbin/tftp_server
+  837     1 root     S    28948  3.6   0  0.0 /opt/nvtl/bin/settingsd
+ 1892  1891 lighttpd S    27152  3.3   0  0.0 /opt/nvtl/bin/sysser.fcgi
+ 1687     1 root     S    25068  3.1   0  0.0 /opt/nvtl/bin/emd
+ 1302     1 root     S    23808  2.9   0  0.0 /opt/nvtl/bin/fotad
+ 1507     1 root     S    23576  2.9   0  0.0 /opt/nvtl/bin/diag_read diag_read
+  572     1 root     S    23344  2.9   0  0.0 /usr/bin/port_bridge at_mdm0 at_usb0
+ 1893  1891 lighttpd S    20292  2.5   0  0.0 /opt/nvtl/bin/restapi.fcgi
+ 1666     1 root     S    18820  2.3   0  0.0 /opt/nvtl/bin/nua_timer_watchdogd
+  558     1 root     S    15208  1.8   0  0.0 ipacmdiag
+ 1106     1 root     S     9368  1.1   0  0.0 /opt/nvtl/bin/devuid
+ 1941  1237 root     S     9040  1.1   0  0.0 /opt/nvtl/bin/hostapd /tmp/wifi/hostapd/wlan0_hostapd.conf -f /tmp/wifi/hostapd/wlan0_hostapd.log
+ 1960  1237 root     S     9028  1.1   0  0.0 /opt/nvtl/bin/hostapd /tmp/wifi/hostapd/wlan1_hostapd.conf -f /tmp/wifi/hostapd/wlan1_hostapd.log
+  799     1 root     S     8040  1.0   0  0.0 /opt/nvtl/bin/msgbusd
+  986     1 root     S     8028  1.0   0  0.0 /opt/nvtl/bin/mifi_watchdogd
+ 2337     1 root     S     5860  0.7   0  0.0 dhcpd -f -cf /opt/nvtl/tmp/router2/dhcpd.conf -lf /opt/nvtl/tmp/router2/dhcpd.leases
+ 1891     1 lighttpd S     5816  0.7   0  0.0 /usr/sbin/lighttpd -f /etc/lighttpd/lighttpd.conf
+ 3560     1 root     S     4808  0.6   0  0.0 dhcpd6 -6 -f -cf /opt/nvtl/tmp/router2/dhcpd6.conf -lf /opt/nvtl/tmp/router2/dhcpd6.leases bridge0
+  765     1 root     S     3252  0.4   0  0.0 {syslogd_monitor} /bin/sh /opt/nvtl/bin/syslogd_monitor.sh
+  943     1 root     S     2868  0.3   0  0.0 {nvtl_mem_diag.s} /bin/sh /opt/nvtl/bin/nvtl_mem_diag.sh daemon 1024 10 15 5 60 30 15 3 2 1 0 5
+ 1912     1 root     S     2868  0.3   0  0.0 /sbin/getty 115200 ttyMSM0 vt100
+32694   765 root     S     2736  0.3   0  0.0 sleep 40
+  262     1 root     S     2408  0.3   0  0.0 udevd --daemon
+  287   262 root     S     2408  0.3   0  0.0 udevd --daemon
+  288   262 root     S     2408  0.3   0  0.0 udevd --daemon
+  711     1 root     S     2280  0.2   0  0.0 /usr/sbin/rngd
+  318     1 root     S     2152  0.2   0  0.0 /sbin/syslogd -z 1024 -q 1024 -o 10 -m 0 -f /etc/syslog.conf
+ 3609     1 root     S     1804  0.2   0  0.0 dnsmasq -k --interface=bridge0 --strict-order --clear-on-reload --user=root --group=root --no-poll
+  783     1 root     S     1724  0.2   0  0.0 /opt/nvtl/bin/mifi_debugd
+ 3537     1 root     S     1648  0.2   0  0.0 radvd -C /opt/nvtl/tmp/router2/radvd.conf -m syslog
+ 3540  3537 root     S     1648  0.2   0  0.0 radvd -C /opt/nvtl/tmp/router2/radvd.conf -m syslog
+    1     0 root     S     1476  0.1   0  0.0 init [3]
+  680     1 root     S     1456  0.1   0  0.0 qrtr-ns
+  527     1 root     S     1316  0.1   0  0.0 /sbin/init_mss
+    8     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+  236     2 root     SW       0  0.0   0  0.0 [ubi_bgt0d]
+  237     2 root     SW       0  0.0   0  0.0 [ubifs_bgt0_0]
+  662     2 root     SW       0  0.0   0  0.0 [qrtr_rx]
+16920     2 root     IW       0  0.0   0  0.0 [kworker/u2:3]
+12489     2 root     SW       0  0.0   0  0.0 [kworker/u2:2]
+ 9229     2 root     SW       0  0.0   0  0.0 [kworker/u2:4]
+13231     2 root     SW       0  0.0   0  0.0 [kworker/u2:11]
+ 1866     2 root     SW       0  0.0   0  0.0 [wlan_logging_th]
+ 4628     2 root     IW       0  0.0   0  0.0 [kworker/u2:1]
+16366     2 root     SW       0  0.0   0  0.0 [kworker/u2:0]
+16959     2 root     SW       0  0.0   0  0.0 [kworker/u2:12]
+  549     2 root     IW<      0  0.0   0  0.0 [kworker/u3:18]
+25637     2 root     SW       0  0.0   0  0.0 [kworker/u2:5]
+   15     2 root     SW       0  0.0   0  0.0 [msm_watchdog]
+    4     2 root     IW       0  0.0   0  0.0 [kworker/0:0]
+   81     2 root     SW       0  0.0   0  0.0 [hwrng]
+30717     2 root     SW       0  0.0   0  0.0 [kworker/u2:10]
+  547     2 root     IW<      0  0.0   0  0.0 [kworker/u3:16]
+    2     0 root     SW       0  0.0   0  0.0 [kthreadd]
+31293     2 root     IW       0  0.0   0  0.0 [kworker/0:1]
+   12     2 root     SW       0  0.0   0  0.0 [kdevtmpfs]
+  348     2 root     SW       0  0.0   0  0.0 [ubi_bgt1d]
+32241     2 root     IW       0  0.0   0  0.0 [kworker/0:2]
+    3     2 root     IW<      0  0.0   0  0.0 [rcu_gp]
+    5     2 root     IW<      0  0.0   0  0.0 [kworker/0:0H]
+    7     2 root     IW<      0  0.0   0  0.0 [mm_percpu_wq]
+   10     2 root     IW       0  0.0   0  0.0 [rcu_sched]
+   11     2 root     IW       0  0.0   0  0.0 [rcu_bh]
+   13     2 root     IW<      0  0.0   0  0.0 [netns]
+   18     2 root     IW<      0  0.0   0  0.0 [ipa_usb_wq]
+   19     2 root     SW       0  0.0   0  0.0 [qmp_aop]
+   21     2 root     SW       0  0.0   0  0.0 [oom_reaper]
+   22     2 root     IW<      0  0.0   0  0.0 [writeback]
+   23     2 root     SW       0  0.0   0  0.0 [kcompactd0]
+   24     2 root     IW<      0  0.0   0  0.0 [crypto]
+   25     2 root     IW<      0  0.0   0  0.0 [kblockd]
+   26     2 root     SW       0  0.0   0  0.0 [irq/42-arm-smmu]
+   27     2 root     SW       0  0.0   0  0.0 [irq/35-tsens-up]
+   28     2 root     SW       0  0.0   0  0.0 [irq/36-tsens-cr]
+   29     2 root     SW       0  0.0   0  0.0 [system]
+   30     2 root     IW<      0  0.0   0  0.0 [ipa_power_mgmt]
+   31     2 root     IW<      0  0.0   0  0.0 [transport_power]
+   32     2 root     IW<      0  0.0   0  0.0 [ipa_pm_activate]
+   33     2 root     IW<      0  0.0   0  0.0 [ipa_eth]
+   34     2 root     IW<      0  0.0   0  0.0 [devfreq_wq]
+   35     2 root     IW<      0  0.0   0  0.0 [cfg80211]
+   36     2 root     IW<      0  0.0   0  0.0 [watchdogd]
+   37     2 root     SW       0  0.0   0  0.0 [kauditd]
+   38     2 root     SW       0  0.0   0  0.0 [kswapd0]
+   77     2 root     SW       0  0.0   0  0.0 [irq/32-smp2p]
+   78     2 root     IW<      0  0.0   0  0.0 [k_hsuart]
+   79     2 root     SW       0  0.0   0  0.0 [msm_serial_hs_0]
+   80     2 root     SW       0  0.0   0  0.0 [msm_serial_hs_0]
+   83     2 root     IW<      0  0.0   0  0.0 [diag_real_time_]
+   84     2 root     IW<      0  0.0   0  0.0 [diag_wq]
+   86     2 root     IW<      0  0.0   0  0.0 [DIAG_USB_diag]
+   87     2 root     IW<      0  0.0   0  0.0 [diag_cntl_wq]
+   88     2 root     IW<      0  0.0   0  0.0 [diag_dci_wq]
+   89     2 root     IW<      0  0.0   0  0.0 [MODEM_CNTL]
+   90     2 root     IW<      0  0.0   0  0.0 [MODEM_DATA]
+   91     2 root     IW<      0  0.0   0  0.0 [MODEM_CMD]
+   92     2 root     IW<      0  0.0   0  0.0 [MODEM_DCI]
+   93     2 root     IW<      0  0.0   0  0.0 [MODEM_DCI_CMD]
+   94     2 root     IW<      0  0.0   0  0.0 [LPASS_CNTL]
+   95     2 root     IW<      0  0.0   0  0.0 [LPASS_DATA]
+   96     2 root     IW<      0  0.0   0  0.0 [LPASS_CMD]
+   97     2 root     IW<      0  0.0   0  0.0 [LPASS_DCI]
+   98     2 root     IW<      0  0.0   0  0.0 [LPASS_DCI_CMD]
+   99     2 root     IW<      0  0.0   0  0.0 [WCNSS_CNTL]
+  100     2 root     IW<      0  0.0   0  0.0 [WCNSS_DATA]
+  101     2 root     IW<      0  0.0   0  0.0 [WCNSS_CMD]
+  102     2 root     IW<      0  0.0   0  0.0 [WCNSS_DCI]
+  103     2 root     IW<      0  0.0   0  0.0 [WCNSS_DCI_CMD]
+  104     2 root     IW<      0  0.0   0  0.0 [SENSORS_CNTL]
+  105     2 root     IW<      0  0.0   0  0.0 [SENSORS_DATA]
+  106     2 root     IW<      0  0.0   0  0.0 [SENSORS_CMD]
+  107     2 root     IW<      0  0.0   0  0.0 [SENSORS_DCI]
+  108     2 root     IW<      0  0.0   0  0.0 [SENSORS_DCI_CMD]
+  109     2 root     IW<      0  0.0   0  0.0 [DIAG_CTRL]
+  110     2 root     IW<      0  0.0   0  0.0 [DIAG_DATA]
+  111     2 root     IW<      0  0.0   0  0.0 [DIAG_CMD]
+  112     2 root     IW<      0  0.0   0  0.0 [DIAG_DCI_DATA]
+  113     2 root     IW<      0  0.0   0  0.0 [DIAG_DCI_CMD]
+  114     2 root     IW<      0  0.0   0  0.0 [CDSP_CNTL]
+  115     2 root     IW<      0  0.0   0  0.0 [CDSP_DATA]
+  116     2 root     IW<      0  0.0   0  0.0 [CDSP_CMD]
+  117     2 root     IW<      0  0.0   0  0.0 [CDSP_DCI]
+  118     2 root     IW<      0  0.0   0  0.0 [CDSP_DCI_CMD]
+  119     2 root     IW<      0  0.0   0  0.0 [NPU_CNTL]
+  120     2 root     IW<      0  0.0   0  0.0 [NPU_DATA]
+  121     2 root     IW<      0  0.0   0  0.0 [NPU_CMD]
+  122     2 root     IW<      0  0.0   0  0.0 [NPU_DCI]
+  123     2 root     IW<      0  0.0   0  0.0 [NPU_DCI_CMD]
+  124     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  125     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  126     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  127     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  128     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  130     2 root     IW<      0  0.0   0  0.0 [diag_mhi_MDM]
+  131     2 root     IW<      0  0.0   0  0.0 [DIAG_USB_diag_m]
+  132     2 root     IW<      0  0.0   0  0.0 [diag_mhi_MDM_DC]
+  133     2 root     IW<      0  0.0   0  0.0 [diag_dci_MDM_DC]
+  134     2 root     SW       0  0.0   0  0.0 [qseecom-unreg-l]
+  135     2 root     IW<      0  0.0   0  0.0 [atlantic-fwd]
+  136     2 root     SW       0  0.0   0  0.0 [irq/43-arm-smmu]
+  137     2 root     IW<      0  0.0   0  0.0 [mhi_w]
+  143     2 root     IW<      0  0.0   0  0.0 [k_ipa_usb]
+  146     2 root     SW       0  0.0   0  0.0 [irq/194-soc-upd]
+  147     2 root     SW       0  0.0   0  0.0 [irq/195-soc-rea]
+  148     2 root     SW       0  0.0   0  0.0 [irq/196-bsoc-de]
+  149     2 root     SW       0  0.0   0  0.0 [irq/197-msoc-de]
+  150     2 root     SW       0  0.0   0  0.0 [irq/198-msoc-lo]
+  151     2 root     SW       0  0.0   0  0.0 [irq/199-msoc-em]
+  152     2 root     SW       0  0.0   0  0.0 [irq/200-msoc-hi]
+  153     2 root     SW       0  0.0   0  0.0 [irq/201-msoc-fu]
+  154     2 root     SW       0  0.0   0  0.0 [irq/202-vbatt-l]
+  155     2 root     SW       0  0.0   0  0.0 [irq/203-vbatt-p]
+  156     2 root     SW       0  0.0   0  0.0 [irq/204-esr-del]
+  157     2 root     SW       0  0.0   0  0.0 [irq/205-batt-mi]
+  158     2 root     SW       0  0.0   0  0.0 [irq/206-batt-id]
+  159     2 root     SW       0  0.0   0  0.0 [irq/207-batt-te]
+  160     2 root     SW       0  0.0   0  0.0 [irq/208-batt-te]
+  161     2 root     SW       0  0.0   0  0.0 [irq/209-batt-te]
+  162     2 root     SW       0  0.0   0  0.0 [irq/210-ima-rdy]
+  163     2 root     SW       0  0.0   0  0.0 [irq/211-ima-xcp]
+  164     2 root     SW       0  0.0   0  0.0 [irq/212-dma-xcp]
+  165     2 root     SW       0  0.0   0  0.0 [irq/213-dma-gra]
+  166     2 root     SW       0  0.0   0  0.0 [irq/214-mem-att]
+  167     2 root     SW       0  0.0   0  0.0 [irq/149-bcl-lvl]
+  168     2 root     SW       0  0.0   0  0.0 [irq/150-bcl-lvl]
+  169     2 root     SW       0  0.0   0  0.0 [irq/151-bcl-lvl]
+  170     2 root     IW<      0  0.0   0  0.0 [ipv6_addrconf]
+  183     2 root     SW       0  0.0   0  0.0 [irq/216-chgr-er]
+  185     2 root     SW       0  0.0   0  0.0 [irq/217-chg-sta]
+  187     2 root     SW       0  0.0   0  0.0 [irq/223-otg-fai]
+  189     2 root     SW       0  0.0   0  0.0 [irq/226-high-du]
+  190     2 root     SW       0  0.0   0  0.0 [irq/227-input-c]
+  191     2 root     SW       0  0.0   0  0.0 [irq/229-switche]
+  192     2 root     SW       0  0.0   0  0.0 [irq/230-bat-tem]
+  193     2 root     SW       0  0.0   0  0.0 [irq/231-bat-ov]
+  194     2 root     SW       0  0.0   0  0.0 [irq/232-bat-low]
+  195     2 root     SW       0  0.0   0  0.0 [irq/233-bat-the]
+  196     2 root     SW       0  0.0   0  0.0 [irq/234-bat-ter]
+  197     2 root     SW       0  0.0   0  0.0 [irq/237-usbin-c]
+  198     2 root     SW       0  0.0   0  0.0 [irq/238-usbin-v]
+  199     2 root     SW       0  0.0   0  0.0 [irq/239-usbin-u]
+  200     2 root     SW       0  0.0   0  0.0 [irq/240-usbin-o]
+  201     2 root     SW       0  0.0   0  0.0 [irq/241-usbin-p]
+  202     2 root     SW       0  0.0   0  0.0 [irq/243-usbin-s]
+  203     2 root     SW       0  0.0   0  0.0 [irq/244-usbin-i]
+  204     2 root     SW       0  0.0   0  0.0 [irq/246-dcin-uv]
+  205     2 root     SW       0  0.0   0  0.0 [irq/247-dcin-ov]
+  206     2 root     SW       0  0.0   0  0.0 [irq/248-dcin-pl]
+  207     2 root     SW       0  0.0   0  0.0 [irq/250-dcin-po]
+  208     2 root     SW       0  0.0   0  0.0 [irq/251-dcin-en]
+  209     2 root     SW       0  0.0   0  0.0 [irq/252-typec-o]
+  210     2 root     SW       0  0.0   0  0.0 [irq/254-typec-c]
+  211     2 root     SW       0  0.0   0  0.0 [irq/255-typec-v]
+  212     2 root     SW       0  0.0   0  0.0 [irq/257-typec-a]
+  213     2 root     SW       0  0.0   0  0.0 [irq/258-typec-l]
+  214     2 root     SW       0  0.0   0  0.0 [irq/260-wdog-sn]
+  215     2 root     SW       0  0.0   0  0.0 [irq/261-wdog-ba]
+  216     2 root     SW       0  0.0   0  0.0 [irq/263-aicl-do]
+  217     2 root     SW       0  0.0   0  0.0 [irq/264-smb-en]
+  218     2 root     SW       0  0.0   0  0.0 [irq/265-temp-ch]
+  219     2 root     SW       0  0.0   0  0.0 [irq/119-qcom,te]
+  220     2 root     SW       0  0.0   0  0.0 [irq/129-qcom,te]
+  221     2 root     IW<      0  0.0   0  0.0 [etr_pcie]
+  228     2 root     SW       0  0.0   0  0.0 [irq/141-sig-tx]
+  229     2 root     SW       0  0.0   0  0.0 [irq/142-sig-rx]
+  230     2 root     SW       0  0.0   0  0.0 [irq/60-pwr_even]
+  231     2 root     SW       0  0.0   0  0.0 [irq/59-dp_hs_ph]
+  232     2 root     SW       0  0.0   0  0.0 [irq/61-dm_hs_ph]
+  233     2 root     SW       0  0.0   0  0.0 [irq/62-ss_phy_i]
+  234     2 root     SW       0  0.0   0  0.0 [irq/44-arm-smmu]
+  235     2 root     IW<      0  0.0   0  0.0 [usb_bam_wq]
+  316     2 root     SW       0  0.0   0  0.0 [irq/48-arm-smmu]
+  320     2 root     SW       0  0.0   0  0.0 [irq/49-arm-smmu]
+  322     2 root     SW       0  0.0   0  0.0 [irq/50-arm-smmu]
+  358     2 root     IW<      0  0.0   0  0.0 [ipa_interrupt_w]
+  360     2 root     IW<      0  0.0   0  0.0 [ipawq36]
+  363     2 root     IW<      0  0.0   0  0.0 [iparepwq36]
+  364     2 root     IW<      0  0.0   0  0.0 [ipawq33]
+  365     2 root     IW<      0  0.0   0  0.0 [iparepwq33]
+  366     2 root     IW<      0  0.0   0  0.0 [ipawq32]
+  368     2 root     IW<      0  0.0   0  0.0 [iparepwq32]
+  369     2 root     IW<      0  0.0   0  0.0 [ipa_ut_dbgfs]
+  371     2 root     IW<      0  0.0   0  0.0 [clnt_req]
+  628     2 root     IW<      0  0.0   0  0.0 [at_usb0]
+  630     2 root     IW<      0  0.0   0  0.0 [at_usb1]
+  634     2 root     IW<      0  0.0   0  0.0 [rmnet_ctrl]
+  639     2 root     IW<      0  0.0   0  0.0 [android_mbim]
+  641     2 root     IW<      0  0.0   0  0.0 [dpl_ctrl]
+  644     2 root     IW<      0  0.0   0  0.0 [gps]
+  646     2 root     IW<      0  0.0   0  0.0 [qdss]
+  651     2 root     IW<      0  0.0   0  0.0 [qdss_mdm]
+  660     2 root     SW       0  0.0   0  0.0 [glink_modem]
+  687     2 root     SW       0  0.0   0  0.0 [kworker/u2:9]
+  688     2 root     IW<      0  0.0   0  0.0 [kworker/0:1H]
+  901     2 root     IW<      0  0.0   0  0.0 [ipawq34]
+  902     2 root     IW<      0  0.0   0  0.0 [iparepwq34]
+  903     2 root     IW<      0  0.0   0  0.0 [ipawq35]
+  904     2 root     IW<      0  0.0   0  0.0 [iparepwq35]
+ 1390     2 root     SW       0  0.0   0  0.0 [file-storage]
+ 1596     2 root     SW       0  0.0   0  0.0 [irq/45-arm-smmu]
+ 1865     2 root     IW<      0  0.0   0  0.0 [cds_recovery_wo]
+ 1867     2 root     SW       0  0.0   0  0.0 [irq/159-mhi]
+ 1869     2 root     SW       0  0.0   0  0.0 [qrtr_rx]
+32265     2 root     IW       0  0.0   0  0.0 [kworker/u2:6]
+Mem: 227792K used, 571772K free, 108K shrd, 0K buff, 23020K cached
+CPU:  0.6% usr  0.6% sys  0.0% nic 98.3% idle  0.0% io  0.0% irq  0.3% sirq
+Load average: 0.07 0.04 0.00 1/425 500
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+  493   943 root     R     2868  0.3   0  0.3 top -b -n 4 -d 3
+  318     1 root     S     2152  0.2   0  0.3 /sbin/syslogd -z 1024 -q 1024 -o 10 -m 0 -f /etc/syslog.conf
+ 1889     2 root     SW<      0  0.0   0  0.3 [scheduler_threa]
+  662     2 root     SW       0  0.0   0  0.3 [qrtr_rx]
+25176     2 root     IW       0  0.0   0  0.3 [kworker/u2:7]
+  584     1 mifi     S     277m 35.2   0  0.0 /usr/bin/netmgrd
+ 1314     1 root     S     162m 20.6   0  0.0 /opt/nvtl/bin/modem2d
+ 1686     1 root     S    77056  9.5   0  0.0 /opt/nvtl/bin/deviceagentd
+  838     1 root     S    74016  9.2   0  0.0 /opt/nvtl/bin/dsmd
+  534     1 root     S    67676  8.4   0  0.0 ipacm
+ 1257     1 root     S    61288  7.6   0  0.0 /opt/nvtl/bin/powersaved
+ 1333     1 root     S    59256  7.3   0  0.0 /opt/nvtl/bin/sim_mgrd
+ 1384     1 root     S    59248  7.3   0  0.0 /opt/nvtl/bin/gpsd
+ 1413     1 root     S    58708  7.3   0  0.0 /opt/nvtl/bin/smsd
+ 1911     1 root     S    56824  7.0   0  0.0 qmuxbridge
+ 1445     1 root     S    53816  6.6   0  0.0 /opt/nvtl/bin/dmdbd
+ 1345     1 root     S    50868  6.3   0  0.0 /opt/nvtl/bin/ccm2d
+ 1237     1 root     S    50412  6.2   0  0.0 /opt/nvtl/bin/wifid
+ 1763     1 root     S    46000  5.7   0  0.0 /opt/nvtl/bin/nuad
+ 1315     1 root     S    45516  5.6   0  0.0 duad
+  523     1 root     S    42572  5.2   0  0.0 ipacm_perf
+  695     1 root     S    40672  5.0   0  0.0 qti
+ 1748     1 root     S    38392  4.7   0  0.0 /opt/nvtl/bin/cloud_engined
+ 1274     1 root     S    37492  4.6   0  0.0 /opt/nvtl/bin/factory_resetd
+ 1793     1 root     S    37220  4.6   0  0.0 /opt/nvtl/bin/webuid -c /opt/nvtl/data/branding/etc/webui/config.xml -m /opt/nvtl/etc/webui/menu_layout.json -r /etc/lighttpd/mod_rewrite.conf -p /etc/lighttpd/mod_proxy.conf -l en_US UTF-8 -l es_MX UTF-8 -l fr_FR UTF-8 -l fr_CA UTF-8 -l ar_AE UTF-8 -l de_DE UTF-8 -l it_IT UTF-8 -l ja_JP UTF-8
+ 1506     1 root     S    36576  4.5   0  0.0 /opt/nvtl/bin/ledd
+ 1185     1 root     S    35488  4.4   0  0.0 /opt/nvtl/bin/ansd
+ 1093     1 root     S    34288  4.2   0  0.0 /opt/nvtl/bin/router2d
+ 1094     1 root     S    34260  4.2   0  0.0 /opt/nvtl/bin/usbd
+ 1480     1 root     S    33528  4.1   0  0.0 /opt/nvtl/bin/vpnd
+ 1099     1 root     S    32900  4.0   0  0.0 /opt/nvtl/bin/wan_mgrd
+  848     1 root     S    32788  4.0   0  0.0 /opt/nvtl/bin/mifi_healthd
+ 1355     1 root     S    31840  3.9   0  0.0 /sbin/adbd
+  591     1 1000     S    29632  3.6   0  0.0 /sbin/tftp_server
+  837     1 root     S    28948  3.6   0  0.0 /opt/nvtl/bin/settingsd
+ 1892  1891 lighttpd S    27152  3.3   0  0.0 /opt/nvtl/bin/sysser.fcgi
+ 1687     1 root     S    25068  3.1   0  0.0 /opt/nvtl/bin/emd
+ 1302     1 root     S    23808  2.9   0  0.0 /opt/nvtl/bin/fotad
+ 1507     1 root     S    23576  2.9   0  0.0 /opt/nvtl/bin/diag_read diag_read
+  572     1 root     S    23344  2.9   0  0.0 /usr/bin/port_bridge at_mdm0 at_usb0
+ 1893  1891 lighttpd S    20292  2.5   0  0.0 /opt/nvtl/bin/restapi.fcgi
+ 1666     1 root     S    18820  2.3   0  0.0 /opt/nvtl/bin/nua_timer_watchdogd
+  558     1 root     S    15208  1.8   0  0.0 ipacmdiag
+ 1106     1 root     S     9368  1.1   0  0.0 /opt/nvtl/bin/devuid
+ 1941  1237 root     S     9040  1.1   0  0.0 /opt/nvtl/bin/hostapd /tmp/wifi/hostapd/wlan0_hostapd.conf -f /tmp/wifi/hostapd/wlan0_hostapd.log
+ 1960  1237 root     S     9028  1.1   0  0.0 /opt/nvtl/bin/hostapd /tmp/wifi/hostapd/wlan1_hostapd.conf -f /tmp/wifi/hostapd/wlan1_hostapd.log
+  799     1 root     S     8040  1.0   0  0.0 /opt/nvtl/bin/msgbusd
+  986     1 root     S     8028  1.0   0  0.0 /opt/nvtl/bin/mifi_watchdogd
+ 2337     1 root     S     5860  0.7   0  0.0 dhcpd -f -cf /opt/nvtl/tmp/router2/dhcpd.conf -lf /opt/nvtl/tmp/router2/dhcpd.leases
+ 1891     1 lighttpd S     5816  0.7   0  0.0 /usr/sbin/lighttpd -f /etc/lighttpd/lighttpd.conf
+ 3560     1 root     S     4808  0.6   0  0.0 dhcpd6 -6 -f -cf /opt/nvtl/tmp/router2/dhcpd6.conf -lf /opt/nvtl/tmp/router2/dhcpd6.leases bridge0
+  765     1 root     S     3252  0.4   0  0.0 {syslogd_monitor} /bin/sh /opt/nvtl/bin/syslogd_monitor.sh
+  943     1 root     S     2868  0.3   0  0.0 {nvtl_mem_diag.s} /bin/sh /opt/nvtl/bin/nvtl_mem_diag.sh daemon 1024 10 15 5 60 30 15 3 2 1 0 5
+ 1912     1 root     S     2868  0.3   0  0.0 /sbin/getty 115200 ttyMSM0 vt100
+32694   765 root     S     2736  0.3   0  0.0 sleep 40
+  262     1 root     S     2408  0.3   0  0.0 udevd --daemon
+  287   262 root     S     2408  0.3   0  0.0 udevd --daemon
+  288   262 root     S     2408  0.3   0  0.0 udevd --daemon
+  711     1 root     S     2280  0.2   0  0.0 /usr/sbin/rngd
+ 3609     1 root     S     1804  0.2   0  0.0 dnsmasq -k --interface=bridge0 --strict-order --clear-on-reload --user=root --group=root --no-poll
+  783     1 root     S     1724  0.2   0  0.0 /opt/nvtl/bin/mifi_debugd
+ 3537     1 root     S     1648  0.2   0  0.0 radvd -C /opt/nvtl/tmp/router2/radvd.conf -m syslog
+ 3540  3537 root     S     1648  0.2   0  0.0 radvd -C /opt/nvtl/tmp/router2/radvd.conf -m syslog
+    1     0 root     S     1476  0.1   0  0.0 init [3]
+  680     1 root     S     1456  0.1   0  0.0 qrtr-ns
+  527     1 root     S     1316  0.1   0  0.0 /sbin/init_mss
+    9     2 root     IW       0  0.0   0  0.0 [rcu_preempt]
+    8     2 root     SW       0  0.0   0  0.0 [ksoftirqd/0]
+  236     2 root     SW       0  0.0   0  0.0 [ubi_bgt0d]
+  237     2 root     SW       0  0.0   0  0.0 [ubifs_bgt0_0]
+16920     2 root     IW       0  0.0   0  0.0 [kworker/u2:3]
+12489     2 root     SW       0  0.0   0  0.0 [kworker/u2:2]
+ 9229     2 root     SW       0  0.0   0  0.0 [kworker/u2:4]
+13231     2 root     SW       0  0.0   0  0.0 [kworker/u2:11]
+ 1866     2 root     SW       0  0.0   0  0.0 [wlan_logging_th]
+ 4628     2 root     IW       0  0.0   0  0.0 [kworker/u2:1]
+16366     2 root     SW       0  0.0   0  0.0 [kworker/u2:0]
+16959     2 root     SW       0  0.0   0  0.0 [kworker/u2:12]
+  549     2 root     IW<      0  0.0   0  0.0 [kworker/u3:18]
+25637     2 root     SW       0  0.0   0  0.0 [kworker/u2:5]
+   15     2 root     SW       0  0.0   0  0.0 [msm_watchdog]
+    4     2 root     IW       0  0.0   0  0.0 [kworker/0:0]
+   81     2 root     SW       0  0.0   0  0.0 [hwrng]
+30717     2 root     SW       0  0.0   0  0.0 [kworker/u2:10]
+  547     2 root     IW<      0  0.0   0  0.0 [kworker/u3:16]
+    2     0 root     SW       0  0.0   0  0.0 [kthreadd]
+31293     2 root     IW       0  0.0   0  0.0 [kworker/0:1]
+   12     2 root     SW       0  0.0   0  0.0 [kdevtmpfs]
+  348     2 root     SW       0  0.0   0  0.0 [ubi_bgt1d]
+32241     2 root     IW       0  0.0   0  0.0 [kworker/0:2]
+    3     2 root     IW<      0  0.0   0  0.0 [rcu_gp]
+    5     2 root     IW<      0  0.0   0  0.0 [kworker/0:0H]
+    7     2 root     IW<      0  0.0   0  0.0 [mm_percpu_wq]
+   10     2 root     IW       0  0.0   0  0.0 [rcu_sched]
+   11     2 root     IW       0  0.0   0  0.0 [rcu_bh]
+   13     2 root     IW<      0  0.0   0  0.0 [netns]
+   18     2 root     IW<      0  0.0   0  0.0 [ipa_usb_wq]
+   19     2 root     SW       0  0.0   0  0.0 [qmp_aop]
+   21     2 root     SW       0  0.0   0  0.0 [oom_reaper]
+   22     2 root     IW<      0  0.0   0  0.0 [writeback]
+   23     2 root     SW       0  0.0   0  0.0 [kcompactd0]
+   24     2 root     IW<      0  0.0   0  0.0 [crypto]
+   25     2 root     IW<      0  0.0   0  0.0 [kblockd]
+   26     2 root     SW       0  0.0   0  0.0 [irq/42-arm-smmu]
+   27     2 root     SW       0  0.0   0  0.0 [irq/35-tsens-up]
+   28     2 root     SW       0  0.0   0  0.0 [irq/36-tsens-cr]
+   29     2 root     SW       0  0.0   0  0.0 [system]
+   30     2 root     IW<      0  0.0   0  0.0 [ipa_power_mgmt]
+   31     2 root     IW<      0  0.0   0  0.0 [transport_power]
+   32     2 root     IW<      0  0.0   0  0.0 [ipa_pm_activate]
+   33     2 root     IW<      0  0.0   0  0.0 [ipa_eth]
+   34     2 root     IW<      0  0.0   0  0.0 [devfreq_wq]
+   35     2 root     IW<      0  0.0   0  0.0 [cfg80211]
+   36     2 root     IW<      0  0.0   0  0.0 [watchdogd]
+   37     2 root     SW       0  0.0   0  0.0 [kauditd]
+   38     2 root     SW       0  0.0   0  0.0 [kswapd0]
+   77     2 root     SW       0  0.0   0  0.0 [irq/32-smp2p]
+   78     2 root     IW<      0  0.0   0  0.0 [k_hsuart]
+   79     2 root     SW       0  0.0   0  0.0 [msm_serial_hs_0]
+   80     2 root     SW       0  0.0   0  0.0 [msm_serial_hs_0]
+   83     2 root     IW<      0  0.0   0  0.0 [diag_real_time_]
+   84     2 root     IW<      0  0.0   0  0.0 [diag_wq]
+   86     2 root     IW<      0  0.0   0  0.0 [DIAG_USB_diag]
+   87     2 root     IW<      0  0.0   0  0.0 [diag_cntl_wq]
+   88     2 root     IW<      0  0.0   0  0.0 [diag_dci_wq]
+   89     2 root     IW<      0  0.0   0  0.0 [MODEM_CNTL]
+   90     2 root     IW<      0  0.0   0  0.0 [MODEM_DATA]
+   91     2 root     IW<      0  0.0   0  0.0 [MODEM_CMD]
+   92     2 root     IW<      0  0.0   0  0.0 [MODEM_DCI]
+   93     2 root     IW<      0  0.0   0  0.0 [MODEM_DCI_CMD]
+   94     2 root     IW<      0  0.0   0  0.0 [LPASS_CNTL]
+   95     2 root     IW<      0  0.0   0  0.0 [LPASS_DATA]
+   96     2 root     IW<      0  0.0   0  0.0 [LPASS_CMD]
+   97     2 root     IW<      0  0.0   0  0.0 [LPASS_DCI]
+   98     2 root     IW<      0  0.0   0  0.0 [LPASS_DCI_CMD]
+   99     2 root     IW<      0  0.0   0  0.0 [WCNSS_CNTL]
+  100     2 root     IW<      0  0.0   0  0.0 [WCNSS_DATA]
+  101     2 root     IW<      0  0.0   0  0.0 [WCNSS_CMD]
+  102     2 root     IW<      0  0.0   0  0.0 [WCNSS_DCI]
+  103     2 root     IW<      0  0.0   0  0.0 [WCNSS_DCI_CMD]
+  104     2 root     IW<      0  0.0   0  0.0 [SENSORS_CNTL]
+  105     2 root     IW<      0  0.0   0  0.0 [SENSORS_DATA]
+  106     2 root     IW<      0  0.0   0  0.0 [SENSORS_CMD]
+  107     2 root     IW<      0  0.0   0  0.0 [SENSORS_DCI]
+  108     2 root     IW<      0  0.0   0  0.0 [SENSORS_DCI_CMD]
+  109     2 root     IW<      0  0.0   0  0.0 [DIAG_CTRL]
+  110     2 root     IW<      0  0.0   0  0.0 [DIAG_DATA]
+  111     2 root     IW<      0  0.0   0  0.0 [DIAG_CMD]
+  112     2 root     IW<      0  0.0   0  0.0 [DIAG_DCI_DATA]
+  113     2 root     IW<      0  0.0   0  0.0 [DIAG_DCI_CMD]
+  114     2 root     IW<      0  0.0   0  0.0 [CDSP_CNTL]
+  115     2 root     IW<      0  0.0   0  0.0 [CDSP_DATA]
+  116     2 root     IW<      0  0.0   0  0.0 [CDSP_CMD]
+  117     2 root     IW<      0  0.0   0  0.0 [CDSP_DCI]
+  118     2 root     IW<      0  0.0   0  0.0 [CDSP_DCI_CMD]
+  119     2 root     IW<      0  0.0   0  0.0 [NPU_CNTL]
+  120     2 root     IW<      0  0.0   0  0.0 [NPU_DATA]
+  121     2 root     IW<      0  0.0   0  0.0 [NPU_CMD]
+  122     2 root     IW<      0  0.0   0  0.0 [NPU_DCI]
+  123     2 root     IW<      0  0.0   0  0.0 [NPU_DCI_CMD]
+  124     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  125     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  126     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  127     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  128     2 root     IW<      0  0.0   0  0.0 [DIAG_RPMSG_DIAG]
+  130     2 root     IW<      0  0.0   0  0.0 [diag_mhi_MDM]
+  131     2 root     IW<      0  0.0   0  0.0 [DIAG_USB_diag_m]
+  132     2 root     IW<      0  0.0   0  0.0 [diag_mhi_MDM_DC]
+  133     2 root     IW<      0  0.0   0  0.0 [diag_dci_MDM_DC]
+  134     2 root     SW       0  0.0   0  0.0 [qseecom-unreg-l]
+  135     2 root     IW<      0  0.0   0  0.0 [atlantic-fwd]
+  136     2 root     SW       0  0.0   0  0.0 [irq/43-arm-smmu]
+  137     2 root     IW<      0  0.0   0  0.0 [mhi_w]
+  143     2 root     IW<      0  0.0   0  0.0 [k_ipa_usb]
+  146     2 root     SW       0  0.0   0  0.0 [irq/194-soc-upd]
+  147     2 root     SW       0  0.0   0  0.0 [irq/195-soc-rea]
+  148     2 root     SW       0  0.0   0  0.0 [irq/196-bsoc-de]
+  149     2 root     SW       0  0.0   0  0.0 [irq/197-msoc-de]
+  150     2 root     SW       0  0.0   0  0.0 [irq/198-msoc-lo]
+  151     2 root     SW       0  0.0   0  0.0 [irq/199-msoc-em]
+  152     2 root     SW       0  0.0   0  0.0 [irq/200-msoc-hi]
+  153     2 root     SW       0  0.0   0  0.0 [irq/201-msoc-fu]
+  154     2 root     SW       0  0.0   0  0.0 [irq/202-vbatt-l]
+  155     2 root     SW       0  0.0   0  0.0 [irq/203-vbatt-p]
+  156     2 root     SW       0  0.0   0  0.0 [irq/204-esr-del]
+  157     2 root     SW       0  0.0   0  0.0 [irq/205-batt-mi]
+  158     2 root     SW       0  0.0   0  0.0 [irq/206-batt-id]
+  159     2 root     SW       0  0.0   0  0.0 [irq/207-batt-te]
+  160     2 root     SW       0  0.0   0  0.0 [irq/208-batt-te]
+  161     2 root     SW       0  0.0   0  0.0 [irq/209-batt-te]
+  162     2 root     SW       0  0.0   0  0.0 [irq/210-ima-rdy]
+  163     2 root     SW       0  0.0   0  0.0 [irq/211-ima-xcp]
+  164     2 root     SW       0  0.0   0  0.0 [irq/212-dma-xcp]
+  165     2 root     SW       0  0.0   0  0.0 [irq/213-dma-gra]
+  166     2 root     SW       0  0.0   0  0.0 [irq/214-mem-att]
+  167     2 root     SW       0  0.0   0  0.0 [irq/149-bcl-lvl]
+  168     2 root     SW       0  0.0   0  0.0 [irq/150-bcl-lvl]
+  169     2 root     SW       0  0.0   0  0.0 [irq/151-bcl-lvl]
+  170     2 root     IW<      0  0.0   0  0.0 [ipv6_addrconf]
+  183     2 root     SW       0  0.0   0  0.0 [irq/216-chgr-er]
+  185     2 root     SW       0  0.0   0  0.0 [irq/217-chg-sta]
+  187     2 root     SW       0  0.0   0  0.0 [irq/223-otg-fai]
+  189     2 root     SW       0  0.0   0  0.0 [irq/226-high-du]
+  190     2 root     SW       0  0.0   0  0.0 [irq/227-input-c]
+  191     2 root     SW       0  0.0   0  0.0 [irq/229-switche]
+  192     2 root     SW       0  0.0   0  0.0 [irq/230-bat-tem]
+  193     2 root     SW       0  0.0   0  0.0 [irq/231-bat-ov]
+  194     2 root     SW       0  0.0   0  0.0 [irq/232-bat-low]
+  195     2 root     SW       0  0.0   0  0.0 [irq/233-bat-the]
+  196     2 root     SW       0  0.0   0  0.0 [irq/234-bat-ter]
+  197     2 root     SW       0  0.0   0  0.0 [irq/237-usbin-c]
+  198     2 root     SW       0  0.0   0  0.0 [irq/238-usbin-v]
+  199     2 root     SW       0  0.0   0  0.0 [irq/239-usbin-u]
+  200     2 root     SW       0  0.0   0  0.0 [irq/240-usbin-o]
+  201     2 root     SW       0  0.0   0  0.0 [irq/241-usbin-p]
+  202     2 root     SW       0  0.0   0  0.0 [irq/243-usbin-s]
+  203     2 root     SW       0  0.0   0  0.0 [irq/244-usbin-i]
+  204     2 root     SW       0  0.0   0  0.0 [irq/246-dcin-uv]
+  205     2 root     SW       0  0.0   0  0.0 [irq/247-dcin-ov]
+  206     2 root     SW       0  0.0   0  0.0 [irq/248-dcin-pl]
+  207     2 root     SW       0  0.0   0  0.0 [irq/250-dcin-po]
+  208     2 root     SW       0  0.0   0  0.0 [irq/251-dcin-en]
+  209     2 root     SW       0  0.0   0  0.0 [irq/252-typec-o]
+  210     2 root     SW       0  0.0   0  0.0 [irq/254-typec-c]
+  211     2 root     SW       0  0.0   0  0.0 [irq/255-typec-v]
+  212     2 root     SW       0  0.0   0  0.0 [irq/257-typec-a]
+  213     2 root     SW       0  0.0   0  0.0 [irq/258-typec-l]
+  214     2 root     SW       0  0.0   0  0.0 [irq/260-wdog-sn]
+  215     2 root     SW       0  0.0   0  0.0 [irq/261-wdog-ba]
+  216     2 root     SW       0  0.0   0  0.0 [irq/263-aicl-do]
+  217     2 root     SW       0  0.0   0  0.0 [irq/264-smb-en]
+  218     2 root     SW       0  0.0   0  0.0 [irq/265-temp-ch]
+  219     2 root     SW       0  0.0   0  0.0 [irq/119-qcom,te]
+  220     2 root     SW       0  0.0   0  0.0 [irq/129-qcom,te]
+  221     2 root     IW<      0  0.0   0  0.0 [etr_pcie]
+  228     2 root     SW       0  0.0   0  0.0 [irq/141-sig-tx]
+  229     2 root     SW       0  0.0   0  0.0 [irq/142-sig-rx]
+  230     2 root     SW       0  0.0   0  0.0 [irq/60-pwr_even]
+  231     2 root     SW       0  0.0   0  0.0 [irq/59-dp_hs_ph]
+  232     2 root     SW       0  0.0   0  0.0 [irq/61-dm_hs_ph]
+  233     2 root     SW       0  0.0   0  0.0 [irq/62-ss_phy_i]
+  234     2 root     SW       0  0.0   0  0.0 [irq/44-arm-smmu]
+  235     2 root     IW<      0  0.0   0  0.0 [usb_bam_wq]
+  316     2 root     SW       0  0.0   0  0.0 [irq/48-arm-smmu]
+  320     2 root     SW       0  0.0   0  0.0 [irq/49-arm-smmu]
+  322     2 root     SW       0  0.0   0  0.0 [irq/50-arm-smmu]
+  358     2 root     IW<      0  0.0   0  0.0 [ipa_interrupt_w]
+  360     2 root     IW<      0  0.0   0  0.0 [ipawq36]
+  363     2 root     IW<      0  0.0   0  0.0 [iparepwq36]
+  364     2 root     IW<      0  0.0   0  0.0 [ipawq33]
+  365     2 root     IW<      0  0.0   0  0.0 [iparepwq33]
+  366     2 root     IW<      0  0.0   0  0.0 [ipawq32]
+  368     2 root     IW<      0  0.0   0  0.0 [iparepwq32]
+  369     2 root     IW<      0  0.0   0  0.0 [ipa_ut_dbgfs]
+  371     2 root     IW<      0  0.0   0  0.0 [clnt_req]
+  628     2 root     IW<      0  0.0   0  0.0 [at_usb0]
+  630     2 root     IW<      0  0.0   0  0.0 [at_usb1]
+  634     2 root     IW<      0  0.0   0  0.0 [rmnet_ctrl]
+  639     2 root     IW<      0  0.0   0  0.0 [android_mbim]
+  641     2 root     IW<      0  0.0   0  0.0 [dpl_ctrl]
+  644     2 root     IW<      0  0.0   0  0.0 [gps]
+  646     2 root     IW<      0  0.0   0  0.0 [qdss]
+  651     2 root     IW<      0  0.0   0  0.0 [qdss_mdm]
+  660     2 root     SW       0  0.0   0  0.0 [glink_modem]
+  687     2 root     SW       0  0.0   0  0.0 [kworker/u2:9]
+  688     2 root     IW<      0  0.0   0  0.0 [kworker/0:1H]
+  901     2 root     IW<      0  0.0   0  0.0 [ipawq34]
+  902     2 root     IW<      0  0.0   0  0.0 [iparepwq34]
+  903     2 root     IW<      0  0.0   0  0.0 [ipawq35]
+  904     2 root     IW<      0  0.0   0  0.0 [iparepwq35]
+ 1390     2 root     SW       0  0.0   0  0.0 [file-storage]
+ 1596     2 root     SW       0  0.0   0  0.0 [irq/45-arm-smmu]
+ 1865     2 root     IW<      0  0.0   0  0.0 [cds_recovery_wo]
+ 1867     2 root     SW       0  0.0   0  0.0 [irq/159-mhi]
+ 1869     2 root     SW       0  0.0   0  0.0 [qrtr_rx]
+32265     2 root     IW       0  0.0   0  0.0 [kworker/u2:6]
+

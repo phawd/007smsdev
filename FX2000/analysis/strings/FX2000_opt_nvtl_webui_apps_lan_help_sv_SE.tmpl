@@ -1,0 +1,109 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+versikt</h2>
+		<p>Dessa inst
+llningar g
+r ditt lokala n
+tverk eller LAN. F
+r enheten best
+r LAN av den h
+r enheten och alla anslutna enheter (inklusive de Ethernet-anslutna enheterna, i f
+rekommande fall).</p>
+	<h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+	<tmpl_if LANIPAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+		<p>IP-adressen f
+r enheten, sett fr
+n det lokala n
+tverket. Normalt sett kan du anv
+nda standardv
+rdet.</p>
+	</tmpl_if>
+	<tmpl_if LANSubnetMaskShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+		<p>Standardv
+rdet 255.255.255.0 
+r standard f
+tverk (klass 
+). Om du 
+ndrar LAN-IP-adressen, se till att du anv
+tmask.</p>
+	</tmpl_if>
+	<tmpl_if LANMacAddressShow>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+		<p>MAC-adressen 
+r ett unikt n
+tverks-id som tilldelas n
+tverksenhet tillverkas. Det h
+r skrivskyddade f
+ltet visar MAC-adressen f
+r Wi-Fi- och USB-gr
+nssnitten p
+r enheten.</p>
+	</tmpl_if>
+	<tmpl_if LANDHCPEnableShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+		<p>Normalt b
+r detta l
+mnas markerat. DHCP-servern tilldelar en IP-adress till varje ansluten enhet. Om DHCP-servern st
+ngts av m
+ste varje ansluten enhet tilldelas en fast IP-adress.</p>
+	</tmpl_if>
+	<tmpl_if LANLANDHCPLeaseTimeShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+		<p>Det h
+ltet avg
+r hur ofta anslutna enheter m
+rnya den IP-adress som tilldelats dem av DHCP-servern. Vanligtvis kan standardv
+rdet beh
+llas, men om du har speciella krav kan du 
+ndra detta v
+rde.</p>
+	</tmpl_if>
+	<tmpl_if LANDHCPStartAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>Om du vill 
+ndra IP-adressintervallet som anv
+nds av DHCP-servern kan du g
+ra det genom att 
+ndra detta v
+rde. Detta alternativ 
+r endast f
+r experter.</p>
+	</tmpl_if>
+	<tmpl_if LANDHCPEndAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+		<p>Detta indikerar intervallet med IP-adresser som kan allokeras till anslutna enheter. Om du anv
+nder en fast IP-adress p
+ en ansluten enhet b
+r du anv
+nda en IP-adress som ligger utanf
+r detta intervall.</p>
+	</tmpl_if>
+	<tmpl_if LANReservedIPAddressShow>		
+	<h3><tmpl_var truncate(_("webui", "adv_lan_reservedIp_help_label"), (size(_("webui", "adv_lan_reservedIp_help_label")) - size(":")))></h3>
+		<p>Den h
+r funktionen kan anv
+lla att en ansluten enhet alltid tilldelas samma IP-adress av <tmpl_var _("webui", "webui_product_name")>. Klicka p
+r knappen f
+ppna konfigurationssk
+r funktionen.</p>
+	</tmpl_if>
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>Om vissa av dina anslutna enheter st
+der IPv6 b
+llningen vara aktiverad. IPv6-anslutna enheter kommer sedan att kunna uppr
+tta IPv6-anslutningar till internet.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+			<p>Detta 
+r denna enhets IPv6-adress. Den lokala l
+nkadressen anv
+r IPv6-kommunikation mellan enheter i samma n
+tverk.</p>
+	</tmpl_if>	
+<!-- id="lan" -->

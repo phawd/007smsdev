@@ -1,0 +1,45 @@
+<!-- Software Update -->
+<div id="software_update">
+
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+
+	<h2>Pārskats</h2>
+
+		<p>Programmatūras atjauninājumi tiek piegādāti automātiski, izmantojot mobilo tīklu. Šajā lapā varat pārraudzīt šos atjauninājumus.</p>
+
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+
+	<h3>Pašreizējā programmatūras versija</h3>
+	
+		<p>Šajā laukā ir norādīta pašlaik ierīcē instalētās programmatūras versija.</p>
+
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var _("webui", "software_update_current_software_configuration_version_label")></h3>
+			
+				<p><tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")></p>
+		</tmpl_if>
+	
+		<h2><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+
+		<h3><tmpl_var _("webui", "software_update_check_for_update_time_label")></h3>
+
+		<p>Šis lauks norāda, kad <tmpl_var _("webui", "webui_product_name")> pēdējo reizi pārbaudīja, vai nav pieejamu atjauninājumu. Varat manuāli pārbaudīt, vai nav atjauninājumu, izmantojot pogu "Pārbaudīt, vai nav atjauninājumu".</p>
+	
+		<h3>Poga "Pārbaudīt, vai nav atjauninājumu"</h3>
+		<p>To var izmantot, lai pārbaudītu, vai ir pieejams <tmpl_var _("webui", "webui_product_name")> atjauninājums. Parasti tas nav nepieciešams, jo atjauninājumi tiek automātiski pārvietoti uz <tmpl_var _("webui", "webui_product_name")>. Ja šī pārbaude tiek veikta un atjauninājums ir pieejams, tas tiek automātiski lejupielādēts.</p>
+	</tmpl_if>
+
+	<h3><tmpl_var _("webui", "software_update_check_for_update_status_label")></h3>
+
+		<p>Parasti šis lauks ir tukšs, bet, ja meklējat atjauninājumu, šīs pārbaudes rezultāts tiek parādīts šeit. Turklāt, ja atjauninājums tiek lejupielādēts, lejupielādes norise ir redzama šeit.</p>
+	
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+		
+		<p>Šajā panelī ir redzama informācija par pēdējo programmatūras atjauninājumu.</p>
+	
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+	
+		<p>Šo paneli var atvērt, noklikšķinot uz saites/virsraksta. Sistēmas atjaunināšanas vēsturē ir ietverta detalizēta informācija par pēdējiem <tmpl_var SoftwareUpdateHistoryCount> atjauninājumiem, kas lejupielādēti un instalēti šajā ierīcē. Ja atjauninājumi nav instalēti, šajā panelī būs redzama pašreizējā programmatūras versija.</p>
+</div>
+<!-- end Software Update -->

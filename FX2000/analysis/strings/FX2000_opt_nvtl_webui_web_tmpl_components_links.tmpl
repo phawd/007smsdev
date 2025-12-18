@@ -1,0 +1,12 @@
+<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/style.min.css?v=<tmpl_var gBaseAssetsPath>" />
+<tmpl_comment>Loop through and link any application styles.</tmpl_comment>
+<tmpl_unless IN_SET(gPageId, "login")>
+	<tmpl_foreach gCssList as css>
+		<link rel="stylesheet" type="text/css" href="/<tmpl_var gPageId>/<tmpl_var css.cssPath>?v=<tmpl_var gBaseAssetsPath>" />
+	</tmpl_foreach>
+</tmpl_unless>
+<tmpl_if gIsMultiSimSupported>
+	<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/statusbar.css?v=<tmpl_var gBaseAssetsPath>" />
+</tmpl_if>
+<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/app.css?v=<tmpl_var gBaseAssetsPath>" />
+	<link rel="stylesheet" type="text/css" href="/<tmpl_var gBaseAssetsPath>/css/override.css?v=<tmpl_var gBaseAssetsPath>" />

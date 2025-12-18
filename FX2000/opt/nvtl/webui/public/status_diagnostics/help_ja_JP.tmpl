@@ -1,0 +1,210 @@
+<!-- Diagnostics -->
+<div id="status_diagnostics">
+	<h1><tmpl_var _("webui", "status_diagnostics_menu_text")></h1>
+	<h2>概要</h2>
+	<p>このページには、 <tmpl_var _("webui", "webui_product_name")> と利用可能なネットワークに関する情報が含まれます。 必要に応じてトラブルシューティング用に使用してください。通常の操作では必要ありません。</p>
+	<h2><tmpl_var _("webui", "status_diagnostics_modem_sub_header_text")></h2>
+
+	<tmpl_if showPhoneNumber>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_phone_number_label"), (size(_("webui", "status_diagnostics_phone_number_label")) - size(":")))></h3>
+		<p>これは <tmpl_var _("webui", "webui_product_name")> の電話番号です。</p>
+	</tmpl_if>
+
+	<tmpl_if showImei>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imei_label"), (size(_("webui", "status_diagnostics_imei_label")) - size(":")))></h3>
+		<p>このデバイスのIMEI（International Mobile Equipment Identity）です。 IMEIは、15または17桁のコードで、ネットワークの個々のモバイルステーションを固有に識別するために<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>使用されます。 SIMを変更してもIMEIは変更されません。</p>
+	</tmpl_if>
+
+	<tmpl_if showImeisv>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imeisv_label"), (size(_("webui", "status_diagnostics_imeisv_label")) - size(":")))></h3>
+		<p>このフィールドは、IMEIとこのタイプのデバイスの承認番号を組み合わせたものです。</p>
+	</tmpl_if>
+
+	<tmpl_if showMeid>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_meid_label"), (size(_("webui", "status_diagnostics_meid_label")) - size(":")))></h3>
+		<p>MEID（モバイル機器ID）は、CDMAネットワーク上の個々のモバイルステーションを識別するために使用される一意の番号です。</p>
+	</tmpl_if>
+
+	<tmpl_if showIMSI>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imsi_label"), (size(_("webui", "status_diagnostics_imsi_label")) - size(":")))></h3>
+		<p>International Mobile Subscriber Identity（IMSI）は、GSMサブスクライバーを識別するために使用されるモバイルコミュニケーション用のすべてのグローバルシステム（GSM）およびユニバーサルモバイルテレコミュニケーションシステム（UMTS）に関連付けられた一意の番号です。</p>
+	</tmpl_if>
+	
+	<tmpl_if showFwVersion>					
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_fw_version_label"), (size(_("webui", "status_diagnostics_fw_version_label")) - size(":")))></h3>
+		<p>現在、モデムにインストールされているファームウェア（ソフトウェア）のバージョン。</p>
+	</tmpl_if>
+
+	<tmpl_if showSimStatus>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_sim_status_label"), (size(_("webui", "status_diagnostics_sim_status_label")) - size(":")))></h3>
+		<p>これは、SIMカードの現在のステータスを示します。 SIMカードがないか、このフィールドが何らかの形のSIMエラーを示している場合は、モバイルネットワークへの接続が可能ではありません。</p>
+	</tmpl_if>
+
+	<tmpl_if showICCID>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_iccid_label"), (size(_("webui", "status_diagnostics_iccid_label")) - size(":")))></h3>
+		<p>この一意のID番号がSIMカードに割り当てられます。 SIMがインストールされていない場合、またはSIMエラー状態が存在する場合は表示されません。</p>
+	</tmpl_if>
+
+	<tmpl_if showModemDetails>
+		<tmpl_if showMINMSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_msid_label"), (size(_("webui", "status_diagnostics_msid_label")) - size(":")))></h3>
+			<p>このIDは、モバイルデータネットワーク上の加入者を識別するために使用されます。</p>
+		</tmpl_if>
+		<tmpl_if showESN>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_esn_label"), (size(_("webui", "status_diagnostics_esn_label")) - size(":")))></h3>
+			<p>電子シリアル番号（ESN）は、CDMAネットワーク上のデバイスを一意に識別するための従来からの方法ですが、MEIDに取って代わられました。 MEIDを使用するデバイス（このデバイスなど）の場合、ESNは空白か、一意であることが保証されていない疑似ESNです。</p>
+ 		</tmpl_if>
+ 		<tmpl_if showHomeSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_home_sid_label"), (size(_("webui", "status_diagnostics_home_sid_label")) - size(":")))></h3>
+			<p>SID（システムID）は、モバイルデータネットワークへの接続ポイントを示すネットワーク識別子です。</p>
+		</tmpl_if>
+		<tmpl_if showERIVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_eri_version_label"), (size(_("webui", "status_diagnostics_eri_version_label")) - size(":")))></h3>
+			<p>ERI（拡張ローミングインジケーター）テーブルには、モバイルデバイスが接続できる各ローミングネットワークに関する情報が含まれています。 このフィールドは、現在インストールされているERIバージョンを示します。 ERIテーブルは自動的に更新されます。</p>
+ 		</tmpl_if>
+ 		<tmpl_if showPRLVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_prl_version_label"), (size(_("webui", "status_diagnostics_prl_version_label")) - size(":")))></h3>
+			<p>複数のネットワークが利用可能な場合、PRL（優先ローミングリスト）を使用してネットワークを選択します。 このフィールドは、このデバイスに現在インストールされているソフトウェアのバージョンを示します。 PRLは自動的に更新されます。</p>
+		</tmpl_if>			
+	</tmpl_if>
+	<tmpl_if lteSupported>			
+		<h2 class="sectionHead">5G/4G LTEネットワーク</h2>
+	
+		<tmpl_if showInternetStatus4G>		
+			<h3>ステータス</h3>
+			<p>ネットワークの<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>場合、可能なステータス値は次のとおりです。</p>
+			<div class="blockgroup">
+				<ul>
+					<li>利用不可-ネットワークは<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>検出されませんでした。</li>
+					<li>利用可能 - ネットワーク<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>が検出されました。</li>
+				</ul>
+			</div>
+			<p>次のデータ項目は、ネットワークが<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>利用可能な場合のみ提供されます。</p>
+		</tmpl_if>
+
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>これはネットワークの<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>名前です。</p>
+		</tmpl_if>
+
+		<tmpl_if showSignalStrength>			
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_signal_strength_label"), (size(_("webui", "status_diagnostics_fourg_signal_strength_label")) - size(" (RSRP):")))></h3>
+			<p>これは信号の強度<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>を示し、dBmで測定されます。 絶対値が高いほど信号が強いことを示しているため、-80 dBmは-90 dBmよりも強い信号です。<tmpl_udf GET_PO_TEXT("status_diagnostics_lte_note_text")>
+			</p>
+		</tmpl_if>
+
+		<tmpl_if showSNR>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_sinr_label"), (size(_("webui", "status_diagnostics_sinr_label")) - size(":")))></h3>
+			<p>SNRは信号品質の測定値です。 数値が大きいほど信号が良好であることを示します。</p>
+		</tmpl_if>
+
+		<tmpl_if showLteBand>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_lte_band_label"), (size(_("webui", "status_diagnostics_lte_band_label")) - size(":")))></h3>
+			<p><tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>ネットワークは、地域によって異なる帯域を使用する場合があります。 このフィールドは、現在の接続に使用されている帯域を<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>示します。</p>
+		</tmpl_if>
+
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_roaming_label"), (size(_("webui", "status_diagnostics_fourg_roaming_label")) - size(":")))></h3>
+			<p>これは、現在の接続がローミング接続であるかどうかを示します。</p>
+		</tmpl_if>
+	</tmpl_if>
+		
+	<tmpl_if isHSPATechnology>	
+		<h2><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> ステータス</h2>
+			
+		<h3>ステータス</h3>
+		<p><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> ネットワークの場合、次の状態がサポートされています。</p>
+		<div class="blockgroup">
+			<ul>
+				<li>利用不可-<tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> ネットワークが検出されませんでした。</li>
+				<li>利用可能 -<tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> ネットワークが検出されました。</li>
+			</ul>
+		</div>
+		<p>次のデータ項目は、ネットワークが利用可能な場合のみ提供されます。</p>
+
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>これは <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> ネットワークの名前です。</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> ネットワークに使用されている現在の技術です。 可能な値は、最も遅いものから最も速いものまで、次のとおりです。</p>
+			<ul>
+				<tmpl_if gsmSupported>
+					<li>GPRS</li>
+				</tmpl_if>
+				<tmpl_if wcdmaSupported>
+					<li>UMTS</li>
+				</tmpl_if>
+				<tmpl_if cdmaSupported>
+					<li>HSPA +</li>
+					<li>HSPA + DC</li>
+				</tmpl_if>
+				<tmpl_if evdoSupported>
+					<li>EDGE</li>
+					<li>HSDPA</li>
+					<li>HSUPA</li>
+				</tmpl_if>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_networkid_label"), (size(_("webui", "status_diagnostics_networkid_label")) - size(":")))></h3>
+			<p>Public Land Mobile Network（PLMN）ネットワークの名前またはID。</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_cellid_label"), (size(_("webui", "status_diagnostics_cellid_label")) - size(":")))></h3>
+			<p>この値は、現在使用されている携帯電話基地局を識別します。</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_rssi_label"), (size(_("webui", "status_diagnostics_rssi_label")) - size(":")))></h3>
+			<p>これは、<tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> 信号のRSSIを示します。 RSSIは、1ミリワットに対する信号強度のデシベル単位の測定値です。 モバイル無線デバイスは1ミリワットほど強力でないため、常にマイナスになります。 絶対値が高いほど信号が強いことを示しているため、-50dBmは-70dBmよりも強い信号です。</p>
+
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_roaming_label"), (size(_("webui", "status_diagnostics_roaming_label")) - size(":")))></h3>
+			<p>これは、現在の接続がローミング接続であるかどうかを示します。</p>
+
+		</tmpl_if>
+		<tmpl_if show3g>
+			<h2><tmpl_var _("webui", "status_diagnostics_threeg_label")></h2>
+			
+			<h3>ステータス</h3>
+			<p>可能なステータス値は次のとおりです。</p>
+			<div class="blockgroup">
+				<ul>
+					<li>利用不可-3Gネットワークが検出されませんでした。</li>
+					<li>利用可能-3Gネットワークが検出されました。</li>
+				</ul>
+			</div>
+			<p>次のデータ項目は、ネットワークが利用可能な場合のみ提供されます。</p>
+			<tmpl_if showNetworkOperator>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_network_label"), (size(_("webui", "status_diagnostics_threeg_network_label")) - size(":")))></h3>
+				<p>これは3Gネットワークの名前です。</p>
+			</tmpl_if>
+			<tmpl_if show3g1xRssi>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_onex_label"), (size(_("webui", "status_diagnostics_threeg_onex_label")) - size(":")))></h3>
+			<p>RSSIは信号強度の測定値です。 単位は1ミリワットと比較してデシベルであり、モバイルラジオデバイスは1ミリワットほど強力でないため、常にマイナスです。 絶対値が高いほど信号が強いことを示しているため、-50 dBmは-70 dBmよりも強い信号です。 このフィールドは、1xRTT信号のRSSIを示します。</p>
+			</tmpl_if>
+			<tmpl_if show3gEvdoRssi>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_evdo_label"), (size(_("webui", "status_diagnostics_threeg_evdo_label")) - size(":")))></h3>
+				<p>RSSIは信号強度の測定値です。 このフィールドは、EVDOまたはeHRPD信号のRSSIを示します。</p>
+ 			</tmpl_if>
+			<tmpl_if show3gTechnology>
+ 				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+				<p>3Gネットワークに使用されている現在の技術です。 可能な値は1xRTT、EVDO、またはeHRPDです。</p>
+ 			</tmpl_if>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_ecio_label"), (size(_("webui", "status_diagnostics_threeg_ecio_label")) - size(":")))></h3>
+			<p>Ec/Ioは、信号がどの程度「クリーン」であるかを示す測定値であり、S/N比の一種です。 一般的な値の範囲は-10〜-40です。 -4の値は、非常に「クリーン」な信号になります。</p>
+ 
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_sid_label"), (size(_("webui", "status_diagnostics_threeg_sid_label")) - size(":")))></h3>
+			<p>SID（システムID）は、モバイルデータネットワークへの現在の接続ポイントを示すネットワーク識別子です。 携帯電話基地局のグループが同じSID値を持つ場合があります。 このフィールドは、現在のSIDを示します。</p>		
+			<tmpl_if showRoaming>
+				<h3>ローミング</h3>
+				<p>これは、現在の接続がローミング接続であるかどうかを示します。</p>			
+			</tmpl_if>
+			<tmpl_if linkToFieldTest>	
+				<h2><tmpl_var _("webui", "status_diagnostics_field_test_button")></h2>
+				<p>「フィールドテスト」ボタンをクリックすると、テクニカルサポートスタッフがネットワーク接続問題のトラブルシューティングを行う際に役立つ、低レベルのネットワークパラメータのリストが表示されます。</p>
+				
+				<p>このボタンは、3Gネットワークが使用可能な場合にのみ使用できます。</p>
+			</tmpl_if>
+		</tmpl_if>
+	</tmpl_if>
+			
+</div>
+<!-- id="status_diagnostics" -->
+		

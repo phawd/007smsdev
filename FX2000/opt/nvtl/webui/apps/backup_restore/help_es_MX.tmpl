@@ -1,0 +1,51 @@
+<!-- Backup and Restore -->
+<div id="backup_restore">
+         <h1><tmpl_var _("webui", "backup_restore_menu_text")></h1>
+
+         <h2>Descripción general</h2>
+         <p>Utilice esta función para hacer una copia de seguridad (descargar) una copia de los ajustes de configuración de este dispositivo en un archivo en su computadora, o restaurar (cargar) un archivo de configuración previamente guardado. Este archivo de configuración contiene todos los ajustes del dispositivo, del enrutador y de las funciones del sistema. No contiene ningún ajuste o datos para el módem 4G/5G. Tenga en cuenta que solo puede restaurar un archivo en el mismo dispositivo del que proviene.
+         </p>
+         <p>
+            Esta pantalla también ofrece la posibilidad de restablecer todas las configuraciones a los valores predeterminados de fábrica.
+         </p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+         <h3>Contraseña del administrador</h3>
+         <p>
+                 Ingrese la contraseña de administrador actual de <tmpl_var _("webui", "webui_product_name")> en este campo.
+         </p>
+         <h3><tmpl_var _("webui", "backup_restore_backup_now_button")></h3>
+         <p>
+                 Haga clic en el botón Descargar para descargar una copia del archivo de configuración actual en su computadora. Si su navegador le pide que guarde el archivo, puede cambiarle el nombre si lo desea.
+         </p>
+         <p class="note">
+                 <strong>Nota:</strong> El archivo de copia de seguridad no se puede editar ni ver en el sistema descargado ni en ningún otro dispositivo. Este archivo solo se puede restaurar para este modelo de <tmpl_var _("webui", "webui_product_name")>, y los ajustes solo se pueden ver o cambiar mediante la interfaz de usuario web.
+         </p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+
+         <h3>Contraseña del administrador</h3>
+         <p>
+                 Ingrese la contraseña de administrador actual de <tmpl_var _("webui", "webui_product_name")> en este campo.
+         </p>
+         <h3><tmpl_var truncate(_("webui", "backup_restore_file_select_label"), (size(_("webui", "backup_restore_file_select_label")) - size(":")))></h3>
+         <p>
+                 Seleccione el archivo de configuración que descargó previamente de este <tmpl_var _("webui", "webui_product_name")> a su computadora.
+         </p>
+         <h3>Botón Restaurar ahora</h3>
+         <p>Después de seleccionar un archivo de configuración, haga clic en este botón para comenzar la carga del archivo. Después de la carga, el archivo de configuración se aplica inmediatamente y este dispositivo se reinicia.
+         </p>
+         <p class="note">
+                 <strong>Nota:</strong> Cargar un archivo de configuración cambia TODOS los ajustes existentes para que coincidan con el archivo de configuración. Todas las conexiones existentes se interrumpirán con este <tmpl_var _("webui", "webui_product_name")>, incluida esta sesión de navegador web.
+         </p>
+
+         <h2><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+         <p>
+                 Haga clic en el botón <strong>Restaurar los valores de fábrica</strong> para restablecer todos los ajustes a sus valores predeterminados de fábrica. Esto provoca un reinicio, rompiendo todas las conexiones existentes con este <tmpl_var _("webui", "webui_product_name")>, incluida esta sesión de navegador web.
+         </p>
+         <h2>Reiniciar dispositivo</h2>
+         <p>
+                 Este botón apaga y enciende su <tmpl_var _("webui", "webui_product_name")>.
+         </p>
+</div>
+ <!-- id="backup_restore" -->

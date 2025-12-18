@@ -1,0 +1,84 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_manager_menu_text")></h1>
+        <h2>
+levaade</h2>
+        <p>SIM-kaardi saab s
+steemis seadme <tmpl_var _("webui", "webui_product_name")> PIN-koodiga lukustada. Kui SIM-kaart on lukustatud, peate enne mobiilsidev
+hendamist PIN-koodi sisestama. P
+rast sisestamist j
+etakse PIN-kood j
+rgmise v
+litumiseni meelde.</p>
+	<p>Lisaks SIM-kaardi PIN-koodi sisestamise vajadusele v
+imaldab see leht avada SIM-kaardi lukustuse v
+i muuta SIM-kaardi PIN-koodi. SIM-kaardi muutmiseks peate 
+ldjuhul sisestama olemasoleva PIN-koodi. Novatel Wireless SIM-kaardi vaikimisi seatud PIN-kood on saadaval teie teenusepakkujalt.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_pin_lock_feature_label"), (size(_("webui", "adv_sim_manager_pin_lock_feature_label")) - size(":")))></h3>
+itab, kas PIN-koodi luku funktsioon on kasutusel v
+i mitte. Sissel
+litamisel on PIN-koodi lukk sisse l
+litatud ja mobiilsidev
+henduse loomiseks tuleb sisestada SIM-kaardi PIN-kood. Kui see on v
+ljas, ei ole PIN-koodi lukustamise funktsioon sisse l
+litatud ja SIM-kaardi PIN-koodi pole vaja.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_status_label"), (size(_("webui", "adv_sim_manager_status_label")) - size(":")))></h3>
+itab SIM-kaardi praegust olekut. V
+imalikud v
+rtused on:</p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>Valmis 
+ see on normaalne olek. SIM-kaardi PIN-koodi ei kasutata.</li>
+	        <li>PIN-kood lukustatud 
+ enne mobiilsidev
+rgu kasutamist tuleb sisestada SIM-kaardi PIN-kood.</li>
+	        <li>PUK-koodiga lukustatud 
+tkamiseks tuleb sisestada SIM-kaardi PUK-kood. PUK-koodi saate oma teenusepakkujalt.</li>
+	        <li>Lukustamata 
+ SIM-kaardi PIN-kood on vajalik, kuid on juba sisestatud.</li>
+	        <li>SIM-kaarti pole 
+ SIM-kaarti ei tuvastatud. Kui teil on SIM-kaart, kontrollige, kas see on 
+igesti sisestatud.</li>
+	        <li>SIM-kaardi t
+ tuvastati SIM-kaart, kuid see ei reageerinud ootusp
+raselt ja seda ei saa kasutada.</li>       
+	        </ul>
+        <h2>SIM-kaardi toimingud</h2>
+        <p>Saadaolevad toimingud s
+ltuvad SIM-kaardi praegusest olekust. Allpool on loetletud ja selgitatud k
+imalikud toimingud.</p>
+		<h3>PIN-koodi lukk</h3>
+		<p>Kui SIM-kaart on hetkel PIN-koodiga lukustatud, palutakse teil PIN-kood sisestada. Pange t
+hele, et kui vale PIN-kood sisestatakse liiga palju kordi, lukustub SIM-kaart PUK-koodiga. Lehek
+ljel olev loendur n
+itab, kui palju valesid sisestusi p
+hjustab PUK-koodiga lukustamise. Kui on rakendatud PUK-koodiga lukustus, tuleb hankida teenusepakkujalt PUK-kood.</p>
+		<h3>PUK-koodiga lukustus</h3>
+		<p>Kui SIM-kaart on PUK-koodiga lukustatud, on ainus v
+imalik toiming PUK-koodi sisestamine. Pange t
+hele, et kui vale PUK-kood sisestatakse liiga palju kordi, muutub SIM-kaart j
+davalt kasutusk
+lbmatuks. Peate hankima uue SIM-kaardi. Lehek
+ljel olev loendur n
+itab, mitu sisestuskatset on j
+nud.</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_enable_pin_lock_option")></h3>
+		<p>See seab SIM-kaardi nii, et k
+ivitamisel on mobiilsidev
+henduse loomiseks vaja sisestada PIN-kood. Selle toimingu tegemiseks peate sisestama praeguse PIN-koodi.</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_disable_pin_option")></h3>
+		<p>Selle seade abil saate eelnevalt sisse l
+litatud PIN-koodi luku v
+litada, nii et PIN-koodi sisestamine pole mobiilsidev
+henduse loomiseks enam vajalik. Selle toimingu tegemiseks peate sisestama praeguse PIN-koodi.</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_change_pin_option")></h3>
+		<p>Olemasoleva PIN-koodi muutmiseks valige see suvand ja sisestage vajalikud andmed.</p>
+		<div class="blockgroup">
+			<li>Praegune PIN-kood</li>
+			<li>Uus PIN-kood</li>
+			<li>Kinnita uus PIN-kood</li>
+			</ul>
+		</div>
+		<p><tmpl_var _("webui", "adv_sim_manager_name_text")></p>
+<!-- id="sim" -->

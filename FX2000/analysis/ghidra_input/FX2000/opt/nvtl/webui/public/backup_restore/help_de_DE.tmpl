@@ -1,0 +1,28 @@
+<!-- Backup and Restore -->
+<div id="backup_restore">
+         <h1><tmpl_var _("webui", "backup_restore_menu_text")></h1>
+
+         <h2>Übersicht</h2>
+         <p>Über diese Funktion können Sie eine Kopie der Konfigurationseinstellungen dieses Geräts in einer Datei auf dem Computer sichern (herunterladen) oder eine zuvor gespeicherte Konfigurationsdatei wiederherstellen (hochladen). In dieser Konfigurationsdatei sind alle Einstellungen für die Geräte-, Router- und Systemfunktionen enthalten. Einstellungen oder Daten für das 4G-Modem sind nicht enthalten. Hinweis: Eine Datei kann zur Wiederherstellung nur auf dem Gerät verwendet werden, von dem sie stammt.</p>
+         <p>Über diesen Bildschirm haben Sie die Möglichkeit, alle Einstellungen auf die werkseitigen Standardwerte zurückzusetzen.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+         <h3>Admin-Kennwort</h3>
+         <p>Geben Sie das aktuelle Admin-Kennwort für <tmpl_var _("webui", "webui_product_name")> in dieses Feld ein.</p>
+         <h3><tmpl_var _("webui", "backup_restore_backup_now_button")></h3>
+         <p>Klicken Sie auf die Schaltfläche „Herunterladen“, um eine Kopie der aktuellen Konfigurationsdatei auf Ihren Computer herunterzuladen. Wenn im Browser die Aufforderung zum Speichern erfolgt, können Sie die Datei bei Bedarf umbenennen.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+
+         <h3>Admin-Kennwort</h3>
+         <p>Geben Sie das aktuelle Admin-Kennwort für <tmpl_var _("webui", "webui_product_name")> in dieses Feld ein.</p>
+         <h3><tmpl_var truncate(_("webui", "backup_restore_file_select_label"), (size(_("webui", "backup_restore_file_select_label")) - size(":")))></h3>
+         <p>Wählen Sie die Konfigurationsdatei, die Sie zuvor von diesem <tmpl_var _("webui", "webui_product_name")> auf Ihren Computer heruntergeladen haben.</p>
+         <h3>Schaltfläche „Jetzt wiederherstellen“</h3>
+         <p>Nachdem Sie eine Konfigurationsdatei ausgewählt haben, klicken Sie auf diese Schaltfläche, um das Hochladen der Datei zu starten. Nach dem Hochladen wird die Konfigurationsdatei sofort angewendet, und das Gerät wird neu gestartet.</p>
+         <p class="note"><strong>Hinweis:</strong> Das Hochladen einer Konfigurationsdatei ändert ALLE vorhandenen Einstellungen entsprechend der Konfigurationsdatei ab. Damit werden ggf. auch die aktuellen WLAN-Einstellungen geändert, und alle bestehenden Verbindungen zu diesem <tmpl_var _("webui", "webui_product_name")>, einschließlich dieser Webbrowser-Sitzung, werden unterbrochen.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+         <p>Klicken Sie auf die Schaltfläche <strong>Auf Werkseinstellungen zurücksetzen</strong>, um alle Einstellungen auf die werkseitigen Standardwerte zurückzusetzen. Das führt zu einem Neustart und ggf. zur Änderung der aktuellen WLAN-Einstellungen. Es werden alle bestehenden Verbindungen zu diesem <tmpl_var _("webui", "webui_product_name")>, einschließlich dieser Webbrowser-Sitzung, unterbrochen.</p>
+</div>
+ <!-- id="backup_restore" -->

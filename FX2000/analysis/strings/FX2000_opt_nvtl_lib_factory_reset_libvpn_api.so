@@ -1,0 +1,573 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+GLIBC_2.4
+libc.so.6
+libvpn_api.so
+vpn_get_error_string
+vpn_clear_openvpn_cfg_settings
+mifi_dbg_get_level_name
+mifi_dbg_log
+settings_set_setting
+msgq_does_queue_exist
+msgq_send_async
+vpn_clear_ipsec_cfg_settings
+snprintf
+vpn_clear_wguard_cfg_settings
+vpn_is_running
+vpn_get_auto_connect_enabled
+settings_get_setting
+mifi_dbg_syslog
+vpn_set_auto_connect_enabled
+vpn_get_settings
+vpn_set_settings
+connect_vpn
+disconnect_vpn
+vpn_get_pptp_settings
+vpn_set_pptp_settings
+vpn_get_openvpn_settings
+vpn_set_openvpn_settings
+vpn_get_l2tp_settings
+vpn_set_l2tp_settings
+vpn_get_ipsec_vpn_enabled
+vpn_set_ipsec_vpn_enabled
+vpn_get_ipsec_settings
+vpn_get_wguard_vpn_enabled
+vpn_set_wguard_vpn_enabled
+vpn_get_wguard_settings
+vpn_set_ipsec_settings
+vpn_set_wguard_settings
+vpn_get_connection_statistics
+msgq_send_sync
+vpn_update_wan_connection_status
+vpn_update_connected_clients_count
+vpn_factory_reset
+vpn_mon_add_service
+vpn_mon_list_services
+vpn_validate_openvpn_config_file_settings
+vpn_get_openvpn_config_file_settings
+vpn_set_openvpn_config_file_settings
+vpn_get_auto_connect_enabled_setting
+xmldata_getint32
+vpn_set_auto_connect_enabled_setting
+xmldata_setint32
+xmldata_save
+MsgBusSetInt32
+vpn_get_setting
+vpn_set_setting
+vpn_get_pptp_setting
+xmldata_getstring
+vpn_set_pptp_setting
+xmldata_setstring
+vpn_get_openvpn_setting
+vpn_set_openvpn_setting
+vpn_get_openvpn_config_file_setting
+vpn_set_openvpn_config_file_setting
+vpn_get_l2tp_setting
+vpn_set_l2tp_setting
+vpn_get_ipsec_vpn_enabled_setting
+vpn_set_ipsec_vpn_enabled_setting
+vpn_get_ipsec_setting
+AesDecrypt
+vpn_get_wguard_vpn_enabled_setting
+vpn_set_wguard_vpn_enabled_setting
+vpn_get_wguard_setting
+vpn_set_ipsec_setting
+AesEncrypt
+vpn_set_wguard_setting
+initialize_settings
+vpn_factory_reset_impl
+initialize_factory_reset_func
+__bss_start
+librt.so.1
+libpthread.so.0
+libmificommon.so
+libmifimsgbus.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+librouter2_api.so
+libwan_mgr_api.so
+libfactory_reset_api.so
+libwebui_api.so
+H	KxD	J{D
+VPN: success.
+VPN: general error.
+VPN: one or more bad parameters passed into a function.
+VPN: one or more buffer type parameters passed into API is too small.
+VPN: the feature is unsupported.
+VPN: process not running.
+VPN: a device reset is required for the operation to take effect.
+VPN: API not implemented for the platform.
+VPN: OpenVPN failed to open uploaded config file path directory.
+VPN: OpenVPN uploaded does not contain configuration file.
+VPN: OpenVPN uploaded contain invalid configuration file.
+VPN: OpenVPN uploaded contains missed configuration files.
+VPN: OpenVPN failed to open uploaded configuration file.
+VPN: unknown error.
+[%s]:[%s] - %s: +++
+vpn.settings.openvpn_config_file
+[%s]:[%s] - %s: +++ Tunnel Index:%d
+vpn.settings.ipsec
+vpn.settings.wguard
+vpn.settings.pptp
+vpn.settings.openvpn
+vpn.settings.l2tp
+vpn.settings.autoconnect
+[%s]:[%s] - settings_get_setting(%s) failed with code: %d
+[%s]:[%s] - During set invalid VPN Auto connection status: %d
+[%s]:[%s] - settings_set_setting(%s) failed with code: %d
+[%s]:[%s] - %s: Null pointer.
+vpn.settings
+[%s]:[%s] - %s: During set invalid retries: [%d]
+[%s]:[%s] - %s: During set invalid server type: [%d]
+[%s]:[%s] - %s: +++ Server Type: %d Tunnel ID: %d
+[%s]:[%s] - %s: During set invalid URL
+[%s]:[%s] - %s: During set invalid Username
+[%s]:[%s] - %s: During set invalid Password
+[%s]:[%s] - %s: During set invalid Authentication Type: [%d]
+[%s]:[%s] - %s: During set invalid port number: [%d]
+[%s]:[%s] - %s: During set invalid protocol: [%d]
+[%s]:[%s] - %s: During set invalid encryption: [%d]
+[%s]:[%s] - %s: During set invalid Pre Shared Key
+vpn.settings.ipsec_service
+[%s]:[%s] - settings_get_setting(%s) failed with code: 0x%x
+[%s]:[%s] - Invalid IPSec VPN Service status: %d
+[%s]:[%s] - settings_set_setting(%s) failed with code: 0x%x
+vpn.settings.wguard_service
+[%s]:[%s] - Invalid WGuard VPN Service status: %d
+[%s]:[%s] - %s: During set invalid Remote ID or URL
+[%s]:[%s] - %s: During set invalid IKE Version: [%d]
+[%s]:[%s] - %s: During set invalid IKE Client Authentication Type: [%d]
+[%s]:[%s] - %s: During set invalid IKE client Pre Shared Key
+[%s]:[%s] - %s: During set invalid IKE client Username
+[%s]:[%s] - %s: During set invalid IKE client Password
+[%s]:[%s] - %s: Local client certificate type:%d 
+[%s]:[%s] - %s: Local client certificate name is missing
+[%s]:[%s] - %s: Private Key client certificate name is missing
+[%s]:[%s] - %s: PKCS12 client certificate password is missing
+[%s]:[%s] - %s: During set invalid IKE client certificate name
+[%s]:[%s] - %s: During set invalid IKE Server Authentication Type: [%d]
+[%s]:[%s] - %s: During set invalid IKE server Pre Shared Key
+[%s]:[%s] - %s: During set invalid IKE server Username
+[%s]:[%s] - %s: During set invalid IKE server Password
+[%s]:[%s] - %s: During set invalid DPD action[%d]
+[%s]:[%s] - %s: Tunnel Name should not be empty.
+[%s]:[%s] - %s: During set invalid Key Path
+[%s]:[%s] - %s: During set invalid Private Key Filename
+[%s]:[%s] - %s: During set found Empty Private Key Content
+[%s]:[%s] - %s: During set found Empty Peer Public Key Content
+[%s]:[%s] - %s: During set found Empty Tunnel IP address 
+[%s]:[%s] - %s: During set found Empty Peer IP address 
+[%s]:[%s] - %s: During set found Empty Allowed IP addresses/subnets 
+[%s]:[%s] - %s: During set found Empty EndPoint IP address 
+[%s]:[%s] - %s: During set found Invalid Port number:%d 
+[%s]:[%s] - %s: During set found Invalid Tunnel Index:%d 
+[%s]:[%s] - %s: During set found keepalive < 1  
+[%s]:[%s] - %s: +++ evt rc=0x%x state:%d
+/vpn_mon_mq
+[%s]:[%s] - %s: Monitor thread updating service %s with %d.
+[%s]:[%s] - %s: During validation of config files invalid config files path
+[%s]:[%s] - %s: During set invalid config files path
+[%s]:[%s] - %s: During set invalid config file name
+[%s]:[%s] - %s: During set invalid url
+vpn_clear_openvpn_cfg_settings
+vpn_clear_ipsec_cfg_settings
+vpn_clear_wguard_cfg_settings
+vpn_clear_all_settings
+vpn_get_auto_connect_enabled
+vpn_set_auto_connect_enabled
+vpn_get_settings
+vpn_set_settings
+connect_vpn
+disconnect_vpn
+vpn_get_pptp_settings
+vpn_set_pptp_settings
+vpn_get_openvpn_settings
+vpn_set_openvpn_settings
+vpn_get_l2tp_settings
+vpn_set_l2tp_settings
+vpn_get_ipsec_vpn_enabled
+vpn_set_ipsec_vpn_enabled
+vpn_get_ipsec_settings
+vpn_get_wguard_vpn_enabled
+vpn_set_wguard_vpn_enabled
+vpn_get_wguard_settings
+vpn_set_ipsec_settings
+vpn_set_wguard_settings
+vpn_get_connection_statistics
+vpn_update_wan_connection_status
+vpn_update_connected_clients_count
+vpn_factory_reset
+vpn_mon_add_service
+vpn_mon_list_services
+vpn_validate_openvpn_config_file_settings
+vpn_get_openvpn_config_file_settings
+vpn_set_openvpn_config_file_settings
+[%s]:[%s] - Invoked %s
+[%s]:[%s] - Invalid data passed for VPN auto connect during get.
+/Settings/VPN/AutoConnect
+[%s]:[%s] - End %s
+[%s]:[%s] - Invalid data passed for VPN auto connect during set.
+[%s]:[%s] - Invalid VPN auto connect value: %d
+vpn.settings.autoconnect
+[%s]:[%s] - Invalid data or length during vpn settings get
+[%s]:[%s] - %s: Server Type:%d
+/Settings/VPN/OpenVPN/TunnelType
+/Settings/VPN/OpenVPN/Retries
+/Settings/VPN/OpenVPN_CFG/TunnelType
+/Settings/VPN/OpenVPN_CFG/Retries
+/Settings/VPN/IPSec/TunnelType
+[%s]:[%s] - %s:%d Invalid Server Type
+[%s]:[%s] - Invalid data during vpn settings set
+[%s]:[%s] - Invalid data length during vpn settings set
+vpn.settings
+[%s]:[%s] - Invalid data or length during pptp vpn settings get
+/Settings/VPN/PPTP/URL
+/Settings/VPN/PPTP/Username
+/Settings/VPN/PPTP/Password
+/Settings/VPN/PPTP/AuthenticationType
+[%s]:[%s] - Invalid data during pptp vpn settings set
+[%s]:[%s] - Invalid data length during pptp vpn settings set
+vpn.settings.pptp
+[%s]:[%s] - Invalid data or length during openvpn settings get
+/Settings/VPN/OpenVPN/URL
+/Settings/VPN/OpenVPN/Username
+/Settings/VPN/OpenVPN/Password
+/Settings/VPN/OpenVPN/Protocol
+/Settings/VPN/OpenVPN/Port
+/Settings/VPN/OpenVPN/RootCA
+/Settings/VPN/OpenVPN/ClientCertificate
+/Settings/VPN/OpenVPN/ClientKey
+/Settings/VPN/OpenVPN/TLSAuthentication
+/Settings/VPN/OpenVPN/Encryption
+/Settings/VPN/OpenVPN/AuthenticationAlgorithm
+/Settings/VPN/OpenVPN/Compression
+[%s]:[%s] - Invalid data during openvpn settings set
+[%s]:[%s] - Invalid data length during openvpn settings set
+vpn.settings.openvpn
+[%s]:[%s] - Invalid data or length during openvpn config file settings get
+/Settings/VPN/OpenVPN/ConfigFileName
+vpn.settings.openvpn_config_file
+[%s]:[%s] - Invalid data or length during l2tp vpn settings get
+/Settings/VPN/L2TP/URL
+/Settings/VPN/L2TP/Username
+/Settings/VPN/L2TP/Password
+/Settings/VPN/L2TP/PreSharedKey
+[%s]:[%s] - Invalid data during l2tp vpn settings set
+[%s]:[%s] - Invalid data length during l2tp vpn settings set
+vpn.settings.l2tp
+[%s]:[%s] - Invalid data to get IPSec VPN Service status.
+/Settings/VPN/IPSecService
+[%s]:[%s] - Invalid data to set IPSec VPN Service status.
+[%s]:[%s] - Invalid IPSec VPN Service value: %d
+vpn.settings.ipsec_service
+[%s]:[%s] - Invalid data or length during ipsec vpn settings get
+[%s]:[%s] - %s:%d IPSec Tunnel ID:%d and Name:%s
+/Settings/VPN/IPSec%d/auto
+[%s]:[%s] - %s:%d buff:%s vpn->auto_enabled:%d
+/Settings/VPN/IPSec%d/conn_enabled
+/Settings/VPN/IPSec%d/anon_enabled
+/Settings/VPN/IPSec%d/lfw_enabled
+/Settings/VPN/IPSec%d/tun_name
+/Settings/VPN/IPSec%d/local_id
+/Settings/VPN/IPSec%d/remote_id
+/Settings/VPN/IPSec%d/IKE/Version
+/Settings/VPN/IPSec%d/IKE/lifetime
+/Settings/VPN/IPSec%d/IKE/Authentication/CertType
+/Settings/VPN/IPSec%d/IKE/Authentication/KeyLifetime
+/Settings/VPN/IPSec%d/IKE/Authentication/Client/Type
+/Settings/VPN/IPSec%d/IKE/Authentication/Client/PreSharedKey
+[%s]:[%s] - %s: IPSec[%d]:PSK-%s len-%d
+Ins3eg0!23
+[%s]:[%s] - %s: Failed to decrypt PSK for IPSec[%d].
+[%s]:[%s] - %s: Decrypted PSK is empty or NULL for IPSec[%d].
+/Settings/VPN/IPSec%d/IKE/Authentication/Client/Password
+[%s]:[%s] - %s: IPSec[%d]:Password-%s len-%d
+[%s]:[%s] - %s: Failed to decrypt Password for IPSec[%d].
+[%s]:[%s] - %s: Decrypted Password is empty or NULL for IPSec[%d].
+/Settings/VPN/IPSec%d/IKE/Authentication/Server/Type
+/Settings/VPN/IPSec%d/IKE/Authentication/Server/Username
+/Settings/VPN/IPSec%d/IKE/Authentication/Server/Password
+/Settings/VPN/IPSec%d/IKE/Authentication/Server/PreSharedKey
+/Settings/VPN/IPSec%d/local_ipv4
+/Settings/VPN/IPSec%d/local_ipv4_subnet
+/Settings/VPN/IPSec%d/remote_ipv4
+/Settings/VPN/IPSec%d/remote_ipv4_subnet
+/Settings/VPN/IPSec%d/left_cert
+/Settings/VPN/IPSec%d/priv_key
+/Settings/VPN/IPSec%d/IKE/Message
+/Settings/VPN/IPSec%d/ESP/Message
+/Settings/VPN/IPSec%d/IKE/Authentication/Client/CertificateName
+/Settings/VPN/IPSec%d/IKE/Authentication/Server/CertificateName
+/Settings/VPN/IPSec%d/DPD/enabled
+/Settings/VPN/IPSec%d/DPD/action
+/Settings/VPN/IPSec%d/DPD/delay
+/Settings/VPN/IPSec%d/DPD/timeout
+[%s]:[%s] - Invalid data to get WGuard VPN Service status.
+/Settings/VPN/WGuardService
+[%s]:[%s] - Invalid data to set WGuard VPN Service status.
+[%s]:[%s] - Invalid WGuard VPN Service value: %d
+vpn.settings.wguard_service
+[%s]:[%s] - Invalid data or length during wguard vpn settings get
+/Settings/VPN/WGuard%d/auto
+/Settings/VPN/WGuard%d/tun_name
+/Settings/VPN/WGuard%d/conn_enabled
+/Settings/VPN/WGuard%d/listen_port
+/Settings/VPN/WGuard%d/endpt_port
+/Settings/VPN/WGuard%d/retries
+/Settings/VPN/WGuard%d/key_path
+/Settings/VPN/WGuard%d/pkey_file_name
+/Settings/VPN/WGuard%d/pkey
+/Settings/VPN/WGuard%d/peer_pubKey
+/Settings/VPN/WGuard%d/tun_ip
+/Settings/VPN/WGuard%d/peer_ip
+/Settings/VPN/WGuard%d/allowed_ips
+/Settings/VPN/WGuard%d/endpt_ip
+/Settings/VPN/WGuard%d/keepalive
+[%s]:[%s] - %s:%d Tunnel:%s - conn:%d Private Key Name:%s
+[%s]:[%s] - Invoked %s with Index:%d
+[%s]:[%s] - Invalid data during ipsec vpn settings set
+[%s]:[%s] - Invalid data length during ipsec vpn settings set
+[%s]:[%s] - %s:%d buff:%s auto_enabled:%d remote_id:%s
+[%s]:[%s] - %s: Failed to Encrypt PSK: %s
+[%s]:[%s] - %s: Encrypted PSK: %s
+[%s]:[%s] - %s: Failed to Encrypt Password: %s
+[%s]:[%s] - %s: Encrypted Password: %s
+vpn.settings.ipsec
+[%s]:[%s] - Invalid data during wguard vpn settings set
+[%s]:[%s] - Invalid data length during wguard vpn settings set
+[%s]:[%s] - %s:%d Wguard Tunnel[%d]:%s
+[%s]:[%s] - %s:%d buff:%s auto_enabled:%d key_path:%s
+vpn.settings.wguard
+vpn_get_auto_connect_enabled_setting
+vpn_set_auto_connect_enabled_setting
+vpn_get_setting
+vpn_set_setting
+vpn_get_pptp_setting
+vpn_set_pptp_setting
+vpn_get_openvpn_setting
+vpn_set_openvpn_setting
+vpn_get_openvpn_config_file_setting
+vpn_set_openvpn_config_file_setting
+vpn_get_l2tp_setting
+vpn_set_l2tp_setting
+vpn_get_ipsec_vpn_enabled_setting
+vpn_set_ipsec_vpn_enabled_setting
+vpn_get_ipsec_setting
+vpn_get_wguard_vpn_enabled_setting
+vpn_set_wguard_vpn_enabled_setting
+vpn_get_wguard_setting
+vpn_set_ipsec_setting
+vpn_set_wguard_setting
+[%s]:[%s] - %s: Starting factory reset
+[%s]:[%s] - %s: factory reset done with rc=%d
+vpn_factory_reset_impl
+GCC: (GNU) 8.2.0
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/xmldata/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/logging/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/watchdog/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/config
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/router2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/factory_reset/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/vpn/src
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/vpn/inc
+-iprefix /opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/bin/arm-oe-linux-gnueabi/../../lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/vpn/src/vpn_api.c
+-mfpu=neon
+-mfloat-abi=hard
+-mcpu=arm10tdmi
+-mtls-dialect=gnu
+-march=armv5t
+-auxbase-strip vpn_api.o
+-Wno-unused-parameter
+-Wstrict-prototypes
+-Wno-trigraphs
+-frecord-gcc-switches
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/vpn/src/vpn_settings.c
+-auxbase-strip vpn_settings.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/vpn/src/vpn_factory_reset.c
+-auxbase-strip vpn_factory_reset.o
+gold 1.16
+call_weak_fn
+crtstuff.c
+__TMC_LIST__
+deregister_tm_clones
+register_tm_clones
+__do_global_dtors_aux
+completed.11339
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+vpn_api.c
+__func__.9236
+__func__.9243
+__func__.9250
+vpn_clear_all_settings
+__func__.9261
+__func__.9270
+__func__.9282
+__func__.9294
+__func__.9307
+__func__.9319
+__func__.9325
+__func__.9331
+__func__.9344
+__func__.9356
+__func__.9369
+__func__.9381
+__func__.9394
+__func__.9406
+__func__.9418
+__func__.9430
+__func__.9442
+__func__.9454
+__func__.9466
+__func__.9479
+__func__.9492
+__func__.9505
+__func__.9511
+__func__.9517
+__func__.9522
+__func__.9527
+__func__.9532
+__func__.9537
+__func__.9543
+__func__.9556
+vpn_settings.c
+__func__.9823
+__func__.9830
+__func__.9836
+__func__.9849
+__func__.9861
+__func__.9868
+__func__.9874
+__func__.9881
+__func__.9887
+__func__.9894
+__func__.9900
+__func__.9907
+__func__.9913
+__func__.9920
+__func__.9931
+__func__.9937
+__func__.9944
+__func__.9952
+__func__.9962
+__func__.9971
+vpn_factory_reset.c
+__func__.9086
+__FRAME_END__
+__dso_handle
+__TMC_END__
+_DYNAMIC
+_GLOBAL_OFFSET_TABLE_
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+vpn_get_error_string
+vpn_clear_openvpn_cfg_settings
+mifi_dbg_get_level_name
+mifi_dbg_log
+settings_set_setting
+msgq_does_queue_exist
+msgq_send_async
+vpn_clear_ipsec_cfg_settings
+snprintf
+vpn_clear_wguard_cfg_settings
+vpn_is_running
+vpn_get_auto_connect_enabled
+settings_get_setting
+mifi_dbg_syslog
+vpn_set_auto_connect_enabled
+vpn_get_settings
+vpn_set_settings
+connect_vpn
+disconnect_vpn
+vpn_get_pptp_settings
+vpn_set_pptp_settings
+vpn_get_openvpn_settings
+vpn_set_openvpn_settings
+vpn_get_l2tp_settings
+vpn_set_l2tp_settings
+vpn_get_ipsec_vpn_enabled
+vpn_set_ipsec_vpn_enabled
+vpn_get_ipsec_settings
+vpn_get_wguard_vpn_enabled
+vpn_set_wguard_vpn_enabled
+vpn_get_wguard_settings
+vpn_set_ipsec_settings
+vpn_set_wguard_settings
+vpn_get_connection_statistics
+msgq_send_sync
+vpn_update_wan_connection_status
+vpn_update_connected_clients_count
+vpn_factory_reset
+vpn_mon_add_service
+vpn_mon_list_services
+vpn_validate_openvpn_config_file_settings
+vpn_get_openvpn_config_file_settings
+vpn_set_openvpn_config_file_settings
+vpn_get_auto_connect_enabled_setting
+xmldata_getint32
+vpn_set_auto_connect_enabled_setting
+xmldata_setint32
+xmldata_save
+MsgBusSetInt32
+vpn_get_setting
+vpn_set_setting
+vpn_get_pptp_setting
+xmldata_getstring
+vpn_set_pptp_setting
+xmldata_setstring
+vpn_get_openvpn_setting
+vpn_set_openvpn_setting
+vpn_get_openvpn_config_file_setting
+vpn_set_openvpn_config_file_setting
+vpn_get_l2tp_setting
+vpn_set_l2tp_setting
+vpn_get_ipsec_vpn_enabled_setting
+vpn_set_ipsec_vpn_enabled_setting
+vpn_get_ipsec_setting
+AesDecrypt
+vpn_get_wguard_vpn_enabled_setting
+vpn_set_wguard_vpn_enabled_setting
+vpn_get_wguard_setting
+vpn_set_ipsec_setting
+AesEncrypt
+vpn_set_wguard_setting
+initialize_settings
+vpn_factory_reset_impl
+initialize_factory_reset_func
+__bss_start
+.init_array
+.fini_array
+.comment
+.rel.plt
+.ARM.attributes
+.eh_frame_hdr
+.gnu.version_r
+.rel.dyn
+.gnu.version
+.note.gnu.gold-version
+.GCC.command.line
+.eh_frame
+.tm_clone_table
+.note.gnu.build-id
+.gnu.version_d
+.dynamic
+.shstrtab

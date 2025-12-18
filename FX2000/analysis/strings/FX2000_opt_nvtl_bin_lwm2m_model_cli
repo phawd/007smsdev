@@ -1,0 +1,289 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+snprintf
+lwm2m_is_running
+lwm2m_get_error_string
+lwm2m_sys_get_device_info
+lwm2m_sys_get_connectivity_statistics
+lwm2m_sys_get_connectivity_monitoring
+lwm2m_sys_get_location_info
+lwm2m_sys_get_connectivity_extn_info
+lwm2m_sys_get_dm_profile_info
+lwm2m_sys_get_active_profile_info
+lwm2m_get_settings
+lwm2m_set_settings
+lwm2m_get_cfg
+lwm2m_file_create
+lwm2m_ota_start_call
+lwm2m_ota_stop_call
+lwm2m_get_lifetime
+lwm2m_enable_disable_dm_apn
+lwm2m_enable_disable_active_apn
+__bss_start
+libwatchdog_api.so
+librouter2_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+librt.so.1
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libgps_api.so
+libfactory_reset_api.so
+libsms_api.so
+libwifi_api.so
+libccm2_api.so
+libfile_sharing_api.so
+libfota_api.so
+libled_api.so
+libbuzzer_api.so
+libans_api.so
+libusb_api.so
+libemd_api.so
+libsensor_api.so
+libvpn_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libwan_mgr_api.so
+libcbsd_api.so
+libsysintclient.so
+liblwm2m_model_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+get_dev_info
+Get device information.
+Get LWM2M configurations.
+get_settings
+Get LWM2M settings.
+set_settings
+Set LWM2M settings.
+set_dummy_devinfo
+For test purposes fake IMEI, secert_key.
+get_conn_stat_info
+Get Connection Statistics information.
+get_conn_monitoring_info
+Get Connection Monitoring information.
+get_loc_info
+Get location information.
+get_conn_extn_info
+Get ATnT Connectivity Extension information.
+get_apn_dm_conn_profile_info
+Get Apn Connection Profile information.
+get_apn_active_conn_profile_info
+get_lifetime
+device lifetime with IOT Server
+set_lifetime
+bootstrap
+connect to bootstrap server if bootstrap enable .
+connect to IOT Server if IOT enable 
+use DM APN to communicate with IOT Server
+dm_call_start
+Start DM APN call
+dm_call_stop
+Stop DM APN call
+set_enable_disable_dm_apn
+Set DM APN enable value.
+set_enable_disable_active_apn
+Set ACTIVE APN enable value.
+lwm2m_is_running returned %d (%s)
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+lwm2m_sys_get_device_info failed, returned rc(%d).
+imei:[%s].
+model:[%s].
+manufacturer:[%s].
+psk:[%s].
+Firmware Version:[%s].
+Software Version:[%s].
+Hardware Version:[%s].
+Device Type:[%s].
+conn_stat.rx_count = [%d]
+conn_stat.tx_count = [%d]
+conn_stat.ipv4_tx_data = [%lld]
+conn_stat.ipv4_rx_data = [%lld]
+conn_stat.ipv6_tx_data = [%lld]
+conn_stat.ipv6_rx_data = [%lld]
+conn_monitoring.bearer_type = [%d]
+conn_monitoring.rsrp = [%d]
+conn_monitoring.link_quality = [%d]
+conn_monitoring.ipv4_address = [%s]
+conn_monitoring.ipv6_address = [%s]
+conn_monitoring.router_ipv4_address = [%s]
+conn_monitoring.router_ipv6_address = [%s]
+conn_monitoring.cell_id = [%s]
+conn_monitoring.apn_name = [%s]
+conn_monitoring.MNC = [%s]
+conn_monitoring.MCC = [%s]
+lwm2m_sys_get_location_info failed, returned rc(%d).
+latitude:[%f]
+longitude:[%f]
+altitude:[%f]
+velocity:[%f]
+radius:[%f]
+timestamp:[%u]
+speed:[%f]
+lwm2m_sys_get_connectivity_extn_info failed, returned rc(%d).
+ICCID:[%s]
+IMSI:[%s]
+MDN:[%s]
+Apn_Retries:[%d]
+Apn_Retry_Period:[%d]
+APN_retry_Backoff_Period:[%d]
+SINR:[%d]
+lwm2m_sys_get_apn_dm_connection_profile_info failed, returned rc(%d).
+Name:[%s]
+APN:[%s]
+APN_ENABLE_STATUS:[%d]
+lwm2m_sys_get_apn_activeindex_connection_profile_info failed, returned rc(%d).
+lwm2m_get_settings returned rc(%d).
+Lifetime=[%u] secs.
+DMCallRetries=[%u].
+DMCallRetryInterval=[%u] secs.
+AuthRetries=[%u].
+AuthRetryInterval=[%u] secs.
+WatchdogCheckInterval=[%u] secs.
+ReadFromIPQ=[%u].
+mccmnc_list=[%s].
+Unknown option: %c
+%s [-a <auth_retries>,<auth_retry_interval>] [-d <dm_call_retries>,<dm_call_retry_interval>] [-l <lifetime>] [-m <mccmnc>] [-w <watchdog_interval>].
+:a:d:i:l:m:w:
+Invalid syntax.
+lwm2m_set_settings returned rc(%d).
+lwm2m_get_cfg returned rc(%d).
+Printing LWM2M configuration settings:
+Carrier=[%s]
+Model=[%s]
+sdm testserver_url=[%s]
+sdm testserver_port=[%d]
+sdm server_url=[%s]
+sdm server_port=[%d]
+sdm bootstrap testserver_url=[%s]
+sdm bootstrap testserver_port=[%d]
+sdm bootstrap server_url=[%s]
+sdm bootstrap server_port=[%d]
+sdm config_ver=[%s]
+sdm dev_type=[%s]
+sdm socket_update_interval=[%d]
+ %s %s <imei or key or active_apn or dm_apn or model or mfg or imsi>
+/opt/nvtl/data/lwm2m/dummy_imei
+/opt/nvtl/data/lwm2m/dummy_secret_key
+active_apn
+/opt/nvtl/data/lwm2m/dummy_active_apn
+/opt/nvtl/data/lwm2m/dummy_dm_apn
+/opt/nvtl/data/lwm2m/dummy_model
+/opt/nvtl/data/lwm2m/dummy_mfg
+/opt/nvtl/data/lwm2m/dummy_imsi
+omadm_file_create returned %d (%s)
+/opt/nvtl/data/lwm2m/use_bootstrap
+Bootstrap server=[Enabled]
+Bootstrap server=[Disabled]
+ Usage: lwm2m_model_cli bootstrap <enable or disable>
+/opt/nvtl/data/lwm2m/no_bootstrap
+Client connectivity to DM server could not be disabled..
+Client connectivity to DM server is disabled.
+Client connectivity to Bootstrap server is enabled.
+Client connectivity to Bootstrap server could not be enabled.
+Please restart the device for the changes to take effect.
+Client connectivity to DM server is enabled.
+Client connectivity to DM server could not be enabled.
+Client connectivity to Bootstrap server could not be disabled.
+Client connectivity to Bootstrap server is disabled.
+Invalid usage.
+ Usage: lwm2m_model_cli bootstrap <enable or disable>
+/opt/nvtl/data/lwm2m/use_iot
+IOT server=[Enabled]
+IOT server=[Disabled]
+ Usage: lwm2m_model_cli iot <enable or disable>
+Usage: lwm2m_model_cli iot <enable or disable>
+IOT server already enabled
+unlink() failed
+You need to restart the device for the changes to take effect
+IOT server already disabled
+fopen() failed
+Disabled
+IOT server=[%s]
+ Usage: lwm2m_model_cli dm_call <enable or disable>
+/opt/nvtl/data/lwm2m/use_ota_call
+/opt/nvtl/data/lwm2m/no_ota_call
+Could not disable Internet call.
+Internet call is disabled.
+DM call is enabled.
+Could not enable DM call.
+Internet call is enabled.
+Could not enable Internet call.
+Could not disable DM call.
+DM call disabled.
+DM call is disabled
+Invalid usage.
+ Usage: lwm2m_model_cli dm_call <enable or disable>
+lwm2m_ota_start_call returned %d (%s)
+lwm2m_ota_stop_call returned %d (%s)
+ Usage: lwm2m_model_cli set_lifetime <value>
+/opt/nvtl/data/lwm2m/lifetime
+lwm2m_file_create returned %d (%s)
+ Usage: lwm2m_model_cli get_lifetime>
+lwm2m_get_lifetime returned rc(%d).
+lifetime=[%u]
+ Usage: lwm2m_model_cli set_enable_disable_dm_apn <0|1>
+Invalid Argument.
+lwm2m_enable_disable_dm_apn returned rc(%d).
+ Usage: lwm2m_model_cli set_enable_disable_active_apn <0|1>
+lwm2m_enable_disable_active_apn returned rc(%d).
+command [%s]
+command [%s] not found.
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

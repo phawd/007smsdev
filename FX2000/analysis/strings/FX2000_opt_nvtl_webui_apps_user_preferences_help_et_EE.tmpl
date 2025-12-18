@@ -1,0 +1,27 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+	<p>Sellel ekraanil on palju suvandeid, mis v
+imaldavad seadistada seadme <tmpl_var _("webui", "webui_product_name")> k
+itumist nii, et see vastaks paremini teie vajadustele.</p>
+	<h3>Keel</h3>
+	<p>Valige soovitud keel.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+rake vorming, milles kuup
+ev selles veebip
+hises liideses kuvatakse.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+rake vorming, milles kellaaeg selles veebip
+hises liideses kuvatakse.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+	<p>Valige GPS-i k
+rguse ja t
+ramiseks kasutatav seade.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+mnendarvude kuvamise viis. K
+mnendkoha m
+rkimiseks saab valida punkti (.) v
+i koma (,).</p>
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+		<p>Etherneti indikaator kuvatakse olekuribal, kui Etherneti port on lubatud; muidu on see varjatud.</p>
+	</tmpl_if>

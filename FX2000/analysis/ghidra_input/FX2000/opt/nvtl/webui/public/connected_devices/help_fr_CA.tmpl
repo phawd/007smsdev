@@ -1,0 +1,80 @@
+<!-- Connected Devices -->
+<div id="connected_devices">
+	<h1><tmpl_var _("webui", "connected_devices_menu_text")></h1>
+	<h2>Vue d’ensemble</h2>
+	<p>
+		Cette page affiche les détails de chaque appareil connecté au <tmpl_var _("webui", "webui_product_name")>, ainsi qu’une liste des appareils bloqués.
+	</p>
+
+	<h2><tmpl_var _("webui", "connected_devices_sub_header_text")></h2>
+	<p>
+		Ce tableau répertorie tous les appareils connectés au réseau Wi-Fi. Le nom du réseau Wi-Fi est affiché après le titre. Si un ordinateur est connecté en partage de connexion à <tmpl_var _("webui", "webui_product_name")> à l’aide d’un câble USB, cet ordinateur sera répertorié dans ce tableau.
+	</p>
+	<p>
+		Les informations suivantes sont affichées pour chaque appareil connecté:
+	</p>
+
+	<h3>Type de connexion</h3>
+	<p>Une icône indique le type de connexion pour chaque appareil connecté.</p>
+
+	<h3>Nom</h3>
+	<p>
+		Normalement, il s’agit du nom d’hôte de l’appareil connecté, comme défini sur l’appareil connecté lui-même. Dans de rares cas, le nom d’hôte peut être indisponible. Si vous avez utilisé l’option « Modifier » pour modifier le nom d’un appareil connecté, le nom que vous avez fourni s’affiche à la place du nom d’hôte.
+	</p>
+	<p>
+		Vous pouvez utiliser l’option « Modifier » pour modifier le nom de tout appareil connecté.
+	</p>
+
+	<h3>Adresse IP</h3>
+	<p>L’adresse IP de l’appareil connecté.</p>
+
+	<h3>
+		<tmpl_var truncate(_("webui", "connected_devices_mac_address_label"), (size(_("webui", "connected_devices_mac_address_label")) - size(":")))>
+	</h3>
+	<p>
+		L’adresse MAC est un identifiant réseau unique pour cet appareil connecté.
+	</p>
+
+	<tmpl_if isIPv6Supported>
+		<h3>
+			<tmpl_var truncate(_("webui", "connected_devices_link_local_label"), (size(_("webui", "connected_devices_link_local_label")) - size(":")))>
+		</h3>
+		<p>
+			Si l’appareil connecté prend en charge IPv6, l’adresse IPv6 locale de liaison s’affiche.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if GuestWifiSupported>
+		<h2><tmpl_var _("webui", "connected_devices_guest_title")></h2>
+		<p>
+			Si le réseau Wi-Fi invité est utilisé, ce tableau répertorie tous les appareils connectés au réseau Wi-Fi invité. Le nom du réseau Wi-Fi est affiché après le titre.
+		</p>
+		
+		<p>
+			La présentation et le fonctionnement des appareils énumérés ici sont identiques à ceux des appareils répertoriés dans le réseau principal.
+		</p>
+	</tmpl_if>
+	
+	<h2>Blocage et déblocage des appareils en cours</h2>
+	<h3>Bouton Bloquer</h3>
+	<p>
+		Cliquer sur le bouton « Bloquer » déconnecte l’appareil connecté et l’empêche de se reconnecter. L’appareil bloqué apparaît alors dans la liste des appareils bloqués.
+	</p>
+	<p>
+		Les appareils bloqués sont bloqués à la fois sur le réseau invité et sur le réseau principal.
+	</p>
+	<p>
+		Cette option peut être utilisée avec chaque appareil connecté, à l’exception de votre propre appareil, et de tout appareil connecté par USB.
+	</p>
+	
+	<h3>Liste bloquée</h3>
+	<p>
+		Il s’agit d’une liste des appareils que vous avez bloqués. Veuillez noter que dans la mesure où ces appareils ne sont pas actuellement connectés et que leur connexion est bloquée, ils n’ont pas d’adresse IP. À la place, ils sont identifiés par leur nom et leur adresse MAC.
+	</p>
+	<h3>Bouton Débloquer</h3>
+	<p>
+		Lorsque vous cliquez sur le bouton Débloquer, vous débloquez un appareil précédemment bloqué, ce qui lui permet de se connecter à nouveau. L’appareil débloqué est supprimé de la liste des appareils bloqués et réapparaîtra dans la liste des appareils connectés lorsqu’il se connecte.
+	</p>
+</div>
+<!-- id="connected_devices" -->
+

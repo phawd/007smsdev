@@ -1,0 +1,499 @@
+<tmpl_if isHidden>
+    <div class="notification app error">
+        <tmpl_var _("webui", "webui_app_hidden_text")>
+    </div>
+<tmpl_else>
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var validated = false;
+    var selectedTwoDotFourBandState = parseInt('<tmpl_var WifiAdvanced2Dot4GHZBandState>', 10);
+    var selectedFiveBandState = parseInt('<tmpl_var WifiAdvanced5GHZBandState>', 10);
+    var savedTwoDotFourBandState = parseInt('<tmpl_var WifiAdvanced2Dot4GHZBandState>', 10);
+    var savedFiveBandState = parseInt('<tmpl_var WifiAdvanced5GHZBandState>', 10);
+    var selectedTwoDotFourGMode = parseInt('<tmpl_var WifiAdvanced2Dot4G802Dot11Mode>', 10);
+    var selectedFiveGMode = parseInt('<tmpl_var WifiAdvanced5G802Dot11Mode>', 10);
+    var minConnVal = 1;
+    var maxConnVal = parseInt('<tmpl_var maxConnectionValue>');
+    var allowedConnectedClients = (isNaN(parseInt("<tmpl_var WifiAdvancedMaxConnections>"))) ? 1 : parseInt("<tmpl_var WifiAdvancedMaxConnections>", 10);
+
+    console.log('Max Value:'+maxConnVal);
+     
+    $(function() {
+
+        var wifiEnabled = parseInt('<tmpl_var EnableWifi>', 10);
+        if (wifiEnabled) {
+            $("#wifi_advanced_settings_form").show();
+        } else {
+            $("#wifi_advanced_settings_form").hide();
+        }
+
+        // Initialize our fancy toggle checkboxes.
+        if (jQuery.fn.slideButton) {
+            $("#EnableWifi").slideButton({
+                change : function($input){
+                    setEnableWifi($input.is(":checked"), $input);
+                }
+            });
+
+            $("#EnableWifiDeviceUi").slideButton("ajaxToggle", {
+                checkUrl : "<tmpl_udf GET_URI('deviceui_wifi_display_enable')>",
+                uncheckUrl : "<tmpl_udf GET_URI('deviceui_wifi_display_disable')>",
+                data : {
+                    gSecureToken : "<tmpl_var gSecureToken>"
+                }
+            });
+        }
+
+        $("#WifiAdvanced2Dot4GSettingsToggle").on("click", function() {
+            $("#WifiAdvanced2Dot4GSettings").slideToggle();
+        });
+
+        $("#WifiAdvanced5GSettingsToggle").on("click", function() {
+            $("#WifiAdvanced5GSettings").slideToggle();
+        });
+    
+        $(".WifiAdvanced2Dot4GHZBandState").on("change", function() {
+            var lastTwoDotFourBandState = selectedTwoDotFourBandState;
+            selectedTwoDotFourBandState = parseInt($("input[name='WifiAdvanced2Dot4GHZBandState']:checked").val(),10);
+            if(selectedTwoDotFourBandState != lastTwoDotFourBandState) {
+                var needRollback = handleBandStateChange();
+                if(needRollback ) {
+                     $('input[name="WifiAdvanced2Dot4GHZBandState"]').val([lastTwoDotFourBandState]);
+                     selectedTwoDotFourBandState = lastTwoDotFourBandState;
+                     if (jQuery.uniform) $.uniform.update();
+                }   
+            }
+        });
+
+    
+        $(".WifiAdvanced5GHZBandState").on("change", function() {
+            var lastFiveBandState =  selectedFiveBandState;
+            selectedFiveBandState = parseInt($("input[name='WifiAdvanced5GHZBandState']:checked").val(),10);
+            if(selectedFiveBandState != lastFiveBandState) {
+               var needRollback = handleBandStateChange();
+               if(needRollback ) {  
+                 $('input[name="WifiAdvanced5GHZBandState"]').val([lastFiveBandState]);
+                 selectedFiveBandState = lastFiveBandState;
+                 if (jQuery.uniform) $.uniform.update();
+               }    
+            }   
+        });
+
+        $("#wifi_advanced_settings_form").on("submit", function() {
+            return true;
+        });
+
+        $("#minConnectionValue").html(minConnVal);
+        $("#maxConnectionValue").html(maxConnVal);
+
+        $("#ChangeConnectionsLink").on('click', function() {
+            $("#slider").slider('value', allowedConnectedClients);
+            $("#wifi_advanced_settings_set_connection_limit").dialog({
+                modal : true,
+                resizable : false,
+                draggable : false,
+                dialogClass : "modalPopup",
+                title: "<tmpl_var _("webui","wifi_advanced_change_connection_modal_title")>",
+                width: 600,                
+                open : null,
+                close : null
+            });
+       });
+
+       var tooltip = $('<div id="tooltip" />');
+
+       $("#slider").slider({
+            min:minConnVal,
+            max:maxConnVal,
+            isRTL: <tmpl_if IN_SET(gLangDirection, "rtl")> true, <tmpl_else> false, </tmpl_if>
+            slide: function(event,ui) {
+                if( (ui.value == minConnVal) || (ui.value == maxConnVal) )
+                {
+                    tooltip.css('display','none');   
+                }
+                else
+                {
+                    tooltip.css('display','block');
+                    tooltip.text(ui.value);
+                }
+            },
+            change: function(event,ui) {
+                if( (ui.value == minConnVal) || (ui.value == maxConnVal) )
+                {
+                    tooltip.css('display','none');   
+                }
+                else
+                {
+                    tooltip.css('display','block');
+                    tooltip.text(ui.value);
+                }
+            }
+       })
+       .find(".ui-slider-handle").append(tooltip);
+
+        $("#saveConnectionLimit").on( "click", function() {
+            var url = "<tmpl_udf GET_URI('wifi_advanced_settings_change_connection_limit')>";
+            var connectionLimit = $("#slider").slider("value");
+
+            $.ajax({
+                url : url,
+                type : "POST",
+                data : {
+                    gSecureToken : "<tmpl_var gSecureToken>",
+                    slider : connectionLimit   
+                },
+                dataType : "json",
+                success : function(data, textStatus, xhr) {
+                    $("#WifiAdvancedMaxConnections").text(connectionLimit); 
+                    $("#wifi_advanced_settings_set_connection_limit").dialog("close");    
+                    allowedConnectedClients = connectionLimit;            
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                        // If auth session has ended, force a new login with a fresh GET.
+                        if( (xhr.status == 401) || (xhr.status == 403) || (xhr.status == 406) ) window.location.replace(window.location.href);
+                }
+            });
+        });       
+    });
+
+    function closePopup() {
+        $("#wifi_advanced_settings_set_connection_limit").dialog('close');
+    }
+
+    function handleBandStateChange() {
+    var needRollback = false;
+        if(selectedTwoDotFourBandState == 0 && selectedFiveBandState == 0) {
+            var text = "<tmpl_var _('webui', 'wifi_advanced_both_bands_off_popup_text')>"
+            showWarning(text);
+            needRollback = true;
+        } else if((selectedTwoDotFourBandState == 0 || selectedTwoDotFourBandState == 2) && (selectedFiveBandState == 0 || selectedFiveBandState == 2)
+            &&(savedTwoDotFourBandState ==1 || savedFiveBandState ==1)) {
+            var text = '<tmpl_var _("webui", "wifi_advanced_primary_off_popup_text")>'
+            showWarning(text);
+        }
+        return needRollback;
+    }
+
+    function showWarning(text) {
+        modalPopup.createWindow('<tmpl_var _("webui", "webui_app_warning_title")>', '<p>'+text+'</p>', 430, 250, [{
+                text : '<tmpl_var _("webui", "webui_modal_ok_button")>',
+                className : "primary",
+                trigger : null
+        }], null, null);
+    }
+
+   function setEnableWifi(bool, $wifiElem) {
+         var msg = '<p><tmpl_var _("webui", "wifi_advanced_disable_wifi_confirm_modal_text")></p>';
+        if (bool) {
+            processEnableWifi(bool, $wifiElem);
+        } else {
+            modalPopup.createWindow('<tmpl_var _("webui", "webui_modal_title")>', msg, 430, 200, [{
+                text : '<tmpl_var _("webui", "webui_modal_cancel_button")>',
+                className : "cancel",
+                trigger : function(){
+                    undoChange($wifiElem);
+                }
+            }, {
+                text : '<tmpl_var _("webui", "webui_modal_confirm_button")>',
+                className : "primary",
+                trigger : function(){
+                    processEnableWifi(false, $wifiElem);
+                }
+            }], null, function(){
+                undoChange($wifiElem);
+            });
+        }
+    }
+
+    function undoChange($el) {
+        if (jQuery.fn.slideButton) $el.slideButton("undo");
+    }
+
+    function processEnableWifi(bool, $wifiElem) {
+        if (jQuery.fn.slideButton) $wifiElem.slideButton("addLoader");
+        var url = (bool) ? "<tmpl_udf GET_URI('wifi_advanced_settings_enable_wifi')>" : "<tmpl_udf GET_URI('wifi_advanced_settings_disable_wifi')>";
+        $.ajax({
+            url : url,
+            type : "POST",
+            data : {
+                gSecureToken : "<tmpl_var gSecureToken>"
+            },
+            dataType : "json",
+                success : function(data, textStatus, xhr){
+                    // If no network connected, success event still occurs.
+                    // We need to implicitly see an xhr.status greater than 0 to know we've actually
+                    // made contact.
+                    if ((xhr.readyState == 4 ) && (xhr.status == 0)) {
+                        undoChange($wifiElem);
+                    } else {
+             if (bool) {
+                     $("#wifi_advanced_settings_form").show();
+                 } else {
+                         $("#wifi_advanced_settings_form").hide();
+                 }
+           }
+                },
+                error : function(xhr, textStatus, errorThrown){
+                    // In this case we won't check for an error event. If turning off WiFi while
+                    // connected over WiFi,
+                    // there will be an error event, but we don't want to reset the toggle as we
+                    // would normally.
+                    // That would confuse the user.
+                    // If auth session has ended, force a new login with a fresh GET.
+                    if ((xhr.status == 401) || (xhr.status == 403) || (xhr.status == 406)) window.location.replace(window.location.href);
+            undoChange($wifiElem);
+                },
+                complete : function(xhr, textStatus){
+                    if (jQuery.fn.slideButton) $wifiElem.slideButton("removeLoader");
+                }
+        });
+    }
+
+    /*  ]]> */
+</script>
+
+    <tmpl_if isLocked>
+        <div class="notification app error">
+            <tmpl_var _("webui", "webui_app_locked_text")>
+        </div>
+    </tmpl_if>
+
+    <tmpl_if errorCount>
+        <div class="notification app error">
+            <div class="notification_inner">
+                <tmpl_var _("webui", "webui_save_code_failed_text")>
+            </div>
+        </div>
+    </tmpl_if>
+
+    <tmpl_if gPostSuccess>
+        <div class="notification app success">
+            <div class="notification_inner">
+                <tmpl_var _("webui", "webui_save_code_success_text")>
+            </div>
+        </div>
+    </tmpl_if>
+
+
+    <div id="wifi_advanced_settings_set_connection_limit" style="display:none;" >
+        <div class="ig_row clearfix">
+            <p class="clearfix">
+                <tmpl_var _("webui", "wifi_advanced_change_connection_modal_text")>
+            </p>
+        </div>
+        <br />
+        <br />
+        <div class="ig_row clearfix">
+            <label for="slider"><tmpl_var _("webui", "wifi_advanced_change_connection_model_label")></label>
+            <span id="minConnectionValue"></span>
+            <div id="slider"></div>
+            <span id="maxConnectionValue"></span>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="row clearfix">
+            <div class="buttonset">
+                <button type="button" class="secondary" id="clearConnectionLimit" onclick='closePopup();'>
+                    <tmpl_var _("webui", "webui_modal_cancel_button")>
+                </button>
+                <button type="submit" class="primary" id="saveConnectionLimit">
+                    <tmpl_var _("webui", "webui_save_button")>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <p class="note" id="intro">
+        <tmpl_udf GET_PO_TEXT("wifi_advanced_intro_text")>
+    </p>
+
+    <h3><label for="EnableWifi"><tmpl_var _("webui", "wifi_advanced_enable_wifi_label")></label></h3>
+
+    <div class="toggleSettingContainer scrimp align-field">
+        <div class="form-group">
+            <label for="EnableWifi">
+                <div class="tooltip tooltip-help" title="<tmpl_udf GET_PO_TEXT("wifi_advanced_enable_wifi_help_tool_tip_text", gProductName)>">
+                    <tmpl_var _("webui", "webui_inline_help_icon")>
+                </div>
+
+               <tmpl_udf GET_PO_TEXT("wifi_advanced_enable_wifi_help_text")>
+            </label>
+            <div class="toggle">
+                <input class="toggleSwitchCheckbox" type="checkbox" id="EnableWifi" name="EnableWifi"<tmpl_if IN_SET(EnableWifi, "true", "1", "on")> checked="checked"</tmpl_if><tmpl_if IN_SET(disableWifi, "on")>disabled="disabled"</tmpl_if><tmpl_if isLocked> disabled="disabled"</tmpl_if> />
+            </div>
+        </div>
+
+    </div>
+    
+    <tmpl_if WifiDisplaySettingShow>
+        <div class="toggleSettingContainer scrimp align-field" id="enableWifiSettingDisplayToggle">
+            <div class="form-group">
+                <label for="EnableWifiDeviceUi">
+                        <div class="tooltip tooltip-help" title="<tmpl_udf GET_PO_TEXT("wifi_advanced_deviceui_enable_wifi_tool_tip_text", gProductName)>">
+                            <tmpl_var _("webui", "webui_inline_help_icon")>
+                        </div>
+
+                        <tmpl_udf GET_PO_TEXT("wifi_advanced_deviceui_enable_wifi_label")>
+                 </label>
+                <div class="toggle">
+                    <input class="toggleSwitchCheckbox" type="checkbox" id="EnableWifiDeviceUi" name="EnableWifiDeviceUi"<tmpl_if IN_SET(EnableWifiDeviceUi, "true", "1", "on")> checked="checked"</tmpl_if><tmpl_if isLocked> disabled="disabled"</tmpl_if> />
+                </div>
+            </div>
+        </div><!--/.toggleSettingContainer-->
+    </tmpl_if>
+
+    <form id="wifi_advanced_settings_form" method="POST" action="<tmpl_udf GET_URI('wifi_advanced_settings')>" >
+        <input type="hidden" name="gSecureToken" id="gSecureToken" value="<tmpl_var gSecureToken>" />
+        <fieldset class="first">
+         <div class="table">
+            <div class="form-group">
+                <div class="label">
+                    <tmpl_var _("webui", "wifi_advanced_max_connections_label")>
+                </div>
+                <div class="input">                        
+                    <span id="WifiAdvancedMaxConnections"> <tmpl_var WifiAdvancedMaxConnections> </span>        
+                    <span class="changeLink">
+                        <a href="#" id="ChangeConnectionsLink">
+                            <tmpl_var _("webui", "wifi_advanced_connections_change_link")>
+                        </a>
+                    </span>                  
+                </div>
+
+            </div>
+        </div>
+           <h2 class="sectionHead">
+                <tmpl_var _("webui", "wifi_advanced_profile_title")>
+            </h2>
+            <p class="note"><tmpl_var _("webui", "wifi_advanced_band_selection_note_text")></p>
+               <div class="table dual-band">
+                <div class="row clearfix">
+                 <div class="col label">
+                            &nbsp;
+                            </div>
+                <div class="col rb">
+                <div class="tooltip tooltip-help" title="<tmpl_var _('webui','wifi_advanced_profile_two_point_four_tool_tip_text')>">
+                        <tmpl_var _("webui", "webui_inline_help_icon")>
+                </div>
+                        <label for="WifiAdvanced2Dot4GHZBandState"><tmpl_var _("webui", "wifi_advanced_two_point_four_ghz_band_label")></label>
+                    </div>
+                <div class="col rb">
+                <div class="tooltip tooltip-help" title="<tmpl_var _('webui','wifi_advanced_profile_five_tool_tip_text')>">
+                        <tmpl_var _("webui", "webui_inline_help_icon")>
+                </div>
+                        <label for="WifiAdvanced5GHZBandState"><tmpl_var _("webui", "wifi_advanced_five_ghz_band_label")></label>
+                    </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col label">
+                            <label><tmpl_var _("webui", "wifi_advanced_band_primary_text")></label>
+                            </div>
+                <div class="col rb">
+                <input type="radio" class="WifiAdvanced2Dot4GHZBandState" name="WifiAdvanced2Dot4GHZBandState" value="1" <tmpl_if IN_SET(WifiAdvanced2Dot4GHZBandState, "1")>checked</tmpl_if> />
+                </div>
+                <div class="col rb">
+                <input type="radio" class="WifiAdvanced5GHZBandState" name="WifiAdvanced5GHZBandState" value="1" <tmpl_if IN_SET(WifiAdvanced5GHZBandState, "1")>checked</tmpl_if> />
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col label">
+                            <label><tmpl_var _("webui", "wifi_advanced_band_guest_text")></label>
+                            </div>
+                <div class="col rb">
+                    <input type="radio" class="WifiAdvanced2Dot4GHZBandState" name="WifiAdvanced2Dot4GHZBandState" value="2" <tmpl_if IN_SET(WifiAdvanced2Dot4GHZBandState, "2")>checked</tmpl_if> />
+                </div>
+                <div class="col rb">
+                   <input type="radio" class="WifiAdvanced5GHZBandState" id="testme" name="WifiAdvanced5GHZBandState" value="2" <tmpl_if IN_SET(WifiAdvanced5GHZBandState, "2")>checked</tmpl_if> />
+                </div>
+            </div>
+            <div class="row clearfix">
+                            <div class="col label">
+                            <label><tmpl_var _("webui", "wifi_advanced_band_off_text")></label>
+                            </div>
+                <div class="col rb">
+                <input type="radio" class="WifiAdvanced2Dot4GHZBandState" name="WifiAdvanced2Dot4GHZBandState" value="0" <tmpl_if IN_SET(WifiAdvanced2Dot4GHZBandState, "0")>checked</tmpl_if> />
+                </div>
+                <div class="col rb">
+                <input type="radio" class="WifiAdvanced5GHZBandState" name="WifiAdvanced5GHZBandState" value="0" <tmpl_if IN_SET(WifiAdvanced5GHZBandState, "0")>checked</tmpl_if> />
+                </div>
+            </div>
+              </div>
+        </fieldset>
+
+        <fieldset class="last">
+            <div>
+        <h3 class="sectionHead">
+                    <tmpl_var _("webui", "wifi_advanced_two_point_four_g_band_options_title")>
+                </h3>
+               <div class="table">
+                    <tmpl_if WifiAdvanced2Dot4G802Dot11ModeTextShow>
+                        <div class="form-group">
+                             <div class="label">
+                                <tmpl_var _("webui", "wifi_advanced_two_point_four_g_802_11_mode_label")>
+                             </div>
+                            <div class="input" id="WifiAdvanced2Dot4G802Dot11Mode">
+                                <tmpl_var WifiAdvanced2Dot4G802Dot11Mode>
+                            </div>
+                        </div>
+                    <tmpl_else>
+                        <div class="form-group">
+                                <label for="WifiAdvanced2Dot4G802Dot11Mode"><tmpl_var _("webui", "wifi_advanced_two_point_four_g_802_11_mode_label")></label>
+                                
+									<select id="WifiAdvanced2Dot4G802Dot11Mode" name="WifiAdvanced2Dot4G802Dot11Mode">
+                                    <tmpl_include "2.4GHz_mode_options.tmpl">
+                                </select>
+
+                        </div>
+                    </tmpl_if>
+                    <div class="form-group">
+                            <label for="WifiAdvanced2Dot4GChannel"><tmpl_var _("webui", "wifi_advanced_two_point_four_g_channel_label")></label>
+
+                            <select id="WifiAdvanced2Dot4GChannel" name="WifiAdvanced2Dot4GChannel">
+                                <tmpl_include "2.4GHz_channel_options.tmpl">
+                            </select>
+
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="sectionHead">
+                    <tmpl_var _("webui", "wifi_advanced_five_g_options_title")>
+                </h3>
+                <div class="table">
+                    <div class="form-group">
+                        <label for="WifiAdvanced5G802Dot11Mode"><tmpl_var _("webui", "wifi_advanced_five_g_802_11_mode_label")></label>
+                            <select id="WifiAdvanced5G802Dot11Mode" name="WifiAdvanced5G802Dot11Mode">
+                                <tmpl_include "5GHz_mode_options.tmpl">
+                            </select>
+
+                     </div>
+
+                    <div class="form-group">
+                       <label for="WifiAdvanced5GBandwidth"><tmpl_var _("webui", "wifi_advanced_five_g_bandwidth_label")></label>
+                       <select id="WifiAdvanced5GBandwidth" name="WifiAdvanced5GBandwidth">
+                                <tmpl_include "5GHz_bandwidth_options.tmpl">
+                            </select>
+
+                     </div>
+
+                    <div class="form-group">
+                            <label for="WifiAdvanced5GChannel"><tmpl_var _("webui", "wifi_advanced_five_g_channel_label")></label>
+
+                            <select id="WifiAdvanced5GChannel" name="WifiAdvanced5GChannel">
+                                <tmpl_include "5GHz_channel_options.tmpl">
+                            </select>
+
+                    </div>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <div class="button_container align-field clearfix">
+             <button type="submit" class="primary central" <tmpl_if isLocked>disabled="disabled"</tmpl_if>>
+                <tmpl_var _("webui", "webui_save_button")>
+            </button>
+        </div>
+   </form>
+</tmpl_if>

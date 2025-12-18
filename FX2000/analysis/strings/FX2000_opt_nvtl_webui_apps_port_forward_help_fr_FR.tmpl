@@ -1,0 +1,240 @@
+<!-- Port Forwarding -->
+<div id="port_forward">
+acheminement de port</h1>
+	<h2>Vue d
+ensemble</h2>
+	<p>Le r
+acheminement de port permet de transf
+rer des applications sp
+cifiques vers un appareil particulier connect
+ votre r
+seau. Normalement, le pare-feu int
+ bloque le trafic Internet entrant. Le r
+acheminement de port permet aux internautes d
+importe quel serveur que vous utilisez sur votre ordinateur, tel qu
+un serveur
+Web, FTP ou de messagerie.
+	<b>Important
+:</b> Le r
+acheminement de port cr
+e un risque de s
+ et ne doit 
+tre activ
+il est n
+cessaire.
+	Certains r
+seaux mobiles vous fournissent une adresse
+IP sur leur propre r
+seau plut
+une adresse
+IP sur Internet. Dans ce cas, le r
+acheminement de port ne peut pas 
+tre utilis
+, car les internautes ne peuvent pas atteindre votre adresse
+	<h2>Applications de r
+acheminement de port</h2>
+	<h3>Cases 
+ cocher de l
+application</h3>
+			Cochez la case situ
+ de chaque application de r
+acheminement de port que vous souhaitez autoriser. Pour transf
+rer tout le trafic
+WAN entrant sur un port sp
+cifique vers un seul client
+LAN, saisissez l
+appareil cible dans le champ
+application.
+			<li>1. Installez l
+application sur un ordinateur qui est connect
+seau de cet appareil.</li>
+			<li>2. Sur l
+ordinateur, vous pouvez v
+rifier l
+adresse IP de ce dernier sur l
+cran Appareils connect
+			<li>3. Sur cet 
+cran, saisissez l
+adresse IP de l
+ordinateur dans le champ <strong>Adresse IP de l
+appareil connect
+</strong> 
+application.</li>
+			<li>4. Activez cette application sur cet 
+cran en s
+lectionnant sa case 
+ cocher.</li>
+			<li>5. Enregistrez vos modifications.</li>
+			<li>6. Sur l
+cran <strong>
+tat actuel</strong>, notez l
+adresse IP Internet de cet appareil.</li>
+			<li>7. Demandez aux utilisateurs sur Internet de se connecter 
+adresse IP Internet de cet appareil. Ces demandes de connexion seront transmises 
+adresse IP sp
+			Le tableau suivant indique les num
+ros de port et les informations de protocole pour chaque application de r
+acheminement de port r
+			<table class="portForwardingTable" id="">
+	 	<thead>
+			<tr class="">
+				<th class=""> Nom de l
+application</th>
+				<th class="">Port</th>
+				<th class="">TCP*</th>
+				<th class="">STCP*</th>
+				<th class="">UDP*</th>
+			</tr>
+		</thead>
+		<tbody>
+				<td> DNS</td>
+				<td> 53</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Oui</td>
+			</tr>
+				<td> Contr
+FTP (commande)</td>
+				<td> 21</td>
+				<td> Oui</td>
+				<td> Oui</td>
+				<td> Attribu
+			</tr>
+				<td> Transfert de donn
+FTP</td>
+				<td> 20</td>
+				<td> Oui</td>
+				<td> Oui</td>
+				<td> Attribu
+			</tr>
+				<td> HTTP</td>
+				<td> 80</td>
+				<td> Oui</td>
+				<td> Oui</td>
+				<td> Attribu
+			</tr>
+				<td> HTTPS</td>
+				<td> 443</td>
+				<td> Oui</td>
+				<td> Oui</td>
+				<td> Attribu
+			</tr>
+				<td> NNTP</td>
+				<td> 119</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Attribu
+			</tr>
+				<td> POP3</td>
+				<td> 110</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Attribu
+			</tr>
+				<td> POP3S</td>
+				<td> 995</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Oui</td>
+			</tr>
+				<td> SMTP</td>
+				<td> 25</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Attribu
+			</tr>
+				<td> SecureSMTP</td>
+				<td> 465</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Non</td>
+			</tr>
+				<td> SNMP</td>
+				<td> 161</td>
+				<td> Attribu
+				<td> Non</td>
+				<td> Oui</td>
+			</tr>
+				<td> Telnet</td>
+				<td> 23</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Attribu
+			</tr>
+				<td> TFTP</td>
+				<td> 69</td>
+				<td> Attribu
+				<td> Non</td>
+				<td> Oui</td>
+			</tr>
+		</tbody>
+	</table>
+	<p><b>Oui</b> indique que le protocole est standardis
+ pour le num
+ro de port.</p>
+	<p><b>Non</b> indique que le protocole n
+est pas standardis
+ pour le num
+ro de port.</p>
+	<p><b>Attribu
+</b> indique que le num
+ro de port est attribu
+IANA (Internet Assigned Numbers Authority) pour l
+utilisation du protocole, mais peut ne pas 
+tre standardis
+	<h2>Applications personnalis
+	<p>Cette fonctionnalit
+ vous permet de d
+finir vos propres applications. Une fois d
+finies, ces applications peuvent 
+tre activ
+es de la m
+re que les applications pr
+finies. Pour d
+finir une application, vous devez conna
+tre les ports et le protocole (TCP, UDP) utilis
+application pour le trafic entrant. Pour commencer, cliquez sur le bouton <strong>Ajouter une application personnalis
+e</strong>, puis fournissez les donn
+es suivantes. 
+	<h3>Case 
+ cocher de l
+application</h3>
+	<p>Cochez cette case si vous souhaitez que la nouvelle application puisse acc
+ Internet (en activant le r
+acheminement de port).
+	<h3>Nom de l
+application</h3>
+		Saisissez un nom appropri
+application que vous d
+finissez.
+	<h3>Adresse IP de l
+appareil connect
+		Saisissez l
+adresse IP de l
+appareil connect
+ qui recevra ce trafic.
+	<h3>Type de port et num
+ros de port</h3>
+		<p>Chaque application a sa propre plage de ports. Indiquez le d
+but et la fin de la plage de ports pour chaque application.
+		<div class="blockgroup">
+				<li>Pour la plage de ports, saisissez le d
+but de la plage dans le champ <strong>De</strong> et la fin de la plage dans le champ <strong>
+</strong>.</li>
+				<li>Pour un port de traduction, saisissez le num
+ro de port dans les champs <strong>Ext</strong> et <strong>Int</strong>.</li>
+			</ul>
+		</div>
+	<h3>Protocole</h3>
+		Pour chaque plage de ports, s
+lectionnez le protocole (TCP ou UDP) utilis
+ par cette 
+tendue de port.
+	<h3>Supprimer</h3>
+	<p>Utilisez cette case 
+ cocher pour supprimer une application personnalis
+	<p><b>REMARQUE
+:</b> Cliquez de nouveau sur l
+acheminement de port pour supprimer les applications personnalis
+cran. </p>
+<!-- id="port_forward" -->

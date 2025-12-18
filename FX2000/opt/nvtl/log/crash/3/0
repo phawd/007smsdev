@@ -1,0 +1,1492 @@
+====1711234034.146538
+<6>[    0.000000] Booting Linux on physical CPU 0x0
+<5>[    0.000000] Linux version 4.14.206-perf (builder@nvtlsdselbld06) (clang version 6.0.9 for Android NDK, GNU ld (GNU Binutils) 2.31.1.20181224) #1 PREEMPT Thu Apr 6 02:19:08 PDT 2023
+<6>[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c53c7d
+<6>[    0.000000] CPU: div instructions available: patching division code
+<6>[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+<6>[    0.000000] OF: fdt: Machine model: Qualcomm Technologies, Inc. SDXPRAIRIE MTP V2
+<6>[    0.000000] Memory policy: Data cache writeback
+<6>[    0.000000] Reserved memory: created DMA memory pool at 0xbfb80000, size 4 MiB
+<6>[    0.000000] OF: reserved mem: initialized node audio_region@0, compatible id shared-dma-pool
+<6>[    0.000000] Reserved memory: created CMA memory pool at 0xbf400000, size 4 MiB
+<6>[    0.000000] OF: reserved mem: initialized node qseecom_ta_region@0, compatible id shared-dma-pool
+<6>[    0.000000] Reserved memory: created CMA memory pool at 0xbf000000, size 4 MiB
+<6>[    0.000000] OF: reserved mem: initialized node mem_dump_region, compatible id shared-dma-pool
+<6>[    0.000000] Reserved memory: created CMA memory pool at 0xbdc00000, size 20 MiB
+<6>[    0.000000] OF: reserved mem: initialized node qseecom_region@0, compatible id shared-dma-pool
+<6>[    0.000000] Removed memory: created DMA memory pool at 0x90800000, size 205 MiB
+<6>[    0.000000] OF: reserved mem: initialized node mpss_adsp_region@90800000, compatible id removed-dma-pool
+<6>[    0.000000] Removed memory: created DMA memory pool at 0x9d500000, size 1 MiB
+<6>[    0.000000] OF: reserved mem: initialized node ramoops_region@9d500000, compatible id removed-dma-pool
+<6>[    0.000000] cma: Reserved 12 MiB at 0xbd000000
+<7>[    0.000000] On node 0 totalpages: 203950
+<7>[    0.000000] free_area_init_node: node 0, pgdat c13f9150, node_mem_map ef801000
+<7>[    0.000000]   Normal zone: 1536 pages used for memmap
+<7>[    0.000000]   Normal zone: 0 pages reserved
+<7>[    0.000000]   Normal zone: 139566 pages, LIFO batch:31
+<7>[    0.000000]   HighMem zone: 64384 pages, LIFO batch:15
+<6>[    0.000000] psci: probing for conduit method from DT.
+<6>[    0.000000] psci: PSCIv1.1 detected in firmware.
+<6>[    0.000000] psci: Using standard PSCI v0.2 function IDs
+<6>[    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+<6>[    0.000000] psci: SMC Calling Convention v1.1
+<6>[    0.000000] CPU: All CPU(s) started in SVC mode.
+<5>[    0.000000] random: get_random_bytes called from start_kernel+0x8c/0x574 with crng_init=0
+<7>[    0.000000] pcpu-alloc: s0 r0 d32768 u32768 alloc=1*32768
+<7>[    0.000000] pcpu-alloc: [0] 0 
+<6>[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 202414
+<5>[    0.000000] Kernel command line: noinitrd rw rootwait console=ttyMSM0,115200,n8 androidboot.hardware=qcom ehci-hcd.park=3 msm_rtb.filter=0x237 androidboot.console=ttyMSM0 lpm_levels.sleep_disabled=1 firmware_class.path=/lib/firmware/updates service_locator.enable=1 net.ifnames=0 rootfstype=ubifs rootflags=bulk_read root=ubi0:rootfs ubi.mtd=27 androidboot.serialno=fff72c1e androidboot.baseband=msm
+<6>[    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+<6>[    0.000000] Dentry cache hash table entries: 131072 (order: 7, 524288 bytes)
+<6>[    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+<6>[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+<6>[    0.000000] Memory: 746172K/815800K available (12288K kernel code, 1257K rwdata, 4220K rodata, 1024K init, 836K bss, 28668K reserved, 40960K cma-reserved, 216576K highmem)
+<5>[    0.000000] Virtual kernel memory layout:
+<5>[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+<5>[    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)
+<5>[    0.000000]     vmalloc : 0xf0800000 - 0xff800000   ( 240 MB)
+<5>[    0.000000]     lowmem  : 0xc0000000 - 0xf0000000   ( 768 MB)
+<5>[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+<5>[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)
+<5>[    0.000000]       .text : 0xc0008000 - 0xc0d00000    (13280 kB)
+<5>[    0.000000]       .init : 0xc1200000 - 0xc1300000    (1024 kB)
+<5>[    0.000000]       .data : 0xc1300000 - 0xc143a4e4    (1258 kB)
+<5>[    0.000000]        .bss : 0xc14416b8 - 0xc1512960    ( 837 kB)
+<6>[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+<6>[    0.000000] Preemptible hierarchical RCU implementation.
+<6>[    0.000000] 	Tasks RCU enabled.
+<6>[    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16
+<4>[    0.000000] arch_sys_timer depends on broadcast, but no broadcast function available
+<6>[    0.000000] arch_timer: cp15 and mmio timer(s) running at 19.20MHz (virt/virt).
+<6>[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x46d987e47, max_idle_ns: 440795202767 ns
+<6>[    0.000005] sched_clock: 56 bits at 19MHz, resolution 52ns, wraps every 4398046511078ns
+<6>[    0.000014] Switching to timer-based delay loop, resolution 52ns
+<6>[    0.000031] clocksource: Switched to clocksource arch_sys_counter
+<6>[    0.001084] Calibrating delay loop (skipped), value calculated using timer frequency.. 38.40 BogoMIPS (lpj=192000)
+<6>[    0.001112] pid_max: default: 32768 minimum: 301
+<6>[    0.001230] Security Framework initialized
+<6>[    0.001246] SELinux:  Initializing.
+<7>[    0.001336] SELinux:  Starting in permissive mode
+<6>[    0.001384] Mount-cache hash table entries: 2048 (order: 1, 8192 bytes)
+<6>[    0.001397] Mountpoint-cache hash table entries: 2048 (order: 1, 8192 bytes)
+<6>[    0.002024] CPU: Testing write buffer coherency: ok
+<6>[    0.002742] Setting up static identity map for 0x80100000 - 0x80100060
+<6>[    0.002864] Hierarchical SRCU implementation.
+<6>[    0.010587] MSM Memory Dump base table set up
+<6>[    0.010631] MSM Memory Dump apps data table set up
+<6>[    0.011667] devtmpfs: initialized
+<6>[    0.044340] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+<6>[    0.044688] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+<6>[    0.044706] futex hash table entries: 256 (order: -1, 3072 bytes)
+<6>[    0.045984] pinctrl core: initialized pinctrl subsystem
+<6>[    0.046944] NET: Registered protocol family 16
+<6>[    0.048310] DMA: preallocated 256 KiB pool for atomic coherent allocations
+<6>[    0.049057] MiFi Events Module initialized: NETLINK_MIFI_EVENT=29
+<6>[    0.049333] cpuidle: using governor menu
+<6>[    0.049358] cpuidle: using governor qcom
+<6>[    0.049509] NET: Registered protocol family 42
+<3>[    0.054617] sd_vdd: regulator get failed, ret=-517
+<3>[    0.056427] unable to find DT imem DLOAD mode node
+<3>[    0.057222] unable to find DT imem EDLOAD mode node
+<3>[    0.058002] unable to find DT imem dload-type node
+<5>[    0.058405] set_dload_mode: on=1
+<6>[    0.059053] msm_watchdog 17817000.qcom,wdt: wdog absent resource not present
+<6>[    0.059098] msm_watchdog 17817000.qcom,wdt: msm_wdog_dt_to_pdata scandump sizes property not correct
+<3>[    0.059484] msm_watchdog 17817000.qcom,wdt: Couldn't get memory for dump
+<6>[    0.059634] msm_watchdog 17817000.qcom,wdt: MSM Watchdog Initialized
+<6>[    0.061689] platform 4080000.qcom,mss: assigned reserved memory node mpss_adsp_region@90800000
+<6>[    0.065165] platform soc:mem_dump: assigned reserved memory node mem_dump_region
+<6>[    0.069066] platform 90000000.qseecom: assigned reserved memory node qseecom_region@0
+<6>[    0.074393] platform soc:qcom,msm-audio-ion: assigned reserved memory node audio_region@0
+<6>[    0.085957] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.
+<6>[    0.085975] hw-breakpoint: maximum watchpoint size is 8 bytes.
+<6>[    0.093735] spmi spmi-0: PMIC arbiter version v5 (0x50010000)
+<6>[    0.101518] sps:sps is ready.
+<6>[    0.103279] exit: IPA_USB init success!
+<6>[    0.109754] pmxprairie_s5_level: supplied by pmxprairie_s7_level
+<6>[    0.110238] pmxprairie_s5_level_ao: supplied by pmxprairie_s7_level_ao
+<6>[    0.131808] qmp-aop-clk soc:qcom,aop: Registered clocks with AOP
+<6>[    0.132644] clk-rpmh soc:qcom,rpmh: Registered RPMh clocks
+<6>[    0.133610] KPI: Bootloader start count = 54838
+<6>[    0.133624] KPI: Bootloader end count = 78723
+<6>[    0.133631] KPI: Bootloader display count = 214959364
+<6>[    0.133637] KPI: Bootloader load kernel count = 16157
+<6>[    0.133643] KPI: Kernel MPM timestamp = 95303
+<6>[    0.133648] KPI: Kernel MPM Clock frequency = 32768
+<6>[    0.133670] socinfo_print: v0.15, id=357, ver=2.0, raw_id=207, raw_ver=2, hw_plat=8, hw_plat_ver=65536
+<6>[    0.133670]  accessory_chip=0, hw_plat_subtype=5, pmic_model=65568, pmic_die_revision=131072 foundry_id=1 serial_number=4294388766 num_pmics=3 chip_family=0x5e raw_device_family=0x6 raw_device_number=0xb nproduct_id=0x410 num_clusters=0x1 ncluster_array_offset=0xb0 num_defective_parts=0xd ndefective_parts_array_offset=0xb4 nmodem_supported=0xffffffff
+<3>[    0.134130] msm_bus_fabric_rpmh_init_driver
+<3>[    0.134504] msm_bus: Probe started
+<4>[    0.135156] msm_bus_device 1100000.ad-hoc-bus: Bus type is missing
+<4>[    0.135201] msm_bus_device 1100000.ad-hoc-bus: Bus type is missing
+<3>[    0.137524] msm_bus: DT Parsing complete
+<3>[    0.139729] msm_bus_fab_init_noc_ops: Invalid Bus type
+<3>[    0.140010] msm_bus_fab_init_noc_ops: Invalid Bus type
+<3>[    0.154095] register_client_adhoc:find path.src 53 dest 585
+<3>[    0.154254] register_client_adhoc:Client handle 1 apps_smmu
+<5>[    0.154486] arm-smmu 15000000.apps-smmu: 	non-coherent table walk
+<5>[    0.154498] arm-smmu 15000000.apps-smmu: 	(IDR0.CTTW overridden by FW configuration)
+<5>[    0.154509] arm-smmu 15000000.apps-smmu: 	stream matching with 20 register groups
+<3>[    0.155396] register_client_adhoc:find path.src 53 dest 585
+<3>[    0.155520] register_client_adhoc:Client handle 2 apps_smmu
+<3>[    0.155969] register_client_adhoc:find path.src 53 dest 585
+<3>[    0.156088] register_client_adhoc:Client handle 3 apps_smmu
+<6>[    0.157161] vgaarb: loaded
+<5>[    0.157563] SCSI subsystem initialized
+<6>[    0.157766] usbcore: registered new interface driver usbfs
+<6>[    0.157810] usbcore: registered new interface driver hub
+<6>[    0.157915] usbcore: registered new device driver usb
+<4>[    0.158363] usb_phy_generic soc:usb_nop_phy: soc:usb_nop_phy supply vcc not found, using dummy regulator
+<6>[    0.159279] qcom,qpnp-power-on c440000.qcom,spmi:qcom,pmxprairie@8:qcom,power-on@800: PMIC@SID8 Power-on reason: Triggered from Hard Reset and 'warm' boot
+<6>[    0.159293] mifi_pwr_on_cause: index=0
+<6>[    0.159386] qcom,qpnp-power-on c440000.qcom,spmi:qcom,pmxprairie@8:qcom,power-on@800: PMIC@SID8: Power-off reason: Triggered from PS_HOLD (PS_HOLD/MSM Controlled Shutdown)
+<6>[    0.159699] input: qpnp_pon as /devices/platform/c440000.qcom,spmi/spmi-0/spmi0-08/c440000.qcom,spmi:qcom,pmxprairie@8:qcom,power-on@800/input/input0
+<6>[    0.160360] qcom,qpnp-power-on c440000.qcom,spmi:qcom,pm8150b@2:qcom,power-on@800: PMIC@SID2 Power-on reason: Triggered from CBL (External Power Supply) and 'warm' boot
+<6>[    0.160394] qcom,qpnp-power-on c440000.qcom,spmi:qcom,pm8150b@2:qcom,power-on@800: PMIC@SID2: Power-off reason: Triggered from SOFT (Software)
+<6>[    0.173696] platform soc:qcom,ion:qcom,ion-heap@27: assigned reserved memory node qseecom_region@0
+<6>[    0.173887] platform soc:qcom,ion:qcom,ion-heap@19: assigned reserved memory node qseecom_ta_region@0
+<6>[    0.174310] ION heap system created
+<6>[    0.174508] ION heap qsecom created at 0xbdc00000 with size 1400000
+<6>[    0.174518] ION heap qsecom_ta created at 0xbf400000 with size 400000
+<6>[    0.175407] PMIC@SID2: PM8150B v2.0 options: 0, 0, 0, 0
+<3>[    0.176707] scm_call failed: func id 0x2000c10, ret: -1, syscall returns: 0x0, 0x0, 0x0
+<3>[    0.176721] ipa ipa3_tz_unlock_reg:6955 scm call SCM_SVC_MP failed: -5
+<3>[    0.176733] ipa ipa3_pre_init:7212 Failed to unlock memory region using TZ
+<3>[    0.177005] register_client_adhoc:find path.src 90 dest 774
+<3>[    0.177159] register_client_adhoc:find path.src 134 dest 512
+<3>[    0.177298] register_client_adhoc:find path.src 90 dest 585
+<3>[    0.177411] register_client_adhoc:find path.src 1 dest 676
+<3>[    0.177567] register_client_adhoc:find path.src 143 dest 777
+<3>[    0.177634] register_client_adhoc:Client handle 4 ipa
+<6>[    0.182416] iommu: Adding device 1e00000.qcom,ipa:ipa_smmu_ap to group 0
+<6>[    0.183177] iommu: Adding device 1e00000.qcom,ipa:ipa_smmu_wlan to group 1
+<6>[    0.183879] iommu: Adding device 1e00000.qcom,ipa:ipa_smmu_uc to group 2
+<6>[    0.183958] gsi_is_mcs_enabled:1032 MCS enabled:1
+<6>[    0.183966] Using XBL boot load for IPA FW
+<3>[    0.184027] ipa ipa_smmu_ap_cb_probe:8773 AP Geometry start = 0 size= f0000000
+<6>[    0.184039] IPA smmu_info.s1_bypass_arr[AP]=0 smmu_info.fast_map=1
+<6>[    0.195314] IPA smmu_info.s1_bypass_arr[WLAN]=0 smmu_info.fast_map=0
+<6>[    0.206815] IPA smmu_info.s1_bypass_arr[UC]=0 smmu_info.fast_map=0
+<3>[    0.218927] ipa ipa3_uc_state_check:377 uC interface not initialized
+<3>[    0.221558] gsi soc:qcom,msm_gsi: gsi_register_device:1163 GSI irq is wake enabled 29
+<6>[    0.232504] IPA driver initialization was successful.
+<3>[    0.233290] ipa ipa3_smp2p_probe:8943 fail to get smp2p clk resp bit -517
+<3>[    0.234659] ipa ipa3_smp2p_probe:8943 fail to get smp2p clk resp bit -517
+<6>[    0.239176] Bluetooth: Core ver 2.22
+<6>[    0.239268] NET: Registered protocol family 31
+<6>[    0.239278] Bluetooth: HCI device and connection manager initialized
+<6>[    0.239297] Bluetooth: HCI socket layer initialized
+<6>[    0.239309] Bluetooth: L2CAP socket layer initialized
+<1>[    0.240801] pcie:pcie_init.
+<4>[    0.245207] pci-msm 1c00000.qcom,pcie: 1c00000.qcom,pcie supply vreg-3.3 not found, using dummy regulator
+<4>[    0.245707] pci-msm 1c00000.qcom,pcie: 1c00000.qcom,pcie supply gdsc-smmu not found, using dummy regulator
+<3>[    0.245923] msm_pcie_probe: PCIe: Driver probe failed for RC0:-517
+<6>[    0.248183] qcom-cpu-sdxprairie 17810008.qcom,clock-cpu: No speed/PVS binning available. Defaulting to 0!
+<6>[    0.249266] Clock_cpu:(cpu 0) OPP voltage for 345600000: 65
+<6>[    0.249282] Clock_cpu:(cpu 0) OPP voltage for 1555200000: 385
+<6>[    0.249297] qcom-cpu-sdxprairie 17810008.qcom,clock-cpu: CPU clock Driver probed successfully
+<6>[    0.252088] gcc-sdxprairie 100000.qcom,gcc: Registered GCC clocks
+<6>[    0.254136] cpufreq: driver msm up and running
+<3>[    0.254485] ipa ipa3_smp2p_probe:8943 fail to get smp2p clk resp bit -517
+<4>[    0.255615] pci-msm 1c00000.qcom,pcie: 1c00000.qcom,pcie supply vreg-3.3 not found, using dummy regulator
+<4>[    0.256140] pci-msm 1c00000.qcom,pcie: 1c00000.qcom,pcie supply gdsc-smmu not found, using dummy regulator
+<3>[    0.256654] register_client_adhoc:find path.src 45 dest 512
+<3>[    0.257049] register_client_adhoc:Client handle 5 pcie0
+<3>[    0.257271] msm_pcie_get_resources: PCIe: RC0 can't get tcsr resource.
+<3>[    0.258292] ipa ipa3_smp2p_probe:8943 fail to get smp2p clk resp bit -517
+<6>[    0.259386] clocksource: Switched to clocksource arch_sys_counter
+<6>[    0.321936] hw_id_probe: hw_id=3 gpio_0=103 gpio_1=104 gpio_2=105
+<6>[    0.322502] NET: Registered protocol family 2
+<6>[    0.323390] TCP established hash table entries: 8192 (order: 3, 32768 bytes)
+<6>[    0.323456] TCP bind hash table entries: 8192 (order: 3, 32768 bytes)
+<6>[    0.323504] TCP: Hash tables configured (established 8192 bind 8192)
+<6>[    0.323659] UDP hash table entries: 512 (order: 1, 8192 bytes)
+<6>[    0.323682] UDP-Lite hash table entries: 512 (order: 1, 8192 bytes)
+<6>[    0.323918] NET: Registered protocol family 1
+<7>[    0.323967] PCI: CLS 0 bytes, default 64
+<3>[    0.324625] ipa ipa3_smp2p_probe:8943 fail to get smp2p clk resp bit -517
+<6>[    0.326902] hw perfevents: enabled with armv7_cortex_a7 PMU driver, 5 counters available
+<6>[    0.328570] audit: initializing netlink subsys (disabled)
+<5>[    0.332637] audit: type=2000 audit(0.319:1): state=initialized audit_enabled=0 res=1
+<6>[    0.332820] workingset: timestamp_bits=29 max_order=18 bucket_order=0
+<7>[    0.337824] SELinux:  Registering netfilter hooks
+<6>[    0.344982] bounce: pool size: 64 pages
+<6>[    0.345170] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 241)
+<6>[    0.345183] io scheduler noop registered
+<6>[    0.345191] io scheduler deadline registered
+<6>[    0.345475] io scheduler cfq registered (default)
+<6>[    0.345488] io scheduler mq-deadline registered
+<6>[    0.345494] io scheduler kyber registered
+<3>[    0.362309] qcom-sps-dma 804000.qcom,sps-dma: dma_async_device_register: device has no channels!
+<4>[    0.365403] qcom_smp2p: probe of 17811008.qcom,smp2p-modem failed with error -22
+<3>[    0.366294] register_client_adhoc:find path.src 125 dest 512
+<3>[    0.366703] register_client_adhoc:Client handle 6 scm_pas
+<6>[    0.367043] subsys-pil-tz 4080000.qcom,mss: for modem segments only will be dumped.
+<6>[    0.368497] subsys-pil-tz soc:qcom,ipa_fws: for ipa_fws segments only will be dumped.
+<6>[    0.379483] msm_serial 831000.serial: msm_serial: detected port #0
+<6>[    0.379556] msm_serial 831000.serial: uartclk = 1843200
+<6>[    0.379647] 831000.serial: ttyMSM0 at MMIO 0x831000 (irq = 25, base_baud = 115200) is a MSM
+<6>[    0.379783] msm_serial: console setup on port #0
+<6>[    1.806113] console [ttyMSM0] enabled
+<6>[    1.812119] msm_serial: driver initialized
+<3>[    1.815864] uart_tx_gpio is not available
+<3>[    1.818428] uart_rx_gpio is not available
+<3>[    1.822630] uart_cts_gpio is not available
+<3>[    1.826498] uart_rfr_gpio is not available
+<3>[    1.830891] register_client_adhoc:find path.src 86 dest 512
+<3>[    1.831372] register_client_adhoc:Client handle 7 buart2b
+<3>[    1.834984] sps: BAM device 0x00804000 is not registered yet.
+<6>[    1.846078] sps:BAM 0x00804000 is registered.
+<6>[    1.848359] 830000.uartb: ttyHS0 at MMIO 0x830000 (irq = 64, base_baud = 460800) is a MSM HS UART
+<3>[    1.858212] register_client_adhoc:find path.src 1 dest 618
+<3>[    1.858506] register_client_adhoc:Client handle 8 msm-rng-noc
+<5>[    1.867529] random: fast init done
+<6>[    1.879204] diag: Pcie registration initiated for id: 0
+<4>[    1.879533] ------------[ cut here ]------------
+<4>[    1.884407] WARNING: CPU: 0 PID: 1 at ../drivers/platform/msm/mhi_dev/mhi.c:4004 mhi_register_state_cb+0x1ec/0x1f4
+<4>[    1.889089] Modules linked in:
+<5>[    1.900210] random: crng init done
+<4>[    1.902746] CPU: 0 PID: 1 Comm: swapper Not tainted 4.14.206-perf #1
+<4>[    1.905617] Hardware name: Qualcomm Technologies, Inc. SDXPRAIRIE (Flattened Device Tree)
+<4>[    1.913992] [<c010f44c>] (unwind_backtrace) from [<c010c078>] (show_stack+0x10/0x14)
+<4>[    1.920307] [<c010c078>] (show_stack) from [<c0120b30>] (__warn+0xb8/0x100)
+<4>[    1.928023] [<c0120b30>] (__warn) from [<c0120c5c>] (warn_slowpath_null+0x20/0x28)
+<4>[    1.934748] [<c0120c5c>] (warn_slowpath_null) from [<c0a36a94>] (mhi_register_state_cb+0x1ec/0x1f4)
+<4>[    1.942407] [<c0a36a94>] (mhi_register_state_cb) from [<c0557618>] (diag_pcie_register+0x248/0x32c)
+<4>[    1.951346] [<c0557618>] (diag_pcie_register) from [<c054438c>] (diag_pcie_register_ops+0x84/0xbc)
+<4>[    1.960366] [<c054438c>] (diag_pcie_register_ops) from [<c0544460>] (diag_mux_register+0x34/0xd0)
+<4>[    1.969369] [<c0544460>] (diag_mux_register) from [<c053cf20>] (diagfwd_init+0x42c/0x570)
+<4>[    1.978329] [<c053cf20>] (diagfwd_init) from [<c123445c>] (diagchar_init+0x6e4/0x9a8)
+<4>[    1.986482] [<c123445c>] (diagchar_init) from [<c0101ba8>] (do_one_initcall+0x114/0x200)
+<4>[    1.994307] [<c0101ba8>] (do_one_initcall) from [<c1201088>] (kernel_init_freeable+0x134/0x1d0)
+<4>[    2.002467] [<c1201088>] (kernel_init_freeable) from [<c0ce33cc>] (kernel_init+0x8/0x128)
+<4>[    2.010887] [<c0ce33cc>] (kernel_init) from [<c0107ec8>] (ret_from_fork+0x14/0x2c)
+<4>[    2.019186] ---[ end trace 9b33602f5a86c73a ]---
+<3>[    2.026798] diag: diag_pcie_register: failed registering pcie channels
+<3>[    2.031479] diag: MUX: unable to register pcie operations for proc: 0, err: -6
+<3>[    2.037747] diag: MUX: unable to register PCIe operations, continuing with USB registrations for proc: 0, err: -6
+<3>[    2.053756] diag: Unable to register with PCIE, id: 1
+<3>[    2.055255] diag: MUX: unable to register pcie operations for proc: 1, err: -5
+<3>[    2.061001] diag: MUX: unable to register PCIe operations, continuing with USB registrations for proc: 1, err: -5
+<6>[    2.069108] iommu: Adding device soc:apps_iommu_test_device to group 3
+<6>[    2.091248] brd: module loaded
+<6>[    2.100976] loop: module loaded
+<6>[    2.101688] zram: Added device: zram0
+<6>[    2.103991] QSEECOM: qseecom_probe: qseecom.qsee_version = 0x1402000
+<4>[    2.106885] QSEECOM: qseecom_retrieve_ce_data: Device does not support PFE/FDE
+<6>[    2.106898] QSEECOM: qseecom_probe: no-clock-support=0x1
+<4>[    2.113576] QSEECOM: qseecom_probe: qseecom.qsee_reentrancy_support = 2
+<4>[    2.125850] QSEECOM: qseecom_probe: secure app region addr=0x90000000 size=0x500000
+<4>[    2.128508] QSEECOM: qseecom_probe: qseecom.whitelist_support = 1
+<6>[    2.142102] nvtl_buzzer: pwm_buzzer_probe[170]: Buzzer probe success
+<6>[    2.146420] SCSI Media Changer driver v0.25 
+<3>[    2.153968] register_client_adhoc:find path.src 91 dest 512
+<3>[    2.154418] register_client_adhoc:Client handle 9 qpic_nand
+<3>[    2.158189] sps: BAM device 0x01b04000 is not registered yet.
+<6>[    2.167982] sps:BAM 0x01b04000 is registered.
+<6>[    2.167997] msm_nand_bam_init: msm_nand_bam_init: BAM device registered: bam_handle 0xec64c000
+<6>[    2.178255] sps:BAM 0x01b04000 (va:0xf1760000) enabled: ver:0x19, number of pipes:9
+<6>[    2.187019] msm_nand_version_check: nand_major:2, nand_minor:0, qpic_major:2, qpic_minor:0
+<6>[    2.194098] msm_nand_parse_smem_ptable: Parsing partition table info from SMEM
+<6>[    2.202310] msm_nand_parse_smem_ptable: SMEM partition table found: ver: 4 len: 28
+<6>[    2.209389] msm_nand_version_check: nand_major:2, nand_minor:0, qpic_major:2, qpic_minor:0
+<6>[    2.217497] msm_nand_flash_onfi_probe: Found an ONFI compliant device MT29F8G08ADBFA      ,
+<6>[    2.225180] msm_nand_scan: NAND Id: 0x26d0a32c Buswidth: 8Bits Density: 1024 MByte
+<6>[    2.233412] msm_nand_scan: pagesize: 4096 Erasesize: 262144 oobsize: 256 (in Bytes)
+<6>[    2.241048] msm_nand_scan: BCH ECC: 8 Bit
+<6>[    2.248562] msm_nand_scan: CFG0: 0x290409c0,           CFG1: 0x08045d5c
+<6>[    2.248562]             RAWCFG0: 0x2b8401c0,        RAWCFG1: 0x0005055d
+<6>[    2.248562]           ECCBUFCFG: 0x00000203,      ECCBCHCFG: 0x42040d10
+<6>[    2.248562]           RAWECCCFG: 0x42000d11, BAD BLOCK BYTE: 0x00000175
+<5>[    2.256707] Creating 28 MTD partitions on "1b00000.nand":
+<5>[    2.278982] 0x000000000000-0x000000280000 : "sbl"
+<5>[    2.285926] 0x000000280000-0x000000500000 : "mibib"
+<5>[    2.290219] 0x000000500000-0x000001a00000 : "efs2"
+<5>[    2.294735] 0x000001a00000-0x000001bc0000 : "tz"
+<5>[    2.299625] 0x000001bc0000-0x000001cc0000 : "tz_devcfg"
+<5>[    2.304481] 0x000001cc0000-0x000001e40000 : "ddr"
+<5>[    2.309308] 0x000001e40000-0x000001f40000 : "apdp"
+<5>[    2.314297] 0x000001f40000-0x000002040000 : "xbl_config"
+<5>[    2.318841] 0x000002040000-0x000002140000 : "multi_image"
+<5>[    2.324437] 0x000002140000-0x000002240000 : "aop"
+<5>[    2.329614] 0x000002240000-0x000002340000 : "qhee"
+<5>[    2.334508] 0x000002340000-0x000002440000 : "abl"
+<5>[    2.338959] 0x000002440000-0x0000026c0000 : "uefi"
+<5>[    2.343886] 0x0000026c0000-0x000002840000 : "toolsfv"
+<5>[    2.348457] 0x000002840000-0x0000029c0000 : "loader_sti"
+<5>[    2.353698] 0x0000029c0000-0x0000036c0000 : "boot"
+<5>[    2.358974] 0x0000036c0000-0x0000037c0000 : "scrub"
+<5>[    2.363669] 0x0000037c0000-0x00000a300000 : "modem"
+<5>[    2.368389] 0x00000a300000-0x00000a4c0000 : "misc"
+<5>[    2.373309] 0x00000a4c0000-0x00000a640000 : "devinfo"
+<5>[    2.378052] 0x00000a640000-0x00000bf40000 : "recovery"
+<5>[    2.383363] 0x00000bf40000-0x00000c100000 : "fota"
+<5>[    2.388254] 0x00000c100000-0x00000ea40000 : "recoveryfs"
+<5>[    2.393113] 0x00000ea40000-0x00000eb00000 : "ipa_fw"
+<5>[    2.398409] 0x00000eb00000-0x00000ec00000 : "usb_qti"
+<5>[    2.403588] 0x00000ec00000-0x00000ed00000 : "sec"
+<5>[    2.408378] 0x00000ed00000-0x00000ee00000 : "fotacookie"
+<5>[    2.413992] 0x00000ee00000-0x000020000000 : "system"
+<6>[    2.418450] msm_nand_probe: NANDc phys addr 0x1b00000, BAM phys addr 0x1b04000, BAM IRQ 34
+<6>[    2.422705] msm_nand_probe: Allocated DMA buffer at virt_addr 0xf10fb000, phys_addr 0xbd044000
+<6>[    2.430699] msm_nand_probe: Host capabilities:0x00000000
+<6>[    2.441269] MACsec IEEE 802.1AE
+<6>[    2.445248] libphy: Fixed MDIO Bus: probed
+<6>[    2.447828] tun: Universal TUN/TAP device driver, 1.6
+<3>[    2.452217] atlantic-fwd: atlantic_fwd_7 version: 1.1.18
+<6>[    2.457281] PPP generic driver version 2.4.2
+<7>[    2.463753] cnss: cnss_probe: rc_num=0
+<7>[    2.463777] cnss: Failed to find qrtr_node_id err=-22
+<7>[    2.463786] cnss: Probing platform driver from single DT
+<7>[    2.463795] cnss: set_wlaon_pwr_ctrl is 1
+<7>[    2.464080] cnss: Got regulator: vdd-wlan-aon, min_uv: 950000, max_uv: 950000, load_ua: 0, delay_us: 0
+<7>[    2.464354] cnss: Regulator vdd-wlan-aon is being enabled
+<6>[    2.465901] msm_pcie_enable: PCIe: Assert the reset of endpoint of RC0.
+<6>[    2.471328] msm_pcie_enable: PCIe: RC0: PCIE20_PARF_INT_ALL_MASK: 0x7f80c202
+<6>[    2.475340] msm_pcie_enable: PCIe RC0 PHY is ready!
+<6>[    2.490204] msm_pcie_enable: PCIe: Release the reset of endpoint of RC0.
+<6>[    2.517052] msm_pcie_enable: PCIe RC0 link initialized
+<6>[    2.517833] OF: PCI: host bridge /soc/qcom,pcie@1c00000 ranges:
+<6>[    2.521238] OF: PCI:   No bus range found for /soc/qcom,pcie@1c00000, using [bus 00-ff]
+<6>[    2.527044] OF: PCI:    IO 0x40200000..0x402fffff -> 0x40200000
+<6>[    2.535005] OF: PCI:   MEM 0x40300000..0x7fffffff -> 0x40300000
+<6>[    2.540964] pci-msm 1c00000.qcom,pcie: MSI: synopsys controller is present
+<6>[    2.547251] pci-msm 1c00000.qcom,pcie: PCI host bridge to bus 0000:00
+<6>[    2.553793] pci_bus 0000:00: root bus resource [bus 00-ff]
+<6>[    2.560239] pci_bus 0000:00: root bus resource [io  0x0000-0xfffff] (bus address [0x40200000-0x402fffff])
+<6>[    2.565654] pci_bus 0000:00: root bus resource [mem 0x40300000-0x7fffffff]
+<7>[    2.575396] pci 0000:00:00.0: [17cb:010c] type 01 class 0x060400
+<7>[    2.575586] pci 0000:00:00.0: reg 0x10: [mem 0x00000000-0x00000fff 64bit]
+<7>[    2.575981] pci 0000:00:00.0: PME# supported from D0 D3hot D3cold
+<6>[    2.576477] PCI: bus0: Fast back to back transfers disabled
+<6>[    2.582081] pci 0000:00:00.0: bridge configuration invalid ([bus 00-00]), reconfiguring
+<7>[    2.587922] pci 0000:01:00.0: [17cb:1101] type 00 class 0xff0000
+<7>[    2.588126] pci 0000:01:00.0: reg 0x10: [mem 0x00000000-0x000fffff 64bit]
+<4>[    2.588369] pci 0000:01:00.0: can't set Max Payload Size to 256; if necessary, use "pci=pcie_bus_safe" and report a bug
+<7>[    2.595943] pci 0000:01:00.0: PME# supported from D0 D3hot D3cold
+<6>[    2.596301] PCI: bus1: Fast back to back transfers disabled
+<7>[    2.606281] pci_bus 0000:01: busn_res: [bus 01-ff] end is updated to 01
+<7>[    2.606385] pci 0000:00:00.0: bridge window [io  0x1000-0x0fff] to [bus 01] add_size 1000
+<7>[    2.606401] pci 0000:00:00.0: bridge window [mem 0x00100000-0x000fffff 64bit pref] to [bus 01] add_size 200000 add_align 100000
+<7>[    2.606411] pci 0000:00:00.0: bridge window [mem 0x00100000-0x001fffff] to [bus 01] add_size 200000 add_align 100000
+<6>[    2.606462] pci 0000:00:00.0: BAR 8: assigned [mem 0x40300000-0x405fffff]
+<6>[    2.611836] pci 0000:00:00.0: BAR 9: assigned [mem 0x40600000-0x407fffff 64bit pref]
+<6>[    2.618761] pci 0000:00:00.0: BAR 0: assigned [mem 0x40800000-0x40800fff 64bit]
+<6>[    2.626635] pci 0000:00:00.0: BAR 7: assigned [io  0x1000-0x1fff]
+<6>[    2.633616] pci 0000:01:00.0: BAR 0: assigned [mem 0x40300000-0x403fffff 64bit]
+<6>[    2.639911] pci 0000:00:00.0: PCI bridge to [bus 01]
+<6>[    2.646962] pci 0000:00:00.0:   bridge window [io  0x1000-0x1fff]
+<6>[    2.652196] pci 0000:00:00.0:   bridge window [mem 0x40300000-0x405fffff]
+<6>[    2.658165] pci 0000:00:00.0:   bridge window [mem 0x40600000-0x407fffff 64bit pref]
+<3>[    2.665702] msm_pcie_enumerate: PCIe: RC0 has already been enumerated.
+<6>[    2.673052] iommu: Adding device 0000:01:00.0 to group 4
+<7>[    2.679162] cnss: PCI is probing, vendor ID: 0x17cb, device ID: 0x1101
+<3>[    2.679174] cnss: Failed to init resered mem device, err = -22
+<7>[    2.685198] cnss: subsys powerup is ignored
+<7>[    2.685329] cnss: Ramdump size 0x400000
+<6>[    2.685364] cnss2 a0000000.qcom,cnss-qca6390: for wlan segments only will be dumped.
+<7>[    2.690527] cnss: smmu_iova_start: 0xa0000000, smmu_iova_len: 268435456
+<7>[    2.690542] cnss: single dt - smmu_iova_ipa_start: 0xb0000000, smmu_iova_ipa_len: 65536
+<7>[    2.690549] cnss: DOMAIN_ATTR_GEOMETRY: 1
+<7>[    2.690554] cnss: Initializing SMMU
+<7>[    2.690566] cnss: Enabling SMMU S1 stage
+<6>[    2.692233] cnss_pci 0000:01:00.0: BAR 0: assigned [mem 0x40300000-0x403fffff 64bit]
+<6>[    2.698218] pci 0000:00:00.0: enabling device (0146 -> 0147)
+<6>[    2.705953] cnss_pci 0000:01:00.0: enabling device (0140 -> 0142)
+<7>[    2.711669] cnss: disable_l1 0
+<7>[    2.712009] cnss: Config PCIe remap window register to 0x4000003f
+<7>[    2.712029] cnss: Read register offset 0x1f8031c, val = 0x6
+<7>[    2.712047] cnss: Write val 0x2 to register offset 0x1f8031c
+<7>[    2.713337] cnss: MSI base data is 0
+<7>[    2.713351] cnss: get firmware path[] for device[0x1101]
+<7>[    2.713366] cnss: BAR starts at 0x40300000
+<7>[    2.713378] cnss: Assign MSI to user: MHI, num_vectors: 3, user_base_data: 0, base_vector: 0
+<7>[    2.713386] cnss: Number of assigned MSI for MHI is 3, base vector is 0
+<7>[    2.713395] cnss: Get IRQ number 161 for vector index 0
+<7>[    2.713401] cnss: Get IRQ number 162 for vector index 1
+<7>[    2.713406] cnss: Get IRQ number 163 for vector index 2
+<7>[    2.714682] cnss: Get device version info, family number: 0x4, device number: 0xa, major version: 0x2, minor version: 0x0
+<7>[    2.714705] cnss: get firmware path[] for device[0x1101]
+<7>[    2.714712] cnss: Firmware name is amss20.bin
+<7>[    2.714743] cnss: Config PCIe remap window register to 0x40000032
+<7>[    2.714756] cnss: Get device JTAG ID 0x301050e1
+<7>[    2.714774] cnss: Config PCIe remap window register to 0x4000003f
+<7>[    2.714791] cnss: Read register offset 0x1f8031c, val = 0x2
+<7>[    2.714808] cnss: Write val 0x3 to register offset 0x1f8031c
+<7>[    2.716894] cnss: Suspending PCI link
+<6>[    2.830840] msm_pcie_disable: PCIe: Assert the reset of endpoint of RC0.
+<7>[    2.832285] cnss: Regulator vdd-wlan-aon is being disabled
+<3>[    2.832781] AXI: get_pdata(): Error: Client name not found
+<3>[    2.836695] AXI: msm_bus_cl_get_pdata(): client has to provide missing entry for successful registration
+<6>[    2.842713] cnss: Platform driver probed successfully.
+<6>[    2.852703] usbcore: registered new interface driver asix
+<6>[    2.856662] usbcore: registered new interface driver ax88179_178a
+<6>[    2.862182] usbcore: registered new interface driver cdc_ether
+<6>[    2.868168] usbcore: registered new interface driver smsc75xx
+<6>[    2.873940] usbcore: registered new interface driver smsc95xx
+<6>[    2.879702] usbcore: registered new interface driver net1080
+<6>[    2.885475] usbcore: registered new interface driver cdc_subset
+<6>[    2.891189] usbcore: registered new interface driver zaurus
+<6>[    2.897310] usbcore: registered new interface driver cdc_ncm
+<6>[    2.906089] sd_vdd: supplied by vddpx_2
+<6>[    2.912058] iommu: Adding device a600000.ssusb to group 5
+<6>[    2.915298] dwc3 a600000.dwc3: changing max_speed on rev 00000000
+<3>[    2.922137] register_client_adhoc:find path.src 61 dest 512
+<3>[    2.922551] register_client_adhoc:find path.src 61 dest 676
+<3>[    2.923570] register_client_adhoc:find path.src 1 dest 583
+<3>[    2.928954] register_client_adhoc:Client handle 10 usb
+<6>[    2.942455] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+<6>[    2.946662] ehci-pci: EHCI PCI platform driver
+<6>[    2.953485] ehci-msm: Qualcomm On-Chip EHCI Host Controller
+<6>[    2.959424] usbcore: registered new interface driver cdc_acm
+<6>[    2.964163] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+<6>[    2.969077] usbcore: registered new interface driver usb-storage
+<6>[    2.976831] usbcore: registered new interface driver ums-alauda
+<6>[    2.982999] usbcore: registered new interface driver ums-cypress
+<6>[    2.988589] usbcore: registered new interface driver ums-datafab
+<6>[    2.994836] usbcore: registered new interface driver ums-freecom
+<6>[    3.000815] usbcore: registered new interface driver ums-isd200
+<6>[    3.006771] usbcore: registered new interface driver ums-jumpshot
+<6>[    3.012447] usbcore: registered new interface driver ums-karma
+<6>[    3.018660] usbcore: registered new interface driver ums-onetouch
+<6>[    3.024418] usbcore: registered new interface driver ums-sddr09
+<6>[    3.030591] usbcore: registered new interface driver ums-sddr55
+<6>[    3.036286] usbcore: registered new interface driver ums-usbat
+<6>[    3.042310] usbcore: registered new interface driver usbserial
+<6>[    3.048094] usbcore: registered new interface driver ftdi_sio
+<6>[    3.053956] usbserial: USB Serial support registered for FTDI USB Serial Device
+<6>[    3.059746] usbcore: registered new interface driver usb_ehset_test
+<6>[    3.066876] usbcore: registered new interface driver lvs
+<4>[    3.075064] qti_usb_gadget: probe of qcom_gadget failed with error -22
+<3>[    3.082488] qpnp-pdphy c440000.qcom,spmi:qcom,pm8150b@2:qcom,usb-pdphy@1700: usbpd_create failed: -517
+<6>[    3.087768] qcom,qpnp-rtc c440000.qcom,spmi:qcom,pmxprairie@8:qcom,rtc@6000: rtc core: registered qpnp_rtc as rtc0
+<6>[    3.095758] i2c /dev entries driver
+<6>[    3.105830] IR NEC protocol handler initialized
+<6>[    3.107943] IR RC5(x/sz) protocol handler initialized
+<6>[    3.112741] IR RC6 protocol handler initialized
+<6>[    3.117660] IR JVC protocol handler initialized
+<6>[    3.122063] IR Sony protocol handler initialized
+<6>[    3.126523] IR SANYO protocol handler initialized
+<6>[    3.131409] IR Sharp protocol handler initialized
+<6>[    3.135979] IR MCE Keyboard/mouse protocol handler initialized
+<6>[    3.140702] IR XMP protocol handler initialized
+<4>[    3.154849] (NULL device *): hwmon_device_register() is deprecated. Please convert the driver to use hwmon_device_register_with_info().
+<6>[    3.162925] FG: fg_gen4_get_batt_id: fg_gen4_get_batt_id battery_id: 7500, retries: 5 BEFORE
+<6>[    3.165964] FG: fg_gen4_get_batt_id: fg_gen4_get_batt_id battery_id: 7500, retries: 5 AFTER
+<6>[    3.174711] FG: fg_gen4_probe: battery SOC:1 voltage: 3991689uV temp: 242 id: 7500 ohms
+<3>[    3.185017] Couldn't parse device tree rc=-517
+<6>[    3.191002] FG: fg_gen4_get_batt_id: fg_gen4_get_batt_id battery_id: 7500, retries: 5 BEFORE
+<6>[    3.195213] FG: fg_gen4_get_batt_id: fg_gen4_get_batt_id battery_id: 7500, retries: 5 AFTER
+<3>[    3.209629] of_batterydata_get_best_profile: No battery data found
+<3>[    3.211997] FG: fg_gen4_get_batt_profile: couldn't find profile handle
+<4>[    3.218100] FG: profile_load_work: profile for batt_id=7KOhms not found..using OTP, rc:-61
+<6>[    3.234459] softdog: initialized. soft_noboot=0 soft_margin=60 sec soft_panic=0 (nowayout=0)
+<6>[    3.235734] bt_dt_parse_vreg_info: qca,bt-vdd-vl: is not provided in device tree
+<3>[    3.242606] FG: fg_psy_get_property: unsupported property 4
+<6>[    3.249782] bt_dt_parse_vreg_info: qca,bt-vdd-vm: is not provided in device tree
+<6>[    3.254992] bt_dt_parse_vreg_info: qca,bt-vdd-5c: is not provided in device tree
+<6>[    3.262598] bt_dt_parse_vreg_info: qca,bt-vdd-5a: is not provided in device tree
+<6>[    3.269983] bt_dt_parse_vreg_info: qca,bt-vdd-vh: is not provided in device tree
+<6>[    3.277394] bt_dt_parse_vreg_info: qca,bt-vdd-io: is not provided in device tree
+<6>[    3.284725] bt_dt_parse_vreg_info: qca,bt-vdd-xtal: is not provided in device tree
+<6>[    3.292116] bt_dt_parse_vreg_info: qca,bt-vdd-pa: is not provided in device tree
+<6>[    3.299483] bt_dt_parse_vreg_info: qca,bt-vdd-ldo: is not provided in device tree
+<6>[    3.307082] bt_dt_parse_vreg_info: qca,bt-chip-pwd: is not provided in device tree
+<6>[    3.314410] bt_dt_parse_vreg_info: qca,bt-vdd-s5: is not provided in device tree
+<6>[    3.321900] bt_power_populate_dt_pinfo: bt-swctrl-gpio not entered in devicetree
+<6>[    3.329442] bt_power_populate_dt_pinfo: bt-3P3-gpio not provided in devicetree
+<6>[    3.336807] bt_power_populate_dt_pinfo: bt-1P3-gpio not provided in devicetree
+<3>[    3.343834] bt_dt_parse_clk_info: clocks is not provided in device tree
+<6>[    3.351029] bt_power_populate_dt_pinfo: clock not provided in device tree
+<6>[    3.365139] usbcore: registered new interface driver usbhid
+<6>[    3.365259] usbhid: USB HID core driver
+<6>[    3.369728] ipa_ut ipa_ut_module_init:1045 Loading IPA test module...
+<6>[    3.374132] tz_log 1468f720.tz-log: Hyp log service is not supported
+<3>[    3.384324] register_client_adhoc:find path.src 1 dest 627
+<3>[    3.384584] register_client_adhoc:Client handle 10 soc:qcom,snoc_pcnoc_keepalive
+<3>[    3.387756] register_client_adhoc:find path.src 1 dest 512
+<3>[    3.392154] register_client_adhoc:Client handle 11 soc:qcom,ddr_keepalive
+<3>[    3.401039] register_client_adhoc:find path.src 1 dest 512
+<3>[    3.404894] register_client_adhoc:Client handle 12 soc:qcom,cpubw
+<3>[    3.415225] coresight-tmc 6b09000.tmc: invalid cti data
+<3>[    3.423179] coresight-tmc 6048000.tmc: failed to get flush cti, defer probe
+<6>[    3.428853] coresight-dynamic-funnel 6045000.funnel: FUNNEL initialized
+<6>[    3.435372] coresight-dynamic-funnel 6b08000.funnel: FUNNEL initialized
+<6>[    3.441904] coresight-dynamic-funnel 6005000.funnel: FUNNEL initialized
+<6>[    3.448455] coresight-dynamic-funnel 6041000.funnel: FUNNEL initialized
+<6>[    3.455107] coresight-dynamic-funnel 6042000.funnel: FUNNEL initialized
+<6>[    3.461711] coresight-dynamic-funnel 6804000.funnel: FUNNEL initialized
+<6>[    3.468241] coresight-dynamic-funnel 680c000.funnel: FUNNEL initialized
+<6>[    3.474897] coresight-dynamic-funnel 680a000.funnel: FUNNEL initialized
+<6>[    3.481477] coresight-dynamic-funnel 69e2000.funnel: FUNNEL initialized
+<6>[    3.489458] coresight-stm 6002000.stm: stm_register_device failed, probing deffered
+<6>[    3.504114] coresight-csr 6001000.csr: CSR initialized: coresight-csr
+<6>[    3.504329] coresight-csr 6b0e000.csr: CSR initialized: coresight-swao-csr
+<6>[    3.510538] coresight-dummy soc:dummy_sink: Dummy device initialized
+<6>[    3.517071] coresight-remote-etm soc:modem_etm0: Remote ETM initialized
+<6>[    3.523238] coresight-remote-etm soc:modem_etm1: Remote ETM initialized
+<6>[    3.530420] Netfilter messages via NETLINK v0.30.
+<6>[    3.535938] nf_conntrack version 0.5.0 (13312 buckets, 53248 max)
+<6>[    3.540862] ctnetlink v0.93: registering with nfnetlink.
+<6>[    3.546930] xt_time: kernel timezone is -0000
+<6>[    3.552119] ip_set: protocol 6
+<6>[    3.579713] wireguard: chacha20 self-tests: pass
+<6>[    3.602733] wireguard: poly1305 self-tests: pass
+<6>[    3.604193] wireguard: chacha20poly1305 self-tests: pass
+<6>[    3.608590] wireguard: blake2s self-tests: pass
+<6>[    3.752742] wireguard: curve25519 self-tests: pass
+<6>[    3.752987] wireguard: allowedips self-tests: pass
+<6>[    3.772267] wireguard: nonce counter self-tests: pass
+<6>[    4.234473] wireguard: ratelimiter self-tests: pass
+<6>[    4.234736] wireguard: WireGuard 1.0.20210606 loaded. See www.wireguard.com for information.
+<6>[    4.238187] wireguard: Copyright (C) 2015-2019 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
+<6>[    4.247037] ipip: IPv4 and MPLS over IPv4 tunneling driver
+<6>[    4.256691] gre: GRE over IPv4 demultiplexor driver
+<6>[    4.261731] ip_gre: GRE over IPv4 tunneling driver
+<6>[    4.267444] ip_tables: (C) 2000-2006 Netfilter Core Team
+<6>[    4.271794] arp_tables: arp_tables: (C) 2002 David S. Miller
+<6>[    4.277187] NET: Registered protocol family 10
+<6>[    4.283558] Segment Routing with IPv6
+<6>[    4.286753] ip6_tables: (C) 2000-2006 Netfilter Core Team
+<6>[    4.290875] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+<6>[    4.296688] ip6_gre: GRE over IPv6 tunneling driver
+<6>[    4.302038] NET: Registered protocol family 17
+<5>[    4.306455] Bridge firewalling registered
+<6>[    4.310988] Ebtables v2.0 registered
+<6>[    4.315191] 8021q: 802.1Q VLAN Support v1.8
+<4>[    4.319010] ------------[ cut here ]------------
+<4>[    4.322642] WARNING: CPU: 0 PID: 1 at ../drivers/platform/msm/mhi_dev/mhi.c:4004 mhi_register_state_cb+0x1ec/0x1f4
+<4>[    4.327431] Modules linked in:
+<4>[    4.337600] CPU: 0 PID: 1 Comm: swapper Tainted: G        W       4.14.206-perf #1
+<4>[    4.340641] Hardware name: Qualcomm Technologies, Inc. SDXPRAIRIE (Flattened Device Tree)
+<4>[    4.348186] [<c010f44c>] (unwind_backtrace) from [<c010c078>] (show_stack+0x10/0x14)
+<4>[    4.356436] [<c010c078>] (show_stack) from [<c0120b30>] (__warn+0xb8/0x100)
+<4>[    4.364241] [<c0120b30>] (__warn) from [<c0120c5c>] (warn_slowpath_null+0x20/0x28)
+<4>[    4.370927] [<c0120c5c>] (warn_slowpath_null) from [<c0a36a94>] (mhi_register_state_cb+0x1ec/0x1f4)
+<4>[    4.378562] [<c0a36a94>] (mhi_register_state_cb) from [<c0ccc4a4>] (qrtr_mhi_dev_probe+0x120/0x178)
+<4>[    4.387519] [<c0ccc4a4>] (qrtr_mhi_dev_probe) from [<c057dc58>] (platform_drv_probe+0x58/0xa4)
+<4>[    4.396541] [<c057dc58>] (platform_drv_probe) from [<c057b3d4>] (driver_probe_device+0x1a0/0x480)
+<4>[    4.405222] [<c057b3d4>] (driver_probe_device) from [<c057b948>] (__driver_attach+0xa0/0x118)
+<4>[    4.414160] [<c057b948>] (__driver_attach) from [<c0579788>] (bus_for_each_dev+0x8c/0xc4)
+<4>[    4.422666] [<c0579788>] (bus_for_each_dev) from [<c0579ed0>] (bus_add_driver+0x140/0x268)
+<4>[    4.430826] [<c0579ed0>] (bus_add_driver) from [<c057c9a0>] (driver_register+0x98/0xe8)
+<4>[    4.438971] [<c057c9a0>] (driver_register) from [<c0101ba8>] (do_one_initcall+0x114/0x200)
+<4>[    4.446888] [<c0101ba8>] (do_one_initcall) from [<c1201088>] (kernel_init_freeable+0x134/0x1d0)
+<4>[    4.455222] [<c1201088>] (kernel_init_freeable) from [<c0ce33cc>] (kernel_init+0x8/0x128)
+<4>[    4.463813] [<c0ce33cc>] (kernel_init) from [<c0107ec8>] (ret_from_fork+0x14/0x2c)
+<4>[    4.472138] ---[ end trace 9b33602f5a86c73b ]---
+<6>[    4.482530] dwc3 a600000.dwc3: changing max_speed on rev 00000000
+<3>[    4.487914] register_client_adhoc:find path.src 61 dest 512
+<3>[    4.488229] register_client_adhoc:find path.src 61 dest 676
+<3>[    4.490561] register_client_adhoc:find path.src 1 dest 583
+<3>[    4.495877] register_client_adhoc:Client handle 13 usb
+<6>[    4.501350] usb_bam_init: setting SPS_BAM_SMMU_EN flag with (a704000.qcom,usbbam)
+<6>[    4.512301] sps:BAM 0x0a704000 is registered.
+<3>[    4.516347] ipa_rm ipa_rm_delete_resource:146 IPA RM was not initialized
+<3>[    4.523969] usb_bam_ipa_delete_resources: Failed to delete USB_PROD resource
+<3>[    4.530672] ipa_rm ipa_rm_delete_resource:146 IPA RM was not initialized
+<3>[    4.537660] usb_bam_ipa_delete_resources: Failed to delete USB_CONS resource
+<3>[    4.547139] qpnp-pdphy c440000.qcom,spmi:qcom,pm8150b@2:qcom,usb-pdphy@1700: usbpd_create failed: -517
+<4>[    4.554910] (NULL device *): hwmon_device_register() is deprecated. Please convert the driver to use hwmon_device_register_with_info().
+<6>[    4.560800] Input suspended: Fake battery
+<6>[    4.573828] typec_usb_send_mifi_pwr_event: event = 121 and prev_event=-1
+<3>[    4.578301] of_batterydata_get_best_profile: No battery data found
+<6>[    4.583730] smblib_send_chg_det_event: SDP detected, pd_active 0, apsd_result->pst 4, typec_mode : 6 
+<3>[    4.590686] pm8150b_charger: jeita_update_work: Incorrect fastchg-current-ma or max-voltage-uv
+<6>[    4.611364] SMB5 status - usb:present=1 type=4 batt:present = 1 health = 1 charge = 1
+<6>[    4.611524] QPNP SMB5 probed successfully
+<3>[    4.629124] coresight-tmc 6b09000.tmc: invalid cti data
+<4>[    4.630279] ------------[ cut here ]------------
+<4>[    4.633180] WARNING: CPU: 0 PID: 199 at ../drivers/platform/msm/mhi_dev/mhi.c:4004 mhi_register_state_cb+0x1ec/0x1f4
+<4>[    4.638050] Modules linked in:
+<4>[    4.648579] CPU: 0 PID: 199 Comm: kworker/0:2 Tainted: G        W       4.14.206-perf #1
+<4>[    4.651425] Hardware name: Qualcomm Technologies, Inc. SDXPRAIRIE (Flattened Device Tree)
+<4>[    4.659668] Workqueue: events deferred_probe_work_func
+<4>[    4.667746] [<c010f44c>] (unwind_backtrace) from [<c010c078>] (show_stack+0x10/0x14)
+<4>[    4.672783] [<c010c078>] (show_stack) from [<c0120b30>] (__warn+0xb8/0x100)
+<4>[    4.680678] [<c0120b30>] (__warn) from [<c0120c5c>] (warn_slowpath_null+0x20/0x28)
+<4>[    4.687348] [<c0120c5c>] (warn_slowpath_null) from [<c0a36a94>] (mhi_register_state_cb+0x1ec/0x1f4)
+<4>[    4.695019] [<c0a36a94>] (mhi_register_state_cb) from [<c0a74954>] (byte_cntr_init+0x2f8/0x300)
+<4>[    4.703949] [<c0a74954>] (byte_cntr_init) from [<c0a6ef84>] (tmc_probe+0x704/0x814)
+<4>[    4.712624] [<c0a6ef84>] (tmc_probe) from [<c04a242c>] (amba_probe+0xdc/0x14c)
+<4>[    4.720261] [<c04a242c>] (amba_probe) from [<c057b3d4>] (driver_probe_device+0x1a0/0x480)
+<4>[    4.727544] [<c057b3d4>] (driver_probe_device) from [<c0579a74>] (bus_for_each_drv+0x84/0xc4)
+<4>[    4.735807] [<c0579a74>] (bus_for_each_drv) from [<c057b7d4>] (__device_attach+0xb0/0x164)
+<4>[    4.744309] [<c057b7d4>] (__device_attach) from [<c0579c0c>] (bus_probe_device+0x2c/0x84)
+<4>[    4.752468] [<c0579c0c>] (bus_probe_device) from [<c057bd6c>] (deferred_probe_work_func+0xc4/0x168)
+<4>[    4.760719] [<c057bd6c>] (deferred_probe_work_func) from [<c013c384>] (process_one_work+0x1c4/0x490)
+<4>[    4.769561] [<c013c384>] (process_one_work) from [<c013c138>] (process_scheduled_works+0x20/0x30)
+<4>[    4.778949] [<c013c138>] (process_scheduled_works) from [<c013ca38>] (worker_thread+0x398/0x578)
+<4>[    4.787717] [<c013ca38>] (worker_thread) from [<c01411a8>] (kthread+0x144/0x148)
+<4>[    4.796567] [<c01411a8>] (kthread) from [<c0107ec8>] (ret_from_fork+0x14/0x2c)
+<4>[    4.803938] ---[ end trace 9b33602f5a86c73c ]---
+<6>[    4.811257] sps:BAM 0x06064000 is registered.
+<6>[    4.812435] coresight-stm 6002000.stm: STM32 initialized with master Disabled
+<6>[    4.824289] dwc3 a600000.dwc3: changing max_speed on rev 00000000
+<3>[    4.832133] register_client_adhoc:find path.src 61 dest 512
+<3>[    4.832451] register_client_adhoc:find path.src 61 dest 676
+<3>[    4.833318] register_client_adhoc:find path.src 1 dest 583
+<3>[    4.838684] register_client_adhoc:Client handle 13 usb
+<6>[    4.844203] usb_bam_init: setting SPS_BAM_SMMU_EN flag with (a704000.qcom,usbbam)
+<6>[    4.855134] sps:BAM 0x0a704000 is registered.
+<3>[    4.859184] ipa_rm ipa_rm_delete_resource:146 IPA RM was not initialized
+<3>[    4.866718] usb_bam_ipa_delete_resources: Failed to delete USB_PROD resource
+<3>[    4.873500] ipa_rm ipa_rm_delete_resource:146 IPA RM was not initialized
+<3>[    4.880994] usb_bam_ipa_delete_resources: Failed to delete USB_CONS resource
+<6>[    4.889769] usbpd usbpd0: Type-C Source (default) connected
+<6>[    4.896927] dwc3 a600000.dwc3: changing max_speed on rev 00000000
+<3>[    4.903132] register_client_adhoc:find path.src 61 dest 512
+<3>[    4.903450] register_client_adhoc:find path.src 61 dest 676
+<3>[    4.905891] register_client_adhoc:find path.src 1 dest 583
+<6>[    4.911373] usb_bam_init: setting SPS_BAM_SMMU_EN flag with (a704000.qcom,usbbam)
+<3>[    4.922458] register_client_adhoc:Client handle 13 usb
+<6>[    4.922891] sps:BAM 0x0a704000 is registered.
+<5>[    4.941558] ubi0: attaching mtd27
+<6>[    5.000217] msm-dwc3 a600000.ssusb: DWC3 exited from low power mode
+<6>[    5.000880] msm-dwc3 a600000.ssusb: DWC3 in low power mode
+<6>[    5.060218] msm-dwc3 a600000.ssusb: DWC3 exited from low power mode
+<5>[    5.201618] ubi0: scanning is finished
+<5>[    5.207795] ubi0: attached mtd27 (name "system", size 274 MiB)
+<5>[    5.207841] ubi0: PEB size: 262144 bytes (256 KiB), LEB size: 253952 bytes
+<5>[    5.212598] ubi0: min./max. I/O unit sizes: 4096/4096, sub-page size 4096
+<5>[    5.219397] ubi0: VID header offset: 4096 (aligned 4096), data offset: 8192
+<5>[    5.226269] ubi0: good PEBs: 1095, bad PEBs: 1, corrupted PEBs: 0
+<5>[    5.233035] ubi0: user volume: 1, internal volumes: 1, max. volumes count: 128
+<5>[    5.239276] ubi0: max/mean erase counter: 3066/1262, WL threshold: 4096, image sequence number: 1469184680
+<5>[    5.246418] ubi0: available PEBs: 0, total reserved PEBs: 1095, PEBs reserved for bad PEB handling: 79
+<5>[    5.256059] ubi0: background thread "ubi_bgt0d" started, PID 274
+<6>[    5.266247] input: soc:gpio_keys as /devices/platform/soc:gpio_keys/input/input1
+<6>[    5.272049] qcom,qpnp-rtc c440000.qcom,spmi:qcom,pmxprairie@8:qcom,rtc@6000: setting system clock to 1970-01-01 02:29:38 UTC (8978)
+<5>[    5.279630] cpuidle: enable-method property 'psci' found operations
+<3>[    5.291010] lpm_levels: register_cluster_lpm_stats()
+<6>[    5.298483] rmnet_ipa3 started initialization
+<6>[    5.301967] IPA SSR support = True
+<6>[    5.306102] IPA is_platform_type_msm = False
+<6>[    5.309403] IPA SG support = False
+<6>[    5.313845] IPA Napi Enable = False
+<6>[    5.317037] using default for wan-rx-desc-size = 256
+<3>[    5.322508] ipa-wan ipa3_wwan_probe:2880 rmnet_ipa completed initialization
+<6>[    5.326591] RNDIS_IPA module is loaded.
+<3>[    5.327246] msm_bus_late_init: Remove handoff bw requests
+<6>[    5.336770] emac_phy: disabling
+<6>[    5.341752] rgmii_io_pads: disabling
+<6>[    5.344669] vddpx_2: disabling
+<6>[    5.348483] vreg_conn_pa: disabling
+<5>[    5.355672] UBIFS (ubi0:0): background thread "ubifs_bgt0_0" started, PID 276
+<5>[    5.401366] UBIFS (ubi0:0): recovery needed
+<5>[    5.585819] UBIFS (ubi0:0): recovery completed
+<5>[    5.585967] UBIFS (ubi0:0): UBIFS: mounted UBI device 0, volume 0, name "rootfs"
+<5>[    5.589182] UBIFS (ubi0:0): LEB size: 253952 bytes (248 KiB), min./max. I/O unit sizes: 4096 bytes/4096 bytes
+<5>[    5.596770] UBIFS (ubi0:0): FS size: 254459904 bytes (242 MiB, 1002 LEBs), journal size 9404416 bytes (8 MiB, 38 LEBs)
+<5>[    5.606926] UBIFS (ubi0:0): reserved for root: 0 bytes (0 KiB)
+<5>[    5.617153] UBIFS (ubi0:0): media format: w4/r0 (latest is w5/r0), UUID 4DBF30BB-6EE4-424A-96B8-AFA0DBB289B5, small LPT model
+<6>[    5.625321] VFS: Mounted root (ubifs filesystem) on device 0:18.
+<6>[    5.636841] devtmpfs: mounted
+<6>[    5.641730] Freeing unused kernel memory: 1024K
+<12>[    5.880492] [MIFI_TIMESTAMP] - /etc/init.d/rcS: started
+<5>[    6.038158] set_dload_mode: on=0
+<30>[    6.237500] udevd[301]: starting version 182
+<3>[    6.560165] of_batterydata_get_best_profile: No battery data found
+<3>[    6.560214] QCOM-STEPCHG: get_step_chg_jeita_setting_from_profile: Couldn't find profile
+<6>[    7.604358] IPA is loading with non MHI configuration
+<6>[    7.630632] IPA is loading with non MHI configuration
+<12>[    7.650953] [MIFI_TIMESTAMP] - S30load_kernel_modules: started
+<12>[    7.711004] [MIFI_TIMESTAMP] - create_device_sym_links.sh: started
+<12>[    7.779954] [MIFI_TIMESTAMP] - create_device_sym_links.sh: done
+<12>[    7.790770] [MIFI_TIMESTAMP] - S30load_kernel_modules: done
+<5>[    7.847558] ubi1: attaching mtd17
+<5>[    7.943788] ubi1: scanning is finished
+<5>[    7.952538] ubi1: attached mtd17 (name "modem", size 107 MiB)
+<5>[    7.952587] ubi1: PEB size: 262144 bytes (256 KiB), LEB size: 253952 bytes
+<5>[    7.957285] ubi1: min./max. I/O unit sizes: 4096/4096, sub-page size 4096
+<5>[    7.964437] ubi1: VID header offset: 4096 (aligned 4096), data offset: 8192
+<5>[    7.971080] ubi1: good PEBs: 429, bad PEBs: 0, corrupted PEBs: 0
+<5>[    7.977680] ubi1: user volume: 1, internal volumes: 1, max. volumes count: 128
+<5>[    7.984163] ubi1: max/mean erase counter: 17/6, WL threshold: 4096, image sequence number: 1865044219
+<5>[    7.991098] ubi1: available PEBs: 0, total reserved PEBs: 429, PEBs reserved for bad PEB handling: 80
+<5>[    8.000393] ubi1: background thread "ubi_bgt1d" started, PID 380
+<5>[    8.117024] UBIFS (ubi1:0): UBIFS: mounted UBI device 1, volume 0, name "modem", R/O mode
+<5>[    8.117087] UBIFS (ubi1:0): LEB size: 253952 bytes (248 KiB), min./max. I/O unit sizes: 4096 bytes/4096 bytes
+<5>[    8.124559] UBIFS (ubi1:0): FS size: 85073920 bytes (81 MiB, 335 LEBs), journal size 9404416 bytes (8 MiB, 38 LEBs)
+<5>[    8.134284] UBIFS (ubi1:0): reserved for root: 0 bytes (0 KiB)
+<5>[    8.144478] UBIFS (ubi1:0): media format: w4/r0 (latest is w5/r0), UUID C372CDA0-9C90-4383-A36E-3F74D3EFA04D, small LPT model
+<6>[    8.960117] smblib_send_chg_det_event: SDP detected, pd_active 0, apsd_result->pst 4, typec_mode : 6 
+<12>[    9.278801] Starting ipacm_perf:  
+<12>[    9.293932] done
+<6>[    9.359880] subsys-restart: __subsystem_get(): Changing subsys fw_name to modem
+<6>[    9.359966] ipa-wan ipa3_lcl_mdm_ssr_notifier_cb:3162 IPA received MPSS BEFORE_POWERUP
+<12>[    9.379879] Starting ipacm: 
+<3>[    9.390785] ipa ipa3_uc_state_check:382 uC is not loaded
+<6>[    9.392753] ipa-wan ipa3_lcl_mdm_ssr_notifier_cb:3174 IPA BEFORE_POWERUP handling is complete
+<12>[    9.406595] done
+<6>[    9.408305] subsys-pil-tz 4080000.qcom,mss: modem: loading from 0x90800000 to 0x9d500000
+<12>[    9.413668] Starting ipacmdiag: 
+<12>[   12.545393] done
+<12>[   12.633333] Starting qseecomd: 
+<12>[   13.835091] done
+<6>[   16.043392] Mass Storage Function, version: 2009/09/11
+<6>[   16.043446] LUN: removable file: (no medium)
+<6>[   16.056168] Mass Storage Function, version: 2009/09/11
+<6>[   16.056221] LUN: removable file: (no medium)
+<6>[   16.083478] file system registered
+<6>[   16.122320] f_cdev_alloc: port_name:at_usb0 (eb800800) portno:(0)
+<6>[   16.132024] f_cdev_alloc: port_name:at_usb1 (eb800c00) portno:(1)
+<6>[   16.197309] subsys-pil-tz 4080000.qcom,mss: modem: Brought out of reset
+<6>[   16.230998] subsys-pil-tz 4080000.qcom,mss: Subsystem error monitoring/handling services are up
+<6>[   16.231068] subsys-pil-tz 4080000.qcom,mss: modem: Power/Clock ready interrupt received
+<6>[   16.245460] ipa-wan ipa3_lcl_mdm_ssr_notifier_cb:3177 IPA received MPSS AFTER_POWERUP
+<3>[   16.246500] ipa ipa3_odl_pipe_open:371 adpl pipe not configured
+<3>[   16.270374] qrtr: Modem QMI Readiness RX cmd:0x2 node[0x3]
+<6>[   16.280427] ipa-wan ipa3_lcl_mdm_ssr_notifier_cb:3183 IPA AFTER_POWERUP handling is complete
+<4>[   16.304470] using random self ethernet address
+<4>[   16.304505] using random host ethernet address
+<3>[   16.426748] qrtr: Modem QMI Readiness TX cmd:0x2 node[0x2]
+<3>[   16.433913] diag: In diag_send_feature_mask_update, control channel is not open, p: 0, c14d576c
+<3>[   16.434499] diag: In diag_send_peripheral_buffering_mode, buffering flag not set for 0
+<6>[   16.474955] sysmon-qmi: ssctl_new_server: Connection established between QMI handle and modem's SSCTL service
+<6>[   16.475233] coresight-remote-etm soc:modem_etm0: Connection established between QMI handle and 2 service
+<6>[   16.484262] coresight-remote-etm soc:modem_etm1: Connection established between QMI handle and 2 service
+<6>[   17.365967] Sending QMI_IPA_INIT_MODEM_DRIVER_REQ_V01
+<3>[   17.369564] ipa-wan ipa3_handle_indication_req:152 not send indication
+<3>[   17.374160] ipa ipa3_uc_wdi_event_log_info_handler:357 WDI protocol missing 0x21
+<3>[   17.376447] ipa ipa3_uc_ntn_event_log_info_handler:33 NTN stats sz invalid exp=224 is=112
+<6>[   17.384824] QMI_IPA_INIT_MODEM_DRIVER_REQ_V01 response received
+<6>[   18.259289] ramoops: platform device not found, using module parameters
+<12>[   18.394628] [MIFI_TIMESTAMP] - /etc/init.d/rcS: done
+<3>[   19.846881] ipa-wan ipa3_wwan_ioctl:2045 dev(rmnet_data0) register to IPA
+<6>[   24.572802] Invalid battery detection triggered
+<6>[   24.572889] Charging disabled: Unknown battery
+<6>[   24.576154] Usb suspend: forced
+<12>[   25.434374] [MIFI_TIMESTAMP] - 
+<12>[   25.435502] WIFI Starting
+<12>[   25.435544] 
+<12>[   28.173953] [MIFI_TIMESTAMP] - 
+<12>[   28.174726] CCM2 Starting
+<12>[   28.174758] 
+<12>[   30.074222] Launch adb is starting adbd... 
+<12>[   30.410015] Started adbd. 
+<6>[   30.759487] RNDIS_IPA NetDev was initialized
+<6>[   30.796873] android_work: did not send uevent (0 0 00000000)
+<12>[   30.816570] [MIFI_TIMESTAMP] - 
+<12>[   30.816583] WIFI Load Driver
+<12>[   30.816616] 
+<6>[   30.983813] msm-dwc3 a600000.ssusb: Avail curr from USB = 100
+<6>[   31.067719] android_work: sent uevent USB_STATE=CONNECTED
+<6>[   31.126044] configfs-gadget gadget: high-speed config #1: c
+<6>[   31.126620] msm-dwc3 a600000.ssusb: Avail curr from USB = 500
+<6>[   31.151668] android_work: sent uevent USB_STATE=CONFIGURED
+<12>[   31.153683] [MIFI_TIMESTAMP] - 
+<12>[   31.153696] USB Enumerated
+<12>[   31.156203] 
+<6>[   31.250246] RNDIS_IPA NetDev pipes were connected
+<3>[   31.267252] id0:ipa_usb_notify_cb: Set net_ready_trigger
+<6>[   31.267271] RNDIS_IPA NetDev was opened
+<6>[   31.408697] read descriptors
+<6>[   31.408828] read strings
+<4>[   31.878064] emac_dwc_eqos: loading out-of-tree module taints kernel.
+<6>[   31.901190] qcom-emac-dwc-eqos DWC_ETH_QOS_get_dts_config:1111 phy_addr = 7
+<5>[   32.196002] UBIFS (ubi1:0): background thread "ubifs_bgt1_0" started, PID 1844
+<6>[   32.242427] iommu: Adding device 20000.qcom,emac:emac_emb_smmu to group 6
+<3>[   32.247534] register_client_adhoc:find path.src 98 dest 512
+<3>[   32.247886] register_client_adhoc:find path.src 1 dest 781
+<3>[   32.248353] register_client_adhoc:Client handle 14 emac
+<6>[   32.276129] qcom-emac-dwc-eqos DWC_ETH_QOS_configure_netdevice:2182 ipa_tx_desc_cnt_mod_param = 128
+<6>[   32.298711] qcom-emac-dwc-eqos DWC_ETH_QOS_configure_netdevice:2184 ipa_rx_desc_cnt_mod_param = 128
+<3>[   32.299300] qcom-emac-dwc-eqos DWC_ETH_QOS_mdio_register:1247 Invlaid phy address specified in device tree
+<1>[   32.322869] DWC_ETH_QOS: Phy detected at ID/ADDR 4
+<6>[   32.357717] libphy: dwc_phy: probed
+<3>[   32.379948] netif_napi_add() called with weight 256 on device eth%d
+<6>[   32.379985] qcom-emac-dwc-eqos DWC_ETH_QOS_dma_desc_stats_init:8239 Enter
+<6>[   32.396755] qcom-emac-dwc-eqos DWC_ETH_QOS_dma_desc_stats_init:8265 Exit
+<6>[   32.408534] qcom-emac-dwc-eqos DWC_ETH_QOS_update_rgmii_tx_drv_strength:1212 IOMACRO pads voltage: 2500000 uV
+<5>[   32.610705] UBIFS (ubi1:0): background thread "ubifs_bgt1_0" stops
+<12>[   36.031025] [MIFI_TIMESTAMP] - 
+<12>[   36.031038] CCM2 IPV4 WWAN connection is now IDLE
+<12>[   36.031078] 
+<12>[   36.091544] [MIFI_TIMESTAMP] - 
+<12>[   36.091557] CCM2 IPV6 WWAN connection is now IDLE
+<12>[   36.091597] 
+<6>[   36.453661] nf_conntrack: default automatic helper assignment has been turned off for security reasons and CT-based  firewall rule not found. Use the iptables CT target to attach helpers instead.
+<6>[   36.572104] qcom-emac-dwc-eqos configure_tx_queue:4193 Enter
+<6>[   36.574298] qcom-emac-dwc-eqos configure_tx_queue:4193 Enter
+<6>[   36.587100] qcom-emac-dwc-eqos configure_tx_queue:4193 Enter
+<6>[   36.588691] qcom-emac-dwc-eqos configure_tx_queue:4193 Enter
+<6>[   36.603455] qcom-emac-dwc-eqos configure_tx_queue:4193 Enter
+<6>[   36.605658] qcom-emac-dwc-eqos configure_rx_queue:4315 Enter
+<6>[   36.617326] qcom-emac-dwc-eqos configure_rx_queue:4315 Enter
+<6>[   36.617384] qcom-emac-dwc-eqos configure_rx_queue:4315 Enter
+<6>[   36.643095] qcom-emac-dwc-eqos configure_rx_queue:4315 Enter
+<6>[   36.649630] IPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready
+<6>[   36.649668] 8021q: adding VLAN 0 to HW filter on device eth0
+<3>[   37.113479] wlan: Loading driver v5.2.05C1.2N; 2023-04-06T09:22:06Z; cld:; cmn:;
+<6>[   37.113555] qdf_print_ctrl_register: Allocated print control object 0
+<3>[   37.150266] ipa ipa3_uc_reg_rdyCB:3140 bad parm. inout=00000000 
+<6>[   37.153429] wlan_hdd_state wlan major(496) initialized
+<7>[   37.153492] cnss: Posting event: REGISTER_DRIVER(7)-sync, state: 0x0 flags: 0x3
+<7>[   37.171034] cnss: PM stay awake, state: 0x0, count: 1
+<7>[   37.171073] cnss: Processing driver event: REGISTER_DRIVER-sync(7), state: 0x0
+<7>[   37.171083] cnss: Regulator vdd-wlan-aon is being enabled
+<7>[   37.172347] cnss: Resuming PCI link
+<6>[   37.172408] msm_pcie_enable: PCIe: Assert the reset of endpoint of RC0.
+<6>[   37.176196] msm_pcie_enable: PCIe: RC0: PCIE20_PARF_INT_ALL_MASK: 0x7f80c202
+<6>[   37.180596] msm_pcie_enable: PCIe RC0 PHY is ready!
+<6>[   37.207788] msm_pcie_enable: PCIe: Release the reset of endpoint of RC0.
+<6>[   37.234695] msm_pcie_enable: PCIe RC0 link initialized
+<7>[   37.250670] cnss: disable_l1ss 0
+<7>[   37.250775] cnss: Read register offset 0x1f8031c, val = 0xffffffff
+<7>[   37.250791] cnss: Write val 0xfffffffa to register offset 0x1f8031c
+<7>[   37.250799] cnss: QMI timeout is 10000 ms
+<7>[   37.250806] cnss: Setting MHI state: INIT(0)
+<7>[   37.255932] cnss: Setting MHI state: POWER_ON(2)
+<7>[   37.697055] cnss: MHI status cb is called with reason UNKNOWN(6)
+<3>[   37.697067] cnss: Unsupported MHI status cb reason: 6
+<7>[   37.698737] cnss: Completed event: REGISTER_DRIVER(7), state: 0x10, ret: 0/0
+<7>[   37.698751] cnss: PM relax, state: 0x10, count: 0
+<7>[   37.817385] cnss: WLFW server arriving: node 7 port 1
+<7>[   37.817402] cnss: Posting event: SERVER_ARRIVE(0), state: 0x10 flags: 0x0
+<7>[   37.817409] cnss: PM stay awake, state: 0x10, count: 1
+<7>[   37.817427] cnss: PM relax, state: 0x10, count: 0
+<7>[   37.817441] cnss: PM stay awake, state: 0x10, count: 1
+<7>[   37.817450] cnss: Processing driver event: SERVER_ARRIVE(0), state: 0x10
+<6>[   37.817460] cnss: QMI WLFW service connected, state: 0x11
+<7>[   37.817504] cnss: Sending indication register message, state: 0x11
+<7>[   37.821599] cnss: Sending host capability message, state: 0x11
+<7>[   37.821613] cnss: Number of clients is 1
+<7>[   37.821622] cnss: Assign MSI to user: WAKE, num_vectors: 1, user_base_data: 13, base_vector: 13
+<7>[   37.821630] cnss: WAKE MSI base data is 13
+<7>[   37.821635] cnss: Calibration done is 0
+<7>[   37.821643] cnss: Sending iova starting 0xa0000000 with size 0x10010000
+<7>[   37.824148] cnss: PM relax, state: 0x11, count: 0
+<7>[   37.825744] cnss: Received QMI WLFW request memory indication
+<7>[   37.825755] cnss: FW requests for memory, size: 0x39c000, type: 1
+<7>[   37.825761] cnss: FW requests for memory, size: 0xd8000, type: 4
+<7>[   37.825768] cnss: Posting event: REQUEST_MEM(2), state: 0x11 flags: 0x0
+<7>[   37.825776] cnss: PM stay awake, state: 0x11, count: 1
+<7>[   37.825791] cnss: PM relax, state: 0x11, count: 0
+<7>[   37.825811] cnss: PM stay awake, state: 0x11, count: 1
+<7>[   37.825819] cnss: Processing driver event: REQUEST_MEM(2), state: 0x11
+<7>[   37.829108] cnss: Sending respond memory message, state: 0x11
+<7>[   37.829123] cnss: Memory for FW, va: 0xf76a5000, pa: 0xa0c00000, size: 0x39c000, type: 1
+<7>[   37.829132] cnss: Memory for FW, va: 0xf6f01000, pa: 0xa1000000, size: 0xd8000, type: 4
+<7>[   37.838711] cnss: PM relax, state: 0x11, count: 0
+<7>[   37.840848] cnss: Received QMI WLFW FW memory ready indication
+<7>[   37.840863] cnss: Posting event: FW_MEM_READY(3), state: 0x11 flags: 0x0
+<7>[   37.840872] cnss: PM stay awake, state: 0x11, count: 1
+<7>[   37.840889] cnss: PM relax, state: 0x11, count: 0
+<7>[   37.840917] cnss: PM stay awake, state: 0x11, count: 1
+<7>[   37.840926] cnss: Processing driver event: FW_MEM_READY(3), state: 0x11
+<7>[   37.840933] cnss: Sending target capability message, state: 0x13
+<7>[   37.846573] cnss: Target capability: chip_id: 0x0, chip_family: 0xb, board_id: 0xff, soc_id: 0xffffffff, fw_version: 0x101981d1, fw_build_timestamp: 2021-08-19 15:15
+<7>[   37.846592] cnss: Sending BDF download message, state: 0x13, type: 4
+<7>[   37.846603] cnss: get firmware path[] for device[0x1101]
+<3>[   37.846778] cnss: Failed to load BDF: regdb.bin
+<7>[   37.846821] cnss: Sending BDF download message, state: 0x13, type: 1
+<7>[   37.846830] cnss: get firmware path[] for device[0x1101]
+<7>[   37.848576] cnss: Downloading BDF: bdwlan.elf, size: 57844
+<7>[   37.889518] cnss: get firmware path[] for device[0x1101]
+<7>[   37.894109] cnss: MHI status cb is called with reason IDLE(0)
+<7>[   37.977183] cnss: Sending M3 information message, state: 0x13
+<7>[   37.977208] cnss: M3 memory, va: 0xf6984000, pa: 0xa1200000, size: 0x411bc
+<7>[   37.983153] cnss: Received QMI WLFW FW initialization done indication
+<7>[   37.983168] cnss: Posting event: FW_READY(4), state: 0x13 flags: 0x0
+<7>[   37.983221] cnss: Processing driver event: FW_READY(4), state: 0x13
+<7>[   37.983229] cnss: PCIE Gen speed not setup
+<7>[   37.987743] cnss: MHI status cb is called with reason IDLE(0)
+<3>[   38.025527] send_filled_buffers_to_user: Send Failed -3 drop_count = 1
+<7>[   38.034278] cnss: Sending ini sync request, state: 0x17, fw_log_mode: 2
+<3>[   38.040731] [kworker/u2:7][0x2eb1fc0e][22:46:35.657354] wlan: [161:E:TXRX] hal_get_shadow_config
+<3>[   38.040776] [kworker/u2:7][0x2eb2002d][22:46:35.657408] wlan: [161:E:TXRX] hal_get_shadow_config
+<3>[   38.086469] [kworker/u2:7][0x2ebf6247][22:46:35.703091] wlan: [161:E:TXRX] hif_print_hal_shadow_register_cfg: num_config 29
+<6>[   38.086545] [kworker/u2:7][0x2ebf68cc][22:46:35.703177] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 0, val a3b034
+<6>[   38.136930] [kworker/u2:7][0x2ece2ad6][22:46:35.753551] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 1, val a3b03c
+<6>[   38.136994] [kworker/u2:7][0x2ece3072][22:46:35.753625] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 2, val a3b044
+<6>[   38.179670] [kworker/u2:7][0x2eda60e6][22:46:35.795232] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 3, val a3b04c
+<6>[   38.179723] [kworker/u2:7][0x2edab4fc][22:46:35.796353] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 4, val a3b054
+<6>[   38.225208] [kworker/u2:7][0x2ee807ea][22:46:35.841832] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 5, val a3b028
+<6>[   38.225286] [kworker/u2:7][0x2ee80e5e][22:46:35.841917] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 6, val a3b020
+<6>[   38.290228] [kworker/u2:7][0x2efb1438][22:46:35.906850] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 7, val a3b06c
+<6>[   38.290305] [kworker/u2:7][0x2efb1ad3][22:46:35.906937] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 8, val a46000
+<6>[   38.340321] [kworker/u2:7][0x2f09c120][22:46:35.956942] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 9, val a46008
+<6>[   38.340399] [kworker/u2:7][0x2f09c7d8][22:46:35.957031] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 10, val a46010
+<6>[   38.372516] [kworker/u2:7][0x2f132fe9][22:46:35.989138] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 11, val a46018
+<6>[   38.372595] [kworker/u2:7][0x2f13368b][22:46:35.989226] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 12, val a46034
+<6>[   38.404061] [kworker/u2:7][0x2f1c6d8c][22:46:36.020681] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 13, val a370b0
+<6>[   38.404138] [kworker/u2:7][0x2f1c7444][22:46:36.020769] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 14, val a37018
+<6>[   38.438905] [kworker/u2:7][0x2f26a2f8][22:46:36.055526] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 15, val a370c4
+<6>[   38.438962] [kworker/u2:7][0x2f26a811][22:46:36.055594] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 16, val a370cc
+<6>[   38.469482] [kworker/u2:7][0x2f2f9840][22:46:36.086104] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 17, val a370d4
+<6>[   38.469558] [kworker/u2:7][0x2f2f9ecd][22:46:36.086190] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 18, val a370dc
+<6>[   38.508589] [kworker/u2:7][0x2f3b0d49][22:46:36.125211] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 19, val a370e4
+<6>[   38.508686] [kworker/u2:7][0x2f3b1274][22:46:36.125278] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 20, val a00400
+<6>[   38.555734] [kworker/u2:7][0x2f48dd20][22:46:36.172355] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 21, val a03400
+<6>[   38.555780] [kworker/u2:7][0x2f48e17a][22:46:36.172412] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 22, val a0340c
+<6>[   38.578888] [kworker/u2:7][0x2f4fa5b0][22:46:36.195509] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 23, val a05400
+<6>[   38.578934] [kworker/u2:7][0x2f4fa9fe][22:46:36.195566] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 24, val a0540c
+<6>[   38.611527] [kworker/u2:7][0x2f5935a4][22:46:36.228149] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 25, val a06400
+<6>[   38.611604] [kworker/u2:7][0x2f593c37][22:46:36.228235] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 26, val a08400
+<6>[   38.643451] [kworker/u2:7][0x2f628ff3][22:46:36.260073] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 27, val a0b400
+<6>[   38.643528] [kworker/u2:7][0x2f629687][22:46:36.260159] wlan: [161:I:TXRX] hif_print_hal_shadow_register_cfg: i 28, val a0b40c
+<7>[   38.669747] cnss: Mode: 0, config: ecbd3cbc, host_version: 5.2.05C1.2N
+<7>[   38.669761] cnss: Sending WLAN config message, state: 0x17
+<7>[   38.669777] cnss: Assign MSI to user: CE, num_vectors: 10, user_base_data: 3, base_vector: 3
+<7>[   38.673169] cnss: Sending mode message, mode: MISSION(0), state: 0x17
+<7>[   38.693881] cnss: Received QMI WLFW pin connect result indication
+<7>[   38.693895] cnss: Pin connect Result: pwr_pin: 0x1 phy_io_pin: 0x0 rf_io_pin: 0x0
+<7>[   38.693965] cnss: Assign MSI to user: CE, num_vectors: 10, user_base_data: 3, base_vector: 3
+<7>[   38.694174] cnss: Assign MSI to user: CE, num_vectors: 10, user_base_data: 3, base_vector: 3
+<7>[   38.694369] cnss: Assign MSI to user: CE, num_vectors: 10, user_base_data: 3, base_vector: 3
+<7>[   38.694534] cnss: Assign MSI to user: CE, num_vectors: 10, user_base_data: 3, base_vector: 3
+<7>[   38.694716] cnss: Assign MSI to user: CE, num_vectors: 10, user_base_data: 3, base_vector: 3
+<7>[   38.694863] cnss: Assign MSI to user: CE, num_vectors: 10, user_base_data: 3, base_vector: 3
+<7>[   38.695187] cnss: Assign MSI to user: CE, num_vectors: 10, user_base_data: 3, base_vector: 3
+<7>[   38.695379] cnss: Assign MSI to user: CE, num_vectors: 10, user_base_data: 3, base_vector: 3
+<7>[   38.695542] cnss: Assign MSI to user: WAKE, num_vectors: 1, user_base_data: 13, base_vector: 13
+<7>[   38.695551] cnss: Get IRQ number 174 for vector index 13
+<7>[   38.695606] cnss: Assign MSI to user: CE, num_vectors: 10, user_base_data: 3, base_vector: 3
+<7>[   38.695614] cnss: Get IRQ number 164 for vector index 3
+<7>[   38.695648] cnss: Get IRQ number 165 for vector index 4
+<7>[   38.695677] cnss: Get IRQ number 166 for vector index 5
+<7>[   38.695706] cnss: Get IRQ number 167 for vector index 6
+<7>[   38.695733] cnss: Get IRQ number 168 for vector index 7
+<7>[   38.695761] cnss: Get IRQ number 169 for vector index 8
+<7>[   38.695788] cnss: Get IRQ number 170 for vector index 9
+<7>[   38.695817] cnss: Get IRQ number 171 for vector index 10
+<7>[   38.695824] cnss: Get IRQ number 172 for vector index 11
+<3>[   38.695873] [kworker/u2:7][0x2f71ebf7][22:46:36.312500] wlan: [161:E:HIF] NAPI_initialization failed,. -14
+<3>[   38.696051] [kworker/u2:7][0x2f71f9a6][22:46:36.312681] wlan: [161:E:WMI] WMI handle is NULL
+<3>[   38.729300] [kworker/u2:7][0x2f7bb6b0][22:46:36.345923] wlan: [161:E:TIF] target_if_fwol_register_elna_event_handler: 163: Failed to register get eLNA bypass event cb
+<3>[   38.729410] [kworker/u2:7][0x2f7bbfaf][22:46:36.346042] wlan: [161:E:QDF] cds_get_context: 1345: Module ID 66 context is Null
+<3>[   38.807139] [kworker/u2:7][0x2f92848e][22:46:36.423761] wlan: [161:E:QDF] cds_get_context: 1345: Module ID 66 context is Null
+<1>[   38.807697] [kworker/u2:7][0x2f92aec3][22:46:36.424323] wlan: [161:F:WMA] WMA --> wmi_unified_attach - success
+<6>[   38.824235] bridge0: port 1(rndis0) entered blocking state
+<6>[   38.831885] bridge0: port 1(rndis0) entered disabled state
+<6>[   38.834706] device rndis0 entered promiscuous mode
+<6>[   38.845339] bridge0: port 1(rndis0) entered blocking state
+<6>[   38.845389] bridge0: port 1(rndis0) entered forwarding state
+<3>[   38.861751] [kworker/u2:7][0x2fa28469][22:46:36.478372] wlan: [161:E:QDF] htc_wait_target: 607: Target Ready! TX resource : 1 size:2176, MaxMsgsPerHTCBundle = 1
+<3>[   38.861844] [kworker/u2:7][0x2fa28c36][22:46:36.478475] wlan: [161:E:QDF] htc_setup_target_buffer_assignments: 499: SVS Index : 1 TX : 0x100 : alloc:1
+<1>[   38.921186] [kworker/u2:7][0x2fb3ee0f][22:46:36.537808] wlan: [161:F:WMA] cds_cdp_cfg_attach: failed to init cfg handle
+<7>[   38.921808] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.927912] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.931122] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.931298] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.931441] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.931631] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.934078] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.934233] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.934381] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<6>[   38.934496] [kworker/u2:7][0x2fb7d4a5][22:46:36.551122] wlan: [161:I:DP] dp_tx_soc_attach Tx Desc Alloc num_pool = 4, descs = 1024
+<6>[   38.937675] [kworker/u2:7][0x2fb8c2be][22:46:36.554297] wlan: [161:I:DP] dp_tx_soc_attach MSDU Ext Desc Alloc 4, descs = 1024
+<6>[   38.955268] [kworker/u2:7][0x2fbdeaa3][22:46:36.571894] wlan: [161:I:DP] dp_tx_soc_attach HAL Tx init Success
+<7>[   38.957309] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.957465] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<6>[   38.957584] [kworker/u2:7][0x2fbe9862][22:46:36.574212] wlan: [161:I:DP] dp_soc_cmn_setup: 2896: num_reo_dest_rings 4
+<7>[   38.975943] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.976191] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.976389] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.976602] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.976735] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.976793] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.976839] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.978284] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.978465] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.978614] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.978763] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<3>[   38.979000] [kworker/u2:7][0x2fc4de75][22:46:36.595626] wlan: [161:E:DP] hal_reo_setup_generic: 1431: HWIO_REO_R0_DESTINATION_RING_CTRL_IX_2_ADDR 0x45a2d100
+<3>[   38.979107] [kworker/u2:7][0x2fc4e6eb][22:46:36.595738] wlan: [161:E:DP] hal_reo_setup_generic: 1442: HWIO_REO_R0_DESTINATION_RING_CTRL_IX_3_ADDR 0x2d168b00
+<7>[   38.994673] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.994720] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.994744] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   38.994776] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<6>[   39.011789] [kworker/u2:7][0x2fce7659][22:46:36.628370] wlan: [161:I:DP] Peer pool init
+<6>[   39.012092] [kworker/u2:7][0x2fce90bb][22:46:36.628722] wlan: [161:I:DP] dp_soc_interrupt_attach_wrapper: Interrupt  mode
+<7>[   39.018687] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   39.018701] cnss: Get IRQ number 175 for vector index 14
+<7>[   39.018718] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   39.018725] cnss: Get IRQ number 176 for vector index 15
+<7>[   39.018735] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   39.018741] cnss: Get IRQ number 177 for vector index 16
+<7>[   39.018761] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   39.018768] cnss: Get IRQ number 178 for vector index 17
+<7>[   39.018778] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   39.018788] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   39.018794] cnss: Get IRQ number 180 for vector index 19
+<7>[   39.018803] cnss: Assign MSI to user: DP, num_vectors: 18, user_base_data: 14, base_vector: 14
+<7>[   39.018810] cnss: Get IRQ number 181 for vector index 20
+<3>[   39.020153] [kworker/u2:12][0x2fd0ed15][22:46:36.636780] wlan: [698:E:QDF] copy_fw_abi_version_tlv: 6690: copy_fw_abi_version_tlv: INIT_CMD version: 1, 0, 0x5f414351, 0x4c4d, 0x0, 0x0
+<3>[   39.176709] [kworker/u2:13][0x2ffecab4][22:46:36.793335] wlan: [2196:E:QDF] dp_peer_map_attach_wifi3: 8703: dp_peer_map_attach_wifi3 max_peers 55, max_ast_index: 144
+<3>[   39.176709] 
+<6>[   39.176762] [kworker/u2:13][0x2ffecf20][22:46:36.793394] wlan: [2196:I:DP] 
+<6>[   39.176762] <=== cfg max peer id 55 ====>
+<6>[   39.192941] [kworker/u2:13][0x30038bd9][22:46:36.809564] wlan: [2196:I:DP] 
+<6>[   39.192941] <=== cfg max ast idx 144 ====>
+<6>[   39.203403] [kworker/u2:13][0x30069cb1][22:46:36.820029] wlan: [2196:I:DP] ast hash_elems: 512, max_ast_idx: 144
+<3>[   39.214106] [kworker/u2:13][0x3009bf8f][22:46:36.830734] wlan: [2196:E:QDF] ready_extract_init_status_tlv: 8430: ready_extract_init_status_tlv:0
+<3>[   39.224872] [kworker/u2:13][0x300ce6ff][22:46:36.841499] wlan: [2196:E:QDF] cds_get_context: 1345: Module ID 65 context is Null
+<1>[   39.237467] [kworker/u2:13][0x3010979f][22:46:36.854095] wlan: [2196:F:DP] cdp_ipa_set_uc_tx_partition_base invalid instance
+<6>[   39.249135] [kworker/u2:13][0x3013ff46][22:46:36.865717] wlan: [2196:I:dfs] WLAN_DEBUG_DFS_ALWAYS : wlan_dfs_pdev_obj_create_notification: 389: dfs_offload 1
+<3>[   39.261164] [kworker/u2:7][0x30178912][22:46:36.877793] wlan: [161:E:WMI] send_action_oui_cmd_tlv: 220: Invalid action id
+<3>[   39.274656] [kworker/u2:7][0x301b7d02][22:46:36.891286] wlan: [161:E:action_oui] ucfg_action_oui_send: 160: Failed to send: 7
+<3>[   39.285797] [kworker/u2:7][0x301ec080][22:46:36.902426] wlan: [161:E:HDD] hdd_action_oui_send: 11412: Failed to send one or all action_ouis
+<7>[   39.300186] cnss: IOMMU map: iova b0000000 len 4096
+<7>[   39.300201] cnss: IOMMU map: iova_addr b0000018
+<7>[   39.300208] cnss: IOMMU map: iova b0001000 len 4096
+<7>[   39.300214] cnss: IOMMU map: iova_addr b0001060
+<7>[   39.300231] cnss: IOMMU map: iova b0002000 len 4096
+<7>[   39.300237] cnss: IOMMU map: iova_addr b0002090
+<3>[   39.300436] [kworker/u2:7][0x30230a97][22:46:36.917067] wlan: [161:E:WMA] Target does not support cesium network
+<6>[   39.308751] [kworker/u2:7][0x30257a06][22:46:36.925380] wlan: [161:I:SYS] Creating periodic timer for OLBC UPDATE CACHE TIMEOUT
+<6>[   39.308751] 
+<3>[   39.319949] [kworker/u2:7][0x3028c200][22:46:36.936579] wlan: [161:E:TXRX] dp_rxdma_ring_config: 4427: DBS enabled max_mac_rings 2
+<4>[   39.331970] [soft_irq][0x302c47a8][22:46:36.948601] wlan: [0:W:TXRX] *** Warning: host/target HTT versions are different, though compatible!
+<3>[   39.343453] [kworker/u2:7][0x302fa2ba][22:46:36.960056] wlan: [161:E:TXRX] dp_rxdma_ring_config: 4438: pdev_id 0 max_mac_rings 2
+<3>[   39.366144] [kworker/u2:7][0x303649e3][22:46:36.982766] wlan: [161:E:TXRX] dp_rxdma_ring_config: 4447: mac_id 0
+<3>[   39.369894] [kworker/u2:7][0x303763a2][22:46:36.986521] wlan: [161:E:TXRX] dp_rxdma_ring_config: 4447: mac_id 1
+<3>[   39.389094] [kworker/u2:7][0x303d0375][22:46:37.005719] wlan: [161:E:HDD] wlan_hdd_tsf_init: 2103: set tsf GPIO failed, status: 4
+<3>[   39.389173] [kworker/u2:7][0x303d09f5][22:46:37.005805] wlan: [161:E:SME] sme_enable_disable_chanavoidind_event: 13712: optimize_ca_event not enabled in ini
+<6>[   39.413498] [scheduler_threa][0x304429f6][22:46:37.030125] wlan: [2193:I:QDF] host_diag_log_submit: Unloading/Loading in Progress. Ignore!!!
+<3>[   39.418314] cnss_utils: WLAN MAC address is not set, type 0
+<7>[   39.451027] cnss: PM relax, state: 0x107, count: 0
+<7>[   39.451050] cnss: PM stay awake, state: 0x107, count: 1
+<7>[   39.451058] cnss: PM relax, state: 0x107, count: 0
+<7>[   39.474991] cnss: MHI status cb is called with reason IDLE(0)
+<6>[   39.855555] [scheduler_threa][0x30c5ac3d][22:46:37.472182] wlan: [2193:I:DP] 00000000: 81 19 a4 64 fd 3f 45 98 8f 25 8c 2e 35 fd 94 c7
+<6>[   39.855634] [scheduler_threa][0x30c5b282][22:46:37.472266] wlan: [2193:I:DP] 00000010: 29 b4 d2 38
+<6>[   39.901012] [scheduler_threa][0x30d2fd91][22:46:37.517640] wlan: [2193:I:DP] 00000000: 5a d8 a5 5b bd 54 74 68 16 90 93 a3 a7 84 d8 af
+<6>[   39.901092] [scheduler_threa][0x30d303d3][22:46:37.517724] wlan: [2193:I:DP] 00000010: 2f db dc fe ca e0 54 9e b6 f7 a6 5f 45 2a 6c f3
+<6>[   39.967045] [scheduler_threa][0x30e6557d][22:46:37.583667] wlan: [2193:I:DP] 00000020: b0 ec a9 54 a8 cc 2b e0 84 20 03 c9
+<6>[   39.967133] [scheduler_threa][0x30e65ce3][22:46:37.583764] wlan: [2193:I:DP] peer ec12a000, local id 0
+<3>[   40.023499] [ifconfig][0x30f6e007][22:46:37.640126] wlan: [2242:E:SME] csr_handle_roam_state_change: 20068: ROAM: roam state change requested in disconnected state
+<3>[   40.023687] [ifconfig][0x30f6ee78][22:46:37.640319] wlan: [2242:E:mlme] wlan_mlme_configure_chain_mask: 942: Cannot configure chainmask to FW
+<3>[   40.102765] [ifconfig][0x310e187a][22:46:37.719387] wlan: [2242:E:HDD] hdd_configure_chain_mask: 4802: WMI PDEV set param failed
+<3>[   40.102845] [ifconfig][0x310e1f4c][22:46:37.719476] wlan: [2242:E:HDD] hdd_start_adapter: 2426: Failed to set the FW params for the adapter!
+<6>[   40.193676] IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+<3>[   40.204430] [kworker/0:2][0x312be148][22:46:37.821051] wlan: [199:E:HDD] hdd_enable_arp_offload: 951: failed to cache arp offload req; status:4
+<3>[   40.269195] [kworker/0:2][0x313edaa7][22:46:37.885816] wlan: [199:E:HDD] hdd_enable_arp_offload: 951: failed to cache arp offload req; status:4
+<6>[   40.709817] [scheduler_threa][0x31bff1e6][22:46:38.326444] wlan: [2193:I:DP] peer ec12e000, local id 1
+<3>[   40.764044] [ifconfig][0x31cfd4e4][22:46:38.380671] wlan: [2286:E:SME] csr_handle_roam_state_change: 20068: ROAM: roam state change requested in disconnected state
+<3>[   40.764481] [ifconfig][0x31cff5ea][22:46:38.381111] wlan: [2286:E:mlme] wlan_mlme_configure_chain_mask: 942: Cannot configure chainmask to FW
+<12>[   40.800661] Starting qmuxbridge: 
+<3>[   40.946958] [ifconfig][0x32056aeb][22:46:38.563579] wlan: [2286:E:HDD] hdd_configure_chain_mask: 4802: WMI PDEV set param failed
+<3>[   40.992307] [ifconfig][0x3212b42f][22:46:38.608929] wlan: [2286:E:HDD] hdd_start_adapter: 2426: Failed to set the FW params for the adapter!
+<6>[   40.995185] IPv6: ADDRCONF(NETDEV_UP): wlan1: link is not ready
+<12>[   41.088621] done
+<3>[   41.130542] [kworker/0:2][0x323b33c0][22:46:38.747164] wlan: [199:E:HDD] hdd_enable_arp_offload: 951: failed to cache arp offload req; status:4
+<3>[   41.307393] [kworker/0:1][0x326f0396][22:46:38.924015] wlan: [14:E:HDD] hdd_enable_arp_offload: 951: failed to cache arp offload req; status:4
+<12>[   43.503868] [MIFI_TIMESTAMP] - 
+<12>[   43.503883] WIFI Start Hostapd on wlan0
+<12>[   43.503924] 
+<12>[   43.630180] [MIFI_TIMESTAMP] - 
+<12>[   43.630194] WIFI Hostapd running on wlan0 successfully.
+<12>[   43.630233] 
+<12>[   47.745712] [MIFI_TIMESTAMP] - 
+<12>[   47.745727] WIFI Start Hostapd on wlan1
+<12>[   47.745768] 
+<12>[   47.946628] [MIFI_TIMESTAMP] - 
+<12>[   47.946641] WIFI Hostapd running on wlan1 successfully.
+<12>[   47.946681] 
+<12>[   48.371794] [MIFI_TIMESTAMP] - 
+<12>[   48.371807] Wifi sub-system started successfully.
+<12>[   48.371846] 
+<3>[   50.271434] [hostapd][0x3cb132f3][22:46:47.888058] wlan: [2357:E:OSIF] wlan_cfg80211_sched_scan_stop: 612: Failed to disabled PNO
+<3>[   50.311787] [hostapd][0x3cbd0597][22:46:47.928414] wlan: [2357:E:mlme] wlan_mlme_configure_chain_mask: 942: Cannot configure chainmask to FW
+<3>[   50.311870] [hostapd][0x3cbd0c2d][22:46:47.928502] wlan: [2357:E:HDD] hdd_configure_chain_mask: 4802: WMI PDEV set param failed
+<3>[   51.010411] [hostapd][0x3d89b1ed][22:46:48.627033] wlan: [2357:E:HDD] hdd_start_adapter: 2426: Failed to set the FW params for the adapter!
+<3>[   51.014462] [hostapd][0x3d8ae20a][22:46:48.631086] wlan: [2381:E:OSIF] wlan_cfg80211_sched_scan_stop: 612: Failed to disabled PNO
+<3>[   51.541377] [hostapd][0x3e2540d8][22:46:49.158004] wlan: [2381:E:REGULATORY] reg_run_11d_state_machine: 198: No valid vdev for 11d scan command
+<3>[   51.541842] [hostapd][0x3e256284][22:46:49.158453] wlan: [2381:E:mlme] wlan_mlme_configure_chain_mask: 942: Cannot configure chainmask to FW
+<3>[   52.159276] [hostapd][0x3eda46c7][22:46:49.775897] wlan: [2381:E:HDD] hdd_configure_chain_mask: 4802: WMI PDEV set param failed
+<3>[   52.159354] [hostapd][0x3eda4d79][22:46:49.775985] wlan: [2381:E:HDD] hdd_start_adapter: 2426: Failed to set the FW params for the adapter!
+<3>[   53.263701] [hostapd][0x401dd69c][22:46:50.880322] wlan: [2357:E:HDD] __wlan_hdd_cfg80211_get_txpower: 2278: SAP is not started yet
+<3>[   53.284234] [hostapd][0x4023da96][22:46:50.900854] wlan: [2381:E:HDD] __wlan_hdd_cfg80211_get_txpower: 2278: SAP is not started yet
+<6>[   54.118280] [hostapd][0x4118340d][22:46:51.734901] wlan: [2357:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   54.118280] 
+<4>[   54.118369] [hostapd][0x41183b9a][22:46:51.735001] wlan: [2357:W:HDD] Ptt Socket error sending message to the app!!
+<3>[   54.440218] [hostapd][0x41768569][22:46:52.056839] wlan: [2357:E:dfs] WLAN_DEBUG_DFS_ALWAYS : utils_dfs_init_nol: 958: no nol in pld
+<6>[   54.440316] [hostapd][0x41768dad][22:46:52.056948] wlan: [2357:I:SAP] sap_get_channel_list: 3304: startChannel 36, EndChannel 161, ch_width 2, HW:256
+<6>[   54.820188] [hostapd][0x41e5d748][22:46:52.436810] wlan: [2357:I:SAP] sap_get_channel_list: 3313: expanded startChannel 36,EndChannel 161
+<6>[   54.820272] [hostapd][0x41e5de48][22:46:52.436903] wlan: [2357:I:SAP] sap_get_channel_list: 3317: band_start_ch 14, band_end_ch 40
+<6>[   55.152543] [hostapd][0x4247365e][22:46:52.769171] wlan: [2357:I:SAP] sap_get_channel_list: 3431: 1 36 added to ACS ch range
+<6>[   55.152670] [hostapd][0x4247402e][22:46:52.769301] wlan: [2357:I:SAP] sap_get_channel_list: 3431: 2 40 added to ACS ch range
+<6>[   55.177717] nvtl_mem_diag.s (948): drop_caches: 3
+<6>[   55.413406] [hostapd][0x4293a308][22:46:53.030033] wlan: [2357:I:SAP] sap_get_channel_list: 3431: 3 44 added to ACS ch range
+<6>[   55.413490] [hostapd][0x4293a9c1][22:46:53.030122] wlan: [2357:I:SAP] sap_get_channel_list: 3431: 4 48 added to ACS ch range
+<6>[   55.650159] [hostapd][0x42d8ff91][22:46:53.266787] wlan: [2357:I:SAP] sap_get_channel_list: 3431: 5 149 added to ACS ch range
+<6>[   55.650214] [hostapd][0x42d90408][22:46:53.266846] wlan: [2357:I:SAP] sap_get_channel_list: 3431: 6 153 added to ACS ch range
+<6>[   55.750180] [hostapd][0x42f64d24][22:46:53.366808] wlan: [2357:I:SAP] sap_get_channel_list: 3431: 7 157 added to ACS ch range
+<6>[   55.750268] [hostapd][0x42f6540f][22:46:53.366900] wlan: [2357:I:SAP] sap_get_channel_list: 3431: 8 161 added to ACS ch range
+<6>[   55.872230] [hostapd][0x431a0ed8][22:46:53.488857] wlan: [2357:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   55.872230] 
+<4>[   55.872319] [hostapd][0x431a15e5][22:46:53.488951] wlan: [2357:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   56.036941] [hostapd][0x434a4ffc][22:46:53.653566] wlan: [2381:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   56.036941] 
+<4>[   56.037029] [hostapd][0x434a571a][22:46:53.653661] wlan: [2381:W:HDD] Ptt Socket error sending message to the app!!
+<3>[   56.142225] [hostapd][0x436927ff][22:46:53.758847] wlan: [2357:E:HDD] __wlan_hdd_cfg80211_get_txpower: 2278: SAP is not started yet
+<3>[   56.142763] [hostapd][0x4369509c][22:46:53.759388] wlan: [2381:E:HDD] __wlan_hdd_cfg80211_get_txpower: 2278: SAP is not started yet
+<6>[   56.266917] [scheduler_threa][0x438dafe5][22:46:53.883539] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   56.266917] 
+<4>[   56.267015] [scheduler_threa][0x438db78d][22:46:53.883640] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   56.357160] [scheduler_threa][0x43a82097][22:46:53.973787] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   56.357160] 
+<4>[   56.357252] [scheduler_threa][0x43a827d7][22:46:53.973884] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   56.497353] [scheduler_threa][0x43d130ea][22:46:54.113952] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   56.497353] 
+<4>[   56.497446] [scheduler_threa][0x43d13a59][22:46:54.114077] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   56.590196] [scheduler_threa][0x43ec665a][22:46:54.206824] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   56.590196] 
+<4>[   56.590287] [scheduler_threa][0x43ec6d81][22:46:54.206919] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   56.690021] [scheduler_threa][0x4409a531][22:46:54.306648] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   56.690021] 
+<4>[   56.690297] [scheduler_threa][0x4409b9fd][22:46:54.306926] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   56.810243] [scheduler_threa][0x442cddde][22:46:54.426871] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   56.810243] 
+<4>[   56.810335] [scheduler_threa][0x442ce512][22:46:54.426967] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   56.922910] [scheduler_threa][0x444ddfcf][22:46:54.539536] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   56.922910] 
+<4>[   56.922961] [scheduler_threa][0x444de40b][22:46:54.539593] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   57.037797] [scheduler_threa][0x446f8856][22:46:54.654424] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   57.037797] 
+<4>[   57.037851] [scheduler_threa][0x446f8cb2][22:46:54.654482] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   57.118172] [scheduler_threa][0x44871479][22:46:54.734799] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   57.118172] 
+<4>[   57.118263] [scheduler_threa][0x44871bb0][22:46:54.734895] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   57.232712] [scheduler_threa][0x44a8a2f6][22:46:54.849339] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   57.232712] 
+<4>[   57.232801] [scheduler_threa][0x44a8aa0b][22:46:54.849433] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   57.360566] [scheduler_threa][0x44ce181a][22:46:54.977194] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   57.360566] 
+<4>[   57.360635] [scheduler_threa][0x44ce1d97][22:46:54.977267] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   57.465623] [scheduler_threa][0x44ecdf5c][22:46:55.082251] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   57.465623] 
+<6>[   57.473414] bridge0: port 2(eth0) entered blocking state
+<4>[   57.479251] [scheduler_threa][0x44ece392][22:46:55.082307] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   57.515415] [scheduler_threa][0x44fb75b3][22:46:55.132042] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   57.515415] 
+<4>[   57.515503] [scheduler_threa][0x44fb7caa][22:46:55.132135] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   57.573742] bridge0: port 2(eth0) entered disabled state
+<1>[   57.575658] qcom-emac-dwc-eqos 20000.qcom,emac: State change - rxcsum enable
+<6>[   57.607340] device eth0 entered promiscuous mode
+<6>[   57.628540] [scheduler_threa][0x451c9a12][22:46:55.245167] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   57.628540] 
+<4>[   57.628612] [scheduler_threa][0x451c9fd1][22:46:55.245243] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   57.715249] [scheduler_threa][0x45360152][22:46:55.331877] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   57.715249] 
+<4>[   57.715340] [scheduler_threa][0x4536087b][22:46:55.331972] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   57.787114] [scheduler_threa][0x454b0f28][22:46:55.403741] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   57.787114] 
+<4>[   57.787205] [scheduler_threa][0x454b1655][22:46:55.403837] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   57.927347] [scheduler_threa][0x45742491][22:46:55.543973] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   57.927347] 
+<4>[   57.927438] [scheduler_threa][0x45742bce][22:46:55.544070] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   58.050292] [scheduler_threa][0x45982980][22:46:55.666919] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   58.050292] 
+<4>[   58.050384] [scheduler_threa][0x459830b7][22:46:55.667015] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   58.187621] [scheduler_threa][0x45c06529][22:46:55.804248] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   58.187621] 
+<4>[   58.187707] [scheduler_threa][0x45c06959][22:46:55.804304] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   58.298878] [scheduler_threa][0x45e0fd7f][22:46:55.915506] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   58.298878] 
+<4>[   58.298969] [scheduler_threa][0x45e104a6][22:46:55.915601] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   58.389087] [scheduler_threa][0x45fb6b29][22:46:56.005714] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   58.389087] 
+<4>[   58.389152] [scheduler_threa][0x45fb704e][22:46:56.005784] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   58.466527] [scheduler_threa][0x46121b29][22:46:56.083154] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Sorted Spectrum Channels Weight
+<6>[   58.466608] [scheduler_threa][0x46122188][22:46:56.083239] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=44 Weight= 0 rssi=-100 bssCount=0
+<6>[   58.623647] [scheduler_threa][0x4640228f][22:46:56.240268] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=157 Weight= 28416 rssi=-65 bssCount=8
+<6>[   58.623733] [scheduler_threa][0x464029e6][22:46:56.240365] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=3 Weight= 106656 rssi=-100 bssCount=0
+<6>[   58.682535] [scheduler_threa][0x46516342][22:46:56.299157] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=4 Weight= 106656 rssi=-100 bssCount=0
+<6>[   58.682585] [scheduler_threa][0x465167d1][22:46:56.299217] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=5 Weight= 106656 rssi=-100 bssCount=0
+<6>[   58.764015] [scheduler_threa][0x4669423e][22:46:56.380637] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=6 Weight= 106656 rssi=-100 bssCount=0
+<6>[   58.764102] [scheduler_threa][0x4669498f][22:46:56.380733] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=7 Weight= 106656 rssi=-100 bssCount=0
+<6>[   58.849303] [scheduler_threa][0x46823edb][22:46:56.465925] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=8 Weight= 106656 rssi=-100 bssCount=0
+<6>[   58.849653] [scheduler_threa][0x4682598b][22:46:56.466280] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=9 Weight= 106656 rssi=-100 bssCount=0
+<6>[   58.928345] [scheduler_threa][0x46996413][22:46:56.544928] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=10 Weight= 106656 rssi=-100 bssCount=0
+<6>[   58.928433] [scheduler_threa][0x46996e58][22:46:56.545064] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=11 Weight= 106656 rssi=-100 bssCount=0
+<6>[   59.001618] [scheduler_threa][0x46aede63][22:46:56.618239] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=36 Weight= 106656 rssi=-100 bssCount=0
+<6>[   59.001708] [scheduler_threa][0x46aee601][22:46:56.618339] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=40 Weight= 106656 rssi=-100 bssCount=0
+<6>[   59.097841] [scheduler_threa][0x46cb0f30][22:46:56.714463] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=1 Weight= 106656 rssi=-100 bssCount=0
+<6>[   59.097912] [scheduler_threa][0x46cb153d][22:46:56.714543] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=48 Weight= 106656 rssi=-100 bssCount=0
+<6>[   59.159343] [scheduler_threa][0x46dd13e4][22:46:56.775965] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=2 Weight= 106656 rssi=-100 bssCount=0
+<6>[   59.159412] [scheduler_threa][0x46dd19d3][22:46:56.776043] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=165 Weight= 106656 rssi=-100 bssCount=0
+<6>[   59.232652] [scheduler_threa][0x46f28dfc][22:46:56.849273] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=149 Weight= 106656 rssi=-35 bssCount=8
+<6>[   59.232714] [scheduler_threa][0x46f29374][22:46:56.849345] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=161 Weight= 106656 rssi=-45 bssCount=8
+<6>[   59.346565] [scheduler_threa][0x4713ed6c][22:46:56.963186] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=153 Weight= 106656 rssi=-55 bssCount=8
+<6>[   59.346658] [scheduler_threa][0x4713f543][22:46:56.963290] wlan: [2193:I:SAP] Best channel so far is: 44
+<6>[   59.399441] [scheduler_threa][0x47236bc4][22:46:57.016069] wlan: [2193:I:SAP] Best channel so far is: 44
+<6>[   59.399541] [scheduler_threa][0x4723737e][22:46:57.016172] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   59.399541] 
+<6>[   59.444900] nvtl_mem_diag.s (948): drop_caches: 3
+<4>[   59.447888] [scheduler_threa][0x47319cc9][22:46:57.064511] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<3>[   59.455676] [hostapd][0x4733e50f][22:46:57.072300] wlan: [2357:E:HDD] __wlan_hdd_cfg80211_get_txpower: 2278: SAP is not started yet
+<3>[   59.581792] [kworker/0:2][0x4758d7b0][22:46:57.198415] wlan: [199:E:HDD] wlan_hdd_cfg80211_scan_block: 297: Vendor scan aborted. Null result sent
+<3>[   59.587603] [hostapd][0x475a8b54][22:46:57.204224] wlan: [2357:E:HDD] __wlan_hdd_cfg80211_get_txpower: 2278: SAP is not started yet
+<3>[   60.209696] [hostapd][0x4810cc51][22:46:57.826318] wlan: [2357:E:SAP] wlansap_set_dfs_preferred_channel_location: 2172: sapdfs:NOT JAPAN REG, Invalid Set preferred chans location
+<6>[   60.300153] [hostapd][0x482b164c][22:46:57.916050] wlan: [2357:I:SAP] wlansap_update_sap_config_add_ie: 2228: update_type: 1
+<6>[   60.302713] [hostapd][0x482c0ca0][22:46:57.919335] wlan: [2357:I:SAP] 00000000: 7f 04 04 00 00 02 dd 1d 00 50 f2 04 10 4a 00 01
+<6>[   60.354149] [hostapd][0x483b1e4f][22:46:57.970771] wlan: [2357:I:SAP] 00000010: 10 10 44 00 01 02 10 3c 00 01 03 10 49 00 06 00
+<6>[   60.354226] [hostapd][0x483b24ea][22:46:57.970858] wlan: [2357:I:SAP] 00000020: 37 2a 00 01 20 ff 1e 23 00 00 00 00 00 00 00 00
+<6>[   60.432946] [hostapd][0x4852340e][22:46:58.049568] wlan: [2357:I:SAP] 00000030: 00 80 03 00 00 00 00 00 00 00 00 00 00 00 00 00
+<6>[   60.433024] [hostapd][0x48523ab5][22:46:58.049656] wlan: [2357:I:SAP] 00000040: 00 00 00 00 00 ff 07 24 0c 01 00 0f 00 00
+<6>[   60.517078] [hostapd][0x486ad9f7][22:46:58.133700] wlan: [2357:I:SAP] wlansap_update_sap_config_add_ie: 2228: update_type: 2
+<6>[   60.517159] [hostapd][0x486ae0d0][22:46:58.133790] wlan: [2357:I:SAP] 00000000: 7f 04 04 00 00 02 dd 73 00 50 f2 04 10 4a 00 01
+<6>[   60.630216] [hostapd][0x488bff52][22:46:58.246838] wlan: [2357:I:SAP] 00000010: 10 10 44 00 01 02 10 3b 00 01 03 10 47 00 10 be
+<6>[   60.630294] [hostapd][0x488c05fb][22:46:58.246925] wlan: [2357:I:SAP] 00000020: c4 aa 70 be c4 be c4 be c4 72 62 52 42 32 22 10
+<6>[   60.727053] [hostapd][0x48a85e2e][22:46:58.343676] wlan: [2357:I:SAP] 00000030: 21 00 04 4e 56 54 4c 10 23 00 07 51 43 41 36 33
+<6>[   60.727132] [hostapd][0x48a864ca][22:46:58.343763] wlan: [2357:I:SAP] 00000040: 39 31 10 24 00 03 31 32 33 10 42 00 05 31 32 33
+<6>[   60.838302] [hostapd][0x48c8f5d8][22:46:58.454924] wlan: [2357:I:SAP] 00000050: 34 35 10 54 00 08 00 06 00 50 f2 04 00 01 10 11
+<6>[   60.838380] [hostapd][0x48c8fc69][22:46:58.455011] wlan: [2357:I:SAP] 00000060: 00 04 4d 49 46 49 10 08 00 02 21 0c 10 3c 00 01
+<3>[   60.960362] [kworker/0:2][0x48ecb84c][22:46:58.576984] wlan: [199:E:dfs] WLAN_DEBUG_DFS_ALWAYS : utils_dfs_init_nol: 958: no nol in pld
+<6>[   60.960434] [kworker/0:2][0x48ecbe82][22:46:58.577066] wlan: [199:I:SAP] sap_get_channel_list: 3304: startChannel 1, EndChannel 11, ch_width 0, HW:16
+<6>[   60.979672] [hostapd][0x48f25de8][22:46:58.596259] wlan: [2357:I:SAP] 00000070: 03 10 49 00 06 00 37 2a 00 01 20
+<6>[   61.043921] [hostapd][0x49053327][22:46:58.660542] wlan: [2357:I:SAP] wlansap_update_sap_config_add_ie: 2228: update_type: 3
+<6>[   61.044001] [hostapd][0x49053a09][22:46:58.660633] wlan: [2357:I:SAP] 00000000: 7f 04 04 00 00 02 dd 18 00 50 f2 04 10 4a 00 01
+<6>[   61.055065] [kworker/0:2][0x4908774c][22:46:58.671690] wlan: [199:I:SAP] sap_get_channel_list: 3313: expanded startChannel 1,EndChannel 11
+<6>[   61.216620] [hostapd][0x4937cb9a][22:46:58.833242] wlan: [2357:I:SAP] 00000010: 10 10 3b 00 01 03 10 49 00 06 00 37 2a 00 01 20
+<3>[   61.216864] [hostapd][0x4937dead][22:46:58.833495] wlan: [2357:E:dfs] WLAN_DEBUG_DFS_ALWAYS : utils_dfs_init_nol: 958: no nol in pld
+<6>[   61.229859] [kworker/0:2][0x493bac8d][22:46:58.846481] wlan: [199:I:SAP] sap_get_channel_list: 3317: band_start_ch 0, band_end_ch 13
+<6>[   61.420532] [kworker/0:2][0x4973897a][22:46:59.037159] wlan: [199:I:SAP] sap_get_channel_list: 3431: 1 1 added to ACS ch range
+<6>[   61.420645] [kworker/0:2][0x49739254][22:46:59.037277] wlan: [199:I:SAP] sap_get_channel_list: 3431: 2 6 added to ACS ch range
+<6>[   61.439818] [hostapd][0x49792ff7][22:46:59.056445] wlan: [2357:I:SAP] sap_get_cac_dur_dfs_region: 454: sapdfs: default cac duration
+<6>[   61.483345] [hostapd][0x4985f050][22:46:59.099970] wlan: [2357:I:SAP] sap_dfs_set_current_channel: 541: freq=5220, channel=44, seg0=42, seg1=0, flags=0x800100, ext flags=0x0
+<3>[   61.483518] [hostapd][0x4985fdae][22:46:59.100148] wlan: [2357:E:SER] wlan_serialization_peek_head_pending_cmd_using_psoc: 206: Empty Queue
+<6>[   61.642513] [kworker/0:2][0x49b49221][22:46:59.259141] wlan: [199:I:SAP] sap_get_channel_list: 3431: 3 11 added to ACS ch range
+<6>[   61.647016] [kworker/0:2][0x49b5e3f1][22:46:59.263645] wlan: [199:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   61.647016] 
+<4>[   61.744247] [kworker/0:2][0x49d25f97][22:46:59.360868] wlan: [199:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   61.777503] [scheduler_threa][0x49dc1e36][22:46:59.394129] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   61.777503] 
+<4>[   61.777600] [scheduler_threa][0x49dc2576][22:46:59.394225] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   62.040426] [scheduler_threa][0x4a292596][22:46:59.657053] wlan: [2193:I:DP] peer ec12a000, local id 1
+<6>[   62.057771] [soft_irq][0x4a2e39e0][22:46:59.674393] wlan: [0:I:TXRX] HTT_T2H_MSG_TYPE_PEER_MAP msg for peer id 8 vdev id 0 n
+<3>[   62.057866] [soft_irq][0x4a2e41f0][22:46:59.674498] wlan: [0:E:DP] dp_peer_find_add_id: peer ec12a000 ID 8 vid 0 mac 18:ee:86:4f:ee:22
+<6>[   62.068174] [soft_irq][0x4a3146db][22:46:59.684804] wlan: [0:I:DP] dp_peer_find_add_id: ref_cnt: 2
+<3>[   62.080006] [soft_irq][0x4a34be4f][22:46:59.696637] wlan: [0:E:DP] dp_peer_map_ast: peer ec12a000 ID 18 vid 0 mac 18:ee:86:4f:ee:22
+<6>[   62.108594] [scheduler_threa][0x4a3d1a4c][22:46:59.725170] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   62.108594] 
+<4>[   62.108828] [scheduler_threa][0x4a3d2fc9][22:46:59.725457] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   62.400386] [scheduler_threa][0x4a929a91][22:47:00.017013] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   62.400386] 
+<4>[   62.400478] [scheduler_threa][0x4a92a1cd][22:47:00.017110] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   62.630221] [scheduler_threa][0x4ad5f022][22:47:00.246847] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   62.630221] 
+<4>[   62.630345] [scheduler_threa][0x4ad5f770][22:47:00.246945] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   62.876054] [scheduler_threa][0x4b1df5a4][22:47:00.492681] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   62.876054] 
+<4>[   62.876146] [scheduler_threa][0x4b1dfce4][22:47:00.492778] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   63.220216] [scheduler_threa][0x4b82c9c6][22:47:00.836843] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   63.220216] 
+<4>[   63.220308] [scheduler_threa][0x4b82d100][22:47:00.836939] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   63.550180] [scheduler_threa][0x4be3751a][22:47:01.166807] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   63.550180] 
+<4>[   63.550272] [scheduler_threa][0x4be37c62][22:47:01.166904] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   63.858338] [scheduler_threa][0x4c3dbce7][22:47:01.474965] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   63.858338] 
+<4>[   63.858429] [scheduler_threa][0x4c3dc422][22:47:01.475061] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   64.144734] [scheduler_threa][0x4c91a4a4][22:47:01.761361] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   64.144734] 
+<4>[   64.144788] [scheduler_threa][0x4c91a901][22:47:01.761419] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   64.511654] [scheduler_threa][0x4cfd23a6][22:47:02.128281] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   64.511654] 
+<4>[   64.511746] [scheduler_threa][0x4cfd2ae5][22:47:02.128378] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   64.893044] [scheduler_threa][0x4d6cdfda][22:47:02.509670] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   64.893044] 
+<4>[   64.893135] [scheduler_threa][0x4d6ce716][22:47:02.509767] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   65.223564] [scheduler_threa][0x4dcdb4ec][22:47:02.840191] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   65.223564] 
+<4>[   65.223688] [scheduler_threa][0x4dcdbc26][22:47:02.840288] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   65.590278] [scheduler_threa][0x4e392478][22:47:03.206905] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   65.590278] 
+<4>[   65.590370] [scheduler_threa][0x4e392bb4][22:47:03.207002] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   65.957962] [scheduler_threa][0x4ea4dcc2][22:47:03.574589] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   65.957962] 
+<4>[   65.958054] [scheduler_threa][0x4ea4e400][22:47:03.574686] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   66.341818] [scheduler_threa][0x4f1551db][22:47:03.958444] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   66.341818] 
+<4>[   66.341947] [scheduler_threa][0x4f15592c][22:47:03.958541] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   66.833041] [scheduler_threa][0x4fa53bab][22:47:04.449668] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   66.833041] 
+<4>[   66.833132] [scheduler_threa][0x4fa542e9][22:47:04.449764] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   67.311309] [scheduler_threa][0x503159b9][22:47:04.927935] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   67.311309] 
+<4>[   67.311399] [scheduler_threa][0x503160da][22:47:04.928031] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   67.670185] [scheduler_threa][0x509a7d81][22:47:05.286813] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   67.670185] 
+<4>[   67.670278] [scheduler_threa][0x509a84b9][22:47:05.286909] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   67.971448] [scheduler_threa][0x50f2c032][22:47:05.588075] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   67.971448] 
+<4>[   67.971504] [scheduler_threa][0x50f2c4bb][22:47:05.588136] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   68.498086] [scheduler_threa][0x518d07fe][22:47:06.114686] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   68.498086] 
+<4>[   68.498177] [scheduler_threa][0x518d113c][22:47:06.114809] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   68.930206] [scheduler_threa][0x520ba309][22:47:06.546833] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   68.930206] 
+<4>[   68.930299] [scheduler_threa][0x520baa59][22:47:06.546930] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   69.214417] [scheduler_threa][0x525ee6d0][22:47:06.831043] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   69.214417] 
+<4>[   69.214508] [scheduler_threa][0x525eee11][22:47:06.831140] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<6>[   69.620191] [scheduler_threa][0x52d5c768][22:47:07.236812] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Sorted Spectrum Channels Weight
+<6>[   69.620275] [scheduler_threa][0x52d5ce89][22:47:07.236906] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=11 Weight= 6771 rssi=-51 bssCount=1
+<6>[   69.990797] [scheduler_threa][0x53425ae0][22:47:07.607418] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=1 Weight= 9546 rssi=-33 bssCount=3
+<6>[   69.990884] [scheduler_threa][0x53426231][22:47:07.607515] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=6 Weight= 10434 rssi=-35 bssCount=8
+<3>[   70.240132] [soft_irq][0x538b66f6][22:47:07.856753] wlan: [0:E:SER] wlan_serialization_timer_handler: 630: active cmd timeout for cmd_type[26] vdev[0]
+<6>[   70.423107] [scheduler_threa][0x53c10225][22:47:08.039729] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=36 Weight= 26664 rssi=-100 bssCount=0
+<6>[   70.423158] [scheduler_threa][0x53c106b8][22:47:08.039789] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=40 Weight= 26664 rssi=-100 bssCount=0
+<6>[   70.768251] [scheduler_threa][0x54261d41][22:47:08.384836] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=44 Weight= 26664 rssi=-100 bssCount=0
+<6>[   70.768341] [scheduler_threa][0x5426276a][22:47:08.384972] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=48 Weight= 26664 rssi=-100 bssCount=0
+<3>[   70.880191] [hostapd][0x5446eb6e][22:47:08.496813] wlan: [2357:E:HDD] wlan_hdd_cfg80211_start_bss: 5637: qdf wait for single_event failed!!
+<3>[   70.880269] [hostapd][0x5446f212][22:47:08.496900] wlan: [2357:E:SME] sme_get_command_q_status: 8268: WLAN_BUG_RCA: Currently smeCmdActiveList has command (0x10001)
+<6>[   71.037061] [scheduler_threa][0x5474e0b6][22:47:08.653683] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=149 Weight= 26664 rssi=-100 bssCount=0
+<6>[   71.037117] [scheduler_threa][0x5474e5a2][22:47:08.653748] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=153 Weight= 26664 rssi=-100 bssCount=0
+<3>[   71.213499] [hostapd][0x54a89184][22:47:08.830121] wlan: [2357:E:SME] sme_get_command_q_status: 8278: Currently smeCmdPendingList has 0 commands
+<3>[   71.213637] [hostapd][0x54a89cb9][22:47:08.830269] wlan: [2357:E:HDD] hdd_hostapd_sap_event_cb: 1845: startbss event failed!!
+<6>[   71.423099] [scheduler_threa][0x54e5f97b][22:47:09.039720] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=157 Weight= 26664 rssi=-100 bssCount=0
+<6>[   71.423186] [scheduler_threa][0x54e600dd][22:47:09.039817] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=161 Weight= 26664 rssi=-100 bssCount=0
+<3>[   71.596775] [hostapd][0x5518db37][22:47:09.213396] wlan: [2357:E:HDD] wlan_hdd_restore_channels: 4703: channel list is NULL or num channels are zero
+<3>[   71.600517] [hostapd][0x5519f45a][22:47:09.217144] wlan: [2357:E:SAP] sap_fsm_state_init: 2392: in state SAP_INIT, event msg 6
+<6>[   71.611879] [scheduler_threa][0x551d480e][22:47:09.228501] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=165 Weight= 26664 rssi=-100 bssCount=0
+<6>[   71.893059] [scheduler_threa][0x556fa87c][22:47:09.509680] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=7 Weight= 26664 rssi=-45 bssCount=9
+<6>[   71.893118] [scheduler_threa][0x556fadbf][22:47:09.509749] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=8 Weight= 26664 rssi=-55 bssCount=9
+<3>[   71.930174] [hostapd][0x557a882e][22:47:09.546796] wlan: [2357:E:HDD] __wlan_hdd_cfg80211_start_ap: 6446: Error Start bss Failed
+<12>[   72.062451] [MIFI_TIMESTAMP] - 
+<12>[   72.063973] WIFI Successfully detached wlan0 interface to bridge.
+<12>[   72.064014] 
+<3>[   72.162685] [soft_irq][0x55bea660][22:47:09.779306] wlan: [0:E:SCH] scheduler_watchdog_notify: 58: WLAN_BUG_RCA: Callback scm_scan_event_handler+0x0/0x454 [wlan] (type 0x0) exceeded its allotted time of 10s
+<6>[   72.165357] [scheduler_threa][0x55bf6ef7][22:47:09.781980] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=9 Weight= 26664 rssi=-65 bssCount=9
+<12>[   72.333835] [MIFI_TIMESTAMP] - 
+<12>[   72.333849] WIFI Successfully detached wlan0 interface to bridge.
+<12>[   72.333889] 
+<6>[   72.386516] [scheduler_threa][0x560039c8][22:47:10.003137] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=10 Weight= 26664 rssi=-61 bssCount=9
+<6>[   72.386604] [scheduler_threa][0x56004132][22:47:10.003235] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=5 Weight= 26664 rssi=-45 bssCount=11
+<6>[   72.640279] [scheduler_threa][0x564a920b][22:47:10.256901] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=3 Weight= 26664 rssi=-53 bssCount=11
+<6>[   72.640408] [scheduler_threa][0x564a996b][22:47:10.256998] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=2 Weight= 26664 rssi=-43 bssCount=11
+<3>[   72.690833] [hostapd][0x565961d9][22:47:10.307457] wlan: [2357:E:HDD] __wlan_hdd_cfg80211_change_iface: 15722: change mode fail -16
+<3>[   72.690995] [hostapd][0x56596e60][22:47:10.307624] wlan: [2357:E:HDD] __wlan_hdd_cfg80211_get_txpower: 2278: SAP is not started yet
+<6>[   72.843082] [scheduler_threa][0x5685fc49][22:47:10.459704] wlan: [2193:I:SAP] In sap_sort_chl_weight_all, Channel=4 Weight= 26664 rssi=-55 bssCount=11
+<6>[   72.843173] [scheduler_threa][0x568603ec][22:47:10.459805] wlan: [2193:I:SAP] Best channel so far is: 11
+<3>[   72.870633] [hostapd][0x568e0ea0][22:47:10.487255] wlan: [2357:E:HDD] __wlan_hdd_cfg80211_get_txpower: 2278: SAP is not started yet
+<3>[   72.950487] [hostapd][0x56a57413][22:47:10.567113] wlan: [2357:E:REGULATORY] reg_run_11d_state_machine: 198: No valid vdev for 11d scan command
+<6>[   72.990344] [scheduler_threa][0x56b1215d][22:47:10.606971] wlan: [2193:I:QDF] ptt_sock_send_msg_to_app:Failed sending Msg Type [0x5050] to pid[-1]
+<6>[   72.990344] 
+<4>[   72.990412] [scheduler_threa][0x56b126d0][22:47:10.607043] wlan: [2193:W:HDD] Ptt Socket error sending message to the app!!
+<1>[   73.150486] [scheduler_threa][0x56e00bd2][22:47:10.767110] wlan: [2193:F:WMA] wma_vdev_resp_timer: request 4133 is timed out for vdev_id - 0
+<1>[   73.150608] [scheduler_threa][0x56e012a0][22:47:10.767201] wlan: [2193:F:WMA] wma_handle_add_bss_req_timeout: WMA_ADD_BSS_REQ timedout
+<3>[   73.263112] [scheduler_threa][0x57010a8b][22:47:10.879734] wlan: [2193:E:WMA] WMA_ADD_BSS_REQ timed out, triggering recovery
+<7>[   73.263282] cnss: Start to dump shadow registers
+<7>[   73.263297] cnss: Config PCIe remap window register to 0x4000003c
+<7>[   73.264124] cnss: Setting MHI state: TRIGGER_RDDM(7)
+<3>[   73.404324] [E][mhi_intvec_threaded_handlr] RDDM event occurred!
+<7>[   73.404378] cnss: MHI status cb is called with reason RDDM(5)
+<7>[   73.404388] cnss: Update driver status: 4
+<7>[   73.404406] cnss: Posting event: RECOVERY(9), state: 0x107 flags: 0x0
+<7>[   73.404415] cnss: PM stay awake, state: 0x107, count: 1
+<7>[   73.404426] cnss: PM relax, state: 0x107, count: 0
+<3>[   73.404609] [hostapd][0x572a7f91][22:47:11.021240] wlan: [2357:E:SAP] wlansap_owe_cleanup: 279: Failed to find assoc ind list
+<7>[   73.410511] cnss: PM stay awake, state: 0x107, count: 1
+<7>[   73.410528] cnss: Processing driver event: RECOVERY(9), state: 0x107
+<7>[   73.410536] cnss: Driver recovery is triggered with reason: RDDM(2)
+<7>[   73.410643] cnss: Start to dump shadow registers
+<7>[   73.411443] cnss: Config PCIe remap window register to 0x40000038
+<7>[   73.411454] cnss: QDSSCSR_ETRIRQCTRL[0x1c0106c] = 0x0
+<7>[   73.411474] cnss: QDSSCSR_PRESERVEETF[0x1c01070] = 0x0
+<7>[   73.411492] cnss: QDSSCSR_PRESERVEETR0[0x1c01074] = 0x0
+<7>[   73.411509] cnss: QDSSCSR_PRESERVEETR1[0x1c01078] = 0x0
+<7>[   73.411530] cnss: Config PCIe remap window register to 0x40000036
+<7>[   73.411545] cnss: Config PCIe remap window register to 0x4000003c
+<7>[   73.411580] cnss: Config PCIe remap window register to 0x40000032
+<7>[   73.411591] cnss: TCSR_PBL_LOGGING: 0xef150400 PCIE_BHI_ERRDBG: Start: 0x0158d7dc Size:0x0000022e
+<7>[   73.411598] cnss: PBL_WLAN_BOOT_CFG: 0x00000201 PBL_BOOTSTRAP_STATUS: 0x00000042
+<7>[   73.411603] cnss: Dumping PBL log data
+<7>[   73.411615] cnss: Config PCIe remap window register to 0x40000028
+<7>[   73.411623] cnss: SRAM[0x1403d58] = 0x0
+<7>[   73.411639] cnss: SRAM[0x1403d5c] = 0x0
+<7>[   73.411655] cnss: SRAM[0x1403d60] = 0x0
+<7>[   73.411671] cnss: SRAM[0x1403d64] = 0x0
+<7>[   73.411686] cnss: SRAM[0x1403d68] = 0x0
+<7>[   73.411702] cnss: SRAM[0x1403d6c] = 0x0
+<7>[   73.411717] cnss: SRAM[0x1403d70] = 0x0
+<7>[   73.411733] cnss: SRAM[0x1403d74] = 0x0
+<7>[   73.411749] cnss: SRAM[0x1403d78] = 0x0
+<7>[   73.411764] cnss: SRAM[0x1403d7c] = 0x0
+<7>[   73.411780] cnss: SRAM[0x1403d80] = 0x0
+<7>[   73.411796] cnss: SRAM[0x1403d84] = 0x0
+<7>[   73.411811] cnss: SRAM[0x1403d88] = 0x0
+<7>[   73.411827] cnss: SRAM[0x1403d8c] = 0x0
+<7>[   73.411842] cnss: SRAM[0x1403d90] = 0x0
+<7>[   73.411857] cnss: SRAM[0x1403d94] = 0x0
+<7>[   73.411872] cnss: SRAM[0x1403d98] = 0x0
+<7>[   73.411888] cnss: SRAM[0x1403d9c] = 0x0
+<7>[   73.411903] cnss: SRAM[0x1403da0] = 0x0
+<7>[   73.411918] cnss: SRAM[0x1403da4] = 0x0
+<3>[   73.411923] cnss: Invalid SBL log data
+<3>[   73.422218] [E][mhi_process_ctrl_ev_ring] No EV access, PM_STATE:Device Error Detect
+<3>[   73.647070] [hostapd][0x577187a8][22:47:11.263695] wlan: [2357:E:HDD] __hdd_hostapd_open: 428: WLAN is currently recovering; Please try again.
+<3>[   76.085827] [E][mhi_intvec_threaded_handlr] MHI system error detected
+<7>[   76.085985] cnss: Collect FW image dump segment, nentries 8
+<7>[   76.085996] cnss: Seg: 0, va: f6801000, dma: 0xa0580000, size: 0x80000
+<7>[   76.086022] cnss: Mini dump region: FBC_0, va: f6801000, pa: 0xb3981000, size: 0x80000
+<7>[   76.086031] cnss: Seg: 1, va: f6882000, dma: 0xa0600000, size: 0x80000
+<7>[   76.086044] cnss: Mini dump region: FBC_1, va: f6882000, pa: 0xb398a000, size: 0x80000
+<7>[   76.086051] cnss: Seg: 2, va: f6903000, dma: 0xa0680000, size: 0x80000
+<7>[   76.086063] cnss: Mini dump region: FBC_2, va: f6903000, pa: 0xb39fa000, size: 0x80000
+<7>[   76.086070] cnss: Seg: 3, va: f6b81000, dma: 0xa0700000, size: 0x80000
+<7>[   76.086082] cnss: Mini dump region: FBC_3, va: f6b81000, pa: 0xb3a7a000, size: 0x80000
+<7>[   76.086089] cnss: Seg: 4, va: f6c39000, dma: 0xa0780000, size: 0x80000
+<7>[   76.086101] cnss: Mini dump region: FBC_4, va: f6c39000, pa: 0xb3afa000, size: 0x80000
+<7>[   76.086108] cnss: Seg: 5, va: f6cba000, dma: 0xa0800000, size: 0x80000
+<7>[   76.086120] cnss: Mini dump region: FBC_5, va: f6cba000, pa: 0xb3b7a000, size: 0x80000
+<7>[   76.086127] cnss: Seg: 6, va: f6d3b000, dma: 0xa0880000, size: 0x80000
+<7>[   76.086155] cnss: Mini dump region: FBC_6, va: f6d3b000, pa: 0xb3bfa000, size: 0x80000
+<7>[   76.086163] cnss: Seg: 7, va: f59a8000, dma: 0xa0900000, size: 0x70
+<7>[   76.086175] cnss: Mini dump region: FBC_7, va: f59a8000, pa: 0xb307a000, size: 0x70
+<7>[   76.086182] cnss: Collect RDDM image dump segment, nentries 9
+<7>[   76.086188] cnss: Seg: 0, va: f5b01000, dma: 0xa0080000, size: 0x80000
+<7>[   76.086206] cnss: Mini dump region: RDDM_0, va: f5b01000, pa: 0xb400d000, size: 0x80000
+<7>[   76.086213] cnss: Seg: 1, va: f5b82000, dma: 0xa0100000, size: 0x80000
+<7>[   76.086226] cnss: Mini dump region: RDDM_1, va: f5b82000, pa: 0xb3f21000, size: 0x80000
+<7>[   76.086233] cnss: Seg: 2, va: f5c03000, dma: 0xa0180000, size: 0x80000
+<7>[   76.086245] cnss: Mini dump region: RDDM_2, va: f5c03000, pa: 0xb3f41000, size: 0x80000
+<7>[   76.086252] cnss: Seg: 3, va: f5c84000, dma: 0xa0200000, size: 0x80000
+<7>[   76.086263] cnss: Mini dump region: RDDM_3, va: f5c84000, pa: 0xb3f81000, size: 0x80000
+<7>[   76.086271] cnss: Seg: 4, va: f5d05000, dma: 0xa0280000, size: 0x80000
+<7>[   76.086282] cnss: Mini dump region: RDDM_4, va: f5d05000, pa: 0xb4701000, size: 0x80000
+<7>[   76.086289] cnss: Seg: 5, va: f5d86000, dma: 0xa0300000, size: 0x80000
+<7>[   76.086300] cnss: Mini dump region: RDDM_5, va: f5d86000, pa: 0xb5b01000, size: 0x80000
+<7>[   76.086307] cnss: Seg: 6, va: f5e07000, dma: 0xa0380000, size: 0x80000
+<7>[   76.086318] cnss: Mini dump region: RDDM_6, va: f5e07000, pa: 0xb5b81000, size: 0x80000
+<7>[   76.086326] cnss: Seg: 7, va: f5e88000, dma: 0xa0400000, size: 0x80000
+<7>[   76.086338] cnss: Mini dump region: RDDM_7, va: f5e88000, pa: 0xb4601000, size: 0x80000
+<7>[   76.086345] cnss: Seg: 8, va: f59a6000, dma: 0xa0480000, size: 0x80
+<7>[   76.086355] cnss: Mini dump region: RDDM_8, va: f59a6000, pa: 0xb4681000, size: 0x80
+<7>[   76.086361] cnss: Collect remote heap dump segment
+<7>[   76.086367] cnss: Seg: 0, va: f76a5000, dma: 0xa0c00000, size: 0x39c000
+<7>[   76.086392] cnss: Mini dump region: RHEAP_0, va: f76a5000, pa: 0xbc603000, size: 0x39c000
+<7>[   76.086400] cnss: Setting MHI state: RDDM_DONE(9)
+<6>[   76.086417] subsys-restart: subsystem_restart_dev(): Restart sequence requested for wlan, restart_level = SYSTEM.
+<3>[   76.091640] [scheduler_threa][0x5a3db6e1][22:47:13.708271] wlan: [2193:E:WMA] wma_remove_peer_on_add_bss_failure: ADD BSS failure 15
+<7>[   76.115980] cnss: PM relax, state: 0x307, count: 0
+<6>[   76.120925] [scheduler_threa][0x5a464a89][22:47:13.737547] wlan: [2193:I:DP] peer ec12a000 mac 0x18 0xee 0x86 0x4f 0xee 0x22
+<3>[   76.121097] [soft_irq][0x5a46583d][22:47:13.737729] wlan: [0:E:OBJMGR] wlan_objmgr_vdev_try_get_ref: 947: [Ref id: 8] vdev(0) is not in Created state(6)
+<3>[   76.160344] [scheduler_threa][0x5a51d41e][22:47:13.776929] wlan: [2193:E:WMA] Obj vdev not found. Unable to remove peer
+<3>[   76.160438] [scheduler_threa][0x5a51deb6][22:47:13.777069] wlan: [2193:E:SER] wlan_serialization_generic_timer_cb: 578: active cmd timeout for cmd_type[26] vdev[0]
+<3>[   76.197020] [soft_irq][0x5a5c94eb][22:47:13.813633] wlan: [0:E:OBJMGR] wlan_objmgr_vdev_try_get_ref: 947: [Ref id: 9] vdev(0) is not in Created state(6)
+<3>[   76.197153] [scheduler_threa][0x5a5ca038][22:47:13.813782] wlan: [2193:E:SER] wlan_serialization_find_and_start_timer: 811: Unbale to get vdev reference
+<0>[   76.220575] Kernel panic - not syncing: subsys-restart: Resetting the SoC - wlan crashed.
+<4>[   76.223396] CPU: 0 PID: 199 Comm: kworker/0:2 Tainted: G        W  O    4.14.206-perf #1
+<4>[   76.231459] Hardware name: Qualcomm Technologies, Inc. SDXPRAIRIE (Flattened Device Tree)
+<4>[   76.239634] Workqueue: events device_restart_work_hdlr
+<4>[   76.247694] [<c010f44c>] (unwind_backtrace) from [<c010c078>] (show_stack+0x10/0x14)
+<4>[   76.252732] [<c010c078>] (show_stack) from [<c01204b0>] (panic+0x180/0x3b4)
+<4>[   76.260625] [<c01204b0>] (panic) from [<c04f7ad0>] (subsys_remove_restart_order+0x0/0x80)
+<4>[   76.267316] [<c04f7ad0>] (subsys_remove_restart_order) from [<ec7da000>] (0xec7da000)
+<7>[   76.477488] cnss: Crash shutdown with driver_state 0x307
+<7>[   76.477524] cnss: RAM dump is already collected, skip
+<3>[   76.481872] ipa ipa3_active_clients_panic_notifier:293 
+<3>[   76.481872] ---- Active Clients Table ----
+<3>[   76.481872] 
+<3>[   76.481872] Total active clients count: 4
+<3>[   76.481872] 
+<6>[   76.486864] qcom-emac-dwc-eqos DWC_ETH_QOS_panic_notifier:1589 gDWC_ETH_QOS_prv_data 0xeaa634e0
+<6>[   76.503036] qcom-emac-dwc-eqos DWC_ETH_QOS_panic_notifier:1594 emac iommu domain 0xef03c8bc
+<6>[   76.511598] qcom-emac-dwc-eqos DWC_ETH_QOS_panic_notifier:1598 emac register mem 0xe8380000
+<6>[   76.522089] qcom-emac-dwc-eqos DWC_ETH_QOS_panic_notifier:1606 rgmii register mem 0xebc0fc80
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           

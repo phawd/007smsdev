@@ -1,0 +1,19 @@
+<!-- Internet  Sessions -->
+<div id="session_log_info">
+	<h1><tmpl_var _("webui", "session_log_info_menu_text")></h1>
+
+	<p>セッションログには次のデータが含まれます。</p>
+	<p>-日付と時刻（接続開始時）</p>
+	<p>-期間（現在のセッション情報と同じ形式）</p>
+	<p>-受信済み（現在のセッションと同じ形式）</p>
+	<p>-送信済み（現在のセッションと同じ形式）</p>
+	<p>-合計データ量（RxとTxの合計、現在のセッション情報の形式）</p>
+	<tmpl_if RoamingStatusShow>
+                <p>- Roaming (Roaming / Teilweise / leer) Leer = Heimnetzwerk </p>
+        </tmpl_if>
+	<p>-IPv4（IPv4 WWAN IPアドレス）</p>
+	<p>-IPv6（IPv6 WWAN IPアドレス）</p>
+
+	<p>ログは日付順になっています。</p>
+	<p>ユーザーは順序を変更できず、セッションログに関連するオプションはありません。</p>
+</div>

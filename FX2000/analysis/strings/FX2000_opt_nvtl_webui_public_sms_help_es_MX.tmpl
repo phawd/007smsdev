@@ -1,0 +1,33 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<h2>Descripci
+	<p> Estos mensajes SMS generalmente se los env
+a su proveedor de servicio. No debe intentar responder y, en consecuencia, no se incluye la funci
+n Responder. </p>
+	<h2>Contenido</h2>
+	<tmpl_if showMessageCounter>
+		<h3>Contadores de mensajes</h3>
+		<p> Dos contadores en la parte superior de la pantalla indican la cantidad de mensajes (nuevos) no le
+dos y la cantidad total de mensajes. </p>
+		<p> Observe que todos los mensajes se definen como "le
+dos" una vez que se exhiben en la pantalla. </p>
+	</tmpl_if>
+	<h3>Lista de mensajes</h3>
+	<p> Todos los mensajes figuran en orden cronol
+gico. Los mensajes no le
+dos (nuevos) se indican por un icono. Los mensajes se marcan autom
+ticamente como "le
+dos" una vez que se muestran en esta p
+gina, de tal forma que la pr
+xima vez que se ingresa a la p
+gina ya no se mostrar
+n como no le
+dos. </p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p> Este bot
+n se encuentra al final de la lista de mensajes. 
+selo seg
+n sea necesario para eliminar todos los mensajes. </p>
+	</tmpl_if>

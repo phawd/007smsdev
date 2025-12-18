@@ -1,0 +1,52 @@
+<!-- Software Update -->
+<div id="software_update">
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+	<h2>Overview</h2>
+			Software updates are delivered automatically over the mobile network. This page allows you to monitor these updates.
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+	<h3><tmpl_var _("webui", "software_update_current_software_modem_version_label")></h3>
+        <p>
+                The version of software currently installed for the modem component.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_kernel_version_label")></h3>
+        <p>
+                The version number for the Operating System and its components.
+        </p>
+        <tmpl_if showAppVersion>
+                <h3><tmpl_var _("webui", "software_update_current_software_app_version_label")></h3>
+                <p>
+                        The app version currently installed.
+                </p>
+        </tmpl_if>
+        <h3><tmpl_var _("webui", "software_update_current_software_cute_version_label")></h3>
+        <p>
+                The cute version of the software currently installed on your device.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_pri_version_label")></h3>
+        <p>
+                The configuration version currently applied to your device.
+        </p>
+	<tmpl_if SuOptOutButtonShow>
+		<h2><tmpl_var _("webui", "software_update_opt_out_update_sub_header_text")></h2>
+			By default, software updates are automatically delivered to your device. This setting allows you to opt-out of automatic software updates. If you do not want software updates automatically delivered, move the ON/OFF slider to ON.
+	</tmpl_if>
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var _("webui", "software_update_current_software_configuration_version_label")></h3>
+					<tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")>
+				</p>
+		</tmpl_if>
+		<h2><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "software_update_check_for_update_time_label"), (size(_("webui", "software_update_check_for_update_time_label")) - size(":")))></h3>
+			This field indicates when the <tmpl_var _("webui", "webui_product_name")> last checked to see if an update is available. You can manually check for an update using the "Check for Update" button.
+		<h3><tmpl_var _("webui", "software_update_check_for_update_button")> Button</h3>
+			You can use this to check if an update is available for your <tmpl_var _("webui", "webui_product_name")>. Normally, this is not necessary, as updates are automatically pushed to the <tmpl_var _("webui", "webui_product_name")>. If you do perform this check, and an update is available, it is automatically downloaded.
+	</tmpl_if>
+	<h3><tmpl_var truncate(_("webui", "software_update_check_for_update_status_label"), (size(_("webui", "software_update_check_for_update_status_label")) - size(":")))></h3>
+			Normally, this will be blank, but if you check for an update, the result of that check is shown here.
+			Also, if a update is being downloaded, the download progress is shown here.
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+			This panel displays the details of the last software update.
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+			This panel can be opened by clicking the link/heading. The System Update History contains details of last <tmpl_var SoftwareUpdateHistoryCount> updates that have been downloaded and installed to this device. If no updates have been installed, this panel will show the current software version.
+<!-- end Software Update -->

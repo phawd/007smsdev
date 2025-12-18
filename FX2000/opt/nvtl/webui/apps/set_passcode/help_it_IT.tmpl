@@ -1,0 +1,33 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>Password amministratore</h1>
+	<h2>Panoramica</h2>
+	<p>La password amministratore serve ad accedere all’interfaccia web di amministrazione di <tmpl_var _("webui", "webui_product_name")>. La pagina della <em>password amministratore</em> consente di modificare la password amministratore e di impostarne alcune opzioni di sicurezza ad essa relative.</p>
+
+
+	<h2>Modifica <tmpl_var _("webui", "webui_product_name")> la password amministratore</h2>
+	<p>Per modificare la password amministratore corrente, devi prima inserire la password amministratore corrente nel campo sottostante. Quindi lo schermo si aggiornerà e permetterà di impostare una nuova password amministratore e una domanda di sicurezza da utilizzare nel caso in cui la password amministratore venga dimenticata.</p>
+
+	<h3>Password amministratore <tmpl_var _("webui", "webui_product_name")> corrente</h3>
+	<p>Inserisci la password amministratore di <tmpl_var _("webui", "webui_product_name")> corrente in questo campo. Si noti che inserire un valore errato troppe volte comporta di non poter più accedere all’interfaccia web di amministrazione di <tmpl_var _("webui", "webui_product_name")>. Per rimuovere il blocco, si deve riavviare il <tmpl_var _("webui", "webui_product_name")>.</p>
+	<tmpl_if showDisplayPascode>
+		<h2>Visualizza la password amministratore del <tmpl_var _("webui", "webui_product_name")></h2>
+		<p>Se questa impostazione è attiva, sullo schermo comparirà *********. Se questa impostazione non è attiva, il display del Jetpack visualizzerà la password amministratore.</p>
+	</tmpl_if>
+
+	<h2>Modifica <tmpl_var _("webui", "webui_product_name")> la password amministratore</h2>
+	<h3>Nuova password amministratore</h3>
+	<p>Immettere la nuova password amministratore, utilizzando solo lettere, numeri e simboli di punteggiatura standard. La password deve contenere almeno 8 caratteri.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p>Inserisci nuovamente la nuova password amministratore in questo campo.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>Questa domanda di sicurezza viene utilizzata se si perde la password dell&#39;amministratore e si utilizza l&#39;opzione "Password amministratore dimenticata". Seleziona la domanda desiderata e fornisci una risposta nel campo sottostante.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Fornisci una risposta alla domanda di sicurezza selezionata sopra. Tieni conto che le risposte fanno distinzione tra maiuscole e minuscole.</p>
+
+</div>
+<!-- id="set_passcode" -->
+

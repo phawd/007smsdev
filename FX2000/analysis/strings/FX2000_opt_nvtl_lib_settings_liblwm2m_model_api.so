@@ -1,0 +1,697 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+GLIBC_2.4
+libc.so.6
+liblwm2m_model_api.so
+lwm2m_is_running
+msgq_does_queue_exist
+lwm2m_use_ota_call
+mifi_dbg_get_level_name
+mifi_dbg_log
+msgq_send_sync
+lwm2m_sys_get_device_info
+lwm2m_sys_get_connectivity_statistics
+lwm2m_sys_get_connectivity_monitoring
+lwm2m_get_cfg
+lwm2m_sys_get_location_info
+lwm2m_sys_get_connectivity_extn_info
+lwm2m_sys_get_dm_profile_info
+lwm2m_sys_get_active_profile_info
+lwm2m_get_lifetime
+lwm2m_enable_disable_active_apn
+lwm2m_enable_disable_dm_apn
+lwm2m_get_settings
+mifi_dbg_syslog
+settings_get_setting
+lwm2m_set_settings
+settings_set_setting
+lwm2m_get_ota_call_status
+lwm2m_ota_start_call
+lwm2m_ota_stop_call
+lwm2m_ota_dns_query
+snprintf
+router2_dns_lookup_cust_apn
+lwm2m_file_sync_and_close
+libpthread.so.0
+__errno_location
+lwm2m_file_read_str
+lwm2m_file_read_bin
+lwm2m_file_is_exists
+lwm2m_file_create
+lwm2m_file_remove
+lwm2m_get_error_string
+lwm2m_get_settings_impl
+xmldata_getuint32_default
+xmldata_getstring_default
+lwm2m_set_settings_impl
+xmldata_setuint32
+xmldata_setstring
+xmldata_save
+MsgBusSetInt32
+initialize_settings
+__bss_start
+__lxstat
+librt.so.1
+libwatchdog_api.so
+librouter2_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libgps_api.so
+libfactory_reset_api.so
+libsms_api.so
+libwifi_api.so
+libccm2_api.so
+libfile_sharing_api.so
+libfota_api.so
+libled_api.so
+libbuzzer_api.so
+libans_api.so
+libusb_api.so
+libemd_api.so
+libsensor_api.so
+libvpn_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libwan_mgr_api.so
+libcbsd_api.so
+libsysintclient.so
+H	KxD	J{D
+/lwm2m_model_mq
+[%s]:[%s] - Begin: %s Sending LWM2M_USE_OTA_CALL message to LWM2M process.
+[%s]:[%s] -  %s: Sending LWM2M_USE_OTA_CALL message to LWM2M process.
+[%s]:[%s] -  End: %s got the LWM2M_USE_OTA_CALL (%d)
+[%s]:[%s] -  %s: LWM2M_USE_OTA_CALL Failed.
+[%s]:[%s] - Sending LWM2M_MSG_GET_DEV_INFO message to LWM2M process.
+[%s]:[%s] - LWM2M_MSG_GET_DEV_INFO buf[%s].
+[%s]:[%s] - Sending LWM2M_MSG_GET_CONNECTIVITY_STATISTICS message to LWM2M process.
+[%s]:[%s] - Sending LWM2M_MSG_GET_CONNECTIVITY_MONITORING message to LWM2M process.
+[%s]:[%s] - Sending LWM2M_MSG_GET_CONFIG message to LWM2M process.
+[%s]:[%s] -  %s: Sending LWM2M_MSG_GET_LOC_INFO message to LWM2M process.
+[%s]:[%s] - End: %s got the LWM2M_MSG_GET_LOC_INFO 
+[%s]:[%s] -  %s: LWM2M_MSG_GET_LOC_INFO Failed.
+[%s]:[%s] -  %s: Sending LWM2M_MSG_GET_CONNECTIVITY_EXTENSION_INFO message to LWM2M process.
+[%s]:[%s] - End: %s got the LWM2M_MSG_GET_CONNECTIVITY_EXTENSION_INFO 
+[%s]:[%s] -  %s: LWM2M_MSG_GET_CONNECTIVITY_EXTENSION_INFO Failed.
+[%s]:[%s] - Begin: %s Sending LWM2M_MSG_GET_APN_DM_CONNECTION_PROFILE_INFO message to LWM2M process.
+[%s]:[%s] -  %s: Sending LWM2M_MSG_GET_APN_DM_CONNECTION_PROFILE_INFO message to LWM2M process.
+[%s]:[%s] -  End: %s got the LWM2M_MSG_GET_APN_DM_CONNECTION_PROFILE_INFO 
+[%s]:[%s] -  %s: LWM2M_MSG_GET_APN_DM_CONNECTION_PROFILE_INFO Failed.
+[%s]:[%s] - Begin: %s Sending LWM2M_MSG_GET_APN_ACTIVE_CONNECTION_PROFILE_INFO message to LWM2M process.
+[%s]:[%s] -  %s: Sending LWM2M_MSG_GET_APN_ACTIVE_CONNECTION_PROFILE_INFO message to LWM2M process.
+[%s]:[%s] -  End: %s got the LWM2M_MSG_GET_APN_ACTIVE_CONNECTION_PROFILE_INFO 
+[%s]:[%s] -  %s: LWM2M_MSG_GET_APN_ACTIVE_CONNECTION_PROFILE_INFO Failed.
+[%s]:[%s] - Begin: %s Sending LWM2M_MSG_GET_LIFETIME message to LWM2M process.
+[%s]:[%s] -  %s: Sending LWM2M_MSG_GET_LIFETIME message to LWM2M process.
+[%s]:[%s] -  End: %s got the LWM2M_MSG_GET_LIFETIME 
+[%s]:[%s] -  %s: LWM2M_MSG_GET_LIFETIME Failed.
+[%s]:[%s] - Begin: %s Sending LWM2M_MSG_ENABLE_DISABLE_ACTIVE_APN message to LWM2M process.
+[%s]:[%s] -  %s: Sending LWM2M_MSG_ENABLE_DISABLE_ACTIVE_APN message to LWM2M process.
+[%s]:[%s] -  End: %s got the LWM2M_MSG_ENABLE_DISABLE_ACTIVE_APN 
+[%s]:[%s] -  %s: LWM2M_MSG_ENABLE_DISABLE_ACTIVE_APN Failed.
+[%s]:[%s] - Begin: %s Sending LWM2M_MSG_ENABLE_DISABLE_DM_APN message to LWM2M process.
+[%s]:[%s] -  %s: Sending LWM2M_MSG_ENABLE_DISABLE_DM_APN message to LWM2M process.
+[%s]:[%s] -  End: %s got the LWM2M_MSG_ENABLE_DISABLE_DM_APN 
+[%s]:[%s] -  %s: LWM2M_MSG_ENABLE_DISABLE_DM_APN Failed.
+[%s]:[%s] - %s: Input buffer NULL
+lwm2m.settings
+[%s]:[%s] - %s: settings_get_setting result code: [%d]
+[%s]:[%s] -  %s: Sending LWM2M_MSG_GET_OTA_CALL_STATUS message to LWM2M process.
+[%s]:[%s] -  End: %s got the LWM2M_MSG_GET_OTA_CALL_STATUS 
+[%s]:[%s] -  %s: LWM2M_MSG_GET_OTA_CALL_STATUS Failed.
+[%s]:[%s] - [LWM2M_CALL_START] %s: +++ 
+[%s]:[%s] - [LWM2M_CALL_START] %s: Sending LWM2M_MSG_START_OTA_CALL to main
+[%s]:[%s] - [LWM2M_CALL_STOP] %s: +++ 
+[%s]:[%s] - [LWM2M_CALL_STOP] %s: Sending LWM2M_MSG_STOP_OTA_CALL to main
+[%s]:[%s] - [LWM2M_CALL_DNS] %s: +++
+[%s]:[%s] - [LWM2M_CALL_DNS] %s: Invalid input
+[%s]:[%s] - [LWM2M_CALL_DNS] %s: Invalid Host name
+[%s]:[%s] - [LWM2M_CALL_DNS] %s: OTA call not preset
+[%s]:[%s] - [LWM2M_CALL_DNS] %s: Invalid DNS reslove conf
+[%s]:[%s] - [LWM2M_CALL_DNS] %s: process not running
+[%s]:[%s] - [LWM2M_CALL_DNS] %s: Server:%s, ifc:%s, ifcv6:%s, timeout:%d
+[%s]:[%s] - [LWM2M_CALL_DNS] %s: Calling DNS API with timeout:%d
+[%s]:[%s] - [LWM2M_CALL_DNS] %s: DNS resolve success (ipaddr_count:%d)
+[%s]:[%s] - [LWM2M_CALL_DNS] %s: router2_dns_lookup_cust_apn(timeout=%d) failed, [rc:%d, ipaddr_count:%d]
+/opt/nvtl/data/lwm2m
+[%s]:[%s] - %s: Cannot open dir, errno:%d
+[%s]:[%s] - %s: syncing %s complete
+[%s]:[%s] - %s: File not found [%s]
+[%s]:[%s] - %s: Read str=[%s] from file=[%s]
+[%s]:[%s] - %s: Read error [%s], read=[%u] bytes but expected=[%u]
+[%s]:[%s] - %s: Read [%u] from file=[%s]
+[%s]:[%s] - %s: fopen() creation failed for %s
+[%s]:[%s] - %s: file (%s) write failed expected:%d, returned:%d
+[%s]:[%s] - %s: unlink failed for:%s rc=%d, errno:%d
+[%s]:[%s] - %s: File created :%s
+[%s]:[%s] - %s: unlink failed ret=%d for file:%s
+[%s]:[%s] - %s: Removed file: %s
+LWM2M: success.
+LWM2M: general error.
+LWM2M: one or more bad parameters passed into a function.
+LWM2M: one or more buffer type parameters passed into API is too small.
+LWM2M: the feature is unsupported.
+LWM2M: process not running.
+LWM2M: a device reset is required for the operation to take effect.
+LWM2M: API not implemented for the platform.
+LWM2M: user defined error message.
+LWM2M: unknown error.
+lwm2m_use_ota_call
+lwm2m_sys_get_location_info
+lwm2m_sys_get_connectivity_extn_info
+lwm2m_sys_get_dm_profile_info
+lwm2m_sys_get_active_profile_info
+lwm2m_get_lifetime
+lwm2m_enable_disable_active_apn
+lwm2m_enable_disable_dm_apn
+lwm2m_get_settings
+lwm2m_set_settings
+lwm2m_get_ota_call_status
+lwm2m_ota_start_call
+lwm2m_ota_stop_call
+lwm2m_ota_dns_query
+lwm2m_file_sync_and_close
+lwm2m_file_read_str
+lwm2m_file_read_bin
+lwm2m_file_create
+lwm2m_file_remove
+/Settings/LWM2M/LifeTime
+/Settings/LWM2M/MCCMNCList
+/Settings/LWM2M/DMCallRetries
+/Settings/LWM2M/DMCallRetryInterval
+/Settings/LWM2M/DataCallRetries
+/Settings/LWM2M/DataCallRetryInterval
+/Settings/LWM2M/AuthRetries
+/Settings/LWM2M/AuthRetryInterval
+/Settings/LWM2M/WatchdogCheckInterval
+/Settings/LWM2M/ReadInfoFromIPQ
+lwm2m.settings
+GCC: (GNU) 8.2.0
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/watchdog/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/router2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/config
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dmdb/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/xmldata/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/logging/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/mal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi-framework
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/loc-hal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi/loc_sdx55
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/usr/src/linux/usr/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dsm/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/powersave/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/modem2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/gps/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/factory_reset/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sms/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/wifi_driver/qca639x/HOSTAP_REL_2_7/src/ap
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/ccm2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/file_sharing/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/fota/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/led/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/buzzer/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/ans/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/usb/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/emd/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/vpn/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/bluetooth_peripheral/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/bluetooth/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sim_mgr/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/cbsd/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/apps_framework/sys_interface/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/lwm2m/src/dil/src
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/lwm2m/src/dil/src/../inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel/config/../.
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-iprefix /opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/bin/arm-oe-linux-gnueabi/../../lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/
+-D MODULE_NAME="LWM2M"
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/lwm2m/src/dil/src/lwm2m_api.c
+-mfpu=neon
+-mfloat-abi=hard
+-mcpu=arm10tdmi
+-mtls-dialect=gnu
+-march=armv5t
+-auxbase-strip lwm2m_api.o
+-frecord-gcc-switches
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/lwm2m/src/dil/src/lwm2m_settings.c
+-auxbase-strip lwm2m_settings.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/lwm2m/src/dil/src
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/include
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits/types
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/netinet
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/router2/inc
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/lwm2m/src/dil/src/../inc
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+lwm2m_api.c
+stddef.h
+struct_FILE.h
+sys_errlist.h
+stdint-uintn.h
+struct_timespec.h
+stat-32.h
+unistd.h
+getopt_core.h
+sockaddr.h
+lwm2m_mb.h
+router2_api.h
+lwm2m_model_api.h
+lwm2m_model.h
+jjjjjjjjj
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/lwm2m/src/dil/src
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/include
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits/types
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+lwm2m_settings.c
+stddef.h
+struct_FILE.h
+sys_errlist.h
+stdint-uintn.h
+lwm2m_mb.h
+settings_api.h
+unistd.h
+getopt_core.h
+data_call
+sin6_flowinfo
+daylight
+lwm2m_sys_get_dm_profile_info
+apn_profile_info
+_shortbuf
+lwm2m_set_settings
+_IO_lock_t
+ipv4_rx_data
+server_url
+filepath
+_IO_buf_end
+apn_retry_backoff_period
+LWM2M_MSG_GET_CONNECTIVITY_STATISTICS
+apn_retries
+ipv4_tx_data
+conn_monitoring
+MSGQ_PAYLOAD_WRITE
+sin6_scope_id
+_IO_write_end
+buf_size
+lwm2m_sys_get_connectivity_statistics
+router_ipv4_address
+lwm2m_cfg_data_t
+_freeres_list
+st_blksize
+LWM2M_SYS_DEVICE_INFO_MODEL_STR
+LWM2M_SYS_FW_VERSION
+lwm2m_sys_get_device_info
+_old_offset
+retry_info
+__nlink_t
+short int
+MSGQ_RESP_NONE
+apn_enable_status
+__u_quad_t
+lwm2m_apn_connection_profile_info_t
+lwm2m_use_ota_call
+lwm2m_file_read_bin
+MSGQ_PAYLOAD_NONE
+ipv4_address
+lwm2m_sys_get_connectivity_extn_info
+LWM2M_SYS_SW_VERSION
+__timezone
+__u6_addr8
+device_id
+LWM2M_MSG_GET_LIFETIME
+uint32_t
+in_addr_t
+long long unsigned int
+bootstrap_testserver_url
+lwm2m_file_sync_and_close
+_IO_save_end
+lwm2m_msg_type
+_cur_column
+mccmnc_list
+lwm2m_cfg_sdm_t
+_IO_codecvt
+addrinfo
+tx_count
+msgq_payload_type_e
+sync_queue_name
+bootstrap_server_url
+conn_ext_info
+sin_family
+__uint16_t
+LWM2M_MSG_GET_OTA_CALL_STATUS
+sys_errlist
+_IO_backup_base
+LWM2M_MSG_GET_APN_DM_CONNECTION_PROFILE_INFO
+dns_resolve_conf
+lwm2m_call_state_e
+in_port_t
+sys_nerr
+lwm2m_get_cfg
+lwm2m_call_dns_t
+MSGQ_RESP_SYNCHRONOUS
+sin_zero
+sa_family_t
+LWM2M_PDP_MAX
+_markers
+__mode_t
+_IO_read_base
+lwm2m_loc_info_t
+LWM2M_MSG_START_OTA_CALL
+lwm2m_file_remove
+connectToDm
+sin6_addr
+ip_addrs
+latitude
+LWM2M_SYS_DEV_TYPE
+st_nlink
+LWM2M_MSG_GET_CONNECTIVITY_MONITORING
+_IO_marker
+lwm2m_is_running
+bootstrap_testserver_port
+long unsigned int
+sockaddr_in_all
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m_model
+lwm2m_sys_get_connectivity_monitoring
+LWM2M_PDP_TYPE_PPP
+lwm2m_enable_disable_dm_apn
+settings
+lwm2m_sys_conn_statisics_info_t
+dev_info
+in6addr_loopback
+longitude
+lwm2m_sys_get_location_info
+conn_stat
+timespec
+__daylight
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/lwm2m/src/dil/src/lwm2m_api.c
+list_of_ip_addr
+config_ver
+lwm2m_pdp_type_e
+apnRetryPeriod
+lwm2m_enable_disable_active_apn
+_IO_write_base
+_IO_read_ptr
+lwm2m_get_ota_call_status
+lwm2m_settings_data_t
+loc_info
+unsigned int
+lwm2m_ota_dns_query
+LWM2M_SYS_DEV_ID
+lwm2m_file_create
+lwm2m_dev_info_t
+lwm2m_cfg_deviceinfo_t
+lwm2m_retry_entity_t
+socket_update_interval
+__glibc_reserved4
+__glibc_reserved5
+long long int
+lwm2m_file_is_exists
+payload_type
+lwm2m_sys_conn_monitoring_info_t
+msgq_resp_type_e
+_IO_save_base
+sin_port
+LWM2M_MSG_GET_CONFIG
+stFileInfo
+LWM2M_CALL_STATE_STARTING
+__u6_addr32
+watchdog
+__syscall_slong_t
+lwm2m_sys_device_info_e
+altitude
+payload_socket_name
+__quad_t
+_freeres_buf
+in6addr_any
+LWM2M_MSG_GET_CONNECTIVITY_EXTENSION_INFO
+LWM2M_SYS_HW_VERSION
+sin_addr
+GNU C17 8.2.0 -mfpu=neon -mfloat-abi=hard -mfpu=neon -mfloat-abi=hard -mcpu=arm10tdmi -mtls-dialect=gnu -marm -march=armv5t -g -frecord-gcc-switches -fpic
+LWM2M_MSG_NONE
+lifetime
+apn_retry_period
+rx_count
+LWM2M_MSG_STOP_OTA_CALL
+apnRetries
+LWM2M_PDP_TYPE_V4V6
+_vtable_offset
+ipv6_rx_data
+apnRetryBackOffPeriod
+lwm2m_file_read_str
+st_blocks
+uint16_t
+sin6_port
+timezone
+LWM2M_SYS_DEVICE_INFO_IMEI
+retry_interval
+MSGQ_PAYLOAD_READ
+__u6_addr16
+addrinfo6
+_IO_read_end
+sin6_family
+bearer_type
+apn_active_profile_info
+lwm2m_get_error_string
+long int
+LWM2M_CALL_STATE_MAX
+LWM2M_CALL_STATE_UP
+LWM2M_MSG_ENABLE_DISABLE_DM_APN
+ota_call
+_IO_wide_data
+LWM2M_CALL_STATE_DOWN
+lwm2m_retries_data_t
+__environ
+__blksize_t
+sockaddr_in
+__uint8_t
+dev_type
+lwm2m_get_settings
+apn_name
+_IO_buf_base
+profile_apn
+useInternetCall
+lwm2m_connectivity_extn_info_t
+_wide_data
+lwm2m_msg_type_e
+velocity
+in6_addr
+v4_state
+_IO_FILE
+bootstrap_server_port
+lwm2m_sys_get_active_profile_info
+LWM2M_USE_OTA_CALL
+LWM2M_MSG_MAX
+MSGQ_RESP_MAX
+unsigned char
+__uint32_t
+__tzname
+LWM2M_MSG_GET_APN_ACTIVE_CONNECTION_PROFILE_INFO
+_IO_write_ptr
+LWM2M_MSG_GET_DEV_INFO
+LWM2M_MSG_ENABLE_DISABLE_ACTIVE_APN
+ipv6_address
+LWM2M_SYS_DEVICE_INFO_MFG
+lwm2m_ota_stop_call
+is_using_data_call
+__time_t
+error_code
+sockaddr_in6
+_codecvt
+MSGQ_RESP_CALLBACK
+profile_name
+msgq_resp_type
+LWM2M_MSG_GET_LOC_INFO
+server_port
+timestamp
+lwm2m_ota_call_t
+LWM2M_CALL_STATE_DISABLED
+payload_buffer_size
+LWM2M_SYS_DEVICE_INFO_PSK
+testserver_url
+signed char
+router_ipv6_address
+device_model
+short unsigned int
+v6_state
+testserver_port
+link_quality
+__func__
+MSGQ_RESP_SYNCHRONOUS_LARGE_PAYLOAD
+__blkcnt_t
+lwm2m_get_lifetime
+lwm2m_ota_start_call
+read_from_ipq
+LWM2M_PDP_TYPE_V4
+LWM2M_PDP_TYPE_V6
+ipaddr_count
+ipv6_tx_data
+apn_dm_profile_info
+__off64_t
+mccmnc_count
+_unused2
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/lwm2m/src/dil/src/lwm2m_settings.c
+lwm2m_get_settings_impl
+register_settings
+initialize_settings
+func_ptr
+lwm2m_set_settings_impl
+gold 1.16
+call_weak_fn
+crtstuff.c
+__TMC_LIST__
+deregister_tm_clones
+register_tm_clones
+__do_global_dtors_aux
+completed.11339
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+lwm2m_api.c
+__func__.9333
+__func__.9357
+__func__.9362
+__func__.9366
+__func__.9371
+__func__.9376
+__func__.9381
+__func__.9386
+__func__.9392
+__func__.9404
+__func__.9416
+__func__.9421
+__func__.9426
+__func__.9434
+__func__.9442
+__func__.9449
+__func__.9457
+__func__.9469
+__func__.9475
+lwm2m_settings.c
+__FRAME_END__
+__dso_handle
+__TMC_END__
+_DYNAMIC
+_GLOBAL_OFFSET_TABLE_
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+lwm2m_is_running
+msgq_does_queue_exist
+lwm2m_use_ota_call
+mifi_dbg_get_level_name
+mifi_dbg_log
+msgq_send_sync
+lwm2m_sys_get_device_info
+lwm2m_sys_get_connectivity_statistics
+lwm2m_sys_get_connectivity_monitoring
+lwm2m_get_cfg
+lwm2m_sys_get_location_info
+lwm2m_sys_get_connectivity_extn_info
+lwm2m_sys_get_dm_profile_info
+lwm2m_sys_get_active_profile_info
+lwm2m_get_lifetime
+lwm2m_enable_disable_active_apn
+lwm2m_enable_disable_dm_apn
+lwm2m_get_settings
+mifi_dbg_syslog
+settings_get_setting
+lwm2m_set_settings
+settings_set_setting
+lwm2m_get_ota_call_status
+lwm2m_ota_start_call
+lwm2m_ota_stop_call
+lwm2m_ota_dns_query
+snprintf
+router2_dns_lookup_cust_apn
+lwm2m_file_sync_and_close
+__errno_location
+lwm2m_file_read_str
+lwm2m_file_read_bin
+lwm2m_file_is_exists
+lwm2m_file_create
+lwm2m_file_remove
+lwm2m_get_error_string
+lwm2m_get_settings_impl
+xmldata_getuint32_default
+xmldata_getstring_default
+lwm2m_set_settings_impl
+xmldata_setuint32
+xmldata_setstring
+xmldata_save
+MsgBusSetInt32
+initialize_settings
+__bss_start
+__lxstat
+.init_array
+.fini_array
+.debug_abbrev
+.comment
+.rel.plt
+.ARM.attributes
+.debug_aranges
+.debug_str
+.eh_frame_hdr
+.gnu.version_r
+.debug_info
+.rel.dyn
+.gnu.version
+.note.gnu.gold-version
+.debug_line
+.GCC.command.line
+.eh_frame
+.debug_frame
+.tm_clone_table
+.note.gnu.build-id
+.gnu.version_d
+.dynamic
+.shstrtab

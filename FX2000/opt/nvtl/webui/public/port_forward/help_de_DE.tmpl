@@ -1,0 +1,46 @@
+<!-- Port Forwarding -->
+<div id="port_forward">
+	<h1>Portweiterleitung</h1>
+	<h2>Übersicht</h2>
+	<p>Die Portweiterleitungs-Funktion ermöglicht es, das eingehender Verkehr aus dem Internet an einen bestimmten Computer oder ein bestimmtes Gerät in Ihrem WLAN-Netzwerk weitergeleitet wird. Normalerweise blockiert die integrierte Firewall eingehenden Verkehr aus dem Internet. Sie verwenden die Portweiterleitung, um Internetbenutzern den Zugriff auf jeden Server zu ermöglichen, den Sie auf Ihrem Computer betreiben, z. B. einen Web-, FTP- oder E-Mail-Server. Bei einigen Onlinespielen muss die Portweiterleitung verwendet werden, damit sie korrekt funktionieren. Beachten Sie, dass die Nutzung der Portweiterleitung ein Sicherheitsrisiko darstellt und ausgeschaltet bleiben sollte, wenn Sie sie nicht benötigen.</p>
+<p><strong>Hinweis:</strong> Einige mobile drahtlose Netzwerke stellen Ihnen statt einer Internet-IP-Adresse eine IP-Adresse in ihrem eigenen Netzwerk zur Verfügung. In diesem Fall kann die Portweiterleitung nicht verwendet werden, da Internetbenutzer Ihre IP-Adresse nicht erreichen können.</p>
+
+	<h2>Portweiterleitungs-Anwendungen</h2>
+	<h3>Anwendungskontrollkästchen</h3>
+		<p>Es wird eine Reihe gängiger Serveranwendungen aufgeführt. Gehen Sie wie folgt vor, um eine dieser Anwendungen zu verwenden:</p>
+		<ol>
+			<li>1. Installieren Sie die Anwendung auf einem Computer, der mit dem WLAN-Netzwerk dieses Geräts verbunden ist.</li>
+			<li>2. Überprüfen Sie auf dem Computer die IP-Adresse für das WLAN-Netzwerk. Alternativ können Sie die IP-Adresse des Computers auf dem Bildschirm „Verbundene Geräte“ überprüfen.</li>
+			<li>3. Geben Sie auf diesem Bildschirm die IP-Adresse des Computers in das Feld <strong>IP-Adresse des verbundenen Geräts</strong> neben der Anwendung ein</li>
+			<li>4. Aktivieren Sie die Anwendung auf diesem Bildschirm, indem Sie das entsprechende Kontrollkästchen markieren.</li>
+			<li>5. Sichern Sie Ihre Änderungen.</li>
+			<li>6. Notieren Sie sich die auf dem Bildschirm <strong>Aktueller Status</strong> angezeigte Internet-IP-Adresse des Geräts</li>
+			<li>7. Bitten Sie Internetbenutzer, sich mit der Internet-IP-Adresse dieses Geräts zu verbinden. Diese Verbindungsanfragen werden an die in Schritt 3 angegebene IP-Adresse weitergeleitet.</li>
+		</ol>
+
+	<h2>Benutzerdefinierte Anwendungen</h2>
+	<p>Über diese Funktion können Sie Ihre eigenen Anwendungen definieren. Einmal definiert, können diese Anwendungen auf die gleiche Weise wie vordefinierte Anwendungen aktiviert oder deaktiviert werden. Um eine Anwendung zu definieren, müssen Sie die Ports und das Protokoll (TCP, UDP) kennen, die von der Anwendung für eingehenden Datenverkehr verwendet werden. Klicken Sie zu Beginn auf die Schaltfläche <strong>Benutzerdefinierte Anwendung hinzufügen</strong> und geben Sie dann die folgenden Daten ein.</p>
+	<h3>Anwendungskontrollkästchen</h3>
+	<p>Damit können Sie eine Anwendung aktivieren, nachdem Sie sie definiert haben.</p>
+	<h3>Anwendungsname</h3>
+	<p>Geben Sie einen geeigneten Namen für die Anwendung ein, die Sie definieren.</p>
+
+	<h3>IP-Adresse des verbundenen Geräts</h3>
+	<p>Geben Sie die IP-Adresse des verbundenen Geräts ein, das diesen Datenverkehr empfangen soll.</p>
+
+	<h3>Porttyp und Portnummern</h3>
+		<p>Jede Anwendung hat ihren eigenen Portbereich. Geben Sie für jede Anwendung den Start und das Ende des Portbereichs ein.</p>
+		<div class="blockgroup">
+			<ul>
+				<li>Geben Sie für einen Portbereich den Anfang des Bereichs in das Feld <strong>Von</strong> und das Ende des Bereichs in das Feld <strong>Bis</strong> ein.</li>
+				<li>Geben Sie für einen Übersetzungsport die Portnummer in das Feld <strong>Extern</strong> und auch in das Feld <strong>Intern</strong> ein.</li>
+			</ul>
+		</div>
+	<h3>Protokoll</h3>
+	<p>Wählen Sie für jeden Portbereich das von diesem Portbereich verwendete Protokoll (TCP oder UDP) aus.</p>
+		
+	<h3>Löschen</h3>
+	<p>Über dieses Kontrollkästchen können Sie eine benutzerdefinierte Anwendung löschen.</p>
+</div>
+<!-- id="port_forward" -->
+

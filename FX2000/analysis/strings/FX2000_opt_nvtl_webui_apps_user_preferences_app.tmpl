@@ -1,0 +1,174 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+<tmpl_else>
+	<script type="text/javascript">
+		$(function()
+			if ("<tmpl_var reboot>" === "true") {
+				window.location = "<tmpl_udf GET_URI('restarting')>";
+			var isDeviceReadOnly = "<tmpl_var showDeviceNameReadOnly>";	
+			var ethernetEnabled = "<tmpl_var ethernetEnabled>";
+			$("#cpeRebootEnabled").change(cpeRebootEnable);
+			var deviceName = "<tmpl_var deviceName>";
+			console.log(deviceName);
+			var isPopup = false;
+			$("#saveChanges").on("click", function() {				
+				var ethernetEnabledCur = $("#ethernetEnabled").is(":checked") ? "on" : "off";
+				var deviceNameCur = $("#deviceName").val();
+				console.log(deviceNameCur);
+				<tmpl_if showDeviceName>
+					if ((isDeviceReadOnly == 0) && (deviceName != deviceNameCur)) {
+						isPopup = true;
+						saveChanges();
+				</tmpl_if>
+				<tmpl_if showEthernetEnable>
+					if((ethernetEnabled == ethernetEnabledCur) &&(isPopup == false)) {						
+						$("#user_preferences_form").submit();
+					} else {						
+						saveChanges();
+				<tmpl_else>
+					if (isPopup == false) {
+						$("#user_preferences_form").submit();		
+				</tmpl_if>
+			function cpeRebootEnable() {
+				var enabled = $("#cpeRebootEnabled").is(":checked") ? 1:0;
+				if(enabled == 1) {
+					var warningText = "<tmpl_udf GET_PO_TEXT("preferences_cpe_reboot_enable_text", cpeRebootDays, cpeRebootTime)>"
+					modalPopup.createWindow('<tmpl_var _("webui", "webui_app_warning_title")>', '<p>'+warningText+'</p>', 430, 250, [{
+									text : '<tmpl_var _("webui", "webui_modal_ok_button")>',
+									className : "primary",
+									trigger : null
+					}], null, null);
+			function saveChanges() {				
+				var title = "<tmpl_var _('webui', 'webui_modal_title')>";
+				var content = "<tmpl_var _('webui', 'adv_lan_save_changes_confirm_modal_without_reservedip_text')>";;
+				var width = 430;
+				var height = 200;
+				var btns;
+				var style;
+				var open = function() {
+				btns = [
+						text: '<tmpl_var _("webui", "webui_modal_cancel_button")>',
+						className: "cancel",
+						trigger : function() {
+							location.reload();
+						text: '<tmpl_var _("webui", "webui_modal_confirm_button")>',
+						className:"primary",
+						trigger : function() {
+							$("#user_preferences_form").submit();
+				modalPopup.createWindow(title, content, width, height, btns, open, null, style);
+	</script>
+	<tmpl_if isLocked>
+		<div class="notification app error">
+			<tmpl_var _("webui", "webui_app_locked_text")>
+		</div>
+	</tmpl_if>
+	<tmpl_if errorCount>
+		<div class="notification app error">
+			<div class="notification_inner" id="errorNotification">
+					<tmpl_var _("webui", "webui_save_code_failed_text")>
+				</p>
+			</div>
+		</div>
+	</tmpl_if>
+	<tmpl_if gPostSuccess>
+		<div class="notification app success">
+			<div class="notification_inner" id="successNotification">
+					<tmpl_var _("webui", "webui_save_code_success_text")>
+				</p>
+			</div>
+		</div>
+	</tmpl_if>
+	<tmpl_if showHeaderText>
+		<h2 class="sectionHead"><tmpl_var _("webui", "preferences_sub_header_text")></h2>
+	</tmpl_if>
+	<form id="user_preferences_form" method="POST" action="<tmpl_udf GET_URI('userpreferences')>">
+			<input type="hidden" name="gSecureToken" id="gSecureToken" value="<tmpl_var gSecureToken>" />
+		</div>
+		<fieldset id="personalization" class="last">
+			<tmpl_if showDeviceName>
+				<div class="form-group">
+					<label for="deviceName">
+						<div class="tooltip tooltip-help" title="<tmpl_var _("webui", "preferences_device_name_help_text")>">
+							<tmpl_var _("webui", "preferences_device_name_help_text" )>
+						</div>
+						<tmpl_var _("webui", "preferences_device_name_label")>
+					</label>
+					<tmpl_if showDeviceNameReadOnly>
+						<div class="input" id="deviceName">                                            
+                                			<tmpl_var deviceName>
+                        			</div>
+					<tmpl_else>
+						<input type="text" id="deviceName" name="deviceName" value="<tmpl_var deviceName>" <tmpl_if deviceNameError>class="error"</tmpl_if> />
+					</tmpl_if>
+                			<tmpl_if deviceNameError>                                          
+                    				<div class="inline_error">                                                                                  
+                        				<tmpl_var deviceNameError>                                                                         
+                    				</div>                                                                                                      
+                			</tmpl_if>
+				</div>
+			</tmpl_if>
+			<tmpl_if showEthernetEnable>
+				<div class="form-group">
+					<label for="ethernetEnabled">
+						<div class="tooltip tooltip-help" id="" title="<tmpl_var _("webui", "preferences_ethernet_enable_help_text")>">
+							<tmpl_var _("webui", "webui_inline_help_icon" )>
+						</div>
+						<tmpl_var _("webui", "preferences_ethernet_enable_label" )>
+					</label>
+					<input type="checkbox" id="ethernetEnabled" name="ethernetEnabled" <tmpl_if
+						IN_SET(ethernetEnabled, "on", "1" )>checked="checked"</tmpl_if> />
+				</div>
+			</tmpl_if>
+			<tmpl_if showCPERebootEnable>
+                    <div class="form-group">
+                            <label for="cpeRebootEnabled">
+                                    <div class="tooltip tooltip-help" id="" title="<tmpl_var _("webui", "preferences_cpe_reboot_enable_help_text")>">
+                                            <tmpl_var _("webui", "webui_inline_help_icon" )>
+                                    </div>
+                                    <tmpl_var _("webui", "preferences_cpe_reboot_enable_label" )>
+                            </label>
+                            <input type="checkbox" id="cpeRebootEnabled" name="cpeRebootEnabled" <tmpl_if
+                                    IN_SET(cpeRebootEnabled, "on", "1" )>checked="checked"</tmpl_if> />
+                    </div>
+            </tmpl_if>
+			<div class="table">
+				<div class="form-group">
+						<label for="language"><tmpl_var _("webui", "preferences_language_options_label")></label>
+						<select name="language" id="language">
+							<tmpl_include "language_options.tmpl">									
+						</select>
+				</div>
+				<div class="form-group">
+					<label for="dateFormat" id="lblDateFormat"><tmpl_var _("webui", "preferences_date_format_label")></label>
+					<select name="dateFormat" id="dateFormat">
+							<tmpl_include "date_format_options.tmpl">
+						</select>
+				</div>
+				<div class="form-group">
+					<label for="timeFormat" id="lblTimeFormat"><tmpl_var _("webui", "preferences_time_format_label")></label>
+						<select name="timeFormat" id="timeFormat">
+							<tmpl_include "time_format_options.tmpl">
+						</select>
+				</div>
+				<div class="form-group">
+					<label for="distanceUnit" id="lblDistanceFormat"><tmpl_var _("webui", "preferences_distace_format_label")></label>
+					<select name="distanceUnit" id="distanceUnit">
+						<tmpl_include "distance_unit_options.tmpl">
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="numericFormat" id="lblNumberFormat"><tmpl_var _("webui", "preferences_numeric_format_label")></label>
+					<select name="numericFormat" id="numericFormat">
+							<tmpl_include "numeric_format_options.tmpl">
+					</select>
+				</div>
+			</div><!-- /.table -->
+		</fieldset>
+		<div class="button_container align-field clearfix">
+			<button type="button" id="saveChanges" class="primary"<tmpl_if isLocked> disabled="disabled"</tmpl_if>>
+				<tmpl_var _("webui", "webui_save_button")>
+			</button>
+		</div>
+	</form>
+</tmpl_if>

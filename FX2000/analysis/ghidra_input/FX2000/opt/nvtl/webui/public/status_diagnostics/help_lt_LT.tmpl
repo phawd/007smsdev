@@ -1,0 +1,210 @@
+<!-- Diagnostics -->
+<div id="status_diagnostics">
+	<h1><tmpl_var _("webui", "status_diagnostics_menu_text")></h1>
+	<h2>Apžvalga</h2>
+	<p>Šiame puslapyje pateikiama informacija apie <tmpl_var _("webui", "webui_product_name")> ir galimus tinklus. Naudokite ją prireikus triktims šalinti; ji nebūtina įprasto veikimo sąlygomis.</p>
+	<h2><tmpl_var _("webui", "status_diagnostics_modem_sub_header_text")></h2>
+
+	<tmpl_if showPhoneNumber>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_phone_number_label"), (size(_("webui", "status_diagnostics_phone_number_label")) - size(":")))></h3>
+		<p>Tai <tmpl_var _("webui", "webui_product_name")> telefono numeris.</p>
+	</tmpl_if>
+
+	<tmpl_if showImei>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imei_label"), (size(_("webui", "status_diagnostics_imei_label")) - size(":")))></h3>
+		<p>Šio įrenginio IMEI (tarptautinis judriojo ryšio įrangos identifikatorius, angl. „International Mobile Equipment Identity“). IMEI yra 15 arba 17 skaitmenų kodas, naudojamas unikaliai identifikuoti atskirai mobiliojo ryšio tinkle esančiai<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>stočiai. Pakeitus SIM, IMEI nesikeičia.</p>
+	</tmpl_if>
+
+	<tmpl_if showImeisv>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imeisv_label"), (size(_("webui", "status_diagnostics_imeisv_label")) - size(":")))></h3>
+		<p>Šiame lauke IMEI sujungiama su tokio tipo įrenginio patvirtinimo numeriu.</p>
+	</tmpl_if>
+
+	<tmpl_if showMeid>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_meid_label"), (size(_("webui", "status_diagnostics_meid_label")) - size(":")))></h3>
+		<p>MEID (mobiliojo ryšio įrangos ID) – tai unikalusis numeris, naudojamas atskirai mobiliojo ryšio stočiai CDMA tinkle identifikuoti.</p>
+	</tmpl_if>
+
+	<tmpl_if showIMSI>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imsi_label"), (size(_("webui", "status_diagnostics_imsi_label")) - size(":")))></h3>
+		<p>Tarptautinis judriojo ryšio abonento identifikatorius (angl. „International Mobile Subscriber Identity“, IMSI) – tai unikalusis numeris, susietas su visais pasaulinės judriojo ryšio sistemos (angl. „Global System for Mobile Communications“, GSM) ir universaliosios judriojo ryšio sistemos (angl. „Universal Mobile Telecommunications System“, UMTS) tinklo mobiliojo ryšio telefonų naudotojais, naudojamas GSM abonentui identifikuoti.</p>
+	</tmpl_if>
+	
+	<tmpl_if showFwVersion>					
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_fw_version_label"), (size(_("webui", "status_diagnostics_fw_version_label")) - size(":")))></h3>
+		<p>Šiuo metu modeme įdiegtos programinės aparatinės įrangos (programinės įrangos) versija.</p>
+	</tmpl_if>
+
+	<tmpl_if showSimStatus>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_sim_status_label"), (size(_("webui", "status_diagnostics_sim_status_label")) - size(":")))></h3>
+		<p>Ji parodo SIM kortelės būseną. Jei nėra SIM kortelės arba šiame lauke kokia nors forma parodoma SIM klaida, prisijungti prie mobiliojo ryšio tinklo negalima.</p>
+	</tmpl_if>
+
+	<tmpl_if showICCID>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_iccid_label"), (size(_("webui", "status_diagnostics_iccid_label")) - size(":")))></h3>
+		<p>Šis unikalusis ID numeris priskiriamas SIM kortelei. Jis nerodomas, jei nėra įdėtos SIM arba esant SIM klaidos būsenai.</p>
+	</tmpl_if>
+
+	<tmpl_if showModemDetails>
+		<tmpl_if showMINMSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_msid_label"), (size(_("webui", "status_diagnostics_msid_label")) - size(":")))></h3>
+			<p>Šis ID naudojamas abonentui mobiliojo ryšio duomenų tinkle identifikuoti.</p>
+		</tmpl_if>
+		<tmpl_if showESN>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_esn_label"), (size(_("webui", "status_diagnostics_esn_label")) - size(":")))></h3>
+			<p>Elektroninis serijos numeris (ESN) – tai įprastinis CDMA tinkluose esančių įrenginių unikalaus identifikavimo būdas, tačiau jį pakeitė MEID. Įrenginiuose, kuriuose naudojamas MEID (pvz., šiame įrenginyje), yra tuščias ESN arba tariamas ESN, kurie neužtikrinami kaip unikalūs.</p>
+ 		</tmpl_if>
+ 		<tmpl_if showHomeSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_home_sid_label"), (size(_("webui", "status_diagnostics_home_sid_label")) - size(":")))></h3>
+			<p>SID (sistemos ID) yra tinklo identifikatorius, nurodantis mobiliojo ryšio duomenų tinklo prijungimo tašką.</p>
+		</tmpl_if>
+		<tmpl_if showERIVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_eri_version_label"), (size(_("webui", "status_diagnostics_eri_version_label")) - size(":")))></h3>
+			<p>ERI (patobulinto tarptinklinio ryšio indikatoriaus, angl. „Enhanced Roaming Indicator“) lentelėje pateikiama informacija apie kiekvieną tarptinklinio ryšio tinklą, prie kurio leidžiama prisijungti mobiliajam įrenginiui. Šiame lauke rodoma šiuo metu įdiegta ERI versija. ERI lentelė atnaujinama automatiškai.</p>
+ 		</tmpl_if>
+ 		<tmpl_if showPRLVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_prl_version_label"), (size(_("webui", "status_diagnostics_prl_version_label")) - size(":")))></h3>
+			<p>PRL (pageidaujamų tarptinklinio ryšio paslaugų sąrašas, angl. „Preferred Roaming List“) naudojamas tinklui pasirinkti, kai galimi keli tinklai. Šiame lauke nurodoma šiuo metu įdiegta PRL versija. PRL atnaujinamas automatiškai.</p>
+		</tmpl_if>			
+	</tmpl_if>
+	<tmpl_if lteSupported>			
+		<h2 class="sectionHead">5G / 4G LTE tinklas</h2>
+		
+		<tmpl_if showInternetStatus4G>	
+			<h3>Būsena</h3>
+			<p>Skirta<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>tinklui; galimos būsenos reikšmės:</p>
+			<div class="blockgroup">
+				<ul>
+					<li>„Negalima“ – neaptiktas<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>tinklas.</li>
+					<li>„Galima“ – aptiktas<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>tinklas.</li>
+				</ul>
+			</div>
+			<p>Šie duomenų elementai pateikiami tik tuo atveju, jei<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>tinklas pasiekiamas.</p>
+		</tmpl_if>
+
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>Tai tinklo<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>pavadinimas.</p>
+		</tmpl_if>
+
+		<tmpl_if showSignalStrength>			
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_signal_strength_label"), (size(_("webui", "status_diagnostics_fourg_signal_strength_label")) - size(" (RSRP):")))></h3>
+			<p>Jis parodo signalo<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>stiprumą, kuris matuojamas dBm. Didesnės absoliučiosios vertės parodo stipresnį signalą, todėl –80 dBm yra stipresnis signalas nei –90 dBm.<tmpl_udf GET_PO_TEXT("status_diagnostics_lte_note_text")>
+			</p>
+		</tmpl_if>
+
+		<tmpl_if showSNR>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_sinr_label"), (size(_("webui", "status_diagnostics_sinr_label")) - size(":")))></h3>
+			<p>SNR – tai signalo kokybės matas. Didesni skaičiai parodo geresnį signalą.</p>
+		</tmpl_if>
+
+		<tmpl_if showLteBand>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_lte_band_label"), (size(_("webui", "status_diagnostics_lte_band_label")) - size(":")))></h3>
+			<p><tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>tinklai gali naudoti skirtingus dažnių diapazonus skirtinguose regionuose. Šis laukas rodo dažnių diapazoną, naudojamą dabartiniam<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>ryšiui.</p>
+		</tmpl_if>
+
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_roaming_label"), (size(_("webui", "status_diagnostics_fourg_roaming_label")) - size(":")))></h3>
+			<p>Jis nurodo, ar dabartinis ryšys yra tarptinklinis.</p>
+		</tmpl_if>
+	</tmpl_if>
+		
+	<tmpl_if isHSPATechnology>	
+		<h2><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> Būsena</h2>
+			
+		<h3>Būsena</h3>
+		<p><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> tinklo palaikomos būsenos:</p>
+		<div class="blockgroup">
+			<ul>
+				<li>„Negalima“ – neaptiktas joks <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> tinklas.</li>
+				<li>„Galima“ – aptiktas <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> tinklas.</li>
+			</ul>
+		</div>
+		<p>Toliau nurodyti duomenų elementai pateikiami tik tuo atveju, jei tinklas pasiekiamas.</p>
+
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>Tai <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> tinklo pavadinimas.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p>Šiuo metu naudojama <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> tinklo technologija. Galimos reikšmės nuo lėčiausios iki greičiausios:</p>
+			<ul>
+				<tmpl_if gsmSupported>
+					<li>GPRS</li>
+				</tmpl_if>
+				<tmpl_if wcdmaSupported>
+					<li>UMTS</li>
+				</tmpl_if>
+				<tmpl_if cdmaSupported>
+					<li>HSPA+</li>
+					<li>HSPA+ DC</li>
+				</tmpl_if>
+				<tmpl_if evdoSupported>
+					<li>EDGE</li>
+					<li>HSDPA</li>
+					<li>HSUPA</li>
+				</tmpl_if>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_networkid_label"), (size(_("webui", "status_diagnostics_networkid_label")) - size(":")))></h3>
+			<p>Viešojo sausumos judriojo ryšio tinklo (angl. „Public Land Mobile Network“, PLMN) pavadinimas ir (arba) ID.</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_cellid_label"), (size(_("webui", "status_diagnostics_cellid_label")) - size(":")))></h3>
+			<p>Ši reikšmė identifikuoja šiuo metu naudojamą mobiliojo ryšio bokštą.</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_rssi_label"), (size(_("webui", "status_diagnostics_rssi_label")) - size(":")))></h3>
+			<p>Jis nurodo <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> signalo RSSI. RSSI yra signalo stiprumo matas decibelais vieno milivato atžvilgiu. Jis visada neigiamas, nes mobilieji radijo ryšio įrenginiai yra kur kas mažiau galingi nei vienas milivatas. Didesnės absoliučiosios vertės rodo stipresnį signalą, todėl –50 dBm yra stipresnis signalas nei –70 dBm.</p>
+
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_roaming_label"), (size(_("webui", "status_diagnostics_roaming_label")) - size(":")))></h3>
+			<p>Jis nurodo, ar dabartinis ryšys yra tarptinklinis.</p>
+
+		</tmpl_if>
+		<tmpl_if show3g>
+			<h2><tmpl_var _("webui", "status_diagnostics_threeg_label")></h2>
+			
+			<h3>Būsena</h3>
+			<p>Galimos būsenos reikšmės:</p>
+			<div class="blockgroup">
+				<ul>
+					<li>„Negalima“ – neaptiktas joks 3G tinklas.</li>
+					<li>„Galima“ – aptiktas 3G tinklas.</li>
+				</ul>
+			</div>
+			<p>Toliau nurodyti duomenų elementai pateikiami tik tuo atveju, jei tinklas pasiekiamas.</p>
+			<tmpl_if showNetworkOperator>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_network_label"), (size(_("webui", "status_diagnostics_threeg_network_label")) - size(":")))></h3>
+				<p>Tai 3G tinklo pavadinimas.</p>
+			</tmpl_if>
+			<tmpl_if show3g1xRssi>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_onex_label"), (size(_("webui", "status_diagnostics_threeg_onex_label")) - size(":")))></h3>
+			<p>RSSI – tai signalo stiprumo matas. Vienetas yra decibelai 1 milivato atžvilgiu ir visada neigiamas, nes mobilieji radijo ryšio įrenginiai yra kur kas mažiau galingi nei vienas milivatas. Didesnės absoliučiosios vertės parodo stipresnį signalą, todėl –50 dBm yra stipresnis signalas nei –70 dBm. Šiame lauke rodomas 1xRTT signalo RSSI.</p>
+			</tmpl_if>
+			<tmpl_if show3gEvdoRssi>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_evdo_label"), (size(_("webui", "status_diagnostics_threeg_evdo_label")) - size(":")))></h3>
+				<p>RSSI – tai signalo stiprumo matas. Šiame lauke rodomas EVDO arba eHRPD signalo RSSI.</p>
+ 			</tmpl_if>
+			<tmpl_if show3gTechnology>
+ 				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+				<p>Šiuo metu naudojama 3G tinklo technologija. Galimos reikšmės yra 1xRTT, EVDO arba eHRPD.</p>
+ 			</tmpl_if>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_ecio_label"), (size(_("webui", "status_diagnostics_threeg_ecio_label")) - size(":")))></h3>
+			<p>Ec/Io yra signalo „švarumo“ matas bei signalo ir triukšmo santykio tipas. Įprastų verčių diapazonas: nuo –10 iki –40. –4 vertė būtų labai „švarus“ signalas.</p>
+ 
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_sid_label"), (size(_("webui", "status_diagnostics_threeg_sid_label")) - size(":")))></h3>
+			<p>SID (sistemos ID) yra tinklo identifikatorius, nurodantis dabartinį mobiliojo ryšio duomenų tinklo prijungimo tašką. Mobiliojo ryšio bokštų grupė gali turėti tą pačią SID reikšmę. Šiame lauke rodomas dabartinis SID.</p>		
+			<tmpl_if showRoaming>
+				<h3>Tarptinklinis ryšys</h3>
+				<p>Jis nurodo, ar dabartinis ryšys yra tarptinklinis.</p>			
+			</tmpl_if>
+			<tmpl_if linkToFieldTest>	
+				<h2><tmpl_var _("webui", "status_diagnostics_field_test_button")></h2>
+				<p>Mygtukas „Naudojimo bandymas“ pateiks žemo lygio tinklo parametrų sąrašą, kuris gali būti naudingas techninės pagalbos darbuotojams šalinant tinklo ryšio triktis.</p>
+				
+				<p>Šis mygtukas galimas tik tuo atveju, jei pasiekiamas 3G tinklas.</p>
+			</tmpl_if>
+		</tmpl_if>
+	</tmpl_if>
+			
+</div>
+<!-- id="status_diagnostics" -->
+		

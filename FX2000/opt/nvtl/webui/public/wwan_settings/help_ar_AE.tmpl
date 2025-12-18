@@ -1,0 +1,68 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p>يمكنك استخدام إعداد "ON/OFF (تشغيل/إيقاف)"عند الضرورة لإيقاف تشغيل بيانات شبكة الجوّال ومنع الوصول إلى شبكة الهاتف المحمول. يمنع هذا الأجهزة المتصلة من الاتصال بالإنترنت واستخدام خطة بيانات الهاتف المحمول. للتشغيل العادي، يجب ترك هذا الإعداد قيد التشغيل.</p>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>تفضيل الاتصال</h3>
+			<p>حدد الخيار المطلوب للتحكم في وقت <tmpl_var _("webui", "webui_product_name")> ستنشئ اتصال بيانات بشبكة الهاتف المحمول.</p>
+	</tmpl_if>
+
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>استخدم هذا الإعداد لتشغيل التجوال الدولي والمحلي أو إيقاف تشغيله حسب الحاجة. قد يتم تطبيق رسوم بيانات إضافية عند التجوال.</p>
+	</tmpl_if>
+
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p>النظام الافتراضي هو "<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>". سوف يختار <tmpl_var _("webui", "webui_product_name")> أفضل تقنية متاحة.</p>
+		<p>إذا رغبت في ذلك، يمكنك تغيير هذا للحد من تقنيات الشبكات التي سيتم استخدامها.</p>
+	</tmpl_if>
+
+	<h3>تحديد الشبكة يدويًا</h3>
+		
+	<p>هذه الميزة متاحة فقط إذا تم إيقاف تشغيل تمكين التحديد التلقائي للشبكة. يمكن أن يكون هذا مفيدًا في حالة توفر شبكات متعددة، ولديك تفضيل بشأن أي شبكة يتم استخدامها.</p>
+	<p>انقر فوق الزر "تحديد شبكة" للبحث عن الشبكات المتاحة ؛ يمكنك بعد ذلك اختيار الشبكة المطلوبة.</p>
+	
+	
+	<tmpl_if showApnSettings>
+		<tmpl_if showAdvancedSettingsToggleButton>
+			<h2>الإعدادات المتقدمة</h2>
+			<p>استخدم هذا العنوان/الرابط لعرض أو إخفاء الإعدادات المتقدمة حسب الحاجة.</p>
+		</tmpl_if>
+
+		<h3>
+			<tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))>
+		</h3>
+		<p>تم تكوين APN مسبقًا؛ لا يجب تغيير APN إلا إذا كان لديك حساب شركة (مع APN الخاص بك).</p>		
+		<p>إذا كنت بحاجة إلى تغيير APN، فأدخل القيمة التي يوفرها مزود خدمة شبكة الأجهزة المحمولة.</p>
+		
+		<tmpl_if showApnAuthenticationSettings>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))>
+			</h3>
+			<div class="blockgroup">
+				<p>حدد الخيار الذي حدده مزود الخدمة الخاص بك.</p>
+				<ul>
+					<li>لا يوجد</li>
+					<li>PAP</li>
+					<li>CHAP</li>
+				</ul>
+			</div>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))>
+			</h3>
+			<p>
+				إذا كانت المصادقة <strong>لا يوجد</strong>، فيمكن ترك هذا فارغًا. خلاف ذلك، أدخل القيمة التي حددها مزود الخدمة الخاص بك.
+			</p>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))>
+			</h3>
+			<p>
+				إذا كانت المصادقة <strong>لا يوجد</strong>، فيمكن ترك هذا فارغًا. خلاف ذلك، أدخل القيمة التي حددها مزود الخدمة الخاص بك.
+			</p>
+		</tmpl_if>
+	</tmpl_if>
+</div>

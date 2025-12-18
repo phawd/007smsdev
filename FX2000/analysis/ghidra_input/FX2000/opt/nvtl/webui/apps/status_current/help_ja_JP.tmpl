@@ -1,0 +1,55 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>モバイルネットワーク経由のインターネット接続の接続ステータスが表示されます。</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>このデバイスが現在接続しているモバイルネットワークの名前。</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>現在の接続に使用されているネットワーク技術。 LTEは利用可能な最速の技術です。</p> 
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+	-->
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>現在のインターネットセッションで、接続が確立されてから経過した時間。</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))></h3>
+	<p>現在のインターネットセッションの場合、受信したデータの量。 このカウンタは、接続が確立されるとゼロから始まります。</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>現在のインターネットセッションの場合、送信したデータの量。 このカウンタは、接続が確立されるとゼロから始まります。</p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+	<p>このデバイスに割り当てられているインターネットIPアドレス。</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))></h3>
+	<p>上記のIPアドレスに関連付けられたネットワークマスク。</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	<p>上記のIPアドレスに関連付けられたゲートウェイIPアドレス。</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))></h3>
+	<p>このデバイスで現在使用されているドメインネームサーバー。</p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+	<p><tmpl_var _("webui", "webui_product_name")> のグローバルIPv6アドレスがここに表示されます。 IPv6がオフになっているか、現在のネットワーク接続でサポートされていない場合、ここは空白になります。</p>
+
+	<tmpl_if InternetStatusViewSessionShow>
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+	<p>セッションログには次のデータが含まれます。</p>
+	<p>-日付と時刻（接続開始時）</p>
+	<p>-期間（現在のセッション情報と同じ形式）</p>
+	<p>-受信済み（現在のセッションと同じ形式）</p>
+	<p>-送信済み（現在のセッションと同じ形式）</p>
+	<p>-合計データ量（RxとTxの合計、現在のセッション情報の形式）</p>
+	<p>-ローミング（ローミング/部分的/空白）空白=ホームネットワーク</p>
+	<p>-IPv4（IPv4 WWAN IPアドレス）</p>
+	<p>-IPv6（IPv6 WWAN IPアドレス）</p>
+
+	<p>ログは日付順になっています。</p>
+	<p>ユーザーは順序を変更できず、セッションログに関連するオプションはありません。</p>
+	</tmpl_if>
+
+</div> 
+<!-- id="status_internet" -->
+

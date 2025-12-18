@@ -1,0 +1,339 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+snprintf
+vfprintf
+closedir
+strcasecmp
+strncasecmp
+__errno_location
+vsnprintf
+strerror
+__ctype_b_loc
+GLIBC_2.28
+gettimeofday
+__assert_fail
+clock_gettime
+librt.so.1
+localtime
+fdatasync
+unsetenv
+H	KxD	J{D
+hostapd_cli v2.8-devel
+Copyright (c) 2004-2019, Jouni Malinen <j@w1.fi> and contributors
+Not connected to hostapd - command dropped.
+'%s' command timed out.
+'%s' command failed.
+RELOAD_WPA_PSK
+DRIVER_FLAGS
+PMKSA_FLUSH
+ERP_FLUSH
+GET_CONFIG
+WPS_GET_STATUS
+WPS_CANCEL
+AP-STA-CONNECTED 
+AP-STA-DISCONNECTED 
+Invalid DRIVER command - at least 1 argument required.
+Too few arguments: hostapd_cli -ifname update_acl <accept/deny> <acl file name>
+UPDATE_ACL %s %s
+Too long UPDATE_ACL command.
+Invalid req_lci command - requires destination address
+REQ_LCI %s
+Too long REQ_LCI command.
+Invalid remove_neighbor command: needs 2 arguments
+REMOVE_NEIGHBOR %s %s
+Too long REMOVE_NEIGHBOR command.
+Invalid set_neighbor command: needs 3-6 arguments
+SET_NEIGHBOR %s %s %s %s %s %s
+Too long SET_NEIGHBOR command.
+LOG_LEVEL%s%s%s%s
+Too long option
+Invalid vendor command
+usage: <vendor id> <command id> [<hex formatted command argument>]
+VENDOR %s %s %s
+Too long VENDOR command.
+Invalid 'hs20_deauth_req' command - at least three arguments (STA addr, Code, Re-auth Delay) are needed
+HS20_DEAUTH_REQ %s %s %s %s
+HS20_DEAUTH_REQ %s %s %s
+Invalid 'hs20_wnm_notif' command - two arguments (STA addr and URL) are needed
+HS20_WNM_NOTIF %s %s
+Invalid chan_switch command: needs at least two arguments (count and freq)
+usage: <cs_count> <freq> [sec_channel_offset=] [center_freq1=] [center_freq2=] [bandwidth=] [blocktx] [ht|vht]
+CHAN_SWITCH %s %s
+Too long CHAN_SWITCH command.
+Invalid 'send_qos_map_conf' command - one argument (STA addr) is needed
+SEND_QOS_MAP_CONF %s
+Invalid 'set_qos_map_set' command - one argument (comma delimited QoS map set) is needed
+SET_QOS_MAP_SET %s
+Invalid GET command: needs one argument (variable name)
+Too long GET command.
+Invalid SET command: needs two arguments (variable name and value)
+SET %s %s
+Too long SET command.
+Invalid 'bss_tm_req' command - at least one argument (STA addr) is needed
+BSS_TM_REQ %s
+Invalid 'ess_disassoc' command - three arguments (STA addr, disassoc timer, and URL) are needed
+ESS_DISASSOC %s %s %s
+Invalid 'disassoc_imminent' command - two arguments (STA addr and Disassociation Timer) are needed
+DISASSOC_IMMINENT %s %s
+Invalid 'wps_config' command - at least two arguments are required.
+WPS_CONFIG %s %s %s
+WPS_CONFIG %s %s
+WPS_CONFIG %s %s %s %s
+Invalid 'wps_ap_pin' command - at least one argument is required.
+WPS_AP_PIN %s %s %s
+WPS_AP_PIN %s %s
+WPS_AP_PIN %s
+Invalid WPS_CHECK_PIN command: needs one argument:
+- PIN to be verified
+WPS_CHECK_PIN %s %s
+WPS_CHECK_PIN %s
+Too long WPS_CHECK_PIN command.
+Invalid 'wps_pin' command - at least two arguments, UUID and PIN, are required.
+WPS_PIN %s %s %s %s
+WPS_PIN %s %s %s
+WPS_PIN %s %s
+Invalid 'sa_query' command - exactly one argument, STA address, is required.
+SA_QUERY %s
+Invalid 'disassociate' command - exactly one argument, STA address, is required.
+DISASSOCIATE %s %s
+DISASSOCIATE %s
+Invalid 'deauthenticate' command - exactly one argument, STA address, is required.
+DEAUTHENTICATE %s %s
+DEAUTHENTICATE %s
+Invalid 'new_sta' command - exactly one argument, STA address, is required.
+NEW_STA %s
+Invalid 'sta' command - at least one argument, STA address, is required.
+STA %s %s
+tls_library
+Ambiguous command '%s'; possible commands:
+Unknown command '%s'
+STATUS-DRIVER
+Invalid %s command - at least %d argument%s required.
+REQ_BEACON
+POLL_STA
+DENY_ACL
+ACCEPT_ACL
+Invalid req_range command: needs at least 4 arguments - dest address, randomization interval, min AP count, and 1 to 16 AP addresses
+REQ_RANGE
+Invalid LEVEL command: needs one argument (debug level)
+LEVEL %s
+Could not read pending message.
+hostapd did not reply to PING command - exiting
+commands:
+usage: hostapd_cli [-p<path>] [-i<ifname>] [-hvB] [-a<path>] \
+                   [-P<pid file>] [-G<ping interval>] [command..]
+Options:
+   -h           help (show this usage text)
+   -v           shown version information
+   -p<path>     path to find control sockets (default: /var/run/hostapd)
+   -s<dir_path> dir path to open client sockets (default: /var/run/hostapd)
+   -a<file>     run in daemon mode executing the action file based on events
+                from hostapd
+   -B           run a daemon in the background
+   -i<ifname>   Interface to listen on (default: first interface found in the
+                socket path)
+STA-FIRST
+STA-NEXT %s
+Warning: Failed to attach to hostapd.
+Control interface directory '%s' could not be openned.
+Available interfaces:
+Could not connect to interface '%s' - re-trying
+Connection to hostapd lost - trying to reconnect
+Connection to hostapd re-established
+a:BhG:i:p:P:s:v
+Selected interface '%s'
+Connection established.
+Failed to connect to hostapd - wpa_ctrl_open
+Could not connect to hostapd - re-trying
+Interactive mode
+.hostapd_cli_history
+gas_frag_limit
+mbo_assoc_disallow
+deny_mac_file
+accept_mac_file
+= pings hostapd
+= get MIB variables (dot1x, dot11, radius)
+= reload/truncate debug log output file
+= show interface status info
+<addr> = get MIB variables for one station
+= get MIB variables for all stations
+list_sta
+= list all stations
+<addr> = add a new station
+deauthenticate
+<addr> = deauthenticate a station
+disassociate
+<addr> = disassociate a station
+sa_query
+<addr> = send SA Query to a station
+<uuid> <pin> [timeout] [addr] = add WPS Enrollee PIN
+wps_check_pin
+<PIN> = verify PIN checksum
+= indicate button pushed to initiate PBC
+wps_cancel
+= cancel the pending WPS operation
+wps_ap_pin
+<cmd> [params..] = enable/disable AP PIN
+wps_config
+<SSID> <auth> <encr> <key> = configure AP
+wps_get_status
+= show current WPS status
+disassoc_imminent
+= send Disassociation Imminent notification
+ess_disassoc
+= send ESS Dissassociation Imminent notification
+bss_tm_req
+= send BSS Transition Management Request
+get_config
+= show current configuration
+= show this usage help
+interface
+[ifname] = show interfaces/select interface
+<params..> = send unprocessed command
+<debug level> = change debug level
+= show full hostapd_cli license
+= exit hostapd_cli
+<name> <value> = set runtime variables
+<name> = get runtime info
+set_qos_map_set
+<arg,arg,...> = set QoS Map set element
+send_qos_map_conf
+<addr> = send QoS Map Configure frame
+chan_switch
+<cs_count> <freq> [sec_channel_offset=] [center_freq1=]
+  [center_freq2=] [bandwidth=] [blocktx] [ht|vht]
+  = initiate channel switch announcement
+hs20_wnm_notif
+<addr> <url>
+  = send WNM-Notification Subscription Remediation Request
+hs20_deauth_req
+<addr> <code (0/1)> <Re-auth-Delay(sec)> [url]
+  = send WNM-Notification imminent deauthentication indication
+<vendor id> <sub command id> [<hex formatted data>]
+  = send vendor driver command
+<driver sub command> [<hex formatted data>]
+  = send driver command data
+= enable hostapd on current interface
+= reload configuration for current interface
+= disable hostapd on current interface
+erp_flush
+= drop all ERP keys
+log_level
+[level] = show/change log verbosity level
+ = show PMKSA cache entries
+pmksa_flush
+ = flush PMKSA cache
+set_neighbor
+<addr> <ssid=> <nr=> [lci=] [civic=] [stat]
+  = add AP to neighbor database
+remove_neighbor
+<addr> <ssid=> = remove AP from neighbor database
+<addr> = send LCI request to a station
+req_range
+ = send FTM range request
+driver_flags
+ = show supported driver flags
+accept_acl
+=Add/Delete/Show/Clear accept MAC ACL
+deny_acl
+=Add/Delete/Show/Clear deny MAC ACL
+update_acl
+<accept/deny> <acl file name> = update acl either to accept or deny from the given file
+poll_sta
+<addr> = poll a STA to check connectivity with a QoS null frame
+req_beacon
+<addr> [req_mode=] <measurement request hexdump>  = send a Beacon report request to a station
+reload_wpa_psk
+= reload wpa_psk_file only
+/var/run/hostapd
+%s/wpa_ctrl_%d-%d
+/tmp/wpa_ctrl_%d-%d
+@abstract:
+fcntl(ctrl->s, O_NONBLOCK)
+/dev/urandom
+Could not open /dev/urandom.
+%02x:%02x:%02x:%02x:%02x:%02x
+Too long command
+This software may be distributed under the terms of the BSD license.
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+3. Neither the name(s) of the above-listed copyright holder(s) nor the
+   names of its contributors may be used to endorse or promote products
+   derived from this software without specific prior written permission.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+This software may be distributed under the terms of the BSD license.
+See README for more details.
+eloop: could not process SIGINT or SIGTERM in two seconds. Looks like there
+is a bug that ends up in a busy loop that prevents clean shutdown.
+Killing program forcefully.
+../src/utils/eloop.c
+table->table[i].sock >= 0
+ELOOP: remaining socket: sock=%d eloop_data=%p user_data=%p handler=%p
+sock >= 0
+ELOOP: Too long timeout (secs=%u) to ever happen - ignore it
+eloop: %s: %s
+ELOOP: remaining timeout: %d.%06d eloop_data=%p user_data=%p handler=%p
+%02x:%02x:%02x:%02x:%02x:%02x/%02x:%02x:%02x:%02x:%02x:%02x
+%ld.%06u: 
+%s - hexdump(len=%lu):
+ [REMOVED]
+%s - hexdump_ascii(len=%lu): [REMOVED]
+%s - hexdump_ascii(len=%lu): [NULL]
+%s - hexdump_ascii(len=%lu):
+%s: Failed to open output file descriptor, using standard output
+%s: Failed to set FD_CLOEXEC - continue without: %s
+wpa_debug_open_file: Failed to open output file, using standard output
+wpa_msg: Failed to allocate message buffer
+wpa_msg_ctrl: Failed to allocate message buffer
+wpa_msg_global: Failed to allocate message buffer
+wpa_msg_global_ctrl: Failed to allocate message buffer
+wpa_msg_no_global: Failed to allocate message buffer
+%s: Failed to allocate message buffer
+hostapd_logger: Failed to allocate message buffer
+hostapd_logger: STA %02x:%02x:%02x:%02x:%02x:%02x - %s
+hostapd_logger: %s
+EXCESSIVE
+eloop_sock_table_set_fds
+eloop_register_sock
+wpa_debug_open_file
+wpa_msg_global_only
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.data.rel.ro.local
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

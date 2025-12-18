@@ -1,0 +1,47 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_manager_menu_text")></h1>
+        <h2>Oversigt</h2>
+        <p>Simkortet inde i din <tmpl_var _("webui", "webui_product_name")> kan låses op med en pinkode. Hvis simkortet er låst, skal du indtaste pinkoden, før du opretter forbindelse til mobilnetværket. Når den først er indtastet, huskes pinkoden indtil næste nedlukning.</p>
+
+	<p>Ud over at gøre det muligt at indtaste pinkoden for simkortet, når det er nødvendigt, giver denne side dig også mulighed for at låse simkortet op eller ændre simkortets pinkode. Du skal angive den eksisterende pinkode for at ændre simkortet. For et Novatel Wireless-simkort er standardpinkoden tilgængelig fra din tjenesteudbyder.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_pin_lock_feature_label"), (size(_("webui", "adv_sim_manager_pin_lock_feature_label")) - size(":")))></h3>
+		<p>Feltet angiver, om pinkode-låsefunktionen er i brug eller ej. Hvis den er slået "Til", er pinkodelåsen slået til, og simkortets pinkode skal indtastes for at oprette forbindelse til mobilnetværket. Hvis den er slået "Fra", er pinkodelåsefunktionen slået fra og simkortets pinkode er ikke påkrævet.</p>
+
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_status_label"), (size(_("webui", "adv_sim_manager_status_label")) - size(":")))></h3>
+	<p>Feltet viser simkortets aktuelle status. Mulige værdier er:</p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>Klar - dette er normal tilstand. Simkortets pinkode bruges ikke.</li>
+	        <li>Pinkodelåst - simkortets pinkode skal indtastes, før du kan bruge mobilnetværket.</li>
+	        <li>Pukkodelåst - simkortets pukkode skal indtastes for at fortsætte. PUK kan fås fra din tjenesteudbyder.</li>
+	        <li>Ikke låst - simkortets pinkode er påkrævet, men er allerede indtastet.</li>
+	        <li>Intet simkort - intet simkort fundet. Hvis du har et simkort, skal du kontrollere, at det er indsat korrekt.</li>
+	        <li>Simkortfejl - et simkort blev registreret, men det svarede ikke som forventet og kan ikke bruges.</li>       
+	        </ul>
+	</div>
+        <h2>Simkort-handlinger</h2>
+        <p>De tilgængelige handlinger afhænger af den aktuelle status for simkortet. Alle de mulige handlinger er vist og forklaret nedenfor.</p>
+
+		<h3>Pinkodelås</h3>
+		<p>Såfremt simkortet er pinkodelåst, bliver du bedt om at indtaste pinkoden. Bemærk, at hvis der indtastes en forkert pinkode for mange gange, bliver simkortet pukkodelåst. En tæller på siden angiver, hvor mange forkerte indtastninger der vil forårsage pukkodelås. Når der først er pukkodelåst, skal du anmode om pukkoden fra din tjenesteudbyder.</p>
+		<h3>Pukkodelås</h3>
+		<p>Såfremt simkortet er pukkodelåst, kan det kun låses op ved hjælp af pukkoden. Bemærk, at hvis der indtastes en forkert puk for mange gange, bliver simkortet ubrugeligt permanent. Du skal da anskaffe et nyt simkort. En tæller på siden viser, hvor mange indtastningsforsøg der er tilbage.</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_enable_pin_lock_option")></h3>
+		<p>Dette indstiller simkortet, så indtastning af en pinkode kræves ved opstart for at oprette forbindelse til mobilnetværket. For at udføre denne handling skal du indtaste den nuværende pinkode.</p>
+
+		<h3><tmpl_var _("webui", "adv_sim_manager_disable_pin_option")></h3>
+		<p>Du kan bruge denne indstilling til at slukke for en pinkodelås, der tidligere var slået til, så det ikke længere er nødvendigt at indtaste en pinkode for at oprette forbindelse til mobilnetværket. For at udføre denne handling skal du indtaste den nuværende pinkode.</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_change_pin_option")></h3>
+		<p>For at ændre den eksisterende pinkode skal du vælge denne indstilling og derefter indtaste de krævede data:</p>
+		<div class="blockgroup">
+			<ul>
+			<li>Nuværende pinkode</li>
+			<li>Ny pinkode</li>
+			<li>Bekræft den nye pinkode</li>
+			</ul>
+		</div>
+		<p><tmpl_var _("webui", "adv_sim_manager_name_text")></p>
+</div>
+<!-- id="sim" -->
+

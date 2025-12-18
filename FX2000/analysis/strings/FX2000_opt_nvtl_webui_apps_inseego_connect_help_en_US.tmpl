@@ -1,0 +1,20 @@
+<div id="inseego_connect">
+	<h1><tmpl_var _("webui", "inseego_connect_help_title_text")></h1>
+	<h2><tmpl_var _("webui", "inseego_connect_cloud_services_text")></h2>
+		Inseego Connect is a cloud platform product that provides 360 degree visibility and secure accessibility into your deployment from a single platform. Use this page to enable and configure settings for connection with Inseego Connect.
+	<h3><tmpl_var _("webui", "inseego_connect_label")></h3>
+		By default, the connection to Inseego Connect is OFF. Slide the ON/OFF slider to ON to enable the connection.
+	<h2><tmpl_var _("webui", "inseego_connect_status_text")></h2>
+	<h3><tmpl_var _("webui", "inseego_connect_connection_state_label")></h3>
+		This is a report on your devices connection to the Inseego Connect server. <br>
+		Up : Device is communicating with Inseego Connect Server. <br>
+		Down : Device is not communicating with Inseego Connect server.<br>
+	<h3><tmpl_var _("webui", "inseego_connect_last_reported_label")></h3>
+		This is equal to the time on your device at which it last sent in a packet to the Inseego Connect server.
+	<h3><tmpl_var _("webui", "inseego_connect_interval_label")></h3>
+		This is the interval at which your device will send packets into the Inseego Connect server.
+		NOTE:</b> A shorter interval means more data usage.
+	<tmpl_if showMobileAppSection>
+	<h3><tmpl_var _("webui", "inseego_connect_mobile_app_text")></h3>
+		Use the link to download the Inseego Connect Mobile App.
+	</tmpl_if>

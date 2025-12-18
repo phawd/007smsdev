@@ -1,0 +1,28 @@
+<!-- Backup and Restore -->
+<div id="backup_restore">
+         <h1><tmpl_var _("webui", "backup_restore_menu_text")></h1>
+
+         <h2>概要</h2>
+         <p>この機能を使用して、このデバイスから構成設定のコピーをコンピューター上のファイルにバックアップ（ダウンロード）したり、以前に保存した構成ファイルを復元（アップロード）したりします。 この構成ファイルには、デバイス、ルーター、システム機能のすべての設定が含まれています。 4Gモデムの設定やデータは含まれません。 ファイルは元のデバイスと同じデバイスにしか復元できないことに注意してください。</p>
+         <p>この画面では、すべての設定を工場出荷時のデフォルト値にリセットすることもできます。</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+         <h3>管理者パスワード:</h3>
+         <p>このフィールドに現在の <tmpl_var _("webui", "webui_product_name")> 管理者パスワードを入力してください。</p>
+         <h3><tmpl_var _("webui", "backup_restore_backup_now_button")></h3>
+         <p>[ダウンロード] ボタンをクリックして、現在の構成ファイルのコピーをコンピューターにダウンロードします。 ブラウザーでファイルの保存を求められた場合は、必要に応じて名前を変更できます。</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+
+         <h3>管理者パスワード:</h3>
+         <p>このフィールドに現在の <tmpl_var _("webui", "webui_product_name")> 管理者パスワードを入力してください。</p>
+         <h3><tmpl_var truncate(_("webui", "backup_restore_file_select_label"), (size(_("webui", "backup_restore_file_select_label")) - size(":")))></h3>
+         <p><tmpl_var _("webui", "webui_product_name")> から以前にコンピューターにダウンロードした構成ファイルを選択します。</p>
+         <h3>今すぐ復元ボタン</h3>
+         <p>構成ファイルを選択した後で、このボタンをクリックしてファイルのアップロードを開始します。 アップロード後、構成ファイルがすぐに適用され、このデバイスが再起動しました。</p>
+         <p class="note"><strong>注:</strong> 構成ファイルをアップロードすると、既存のすべての設定が構成ファイルと一致するように変更されます。 これにより、現在のWi-Fi設定が変更され、このウェブブラウザーセッションを含めて、この <tmpl_var _("webui", "webui_product_name")> への既存のすべての接続が切断される可能性があります。</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+         <p><strong>工場出荷時のデフォルトに戻します</strong> ボタンをクリックして、すべての設定を工場出荷時のデフォルト値にリセットします。 これにより、再起動され、現在のWi-Fi設定が変更され、このウェブブラウザーセッションを含めて、この <tmpl_var _("webui", "webui_product_name")> への既存のすべての接続が切断される可能性があります。</p>
+</div>
+ <!-- id="backup_restore" -->

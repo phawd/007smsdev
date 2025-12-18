@@ -1,0 +1,29 @@
+<div id="session_log_info">        
+	<h1><tmpl_var _("webui", "session_log_info_menu_text")></h1>
+        <p>El registro de la sesi
+n contiene los siguientes datos:</p>
+        <p>- Fecha y hora   (cu
+ndo comenz
+ la conexi
+        <p>- Duraci
+n (con el mismo formato que la informaci
+n de sesi
+n actual)</p>
+        <p>- Recibido    (formato en cuanto a la sesi
+n actual)</p>
+        <p>- Transmitido    (formato en cuanto a la sesi
+n actual)</p>
+        <p>- Datos totales  (suma de Rx y Tx, formato en cuanto a la informaci
+n de sesi
+n actual)</p>
+	<tmpl_if RoamingStatusShow>
+        	<p>- Roaming   (Roaming/Parcial/en blanco) En blanco=red dom
+stica</p>
+	</tmpl_if>
+        <p>- IPv4   (Direcci
+n IP IPv4 WWAN)</p>
+        <p>- IPv6   (Direcci
+n IP IPv6 WWAN)</p>
+        <p>El registro est
+ en orden de fecha. </p>
+        <p>El usuario no puede cambiar el orden y no existen opciones relacionadas con el registro de sesi

@@ -1,0 +1,397 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+nwqmi_nvtl_test_cmd
+__ctype_b_loc
+nwqmi_nvtl_nv_item_read_cmd
+snprintf
+nwqmi_nvtl_nv_item_write_cmd
+nwqmi_nvtl_register_event_reporting
+nwqmi_nvtl_get_model_number_cmd
+nwqmi_nvtl_get_eri
+nwqmi_nvtl_get_pco_value
+nwqmi_nvtl_modem_pwr_down_cmd
+nwqmi_nvtl_verify_registration_state
+nwqmi_nvtl_factory_restore
+nwqmi_read_sprint_bsr_timers
+nwqmi_write_sprint_bsr_timers
+nwqmi_write_sprint_lte_tm9
+nwqmi_nvtl_set_sprint_lte_band_option
+nwqmi_nvtl_set_sprint_sim_lock
+nwqmi_nvtl_set_sprint_ims_enable
+nwqmi_nvtl_set_sprint_lte_qam_status
+nwqmi_open_one
+nwqmi_wds_get_pkt_statistics
+nwqmi_open_ipv6
+nwqmi_wds6_get_pkt_statistics
+qmi_client_send_msg_sync
+nwqmi_get_error
+str_qmi_error
+__isoc99_scanf
+GLIBC_2.7
+nwqmi_uim_power_down
+nwqmi_uim_power_up
+mifi_dbg_start
+nwqmi_init
+nwqmi_close
+nwqmi_gps_register_event_reporting
+nwqmi_gps_set_session_operation
+nwqmi_gps_start_fix_req
+nwqmi_gps_set_ftm_mode
+nwqmi_gps_set_service_state
+nwqmi_open
+nwqmi_dms_set_operating_mode
+nwqmi_wds_get_profile
+nwqmi_wds_modify_profile
+nwqmi_wds_start_call
+nwqmi_wds_get_call_status
+nwqmi_wds6_start_call
+nwqmi_wds6_get_call_status
+nwqmi_nas_get_sig_str
+nwqmi_print_nas_sig_str
+nwqmi_nas_get_serving_system
+nwqmi_print_nas_serving_system
+nwqmi_nas_get_sig_info
+nwqmi_print_nas_sig_info
+nwqmi_wds_stop_call
+nwqmi_wds6_stop_call
+nwqmi_nvtl_file_read
+nwqmi_nvtl_file_write
+nwqmi_nvtl_file_delete
+mifi_dbg_stop
+__isoc99_sscanf
+qmi_util_read_std_tlv
+qmi_linux_get_conn_id_by_name
+qmi_service_connection_init
+qmi_service_init
+qmi_service_release
+qmi_util_write_std_tlv
+qmi_service_send_msg_sync
+__bss_start
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+librt.so.1
+libpthread.so.0
+libmifi_debug.so
+libmificommon.so
+H	KxD	J{D
+Prints out usage and command listing.
+test_cmd
+NW_SVC1_CMD_TEST                 = 0x0000
+NW_SVC1_CMD_READ_NV_ITEM         = 0x002e
+write_nv
+NW_SVC1_CMD_WRITE_NV_ITEM        = 0x002f
+write_lwm2m_key_nv
+set_event_report
+NW_SVC1_CMD_SET_EVENT_REPORT     = 0x000e
+get_model
+NW_SVC1_CMD_MODEL_TYPE           = 0x0009
+NW_SVC1_CMD_GET_ERI_INFO         = 0x003B
+NW_SVC1_CMD_LAST_KNOWN_PCO_VALUE = 0x0060
+pwr_down
+NW_SVC1_CMD_POWER_DOWN_PROC      = 0x0034
+get_reg_state
+NW_SVC1_CMD_GET_REG_STATE        = 0x0047
+factory_restore
+NW_SVC1_CMD_FACTORY_RESTORE      = 0x003A
+read_file
+NW_SVC1_CMD_CHUNK_FILE_READ      = 0x0042
+write_file
+NW_SVC1_CMD_CHUNK_FILE_WRITE     = 0x0043
+set_bsr_timer
+NW_SVC1_CMD_SET_BSR_TIMER        = 0x0069
+get_bsr_timer
+NW_SVC1_CMD_GET_BSR_TIMER        = 0x0072
+NW_SVC1_CMD_SET_LTE_TM9SET_STATUS        = 0x0075
+set_sprint_lte_band_option
+NW_SVC1_CMD_SET_LTE_BAND_VAL        = 0x0076
+set_sprint_sim_lock
+NW_SVC1_CMD_SET_SIM_LOCK        = 0x0077
+set_sprint_ims_enable
+NW_SVC1_CMD_SET_IMS_ENABLE        = 0x0078
+set_sprint_lte_qam_status
+NW_SVC1_CMD_SET_LTE_QAM_STATUS        = 0x0079
+get_pkt_stats
+NW_SVC1_CMD_GET_PKT_STATS        = 0x0000
+get_physical_slot_status
+NW_SVC1_CMD_GET_PHY_SLOT_ST        = 0x0000
+switch_slot
+NW_SVC1_CMD_GET_SW_SLOT        = 0x0000
+get_NSA_nr5g_sys_info
+NW_SVC1_CMD_GET_NSA_NR5G_SYS_INFO_REQ_V01 = 0x0000
+uim_power_down
+QMI_UIM_POWER_DOWN_REQ_V01 = 0x0030
+uim_power_up
+QMI_UIM_POWER_UP_REQ_V01 = 0x0031
+  ---------------------------------------------------------------------------
+ %-30s - %s
+  ---------------------------------------------------------------------------
+nwqmi_nvtl_test_cmd() failed, rc=[%d]
+Command success - Data1=[%d], Data2=[%d], buf=[%s]
+Invalid input value
+ %s %s %s <NV item number> <0/1, 1 - string>
+nwqmi_nvtl_nv_item_read_cmd() failed, rc=[%d]
+String value=[%s]
+60044 - Old value=[%s]
+NVTL rocks!!
+nwqmi_nvtl_nv_item_write_cmd() failed, rc=[%d]
+New value set
+60044 - Read back new value=[%s]
+Wrote old value back
+ %s %s %s <LWM2M_key>
+LWM2M - key value=[%s]
+New LWM2M key is set
+LWM2M key - Read back new value=[%s]
+ %s %s %s <0/1>
+nwqmi_nvtl_register_event_reporting() failed, rc=[%d]
+Value set - %d
+nwqmi_nvtl_get_model_number_cmd() failed, rc=[%d]
+Model=[%s]
+nwqmi_nvtl_get_eri() failed, rc=[%d]
+eri_version=[%d], eri_ind=[%d], eri_alert=[%d],icon_id=[%d] icon_mode=[%d], text=[%s] 
+nwqmi_nvtl_get_pco_value() failed, rc=[%d]
+PCO pdn_type=[%d]
+PCO pcoSubValue=[%d]
+nwqmi_nvtl_modem_pwr_down_cmd() failed, rc=[%d]
+nwqmi_nvtl_verify_registration_state() failed, rc=[%d]
+/factory_backup/item_list.save
+/novatel/$$NW_FACTORY_BACKUP$$
+nwqmi_nvtl_factory_restore() failed, rc=[%d]
+ %s %s %s <local file path> <modem efs file path> <Max expected file size in bytes>
+read_efs_file() failed, rc=[%d]
+ %s %s %s <local file path> <modem efs file path> 
+write_efs_file() failed, rc=[%d]
+ %s %s %s
+read_sprint_bsr_timers() failed, rc=[%d]
+read_sprint_bsr_timers(%d, %d, %d)
+ %s %s %s <bsr timer> <next lte scan> <bsr max timer>
+write_sprint_bsr_timers(%d, %d, %d)
+write_sprint_bsr_timers() failed, rc=[%d]
+ %s %s %s <tm9 mimo> <enable>
+write_sprint_lte_tm9(%d, %d)
+write_sprint_lte_tm9() failed, rc=[%d]
+ %s %s %s <band> <enable>
+set_sprint_lte_band_option(%d, %d)
+set_sprint_lte_band_option() failed, rc=[%d]
+ %s %s %s <unlock>
+set_sprint_sim_lock(%d)
+set_sprint_sim_lock() failed, rc=[%d]
+ %s %s %s <enable>
+set_sprint_ims_enable(%d)
+set_sprint_ims_enable() failed, rc=[%d]
+ %s %s %s <qam_type> <enable>
+set_sprint_lte_qam_status(%d, %d)
+set_sprint_lte_qam_status() failed, rc=[%d]
+IPv4 Internet Call:
+ bytes_tx_ok=%llu
+ bytes_rx_ok=%llu
+ bytes_lc_tx_ok=%llu
+ bytes_lc_rx_ok=%llu
+ pkt_tx_ok=%u
+ pkt_rx_ok=%u
+ pkt_tx_err=%u
+ pkt_rx_err=%u
+ pkt_tx_ofl=%u
+ pkt_rx_ofl=%u
+IPv6 Internet Call:
+Error: %d - %s
+Phy Slot Status[%d]: status=
+(1)ABSENT
+(2)PRESENT
+(0)UNKNOWN
+, state=
+(0)INACTIVE
+(1)ACTIVE
+, logical_slot=%d, iccid=
+Phy Slot Info[%d]: protocol=%d, apps=%d, is_euicc=%d
+Extended State[%d]: state=%d, error_code=%d
+Enter logical slot (1-5): 
+Enter physical slot (1-5): 
+Get NoN-Standalone NR5G SysInfo
+sizeof(nwsvc_nas_get_nr5g_sys_info_req_msg_v01):%d sizeof(nwsvc_nas_get_nr5g_sys_info_resp_msg_v01):%d
+rc= %d resp.resp.error= %d 
+Error:rc(hex)= %x  %s
+Error:resp.resp.error(hex) = %x  %s
+band:%d earfcn:%d
+pci :%d dl_bandwidth:%d
+nwqmi_open_one rc=[%d]
+nwqmi_open_one ERROR rc=[%d]
+nwqmi_uim_power_down failed, rc=[%d]
+nwqmi_uim_power_up failed, rc=[%d]
+command [%s]
+nwqmi_init() failed, rc=[%d]
+nwqmi_open_one() failed, rc=[%d]
+command [%s] not found.
+==============================
+Starting NVTL QMI test
+No qmi data provided
+svc id = 0x%04x, (dec %d)
+msg id = 0x%04x (%d)
+Invalid number of arguments
+registering event reporting...
+setting gps mode to msa...
+starting auto tracking session...
+========Enter 'q' to quit ==========
+Don't know %c
+Setting operation mode to standalone
+/opt/nvtl/data/gps/gps.txt
+/opt/nvtl/data/gps/gps_0.txt
+Setting recording mode to ftm
+Starting auto tracking session...
+Gps ftm test running, check: /opt/nvtl/data/gps/gps.txt
+Invalid command: %c
+Reverting recording mode back to production
+Disconnected
+Connected
+Suspended
+Authenticating
+name:[%s]
+apn:[%s]
+username:[%s]
+password:[%s]
+auth pref:[%d]
+%d.%d.%d.%d
+DNS1:[%s]
+DNS2:[%s]
+PDP type:[%d]
+APN disabled:[%d]
+PDN inactivity timeout:[%d]
+IPv4 address preference:[%s]
+IPv6 address preference:[%s]
+Override PDP type:[%d]
+%s: Successfully configured the device in low power mode 
+%s: Failed to change low power state to: %d , %d err=%d
+Failed to open nwqmi 
+/opt/nvtl/data/fota/staging/profile%d.txt
+Saved the profile successfully
+Saving the profile failed
+getting profile failed
+nwqmi_open() failed to open
+Restored profile Successfully for index : %d 
+Failed to restored the profile for index : %d 
+Starting IPV4 call...
+IPV4 call failed. Rc= 0x%08x
+Monitoring IPV4 call status...
+ifconfig rmnet0 down
+ifconfig rmnet0 up 0.0.0.0
+udhcpc --now --quit -i rmnet0
+Starting IPV6 call...
+IPV6 call failed. Rc= 0x%08x
+Monitoring IPV6 call status...
+ifconfig rmnet1 up
+Starting alaska call test
+calling ccm_init()
+Failed to open QMI communications
+calling ccm_open()
+Failed to open QMI services
+opening qmi client for ipv6 on rmnet1...
+rc = %d  0x%08x
+Checking for service...
+NO SERVICE DETECTED!
+Service found.
+ipv4 status:
+ipv6 status:
+Stoping ipv4 call...
+Stoping ipv6 call...
+Stopping qmi
+Cannot allocate memory for buffer for bytes:%u
+Attempting to read file:[%s]
+File read QMI failure:%d
+File read success, (Total bytes read:%u)
+QMI Read is success, but failed while writing local file QMI count=%u
+Cannot open local file:%s for writing
+Found file=[%s]
+Cannot allocate memory for buffer
+Attempting to write file=[%s]
+File write failure:%d
+File write success, (Total bytes written=[%u])
+No of bytes read (%u) doesn't match file size(%lu)
+Cannot open local file:%s for reading
+ %s  file read  <local file path> <modem efs file path> <Max expected file size in bytes>
+Failed to open QMI communications
+Failed to open NWQMI_SVC_NVTL_SDK
+ %s  file write  <local file path> <modem efs file path>
+ %s  file delete  <modem efs file path>
+Attempting to Delete file:%s
+File delete failure:%d
+File delete success
+ %s  file <read or write or delete>
+nwcli qmi_idl   - nwqmi API test menu for NVTL service
+nwcli <call>    - start data call
+nwcli <qmi> <svc_id hex> <msg_id hex> <tlv_id_1 hex> <tlv_data_1 hex> ... <tlv_id_n hex> <tlv_data_n hex>
+alaska_call
+profile_get
+profile_restore
+power_mode
+Starting ccm nv item test
+Reading NV item NW_NV_LINUX_ROOT_PASSWORD_I %d
+NW_NV_LINUX_ROOT_PASSWORD_I is inactive
+Linux run level is: flag = %d level = %d
+NW_NV_LINUX_RUN_LEVEL_I is inactive
+Reading NV item NW_NV_MAC_ID_I %x:%x:%x:%x:%x:%x
+NW_NV_MAC_ID_I is inactive
+Reading NV item NW_NV_USB_DEFAULT_MODE_I %d result %d
+NW_NV_USB_DEFAULT_MODE_I is inactive
+Writing NW_NV_LINUX_RUN_LEVEL_I succeeded!
+Can't read NW_NV_LINUX_RUN_LEVEL_I after writing
+Writing NW_NV_LINUX_RUN_LEVEL_I failed, err code=%d!
+Stopping
+reading tlvs..
+failed to read tlv
+Read Tlv: id = %ld, length = %ld
+Can not detect rmnet0
+Failed to connect to qmi_service %d, err = 0x%08x
+Can't close qmi service, bad handle
+Failed to close qmi service: rc = 0x08%x, qmi_err = 0x%08x
+Opening service...
+Could not open qmi for service %d
+Adding %d tlvs
+Adding input tlv: id = %d, len = %d bytes
+bad tlv data, tlv_id = %d
+Input TLV Size = %d
+Full packet size  = %d
+Sending QMI Msg: id = %d: 
+Result code = 0x%08x, qmi_error_code = 0x%08x
+Result msg_size = %d
+Response bytes: 
+Error, Qmi result code = 0x%08x
+Error, qmi error code = 0x%08x
+closing service
+cmd_get_physical_slot_status
+cmd_switch_slot
+cmd_get_NSA_nr5g_sys_info
+do_power_mode
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

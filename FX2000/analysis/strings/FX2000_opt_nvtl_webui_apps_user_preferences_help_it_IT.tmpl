@@ -1,0 +1,26 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+	<p>Questa schermata contiene numerose opzioni che consentono di impostare il comportamento di dispositivo per soddisfare al meglio le tue esigenze.
+	<tmpl_if showDeviceName>
+                <h3><tmpl_var truncate(_("webui", "preferences_device_name_label"),(size(_("webui", "preferences_device_name_label")) - size(":")))></h3>
+                <p>
+                        Nome del dispositivo indica il nome di rete del dispositivo e l'URL per accedere all'interfaccia utente locale di gestione web del dispositivo.
+                </p>
+        </tmpl_if>
+	<h3>Lingua</h3>
+	<p>Seleziona la lingua desiderata. </p>
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+		Specifica il formato con cui visualizzare la data su questa interfaccia Web.
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+		Specifica il formato con cui visualizzare l
+ora su questa interfaccia Web.
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+		Specifica il formato con cui visualizzare la distanza su questa interfaccia (piedi o metri) Web.
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+		Specifica come visualizzare i numeri decimali. 
+ possibile selezionare il punto (.) o la virgola (,) da utilizzare come separatore decimale.
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+			L'indicatore Ethernet viene visualizzato sulla barra di stato quando la porta Ethernet 
+ abilitata, altrimenti rimane nascosto.
+	</tmpl_if>

@@ -1,0 +1,41 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+	<p>This screen contains many options which allow you to set the behaviour of the device to better meet your needs.
+	</p>
+	<tmpl_if showDeviceName>
+		<h3><tmpl_var truncate(_("webui", "preferences_device_name_label"),(size(_("webui", "preferences_device_name_label")) - size(":")))></h3>
+		<p>
+			Device Name indicates device network name and URL to access the device local web management UI.
+		</p>
+	</tmpl_if>
+	<h3>Language</h3>
+	<p>Select the desired language. </p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+	<p>
+		Specify the format in which the date is displayed on this Web-based interface.
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+	<p>
+		Specify the format in which the time is displayed on this Web-based interface.
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+	<p>
+		Specify the format in which the distance is displayed on this Web-based interface (feet or meters).
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+	<p>
+		Specify how decimal numbers are displayed. Period (.) or Comma (,) can be selected for use as the decimal point.
+	</p>
+
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+		<p>
+			Ethernet indicator is shown on the status bar when Ethernet port is enabled; hidden otherwise.
+		</p>
+	</tmpl_if>
+
+</div>

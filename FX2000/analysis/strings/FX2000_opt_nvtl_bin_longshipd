@@ -1,0 +1,481 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__ctype_b_loc
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+libpthread.so.0
+snprintf
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+longship_ztp_status_write_history
+sys_getLastSoftwareUpdateStatus
+router2_set_allowed_port_enabled
+router2_set_allowed_port_list
+factory_reset_do_reset
+dsm_reset_device
+sys_sendSideloadRequest
+xmldata_initialize
+xmldata_getcount
+xmldata_getstring
+xmldata_getuint32
+xmldata_shutdown
+MsgBusGet
+settings_get_features
+longship_get_test_settings
+pthread_self
+mifi_dbg_start
+__errno_location
+msgq_create
+longship_msg_async_poweron_ind
+msgq_receive
+msgq_resp_preprocess
+msgq_resp_postprocess
+mq_close
+librt.so.1
+mq_unlink
+mifi_dbg_stop
+msgq_does_queue_exist
+msgq_send_async
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+pthread_detach
+timer_delete
+timer_create
+timer_settime
+__isoc99_sscanf
+GLIBC_2.7
+__xpg_basename
+modem2_get_info
+gps_get_privacy_setting
+gps_set_privacy_setting
+gps_get_default_status
+gps_set_default_status
+gps_get_status
+gps_start
+vpn_set_wguard_settings
+connect_vpn
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+librouter2_api.so
+libwan_mgr_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libvpn_api.so
+libgps_api.so
+libfactory_reset_api.so
+libsms_api.so
+libwifi_api.so
+libccm2_api.so
+libfile_sharing_api.so
+libfota_api.so
+libled_api.so
+libbuzzer_api.so
+libans_api.so
+libusb_api.so
+libemd_api.so
+libsensor_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libcbsd_api.so
+libsysintclient.so
+liblongship_api.so
+H	KxD	J{D
+/dev/null
+/opt/nvtl/data/longship/ztp_host
+LONGSHIP
+[%s]:[%s] - %s: No ZTP Host
+[%s]:[%s] - %s: ZTP Hostname cannot be empty!!
+[%s]:[%s] - %s: Couldn't create ZTP Host file
+/tmp/longship/ztp_status
+[%s]:[%s] - %s: Couldn't create ZTP status file
+[%s]:[%s] - [LONGSHIP_ZTP]%s: longship_timer_delete(LONGSHIP_TIMER_ID_RETRY) failed, rc=[%d]
+[%s]:[%s] - [LONGSHIP_ZTP]%s: LONGSHIP_TIMER_ID_ZTP_RETRY - deleted
+[%s]:[%s] - [LONGSHIP_ZTP]%s: Timer expired
+[%s]:[%s] - [LONGSHIP_ZTP]%s: longship_timer_start(LONGSHIP_TIMER_ID_ZTP_RETRY) failed,rc=[%d]
+[%s]:[%s] - [LONGSHIP_ZTP]%s: LONGSHIP_TIMER_ID_ZTP_RETRY - started, interval=[%u]
+[%s]:[%s] - Power ON sequence starting
+rm -f /tmp/longship/data_usage_monitor
+[%s]:[%s] - %s: WAN interface Name [%d], status[%d], reason[%d], IP family=[%d] 
+/tmp/longship/data_usage_monitor
+[%s]:[%s] - Data usage already running, no action!!
+/opt/nvtl/etc/longship/ztp/zmon_datausage.sh %d &
+[%s]:[%s] - Starting Data usage montior - cmd=[%s]
+killall zmon_datausage.sh
+[%s]:[%s] - Stopping Data usage monitor - cmd=[%s]
+/opt/nvtl/data/longship/ztp/ztp_user.txt
+/opt/nvtl/data/longship/ztp/dropbear_rsa_host_key
+rm -rf /opt/nvtl/data/longship/ztp/fota_opr_id
+rm -rf /opt/nvtl/data/longship/ztp/fota_severity
+rm -rf /opt/nvtl/data/longship/ztp/fota_remarks
+[%s]:[%s] - %s: Unable create file:[%s]
+/opt/nvtl/data/longship/ztp/ran_approved_actions
+/opt/nvtl/data/longship/ztp/fota_severity
+/opt/nvtl/data/longship/ztp/fota_remarks
+[%s]:[%s] - %s: Failed to send FW update report, OPR ID=[%s]
+[%s]:[%s] - %s: FW report sent for OPR ID=[%s]
+/opt/nvtl/data/longship/ztp/fota_opr_id
+[%s]:[%s] - %s: No FOTA detected!!
+[%s]:[%s] - %s: FOTA Operation ID cannot be empty!!
+[%s]:[%s] - %s: Detected FOTA result, lets update to MA!!
+[%s]:[%s] - %s: sys_getLastSoftwareUpdateStatus() failed rc=[%d]
+Failure_to_read_result
+[%s]:[%s] - %s: FOTA History says record not found.!!
+FW_record_not_found_in_history
+fw_update_status_%d_%d_%d_details_%s
+[%s]:[%s] - %s: FW status=[%s]
+/opt/nvtl/data/longship/ztp/actions/ztp_post_action.sh
+[%s]:[%s] - %s: Found ZTP Post install actions
+[%s]:[%s] - %s: ZTP Post install actions - ret=[%d]
+/opt/nvtl/data/longship/ztp/actions/ztp_routine_action.sh
+[%s]:[%s] - %s: Found ZTP Routine actions
+[%s]:[%s] - %s: ZTP Post routine actions - ret=[%d]
+/opt/nvtl/data/longship/ztp/actions/ztp_delete_action.sh
+[%s]:[%s] - %s: Found ZTP Delete actions
+[%s]:[%s] - %s: ZTP Delete actions - ret=[%d]
+[%s]:[%s] - [ZTP-%s] %s: WG confirm handshake failed
+[%s]:[%s] - [ZTP-%s] %s: WG Handshake confirmed
+[%s]:[%s] - [ZTP-%s] %s: SSH start failed
+[%s]:[%s] - [ZTP-%s] %s: Started SSH
+[%s]:[%s] - [ZTP-%s] %s: Zabbix start failed
+[%s]:[%s] - [ZTP-%s] %s: Started Zabbix!!
+[%s]:[%s] - [ZTP-%s] %s: WebUI configure failed, continue
+[%s]:[%s] - [ZTP-%s] %s: WebUI configured
+[%s]:[%s] - [ZTP-%s] %s: WG Key exchange failed
+[%s]:[%s] - [ZTP-%s] %s: WG Key exchange done
+[%s]:[%s] - [ZTP-%s] %s: WG Setup tunnel failed
+[%s]:[%s] - [ZTP-%s] %s: WG tunnel configured
+[%s]:[%s] - [ZTP-%s] %s: Failed to add user
+[%s]:[%s] - [ZTP-%s] %s: User Added
+[%s]:[%s] - [ZTP-%s] %s: cred create failed
+[%s]:[%s] - [ZTP-%s] %s: SSH Cred created
+[%s]:[%s] - [ZTP-%s] %s: Send Device info to MA failed
+[%s]:[%s] - [ZTP-%s] %s: Sent Device details
+[%s]:[%s] - Allow port enabled.
+10050,10051,22
+[%s]:[%s] - Configured allowed port list.
+[%s]:[%s] - [ZTP-%s] %s: Failed to request default templates
+[%s]:[%s] - [ZTP-%s] %s: Requested default template
+[%s]:[%s] - [ZTP-%s] %s: Unable to turn ON GPS
+[%s]:[%s] - [ZTP-%s] %s: GPS turned ON
+/opt/nvtl/data/longship/ztp/devicePrivateKey
+/opt/nvtl/data/longship/ztp/factory_reset_trigger
+rm -rf /opt/nvtl/data/longship/ztp/factory_reset_trigger
+rm -f /tmp/longship/ztp_status
+rm -f /tmp/longship/ztp_ency_key.zip
+rm -f /opt/nvtl/data/longship/ztp_host
+[%s]:[%s] - %s: Deleting ztp directory
+rm -rf /opt/nvtl/data/longship/ztp
+[%s]:[%s] - %s: Issue factory reset
+[%s]:[%s] - %s: factory_reset_do_reset() failed
+/opt/nvtl/data/longship/ztp/ztpKey.txt
+[%s]:[%s] - %s: No ZTP Host and Key
+[%s]:[%s] - %s: No Internet connection, start retry timer
+[%s]:[%s] - %s: Failed to Download ZTP package, retry
+/tmp/longship/ztp_ency_key.zip
+[%s]:[%s] - %s: ZTP install package failed, retry
+Approved
+[%s]:[%s] - %s: *******Factory reset detected, run approved actions
+[%s]:[%s] - %s: *******Server didn't send [Approved], run approved actions
+[%s]:[%s] - %s: Received [Deleted] from MA 
+[%s]:[%s] - %s: Received [Deleted Success] from MA 
+[%s]:[%s] - %s: longship_ztp_cleanup() failed
+[%s]:[%s] - %s: Received [Duplicate] from MA 
+[%s]:[%s] - %s: Get info
+[%s]:[%s] - %s: LONGSHIP_ZTP_GET_DEVICE_INFO failed
+[%s]:[%s] - %s: Delay=[%u], force=[%u]!!
+[%s]:[%s] - %s: dsm_reset_device() failed, rc=[%d]
+[%s]:[%s] - %s: DSM Reset success!!
+[%s]:[%s] - %s: Delay=[%u], opr_id=[%s]!!
+/opt/nvtl/data/longship/ztp/factory_reset_opr_id
+[%s]:[%s] - %s: fopen() failed
+[%s]:[%s] - %s: Factory Reset success!!
+[%s]:[%s] - %s: Delete ZTP package Delay=[%u], factory_reset=[%u]!!
+[%s]:[%s] - %s: Delete ZTP package success!!
+[%s]:[%s] - %s: sys_sendSideloadRequest()
+fw_update_service_is_busy
+fw_update_service_lock_missing
+fw_update_service_insufficient_buffer
+fw_update_service_record_missing
+fw_update_service_pkg_too_big
+fw_update_service_not_enough_flash
+fw_update_service_pkg_validation_failed
+fw_update_service_source_ver_mismatch
+fw_update_service_install_kickoff_failed
+fw_update_service_generic_error
+LONGSHIP_SUCCESS
+[%s]:[%s] - %s:ztp_path=[%s]
+[%s]:[%s] - %s:ztp Host=[%s], is_ip=[%d], is_ssl=[%d]
+/opt/nvtl/etc/longship/config.xml
+/Config/ZTPFunction/List
+[%s]:[%s] - %s: Found %d %s nodes
+/Config/ZTPFunction/List[%d]/Name
+/Config/ZTPFunction/List[%d]/Script
+/Config/dataUsageMontorInterval
+/Config/doFactoryResetAfterDelete
+/Config/retryTimerOnCommError
+/Config/retryTimerOnStateTransition
+/Config/traceMARequestResp
+[%s]:[%s] - LONGSHIP initialized with the following configurations: 
+[%s]:[%s] - %s: ZTP func=[%s], Script=[%s]
+[%s]:[%s] - %s: doFactoryResetAfterDelete=[%u]
+[%s]:[%s] - %s: retryTimerOnCommError=[%u]
+[%s]:[%s] - %s: retryTimerOnStateTransition=[%u]
+[%s]:[%s] - %s: dataUsageMontorInterval=[%u]
+[%s]:[%s] - Failed to open configuration file: %s
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - Longship disabled in features.xml
+[%s]:[%s] - Failed to initialize settings. longship_get_test_settings returned %d
+/opt/nvtl/data/longship
+[%s]:[%s] - %s: Directory not present even after created once
+mkdir -p 
+[%s]:[%s] - %s: Failed to create NUA data directory, rc=[%d]
+[%s]:[%s] - %s: Successfully created Data directory
+[%s]:[%s] - %s: Data directory found
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Longship data directory not present, terminating.
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - Error initializing longship configuration, terminating.
+[%s]:[%s] - Error initializing longship settings, terminating.
+/longship_mq
+[%s]:[%s] - Error opening message queue: %d, terminating.
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - Kick watchdog here
+[%s]:[%s] - %s Server Terminating.
+longship_read_ztp_host
+longship_write_ztp_host
+longship_write_ztp_status
+longship_ztp_retry_delete_timer
+longship_ztp_retry_alarm_handler
+longship_ztp_retry_start_timer
+longship_msg_async_wan_status_notify_impl
+longship_data_usage_monitor
+longship_write_string_to_file
+longship_report_result
+longship_fw_update_status_check_func
+longship_execute_ztp_actions
+longship_ztp_ma_state_routine_actions
+longship_ztp_ma_state_approved_actions
+longship_ztp_cleanup
+longship_ztp_ma_state_actions
+longship_ztp_state_machine_func
+longship_device_reboot_func
+longship_factory_reset_device_func
+longship_ztp_delete_pkg_func
+longship_install_fota_pkg_func
+longship_handle_event_message
+longship_config_init
+verify_and_create_data_dir
+LONGSHIP
+[%s]:[%s] - [WAN_MGR_STATUS] %s: Evt - wan_details Null
+/longship_mq
+[%s]:[%s] - [WAN_MGR_STATUS] %s: Evt - MSGQ does not exist
+wan_mgr.wan_status_change
+[%s]:[%s] - %s: MsgBus_Create Failed
+LONGSHIP_MBH
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe Refresh Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+longship_wan_status_change_handler
+LONGSHIP
+[%s]:[%s] - [LONGSHIP_TIMER]%s: Timer expired longship-id:%u
+/longship_mq
+[%s]:[%s] - [LONGSHIP_TIMER]%s: msgq_send_async(LONGSHIP_MSG_ASYNC_TIMER_TIMEOUT) failed, rc= %d
+[%s]:[%s] - [LONGSHIP_TIMER]%s: thread exit, timer longship-id:%d
+[%s]:[%s] - [LONGSHIP_TIMER]%s: caller_ref_id: %d
+[%s]:[%s] - [LONGSHIP_TIMER]%s: longship Timer not found for ref id: [%u]
+[%s]:[%s] - [LONGSHIP_TIMER]%s: Found timer with longship-id:%u, ref-id:%u, os-id:%ld
+[%s]:[%s] - [LONGSHIP_TIMER]%s: timer_delete(%ld) failed for longship-id:%d, ref id:%u
+[%s]:[%s] - [LONGSHIP_TIMER]%s: Timer deleted - longship-id:%u, caller_ref_id:%u
+[%s]:[%s] - [LONGSHIP_TIMER]%s: Input buffer is NULL
+[%s]:[%s] - [LONGSHIP_TIMER]%s: caller_ref_id:%d
+[%s]:[%s] - [LONGSHIP_TIMER]%s: Timer CB is NULL
+[%s]:[%s] - [LONGSHIP_TIMER]%s: Invalid timer interval:%lu
+[%s]:[%s] - [LONGSHIP_TIMER]%s: longship Timers not available
+[%s]:[%s] - [LONGSHIP_TIMER]%s: timer_create() failed -- sig:%d
+[%s]:[%s] - [LONGSHIP_TIMER]%s: timer_settime() failed for caller-id:%u (interval:%lu), errno:%d
+[%s]:[%s] - [LONGSHIP_TIMER]%s: Timer started - longship id:%u, OS id:%ld, caller id:%u, interval:%lu, repeat:%u, obsolute:%u
+[%s]:[%s] - [LONGSHIP_TIMER]%s: longship Timer not found for LONGSHIP-id:%u
+[%s]:[%s] - [LONGSHIP_TIMER]%s: longship-id:%u, caller-ref-id:%u timeout
+[%s]:[%s] - [LONGSHIP_TIMER]%s: Error in longship Timer CB:%p for longship-id:%d
+longship_timer_thread
+longship_timer_is_running
+longship_timer_delete
+longship_timer_start
+longship_msg_async_timer_expiry_impl
+/opt/nvtl/data/longship/pri_ztp/%s
+LONGSHIP
+[%s]:[%s] - %s: Found new ZTP script:[%s]
+[%s]:[%s] - %s: Running script[%s].
+[%s]:[%s] - %s: cmd_stat[%d] exit_code[%d].
+[%s]:[%s] - %s: script[%s] execution failed.
+[%s]:[%s] - %s: script[%s] execution is success.
+/opt/nvtl/etc/mifios-version
+[%s]:[%s] - %s: Longship version=[%s], len=[%d]
+[%s]:[%s] - %s: Get sss
+[%s]:[%s] - %s: modem2_get_info() failed, rc=[%d]
+[%s]:[%s] - %s: Done
+[%s]:[%s] - %s: Script=[%s] failed
+2efbc8704df69db8e7f1242933eb3ffb
+/opt/nvtl/data/longship/ztp/HandshakeResp.txt
+[%s]:[%s] - %s: +++
+[%s]:[%s] - %s: longship_ztp_exec_handshake(), buf=[%s]
+Approved
+[%s]:[%s] - %s: Handshake=[%s]
+echo 1 > /opt/nvtl/data/longship/ztp/deleteStatus
+SuccessfullyDeleted
+echo 0 > /opt/nvtl/data/longship/ztp/deleteStatus
+Duplicate
+[%s]:[%s] - %s: Device Not approved, Resp. Handshake=[%s]
+[%s]:[%s] - %s: gps_set_privacy_setting(1) failed, rc=[%d]
+[%s]:[%s] - %s: gps_get_default_status(1) failed, rc=[%d]
+[%s]:[%s] - %s: gps_start() failed, rc=[%d]
+[%s]:[%s] - %s: GPS turned ON
+/opt/nvtl/data/longship/ztp/TunnelDetails.txt
+[%s]:[%s] - %s: Tunnel details not present
+devicePrivateKeyInfo=%s
+serverPubkey=%s
+tunnelIP=%s
+serverIP=%s
+mgmtURL=%s
+wgPort=%s
+keepAlive=%s
+[%s]:[%s] - %s: WG Keys are missing
+[%s]:[%s] - %s: IP are missing, tunnelIP=[%s], peerIP=[%s], endpointIP=[%s]
+[%s]:[%s] - %s: read_tunnel_information(), rc=[%d]
+/opt/nvtl/data/longship/ztp
+VPNSubdevicePrivateKey
+[%s]:[%s] - %s: Control tunnel tun_name=[%s], index=[%d], tun_ip=[%s], peer_ip=[%s], endpt_ip=[%s]
+[%s]:[%s] - %s: vpn_set_wguard_settings(), rc=[%d]
+[%s]:[%s] - %s: tun_name=[%s], index=[%d], tun_ip=[%s], peer_ip=[%s], endpt_ip=[%s]
+[%s]:[%s] - %s: connect_vpn(), rc=[%d]
+[%s]:[%s] - %s: Host name missing!
+[%s]:[%s] - %s: Connecting to Host=[%s][%s]
+[%s]:[%s] - %s: Installing new ZTP package - file=[%s]
+https://
+[%s]:[%s] - %s: Using Default port=[%s]
+[%s]:[%s] - %s: Using custom port=[%s]
+[%s]:[%s] - %s: Stopping previous services
+[%s]:[%s] - %s: Start new ZTP session - URL=[%s], Host=[%s],is_ip=[%d],is_ssl=[%d]
+/opt/nvtl/data/longship/ztp/webui_config.txt
+[%s]:[%s] - %s: No webui configuration
+[%s]:[%s] - %s: Configuring webgui
+[%s]:[%s] - %s: share memory get failed, errno = %d
+[%s]:[%s] - shared memory attach failed, errno = %d
+[%s]:[%s] - %s: item_name=[%s], RO=[%d], RW=[%d]
+[%s]:[%s] - %s: sscanf() failed on line=[%s], ret=[%d]
+/opt/nvtl/data/longship/ztp/webui_dua_stop.txt
+/opt/nvtl/bin/nvtl_dua.sh
+[%s]:[%s] - %s: Script=[%s] failed, but continue
+/opt/nvtl/bin/nvtl_dua.sh stop
+[%s]:[%s] - %s: Done Webgui config
+LONGSHIP_ZTP_SEND_FW_REPORT
+LONGSHIP_ZTP_GET_DEVICE_INFO
+LONGSHIP_ZTP_SEND_DEVICE_INFO
+LONGSHIP_ZTP_CHECK_INTERNET
+LONGSHIP_ZTP_START_HANDSHAKE
+LONGSHIP_ZTP_GPS_ON
+LONGSHIP_ZTP_KEY_SETUP
+LONGSHIP_ZTP_USER_ADD
+LONGSHIP_ZTP_USER_DELETE
+LONGSHIP_ZTP_SSH_CRED
+LONGSHIP_ZTP_SSH_START
+LONGSHIP_ZTP_SSH_STOP
+LONGSHIP_ZTP_START_ZABBIX
+LONGSHIP_ZTP_STOP_ZABBIX
+LONGSHIP_ZTP_WG_KEY_EXCHANGE
+LONGSHIP_ZTP_WG_SETUP_TUN
+LONGSHIP_ZTP_WG_CONFIRM_HANDSHAKE
+LONGSHIP_ZTP_REQ_DEF_TEMPLATE
+LONGSHIP_ZTP_INSTALL_PKG
+LONGSHIP_ZTP_CONFIGURE_WEBUI
+LONGSHIP_ZTP_BEGIN_NEW_SESSION
+longship_select_script
+longship_execute_shell_cmd
+longship_parse_sw_version
+longship_ztp_get_info_func
+longship_send_fw_report_func
+longship_ztp_send_info_func
+longship_ztp_exec_handshake
+longship_ztp_handshake_func
+longship_ztp_gps_on_func
+longship_ztp_key_setup_func
+longship_ztp_user_add_func
+longship_ztp_user_del_func
+longship_ztp_ssh_cred_func
+longship_ztp_ssh_start_func
+longship_ztp_ssh_stop_func
+longship_ztp_start_zabbix_func
+longship_ztp_stop_zabbix_func
+longship_ztp_wg_key_exchange_func
+read_tunnel_information
+longship_ztp_wg_setup_tun_func
+longship_ztp_wg_confirm_handshake_func
+longship_ztp_request_def_template_func
+longship_ztp_check_internet_func
+longship_ztp_install_pkg_func
+longship_ztp_begin_new_session_func
+longship_ztp_configure_webui_func
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

@@ -1,0 +1,41 @@
+<!-- Status Logs -->
+<div id="status_logs">
+	<h1><tmpl_var _("webui", "status_logs_menu_text")></h1>
+	<h2>Descripci
+n general</h2>
+		La informaci
+n del registro es 
+til para la resoluci
+n de problemas, pero no es necesaria para el funcionamiento normal.
+	<h2>Ajustes</h2>
+	<h3><tmpl_var truncate(_("webui", "status_logs_enable_logs_label"), (size(_("webui", "status_logs_enable_logs_label")) - size(":")))></h3>
+	<p>Marque esta casilla para activar los registros seg
+n sea necesario.</p>
+	<h3><tmpl_var truncate(_("webui", "status_logs_delete_sys_logs_label"), (size(_("webui", "status_logs_delete_sys_logs_label")) - size(":")))></h3>
+	<p>Utilice la lista desplegable para seleccionar cu
+ndo se borran los registros. Seleccione la opci
+n deseada.</p>
+	<p>Tenga en cuenta que si el registro est
+ lleno, se eliminan los datos m
+s antiguos, independientemente de los ajustes.</p>
+	<h2>Datos de registro</h2>
+	<p>Las pesta
+as proporcionadas le permiten seleccionar el tipo de datos de registro que desea ver.
+	<h3><tmpl_var _("webui", "status_logs_mobile_network_log_href")></h3>
+	<p>Este registro contiene datos sobre las conexiones a la red m
+	<h3><tmpl_var _("webui", "status_logs_system_log_href")></h3>
+	<p>Este registro registra eventos, distintos de las conexiones de datos m
+viles, que ocurrieron en este dispositivo.
+	<h2>Botones</h2>
+	<h3><tmpl_var _("webui", "status_logs_clear_log_btn")></h3>
+	<p>Al hacer clic en este bot
+n, se eliminar
+n todos los datos de registro existentes. Esto hace que los datos nuevos sean m
+ciles de leer.</p>
+	<h3><tmpl_var _("webui", "status_logs_refresh_btn")></h3>
+	<p>Utilice este bot
+n para actualizar los datos de registro que se muestran.</p>
+	<h3><tmpl_var _("webui", "status_logs_download_btn")></h3>
+	<p>Utilice este bot
+n si desea descargar datos de registro a su computadora o dispositivo conectado.</p>
+<!-- end Status Logs -->

@@ -1,0 +1,469 @@
+/lib/ld-linux-armhf.so.3
+pthread_join
+GLIBC_2.4
+libpthread.so.0
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+get_cbsd_error_code
+pthread_exit
+is_file_exists
+pthread_create
+mifi_dbg_get_level_name
+pthread_cancel
+__errno_location
+mifi_dbg_syslog
+mifi_dbg_log
+snprintf
+settings_set_setting
+settings_get_setting
+__xpg_basename
+cbsd_unregister_device
+cbsd_get_registration_status_string
+cbsd_get_response_code_string
+xmldata_initialize
+xmldata_getint32_default
+xmldata_shutdown
+MsgBusGet
+cbsd_get_settings
+settings_get_features
+pthread_self
+mifi_dbg_start
+msgq_create
+mifi_timer_init
+watchdog_application_register
+MsgBusSetInt32
+msgq_receive
+msgq_resp_preprocess
+msgq_resp_postprocess
+watchdog_application_send_keep_alive
+mq_close
+librt.so.1
+mq_unlink
+mifi_dbg_stop
+cbsd_disable_cellular_data
+cbsd_register_device
+cbsd_deregister_device
+ccm2_set_cellular_data_enabled
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+modem2_get_signal_stats
+xmldata_getstring
+__isoc99_sscanf
+GLIBC_2.7
+inet_pton
+router2_dns_lookup_cust_apn
+inet_ntoa
+sas_test_cleanup
+mifi_stop_timer
+cbsd_get_default_settings
+ccm2_wan_get_current_wan
+cbsd_enable_cellular_data
+modem2_get_b48_max_eirp
+modem2_get_fcc_id
+modem2_get_info
+http_error_str
+cbsd_connection_timer_expired
+mifi_start_timer
+cbsd_registration
+cbsd_spectruminquiry
+cbsd_deregistration
+cbsd_grant
+cbsd_heartbeat
+hbTransmitExpTimeEpoch
+cbsd_relinquishment
+modem2_get_current_state
+msgq_resp_handler
+msgq_does_queue_exist
+msgq_send_async
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libwifi_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libccm2_api.so
+libdmdb_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+librouter2_api.so
+libcbsd_api.so
+libgps_api.so
+libbluetooth_api.so
+libcurl.so.4
+libssl.so.1.1
+libcrypto.so.1.1
+libjansson.so.4
+libcbsd_util.so
+H	KxD	J{D
+[%s]:[%s] - %s: Cannot open dir, errno:%d
+[%s]:[%s] - %s: complete[%s]
+[%s]:[%s] - %s: Moving file from %s to %s 
+mv %s %s
+[%s]:[%s] - %s: Executing.. [%s]
+[%s]:[%s] - %s: Moving file from %s to %s is failed
+/opt/nvtl/data/cbsd/runtimeconfig
+[%s]:[%s] - %s: Creating directory:%s
+mkdir -p -m 0700
+[%s]:[%s] - %s: %s
+[%s]:[%s] - %s: Failed to create directory:%s, error code:%d
+[%s]:[%s] - %s: Directory created!!
+[%s]:[%s] - %s: The directory is already present [%s]
+/dev/null
+cbsd.settings.sas
+[%s]:[%s] - SAS settings :: Operator =[%s] URL=[%s] Version=[%s] CBSD_UserID[%s]
+/opt/nvtl/data/cbsd/cpi
+[%s]:[%s] - CBSD directory is not present in %s
+/opt/nvtl/data/cbsd
+[%s]:[%s] - Given privatekey file is not valid 
+cbsd.settings.cpi
+[%s]:[%s] - Unable to get the Certificate settings
+[%s]:[%s] - Already there is a file [%s], so deleting
+[%s]:[%s] - The file [%s] is not present
+[%s]:[%s] - %s: Unable to move the file [%s]
+[%s]:[%s] - CPI settings :: UserID =[%s] Name=[%s] PrivateKey=[%s]
+[%s]:[%s] - Certificates settings :: Certificate =[%s] CA_Certificate=[%s] PrivateKey=[%s]
+/opt/nvtl/data/cbsd/certificates
+[%s]:[%s] - Given Certificate files are not valid 
+cbsd.settings.cert
+[%s]:[%s] - The file [%s] is not present 
+cbsd.settings.anteena
+[%s]:[%s] - Antenna settings :: azimuth =[%d] downtilt[%d]
+cbsd.settings.runtime
+[%s]:[%s] - Failed to get runtime config params, rc:%d
+[%s]:[%s] - Successfully get the runtime configuration
+[%s]:[%s] - Failed to reset runtime config params, rc:%d
+[%s]:[%s] - Successfully set the runtime config param
+[%s]:[%s] - ************[%s]:[%d] test_mode:[%d] *******
+[%s]:[%s] - Unable to create CBSD directory in /opt/nvtl/tmp
+[%s]:[%s] - Previous provided device json file [%s]
+[%s]:[%s] - The device json file is not present 
+[%s]:[%s] - Previous provided device cpi json file [%s]
+[%s]:[%s] - The device cpi json file is not present 
+[%s]:[%s] - Given device json files is not valid 
+[%s]:[%s] - Successfully copied the device json file [%s]
+[%s]:[%s] - Failed to set runtime config params, rc:%d
+[%s]:[%s] - Previous provided spectrum json file [%s]
+[%s]:[%s] - The spectrum json file is not present 
+[%s]:[%s] - Given spectrum json files is not valid 
+[%s]:[%s] - Successfully copied the spectrum json file [%s]
+[%s]:[%s] - Previous provided grant json file [%s]
+[%s]:[%s] - The grant json file is not present 
+[%s]:[%s] - Given grant json files is not valid 
+[%s]:[%s] - Successfully copied the grant json file [%s]
+[%s]:[%s] - Previous provided heartbeat json file [%s]
+[%s]:[%s] - The heartbeat json file is not present 
+[%s]:[%s] - Successfully copied the heartbeat json file [%s] state = [%d]
+[%s]:[%s] - Invalid runtime config case
+[%s]:[%s] - Successfully reset SAS settings
+[%s]:[%s] - Successfully reset CPI settings
+[%s]:[%s] - Successfully reset certificate settings
+[%s]:[%s] - Successfully reset antenna settings
+[%s]:[%s] - Invalid setting reset option
+rm -rf /opt/nvtl/data/cbsd/certificates/*
+rm -rf /opt/nvtl/data/cbsd/cpi/*
+[%s]:[%s] - %s: Get device connection status event received
+[%s]:[%s] - %s: Registration setting:[%d]
+[%s]:[%s] - %s: Registration status:[%s]
+[%s]:[%s] - %s: Registration response code:[%s]
+[%s]:[%s] - %s: Registration response message:[%s]
+/opt/nvtl/etc/cbsd/config.xml
+/Config/RegistrationRetryLimit
+/Config/SpectrumRetryLimit
+/Config/GrantRetryLimit
+/Config/RegistrationTimeOut
+/Config/SpectrumTimeOut
+/Config/GrantTimeOut
+/Config/HeartBeatTimeOut
+[%s]:[%s] - CBSD initialized with the following configurations: 
+[%s]:[%s] - RegistrationRetryLimit%*c= [%d]
+[%s]:[%s] - SpectrumRetryLimit%*c= [%d]
+[%s]:[%s] - GrantRetryLimit%*c= [%d]
+[%s]:[%s] - RegistrationTimeOut%*c= [%d]
+[%s]:[%s] - SpectrumTimeOut%*c= [%d]
+[%s]:[%s] - GrantTimeOut%*c= [%d]
+[%s]:[%s] - HeartBeatTimeOut%*c= [%d]
+[%s]:[%s] - Failed to open configuration file: %s
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Get CBSD settings
+[%s]:[%s] - SAS settings info Operator =[%s] URL=[%s] Version=[%s] CBSD_UserID[%s]
+[%s]:[%s] - CPI settings info UserID =[%s] Name=[%s] PrivateKey=[%s]
+[%s]:[%s] - Certificates settings info Certificate =[%s] CA_Certificate=[%s] PrivateKey=[%s] PrivateKeyPassPhrase=[%s]
+[%s]:[%s] - Antenna settings info Azimuth=[%d] Downtilt=[%d]
+[%s]:[%s] - Failed to initialize settings. cbsd_get_settings returned %d
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - CBSD subsystem disabled in features.xml
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - Error initializing cbsd configuration, terminating.
+[%s]:[%s] - Error initializing cbsd settings, terminating.
+/cbsd_mq
+[%s]:[%s] - Error opening message queue: %d, terminating.
+cbsd_main_thread
+cbsd.authorization_status
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - Kick watchdog here
+[%s]:[%s] - %s Server Terminating.
+sync_directory
+move_file
+create_a_dir
+set_cpi_settings
+set_certificate_settings
+runtime_config_param
+cbsd_handle_event_message
+ccm2.wan_connection
+[%s]:[%s] - %s: WAN connection status notification [MSGBUS_CCM2_WAN_CONNECTION_CHANNEL]
+[%s]:[%s] - %s: WAN [%d], Previous WAN [%d]
+[%s]:[%s] - %s: Received SUSPENDED_GRANT/TERMINATED_GRANT.
+cbsd.settings.register
+[%s]:[%s] - %s: Failed to read register_setting disabled.
+[%s]:[%s] - %s: WAN status is same as previous.
+[%s]:[%s] - %s: Device in band48, but not registered by user. So disabling cellualar data.
+cbsd.authorization_status
+[%s]:[%s] - %s: WAN is connected and cbsd should be registered.
+[%s]:[%s] - %s: Data is disconnected and cbsd state is not idle. So de registering.
+modem2.uim_state
+[%s]:[%s] - MSGBUS_MODEM2_EVT_UIM_STATE_CHAN: sim_status=%d
+[%s]:[%s] - %s: SIM slot is not found. So de-registering.
+[%s]:[%s] - %s: Waiting for 10sec for modem updation.
+cbsd.settings.runtime
+[%s]:[%s] - Failed to get runtime config params
+[%s]:[%s] - %s: The device is not in Band48
+cbsd.settings.dataenable
+[%s]:[%s] - %s: Failed to read data enable settings.
+[%s]:[%s] - %s: Failed to enable the data connectivity, once again retrying
+[%s]:[%s] - %s: Failed to enable the data connectivity
+[%s]:[%s] - %s: Failed to set data enabled in settings.xml file.
+[%s]:[%s] - %s: MsgBus_Create Failed
+CBSD_MBH
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe Refresh Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+cbsd_msgbus_handler
+[%s]:[%s] - %s:
+ Unable to get signal status from modem2_get_signal_stats
+[%s]:[%s] - %s:Modem is not in band 48
+[%s]:[%s] - %s:Modem is in band 48
+/opt/nvtl/etc/cbsd/config.xml
+/Config/Countrycode
+[%s]:[%s] - Countrycodes: %s
+[%s]:[%s] - Config file failed to initialize [%s]
+[%s]:[%s] - Operator ID from device: %s
+[%s]:[%s] - Countrycode from device: %s
+[%s]:[%s] - The country code [%s] from config.xml
+[%s]:[%s] - The device country code [%s] matched with country code [%s]from config.xml
+[%s]:[%s] - The device country code[%s] not matched with country code from config.xml
+[%s]:[%s] - %s - BEGIN
+%9[^:]://%512[^/]/%9[^
+[%s]:[%s] - [%s]:[%d] protocol:[%s], hostname:[%s].
+%9[^:]://%512[^:]:%i/%9[^
+%9[^:]://%512[^:]:%i[^
+%9[^:]://%512[^
+%512[^/]/%9[^
+[%s]:[%s] - [%s]:[%d] hostname:[%s].
+%512[^:]:%i/%9[^
+[%s]:[%s] - [%s]:[%d]  hostname:[%s], port:[%d].
+%512[^:]:%i[^
+[%s]:[%s] - [%s]:[%d] hostname:[%s], port:[%d].
+[%s]:[%s] - [GET_DNS] %s: hostname is IPaddress:[%s]
+[%s]:[%s] - [GET_DNS] %s: Server:%s, ifc:%s, ifcv6:%s
+[%s]:[%s] - [CALL_DNS] %s: Calling DNS API with timeout:%d
+/opt/nvtl/tmp/router2/resolv_wwan.conf
+%s:443:%s
+[%s]:[%s] - %s: DNS resolve success (count:%d) curl_resolve_ip_address:[%s]
+[%s]:[%s] - %s: router2_dns_lookup_cust_apn(timeout=%d) failed, [rc:%d, count:%d]
+[%s]:[%s] - %s: Failed to get host name from url.
+[%s]:[%s] - %s - END 
+[%s]:[%s] - %s: Start
+/opt/nvtl/data/cbsd/cpi
+/opt/nvtl/data/cbsd/certificates
+/opt/nvtl/data/cbsd/runtimeconfig
+[%s]:[%s] - %s: Failed to get current wan status from ccm2_wan_get_current_wan, so retrying one more time
+[%s]:[%s] - %s: Failed to enable the data connectivity, once again retrying
+[%s]:[%s] - %s: Failed to enable the data connectivity
+[%s]:[%s] - %s: Failed to get current wan status from ccm2_wan_get_current_wan
+[%s]:[%s] - %s: There is no active WAN interface
+[%s]:[%s] - %s: Current active WAN interface is [%s]
+[%s]:[%s] - Failed to read the FCCID value from modem, rc = %d
+[%s]:[%s] - Failed to read the FID value from bluetooth, rc = %d
+[%s]:[%s] - %s: Timer could NOT be published
+[%s]:[%s] - %s: End
+[%s]:[%s] - cbsd main timer id already in progress. So stoping timer.
+[%s]:[%s] - Timer could NOT be STARTED - FAILURE
+[%s]:[%s] - Started cbsd timer [%zu]
+[%s]:[%s] - %s: Timer initiated for state:[%d] with interval [%d]
+[%s]:[%s] - %s: SAS information are incomplete
+[%s]:[%s] - %s: Certificate details are incomplete
+[%s]:[%s] - %s: Certificate details are present, but certificates files are not present in device
+[%s]:[%s] - %s: Antenna details are incomplete
+cbsd.authorization_status
+Failed to enable the data connectivity
+[%s]:[%s] - %s: Failed to get SAS structure info
+Failed to get SAS information in the device
+[%s]:[%s] - %s: SAS informations are incomplete
+[%s]:[%s] - %s: CBSD supports only on band 48
+Device not in band 48
+[%s]:[%s] - %s: cbsd_registartion response code:[%s]
+[%s]:[%s] - %s: REGISTRATION - PASSED
+[%s]:[%s] - %s: FAILED at registration. So resting
+[%s]:[%s] - %s: Clearing the cbsd complete register thread ID [%ld]
+[%s]:[%s] - %s: FAILED at registration. So initiating timer and retrying count: %d
+[%s]:[%s] - %s: FAILED at registration. retrying count: %d ie exceed. So reseting.
+[%s]:[%s] - %s: FAILED at registration with unkown error. So initiating timer and retrying count: %d
+[%s]:[%s] - %s: FAILED at registration with unknown error. retrying count: %d ie exceed. So reseting.
+[%s]:[%s] - %s: FAILED at spectrumInquiry
+[%s]:[%s] - %s: deregistration request failed
+[%s]:[%s] - %s: deregistration request passed
+[%s]:[%s] - %s: FAILED at grant. So initiating timer and retrying count: %d
+[%s]:[%s] - %s: FAILED at grant with unknown errors. retrying count: %d ie exceed. So de register.
+[%s]:[%s] - %s: cbsd_grant response code:[%s]
+[%s]:[%s] - %s: GRANT - PASSED
+[%s]:[%s] - %s: FAILED at grant. So reseting.
+[%s]:[%s] - %s: FAILED at grant. retrying count: %d ie exceed. So de register.
+[%s]:[%s] - %s: FAILED at grant with interference. So reseting.
+[%s]:[%s] - %s: FAILED at grant with unknown errors. So initiating timer and retrying count: %d
+[%s]:[%s] - %s: cbsd_heartbeat response code:[%s]
+[%s]:[%s] - %s: heartbeat-granted passed
+[%s]:[%s] - %s: hb_sec %d is more than 30 secs, so setting to 30 seconds.
+[%s]:[%s] - %s: heartbeat limit reached [%d]
+Heartbeat limit reached
+[%s]:[%s] - %s: hb_counter is:[%d]
+[%s]:[%s] - %s: FAILED at heart beat. So reseting.
+[%s]:[%s] - %s: heartbeat_count reached [%d]
+[%s]:[%s] - %s: heartbeat-granted SUSPEND. So initiating timer.
+[%s]:[%s] - %s: heartbeat-granted TERMINATED. So going to grant idle.
+[%s]:[%s] - %s: heartbeat-granted is UNSYNC_OP_PARAM. So resting.
+[%s]:[%s] - %s: cbsd_heartbeat authorized response code:[%s]
+[%s]:[%s] - %s: heartbeat-authorized passed
+[%s]:[%s] - %s: heartbeat limit reached [%d] for CBSD_WINNF_RLQ_1|CBSD_WINNF_DRG_1
+[%s]:[%s] - %s: heartbeat limit reached [%d] for CBSD_WINNF_HBT_1 
+[%s]:[%s] - %s: FAILED at heart beat authorization. So reseting.
+[%s]:[%s] - %s: heartbeat-authorization is SUSPEND. So initiating timer and going to GRANTED state.
+[%s]:[%s] - %s: heartbeat-authorization TERMINATED. So going to grant idle.
+[%s]:[%s] - %s: relinquishment request failed
+[%s]:[%s] - %s: relinquishment passed
+[%s]:[%s] - %s: Complete CBSD registration process [Start]
+[%s]:[%s] - %s: start
+[%s]:[%s] - %s: register device event received with reg_type [%d]
+[%s]:[%s] - %s: Only CBSD register request to SAS
+cbsd.settings.register
+[%s]:[%s] - %s: Failed to store register enabled.
+[%s]:[%s] - %s: Creating the CBSD complete register request thread
+[%s]:[%s] - %s: Error creating CBSD complete register thread
+[%s]:[%s] - %s: Successfully created the CBSD complete register thread [%ld]
+[%s]:[%s] - %s: Already the CBSD complete register request is in-progress
+[%s]:[%s] - %s: unknown register instruction
+[%s]:[%s] - %s: spectrum device event received
+[%s]:[%s] - %s: grant device event received
+[%s]:[%s] - %s: the device state is CBSD_STATE_GRANT_IDLE
+[%s]:[%s] - %s: the device state should be in CBSD_STATE_GRANT_IDLE
+[%s]:[%s] - %s: heartbeat device event received
+[%s]:[%s] - %s: the device state is in CBSD_STATE_GRANT_GRANTED
+[%s]:[%s] - %s: the device state is in CBSD_STATE_GRANT_AUTHORIZED
+[%s]:[%s] - %s: the device state should be in CBSD_STATE_GRANT_GRANTED or CBSD_STATE_GRANT_AUTHORIZED
+[%s]:[%s] - %s: unregister device event received
+[%s]:[%s] - %s: Failed to store register disabled.
+[%s]:[%s] - %s: ERROR enabling cellular data %d 
+cbsd.settings.dataenable
+[%s]:[%s] - %s: Failed to set data enabled settings
+[%s]:[%s] - %s: relinquish device event received
+[%s]:[%s] - %s: The device should be in Granted or Authorised state for relinquish the device
+[%s]:[%s] - %s: get device connection timer event received for state is [%s]. Current status is [%s]
+[%s]:[%s] - %s: Timer is ignored due to timer state [%s] is not the current state [%s]
+[%s]:[%s] - %s: deregister device event received
+[%s]:[%s] - %s: unknown instruction
+[%s]:[%s] - %s: Modem is in connected state
+[%s]:[%s] - %s: Modem is not in connected state [cout = %d]
+[%s]:[%s] - %s: Start with pthread ID:%lu, process ID:%d.
+CBSD_CONN_HAND
+cbsd.settings.runtime
+[%s]:[%s] - Failed to get runtime config params
+[%s]:[%s] - %s: Get the SAS structure info
+[%s]:[%s] - %s: Failed to read register_setting disabled.
+[%s]:[%s] - %s: register_setting is already 1, so trying to register
+[%s]:[%s] - %s: CBSD is not yet registered [%d]
+/cbsd_conn_handler_mq
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - %s: end
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Terminate Thread Example, TID: %lu.
+verify_band48_country_code
+cbsd_dns_resolve
+sas_if_update
+cbsd_timer_expired
+cbsd_start_timer
+reset_any
+cbsd_reg
+cbsd_reg_only
+cbsd_dreg
+cbsd_grntreq
+cbsd_hb_grantd
+cbsd_hb_auth
+cbsd_rlnq
+reset_in_grant
+cbsd_complete_reg
+cbsd_state_handler
+check_modem_state
+cbsd_conn_handlre_thread
+cbsd_state_init
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.data.rel.ro.local
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

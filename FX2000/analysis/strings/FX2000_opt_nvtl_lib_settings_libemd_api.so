@@ -1,0 +1,251 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+GLIBC_2.4
+libc.so.6
+libemd_api.so
+emd_eth_wan_g
+emd_eth_wan_session
+emd_get_error_string
+emd_api_is_running
+msgq_does_queue_exist
+emd_set_ethernet_iface_type
+mifi_dbg_get_level_name
+mifi_dbg_log
+router2_get_ip_passthrough
+settings_set_setting
+mifi_dbg_syslog
+emd_get_ethernet_iface_type
+settings_get_setting
+emd_set_ethernet_static_ip_conf
+inet_pton
+emd_get_ethernet_static_ip_conf
+emd_connect_eth_wan
+msgq_send_async
+emd_get_ethernet_macaddr
+msgq_send_sync
+emd_set_eth_enabled
+emd_get_eth_enabled
+emd_get_eth_status_settings
+xmldata_getint32
+emd_set_eth_status_settings
+xmldata_setint32
+xmldata_save
+MsgBusSetInt32
+emd_get_eth_type_settings
+emd_set_eth_type_settings
+emd_get_eth_static_wan_settings
+xmldata_getstring
+emd_set_eth_static_wan_settings
+xmldata_setstring
+initialize_settings
+__bss_start
+librt.so.1
+libpthread.so.0
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libusb_api.so
+libfactory_reset_api.so
+librouter2_api.so
+libwan_mgr_api.so
+H	KxD	J{D
+EMD: success.
+EMD: general error.
+EMD: one or more bad parameters passed into a function.
+EMD: one or more buffer type parameters passed into API is too small.
+EMD: the feature is unsupported.
+EMD: process not running.
+EMD: a device reset is required for the operation to take effect.
+EMD: API not implemented for the platform.
+EMD: unknown error.
+[%s]:[%s] - Invalid Ethernet interface type: %d
+[%s]:[%s] - Invalid configuration for Ethernet interface, IPPT is enabled.
+emd.ethernet_type.settings
+[%s]:[%s] - Settings Update: Ethernet interface Type: [%d]
+[%s]:[%s] - settings_get_setting(%s) failed with code: %d
+[%s]:[%s] - Invalid Etherent static WAN settings. 
+[%s]:[%s] - Invalid Ethernet static WAN IP address.
+[%s]:[%s] - Invalid Ethernet static WAN netmask
+[%s]:[%s] - Invalid Ethernet static WAN gateway
+emd.ethernet_static_wan.settings
+[%s]:[%s] - Settings Update: Ethernet static WAN settings: ip [%s] netmask [%s] gw [%s]
+[%s]:[%s] - Etherenet WAN connecting..
+[%s]:[%s] - Failed to get MAC since passed NULL Buffer.
+[%s]:[%s] - Failed to get MAC since passed insufficient Buffer.
+[%s]:[%s] - Interface %s Mac : %.2x:%.2x:%.2x:%.2x:%.2x:%.2x
+[%s]:[%s] - Trying to configure invalid Ethernet interface status.
+emd.ethernet_status.settings
+[%s]:[%s] - Settings Update: Ethernet interface status: [%d]
+[%s]:[%s] - %s: +++
+emd_get_eth_enabled
+[%s]:[%s] - Invalid data passed to get Ethernet iface status.
+/Settings/Ethernet/EthernetIface[%d]/Enabled
+[%s]:[%s] - Invalid data passed for Ethernet interface status.
+[%s]:[%s] - Invalid Ethernet interface status: %d
+emd.ethernet_status.settings
+/Settings/Ethernet/EthernetIface[%d]/EthernetType
+[%s]:[%s] - Invalid data passed for Ethernet interface type.
+[%s]:[%s] - Invalid Ethernet interface type: %d
+emd.ethernet_type.settings
+[%s]:[%s] - Invalid data passed for Ethernet interface static IP configuration.
+/Settings/Ethernet/EthernetIface[%d]/IPAddress
+/Settings/Ethernet/EthernetIface[%d]/Netmask
+/Settings/Ethernet/EthernetIface[%d]/Gateway
+emd.ethernet_static_wan.settings
+GCC: (GNU) 8.2.0
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/emd/src
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/emd/src/../include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/logging/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/xmldata/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/emd/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/router2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/ccm2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/watchdog/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/config
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dmdb/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/mal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi-framework
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/loc-hal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi/loc_sdx55
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/usr/src/linux/usr/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dsm/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/powersave/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/modem2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/usb/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/factory_reset/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel/config/../.
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-iprefix /opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/bin/arm-oe-linux-gnueabi/../../lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/emd/src/emd_api.c
+-mfpu=neon
+-mfloat-abi=hard
+-mcpu=arm10tdmi
+-mtls-dialect=gnu
+-march=armv5t
+-auxbase-strip emd_api.o
+-Wno-unused-parameter
+-Wstrict-prototypes
+-Wno-trigraphs
+-frecord-gcc-switches
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/emd/src/emd_settings.c
+-auxbase-strip emd_settings.o
+gold 1.16
+call_weak_fn
+crtstuff.c
+__TMC_LIST__
+deregister_tm_clones
+register_tm_clones
+__do_global_dtors_aux
+completed.11339
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+emd_api.c
+__func__.10641
+emd_settings.c
+__FRAME_END__
+__dso_handle
+__TMC_END__
+_DYNAMIC
+_GLOBAL_OFFSET_TABLE_
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+emd_eth_wan_g
+emd_eth_wan_session
+emd_get_error_string
+emd_api_is_running
+msgq_does_queue_exist
+emd_set_ethernet_iface_type
+mifi_dbg_get_level_name
+mifi_dbg_log
+router2_get_ip_passthrough
+settings_set_setting
+mifi_dbg_syslog
+emd_get_ethernet_iface_type
+settings_get_setting
+emd_set_ethernet_static_ip_conf
+inet_pton
+emd_get_ethernet_static_ip_conf
+emd_connect_eth_wan
+msgq_send_async
+emd_get_ethernet_macaddr
+msgq_send_sync
+emd_set_eth_enabled
+emd_get_eth_enabled
+emd_get_eth_status_settings
+xmldata_getint32
+emd_set_eth_status_settings
+xmldata_setint32
+xmldata_save
+MsgBusSetInt32
+emd_get_eth_type_settings
+emd_set_eth_type_settings
+emd_get_eth_static_wan_settings
+xmldata_getstring
+emd_set_eth_static_wan_settings
+xmldata_setstring
+initialize_settings
+__bss_start
+.init_array
+.fini_array
+.comment
+.rel.plt
+.ARM.attributes
+.eh_frame_hdr
+.gnu.version_r
+.rel.dyn
+.gnu.version
+.note.gnu.gold-version
+.GCC.command.line
+.eh_frame
+.tm_clone_table
+.note.gnu.build-id
+.gnu.version_d
+.dynamic
+.shstrtab

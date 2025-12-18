@@ -1,0 +1,458 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+snprintf
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+__assert_fail
+__ctype_b_loc
+mifi_security_generate_sha256_file
+mifi_security_generate_sha256tree_file
+libpthread.so.0
+MsgBusGet
+sys_getCloudEngineCarrierEnabled
+gettimeofday
+difftime
+strftime
+mifi_security_hmac_create_signature
+curl_slist_append
+curl_easy_setopt
+mifi_security_generate_sha256_string
+mifi_security_hmac_create_s4_signature
+__errno_location
+realpath
+curl_easy_perform
+curl_easy_strerror
+curl_easy_getinfo
+curl_global_init
+curl_easy_init
+curl_slist_free_all
+curl_easy_cleanup
+curl_global_cleanup
+__isoc99_sscanf
+GLIBC_2.7
+pthread_self
+mifi_dbg_start
+msgq_create
+watchdog_application_register
+MsgBusSetInt32
+msgq_receive
+msgq_resp_handler
+mq_close
+mq_unlink
+mifi_dbg_stop
+MsgBus_Subscribe
+MsgBus_Unsubscribe
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MbVar_InitBinary
+MsgBus_Set
+MbVar_Cleanup
+OPENSSL_sk_num
+OPENSSL_1_1_0
+libcrypto.so.1.1
+OPENSSL_sk_new_null
+OPENSSL_sk_push
+OPENSSL_sk_pop_free
+OPENSSL_sk_value
+ossl_err_as_string
+BIO_s_mem
+ERR_print_errors
+BIO_ctrl
+BIO_free_all
+smime_verify_signature
+X509_STORE_new
+BIO_new_file
+PEM_X509_INFO_read_bio
+SMIME_read_PKCS7
+PKCS7_verify
+PKCS7_free
+X509_STORE_free
+X509_INFO_free
+X509_free
+smime_create_signature
+PEM_read_bio_X509
+PEM_read_bio_PrivateKey
+PKCS7_sign
+SMIME_write_PKCS7
+EVP_PKEY_free
+PKCS7_decrypt
+EVP_aes_256_cbc
+PKCS7_encrypt
+mifi_security_decrypt_file
+mifi_security_encrypt_file
+HMAC_CTX_new
+EVP_sha1
+HMAC_Init_ex
+HMAC_Update
+HMAC_Final
+EVP_EncodeBlock
+HMAC_CTX_free
+mifi_security_aes128_encrypt
+EVP_BytesToKey
+EVP_CIPHER_CTX_new
+EVP_CIPHER_CTX_reset
+EVP_aes_128_cbc
+EVP_EncryptInit_ex
+EVP_EncryptUpdate
+EVP_EncryptFinal_ex
+EVP_CIPHER_CTX_free
+mifi_security_aes128_decrypt
+EVP_DecryptInit_ex
+EVP_DecryptUpdate
+EVP_DecryptFinal_ex
+mifi_security_init
+OPENSSL_init_crypto
+ENGINE_load_builtin_engines
+ENGINE_register_all_complete
+mifi_security_shutdown
+SHA256_Init
+SHA256_Update
+SHA256_Final
+EVP_sha256
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libgps_api.so
+libfactory_reset_api.so
+libsms_api.so
+libwifi_api.so
+libccm2_api.so
+librouter2_api.so
+libfile_sharing_api.so
+libfota_api.so
+libled_api.so
+libbuzzer_api.so
+libans_api.so
+libusb_api.so
+libemd_api.so
+libsensor_api.so
+libvpn_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libwan_mgr_api.so
+libcbsd_api.so
+libsysintclient.so
+libcurl.so.4
+libssl.so.1.1
+libcloud_engine_api.so
+H	KxD	J{D
+%s failed, rc=[%d]
+[%s]:[%s] - %s: %s
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/cloud_engine/src/cloud_engine.c
+string != NULL
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+AWS_EMPTY_PAYLOAD_HASH
+AWS_PAYLOAD_ARCHIVE_LOW_SIZE
+AWS_PAYLOAD_ARCHIVE
+AWS_PAYLOAD_FILE
+mifi_security_generate_sha256_file failed.
+[%s]:[%s] - %s - sha256(%s) : [%s].
+mifi_security_generate_sha256tree_file failed.
+[%s]:[%s] - %s - sha256tree(%s) : [%s].
+DOWNLOAD
+[%s]:[%s] - %s - Action[%s] File[%s] Payload_Type[%s].
+[%s]:[%s] - %s - Size[%d] Payload_hash[%s] Payload_tree_hash[%s].
+/dev/null
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - sys_getCloudEngineEnabled failed %d
+[%s]:[%s] - CLOUD ENGINE disabled in features.xml
+[%s]:[%s] - %s: BEGIN initiator_id[%s] req_type[%d]
+[%s]:[%s] - %s: END 
+[%s]:[%s] - %s: dlnow=[%ld], dltotal=[%ld], ulnow=[%ld], ultotal=[%ld]
+[%s]:[%s] - %s: g_cloud_engine.sess_init_time[%lu] curr_time[%lu] prev_time[%lu]
+[%s]:[%s] - %s: DL1 timeout
+[%s]:[%s] - %s: DL2 timeout
+[%s]:[%s] - %s: DL3 timeout
+[%s]:[%s] - %s: DL4 timeout
+[%s]:[%s] - %s: UL1 timeout
+[%s]:[%s] - %s: UL2 timeout
+[%s]:[%s] - %s: UL3 timeout
+[%s]:[%s] - %s: UL4 timeout
+[%s]:[%s] - %s: CURL timeout from callback function.
+[%s]:[%s] - %s: publish initiator_id[%s] is_download[%d] cur_offset[%f] total_size[%f]
+[%s]:[%s] - %s: Trigger watchdog_keep_alive.
+cloud_engine_main_thread
+[%s]:[%s] - %s: inHostname: empty
+https://
+%a, %d %b %Y %H:%M:%S %z
+[%s]:[%s] - %s: host[%s] rel_path[%s] bucket[%s] sKey[%s] aKey[%s]
+Memory alloc failure
+application/octet-stream
+HMAC signature failed
+[%s]:[%s] - %s: Success, sig=[%s]
+extract_host_name_only()
+[%s]:[%s] - %s: Host name=[%s]
+Host: %s
+Date: %s
+Content-Type: %s
+Authorization: AWS %s:%s
+CURLOPT_HTTPHEADER
+%Y%m%dT%H%M%SZ
+x-amz-sha256-tree-hash
+x-amz-date
+x-amz-content-sha256
+%s;%s;%s;%s
+%s;%s;%s
+[%s]:[%s] - %s - canonical_hdrs[%s] signed_hdrs[%s].
+mifi_security_generate_sha256_string failed.
+[%s]:[%s] - %s - sha256_canonical_req(%s) : [%s].
+AWS4-HMAC-SHA256
+%s/us-east-1/s3/aws4_request
+[%s]:[%s] - %s - str_to_sign[%s].
+[%s]:[%s] - %s - new_secret_key[%s].
+aws4_request
+us-east-1
+HMAC signature [mifi_security_hmac_create_s4_signature] failed
+AWS4-HMAC-SHA256 Credential=%s/%s/us-east-1/s3/aws4_request, SignedHeaders=%s, Signature=%s
+[%s]:[%s] - %s - time[%s] date[%s] signed_hdrs[%s] auth_str[%s].
+Authorization
+Content-Length: %d
+[%s]:[%s] - In %s .
+[%s]:[%s] - %s: file not present=[%s]
+Upload file not found
+[%s]:[%s] - %s: fopen() failed, [%s]
+Cannot open upload file
+CURLOPT_UPLOAD
+CURLOPT_PUT
+CURLOPT_READDATA
+CURLOPT_INFILESIZE_LARGE
+CURLOPT_LOW_SPEED_LIMIT
+CURLOPT_LOW_SPEED_TIME
+[%s]:[%s] - In %s conn_timeout[%d].
+[%s]:[%s] - %s: Offset=[%u] > actual size=[%ld], start from file size
+[%s]:[%s] - %s: fopen() failed on file=[%s]
+Unable to open download file
+[%s]:[%s] - %s: fseek(%u) failed.
+fseek failed
+[%s]:[%s] - %s: curl_retry setting dl_file_offset (%u).
+libcurl-agent/1.0
+CURLOPT_USERAGENT
+CURLOPT_WRITEFUNCTION
+CURLOPT_WRITEDATA
+CURLOPT_RESUME_FROM
+CURLOPT_NOPROGRESS
+[%s]:[%s] - %s: inOffset=[%u], actual offset=[%u]
+CURLOPT_XFERINFOFUNCTION
+CURLOPT_XFERINFODATA
+CURLOPT_ERRORBUFFER
+CURLOPT_SSL_VERIFYPEER
+[%s]:[%s] - %s: disable_cert_verify is set
+CURLOPT_SSL_VERIFYHOST
+CURLOPT_URL
+[%s]:[%s] - %s: file=[%s], bucket=[%s], host=[%s], path=[%s]
+/opt/nvtl/data/custom_upload
+[%s]:[%s] - %s: custom file [%s] present, overwrite filename [%s]
+[%s]:[%s] - %s: cloud_engine_determine_payload_type() failed
+[%s]:[%s] - %s: cloud_engine_io_create_s4_aws_signature() failed
+[%s]:[%s] - %s: cloud_engine_io_aws_create_s4_http_header() failed
+[%s]:[%s] - %s: **** inside s2 create sign function: 
+[%s]:[%s] - %s: cloud_engine_io_create_s2_aws_signature() failed
+[%s]:[%s] - %s: cloud_engine_io_aws_create_s2_http_header() failed
+[%s]:[%s] - %s: action[%d] access[%d] req[%d] timeout[%d] url[%s] 
+[%s]:[%s] - %s: curl_easy_perform rc[%d] err[%s]. 
+[%s]:[%s] - %s: curl error=[%s], retry after 2 second
+[%s]:[%s] - %s: curl_easy_getinfo rc[%d]. 
+CURLINFO_RESPONSE_CODE
+HTTP code=[%ld]
+[%s]:[%s] - %s: Success, ref-req=[%d], HTTP code=[%ld]
+[%s]:[%s] - %s: Failed HTTP status ref-req=[%d], code=[%ld]
+[%s]:[%s] - %s: curl_global_init() failed, rc=[%d]
+[%s]:[%s] - %s: curl_easy_init() failed
+[%s]:[%s] - %s: cloud_engine_io_aws_setup() failed
+[%s]:[%s] - %s: Headers=[%p]
+Invalid input
+[%s]:[%s] - %s: final - url=[%s]
+[%s]:[%s] - %s: cloud_engine_io_setup_upload_options() failed
+[%s]:[%s] - %s: cloud_engine_io_setup_download_options() failed
+[%s]:[%s] - %s: fhandle=[%p]
+[%s]:[%s] - %s: cloud_engine_io_setup_common_options() failed
+[%s]:[%s] - %s: Triggering cloud_engine_io_perform_curl. 
+Download
+[%s]:[%s] - %s: Action=[%s] [%s], status=[%s], file_size=[%u] url=[%s]
+[%s]:[%s] - Received CLOUD_ENGINE_MSG_ACTION
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error initializing cloud engine settings, terminating.
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - Error initializing cloud_engine configuration, terminating.
+/cloud_engine_mq
+[%s]:[%s] - Error opening message queue: %d, terminating.
+[%s]:[%s] - Cloud engine is initialized. Notifying ready status on %s channel
+cloud_engine.ready
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - Cloud engine initiating shutdown
+[%s]:[%s] - %s Server Terminating.
+file_ext
+cloud_engine_determine_payload_type
+cloud_engine_publish_io_status
+cloud_engine_io_xferinfo_cb
+extract_host_name_only
+cloud_engine_io_create_s2_aws_signature
+cloud_engine_io_aws_create_s2_http_header
+cloud_engine_io_create_s4_aws_signature
+cloud_engine_io_aws_create_s4_http_header
+cloud_engine_io_setup_upload_options
+cloud_engine_io_setup_download_options
+cloud_engine_io_setup_common_options
+cloud_engine_io_aws_setup
+cloud_engine_io_perform_curl
+cloud_engine_io_action_start_impl
+[%s]:[%s] - %s - BEGIN
+ccm2.wan_connection
+modem2.service
+modem2.roam_state
+[%s]:[%s] - %s - END
+[%s]:[%s] - %s - Failed to subscribe to %s channel
+[%s]:[%s] - %s - Failed to unsubscribe to %s channel
+[%s]:[%s] - %s - MsgBus_Create Failed
+[%s]:[%s] - %s - End returning %d
+[%s]:[%s] - %s - MsgBus_Connect Failed
+[%s]:[%s] - %s - MsgBus_SetCallback Failed
+cloud_engine.status
+[%s]:[%s] - %s - MsgBus_Set(CLOUD_ENGINE_IO_STATUS_CHANNEL) failed, returned %d
+[%s]:[%s] - %s - MsgbusHandler module is not initialized yet
+cloud_engine_msgbus_handler
+cloud_engine_mbh_registerChannel
+cloud_engine_mbh_subscribe
+cloud_engine_mbh_unsubscribe
+cloud_engine_mbh_init
+cloud_engine_mbh_deinit
+cloud_engine_mbh_publish_io_data
+[%s]:[%s] - %s: BIO_new_file() failed on certificate
+[%s]:[%s] - %s: failed to find X509 certificate
+[%s]:[%s] - %s: BIO_new_file(), failed on data file
+[%s]:[%s] - %s: SMIME_read_PKCS7() failed
+[%s]:[%s] - %s: BIO_new_file(), failed on output file
+[%s]:[%s] - %s: PKCS7_verify() failed
+[%s]:[%s] - %s: success
+[%s]:[%s] - %s: Error in Verifying data
+[%s]:[%s] - %s
+[%s]:[%s] - %s: Cannot open signer Certificate file
+[%s]:[%s] - %s: PEM_read_bio_X509() failed on certificate
+[%s]:[%s] - %s: Cannot open Device private key file
+[%s]:[%s] - %s: PEM_read_bio_PrivateKey() failed
+[%s]:[%s] - %s: BIO_new_file() failed, input data file
+[%s]:[%s] - %s: PKCS7_sign() failed
+[%s]:[%s] - %s: BIO_new_file() failed, for output file
+[%s]:[%s] - %s: SMIME_write_PKCS7() failed
+[%s]:[%s] - %s: File with signature created
+[%s]:[%s] - %s: Error in signing data
+[%s]:[%s] - %s: BIO_new_file() failed on private key
+[%s]:[%s] - %s: BIO_new_file() failed on input file
+[%s]:[%s] - %s: BIO_new_file() failed on output file
+[%s]:[%s] - %s: PKCS7_decrypt() failed
+[%s]:[%s] - %s: Error in decrypting
+[%s]:[%s] - %s: [%s]
+[%s]:[%s] - %s: sk_X509_new_null() failed
+[%s]:[%s] - %s: PKCS7_encrypt() failed
+[%s]:[%s] - %s: Encryption success
+[%s]:[%s] - %s: Error in encryption
+[%s]:[%s] - %s: Cannot find one of the input files
+[%s]:[%s] - %s: Output/Temp file name, cannot be empty
+[%s]:[%s] - %s: Pass phrase cannot be more than 32 bytes
+[%s]:[%s] - %s: smime_create_signature() failed
+[%s]:[%s] - %s: smime_encrypt_file() failed
+[%s]:[%s] - %s: malloc(%d) failed
+[%s]:[%s] - HMAC_Init_ex() failed
+[%s]:[%s] - %s: HMAC_Update() failed
+[%s]:[%s] - %s: HMAC_Final() failed
+[%s]:[%s] - %s: EVP_EncodeBlock() failed
+[%s]:[%s] - %s: outBuf=[%s], len=[%ld]
+[%s]:[%s] - %s: Key size is %d bits - should be 256 bits
+[%s]:[%s] - %s: malloc() failed
+[%s]:[%s] - %s: EVP_EncryptInit_ex() failed
+[%s]:[%s] - %s EVP_EncryptUpdate() failed
+[%s]:[%s] - %s EVP_EncryptFinal_ex() failed
+[%s]:[%s] - %s: Encrypted data=[%d] > input buffer size=[%d]
+[%s]:[%s] - %s: Outbuf=[%s][%ld], Binary len=[%d]
+[%s]:[%s] - malloc(%d) failed
+[%s]:[%s] - %s: Key size is [%d] bits - should be 256 bits
+[%s]:[%s] - EVP_EncryptInit_ex() failed
+[%s]:[%s] - EVP_DecryptUpdate() failed
+[%s]:[%s] - EVP_DecryptFinal_ex() failed
+[%s]:[%s] - %s: init
+[%s]:[%s] - %s: data_len[%d] data[%s]
+[%s]:[%s] - %s: file[%s]
+[%s]:[%s] - hmac_date creation failed
+[%s]:[%s] - hmac_region creation failed
+[%s]:[%s] - hmac_service creation failed
+[%s]:[%s] - signing_key creation failed
+[%s]:[%s] - signature creation failed
+[%s]:[%s] - File[%s] read failed
+smime_verify_signature
+smime_create_signature
+smime_decrypt_file
+smime_encrypt_file
+mifi_security_decrypt_file
+mifi_security_encrypt_file
+mifi_security_hmac_create_signature
+mifi_security_aes128_encrypt
+mifi_security_aes128_decrypt
+mifi_security_init
+mifi_security_generate_sha256_string
+mifi_security_generate_sha256_file
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

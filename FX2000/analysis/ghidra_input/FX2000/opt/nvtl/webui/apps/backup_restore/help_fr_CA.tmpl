@@ -1,0 +1,28 @@
+<!-- Backup and Restore -->
+<div id="backup_restore">
+         <h1><tmpl_var _("webui", "backup_restore_menu_text")></h1>
+
+         <h2>Vue d’ensemble</h2>
+         <p>Utilisez cette fonctionnalité pour sauvegarder (télécharger) une copie des paramètres de configuration de cet appareil dans un fichier sur votre ordinateur, ou restaurer (télécharger) un fichier de configuration précédemment enregistré. Ce fichier de configuration contient tous les paramètres des fonctionnalités de l’appareil, du routeur et du système. Il ne contient aucun paramètre et aucune donnée pour le modem 4G. Veuillez noter que vous ne pouvez restaurer un fichier que sur le même appareil que celui dont il provient.</p>
+         <p>Cet écran permet également de réinitialiser tous les paramètres aux paramètres d’usine par défaut.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+         <h3>Mot de passe administrateur</h3>
+         <p>Saisissez le mot de passe administrateur actuel <tmpl_var _("webui", "webui_product_name")> dans ce champ.</p>
+         <h3><tmpl_var _("webui", "backup_restore_backup_now_button")></h3>
+         <p>Cliquez sur le bouton Télécharger pour télécharger une copie du fichier de configuration actuel sur votre ordinateur. Si votre navigateur vous invite à enregistrer le fichier, vous pouvez le renommer si vous le souhaitez.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+
+         <h3>Mot de passe administrateur</h3>
+         <p>Saisissez le mot de passe administrateur actuel <tmpl_var _("webui", "webui_product_name")> dans ce champ.</p>
+         <h3><tmpl_var truncate(_("webui", "backup_restore_file_select_label"), (size(_("webui", "backup_restore_file_select_label")) - size(":")))></h3>
+         <p>Sélectionnez le fichier de configuration que vous avez téléchargé précédemment depuis ce <tmpl_var _("webui", "webui_product_name")> sur votre ordinateur.</p>
+         <h3>Bouton Restaurer maintenant</h3>
+         <p>Après avoir sélectionné un fichier de configuration, cliquez sur ce bouton pour commencer le téléchargement du fichier. Après le téléchargement, le fichier de configuration est immédiatement appliqué et cet appareil redémarre.</p>
+         <p class="note"><strong>Remarque :</strong> Le téléchargement d’un fichier de configuration modifie TOUS les paramètres existants pour qu’ils correspondent au fichier de configuration. Cela peut modifier les paramètres Wi-Fi actuels, interrompant toutes les connexions existantes à ce <tmpl_var _("webui", "webui_product_name")>, y compris la présente session du navigateur Web.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+         <p>Cliquez sur le bouton <strong>Restaurer les paramètres d’usine par défaut</strong> pour réinitialiser tous les paramètres aux paramètres d’usine par défaut. Cela entraîne un redémarrage et peut modifier les paramètres Wi-Fi actuels, interrompant toutes les connexions existantes à ce <tmpl_var _("webui", "webui_product_name")>, y compris la présente session du navigateur Web.</p>
+</div>
+ <!-- id="backup_restore" -->

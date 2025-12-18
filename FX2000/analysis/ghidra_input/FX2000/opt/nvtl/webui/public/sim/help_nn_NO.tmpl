@@ -1,0 +1,47 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_menu_text")></h1>
+        <h2>Oversikt</h2>
+        <p>SIM-kortet inne i din <tmpl_var _("webui", "webui_product_name")> kan låses med en PIN-kode. Hvis SIM-kortet er låst, må du oppgi PIN-koden før du kobler deg til mobilnettverket. Når PIN-koden er skrevet inn, huskes PIN-koden til neste avslutning.</p>
+
+	<p>I tillegg til at du kan angi PIN-koden for SIM-kortet ved behov, lar denne siden deg også låse opp SIM-kortet, eller endre PIN-koden for SIM-kortet. Generelt må du oppgi den eksisterende PIN-koden for å endre SIM-kortet. For et Novatel Wireless SIM-kort er standard PIN-koden tilgjengelig fra tjenesteleverandøren.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_pin_lock_feature_label"), (size(_("webui", "adv_sim_pin_lock_feature_label")) - size(":")))></h3>
+		<p>Feltet viser om låsefunksjonen for PIN-kode er i bruk eller ikke. Hvis «På», har PIN-kodelåsen blitt slått på, og PIN-koden for SIM-kortet må skrives inn for å koble til mobilnettverket. Hvis «Av», er ikke låsefunksjonen for PIN-kode slått på, og PIN-koden for SIM-kortet er ikke nødvendig.</p>
+
+	<h3><tmpl_var truncate(_("webui", "adv_sim_status_label"), (size(_("webui", "adv_sim_status_label")) - size(":")))></h3>
+	<p>Feltet viser gjeldende status på SIM-kortet. Mulige verdier er:</p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>Klar – dette er normal tilstand. PIN-koden for SIM-kortet brukes ikke.</li>
+	        <li>PIN-kodelåst – PIN-koden for SIM-kortet må legges inn før du kan bruke mobilnettverket.</li>
+	        <li>PUK-kodelåst – PUK-koden for SIM-kortet må legges inn for å kunne fortsette. PUK-koden kan fås fra tjenesteleverandøren.</li>
+	        <li>Ulåst – PIN-koden for SIM-kortet er nødvendig, men er allerede tastet inn.</li>
+	        <li>SIM-kort mangler – intet SIM-kort ble oppdaget. Hvis du har et SIM-kort, må du kontrollere at det er satt inn riktig.</li>
+	        <li>SIM-kortfeil – et SIM-kort ble oppdaget, men det svarte ikke som forventet, og kan ikke brukes.</li>       
+	        </ul>
+	</div>
+        <h2>SIM-kortoperasjoner</h2>
+        <p>Handlingene som er tilgjengelige avhenger av gjeldende SIM-kortstatus. Alle mulige operasjoner er listet opp og forklart nedenfor.</p>
+
+		<h3>PIN-kodelås</h3>
+		<p>Hvis SIM-kortet for øyeblikket er PIN-kodelåst, blir du bedt om å oppgi PIN-koden. Merk at hvis en feil PIN-kode er skrevet inn for mange ganger, blir SIM-kortet PUK-låst. En teller på siden viser hvor mange uriktige inntastinger som vil forårsake PUK-lås. Når det er PUK-låst, må PUK-koden deretter skaffes fra tjenesteleverandøren.</p>
+		<h3>PUK-lås</h3>
+		<p>Hvis SIM-kortet for øyeblikket er PUK-låst, er det å skrive inn PUK-koden eneste mulige handling. Merk at hvis en feil PUK-kode legges inn for mange ganger, blir SIM-kortet permanent ubrukelig. Du må skaffe et nytt SIM-kort. En teller på siden viser hvor mange inntastingsforsøk som gjenstår.</p>
+		<h3><tmpl_var _("webui", "adv_sim_enable_pin_lock_option")></h3>
+		<p>Dette innstiller SIM-kortet til å kreve at en PIN-kode tastes inn ved oppstart for å koble til mobilnettverket. For å utføre denne operasjonen, må du oppgi gjeldende PIN-kode.</p>
+
+		<h3><tmpl_var _("webui", "adv_sim_disable_pin_option")></h3>
+		<p>Du kan bruke denne innstillingen til å slå av en PIN-kodelås som tidligere var slått på, slik at det ikke lenger er nødvendig å oppgi en PIN-kode for å koble til mobilnettverket. For å utføre denne operasjonen, må du oppgi gjeldende PIN-kode.</p>
+		<h3><tmpl_var _("webui", "adv_sim_change_pin_option")></h3>
+		<p>For å endre den eksisterende PIN-koden, må du velge du dette alternativet og deretter skrive inn de nødvendige dataene:</p>
+		<div class="blockgroup">
+			<ul>
+			<li>Gjeldende PIN-kode</li>
+			<li>Ny PIN-kode</li>
+			<li>Bekreft ny PIN-kode</li>
+			</ul>
+		</div>
+		<p><tmpl_var _("webui", "adv_sim_name_text")></p>
+</div>
+<!-- id="sim" -->
+

@@ -1,0 +1,33 @@
+<Config>
+    <Carrier>ATT</Carrier>
+    <modelString>M2000</modelString>
+    <Sdm>
+        <TestServerURL>coaps://InteropLwM2M.dm.iot.att.com</TestServerURL>
+        <TestServerPort>5684</TestServerPort>
+        <!-- <BootstrapTestServerURL>coaps://InteropBootstrap.dm.iot.att.com</BootstrapTestServerURL> -->
+        <BootstrapTestServerURL>coaps://us.iot.avsystem.cloud</BootstrapTestServerURL>
+        <BootstrapTestServerPort>5694</BootstrapTestServerPort>
+        
+        <ServerURL>coaps://lwm2m.dm.iot.att.com</ServerURL>
+        <ServerPort>5684</ServerPort>
+        <BootstrapServerURL>coaps://bootstrap.dm.iot.att.com</BootstrapServerURL>
+        <BootstrapServerPort>5694</BootstrapServerPort>
+    
+        <DevType>Module-Proprietary</DevType>
+        <ConfigVersion></ConfigVersion>
+        <SocketConnectionUpdateInterval>180</SocketConnectionUpdateInterval>
+    </Sdm>
+    <DeviceInfo>
+        <Manufacturer>Inseego</Manufacturer>
+        <DeviceModel>FX2000-3</DeviceModel>
+        <DeviceID>BI003293</DeviceID>
+        <SoftwareVersion></SoftwareVersion>
+        <HardwareVersion>3</HardwareVersion>
+        <FirmwareVersion></FirmwareVersion>
+    </DeviceInfo>   
+    <ApnRetries>2</ApnRetries>
+    <ApnRetryPeriod>0</ApnRetryPeriod>
+    <ApnRetryBackOffPeriod>86400</ApnRetryBackOffPeriod> <!--in seconds-->
+    <UseInternetCallForDm>0</UseInternetCallForDm>
+    <ConnectToDm>0</ConnectToDm>
+</Config>

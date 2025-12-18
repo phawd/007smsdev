@@ -1,0 +1,65 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p>Vous pouvez utiliser ce paramètre d’activation/désactivation lorsque cela est nécessaire pour désactiver les données cellulaires et empêcher l’accès au réseau mobile. Cela empêche les appareils connectés de se connecter à Internet et d’utiliser votre forfait de données mobile. En fonctionnement normal, ce paramètre doit rester activé.</p>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Préférence de connexion</h3>
+			<p>Sélectionnez l’option souhaitée pour contrôler le moment où le <tmpl_var _("webui", "webui_product_name")> établira une connexion de données au réseau mobile.</p>
+	</tmpl_if>
+
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>Utilisez ce paramètre pour activer ou désactiver l’itinérance internationale et nationale selon les besoins. Des frais de données supplémentaires peuvent s’appliquer en cas d’itinérance.</p>
+	</tmpl_if>
+
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p>La valeur par défaut est « <tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")> ». Le <tmpl_var _("webui", "webui_product_name")> sélectionnera la meilleure technologie disponible.</p>
+		<p>Si vous le souhaitez, vous pouvez modifier cela pour limiter les technologies de réseau qui seront utilisées.</p>
+	</tmpl_if>
+
+	<h3>Sélection manuelle du réseau</h3>
+		
+	<p>Cette fonctionnalité n’est disponible que lorsque l’activation de la sélection automatique du réseau est désactivée. Cela peut être utile si plusieurs réseaux sont disponibles et que vous avez une préférence relative à celui qui est utilisé.</p>
+	<p>Cliquez sur le bouton « Sélectionner un réseau » pour analyser les réseaux disponibles; vous pouvez ensuite choisir le réseau souhaité.</p>
+	
+	
+	<tmpl_unless apnProfileSettings>
+		
+
+		<tmpl_if NetworksFourGLTEAPNShow>
+			<h3><tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))></h3>
+			<p>L’APN est préconfiguré; vous ne devez pas le modifier à moins d’avoir un compte d’entreprise (avec votre propre APN).</p>
+		</tmpl_if>
+
+
+
+		<tmpl_if NetworksCustomAPNShow>
+			<h3><tmpl_var truncate(_("webui", "wwan_settings_custom_apn_label"), (size(_("webui", "wwan_settings_custom_apn_label")) - size(":")))></h3>
+			<p>Cet APN est utilisé si vous changez la carte SIM pour une carte SIM autre que Verizon. Sinon, il est ignoré et n’a aucun effet.</p>
+		</tmpl_if>
+	<tmpl_else>
+		<h2>Paramètres avancés</h2>
+		<p>Utilisez cet en-tête/ce lien pour afficher ou masquer les paramètres avancés selon vos besoins.</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_apn_label"), (size(_("webui", "wwan_settings_apn_label")) - size(":")))></h3>
+		<p>Si vous devez modifier l’APN, saisissez la valeur fournie par votre fournisseur de services de réseau mobile.</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p>Sélectionnez l’option spécifiée par votre fournisseur de services.</p>
+			<ul>
+				<li>Aucun</li>
+				<li>PAP</li>
+				<li>CHAP</li>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))></h3>
+		<p>Si l’authentification est <strong>Aucun</strong>, ce champ peut être laissé vide. Sinon, entrez la valeur spécifiée par votre fournisseur de services.</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))></h3>
+		<p>Si l’authentification est <strong>Aucun</strong>, ce champ peut être laissé vide. Sinon, entrez la valeur spécifiée par votre fournisseur de services.</p>
+
+	</tmpl_unless>
+
+</div>

@@ -1,0 +1,70 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+mifi_dbg_start
+__isoc99_scanf
+GLIBC_2.7
+nvtl_acm_get_config
+nvtl_acm_set_config
+nvtl_acm_register
+nvtl_acm_deregister
+mifi_dbg_stop
+__bss_start
+librt.so.1
+libmifi_debug.so
+libpthread.so.0
+libmifi_events.so
+libmificommon.so
+libacm.so
+H	KxD	J{D
+ACM0: Motion Detected
+ACM0: X=%d Y=%d Z=%d
+ACM1: Motion Detected
+ACM1: X=%d Y=%d Z=%d
+ACM2: Motion Detected
+ACM2: X=%d Y=%d Z=%d
+Enter 0 for getting existing ACM configuration
+Enter 1 for configuring ACM in motion_detect mode
+Enter 2 for configuring ACM in read_samples mode
+Enter 3 for disabling ACM mode
+Enter 4 for 0 register the ACM API
+Enter 5 for 1 register the ACM API
+Enter 6 for 2 register the ACM API
+Enter 7 for 0 deregister the ACM API
+Enter 8 for 1 deregister the ACM API
+Enter 9 for 2 deregister the ACM API
+Enter 99 to EXIT
+ACM get configuration
+mode=%u sample_rate=%u g_range=%u threshold=%u duration=%u
+ACM motion detect configuration
+ACM read samples configuration
+ACM none(disable) configuration
+ 0 register the ACM API
+1  register the ACM API
+ 2 register the ACM API
+ 0-de register the ACM API
+ 1-de register the ACM API
+ 2-de register the ACM API
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

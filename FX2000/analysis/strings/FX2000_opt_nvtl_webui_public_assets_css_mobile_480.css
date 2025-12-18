@@ -1,0 +1,201 @@
+/* ==|== mobile_480 ======================================================
+	Mobile style overrides for screens up to 480px wide.
+	This should be the linked just before last.css
+	========================================================================== */
+/* =============================================================================
+ ========================================================================== */
+#carrier_logo
+	position: relative;
+#header{
+	padding-bottom:0px;
+	height: 140px;
+#header #header_inner {
+    height: auto;
+    background:#fff;
+#container_inner {
+.tabs_container .tier_1_content {
+    border-top:none;
+body.no_status_bar #carrier_logo
+	display: block;
+#mobile_menu{
+	top:142px;
+#main_inner{
+	margin-top: 0px;
+#main_inner #app_container {
+#app_container #app_inner {
+    padding-top: 10px;
+#status_area ul.status
+	margin-right: 10px;
+#mobile_status_area ul.status {
+    /* margin-right: 0px; */
+#header_mobile_menu {
+	margin-top: -53px;
+/* =============================================================================
+ CONTAINER & STICKY FOOTER
+ ========================================================================== */
+#container
+	/* Sticky Footer Stuff */
+	margin: 0 auto -140px; /* the bottom margin is the negative value of the footer's height */
+.footer .copyright p {
+    /* float: right; */
+.logo_device {
+    width: 100%;
+.copyright {
+    width: 100%;
+    padding-top: 10px;
+.mifi_device {
+    width: 100%;
+    padding-top: 10px;
+.footer {
+    height: 130px;
+/* =============================================================================
+ FOOTER & STICKY FOOTER
+ ========================================================================== */
+	height: 140px; /* #push must be the same height as #footer + borders */
+/* =============================================================================
+ MODAL DIALOG
+ ========================================================================== */
+.ui-dialog-content
+	height: 100% !important; /* Force to window height. */
+	overflow: visible;
+.ui-dialog
+	height: auto !important; /* Force to window height. */
+	top: 0 !important; /* Force to top position. */
+.ui-dialog-titlebar-close{
+	width:20px;
+	height:20px;
+	z-index:1010; 
+/* =============================================================================
+ PARENTAL CONTROL SITES PAGE
+ ========================================================================== */
+#parentalctrl_site table.parentalControlSiteTable td input.text
+	width: auto;
+#parentalctrl_site #parentalControlSiteFilter div.col,
+html.rtl #parentalctrl_site #parentalControlSiteFilter div.col,
+#parentalctrl_site #parentalControlSiteFilter div.sites_count,
+html.rtl #parentalctrl_site #parentalControlSiteFilter div.sites_count
+	float: none;
+	padding: 0 !important;
+/* =============================================================================
+ GPS PAGE
+ ========================================================================== */
+#gps_status #gps_panel #map_canvas
+	height: 200px;
+#gps_status #gps_table div.row
+	width: auto;
+	float: none;
+	padding: 0;
+	margin: 0;
+#gps_status #gps_table div.row + div.row
+	margin-top: 10px;
+#gps_status #gps_table div.col
+	width: auto;
+#gps_status #gps_panel a#downloadGpsDriver
+	padding-top: 5px;
+	padding-bottom: 5px;
+	line-height: normal;
+	height: auto;
+	text-align: center;
+.pco-container {
+    margin: 0 auto;
+    width: 90%;
+/* =============================================================================
+ ========================================================================== */
+.table .row .input {
+    width: 100%;
+.table .input input {
+    width: 95%;
+.table .row .help {
+    float: left;
+#connected_devices tr.editDeviceRow td input {
+    width: 89% !important;
+#connected_devices table tr.editDeviceRow{
+	float:right;
+	width:100%;
+.table .row .input.m_chkbox_widthauto{
+	width:auto;
+/* =============================================================================
+ ========================================================================== */
+.col-md-6 {
+    margin-top: 20px;
+    width: 100%;
+.shortcut {
+    margin: 0 0 20px;
+    width: 100%;
+    min-height: auto;
+	width: 100%;
+	table-layout: fixed;
+	word-wrap: break-word;
+button.secondary
+	/* padding: 0 12px; */
+	height: 25px;
+	line-height: 25px;
+	margin-top: 2%;
+.col-secondary {
+	width: 100%;
+	margin-left: 0%;
+.col-primary .col.label-teeny {
+	width: 100%;
+.col-primary .col.input-textbox {
+	width: 100%;
+div#uniform-GPSPortNumberSave {
+    margin-top: -32%;
+.inline_error {
+    margin-left: 44%;
+.progress_bar_wrapper #data_plan_usage_bar_col .totalUsageColor
+	margin-left: 0px;
+.progress_bar_wrapper #data_plan_usage_bar_col .lineUsage
+	float: right;
+	text-align: right;
+.right-move{
+    margin-left: 6%;
+.left-move{
+    margin-right: 6%;
+.tabs_container .tabs {
+    width: 84%;
+.ui-dialog-buttonset {
+    margin-right: 20%;
+.wider-display {
+	display: none;
+.tiney-display {
+    display: block;
+#smsInbox .delete {
+	width: 25%;
+    float: left;
+#smsInbox input[type="checkbox"] {
+	margin-top: 6px;
+#wifi_advanced_settings_form .table .label {
+	width: 25%;
+#wifi_advanced_settings_form .table .rb {
+	width: 24%;
+#apps_home #logo #deviceImg {
+#dataUsage {
+    width: 100%;
+@media screen and (max-width: 420px) {
+	#wifi_advanced_settings_form .table .label {
+		width: 24%;
+#forgot_password_area, #submit_button_area {
+    width: 100%;
+form#login-form #forgot_password_area button, form#login-form #submit_button_area button {
+    width: 100%; 
+#login-form .table .input input {
+	width: 100%;
+	padding-right: 40px;
+.ui-dialog-buttonset {
+    margin: 0px;
+.ui-dialog-buttonset button {
+    margin: 4px 0px;
+    width: 100% !important;
+.buttonset button{
+    width: 100% !important;
+    margin-bottom: 5px;
+#gps .petite {
+    width: 100%;
+/* Networks Page */
+#wwan_settings .dialog_page #app_inner{padding: 0px;}
+#wwan_settings .dialog_page #app_inner .button_container {text-align: center;}
+#wwan_settings button#cancelButton, #wwan_settings button#refreshList, #wwan_settings button#selectNetworkButton {
+		top: 0px;
+	    margin-left: 0px;
+		width: auto;
+		float: none !important;

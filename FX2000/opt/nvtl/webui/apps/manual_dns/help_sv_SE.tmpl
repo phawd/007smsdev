@@ -1,0 +1,16 @@
+<!-- Manual DNS -->
+<div id="manual_dns">
+	<h1><tmpl_var _("webui", "adv_manual_dns_menu_text")></h1>
+	<h2>Översikt</h2>
+	<p>Normalt anges DNS-adressen automatiskt. På den här sidan kan du specificera en DNS manuellt, om så behövs.</p>
+
+	<h2>Inställningar</h2>
+
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_enable_label"), (size(_("webui", "adv_manual_dns_enable_label")) - size(":")))></h3>
+	<p>Använd den här inställningen för att sätta på eller stänga av funktionen Manuell DNS. Om den är påslagen måste följande data tillhandahållas.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address1_label"), (size(_("webui", "adv_manual_dns_address1_label")) - size(":")))></h3>
+	<p>Ange IP-adressen till önskad primär DNS. Den här adressen krävs för att använda funktionen Manuell DNS.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address2_label"), (size(_("webui", "adv_manual_dns_address2_label")) - size(":")))></h3>
+	<p>Ange IP-adressen för önskad sekundär (reserv) DNS. Denna adress är valfri och kan lämnas tom om så önskas.</p>
+</div>
+<!-- id="manual_dns" -->

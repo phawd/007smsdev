@@ -1,0 +1,86 @@
+<!-- wifi_guest_settings -->
+<div id="wifi_guest_settings">	
+	<h1>Wi-Fi 
+ Vierasverkko</h1>
+		Wi-Fi-vierasverkkoa voidaan k
+ antamaan v
+liaikainen yhteys Internetiin <tmpl_var _("webui", "webui_product_name_with_suffix")>-laitteen Wi-Fi-verkon kautta. Jotta voit muodostaa yhteyden Wi-Fi-vierasverkkoon, yhdistettyjen laitteiden on k
+ Wi-Fi-asetuksia.
+		Voit kytke
+ vierasverkon p
+n verkkok
+n Wi-Fi General (Wi-Fi 
+ tai <tmpl_var _("webui", "webui_product_name_with_suffix")>-laitteen kosketusn
+ Wi-Fi-sovelluksen 
+Wi-Fi Band Selection
+ (Wi-Fi-kaistanvalinta) -kohdasta.
+	<h3><tmpl_var _("webui", "wifi_guest_ssid_label")></h3>
+ asettaa verkon nimen tai SSID:n Wi-Fi-vierasverkolle. Anna sopiva nimi. Nimi voi olla enint
+n 32 merkki
+	<h3><tmpl_var _("webui", "wifi_guest_security_label")></h3>
+		Valitse haluamasi Wi-Fi-suojausvaihtoehto.
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> sallii muiden seurata Wi-Fi-liikennett
+ datapakettiasi Internetin k
+miseen. Jos mitenk
+n mahdollista, t
+n vaihtoehdon k
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> on uusin ja turvallisin menetelm
+, ja sit
+, jos mahdollista.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> -vaihtoehtoa voidaan k
+, jos jotkin vanhemmista laitteistasi eiv
+t tue WPA2:ta.
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> voidaan k
+ WPA2- ja WPA3-valituslaitteisiin.
+	<h3><tmpl_var _("webui", "wifi_guest_password_label")></h3>
+		Jos <strong>Security</strong>(Suojaus) -kent
+ valittiin jokin muu vaihtoehto kuin <strong>None</strong> (Ei mit
+n), Wi-Fi-salasana vaaditaan.
+		Anna Wi-Fi-salasana t
+n. Jos haluat, ett
+n asetetaan vahva satunnainen salasana, voit k
+Generate New Key
+ (Laadi uusi avain) -painiketta. Muista tallentaa muutokset, jos k
+ vaihtoehtoa.
+ asetukset ovat oletusarvoisesti piilotettuina, mutta napsauttamalla otsikkoa/linkki
+ saat ne n
+kyviin. 
+ asetukset voidaan yleens
+ oletusarvoihinsa, mutta tarvittaessa voit muuttaa niit
+si mukaan.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_ssid_label", gProductName)></h3>
+ asetus on valittuna, Wi-Fi-nimi on luettavissa <tmpl_var _("webui", "webui_product_name_with_suffix")>-laitteen kosketusn
+-valikkovaihtoehtoa. Jos sit
+ ei ole valittu, nimi n
+kyy muodossa ******.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_password_label", gProductName)></h3>
+ asetus on valittuna, Wi-Fi-salasana on luettavissa <tmpl_var _("webui", "webui_product_name_with_suffix")>-laitteen kosketusn
+-valikkovaihtoehtoa. Jos sit
+ ei ole valittu, salasana n
+kyy muodossa ******.
+	<h3><tmpl_var _("webui", "wifi_guest_broadcast_ssid_label")></h3>
+ asetus on valittuna, t
+ Wi-Fi-verkko n
+ olevien Wi-Fi-verkkojen luettelossa yhdistetyiss
+ laitteissasi. Jos sit
+ ei ole valittu, t
+ verkko ei ole n
+	<tmpl_if showWiFiGuestWPS>
+		<h3><tmpl_var _("webui", "wifi_guest_wps_label")></h3>
+			Wi-Fi Protected Setup (WPS) on j
+rjestelm
+, jonka avulla Wi-Fi-laitteet voivat muodostaa yhteyden Wi-Fi-verkkoon ilman, ett
+ verkkoavain jouduttaisiin sy
+n manuaalisesti. Jos haluat k
+, valitse t
+ asetus.
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_guest_privacy_label")></h3>
+ asetus on valittuna, jokainen yhdistetty laite on erill
+n kaikista muista yhdistetyist
+ laitteista. T
+ tarjoaa lis
+turvaa, jos jotkin yhdistetyt laitteet ovat tuntemattomia tai niihin ei luoteta t
+n ei pit
+isi olla valittuna tavanomaisessa k
+<!-- id="wifi_guest_settings" -->

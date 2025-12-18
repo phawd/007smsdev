@@ -1,0 +1,62 @@
+<script type="text/javascript">
+	$(function()
+		if ("<tmpl_var reboot>" === "true") {
+			window.location.href = "<tmpl_udf GET_URI('restarting')>";
+</script>
+<div id="pageHeadCol clearfix">
+	<h1 class="pageHead carrier-unlock"><tmpl_var _("webui", "carrier_unlock_title")></h1>
+<p class="note"><tmpl_var _("webui", "carrier_unlock_intro")></p>
+<form method="POST" action="<tmpl_udf GET_URI('carrier_unlock')>">
+	<fieldset class="first">
+		<p class="note">
+			<tmpl_if showCustomerInfo>
+						<tmpl_var _("webui", "carrier_unlock_customer_care_text_front")>
+						<a href="<tmpl_udf GET_EXTERNAL_URI('carrier_unlock_request_link')>" target="_blank"><tmpl_var _("webui", "carrier_unlock_link_text")></a>
+						<tmpl_var _("webui", "carrier_unlock_customer_care_text_back")>			
+			<tmpl_else>		
+				<tmpl_var _("webui", "carrier_unlock_contact_customer_care_default_text")>
+			</tmpl_if>			
+		<div class="form-group noblock clearfix">
+			<div class="label">
+				<tmpl_var _("webui", "carrier_unlock_imei_label")>
+			</div>
+			<div class="input" id="modemInfoIMEI">
+				<tmpl_var modemInfoIMEI>
+			</div>
+		</div>
+		<div class="form-group noblock clearfix">
+			<div class="label">
+				<tmpl_var _("webui", "carrier_unlock_phone_number_label")>
+			</div>
+			<div class="input" x-ms-format-detection="none" id="modemInfoPhoneNumber">
+				<tmpl_var modemInfoPhoneNumber>
+			</div>
+		</div>
+		<div class="table">
+			<div class="form-group btn-append clearfix">
+				<div class="label">
+					 <label for="systemSettingCarrierUnlockCode"><tmpl_var _("webui", "carrier_unlock_code_label")></label>
+				</div>
+				<div class="input">
+					<input type="text" name="systemSettingCarrierUnlockCode" id="systemSettingCarrierUnlockCode" value=""<tmpl_if systemSettingCarrierUnlockCodeError> class="error"</tmpl_if><tmpl_if disableField> disabled='disabled'</tmpl_if> />
+				</div>
+				<div class="append">
+					<input type="hidden" name="gSecureToken" id="gSecureToken" value="<tmpl_var gSecureToken>" />
+					<button type="submit" id="submit" class="primary"<tmpl_if disableField> disabled="disabled"</tmpl_if>><tmpl_var _("webui", "carrier_unlock_save_btn")></button>
+				</div>
+			</div><!-- /.row -->
+		</div><!-- /.table -->
+		<tmpl_if saveFailedMessageShow>
+			<tmpl_if systemSettingCarrierUnlockCodeError>
+			<p class="error"><tmpl_var saveFailedMessage></p>
+			</tmpl_if>
+		</tmpl_if>
+		<tmpl_if saveSuccessMessage>
+			<p class="success"><tmpl_var saveSuccessMessage></p>
+		</tmpl_if>
+		<tmpl_if gPostSuccess>
+			<p class="success"><tmpl_var _("webui", "carrier_unlock_save_code_success_text")></p>
+		</tmpl_if>
+	</fieldset>
+<div class="action_links_container clearfix">
+	<a href="<tmpl_udf GET_URI('customer_care')>" class="return_prev_page"><tmpl_var _("webui","carrier_unlock_return_customer_care_btn")></a>

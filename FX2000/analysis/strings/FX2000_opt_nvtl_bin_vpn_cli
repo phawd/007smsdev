@@ -1,0 +1,383 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+vpn_get_error_string
+vpn_is_running
+vpn_get_auto_connect_enabled
+vpn_set_auto_connect_enabled
+vpn_get_ipsec_vpn_enabled
+libpthread.so.0
+vpn_set_ipsec_vpn_enabled
+vpn_get_wguard_vpn_enabled
+vpn_set_wguard_vpn_enabled
+vpn_get_settings
+vpn_clear_ipsec_cfg_settings
+vpn_clear_openvpn_cfg_settings
+vpn_clear_wguard_cfg_settings
+vpn_set_settings
+connect_vpn
+disconnect_vpn
+vpn_get_pptp_settings
+vpn_set_pptp_settings
+vpn_get_openvpn_settings
+vpn_set_openvpn_settings
+vpn_validate_openvpn_config_file_settings
+vpn_get_openvpn_config_file_settings
+vpn_set_openvpn_config_file_settings
+vpn_get_l2tp_settings
+vpn_set_l2tp_settings
+vpn_get_ipsec_settings
+vpn_set_ipsec_settings
+vpn_get_wguard_settings
+vpn_set_wguard_settings
+vpn_get_connection_statistics
+vpn_mon_list_services
+vpn_update_wan_connection_status
+vpn_update_connected_clients_count
+__bss_start
+librt.so.1
+libmificommon.so
+libmifimsgbus.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+librouter2_api.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libwan_mgr_api.so
+libfactory_reset_api.so
+libvpn_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+get_auto_connect
+Gets VPN auto connection status.
+set_auto_connect
+Sets VPN auto connection status.
+get_ipsec_vpn
+Gets IPSec VPN Service status.
+set_ipsec_vpn
+Sets IPSec VPN Service status.
+get_wguard_vpn
+Gets WGuard VPN Service status.
+set_wguard_vpn
+Sets WGuard VPN Service status.
+get_settings
+Gets VPN settings.
+set_settings
+Sets VPN settings.
+connect_vpn
+Connects VPN with configured settings.
+disconnect_vpn
+Disconnects VPN with configured settings.
+get_connection_statistics
+Gets VPN connection statistics.
+update_wan_connection_status
+update WAN connection status. This will use by the development team.
+update_connected_clients_count
+update connected clients count. This will use by the development team.
+list_vpn_mon_service
+List all monitor services. This will use by the development team.
+validate_openvpn_config_files
+Validate uploaded OpenVPN config files.
+Supported Encryption, Integrity and DH groups:
+Encryption 
+ aes256, aes128, des, 3des, blowfish, cast128.
+Integrity 
+ md5, sha1, sha2_256, sha2_384, sha2_512.
+DH Groups 
+ 1 (modp768), 2(modp1024), 5(modp1536), 14(modp2048), 	15(modp3072), 16(modp4096), 17(modp6144), 18(modp8192).
+Syntax: encryption-integrity[-dhgroup].
+Note: Multiple entries should be separated by comma.
+e.g: aes256-sha2_256-modp1024, aes128-sha2_256- modp1536
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+vpn_is_running returned %d (%s)
+vpn_get_auto_connect returned %d (%s)
+VPN auto connect status (0=Disable, 1=Enable) is: [%d]
+Enter VPN auto connect status (0=Disable, 1=Enable): 
+vpn_set_auto_connect returned %d (%s)
+vpn_get_ipsec_vpn_enabled returned 0x%x (%s)
+VPN IPSec VPN Service status (0=Disable, 1=Enable) is: [%d]
+This VPN settings requires reset of device:
+Do you want to reset the device Y/N:
+Enter IPSec VPN Service status (0=Disable, 1=Enable): 
+vpn_set_ipsec_vpn_enabled returned %d (%s)
+vpn_get_wguard_vpn_enabled returned 0x%x (%s)
+VPN WGuard VPN Service status (0=Disable, 1=Enable) is: [%d]
+Enter WGuard VPN Service status (0=Disable, 1=Enable): 
+vpn_set_wguard_vpn_enabled returned %d (%s)
+VPN server type is(0-NONE, 1-PPTP, 2-OpenVPN, 3-L2TP over IPsec, 4-IPSec, 5-OpenVPN with config files, 6- WiredGuard VPN):
+Invalid VPN Server Type:%d
+vpn_get_settings returned 0x%x (%s)
+Enter server type (0-NONE, 1-PPTP, 2-OpenVPN, 3-L2TP Over IPSec, 4-IPSec, 5-OpenVPN with config files 6- WiredGuard VPN): 
+Clear/Set server configuration(Set-0, Clear-1): 
+Enter IPsec Tunnel Index[0-%d]:
+Invalid tunnel index or Exceed tunnel limit i.e. %d.
+Enter server connection retries: 
+Enter WGuard Tunnel Index[0-%d]:
+vpn_set_settings returned %d (%s)
+Enter Tunnel Index:
+%s:%d Invalid tunnel index or Exceed tunnel limit i.e. %d.
+%s:%d Unsupported or Invalid Server type[%d]
+connect_vpn returned %d (%s)
+disconnect_vpn returned %d (%s)
+vpn_get_pptp_settings returned %d (%s)
+PPTP VPN server URL: [%s]
+PPTP VPN server username: [%s]
+PPTP VPN server password: [%s]
+PPTP VPN server authentication type(0-NONE, 1-PAP, 2-CHAP): [%d]
+Enter PPTP server URL: 
+Enter PPTP server username: 
+Enter PPTP server password: 
+Enter PPTP server authentication type(0-NONE, 1-PAP, 2-CHAP): 
+vpn_set_pptp_settings returned %d (%s)
+vpn_get_openvpn_settings returned %d (%s)
+OpenVPN server URL: [%s]
+OpenVPN server username: [%s]
+OpenVPN server password: [%s]
+OpenVPN server protocol: [%d]
+OpenVPN server port number: [%d]
+OpenVPN server Root CA certificate: [%s]
+OpenVPN server client certificate: [%s]
+OpenVPN server client key certificate: [%s]
+OpenVPN server TLS authentication certificate: [%s]
+OpenVPN server encryption: [%d]
+OpenVPN server authentication algorithm: [%d]
+OpenVPN server LZO compression enabled: [%d]
+Enter OpenVPN server URL: 
+Enter OpenVPN server username: 
+Enter OpenVPN server password: 
+Enter OpenVPN server protocol(0-TCP, 1-UDP): 
+Enter OpenVPN server port number: 
+Enter OpenVPN server ROOT CA certificate: 
+Enter OpenVPN server client certificate: 
+Enter OpenVPN server client key certificate: 
+Enter OpenVPN server TLS authentication certificate: 
+Enter OpenVPN server encryption(0: NONE, 1:AES-128, 2:AES-192, 3:AES-256, 4:BF, 5:CAST5, 6:DES, 7:DES-EDE, 8:DES-EDE3, 9:DESX, 10:RC2, 11:RC2-40, 12:RC2-64): 
+Enter OpenVPN server authentication algorithm(0: DEFAULT, 1:MD5, 2:RSA-MD5, 3:SHA, 4:RSA-SHA, 5:SHA1, 6:RSA-SHA1, 7:DSA-SHA, 8:DSA-SHA1-old,
+ 9:MDC2, 10:RSA-MDC2, 11:DSA-SHA1, 12:RSA-SHA1-2, 13:DSA, 14:RIPEMD160, 15:RSA-RIPEMD160, 16:MD4, 17:RSA-MD4, 18:ecdsa-with-SHA1,
+ 19:SHA256, 20:RSA-SHA256, 21:SHA384, 22:RSA-SHA384, 23:SHA512, 24:RSA-SHA512, 25:SHA224, 26:RSA-SHA224, 27:whirlpool): 
+Enter OpenVPN server LZO compression enable(0-disabled, 1-enabled): 
+vpn_set_openvpn_settings returned %d (%s)
+Enter OpenVPN uploaded config file path: 
+vpn_validate_openvpn_config_file_settings returned %d (%s)
+config file name:[%s]
+config URL:[%s]
+Missed configuration file name is: [%s]
+vpn_get_openvpn_config_file_settings returned %d (%s)
+OpenVPN uploaded config file name: [%s]
+Enter OpenVPN uploaded config file name: 
+vpn_set_openvpn_config_file_settings returned %d (%s)
+vpn_get_l2tp_settings returned %d (%s)
+L2TP VPN server URL: [%s]
+L2TP VPN server username: [%s]
+L2TP VPN server password: [%s]
+L2TP VPN server pre shared key: [%s]
+Enter L2TP server URL: 
+Enter L2TP server username: 
+Enter L2TP server password: 
+Enter L2TP server pre shared key: 
+vpn_set_l2tp_settings returned %d (%s)
+Enter IPSec Tunnel Index[0-%d]:
+Invalid Tunnel Index:%d
+vpn_get_ipsec_settings returned %d (%s)
+IPSec VPN Automatically(1) or Manually(0): %d
+IPsec VPN Tunnel Enabled(0-Disable, 1-Enable): %d
+IPSec VPN Left Firewall Enabled(0-Disable, 1-Enable): %d
+IPSec VPN Tunnel Name:[%s]
+IPSec IKE Version:%d
+IPSec VPN Anonymous mode (0-Disable, 1-Enable): %d
+IPSec VPN Local ID:[%s]
+IPSec VPN Remote ID:[%s]
+IPSec IKE Client Authentication Type(0-None 1-Pre shared key, 2-EAP_MSCHAPv2, 3-Pub Key/RSA certificates): [%d]
+Certificate Type(0-None, 1-DER, 2-PEM, 3-OTHER): %d
+IPSec Local Certificate Name with Absolute Path: %s
+IPSec Local Private Key Name: %s
+IPSec IKE Server Authentication Type(0- None, 1-Pre shared key, 2-EAP_MSCHAPv2, 3-Pub Key/RSA certificates): [%d]
+IPSec Local IP address: %s
+IPSec Local Network Subnet: %s
+IPSec Remote IP address: %s
+IPSec Remote Network Subnet: %s
+IPSec IKE Lifetime: %s (default in seconds)
+IPSec Phase1 Proposal: %s
+IPSec Authentication Key Lifetime: %s (default in seconds)
+IPSec Phase2 Proposal: %s
+DPD Enabled(0-Disable, 1-Enable: %d)
+DPD Action(0-None, 1-CLEAR, 2-HOLD, 3-RESTART): %d
+DPD Delay: %d seconds
+DPD Timeout: %d seconds
+IPSec VPN State: %d
+Select Tunnel Startup(0-Manually, 1-Automatically):
+Enable IPsec Tunnel(0-Disable, 1-Enable):
+Enter IPSec Tunnel name:
+Enable Left Firewall (0-Disable, 1-Enable):
+Enable Anonymous Mode (0-Disable, 1-Enable):
+Enter IPSec Local ID: 
+Enter IPSec Remote ID: 
+Enter IPSec IKE Client or Local Authentication Type(0-None, 1-Pre shared key, 2-EAP_MSCHAPv2, 3-Pub Key/RSA certificates): 
+Enter IPSec IKE client pre shared key: 
+Enter IPSec IKE client username: 
+Enter IPSec IKE client password: 
+Enter Certificate Type(0-None, 1-DER, 2-PEM, 3-PKCS12 4-TAR 5-OTHER): 
+Enter IPSec Local Certificate Name with Absolute Path: 
+Enter IPSec Local Private Key Name: 
+Enter IPSec PKCS12 Certificate Password: 
+Enter IPSec IKE Client Certificate Name: 
+Enter IPSec IKE Server or Remote Authentication Type(0-None, 1-Pre shared key, 2-EAP_MSCHAPv2, 3-Pub Key/RSA certificates): 
+Enter IPSec IKE server pre shared key: 
+Enter IPSec IKE server username: 
+Enter IPSec IKE server password: 
+Enter IPSec IKE server certificate: 
+Enter IPSec IKE version(1-IKEv1, 2-IKEv2): 
+Enter IPSec Local IP address: 
+Enter IPSec Local Network Subnet: 
+Enter IPSec Remote IP address: 
+Enter IPSec Remote Network Subnet: 
+IKE  Phase 1:
+Enter IPSec IKE SA Key Lifetime: 
+Enter IPSec Algorithms for Phase1: 
+IKE  Phase 2:
+Enter IPSec Key Lifetime: 
+Enter IPSec Algorithms for Phase2: 
+DPD Settings:
+Enable DPD(0-Disable, 1-Enable):
+Enter DPD Action(0-None, 1-CLEAR, 2-HOLD, 3-RESTART): 
+Enter DPD Delay: 
+Enter DPD Timeout: 
+vpn_set_ipsec_settings returned %d (%s)
+vpn_get_wguard_settings returned %d (%s)
+WGuard VPN Tunnel Index[%d] Details:
+WGuard VPN Tunnel Name:%s
+Tunnel Connection(0-Disable, 1-Enable):%d
+Tunnel Startup(0-Manually, 1-Automatically):%d
+connection retries:%d
+Keys Path:%s
+Private Key file name:%s
+Private Key content:%s
+Public Key content:%s
+Tunnel IP:%s
+Peer IP:%s
+Allowed IPs/Subnets:%s
+EndPoint IP:%s
+Listen Port:%d
+EndPoint Port:%d
+KeepAlive :%d
+Tunnel State: %d
+Enter WGuard VPN Tunnel Index[0-%d]:
+Enable WGuard VPN Tunnel(0-Disable, 1-Enable):
+Enter WGuard Tunnel name:
+Enter WGuard VPN connection retries: 
+Enter WGuard VPN Path where Keys are stored: 
+Enter WGuard VPN Private Key file name: 
+Enter WGuard VPN Private Key content: 
+Enter WGuard VPN Public Key content: 
+Enter WGuard VPN Tunnel IP: 
+Enter WGuard VPN Peer IP: 
+Enter WGuard VPN Allowed IPs/Subnets separated by ',': 
+Enter WGuard VPN EndPoint IP: 
+Enter WGuard VPN Listen port: 
+Enter WGuard VPN EndPoint port: 
+Enter WGuard VPN Tunnel Keepalive:
+vpn_set_wguard_settings returned %d (%s)
+%s:%d Tunnel type:%d, idx=%d
+%s:%d Unsupported Server type[%d]
+Server Type :-
+	2-OpenVPN
+	3-L2TP Over IPSec
+	4-IPSec VPN
+	5-OpenVPN with configuration
+	6-WGuard VPN
+connection state :-
+	0-VPN_STATE_NOTCONNECTED
+	1-VPN_STATE_CONNECTING
+	2-VPN_STATE_CONNECTED
+	3-VPN_STATE_DISCONNECTED
+	4-VPN_STATE_CONNECT_FAILED
+	5-VPN_STATE_STALE_HANDSHAKE
+Vpn server type : [%d]
+Connection state: [%d]
+Connection Up Time: [%d days %02d:%02d:%02d]
+Connection IPv4 address: [%s]
+Connection IPv4 subnet address: [%s]
+Connection IPv4 Tx Bytes: [%llu]
+Connection IPv4 Rx Bytes: [%llu]
+connection failed reason :-
+	0-VPN_FAILED_UNKNOWN
+	1-VPN_FAILED_NO_WAN
+	2-VPN_FAILED_SERVER_NOT_BIND
+	3-VPN_FAILED_AUTHENTICATION
+	4-VPN_FAILED_CERTIFICATE_ERR
+	5-VPN_FAILED_KEY_ERR
+	6-VPN_FAILED_NO_CLIENTS_CONNECTED
+	7-VPN_FAILED_NO_PEER_RESPONSE
+	8-VPN_FAILED_NO_PROPOSAL_CHOSEN
+Connection failed reason: [%d]
+vpn_get_connection_statistics returned %d (%s)
+%s: [%d]: name=%s, cmd=<%s> pid=%d running=%d monitor=%d restarted=%d
+vpn_list_vpn_mon_services returned %d (%s)
+command [%s]
+command [%s] not found.
+Enter WAN connect status (0=NO WAN, 1=WAN): 
+%s returned %d (%s)
+vpn_update_wan_connection_status returned %d (%s)
+Enter connected clients count: 
+vpn_update_connected_clients_count returned %d (%s)
+cmd_connect_vpn
+cmd_disconnect_vpn
+cmd_get_connection_statistics
+cmd_list_vpn_mon_services
+cmd_update_wan_connection_status
+cmd_update_connected_clients_count
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

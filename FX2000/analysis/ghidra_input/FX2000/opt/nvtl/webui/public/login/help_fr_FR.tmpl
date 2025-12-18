@@ -1,0 +1,10 @@
+<!-- Login -->
+<div id="login">
+	<h1><tmpl_var _("webui", "webui_product_name")> Connexion <tmpl_var _("webui", "webui_product_number")> MiFi</h1>
+	<p>Saisissez le mot de passé administrateur <tmpl_var _("webui", "webui_product_name")> pour continuer.</p>
+	<tmpl_if showForgotPassword>
+	<p>Si vous ne connaissez pas le mot de passé, utilisez l’option <strong>J’ai oublié le mot de passé administrateur</strong>.</p>
+	</tmpl_if>
+	<p>Si vous entrez un mot de passé incorrect trop souvent, vous serez bloqué. Pour déverrouiller, vous devez redémarrer le <tmpl_var _("webui", "webui_product_name")>.</p>
+</div>
+<!-- id="login" -->

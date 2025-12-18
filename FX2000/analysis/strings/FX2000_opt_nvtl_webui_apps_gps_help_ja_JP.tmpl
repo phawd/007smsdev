@@ -1,0 +1,40 @@
+<div id="gps_status">
+	<h1><tmpl_var _("webui", "gps_status_menu_text")></h1>
+ <tmpl_var _("webui", "webui_product_name")> 
+<tmpl_if GPSOverWiFiEnableShow>
+GPS over Wi-Fi
+</tmpl_if>
+	<h2>GPS
+	<tmpl_if GPSEnableShow>
+		<h3><tmpl_var _("webui", "gps_status_enable_label")></h3>
+		<h3><tmpl_udf GET_PO_TEXT("gps_status_startup_state_label", gProductName)></h3>
+<tmpl_var _("webui", "webui_product_name")> 
+	</tmpl_if>
+		<h3>GPS
+		<p>GPS
+ <strong>
+</strong>
+		<h2><tmpl_var _("webui", "gps_status_map_section_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "gps_status_latitude_label"), (size(_("webui", "gps_status_latitude_label")) - size(":")))></h3>
+		<h3><tmpl_var truncate(_("webui", "gps_status_longitude_label"), (size(_("webui", "gps_status_longitude_label")) - size(":")))></h3>
+		<h3><tmpl_var truncate(_("webui", "gps_status_altitude_label"), (size(_("webui", "gps_status_altitude_label")) - size(":")))></h3>
+		<h3><tmpl_var truncate(_("webui", "gps_status_accuracy_label"), (size(_("webui", "gps_status_accuracy_label")) - size(":")))></h3>
+		<tmpl_if GPSOverWiFiEnableShow>
+			<tmpl_if GPSPortNumberShow>		
+				<h2><tmpl_var _("webui", "gps_status_enable_sub_header_text")></h2>
+				<h3><tmpl_var truncate(_("webui", "gps_status_gps_over_wifi_label"), (size(_("webui", "gps_status_gps_over_wifi_label")) - size(":")))></h3>
+				<p>GPS
+National Marine Electronics Association
+ <tmpl_var _("webui", "webui_product_name")> 
+				<p>NMEA
+GPS over Wi-Fi
+ <tmpl_var _("webui", "webui_product_name")> 
+				<h3><tmpl_var truncate(_("webui", "gps_status_port_number_label"), (size(_("webui", "gps_status_port_number_label")) - size(":")))></h3>
+			</tmpl_if>
+		</tmpl_if>
+	<tmpl_if GPSDownloadDriversShow>
+		<h3><tmpl_var _("webui", "gps_status_wifi_driver_download_link")></h3>
+<tmpl_if GPSOverWiFiEnableShow>
+GPS over Wi-Fi
+</tmpl_if>
+	</tmpl_if>

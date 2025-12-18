@@ -1,0 +1,302 @@
+<Config>
+	<LogSignalStatsInterval>30</LogSignalStatsInterval>
+	<IntlEriList>1 2 3 4</IntlEriList>
+	<FactoryReset>
+		<Enable>0</Enable>
+	</FactoryReset>
+	<WorldModeSupported>1</WorldModeSupported>
+	<APNValidation>1</APNValidation>
+	<Support3GPP2>1</Support3GPP2>
+	<SprintUICCLockUnlock>0</SprintUICCLockUnlock>
+	<ProfileMap>
+		<CarrierConfig>
+			<Carrier>1</Carrier>     <!-- CARRIER_ID_VERIZON  -->
+			<Profiles>
+				<Info>
+					<Tech>0</Tech>                 <!-- LTE, LTE CA  -->
+					<APNAttach>1</APNAttach>
+					<APNIMS>1</APNIMS>
+					<APNDM>2</APNDM>
+					<APNInternet>3</APNInternet>
+					<APNApps>4</APNApps>
+					<APN800>5</APN800>
+				</Info>
+				<Info>
+					<Tech>1</Tech>                 <!-- UMTS 3G  -->
+					<APNAttach>-1</APNAttach>
+					<APNIMS>1</APNIMS>
+					<APNDM>2</APNDM>
+					<APNInternet>3</APNInternet>
+					<APNApps>4</APNApps>
+					<APN800>5</APN800>
+				</Info>
+				<Info>
+					<Tech>2</Tech>                 <!-- CDMA EVDO-eHRPD  -->
+					<APNAttach>-1</APNAttach>
+					<APNIMS>-1</APNIMS>
+					<APNDM>-1</APNDM>
+					<APNInternet>-1</APNInternet>
+					<APNApps>-1</APNApps>
+					<APN800>-1</APN800>
+				</Info>
+			</Profiles>
+		</CarrierConfig>
+		<CarrierConfig>
+			<Carrier>2</Carrier>     <!-- CARRIER_ID_ATT  -->
+			<Profiles>
+				<Info>
+					<Tech>0</Tech>                 <!-- LTE, LTE CA  -->
+					<APNAttach>1</APNAttach>
+					<APNIMS>-1</APNIMS>
+					<APNDM>-1</APNDM>
+					<APNInternet>1</APNInternet>
+					<APNApps>-1</APNApps>
+					<APN800>-1</APN800>
+				</Info>
+				<Info>
+					<Tech>1</Tech>                 <!-- UMTS 3G  -->
+					<APNAttach>-1</APNAttach>
+					<APNIMS>-1</APNIMS>
+					<APNDM>-1</APNDM>
+					<APNInternet>1</APNInternet>
+					<APNApps>-1</APNApps>
+					<APN800>-1</APN800>
+				</Info>
+				<Info>
+					<Tech>2</Tech>                 <!-- CDMA EVDO-eHRPD  -->
+					<APNAttach>-1</APNAttach>
+					<APNIMS>-1</APNIMS>
+					<APNDM>-1</APNDM>
+					<APNInternet>-1</APNInternet>
+					<APNApps>-1</APNApps>
+					<APN800>-1</APN800>
+				</Info>
+			</Profiles>
+		</CarrierConfig>
+		<CarrierConfig>
+			<Carrier>3</Carrier>     <!-- CARRIER_ID_STRINT  -->
+			<Profiles>
+				<Info>
+					<Tech>0</Tech>                 <!-- LTE, LTE CA  -->
+					<APNAttach>1</APNAttach>
+					<APNIMS>1</APNIMS>
+					<APNDM>2</APNDM>
+					<APNInternet>1</APNInternet>
+					<APNApps>-1</APNApps>
+					<APN800>-1</APN800>
+				</Info>
+				<Info>
+					<Tech>1</Tech>                 <!-- UMTS 3G  -->
+					<APNAttach>-1</APNAttach>
+					<APNIMS>1</APNIMS>
+					<APNDM>2</APNDM>
+					<APNInternet>1</APNInternet>
+					<APNApps>-1</APNApps>
+					<APN800>-1</APN800>
+				</Info>
+				<Info>
+					<Tech>2</Tech>                 <!-- CDMA EVDO-eHRPD  -->
+					<APNAttach>-1</APNAttach>
+					<APNIMS>-1</APNIMS>
+					<APNDM>-1</APNDM>
+					<APNInternet>-1</APNInternet>
+					<APNApps>-1</APNApps>
+					<APN800>-1</APN800>
+				</Info>
+			</Profiles>
+		</CarrierConfig>
+		<CarrierConfig>
+			<Carrier>4</Carrier>     <!-- CARRIER_ID_BELL  -->
+			<Profiles>
+				<Info>
+					<Tech>0</Tech>                 <!-- LTE, LTE CA  -->
+					<APNAttach>1</APNAttach>
+					<APNIMS>-1</APNIMS>
+					<APNDM>2</APNDM>
+					<APNInternet>1</APNInternet>
+					<APNApps>-1</APNApps>
+					<APN800>-1</APN800>
+				</Info>
+				<Info>
+					<Tech>1</Tech>                 <!-- UMTS 3G  -->
+					<APNAttach>-1</APNAttach>
+					<APNIMS>-1</APNIMS>
+					<APNDM>2</APNDM>
+					<APNInternet>1</APNInternet>
+					<APNApps>-1</APNApps>
+					<APN800>-1</APN800>
+				</Info>
+				<Info>
+					<Tech>2</Tech>                 <!-- CDMA EVDO-eHRPD  -->
+					<APNAttach>-1</APNAttach>
+					<APNIMS>-1</APNIMS>
+					<APNDM>-1</APNDM>
+					<APNInternet>-1</APNInternet>
+					<APNApps>-1</APNApps>
+					<APN800>-1</APN800>
+				</Info>
+			</Profiles>
+		</CarrierConfig>
+		<CarrierConfig>
+			<Carrier>5</Carrier>     <!-- CARRIER_ID_TELUS -->
+			<Profiles>
+				<Info>
+					<Tech>0</Tech>                 <!-- LTE, LTE CA  -->
+					<APNAttach>1</APNAttach>
+					<APNIMS>-1</APNIMS>
+					<APNDM>2</APNDM>
+					<APNInternet>1</APNInternet>
+					<APNApps>-1</APNApps>
+					<APN800>-1</APN800>
+				</Info>
+				<Info>
+					<Tech>1</Tech>                 <!-- UMTS 3G  -->
+					<APNAttach>-1</APNAttach>
+					<APNIMS>-1</APNIMS>
+					<APNDM>2</APNDM>
+					<APNInternet>1</APNInternet>
+					<APNApps>-1</APNApps>
+					<APN800>-1</APN800>
+				</Info>
+				<Info>
+					<Tech>2</Tech>                 <!-- CDMA EVDO-eHRPD  -->
+					<APNAttach>-1</APNAttach>
+					<APNIMS>-1</APNIMS>
+					<APNDM>-1</APNDM>
+					<APNInternet>-1</APNInternet>
+					<APNApps>-1</APNApps>
+					<APN800>-1</APN800>
+				</Info>
+			</Profiles>
+		</CarrierConfig>
+		<CarrierConfig>
+			<Carrier>7</Carrier>     <!-- CARRIER_ID_AUTOAPN LAST in LIST  -->
+			<Profiles>
+				<Info>
+					<Tech>0</Tech>                 <!-- LTE, LTE CA  -->
+					<APNAttach>1</APNAttach>
+					<APNIMS>1</APNIMS>
+					<APNDM>2</APNDM>
+					<APNInternet>1</APNInternet>
+					<APNApps>-1</APNApps>
+					<APN800>-1</APN800>
+				</Info>
+				<Info>
+					<Tech>1</Tech>                 <!-- UMTS 3G  -->
+					<APNAttach>1</APNAttach>
+					<APNIMS>1</APNIMS>
+					<APNDM>2</APNDM>
+					<APNInternet>1</APNInternet>
+					<APNApps>-1</APNApps>
+					<APN800>-1</APN800>
+				</Info>
+				<Info>
+					<Tech>2</Tech>                 <!-- CDMA EVDO-eHRPD  -->
+					<APNAttach>-1</APNAttach>
+					<APNIMS>-1</APNIMS>
+					<APNDM>-1</APNDM>
+					<APNInternet>-1</APNInternet>
+					<APNApps>-1</APNApps>
+					<APN800>-1</APN800>
+				</Info>
+			</Profiles>
+		</CarrierConfig>
+	</ProfileMap>
+	<SimCarrierMap>
+		<Carrier id="1" iccid="891480">
+			<Network mcc="311" mnc="480"/>
+			<Network mcc="311" mnc="800"/>
+		</Carrier>
+		<Carrier id="2" iccid="89302610">
+			<Network mcc="302" mnc="610"/>
+			<Network mcc="302" mnc="651"/>
+			<Network mcc="302" mnc="780"/>
+			<Network mcc="204" mnc="04"/>
+		</Carrier>
+		<Carrier id="3" iccid="8901260">
+			<Network mcc="310" mnc="260"/>
+			<Network mcc="310" mnc="120"/>
+			<Network mcc="310" mnc="240"/>
+			<Network mcc="311" mnc="882"/>
+		</Carrier>
+		<Carrier id="4" iccid="8901410">
+			<Network mcc="310" mnc="410"/>
+			<Network mcc="310" mnc="280"/>
+		</Carrier>
+		<Carrier id="5" iccid="891223">
+			<Network mcc="302" mnc="220"/>
+			<Network mcc="302" mnc="880"/>
+		</Carrier>
+		<Carrier id="6" iccid="89312530">
+			<Network mcc="312" mnc="530"/>
+			<Network mcc="312" mnc="190"/>
+			<Network mcc="310" mnc="120"/>
+			<Network mcc="311" mnc="870"/>
+			<Network mcc="311" mnc="880"/>
+			<Network mcc="311" mnc="490"/>
+			<Network mcc="316" mnc="010"/>
+		</Carrier>
+	</SimCarrierMap>
+	<LTEFemtoCellMap>
+		<Carrier id="1" min="1024000" max="1048575" />
+		<Carrier id="3" min="256000000" max="261000191" />
+	</LTEFemtoCellMap>
+	<CustomNetworkNameRules>
+		<Enable>0</Enable>
+		<Home>Home</Home>
+		<Roam>Roam</Roam>
+	</CustomNetworkNameRules>
+	<CallThrottlingMap>
+		<EndReason>33</EndReason>  <!-- option unsubscribed/bad APN string -->
+		<EndReason>208</EndReason> <!-- Ipv4 call disallowed -->
+		<EndReason>209</EndReason> <!-- Ipv4 throttled -->
+		<EndReason>210</EndReason> <!-- Ipv6 call disallowed -->
+		<EndReason>211</EndReason> <!-- Ipv6 throttled -->
+		<EndReason>214</EndReason> <!-- Unpreferred RAT -->
+        <EndReason>231</EndReason> <!-- IP type disabled -->
+	</CallThrottlingMap>
+	<LocationSurveyConfig>
+		<ping_url>8.8.8.8</ping_url>
+		<ping_interval>5</ping_interval>
+		<enable_stubs>0</enable_stubs>
+		<T_mvg_avg>10</T_mvg_avg>
+		<Max_mvg_avg>2</Max_mvg_avg>
+		<R_sampling_frequency>1</R_sampling_frequency>
+		<STD_DEV>
+			<SD_rsrpFR1>1.2</SD_rsrpFR1>
+			<SD_rsrpFR2>1.2</SD_rsrpFR2>
+			<SD_sinrFR1>1.2</SD_sinrFR1>
+			<SD_sinrFR2>1.2</SD_sinrFR2>
+		</STD_DEV>
+		<PEAK_VARIATION>
+			<V_rsrpFR1>4</V_rsrpFR1>
+			<V_rsrpFR2>5</V_rsrpFR2>
+			<V_sinrFR1>4</V_sinrFR1>
+			<V_sinrFR2>5</V_sinrFR2>
+		</PEAK_VARIATION>
+		<V_switchBM>5</V_switchBM>
+		<F_BEAM>3</F_BEAM>
+		<F_5GEARFCN>1</F_5GEARFCN>
+		<RANK>
+			<Excel>1</Excel>
+			<Good>2</Good>
+			<Mid>3</Mid>
+			<Edge>4</Edge>
+		</RANK>
+		<UE_CONFIG>
+			<RSRP_Excel_Low>-80</RSRP_Excel_Low>
+			<RSRP_Good_Low>-90</RSRP_Good_Low>
+			<RSRP_Good_High>-80</RSRP_Good_High>
+			<RSRP_Mid_Low>-102</RSRP_Mid_Low>
+			<RSRP_Mid_High>-90</RSRP_Mid_High>
+			<RSRP_Edge_High>-102</RSRP_Edge_High>
+			<SINR_Excel_Low>16</SINR_Excel_Low>
+			<SINR_Good_Low>8</SINR_Good_Low>
+			<SINR_Good_High>16</SINR_Good_High>
+			<SINR_Mid_Low>0</SINR_Mid_Low>
+			<SINR_Mid_High>8</SINR_Mid_High>
+			<SINR_Edge_High>0</SINR_Edge_High>
+		</UE_CONFIG>
+	</LocationSurveyConfig>
+	<SIM_MGR_WAIT_TIME>15</SIM_MGR_WAIT_TIME>
+</Config>

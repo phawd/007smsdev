@@ -1,0 +1,80 @@
+<!-- Connected Devices -->
+<div id="connected_devices">
+	<h1><tmpl_var _("webui", "connected_devices_menu_text")></h1>
+	<h2>Oversigt</h2>
+	<p>
+		Denne side viser detaljer om hver enhed, der er tilsluttet <tmpl_var _("webui", "webui_product_name")>, og opremser også alle blokerede enheder.
+	</p>
+
+	<h2><tmpl_var _("webui", "connected_devices_sub_header_text")></h2>
+	<p>
+		Denne tabel viser alle enheder, der er tilsluttet Wi-Fi-netværket. Wi-Fi-netværksnavnet vises efter overskriften. Hvis en computer er tetheret til <tmpl_var _("webui", "webui_product_name")> ved hjælp af et USB-kabel, vil den computer blive vist i denne tabel.
+	</p>
+	<p>
+		Følgende oplysninger vises for hver tilsluttet enhed:
+	</p>	
+
+	<h3>Forbindelsestype</h3>
+	<p>
+		Et ikon angiver forbindelsestypen for hver tilsluttet enhed.
+	</p>
+
+	<h3>Navn</h3>
+	<p>
+		Normalt er dette værtsnavnet på den tilsluttede enhed, som indstillet på selve den tilsluttede enhed. I sjældne tilfælde er værtsnavnet muligvis ikke tilgængeligt. Hvis du har brugt indstillingen "Redigér" til at ændre navnet på en tilsluttet enhed, vises det navn, du har angivet, i stedet for værtsnavnet.
+	</p>
+	<p>
+		Du kan bruge indstillingen "Redigér" til at ændre navnet på enhver tilsluttet enhed.
+	</p>
+
+	<h3>IP-adresse</h3>
+	<p>IP-adressen på den tilsluttede enhed.</p>
+
+	<h3>
+		<tmpl_var truncate(_("webui", "connected_devices_mac_address_label"), (size(_("webui", "connected_devices_mac_address_label")) - size(":")))>
+	</h3>
+	<p>Mac-adressen er en unik netværksidentifikator for denne tilsluttede enhed.</p>
+
+	<tmpl_if isIPv6Supported>
+		<h3>
+			<tmpl_var truncate(_("webui", "connected_devices_link_local_label"), (size(_("webui", "connected_devices_link_local_label")) - size(":")))>
+		</h3>
+		<p>
+			Hvis den tilsluttede enhed understøtter IPv6, vises Link-Local IPv6-adressen.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if GuestWifiSupported>
+		<h2><tmpl_var _("webui", "connected_devices_guest_title")></h2>
+		<p>
+			Hvis Wi-Fi-gæstenetværket er i brug, opremser denne tabel alle enheder, der er forbundet til Wi-Fi-gæstenetværket. Wi-Fi-netværksnavnet vises efter overskriften.
+		</p>
+		
+		<p>
+			Præsentation og betjening af enheder, der er anført her, er identisk med enheder, der er anført under det primære netværk.
+		</p>
+	</tmpl_if>
+	
+	<h2>Blokering og fjernelse af blokering af enheder</h2>
+	<h3>Blokeringsknap</h3>
+	<p>
+		Hvis du klikker på knappen "Blokér", bliver den tilsluttede enhed koblet fra og forhindret i at oprette forbindelse igen. Den blokerede enhed vises derefter på listen Blokerede.
+	</p>
+	<p>
+		Blokerede enheder blokeres fra både gæstenetværket og det primære netværk.
+	</p>
+	<p>
+		Denne mulighed er tilgængelig til brug med hver tilsluttet enhed, undtagen din egen enhed og enhver enhed, der er tilsluttet via USB.
+	</p>
+	
+	<h3>Listen Blokerede</h3>
+	<p>
+		Denne viser alle enheder, du har blokeret. Bemærk, at da disse enheder ikke er tilkoblet i øjeblikket og er blokeret fra at oprette forbindelse, har de ikke en IP-adresse. I stedet identificeres de med deres navn og Mac-adresse.
+	</p>
+	<h3>Knappen Fjern blokering</h3>
+	<p>
+		Hvis du klikker på knappen Fjern blokering, fjernes blokeringen af en tidligere blokeret enhed, og den frigøres til igen at oprette forbindelse. Den ikke-blokerede enhed slettes fra listen Blokerede og vises igen på listen Tilsluttede enheder, når den opretter forbindelse.
+	</p>
+</div>
+<!-- id="connected_devices" -->
+

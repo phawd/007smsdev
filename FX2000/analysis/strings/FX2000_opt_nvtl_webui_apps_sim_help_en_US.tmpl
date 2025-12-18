@@ -1,0 +1,43 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_menu_text")></h1>
+        <h2>Overview</h2>
+        <p>Use this page to turn on automatic SIM switching, manually switch SIMS, enter a SIM pin, or change SIM lock settings.
+        	NOTE: The SIM card in your <tmpl_var _("webui", "webui_product_name")> can be locked using a PIN. If the SIM card is locked, you must enter the PIN before connecting to the mobile network. Once entered, the PIN is remembered until the next shutdown. You may also need to provide the existing PIN to change a SIM. The default PIN is available from your service provider.
+	In addition to enabling you to enter the SIM PIN when needed, this page also allows you to unlock your SIM, or change the SIM PIN.
+	Generally, you need to provide the existing PIN in order to change the SIM PIN. For a Novatel Wireless SIM, the default PIN is available from your service provider.
+	<h3><tmpl_var truncate(_("webui", "adv_sim_pin_lock_feature_label"), (size(_("webui", "adv_sim_pin_lock_feature_label")) - size(":")))>
+		<p>The field indicates whether or not the PIN lock feature is in use.
+		If "On", the PIN lock has been turned on, and the SIM PIN must be entered in order to connect to the mobile network.
+		If "Off", the PIN lock feature is not turned on, and the SIM PIN is not required.
+	<h3><tmpl_var truncate(_("webui", "adv_sim_status_label"), (size(_("webui", "adv_sim_status_label")) - size(":")))></h3>
+	<p>The field indicates the current status of the SIM card. Possible values are: </p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>Ready - this is the normal state. The SIM PIN is not used. </li>
+	        <li>PIN Locked - the SIM PIN must be entered before you can use the mobile network.</li>
+	        <li>PUK Locked - the PUK for the SIM must be entered in order to continue. The PUK can be obtained from your service provider.</li>
+	        <li>Unlocked - the SIM PIN is needed, but has already been entered. </li>
+	        <li>No SIM - no SIM was detected. If you do have a SIM, check that it is inserted correctly.</li>
+	        <li>SIM Error - a SIM was detected, but it did not respond as expected, and cannot be used. </li>       
+	        </ul>
+        <h2>SIM Operations</h2>
+        <p>The actions available depend on the current SIM status. All possible operations are listed and explained below. </p>
+		<h3>PIN Lock</h3>
+		<p>If the SIM is currently PIN locked, you are prompted to enter the PIN. Note that if an incorrect PIN is entered too many times, the SIM becomes PUK locked. An on-page counter indicates how many incorrect entries will cause PUK lock. Once PUK locked, the PUK must then be obtained from your service provider.
+		<h3>PUK Lock</h3>
+		<p>If the SIM is currently PUK locked, the only operation possible is to enter the PUK. Note that if an incorrect PUK is entered too many times, the SIM becomes permanently unusable. You will need to obtain a new SIM. An on-page counter indicates how many entry attempts remain.
+		<h3><tmpl_var _("webui", "adv_sim_enable_pin_lock_option")></h3>
+		<p>This sets the SIM so that entry of a PIN is required upon startup to connect to the mobile network. To perform this operation, you must enter the current PIN.
+		<h3><tmpl_var _("webui", "adv_sim_disable_pin_option")></h3>
+		<p>You can use this setting to turn off a PIN lock which was previously turned on, so that entry of a PIN is no longer required to connect to the mobile network. To perform this operation, you must enter the current PIN.
+		<h3><tmpl_var _("webui", "adv_sim_change_pin_option")></h3>
+		<p>To change the existing PIN, select this option and then enter the required data:	
+		<div class="blockgroup">
+			<li>Current PIN</li>
+			<li>New PIN</li>
+			<li>Confirm new PIN</li>
+			</ul>
+		</div>
+		<p><tmpl_var _("webui", "adv_sim_name_text")></p>
+<!-- id="sim" -->

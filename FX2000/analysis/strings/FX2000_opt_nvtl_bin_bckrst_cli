@@ -1,0 +1,66 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+bckrst_get_error_string
+bckrst_is_running
+bckrst_backup
+bckrst_restore
+bckrst_get_backup_file
+bckrst_set_backup_file
+mifi_dbg_start
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libpthread.so.0
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libmificommon.so
+libxmldata_api.so
+libmifimsgbus.so
+libbckrst_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+starts the backup process.
+starts the restore process.
+get_backup_file
+Copies the backup file to the file path specified.
+set_backup_file
+Copies a backup file and overwrites any existing backup.
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+bckrst_is_running returned %d (%s)
+bckrst_backup returned %d (%s)
+bckrst_get_sync_test returned %d (%s)
+bckrst_get_backup_file returned %d (%s)
+command [%s]
+command [%s] not found.
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

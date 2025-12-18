@@ -1,0 +1,11 @@
+DELETE FROM Goldrec;
+
+
+
+
+
+
+
+
+
+

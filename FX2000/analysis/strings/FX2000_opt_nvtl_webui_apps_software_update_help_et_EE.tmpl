@@ -1,0 +1,68 @@
+<!-- Software Update -->
+<div id="software_update">
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+levaade</h2>
+		<p>Tarkvarav
+rskendused edastatakse mobiilsidev
+rgu kaudu automaatselt. Sellel lehel saate neid v
+rskendusi j
+lgida.</p>
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+	<h3><tmpl_var _("webui", "software_update_current_software_modem_version_label")></h3>
+        <p>
+                The version of software currently installed for the modem component.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_kernel_version_label")></h3>
+        <p>
+                The version number for the Operating System and its components.
+        </p>
+        <tmpl_if showAppVersion>
+                <h3><tmpl_var _("webui", "software_update_current_software_app_version_label")></h3>
+                <p>
+                        The app version currently installed.
+                </p>
+        </tmpl_if>
+        <h3><tmpl_var _("webui", "software_update_current_software_cute_version_label")></h3>
+        <p>
+                The cute version of the software currently installed on your device.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_pri_version_label")></h3>
+        <p>
+                The configuration version currently applied to your device.
+        </p>
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var _("webui", "software_update_current_software_configuration_version_label")></h3>
+				<p><tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")></p>
+		</tmpl_if>
+	</tmpl_if>
+	<h2><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+	<h3><tmpl_var _("webui", "software_update_check_for_update_time_label")></h3>
+		<p>See v
+itab, millal <tmpl_var _("webui", "webui_product_name")> viimati kontrollis, kas v
+rskendus on saadaval. V
+rskendust saate k
+sitsi kontrollida nupuga Otsi uuendusi.</p>
+	<h3>Nupp Otsi uuendusi</h3>
+		<p>Selle abil saate kontrollida, kas seadme <tmpl_var _("webui", "webui_product_name")> jaoks on saadaval v
+rskendus. Tavaliselt ei ole see vajalik, kuna v
+rskendused t
+ugatakse automaatselt seadmele <tmpl_var _("webui", "webui_product_name")>. Kui teete selle kontrolli ja v
+rskendus on saadaval, laaditakse see automaatselt alla.</p>
+	<h3><tmpl_var _("webui", "software_update_check_for_update_status_label")></h3>
+		<p>Tavaliselt on see t
+hi, kuid kui otsite v
+rskendust, kuvatakse selle kontrolli tulemus siin. Kui v
+rskendust alla laaditakse, kuvatakse siin ka allalaadimise edenemine.</p>
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+		<p>See paneel kuvab viimase tarkvarauuenduse 
+ksikasjad.</p>
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+		<p>Seda paneeli saab avada lingil/pealkirjal kl
+psates. S
+rskenduste ajalugu sisaldab sellesse seadmesse allalaaditud ja paigaldatud viimaste <tmpl_var SoftwareUpdateHistoryCount> v
+rskenduste 
+ksikasju. Kui v
+rskendusi pole paigaldatud, n
+itab see paneel praegust tarkvaraversiooni.</p>
+<!-- end Software Update -->

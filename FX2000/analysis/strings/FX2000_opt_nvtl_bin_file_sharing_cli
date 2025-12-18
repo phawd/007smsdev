@@ -1,0 +1,171 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+file_sharing_api_is_running
+file_sharing_get_settings
+__isoc99_scanf
+GLIBC_2.7
+file_sharing_set_settings
+file_sharing_get_folder_settings_list
+file_sharing_set_folder_settings_list
+file_sharing_start_stop_file_sharing
+file_sharing_mount_umount
+file_sharing_usb_state_changed
+file_sharing_send_fs_type
+file_sharing_get_state
+file_sharing_get_fs_type
+file_sharing_get_samba_host_name
+file_sharing_mon_add_service
+file_sharing_mon_list_services
+mifi_dbg_start
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+librt.so.1
+libm.so.6
+libmifi_events.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+librouter2_api.so
+libfile_sharing_api.so
+H	KxD	J{D
+Prints commands and usage.
+print_error_codes
+Prints error codes and descriptions.
+is_running
+Prints if process is running.
+settings_get
+Get file sharing settings.
+settings_set
+Set file sharing settings.
+settings_list_get
+Get file sharing list settings.
+settings_list_set
+Set file sharing list settings.
+start_stop_share
+Start / stop sharing.
+get_file_sharing_state
+Get file sharing state.
+get_file_system_type
+Get mounted USB drive file system type.
+get_smb_host_name
+Get samba host name.
+mount_umount_partition
+Mount / unmount USB drive.
+change_usb_state
+Private API to change usb state.
+set_file_system_type
+Private API to set file system type.
+service_monitor_add
+Private API to add / modify monitor services
+service_monitor_list
+Private API to list all monitor services.
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+FILE_SHARING: success.
+FILE_SHARING: general error.
+FILE_SHARING: one or more bad parameters passed into a function.
+FILE_SHARING: one or more buffer type parameters passed into API is too small.
+FILE_SHARING: process not running.
+FILE_SHARING: unknown error.
+file_sharing_api_is_running returned %d (%s)
+file sharing enabled - 1(enabled), 0(disabled): %d
+file sharing samba_host_name: %s
+file sharing_option - 1(share full partition), 0(share selected folders): %d
+file share_all_rw - 1(full partition share is RW), 0(full partition share is RO) : %d
+file_sharing_get_settings returned %d (%s)
+What is file sharing enabled- 1(enabled), 0(disabled): 
+What is file sharing samba host name: 
+Full partition/drive share enabled - 1(share full partition), 0(share selected folders): 
+Full partition share read or Write - 1(full partition share is RW), 0(full partition share is RO) : 
+file_sharing_set_settings returned %d (%s)
+file_sharing_get_folder_settings_list returned %d (%s)
+Settings item List:
+Settings ShareFoldersList[%u]: Entry share_folder_name=%s, share_folder_type=%d
+Enter number of items you want to set:
+Enter Entry[%d],share_folder_name:
+Enter list[%d],share_folder_type (0=rw, 1=ro):
+usage: share_folder_type must be 0 or 1
+file_sharing_set_folder_settings_list returned %d (%s)
+Usage: file_sharing_cli start_stop_share <start | stop>
+file_sharing_start_stop_file_sharing returned %d (%s)
+Usage: file_sharing_cli mount_umount_partition <mount | unmount>
+file_sharing_mount_umount returned %d (%s)
+not_detected
+detected_mounted
+drive_unmounted
+detected_mount_error
+detected_supported_fs
+detected_unsupported_fs
+detected_mounted_read_only
+Usage: file_sharing_cli change_usb_state <not_detected | detected_mounted | drive_unmounted | detected_mount_error | detected_supported_fs | detected_unsupported_fs | detected_mounted_read_only>
+file_sharing_usb_state_changed returned %d (%s)
+Usage: file_sharing_cli set_file_system_type <vfat | exfat | ntfs | ext4 | ext3 | hfsplus>
+file_sharing_send_fs_type returned %d (%s)
+usb_drive_invalid
+fs_type_invalid
+file sharing in progress 1(yes), 0(no): %d 
+mass drive status: %s
+file_sharing_get_state returned %d (%s)
+File system type is: %s
+file_sharing_get_fs_type returned %d (%s)
+Samba host name: %s 
+file_sharing_get_samba_host_name returned %d (%s)
+Enter the service name:
+Enter the service command:
+Enter the service to be monitored <ON=1, OFF=0>:
+file_sharing_mon_add_service returned %d (%s)
+file_sharing_mon_list_services returned %d (%s)
+command [%s]
+command [%s] not found.
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

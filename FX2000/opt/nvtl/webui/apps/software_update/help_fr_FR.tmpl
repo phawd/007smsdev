@@ -1,0 +1,63 @@
+<!-- Software Update -->
+<div id="software_update">
+
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+
+	<h2>Vue d’ensemble</h2>
+
+		<p>Les mises à jour logicielles sont automatiquement fournies sur le réseau mobile. Cette page vous permet de surveiller ces mises à jour.</p>
+
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+	<h3><tmpl_var _("webui", "software_update_current_software_modem_version_label")></h3>
+        <p>
+                The version of software currently installed for the modem component.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_kernel_version_label")></h3>
+        <p>
+                The version number for the Operating System and its components.
+        </p>
+        <tmpl_if showAppVersion>
+                <h3><tmpl_var _("webui", "software_update_current_software_app_version_label")></h3>
+                <p>
+                        The app version currently installed.
+                </p>
+        </tmpl_if>
+        <h3><tmpl_var _("webui", "software_update_current_software_cute_version_label")></h3>
+        <p>
+                The cute version of the software currently installed on your device.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_pri_version_label")></h3>
+        <p>
+                The configuration version currently applied to your device.
+        </p>
+
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var _("webui", "software_update_current_software_configuration_version_label")></h3>
+			
+				<p><tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")></p>
+		</tmpl_if>
+	</tmpl_if>
+	
+	<h2><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+
+	<h3><tmpl_var _("webui", "software_update_check_for_update_time_label")></h3>
+
+		<p>Ce champ indique la date de la dernière vérification de <tmpl_var _("webui", "webui_product_name")> pour savoir si une mise à jour est disponible. Vous pouvez vérifier manuellement une mise à jour grâce au bouton « Rechercher les mises à jour ».</p>
+	
+	<h3>Bouton Rechercher les mises à jour</h3>
+		<p>Vous pouvez l’utiliser pour vérifier si une mise à jour est disponible pour votre <tmpl_var _("webui", "webui_product_name")>. Normalement, cela n’est pas nécessaire, car les mises à jour sont automatiquement envoyées au <tmpl_var _("webui", "webui_product_name")>. Si vous effectuez cette vérification et qu’une mise à jour est disponible, elle est automatiquement téléchargée.</p>
+
+	<h3><tmpl_var _("webui", "software_update_check_for_update_status_label")></h3>
+
+		<p>Normalement, ce champ sera vide, mais si vous vérifiez une mise à jour, le résultat de cette vérification s’affiche ici. De plus, si une mise à jour est en cours de téléchargement, la progression du téléchargement s’affiche ici.</p>
+	
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+		
+		<p>Ce panneau affiche les détails de la dernière mise à jour logicielle.</p>
+	
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+	
+		<p>Ce panneau peut être ouvert en cliquant sur le lien/l’en-tête. L’historique des mises à jour du système contient les détails des dernières mises à jour <tmpl_var SoftwareUpdateHistoryCount> qui ont été téléchargées et installées sur cet appareil. Si aucune mise à jour n’a été installée, ce panneau affichera la version logicielle actuelle.</p>
+</div>
+<!-- end Software Update -->

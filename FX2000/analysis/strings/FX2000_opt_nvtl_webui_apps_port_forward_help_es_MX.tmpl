@@ -1,0 +1,188 @@
+<!-- Port Forwarding -->
+<div id="port_forward">
+	<h1>Enrutamiento de puertos</h1>
+	<h2>Descripci
+n general</h2>
+	<p>El enrutamiento de puertos permite reenviar aplicaciones espec
+ficas a un dispositivo en particular conectado a su red. Normalmente, el firewall incorporado bloquea el tr
+fico entrante de Internet. El enrutamiento de puertos permite que los usuarios de Internet accedan a cualquier servidor que se est
+ ejecutando en su computadora, como un servidor web, FTP o de correo electr
+	<b>Importante:</b> El enrutamiento de puertos crea un riesgo de seguridad y no se debe activar a menos que sea necesario.
+	Algunas redes m
+viles le proporcionan una direcci
+n IP dentro de su propia red en lugar de una direcci
+n IP de Internet. En este caso, el enrutamiento de puertos no se puede usar porque los usuarios de Internet no pueden acceder a su direcci
+	<h2>Aplicaciones de Enrutamiento de puertos</h2>
+	<h3>Casillas de verificaci
+n de la aplicaci
+			Marque la casilla junto a cada aplicaci
+n de enrutamiento de puertos que desee permitir. Para enrutar todo el tr
+fico WAN entrante en un puerto espec
+fico a un solo cliente LAN, ingrese la direcci
+n IP del dispositivo de destino en el campo Direcci
+n IP de la aplicaci
+			<li>1. Instale la aplicaci
+n en una computadora que est
+ conectada a la red de este dispositivo.</li>
+			<li>2. En la computadora, puede verificar la direcci
+n IP de la computadora en la pantalla Dispositivos conectados.</li>
+			<li>3. En esta pantalla, ingrese la direcci
+n IP de la computadora en el campo <strong>Direcci
+n IP del dispositivo conectado</strong> que se encuentra al lado de la aplicaci
+			<li>4. Active esta aplicaci
+n en esta pantalla seleccionando su casilla de verificaci
+			<li>5. Guarde sus cambios.</li>
+			<li>6. En la pantalla <strong>Estado actual</strong>, tome nota de la direcci
+n IP de Internet de este dispositivo.</li>
+			<li>7. Solicite a los usuarios en Internet que se conecten a la direcci
+n IP de este dispositivo. Estas solicitudes de conexi
+n se enviar
+n a la direcci
+n IP especificada en el paso 3.</li>
+			La siguiente tabla proporciona n
+meros de puerto e informaci
+n de protocolo para cada aplicaci
+n de enrutamiento de puertos detallada.
+			<table class="portForwardingTable" id="">
+	 	<thead>
+			<tr class="">
+				<th class=""> Nombre de la aplicaci
+n</th>     
+		<th class="">Puerto</th>     
+		<th class="">TCP*</th>     
+		<th class="">STCP*</th>
+	     <th class="">UDP*</th>
+			</tr>
+		</thead>
+		<tbody>
+				<td> DNS</td>
+				<td> 53</td>
+				<td> S
+				<td> No</td>
+				<td> S
+			</tr>
+				<td> Control FTP (comando)</td>
+				<td> 21</td>
+				<td> S
+				<td> S
+				<td> Asignado</td>
+			</tr>
+				<td> Transferencia de datos del FTP</td>
+				<td> 20</td>
+				<td> S
+				<td> S
+				<td> Asignado</td>
+			</tr>
+				<td> HTTP</td>
+				<td> 80</td>
+				<td> S
+				<td> S
+				<td> Asignado</td>
+			</tr>
+				<td> HTTPS</td>
+				<td> 443</td>
+				<td> S
+				<td> S
+				<td> Asignado</td>
+			</tr>
+				<td> NNTP</td>
+				<td> 119</td>
+				<td> S
+				<td> No</td>
+				<td> Asignado</td>
+			</tr>
+				<td> POP3</td>
+				<td> 110</td>
+				<td> S
+				<td> No</td>
+				<td> Asignado</td>
+			</tr>
+				<td> POP3S</td>
+				<td> 995</td>
+				<td> S
+				<td> No</td>
+				<td> S
+			</tr>
+				<td> SMTP</td>
+				<td> 25</td>
+				<td> S
+				<td> No</td>
+				<td> Asignado</td>
+			</tr>
+				<td> SecureSMTP</td>
+				<td> 465</td>
+				<td> S
+				<td> No</td>
+				<td> No</td>
+			</tr>
+				<td> SNMP</td>
+				<td> 161</td>
+				<td> Asignado</td>
+				<td> No</td>
+				<td> S
+			</tr>
+				<td> Telnet</td>
+				<td> 23</td>
+				<td> S
+				<td> No</td>
+				<td> Asignado</td>
+			</tr>
+				<td> TFTP</td>
+				<td> 69</td>
+				<td> Asignado</td>
+				<td> No</td>
+				<td> S
+			</tr>
+		</tbody>
+	</table>
+	<p><b>S
+</b> indica que el protocolo est
+ estandarizado para el n
+mero de puerto.</p>
+	<p><b>No </b>indica que el protocolo no est
+ estandarizado para el n
+mero de puerto.</p>
+	<p><b>Asignado</b> indica que el n
+mero de puerto lo asigna la IANA (Autoridad de N
+meros Asignados en Internet) para el uso del protocolo, pero que es posible que no est
+ estandarizado.</p>	
+	<h2>Aplicaciones personalizadas</h2>
+	<p>Esta funci
+n le permite definir sus propias aplicaciones. Una vez definidas, estas aplicaciones se pueden activar o desactivar de la misma manera que las aplicaciones predefinidas. Para definir una aplicaci
+n, debe conocer los puertos y el protocolo (TCP, UDP) que la aplicaci
+n usa para el tr
+fico entrante. Para comenzar, haga clic en el bot
+n <strong>Agregar aplicaci
+n personalizada</strong>, y luego proporcione los siguientes datos. 
+	<h3>Casilla de verificaci
+n de la aplicaci
+	<p>Marque esta casilla si desea que la nueva aplicaci
+n pueda acceder a Internet (habilitando el enrutamiento de puertos).
+	<h3>Nombre de la aplicaci
+		Ingrese un nombre adecuado para la aplicaci
+n que define.
+	<h3>Direcci
+n IP del dispositivo conectado</h3>
+		Ingrese la direcci
+n IP del dispositivo conectado que recibir
+ este tr
+	<h3>Tipo de puerto y n
+meros de puertos</h3>
+		<p>Cada aplicaci
+n posee su propio rango de puertos. Ingrese el comienzo y el final del rango de puertos para cada aplicaci
+		<div class="blockgroup">
+				<li>Para un rango de puertos, ingrese el comienzo del rango en el campo <strong>Desde</strong> y el fin del rango en el campo <strong>Hasta</strong>.</li>
+				<li>Para un puerto de conversi
+n, ingrese el n
+mero de puerto en los campos <strong>Ext.</strong> e <strong>Int.</strong></li>
+			</ul>
+		</div>
+	<h3>Protocolo</h3>
+		Para cada rango de puertos, seleccione el protocolo (TCP o UDP) usado por ese rango de puertos.
+	<h3>Eliminar</h3>
+	<p>Use esta casilla de verificaci
+n para eliminar una aplicaci
+n personalizada.
+	<p><b>NOTA:</b> Haga clic en la pesta
+a Enrutamiento de puertos nuevamente para quitar las aplicaciones personalizadas eliminadas de la vista en la pantalla. </p>
+<!-- id="port_forward" -->

@@ -1,0 +1,34 @@
+<!-- MAC Filter -->
+<div id="adv_macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+	<h2>Descripción</h2>
+	<p>La función MAC, si está activada, evitará el acceso a esta red de Wi-Fi por parte de cualquier dispositivo que no esté incluido en la lista "Filtro de direcciones MAC". El filtro se aplica solamente a la red de Wi-Fi, y no tiene ningún efecto sobre los dispositivos USB. </p>
+	
+	<h2>Control ENCENDER/APAGAR</h2>
+	<p>Use este control para activar o desactivar el Filtro MAC según sea necesario. Antes de activarlo, debe asegurarse de que algunos dispositivos estén permitidos. Tenga en cuenta que, cuando el Filtro MAC está activado, cualquier Dispositivo conectado que no esté en la lista "Filtro de direcciones MAC" se desconectará inmediatamente. </p>
+	
+	<h2>Lista de dispositivos</h2>
+	
+	<p>Todos los dispositivos conocidos se enumeran aquí, salvo los dispositivos USB. Use las casillas de verificación proporcionadas para incluir o excluir los dispositivos de la lista "Filtro de direcciones MAC". </p>
+
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Use el botón de actualización para actualizar la lista según sea necesario. </p>
+		
+	<h2>Operación</h2>
+	
+	<h3>Bloqueados frente a Filtro MAC</h3>
+	<p>La interacción entre los dispositivos "Bloqueados" y el "Filtro MAC" es la siguiente: </p>
+	<div class="blockgroup">
+	<ul>
+	<li>Los dispositivos bloqueados siempre están bloqueados de la red Wi-Fi, independientemente de si el Filtro MAC está activado o desactivado. </li>
+	<li>Si el filtro MAC está activado, y un dispositivo está en la lista de Bloqueados, pero no en la lista Filtro de direcciones MAC, no podrá conectarse. Tanto el Filtro MAC como los Bloqueados evitan la conexión. </li>
+
+	<li>Si el filtro MAC está activado, y un dispositivo está en la lista Filtro de direcciones MAC, el dispositivo no podrá conectarse. Tras haberse conectado, se lo puede bloquear al quitarlo de la lista Filtro de direcciones MAC o al usar la función "Bloquear". Generalmente, la función "Bloquear" debe usarse para el bloqueo temporal y el Filtro MAC para el bloqueo permanente. </li>
+	</ul>
+	</div>
+	
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+	<p>Use este botón para agregar un dispositivo nuevo a la lista de dispositivos. </p>
+
+ </div>
+<!--  adv_macfilter  -->

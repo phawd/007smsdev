@@ -1,0 +1,50 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>Administratoradgangskode</h1>
+	<h2>Oversigt</h2>
+	<p>Administratoradgangskoden bruges til at logge ind p
+ dette <tmpl_var _("webui", "webui_product_name")> administrationswebsted. Siden <em>Administratoradgangskode</em> giver dig mulighed for at 
+ndre administratoradgangskoden og foretage en vis sikkerhedsindstilling i forbindelse med administratoradgangskoden.</p>
+	<h2>Redig
+r <tmpl_var _("webui", "webui_product_name")>s administratoradgangskode</h2>
+	<p>For at skifte til den nuv
+rende administratoradgangskode skal du f
+rst indtaste den nuv
+rende administratoradgangskode i feltet nedenfor. Sk
+rmen opdateres derefter og giver mulighed for at indstille en ny administratoradgangskode og et sikkerhedssp
+l til brug, hvis administratoradgangskoden g
+r tabt.</p>
+	<h3>Nuv
+rende <tmpl_var _("webui", "webui_product_name")> administratoradgangskode</h3>
+	<p>Indtast den nuv
+rende <tmpl_var _("webui", "webui_product_name")> administratoradgangskode i dette felt. Bem
+rk, at hvis du indtaster en forkert v
+rdi for mange gange, vil du blive l
+st ude af dette <tmpl_var _("webui", "webui_product_name")> administrationswebsted. For at rydde denne l
+s, skal <tmpl_var _("webui", "webui_product_name")> genstartes.</p>
+	<tmpl_if showDisplayPascode>
+		<h2>Vis <tmpl_var _("webui", "webui_product_name")>s administratoradgangskode</h2>
+		<p>Hvis denne indstilling er sl
+et TIL, vises *********. Hvis denne indstilling er sl
+et FRA, kan administratoradgangskoden l
+ Jetpacks display.</p>
+	</tmpl_if>
+	<h2>Redig
+r <tmpl_var _("webui", "webui_product_name")>s administratoradgangskode</h2>
+	<h3>Ny administratoradgangskode</h3>
+	<p>Indtast det nye administratoradgangskode, ved kun at bruge bogstaver, tal og standard tegns
+tningssymboler. Adgangskoden skal v
+re mindst 8 tegn lang.</p>
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p>Indtast den nye administratoradgangskode igen i dette felt.</p>
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>Dette sikkerhedssp
+l bruges, hvis administratoradgangskoden er mistet, og indstillingen "Jeg har glemt administratoradgangskoden" er brugt. V
+nskede sp
+l, og angiv et svar i feltet nedenfor.</p>
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Giv et svar p
+ det valgte sikkerhedssp
+rk, at der skelnes mellem store og sm
+ bogstaver i svarene.</p>
+<!-- id="set_passcode" -->

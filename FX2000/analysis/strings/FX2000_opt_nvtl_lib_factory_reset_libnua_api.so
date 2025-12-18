@@ -1,0 +1,903 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+GLIBC_2.4
+libc.so.6
+libnua_api.so
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+xmldata_initialize
+xmldata_getuint32_default
+xmldata_shutdown
+su_api_is_running
+msgq_does_queue_exist
+su_api_indicate_failsafe_status
+msgq_send_sync
+su_api_indicate_fota_revert_status
+su_api_get_status_before_low_battery
+su_api_get_status
+su_api_get_installation_status
+su_api_check_for_update
+snprintf
+su_api_get_download_progress
+su_api_start_install
+msgq_send_async
+su_api_postpone_install
+su_api_test_set_poll_interval
+su_api_test_get_poll_interval
+su_api_test_get_autoinstall_time
+su_api_test_set_test_imei
+__ctype_b_loc
+su_api_test_mode_enable
+su_api_test_mode_get_status
+su_api_test_mode_set_url
+su_api_test_mode_get_url_list
+su_api_get_custom_msgs
+su_api_get_settings
+settings_get_setting
+su_api_set_settings
+settings_set_setting
+nua_api_get_cfg_settings
+nua_api_sys_indication
+nua_api_test_msg
+nua_api_timer_timeout_ind
+nua_api_job_response_ind
+nua_api_engine_ready_ind
+nua_api_get_error_string
+nua_get_settings_impl
+xmldata_getint32_default
+xmldata_getstring
+nua_set_settings_impl
+xmldata_setuint32
+xmldata_setint32
+xmldata_setstring
+xmldata_save
+MsgBusSetInt32
+initialize_settings
+nua_factory_reset_impl
+initialize_factory_reset_func
+__bss_start
+librt.so.1
+libpthread.so.0
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libgps_api.so
+libfactory_reset_api.so
+libsms_api.so
+libwifi_api.so
+libccm2_api.so
+librouter2_api.so
+libfile_sharing_api.so
+libfota_api.so
+libled_api.so
+libbuzzer_api.so
+libans_api.so
+libusb_api.so
+libemd_api.so
+libsensor_api.so
+libvpn_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libwan_mgr_api.so
+libcbsd_api.so
+libsysintclient.so
+libcurl.so.4
+libssl.so.1.1
+libcrypto.so.1.1
+libcloud_engine_api.so
+H	KxD	J{D
+[%s]:[%s] - %s: Input buffer NULL
+/opt/nvtl/data/branding/etc/nua/config.xml
+/opt/nvtl/etc/nua/config.xml
+[%s]:[%s] - %s: Could not find NUA configuration file.
+/Config/softwareUpdate/BatteryCheck/IgnoreCharger
+[%s]:[%s] - Failed to open configuration file: %s
+[%s]:[%s] - %s: Empty string
+[%s]:[%s] - %s: invalid string length (%d)
+[%s]:[%s] - %s: process not running
+[%s]:[%s] - %s: Sent NUA_MSG_FAILSAFE_START to main
+[%s]:[%s] - %s: Sent NUA_MSG_FAILSAFE_END to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_FAILSAFE start[%d]) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Sent NUA_MSG_FOTA_REVERT to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_FOTA_REVERT) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Sent NUA_MSG_GET_STATUS_BEFORE_LOW_BATTERY to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_GET_STATUS_BEFORE_LOW_BATTERY) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Sent NUA_MSG_PUBLIC_GET_STATUS to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_PUBLIC_GET_STATUS) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Sent NUA_MSG_PUBLIC_GET_INSTALLATION_STATUS to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_PUBLIC_GET_INSTALLATION_STATUS) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Sent NUA_MSG_PUBLIC_CHECK_FOR_UPDATE [%s] to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_PUBLIC_CHECK_FOR_UPDATE) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Sent NUA_MSG_PUBLIC_GET_DOWNLOAD_PROGRESS to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_PUBLIC_GET_DOWNLOAD_PROGRESS) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Sent NUA_MSG_PUBLIC_START_INSTALL to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_PUBLIC_START_INSTALL) failed, rc=[%d]
+[%s]:[%s] - %s: Sent NUA_MSG_PUBLIC_DEFER_INSTALL [%u mins] to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_PUBLIC_DEFER_INSTALL) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Interval too short
+[%s]:[%s] - %s: Sent NUA_MSG_PUBLIC_SET_TEST_POLL_INTERVAL [%u] to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_PUBLIC_SET_TEST_POLL_INTERVAL) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Sent NUA_MSG_PUBLIC_GET_TEST_POLL_INTERVAL [%u] to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_PUBLIC_GET_TEST_POLL_INTERVAL) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Sent NUA_MSG_PUBLIC_GET_AUTOINSTALL_TIME [%u] to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_PUBLIC_GET_AUTOINSTALL_TIME) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: imei should be all digits
+[%s]:[%s] - %s: Sent NUA_MSG_PUBLIC_SET_TEST_IMEI [%s] to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_PUBLIC_SET_TEST_IMEI) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Input can only be 0 or 1
+[%s]:[%s] - %s: Sent NUA_MSG_PUBLIC_SET_TEST_MODE [%u] to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_PUBLIC_SET_TEST_MODE) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Sent NUA_MSG_PUBLIC_GET_TEST_MODE to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_PUBLIC_GET_TEST_MODE) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Input is empty
+[%s]:[%s] - %s: Sent NUA_MSG_PUBLIC_SET_TEST_URL [%s][%s] to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_PUBLIC_SET_TEST_URL) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: *no_of_records is empty
+[%s]:[%s] - %s: Sent NUA_MSG_PUBLIC_GET_TEST_URL_COUNT to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_PUBLIC_GET_TEST_URL_COUNT) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Sent NUA_MSG_PUBLIC_GET_TEST_URL index=[%u] to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_PUBLIC_GET_TEST_URL) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Sending NUA_MSG_GET_CUSTOM_MSGS to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_GET_CUSTOM_MSGS) failed, rc=[%d], err_rc=[%d]
+nua.settings
+[%s]:[%s] - %s: settings_get_setting result code: [%d]
+[%s]:[%s] - %s: get_low_battery_threshold_with_charger_enabled result code:%d
+[%s]:[%s] - Settings update: FUMO Enabled: [%d]
+[%s]:[%s] - %s: Sending NUA_MSG_GET_CFG_SETTTINGS to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_GET_CFG_SETTTINGS) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Sending NUA_MSG_SYSTEM_IND - type=[%d] to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_SYSTEM_IND, type=[%d]) failed, rc=[%d]
+[%s]:[%s] - %s: Sending NUA_MSG_UNIT_TEST - type=[%d] to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_UNIT_TEST, type=[%d]) failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - %s: Sending NUA_MSG_TIMER_TIMEOUT id=[%u] to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_TIMER_TIMEOUT) failed, rc=[%d]
+[%s]:[%s] - %s: Sending NUA_MSG_JOB_RESPONSE type=[%u], ref_req=[%u], opr_err=[%u] to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_JOB_RESPONSE) failed, rc=[%d]
+[%s]:[%s] - %s: Sending NUA_MSG_ENGINE_READY to main
+[%s]:[%s] - %s: msgq_send_sync(NUA_MSG_ENGINE_READY) failed, rc=[%d]
+NUA: success.
+NUA: general error.
+NUA: one or more bad parameters passed into a function.
+NUA: one or more buffer type parameters passed into API is too small.
+NUA: the feature is unsupported.
+NUA: process not running.
+NUA: a device reset is required for the operation to take effect.
+NUA: API not implemented for the platform.
+NUA: Error in message queue.
+NUA: Error no mobile coverage.
+NUA: Error OTA call disabled.
+NUA: Error in dns query.
+NUA: Error in sys interface layer.
+NUA: Error subsystem is busy try later.
+NUA: Error requested feature is disabled.
+NUA: Error couldn't find the record in update history database.
+NUA: Error battery check failed.
+NUA: Error CCM call engine is busy.
+NUA: unknown error.
+get_low_battery_threshold_with_charger_enabled
+nua_verify_string
+su_api_indicate_failsafe_status
+su_api_indicate_fota_revert_status
+su_api_get_status_before_low_battery
+su_api_get_status
+su_api_get_installation_status
+su_api_check_for_update
+su_api_get_download_progress
+su_api_start_install
+su_api_postpone_install
+su_api_test_set_poll_interval
+su_api_test_get_poll_interval
+su_api_test_get_autoinstall_time
+su_api_test_set_test_imei
+su_api_test_mode_enable
+su_api_test_mode_get_status
+su_api_test_mode_set_url
+su_api_test_mode_get_url_list
+su_api_get_custom_msgs
+su_api_get_settings
+nua_api_get_cfg_settings
+nua_api_sys_indication
+nua_api_test_msg
+nua_api_timer_timeout_ind
+nua_api_job_response_ind
+nua_api_engine_ready_ind
+/Settings/NUA/EnableFUMO
+/Settings/NUA/EnableAutoPoll
+/Settings/NUA/LowBatteryThreshold
+/Settings/NUA/LowBatteryThresholdWithCharger
+/Settings/NUA/ModelString
+/Settings/NUA/CustomerID
+nua.settings
+[%s]:[%s] - Enter nua_factory_reset_impl
+[%s]:[%s] - %s: nua_api_sys_indication() failed, rc= %d
+[%s]:[%s] - Exit nua_factory_reset_impl
+nua_factory_reset_impl
+GCC: (GNU) 8.2.0
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/watchdog/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/config
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dmdb/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/xmldata/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/logging/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/mal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi-framework
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/loc-hal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi/loc_sdx55
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/usr/src/linux/usr/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dsm/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/powersave/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/modem2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/gps/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/factory_reset/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sms/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/wifi_driver/qca639x/HOSTAP_REL_2_7/src/ap
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/ccm2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/router2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/file_sharing/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/fota/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/led/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/buzzer/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/ans/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/usb/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/emd/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/vpn/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/bluetooth_peripheral/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/bluetooth/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sim_mgr/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/cbsd/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/apps_framework/sys_interface/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/nua/src
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/nua/src/../include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/nua/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/cloud_engine/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel/config/../.
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/libxml2
+-iprefix /opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/bin/arm-oe-linux-gnueabi/../../lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/nua/src/nua_api.c
+-mfpu=neon
+-mfloat-abi=hard
+-mcpu=arm10tdmi
+-mtls-dialect=gnu
+-march=armv5t
+-auxbase-strip nua_api.o
+-Wno-unused-parameter
+-Wstrict-prototypes
+-Wno-trigraphs
+-Wformat-truncation=0
+-Wstringop-overflow=0
+-frecord-gcc-switches
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/nua/src/nua_settings.c
+-auxbase-strip nua_settings.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/nua/src/nua_factory_reset.c
+-auxbase-strip nua_factory_reset.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/nua/src
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/include
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits/types
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+nua_api.c
+stddef.h
+struct_FILE.h
+sys_errlist.h
+stdint-intn.h
+stdint-uintn.h
+struct_timespec.h
+stat-32.h
+timer_t.h
+su_api_mb.h
+unistd.h
+getopt_core.h
+nua_public.h
+nua_sys.h
+nua_timer.h
+nua_test.h
+jjjjjjjjjjjjjjjjjj
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/nua/src
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/include
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits/types
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+nua_settings.c
+stddef.h
+struct_FILE.h
+sys_errlist.h
+stdint-intn.h
+stdint-uintn.h
+su_api_mb.h
+unistd.h
+getopt_core.h
+settings_api.h
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/nua/src
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/include
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits/types
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/factory_reset/inc
+nua_factory_reset.c
+stddef.h
+struct_FILE.h
+sys_errlist.h
+stdint-uintn.h
+unistd.h
+getopt_core.h
+nua_sys.h
+factory_reset_api.h
+su_api_test_mode_get_url_list
+su_api_test_get_autoinstall_time
+nua_api_timer_timeout_ind
+__off64_t
+daylight
+interval
+_shortbuf
+cfg_su_check_condition_t
+NUA_SYS_WALL_CHG_DISCONNECTED
+nua_sys_device_info_e
+window_open
+_IO_lock_t
+NUA_JOB_RESP_IO_PROGRESS
+retry_long_secs
+SU_STATE_INSTALL_IN_PROGRESS
+SU_STATE_BATT_TOO_LOW_FOR_INSTALL
+nua_priv_msg_t
+url_prod
+_IO_buf_end
+SU_OPR_ERR_OTA_CALL_FAILED
+NUA_MSG_PUBLIC_GET_TEST_POLL_INTERVAL
+NUA_MSG_PUBLIC_GET_TEST_MODE
+SU_OPR_ERR_UNDEFINED
+MSGQ_RESP_SYNCHRONOUS_LARGE_PAYLOAD
+SU_OPR_ERR_HTTP_400
+SU_OPR_ERR_HTTP_401
+SU_OPR_ERR_HTTP_402
+SU_OPR_ERR_HTTP_403
+SU_OPR_ERR_HTTP_404
+SU_OPR_ERR_HTTP_405
+SU_OPR_ERR_HTTP_406
+MSGQ_PAYLOAD_WRITE
+SU_OPR_ERR_HTTP_409
+nua_msg_type_e
+_IO_write_end
+get_low_battery_threshold_with_charger_enabled
+err_bl_str
+cfg_cloud_t
+_freeres_list
+__blksize_t
+st_blksize
+su_api_get_download_progress
+su_status_t
+__int32_t
+installation_success_msg
+nua_msg_type
+SU_OPR_ERR_MEM_ALLOC_FIALURE
+nua_sys_device_info_t
+NUA_MSG_PUBLIC
+SU_OPR_ERR_DM_TREE_NODE
+__nlink_t
+short int
+MSGQ_RESP_NONE
+su_err_t
+NUA_MSG_FAILSAFE_END
+__u_quad_t
+pre_install_wait_secs
+_ISdigit
+absolute_time
+fumo_enabled
+_ISlower
+NUA_MSG_PUBLIC_GET_DOWNLOAD_PROGRESS
+SU_OPR_ERR_OTA_CALL_DNS_QUERY
+cfg_software_update_t
+max_retry_roam
+NUA_MSG_NONE
+SU_OPR_ERR_AUTH
+NUA_SYS_DEVICE_INFO_IMEI
+NUA_SYS_FACTORY_RESET
+__timezone
+_IScntrl
+NUA_SYS_POWER_INDICATION
+SU_OPR_ERR_DM_SU_CANCEL
+MSGQ_PAYLOAD_NONE
+uint32_t
+max_retry_report
+SU_STATE_MAX
+SU_STATE_CHECKING_UPDATE
+_IO_save_end
+su_custom_msg_type_t
+SU_OPR_ERR_BOOTSTRAP
+NUA_MSG_PUBLIC_GET_TEST_URL_COUNT
+SU_OPR_ERR_STORAGE
+conn_timeout
+NUA_JOB_REQ_REPORT_ACT_UPD_CHECK
+su_api_get_status
+deny_if_no_data_call
+SU_OPR_ERR_HTTP
+cfg_file_path
+msgq_payload_type_e
+sync_queue_name
+SU_OPR_ERR_BUFFER
+NUA_MSG_PUBLIC_SET_TEST_IMEI
+long long unsigned int
+st_blocks
+_IO_wide_data
+NUA_TEST_REG_DSM_HANDOFF
+nua_api_engine_ready_ind
+nua_public_msg_t
+SU_OPR_ERR_WIFI_NOT_AVAILABLE
+NUA_JOB_RESP_MAX
+sys_nerr
+su_api_indicate_fota_revert_status
+_IO_read_base
+NUA_SYS_HANDOFF_SHUTDOWN
+sys_errlist
+SU_OPR_ERR_CANCEL
+deny_ui_fota_if_roaming
+dd_file_name
+pri_only_update_supported
+su_api_get_status_before_low_battery
+nua_timer_cb
+broadcast_msgbus_events
+NUA_SYS_HANDOFF_REBOOT
+MSGQ_RESP_SYNCHRONOUS
+broadcast_events
+nua_sys_msg_type_e
+su_api_check_for_update
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/nua/src/nua_api.c
+NUA_MSG_PUBLIC_GET_AUTOINSTALL_TIME
+_markers
+__mode_t
+su_test_url_t
+SU_OPR_ERR_FEATURE_DISABLED
+max_retry_download
+customerID
+_ISxdigit
+NUA_TEST_DL_RETRY_LOGIC
+cfg_retry_t
+_cur_column
+NUA_TEST_ROAM_RETRY_LOGIC
+deny_if_no_coverage
+max_retry_no_data
+linux_pri_status
+su_settings_data_t
+NUA_JOB_REQ_REPORT_ACT_DLSTART
+SU_OPR_ERR_BATT_LOW_FOR_INSTALL
+SU_OPR_ERR_DL_CURL_RANGE
+last_err
+NUA_TEST_GET_ROAM_STATUS
+SU_OPR_ERR_COMMS
+SU_OPR_ERR_SYNML_CMD
+deny_if_low_battery
+st_nlink
+_IO_marker
+no_of_records
+nua_cfg_data_t
+NUA_JOB_REQ_START_PKG_DOWNLOAD
+NUA_JOB_REQ_REPORT_RESULTS
+SU_OPR_ERR_HTTP_407
+local_time_enabled
+SU_OPR_ERR_DEVICE_IN_ROAMING
+SU_OPR_ERR_OK
+window_end
+settings
+cfg_battery_check_t
+NUA_TEST_GET_CALL_STATUS
+NUA_MSG_JOB_RESPONSE
+dev_info
+SU_OPR_ERR_DM_NO_UPD_PKG
+su_api_get_settings
+NUA_MSG_PUBLIC_GET_STATUS
+dd_file_size_max
+timespec
+NUA_JOB_REQ_REPORT_ACT_ABFAILSAFEFINISH
+NUA_TEST_NODATA_RETRY_LOGIC
+NUA_TEST_GET_DEV_INFO
+cfg_backend_t
+_IO_write_base
+_IO_read_ptr
+cur_offset
+monitor_enabled
+SU_STATE_READY_FOR_INSTALL
+long long int
+SU_STATE_READY
+nua_timer_ind_t
+__uint32_t
+progress
+su_api_test_mode_set_url
+SU_OPR_ERR_HTTP_500
+SU_OPR_ERR_HTTP_501
+SU_OPR_ERR_HTTP_502
+SU_OPR_ERR_HTTP_503
+su_state_e
+SU_OPR_ERR_OTA_CALL_CONNECT_PROG
+url_test
+su_state_t
+NUA_SYS_WWAN_SERVICE_INDICATION
+__time_t
+__glibc_reserved4
+__glibc_reserved5
+SU_OPR_ERR_MAX
+su_custom_msg_t
+low_battery_threshold_with_charger_enabled
+payload_type
+msgq_resp_type_e
+_IO_save_base
+SU_OPR_ERR_DD_PARSE
+NUA_JOB_REQ_REPORT_ACT_FOTAREVERT
+NUA_MSG_PUBLIC_DEFER_INSTALL
+SU_OPR_ERR_ABORT
+NUA_JOB_REQ_REPORT_ACT_DLFINISH
+nua_api_get_cfg_settings
+su_device_poll_timer_days
+low_battery_threshold_with_charger
+batt_check
+su_api_test_mode_get_status
+su_api_postpone_install
+SU_OPR_ERR_DL_NETWORK
+nua_api_get_error_string
+su_api_test_set_test_imei
+SU_STATE_INSTALL_POSTPONED
+__syscall_slong_t
+su_api_test_mode_enable
+NUA_SYS_DEVICE_INFO_MFG
+nua_sys_power_e
+SU_OPR_ERR_DL_CURL_API
+SU_OPR_ERR_OTA_CALL_DISABLED
+NUA_SYS_DEVICE_INFO_MODEL_STR
+SU_STATE_REPORTING_RESULTS
+client_id
+_ISspace
+_freeres_buf
+nua_sys_msg_t
+su_api_set_settings
+MSGQ_RESP_MAX
+GNU C17 8.2.0 -mfpu=neon -mfloat-abi=hard -mfpu=neon -mfloat-abi=hard -mcpu=arm10tdmi -mtls-dialect=gnu -marm -march=armv5t -g -frecord-gcc-switches -fpic
+status_str
+long unsigned int
+low_battery_threshold
+cfg_url_t
+SU_OPR_ERR_DL_PKG_VALIDATION_FAILED
+result_d
+_vtable_offset
+installation_failed_msg
+timer_msg
+NUA_SYS_DATA_CALL_INDICATION
+__timer_t
+SU_OPR_ERR_DM_GENERAL
+su_api_get_installation_status
+__quad_t
+NUA_MSG_PUBLIC_CHECK_FOR_UPDATE
+custom_msgs
+timezone
+disable_cert_verify
+MSGQ_PAYLOAD_READ
+nua_api_sys_indication
+SU_STATE_DOWNLOADING
+retry_short_secs
+nua_api_test_msg
+_ISpunct
+_IO_read_end
+NUA_TEST_REPORT_RETRY_LOGIC
+NUA_JOB_REQ_REPORT_ACT_ABFAILSAFESTART
+_ISprint
+NUA_TEST_DELETE_ALARM
+SU_OPR_ERR_DL_FILE_TOO_BIG
+NUA_TEST_GET_MAX_PKG_SIZE
+nua_timer_id
+long int
+NUA_JOB_REQ_MAX
+SU_OPR_ERR_NIA
+su_api_is_running
+NUA_JOB_RESP_FINISHED
+su_api_start_install
+NUA_SYS_SETTINGS_UPDATED
+NUA_TEST_GET_VERSION
+NUA_MSG_GET_CFG_SETTTINGS
+timer_info
+SU_OPR_ERR_DM_IN_PROGRESS
+SU_OPR_ERR_ROAMING_OR_EMERGENCY
+NUA_MSG_PUBLIC_SET_TEST_POLL_INTERVAL
+job_status
+nua_job_req_type_e
+__environ
+nua_test_msg_t
+NUA_JOB_REQ_CHECK_UPDATE
+cfg_key_t
+modem_pri_status
+SU_OPR_ERR_HTTP_408
+nua_verify_string
+state_prior_to_low_battery
+test_msg
+su_api_get_custom_msgs
+nua_job_resp_type_e
+cfg_auto_install_t
+nua_sys_powerdown_handoff_e
+NUA_MSG_PUBLIC_SET_TEST_MODE
+__uint8_t
+_ISgraph
+NUA_MSG_PUBLIC_GET_TEST_URL
+SU_OPR_ERR_OTA_CALL_NOT_PRESENT
+NUA_MSG_GET_CUSTOM_MSGS
+unsigned int
+only_ni_enabled
+_IO_buf_base
+SU_STATE_NOTREADY
+_wide_data
+nua_public_msg_type_e
+NUA_TEST_SAVE_TEMP_FILES
+payload_socket_name
+NUA_MSG_UNIT_TEST
+_IO_codecvt
+_codecvt
+install_at_powerup
+_old_offset
+NUA_MSG_SETTINGS_UPDATED
+_IO_FILE
+NUA_TEST_GET_TIMESTAMPS
+_ISalpha
+SU_OPR_ERR_NO_MOBILE_COVERAGE
+SU_OPR_ERR_COMMS_FATAL
+platform_prefix
+total_size
+SU_OPR_ERR_DM_NETWORK
+NUA_MSG_MAX
+NUA_MSG_SYSTEM_IND
+unsigned char
+su_conds
+__tzname
+_IO_write_ptr
+bootup_mdm_delay_secs
+deny_if_roaming
+NUA_MSG_PUBLIC_START_INSTALL
+test_url
+_IO_backup_base
+nua_api_job_response_ind
+min_after_dl
+ignore_charger
+NUA_MSG_TIMER_TIMEOUT
+SU_OPR_ERR_CALL
+SU_OPR_ERR_DL_GENERAL
+SU_STATE_INSTALL_COMPLETED
+su_opr_err_type_e
+_ISalnum
+SU_STATE_IDLE
+error_code
+install_defer_supported
+caller_ref_id
+MSGQ_RESP_CALLBACK
+NUA_SYS_WALL_CHG_CONNECTED
+validate_nua_settings_data_t
+msgq_resp_type
+su_api_test_get_poll_interval
+SU_STATE_READY_FOR_DOWNLOAD
+nua_timer_t
+payload_buffer_size
+_ISblank
+signed char
+NUA_MSG_FOTA_REVERT
+NUA_MSG_PUBLIC_SET_TEST_URL
+short unsigned int
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/mifi_nua
+bootup_wwan_delay_secs
+__func__
+ready_to_install_msg
+NUA_JOB_REQ_NONE
+SU_OPR_ERR_SYS_INTF_FAILURE
+NUA_MSG_FAILSAFE_START
+__blkcnt_t
+su_api_test_set_poll_interval
+nua_job_resp_t
+cust_str
+nua_test_msg_type_e
+NUA_MSG_GET_STATUS_BEFORE_LOW_BATTERY
+_ISupper
+cfg_version_t
+install_at_powerdown
+NUA_TEST_SET_ALARM
+no_modem_version
+model_string
+NUA_SYS_POWERDOWN_HANDOFF
+is_success
+su_api_indicate_failsafe_status
+NUA_MSG_PUBLIC_GET_INSTALLATION_STATUS
+NUA_MSG_ENGINE_READY
+__daylight
+SU_STATE_NI_SESSION
+NUA_SYS_ROAM_INDICATION
+model_str
+phandoff
+su_mo_auto_poll_enabled
+_unused2
+NUA_SYS_BATTERY_CAPACITY
+nua_job_io_progress_t
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/nua/src/nua_settings.c
+nua_get_settings_impl
+register_settings
+func_ptr
+initialize_settings
+settings_struct
+nua_set_settings_impl
+nua_factory_reset_impl
+data_wipe
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/nua/src/nua_factory_reset.c
+register_factory_reset
+initialize_factory_reset_func
+gold 1.16
+call_weak_fn
+crtstuff.c
+__TMC_LIST__
+deregister_tm_clones
+register_tm_clones
+__do_global_dtors_aux
+completed.11339
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+nua_api.c
+get_low_battery_threshold_with_charger_enabled
+__func__.9329
+validate_nua_settings_data_t
+nua_verify_string
+__func__.9338
+__func__.9347
+__func__.9353
+__func__.9359
+__func__.9365
+__func__.9371
+__func__.9378
+__func__.9384
+__func__.9390
+__func__.9396
+__func__.9402
+__func__.9408
+__func__.9414
+__func__.9421
+__func__.9430
+__func__.9436
+__func__.9442
+__func__.9450
+__func__.9460
+__func__.9467
+__func__.9490
+__func__.9496
+__func__.9502
+__func__.9508
+__func__.9514
+__func__.9520
+nua_settings.c
+nua_factory_reset.c
+__func__.9168
+__FRAME_END__
+__dso_handle
+__TMC_END__
+_DYNAMIC
+_GLOBAL_OFFSET_TABLE_
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+xmldata_initialize
+xmldata_getuint32_default
+xmldata_shutdown
+su_api_is_running
+msgq_does_queue_exist
+su_api_indicate_failsafe_status
+msgq_send_sync
+su_api_indicate_fota_revert_status
+su_api_get_status_before_low_battery
+su_api_get_status
+su_api_get_installation_status
+su_api_check_for_update
+snprintf
+su_api_get_download_progress
+su_api_start_install
+msgq_send_async
+su_api_postpone_install
+su_api_test_set_poll_interval
+su_api_test_get_poll_interval
+su_api_test_get_autoinstall_time
+su_api_test_set_test_imei
+__ctype_b_loc
+su_api_test_mode_enable
+su_api_test_mode_get_status
+su_api_test_mode_set_url
+su_api_test_mode_get_url_list
+su_api_get_custom_msgs
+su_api_get_settings
+settings_get_setting
+su_api_set_settings
+settings_set_setting
+nua_api_get_cfg_settings
+nua_api_sys_indication
+nua_api_test_msg
+nua_api_timer_timeout_ind
+nua_api_job_response_ind
+nua_api_engine_ready_ind
+nua_api_get_error_string
+nua_get_settings_impl
+xmldata_getint32_default
+xmldata_getstring
+nua_set_settings_impl
+xmldata_setuint32
+xmldata_setint32
+xmldata_setstring
+xmldata_save
+MsgBusSetInt32
+initialize_settings
+nua_factory_reset_impl
+initialize_factory_reset_func
+__bss_start
+.init_array
+.fini_array
+.debug_abbrev
+.comment
+.rel.plt
+.ARM.attributes
+.debug_aranges
+.debug_str
+.eh_frame_hdr
+.gnu.version_r
+.debug_info
+.rel.dyn
+.gnu.version
+.note.gnu.gold-version
+.debug_line
+.GCC.command.line
+.eh_frame
+.debug_frame
+.tm_clone_table
+.note.gnu.build-id
+.gnu.version_d
+.dynamic
+.shstrtab

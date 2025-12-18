@@ -1,0 +1,28 @@
+<!-- Backup and Restore -->
+<div id="backup_restore">
+         <h1><tmpl_var _("webui", "backup_restore_menu_text")></h1>
+
+         <h2>Översikt</h2>
+         <p>Använd den här funktionen för att säkerhetskopiera (ladda ned) en kopia av konfigurationsinställningarna från den här enheten till en fil på din dator, eller för att återställa (ladda upp) en tidigare sparad konfigurationsfil. Den här konfigurationsfilen innehåller alla inställningar för enheten, routern och systemfunktionerna. Den innehåller inte några inställningar eller data för 4G-modemet. Observera att du bara kan återställa en fil till samma enhet som den kom från.</p>
+         <p>Den här skärmen ger också möjlighet att återställa alla inställningar till de standardvärden som angavs på fabriken.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+         <h3>Admin-lösenord</h3>
+         <p>Ange det nuvarande Admin-lösenordet för <tmpl_var _("webui", "webui_product_name")> i det här fältet.</p>
+         <h3><tmpl_var _("webui", "backup_restore_backup_now_button")></h3>
+         <p>Klicka på knappen Nedladdning för att ladda ned en kopia av den nuvarande konfigurationsfilen till din dator. Om din webbläsare uppmanar dig att spara filen kan du byta namn på den om du vill.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+
+         <h3>Admin-lösenord</h3>
+         <p>Ange det nuvarande Admin-lösenordet för <tmpl_var _("webui", "webui_product_name")> i det här fältet.</p>
+         <h3><tmpl_var truncate(_("webui", "backup_restore_file_select_label"), (size(_("webui", "backup_restore_file_select_label")) - size(":")))></h3>
+         <p>Välj den konfigurationsfil som du tidigare laddat ned från den här <tmpl_var _("webui", "webui_product_name")> till din dator.</p>
+         <h3>Knappen Återställ nu</h3>
+         <p>När du har valt en konfigurationsfil klickar du på den här knappen för att starta filuppladdningen. Efter uppladdningen tillämpas konfigurationsfilen omedelbart och denna enhet startas om.</p>
+         <p class="note"><strong>Obs!</strong> Om man laddar upp en konfigurationsfil ändras ALLA befintliga inställningar så att de motsvarar konfigurationsfilen. Detta kan ändra de nuvarande Wi-Fi-inställningarna och bryta alla befintliga anslutningar till denna <tmpl_var _("webui", "webui_product_name")>, inklusive denna webbläsarsession.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+         <p>Klicka på knappen <strong>Återställ fabrikens standardinställningar</strong> för att återställa alla inställningar till de standardvärden som angavs på fabriken. Detta medför en omstart och kan komma att ändra de nuvarande Wi-Fi-inställningarna och bryta alla befintliga anslutningar till denna <tmpl_var _("webui", "webui_product_name")>, inklusive denna webbläsarsession.</p>
+</div>
+ <!-- id="backup_restore" -->

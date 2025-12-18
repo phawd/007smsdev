@@ -1,0 +1,19 @@
+<!-- Internet  Sessions -->
+<div id="session_log_info">
+	<h1><tmpl_var _("webui", "session_log_info_menu_text")></h1>
+
+	<p>Seanso žurnale pateikiami šie duomenys:</p>
+	<p>– Data ir laikas (prisijungimo pradžia)</p>
+	<p>– Trukmė (toks pat kaip dabartinio seanso duomenų formatas)</p>
+	<p>– Gauta (toks pat kaip dabartinio seanso formatas)</p>
+	<p>– Perduota (toks pat kaip dabartinio seanso formatas)</p>
+	<p>– Iš viso duomenų (Rx ir Tx suma, toks pat, kaip ir dabartinio seanso, duomenų formatas)</p>
+	<tmpl_if RoamingStatusShow>
+                <p>- Roaming (Roaming / Teilweise / leer) Leer = Heimnetzwerk </p>
+        </tmpl_if>
+	<p>– IPv4 (IPv4 WWAN IP adresas)</p>
+	<p>– IPv6 (IPv6 WWAN IP adresas)</p>
+
+	<p>Žurnalas pateikiamas pagal datą.</p>
+	<p>Naudotojas negali pakeisti tvarkos ir nėra jokių su seanso žurnalu susijusių parinkčių.</p>
+</div>

@@ -1,0 +1,95 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+levaade</h2>
+		<p>Need seaded kehtivad kohalikule v
+rgule. Selle seadme puhul koosneb kohtv
+rk sellest seadmest ja k
+ikidest 
+hendatud seadmetest (sh Ethernetiga 
+hendatud seadmed, kui need on olemas).</p>
+	<h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+	<tmpl_if LANIPAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+		<p>Selle seadme IP-aadress kohalikust v
+rgust vaadatuna. Tavaliselt saate kasutada vaikev
+rtust.</p>
+	</tmpl_if>
+	<tmpl_if LANSubnetMaskShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+		<p>Vaikev
+rtus 255.255.255.0 on v
+ikeste (C-klassi) v
+rkude puhul standardne. Kui muudate kohtv
+rgu IP-aadressi, veenduge, et kasutate 
+iget alamv
+rgumaski.</p>
+	</tmpl_if>
+	<tmpl_if LANMacAddressShow>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+		<p>MAC-aadress on ainulaadne v
+rguidentifikaator, mis m
+ratakse v
+rguseadme valmistamisel. Sellel kirjutuskaitstud v
+ljal kuvatakse seadme Wi-Fi- ja USB-liideste MAC-aadress.</p>
+	</tmpl_if>
+	<tmpl_if LANDHCPEnableShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+		<p>Tavaliselt tuleb see j
+rkimata. DHCP-server eraldab igale 
+hendatud seadmele IP-aadressi. Kui DHCP-server on v
+litatud, tuleb igale 
+hendatud seadmele m
+rata fikseeritud IP-aadress.</p>
+	</tmpl_if>
+	<tmpl_if LANLANDHCPLeaseTimeShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+		<p>See v
+rab, kui tihti peavad 
+hendatud seadmed uuendama DHCP-serveri m
+ratud IP-aadressi. Tavaliselt v
+ib selle j
+tta vaikev
+rtusele, kuid kui teil on erin
+uded, saate seda v
+rtust muuta.</p>
+	</tmpl_if>
+	<tmpl_if LANDHCPStartAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>Kui soovite muuta DHCP-serveris kasutatavat IP-aadresside vahemikku, saate seda v
+rtust muuta. See valik on m
+eldud ainult asjatundjatele.</p>
+	</tmpl_if>
+	<tmpl_if LANDHCPEndAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+		<p>See n
+itab IP-aadresside vahemikku, mida saab 
+hendatud seadmetele eraldada. Kui kasutate 
+hendatud seadmel fikseeritud IP-aadressi, peaksite kasutama sellest vahemikust v
+ljapoole j
+vat IP-aadressi.</p>
+	</tmpl_if>
+	<tmpl_if LANReservedIPAddressShow>		
+	<h3><tmpl_var truncate(_("webui", "adv_lan_reservedIp_button"), (size(_("webui", "adv_lan_reservedIp_button")) - size(":")))></h3>
+		<p>Seda funktsiooni saab kasutada tagamaks, et 
+hendatud seadmele m
+rab <tmpl_var _("webui", "webui_product_name")> alati sama IP-aadressi. Kl
+psake sellel nupul, et avada selle funktsiooni seadistusekraan.</p>
+	</tmpl_if>
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>Kui m
+hendatud seadmed toetavad IPv6, tuleb see s
+te sisse l
+litada. Seej
+rel saavad IPv6-
+hendusega seadmed luua IPv6-
+henduse internetiga.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+			<p>See on selle seadme IPv6 aadress. Kohaliku lingi aadressi kasutatakse IPv6 suhtlemiseks samas v
+rgus asuvate seadmete vahel.</p>
+	</tmpl_if>	
+<!-- id="lan" -->

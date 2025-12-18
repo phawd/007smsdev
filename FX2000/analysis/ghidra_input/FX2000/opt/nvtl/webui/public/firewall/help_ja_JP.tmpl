@@ -1,0 +1,40 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+	<h2>概要</h2>
+		<p>ファイアウォールは、インターネットからの悪意のある受信トラフィックから接続デバイスを保護します。 ファイアウォールをオフにすることはできませんが、次の設定を使用できます。</p>
+			
+	<h2>設定</h2>
+			
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+	<tmpl_unless ShowDmzActive>
+		<h3>VPNパススルー</h3>
+	</tmpl_unless>
+		<p>この機能により、接続されたデバイス上のVPNクライアントソフトウェアは、このデバイスを介してリモートVPNサーバーに接続できます。 通常、このオプションはオンのままにしておく必要があります。</p>
+
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+		<tmpl_unless ShowDmzActive>
+			<h3>IPv6トランスペアレントモード</h3>
+		</tmpl_unless>
+			<p>通常、ファイアウォールは、IPv6接続デバイスを対象とした着信IPv6接続要求をブロックします。</p>
+			<p>これらの着信接続要求が目的の接続デバイスに到達できるようにする場合は、この設定をオンにします。 トランスペアレントモードは、<tmpl_var _("webui", "webui_product_name")> ファイアウォールにより提供される保護を減らすため、必要な場合にのみオンにする必要があります。</p>
+	</tmpl_if>
+	
+	<tmpl_if ShowDmzActive>
+		<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+	<tmpl_else>
+		<h2>DMZ</h2>
+	</tmpl_if>
+	<p>オンにすると、DMZ IPアドレス（DMZ宛先）として指定された接続デバイスが、ファイアウォールによってブロックされるすべてのトラフィックを受信します。 これは、一部の問題のあるネットワークアプリケーションを正しく機能させるのに役立ちますが、DMZデバイスには、悪意のあるトラフィックからデバイスを保護するための独自のファイアウォールが必要です。</p>
+	<tmpl_if ShowDmzActive>
+	<h3>DMZチェックボックス</h3>
+				
+		<p>ここから、必要に応じてこの機能をオンまたはオフにします。 やむを得ない場合を除いて、通常DMZはオフにしておきます。</p>	
+	</tmpl_if>
+	<h3>宛先IPアドレス</h3>
+		<p>このフィールドに、DMZデバイス（DMZ宛先）に指定したい接続デバイスのIPアドレスを入力します。 接続デバイス画面で各接続デバイスのIPアドレスを確認できます。</p>
+			
+</div>
+<!-- id="firewall" -->
+

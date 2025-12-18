@@ -1,0 +1,60 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1><tmpl_udf GET_PO_TEXT("set_passcode_menu_text", gProductName)></h1>
+	<h2>Descripci
+	<p> La Contrase
+a de administrador se usa para iniciar sesi
+n en este sitio web del administrador de <tmpl_var _("webui", "webui_product_name")>. La p
+gina de <em>Contrase
+a de administrador</em> le permite cambiar la Contrase
+a de administrador y definir algunas opciones de seguridad relacionadas con la Contrase
+a de administrador. </p>
+	<h2>Cambiar la Contrase
+a de administrador de <tmpl_var _("webui", "webui_product_name")></h2>
+	<p>Para cambiar la Contrase
+a de administrador actual, primero debe ingresar la Contrase
+a de administrador actual en el campo que aparece a continuaci
+n. La pantalla entonces se actualizar
+ y proporcionar
+ la opci
+n para definir una nueva Contrase
+a de administrador y una pregunta de seguridad para usar en el caso de que se pierda esa contrase
+	<h3>Contrase
+a de administrador de <tmpl_var _("webui", "webui_product_name")> actual</h3>
+	<p> Ingrese la Contrase
+a de administrador <tmpl_var _("webui", "webui_product_name")> actual en este campo. Tenga en cuenta que, si ingresa un valor incorrecto demasiadas veces, se bloquear
+ su acceso a este sitio web del administrador de <tmpl_var _("webui", "webui_product_name")>. Para cancelar este bloqueo, se debe reiniciar el <tmpl_var _("webui", "webui_product_name")>. </p>
+	<tmpl_if showDisplayPascode>
+		<h2>Mostrar la Contrase
+a de administrador de <tmpl_var _("webui", "webui_product_name")></h2>
+		<p>Si esta configuraci
+ ACTIVADA, la Contrase
+a de administrador se puede leer en la pantalla del <tmpl_var _("webui", "webui_product_name")>. Si esta configuraci
+ DESACTIVADA, se muestra, en cambio, ***********. </p>
+	</tmpl_if>
+	<h2>Cambiar la Contrase
+a de administrador de <tmpl_var _("webui", "webui_product_name")></h2>
+	<h3>Nueva contrase
+a de administrador</h3>
+	<p> Ingrese la nueva Contrase
+a de administrador usando 
+nicamente letras, n
+meros y s
+mbolos de puntuaci
+ndar. La contrase
+a debe tener al menos 8 caracteres de largo. </p>
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p> Vuelva a ingresar la nueva Contrase
+a de administrador en este campo. </p>
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>Esta pregunta de seguridad se usa si se pierde la Contrase
+a de administrador y se usa la opci
+n "Olvid
+ la Contrase
+a de administrador". Seleccione la pregunta deseada y proporcione una respuesta en el campo que aparece a continuaci
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Proporcione una respuesta a la pregunta de seguridad que seleccion
+ anteriormente. Tenga en cuenta que las respuestas distinguen entre may
+sculas y min
+sculas. </p>
+<!-- id="set_passcode" -->

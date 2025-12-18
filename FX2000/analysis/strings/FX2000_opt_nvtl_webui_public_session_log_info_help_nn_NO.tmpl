@@ -1,0 +1,23 @@
+<!-- Internet  Sessions -->
+<div id="session_log_info">
+	<h1><tmpl_var _("webui", "session_log_info_menu_text")></h1>
+ktloggen inneholder f
+lgende data:</p>
+	<p>- Dato og tid (n
+r tilkobling startet)</p>
+	<p>- Varighet (samme format som gjeldende 
+ktinformasjon)</p>
+	<p>- Mottatt (format som for gjeldende 
+	<p>- Overf
+rt (format som for gjeldende 
+	<p>- Totaldata (summen av Rx og Tx, format som for gjeldende 
+ktinformasjon)</p>
+	<tmpl_if RoamingStatusShow>
+                <p>- Roaming (Roaming / Teilweise / leer) Leer = Heimnetzwerk </p>
+        </tmpl_if>
+	<p>- IPv4 (IPv4 WWAN IP-adresse)</p>
+	<p>- IPv6 (IPv6 WWAN IP-adresse)</p>
+	<p>Loggen er ordnet etter dato.</p>
+	<p>Bruker kan ikke endre rekkef
+lgen, og det er ingen alternativer knyttet til 
+ktloggen.</p>

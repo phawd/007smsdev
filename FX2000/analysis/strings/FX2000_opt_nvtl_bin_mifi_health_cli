@@ -1,0 +1,167 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+mifi_health_get_error_string
+mifi_health_is_running
+mifi_health_ab_failsafe_is_running
+snprintf
+mifi_health_api_wd_app_event
+mifi_health_get_mem_diag_settings
+__isoc99_scanf
+GLIBC_2.7
+mifi_health_set_mem_diag_settings
+mifi_health_get_ab_failsafe_settings
+mifi_health_set_ab_failsafe_settings
+MsgBusSetInt32
+mifi_health_get_lowmem_reboot_settings
+mifi_health_set_lowmem_reboot_settings
+mifi_dbg_start
+__bss_start
+libwatchdog_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifi_config.so
+libsettings_api.so
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+librt.so.1
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libdmdb_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libmifi_health_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+is_ab_failsafe_running
+Tells if ab_failsafe verification in progress or not.
+wd_app_crash_ind
+Called by watchdog process to notify which process is crashed
+set_mem_diag_settings
+Set mifi_health mem diag settings.
+get_mem_diag_settings
+Get mifi_helath mem_diag settings.
+get_ab_failsafe_settings
+Get mifi_helath ab_failsafe settings.
+set_ab_failsafe_settings
+Set mifi_health ab_failsafe settings.
+send_ab_failsafe_msg_bus_event
+Sent ab_failsafe msg bus event.
+get_lowmem_reboot_settings
+Get mifi_helath lowmem_reboot settings.
+set_lowmem_reboot_settings
+Set mifi_health lowmem_reboot settings.
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+mifi_health_is_running returned %d (%s)
+mifi_health_is_ab_failsafe_running returned %d (%s)
+What is reason:  
+mifi_health_api_wd_app_event returned %d (%s)
+mifi_health_get_mem_diag_settings returned %d (%s)
+MaxLogFileSize:[%d]
+MaxNoOfBackups:[%d]
+SafeZoneLeastMem:[%d]
+CriticalZoneStartMem:[%d]
+SafeZonePollIntervalSec:[%d]
+ModerateZonePollIntervalSec:[%d]
+CriticalZonePollIntervalSec:[%d]
+SafeZoneStoreMemStatsIntervalMins:[%d]
+ModerateZoneStoreMemStatsIntervalMins:[%d]
+CriticalZoneStoreMemStatsIntervalMins:[%d]
+EnableDebugMode:[%d]
+TopCPUUsageThreshold:[%d]
+Enter Max log file size (max size 2048) : 
+Enter Max number of backups : 
+Enter Safe zone least memory : 
+Enter Critical zone start memory :
+Enter Safe zone poll interval seconds :
+Enter Moderate zone poll interval seconds :
+Enter Critical zone poll interval seconds :
+Enter Safe zone store memory stats interval mins :
+Enter Moderate zone store memory stats interval mins :
+Enter Critical zone store memory stats interval mins :
+Enter Enable debug mode :
+Enter Top CPU usage threshold :
+mifi_health_set_mem_diag_settings returned %d (%s)
+mifi_health_get_ab_failsafe_settings returned %d (%s)
+verify_duration:[%d]
+crash_cnt:[%d]
+wdt_reboot_cnt:[%d]
+pdn_connect_retry_cnt:[%d]
+ab_failsafe passed values are...
+Enter Max verify duration (In Mins): 
+Enter Max Crash count : 
+Enter Max WDT reboot count :
+Enter PDN connect retry count :
+mifi_health_set_ab_failsafe_settings returned %d (%s)
+Select event to send. 1-Start, 0-End? (1 or 0) : 
+Invalid option i=%d
+mifi_health.ab_failsafe_start
+sending MSGBUS_MIFI_HEALTH_AB_FAILSAFE_START event failed. rc=%d
+sending MSGBUS_MIFI_HEALTH_AB_FAILSAFE_START event success. rc=%d
+mifi_health.ab_failsafe_end
+sending MSGBUS_MIFI_HEALTH_AB_FAILSAFE_END event failed. rc=%d
+sending MSGBUS_MIFI_HEALTH_AB_FAILSAFE_END event success. rc=%d
+mifi_health_get_lowmem_reboot_settings returned %d (%s)
+mem_threshold:[%d]
+check_interval:[%d]
+min_uptime:[%d]
+reboot_time_window_open:[%d]
+reboot_time_window_end:[%d]
+Enter Low Memory Threshold [Value >= 15 in MB]: 
+Enter Check Interval (In Sec) : 
+Enter Minimum Device Uptime before Reboot(In Hours) :
+Enter Reboot Time Window Open (Only Hour in 24H format [0-23] ):
+Enter Reboot Time Window End (Only Hour in 24H format [0-23] ):
+mifi_health_set_lowmem_reboot_settings returned %d (%s)
+command [%s]
+command [%s] not found.
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

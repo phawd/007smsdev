@@ -1,0 +1,100 @@
+<!-- Software Update -->
+<div id="software_update">
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+rskats</h2>
+		<p>Programmat
+ras atjaunin
+jumi tiek pieg
+ti autom
+tiski, izmantojot mobilo t
+ varat p
+os atjaunin
+jumus.</p>
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+	<h3><tmpl_var _("webui", "software_update_current_software_modem_version_label")></h3>
+        <p>
+                The version of software currently installed for the modem component.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_kernel_version_label")></h3>
+        <p>
+                The version number for the Operating System and its components.
+        </p>
+        <tmpl_if showAppVersion>
+                <h3><tmpl_var _("webui", "software_update_current_software_app_version_label")></h3>
+                <p>
+                        The app version currently installed.
+                </p>
+        </tmpl_if>
+        <h3><tmpl_var _("webui", "software_update_current_software_cute_version_label")></h3>
+        <p>
+                The cute version of the software currently installed on your device.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_pri_version_label")></h3>
+        <p>
+                The configuration version currently applied to your device.
+        </p>
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var _("webui", "software_update_current_software_configuration_version_label")></h3>
+				<p><tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")></p>
+		</tmpl_if>
+	</tmpl_if>
+	<h2><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+	<h3><tmpl_var _("webui", "software_update_check_for_update_time_label")></h3>
+is lauks nor
+da, kad <tmpl_var _("webui", "webui_product_name")> p
+jo reizi p
+ja, vai nav pieejamu atjaunin
+jumu. Varat manu
+t, vai nav atjaunin
+jumu, izmantojot pogu "P
+t, vai nav atjaunin
+jumu".</p>
+	<h3>Poga "P
+t, vai nav atjaunin
+jumu"</h3>
+		<p>To var izmantot, lai p
+tu, vai ir pieejams <tmpl_var _("webui", "webui_product_name")> atjaunin
+jums. Parasti tas nav nepiecie
+ams, jo atjaunin
+jumi tiek autom
+rvietoti uz <tmpl_var _("webui", "webui_product_name")>. Ja 
+rbaude tiek veikta un atjaunin
+jums ir pieejams, tas tiek autom
+tiski lejupiel
+	<h3><tmpl_var _("webui", "software_update_check_for_update_status_label")></h3>
+		<p>Parasti 
+is lauks ir tuk
+s, bet, ja mekl
+jat atjaunin
+rbaudes rezult
+ts tiek par
+eit. Turkl
+t, ja atjaunin
+jums tiek lejupiel
+ts, lejupiel
+des norise ir redzama 
+eit.</p>
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+ ir redzama inform
+cija par p
+jo programmat
+ras atjaunin
+jumu.</p>
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+o paneli var atv
+rt, noklik
+inot uz saites/virsraksta. Sist
+mas atjaunin
+ ir ietverta detaliz
+ta inform
+cija par p
+jiem <tmpl_var SoftwareUpdateHistoryCount> atjaunin
+jumiem, kas lejupiel
+ti un instal
+. Ja atjaunin
+jumi nav instal
+s redzama pa
+ programmat
+ras versija.</p>
+<!-- end Software Update -->

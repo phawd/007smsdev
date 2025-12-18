@@ -1,0 +1,73 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+levaade</h2>
+		<p>Tulem
+r kaitseb teie 
+hendatud seadmeid internetist sissetuleva pahatahtliku liikluse eest. Tulem
+ri ei saa v
+litada, kuid saadaval on j
+rgmised seaded.</p>
+	<h2>Seaded</h2>
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+	<tmpl_unless ShowDmzActive>
+		<h3>VPN-i l
+	</tmpl_unless>
+		<p>See funktsioon v
+imaldab 
+hendatud seadmete VPN-kliendi tarkvaral VPN-i kaugserveritega 
+henduse luua. Tavaliselt peaks see suvand olema sisse l
+litatud.</p>
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+		<tmpl_unless ShowDmzActive>
+			<h3>IPv6 l
+bipaistev re
+iim</h3>
+		</tmpl_unless>
+			<p>Tavaliselt blokeerib tulem
+r IPv6-ga 
+hendatud seadmele m
+eldud sissetulevad IPv6-
+henduse taotlused.</p>
+			<p>Kui soovite, et need sissetulevad 
+hendustaotlused j
+uaksid soovitud 
+hendatud seadmeni, l
+litage see s
+te sisse. L
+bipaistev re
+iim tuleks sisse l
+litada ainult siis, kui see on vajalik, sest see v
+hendab seadme <tmpl_var _("webui", "webui_product_name")> tulem
+ri pakutavat kaitset.</p>
+	</tmpl_if>
+	<tmpl_if ShowDmzActive>
+		<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+	<tmpl_else>
+		<h2>DMZ</h2>
+	</tmpl_if>
+	<p>Kui see on m
+rgitud, saab 
+hendatud seade, mis on m
+ratud DMZ IP-aadressiks (DMZ sihtkoht), kogu liikluse, mille tulem
+r muidu blokeeriks. See v
+ib aidata m
+nel probleemsel v
+rgurakendusel korralikult toimida, kuid DMZ-seadmel peaks olema oma tulem
+r, et kaitsta end pahatahtliku liikluse eest.</p>
+	<tmpl_if ShowDmzActive>
+	<h3>DMZ m
+rkeruut</h3>
+		<p>Kasutage seda funktsiooni vajaduse korral sisse- v
+litamiseks. 
+ldiselt peaks DMZ olema v
+litatud, kui see pole h
+davajalik.</p>	
+	</tmpl_if>
+	<h3>Sihtkoha IP-aadress</h3>
+		<p>Sisestage sellele v
+hendatud seadme IP-aadress, mille soovite muuta DMZ-seadmeks (DMZ-sihtkohaks). Iga 
+hendatud seadme IP-aadressi saate kontrollida 
+hendatud seadmete ekraanilt.</p>
+<!-- id="firewall" -->

@@ -1,0 +1,3275 @@
+
+
+
+
+
+
+
+
+fieldset#home .ig_col {
+  min-height: inherit !important;
+}
+
+@media screen and (max-width: 480px) {
+  .productNumber {
+    margin-left: 128px;
+  }
+}
+
+
+
+#settings_virtual .tier_2 .tabs,
+.tabitem.settings-advanced-bengal-advanced {
+  display: none;
+}
+
+@media (min-width: 0px) {
+  .hidden-xs {
+    display: none;
+  }
+  .opacity-0-xs {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .hidden-sm {
+    display: none;
+  }
+  .opacity-0-sm {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hidden-md {
+    display: none;
+  }
+  .opacity-0-md {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1279px) {
+  .hidden-lg {
+    display: none;
+  }
+  .opacity-0-lg {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1366px) {
+  .hidden-xl {
+    display: none;
+  }
+  .opacity-0-xl {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 0px) {
+  .visible-xs {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .visible-sm {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .visible-md {
+    display: block;
+  }
+}
+
+@media (min-width: 1279px) {
+  .visible-lg {
+    display: block;
+  }
+}
+
+@media (min-width: 1366px) {
+  .visible-xl {
+    display: block;
+  }
+}
+
+@media (max-width: 1024px) {
+  div.notifications_wrapper.global {
+    background-color: #333 !important;
+    position: relative;
+    width: calc(100% - 100px);
+    z-index: 5;
+    margin: 0px 50px;
+  }
+  div.notifications_wrapper.global > * {
+    padding: 0px !important;
+    font-weight: 400 !important;
+    text-align: center;
+    margin: auto !important;
+  }
+  div.notification p {
+    float: inherit;
+    font-weight: normal !important;
+    font-size: inherit !important;
+  }
+  div.notification_inner {
+    padding-left: 30px;
+    margin-top: 10px !important;
+  }
+  div.notification.global.warning,
+  div.notification.global.critical,
+  div.notification.global.alert {
+    background-position: 0px 5px !important;
+    background-size: 25px;
+  }
+}
+
+.tabs_container .tabs,
+.tabs_container .tier_2 .tabs {
+  width: 100%;
+  top: 0px !important;
+}
+
+.tabs_container .tabs ul li {
+  padding: 4px 0px !important;
+  margin: 0px 10px !important;
+  border-bottom: 4px solid transparent;
+}
+
+.tabs_container .tabs ul li:first-child {
+  margin-left: 0px !important;
+}
+
+.tabs_container .tabs ul li:hover,
+.tabs_container .tabs ul li:active,
+.tabs_container .tabs ul li.active {
+  border-bottom: 4px solid #0082ca;
+}
+
+.tabs_container.tier_2 .tabs {
+  border-bottom: 2px solid #ccc;
+}
+
+.tabs_container.tier_2 .tabs ul li {
+  border-bottom: 4px solid transparent;
+  padding: 0px !important;
+}
+
+.tabs_container.tier_2 .tabs ul li.first + li {
+  margin-left: 0px !important;
+}
+
+.tabs_container.tier_2 .tabs ul li.active {
+  border-bottom: 4px solid #0082ca;
+}
+
+.tabs_container.tier_2 .tabs ul li:hover {
+  cursor: pointer;
+  font-weight: normal !important;
+  border-bottom: 4px solid #0082ca;
+}
+
+.tabs_container.tier_2 .tabs ul li:hover a {
+  font-weight: normal !important;
+}
+
+.tabs_container.tier_2 .tabs ul li a:hover,
+    .tabs_container.tier_2 .tabs ul li a:focus {
+  cursor: pointer;
+  font-weight: normal !important;
+}
+
+.tabs_container.tier_2 .tabs ul li a {
+  font-weight: normal !important;
+  padding: 4px 0px;
+}
+
+#navigationTabsTwo {
+  min-width: inherit !important;
+}
+
+body#help_faq fieldset li a {
+  text-decoration: underline;
+}
+
+html[dir="rtl"] #mobile_status_bar ul.status li span,
+html[dir="rtl"] #status_bar ul.status li span,
+html.rtl #mobile_status_bar ul.status li span,
+html.rtl #status_bar ul.status li span {
+  background-image: url(../images/status/icn-sprite-status_icons_rtl.png);
+}
+
+html[dir="rtl"] .uitooltip,
+html.rtl .uitooltip {
+  text-align: right;
+}
+
+html[dir="rtl"] #slider #tooltip,
+html.rtl #slider #tooltip {
+  left: inherit;
+  right: -9px;
+}
+
+html[dir="rtl"] span#minConnectionValue,
+html.rtl span#minConnectionValue {
+  padding-left: inherit;
+  padding-right: 30px;
+  left: inherit;
+  right: 8px;
+}
+
+html[dir="rtl"] span#maxConnectionValue,
+html.rtl span#maxConnectionValue {
+  right: inherit;
+  left: 8px;
+}
+
+html[dir="rtl"] .tooltip,
+html.rtl .tooltip {
+  margin-left: 3px;
+  margin-right: 0px;
+}
+
+html[dir="rtl"] .tabs_container .tabs ul li,
+html.rtl .tabs_container .tabs ul li {
+  border-left: 0px !important;
+}
+
+html[dir="rtl"] #notification_preferences .col-primary,
+html.rtl #notification_preferences .col-primary {
+  float: right;
+}
+
+html[dir="rtl"] #mobile_navigation .badge,
+html.rtl #mobile_navigation .badge {
+  float: left;
+  text-align: center;
+  padding: 4px !important;
+}
+
+a.helpLink {
+  background: url(../images/icons/icn-help.png) center no-repeat;
+  background-size: 20px;
+}
+
+html[dir="rtl"] a.helpLink,
+html.rtl a.helpLink {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] #customer_care fieldset.last .input:last-child,
+html.rtl #customer_care fieldset.last .input:last-child {
+  text-align: right;
+  direction: ltr;
+}
+
+html[dir="rtl"] #status_diagnostics #modemInfoIMSI,
+html[dir="rtl"] #status_diagnostics #modemInfoPhoneNumber,
+html[dir="rtl"] #status_diagnostics #modemInfoIMSI,
+html.rtl #status_diagnostics #modemInfoIMSI,
+html.rtl #status_diagnostics #modemInfoPhoneNumber,
+html.rtl #status_diagnostics #modemInfoIMSI {
+  direction: ltr;
+  text-align: right;
+}
+a.helpLink:active,
+a.helpLink:hover {
+  background-size: 20px;
+}
+
+.tooltip {
+  background: url(../images/icons/icn-info.png) center no-repeat;
+  background-size: 19px;
+  width: 19px;
+  height: 19px;
+  cursor: help;
+  border: 0px;
+  visibility: visible;
+  font-size: 0px;
+  line-height: 27px;
+  float: left;
+}
+
+html.rtl .tooltip,
+html[dir="rtl"] .tooltip {
+  float: right;
+}
+
+#simPinLabel {
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+body#sim .form-group .selector,
+.form-group select {
+  display: inline-block;
+  min-width: 290px;
+  box-sizing: border-box;
+  left: -4px;
+}
+
+html [dir="rtl"] body#sim .form-group .selector,
+html [dir="rtl"] .form-group select,
+html.rtl body#sim .form-group .selector,
+html.rtl .form-group select {
+  left: 0px;
+  right: -4px;
+}
+
+#sim #simStatus {
+  padding-top: 6px;
+}
+
+#primaryPwd span > span:first-child,
+#guestPwd span > span:first-child {
+  width: 200px;
+  display: inline-block;
+  vertical-align: top !important;
+}
+
+html[dir="rtl"] #primaryPwd span > span:first-child,
+html[dir="rtl"] #guestPwd span > span:first-child,
+html.rtl #primaryPwd span > span:first-child,
+html.rtl #guestPwd span > span:first-child {
+  width: 197px;
+}
+
+#https_support .button_container button {
+  float: left;
+  margin-left: 10px !important;
+  margin-right: 0px !important;
+}
+
+#https_support .button_container button.primary {
+  float: right;
+}
+
+#https_support .button_container button:first-child {
+  margin-left: 0px !important;
+}
+
+html[dir="rtl"] #https_support .button_container button,
+html.rtl #https_support .button_container button {
+  float: right;
+  margin-right: 10px !important;
+  margin-left: 0px !important;
+}
+
+html[dir="rtl"] #https_support .button_container button.primary,
+  html.rtl #https_support .button_container button.primary {
+  float: left;
+}
+
+html[dir="rtl"] #https_support .button_container button:first-child,
+  html.rtl #https_support .button_container button:first-child {
+  margin-right: 0px !important;
+}
+
+
+
+
+#connected_devices table#ConnectedDevicesPrimaryTable tr {
+  height: 35px;
+  min-height: 35px;
+}
+
+#connected_devices table#ConnectedDevicesPrimaryTable th {
+  text-align: left;
+}
+
+#connected_devices table#ConnectedDevicesPrimaryTable td {
+  text-align: left;
+  vertical-align: top;
+}
+
+#connected_devices table#ConnectedDevicesPrimaryTable th:first-child {
+  width: 1%;
+  white-space: nowrap;
+}
+
+#connected_devices table#ConnectedDevicesPrimaryTable td:last-child {
+  width: 1%;
+  white-space: nowrap;
+}
+
+#connected_devices table#ConnectedDevicesPrimaryTable td:nth-child(3),
+#connected_devices table#ConnectedDevicesPrimaryTable td:nth-child(4) {
+  width: 1%;
+}
+
+#connected_devices table#ConnectedDevicesPrimaryTable td.edit button#dropdown {
+  display: inline-block;
+  width: 18px;
+  padding: 0px;
+  height: 11px;
+  background-position: center;
+}
+
+#connected_devices table#ConnectedDevicesPrimaryTable td .deviceInformation p {
+  font-weight: 700 !important;
+  padding: 0px 8px;
+}
+
+#connected_devices table#ConnectedDevicesPrimaryTable td .deviceInformation p span {
+  font-weight: 400 !important;
+}
+
+#connected_devices table#ConnectedDevicesPrimaryTable td .deviceInformation p span.macAddress {
+  direction: ltr;
+}
+#connected_devices table#ConnectedDevicesPrimaryTable td.deviceName .hostName {
+  padding: 0px 8px;
+}
+
+#connected_devices table#BlockedDevicesTable th,
+#connected_devices table#BlockedDevicesTable td {
+  text-align: left !important;
+  height: 36px;
+}
+
+#connected_devices table#BlockedDevicesTable th:first-child,
+#connected_devices table#BlockedDevicesTable td:last-child {
+  width: 1%;
+  white-space: nowrap;
+}
+
+#connected_devices span.Generic {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #000;
+  border-radius: 50px;
+  background-size: 60% !important;
+  background-position: center !important;
+}
+
+#connected_devices #BlockedDevicesCountZero .icon {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #000;
+  border-radius: 50px;
+  background-size: 60% !important;
+  background-position: center !important;
+}
+
+#connected_devices #BlockedDevicesCountZero .text {
+  margin-left: 10px;
+}
+
+#connected_devices .loading {
+  line-height: 32px;
+  background-position: left;
+  padding-left: 35px;
+}
+
+html[dir="rtl"] #connected_devices table#ConnectedDevicesPrimaryTable th,
+html[dir="rtl"] #connected_devices table#ConnectedDevicesPrimaryTable td {
+  text-align: right !important;
+}
+
+html[dir="rtl"] #connected_devices #BlockedDevicesTable th,
+html[dir="rtl"] #connected_devices #BlockedDevicesTable td {
+  text-align: right !important;
+}
+
+html[dir="rtl"] #connected_devices .loading {
+  line-height: 32px;
+  background-position: right;
+  padding-right: 35px;
+}
+
+html[dir="rtl"] #connected_devices #BlockedDevicesCountZero .text {
+  margin-left: 0px;
+  margin-right: 10px;
+}
+
+html[dir="rtl"] #connected_devices .deviceInformation p span {
+  display: inline-block;
+}
+
+div.inlineedit {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  #connected_devices fieldset.first,
+#connected_devices fieldset.last {
+    margin-top: 20px;
+  }
+  #connected_devices fieldset.first #ConnectedDevicesTitle {
+    padding-left: 10px;
+  }
+  #connected_devices fieldset.last #BlockedDevicesTitle {
+    padding-left: 10px;
+  }
+  #connected_devices fieldset.last #BlockedDevicesCountZero {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  #BlockedDevicesTable {
+    display: block !important;
+    height: auto !important;
+    line-height: 27px;
+  }
+  #BlockedDevicesTable tbody,
+    #BlockedDevicesTable td,
+    #BlockedDevicesTable tfoot,
+    #BlockedDevicesTable th,
+    #BlockedDevicesTable thead,
+    #BlockedDevicesTable tr {
+    display: block !important;
+    height: auto !important;
+    line-height: 27px;
+  }
+  #ConnectedDevicesPrimaryTable {
+    display: block !important;
+    height: auto !important;
+    line-height: 27px;
+  }
+  #ConnectedDevicesPrimaryTable tbody,
+    #ConnectedDevicesPrimaryTable td,
+    #ConnectedDevicesPrimaryTable tfoot,
+    #ConnectedDevicesPrimaryTable th,
+    #ConnectedDevicesPrimaryTable thead,
+    #ConnectedDevicesPrimaryTable tr {
+    display: block !important;
+    height: auto !important;
+    line-height: 27px;
+  }
+  #BlockedDevicesTable,
+  #ConnectedDevicesPrimaryTable {
+    box-sizing: border-box;
+  }
+  #connected_devices table#ConnectedDevicesPrimaryTable th,
+  #connected_devices table#ConnectedDevicesPrimaryTable td {
+    box-sizing: border-box;
+    width: 100% !important;
+  }
+  table#ConnectedDevicesPrimaryTable thead,
+  #BlockedDevicesTable thead,
+  table#ConnectedDevicesPrimaryTable th,
+  #BlockedDevicesTable th {
+    display: none !important;
+  }
+  table#ConnectedDevicesPrimaryTable td,
+  #BlockedDevicesTable td {
+    min-height: 33px !important;
+  }
+  table#ConnectedDevicesPrimaryTable td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    width: 50%;
+  }
+  table#ConnectedDevicesPrimaryTable td.deviceName {
+    float: left;
+    font-weight: bold;
+  }
+  table#ConnectedDevicesPrimaryTable td:last-child {
+    display: none !important;
+  }
+  table#ConnectedDevicesPrimaryTable tbody tr td.interfaceType span {
+    position: relative;
+    display: inline-block;
+  }
+  div.inlineedit {
+    display: inline;
+    float: left;
+    height: 27px;
+    padding: 3px 10px;
+    box-sizing: border-box;
+  }
+  div.inlineedit button {
+    display: inline-block;
+    padding: 0px !important;
+    width: 18px !important;
+    height: 11px !important;
+  }
+  div.deviceInformation {
+    padding-left: 35px;
+  }
+  html [dir="rtl"] #connected_devices table#ConnectedDevicesPrimaryTable td:before,
+  html.rtl #connected_devices table#ConnectedDevicesPrimaryTable td:before {
+    float: right;
+  }
+  html [dir="rtl"] #connected_devices table#ConnectedDevicesPrimaryTable td.deviceName,
+  html.rtl #connected_devices table#ConnectedDevicesPrimaryTable td.deviceName {
+    float: right;
+    font-weight: bold;
+  }
+  html [dir="rtl"] #connected_devices div.inlineedit,
+  html.rtl #connected_devices div.inlineedit {
+    float: right;
+  }
+  html [dir="rtl"] #connected_devices div.deviceInformation,
+  html.rtl #connected_devices div.deviceInformation {
+    padding-left: 0px;
+    padding-right: 35px;
+  }
+  html [dir="rtl"] #connected_devices div.deviceInformation p,
+    html.rtl #connected_devices div.deviceInformation p {
+    font-weight: 700 !important;
+    padding: 0px 8px;
+  }
+  html [dir="rtl"] #connected_devices div.deviceInformation p span,
+      html.rtl #connected_devices div.deviceInformation p span {
+    font-weight: 400 !important;
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  div.inlineedit {
+    display: inline;
+    float: left;
+    height: 27px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  html [dir="rtl"] div.inlineedit,
+  html.rtl div.inlineedit {
+    float: right;
+  }
+}
+
+#wwan_settings #NetworksProfileAuthenticationOptionsHolder .selector,
+#wwan_settings #NetworksProfileAuthenticationOptionsHolder select {
+  display: inline-block;
+  min-width: 280px;
+}
+
+html[dir="rtl"] .ui-helper-hidden-accessible,
+html.rtl .ui-helper-hidden-accessible {
+  left: auto !important;
+  right: -999em !important;
+}
+
+html[dir="rtl"] #setPasscodeForm .ui-dialog-buttonset,
+html.rtl #setPasscodeForm .ui-dialog-buttonset {
+  text-align: center;
+}
+
+html[dir="rtl"] #setPasscodeForm .ui-dialog-buttonset button,
+html.rtl #setPasscodeForm .ui-dialog-buttonset button {
+  float: inherit !important;
+}
+
+html[dir="rtl"] #lab_test_info #connectDisconnect,
+html.rtl #lab_test_info #connectDisconnect {
+  float: right;
+}
+
+html[dir="rtl"] div#gps_table div.row:nth-child(2),
+html[dir="rtl"] div#gps_table div.row:nth-child(4),
+html.rtl div#gps_table div.row:nth-child(2),
+html.rtl div#gps_table div.row:nth-child(4) {
+  float: right;
+}
+
+html[dir="rtl"] #retrieval_status.loading,
+html.rtl #retrieval_status.loading {
+  padding-right: 0px;
+  padding-left: 35px;
+}
+
+html[dir="rtl"] #status_diagnostics #modemInfoIMSI,
+html[dir="rtl"] #status_diagnostics #modemInfoPhoneNumber,
+html[dir="rtl"] #status_diagnostics #modemInfoIMEI,
+html.rtl #status_diagnostics #modemInfoIMSI,
+html.rtl #status_diagnostics #modemInfoPhoneNumber,
+html.rtl #status_diagnostics #modemInfoIMEI {
+  direction: ltr;
+  text-align: right;
+}
+
+html[dir="rtl"] #apps_home #internetMDN,
+html[dir="rtl"] #apps_home #internetInfoIMSI,
+html[dir="rtl"] #apps_home #imei,
+html[dir="rtl"] #apps_home #macAddress,
+html[dir="rtl"] #apps_home #fwVersion,
+html[dir="rtl"] #apps_home #internetInfoICCID,
+html.rtl #apps_home #internetMDN,
+html.rtl #apps_home #internetInfoIMSI,
+html.rtl #apps_home #imei,
+html.rtl #apps_home #macAddress,
+html.rtl #apps_home #fwVersion,
+html.rtl #apps_home #internetInfoICCID {
+  direction: ltr;
+  text-align: right;
+}
+
+html[dir="rtl"] span.ipv6Address,
+html.rtl span.ipv6Address {
+  direction: ltr;
+  unicode-bidi: -moz-plaintext;
+  unicode-bidi: plaintext;
+}
+
+
+
+
+html.rtl fieldset#data_usage_stats .ig_row .ig_col:nth-child(1),
+html[dir="rtl"] fieldset#data_usage_stats .ig_row .ig_col:nth-child(1) {
+  float: right;
+}
+
+html.rtl fieldset#data_usage_stats .ig_row .ig_col:nth-child(1) #data_plan_circle,
+html[dir="rtl"] fieldset#data_usage_stats .ig_row .ig_col:nth-child(1) #data_plan_circle {
+  width: auto;
+}
+
+html.rtl fieldset#data_usage_stats .ig_row .ig_col:nth-child(2),
+html[dir="rtl"] fieldset#data_usage_stats .ig_row .ig_col:nth-child(2),
+html.rtl fieldset#data_usage_stats .ig_row .ig_col:nth-child(2) #data_plan_usage_bar_col .used,
+html[dir="rtl"] fieldset#data_usage_stats .ig_row .ig_col:nth-child(2) #data_plan_usage_bar_col .used
+html.rtl #apps_home #data_plan_usage_bar_col .used,
+html[dir="rtl"] #apps_home #data_plan_usage_bar_col .used {
+  float: right;
+}
+
+html.rtl fieldset#data_usage_stats .ig_row .ig_col:nth-child(3),
+html[dir="rtl"] fieldset#data_usage_stats .ig_row .ig_col:nth-child(3) {
+  text-align: left;
+}
+
+#retrieval_status.loading {
+  padding-right: 35px;
+}
+
+
+/*!
+ * Based on 
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+
+#hamburger {
+  position: relative;
+  z-index: 6;
+  background-color: #fff;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  padding-top: 22px;
+}
+
+@media (max-width: 768px) {
+  #hamburger {
+    display: inline-block;
+  }
+}
+
+#hamburger:after {
+  content: "";
+  width: 150px;
+  height: 40px;
+  background: transparent url("../images/logos/header_logo.png") no-repeat;
+  background-size: contain;
+  top: 18px;
+  right: 15px;
+  position: absolute;
+  display: inline-block;
+}
+
+html[dir="rtl"] #hamburger {
+  top: 0px;
+  left: unset;
+  right: 0px;
+}
+
+html[dir="rtl"] #hamburger:after {
+  left: 15px;
+  right: unset;
+}
+
+.hamburger {
+  padding: 10px 10px;
+  cursor: pointer;
+  -webkit-transition-property: opacity, -webkit-filter;
+  transition-property: opacity, -webkit-filter;
+  transition-property: opacity, filter;
+  transition-property: opacity, filter, -webkit-filter;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: white;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.hamburger:hover {
+  opacity: 0.9;
+}
+
+.hamburger.is-active:hover {
+  opacity: 0.9;
+}
+
+.hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+  background-color: #000;
+}
+
+@media (max-width: 1024px) {
+  .hamburger {
+    display: inline-block;
+    z-index: 4;
+    position: relative;
+  }
+}
+
+.hamburger-box {
+  width: 30px;
+  height: 18px;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 30px;
+  height: 4px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -7px;
+}
+
+.hamburger-inner::after {
+  bottom: -7px;
+}
+
+@media screen and (min-width: 1025px) {
+  .hamburger,
+.breadcrumb {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #mobile_navigation .badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 3px;
+    font-size: 12px;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #cd040b;
+    border-radius: 50px;
+    margin-top: 5px;
+  }
+}
+
+
+
+
+.hamburger--arrow.is-active .hamburger-inner::before {
+  -webkit-transform: translate3d(-6px, 0, 0) rotate(-45deg) scale(0.7, 1);
+  transform: translate3d(-6px, 0, 0) rotate(-45deg) scale(0.7, 1);
+}
+
+.hamburger--arrow.is-active .hamburger-inner::after {
+  -webkit-transform: translate3d(-6px, 0, 0) rotate(45deg) scale(0.7, 1);
+  transform: translate3d(-6px, 0, 0) rotate(45deg) scale(0.7, 1);
+}
+
+#mobile_menu {
+  display: none;
+  position: absolute;
+  overflow-y: scroll;
+  height: calc(100vh - 60px);
+  background-color: #ffffff;
+  z-index: 0;
+  top: 60px;
+  box-shadow: none;
+}
+
+
+
+
+#mobile_menu {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  min-width: 45%;
+  background-color: #ffffff;
+}
+
+#mobile_menu li.menu-home,
+  #mobile_menu ul.level-3 li.settings-advanced-bengal-advanced {
+  display: none;
+}
+
+
+
+
+#mobile_navigation_ext li.first a {
+  border-top: none;
+}
+
+#mobile_navigation_ext li.mobile_help a.helpLink {
+  width: auto;
+  height: auto;
+  background-image: none;
+  float: none;
+  margin-top: 0;
+}
+
+#mobile_menu a {
+  font-size: 1em;
+  color: #000000;
+  background-color: #ffffff;
+  line-height: 2em;
+  padding: 10px 20px;
+  display: block;
+}
+
+#mobile_menu_inner {
+  overflow-y: scroll;
+}
+
+#mobile_menu_inner ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+#mobile_menu_inner ul li > a.parent {
+  position: relative;
+    
+  margin: 0 auto;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+
+
+
+#mobile_navigation .parent span.indicator {
+  background: none !important;
+  display: block;
+  float: right;
+  padding: 5px;
+}
+
+#mobile_navigation .parent span.indicator:after,
+#mobile_navigation .parent span.indicator.right:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -3px;
+  border-left: solid 6px #000000;
+  border-bottom: solid 6px transparent;
+  border-top: solid 6px transparent;
+  border-right: none;
+}
+
+#mobile_navigation .parent span.indicator.left:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -3px;
+  border-right: solid 6px #000000;
+  border-bottom: solid 6px transparent;
+  border-top: solid 6px transparent;
+  border-left: none;
+}
+
+#mobile_navigation .parent span.indicator.down:after {
+  margin-left: -3px;
+  border-bottom: none;
+  border-left: solid 6px transparent;
+  border-right: solid 6px transparent;
+  border-top: solid 6px #000000;
+}
+
+html[dir="rtl"] #mobile_navigation .parent span.indicator:after,
+html[dir="rtl"] #mobile_navigation .parent span.indicator.left:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -3px;
+  border-right: solid 6px #000000;
+  border-bottom: solid 6px transparent;
+  border-top: solid 6px transparent;
+  border-left: none;
+}
+
+html[dir="rtl"] #mobile_navigation .parent span.indicator.down:after {
+  margin-left: -3px;
+  border-bottom: none;
+  border-left: solid 6px transparent;
+  border-right: solid 6px transparent;
+  border-top: solid 6px #000000;
+}
+
+#mobile_navigation a:hover,
+#mobile_navigation a:focus,
+#mobile_navigation a:active {
+  text-decoration: none;
+}
+
+#mobile_navigation .parent span.indicator,
+#mobile_navigation .parent span.right,
+#mobile_navigation .parent span.left {
+  margin: 6px 0;
+}
+
+#mobile_navigation li ul {
+  display: none;
+}
+
+#mobile_navigation li.active > ul {
+  display: block;
+}
+
+#overlay {
+  background: 0 0 rgba(0, 0, 0, 0.8);
+  display: none;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+  width: 100%;
+  z-index: 3;
+}
+
+@font-face {
+  font-family: 'STCForward-Regular';
+  src: url(../fonts/ar/STCForward-Regular.eot);
+  src: url(../fonts/ar/STCForward-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/ar/STCForward-Regular.woff2) format("woff2"), url(../fonts/ar/STCForward-Regular.woff) format("woff"), url(../fonts/ar/STCForward-Regular.ttf) format("truetype"), url(../fonts/ar/STCForward-Regular.svg#ar/STCForward-Regular) format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'STCForward-Bold';
+  src: url(../fonts/ar/STCForward-Bold.eot);
+  src: url(../fonts/ar/STCForward-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/ar/STCForward-Bold.woff2) format("woff2"), url(../fonts/ar/STCForward-Bold.woff) format("woff"), url(../fonts/ar/STCForward-Bold.ttf) format("truetype"), url(../fonts/ar/STCForward-Bold.svg#ar/STCForward-Bold) format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+
+:lang(ar) html,
+:lang(ar) * {
+  font-family: 'STCForward-Regular' !important;
+}
+
+:lang(ar) h1,
+:lang(ar) h2,
+:lang(ar) h3,
+:lang(ar) h4,
+:lang(ar) h5,
+:lang(ar) h6 {
+  font-family: 'STCForward-Bold' !important;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+button.primary,
+button.secondary,
+button.central {
+  padding: 5px 25px !important;
+  border: 1px solid transparent;
+  box-sizing: border-box !important;
+}
+
+button.secondary {
+  border: 1px solid #0082ca !important;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group:before {
+  display: table;
+  content: " ";
+}
+
+.form-group:after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+.form-group label,
+  .form-group .label {
+  display: inline-block;
+  width: 218px;
+  padding: 4px 0px;
+  vertical-align: top;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+
+.form-group input {
+  width: 290px;
+  max-width: 100%;
+  padding: 6px;
+}
+
+.form-group input + .inline_error {
+  width: calc(300px - 12px);
+  margin-left: 222px !important;
+  padding: 6px;
+  margin-top: 0px;
+}
+
+.form-group .help {
+  display: inline;
+  padding: 0px 10px;
+}
+
+.form-group .help + .inline_error {
+  width: calc(300px - 12px);
+  margin-left: 222px !important;
+  padding: 6px;
+  margin-top: 0px;
+}
+
+.form-group .input {
+  display: inline-block;
+  padding: 4px;
+  width: 290px;
+  line-height: normal;
+  box-sizing: border-box;
+}
+
+.form-group .input span.toggle-password {
+  float: right;
+  top: -25px !important;
+  right: 7px !important;
+  box-sizing: border-box;
+}
+
+.form-group .input.link {
+  width: calc(100% - 230px);
+}
+
+.form-group .input.link span {
+  float: right;
+}
+
+.form-group .input + .inline_error {
+  width: calc(300px - 12px);
+  margin-left: 222px !important;
+  padding: 6px;
+  margin-top: 0px;
+  box-sizing: border-box;
+}
+
+.form-group .input > .inline_error {
+  margin-left: inherit !important;
+  box-sizing: border-box;
+}
+
+.form-group .input button {
+  float: right;
+}
+
+.form-group .checker {
+  float: inherit !important;
+}
+
+.form-group .checker input {
+  width: inherit;
+}
+
+.form-group .selector,
+  .form-group select {
+  display: inline-block;
+  min-width: 290px;
+}
+
+.form-group .button_container {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.form-group .button_container + .inline_error {
+  width: calc(300px - 12px);
+  margin-left: 222px;
+  padding: 6px;
+  margin-top: 0px;
+}
+
+.form-group.btn-append .append {
+  display: inline;
+}
+
+.form-group.btn-append .append button {
+  min-width: inherit;
+  max-width: inherit;
+  width: inherit;
+}
+
+.form-group.lbl-append .input {
+  max-width: calc(100% - 30px);
+}
+
+.form-group.lbl-append .append {
+  display: inline;
+  vertical-align: top;
+  line-height: 35px;
+}
+
+.toggleSettingContainer {
+  border-spacing: inherit;
+  width: 100%;
+  display: table;
+  padding: 0px;
+  margin: 0px;
+}
+
+.toggleSettingContainer.align-field {
+  max-width: 520px;
+}
+
+.toggleSettingContainer {
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.toggleSettingContainer .form-group {
+  padding: 0px;
+  margin: 0px;
+}
+
+.toggleSettingContainer .form-group label {
+  width: calc(100% - 85px);
+}
+
+.toggleSettingContainer .form-group .toggle {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.toggleSettingContainer + .form-group .label {
+  padding-left: 40px;
+}
+
+.button_container {
+  margin-top: 10px;
+}
+
+.button_container.align-right {
+  float: inherit !important;
+  text-align: right;
+}
+
+.button_container.align-left {
+  float: inherit !important;
+  text-align: left;
+}
+
+.button_container.align-field {
+  text-align: right;
+  margin-right: calc(100% - 520px);
+}
+
+.button_container button.secondary {
+  padding: 5px 25px;
+  white-space: nowrap;
+  margin: inherit !important;
+}
+
+.button_container button.primary {
+  padding: 5px 25px !important;
+  white-space: nowrap;
+  margin: inherit !important;
+}
+
+.button_container:before {
+  display: table;
+  content: " ";
+}
+
+.button_container:after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+.button_container .left-buttons {
+  width: calc(100% - 85px);
+}
+
+.button_container .right-buttons {
+  text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+  .form-group #sample.help {
+    display: block;
+    float: none;
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .form-group.noblock label,
+  .form-group.noblock .label {
+    width: 50%;
+  }
+  .form-group.noblock input,
+  .form-group.noblock .input {
+    width: 40%;
+  }
+  .form-group label,
+  .form-group .label,
+  .form-group input,
+  .form-group .input {
+    width: 100%;
+  }
+  .form-group .help {
+    display: block;
+    float: none;
+    padding: 0px;
+  }
+  .form-group input + .inline_error {
+    width: 100%;
+    margin-left: inherit;
+    padding: 6px;
+    margin-top: 0px;
+  }
+  .form-group .input + .inline_error {
+    width: 94%;
+    margin-left: inherit !important;
+    padding: 6px;
+    margin-top: 0px;
+  }
+  .form-group .selector,
+  .form-group select {
+    display: inline-block;
+    min-width: 100%;
+  }
+  .form-group .button_container + .inline_error {
+    width: 100%;
+    margin-left: inherit;
+    padding: 6px;
+    margin-top: 0px;
+  }
+  .toggleSettingContainer + .form-group .label {
+    padding-left: 0px;
+  }
+  .button_container.align-field {
+    text-align: right;
+    margin-right: 0px;
+  }
+}
+
+.introText {
+  margin-bottom: 10px;
+}
+
+html[dir="rtl"] input.password {
+  padding-left: 35px !important;
+  padding-right: 5px !important;
+}
+
+html[dir="rtl"] .form-group .inline_error {
+  margin-left: unset !important;
+  margin-right: 222px !important;
+}
+
+html[dir="rtl"] .form-group .button_container button.primary,
+html[dir="rtl"] .form-group .button_container button.secondary,
+html[dir="rtl"] .form-group .button_container button.central {
+  padding: 5px 25px !important;
+  float: unset !important;
+}
+
+html[dir="rtl"] .input input.password {
+  padding: 5px !important;
+  padding-left: 35px !important;
+}
+
+html[dir="rtl"] .input span.toggle-password {
+  float: left !important;
+  top: -25px !important;
+  right: -7px !important;
+  box-sizing: border-box;
+}
+
+html[dir="rtl"] div.notification.app {
+  background-position: right !important;
+}
+
+html[dir="rtl"] .button_container {
+  margin-top: 10px;
+}
+
+html[dir="rtl"] .button_container.align-right {
+  float: inherit !important;
+  text-align: left;
+}
+
+html[dir="rtl"] .button_container.align-left {
+  float: inherit !important;
+  text-align: right;
+}
+
+html[dir="rtl"] .button_container.align-field {
+  float: inherit !important;
+  text-align: left;
+  margin-right: unset !important;
+  margin-left: calc(100% - 512px);
+}
+
+html[dir="rtl"] .button_container .right-buttons {
+  text-align: left;
+}
+
+html[dir="rtl"] .button_container button {
+  display: inline-block;
+}
+
+html[dir="rtl"] .button_container button.secondary {
+  padding: 5px 25px;
+  white-space: nowrap;
+  margin: inherit !important;
+}
+
+html[dir="rtl"] .button_container button.primary {
+  padding: 5px 25px !important;
+  white-space: nowrap;
+  margin: inherit !important;
+}
+
+html[dir="rtl"] .button_container button:first-child {
+  float: right;
+}
+
+html[dir="rtl"] .button_container button:only-child {
+  float: left;
+}
+
+html[dir="rtl"] .button_container a {
+  float: left !important;
+}
+
+html[dir="rtl"] #downloadGpsOverDriver .button_container.align-field button:first-child {
+  float: left !important;
+}
+
+html[dir="rtl"] .noblock .col.label {
+  float: right;
+}
+
+html[dir="rtl"] #connectedSaveChanges {
+  float: left;
+}
+
+@media screen and (max-width: 640px) {
+  html[dir="rtl"] .button_container.align-field {
+    text-align: left;
+    margin-left: 0px !important;
+  }
+}
+
+.portFilteringTable input {
+  padding: 6px;
+}
+
+.portFilteringTable input:hover,
+.portFilteringTable input:active,
+.portFilteringTable input:focus {
+  box-shadow: none;
+}
+
+.portFilteringTable input + .inline_error {
+  padding: 6px;
+  margin-top: 0px;
+}
+
+html[dir="rtl"] .portForwardingTable tr th {
+  text-align: right !important;
+}
+
+table#portForwardingCustomApplicationsList td label {
+  white-space: nowrap !important;
+  padding-right: 0px;
+  font-size: .9em;
+}
+
+
+
+
+#portFilteringCustomApplicationsList th {
+  white-space: nowrap !important;
+  text-align: left;
+}
+
+table#portForwardingApplicationsList,
+table#portForwardingCustomApplicationsList {
+  table-layout: auto;
+}
+
+table#portForwardingApplicationsList th:first-child {
+  width: 20px;
+}
+
+table#portForwardingApplicationsList th:last-child {
+  max-width: 50%;
+}
+
+#wwanSettingsSaveButton {
+  float: unset !important;
+}
+
+.mnsButtonContainer {
+  margin-top: 10px;
+}
+
+.mnsButtonContainer button {
+  border: 1px solid #0082ca !important;
+  box-sizing: border-box;
+  min-width: 150px !important;
+  float: left;
+  margin: 0px 5px;
+}
+
+.mnsButtonContainer button:first-child {
+  margin-left: 0px !important;
+}
+
+.mnsButtonContainer button:nth-child(3) {
+  float: right !important;
+}
+
+.mnsButtonContainer button#revertMns {
+  margin-left: 0px !important;
+}
+
+.mnsButtonContainer button#scanForNetworks {
+  margin-left: 0px !important;
+  float: right !important;
+}
+
+@media screen and (max-width: 640px) {
+  #wwan_settings .dialog_page {
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+  }
+  #wwan_settings .dialog_page fieldset.first {
+    padding: 0px 10px !important;
+  }
+  #wwan_settings .dialog_page fieldset.first table#networkListTable tr td:last-child {
+    text-align: center;
+  }
+  #wwan_settings .dialog_page .mnsButtonContainer button {
+    margin: unset !important;
+    margin: 5px 0px !important;
+    width: 100% !important;
+  }
+  #wwan_settings .dialog_page .mnsButtonContainer button:nth-child(3) {
+    float: right !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  fieldset.first table#networkListTable tr td:last-child {
+    text-align: center;
+  }
+}
+
+html[dir="rtl"] #networkListHeader th {
+  text-align: right;
+}
+
+html[dir="rtl"] .mnsButtonContainer button {
+  float: right;
+}
+
+html[dir="rtl"] .mnsButtonContainer button:nth-child(3) {
+  float: left !important;
+}
+
+html[dir="rtl"] .mnsButtonContainer button#scanForNetworks {
+  float: left !important;
+}
+
+#macfilter div#refreshAlert + .scrimp {
+  width: inherit;
+}
+
+#macfilter p.info_text {
+  margin-left: 20px;
+  text-indent: -20px;
+}
+
+#macFilterTable td {
+  padding: 5px !important;
+  box-sizing: border-box;
+}
+
+#macFilterTable td:first-child {
+  width: 40%;
+}
+
+#macFilterTable td input {
+  padding: 6px;
+}
+
+#macFilterTable button#MacFilterAddDevice,
+#macFilterTable button#refreshDevices,
+#macFilterTable button#savechanges {
+  position: inherit !important;
+  top: inherit !important;
+  margin: inherit !important;
+  white-space: nowrap;
+  float: inherit;
+}
+
+#macFilterTable button#MacFilterAddDevice,
+#macFilterTable button#refreshDevices {
+  min-width: inherit;
+  margin-top: 4px !important;
+}
+
+#macFilterTable tr.buttonsRow {
+  border: none !important;
+}
+
+#macFilterTable tr.buttonsRow:hover {
+  background-color: #ffffff;
+}
+
+#macFilterTable tr.deviceFooterRow {
+  border: none !important;
+  height: inherit !important;
+  background-color: #ffffff !important;
+}
+
+#macFilterTable tr.deviceFooterRow:hover {
+  background-color: #ffffff;
+}
+
+#macFilterTable tr.deviceFooterRow td {
+  padding: 0px !important;
+  height: inherit;
+}
+
+#macFilterTable tr.deviceFooterRow td #allowListCount {
+  top: inherit !important;
+}
+
+#macFilterTable td .button_container {
+  margin: inherit;
+  text-align: right;
+}
+
+@media screen and (max-width: 640px) {
+  #macFilterTable {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+    display: block;
+  }
+  #macFilterTable thead {
+    display: none !important;
+  }
+  #macFilterTable tbody {
+    display: table !important;
+    width: 100% !important;
+  }
+  #macFilterTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  #macFilterTable tr:last-child {
+    background-color: #fff;
+  }
+  #macFilterTable td {
+    width: 100% !important;
+    display: block !important;
+    text-align: left !important;
+  }
+  #macFilterTable td .label,
+      #macFilterTable td label {
+    width: 222px;
+    display: inline-block !important;
+    padding-right: 5px;
+  }
+  #macFilterTable td button:last-child {
+    float: right;
+  }
+  #macFilterTable td .button_container {
+    text-align: center;
+  }
+  #macFilterTable .deviceFooterRow td #allowListCount {
+    margin-left: 10px;
+  }
+  #macFilterForm table.devicesTable .deviceNameColumn input,
+  #macFilterForm table.devicesTable .macAddressColumn input {
+    width: calc(100% - 245px) !important;
+    margin: 0px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #macFilterTable td .label,
+  #macFilterTable td label {
+    width: 100%;
+    display: inline-block !important;
+    padding-right: 5px;
+  }
+  #macFilterForm table.devicesTable .deviceNameColumn input,
+  #macFilterForm table.devicesTable .macAddressColumn input {
+    width: 90% !important;
+    margin: 0px;
+  }
+  #macFilterTable td.filter label,
+  #macFilterTable td.filter .label,
+  #macFilterTable td.status .label,
+  #macFilterTable td.delete label {
+    width: 150px;
+  }
+}
+
+#wifi_guest_settings span.toggle-password,
+#wifi_primary_settings span.toggle-password {
+  position: relative;
+  float: inherit !important;
+  top: 3px !important;
+  right: 35px !important;
+}
+
+#wifi_primary_settings .button_container.align-field button.secondary,
+#wifi_guest_settings .button_container.align-field button.secondary {
+  float: inherit;
+}
+
+#wifi_guest_settings button.central {
+  margin-left: inherit !important;
+}
+
+.table-checkbox {
+  max-width: 519px;
+}
+
+.table-checkbox .form-group label {
+  width: 95%;
+}
+
+.table-checkbox .form-group .label {
+  width: 95%;
+}
+
+.changeLink {
+  float: right;
+}
+
+@media screen and (max-width: 640px) {
+  #wifi_guest_settings span.toggle-password,
+  #wifi_primary_settings span.toggle-password {
+    position: relative;
+    float: right !important;
+    top: -25px !important;
+    right: 10px !important;
+  }
+  .table-checkbox {
+    max-width: 100%;
+  }
+  .table-checkbox .form-group label {
+    width: calc(100% - 30px);
+    float: left;
+  }
+  .table-checkbox .form-group .checker {
+    margin-top: 2px;
+  }
+}
+
+html[dir="rtl"] #wifi_guest_settings span.toggle-password,
+html[dir="rtl"] #wifi_primary_settings span.toggle-password {
+  left: 35px !important;
+  right: unset !important;
+}
+
+html[dir="rtl"] #saveConnectionLimit {
+  float: left;
+}
+
+html[dir="rtl"] .changeLink {
+  float: left;
+}
+
+html[dir="rtl"] #BlockedDevicesCountZero .icon {
+  background-position: 13px 0px;
+}
+
+#passcodeBackupRow .input,
+#passcodeRestoreRow .input {
+  max-height: 30px;
+}
+
+html[dir="rtl"] #backup_restore .button_container.align-right button:first-child {
+  float: left !important;
+}
+
+#vpn #viewLog {
+  margin-left: 10px !important;
+}
+
+form#vpnForm {
+  padding: 0px 0px !important;
+  box-sizing: border-box !important;
+  width: auto !important;
+  margin: auto;
+}
+
+form#vpnForm .buttonset {
+  margin-top: 20px;
+}
+
+#vpnForm span.toggle-password {
+  position: relative;
+  float: inherit !important;
+  top: 3px !important;
+  right: 35px !important;
+}
+
+@media screen and (max-width: 640px) {
+  form#vpnForm {
+    padding: 0px 0px !important;
+    box-sizing: border-box !important;
+    width: 90% !important;
+  }
+  #vpnForm span.toggle-password {
+    position: relative;
+    float: right !important;
+    top: -25px !important;
+    right: 10px !important;
+  }
+}
+
+html[dir="rtl"] #vpnForm span.toggle-password {
+  right: inherit !important;
+  left: 35px !important;
+}
+
+html[dir="rtl"] #saveVpnSettings {
+  float: left;
+}
+
+html[dir="rtl"] #vpn #viewLog {
+  margin-left: 0px !important;
+  margin-right: 10px !important;
+  float: right;
+}
+
+@media screen and (max-width: 640px) {
+  #vpn #viewLog {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin: 4px 0px !important;
+  }
+  html[dir="rtl"] #vpn #viewLog {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin: 4px 0px !important;
+  }
+}
+
+#newpasswd .form-group .input {
+  width: 298px;
+}
+
+.dialog_page {
+  max-height: 460px;
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+.dialog_page form#login-form {
+  display: table;
+  width: 100%;
+  margin: auto;
+}
+
+.dialog_page form#login-form .form-group .label,
+    .dialog_page form#login-form .form-group .label label,
+    .dialog_page form#login-form .form-group .input,
+    .dialog_page form#login-form .form-group .input input {
+  padding: 4px 0px;
+  width: 100% !important;
+}
+
+.dialog_page form#login-form fieldset {
+  width: 50% !important;
+  display: block;
+}
+
+.dialog_page form#login-form fieldset.first.extend {
+  width: 100% !important;
+}
+
+.dialog_page form#login-form fieldset.first.extend .securityQuesitonTable {
+  display: block;
+}
+
+.dialog_page form#login-form fieldset.first.extend .securityQuesitonTable .form-group .label {
+  max-width: 120px !important;
+}
+
+.dialog_page form#login-form fieldset.first.extend .securityQuesitonTable .form-group .input {
+  max-width: calc(100% - 210px) !important;
+}
+
+.dialog_page form#login-form fieldset.first.extend .securityQuesitonTable .form-group #oKButton {
+  float: right;
+  margin: 4px;
+}
+
+.dialog_page form#login-form .inline_error {
+  margin: 2px 0px !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dialog_page form#setPasscodeForm .form-group {
+  margin-bottom: 5px;
+}
+
+.dialog_page form#setPasscodeForm .input {
+  width: calc(100% - 230px) !important;
+}
+
+.dialog_page form#setPasscodeForm .input input {
+  width: 100% !important;
+}
+
+.dialog_page form#setPasscodeForm .input .selector {
+  display: block !important;
+}
+
+.dialog_page form#setPasscodeForm .input .selector select {
+  display: block !important;
+}
+
+.dialog_page form#setPasscodeForm #newPasscodeHelp {
+  margin-left: 225px !important;
+}
+
+.dialog_page form#setPasscodeForm .button_container.align-field {
+  margin: 0px;
+  text-align: left;
+}
+
+.dialog_page form#setPasscodeForm .button_container.align-field button {
+  float: inherit !important;
+  margin-left: 225px !important;
+}
+
+.dialog_page form#setPasscodeForm #passwordChanged {
+  max-width: 300px;
+  text-align: center;
+  margin: auto;
+}
+
+.dialog_page form#setPasscodeForm #passwordChanged button {
+  text-transform: uppercase !important;
+  width: inherit !important;
+  min-width: inherit !important;
+  line-height: normal !important;
+  margin: auto !important;
+}
+
+.dialog_page #smsInbox th {
+  text-align: left;
+}
+
+.dialog_page #smsInbox p {
+  width: unset !important;
+}
+
+@media screen and (max-width: 768px) {
+  .dialog_page form#login-form fieldset {
+    width: 100% !important;
+    display: block;
+  }
+  .dialog_page form#login-form fieldset.first {
+    padding-right: 0px;
+    border-right: 0px;
+  }
+  .dialog_page form#login-form fieldset.right {
+    padding-left: 0px;
+  }
+  .dialog_page form#login-form fieldset.first.extend {
+    width: 100% !important;
+  }
+  .dialog_page form#login-form fieldset.first.extend .securityQuesitonTable {
+    display: block;
+  }
+  .dialog_page form#login-form fieldset.first.extend .securityQuesitonTable .form-group .label,
+        .dialog_page form#login-form fieldset.first.extend .securityQuesitonTable .form-group .input {
+    max-width: 100% !important;
+  }
+  .dialog_page form#login-form fieldset.first.extend .securityQuesitonTable .form-group #oKButton {
+    float: inherit;
+    margin: inherit !important;
+  }
+  .dialog_page form#login-form fieldset#setPasscodeField .button_container button {
+    min-width: inherit !important;
+  }
+  .dialog_page form#setPasscodeForm #validateCurrPasswd div#currentPasscodeRow {
+    max-width: inherit !important;
+  }
+  .dialog_page form#setPasscodeForm #validateCurrPasswd .input {
+    width: 100% !important;
+  }
+  .dialog_page form#setPasscodeForm #validateCurrPasswd .button_container {
+    display: block;
+    padding: 4px;
+    margin: 0px;
+  }
+  .dialog_page form#setPasscodeForm #validateCurrPasswd .button_container button {
+    padding: 6px 25px !important;
+    min-width: inherit !important;
+  }
+  .dialog_page form#setPasscodeForm #validateCurrPasswd .button_container + .inline_error {
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .dialog_page .form-group .label {
+    width: 100%;
+    display: block;
+  }
+  .dialog_page .form-group .input,
+  .dialog_page .form-group input {
+    width: 94% !important;
+  }
+  .dialog_page form#setPasscodeForm .input,
+  .dialog_page form#setPasscodeForm input {
+    width: 100% !important;
+    max-height: 34px;
+  }
+  .dialog_page form#setPasscodeForm #newPasscodeHelp {
+    margin-left: inherit !important;
+  }
+  .dialog_page form#setPasscodeForm .button_container.align-field {
+    padding: 4px;
+  }
+  .dialog_page form#setPasscodeForm .button_container.align-field button {
+    margin-left: inherit !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ui-dialog-buttonset {
+    margin-right: 0% !important;
+  }
+}
+
+html[dir="rtl"] .dialog_page #smsInbox th,
+html.rtl .dialog_page #smsInbox th {
+  text-align: right;
+}
+
+div#status_bar ul,
+div#status_bar ul li {
+  float: right;
+  margin-right: 4px;
+  margin-top: 6px;
+}
+
+#carrier_logo > span {
+  display: block;
+  font-weight: bold;
+}
+
+a#admin_menu {
+  padding-right: 10px;
+}
+
+a#admin_menu ~ #administrator {
+  margin-right: 5px;
+}
+
+html[dir="rtl"] div#status_login {
+  float: left;
+  background: none;
+  margin-left: 0px;
+  margin-right: 20px;
+}
+
+html[dir="rtl"] div#status_login a {
+  float: right;
+}
+
+html[dir="rtl"] div#status_login a h4 {
+  padding-right: 5px;
+  padding-left: 30px;
+}
+
+html[dir="rtl"] div#status_login #administrator.closed {
+  background-position: left;
+}
+
+html[dir="rtl"] div#status_login + .sub_menu {
+  right: unset;
+  left: 0px;
+}
+
+html[dir="rtl"] div#status_login + .sub_menu ul#admin_navigation li {
+  border-right: 5px solid transparent;
+  border-left: 0px !important;
+}
+
+html[dir="rtl"] div#status_login + .sub_menu ul#admin_navigation li:hover {
+  border-right: 5px solid #0088ca;
+}
+
+html[dir="rtl"] #carrier_logo {
+  right: 65px;
+}
+
+html[dir="rtl"] #status_bar,
+html[dir="rtl"] #mobile_status_bar {
+  float: left;
+}
+
+html[dir="rtl"] #status_area ul.status {
+  float: left !important;
+}
+
+html[dir="rtl"] #mobile_status_area ul.status {
+  float: right !important;
+}
+
+html[dir="rtl"] div#status_bar ul,
+html[dir="rtl"] div#status_bar ul li {
+  float: left;
+  margin-left: 4px;
+}
+
+@media screen and (max-width: 480px) {
+  html[dir="rtl"] a#toggle_mobile_menu {
+    left: unset;
+    right: 20px;
+  }
+  html[dir="rtl"] #carrier_logo {
+    display: inline-block !important;
+  }
+  html[dir="rtl"] #carrier_logo img {
+    margin-top: 0px !important;
+  }
+  html[dir="rtl"] #carrier_logo > span {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #carrier_logo {
+    display: inline-block !important;
+    height: inherit;
+  }
+  #carrier_logo img {
+    margin-top: 0px !important;
+    display: block;
+    clear: both;
+  }
+  #carrier_logo > span {
+    display: inline-block;
+  }
+}
+
+#notifications_preferences_form .table {
+  box-sizing: border-box;
+}
+
+#notifications_preferences_form .table .col-primary {
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+#notifications_preferences_form .table .col-primary .form-group label,
+#notifications_preferences_form .table .col-primary .form-group .label {
+  width: calc(100% - 30px);
+}
+
+#notifications_preferences_form .table .col-secondary {
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+  margin-left: 10px;
+}
+
+#notifications_preferences_form .table .col-secondary .form-group label,
+#notifications_preferences_form .table .col-secondary .form-group .label {
+  width: calc(100% - 30px);
+}
+
+@media screen and (max-width: 640px) {
+  #notifications_preferences_form .table .row .col-primary:first-child {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #notifications_preferences_form .table .row {
+    width: 100% !important;
+  }
+  #notifications_preferences_form .table .col-primary,
+  #notifications_preferences_form .table .col-secondary {
+    width: 100%;
+  }
+}
+
+div.selector {
+  padding: 0px !important;
+}
+
+div.selector select {
+  height: 25px;
+}
+
+
+
+
+div.checker {
+  width: 16px !important;
+  height: 16px !important;
+  line-height: 16px !important;
+  box-sizing: border-box;
+}
+
+div.checker span {
+  width: 16px !important;
+  height: 16px !important;
+  line-height: 16px !important;
+}
+
+div.checker span.checked {
+  width: 16px !important;
+  height: 16px !important;
+  line-height: 16px !important;
+}
+
+div.checker .disabled,
+  div.checker input {
+  width: 16px !important;
+  height: 16px !important;
+  line-height: 16px !important;
+}
+
+div.checker,
+div.checker.disabled {
+  border: 0px solid transparent !important;
+}
+
+div.checker:active,
+div.checker.active,
+div.checker:hover,
+div.checker.hover,
+div.checker:focus,
+div.checker.focus,
+  div.checker.disabled:active,
+  div.checker.disabled.active,
+  div.checker.disabled:hover,
+  div.checker.disabled.hover,
+  div.checker.disabled:focus,
+  div.checker.disabled.focus {
+  border: 0px solid transparent !important;
+  box-shadow: 0 0 3px 2px #7199c0;
+}
+
+div.checker span {
+  background: url(../images/uniform/checker/bg-checker.png) center center no-repeat !important;
+  background-size: 16px;
+  background-size: contain !important;
+}
+
+div.checker span.checked {
+  background: url(../images/uniform/checker/bg-checker_checked.png) center center no-repeat !important;
+  background-size: 16px;
+  background-size: contain !important;
+}
+
+div.checker.disabled span {
+  background: url(../images/uniform/checker/bg-checker_disabled.png) center center no-repeat !important;
+  background-size: 16px;
+  background-size: contain !important;
+}
+
+div.checker.disabled span.checked {
+  background: url(../images/uniform/checker/bg-checker_checked_disabled.png) center center no-repeat !important;
+  background-size: 16px;
+  background-size: contain !important;
+}
+
+div.selector.disabled span {
+  background: url(../images/uniform/selector/bg-dropdown_arrow_disabled.png) 99% center no-repeat #fff !important;
+}
+
+div.radio {
+  width: 16px !important;
+  height: 16px !important;
+  line-height: 16px !important;
+}
+
+div.radio:active,
+div.radio.active,
+div.radio:hover,
+div.radio.hover,
+div.radio:focus,
+div.radio.focus {
+  border: 0px solid transparent !important;
+  box-shadow: 0 0 3px 2px #7199c0 !important;
+  border-radius: 100px;
+}
+
+div.radio.disabled span {
+  background-image: url(../images/uniform/radio/radio_inactive_disabled.svg);
+  background-repeat: no-repeat;
+}
+
+div.radio.disabled span.checked {
+  background-image: url(../images/uniform/radio/radio_active_disabled.svg);
+  background-repeat: no-repeat;
+}
+
+@media all and (max-width: 1439px) and (min-width: 1025px) {
+  #main {
+    max-width: inherit !important;
+  }
+  .page #sidebar.left,
+  .tabbed_page #sidebar.left {
+    width: 20%;
+  }
+  .page #app_container,
+  .tabbed_page #app_container {
+    width: calc(80% - 40px) !important;
+    max-width: inherit !important;
+    padding-left: 40px;
+  }
+  .tabs_container .tabs {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .page #pageHeadCol,
+  .tabbed_page #pageHeadCol {
+    width: 100%;
+    border-bottom: 2px solid #d8dada;
+  }
+}
+
+#data_usage .remainingDaysCircle {
+  white-space: nowrap;
+}
+
+.duaReset > button.reset {
+  min-width: inherit !important;
+}
+
+body#debug_logs #app_content,
+body#lab_test_info #app_content,
+body#field_test_info #app_content,
+body#sideload_software_update #app_content {
+  padding-top: 50px;
+  width: inherit;
+  margin: auto;
+}
+
+body#sideload_software_update #uploadInput h3 {
+  border-bottom: 0px !important;
+}
+
+body#sideload_software_update .button_container {
+  float: inherit;
+}
+
+@media screen and (max-width: 1024px) {
+  .page #app_container,
+.tabbed_page #app_container {
+    width: 100% !important;
+    box-sizing: border-box;
+    padding: 0px;
+  }
+  #data_usage #app_content #pageHeadRow {
+    padding: 0px;
+  }
+  #data_usage #app_content,
+  #connected_devices #app_content,
+  #carrier_unlock #app_content {
+    padding: 10px 10px 0 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  table#portForwardingCustomApplicationsList td label {
+    visibility: visible !important;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 768px) {
+  table#portForwardingCustomApplicationsList td label {
+    visibility: hidden !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .input input {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  div.table {
+    width: 100%;
+    max-width: inherit !important;
+    min-width: inherit !important;
+  }
+}
+
+html[dir="rtl"] .tabs_container .tabs {
+  width: 100%;
+}
+
+html[dir="rtl"] .tabs_container .tabs {
+  float: right;
+}
+
+html[dir="rtl"] .tabs_container.tier_2 .tabs ul li {
+  margin: 0 10px 0 0;
+}
+
+html[dir="rtl"] .tabs_container.tier_2 .tabs ul li.last {
+  margin-right: 10px;
+}
+
+html[dir="rtl"] h1.pageHead {
+  padding-left: 0;
+  padding-right: 0px;
+  right: unset;
+}
+
+html[dir="rtl"] #checkForUpdate.primary {
+  float: unset;
+}
+
+html[dir="rtl"] .page #app_container,
+html[dir="rtl"] .tabbed_page #app_container {
+  padding-left: 0px;
+  padding-right: 40px;
+}
+
+@media screen and (max-width: 1024px) {
+  html[dir="rtl"] .page #app_container,
+html[dir="rtl"] .tabbed_page #app_container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+table#portForwardingCustomApplicationsList td label {
+  white-space: nowrap !important;
+  padding-right: 0px;
+  font-size: .9em;
+}
+
+
+
+
+@media screen and (min-width: 320px) {
+  #push {
+    display: none !important;
+  }
+  #container {
+    margin: 0 auto 0 !important;
+  }
+}
+
+body > #container:first-child {
+  min-height: calc(100vh - 86px);
+  overflow: visible !important;
+}
+
+body#apps_home > #container:first-child {
+  min-height: inherit;
+}
+
+#apps_home #connectedDevices .ig_card_body {
+  max-height: 475px;
+  overflow-y: auto;
+}
+
+.footer {
+  position: -webkit-sticky !important;
+  position: sticky !important;
+}
+
+@media screen and (max-width: 768px) {
+  body > #container:first-child {
+    height: auto !important;
+    min-height: calc(100vh - 111px);
+    overflow: visible !important;
+  }
+  body#apps_home > #container:first-child {
+    min-height: inherit;
+  }
+  .footer {
+    height: 95px !important;
+  }
+}
+
+.ui-dialog {
+  box-sizing: border-box;
+}
+
+.ui-dialog-buttonpane button.cancel {
+  padding: 5px 25px !important;
+}
+
+html.rtl .ui-dialog-buttonpane .ui-dialog-buttonset {
+  text-align: center;
+}
+
+html.rtl .ui-dialog-buttonpane button:first-child {
+  float: right;
+}
+
+html.rtl .ui-dialog-buttonpane button:last-child {
+  float: left;
+}
+
+html.rtl .ui-dialog-buttonpane button:only-child {
+  float: none;
+}
+
+#profileUpdate button {
+  min-width: inherit;
+  margin: 0px 10px;
+  float: left;
+}
+
+#profileUpdate button:first-child {
+  min-width: inherit;
+  float: right;
+}
+
+#UpdateStatus {
+  width: 60%;
+}
+
+#ProgressBarZeroPercent,
+#ProgressBarHundredPercent {
+  display: block;
+}
+
+#installBtns {
+  padding-left: 218px;
+  width: calc(100% - 218px);
+}
+
+#installBtns #installNow {
+  float: right !important;
+}
+
+#installBtns #installLater {
+  float: left !important;
+}
+
+@media screen and (max-width: 768px) {
+  #installBtns {
+    padding-left: inherit;
+    width: 100%;
+  }
+  div#SoftwareInstallProgressBar {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #profileUpdate button {
+    min-width: inherit;
+    margin: 0px 10px;
+    width: inherit !important;
+  }
+  #installBtns #installNow,
+  #installBtns #installLater {
+    margin-top: 4px;
+  }
+}
+
+html[dir='rtl'] #lineUsagePercentage {
+  text-align: left;
+}
+
+html[dir='rtl'] #SoftwareInstallStatus.fail,
+html[dir='rtl'] #SoftwareInstallStatus.noresp,
+html[dir='rtl'] #SoftwareInstallStatus.progress,
+html[dir='rtl'] #SoftwareInstallStatus.success {
+  text-align: right !important;
+}
+
+#SoftwareInstallStatus
+html[dir='rtl'].progress,
+html[dir='rtl'].success {
+  background: 0 0 !important;
+  font-weight: 400 !important;
+  padding: 0 !important;
+}
+
+.progress_bar_wrapper .ui-progressbar {
+  background-color: #8F8F8F !important;
+  border-radius: 0px !important;
+  border: none;
+}
+
+div#SoftwareInstallProgressBar {
+  width: unset;
+  height: unset;
+}
+
+#SoftwareInstallNote {
+  text-align: left;
+  margin-top: 10px;
+}
+
+#softwareInstallContent h2 {
+  text-align: left;
+}
+
+#softwareInstallContentInner #homeLink a {
+  width: unset !important;
+  white-space: nowrap;
+}
+
+.filetype {
+  width: unset !important;
+  padding: 4px 5px !important;
+}
+
+.filetype input[type="file"] {
+  width: 100% !important;
+  padding: 0px;
+}
+
+.filetype .uploader {
+  float: inherit;
+  line-height: inherit;
+}
+
+.filetype .uploader .filename {
+  border: 1px solid #8F8F8F;
+}
+
+.filetype .uploader .action {
+  width: auto;
+  line-height: inherit;
+  padding: 2px 16px;
+  line-height: 25px;
+}
+
+@media screen and (max-width: 320px) {
+  .filetype .uploader .action {
+    padding: 2px 10px;
+    line-height: 25px;
+  }
+}
+
+
+
+
+#restarting .footer .col,
+#shutdown .footer .col,
+#resetting .footer .col {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#restarting .footer .col p,
+  #shutdown .footer .col p,
+  #resetting .footer .col p {
+  float: none !important;
+}
+
+#restarting #restartingContent {
+  display: table;
+  margin: auto;
+  width: 80%;
+  height: 60vh;
+}
+
+#restarting #restartingContent #restartingContentInner {
+  display: table-cell;
+  vertical-align: top;
+  padding-top: 50px;
+}
+
+#restarting #restartingContent #restartingContentInner .notification {
+  padding-left: 0px !important;
+}
+
+#restarting #restartingContent #restartingContentInner .notification p {
+  float: left !important;
+  padding: 4px !important;
+  margin-bottom: 0px !important;
+  margin-left: 0px !important;
+}
+
+#restarting #restartingContent #restartingContentInner #homeLink {
+  border-bottom: 1px solid #0088ca;
+  padding: 4px 0px;
+}
+
+#restarting #restartingContent #restartingContentInner #homeLink:hover {
+  color: #0088ca;
+  font-weight: 700;
+}
+
+#shutdown #shutdownContent {
+  display: table;
+  margin: auto;
+  width: 80%;
+  height: 60vh;
+  text-align: left !important;
+}
+
+#shutdown #shutdownContent #shutdownContentInner {
+  display: table-cell;
+  vertical-align: top;
+  padding-top: 50px;
+}
+
+#shutdown #shutdownContent p {
+  float: left !important;
+  padding: 4px !important;
+  margin-bottom: 0px !important;
+  margin-left: 0px !important;
+}
+
+#resetting #resettingContent {
+  display: table;
+  margin: auto;
+  width: 80%;
+  height: 60vh;
+}
+
+#resetting #resettingContent #resettingContentInner {
+  display: table-cell;
+  vertical-align: top;
+  padding-top: 50px;
+}
+
+#resetting #resettingContent #resettingContentInner .notification {
+  padding-left: 0px !important;
+}
+
+#resetting #resettingContent #resettingContentInner .notification p {
+  float: left !important;
+  padding: 4px !important;
+  margin-bottom: 0px !important;
+  margin-left: 0px !important;
+}
+
+#resetting #resettingContent #resettingContentInner #homeLink {
+  border-bottom: 1px solid #0088ca;
+  padding: 4px 0px;
+}
+
+#resetting #resettingContent #resettingContentInner #homeLink:hover {
+  color: #0088ca;
+  font-weight: 700;
+}
+
+#resetting #resettingContent #resettingContentInner p.spinner {
+  float: inherit !important;
+}
+
+@media screen and (max-width: 768px) {
+  #restartingContent,
+  #shutdownContent,
+  #shutdownContent {
+    width: 100% !important;
+  }
+  html[dir="rtl"] #sessionLogTable td,
+  html[dir="rtl"] #sessionLogTable th {
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  #restarting #carrier_logo,
+  #shutdown #carrier_logo,
+  #resetting #carrier_logo {
+    left: 0px;
+  }
+  #restarting #carrier_logo .productNumber,
+    #shutdown #carrier_logo .productNumber,
+    #resetting #carrier_logo .productNumber {
+    margin-left: 175px;
+  }
+  #restartingContent,
+  #shutdownContent,
+  #shutdownContent {
+    height: auto !important;
+  }
+  #restartingContentInner,
+  #shutdownContentInner,
+  #resettingContentInner {
+    width: 100% !important;
+    padding: 0px !important;
+  }
+  #restarting .footer.footer_fixed,
+  #shutdown .footer.footer_fixed,
+  #resetting .footer.footer_fixed {
+    position: relative !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #restarting #header,
+  #shutdown #header,
+  #resetting #header {
+    height: auto;
+  }
+}
+
+#lab_test_info .primary {
+  float: unset;
+}
+
+#sideload_software_install #homeLink:before,
+#sideload_software_install #homeLink:after {
+  content: "";
+  display: table;
+}
+
+#sideload_software_install #homeLink:after {
+  clear: both;
+}
+
+#status_logs .button_container button.secondary,
+#status_logs .button_container #saveBtn {
+  margin: unset !important;
+  margin: 0 5px 0 0 !important;
+  width: unset !important;
+  min-width: unset !important;
+}
+
+#status_logs #downLoadLogForm {
+  display: inline-block;
+  float: right;
+}
+
+#status_logs #downLoadLogForm button {
+  float: none !important;
+  width: unset !important;
+}
+
+html[dir="rtl"] .keyAdjust > span {
+  margin-left: 10px;
+}
+
+html[dir="rtl"] .keyAdjust > span div.radio {
+  margin-left: 5px;
+  margin-right: 0px;
+}
+
+html[dir="rtl"] #softwareInstallContent h2 {
+  text-align: right;
+}
+
+html[dir="rtl"] #software_install #softwareInstallContentInner,
+html[dir="rtl"] #sideload_software_install #softwareInstallContentInner {
+  padding: inherit;
+}
+
+html[dir="rtl"] #SoftwareInstallStatus.progress {
+  float: right !important;
+  text-align: right !important;
+}
+
+html[dir="rtl"] #SoftwareInstallStatus.fail,
+html[dir="rtl"] #SoftwareInstallStatus.noresp {
+  text-align: right !important;
+}
+
+html[dir="rtl"] #ProgressBarZeroPercent {
+  float: right !important;
+}
+
+html[dir="rtl"] #ProgressBarHundredPercent {
+  float: left !important;
+}
+
+html[dir="rtl"] #SoftwareInstallNote {
+  text-align: right;
+}
+
+html[dir="rtl"] #homeLink a.gohome {
+  float: right !important;
+}
+
+html[dir="rtl"] #restarting #restartingContent #restartingContentInner .notification p {
+  float: right !important;
+}
+
+html[dir="rtl"] #resetting #resettingContent #resettingContentInner .notification p {
+  float: right !important;
+}
+
+html[dir="rtl"] #shutdown #shutdownContent h2 {
+  text-align: right;
+}
+
+html[dir="rtl"] #shutdown #shutdownContent p {
+  float: right !important;
+}
+
+html[dir="rtl"] #session_log_info table th {
+  text-align: right;
+}
+
+html[dir="rtl"] #status_logs .button_container button.secondary,
+html[dir="rtl"] #status_logs .button_container #refreshLog,
+html[dir="rtl"] #status_logs .button_container #saveBtn {
+  margin: 0 0 0 5px !important;
+  float: right !important;
+}
+
+html[dir="rtl"] #status_logs .button_container #downLoadLogForm {
+  float: left;
+}
+
+@media screen and (max-width: 640px) {
+  #status_bar {
+    margin: 0px !important;
+  }
+  #status_logs .button_container button.secondary,
+  #status_logs .button_container #saveBtn {
+    width: 100% !important;
+    display: block !important;
+    margin: 4px 0px !important;
+  }
+  #status_logs #downLoadLogForm {
+    float: inherit;
+    width: 100% !important;
+    display: block;
+  }
+  #status_logs #downLoadLogForm button {
+    float: inherit;
+    width: 100% !important;
+    display: block;
+  }
+  html[dir="rtl"] #status_logs .button_container button.secondary,
+  html[dir="rtl"] #status_logs .button_container #saveBtn {
+    width: 100% !important;
+    display: block !important;
+    margin: 4px 0px !important;
+  }
+}
+
+.footer .logo_device {
+  max-width: 180px !important;
+}
+
+.footer .copyright {
+  width: calc(100% - 325px) !important;
+}
+
+.footer .mifi_device {
+  max-width: 145px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .footer.footer_fixed {
+    height: 95px;
+  }
+  .footer .logo_device,
+  .footer .copyright,
+  .footer .mifi_device {
+    max-width: inherit !important;
+    width: 100% !important;
+    line-height: inherit;
+    text-align: center !important;
+    display: block !important;
+    padding-top: inherit !important;
+  }
+  .footer #inseegoLogo,
+.footer #powered {
+    float: none !important;
+  }
+}
+
+html[dir="rtl"] #navigation li a {
+  border-left: 0px !important;
+  border-right: 5px solid transparent;
+}
+
+html[dir="rtl"] #navigation li:hover a,
+html[dir="rtl"] #navigation li a:hover,
+html[dir="rtl"] #navigation li:focus a,
+html[dir="rtl"] #navigation li a:focus,
+html[dir="rtl"] #navigation li.active a {
+  border-left: 0px !important;
+  border-right: 5px solid #0082ca;
+}
+
+html[dir="rtl"] #navigation .badge + a {
+  padding: 5px 15px !important;
+}
+
+#remoteServerConfigurationTable th {
+  text-align: left;
+}
+
+#remoteServerConfigurationTable th button {
+  min-width: inherit;
+  padding: 2px 5px !important;
+}
+
+#remoteServerConfigurationTable td .radio,
+#remoteServerConfigurationTable td .checker {
+  margin-left: 12px;
+}
+
+
+
+
+#serverConfigurationTable .form-group .input {
+  width: inherit !important;
+}
+
+#serverConfigurationTable .form-group .input.checkBox input {
+  width: auto;
+  margin-left: 5px;
+}
+
+#serverConfigurationTable .form-group .input.reportingModeAdjust {
+  margin-right: 10px;
+  line-height: 27px;
+}
+
+#serverConfigurationTable .form-group .input.reportingModeAdjust .radio {
+  margin-right: 5px;
+}
+
+#serverConfigurationTable .form-group #activeSentencesLabel a {
+  border-bottom: 1px solid #0082ca;
+}
+
+@media screen and (max-width: 640px) {
+  #serverConfigurationTable .form-group .input {
+    width: 100% !important;
+  }
+  #serverConfigurationTable .form-group.noblock .input {
+    width: 50% !important;
+  }
+}
+#nmeaInfo .form-group,
+#taipInfo .form-group {
+  margin-bottom: 0px !important;
+}
+
+#nmeaInfo .form-group .input.checkBox,
+  #taipInfo .form-group .input.checkBox {
+  width: calc(100% - 225px) !important;
+}
+
+#nmeaInfo .form-group .input.checkBox .checker,
+    #taipInfo .form-group .input.checkBox .checker {
+  margin-top: 2px;
+}
+
+#nmeaInfo .form-group .input.checkBox label,
+    #taipInfo .form-group .input.checkBox label {
+  width: calc(100% - 30px) !important;
+  margin-left: 5px;
+}
+
+#nmeaInfo .form-group .help,
+  #taipInfo .form-group .help {
+  line-height: 27px;
+}
+
+#gps_local .form-group .input.fullWidth {
+  width: calc(100% - 225px) !important;
+}
+
+#gps_local .form-group .selector,
+#gps_local .form-group .form-group select {
+  display: inline-block;
+  min-width: 280px;
+}
+
+#gps_local .form-group .input.checkBox {
+  width: inherit;
+}
+
+#gps_local .form-group .input.checkBox input {
+  width: auto;
+  margin-left: 5px;
+}
+
+#gps_local .input.reportingModeAdjust {
+  margin-right: 10px;
+  line-height: 27px;
+  width: inherit;
+}
+
+#gps_local .input.reportingModeAdjust .radio {
+  margin-right: 5px;
+}
+
+#gps_local #activeSentencesLabel a {
+  border-bottom: 1px solid #0082ca;
+}
+
+span.buttons {
+  margin-right: 5px;
+  margin-left: -13px;
+}
+
+span.buttons button {
+  padding: 5px;
+  background-color: #0082ca;
+  color: white;
+  font-weight: bold;
+  width: 20px;
+}
+
+@media screen and (max-width: 640px) {
+  #nmeaInfo .form-group .label,
+  #taipInfo .form-group .label {
+    display: none;
+  }
+  #gps_local .form-group .input.checkBox {
+    width: 100% !important;
+  }
+  #gps_local .form-group .selector,
+#gps_local .form-group select {
+    width: 100% !important;
+  }
+  h2#localServerConfigurationTitle ~ .form-group .input input[type="text"],
+  h2#remoteServerConfigurationTitle ~ .form-group .input input[type="text"] {
+    width: calc(100% - 30px) !important;
+  }
+  h2#localServerConfigurationTitle ~ .form-group .input ~ .help,
+  h2#remoteServerConfigurationTitle ~ .form-group .input ~ .help {
+    margin-left: 32px;
+  }
+}
+
+#gpio .form-group .selector,
+#gpio .form-group select {
+  min-width: 281px !important;
+}
+
+@media screen and (max-width: 640px) {
+  #gpio .form-group .selector,
+  #gpio .form-group select {
+    width: 100% !important;
+  }
+  .input.adjust-pls {
+    max-width: calc(100% - 80px) !important;
+    display: inline;
+    float: left;
+    margin-right: 15px;
+  }
+  .input.adjust-pls ~ .help {
+    width: 50px !important;
+    display: inline;
+    float: left;
+  }
+  .input.adjust-pls ~ .help .buttons {
+    display: inline !important;
+  }
+  .input.adjust-pls ~ .help .buttons button {
+    display: inline !important;
+    width: 20px !important;
+    margin-top: 4px !important;
+    padding: 4px;
+  }
+}
+
+fieldset#power-pin-overview .connector-image,
+fieldset#power-pin-overview .connector-discription {
+  float: left;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  width: 30%;
+}
+
+.connector-discription {
+  padding-top: 50px;
+  padding-left: 20px;
+  text-align: left !important;
+}
+
+.connector-discription .form-group {
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+
+.connector-discription .form-group .label {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 480px) {
+  fieldset#power-pin-overview .connector-image,
+  fieldset#power-pin-overview .connector-discription {
+    width: 45%;
+  }
+}

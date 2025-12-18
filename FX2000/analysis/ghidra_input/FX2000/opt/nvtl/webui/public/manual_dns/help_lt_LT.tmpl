@@ -1,0 +1,16 @@
+<!-- Manual DNS -->
+<div id="manual_dns">
+	<h1><tmpl_var _("webui", "adv_manual_dns_menu_text")></h1>
+	<h2>Apžvalga</h2>
+	<p>Paprastai DNS adresas suteikiamas automatiškai. Jei reikia, šiame puslapyje galite neautomatiškai nurodyti DNS.</p>
+
+	<h2>Nuostatos</h2>
+
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_enable_label"), (size(_("webui", "adv_manual_dns_enable_label")) - size(":")))></h3>
+	<p>Naudokite šią nuostatą norėdami įjungti arba išjungti neautomatinio DNS funkciją. Jei įjungta, turi būti pateikti toliau nurodyti duomenys.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address1_label"), (size(_("webui", "adv_manual_dns_address1_label")) - size(":")))></h3>
+	<p>Įveskite norimo pirminio DNS IP adresą. Šio adreso reikia norint naudoti neautomatinio DNS funkciją.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address2_label"), (size(_("webui", "adv_manual_dns_address2_label")) - size(":")))></h3>
+	<p>Įveskite norimo antrinio (atsarginio) DNS IP adresą. Šis adresas yra nebūtinas, todėl, jei pageidaujama, gali būti paliktas tuščias.</p>
+</div>
+<!-- id="manual_dns" -->

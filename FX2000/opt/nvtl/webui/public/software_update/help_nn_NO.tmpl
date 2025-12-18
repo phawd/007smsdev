@@ -1,0 +1,45 @@
+<!-- Software Update -->
+<div id="software_update">
+
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+
+	<h2>Oversikt</h2>
+
+		<p>Programvareoppdateringer leveres automatisk over mobilnettverket. Denne siden lar deg overvåke disse oppdateringene.</p>
+
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+
+	<h3>Gjeldende programvareversjon</h3>
+	
+		<p>Dette feltet viser hvilken versjon av programvaren som for øyeblikket er installert på denne enheten.</p>
+
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var _("webui", "software_update_current_software_configuration_version_label")></h3>
+			
+				<p><tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")></p>
+		</tmpl_if>
+	
+		<h2><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+
+		<h3><tmpl_var _("webui", "software_update_check_for_update_time_label")></h3>
+
+		<p>Dette feltet viser når <tmpl_var _("webui", "webui_product_name")> sist sjekket for å se om en oppdatering er tilgjengelig. Du kan se etter en oppdatering manuelt ved å bruke knappen «Kontroller for oppdatering».</p>
+	
+		<h3>Knappen Kontroller for oppdatering</h3>
+		<p>Du kan bruke denne til å sjekke om en oppdatering er tilgjengelig for din <tmpl_var _("webui", "webui_product_name")>. Normalt er dette ikke nødvendig, da oppdateringer automatisk skyves til <tmpl_var _("webui", "webui_product_name")>. Hvis du utfører denne kontrollen, og en oppdatering er tilgjengelig, lastes den automatisk ned.</p>
+	</tmpl_if>
+
+	<h3><tmpl_var _("webui", "software_update_check_for_update_status_label")></h3>
+
+		<p>Normalt vil dette være tomt, men hvis du ser etter en oppdatering, vises resultatet av den sjekken her. Hvis en oppdatering lastes ned, vises nedlastingsforløpet her.</p>
+	
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+		
+		<p>Dette panelet viser detaljene for den siste programvareoppdateringen.</p>
+	
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+	
+		<p>Dette panelet kan åpnes ved å klikke på lenken/overskriften. Systemoppdateringsloggen inneholder detaljer fra siste <tmpl_var SoftwareUpdateHistoryCount> oppdateringer som er lastet ned og installert på denne enheten. Hvis det ikke er installert noen oppdateringer, viser dette panelet gjeldende programvareversjon.</p>
+</div>
+<!-- end Software Update -->

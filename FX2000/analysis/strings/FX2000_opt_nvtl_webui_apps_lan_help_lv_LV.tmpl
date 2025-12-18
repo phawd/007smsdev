@@ -1,0 +1,109 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+rskats</h2>
+ie iestat
+jumi attiecas uz lok
+klu vai LAN. 
+cei LAN veido 
+ce un visas pievienot
+ces (tostarp Ethernet pievienot
+ces, ja t
+das ir).</p>
+	<h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+	<tmpl_if LANIPAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+ces IP adrese, k
+ redzams lok
+. Parasti varat izmantot noklus
+	</tmpl_if>
+	<tmpl_if LANSubnetMaskShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+		<p>Noklus
+ba 255.255.255.0 ir standarta v
+ba maziem ("C" klases) t
+kliem. Mainot LAN IP adresi, p
+rliecinieties, vai izmantojat pareizo apak
+kla masku.</p>
+	</tmpl_if>
+	<tmpl_if LANMacAddressShow>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+		<p>MAC adrese ir unik
+kla identifikators, kas tiek pie
+anas laik
+ tikai las
+ces Wi-Fi un USB interfeisu MAC adrese.</p>
+	</tmpl_if>
+	<tmpl_if LANDHCPEnableShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+		<p>Parasti t
+ta. DHCP serveris pie
+ir IP adresi katrai pievienotajai ier
+cei. Ja DHCP serveris ir izsl
+gts, katrai pievienotajai ier
+cei ir j
+ta IP adrese.</p>
+	</tmpl_if>
+	<tmpl_if LANLANDHCPLeaseTimeShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+is lauks nosaka, cik bie
+i pievienotaj
+atjauno IP adrese, ko t
+ris DHCP serveris. Parasti to var atst
+t noklus
+, bet, ja jums ir 
+bas, varat main
+	</tmpl_if>
+	<tmpl_if LANDHCPStartAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>Ja v
+laties main
+t DHCP servera izmantoto IP adre
+u diapazonu, varat to dar
+t, mainot 
+ opcija ir paredz
+ta tikai pieredz
+iem lietot
+jiem.</p>
+	</tmpl_if>
+	<tmpl_if LANDHCPEndAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+		<p>Tas nor
+da IP adre
+u diapazonu, ko var pie
+irt pievienotaj
+m. Ja pievienotaj
+ izmantojat fiks
+tu IP adresi, izmantojiet IP adresi, kas atrodas 
+ diapazona.</p>
+	</tmpl_if>
+	<tmpl_if LANReservedIPAddressShow>		
+	<h3><tmpl_var truncate(_("webui", "adv_lan_reservedIp_help_label"), (size(_("webui", "adv_lan_reservedIp_help_label")) - size(":")))></h3>
+o funkciju var izmantot, lai nodro
+tu, ka <tmpl_var _("webui", "webui_product_name")> pie
+irs pievienotajai ier
+cei vienm
+u IP adresi. Noklik
+iniet uz 
+s pogas, lai piek
+s funkcijas iestat
+anas ekr
+nam.</p>
+	</tmpl_if>
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>Ja da
+as no pievienotaj
+m atbalsta IPv6, 
+is iestat
+jums ir j
+c tam ar IPv6 savienot
+s izveidot IPv6 savienojumus ar internetu.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+ces IPv6 adrese. Link-Local adrese tiek izmantota IPv6 sazi
+ai starp ier
+	</tmpl_if>	
+<!-- id="lan" -->

@@ -1,0 +1,47 @@
+<!-- Software Update -->
+<div id="software_update">
+
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+
+	<h2>Visão geral</h2>
+
+		<p> As atualizações do software são entregues automaticamente pela rede móvel. Esta página permite que você monitore as atualizações. </p>
+
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+
+	<h3>Versão atual do software</h3>
+	
+		<p> Este campo indica a versão do software instalado atualmente neste dispositivo. </p>
+
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var truncate(_("webui", "software_update_current_software_configuration_version_label"), (size(_("webui", "software_update_current_software_configuration_version_label")) - size(":")))></h3>
+			
+				<p>
+					<tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")>
+				</p>
+		</tmpl_if>
+	
+		<h2><tmpl_var truncate(_("webui", "software_update_check_for_update_sub_header_text"), (size(_("webui", "software_update_check_for_update_sub_header_text"))))></h2>
+
+		<h3><tmpl_var truncate(_("webui", "software_update_check_for_update_time_label"), (size(_("webui", "software_update_check_for_update_time_label")) - size(":")))></h3>
+
+		<p> Este campo indica a última verificação do <tmpl_var _("webui", "webui_product_name")> para ver se havia uma atualização disponível. Você pode verificar uma atualização manualmente, através do botão "Verificar atualização". </p>
+	
+		<h3>Botão "Verificar atualização"</h3>
+		<p> Você pode usar esse botão para verificar se há alguma atualização disponível para o seu <tmpl_var _("webui", "webui_product_name")>. Isso não costuma ser necessário, pois as atualizações são enviadas automaticamente ao <tmpl_var _("webui", "webui_product_name")>. Se você efetuar essa verificação e houver uma atualização disponível, ela será baixada automaticamente. </p>
+	</tmpl_if>
+
+	<h3><tmpl_var truncate(_("webui", "software_update_check_for_update_status_label"), (size(_("webui", "software_update_check_for_update_status_label")) - size(":")))></h3>
+
+		<p> Normalmente, estará em branco, mas se você fizer uma verificação de atualização, o resultado será mostrado aqui. Além disso, se uma atualização estiver sendo baixada, o progresso do download é mostrado aqui. </p>
+	
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+		
+		<p> Este painel exibe os detalhes da última atualização do software. </p>
+	
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+	
+		<p> Este painel pode ser aberto clicando no link/título. O Histórico de Atualizações do Sistema contém detalhes das últimas <tmpl_var SoftwareUpdateHistoryCount> atualizações que foram baixadas e instaladas neste dispositivo. Se nenhuma atualização tiver sido instalada, este painel mostrará a versão atual do software. </p>
+</div>
+<!-- end Software Update -->

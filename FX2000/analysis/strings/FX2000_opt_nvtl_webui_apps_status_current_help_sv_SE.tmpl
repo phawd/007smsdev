@@ -1,0 +1,90 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>Detta visar anslutningsstatusen f
+r internetanslutningen via mobiln
+tet.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>Namnet p
+ det mobiln
+t som den h
+r enheten f
+rvarande 
+r ansluten till.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>Den n
+tverksteknik som anv
+r den nuvarande anslutningen. LTE 
+r den snabbaste tillg
+ngliga tekniken.</p> 
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+r den nuvarande internetsessionen, den tid som f
+rflutit sedan anslutningen uppr
+ttades.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))></h3>
+r den nuvarande internetsessionen, den m
+ngd data som tagits emot. Denna r
+n noll n
+r anslutningen uppr
+ttas.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+r den nuvarande internetsessionen, den m
+ngden data som 
+rts. Denna r
+n noll n
+r anslutningen uppr
+ttas.</p>
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+	<p>Den internet-IP-adress som 
+r tilldelad till denna enhet.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))></h3>
+	<p>Den n
+tverksmask som h
+r ihop med IP-adressen ovan.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	<p>Den gateway-IP-adress som h
+r ihop med IP-adressen ovan.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))></h3>
+	<p>Den dom
+nnamnserver som f
+rvarande anv
+nds av den h
+r enheten.</p>
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+	<p>Den globala IPv6-adressen f
+r <tmpl_var _("webui", "webui_product_name")> visas h
+r. Detta kommer att vara tomt om IPv6 
+ngt eller inte st
+ds av den nuvarande n
+tverksanslutningen.</p>
+	<tmpl_if InternetStatusViewSessionShow>
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+	<p>Sessionsloggen inneh
+ljande data:</p>
+ Datum och tid (n
+r anslutningen startade)</p>
+ Varaktighet (samma format som information f
+r nuvarande session)</p>
+ Mottaget (format som f
+r nuvarande session)</p>
+nda (format som f
+r nuvarande session)</p>
+ Totala data (summan av Rx och Tx, format som information f
+r nuvarande session)</p>
+ Roaming (roaming/partiell/tom) tom = hemn
+tverk</p>
+ IPv4 (IPv4 WWAN IP-adress)</p>
+ IPv6 (IPv6 WWAN IP-adress)</p>
+	<p>Loggen 
+r i datumordning.</p>
+ndaren kan inte 
+ndra ordningen och det finns inga alternativ relaterade till sessionsloggen.</p>
+	</tmpl_if>
+<!-- id="status_internet" -->

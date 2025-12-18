@@ -1,0 +1,16 @@
+<!-- Manual DNS -->
+<div id="manual_dns">
+	<h1><tmpl_var _("webui", "adv_manual_dns_menu_text")></h1>
+	<h2>Yleiskatsaus</h2>
+	<p>DNS-osoite annetaan yleensä automaattisesti. Tällä sivulla voit tarvittaessa määrittää DNS:n manuaalisesti.</p>
+
+	<h2>Asetukset</h2>
+
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_enable_label"), (size(_("webui", "adv_manual_dns_enable_label")) - size(":")))></h3>
+	<p>Kytke Manual DNS (Manuaalinen DNS) -ominaisuus päälle tai pois päältä tällä asetuksella. Jos se on kytketty päälle, on annettava seuraavat tiedot.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address1_label"), (size(_("webui", "adv_manual_dns_address1_label")) - size(":")))></h3>
+	<p>Syötä halutun ensisijaisen DNS:n IP-osoite. Tämä osoite vaaditaan, jotta Manual DNS (Manuaalinen DNS) -ominaisuutta voi käyttää.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address2_label"), (size(_("webui", "adv_manual_dns_address2_label")) - size(":")))></h3>
+	<p>Anna halutun toissijaisen (varmuuskopio-) DNS:n IP-osoite. Tämä osoite on valinnainen, ja se voidaan haluttaessa jättää tyhjäksi.</p>
+</div>
+<!-- id="manual_dns" -->

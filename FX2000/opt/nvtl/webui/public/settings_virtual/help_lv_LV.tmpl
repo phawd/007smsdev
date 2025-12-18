@@ -1,0 +1,28 @@
+<div id="settings_virtual">
+	<h1>Papildu iestatījumi</h1>
+	
+	<tmpl_if appsList>
+		<h2>Pārskats</h2>Izvēlne Papildu nodrošina piekļuvi tālāk norādītajām lapām un iestatījumiem.<div class="blockgroup">
+			<ul>
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title>&nbsp;-&nbsp;<tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+		<p>Ņemiet vērā, ka normālai darbībai un parastām situācijām neviens no šiem iestatījumiem nav jāmaina no to noklusējuma vērtībām. Mainiet šos iestatījumus tikai tad, ja konkrētajā situācijā ir nepieciešamas izmaiņas.</p>
+	</tmpl_if>
+
+	<h2>Pogas</h2>
+	<tmpl_if showBackButton>
+		<h3>Atgriezties</h3>
+		<p>Noklikšķiniet uz šīs pogas, lai atgrieztos iepriekšējā lapā.</p>
+	</tmpl_if>
+	
+	<tmpl_unless showBackButton>
+		<h3>Turpināt</h3>
+		<p>Izmantojiet šo opciju, lai pārietu uz papildu lapām.</p>
+	</tmpl_unless>
+
+</div>

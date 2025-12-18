@@ -1,0 +1,1751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+	 <Common>
+	 	<Features> <!-- Show/Hide status values -->
+	 		<ShowAllowFOTASoftwareUpdate>0</ShowAllowFOTASoftwareUpdate>
+	 		<ShowNonVerizonTechnologies>1</ShowNonVerizonTechnologies>
+	 		<ShowAdvancedSettings>0</ShowAdvancedSettings>
+	 		<ShowPromptOnUSB>1</ShowPromptOnUSB>     
+	 		<ShowWifiDisplaySetting>0</ShowWifiDisplaySetting>
+	 		<ShowToolTip>1</ShowToolTip>
+	 		<ShowAddCustomAppButton>1</ShowAddCustomAppButton>
+	 		<ShowModemVersionAsSoftwareVersion>0</ShowModemVersionAsSoftwareVersion>
+	 		<ShowMNSInGlobalTech>1</ShowMNSInGlobalTech> <!-- to show mns available in global mode for Alpine -->
+	 		<ShowChangePassword>1</ShowChangePassword>
+	 		<ShowRoamingIndicator>0</ShowRoamingIndicator>
+	 		<ShowWifiEthernetUSBTotalClients>1</ShowWifiEthernetUSBTotalClients>
+	 	</Features>
+	 	<Config> <!-- configurations common among multiple apps -->
+	 		<AutomaticTechMode>50</AutomaticTechMode> <!-- SYS_WAN_RADIO_TECH_WCDMA| SYS_WAN_RADIO_TECH_LTE | SYS_WAN_RADIO_TECH_NR5G -->
+	 		<MnsTechMode>2</MnsTechMode> <!-- MnsTechMode = SYS_WAN_RADIO_TECH_WCDMA -->
+	 									  <!-- Need to change in devui config file, if MnsTechMode is changed-->
+	 		<MDNDelimiter>1</MDNDelimiter> <!-- 0 for "space", 1 for "dot", 2 for "hypen" -->
+	 		<SwapToggleButtonAction>1</SwapToggleButtonAction><!--Supporting hide functionality -->
+	 	</Config>
+	 	<MdnCountryCode>
+	 		<MCC id="404"> <!-- India Country code-->
+	 			<CallingCode>91</CallingCode>
+	 			<MobileLength>10</MobileLength>
+	 		</MCC>
+	 		<MCC id="405"> <!-- India Country code-->
+	 			<CallingCode>91</CallingCode>
+	 			<MobileLength>10</MobileLength>
+	 		</MCC>
+	 		<MCC id="310"> <!-- US Country code-->
+	 			<CallingCode>1</CallingCode>
+	 			<MobileLength>10</MobileLength>
+	 		</MCC>
+	 		<MCC id="311"> <!-- US Country code-->
+	 			<CallingCode>1</CallingCode>
+	 			<MobileLength>10</MobileLength>
+	 		</MCC>
+	 		<MCC id="312"> <!-- US Country code-->
+	 			<CallingCode>1</CallingCode>
+	 			<MobileLength>10</MobileLength>
+	 		</MCC>
+	 		<MCC id="313"> <!-- US Country code-->
+	 			<CallingCode>1</CallingCode>
+	 			<MobileLength>10</MobileLength>
+	 		</MCC>
+	 		<MCC id="316"> <!-- US Country code-->
+	 			<CallingCode>1</CallingCode>
+	 			<MobileLength>10</MobileLength>
+	 		</MCC>
+	 		<MCC id="302"> <!-- Canada Country code-->
+	 			<CallingCode>1</CallingCode>
+	 			<MobileLength>10</MobileLength>
+	 		</MCC>
+	 		<MCC id="724"> <!-- Brazil Country code-->
+	 			<CallingCode>55</CallingCode>
+	 			<MobileLength>10</MobileLength>
+	 		</MCC>
+	 		<MCC id="334"> <!-- Mexico Country code-->
+	 			<CallingCode>52</CallingCode>
+	 			<MobileLength>10</MobileLength>
+	 		</MCC>
+	 		<MCC id="214"> <!-- Spain Country code-->
+	 			<CallingCode>34</CallingCode>
+	 			<MobileLength>9</MobileLength>
+	 		</MCC>
+	 		<MCC id="208"> <!-- France Country code-->
+	 			<CallingCode>33</CallingCode>
+	 			<MobileLength>9</MobileLength>
+	 		</MCC>
+	 		<MCC id="460"> <!-- China  Country code-->
+	 			<CallingCode>86</CallingCode>
+	 			<MobileLength>11</MobileLength>
+	 		</MCC>
+	 	</MdnCountryCode>
+	 	<MenuLayoutGroupHeader>
+	 		<URI id="settings">
+	 			<Path>/preference/</Path>
+	 			<MenuTitle>settings_group_menu_text</MenuTitle>
+	 			<Title>settings_group_title_text</Title>
+	 		</URI>
+	 		<URI id="preferences">
+	 			<Path>/preferences/</Path>
+	 			<Title>preferences_menu_text</Title>
+	 		</URI>
+	 		<URI id="admin_password">
+	 			<Path>/adminpassword/</Path>
+	 			<Title>admin_password_top_menu_text</Title>
+	 		</URI>
+	 		<URI id="about">
+	 			<Path>/internet/</Path>
+	 			<MenuTitle>about_group_side_menu_text</MenuTitle>
+	 			<Title>about_jetpack_title_text</Title>
+	 		</URI>
+	 		<URI id="wifi_settings">
+	 			<Path>/wifisettings/</Path>
+	 			<Title>wifi_settings_top_menu_text</Title>
+	 		</URI>
+	 		<URI id="advanced_settings_virtual">
+	 			<Path>/advanced/</Path>
+	 			<Title>advanced_settings_virtual_top_menu_text</Title>
+	 		</URI>
+	 		<URI id="help">
+	 			<Path>/help/</Path>
+	 			<Title>help_menu_text</Title>
+	 		</URI>
+	 	</MenuLayoutGroupHeader>
+	 </Common>
+	<Panels>
+		 <Panel id="mns" label="Network Selection">
+		 	<Enabled>1</Enabled>
+		 	<Login>1</Login>
+		 	<URI id="mns">
+		 		<Path>/networkselection/</Path>
+		 		<Title>menu_adv_mns_text</Title>
+		 	</URI>
+		 	<!-- contains urls for asynchronous requests -->
+		 	<Redirects>
+		 		<URI id="mns_enable_mns">
+		 			<Path>/networkselection/enablemns/</Path>
+		 			<Title>menu_adv_mns_enable_mns_text</Title>
+		 			<RewriteRule>"^/networkselection/enablemns/*?$" => "/cgi/webui.cgi?id=mns&amp;as=1&amp;opr=toggleMns&amp;toggleMns=on"</RewriteRule>
+		 		</URI>
+		 		<URI id="mns_disable_mns">
+		 			<Path>/networkselection/disablemns/</Path>
+		 			<Title>menu_adv_mns_disable_mns_text</Title>
+		 			<RewriteRule>"^/networkselection/disablemns/*?$" => "/cgi/webui.cgi?id=mns&amp;as=1&amp;opr=toggleMns&amp;toggleMns=off"</RewriteRule>
+		 		</URI>
+		 		<URI id="mns_get_scan_status">
+		 			<Path>/networkselection/getscanstatus/</Path>
+		 			<Title>menu_adv_mns_get_scan_status_text</Title>
+		 			<RewriteRule>"^/networkselection/getscanstatus/*?$" => "/cgi/webui.cgi?id=mns&amp;as=1&amp;opr=getScanningStatus"</RewriteRule>
+		 		</URI>
+		 		<URI id="mns_cancel_mns">
+		 			<Path>/networkselection/cancelmns/</Path>
+		 			<Title>menu_adv_mns_cancel_mns_text</Title>
+		 			<RewriteRule>"^/networkselection/cancelmns/*?$" => "/cgi/webui.cgi?id=mns&amp;as=1&amp;opr=cancelMNS"</RewriteRule>
+		 		</URI>
+		 		<URI id="mns_start_scan">
+		 			<Path>/networkselection/startscan/</Path>
+		 			<Title>menu_adv_mns_start_scan_text</Title>
+		 			<RewriteRule>"^/networkselection/startscan/*?$" => "/cgi/webui.cgi?id=mns&amp;as=1&amp;opr=startScanning"</RewriteRule>
+		 		</URI>
+		 		<URI id="mns_get_available_networks">
+		 			<Path>/networkselection/getavailablenetworks/</Path>
+		 			<Title>menu_adv_mns_get_available_networks_text</Title>
+		 			<RewriteRule>"^/networkselection/getavailablenetworks/*?$" => "/cgi/webui.cgi?id=mns&amp;as=1&amp;opr=getAvailableNetworks"</RewriteRule>
+		 		</URI>
+		 		<URI id="mns_connect_to_network">
+		 			<Path>/networkselection/connecttonetwork/</Path>
+		 			<Title>menu_adv_mns_adv_mns_connect_to_network_text</Title>
+		 			<RewriteRule>"^/networkselection/connecttonetwork/*?$" => "/cgi/webui.cgi?id=mns&amp;as=1&amp;opr=connectNetwk"</RewriteRule>
+		 		</URI>
+		 		<URI id="mns_help">
+		 			<Path>/networkselection/help/</Path>
+		 			<Title>adv_mns_help_text</Title>
+		 			<RewriteRule>"^/networkselection/help/*?$" => "/cgi/webui.cgi?id=mns&amp;content=help"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<!-- show/hide status values -->
+		 	<Features>
+		 		<ShowNonVerizonTechnologies>1</ShowNonVerizonTechnologies>
+		 		<ShowRoamingWarning>1</ShowRoamingWarning>
+		 		<ShowManualNetworkSelectionRedirection>0</ShowManualNetworkSelectionRedirection> <!-- Show the redirection link to the Networks Page-->
+		 	</Features>
+		 	<!-- configurations specific to app -->
+		 	<Config>
+		 	</Config>	
+		 </Panel>
+		 <Panel id="sim" label="SIM Lock">
+		 	<Enabled>1</Enabled>
+		 	<Login>1</Login>
+		 	<URI id="sim">
+		 		<Path>/sim/</Path>
+		 		<Title>adv_sim_menu_text</Title>
+		 	</URI>
+		 	<!-- contains urls for asynchronous requests -->
+		 	<Redirects>
+		 		<URI id="sim_help">
+		 			<Path>/sim/help/</Path>
+		 			<Title>adv_sim_help_text</Title>
+		 			<RewriteRule>"^/sim/help/*?$" => "/cgi/webui.cgi?id=sim&amp;content=help"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<!-- show/hide status values -->
+		 	<Features>
+		 		<ShowSIMRestrictions>0</ShowSIMRestrictions>
+		 	</Features>
+		 	<!-- configurations specific to app -->
+		 	<Config>
+		 	</Config>	
+		 </Panel>
+		 <Panel id="apps_home" label="HOME">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		 	<Login>0</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		 	<URI id="apps_home">
+		 		<Path>/</Path> <!--friendly url. -->
+		 		<Title>apps_home_menu_text</Title> <!--title of the page. -->
+		 	</URI>
+		 	<Redirects> <!-- This node contains urls for asynchronous requests -->
+		 		<URI id="apps_home_connected_devices_refresh">
+		             <Path>/apps_home/devicesrefresh/</Path>
+		             <Title>apps_home_connected_devices_menu_refresh_text</Title>
+		             <RewriteRule>"^/apps_home/devicesrefresh/*?$" => "/cgi/webui.cgi?id=apps_home&amp;as=1&amp;opr=devicesrefresh"</RewriteRule>
+		         </URI>
+		         <URI id="apps_home_check_for_update">
+		             <Path>/apps_home/checkForUpdate/</Path>
+		             <Title>apps_home_check_for_update_text</Title>
+		             <RewriteRule>"^/apps_home/checkForUpdate/*?$" => "/cgi/webui.cgi?id=apps_home&amp;as=1&amp;opr=checkForUpdate"</RewriteRule>
+		         </URI>
+		         <URI id="apps_home_software_update_status">
+		             <Path>/apps_home/suStatus/</Path>
+		             <Title>apps_home_check_for_update_text</Title>
+		             <RewriteRule>"^/apps_home/suStatus/*?$" => "/cgi/webui.cgi?id=apps_home&amp;as=1&amp;opr=softwareupdatestatus"</RewriteRule>
+		         </URI>
+		         <URI id="apps_home_data_usage_retrieve">
+		     		<Path>/apps_home/retrieve/</Path>
+		        		<Title>apps_home_data_usage_retrieve_menu_text</Title>
+		         	<RewriteRule>"^/apps_home/retrieve/*?$" => "/cgi/webui.cgi?id=apps_home&amp;as=1&amp;opr=retrievefromserver"</RewriteRule>
+		 		</URI>
+		         <URI id="apps_home_data_usage_info">
+		         	<Path>/apps_home/usageinfo/</Path>
+		            	<Title>apps_home_data_usage_info_menu_text</Title>
+		            	<RewriteRule>"^/apps_home/usageinfo/*?$" => "/cgi/webui.cgi?id=apps_home&amp;as=1&amp;opr=getusageinfo"</RewriteRule>
+		         </URI>
+		 		<URI id="apps_home_help">
+		             <Path>/apps_home/help/</Path>
+		             <Title>apps_home_help_text</Title>
+		             <RewriteRule>"^/apps_home/help/*?$" => "/cgi/webui.cgi?id=apps_home&amp;content=help"</RewriteRule>
+		         </URI>
+		 	</Redirects>
+		 	<Features> <!-- Show/Hide status values-->
+		         <ProductCarrierValidation>0</ProductCarrierValidation> <!-- Make sure to update the changes in software_update_page config as well -->
+		 	</Features>
+		 	<Config> <!-- configurations specific to app -->
+		         <ProductCarrierNetwork>1</ProductCarrierNetwork>
+		 	</Config>
+		 </Panel>
+		 <Panel id="backup_restore" label="Backup and Restore">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		         <Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		         <URI id="backup_restore">
+		         	<Path>/backup/</Path> <!--friendly url. -->
+		                 <Title>backup_restore_menu_text</Title> <!--title of the page. -->
+		         </URI>
+		         <Redirects> <!--This node contains urls for asynchronous requests -->
+		        		<URI id="backup_restore_help">
+		                         <Path>/backup/help/</Path>
+		                         <Title>backup_restore_help_text</Title>
+		                         <RewriteRule>"^/backup/help/*?$" => "/cgi/webui.cgi?id=backup_restore&amp;content=help"</RewriteRule>
+		                 </URI>
+		 	</Redirects>
+		 	<Features> <!-- /Show/Hide status values.-->
+		 		<ShowRestartShutdownButtons>0</ShowRestartShutdownButtons> <!-- Display Restart and Shudown options in Back Up and Restore Page-->
+		         <ShowHelpText>0</ShowHelpText><!-- Display help text instead of Note on true else show vise versa -->
+		         <ShowRestartTurnOffNewLayout>1</ShowRestartTurnOffNewLayout><!-- Display Restart and turn off options in Back Up and Restore Page-->
+		         <ShowTurnOffJetpack>0</ShowTurnOffJetpack>
+		 	</Features>
+		         <Config> <!-- configurations specific to app -->
+		 		<ConfigFileExtension>device</ConfigFileExtension>
+		         </Config>
+		 </Panel>
+		 <Panel id="customer_care">
+		         <Enabled>1</Enabled>
+		         <Login>1</Login>
+		         <URI id="customer_care">
+		                 <Path>/support/</Path>
+		                 <Title>customer_care_menu_text</Title>
+		         </URI>
+		 	<Redirects>
+		 		<URI id="customer_care_help">
+		 			<Path>/support/help/</Path>
+		 			<Title>customer_care_help_text</Title>
+		 			<RewriteRule>"^/support/help/*?$" => "/cgi/webui.cgi?id=customer_care&amp;content=help"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		         <Features>
+		 		<ShowPhoneNumber>1</ShowPhoneNumber>
+		 		<ShowModelNumber>1</ShowModelNumber>
+		                 <ShowAdvancedCarrierUnlock>1</ShowAdvancedCarrierUnlock>		
+		         </Features>
+		         <Config>
+		         </Config>
+		 </Panel>
+		 <Panel id="carrier_unlock" label="Support -Advanced">
+		         <Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		         <Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		         <URI id="carrier_unlock">
+		                 <Path>/carrierunlock/</Path> <!--friendly url. -->
+		                 <Title>carrier_unlock_title</Title> <!--title of the page. -->
+		         </URI>
+		         <Redirects> <!-- This node contains urls for asynchronous requests -->
+		         </Redirects>
+		         <Features> <!-- Show/Hide status values-->
+		 			<ShowCustomerInfo>1</ShowCustomerInfo>
+		         </Features>
+		         <Config> <!-- configurations specific to app -->
+		         </Config>
+		 </Panel>
+		 <Panel id="debug_logs" label="Debug Logs">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		         <Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		         <URI id="debug_logs">
+		         	<Path>/debuglogs/</Path> <!--friendly url. -->
+		               	<Title>debug_logs_menu_info_text</Title> <!--title of the page. -->
+		        	</URI>
+		         <Redirects> <!--This node contains urls for asynchronous requests -->
+		         </Redirects>
+		 	<Features> <!-- /Show/Hide status values.-->
+		      <ShowToolTip>0</ShowToolTip>
+		 	</Features>
+		         <Config> <!-- configurations specific to app -->
+		         </Config>
+		 </Panel>
+		 <Panel id="device_info" label="Device Info">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		         <Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		         <URI id="device_info">
+		         	<Path>/deviceinfo/</Path> <!--friendly url. -->
+		                	<Title>device_info_menu_text</Title> <!--title of the page. -->
+		        	</URI>
+		        	<Redirects> <!--This node contains urls for asynchronous requests -->
+		 		<URI id="device_info_help">
+		 			<Path>/deviceinfo/help/</Path>
+		 			<Title>device_info_help_text</Title>
+		 			<RewriteRule>"^/deviceinfo/help/*?$" => "/cgi/webui.cgi?id=device_info&amp;content=help"</RewriteRule>
+		  		</URI>
+		        	</Redirects>
+		         <Features> <!-- /Show/Hide status values.-->
+		 			<ShowDiagInfo>0</ShowDiagInfo>
+		 			<ShowLcdVersion>0</ShowLcdVersion>
+		 			<ShowRadioTechnologies>0</ShowRadioTechnologies>
+		 			<ShowHardwareVersion>0</ShowHardwareVersion>
+		 			<ShowPRICustomization>0</ShowPRICustomization>
+		 			<ShowOsVersion>1</ShowOsVersion>
+		 			<ShowWifiFwVersion>1</ShowWifiFwVersion>
+		 			<ShowSoftwareComponent>1</ShowSoftwareComponent>
+		 			<ShowRestart>0</ShowRestart>
+		 			<ShowRestore>0</ShowRestore>
+		 			<ShowSDMVersion>0</ShowSDMVersion>
+		 			<ShowIMEI>0</ShowIMEI>
+		 			<ShowMDN>0</ShowMDN>
+		 			<ShowToggleSoftwareComponentSection>0</ShowToggleSoftwareComponentSection>
+		 			<ShowMiFiRealVersion>0</ShowMiFiRealVersion>
+		 			<ShowModemVersion>1</ShowModemVersion>
+		 			<showWebUiVersion>0</showWebUiVersion>
+		 			<ShowAppVersion>0</ShowAppVersion>
+		         </Features>
+		         <Config> <!-- configurations specific to app -->
+		        	</Config>
+		 </Panel>
+		 <Panel id="data_usage" label="Data Usage">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		 		<Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		 		<URI id="data_usage">
+		 			<Path>/datausage/</Path>
+		 				<Title>data_usage_menu_text</Title>
+		 		</URI>
+		 	<Redirects> <!--This node contains urls for asynchronous requests -->
+		 			<URI id="data_usage_retrieve">
+		 				<Path>/datausage/retrieve/</Path>
+		 					<Title>data_usage_retrieve_menu_text</Title>
+		 					<RewriteRule>"^/datausage/retrieve/*?$" => "/cgi/webui.cgi?id=data_usage&amp;as=1&amp;api=retrievefromserver"</RewriteRule>
+		 			</URI>
+		 			<URI id="data_usage_get_session_start_info">
+		 				<Path>/datausage/sessionstartinfo/</Path>
+		 					<Title>data_usage_session_start_info_text</Title>
+		 					<RewriteRule>"^/datausage/sessionstartinfo/*?$" => "/cgi/webui.cgi?id=data_usage&amp;as=1&amp;api=sessionstartinfo"</RewriteRule>
+		 			</URI>
+		 			<URI id="data_usage_info">
+		 				<Path>/datausage/info/</Path>
+		 					<Title>data_usage_info_menu_text</Title>
+		 					<RewriteRule>"^/datausage/info/*?$" => "/cgi/webui.cgi?id=data_usage&amp;as=1&amp;api=getusageinfo"</RewriteRule>
+		 			</URI>
+		 			<URI id="data_usage_reset_date">
+		 				<Path>/datausage/resetdate/</Path>
+		 					<Title>data_usage_resetdate_menu_text</Title>
+		 					<RewriteRule>"^/datausage/resetdate/*?$" => "/cgi/webui.cgi?id=data_usage&amp;as=0&amp;opr=resetdate"</RewriteRule>
+		 			</URI>
+		 		<URI id="data_usage_help">
+		 			<Path>/datausage/help/</Path>
+		 			<Title>data_usage_help_text</Title>
+		 			<RewriteRule>"^/datausage/help/*?$" => "/cgi/webui.cgi?id=data_usage&amp;content=help"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<Features> <!-- /Show/Hide status values.-->
+		 		<ShowToolLinks>1</ShowToolLinks>
+		 		<ShowUsageText>1</ShowUsageText>
+		 		<ShowUsageUnavailableText>0</ShowUsageUnavailableText>
+		 		<ShowPieChart>0</ShowPieChart>
+		 		<ShowUsageIntroText>0</ShowUsageIntroText>
+		 	</Features>
+		 	<Config> <!-- configurations specific to app -->
+		 		<MaxPieDeviceCount>5</MaxPieDeviceCount>
+		 	</Config>
+		 </Panel>
+		 <Panel id="lan" label="LAN">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		 		<Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		 		<URI id="lan">
+		 			<Path>/lan/</Path> <!--friendly url. -->
+		 				<Title>adv_lan_menu_text</Title> <!--title of the page. -->
+		 		</URI>
+		 	<Redirects> <!-- This node contains urls for asynchronous requests -->
+		 		<URI id="lan_help">
+		 			<Path>/lan/help/</Path>
+		 			<Title>adv_lan_help_text</Title>
+		 			<RewriteRule>"^/lan/help/*?$" => "/cgi/webui.cgi?id=lan&amp;content=help"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<Features> <!-- Show/Hide status values-->
+		 		<ShowLANHttpsStatement>0</ShowLANHttpsStatement>
+		 		<ShowLANDeviceName>1</ShowLANDeviceName>
+		 		<ShowLANIPAddress>1</ShowLANIPAddress>
+		 		<ShowLANSubnetMask>1</ShowLANSubnetMask>
+		 		<ShowLANMacAddress>1</ShowLANMacAddress>
+		 		<ShowLANDHCPEnable>1</ShowLANDHCPEnable>
+		 		<ShowLANDHCPLeaseTime>1</ShowLANDHCPLeaseTime>
+		 		<ShowLANDHCPStartAddress>1</ShowLANDHCPStartAddress>
+		 		<ShowLANDHCPEndAddress>1</ShowLANDHCPEndAddress>
+		 		<ShowReservedIPFeature>0</ShowReservedIPFeature>
+		 		<ShowIPv6EnableHelp>1</ShowIPv6EnableHelp>
+		 		<ShowIPv6EnableOption>1</ShowIPv6EnableOption>
+		 		<ShowDHCPEndAddressEditOption>1</ShowDHCPEndAddressEditOption>
+		 		<ShowEthernetMACAddress>0</ShowEthernetMACAddress>
+		 	</Features>
+		 	<Config> <!-- configurations specific to app -->
+		 		<DHCPLeaseTimeMaxLimit>71582788</DHCPLeaseTimeMaxLimit>
+		 	</Config>
+		 </Panel>
+		 <Panel id="gps" label="GPS">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		 		<Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		 		<URI id="gps">
+		 			<Path>/gps/</Path> <!--friendly url. -->
+		 				<Title>gps_status_menu_text</Title> <!--title of the page. -->
+		 		</URI>
+		 		<Redirects> <!--This node contains urls for asynchronous requests -->
+		 		<URI id="gps_status_api">
+		 					<Path>/gps/status/</Path>
+		 						<Title>gps_status_menu_api_text</Title>
+		 						<RewriteRule>"^/gps/status/*?$" => "/cgi/webui.cgi?id=gps&amp;as=1&amp;api=status"</RewriteRule>
+		 				</URI>
+		 				<URI id="gps_status_enablegps">
+		 						<Path>/gps/enablegps/</Path>
+		 						<Title>gps_status_menu_enablegps_text</Title>
+		 						<RewriteRule>"^/gps/enablegps/*?$" => "/cgi/webui.cgi?id=gps&amp;as=1&amp;api=enablegps"</RewriteRule>
+		 				</URI>
+		 				<URI id="gps_status_disablegps">
+		 					<Path>/gps/disablegps/</Path>
+		 						<Title>gps_status_menu_disablegps_text</Title>
+		 						<RewriteRule>"^/gps/disablegps/*?$" => "/cgi/webui.cgi?id=gps&amp;as=1&amp;api=disablegps"</RewriteRule>
+		 				</URI>
+		 				<URI id="gps_status_enablegpsprivacy">
+		 					<Path>/gps/enablegpsprivacy/</Path>
+		 						<Title>gps_status_menu_enablegpsprivacy_text</Title>
+		 						<RewriteRule>"^/gps/enablegpsprivacy/*?$" => "/cgi/webui.cgi?id=gps&amp;as=1&amp;api=enablegpsprivacy"</RewriteRule>
+		 				</URI>
+		 				<URI id="gps_status_disablegpsprivacy">
+		 					<Path>/gps/disablegpsprivacy/</Path>
+		 						<Title>gps_status_menu_disablegpsprivacy_text</Title>
+		 						<RewriteRule>"^/gps/disablegpsprivacy/*?$" => "/cgi/webui.cgi?id=gps&amp;as=1&amp;api=disablegpsprivacy"</RewriteRule>
+		 				</URI>
+		 				<URI id="gps_status_startupstatuson">
+		 					<Path>/gps/startupstatuson/</Path>
+		 						<Title>gps_status_menu_startupstatuson_text</Title>
+		 						<RewriteRule>"^/gps/startupstatuson/*?$" => "/cgi/webui.cgi?id=gps&amp;as=1&amp;api=startupstatuson"</RewriteRule>
+		 				</URI>
+		 				<URI id="gps_status_startupstatusoff">
+		 					<Path>/gps/startupstatusoff/</Path>
+		 						<Title>gps_status_menu_startupstatusoff_text</Title>
+		 						<RewriteRule>"^/gps/startupstatusoff/*?$" => "/cgi/webui.cgi?id=gps&amp;as=1&amp;api=startupstatusoff"</RewriteRule>
+		 				</URI>
+		 				<URI id="gps_status_gpsoverwifienable">
+		 					<Path>/gps/gpsoverwifienable/</Path>
+		 						<Title>gps_status_gpsoverwifienable_text</Title>
+		 						<RewriteRule>"^/gps/gpsoverwifienable/*?$" => "/cgi/webui.cgi?id=gps&amp;as=1&amp;api=gpsoverwifienable"</RewriteRule>
+		 				</URI>
+		 				<URI id="gps_status_gpsoverwifidisable">
+		 					<Path>/gps/gpsoverwifidisable/</Path>
+		 						<Title>gps_status_menu_gpsoverwifidisable_text</Title>
+		 						<RewriteRule>"^/gps/gpsoverwifidisable/*?$" => "/cgi/webui.cgi?id=gps&amp;as=1&amp;api=gpsoverwifidisable"</RewriteRule>
+		 				</URI>
+		 				<URI id="gps_status_setnmeaportnumber">
+		 					<Path>/gps/gpsportnumber/</Path>
+		 						<Title>gps_status_menu_gpsportnumber_text</Title>
+		 						<RewriteRule>"^/gps/gpsportnumber/*?$" => "/cgi/webui.cgi?id=gps&amp;as=1&amp;api=gpsportnumber"</RewriteRule>
+		 				</URI>
+		 		<URI id="gps_help">
+		 			<Path>/gps/help/</Path>
+		 			<Title>gps_status_help_text</Title>
+		 			<RewriteRule>"^/gps/help/*?$" => "/cgi/webui.cgi?id=gps&amp;content=help"</RewriteRule>
+		 		</URI>
+		 		</Redirects>
+		 		<Features> <!-- /Show/Hide status values.-->
+		 			<ShowGPSAgreement>1</ShowGPSAgreement>
+		 			<ShowNMEAOverWifi>1</ShowNMEAOverWifi>
+		 			<ShowCurrentLocation>1</ShowCurrentLocation>
+		 			<ShowDownloadGpsDriver>1</ShowDownloadGpsDriver>
+		 			<ShowGPSOverWiFiSettings>1</ShowGPSOverWiFiSettings>
+		 			<ShowMapWhileSearching>0</ShowMapWhileSearching>
+		 			<GPSEnableShow>1</GPSEnableShow>
+		 			<GPSTurnOffConditionShow>1</GPSTurnOffConditionShow>
+		 		</Features> 
+		 		<Config> <!-- configurations specific to app -->
+		 		</Config>
+		 </Panel>
+		 <Panel id="manual_dns" label="Manual DNS">
+		 	<Enabled>1</Enabled>
+		 	<Login>1</Login>
+		 	<URI id="manual_dns">
+		 		<Path>/manualdns/</Path>
+		 		<Title>adv_manual_dns_menu_text</Title>
+		 	</URI>
+		 	<!-- contains urls for asynchronous requests -->
+		 	<Redirects>
+		 		<URI id="manual_dns_help">
+		 			<Path>/manualdns/help/</Path>
+		 			<Title>adv_manual_dns_help_text</Title>
+		 			<RewriteRule>"^/manualdns/help/*?$" => "/cgi/webui.cgi?id=manual_dns&amp;content=help"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<!-- show/hide status values -->
+		 	<Features>
+		 		<ShowPlaceHolderText>1</ShowPlaceHolderText>
+		 		<ShowHeaderText>1</ShowHeaderText>
+		 	</Features>
+		 	<!-- configurations specific to app -->
+		 	<Config>
+		 	</Config>
+		 </Panel>
+		 <Panel id="lab_test_info" label="Lab Test Info">
+		 	<!-- show or hide the page -->
+		 	<Enabled>1</Enabled>
+		 	<!-- prompt for user login -->
+		 	<Login>1</Login>
+		 	<URI id="lab_test_info">
+		         	<Path>/labtestinfo/</Path> <!--friendly url. -->
+		                 <Title>lab_test_info_menu_text</Title> <!--title of the page. -->
+		         </URI>
+		 	<!-- contains Paths for asynchronous requests -->
+		 	<Redirects>
+		 	</Redirects>
+		 	<!-- show/hide status values -->
+		 	<Features>
+		 		<ShowDeviceMode>0</ShowDeviceMode>
+		 		<ShowConnectionControls>1</ShowConnectionControls>
+		 		<ShowEnterpriseMode>0</ShowEnterpriseMode>
+		 		<ShowIpptMode>0</ShowIpptMode>
+		 		<ShowInseegoConnectInfo>1</ShowInseegoConnectInfo>
+		 		<ShowSetupDemo>1</ShowSetupDemo>
+		 		<ShowAppVersion>1</ShowAppVersion>
+		 	</Features>
+		 	<!-- configurations specific to app -->
+		 	<Config>
+		 	</Config>
+		 </Panel>
+		 <Panel id="login" label="Login">
+		 	<Enabled>1</Enabled>
+		 	<Login>0</Login>
+		 	<URI id="login">
+		 		<Path>/login/</Path>
+		 		<Title>login_menu_text</Title>
+		 	</URI>
+		 	<!-- contains urls for asynchronous requests -->
+		 	<Redirects>
+		 		<URI id="logout">
+		 			<Path>/logout/</Path>
+		 			<Title>login_menu_logout_text</Title>
+		 			<RewriteRule>"^/logout/*?$" => "/cgi/webui.cgi?id=login&amp;do=logout"</RewriteRule>
+		 		</URI>
+		 		<URI id="validate_secAnswer">
+		 			<Path>/validate/</Path>
+		 			<Title>login_menu_validate_text</Title>
+		 			<RewriteRule>"^/validate/*?$" => "/cgi/webui.cgi?id=login&amp;as=1&amp;do=validate"</RewriteRule>
+		 		</URI>
+		 		<URI id="submit_login">
+		 			<Path>/submitLogin/</Path>
+		 			<Title>login_menu_validate_text</Title>
+		 			<RewriteRule>"^/submitLogin/*?$" => "/cgi/webui.cgi?id=login&amp;as=1&amp;do=submitLogin"</RewriteRule>
+		 		</URI>
+		 		<URI id="login_redirect">
+		 			<Path>/login/redirect/</Path>
+		 			<Title>login_menu_text</Title>
+		 			<RewriteRule>"^/login/([a-zA-Z]+)/$" => "/cgi/webui.cgi?id=login&amp;redirectLocation=$1"</RewriteRule>
+		 		</URI>
+		 		<URI id="login_help">
+		 			<Path>/login/help/</Path>
+		 			<Title>login_help_text</Title>
+		 			<RewriteRule>"^/login/help/*?$" => "/cgi/webui.cgi?id=login&amp;content=help"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<!-- show/hide status values-->
+		 	<Features> 
+		 		<ShowForgotPassword>1</ShowForgotPassword>
+		 		<ShowForgotPasswordSecurityQuestion>1</ShowForgotPasswordSecurityQuestion>
+		 		<ShowDefaultAdminPassword>0</ShowDefaultAdminPassword>
+		 		<ShowLoginAsPopUp>1</ShowLoginAsPopUp>
+		 		<ShowCoverageMap>0</ShowCoverageMap>
+		 		<ShowSeparateUGAndSupport>0</ShowSeparateUGAndSupport>
+		 	</Features>
+		 	<!-- configurations specific to app -->
+		 	<Config> 
+		 	</Config>
+		 </Panel>
+		 <Panel id="inseego_connect" label="Inseego Connect">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		 	<Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		 	<URI id="inseego_connect">
+		 		<Path>/inseegoconnect/</Path> <!--friendly url. -->
+		 		<Title>inseego_connect_menu_text</Title> <!--title of the page. -->
+		 	</URI>
+		 	<Redirects> <!--This node contains urls for asynchronous requests -->
+		 		<URI id="inseego_connect_help">
+		 			<Path>/inseegoconnect/help/</Path>
+		 			<Title>inseego_connect_help_text</Title>
+		 			<RewriteRule>"^/inseegoconnect/help/*?$" => "/cgi/webui.cgi?id=inseego_connect&amp;content=help"</RewriteRule>
+		 		</URI>
+		 		<URI id="inseego_connect_enable">
+		 			<Path>/inseegoconnect/inseegoconnectenable/</Path>
+		 			<Title>inseego_connect_enable_text</Title>
+		 			<RewriteRule>"^/inseegoconnect/inseegoconnectenable/*?$" => "/cgi/webui.cgi?id=inseego_connect&amp;as=1&amp;inseegoconnectenabled=1"</RewriteRule>
+		 		</URI>
+		 		<URI id="inseego_connect_disable">
+		 			<Path>/inseegoconnect/inseegoconnectdisable/</Path>
+		 			<Title>inseego_connect_disable_text</Title>
+		 			<RewriteRule>"^/inseegoconnect/inseegoconnectdisable/*?$" => "/cgi/webui.cgi?id=inseego_connect&amp;as=1&amp;inseegoconnectenabled=0"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<Features>
+		 		<ShowMobileAppSection>0</ShowMobileAppSection>
+		 		<ShowInseegoConnectEnable>1</ShowInseegoConnectEnable>
+		 	</Features>
+		 	<Config>
+		 	</Config>
+		 </Panel>
+		 <Panel id="resetting" label="Resetting">
+		 	<Enabled>1</Enabled>
+		 	<Login>1</Login>
+		 	<URI id="resetting">
+		 		<Path>/resetting/</Path>
+		 		<Title>resetting_menu_text</Title>
+		 	</URI>
+		 	<!-- contains urls for asynchronous requests -->
+		 	<Redirects>
+		 	</Redirects>
+		 	<!-- show/hide status values -->
+		 	<Features> 
+		 	</Features>
+		 	<!-- configurations specific to app -->
+		 	<Config> 
+		 	</Config>
+		 </Panel>
+		 <Panel id="set_passcode" label="Admin Password">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		 	<Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		 	<URI id="set_passcode">
+		 		<Path>/adminpassword/</Path> <!--friendly url. -->
+		 		<Title>set_passcode_menu_text</Title> <!--title of the page. -->
+		 	</URI>
+		 	<Redirects> <!--This node contains urls for asynchronous requests -->	
+		 		<URI id="set_passcode_enable_display">
+		 			<Path>/adminpassword/enabledisplaypasscode/</Path>
+		 			<Title>set_passcode_menu_text</Title>
+		 			<RewriteRule>"^/adminpassword/enabledisplaypasscode/*?$" => "/cgi/webui.cgi?id=set_passcode&amp;as=1&amp;opr=true"</RewriteRule>
+		 		</URI>
+		 		<URI id="set_passcode_disable_display">
+		 			<Path>/adminpassword/disabledisplaypasscode/</Path>
+		 			<Title>set_passcode_menu_text</Title>
+		 			<RewriteRule>"^/adminpassword/disabledisplaypasscode/*?$" => "/cgi/webui.cgi?id=set_passcode&amp;as=1&amp;opr=false"</RewriteRule>
+		 		</URI>
+		 		<URI id="set_passcode_verify_current_password">
+		 			<Path>/adminpassword/verifyCurrentPassword/</Path>
+		 			<Title>set_passcode_menu_text</Title>
+		 			<RewriteRule>"^/adminpassword/verifyCurrentPassword/*?$" => "/cgi/webui.cgi?id=set_passcode&amp;as=1&amp;opr=verifyPassword"</RewriteRule>
+		 		</URI>
+		 		<URI id="set_passcode_verify_new_password">
+		 			<Path>/adminpassword/verifyNewPassword/</Path>
+		 			<Title>set_passcode_menu_text</Title>
+		 			<RewriteRule>"^/adminpassword/verifyNewPassword/*?$" => "/cgi/webui.cgi?id=set_passcode&amp;as=1&amp;opr=verifyNewPassword"</RewriteRule>
+		 		</URI>
+		 		<URI id="set_passcode_help">
+		                         <Path>/adminpassword/help/</Path>
+		                         <Title>set_passcode_help_text</Title>
+		                         <RewriteRule>"^/adminpassword/help/*?$" => "/cgi/webui.cgi?id=set_passcode&amp;content=help"</RewriteRule>
+		                 </URI>
+		 	</Redirects>
+		 	<Features> <!-- /Show/Hide status values.-->
+		 		<ShowDisplayPasscode>0</ShowDisplayPasscode>
+		 		<AllowDefaultPassword>1</AllowDefaultPassword>
+		 	</Features>
+		 	<Config> <!-- configurations specific to app -->
+		 		<MinimumPasscodeLength>8</MinimumPasscodeLength>
+		 	</Config>
+		 </Panel>
+		 <Panel id="sms" label="Message Center">
+		 	<Enabled>0</Enabled>
+		 	<Login>1</Login>
+		 	<URI id="sms">
+		 		<Path>/sms/</Path>
+		 		<Title>sms_menu_text</Title>
+		 	</URI>
+		 	<!-- contains urls for asynchronous requests -->
+		 	<Redirects>
+		 		<URI id="sms_set_state">
+		 			<Path>/sms/setstate/</Path>
+		 			<Title>sms_menu_set_state_text</Title>
+		 			<RewriteRule>"^/sms/setstate/*?$" => "/cgi/webui.cgi?id=sms&amp;as=1&amp;opr=setState"</RewriteRule>
+		 		</URI>
+		 		<URI id="sms_delete_message">
+		 			<Path>/sms/deletemessage/</Path>
+		 			<Title>sms_menu_delete_message_text</Title>
+		 			<RewriteRule>"^/sms/deletemessage/*?$" => "/cgi/webui.cgi?id=sms&amp;as=1&amp;opr=deleteMsg"</RewriteRule>
+		 		</URI>
+		 		<URI id="sms_delete_all">
+		 			<Path>/sms/deleteall/</Path>
+		 			<Title>sms_menu_delete_all_text</Title>
+		 			<RewriteRule>"^/sms/deleteall/*?$" => "/cgi/webui.cgi?id=sms&amp;as=1&amp;opr=deleteAll"</RewriteRule>
+		 		</URI>
+		 		<URI id="sms_list_refresh">
+		                         <Path>/sms/refresh/</Path>
+		                 	<Title>sms_refresh_text</Title>
+		                 	<RewriteRule>"^/sms/refresh/*?$" => "/cgi/webui.cgi?id=sms&amp;as=1&amp;opr=refreshSms"</RewriteRule>
+		         	</URI>
+		 		<URI id="sms_help">
+		                         <Path>/sms/help/</Path>
+		                 	<Title>sms_help_text</Title>
+		                 	<RewriteRule>"^/sms/help/*?$" => "/cgi/webui.cgi?id=sms&amp;content=help"</RewriteRule>
+		         	</URI>
+		 	</Redirects>
+		 	<!-- show/hide status values -->
+		 	<Features> 
+		 		<ShowSendSMS>0</ShowSendSMS>
+		 		<ShowSMSLocalTimeSupport>1</ShowSMSLocalTimeSupport>
+		 		<ShowDeleteAllButton>0</ShowDeleteAllButton>
+		 		<ShowMessageCounter>0</ShowMessageCounter>
+		 	</Features>
+		 	<!-- configurations specific to app -->
+		 	<Config>
+		 		<SMSValidYear>2017</SMSValidYear> 
+		 	</Config>
+		 </Panel>
+		 <Panel id="ztp" label="ztp">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		 	<Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		 	<URI id="ztp">
+		 		<Path>/ztp/</Path> <!--friendly url. -->
+		 		<Title>ztp_menu_text</Title> <!--title of the page. -->
+		 	</URI>
+		 	<Redirects> <!--This node contains urls for asynchronous requests -->
+		 		<URI id="ztp_help">
+		 			<Path>/ztp/help/</Path>
+		 			<Title>ztp_help_text</Title>
+		 			<RewriteRule>"^/ztp/help/*?$" => "/cgi/webui.cgi?id=ztp&amp;content=help"</RewriteRule>
+		 		</URI>
+		 		<URI id="ztp_status_retrieve">
+		 			<Path>/ztp/status/</Path>
+		 			<Title>ztp_status_retrieve_menu_text</Title>
+		 			<RewriteRule>"^/ztp/status/*?$" => "/cgi/webui.cgi?id=ztp&amp;as=1&amp;api=statusRetrieve"</RewriteRule>
+		 		</URI>
+		 		<URI id="ztp_store_ip_url">
+		 			<Path>/ztp/storeipurl/</Path>
+		 			<Title>ztp_store_ip_url_menu_text</Title>
+		 			<RewriteRule>"^/ztp/storeipurl/*?$" => "/cgi/webui.cgi?id=ztp&amp;as=1&amp;api=storeipurl"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<Features> <!-- /Show/Hide status values.-->
+		 	</Features>
+		 	<Config> <!-- configurations specific to app -->
+		 	</Config>
+		 </Panel>
+		 <Panel id="user_preferences" label="User Preference">
+		 	<Enabled>1</Enabled>
+		 	<Login>1</Login>
+		 	<URI id="user_preferences">
+		 		<Path>/userpreferences/</Path>
+		 		<Title>preferences_personalization_sub_header_text</Title>
+		 	</URI>
+		 	<Redirects>
+		 		<URI id="user_preferences_help">
+		 			<Path>/userpreferences/help/</Path>
+		 			<Title>preferences_personalization_help_text</Title>
+		 			<RewriteRule>"^/userpreferences/help/*?$" => "/cgi/webui.cgi?id=user_preferences&amp;content=help"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<Features>
+		 		<ShowEthernetEnable>1</ShowEthernetEnable>
+		 		<ShowDeviceName>1</ShowDeviceName>
+		 		<ShowDeviceNameReadOnly>0</ShowDeviceNameReadOnly>
+		 		<ShowHeaderText>1</ShowHeaderText>
+		 		<ShowCPERebootEnable>1</ShowCPERebootEnable>
+		 	</Features>
+		 	<Config>
+		 	</Config> 
+		 </Panel>
+		 <Panel id="settings_virtual" label="Advanced">
+		         <Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		         <Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		         <URI id="settings_virtual"> 
+		                 <Path>/advanced/</Path> <!--friendly url. -->
+		                 <Title>adv_settings_virtual_menu_text</Title> <!--title of the page. -->
+		         </URI>
+		 	<Redirects>
+		 		<URI id="settings_virtual_help">
+		 			<Path>/advanced/help/</Path>
+		 			<Title>adv_settings_virtual_help_text</Title>
+		 			<RewriteRule>"^/advanced/help/*?$" => "/cgi/webui.cgi?id=settings_virtual&amp;content=help"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<Features> <!-- Show/Hide status values.-->
+		 		<ShowBackButton>0</ShowBackButton>
+		 	</Features>
+		 	<Config> <!-- configurations specific to app -->
+		 		<RedirectAppId>wwan_settings</RedirectAppId>
+		 	</Config>
+		 </Panel>
+		 <Panel id="software_update" label="Software Update">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		 	<Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		 	<URI id="software_update">
+		 		<Path>/softwareupdate/</Path>
+		 		<Title>software_update_menu_text</Title>
+		 	</URI>
+		 	<Redirects> <!--This node contains urls for asynchronous requests -->
+		 		<URI id="software_update_help">
+		 			<Path>/softwareupdate/help/</Path>
+		 			<Title>software_update_help_text</Title>
+		 			<RewriteRule>"^/softwareupdate/help/*?$"  => "/cgi/webui.cgi?id=software_update&amp;content=help"</RewriteRule>
+		 		</URI>
+		 		<URI id="software_update_check">
+		 			<Path>/softwareupdate/checkforupdate/</Path>
+		 			<Title>software_update_check_text</Title>
+		 			<RewriteRule>"^/softwareupdate/checkforupdate/*?$"  => "/cgi/webui.cgi?id=software_update&amp;as=1&amp;opr=softwareupdatecheck"</RewriteRule>
+		 		</URI>
+		 		<URI id="software_update_install_now">
+		 			<Path>/softwareupdate/installnow/</Path>
+		 			<Title>software_update_install_now_text</Title>
+		 			<RewriteRule>"^/softwareupdate/installnow/*?$"  => "/cgi/webui.cgi?id=software_update&amp;as=1&amp;opr=installnow"</RewriteRule>
+		 		</URI>
+		 		<URI id="software_update_defer">
+		 			<Path>/softwareupdate/defer/</Path>
+		 			<Title>software_update_defer_text</Title>
+		 			<RewriteRule>"^/softwareupdate/defer/*?$"  => "/cgi/webui.cgi?id=software_update&amp;as=1&amp;opr=defer"</RewriteRule>
+		 		</URI>
+		 		<URI id="opt_out_enable">
+		 			<Path>/softwareupdate/optoutenable/</Path>
+		 			<Title>software_update_opt_out_enable_text</Title>
+		 			<RewriteRule>"^/softwareupdate/optoutenable/*?$" => "/cgi/webui.cgi?id=software_update&amp;as=1&amp;optoutenabled=1"</RewriteRule>
+		 		</URI>
+		 		<URI id="opt_out_disable">
+		 			<Path>/softwareupdate/optoutdisable/</Path>
+		 			<Title>software_update_opt_out_disable_text</Title>
+		 			<RewriteRule>"^/softwareupdate/optoutdisable/*?$" => "/cgi/webui.cgi?id=software_update&amp;as=1&amp;optoutenabled=0"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<Features> <!-- /Show/Hide status values.-->
+		 		<SoftwareUpdateCheckSection>1</SoftwareUpdateCheckSection>
+		 		<ShowSUOptOutButton>0</ShowSUOptOutButton>
+		 		<LastSoftwareUpdateSection>1</LastSoftwareUpdateSection> <!--Description for the last updated entries-->
+		 		<ConfigurationVersion>0</ConfigurationVersion>
+		 		<ProductCarrierValidation>0</ProductCarrierValidation> <!-- Make sure to update the changes in home_page config as well if "check-for-update" button is present in home_page -->
+		 		<ShowConfigUpdateInHistory>0</ShowConfigUpdateInHistory>
+		 		<ShowFailedRecordInHistory>0</ShowFailedRecordInHistory>
+		 		<ShowMiFiRealVersion>1</ShowMiFiRealVersion>
+		 		<ToggleSystemUpdateHistory>0</ToggleSystemUpdateHistory>
+		 		<HiddenIfNeverUpdated>0</HiddenIfNeverUpdated>
+		 		<ShowAppVersion>0</ShowAppVersion>
+		 	</Features>
+		 	<Config> <!-- configurations specific to app -->
+		 		<ProductCarrierNetwork>1</ProductCarrierNetwork> <!-- 0-Information not available,1-Verizon Wireless,2-Bell Mobility Canada,3-T-Mobile USA,4-AT&T USA,5-Unknown carrier -->
+		 		<RecordCountInHistory>2</RecordCountInHistory>
+		 	</Config>
+		 </Panel>
+		 <Panel id="restarting" label="Restarting">
+		 	<Enabled>1</Enabled>
+		 	<Login>1</Login>
+		 	<URI id="restarting">
+		 		<Path>/restarting/</Path>
+		 		<Title>restarting_menu_text</Title>
+		 	</URI>
+		 	<!-- contains urls for asynchronous requests -->
+		 	<Redirects>
+		 		<URI id="restarting_do_reboot">
+		 			<Path>/restarting/reboot/</Path>
+		 			<Title>restarting_menu_do_reboot_text</Title>
+		 			<RewriteRule>"^/restarting/reboot/*?$" => "/cgi/webui.cgi?id=restarting&amp;as=1&amp;reboot=true"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<!-- show/hide status values -->
+		 	<Features> 
+		 		<ShowDeviceImage>0</ShowDeviceImage>
+		 		<ShowCustomNonResponding>0</ShowCustomNonResponding>
+		 		<ShowRedirectToLoginPage>0</ShowRedirectToLoginPage>
+		 	</Features>
+		 	<!-- configurations specific to app -->
+		 	<Config> 
+		 	</Config>
+		 </Panel>
+		 <Panel id="shutdown" label="Shutdown">
+		 	<Enabled>1</Enabled>
+		 	<Login>1</Login>
+		 	<URI id="shutdown">
+		 		<Path>/shutdown/</Path>
+		 		<Title>shutdown_menu_text</Title>
+		 	</URI>
+		 	<!-- contains urls for asynchronous requests -->
+		 	<Redirects> 
+		 		<URI id="shutdown_do_shutdown">
+		 			<Path>/shutdown/doshutdown/</Path>
+		 			<Title>shutdown_menu_do_shutdown_text</Title>
+		 			<RewriteRule>"^/shutdown/doshutdown/*?$" => "/cgi/webui.cgi?id=shutdown&amp;as=1&amp;shutdown=1"</RewriteRule>
+		 		</URI>
+		 	</Redirects> 
+		 	<!-- show/hide status values -->
+		 	<Features> 
+		 	</Features>
+		 	<!-- configurations specific to app -->
+		 	<Config> 
+		 	</Config>
+		 </Panel>
+		 <Panel id="sideload_software_update" label="SideloadSoftwareUpdate">
+		         <Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		         <Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		         <URI id="sideload_software_update">
+		                 <Path>/sideload/</Path> <!--friendly url. -->
+		                 <Title>sideload_software_update_menu_text</Title> <!--title of the page. -->
+		         </URI>
+		         <Redirects> <!--This node contains urls for asynchronous requests -->
+		         </Redirects>
+		         <Features> <!-- /Show/Hide status values.-->
+		         </Features>
+		         <Config> <!-- configurations specific to app -->
+		         </Config>
+		 </Panel>
+		 <Panel id="software_install" label="SoftwareInstall">
+		     <Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		     <Login>0</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		     <URI id="software_install">
+		         <Path>/softwareupdateprogress/</Path> <!--friendly url. -->
+		         <Title>software_install_menu_text</Title> <!--title of the page. -->
+		     </URI>
+		     <Redirects> <!--This node contains urls for asynchronous requests -->
+		     <URI id="software_install_status">
+		 	    <Path>/softwareupdateprogress/installstatus/</Path>
+		 	    <Title>software_install_status_text</Title>
+		 	    <RewriteRule>"^/softwareupdateprogress/installstatus/*?$"  => "/cgi/webui.cgi?id=software_install&amp;as=1&amp;opr=installstatus"</RewriteRule>
+		     </URI>
+		     </Redirects>
+		     <Features> <!-- /Show/Hide status values.-->
+		     </Features>
+		     <Config> <!-- configurations specific to app -->
+		     </Config>
+		 </Panel>
+		 <Panel id="sideload_software_install" label="SideloadSoftwareInstall">
+		     <Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		     <Login>0</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		     <URI id="sideload_software_install">
+		         <Path>/sideloadupdateprogress/</Path> <!--friendly url. -->
+		         <Title>sideload_software_install_menu_text</Title> <!--title of the page. -->
+		     </URI>
+		     <Redirects> <!--This node contains urls for asynchronous requests -->
+		     <URI id="sideload_software_install_status">
+		 	    <Path>/sideloadupdateprogress/installstatus/</Path>
+		 	    <Title>sideload_software_install_status_text</Title>
+		 	    <RewriteRule>"^/sideloadupdateprogress/installstatus/*?$"  => "/cgi/webui.cgi?id=sideload_software_install&amp;as=1&amp;opr=installstatus"</RewriteRule>
+		     </URI>
+		     </Redirects>
+		     <Features> <!-- /Show/Hide status values.-->
+		     </Features>
+		     <Config> <!-- configurations specific to app -->
+		     </Config>
+		 </Panel>
+		 <Panel id="status_current" label="Internet Status">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		         <Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		         <URI id="status_current">
+		         	<Path>/internet/</Path> <!--friendly url. -->
+		                	<Title>status_current_menu_text</Title> <!--title of the page. -->
+		        	</URI>
+		         <Redirects> <!--This node contains urls for asynchronous requests -->
+		 		<URI id="status_current_help">
+		                         <Path>/internet/help/</Path>
+		                         <Title>status_current_help_text</Title>
+		                         <RewriteRule>"^/internet/help/*?$" => "/cgi/webui.cgi?id=status_current&amp;content=help"</RewriteRule>
+		                 </URI>
+		        	</Redirects>
+		         <Features> <!-- /Show/Hide status values.-->
+		             <ShowInternetSessionsButton>0</ShowInternetSessionsButton>
+		         </Features>
+		         <Config> <!-- configurations specific to app -->
+		         </Config>
+		 </Panel>
+		 <Panel id="status_diagnostics" label="Diagnostics">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		 	<Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		 	<URI id="status_diagnostics">
+		 		<Path>/diagnostics/</Path> <!--friendly url. -->
+		 		<Title>status_diagnostics_menu_text</Title> <!--title of the page. -->
+		 	</URI>
+		 	<Redirects> <!--This node contains urls for asynchronous requests -->
+		 		<URI id="status_diagnostics_help">
+		 			<Path>/diagnostics/help/</Path>
+		 			<Title>status_diagnostics_help_text</Title>
+		 			<RewriteRule>"^/diagnostics/help/*?$" => "/cgi/webui.cgi?id=status_diagnostics&amp;content=help"</RewriteRule>
+		  		</URI>
+		         </Redirects>
+		 	<Features> <!-- /Show/Hide status values.-->
+		 		<ShowIMSI>0</ShowIMSI>
+		 		<ShowMEID>0</ShowMEID> <!-- Display MEID on diagnostics Page-->
+		 		<Show3G>0</Show3G> <!--Display 3G info on diagnostics application.-->
+		 		<Show3GTechnology>1</Show3GTechnology>
+		 		<Show3GEVDORSSI>1</Show3GEVDORSSI>
+		 		<ShowDiagFieldTest>1</ShowDiagFieldTest>
+		 		<ShowDiagNetOperator>1</ShowDiagNetOperator> <!-- Display Network Operator on Diagnostics page-->
+		 		<ShowDiagModemDetails>1</ShowDiagModemDetails>
+		 		<ShowIMSISV>1</ShowIMSISV>
+		 		<ShowDiagnosticsVoiceNetworkOperator>0</ShowDiagnosticsVoiceNetworkOperator> <!-- Display Voice Network Operator on the Diagnositcs Page -->
+		 		<ShowLTEBand>1</ShowLTEBand>
+		 		<ShowDiagRoaming>0</ShowDiagRoaming>
+		 		<ShowTechnologyEVDO>0</ShowTechnologyEVDO> <!-- EVDO features -->
+		 		<ShowTechnologyHSPA>0</ShowTechnologyHSPA>  <!-- HSPA features -->
+		 		<ShowESN>0</ShowESN>
+		 		<ShowHomeSID>0</ShowHomeSID>
+		 		<ShowERIVersion>0</ShowERIVersion>
+		 		<ShowPRLVersion>0</ShowPRLVersion>
+		 		<ShowMINMSID>0</ShowMINMSID>
+		 		<ShowPhoneNumber>1</ShowPhoneNumber>
+		 		<ShowTechnology>1</ShowTechnology>
+		 		<ShowIMEI>1</ShowIMEI>
+		 		<ShowFwVersion>1</ShowFwVersion>
+		 		<ShowSimStatus>1</ShowSimStatus>
+		 		<ShowICCID>1</ShowICCID>
+		 		<ShowInternetStatus4G>1</ShowInternetStatus4G>
+		 		<ShowSignalStrength>1</ShowSignalStrength>
+		 		<ShowSINR>1</ShowSINR>
+		 		<ShowBandwidth>1</ShowBandwidth>
+		 	</Features>
+		         <Config> <!-- configurations specific to app -->
+		         </Config>
+		 </Panel>
+		 <Panel id="status_logs" label="Logs">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		 	<Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		 	<URI id="status_logs">
+		 		<Path>/logs/</Path> <!--friendly url. -->
+		 		<Title>status_logs_menu_text</Title> <!--Title of the page. -->
+		 	</URI>
+		 	<Redirects> <!--This node contains urls for asynchronous requests -->
+		 		<URI id="status_logs_help">
+		 			<Path>/log/help/</Path>
+		 			<Title>status_logs_help_text</Title>
+		 			<RewriteRule>"^/log/help/*?$"  => "/cgi/webui.cgi?id=status_logs&amp;content=help"</RewriteRule>
+		 		</URI>
+		 		<URI id="status_logs_getwwanlog">
+		 			<Path>/log/getwwanlog/</Path>
+		 			<Title>menu_status_logs_getwwanlog_text</Title>
+		 			<RewriteRule>"^/log/getwwanlog/*?$"  => "/cgi/webui.cgi?id=status_logs&amp;as=1&amp;api=getwwaneventlog"</RewriteRule>
+		 		</URI>
+		 		<URI id="status_logs_getconnlog">
+		 			<Path>/log/getconnlog/</Path>
+		 			<Title>menu_status_logs_getconnlog_text</Title>
+		 			<RewriteRule>"^/log/getconnlog/*?$"  => "/cgi/webui.cgi?id=status_logs&amp;as=1&amp;api=getconnectionlog"</RewriteRule>
+		 		</URI>
+		 		<URI id="status_logs_getsyslog">
+		 			<Path>/log/getsyslog/</Path>
+		 			<Title>menu_status_logs_getsyslog_text</Title>
+		 			<RewriteRule>"^/log/getsyslog/*?$"  => "/cgi/webui.cgi?id=status_logs&amp;as=1&amp;api=getsystemlog"</RewriteRule>
+		 		</URI>
+		 		<URI id="status_logs_clearwanlog">               
+		 			<Path>/log/clearwanlog/</Path>
+		 			<Title>menu_status_logs_clearlog_text</Title>                                         
+		 			<RewriteRule>"^/log/clearwanlog/*?$"  =&gt; "/cgi/webui.cgi?id=status_logs&amp;as=1&amp;clearWanLog=true"</RewriteRule>
+		 		</URI>        
+		 		<URI id="status_logs_clearsyslog">
+		 			<Path>/log/clearsyslog/</Path>
+		 			<Title>menu_status_logs_clearlog_text</Title>
+		 			<RewriteRule>"^/log/clearsyslog/*?$"  =&gt; "/cgi/webui.cgi?id=status_logs&amp;as=1&amp;clearSystemLog=true"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<Features> <!-- can set to 1 or 0 to Show/Hide status values.-->
+		 		<ShowUserConfigOptions>1</ShowUserConfigOptions>        		<!-- 1(on), 0(off)-->
+		 		<ShowLogDownloadEnabled>1</ShowLogDownloadEnabled>                              <!-- show download button on logs page - 1(on), 0(off)-->
+		 		<ShowNewUILayout>0</ShowNewUILayout>
+		 		<ShowInlineExportButton>0</ShowInlineExportButton>
+		 		<ShowUIText>1</ShowUIText>
+		 	</Features>
+		 	<Config> <!-- app specific configurations, if any. -->
+		 		<MaxLinesShown>500</MaxLinesShown>                                      <!-- allowed values 50 - 500 -->
+		 	</Config>
+		 </Panel>
+		 <Panel id="under_construction" label="Under Construction">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		 	<Login>0</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		 	<URI id="under_construction">
+		 		<Path>/underconstruction/</Path> <!--friendly url. -->
+		 		<Title>under_construction_menu_text</Title> <!--Title of the page. -->
+		 	</URI>
+		 	<Redirects> <!--This node contains urls for asynchronous requests -->
+		 	</Redirects>
+		 	<Features> <!-- /Show/Hide status values.-->
+		 	</Features>
+		 	<Config> <!-- configurations specific to app -->
+		 	</Config>
+		 </Panel>
+		 <Panel id="wwan_settings" label="Mobile Settings">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		 	<Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		 	<URI id="wwan_settings">
+		 		<Path>/networks/</Path> <!--friendly url. -->
+		 		<Title>wwan_settings_menu_text</Title> <!--title of the page. -->
+		 	</URI>
+		 	<Redirects> <!--This node contains urls for asynchronous requests -->
+		 		<URI id="wwan_settings_help">
+		 			<Path>/networks/help/</Path>
+		 			<Title>wwan_settings_help_text</Title>
+		 			<RewriteRule>"^/networks/help/*?$" => "/cgi/webui.cgi?id=wwan_settings&amp;content=help"</RewriteRule>
+		 		</URI>
+		 		<URI id="wwan_settings_enable_cellular_data">
+		 			<Path>/wwan/enablecellulardata/</Path>
+		 			<Title>wwan_settings_menu_enable_cellular_data_text</Title>
+		 			<RewriteRule>"^/wwan/enablecellulardata/*?$" => "/cgi/webui.cgi?id=wwan_settings&amp;as=1&amp;api=enableCellular"</RewriteRule>
+		 		</URI>
+		 		<URI id="wwan_settings_disable_cellular_data">
+		 			<Path>/wwan/disablecellulardata/</Path>
+		 			<Title>wwan_settings_menu_disable_cellular_data_text</Title>
+		 			<RewriteRule>"^/wwan/disablecellulardata/*?$" => "/cgi/webui.cgi?id=wwan_settings&amp;as=1&amp;api=disableCellular"</RewriteRule>
+		 		</URI>
+		 		<URI id="wwan_settings_revert_mns">
+		 			<Path>/wwan/revertmns/</Path>
+		 			<Title>wwan_settings_menu_revert_mns_data_text</Title>
+		 			<RewriteRule>"^/wwan/revertmns/*?$" => "/cgi/webui.cgi?id=wwan_settings&amp;as=1&amp;api=revertMns"</RewriteRule>
+		 		</URI>
+		 		<URI id="wwan_settings_enable_automatic_network_selection">
+		 			<Path>/wwan/enableautomaticnetworkselection/</Path>
+		 			<Title>wwan_settings_enable_automatic_network_selection_text</Title>
+		 			<RewriteRule>"^/wwan/enableautomaticnetworkselection/*?$" => "/cgi/webui.cgi?id=wwan_settings&amp;as=1&amp;api=enableautomaticnetwork"</RewriteRule>
+		 		</URI>
+		 		<URI id="wwan_settings_disable_automatic_network_selection">
+		 			<Path>/wwan/disableautomaticnetworkselection/</Path>
+		 			<Title>wwan_settings_disable_automatic_network_selection_text</Title>
+		 			<RewriteRule>"^/wwan/disableautomaticnetworkselection/*?$" => "/cgi/webui.cgi?id=wwan_settings&amp;as=1&amp;api=disableautomaticnetwork"</RewriteRule>
+		 		</URI>
+		 		<URI id="wwan_settings_enable_roaming">
+		 			<Path>/wwan/enableroaming/</Path>
+		 			<Title>wwan_settings_enable_roaming_text</Title>
+		 			<RewriteRule>"^/wwan/enableroaming/*?$" => "/cgi/webui.cgi?id=wwan_settings&amp;as=1&amp;api=enableRoaming"</RewriteRule>
+		 		</URI>
+		 		<URI id="wwan_settings_disable_roaming">
+		 			<Path>/wwan/disableroaming/</Path>
+		 			<Title>wwan_settings_disable_roaming_text</Title>
+		 			<RewriteRule>"^/wwan/disableroaming/*?$" => "/cgi/webui.cgi?id=wwan_settings&amp;as=1&amp;api=disableRoaming"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<Features> <!-- /Show/Hide status values.-->
+		 		<ShowConnectionPreference>0</ShowConnectionPreference>
+		 		<ShowRestoreDefaultAPN>0</ShowRestoreDefaultAPN>
+		 		<ShowMnsPageLink>1</ShowMnsPageLink>
+		 		<ShowHeaderText>1</ShowHeaderText>
+		 		<ShowAdvancedSettingsToggleButton>0</ShowAdvancedSettingsToggleButton>
+		 		<ShowDisconnectConfirmation>0</ShowDisconnectConfirmation>
+		 		<ShowNetworkSettingHelpText>0</ShowNetworkSettingHelpText>
+		 		<ShowApnHelpText>0</ShowApnHelpText>
+		 		<ShowPlaceHolderText>1</ShowPlaceHolderText>
+		 		<ShowMNSAsPopUp>1</ShowMNSAsPopUp>
+		 		<ShowNetworkTechOptions>1</ShowNetworkTechOptions>
+		 		<ShowPageHeaddings>0</ShowPageHeaddings>
+		 		<ShowRoamSetting>1</ShowRoamSetting>
+		 		<Show5GNetwork>1</Show5GNetwork>
+		 		<UpdateInternationalRoaming>1</UpdateInternationalRoaming>
+		 		<ShowRoamingInfo>0</ShowRoamingInfo>
+		 		<ShowEnableAutomaticNetworkSelectionToggleButton>1</ShowEnableAutomaticNetworkSelectionToggleButton>
+		 		<ShowNetworksCellularDataEnable>1</ShowNetworksCellularDataEnable>
+		 		<ShowApnSettings>1</ShowApnSettings>
+		 		<ShowApnAuthenticationSettings>1</ShowApnAuthenticationSettings>
+		 		<ShowAPNReadOnly>0</ShowAPNReadOnly>
+		 	</Features>
+		 	<Config> <!-- configurations specific to app -->
+		 		<DefaultApn>VZWINTERNET</DefaultApn>
+		 		<CustomDefaultApn>blank</CustomDefaultApn>
+		 	</Config>
+		 </Panel>
+		 <Panel id="session_log_info" label="Session Log Info">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		 	<Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		 	<URI id="session_log_info">
+		 		<Path>/sessions/</Path> <!--friendly url. -->
+		 			<Title>session_log_info_menu_text</Title> <!--title of the page. -->
+		 	</URI>
+		 	<Redirects> <!-- This node contains urls for asynchronous requests -->
+		 		<URI id="session_log_info_help">
+		 				<Path>/sessions/help/</Path>
+		 				<Title>session_log_info_help_text</Title>
+		 				<RewriteRule>"^/sessions/help/*?$" => "/cgi/webui.cgi?id=session_log_info&amp;content=help"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<Features> <!-- Show/Hide status values-->
+		 		<ShowBackToInternetStatus>1</ShowBackToInternetStatus>
+		 	</Features>
+		 	<Config> <!-- configurations specific to app -->
+		 		<MaxSessionLogs>100</MaxSessionLogs>
+		 		<ShowRoamingStatus>0</ShowRoamingStatus>
+		 	</Config>
+		 </Panel>
+		 <Panel id="field_test_info" label="Field Test Info">
+		 	<!-- show or hide the page -->
+		 	<Enabled>1</Enabled>
+		 	<!-- prompt for user login -->
+		 	<Login>1</Login>
+		 	<URI id="field_test_info">
+		 		<Path>/fieldtest/</Path>
+		 		<Title>field_test_info_menu_text</Title>
+		 	</URI>
+		 	<!-- contains Paths for asynchronous requests -->
+		 	<Redirects>
+		 	</Redirects>
+		 	<!-- show/hide status values -->
+		 	<Features>
+		 	</Features>
+		 	<!-- configurations specific to app -->
+		 	<Config>
+		 	</Config>
+		 </Panel>
+		 <Panel id="wifi_primary_settings" label="Primary WiFi Settings">
+		         <Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		         <Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		         <URI id="wifi_primary_settings">
+		                 <Path>/wifi/</Path> <!--friendly url. -->
+		                 <Title>wifi_primary_settings_menu_text</Title> <!--Title of the page. -->
+		         </URI>
+		         <Redirects> <!--This node contains urls for asynchronous requests -->
+		 	    <URI id="wifi_primary_settings_generate_password">
+		 		    <Path>/wifi/newpasswd/</Path>
+		 		    <Title>wifi_primary_settings_generate_password_text</Title>
+		 		    <RewriteRule>"^/wifi/newpasswd/*?$" => "/cgi/webui.cgi?id=wifi_primary_settings&amp;as=1&amp;opr=generateNewPassword"</RewriteRule>
+		 	    </URI>
+		             <URI id="wifi_primary_settings_help">
+		                 <Path>/wifi/help/</Path>
+		                 <Title>wifi_primary_settings_help_text</Title>
+		                 <RewriteRule>"^/wifi/help/*?$" => "/cgi/webui.cgi?id=wifi_primary_settings&amp;content=help"</RewriteRule>
+		             </URI>
+		         </Redirects>
+		         <Features> <!-- Show/Hide status values.-->
+		             <ShowWifiSecurityNone>1</ShowWifiSecurityNone>
+		             <ShowGeneratePassword>1</ShowGeneratePassword>
+		             <ShowWPA3SecurityOption>0</ShowWPA3SecurityOption>
+		             <ShowOWESecurityOption>0</ShowOWESecurityOption>
+		             <ShowOWEEnhancedSecurityOption>0</ShowOWEEnhancedSecurityOption>
+		             <ShowWiFiPrimarySSID>0</ShowWiFiPrimarySSID>
+		             <ShowWiFiPrimaryPassword>0</ShowWiFiPrimaryPassword>
+		             <ShowWiFiPrimaryWPS>0</ShowWiFiPrimaryWPS>
+		             <ShowHeaderText>1</ShowHeaderText>
+		         </Features>
+		         <Config> <!-- configurations specific to app -->
+		             <WifiGeneratedPasswordMinLength>8</WifiGeneratedPasswordMinLength>
+		             <WifiGeneratedPasswordMaxLength>24</WifiGeneratedPasswordMaxLength>
+		         </Config>
+		 </Panel>
+		 <Panel id="wifi_guest_settings" label="Guest WiFi Settings">
+		         <Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		         <Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		         <URI id="wifi_guest_settings">
+		                 <Path>/wifiguest/</Path> <!--friendly url. -->
+		                 <Title>wifi_guest_settings_menu_text</Title> <!--Title of the page. -->
+		         </URI>
+		         <Redirects> <!--This node contains urls for asynchronous requests -->
+		 		    <URI id="wifi_guest_settings_generate_password">
+		 			    <Path>/wifiguest/newpasswd/</Path>
+		 			    <Title>wifi_guest_setting_generate_password_text</Title>
+		 			    <RewriteRule>"^/wifiguest/newpasswd/*?$" => "/cgi/webui.cgi?id=wifi_guest_settings&amp;as=1&amp;opr=generateNewPassword"</RewriteRule>
+		 		    </URI>
+		             <URI id="wifi_guest_settings_help">
+		                 <Path>/wifiguest/help/</Path>
+		                 <Title>wifi_guest_settings_help_text</Title>
+		                 <RewriteRule>"^/wifiguest/help/*?$" => "/cgi/webui.cgi?id=wifi_guest_settings&amp;content=help"</RewriteRule>
+		             </URI>
+		         </Redirects>
+		         <Features> <!-- Show/Hide status values.-->
+		             <ShowWifiSecurityNone>1</ShowWifiSecurityNone>
+		             <ShowGeneratePassword>1</ShowGeneratePassword>
+		             <ShowBroadcastSSID>1</ShowBroadcastSSID>
+		             <ShowWPA3SecurityOption>0</ShowWPA3SecurityOption>
+		             <ShowOWESecurityOption>0</ShowOWESecurityOption>
+		             <ShowOWEEnhancedSecurityOption>0</ShowOWEEnhancedSecurityOption>
+		             <ShowWiFiGuestSSID>0</ShowWiFiGuestSSID>
+		             <ShowWiFiGuestPassword>0</ShowWiFiGuestPassword>
+		             <ShowWiFiGuestWPS>0</ShowWiFiGuestWPS>
+		             <ShowHeaderText>1</ShowHeaderText>
+		         </Features>
+		         <Config> <!-- configurations specific to app -->
+		             <WifiGeneratedPasswordMinLength>8</WifiGeneratedPasswordMinLength>
+		             <WifiGeneratedPasswordMaxLength>24</WifiGeneratedPasswordMaxLength>
+		         </Config>
+		 </Panel>
+		 <Panel id="wifi_advanced_settings" label="WiFi Advanced Settings">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		     <Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		     <URI id="wifi_advanced_settings">
+		     	<Path>/wifisettings/</Path> <!--friendly url. -->
+		         <Title>wifi_advanced_settings_menu_text</Title> <!--Title of the page. -->
+		    	</URI>
+		 	<Redirects> <!--This node contains urls for asynchronous requests -->
+		     	<URI id="wifi_advanced_settings_enable_wifi">
+		     		<Path>/wifigeneral/enablewifi/</Path>
+		             <Title>wifi_advanced_settings_menu_enable_wifi_text</Title>
+		             <RewriteRule>"^/wifigeneral/enablewifi/*?$" => "/cgi/webui.cgi?id=wifi_advanced_settings&amp;as=1&amp;opr=enableWifi"</RewriteRule>
+		    		</URI>
+		     	<URI id="wifi_advanced_settings_disable_wifi">
+		     		<Path>/wifigeneral/disablewifi/</Path>
+		             <Title>wifi_advanced_settings_menu_disable_wifi_text</Title>
+		         	<RewriteRule>"^/wifigeneral/disablewifi/*?$" => "/cgi/webui.cgi?id=wifi_advanced_settings&amp;as=1&amp;opr=disableWifi"</RewriteRule>
+		             </URI>
+		 		<URI id="wifi_advanced_settings_help">
+		 			<Path>/wifigeneral/help/</Path>
+		 			<Title>wifi_advanced_settings_help_text</Title>
+		 			<RewriteRule>"^/wifigeneral/help/*?$" => "/cgi/webui.cgi?id=wifi_advanced_settings&amp;content=help"</RewriteRule>
+		  		</URI>
+		         <URI id="deviceui_wifi_display_enable">
+		             <Path>/wifigeneral/deviceuiWifiDisplayEnable/</Path>
+		             <Title>deviceui_wifi_display_enable_text</Title>
+		             <RewriteRule>"^/wifigeneral/deviceuiWifiDisplayEnable/*?$" => "/cgi/webui.cgi?id=wifi_advanced_settings&amp;as=1&amp;opr=enableWifiOnDisplay"</RewriteRule>
+		         </URI>
+		         <URI id="deviceui_wifi_display_disable">
+		             <Path>/wifigeneral/deviceuiWifiDisplayDisable/</Path>
+		             <Title>deviceui_wifi_display_disable_text</Title>
+		             <RewriteRule>"^/wifigeneral/deviceuiWifiDisplayDisable/*?$" => "/cgi/webui.cgi?id=wifi_advanced_settings&amp;as=1&amp;opr=disableWifiOnDisplay"</RewriteRule>
+		         </URI>
+		         <URI id="wifi_advanced_settings_change_connection_limit">
+		             <Path>/wifigeneral/changeconnectionlimit/</Path>
+		             <Title>wifi_advanced_settings_change_connection_limit_text</Title>
+		             <RewriteRule>"^/wifigeneral/changeconnectionlimit/*?$" => "/cgi/webui.cgi?id=wifi_advanced_settings&amp;as=1&amp;opr=changeConnectionLimit"</RewriteRule>
+		         </URI>
+		 	</Redirects>
+		 	<Features> <!-- Show/Hide status values.-->
+		         <ShowWifiAdvanced2Dot4G802Dot11ModeText>0</ShowWifiAdvanced2Dot4G802Dot11ModeText>
+		 	</Features>
+		 	<Config> <!-- configurations specific to app -->
+		 	</Config>
+		 </Panel>
+		 <Panel id="connected_devices" label="Connected Devices">
+		     <Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		     <Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		 	<URI id="connected_devices">                
+		         <Path>/connecteddevices/</Path> <!--friendly url. -->
+		         <Title>connected_devices_menu_text</Title> <!--title of the page. -->
+		     </URI>
+		     <Redirects> <!--This node contains urls for asynchronous requests -->
+		         <URI id="connected_devices_refresh">
+		             <Path>/connecteddevices/refresh/</Path>
+		             <Title>connected_devices_menu_refresh_text</Title>
+		             <RewriteRule>"^/connecteddevices/refresh/*?$" => "/cgi/webui.cgi?id=connected_devices&amp;as=1&amp;opr=refresh"</RewriteRule>
+		         </URI>
+		         <URI id="connected_devices_block_device">
+		             <Path>/connecteddevices/blockdevice/</Path>
+		             <Title>connected_devices_menu_block_device_text</Title>
+		             <RewriteRule>"^/connecteddevices/blockdevice/*?$" => "/cgi/webui.cgi?id=connected_devices&amp;as=1&amp;opr=blockDevice"</RewriteRule>
+		         </URI>
+		         <URI id="connected_devices_unblock_device">
+		             <Path>/connecteddevices/unblockdevice/</Path>
+		             <Title>connected_devices_menu_unblock_device_text</Title>
+		             <RewriteRule>"^/connecteddevices/unblockdevice/*?$" => "/cgi/webui.cgi?id=connected_devices&amp;as=1&amp;opr=unblockDevice"</RewriteRule>
+		         </URI>
+		         <URI id="connected_devices_custom_device">
+		             <Path>/connecteddevices/customdevice/</Path>
+		             <Title>connected_devices_menu_custom_device_text</Title>
+		             <RewriteRule>"^/connecteddevices/customdevice/*?$" => "/cgi/webui.cgi?id=connected_devices&amp;as=1&amp;opr=customDevice"</RewriteRule>
+		         </URI>
+		         <URI id="connected_devices_change_connection_limit">
+		             <Path>/connecteddevices/changeconnectionlimit/</Path>
+		             <Title>connected_devices_change_connection_limit_text</Title>
+		             <RewriteRule>"^/connecteddevices/changeconnectionlimit/*?$" => "/cgi/webui.cgi?id=connected_devices&amp;as=1&amp;opr=changeConnectionLimit"</RewriteRule>
+		         </URI>
+		         <URI id="connected_devices_savechanges">
+		             <Path>/connecteddevices/savechanges/</Path>
+		             <Title>connected_devices_menu_savechanges_text</Title>
+		             <RewriteRule>"^/connecteddevices/savechanges/*?$" => "/cgi/webui.cgi?id=connected_devices&amp;as=1&amp;opr=saveChanges"</RewriteRule>
+		         </URI>    
+		         <URI id="connected_devices_help">
+		             <Path>/connecteddevices/help/</Path>
+		             <Title>connected_devices_help_text</Title>
+		             <RewriteRule>"^/connecteddevices/help/*?$" => "/cgi/webui.cgi?id=connected_devices&amp;content=help"</RewriteRule>
+		         </URI>
+		     </Redirects>
+		     <Features> <!-- /Show/Hide status values.-->
+		         <ShowEthernetDevice>0</ShowEthernetDevice>
+		         <ShowWiFiSSID>1</ShowWiFiSSID>
+		         <ShowBlockedLimitCheck>1</ShowBlockedLimitCheck> <!--When change the value, need to change in DeviceUI config file -->
+		     </Features>
+		     <Config> <!-- configurations specific to app -->
+		 	<MaxBlockedDevices>300</MaxBlockedDevices> <!--When change the value, need to change in DeviceUI config file -->
+		     <WiFiRedirectionLink>/wifisettings/</WiFiRedirectionLink>
+		     </Config>
+		 </Panel>
+		 <Panel id="vpn" label="Vpn">
+		 	<Enabled>1</Enabled>
+		 	<Login>1</Login>
+		 	<URI id="vpn">
+		 		<Path>/vpn/</Path>
+		 		<Title>vpn_menu_text</Title>
+		 	</URI>
+		 	<!-- contains urls for asynchronous requests -->
+		 	<Redirects>
+		 		<URI id="vpn_auto_connect_enable">
+		 			<Path>/vpn/enable/</Path>
+		 			<Title>vpn_menu_enable_text</Title>
+		 			<RewriteRule>"^/vpn/enable/*?$" => "/cgi/webui.cgi?id=vpn&amp;as=1&amp;autoConnect=1"</RewriteRule>
+		 		</URI>
+		 		<URI id="vpn_auto_connect_disable">
+		 			<Path>/vpn/disable/</Path>
+		 			<Title>vpn_menu_disable_text</Title>
+		 			<RewriteRule>"^/vpn/disable/*?$" => "/cgi/webui.cgi?id=vpn&amp;as=1&amp;autoConnect=0"</RewriteRule>
+		 		</URI>
+		 		<URI id="vpn_connect">
+		 			<Path>/vpn/connect/</Path>
+		 			<Title>vpn_menu_enable_text</Title>
+		 			<RewriteRule>"^/vpn/connect/*?$" => "/cgi/webui.cgi?id=vpn&amp;as=1&amp;connect=1"</RewriteRule>
+		 		</URI>
+		 		<URI id="vpn_disconnect">
+		 			<Path>/vpn/disconnect/</Path>
+		 			<Title>vpn_menu_disable_text</Title>
+		 			<RewriteRule>"^/vpn/disconnect/*?$" => "/cgi/webui.cgi?id=vpn&amp;as=1&amp;connect=0"</RewriteRule>
+		 		</URI>
+		 		<URI id="vpn_status">
+		 			<Path>/vpn/vpnStatus/</Path>
+		 			<Title>vpn_menu_enable_text</Title>
+		 			<RewriteRule>"^/vpn/vpnStatus/*?$" => "/cgi/webui.cgi?id=vpn&amp;as=1&amp;opr=vpnStatus"</RewriteRule>
+		 		</URI>
+		 		<URI id="clear_vpn_settings">
+		 			<Path>/vpn/clearVPNSettings/</Path>
+		 			<Title>vpn_menu_enable_text</Title>
+		 			<RewriteRule>"^/vpn/clearVPNSettings/*?$" => "/cgi/webui.cgi?id=vpn&amp;as=1&amp;opr=clearVPNSettings"</RewriteRule>
+		 		</URI>
+		 		<URI id="vpn_logs">
+		 			<Path>/vpn/vpnLogs/</Path>
+		 			<Title>vpn_logs_text</Title>
+		 			<RewriteRule>"^/vpn/vpnLogs/*?$"  => "/cgi/webui.cgi?id=vpn&amp;as=1&amp;opr=vpnLogs"</RewriteRule>
+		 		</URI>
+		 		<URI id="vpn_help">
+		 			<Path>/vpn/help/</Path>
+		 			<Title>vpn_help_text</Title>
+		 			<RewriteRule>"^/vpn/help/*?$" => "/cgi/webui.cgi?id=vpn&amp;content=help"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<!-- show/hide status values -->
+		 	<Features>
+		 	</Features>
+		 	<!-- configurations specific to app -->
+		 	<Config>
+		 		<MaxLinesShown>500</MaxLinesShown> 
+		 	</Config>	
+		 </Panel>
+		 <Panel id="firewall" label="Firewall">
+		 	<Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		 	<Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		 	<URI id="firewall">
+		 		<Path>/firewall/</Path> <!--friendly url. -->
+		 		<Title>adv_firewall_menu_text</Title> <!--title of the page. -->
+		 	</URI>
+		 	<Redirects> <!--This node contains urls for asynchronous requests -->
+		 		<URI id="firewall_enable">
+		 			<Path>/firewall/enable/</Path>
+		 			<Title>adv_firewall_menu_enable_text</Title>
+		 			<RewriteRule>"^/firewall/enable/*?$" => "/cgi/webui.cgi?id=firewall&amp;as=1&amp;routerSettingsVpnPassthrough=true"</RewriteRule>
+		 		</URI>
+		 		<URI id="firewall_disable">
+		 			<Path>/firewall/disable/</Path>
+		 			<Title>adv_firewall_menu_disable_text</Title>
+		 			<RewriteRule>"^/firewall/disable/*?$" => "/cgi/webui.cgi?id=firewall&amp;as=1&amp;routerSettingsVpnPassthrough=false"</RewriteRule>
+		 		</URI>
+		                 <URI id="wan_ping_enable">
+		                         <Path>/firewall/wanpingenable/</Path>
+		                         <Title>wan_ping_enable_text</Title>
+		                         <RewriteRule>"^/firewall/wanpingenable/*?$" => "/cgi/webui.cgi?id=firewall&amp;as=1&amp;wanpingenabled=true"</RewriteRule>
+		                 </URI>
+		                 <URI id="wan_ping_disable">
+		                         <Path>/firewall/wanpingdisable/</Path>
+		                         <Title>wan_ping_disable_text</Title>
+		                         <RewriteRule>"^/firewall/wanpingdisable/*?$" => "/cgi/webui.cgi?id=firewall&amp;as=1&amp;wanpingenabled=false"</RewriteRule>
+		                 </URI>
+		 		<URI id="firewall_ipv6_enable">
+		 			<Path>/firewall/enableipv6/</Path>
+		 			<Title>adv_firewall_menu_ipv6_enable_text</Title>
+		 			<RewriteRule>"^/firewall/enableipv6/*?$" => "/cgi/webui.cgi?id=firewall&amp;as=1&amp;ipv6TransparentEnable=true"</RewriteRule>
+		 		</URI>
+		 		<URI id="firewall_ipv6_disable">
+		 			<Path>/firewall/disableipv6/</Path>
+		 			<Title>adv_firewall_menu_ipv6_disable_text</Title>
+		 			<RewriteRule>"^/firewall/disableipv6/*?$" => "/cgi/webui.cgi?id=firewall&amp;as=1&amp;ipv6TransparentEnable=false"</RewriteRule>
+		 		</URI>
+		 		<URI id="firewall_help">
+		                         <Path>/firewall/help/</Path>
+		                         <Title>adv_firewall_help_text</Title>
+		                         <RewriteRule>"^/firewall/help/*?$" => "/cgi/webui.cgi?id=firewall&amp;content=help"</RewriteRule>
+		                 </URI>
+		 	</Redirects>
+		 	<Features> <!-- /Show/Hide status values.-->
+		 		<ShowDmzActive>1</ShowDmzActive>
+		 		<ShowICMPPing>1</ShowICMPPing>
+		 		<ShowTransparentMode>0</ShowTransparentMode>
+		 	</Features>
+		 	<Config> <!-- configurations specific to app -->
+		 	</Config>
+		 </Panel>
+		 <Panel id="port_filtering" label="Port Filtering">
+		 	<Enabled>1</Enabled>
+		 	<Login>1</Login>
+		 	<URI id="port_filtering">
+		 		<Path>/portfiltering/</Path>
+		 		<Title>adv_port_filtering_menu_text</Title>
+		 	</URI>
+		 	<!-- contains urls for asynchronous requests -->
+		 	<Redirects>
+		 		<URI id="port_filtering_enable">
+		 			<Path>/portfiltering/enable/</Path>
+		 			<Title>adv_port_filtering_menu_enable_text</Title>
+		 			<RewriteRule>"^/portfiltering/enable/*?$" => "/cgi/webui.cgi?id=port_filtering&amp;as=1&amp;portFilterEnable=1"</RewriteRule>
+		 		</URI>
+		 		<URI id="port_filtering_disable">
+		 			<Path>/portfiltering/disable/</Path>
+		 			<Title>adv_port_filtering_menu_disable_text</Title>
+		 			<RewriteRule>"^/portfiltering/disable/*?$" => "/cgi/webui.cgi?id=port_filtering&amp;as=1&amp;portFilterEnable=0"</RewriteRule>
+		 		</URI>
+		 		<URI id="port_filtering_help">
+		 			<Path>/port_filtering/help/</Path>
+		 			<Title>adv_port_filtering_help_text</Title>
+		 			<RewriteRule>"^/port_filtering/help/*?$" => "/cgi/webui.cgi?id=port_filtering&amp;content=help"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<!-- show/hide status values -->
+		 	<Features>
+		 		<ShowTCPUDP>1</ShowTCPUDP>
+		 		<ShowPortFilterList>0</ShowPortFilterList>
+		 		<ShowPortFilterStandardApps>1</ShowPortFilterStandardApps>
+		 		<ShowNoteOnTop>1</ShowNoteOnTop>
+		 		<ShowHeaderText>1</ShowHeaderText>
+		 	</Features>
+		 	<!-- configurations specific to app -->
+		 	<Config>
+		 		<PortFilterCustomAppLimit>10</PortFilterCustomAppLimit>
+		 	</Config>
+		 </Panel>
+		 <Panel id="port_forward" label="Port Forwarding">
+		 	<Enabled>1</Enabled>
+		 	<Login>1</Login>
+		 	<URI id="port_forward">
+		 		<Path>/portforwarding/</Path>
+		 		<Title>adv_port_forward_menu_text</Title>
+		 	</URI>
+		 	<!-- contains urls for asynchronous requests -->
+		 	<Redirects>
+		 		<URI id="port_forward_enable">
+		 			<Path>/portforwarding/enable/</Path>
+		 			<Title>adv_port_forward_menu_enable_text</Title>
+		 			<RewriteRule>"^/portforwarding/enable/*?$" => "/cgi/webui.cgi?id=port_forward&amp;as=1&amp;portForwardEnable=1"</RewriteRule>
+		 		</URI>
+		 		<URI id="port_forward_disable">
+		 			<Path>/portforwarding/disable/</Path>
+		 			<Title>adv_port_forward_menu_disable_text</Title>
+		 			<RewriteRule>"^/portforwarding/disable/*?$" => "/cgi/webui.cgi?id=port_forward&amp;as=1&amp;portForwardEnable=0"</RewriteRule>
+		 		</URI>
+		 		<URI id="port_forward_help">
+		 			<Path>/port_forward/help/</Path>
+		 			<Title>adv_port_forward_help_text</Title>
+		 			<RewriteRule>"^/port_forward/help/*?$" => "/cgi/webui.cgi?id=port_forward&amp;content=help"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<!-- show/hide status values -->
+		 	<Features>
+		 		<ShowPortType>1</ShowPortType>
+		 		<ShowSinglePortType>0</ShowSinglePortType>
+		 		<ShowTranslatePortType>1</ShowTranslatePortType>
+		 		<ShowTCPUDP>1</ShowTCPUDP>
+		 		<ShowPortForwardStandardApps>1</ShowPortForwardStandardApps>
+		 		<ShowIntroductoryText>1</ShowIntroductoryText>
+		 		<ShowDefaultAppSNMP>1</ShowDefaultAppSNMP>
+		 		<ShowPortForwardApplicationsSubHeading>1</ShowPortForwardApplicationsSubHeading>
+		 		<ShowHeaderText>1</ShowHeaderText>
+		 	</Features>
+		 	<!-- configurations specific to app -->
+		 	<Config>
+		 	</Config>	
+		 </Panel>
+		 <Panel id="macfilter" label="MAC Filter">
+		         <Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		         <Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		         <URI id="macfilter">
+		                 <Path>/macfilter/</Path> <!--friendly url. -->
+		                 <Title>adv_macfilter_menu_text</Title> <!--title of the page. -->
+		         </URI>
+		         <Redirects> <!-- This node contains urls for asynchronous requests -->
+		 		<URI id="macfilter_enable">
+		         	<Path>/macfilter/enable/</Path>
+		             <Title>adv_macfilter_menu_enable_text</Title>
+		            	<RewriteRule>"^/macfilter/enable/*?$" => "/cgi/webui.cgi?id=macfilter&amp;as=1&amp;opr=macfilterEnable"</RewriteRule>
+		         </URI>
+		         <URI id="macfilter_disable">
+		        		<Path>/macfilter/disable/</Path>
+		             <Title>adv_macfilter_menu_disable_text</Title>
+		            	<RewriteRule>"^/macfilter/disable/*?$" => "/cgi/webui.cgi?id=macfilter&amp;as=1&amp;opr=macfilterDisable"</RewriteRule>
+		         </URI>
+		         <URI id="macfilter_enable_own_device">
+		             <Path>/macfilter/enableowndevice/</Path>
+		             <Title>adv_macfilter_menu_save_check_text</Title>
+		             <RewriteRule>"^/macfilter/enableowndevice/*?$" => "/cgi/webui.cgi?id=macfilter&amp;as=1&amp;opr=enableowndevice"</RewriteRule>
+		         </URI>
+		 		<URI id="macfilter_help">
+		 			<Path>/macfilter/help/</Path>
+		 			<Title>adv_macfilter_help_text</Title>
+		 			<RewriteRule>"^/macfilter/help/*?$" => "/cgi/webui.cgi?id=macfilter&amp;content=help"</RewriteRule>
+		 		</URI>
+		         </Redirects>
+		         <Features> <!-- Show/Hide status values-->
+		             <ShowIntroText>1</ShowIntroText>
+		             <ShowDeviceTypeColumn>0</ShowDeviceTypeColumn>
+		             <ShowDeviceCount>1</ShowDeviceCount>
+		             <ShowSaveButton>1</ShowSaveButton>
+		             <ShowHeaderText>1</ShowHeaderText>
+		             <AutoSelectUserOwnDevice>0</AutoSelectUserOwnDevice>
+		         </Features>
+		         <Config> <!-- configurations specific to app -->
+		 		<MaxAllowedDevices>100</MaxAllowedDevices>
+		 		<MaxAllowedDevicesPerSave>10</MaxAllowedDevicesPerSave>
+		         </Config>
+		 </Panel>
+		 <Panel id="sim_manager" label="SIM Manager">
+		 	<Enabled>1</Enabled>
+		 	<Login>1</Login>
+		 	<URI id="sim_manager">
+		 		<Path>/simmanager/</Path>
+		 		<Title>adv_sim_manager_menu_text</Title>
+		 	</URI>
+		 	<!-- contains urls for asynchronous requests -->
+		 	<Redirects>
+		 		<URI id="sim_manager_help">
+		 			<Path>/simmanager/help/</Path>
+		 			<Title>adv_sim_manager_help_text</Title>
+		 			<RewriteRule>"^/simmanager/help/*?$" => "/cgi/webui.cgi?id=sim_manager&amp;content=help"</RewriteRule>
+		 		</URI>
+		 		<URI id="sim_manager_enable_sim_switching">
+		 			<Path>/simmanager/enablesimswitching/</Path>
+		 			<Title>adv_sim_manager_enable_sim_switching_text</Title>
+		 			<RewriteRule>"^/simmanager/enablesimswitching/*?$" => "/cgi/webui.cgi?id=sim_manager&amp;as=1&amp;simSwitchModeEnabled=1"</RewriteRule>
+		 		</URI>
+		 		<URI id="sim_manager_disable_sim_switching">
+		 			<Path>/simmanager/disablesimswitching/</Path>
+		 			<Title>adv_sim_manager_disable_sim_switching_text</Title>
+		 			<RewriteRule>"^/simmanager/disablesimswitching/*?$" => "/cgi/webui.cgi?id=sim_manager&amp;as=1&amp;simSwitchModeEnabled=0"</RewriteRule>
+		 		</URI>
+		 		<URI id="sim_manager_sim_switch_slot">
+		 			<Path>/simmanager/simswitchslot/</Path>
+		 			<Title>adv_sim_manager_sim_switch_slot_text</Title>
+		 			<RewriteRule>"^/simmanager/simswitchslot/*?$" => "/cgi/webui.cgi?id=sim_manager&amp;as=1&amp;opr=simSwitchSlot"</RewriteRule>
+		 		</URI>
+		 		<URI id="sim_manager_check_sim_status">
+		 			<Path>/simmanager/checksimstatus/</Path>
+		 			<Title>adv_sim_manager_check_sim_status_text</Title>
+		 			<RewriteRule>"^/simmanager/checksimstatus/*?$" => "/cgi/webui.cgi?id=sim_manager&amp;as=1&amp;opr=checkSimStatus"</RewriteRule>
+		 		</URI>
+		 		<URI id="sim_manager_sim_information_refresh">
+		 			<Path>/simmanager/refreshSimInformation/</Path>
+		 			<Title>adv_sim_manager_refresh_sim_information_text</Title>
+		 			<RewriteRule>"^/simmanager/refreshSimInformation/*?$" => "/cgi/webui.cgi?id=sim_manager&amp;as=1&amp;opr=refreshSimInformation"</RewriteRule>
+		 		</URI>
+		 		<URI id="sim_manager_enable_cellular_data">
+		 			<Path>/simmanager/enablecellulardata/</Path>
+		 			<Title>sim_manager_enable_cellular_data_text</Title>
+		 			<RewriteRule>"^/simmanager/enablecellulardata/*?$" => "/cgi/webui.cgi?id=sim_manager&amp;as=1&amp;enableCellularData=1"</RewriteRule>
+		 		</URI>
+		 		<URI id="sim_manager_disable_cellular_data">
+		 			<Path>/simmanager/disablecellulardata/</Path>
+		 			<Title>sim_manager_disable_cellular_data_text</Title>
+		 			<RewriteRule>"^/simmanager/disablecellulardata/*?$" => "/cgi/webui.cgi?id=sim_manager&amp;as=1&amp;enableCellularData=0"</RewriteRule>
+		 		</URI>
+		 	</Redirects>
+		 	<!-- show/hide status values -->
+		 	<Features>
+		 		<ShowApnAuthentication>0</ShowApnAuthentication>
+		 		<ShowSimManagerCellularDataEnable>0</ShowSimManagerCellularDataEnable>
+		 		<ShowToolTip>1</ShowToolTip>
+		 	</Features>
+		 	<!-- configurations specific to app -->
+		 	<Config>
+		 	</Config>	
+		 </Panel>
+		 <Panel id="cbsd" label="CBSD">
+		 	<!-- show or hide the page -->
+		 	<Enabled>0</Enabled>
+		 	<!-- prompt for user login -->
+		 	<Login>1</Login>
+		 	<URI id="cbsd">
+		         	<Path>/cbsd/</Path> <!--friendly url. -->
+		                 <Title>cbsd_menu_text</Title> <!--title of the page. -->
+		         </URI>
+		 	<!-- contains Paths for asynchronous requests -->
+		 	<Redirects>
+		 		<URI id="cbsd_register_device">
+		 			<Path>/cbsd/registerDevice/</Path>
+		 			<Title>cbsd_register_device_text</Title>
+		 			<RewriteRule>"^/cbsd/registerDevice/*?$" => "/cgi/webui.cgi?id=cbsd&amp;as=1&amp;opr=registerDevice"</RewriteRule>
+		 		</URI>
+		 		<URI id="cbsd_deregister_device">
+		 			<Path>/cbsd/deRegisterDevice/</Path>
+		 			<Title>cbsd_deregister_device_text</Title>
+		 			<RewriteRule>"^/cbsd/deRegisterDevice/*?$" => "/cgi/webui.cgi?id=cbsd&amp;as=1&amp;opr=deRegisterDevice"</RewriteRule>
+		 		</URI>
+		 		<URI id="cbsd_get_registration_status">
+		                         <Path>/cbsd/getRegStatus/</Path>
+		                         <Title>cbsd_get_registration_status_text</Title>
+		                         <RewriteRule>"^/cbsd/getRegStatus/*?$" => "/cgi/webui.cgi?id=cbsd&amp;as=1&amp;opr=getRegStatus"</RewriteRule>
+		                 </URI>
+		 		<URI id="cbsd_get_password">
+		                         <Path>/cbsd/getPassword/</Path>
+		                         <Title>cbsd_get_password_text</Title>
+		                         <RewriteRule>"^/cbsd/getPassword/*?$" => "/cgi/webui.cgi?id=cbsd&amp;as=1&amp;opr=getPassword"</RewriteRule>
+		                 </URI>
+		 	</Redirects>
+		 	<!-- show/hide status values -->
+		 	<Features>
+		 	</Features>
+		 	<!-- configurations specific to app -->
+		 	<Config>
+		 	</Config>
+		 </Panel>
+		 <Panel id="reserved_ip" label="Reserved IP Addresses">
+		         <Enabled>1</Enabled> <!-- can set to 1 or 0 to show or hide the page. This can be configured through PRI. -->
+		         <Login>1</Login> <!-- can set to 1 or 0 to prompt for user login. -->
+		         <URI id="reserved_ip">
+		                 <Path>/reservedip/</Path> <!--friendly url. -->
+		                 <Title>adv_reserved_ip_menu_text</Title> <!--title of the page. -->
+		         </URI>
+		         <Redirects> <!-- This node contains urls for asynchronous requests -->
+		                 <URI id="reserved_ip_help">
+		                         <Path>/reservedip/help/</Path>
+		                         <Title>adv_reserved_ip_help_text</Title>
+		                         <RewriteRule>"^/reservedip/help/*?$" => "/cgi/webui.cgi?id=reserved_ip&amp;content=help"</RewriteRule>
+		                 </URI>
+		         </Redirects>
+		         <Features> <!-- Show/Hide status values-->
+		 		<ShowUSBDevices>0</ShowUSBDevices>
+		 		<ShowEthernetDevices>1</ShowEthernetDevices>
+		                 <ShowDeviceType>0</ShowDeviceType>
+		         </Features>
+		         <Config> <!-- configurations specific to app -->
+		 		<MaxAllowedDevices>10</MaxAllowedDevices>
+		                 <MaxAllowedDevicesPerSave>10</MaxAllowedDevicesPerSave>
+		         </Config>
+		 </Panel>
+	</Panels>
+</Config>

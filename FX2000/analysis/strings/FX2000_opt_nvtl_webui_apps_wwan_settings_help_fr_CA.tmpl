@@ -1,0 +1,117 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p>Vous pouvez utiliser ce param
+activation/d
+sactivation lorsque cela est n
+cessaire pour d
+sactiver les donn
+es cellulaires et emp
+seau mobile. Cela emp
+che les appareils connect
+s de se connecter 
+ Internet et d
+utiliser votre forfait de donn
+es mobile. En fonctionnement normal, ce param
+tre doit rester activ
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Pr
+rence de connexion</h3>
+lectionnez l
+option souhait
+e pour contr
+ler le moment o
+ le <tmpl_var _("webui", "webui_product_name")> 
+tablira une connexion de donn
+seau mobile.</p>
+	</tmpl_if>
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>Utilisez ce param
+tre pour activer ou d
+sactiver l
+rance internationale et nationale selon les besoins. Des frais de donn
+es suppl
+mentaires peuvent s
+appliquer en cas d
+rance.</p>
+	</tmpl_if>
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p>La valeur par d
+faut est 
+<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>
+. Le <tmpl_var _("webui", "webui_product_name")> s
+lectionnera la meilleure technologie disponible.</p>
+		<p>Si vous le souhaitez, vous pouvez modifier cela pour limiter les technologies de r
+seau qui seront utilis
+	</tmpl_if>
+lection manuelle du r
+seau</h3>
+	<p>Cette fonctionnalit
+est disponible que lorsque l
+activation de la s
+lection automatique du r
+seau est d
+e. Cela peut 
+tre utile si plusieurs r
+seaux sont disponibles et que vous avez une pr
+rence relative 
+ celui qui est utilis
+	<p>Cliquez sur le bouton 
+lectionner un r
+ pour analyser les r
+seaux disponibles; vous pouvez ensuite choisir le r
+seau souhait
+	<tmpl_unless apnProfileSettings>
+		<tmpl_if NetworksFourGLTEAPNShow>
+			<h3><tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))></h3>
+APN est pr
+configur
+; vous ne devez pas le modifier 
+ moins d
+avoir un compte d
+entreprise (avec votre propre APN).</p>
+		</tmpl_if>
+		<tmpl_if NetworksCustomAPNShow>
+			<h3><tmpl_var truncate(_("webui", "wwan_settings_custom_apn_label"), (size(_("webui", "wwan_settings_custom_apn_label")) - size(":")))></h3>
+			<p>Cet APN est utilis
+ si vous changez la carte SIM pour une carte SIM autre que Verizon. Sinon, il est ignor
+a aucun effet.</p>
+		</tmpl_if>
+	<tmpl_else>
+		<h2>Param
+tres avanc
+		<p>Utilisez cet en-t
+te/ce lien pour afficher ou masquer les param
+tres avanc
+s selon vos besoins.</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_apn_label"), (size(_("webui", "wwan_settings_apn_label")) - size(":")))></h3>
+		<p>Si vous devez modifier l
+APN, saisissez la valeur fournie par votre fournisseur de services de r
+seau mobile.</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))></h3>
+		<div class="blockgroup">
+lectionnez l
+option sp
+e par votre fournisseur de services.</p>
+				<li>Aucun</li>
+				<li>PAP</li>
+				<li>CHAP</li>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))></h3>
+		<p>Si l
+authentification est <strong>Aucun</strong>, ce champ peut 
+tre laiss
+ vide. Sinon, entrez la valeur sp
+e par votre fournisseur de services.</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))></h3>
+		<p>Si l
+authentification est <strong>Aucun</strong>, ce champ peut 
+tre laiss
+ vide. Sinon, entrez la valeur sp
+e par votre fournisseur de services.</p>
+	</tmpl_unless>

@@ -1,0 +1,397 @@
+<tmpl_if isHidden>
+    <div class="notification app error">
+        <tmpl_var _("webui", "webui_app_hidden_text")>
+    </div>
+<tmpl_else>
+    <script type="text/javascript">
+        var validated = false;
+        var previousSecurityOption = parseInt("<tmpl_var WifiGuestSecurity>");
+        var previousPassword = "<tmpl_var WifiGuestPassword>";
+
+        $(function()
+        {
+            if ($("#WifiGuestSecurity").val() == 0) {
+                $("#WifiGuestPassword").val("");
+                $("#WifiGuestPassword").prop("disabled", true);
+                $("#GenerateNewPassword").prop("disabled", true);
+                if (jQuery.uniform) $.uniform.update("#WifiGuestPassword", "#GenerateNewPassword");
+            }
+
+            $("#WifiGuestSecurity").focus(function() {
+                previousSecurityOption = $("#WifiGuestSecurity").val();
+            }).change(function() {
+                var securityType = $("#WifiGuestSecurity").val();
+
+                <tmpl_if ShowWifiSecurityNone>
+                    if (securityType == 0) {                        
+                        showNoSecurityConfirmation(previousSecurityOption);
+                    } else {
+                        $("#WifiGuestPassword").prop("disabled", false);
+                        $("#GenerateNewPassword").prop("disabled", false);
+                        if (jQuery.uniform) $.uniform.update("#WifiGuestPassword", "#GenerateNewPassword");
+                    }
+                </tmpl_if>
+
+            });
+
+            if ($("#WifiGuestSecurity").val() == 9) {
+                $("#WifiGuestSecurityHelpText").show();
+                if (jQuery.uniform) $.uniform.update("#WifiGuestSecurityHelpText");
+            }
+
+            $("#WifiGuestSecurity").change(function() {
+                var securityType = $("#WifiGuestSecurity").val();
+                    if (securityType == 9) {                        
+                        $("#WifiGuestSecurityHelpText").show();
+                        if (jQuery.uniform) $.uniform.update("#WifiGuestSecurityHelpText");
+                    } else {
+                        $("#WifiGuestSecurityHelpText").hide();
+                        if (jQuery.uniform) $.uniform.update("#WifiGuestSecurityHelpText");
+                    }
+            });
+
+            $("#WifiGuestWpsEnabled").on("change", function() {
+                if ($("#WifiGuestWpsEnabled").is(":checked")) {
+                    if (!$("#WifiGuestBroadcastSsid").is(":checked")) {
+                        showWpsOnConfirmation();
+                    }
+                }
+            });
+            
+            $("#WifiGuestBroadcastSsid").on("change", function() {
+                if ($("#WifiGuestWpsEnabled").is(":checked") && (!$("#WifiGuestBroadcastSsid").is(":checked"))) {
+                    showBroadcastOffConfirmation();
+                }
+            });
+
+            $("#GenerateNewPassword").on("click", function() {
+                generateNewPassword();
+            });
+
+            $("#WifiGuestPrivacyEnabled").on("change", function() {
+                if ($("#WifiGuestPrivacyEnabled").is(":checked")) {
+                    showWarning("<tmpl_var _("webui", "wifi_guest_privacy_warning_text")>");                    
+                }
+            });
+
+            $("#wifi_guest_settings_form").on("submit", function() {
+                if (validated) {
+                        return true;
+                } else {
+                        return showSaveChangesConfirmation();
+                }
+            });
+
+            $(".toggle-password").click(function () {
+                $(this).toggleClass("eye eye-slash");
+                var input = $($(this).attr("toggle"));
+                    input.css('padding-right', '30px')
+                if (input.attr("type") == "password") {
+                    input.attr("type", "text");
+                } else {
+                    input.attr("type", "password");
+                }
+            });
+
+        });
+
+        function generateNewPassword() {
+            var url = "<tmpl_udf GET_URI('wifi_guest_settings_generate_password')>";
+
+            $.ajax({
+                url : url,
+                type : "GET",
+                success: function(data) {
+                    previousPassword = $("#WifiGuestPassword").val();
+                    $("#WifiGuestPassword").val(data["GeneratedPassword"]);
+                    if (jQuery.uniform) $.uniform.update("#WifiGuestPassword");
+                },
+                error : function(xhr, textStatus, errorThrown) {
+                    // If auth session has ended, force a new login with a fresh GET.
+                    if( (xhr.status == 401) || (xhr.status == 403) || (xhr.status == 406) ) {
+                        window.location.replace(window.location.href);
+                    } else  {
+                        return false;
+                    }
+                }
+            });          
+        }
+
+        function showSaveChangesConfirmation() {
+            if (("[<tmpl_var WifiGuestSsid>]" !== "["+$("#WifiGuestSsid").val()+"]") || 
+                ("[<tmpl_var WifiGuestSecurity>]" !== "["+$("#WifiGuestSecurity").val()+"]") || 
+                ("[<tmpl_var WifiGuestPassword>]" !== "["+$("#WifiGuestPassword").val()+"]")) {
+                modalPopup.createWindow('<tmpl_var _("webui", "webui_modal_title")>', '<p><tmpl_udf GET_PO_TEXT("wifi_guest_save_changes_confirmation_text", gProductNumber)></p>', 430, "auto", [{
+                        text : '<tmpl_var _("webui", "webui_modal_cancel_button")>',
+                        className : "cancel",
+                        trigger : function () {
+                            validated = false;
+                            location.reload();
+                        }
+                }, {
+                        text : '<tmpl_var _("webui", "webui_modal_confirm_button")>',
+                        className : "primary",
+                        trigger : function() {
+                                validated = true;
+                                $("#intro").hide();
+                                $("#introLostConnection").show();
+                                $("#wifi_guest_settings_form").submit();
+                        }
+                }], null, function(){
+                        validated = false;
+                });
+            } else {
+                validated = true;
+                $("#wifi_guest_settings_form").submit();
+            }
+            return false;
+        }
+
+        function showWarning(text) {            
+            modalPopup.createWindow('<tmpl_var _("webui", "webui_app_warning_title")>', '<p>'+text+'</p>', 430, 250, [{
+                text : '<tmpl_var _("webui", "webui_modal_ok_button")>',
+                className : "primary",
+                trigger : function() {
+                    // do nothing
+                }
+            }], null, function() {
+                // do nothing
+            });
+        }
+
+        function showNoSecurityConfirmation(previousSecurityOption) {
+            modalPopup.createWindow('<tmpl_var _("webui", "webui_modal_title")>', '<p><tmpl_udf GET_PO_TEXT("wifi_guest_security_none_warning_text", gProductNumber)></p>', 430, 250, [{
+                    text : '<tmpl_var _("webui", "webui_modal_cancel_button")>',
+                    className : "cancel",
+                    trigger : function() {
+                        $("#WifiGuestSecurity").val(previousSecurityOption);
+                        if (jQuery.uniform) $.uniform.update("#WifiGuestSecurity");
+                    }
+            }, {
+                    text : '<tmpl_var _("webui", "webui_modal_confirm_button")>',
+                    className : "primary",
+                    trigger : function() {
+                        $("#WifiGuestPassword").val("");
+                        $("#WifiGuestPassword").prop("disabled", true);
+                        $("#GenerateNewPassword").prop("disabled", true);
+                        if (jQuery.uniform) $.uniform.update("#WifiGuestPassword","#GenerateNewPassword");
+                    }
+            }], null, function(){
+                $("#WifiGuestSecurity").val(previousSecurityOption);
+                if (jQuery.uniform) $.uniform.update("#WifiGuestSecurity");
+            });
+        }
+
+
+        function showWpsOnConfirmation() {
+            modalPopup.createWindow('<tmpl_var _("webui", "webui_modal_title")>', '<p><tmpl_var _("webui", "wifi_guest_wps_change_broadcast_incompatible_warning_text")></p>', 430, 250, [{
+                    text : '<tmpl_var _("webui", "webui_modal_cancel_button")>',
+                    className : "cancel",
+                    trigger : function() {
+                        $("#WifiGuestWpsEnabled").prop("checked", false);
+                        if (jQuery.uniform) $.uniform.update("#WifiGuestWpsEnabled");
+                    }
+            }, {
+                    text : '<tmpl_var _("webui", "webui_modal_confirm_button")>',
+                    className : "primary",
+                    trigger : function() {
+                        $("#WifiGuestWpsEnabled").prop("checked", true);
+                        $("#WifiGuestBroadcastSsid").prop("checked", true);
+                        if (jQuery.uniform) $.uniform.update("#WifiGuestWpsEnabled, #WifiGuestBroadcastSsid");
+                    }
+            }], null, function(){
+                $("#WifiGuestWpsEnabled").prop("checked", false);
+                if (jQuery.uniform) $.uniform.update("#WifiGuestWpsEnabled");
+            });
+            
+        }
+
+        function showBroadcastOffConfirmation() {
+            modalPopup.createWindow('<tmpl_var _("webui", "webui_modal_title")>', "<p><tmpl_var _('webui', 'wifi_guest_broadcast_change_wps_incompatible_warning_text')></p>", 430, 250, [{
+                    text : '<tmpl_var _("webui", "webui_modal_cancel_button")>',
+                    className : "cancel",
+                    trigger : function() {
+                        $("#WifiGuestBroadcastSsid").prop("checked", true);
+                        if (jQuery.uniform) $.uniform.update("#WifiGuestBroadcastSsid");
+                    }
+            }, {
+                    text : '<tmpl_var _("webui", "webui_modal_confirm_button")>',
+                    className : "primary",
+                    trigger : function() {
+                        $("#WifiGuestWpsEnabled").prop("checked", false);
+                        $("#WifiGuestBroadcastSsid").prop("checked", false);
+                        if (jQuery.uniform) $.uniform.update("#WifiGuestWpsEnabled, #WifiGuestBroadcastSsid");
+                    }
+            }], null, function(){
+                $("#WifiGuestBroadcastSsid").prop("checked", true);
+                if (jQuery.uniform) $.uniform.update("#WifiGuestBroadcastSsid");
+            });
+        }
+
+
+    </script>
+
+    <tmpl_if isLocked>
+        <div class="notification app error">
+            <tmpl_var _("webui", "webui_app_locked_text")>
+        </div>
+    </tmpl_if>
+
+    <tmpl_if errorCount>
+        <div class="notification app error">
+            <div class="notification_inner">
+                <tmpl_var _("webui", "webui_save_code_failed_text")>
+            </div>
+        </div>
+    </tmpl_if>
+
+    <tmpl_if gPostSuccess>
+        <div class="notification app success">
+            <div class="notification_inner">
+                <tmpl_var _("webui", "webui_save_code_success_text")>
+            </div>
+        </div>
+    </tmpl_if>
+
+	<tmpl_if showHeaderText>
+		<h2 class="sectionHead"><tmpl_var _("webui", "wifi_settings_guest_sub_header_text")></h2>
+	</tmpl_if>
+
+    <p  id="intro" >
+        <tmpl_udf GET_PO_TEXT("wifi_guest_intro_text", gProductNumber)>
+    </p>
+
+    <p class="warning" id="introLostConnection" style="display:none">
+        <tmpl_udf GET_PO_TEXT("wifi_guest_connection_lost_text", gProductNumber)>
+    </p>
+
+    <form id="wifi_guest_settings_form" method="POST" action="<tmpl_udf GET_URI('wifi_guest_settings')>" >
+        <div class="table">
+            <div class="form-group">
+                <label for="WifiGuestSsid">
+                    <tmpl_var _("webui", "wifi_guest_ssid_label" )>
+                </label>
+                <input type="text" id="WifiGuestSsid" name="WifiGuestSsid" value="<tmpl_var WifiGuestSsid>" <tmpl_if
+                    WifiGuestSsidError>class="error"</tmpl_if> />
+                <tmpl_if WifiGuestSsidError>
+                    <div class="inline_error">
+                        <tmpl_var WifiGuestSsidError>
+                    </div>
+                </tmpl_if>
+            </div>
+        
+            <div class="form-group">
+                <label for="WifiGuestSecurity">
+                    <tmpl_var _("webui", "wifi_guest_security_label" )>
+                </label>
+                <select id="WifiGuestSecurity" name="WifiGuestSecurity">
+                    <tmpl_include "wifi_security_options.tmpl">
+                </select>
+                <div class="help" style="display:none" id="WifiGuestSecurityHelpText">
+                    <tmpl_udf GET_PO_TEXT("wifi_open_enhanced_warning_text", gProductNumber)>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label for="WifiGuestPassword">
+                    <tmpl_var _("webui", "wifi_guest_password_label" )>
+                </label>
+        
+                <input type="password" id="WifiGuestPassword" name="WifiGuestPassword" value="<tmpl_var WifiGuestPassword>"
+                        <tmpl_if WifiGuestPasswordError>class="error"</tmpl_if> />
+                <span toggle='#WifiGuestPassword' class='eye toggle-password'></span>
+                <tmpl_if WifiGuestPasswordError>
+                    <div class="inline_error">
+                        <tmpl_var WifiGuestPasswordError>
+                    </div>
+                </tmpl_if>
+            </div>
+        
+            <div class="button_container align-field">
+                <button type="button" class="secondary" id="GenerateNewPassword">
+                    <tmpl_var _("webui", "wifi_guest_generate_password_button" )>
+                </button>
+            </div>
+
+        </div>
+
+        <p class="note"><tmpl_udf GET_PO_TEXT("wifi_guest_footer_note_text", gProductNumber)></p>
+        <div class="table-checkbox">
+        
+            <tmpl_if showWiFiGuestSSID>
+                <div class="form-group">
+                    <label for="WifiGuestShowSsid">
+                        <div class="tooltip tooltip-help" id="" title="<tmpl_var _('webui', 'wifi_guest_show_ssid_help_text')>">
+                            <tmpl_var _("webui", "webui_inline_help_icon" )>
+                        </div>
+                        <tmpl_udf GET_PO_TEXT("wifi_guest_show_ssid_label")>
+                    </label>
+                    <input type="checkbox" id="WifiGuestShowSsid" name="WifiGuestShowSsid" <tmpl_if IN_SET(WifiGuestShowSsid, "on"
+                        )>checked="checked"</tmpl_if> />
+                </div>
+            </tmpl_if>
+        
+            <tmpl_if showWiFiGuestPassword>
+                <div class="form-group">
+                    <label for="WifiGuestShowPassword">
+                        <div class="tooltip tooltip-help" id="" title="<tmpl_var _('webui', 'wifi_guest_show_password_help_text')>">
+                            <tmpl_var _("webui", "webui_inline_help_icon" )>
+                        </div>
+                        <tmpl_udf GET_PO_TEXT("wifi_guest_show_password_label")>
+                    </label>
+                    <input type="checkbox" id="WifiGuestShowPassword" name="WifiGuestShowPassword" <tmpl_if
+                        IN_SET(WifiGuestShowPassword, "on" )>checked="checked"</tmpl_if> />
+                </div>
+            </tmpl_if>
+        
+            <div class="form-group">
+                <label for="WifiGuestBroadcastSsid">
+                    <div class="tooltip tooltip-help" id=""
+                        title="<tmpl_var _('webui', 'wifi_guest_broadcast_ssid_help_text')>">
+                        <tmpl_var _("webui", "webui_inline_help_icon" )>
+                    </div>
+                    <tmpl_var _("webui", "wifi_guest_broadcast_ssid_label" )>
+                </label>
+                <input type="checkbox" id="WifiGuestBroadcastSsid" name="WifiGuestBroadcastSsid" <tmpl_if
+                    IN_SET(WifiGuestBroadcastSsid, "on" )>checked="checked"</tmpl_if> />
+            </div>
+        
+            <tmpl_if showWiFiGuestWPS>
+                <div class="form-group">
+                    <label for="WifiGuestWpsEnabled">
+                        <div class="tooltip tooltip-help" id="" title="<tmpl_udf GET_PO_TEXT("wifi_guest_wps_help_text",
+                            gProductNumber)>">
+                            <tmpl_var _("webui", "webui_inline_help_icon" )>
+                        </div>
+                        <tmpl_var _("webui", "wifi_guest_wps_label" )>
+                    </label>
+                    <input type="checkbox" id="WifiGuestWpsEnabled" name="WifiGuestWpsEnabled" <tmpl_if
+                        IN_SET(WifiGuestWpsEnabled, "on" )>checked="checked"</tmpl_if> />
+                </div>
+            </tmpl_if>
+        
+            <div class="form-group">
+                <label for="WifiGuestPrivacyEnabled">
+                    <div class="tooltip tooltip-help" id="" title="<tmpl_var _('webui', 'wifi_guest_privacy_help_text')>">
+                        <tmpl_var _("webui", "webui_inline_help_icon" )>
+                    </div>
+                    <tmpl_var _("webui", "wifi_guest_privacy_label" )>
+                </label>
+                <input type="checkbox" id="WifiGuestPrivacyEnabled" name="WifiGuestPrivacyEnabled" <tmpl_if
+                    IN_SET(WifiGuestPrivacyEnabled, "on" )>checked="checked"</tmpl_if> />
+            </div>
+
+
+
+
+        </div>
+
+        <div class="button_container align-field">
+            <input type="hidden" name="gSecureToken" id="gSecureToken" value="<tmpl_var gSecureToken>" />
+            <button type="submit" class="primary central" <tmpl_if isLocked>disabled="disabled"</tmpl_if>>
+                <tmpl_var _("webui", "webui_save_button")>
+            </button>
+        </div>
+    </form>
+
+</tmpl_if>

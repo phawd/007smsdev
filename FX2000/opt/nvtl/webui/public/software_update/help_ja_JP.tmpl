@@ -1,0 +1,63 @@
+<!-- Software Update -->
+<div id="software_update">
+
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+
+	<h2>概要</h2>
+
+		<p>ソフトウェアの更新は、モバイルネットワーク経由で自動的に配信されます。 このページでは、これらの更新を監視できます。</p>
+
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+	<h3><tmpl_var _("webui", "software_update_current_software_modem_version_label")></h3>
+        <p>
+                The version of software currently installed for the modem component.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_kernel_version_label")></h3>
+        <p>
+                The version number for the Operating System and its components.
+        </p>
+        <tmpl_if showAppVersion>
+                <h3><tmpl_var _("webui", "software_update_current_software_app_version_label")></h3>
+                <p>
+                        The app version currently installed.
+                </p>
+        </tmpl_if>
+        <h3><tmpl_var _("webui", "software_update_current_software_cute_version_label")></h3>
+        <p>
+                The cute version of the software currently installed on your device.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_pri_version_label")></h3>
+        <p>
+                The configuration version currently applied to your device.
+        </p>
+
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var _("webui", "software_update_current_software_configuration_version_label")></h3>
+			
+				<p><tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")></p>
+		</tmpl_if>
+	
+		<h2><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+
+		<h3><tmpl_var _("webui", "software_update_check_for_update_time_label")></h3>
+
+		<p>このフィールドは、 <tmpl_var _("webui", "webui_product_name")> が最後に更新が利用可能かどうかを確認した日時を示します。 「更新を確認する」ボタンを使用して、手動で更新を確認できます。</p>
+	
+		<h3>「更新を確認する」ボタン</h3>
+		<p>これを使用して、<tmpl_var _("webui", "webui_product_name")> の更新が利用可能かどうかを確認できます。 通常、更新は自動的に <tmpl_var _("webui", "webui_product_name")> にプッシュされるため、必要ありません。 このチェックを実行し、更新が利用可能な場合は、自動的にダウンロードされます。</p>
+	</tmpl_if>
+
+	<h3><tmpl_var _("webui", "software_update_check_for_update_status_label")></h3>
+
+		<p>通常、ここは空白になりますが、更新を確認すると、その確認の結果が表示されます。 また、更新がダウンロードされている場合は、ダウンロードの進行状況が表示されます。</p>
+	
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+		
+		<p>このパネルには、最後のソフトウェア更新の詳細が表示されます。</p>
+	
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+	
+		<p>このパネルは、リンク/見出しをクリックして開くことができます。 システム更新履歴には、このデバイスにダウンロードおよびインストールされた最新の <tmpl_var SoftwareUpdateHistoryCount> の更新の詳細が含まれます。。 更新がインストールされていない場合、このパネルには現在のソフトウェアバージョンが表示されます。</p>
+</div>
+<!-- end Software Update -->

@@ -1,0 +1,53 @@
+<!-- WiFi Advanced -->
+<div id="wifi_advanced">
+	<h1>WLAN</h1>
+	<h2>Übersicht</h2>
+	<p>In der Regel ist es nicht erforderlich, die standardmäßigen WLAN-Einstellungen zu ändern. Bei Bedarf können Sie sie aber an die Bedingungen Ihrer Umgebung anpassen.</p>
+
+	<h2>WLAN-Ein-/Aus-Steuerung</h2>
+	<p>Mit diesem Regler können Sie das WLAN nach Bedarf ein- oder ausschalten. Ist es ausgeschaltet, ist das <tmpl_var _("webui", "webui_product_name_with_suffix")>-WLAN-Netzwerk nicht verfügbar. In diesem Fall können Sie sich nur über ein USB-Kabel mit dem <tmpl_var _("webui", "webui_product_name")>-Netzwerk verbinden.</p>
+
+	<h3>Änderungen der WLAN-Einstellungen vom Jetpack-Bildschirm aus erlauben</h3>
+	<p>Mit diesem Regler können Sie das WLAN nach Bedarf ein- oder ausschalten. Ist es ausgeschaltet, ist das -WLAN-Netzwerk nicht verfügbar. In diesem Fall können Sie sich nur über ein USB-Kabel mit dem Netzwerk verbinden.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_max_connections_label")></h3>
+	<p>Legen Sie fest, wie viele Geräte gleichzeitig eine Verbindung mit dem/den <tmpl_var _("webui", "webui_product_name_with_suffix")>-WLAN-Netzwerk(en) herstellen können.</p>
+
+	<h2><tmpl_var _("webui", "wifi_advanced_profile_title")></h2>
+	<p>Über diese Einstellungen wird festgelegt, wie jedes Band (2,4 GHz und 5 GHz) genutzt wird und ob das WLAN-Gastnetzwerk verfügbar ist.</p>
+	<tmpl_if SwapToggleButtonAction>
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_ghz_band_label")></h3>
+		<p>Der 2,4-GHz-802.11-Modus wird angezeigt, der automatisch erkannt wird.</p>
+	<tmpl_else>
+		<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_ghz_band_label")></h3>
+		<p>Wählen Sie die gewünschte Option, um dieses Band auf das primäre Netzwerk oder das Gastnetzwerk anzuwenden oder dieses Band auszuschalten.</p>
+
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_advanced_five_ghz_band_label")></h3>
+	<p>Wählen Sie die gewünschte Option, um dieses Band auf das primäre Netzwerk oder das Gastnetzwerk anzuwenden oder dieses Band auszuschalten. Hinweis: Es ist nicht möglich, beide Bänder abzuschalten.</p>
+
+	<h2><tmpl_var _("webui", "wifi_advanced_two_point_four_g_band_options_title")></h2>
+	<p>Diese Einstellungen sind standardmäßig ausgeblendet. Wenn Sie auf die Überschrift/den Link klicken, werden sie angezeigt. Diese Einstellungen werden immer dann verwendet, wenn das 2,4-GHz-Band aktiv ist.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_g_802_11_mode_label")></h3>
+	<p>Verwenden Sie diese Einstellung, um den WLAN-Modus bei Bedarf zu ändern. In der Regel wird der Standardwert für diese Einstellung beibehalten.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_g_channel_label")></h3>
+	<p>Sie sollte auf <strong>Automatisch</strong> belassen werden, es sei denn, Sie müssen einen bestimmten Kanal für Ihre Umgebung wählen.</p>
+
+	<h2><tmpl_var _("webui", "wifi_advanced_five_g_options_title")></h2>
+	<p>Diese Einstellungen sind standardmäßig ausgeblendet. Wenn Sie auf die Überschrift/den Link klicken, werden sie angezeigt. Diese Einstellungen werden immer dann verwendet, wenn das 5-GHz-Band aktiv ist.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_802_11_mode_label")></h3>
+	<p>Verwenden Sie diese Einstellung, um den WLAN-Modus bei Bedarf zu ändern. In der Regel ist es nicht erforderlich, den Standardwert zu ändern.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_bandwidth_label")></h3>
+	<p>Wählen Sie die gewünschte Option. Der Standardwert sollte verwendet werden, es sei denn, es kommt zu Interferenzen mit anderen WLAN-Geräten. In diesem Fall kann eine Reduzierung der Bandbreite die Interferenz verringern.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_channel_label")></h3>
+	<p>Sie sollte auf <strong>Automatisch</strong> belassen werden, es sei denn, Sie müssen einen bestimmten Kanal für Ihre Umgebung wählen.</p>
+
+</div>
+
+<!-- id="wifi_advanced" -->
+

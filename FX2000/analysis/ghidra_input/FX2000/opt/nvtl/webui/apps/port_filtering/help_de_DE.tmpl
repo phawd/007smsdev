@@ -1,0 +1,165 @@
+<!-- Port Filtering -->
+<div id="port_filtering">
+	<h1>Portfilterung</h1>
+	<h2>Übersicht</h2>
+	<p>
+		Verwenden Sie bei Bedarf die Funktion „Portfilterung“, um ausgehenden Internetverkehr zu blockieren. Wenn diese Einstellung aktiviert ist, kann nur der Datenverkehr der ausgewählten Anwendungen über das Internet laufen. Der Verkehr wird durch Portnummern gekennzeichnet. 
+Einige Anwendungen sind vordefiniert. Sie können zusätzliche Anwendungen definieren. Dafür müssen Sie aber Einzelheiten über den Verkehr kennen, der von den Anwendungen verwendet und erzeugt wird, die Sie definieren möchten. 
+	</p>
+
+	<h2>Anwendungen</h2>
+	<h3>Anwendungskontrollkästchen</h3>
+	<p>Verwenden Sie diese Kontrollkästchen, um den Zugriff auf das Internet für jede Anwendung einzeln festzulegen, während die Funktion „Portfilterung“ aktiviert ist. Der Datenverkehr von ausgewählten Anwendungen kann über das Internet erfolgen. Andernfalls wird der Datenverkehr blockiert. 
+	</p>
+	<p>Die folgende Tabelle enthält Portnummern und Protokollinformationen für jede aufgelistete Portfilteranwendung.</p>
+
+	<table class="portFilteringTable" id="">
+	 	<thead>
+			<tr class="">
+				<th class=""> Anwendungsname</th>
+				<th class="">Port</th>
+				<th class="">TCP*</th>
+				<th class="">STCP*</th>
+				<th class="">UDP*</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td> POP3</td>
+				<td> 110</td>
+				<td> Ja</td>
+				<td> Nein</td>
+				<td> Zugewiesen</td>
+			</tr>
+
+			<tr>
+				<td> POP3S</td>
+				<td> 995</td>
+				<td> Ja</td>
+				<td> Nein</td>
+				<td> Ja</td>
+			</tr>
+
+			<tr>
+				<td> IMAP</td>
+				<td> 143</td>
+				<td> Ja</td>
+				<td> Nein</td>
+				<td> Zugewiesen</td>
+			</tr>
+
+			<tr>
+				<td> IMAPS</td>
+				<td> 993</td>
+				<td> Ja</td>
+				<td> Nein</td>
+				<td> Zugewiesen</td>
+			</tr>
+
+			<tr>
+				<td> SMTP</td>
+				<td> 25</td>
+				<td> Ja</td>
+				<td> Nein</td>
+				<td> Zugewiesen</td>
+			</tr>
+
+			<tr>
+				<td> SecureSMTP</td>
+				<td> 465</td>
+				<td> Ja</td>
+				<td> Nein</td>
+				<td> Nein</td>
+			</tr>
+
+			<tr>
+				<td> FTP-Steuerung (Befehl)</td>
+				<td> 21</td>
+				<td> Ja</td>
+				<td> Ja</td>
+				<td> Zugewiesen</td>
+			</tr>
+
+			<tr>
+				<td> FTP-Datenübertragung</td>
+				<td> 20</td>
+				<td> Ja</td>
+				<td> Ja</td>
+				<td> Zugewiesen</td>
+			</tr>
+
+			<tr>
+				<td> HTTP</td>
+				<td> 80</td>
+				<td> Ja</td>
+				<td> Ja</td>
+				<td> Zugewiesen</td>
+			</tr>
+
+			<tr>
+				<td> HTTPS</td>
+				<td> 443</td>
+				<td> Ja</td>
+				<td> Ja</td>
+				<td> Zugewiesen</td>
+			</tr>
+
+			<tr>
+				<td> Telnet</td>
+				<td> 23</td>
+				<td> Ja</td>
+				<td> Nein</td>
+				<td> Zugewiesen</td>
+			</tr>
+			
+		</tbody>
+
+	</table>
+
+	<p><b>Ja</b> gibt an, dass das Protokoll für die Portnummer standardisiert ist.</p>
+	<p><b>Nein</b> gibt an, dass das Protokoll für die Portnummer standardisiert ist.</p>
+	<p><b>Zugewiesen</b> gibt an, dass die Portnummer von der IANA (Internet Assigned Numbers Authority) für die Verwendung im Protokoll zugewiesen wurde, aber möglicherweise nicht standardisiert ist.</p>
+
+	<h2>Benutzerdefinierte Anwendungen</h2>
+	<p>Diese Funktion ermöglicht es Ihnen, Ihre eigenen Anwendungen (bis zu 10) zu definieren. Einmal definiert, können diese Anwendungen auf die gleiche Weise wie vordefinierte Anwendungen aktiviert und deaktiviert werden. Um eine Anwendung zu definieren, müssen Sie die Ports und das Protokoll (TCP, UDP) kennen, die von der Anwendung für ausgehenden Datenverkehr verwendet werden. Klicken Sie zu Beginn auf die Schaltfläche <strong>Benutzerdefinierte Anwendung hinzufügen</strong> und geben Sie dann die folgenden Daten ein. 
+	</p>
+	<p>Beachten Sie, dass alle Änderungen an einer benutzerdefinierten Anwendung erst dann gespeichert werden, wenn Sie den gesamten Seiteninhalt über die Schaltfläche „Änderungen speichern“ speichern.</p>
+	
+	<h3>Anwendungskontrollkästchen</h3>
+	<p>Aktiveren Sie über dieses Kontrollkästchen eine Anwendung, nachdem Sie sie definiert haben. Ist es aktiviert, kann der Datenverkehr von dieser Anwendung über das Internet erfolgen. Andernfalls wird der Datenverkehr blockiert. 
+	</p>
+	<h3>Anwendungsname</h3>
+	<p>
+		Geben Sie einen geeigneten Namen für die Anwendung ein, die Sie definieren.
+	</p>
+	<h3>Portbereich (Startport/Endport)</h3>
+		<p>
+			Jede Anwendung hat ihren eigenen Portbereich.
+			Geben Sie für jede Anwendung Anfang und Ende des Portbereichs ein.
+		</p>
+		<div class="blockgroup">
+			<ul>
+				<li>Geben Sie für einen einzelnen Port die Portnummer in den beiden Feldern <strong>Startport</strong> und <strong>Endport</strong> ein.</li>
+				<li>Geben Sie für einen Portbereich den Anfang des Bereichs in das Feld <strong>Startport</strong> und das Ende des Bereichs in das Feld <strong>Endport</strong> ein. </li>
+			</ul>
+		</div>
+	<h3>Startport</h3>
+	<p>
+		Geben Sie den Anfang des Portnummernbereichs ein, der vom ausgehenden Datenverkehr für die hinzugefügte benutzerdefinierte Anwendung verwendet wird.
+	</p>
+	<h3>Endport</h3>
+	<p>
+		Geben Sie das Ende des Portnummernbereichs ein, der von der Anwendung verwendetet wird.
+		<b>HINWEIS:</b> Wenn die Anwendung einen einzelnen Port anstelle eines Bereichs nutzt, geben Sie diesen Port ein.
+	</p>
+	<h3>Protokoll</h3>
+	<p>
+		Wählen Sie aus der Dropdown-Liste das vom Portbereich verwendete Protokoll aus (TCP, UDP oder beides). 
+	</p>
+	<h3>Löschen</h3>
+	<p>Über dieses Kontrollkästchen können Sie eine benutzerdefinierte Anwendung löschen.
+	</p>
+	<p>HINWEIS: Klicken Sie erneut auf die Registerkarte „Portfilterung“, um gelöschte benutzerdefinierte Anwendungen aus der Bildschirmansicht zu entfernen. </p>
+</div>
+<!-- id="port_filtering" -->
+		

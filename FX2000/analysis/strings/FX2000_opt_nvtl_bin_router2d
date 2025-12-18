@@ -1,0 +1,1467 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+libpthread.so.0
+MsgBusGet
+mifi_dbg_get_level_name
+mifi_dbg_log
+mifi_dbg_syslog
+settings_get_features
+xmldata_initialize
+xmldata_getstring
+router2_get_ip_passthrough
+router2_get_ippt_mode_settings
+router2_get_dns_name
+router2_get_device_name
+router2_get_port_forwarding_enabled
+router2_get_port_fwd_app_list
+router2_get_port_filtering_enabled
+router2_get_port_filter_app_list
+router2_get_firewall_severity_mode
+router2_get_vpn_passthrough_enabled
+router2_get_http_redirect_enabled
+strcasecmp
+router2_get_mtu_value
+router2_get_ipv6_firewall_enabled
+router2_get_lan_settings
+router2_get_dmz_settings
+router2_get_gw_settings
+router2_get_dhcp_settings
+router2_get_manual_dns
+router2_get_public_access_list
+router2_get_icmp_response_enabled
+router2_get_allowed_port_enabled
+router2_get_allowed_port_list
+router2_get_static_routes_enabled
+router2_get_static_route_list
+router2_get_dns_filter
+mq_close
+mq_unlink
+snprintf
+router2_utils_get_wan_type_str
+router2_get_masquerade_rule_status
+router2_set_masquerade_rule_status
+pthread_create
+inet_ntop
+pthread_join
+inet_addr
+getifaddrs
+freeifaddrs
+dmdb_get_reserved_ip_list
+inet_pton
+dmdb_get_internet_blocked_list
+dmdb_get_mac_filter_type
+dmdb_get_blacklist
+dmdb_get_whitelist
+pthread_self
+__ctype_b_loc
+dmdb_get_connected_device_list
+__errno_location
+ifc_get_linklocal_address6
+__isoc99_fscanf
+GLIBC_2.7
+dmdb_dus_set_usage_data
+router2_check_dns_on_wan
+mifi_dbg_start
+msgq_create
+watchdog_application_register
+msgq_receive
+msgq_resp_handler
+msgq_send_async
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+service_monitor_add
+service_monitor_list
+service_monitor_validate
+msgq_does_queue_exist
+rout_mon_add_service
+router2_set_gw_settings
+router2_get_dns_passthrough_enabled
+check_ip_version
+modem2_get_call_status
+modem2_sim_get_carrier
+settings_get_setting
+__bss_start
+libmifimsgbus.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libsqlite3.so.0
+librouter2_api.so
+H	KxD	J{D
+/dev/null
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - IPPassthrough feature is DISABLED in features.xml
+/opt/nvtl/etc/router2/config.xml
+/Config/Interfaces/Bridge
+[%s]:[%s] - Failed to open configuration file: %s
+[%s]:[%s] - settings subsystem is not ready. retries left %d
+[%s]:[%s] - settings subsystem initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings subsystem not ready?
+[%s]:[%s] - Failed to initialize router2_get_ip_passthrough settings. %d
+[%s]:[%s] - Failed to initialize router2_get_ippt_mode settings. %d
+[%s]:[%s] - Failed to initialize router2_get_dns_name settings. %d
+[%s]:[%s] - Failed to initialize router2_get_device_name settings. %d
+[%s]:[%s] - Failed to initialize router2_get_port_forwarding_enabled settings. %d
+[%s]:[%s] - Failed to initialize router2_get_port_fwd_app_list settings. %d
+[%s]:[%s] - Failed to initialize router2_get_port_filtering_enabled settings. %d
+[%s]:[%s] - Failed to initialize router2_get_port_filter_app_list settings. %d
+[%s]:[%s] - Failed to initialize router2_get_firewall_severity settings. %d
+[%s]:[%s] - Failed to initialize router2_get_vpn_passthrough settings. %d
+[%s]:[%s] - Failed to initialize router2_get_http_redirect settings. %d
+[%s]:[%s] - Failed to initialize router2_get_mtu. %d
+[%s]:[%s] - Failed to initialize ipv6 firewall. %d
+[%s]:[%s] - Failed to initialize LAN settings. %d
+[%s]:[%s] - Failed to initialize DMZ settings. %d
+[%s]:[%s] - Failed to initialize DHCP settings. %d
+[%s]:[%s] - Failed to initialize manual DNS settings. %d
+/opt/nvtl/tmp/router2/resolv_manual.conf
+[%s]:[%s] - Failed to initialize public access settings. %d
+[%s]:[%s] - Failed to initialize dns name list. %d
+[%s]:[%s] - Failed to initialize MAC filter type. %d
+[%s]:[%s] - Failed to initialize MAC filter list. %d
+[%s]:[%s] - Failed to initialize Reserved IP list. %d
+[%s]:[%s] - Failed to initialize Internet blocked list. %d
+[%s]:[%s] - Failed to initialize ICMP response settings: %d
+[%s]:[%s] - Failed to initialize router2_get_allowed_port_enabled settings. %d
+[%s]:[%s] - Failed to initialize Allowed port list settings: %d
+[%s]:[%s] - Failed to initialize router2_get_static_routes_enabled settings. %d
+[%s]:[%s] - Failed to initialize router2_get_static_route_list settings. %d
+[%s]:[%s] - Failed to initialize DNS Filter settings. %d
+sh /opt/nvtl/bin/router2_update_ipacm_cfg.sh subnet_update %s %s
+[%s]:[%s] - Internet v4: [%d], ip [%s]
+[%s]:[%s] - Internet v4: mask [%s]
+[%s]:[%s] - Internet v4: gateway [%s]
+[%s]:[%s] - Internet v4: dns1 [%s]
+[%s]:[%s] - Internet v4: dns2 [%s]
+[%s]:[%s] - Internet v6: [%d], ip [%s]
+[%s]:[%s] - Internet v6: gateway [%s]
+[%s]:[%s] - Internet v6: dns1 [%s]
+[%s]:[%s] - Internet v6: dns2 [%s]
+[%s]:[%s] - Data Usage v4: [%d], ip [%s]
+[%s]:[%s] - Data Usage v4: mask [%s]
+[%s]:[%s] - Data Usage v4: gateway [%s]
+[%s]:[%s] - Data Usage v4: dns1 [%s]
+[%s]:[%s] - Data Usage v4: dns2 [%s]
+[%s]:[%s] - DM v4: [%d], ip [%s]
+[%s]:[%s] - DM v4: mask [%s]
+[%s]:[%s] - DM v4: gateway [%s]
+[%s]:[%s] - DM v4: dns1 [%s]
+[%s]:[%s] - DM v4: dns2 [%s]
+[%s]:[%s] - DM v6: [%d], ip [%s]
+[%s]:[%s] - DM v6: gateway [%s]
+[%s]:[%s] - DM v6: dns1 [%s]
+[%s]:[%s] - DM v6: dns2 [%s]
+[%s]:[%s] - Interface wwan v4 [%s]
+[%s]:[%s] - Interface wwan v6 [%s]
+[%s]:[%s] - Interface du v4 [%s]
+[%s]:[%s] - Interface dm v4 [%s]
+[%s]:[%s] - Interface dm v6 [%s]
+[%s]:[%s] - Interface bridge [%s]
+[%s]:[%s] - IPPT mode: [%d]
+[%s]:[%s] - IPPT enabled: [%d], interface [%d]
+[%s]:[%s] - IPPT port: [%d], protocol (tcp=1,udp=2) [%d]
+[%s]:[%s] - Port filtering status is:%s
+[%s]:[%s] - Port forwarding status is:%s
+[%s]:[%s] - VPN passthrough status is:%s
+[%s]:[%s] - HTTP redirect status is:%s
+[%s]:[%s] - Allowed Ports status is:%s
+[%s]:[%s] - LAN interface MTU:%d
+[%s]:[%s] - IPv6 firewall is :%d
+[%s]:[%s] - Mac filter mode is :%d
+[%s]:[%s] - DHCP status is: %d
+[%s]:[%s] - DHCP IP range is: %s - %s
+[%s]:[%s] - Maximum DHCP pool hosts: %u
+[%s]:[%s] - DHCP lease (in seconds): %u
+[%s]:[%s] - Manual DNS status is: %d
+[%s]:[%s] - Manual DNS IP1: %s
+[%s]:[%s] - Manual DNS IP2: %s
+[%s]:[%s] - DMZ status: %d
+[%s]:[%s] - DMZ IP: %s
+[%s]:[%s] - LAN IP: %s
+[%s]:[%s] - LAN netmask: %s
+[%s]:[%s] - LAN subnet: %s
+[%s]:[%s] - Public access Record-%d: 
+[%s]:[%s] - Public access status: %s
+[%s]:[%s] - Public access IP type: %s
+[%s]:[%s] - Public access Start IP: %s
+[%s]:[%s] - Public access End IP: %s
+[%s]:[%s] - Public access ports: %d
+[%s]:[%s] - Public access Proto: %s
+[%s]:[%s] - Public access is not configured
+[%s]:[%s] - IPPT enabled: [%d] Interface [%d]
+[%s]:[%s] - DNS name set: %s
+[%s]:[%s] - DERVICE name set: %s
+/opt/nvtl/bin/stop_process.sh avahi-daemon
+/opt/nvtl/tmp/router2/avahi_daemon.conf
+/usr/sbin/avahi-daemon -f %s -D
+[%s]:[%s] - %s() : Null data received
+[%s]:[%s] - {ROUTER_WAN_EVENT} %s() Entered for %s
+/opt/nvtl/tmp/router2/resolv_wwan.conf
+/opt/nvtl/tmp/router2/resolv_eth.conf
+/opt/nvtl/tmp/router2/resolv_usb.conf
+/opt/nvtl/tmp/router2/resolv_wifi.conf
+[%s]:[%s] - %s() Invalid WAN type %d 
+[%s]:[%s] - Failed to SET masquerade_rule_status settings in Bootup [%d]
+[%s]:[%s] - %s() %s already in disconnected state
+[%s]:[%s] - {ROUTER_WAN_EVENT} %s() Completed for %s
+/opt/nvtl/tmp/router2/resolv_wwan4.conf
+/opt/nvtl/tmp/router2/resolv_wwan6.conf
+/opt/nvtl/tmp/router2/router_init_wwan_iface_v4.sh
+/opt/nvtl/tmp/router2/router_deinit_wwan_iface_v4.sh
+/opt/nvtl/tmp/router2/resolv_dm.conf
+/opt/nvtl/tmp/router2/resolv_dmv4.conf
+/opt/nvtl/tmp/router2/resolv_dmv6.conf
+/opt/nvtl/tmp/router2/router_init_dm_v4.sh
+/opt/nvtl/tmp/router2/router_deinit_dm_v4.sh
+/opt/nvtl/tmp/router2/resolv_data_usage.conf
+/opt/nvtl/tmp/router2/resolv_data_usage4.conf
+/opt/nvtl/tmp/router2/resolv_data_usage6.conf
+/opt/nvtl/tmp/router2/router_init_apps_v4.sh
+/opt/nvtl/tmp/router2/router_deinit_apps_v4.sh
+/opt/nvtl/tmp/router2/resolv_eth4.conf
+/opt/nvtl/tmp/router2/resolv_eth6.conf
+/opt/nvtl/tmp/router2/router_init_eth_iface_v4.sh
+/opt/nvtl/tmp/router2/router_deinit_eth_iface_v4.sh
+/opt/nvtl/tmp/router2/resolv_usb4.conf
+/opt/nvtl/tmp/router2/resolv_usb6.conf
+/opt/nvtl/tmp/router2/router_init_usb_iface_v4.sh
+/opt/nvtl/tmp/router2/router_deinit_usb_iface_v4.sh
+/opt/nvtl/tmp/router2/resolv_wifi4.conf
+/opt/nvtl/tmp/router2/resolv_wifi6.conf
+/opt/nvtl/tmp/router2/router_init_wifi_iface_v4.sh
+/opt/nvtl/tmp/router2/router_deinit_wifi_iface_v4.sh
+[%s]:[%s] - Wan IPv4 interface received in PDN context is not valid
+[%s]:[%s] - Invalid WAN IPv4 address %x
+[%s]:[%s] - Invalid WAN IPv4 netmask %x
+[%s]:[%s] - Invalid WAN IPv4 gateway %x
+[%s]:[%s] - Invalid WAN IPv4 DNS %x
+[%s]:[%s] - {ROUTER_WAN_EVENT} WAN IPv4 interface "%s" IP "%s" Mask "%s" GW "%s" DNS1 "%s" DNS2 "%s"  MTU "%d" received in PDN context
+[%s]:[%s] - %s() %s already connected with same IP: %s
+[%s]:[%s] - %s() %s already connected with different IP: %s
+[%s]:[%s] - Firewall Severity is set to: %d
+/opt/nvtl/tmp/router2/deinit_ipv4_firewall.sh
+/opt/nvtl/tmp/router2/deinit_ipv6_firewall.sh
+/opt/nvtl/tmp/router2/init_ipv6_firewall.sh
+iptables -t nat -A INSEEGO_NAT_POSTROUTING -o %s -j SNAT --to %s
+[%s]:[%s] - %s
+iptables -t nat -A INSEEGO_NAT_POSTROUTING -s 169.254.5.1 -o %s -j SNAT --to %s
+iptables -t nat -D INSEEGO_NAT_POSTROUTING -s 169.254.5.1 -o %s -j SNAT --to %s
+iptables -t nat -D INSEEGO_NAT_POSTROUTING -o %s -j SNAT --to %s
+[%s]:[%s] - %s() invoked
+[%s]:[%s] - Unable to get the IP addresses list
+[%s]:[%s] - %s():%d IPv6 is addr[%s] wan_iface=[%s] iface=[%s] family[%d]
+[%s]:[%s] - Global IPv6 address %s found on %s
+[%s]:[%s] - Link local IPv6 address %s found on %s
+[%s]:[%s] - IPv6 address %s returned on %s
+[%s]:[%s] - Got the valid IPv6 address
+echo "0" > /proc/sys/net/ipv6/conf/%s/disable_ipv6
+[%s]:[%s] - %s Exec: %s
+echo "2" > /proc/sys/net/ipv6/conf/%s/accept_ra
+ifconfig %s up
+[%s]:[%s] - Retry to get the IPv6 address
+ifconfig %s del %s/64
+/opt/nvtl/tmp/router2/router_init_wwan_iface_v6.sh
+/opt/nvtl/tmp/router2/router_deinit_wwan_iface_v6.sh
+/opt/nvtl/tmp/router2/router_init_dm_v6.sh
+/opt/nvtl/tmp/router2/router_deinit_dm_v6.sh
+/opt/nvtl/tmp/router2/router_init_apps_v6.sh
+/opt/nvtl/tmp/router2/router_deinit_apps_v6.sh
+/opt/nvtl/tmp/router2/router_init_eth_iface_v6.sh
+/opt/nvtl/tmp/router2/router_deinit_eth_iface_v6.sh
+/opt/nvtl/tmp/router2/router_init_wifi_iface_v6.sh
+/opt/nvtl/tmp/router2/router_deinit_wifi_iface_v6.sh
+[%s]:[%s] - Unable to get WAN IPv6 address.
+[%s]:[%s] - Wan IPv6 interface received in PDN context is not valid
+[%s]:[%s] - IPv6 routing failed, invalid IPv6 address.
+[%s]:[%s] - IPv6 routing failed, invalid IPv6 gateway address.
+[%s]:[%s] - IPv6 invalid IPv6 Primary DNS address.
+[%s]:[%s] - Start IPV6 Interface routing with DNS IP: %s
+[%s]:[%s] - IPv6 invalid IPv6 Secondary DNS address.
+[%s]:[%s] - {ROUTER_WAN_EVENT} WAN IPv6 interface "%s" IP "%s" GW "%s" DNS1 "%s" DNS2 "%s" MTU "%d" received in PDN context
+[%s]:[%s] - %s() %s already connected with same IPv6: %s
+[%s]:[%s] - %s() %s already connected with different IPv6: %s
+[%s]:[%s] - Stop IPV6 Internet routing.
+[%s]:[%s] - DEVICE is not doing INTERNET ROUTING
+[%s]:[%s] - Port filtering is set to: %d
+[%s]:[%s] - NO INTERNET configuration will be applied after it comes up
+/opt/nvtl/tmp/router2/deinit_port_filter.sh
+/opt/nvtl/tmp/router2/init_port_filter.sh
+/opt/nvtl/tmp/router2/deinit_vpn_conn.sh
+/opt/nvtl/tmp/router2/init_vpn_conn.sh
+/opt/nvtl/tmp/router2/deinit_port_filter_ipv6.sh
+/opt/nvtl/tmp/router2/init_port_filter_ipv6.sh
+/opt/nvtl/tmp/router2/deinit_ipv6_vpn_conn.sh
+/opt/nvtl/tmp/router2/init_ipv6_vpn_conn.sh
+[%s]:[%s] - Port filtering list set, count:%d
+[%s]:[%s] - 
+Filter rule name=%s, enabled=%d, type=%s, start port=%d, end port=%d
+[%s]:[%s] - VPN passthrough is set to: %d
+/opt/nvtl/tmp/router2/deinit_vpn_conntrack.sh
+[%s]:[%s] - HTTP redirect is set to: %d
+[%s]:[%s] - INTERNET configuration present
+[%s]:[%s] - LAN MTU is set to: %d
+[%s]:[%s] - IPv6 firewall status is: %d
+[%s]:[%s] - Port forwarding is set to: %d
+/opt/nvtl/tmp/router2/deinit_port_forward.sh
+/opt/nvtl/tmp/router2/init_port_forward.sh
+[%s]:[%s] - Port forwarding list set, count:%d
+translate
+[%s]:[%s] - 
+Fwd rule name=%s, enabled=%d, ip=%s, type=%s, range=%s, start/ext port=%d, end/int port=%d
+[%s]:[%s] - Unable to get the reserved ip list from DMDB
+[%s]:[%s] - DHCP reserved ip settings have been updated
+/opt/nvtl/tmp/router2/deinit_dhcpd.sh
+/opt/nvtl/tmp/router2/init_dhcpd.sh
+[%s]:[%s] - In %s()
+[%s]:[%s] - Internet blocked list has been updated
+/opt/nvtl/tmp/router2/deinit_internet_block.sh
+/opt/nvtl/tmp/router2/init_internet_block.sh
+[%s]:[%s] - Unable to get the Mac filter mode from DMDB
+[%s]:[%s] - Mac filter mode set to %d from %d
+/opt/nvtl/tmp/router2/deinit_%s_mac_filter.sh
+/opt/nvtl/tmp/router2/init_%s_mac_filter.sh
+[%s]:[%s] - dmdb_get_blacklist failed with code: %d
+[%s]:[%s] - Blacklisted mac list has %d devices
+[%s]:[%s] - Mac%d: %s
+[%s]:[%s] - dmdb_get_whitelist failed with code: %d
+[%s]:[%s] - Whitelisted mac list has %d devices
+[%s]:[%s] - %s: call to dmdb_get_connected_device_list failed
+[%s]:[%s] - Connected client list:
+/opt/nvtl/tmp/router2/init_statistics.sh
+[%s]:[%s] - Connected client list is updated from DMDB
+00:00:00:00:00:00
+0123456789abcdefABCDEF
+/dev/ipa
+[%s]:[%s] - Failed to open the %s device
+[%s]:[%s] - ioctl() failed for command IPA_IOC_PDN_CONFIG.
+[%s]:[%s] - IPA ioctl() is successfull for  command IPA_IOC_PDN_CONFIG.
+ebtables -L --Lc -Z > /tmp/router_counters.txt
+[%s]:[%s] - Router collecting and resetting client data counters.
+[%s]:[%s] - Router unable to collect and reset client data counters.
+[%s]:[%s] - Collecting Stats for MAC address %s
+cat /tmp/router_counters.txt | tr -s ' ' | grep CONTINUE | grep -i "\-p IPv4" | grep -i "\-s %s" | cut -d ' ' -f17
+[%s]:[%s] - Transmitted %lld IPv4 bytes from mac %s.
+[%s]:[%s] - Unable to collect IPv4 tx stats for mac %s.
+cat /tmp/router_counters.txt | tr -s ' ' | grep CONTINUE | grep -i "\-p IPv4" |  grep -i "\-d %s" | cut -d ' ' -f17
+[%s]:[%s] - Received %lld IPv4 bytes on mac %s.
+[%s]:[%s] - Unable to collect IPv4 rx stats for mac %s.
+cat /tmp/router_counters.txt | tr -s ' ' | grep CONTINUE |  grep -i "\-p IPv6" | grep -i "\-s %s" | cut -d ' ' -f17
+[%s]:[%s] - Transmitted %lld IPv6 bytes from mac %s.
+[%s]:[%s] - Unable to collect IPv6 tx stats for mac %s.
+cat /tmp/router_counters.txt | tr -s ' ' | grep CONTINUE |  grep -i "\-p IPv6" | grep -i "\-d %s" | cut -d ' ' -f17
+[%s]:[%s] - Received %lld IPv6 bytes on mac %s.
+[%s]:[%s] - Unable to collect IPv6 rx stats for mac %s.
+[%s]:[%s] - Unable to collect stats for mac %s.
+[%s]:[%s] - DMDB client stat update returned error code %d.
+[%s]:[%s] - LAN settings has been updated
+[%s]:[%s] - DMZ settings has been updated
+/opt/nvtl/tmp/router2/deinit_dmz.sh
+/opt/nvtl/tmp/router2/init_dmz.sh
+[%s]:[%s] - DHCP settings has been updated
+[%s]:[%s] - Manual DNS settings has been updated
+/etc/resolv.conf
+/etc/resolv.dnsmasq
+killall -SIGHUP dnsmasq
+[%s]:[%s] - Public access settings has been updated
+/opt/nvtl/tmp/router2/deinit_public_access.sh
+/opt/nvtl/tmp/router2/init_public_access.sh
+[%s]:[%s] - %s: add/remove(%d) %s interface with flags 0x%X
+[%s]:[%s] - %s: %s [type %d] is not supported when IPPT is enabled on [type %d]
+/opt/nvtl/tmp/router2/init_bridge.sh
+[%s]:[%s] - %s
+[%s]:[%s] - Allowed Ports status is set to: %d
+[%s]:[%s] - NO INTERNET, but apply allowed port configuration.
+/opt/nvtl/tmp/router2/deinit_allowed_ports.sh
+/opt/nvtl/tmp/router2/init_allowed_ports.sh
+[%s]:[%s] - %s: Allowed Port list, status:%d , count:%d
+[%s]:[%s] - 
+Allowed Port rule Interface name=%s, enabled=%d, port_list=%s, prtcl type=%s, port_type=%s, start/ext port=%d, end/int port=%d
+[%s]:[%s] - NO INTERNET, but applying Allowed Ports configuration.
+[%s]:[%s] - Invoked %s() for %s
+[%s]:[%s] - Invalid WAN %d is passed to check DNS Connectivity.
+[%s]:[%s] - DNS could not be resolved on wan type %d for url %s
+[%s]:[%s] - Resolved DNS on wan type %d for url %s
+[%s]:[%s] - WAN MGR informed %s is now ROUTED WAN
+[%s]:[%s] - Static routes status is set to: %d
+/opt/nvtl/tmp/router2/init_static_route.sh
+/opt/nvtl/tmp/router2/deinit_static_route.sh
+[%s]:[%s] - Static Route List set, count:%d
+[%s]:[%s] - Wiregaurd Tunnel %s started 
+[%s]:[%s] - ICMP Response is set to: %d
+[%s]:[%s] -  Removing ICMP Response rules
+iptables -D INSEEGO_FILTER_INPUT -p icmp  -i %s -j ACCEPT
+iptables -I INSEEGO_FILTER_INPUT -p icmp --icmp-type 8 -i %s -j DROP
+ip6tables -D INSEEGO_FILTER_INPUT -p icmp  -i %s -j ACCEPT
+ip6tables -I INSEEGO_FILTER_INPUT -p ipv6-icmp --icmpv6-type 128 -i %s -j DROP
+[%s]:[%s] -  Adding ICMP Response rules
+iptables -D INSEEGO_FILTER_INPUT -p icmp --icmp-type 8 -i %s -j DROP
+iptables -I INSEEGO_FILTER_INPUT -p icmp  -i %s -j ACCEPT
+ip6tables -D INSEEGO_FILTER_INPUT -p ipv6-icmp --icmpv6-type 128 -i %s -j DROP
+ip6tables -I INSEEGO_FILTER_INPUT -p icmp  -i %s -j ACCEPT
+[%s]:[%s] - %s:Begin
+[%s]:[%s] - %s: DNS Filter Config empty
+[%s]:[%s] - %s: Enabled-%d Add List:%d Black List:%d URL's:%s 
+/opt/nvtl/tmp/router2/dns_filter.sh
+[%s]:[%s] - %s: Disabled-%d or Delete:%d Operation performed.
+/opt/nvtl/tmp/router2/dns_white_list
+/opt/nvtl/tmp/router2/dns_black_list
+[%s]:[%s] - %s: Failed to create Black DNS URL configuration file-%s.
+[%s]:[%s] - %s: Failed to create White DNS URL configuration file-%s.
+Doesn't exist.
+[%s]:[%s] - %s: Invalid DNS Operation
+sh %s 1 %d "%s"
+[%s]:[%s] - %s: Updating filter configuration
+[%s]:[%s] - Invoked %s +++
+[%s]:[%s] - %s +++ : Null data received
+[%s]:[%s] - WWAN connected
+[%s]:[%s] - WWAN is not in connected state 
+[%s]:[%s] - %s:%s:%d:ipacm_ROUTER2 CONNECTED:%d
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/router2/src/router2.c
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+/opt/nvtl/tmp/router2/
+[%s]:[%s] - Error attaching to the message bus.
+/router2_mq
+[%s]:[%s] - Error opening message queue: %d, terminating.
+[%s]:[%s] - Error initializing the router setup. %d
+router2_main_thread
+[%s]:[%s] - Ready for events
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - Error de-initializing the router setup. %d
+[%s]:[%s] - %s Server Terminating.
+start_internet_v4_routing
+stop_internet_v4_routing
+start_init_v4_routing
+stop_init_v4_routing
+router2_get_ipv6_address
+router2_update_internet_addr
+start_init_v6_routing
+start_internet_v6_routing
+stop_init_v6_routing
+stop_internet_v6_routing
+set_port_filtering
+set_port_filter_list
+set_vpn_passthrough
+set_http_redirect
+set_port_forwarding
+set_port_fwd_list
+router2_internet_blocked_list_update
+router2_mac_filter_type_update
+router2_mac_filtering_update
+router2_update_connected_client_list
+router2_update_connected_client_stats
+set_dmz_settings
+set_public_access_settings
+router2_update_bridge_interfaces
+set_allowed_port_list
+check_dns_connectivity
+set_dns_filter_settings
+set_masquerade_rule_status
+handle_event_message
+dmdb.blacklist.settings
+[%s]:[%s] - %s: blacklist notification
+dmdb.whitelist.settings
+[%s]:[%s] - %s: whitelist notification
+dmdb.macfilter_type.settings
+[%s]:[%s] - %s: macfilter type notification
+dmdb.reserved_ip.settings
+[%s]:[%s] - %s: Reserved IP list notification
+dmdb.internet_blocked.settings
+[%s]:[%s] - %s: Internet blocked list notification
+dmdb.dus.report.statistics
+[%s]:[%s] - %s: connected device list statistics notification
+/router2_mq
+dmdb.connected.device.list
+[%s]:[%s] - %s: connected device list notification
+wan_mgr.wan_status_change
+[%s]:[%s] - %s: WAN Status change notification
+vpn.connection.status.changed
+[%s]:[%s] - %s: VPN connection state change notification
+[%s]:[%s] - %s: VPN Info: Server:0x%x Idx:%d Intf:%s
+VPN State:0x%x Failed Reason(if any):0x%x
+[%s]:[%s] - %s: MsgBus_Create Failed
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe to Reserved IP DMDB channel Failed
+[%s]:[%s] - %s: MsgBus_Subscribe to Internet blocked list DMDB channel Failed
+[%s]:[%s] - %s: MsgBus_Subscribe to Blacklisted MAC list DMDB channel Failed
+[%s]:[%s] - %s: MsgBus_Subscribe to Whitelisted MAC list DMDB channel Failed
+[%s]:[%s] - %s: MsgBus_Subscribe to MAC filter type DMDB channel Failed
+[%s]:[%s] - %s: MsgBus_Subscribe to Connected client DMDB channel Failed
+dsm.broadcast
+[%s]:[%s] - %s: MsgBus_Subscribe to USB state change channel Failed
+[%s]:[%s] - %s: MsgBus_Subscribe to WAN state change channel Failed
+[%s]:[%s] - %s: MsgBus_Subscribe to VPN connection state change channel Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+router2_msgbus_handler
+[%s]:[%s] - %s: service_monitor_add() failed
+[%s]:[%s] - %s: Start with pthread ID:%lu, process ID:%d.
+/rout_mon_mq
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+router2_moniter_thread
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Terminate Thread Example, TID: %lu.
+handle_event_message
+rmnet_data0
+rmnet_data3
+/opt/nvtl/tmp/router2/avahi_daemon.conf
+[%s]:[%s] - Error in opening the Avahi daemon conf file
+[server]
+	host-name=%s
+	use-ipv4=yes
+	use-ipv6=yes
+[publish]
+	 #avahi-daemon will publish an IPv6 AAAA record via IPv4
+	publish-aaaa-on-ipv4=yes
+	 #avahi-daemon will publish an IPv4 A record via IPv6
+	publish-a-on-ipv6=yes
+[%s]:[%s] - User GW setting %d, GW IP: %s WAN IP: %s in same subnet: %s, using configured gateway 
+[%s]:[%s] - User GW setting %d, GW IP: %s WAN IP: %s NOT in same subnet: %s, using Default gateway 
+255.255.255.0
+[%s]:[%s] - GW Mode %d WAN IP: %s Netmask %s GW_IP %s 
+[%s]:[%s] - WAN IP: [%s] GW: [%s] Netmask: [%s] DNS1: [%s] DNS2: [%s]
+[%s]:[%s] - Invoked %s()
+[%s]:[%s] - Invalid parameters passed for creating dhcpd.conf
+/opt/nvtl/tmp/router2/dhcpd.conf
+[%s]:[%s] - Error in opening the DHCP conf files fout=%d
+/opt/nvtl/tmp/router2/dhcpd_reserved.conf
+[%s]:[%s] - Error in opening the DHCP reserved ip conf file
+# This is auto generated dhcpd.conf
+ddns-update-style interim;
+authoritative;
+ignore client-updates;
+option interface-mtu %d;
+[%s]:[%s] - %s returned %d
+[%s]:[%s] - %s Both dns servers are ipv6 hence configuring to default dns server ip i.e device ip
+subnet %s netmask %s {
+	   # always-broadcast on;
+	   # The range of IP addresses the server
+	   # will issue to DHCP enabled PC clients
+	   # booting up on the network.
+	   range %s %s;
+	   # Set the amount of time in seconds that a
+	   # client may keep the IP address.
+	   default-lease-time %u;
+	   max-lease-time  %u;
+	   option routers %s;
+	   option ip-forwarding off;
+	   option broadcast-address %s;
+	   option subnet-mask %s;
+	   option domain-name-servers %s;
+	   option netbios-name-servers %s;
+	   set vendor-string = option vendor-class-identifier;
+	   set param-req-list = option dhcp-parameter-request-list;
+	   include "/opt/nvtl/tmp/router2/dhcpd_reserved.conf";
+	subnet %s netmask %s {
+	   # always-broadcast on;
+	   # The range of IP addresses the server
+	   # will issue to DHCP enabled PC clients
+	   # booting up on the network.
+	   range %s %s;
+	   # Set the amount of time in seconds that a
+	   # client may keep the IP address.
+	   default-lease-time %u;
+	   max-lease-time  %u;
+	   option routers %s;
+	   option ip-forwarding off;
+	   option broadcast-address %s;
+	   option subnet-mask %s;
+	   option domain-name-servers %s;
+	   option netbios-name-servers %s;
+	   set vendor-string = option vendor-class-identifier;
+	   set param-req-list = option dhcp-parameter-request-list;
+shared-network my-net {
+	subnet %s netmask %s {
+	   # always-broadcast on;
+	   # The range of IP addresses the server
+	   # will issue to DHCP enabled PC clients
+	   # booting up on the network.
+	   range %s %s;
+	   # Set the amount of time in seconds that a
+	   # client may keep the IP address.
+	   default-lease-time %u;
+	   max-lease-time  %u;
+	   option routers %s;
+	   option ip-forwarding off;
+	   option broadcast-address %s;
+	   option subnet-mask %s;
+	   option domain-name-servers %s;
+	   option netbios-name-servers %s;
+	   set vendor-string = option vendor-class-identifier;
+	   set param-req-list = option dhcp-parameter-request-list;
+	   include "/opt/nvtl/tmp/router2/dhcpd_reserved.conf";
+/opt/nvtl/tmp/router2/
+/opt/nvtl/tmp/router2/dhcpd6.conf
+[%s]:[%s] - %s(): Unable to open file %s 
+default-lease-time 1800;
+max-lease-time 1800;
+# IPv6 address preferred lifetime (at the end the address is deprecated)
+preferred-lifetime 1800;
+# T1, the delay before Renew (default is 1/2 preferred lifetime)
+option dhcp-renewal-time 900;
+# T2, the delay before Rebind (if Renews failed) (default is 3/4 preferred lifetime)
+option dhcp-rebinding-time 1440;
+option interface-mtu %d;
+subnet6 %s/64 {
+	#Range for clients
+	range6 %s/64;
+	#Range for clients requesting a temporary address 
+	range6 %s/64 temporary;
+[%s]:[%s] - %s Both dns servers are ipv4 hence configuring to default dns server ip i.e device ip
+	# Additional options
+	option dhcp6.name-servers %s;
+	option dhcp6.name-servers %s ;
+	#Prefix range for delegation to sub-routers
+	prefix6 %s %s/64;
+[%s]:[%s] - Invalid parameters passed for creating dhcpd_reserved.conf
+[%s]:[%s] - %s(): Unable to open file %s
+host %s {
+	 hardware ethernet %s;
+	 fixed-address %s;
+/opt/nvtl/tmp/router2/init_internet_block.sh
+[%s]:[%s] - Cant open %s file.
+/opt/nvtl/tmp/router2/deinit_internet_block.sh
+#!/bin/sh
+ROUTER_CMD_LOGS=/opt/nvtl/tmp/router2/router2-log 
+touch $ROUTER_CMD_LOGS 
+chmod 0664 $ROUTER_CMD_LOGS 
+print_if_failed () 
+    if [ `wc -l $ROUTER_CMD_LOGS | cut -d ' ' -f1` -gt 10000 ]; then 
+        echo "$(tail -n 1000 $ROUTER_CMD_LOGS)" > $ROUTER_CMD_LOGS 
+        printf '.....TRUNCATED....\n' >> $ROUTER_CMD_LOGS 
+    printf "`date |tr -s ' '|cut -d ' ' -f1,3,4` CMD: "%s" from "%s". \n" "$*"  "$0" >>$ROUTER_CMD_LOGS 
+    $@ 2>> $ROUTER_CMD_LOGS && return  
+    st=$? 
+    cmd="$*" 
+    printf 'Command: "%s" FAILED with status %d from "%s" Please Fix \n' "$*" "$st" "$0" >>$ROUTER_CMD_LOGS 
+    nvtl_log -p 1 -m "ROUTER" -l "error" -s "Command: $cmd, FAILED with status $st from "$0"." 
+    return $st 
+print_command () 
+    printf 'Executing cmd: "%s" from "%s". \n' "$*"  "$0" >> $ROUTER_CMD_LOGS 
+print_if_failed ebtables -A FORWARD -s %s -j DROP
+print_if_failed ebtables -D FORWARD -s %s -j DROP
+print_if_failed exit 0
+/opt/nvtl/tmp/router2/deinit_port_filter.sh
+/opt/nvtl/tmp/router2/init_dhcpd.sh
+/opt/nvtl/tmp/router2/deinit_dhcpd.sh
+nvtl_log -p 1 -m "ROUTER" -l "notice" -s "%s: starting dhcpd " 
+/opt/nvtl/tmp/router2/dhcpd.leases
+print_if_failed rm %s 
+print_if_failed rm %s~ 
+print_if_failed touch %s 
+dhcpd -f -cf %s -lf %s &
+nvtl_log -p 1 -m "ROUTER" -l "notice" -s "%s: stopping dhcpd " 
+print_if_failed /opt/nvtl/bin/stop_process.sh dhcpd
+/opt/nvtl/tmp/router2/init_dhcpd6.sh
+/opt/nvtl/tmp/router2/deinit_dhcpd6.sh
+nvtl_log -p 1 -m "ROUTER" -l "notice" -s "%s: starting dhcpd6 " 
+/opt/nvtl/tmp/router2/dhcpd6.leases
+print_if_failed rm %s
+print_if_failed rm %s~
+print_if_failed touch %s
+if [ ! -f /sbin/dhcpd6 ]
+    ln -s /sbin/dhcpd /sbin/dhcpd6
+dhcpd6 -6 -f -cf %s -lf %s %s &
+nvtl_log -p 1 -m "ROUTER" -l "notice" -s "%s: stopping dhcpd6 " 
+print_if_failed /opt/nvtl/bin/stop_process.sh dhcpd6
+[%s]:[%s] - %s() script File %s doesn't exist.
+[%s]:[%s] - %s(): Running command %s
+[%s]:[%s] - Error in running the script:%s, rc=%d
+/opt/nvtl/tmp/router2/router_init.sh
+# Reset the linux routing stack of previous configurations.
+print_if_failed iptables -w --flush -t filter
+print_if_failed iptables -w --flush -t mangle
+print_if_failed iptables -w --flush -t nat
+# Setup bridge.
+print_if_failed brctl addbr %s
+print_if_failed brctl setfd %s 0
+print_if_failed ifconfig %s %s up
+print_if_failed ifconfig %s netmask %s
+echo "0" > /proc/sys/net/ipv4/ip_forward 
+print_command echo "0" \> /proc/sys/net/ipv4/ip_forward 
+echo "0" > /proc/sys/net/ipv6/conf/all/forwarding
+print_command echo "0" \> /proc/sys/net/ipv6/conf/all/forwarding
+echo "0" > /proc/sys/net/ipv6/conf/all/proxy_ndp
+print_command echo "0" \> /proc/sys/net/ipv6/conf/all/proxy_ndp
+print_if_failed iptables -w -t filter -N INSEEGO_FILTER_INPUT 
+print_if_failed iptables -w -t filter -A INPUT -j INSEEGO_FILTER_INPUT 
+print_if_failed iptables -w -t filter -N INSEEGO_FILTER_OUTPUT 
+print_if_failed iptables -w -t filter -A OUTPUT -j INSEEGO_FILTER_OUTPUT 
+print_if_failed iptables -w -t filter -N INSEEGO_FILTER_FORWARD 
+print_if_failed iptables -w -t filter -A FORWARD -j INSEEGO_FILTER_FORWARD 
+print_if_failed iptables -w -t mangle -N INSEEGO_MANGLE_PREROUTING 
+print_if_failed iptables -w -t mangle -I PREROUTING -j INSEEGO_MANGLE_PREROUTING 
+print_if_failed iptables -w -t mangle -N INSEEGO_MANGLE_POSTROUTING 
+print_if_failed iptables -w -t mangle -I POSTROUTING -j INSEEGO_MANGLE_POSTROUTING 
+print_if_failed iptables -w -t nat -N INSEEGO_NAT_PREROUTING 
+print_if_failed iptables -w -t nat -I PREROUTING -j INSEEGO_NAT_PREROUTING 
+print_if_failed iptables -w -t nat -N INSEEGO_NAT_POSTROUTING 
+print_if_failed iptables -w -t nat -I POSTROUTING -j INSEEGO_NAT_POSTROUTING 
+print_if_failed iptables -w -t filter -N INSEEGO_MNGACCS_INPUT 
+print_if_failed iptables -w -t filter -N INSEEGO_MNGACCS_OUTPUT 
+print_if_failed iptables -w -t filter -N INSEEGO_MNGACCS_FORWARD 
+print_if_failed iptables -w -t nat -N INSEEGO_MNGACCS_PREROUTING 
+print_if_failed iptables -w -t nat -N INSEEGO_MNGACCS_POSTROUTING 
+print_if_failed iptables -w -t nat -N INSEEGO_MNGACCS_INPUT 
+print_if_failed iptables -w -t nat -N INSEEGO_MNGACCS_OUTPUT 
+print_if_failed iptables -w -t nat -N CUSTOMER_DNS_OVERRIDE 
+print_if_failed ip6tables -w -t filter -N INSEEGO_FILTER_INPUT 
+print_if_failed ip6tables -w -t filter -I INPUT -j INSEEGO_FILTER_INPUT 
+print_if_failed ip6tables -w -t filter -N INSEEGO_FILTER_OUTPUT 
+print_if_failed ip6tables -w -t filter -I OUTPUT -j INSEEGO_FILTER_OUTPUT 
+print_if_failed ip6tables -w -t filter -N INSEEGO_FILTER_FORWARD 
+print_if_failed ip6tables -w -t filter -I FORWARD -j INSEEGO_FILTER_FORWARD 
+print_if_failed ip6tables -w -t mangle -N INSEEGO_MANGLE_POSTROUTING 
+print_if_failed ip6tables -w -t mangle -A POSTROUTING -j INSEEGO_MANGLE_POSTROUTING 
+print_if_failed ip6tables -w -t mangle -N INSEEGO_MANGLE_PREROUTING 
+print_if_failed ip6tables -w -t mangle -A PREROUTING -j INSEEGO_MANGLE_PREROUTING 
+print_if_failed ip6tables -w -t filter -N INSEEGO_MNGACCS_INPUT 
+print_if_failed ip6tables -w -t filter -N INSEEGO_MNGACCS_OUTPUT 
+print_if_failed ip6tables -w -t filter -N INSEEGO_MNGACCS_FORWARD 
+print_if_failed ip6tables -w -t nat -N INSEEGO_MNGACCS_PREROUTING 
+print_if_failed ip6tables -w -t nat -N INSEEGO_MNGACCS_POSTROUTING 
+print_if_failed ip6tables -w -t nat -N INSEEGO_MNGACCS_INPUT 
+print_if_failed ip6tables -w -t nat -N INSEEGO_MNGACCS_OUTPUT 
+print_if_failed ip6tables -w -t nat -N CUSTOMER_DNS_OVERRIDE 
+print_if_failed ip6tables -w -t nat -N INSEEGO_NAT_PREROUTING 
+print_if_failed ip6tables -w -t nat -I PREROUTING -j INSEEGO_NAT_PREROUTING 
+print_if_failed ip6tables -w -t nat -N INSEEGO_NAT_POSTROUTING 
+print_if_failed ip6tables -w -t nat -I POSTROUTING -j INSEEGO_NAT_POSTROUTING 
+print_command sh %s
+/opt/nvtl/tmp/router2/init_%s_mac_filter.sh
+print_if_failed sh %s
+/opt/nvtl/tmp/router2/init_statistics.sh
+/usr/sbin/avahi-daemon -f %s -D
+# start dhcp server.
+# Test script hooks for debugging only.
+if [ -f /root/router_test_init.sh ]
+    source /root/router_test_init.sh
+[%s]:[%s] - Can't open %s file.
+avahi-daemon
+/opt/nvtl/tmp/router2/init_ipv4_firewall.sh
+/opt/nvtl/tmp/router2/deinit_ipv4_firewall.sh
+# Set the default policy on IPV4 INPUT, OUTPUT, FORWARD tables to DROP
+# Only traffic expressly permitted will be allowed
+print_if_failed iptables -w -P INPUT DROP
+print_if_failed iptables -w -P FORWARD DROP
+print_if_failed iptables -w -P OUTPUT DROP
+# Set the default policy on IPV4 INPUT, OUTPUT, FORWARD tables to ACCEPT
+# all traffic expressly permitted will be allowed
+print_if_failed iptables -w -P INPUT ACCEPT
+print_if_failed iptables -w -P FORWARD ACCEPT
+print_if_failed iptables -w -P OUTPUT ACCEPT
+# to allow DHCP requests 
+# Allow all traffic to and from the local bridge interface
+print_if_failed iptables -w -A INSEEGO_FILTER_INPUT -i %s -j ACCEPT
+print_if_failed iptables -w -A INSEEGO_FILTER_OUTPUT -o %s -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_OUTPUT -o %s -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_INPUT -i %s -j ACCEPT
+print_if_failed iptables -w -w -A INSEEGO_FILTER_INPUT -p icmp -i %s -j ACCEPT
+print_if_failed iptables -w -w -D INSEEGO_FILTER_INPUT -p icmp -i %s -j ACCEPT
+print_if_failed iptables -w -w -A INSEEGO_FILTER_INPUT -p all -i %s -j ACCEPT
+print_if_failed iptables -w -w -D INSEEGO_FILTER_INPUT -p all -i %s -j ACCEPT
+print_if_failed iptables -w -A INSEEGO_FILTER_INPUT -p icmp -i %s --icmp-type fragmentation-needed -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_INPUT -p icmp -i %s --icmp-type fragmentation-needed -j ACCEPT
+# Allow outbound and inbound for FOTA/OTADM
+print_if_failed iptables -w -A INSEEGO_FILTER_OUTPUT  -j ACCEPT
+print_if_failed iptables -w -A INSEEGO_FILTER_INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_OUTPUT  -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+# Allow all traffic from the router itself
+print_if_failed iptables -w -A INSEEGO_FILTER_INPUT -i lo -j ACCEPT
+print_if_failed iptables -w -A INSEEGO_FILTER_OUTPUT -o lo -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_INPUT -i lo -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_OUTPUT -o lo -j ACCEPT
+# prevent inbound tcp requests.
+# Allow all established traffic patterns from public internet.
+print_if_failed iptables -w -I INSEEGO_FILTER_INPUT -i %s -m state --state ESTABLISHED,RELATED -j ACCEPT
+# setup any other rules to allow public internet.
+/opt/nvtl/tmp/router2/init_public_access.sh
+/opt/nvtl/tmp/router2/init_allowed_ports.sh
+print_if_failed iptables -w -D INSEEGO_FILTER_INPUT -i %s -m state --state ESTABLISHED,RELATED -j ACCEPT
+/opt/nvtl/tmp/router2/deinit_public_access.sh
+/opt/nvtl/tmp/router2/deinit_allowed_ports.sh
+# Enforces MTU/MSS by enforcing tcp/MSS clamping on both inbound and outpund TCP connections
+print_if_failed ifconfig %s mtu %d
+print_if_failed iptables -w -t mangle -A INSEEGO_MANGLE_PREROUTING -p tcp --tcp-flags SYN,RST SYN -i %s -j TCPMSS --set-mss %d
+print_if_failed iptables -w -t mangle -A INSEEGO_MANGLE_POSTROUTING -p tcp --tcp-flags SYN,RST SYN -o %s -j TCPMSS --set-mss %d
+print_if_failed iptables -w -t mangle -D INSEEGO_MANGLE_PREROUTING -p tcp --tcp-flags SYN,RST SYN -i %s -j TCPMSS --set-mss %d
+print_if_failed iptables -w -t mangle -D INSEEGO_MANGLE_POSTROUTING -p tcp --tcp-flags SYN,RST SYN -o %s -j TCPMSS --set-mss %d
+# Setups VPN passthrough rules
+/opt/nvtl/tmp/router2/init_vpn_conn.sh
+/opt/nvtl/tmp/router2/deinit_vpn_conn.sh
+print_if_failed iptables -w -A INSEEGO_FILTER_FORWARD -i %s -o %s -m state --state ESTABLISHED,RELATED -j ACCEPT
+# allow forwarding basic inbound traffic from WAN to LAN
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -i %s -o %s -m state --state ESTABLISHED,RELATED -j ACCEPT
+print_if_failed iptables -w -A INSEEGO_FILTER_FORWARD -i %s -o %s -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -i %s -o %s -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+/opt/nvtl/tmp/router2/init_port_forward.sh
+/opt/nvtl/tmp/router2/deinit_port_forward.sh
+# Sets up outbound port filtering rules on FORWARD table from LAN to WAN
+# Allow all normal outbound traffic from LAN to WAN
+# Enforce state here to prevent packets for invalid or unknown connections to
+# escape without being NAT'd
+print_if_failed iptables -w -A INSEEGO_FILTER_OUTPUT -o %s ! -s %s/%d -j ACCEPT 
+print_if_failed iptables -w -D INSEEGO_FILTER_OUTPUT -o %s ! -s %s/%d -j ACCEPT 
+print_if_failed iptables -w -A INSEEGO_FILTER_FORWARD -i %s -o %s  -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+print_if_failed iptables -w -A INSEEGO_FILTER_FORWARD -i %s -o %s -m state --state NEW,RELATED,ESTABLISHED -p tcp -m tcp --match multiport --dports 80,443,23,21,25,110,143,53 -j ACCEPT 
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -i %s -o %s -m state --state NEW,RELATED,ESTABLISHED -p tcp -m tcp --match multiport --dports 80,443,23,21,25,110,143,53 -j ACCEPT 
+# Do not forward Acknowledgement for FIN (socket finshed), and RST (socket err).
+# They seem to sometimes fail NAT and leak to the public internet.  Possibly the NAT is clearing state?
+/opt/nvtl/tmp/router2/init_port_filter.sh
+# Do not forward Acknoledgement for FIN (socket finshed), and RST (socket err).
+# Setup DMZ rules
+/opt/nvtl/tmp/router2/init_dmz.sh
+/opt/nvtl/tmp/router2/deinit_dmz.sh
+print_if_failed iptables -w -I INSEEGO_FILTER_OUTPUT -o %s -s %s/%d -j DROP 
+print_if_failed iptables -w -D INSEEGO_FILTER_OUTPUT -o %s -s %s/%d -j DROP 
+/opt/nvtl/tmp/router2/router_init_internet_v4.sh
+/opt/nvtl/tmp/router2/router_deinit_internet_v4.sh
+[%s]:[%s] - Setting up WAN firewall
+/etc/resolv.dnsmasq
+# Disable all forwarding
+echo "0" > /proc/sys/net/ipv4/ip_forward
+print_command echo "0" \> /proc/sys/net/ipv4/ip_forward
+print_if_failed route add default gw %s dev %s
+echo 1 > /proc/sys/net/ipv4/conf/%s/proxy_arp 
+print_command echo "1" \> /proc/sys/net/ipv4/conf/%s/proxy_arp 
+echo 0 > /proc/sys/net/ipv4/conf/%s/proxy_arp 
+print_command echo "0" \> /proc/sys/net/ipv4/conf/%s/proxy_arp 
+print_if_failed ifconfig %s 169.254.5.1 netmask 255.255.255.255 mtu %d up 
+print_if_failed ifconfig %s 0.0.0.0 
+print_if_failed ifconfig %s  %s netmask %s mtu %d up 
+print_if_failed route add default dev %s 
+print_if_failed ifconfig %s 0.0.0.0 down 
+print_if_failed ip addr add %s/32 dev %s 
+print_if_failed ifconfig %s up  
+print_if_failed route add -host %s dev %s 
+print_if_failed sleep 1 
+print_if_failed ifconfig %s %s up 
+print_if_failed route add -net %s/%u dev %s 
+print_if_failed /sbin/route -A inet6 add %s/64 dev %s metric 1
+print_if_failed route del default dev %s 
+print_if_failed /opt/nvtl/bin/usb_cli restart
+print_if_failed ifconfig eth0 down 
+print_if_failed ifconfig eth0 up 
+# Configure default routing on this interface.
+# Remove default routing on this interface. 
+print_if_failed route del default gw %s dev %s
+# Sets up basic NAT routing
+print_if_failed iptables -w -t nat -A INSEEGO_NAT_POSTROUTING -o %s -j MASQUERADE
+print_if_failed iptables -w -t nat -D INSEEGO_NAT_POSTROUTING -o %s -j MASQUERADE
+print_if_failed conntrack -D
+# Enable all forwarding
+echo "1" > /proc/sys/net/ipv4/ip_forward 
+print_command echo "1" \> /proc/sys/net/ipv4/ip_forward 
+/opt/nvtl/tmp/router2/data_time.txt
+echo %ld > %s
+rm -rf %s
+/opt/nvtl/tmp/router2/radvd.conf
+[%s]:[%s] - %s: modem2_get_call_status() failed, rc=[%d]
+[%s]:[%s] - %s: IPv6 call status=[%d]
+interface %s { 
+    AdvSendAdvert on;
+    AdvManagedFlag off;
+    AdvOtherConfigFlag on;
+    MinRtrAdvInterval 30;
+    MaxRtrAdvInterval 60;
+    AdvDefaultLifetime 1800;
+    AdvDefaultPreference high;
+    AdvLinkMTU %d;
+    AdvReachableTime 30000;
+    AdvRetransTimer 1000;
+[%s]:[%s] - %s():%d This is IPv6 call dropped case.
+    prefix %s/64
+        AdvOnLink on;
+        AdvAutonomous on;
+        AdvPreferredLifetime 0;
+        AdvValidLifetime 0;
+[%s]:[%s] - %s():%d This is PCO case.
+        AdvAutonomous on;
+        };
+[%s]:[%s] - %s():%d This is the call connection case.
+        AdvAutonomous on;
+[%s]:[%s] - %s: Selected MTU(%d)
+[%s]:[%s] - Invalid local IPv6 interface
+if [ -f /root/router_test_init_v6_s.sh ]
+    print_if_failed source /root/router_test_init_v6_s.sh
+if [ -f /root/router_test_deinit_v6_s.sh ]
+    print_if_failed source /root/router_test_deinit_v6_s.sh
+echo "0" > /proc/sys/net/ipv6/conf/%s/disable_ipv6
+print_command echo "0" \> /proc/sys/net/ipv6/conf/%s/disable_ipv6
+echo "0" > /proc/sys/net/ipv6/conf/%s/accept_ra
+print_command echo "0" \> /proc/sys/net/ipv6/conf/%s/accept_ra
+print_if_failed ip -6 addr flush dev %s deprecated
+print_if_failed ifconfig %s %s/64 mtu %d up
+print_if_failed ifconfig %s del %s/64
+print_if_failed sleep 1
+print_if_failed ip6tables -w -I INSEEGO_FILTER_INPUT -p icmp -i %s -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_INPUT -p icmp  -i %s -j ACCEPT
+print_if_failed ip6tables -w -I INSEEGO_FILTER_INPUT -p ipv6-icmp --icmpv6-type 128 -i %s -j DROP
+print_if_failed ip6tables -w -D INSEEGO_FILTER_INPUT -p ipv6-icmp --icmpv6-type 128 -i %s -j DROP
+print_if_failed /sbin/route -A inet6 add default dev %s metric 25
+print_if_failed ip6tables -w -A INSEEGO_FILTER_OUTPUT -o %s -s %s/64 -j ACCEPT
+print_if_failed ip6tables -w -A INSEEGO_FILTER_INPUT -i %s -m state --state ESTABLISHED,RELATED -j ACCEPT
+print_if_failed /sbin/route -A inet6 del default dev %s metric 25
+print_if_failed ip6tables -w -D INSEEGO_FILTER_OUTPUT -o %s -s %s/64 -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_INPUT -i %s -m state --state ESTABLISHED,RELATED -j ACCEPT
+print_if_failed ip6tables -w -I INSEEGO_FILTER_INPUT -i %s -p tcp --dport 7547 -j ACCEPT 
+print_if_failed ip6tables -w -D INSEEGO_FILTER_INPUT -i %s -p tcp --dport 7547 -j ACCEPT 
+/opt/nvtl/tmp/router2/dm_time.txt
+print_if_failed /sbin/route -A inet6 add %s dev %s 
+print_if_failed /sbin/route -A inet6 del %s dev %s 
+if [ -f /root/router_test_init_v6_e.sh ]
+   print_if_failed source /root/router_test_init_v6_e.sh
+radvd -C %s -m syslog
+/opt/nvtl/tmp/router2/router_init_internet_v6.sh
+/opt/nvtl/tmp/router2/router_deinit_internet_v6.sh
+nvtl_log -p 1 -m "ROUTER" -l "notice" -s "%s: stopping radvd" 
+print_if_failed /opt/nvtl/bin/stop_process.sh radvd
+echo "2" > /proc/sys/net/ipv6/conf/%s/accept_ra
+print_command echo "2" \> /proc/sys/net/ipv6/conf/%s/accept_ra
+echo "2" > /proc/sys/net/ipv6/conf/all/forwarding
+print_command echo "2" \> /proc/sys/net/ipv6/conf/all/forwarding
+echo "2" > /proc/sys/net/ipv6/conf/all/proxy_ndp
+print_command echo "2" \> /proc/sys/net/ipv6/conf/all/proxy_ndp
+echo "120000" > /proc/sys/net/ipv6/neigh/default/base_reachable_time_ms
+print_command echo "120000" \> /proc/sys/net/ipv6/neigh/default/base_reachable_time_ms
+echo "120"    > /proc/sys/net/ipv6/neigh/default/base_reachable_time
+print_command echo "120"  \> /proc/sys/net/ipv6/neigh/default/base_reachable_time
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -i %s -o %s -j DROP
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -i %s -o %s ! -s %s/64 -j DROP
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -i %s -o %s -j DROP
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -i %s -o %s ! -s %s/64 -j DROP
+print_if_failed /sbin/route -A inet6 add default dev %s
+print_if_failed /sbin/route -A inet6 del default dev %s
+print_if_failed ip6tables -w -A INSEEGO_FILTER_INPUT  -i %s -j ACCEPT
+print_if_failed ip6tables -w -A INSEEGO_FILTER_OUTPUT -o %s -j ACCEPT
+print_if_failed ip6tables -w -A INSEEGO_FILTER_FORWARD -i %s -o %s -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_INPUT  -i %s -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_OUTPUT -o %s -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -i %s -o %s -j ACCEPT
+print_if_failed ip6tables -w -A INSEEGO_FILTER_FORWARD -o %s -d ff02::/16 -j ACCEPT
+print_if_failed ip6tables -w -A INSEEGO_FILTER_FORWARD -o %s -d fe80::/16 -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -o %s -d ff02::/16 -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -o %s -d fe80::/16 -j ACCEPT
+print_if_failed ip6tables -w -t mangle -A INSEEGO_MANGLE_POSTROUTING -p tcp --tcp-flags SYN,RST SYN -o %s -j TCPMSS --set-mss 1388
+print_if_failed ip6tables -w -t mangle -A INSEEGO_MANGLE_PREROUTING -p tcp --tcp-flags SYN,RST SYN -i %s -j TCPMSS --set-mss 1388
+print_if_failed ip6tables -w -t mangle -D INSEEGO_MANGLE_POSTROUTING -p tcp --tcp-flags SYN,RST SYN -o %s -j TCPMSS --set-mss 1388
+print_if_failed ip6tables -w -t mangle -D INSEEGO_MANGLE_PREROUTING -p tcp --tcp-flags SYN,RST SYN -i %s -j TCPMSS --set-mss 1388
+print_if_failed ip6tables -w -A INSEEGO_FILTER_INPUT -p icmpv6 -i %s --icmpv6-type packet-too-big -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_INPUT -p icmpv6 -i %s --icmpv6-type packet-too-big -j ACCEPT
+print_if_failed /sbin/route -A inet6 del %s/64 dev %s metric 1
+/opt/nvtl/tmp/router2/init_ipv6_firewall.sh
+/opt/nvtl/tmp/router2/deinit_ipv6_firewall.sh
+/opt/nvtl/tmp/router2/init_port_filter_ipv6.sh
+/opt/nvtl/tmp/router2/deinit_port_filter_ipv6.sh
+/opt/nvtl/tmp/router2/init_ipv6_vpn_conn.sh
+/opt/nvtl/tmp/router2/deinit_ipv6_vpn_conn.sh
+nvtl_log -p 1 -m "ROUTER" -l "notice" -s "%s: starting radvd" 
+radvd -C %s -m syslog
+print_if_failed ip6tables -w -I INSEEGO_FILTER_INPUT -i %s -p tcp --dport %d -j ACCEPT 
+print_if_failed ip6tables -w -D INSEEGO_FILTER_INPUT -i %s -p tcp --dport %d -j ACCEPT 
+print_if_failed ifconfig %s down
+[%s]:[%s] - %s: bring down iface %s
+if [ -f /root/router_test_deinit_v6_e.sh ]
+   print_if_failed source /root/router_test_deinit_v6_e.sh
+print_if_failed iptables -w -t nat -A INSEEGO_NAT_POSTROUTING -o %s -j SNAT --to %s 
+print_if_failed iptables -w -t nat -D INSEEGO_NAT_POSTROUTING -o %s -j SNAT --to %s 
+print_if_failed ifconfig %s %s netmask %s mtu %d up 
+print_if_failed ifconfig %s 0.0.0.0  
+print_if_failed ip route add %s via %s dev %s 
+print_if_failed iptables -w -I INSEEGO_FILTER_INPUT -p icmp -i %s -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_INPUT -p icmp  -i %s -j ACCEPT
+print_if_failed iptables -w -I INSEEGO_FILTER_INPUT -i %s -p tcp --dport %d -j ACCEPT 
+print_if_failed iptables -w -D INSEEGO_FILTER_INPUT -i %s -p tcp --dport %d -j ACCEPT 
+/opt/nvtl/tmp/router2/router_deinit.sh
+print_if_failed iptables -w -t nat -F 
+print_if_failed iptables -w -t mangle -F 
+print_if_failed iptables -w -F 
+print_if_failed ip6tables -w -F 
+print_if_failed ip6tables -w -t mangle -F 
+print_if_failed brctl delbr %s 
+print_if_failed /opt/nvtl/bin/stop_process.sh nvtl_dnsd
+print_if_failed %s
+/opt/nvtl/tmp/router2/deinit_%s_mac_filter.sh
+/opt/nvtl/tmp/router2/deinit_statistics.sh
+print_if_failed /opt/nvtl/bin/stop_process.sh dnsmasq
+print_if_failed /opt/nvtl/bin/stop_process.sh nbnsd
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -o %s -s %s/%u -j REJECT
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -o %s -m state --state RELATED,ESTABLISHED -j ACCEPT
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -p icmp --icmp-type 8 -o %s -i %s -j ACCEPT
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -p icmp --icmp-type 8 -i %s -o %s -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -o %s -s %s/%u -j REJECT
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -o %s -m state --state RELATED,ESTABLISHED -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -p icmp --icmp-type 8 -o %s -i %s -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -p icmp --icmp-type 8 -i %s -o %s -j ACCEPT
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -s %s/%u -p udp --dport %d -j ACCEPT 
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -s %s/%u -p udp --dport %d -j ACCEPT 
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -s %s/%u -p tcp --dport %d:%d -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -s %s/%u -p tcp --dport %d:%d -j ACCEPT
+print_if_failed iptables -w -t filter -I INSEEGO_FILTER_FORWARD -s %s/%u -p tcp --dport %d -j CONNMARK --set-mark 21
+print_if_failed iptables -w -t filter -D INSEEGO_FILTER_FORWARD -s %s/%u -p tcp --dport %d -j CONNMARK --set-mark 21
+print_if_failed conntrack -D --mark 21
+print_if_failed conntrack -D -p tcp --orig-port-dst %d:%d
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -s %s/%u -p udp --dport %d:%d -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -s %s/%u -p udp --dport %d:%d -j ACCEPT
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -s %s/%u -p tcp --dport %d -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -s %s/%u -p tcp --dport %d -j ACCEPT
+print_if_failed conntrack -D -p tcp --orig-port-dst %d
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -s %s/%u -p udp --dport %d -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -s %s/%u -p udp --dport %d -j ACCEPT
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -o %s -s %s/%u -p tcp -m state --state INVALID -j DROP
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -o %s -s %s/%u -p tcp -m state --state INVALID -j DROP
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -o %s -j REJECT
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p icmpv6 --icmpv6-type 128 -o %s -j ACCEPT
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p icmpv6 --icmpv6-type 129 -o %s -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -o %s -j REJECT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p icmpv6 --icmpv6-type 128 -o %s -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p icmpv6 --icmpv6-type 129 -o %s -j ACCEPT
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p tcp --dport %d:%d -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p tcp --dport %d:%d -j ACCEPT
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p udp --dport %d:%d -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p udp --dport %d:%d -j ACCEPT
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p tcp --dport %d -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p tcp --dport %d -j ACCEPT
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p udp --dport %d -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p udp --dport %d -j ACCEPT
+print_if_failed conntrack -D -s %s -p tcp --orig-port-src %d:%d 
+print_if_failed iptables -w -t nat -I INSEEGO_NAT_PREROUTING -p tcp -i %s -d %s --dport %d:%d -j DNAT --to %s:%d-%d
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -p tcp -i %s -o %s -d %s --dport %d:%d -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+print_if_failed iptables -w -t nat -D INSEEGO_NAT_PREROUTING -p tcp -i %s -d %s --dport %d:%d -j DNAT --to %s:%d-%d
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -p tcp -i %s -o %s -d %s --dport %d:%d -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+print_if_failed iptables -w -t nat -I INSEEGO_NAT_PREROUTING -p udp -i %s -d %s --dport %d:%d -j DNAT --to %s:%d-%d
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -p udp -i %s -o %s -d %s --dport %d:%d -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+print_if_failed iptables -w -t nat -D INSEEGO_NAT_PREROUTING -p udp -i %s -d %s --dport %d:%d -j DNAT --to %s:%d-%d
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -p udp -i %s -o %s -d %s --dport %d:%d -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+print_if_failed iptables -w -t nat -I INSEEGO_NAT_PREROUTING -p tcp -i %s -d %s --dport %d -j DNAT --to %s
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -p tcp -i %s -o %s -d %s --dport %d -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+print_if_failed iptables -w -t nat -D INSEEGO_NAT_PREROUTING -p tcp -i %s -d %s --dport %d -j DNAT --to %s
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -p tcp -i %s -o %s -d %s --dport %d -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+print_if_failed iptables -w -t nat -I INSEEGO_NAT_PREROUTING -p udp -i %s -d %s --dport %d -j DNAT --to %s
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -p udp -i %s -o %s -d %s --dport %d -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+print_if_failed iptables -w -t nat -D INSEEGO_NAT_PREROUTING -p udp -i %s -d %s --dport %d -j DNAT --to %s
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -p udp -i %s -o %s -d %s --dport %d -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+print_if_failed iptables -w -t nat -I INSEEGO_NAT_PREROUTING -p tcp -i %s -d %s --dport %d -j DNAT --to %s:%d
+print_if_failed iptables -w -t nat -D INSEEGO_NAT_PREROUTING -p tcp -i %s -d %s --dport %d -j DNAT --to %s:%d
+print_if_failed iptables -w -t nat -I INSEEGO_NAT_PREROUTING -p udp -i %s -d %s --dport %d -j DNAT --to %s:%d
+print_if_failed iptables -w -t nat -D INSEEGO_NAT_PREROUTING -p udp -i %s -d %s --dport %d -j DNAT --to %s:%d
+print_if_failed iptables -w -t nat -I INSEEGO_NAT_PREROUTING -i %s -d %s -j DNAT --to %s
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -i %s -o %s -d %s -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+print_if_failed iptables -w -t nat -D INSEEGO_NAT_PREROUTING -i %s -d %s -j DNAT --to %s
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -i %s -o %s -d %s -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+/opt/nvtl/tmp/router2/deinit_vpn_conntrack.sh
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -p tcp --dport %d -j DROP
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -p udp --dport %d -j DROP
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -p tcp --dport %d -j DROP
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -p udp --dport %d -j DROP
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -i %s -p tcp --dport %d -m state --state NEW -j ACCEPT
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -i %s -p udp --dport %d -m state --state NEW -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -i %s -p tcp --dport %d -m state --state NEW -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -i %s -p udp --dport %d -m state --state NEW -j ACCEPT
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -p tcp --dport %d -m state --state NEW -j ACCEPT
+print_if_failed iptables -w -I INSEEGO_FILTER_FORWARD -p udp --dport %d -m state --state NEW -j ACCEPT
+print_if_failed iptables -w -t filter -I INSEEGO_FILTER_FORWARD -p tcp --dport %d -j CONNMARK --set-mark %d
+print_if_failed iptables -w -t filter -I INSEEGO_FILTER_FORWARD -p udp --dport %d -j CONNMARK --set-mark %d
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -p tcp --dport %d -m state --state NEW -j ACCEPT
+print_if_failed iptables -w -D INSEEGO_FILTER_FORWARD -p udp --dport %d -m state --state NEW -j ACCEPT
+print_if_failed iptables -w -t filter -D INSEEGO_FILTER_FORWARD -p tcp --dport %d -j CONNMARK --set-mark %d
+print_if_failed iptables -w -t filter -D INSEEGO_FILTER_FORWARD -p udp --dport %d -j CONNMARK --set-mark %d
+print_if_failed conntrack -D --mark %d
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p tcp --dport 4500 -j DROP
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p udp --dport 4500 -j DROP
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p tcp --dport 1723 -j DROP
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p udp --dport 1723 -j DROP
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p udp --dport 1701 -j DROP
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p tcp --dport 1701 -j DROP
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p udp --dport 500 -j DROP
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p tcp --dport 500 -j DROP
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p tcp --dport 4500 -j DROP
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p udp --dport 4500 -j DROP
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p tcp --dport 1723 -j DROP
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p udp --dport 1723 -j DROP
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p udp --dport 1701 -j DROP
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p tcp --dport 1701 -j DROP
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p udp --dport 500 -j DROP
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p tcp --dport 500 -j DROP
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p tcp --dport 4500 -m state --state NEW -j ACCEPT
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p udp --dport 4500 -m state --state NEW -j ACCEPT
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p tcp --dport 1723 -m state --state NEW -j ACCEPT
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p udp --dport 1723 -m state --state NEW -j ACCEPT
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p udp --dport 1701 -m state --state NEW -j ACCEPT
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p tcp --dport 1701 -m state --state NEW -j ACCEPT
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p udp --dport 500  -m state --state NEW -j ACCEPT
+print_if_failed ip6tables -w -I INSEEGO_FILTER_FORWARD -p tcp --dport 500  -m state --state NEW -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p tcp --dport 4500 -m state --state NEW -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p udp --dport 4500 -m state --state NEW -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p tcp --dport 1723 -m state --state NEW -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p udp --dport 1723 -m state --state NEW -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p udp --dport 1701 -m state --state NEW -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p tcp --dport 1701 -m state --state NEW -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p udp --dport 500  -m state --state NEW -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -p tcp --dport 500  -m state --state NEW -j ACCEPT
+print_if_failed ip6tables -w -A INSEEGO_FILTER_FORWARD -i %s -o %s -m state --state ESTABLISHED,RELATED -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -i %s -o %s -m state --state ESTABLISHED,RELATED -j ACCEPT
+print_if_failed ip6tables -w -A INSEEGO_FILTER_INPUT -p tcp -i %s -m state --state NEW -j DROP
+print_if_failed ip6tables -w -A INSEEGO_FILTER_INPUT -p udp -i %s -m state --state NEW -j DROP
+print_if_failed ip6tables -w -D INSEEGO_FILTER_INPUT -p tcp -i %s -m state --state NEW -j DROP
+print_if_failed ip6tables -w -D INSEEGO_FILTER_INPUT -p udp -i %s -m state --state NEW -j DROP
+print_if_failed ip6tables -w -A INSEEGO_FILTER_FORWARD -i %s -o %s -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -i %s -o %s -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+print_if_failed ip6tables -w -A INSEEGO_FILTER_FORWARD -i %s -o %s  -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+print_if_failed ip6tables -w -A INSEEGO_FILTER_FORWARD -i %s -o %s -m state --state NEW,RELATED,ESTABLISHED -p tcp -m tcp --match multiport --dports 80,443,23,21,25,110,143,53 -j ACCEPT
+print_if_failed ip6tables -w -D INSEEGO_FILTER_FORWARD -i %s -o %s -m state --state NEW,RELATED,ESTABLISHED -p tcp -m tcp --match multiport --dports 80,443,23,21,25,110,143,53 -j ACCEPT
+[%s]:[%s] - %s: Records Count:%d
+[%s]:[%s] - %s:Recored[%d]- Enable:%d.
+[%s]:[%s] - %s:Record[%d]- Intf:%s.
+[%s]:[%s] - %s:Record[%d]- PortType:%d.
+[%s]:[%s] - %s:Record[%d]- PrtclType:%d.
+[%s]:[%s] - %s:Recored[%d]- Intf:%s TCP Port Range rules update.
+print_if_failed iptables -I INSEEGO_FILTER_INPUT -i %s -p tcp --dport %d:%d  -j ACCEPT
+print_if_failed iptables -D INSEEGO_FILTER_INPUT -i %s -p tcp  --dport %d:%d  -j ACCEPT
+[%s]:[%s] - %s:Recored[%d]- Intf:%s UDP Port Range rules update.
+print_if_failed iptables -I INSEEGO_FILTER_INPUT -i %s -p udp --dport %d:%d  -j ACCEPT
+print_if_failed iptables -D INSEEGO_FILTER_INPUT -i %s -p udp --dport %d:%d  -j ACCEPT
+[%s]:[%s] - %s:Recored[%d]- Intf:%s TCP Port List rules update.
+print_if_failed iptables -I INSEEGO_FILTER_INPUT -i %s -p tcp -m multiport --dport %s -j ACCEPT
+print_if_failed iptables -D INSEEGO_FILTER_INPUT -i %s -p tcp -m multiport --dport %s -j ACCEPT
+[%s]:[%s] - %s:Recored[%d]- Intf:%s UDP Port List rules update.
+print_if_failed iptables -I INSEEGO_FILTER_INPUT -i %s -p udp -m multiport --dport %s -j ACCEPT
+print_if_failed iptables -D INSEEGO_FILTER_INPUT -i %s -p udp -m multiport --dport %s -j ACCEPT
+print_if_failed iptables -I INSEEGO_FILTER_INPUT -p tcp --dport %d -m iprange --src-range %s-%s -j ACCEPT
+print_if_failed iptables -D INSEEGO_FILTER_INPUT -p tcp --dport %d -m iprange --src-range %s-%s -j ACCEPT
+print_if_failed iptables -t nat -I INSEEGO_NAT_PREROUTING  -p tcp --dport %d -m iprange --src-range %s-%s -j REDIRECT --to-ports %d
+print_if_failed iptables -t nat -D INSEEGO_NAT_PREROUTING  -p tcp --dport %d -m iprange --src-range %s-%s -j REDIRECT --to-ports %d
+print_if_failed iptables -t nat -I INSEEGO_NAT_PREROUTING  -p tcp --match multiport --dport 80,443 -m iprange --src-range %s-%s -j REDIRECT --to-ports %d
+print_if_failed iptables -t nat -D INSEEGO_NAT_PREROUTING  -p tcp --match multiport --dport 80,443 -m iprange --src-range %s-%s -j REDIRECT --to-ports %d
+print_if_failed iptables -I INSEEGO_FILTER_INPUT -p udp --dport %d -m iprange --src-range %s-%s -j ACCEPT
+print_if_failed iptables -D INSEEGO_FILTER_INPUT -p udp --dport %d -m iprange --src-range %s-%s -j ACCEPT
+print_if_failed iptables -t nat -I INSEEGO_NAT_PREROUTING  -p udp --dport %d -m iprange --src-range %s-%s -j REDIRECT --to-ports %d
+print_if_failed iptables -t nat -D INSEEGO_NAT_PREROUTING  -p udp --dport %d -m iprange --src-range %s-%s -j REDIRECT --to-ports %d
+print_if_failed iptables -t nat -I INSEEGO_NAT_PREROUTING  -p udp --match multiport --dport 80,443 -m iprange --src-range %s-%s -j REDIRECT --to-ports %d
+print_if_failed iptables -t nat -D INSEEGO_NAT_PREROUTING  -p udp --match multiport --dport 80,443 -m iprange --src-range %s-%s -j REDIRECT --to-ports %d
+print_if_failed iptables -I INSEEGO_FILTER_INPUT -p tcp --dport %d -s %s -j ACCEPT
+print_if_failed iptables -D INSEEGO_FILTER_INPUT -p tcp --dport %d -s %s -j ACCEPT
+print_if_failed iptables -t nat -I INSEEGO_NAT_PREROUTING  -p tcp --dport %d -s %s -j REDIRECT --to-ports %d
+print_if_failed iptables -t nat -D INSEEGO_NAT_PREROUTING  -p tcp --dport %d -s %s -j REDIRECT --to-ports %d
+print_if_failed iptables -t nat -I INSEEGO_NAT_PREROUTING  -p tcp --match multiport --dport 80,443 -s %s -j REDIRECT --to-ports %d
+print_if_failed iptables -t nat -D INSEEGO_NAT_PREROUTING  -p tcp --match multiport --dport 80,443 -s %s -j REDIRECT --to-ports %d
+print_if_failed iptables -I INSEEGO_FILTER_INPUT -p udp --dport %d -s %s -j ACCEPT
+print_if_failed iptables -D INSEEGO_FILTER_INPUT -p udp --dport %d -s %s -j ACCEPT
+print_if_failed iptables -t nat -I INSEEGO_NAT_PREROUTING  -p udp --dport %d -s %s -j REDIRECT --to-ports %d
+print_if_failed iptables -t nat -D INSEEGO_NAT_PREROUTING  -p udp --dport %d -s %s -j REDIRECT --to-ports %d
+print_if_failed iptables -t nat -I INSEEGO_NAT_PREROUTING  -p udp --match multiport --dport 80,443 -s %s -j REDIRECT --to-ports %d
+print_if_failed iptables -t nat -D INSEEGO_NAT_PREROUTING  -p udp --match multiport --dport 80,443 -s %s -j REDIRECT --to-ports %d
+print_if_failed ebtables -A INPUT -i %s -s %s -j DROP
+print_if_failed ebtables -D INPUT -i %s -s %s -j DROP
+print_if_failed ebtables -A FORWARD -i %s -s %s -j DROP
+print_if_failed ebtables -D FORWARD -i %s -s %s -j DROP
+print_if_failed ebtables -A INPUT -i %s -s %s -j ACCEPT
+print_if_failed ebtables -D INPUT -i %s -s %s -j ACCEPT
+print_if_failed ebtables -A FORWARD -i %s -s %s -j ACCEPT
+print_if_failed ebtables -D FORWARD -i %s -s %s -j ACCEPT
+print_if_failed ebtables -A INPUT -i %s  -j DROP
+print_if_failed ebtables -A FORWARD -i %s  -j DROP
+print_if_failed ebtables -D INPUT -i %s -j DROP
+print_if_failed ebtables -D FORWARD -i %s -j DROP
+[%s]:[%s] - Unable to generate interface MAC scripts for interface: %s
+nameserver %s
+[%s]:[%s] - Cant open resolv file %s
+[%s]:[%s] - DNS Filtering is not configured. %s()
+[%s]:[%s] - DNS Filtering is disabled. %s()
+/opt/nvtl/tmp/router2/dns_filter.sh
+/opt/nvtl/tmp/router2/dns_services.sh
+nvtl_dnsd
+/etc/dns_cache.txt
+nvtl_dns_resolver %s %s & 
+nvtl_log -p 1 -m "ROUTER" -l "notice" -s "%s: starting dnsmasq" 
+is_dnsmasq_running=`pidof dnsmasq` 
+print_command is_dnsmasq_running=\`pidof dnsmasq\` 
+if [ -z "$is_dnsmasq_running"  ] ; then 
+print_if_failed iptables -w -t nat -D INSEEGO_NAT_PREROUTING -i %s -p tcp --dport %d  -d 0/0 -j DNAT --to %s 
+    nvtl_log -p 1 -m "ROUTER" -l "notice" -s "%s: stopping nvtl_dnsd" 
+    print_if_failed /opt/nvtl/bin/stop_process.sh nvtl_dnsd
+dnsmasq -k --interface=%s --strict-order --clear-on-reload --user=root --group=root --no-poll &
+dnsmasq -k --interface=%s --all-servers --clear-on-reload --user=root --group=root --no-poll &
+    print_if_failed killall dnsmasq 
+nvtl_log -p 1 -m "ROUTER" -l "notice" -s "%s: stopping dnsmasq" 
+is_nvtl_dnsd_running=`pidof nvtl_dnsd` 
+print_command is_nvtl_dnsd_running=\`pidof nvtl_dnsd\` 
+if [ -z "$is_nvtl_dnsd_running"  ] ; then 
+    nvtl_log -p 1 -m "ROUTER" -l "notice" -s "%s: starting nvtl_dnsd" 
+nvtl_dnsd %s %d %s &
+print_if_failed iptables -w -t nat -A INSEEGO_NAT_PREROUTING -i %s -p tcp --dport %d  -d 0/0 -j DNAT --to %s 
+print_if_failed iptables -w -t nat -D INSEEGO_NAT_PREROUTING -i %s -p tcp --dport %d  -d 0/0 -j DNAT --to %s
+nvtl_log -p 1 -m "ROUTER" -l "notice" -s "%s: stopping nvtl_dnsd 2" 
+[%s]:[%s] - Can't open %s file.
+/etc/hosts
+localhost
+127.0.0.1
+killall -SIGHUP dnsmasq
+[%s]:[%s] - Error opening: %s
+[%s]:[%s] - Received the empty buffer for dns name.
+router2.dns_list.settings
+[%s]:[%s] - settings_get_setting(%s) failed with code: %d
+/opt/nvtl/tmp/router2/init_bridge.sh
+if [ -d /sys/devices/virtual/net/%s/brif/ ]; then 
+    print_if_failed ls /sys/devices/virtual/net/%s/brif/ >/opt/nvtl/tmp/router2/br_ifc
+    list_of_ifc=`cat /opt/nvtl/tmp/router2/br_ifc` 
+    print_command "list_of_ifc=`cat /opt/nvtl/tmp/router2/br_ifc`" 
+	print_if_failed ifconfig %s 169.254.4.1 netmask 255.255.255.0  up 
+	print_if_failed ip route del 169.254.4.0/24 
+	print_if_failed ifconfig %s 169.254.3.1 netmask 255.255.255.0  up 
+	print_if_failed ip route del 169.254.3.0/24 
+for ifc in $list_of_ifc 
+    if [ "$ifc" == "%s" ] ; then 
+	 found=1 
+if [ "$found" != "1" ] ; then 
+	print_command ifconfig %s down
+	print_if_failed brctl addif %s %s 
+	print_if_failed ifconfig %s up 
+if [ "$found" == "1" ] ; then 
+	print_if_failed brctl delif %s $ifc 
+is_radvd_running=`pidof radvd` 
+print_command "is_radvd_running=`pidof radvd`" 
+if [ -z "$is_radvd_running"  ] ; then 
+	print_if_failed echo "radvd is not running " 
+	print_if_failed killall -SIGHUP radvd
+/opt/nvtl/tmp/router2/br_ifc
+ifc=`ifconfig -a |grep %s|tr -s ' ' | cut -d ' ' -f1`
+print_command "ifc=`ifconfig -a |grep %s|tr -s ' ' | cut -d ' ' -f1`" 
+if [ $ifc == "%s" ] ; then 
+[%s]:[%s] - SKIP %s add into bridge 
+	print_if_failed ifconfig %s 169.254.3.1 netmask 255.255.255.0 up 
+	print_if_failed ifconfig %s  0.0.0.0 up 
+	print_if_failed brctl addif %s %s
+	print_if_failed sleep 1
+if [ -f /root/router_test_bridge_insert.sh ]
+	print_if_failed source /root/router_test_bridge_insert.sh %s
+[%s]:[%s] - %s:Update add: [%s]
+print_command "ifc=`ifconfig -a |grep %s|tr -s ' ' | cut -d ' ' -f1`"
+	print_if_failed brctl delif %s %s
+[%s]:[%s] - %s:Update del: [%s]
+mac=`ifconfig |grep wlan0|tr -s ' ' |cut -d ' ' -f5`
+if [ -z "$mac" ] ; then 
+   print_if_failed echo "We failed to find the MAC address of wlan0 interface." 
+   mac=`ifconfig |grep 'ecm0\|rndis0'|tr -s ' ' |cut -d ' ' -f5`
+if [[ !  -z  $mac  ]] ; then 
+   print_if_failed ifconfig %s hw ether $mac 
+print_command is_radvd_running=\`pidof radvd\` 
+[%s]:[%s] - %s: start 
+/opt/nvtl/tmp/router2/deinit_fs_websvr_isolate.sh
+/opt/nvtl/tmp/router2/init_fs_websvr_isolate.sh
+[%s]:[%s] - %s: count %d Interface %s, ipaddr:%s 
+print_if_failed iptables -w -I INSEEGO_FILTER_INPUT -i %s -s %s -d %s/24 -p tcp --dport %d -j DROP
+print_if_failed iptables -w -I INSEEGO_FILTER_INPUT -i %s -s %s -d %s/24 -p udp --dport %d -j DROP
+print_if_failed iptables -w -D INSEEGO_FILTER_INPUT -i %s -s %s -d %s/24 -p tcp --dport %d -j DROP
+print_if_failed iptables -w -D INSEEGO_FILTER_INPUT -i %s -s %s -d %s/24 -p udp --dport %d -j DROP
+print_if_failed iptables -w -I INSEEGO_FILTER_INPUT -i %s -s %s -d %s -p tcp --dport %d -j DROP
+print_if_failed iptables -w -D INSEEGO_FILTER_INPUT -i %s -s %s -d %s -p tcp --dport %d -j DROP
+/opt/nvtl/tmp/router2/deinit_lan_isolate.sh
+/opt/nvtl/tmp/router2/init_lan_isolate.sh
+print_if_failed ebtables -I FORWARD -i %s -o %s -j DROP
+print_if_failed ebtables -D FORWARD -i %s -o %s -j DROP
+[%s]:[%s] - Update bridge interfaces %s()
+[%s]:[%s] - Found %s in existing bridge interfaces
+[%s]:[%s] - Adding interface %s with feature flags %d to bridge, type:%d
+[%s]:[%s] - %s: add_to_bridge index:[%d] iface:[%s] add:[%d] feature:[0x%X] type[%d] 
+[%s]:[%s] - Deleteing %s from existing bridge interfaces
+[%s]:[%s] - Updating flags %d for %s interface
+/opt/nvtl/tmp/router2/dhcp.info
+ipaddr=%s
+netmask=%s
+gateway=%s
+[%s]:[%s] - WAN IP Configuration is IP=%s mask=%s gateway=%s
+[%s]:[%s] - WAN IP Configuration is Primary DNS=%s Secondary DNS=%s
+[%s]:[%s] - WAN IP configuration is not valid 
+[%s]:[%s] - Failed to open the %s file
+[%s]:[%s] - Adding %s to statistics filter
+print_if_failed ebtables -I INPUT -s %s -p IPv4 --ip-dst ! %s -j CONTINUE
+print_if_failed ebtables -I INPUT -s %s -p IPv6 --ip6-dst ! %s -j CONTINUE
+print_if_failed ebtables -I OUTPUT -p IPv4 -d %s --ip-src ! %s -j CONTINUE
+print_if_failed ebtables -I OUTPUT -p IPv6 -d %s --ip6-src ! %s -j CONTINUE
+print_if_failed ebtables -D INPUT -s %s -p IPv4 --ip-dst ! %s -j CONTINUE
+print_if_failed ebtables -D INPUT -s %s -p IPv6 --ip6-dst ! %s -j CONTINUE
+print_if_failed ebtables -D OUTPUT -p IPv4 -d %s --ip-src ! %s -j CONTINUE
+print_if_failed ebtables -D OUTPUT -p IPv6 -d %s --ip6-src ! %s -j CONTINUE
+[%s]:[%s] - Invalid MAC %s passed for statistics collection.
+[%s]:[%s] - Deleting %s from statistics filter
+[%s]:[%s] - Invalid mac %s passed for statistics collection.
+/opt/nvtl/tmp/router2/init_usb_state.sh
+	print_if_failed brctl delif %s %s 
+	print_if_failed ifconfig %s down
+	print_if_failed sleep 5 
+	print_if_failed ifconfig %s %s up 
+	print_if_failed kill `pidof dhcpd` 
+[%s]:[%s] - Invalid USB interface name passed.
+/opt/nvtl/tmp/router2/init_static_route.sh
+metric %d 
+print_if_failed ip -%d route replace %s %s
+/opt/nvtl/tmp/router2/deinit_static_route.sh
+print_if_failed ip -%d route del %s %s
+[%s]:[%s] - %s: Opening file: %s
+[%s]:[%s] - %s: file open failed - %s
+/opt/nvtl/tmp/router2/set_dns_filter.log
+touch %s
+LOGFILE='/opt/nvtl/tmp/router2/set_dns_filter.log'
+BLACK_LIST='/opt/nvtl/tmp/router2/dns_black_list'
+WHITE_LIST='/opt/nvtl/tmp/router2/dns_white_list'
+DNSMASQ_CONF_FILE='/etc/dnsmasq.conf'
+if ([ $# -lt 1 ] || [ $# -gt 3 ]);then
+        echo "Bad arguments passed:Argc - $# " > $LOGFILE
+        echo "Usage: sh dns_filter.sh <Delete:0>" >> $LOGFILE
+        echo "OR  sh dns_filter.sh <Add:1>  <Black-list:1 or White-list:0> "<URL-list>"" >> $LOGFILE
+        exit 1
+if [ -f /etc/dnsmasq.conf ];then
+        start_var=`grep  -n -m1 "#DNS_FILTERING:BEGIN" $DNSMASQ_CONF_FILE | cut -f1 -d':'`
+        end_var=`grep  -n -m1 "#DNS_FILTERING:END" $DNSMASQ_CONF_FILE | cut -f1 -d':'`
+        # Delete existing DNS FILTER CONFIGURATION and ADD either Black or White list
+        [ ! -z "$start_var" ] && [ ! -z "$end_var" ] && sed -i "${start_var},${end_var}d" $DNSMASQ_CONF_FILE
+        if [ $1 == '0' ];then
+                echo "DNS Filter Servers Configuration is removed." >> $LOGFILE
+                rm -f $BLACK_LIST > /dev/null 2>&1
+                rm -f $WHITE_LIST > /dev/null 2>&1
+                sh /opt/nvtl/tmp/router2/dns_services.sh
+                exit 1
+        fi
+        URL=`echo $3 | sed "s/[]'[]//g"`
+        IFS=','
+        if ([ $2 == '0' ] && [ ! -z "$URL" ]);then
+                echo "#DNS_FILTERING:BEGIN" > $WHITE_LIST ; > $BLACK_LIST
+                    for url in $URL; do
+			url=`echo $url | sed "s/^ *//g" | sed "s/ *$//g"`
+                       echo "server=/$url/#" >> $WHITE_LIST
+                done
+                echo "server=/#/" >> $WHITE_LIST
+                echo "#DNS_FILTERING:END" >> $WHITE_LIST
+                echo "Update white list DNS Servers Configuration." >> $LOGFILE
+                cat $WHITE_LIST >> $DNSMASQ_CONF_FILE
+        elif ([ $2 == '1' ] && [ ! -z "$URL" ]);then
+                echo "#DNS_FILTERING:BEGIN" > $BLACK_LIST ; > $WHITE_LIST
+                    for url in $URL; do
+			url=`echo $url | sed "s/^ *//g" | sed "s/ *$//g"`
+                       echo "server=/$url/" >> $BLACK_LIST
+                done
+                echo "#DNS_FILTERING:END" >> $BLACK_LIST
+                echo "Update white list DNS Servers Configuration." >> $LOGFILE
+                cat $BLACK_LIST >> $DNSMASQ_CONF_FILE
+        else
+                echo "Invalid arguments are passed." >> LOGFILE
+                echo "Usage: sh dns_filter.sh <1-black-list , 0 - white-list>." >> $LOGFILE
+        fi
+ sh /opt/nvtl/tmp/router2/dns_services.sh
+[%s]:[%s] - %s:End
+router2_setup_create_dhcp_conf
+router2_setup_create_dhcp6_conf
+router2_setup_create_dhcp_reserved_conf
+router2_setup_create_internet_block_script
+router2_setup_create_dhcp_script
+router2_setup_create_dhcp6_script
+router2_setup_run_script
+router2_setup_init
+router2_setup_configure_firewall_v4
+router2_setup_init_internet_v4
+router2_setup_deinit_internet_v4
+build_radvd_config
+router2_setup_init_iface_v6
+router2_setup_init_internet_v6
+router2_setup_deinit_iface_v6
+router2_setup_deinit_internet_v6
+router2_setup_init_iface_v4
+router2_setup_deinit
+router2_setup_create_port_filter_script
+router2_setup_create_ipv6_port_filter_script
+router2_setup_create_port_forward_script
+router2_setup_create_dmz_script
+router2_setup_create_vpn_passthrough_script
+router2_setup_create_ipv6_vpn_conn_script
+router2_setup_create_ipv6_firewall_script
+router2_setup_create_allowed_port_script
+router2_setup_create_public_access_script
+router2_setup_run_interface_macfilter_script
+router2_setup_run_macfilter_scripts
+router2_setup_create_interface_macfilter_script
+router2_setup_create_macfilter_scripts
+router2_setup_generate_resolve_conf
+router2_update_dnsmasq_conf
+router2_setup_configure_dns_services
+router2_update_hosts_file
+get_dns_name_for_router
+update_bridge_interfaces_with_ippt
+update_bridge_interfaces_without_ippt
+router2_setup_update_fileshare_webserver_isolation
+router2_setup_update_bridge_interfaces
+read_ip_addr_configurations
+router2_setup_create_statistics_script
+router2_setup_usb_iface
+router2_setup_install_iface_static_routes
+router2_setup_create_static_routes
+router2_setup_configure_dns_filter
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

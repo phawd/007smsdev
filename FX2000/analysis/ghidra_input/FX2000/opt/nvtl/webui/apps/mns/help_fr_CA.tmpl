@@ -1,0 +1,36 @@
+<!-- mns -->
+<div id="mns">
+	<h1>Sélection du réseau</h1>
+	<h2>Vue d’ensemble</h2>
+	<p>Cet appareil sélectionne automatiquement le réseau mobile optimal. Si vous utilisez des réseaux GSM, vous pouvez également sélectionner un réseau manuellement. Cette fonctionnalité « <tmpl_var _("webui", "menu_adv_mns_text")> » n’est utile que si plusieurs réseaux sont disponibles. Si cette fonctionnalité est utilisée, cet appareil se connecte uniquement au réseau spécifié et ignore les autres réseaux disponibles.</p>
+
+	<h2>État</h2>
+	<p>Cette section indique si la sélection automatique ou manuelle du réseau est utilisée. Si la sélection manuelle du réseau est utilisée, le réseau spécifié est également affiché.</p>
+
+	<h2>Fonctionnement</h2>
+	<h3><tmpl_var _("webui","adv_mns_scan_for_networks_btn")></h3>
+	<p>Si la sélection manuelle du réseau est possible, ce bouton est disponible. Cliquez sur ce bouton si vous souhaitez sélectionner manuellement un réseau. Le modem recherche ensuite tous les réseaux disponibles. Cette analyse peut prendre jusqu’à deux minutes.</p>
+
+	<p>Remarque : Si ce bouton ne s’affiche pas, alors la sélection manuelle du réseau n’est pas possible à votre emplacement actuel lorsque vous utilisez votre réseau actuel.</p>
+
+	<h3>Liste des réseaux</h3>
+	<div class="blockgroup">
+	<p>Tous les réseaux disponibles s’affichent dans la liste une fois l’analyse réseau terminée. Vous pouvez alors effectuer l’une des opérations suivantes :</p>
+	<ul>
+		<li>Annuler - Utilisez cette option pour conserver la sélection automatique du réseau.</li>
+		<li>Actualiser - Utilisez cette option pour effectuer une nouvelle analyse si le réseau souhaité n’est pas répertorié. Vous devrez peut-être vous déplacer pour améliorer le signal.</li>
+
+		<li>Sélectionner - Utilisez cette option pour activer la sélection manuelle du réseau avec le réseau spécifié. Notez qu’il peut ne pas être possible de se connecter à tous les réseaux répertoriés. Si votre fournisseur de services n’a pas d’accord d’itinérance avec le réseau sélectionné, la tentative de connexion échouera.</li>
+	</ul>
+
+	<h3><tmpl_var _("webui","adv_mns_revert_to_automatic_btn")></h3>
+	<p>Si la sélection manuelle du réseau est utilisée, ce bouton est visible. Cliquez sur ce bouton pour passer de la sélection manuelle à la sélection automatique du réseau.</p>
+
+	<h3>Revenir à l’écran Réseaux</h3>
+	<p>Utilisez ce lien pour revenir à l’écran Réseaux.</p>
+		
+	</div>
+	
+</div>
+
+<!-- id="mns" -->

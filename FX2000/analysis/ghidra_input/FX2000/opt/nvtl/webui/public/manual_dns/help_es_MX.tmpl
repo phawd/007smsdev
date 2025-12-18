@@ -1,0 +1,18 @@
+<!-- Manual DNS -->
+<div id="adv_manual_dns">
+	<h1><tmpl_var _("webui", "adv_manual_dns_menu_text")></h1>
+	<h2>Descripción</h2>
+	<p>Normalmente, la dirección DNS se proporciona automáticamente. Esta página le permite especificar manualmente un DNS, de ser necesario. </p>
+
+	<h2>Configuración</h2>
+
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_enable_label"), (size(_("webui", "adv_manual_dns_enable_label")) - size(":")))></h3>
+	<p>Use esta configuración para activar o desactivar la función DNS manual. Si se la activa, se deben suministrar los siguientes datos. </p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address1_label"), (size(_("webui", "adv_manual_dns_address1_label")) - size(":")))>
+</h3>
+	<p>Ingrese la dirección de IP del DNS primario deseado. Se requiere esta dirección para usar la función DNS manual. </p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address2_label"), (size(_("webui", "adv_manual_dns_address2_label")) - size(":")))>
+</h3>
+	<p>Ingrese la dirección de IP del DNS secundario deseado (de respaldo). Esta dirección es opcional y puede quedar en blanco si se desea. </p>
+</div>
+<!-- id="adv_manual_dns" -->

@@ -1,0 +1,74 @@
+Mem total:799560 anon:68720 map:19296 free:571520
+ slab:58264 buf:0 cache:23612 dirty:904 write:0
+Swap total:0 free:0
+  PID^^^VSZ^VSZRW   RSS (SHR) DIRTY (SHR) STACK COMMAND
+  563  277m  269m  5060  1620  2772     0   132 /usr/bin/netmgrd
+ 1264  188m  175m  8372  2344  5300     4   296 /opt/nvtl/bin/modem2d
+  777 76068 64300  5488  1520  3872     4   132 /opt/nvtl/bin/dsmd
+ 1340 67512 53592  3080  1592  1408     4   132 /opt/nvtl/bin/gpsd
+  531 67468 58700  3700  1700  1312     0   132 ipacm
+ 1875 65008 47864  9844  4520  4192     4   132 /opt/nvtl/bin/deviceagentd
+ 1177 61428 45644  4500  2796  1644     4   132 /opt/nvtl/bin/powersaved
+ 1328 60940 45376  2728  1404  1116     4   132 /opt/nvtl/bin/sim_mgrd
+ 1418 58744 45452  2444  1064  1324     4   132 /opt/nvtl/bin/smsd
+ 2244 56828 52208  2260  1396   836     0   132 qmuxbridge
+ 1459 53904 39960  6636  1964  4460     4   288 /opt/nvtl/bin/dmdbd
+ 1335 51280 37100  2884  1792   952     4   132 /opt/nvtl/bin/ccm2d
+ 1147 50476 37024  2328  1352   852     4   132 /opt/nvtl/bin/wifid
+ 1936 46176 29356  4568  2664  1596     4   132 /opt/nvtl/bin/nuad
+ 1243 45860 29220  3864  2428  1284     4   132 duad
+  521 42576 36176  2368  1452   880     0   132 ipacm_perf
+ 1033 42196 28828  2000  1120   796     4   132 /opt/nvtl/bin/wan_mgrd
+  663 40676 35832  2396  1456   856     0   132 qti
+ 1928 38688 21852  5620  3228  2176     4   132 /opt/nvtl/bin/cloud_engined
+ 1195 37832 20992  4120  2816  1284     4   132 /opt/nvtl/bin/factory_resetd
+ 1950 37636 13440  6516  2624  2140    20   288 /opt/nvtl/bin/webuid -c /opt/nvtl/data/branding/etc/webui/config.xml -m /opt/nvtl/etc/webui/menu_layout.json -r /etc/lighttpd/mod_rewrite.conf -p /etc/lighttpd/mod_proxy.conf -l en_US UTF-8 -l es_MX UTF-8 -l fr_FR UTF-8 -l fr_CA UTF-8 -l ar_AE UTF-8 -l de_DE UTF-8 -l it_IT UTF-8 -l ja_JP UTF-8
+ 1597 37216 21480  3824  1952  1748     4   132 /opt/nvtl/bin/ledd
+ 1046 36844 21096  3088  1464  1552     4   132 /opt/nvtl/bin/usbd
+ 1105 35596 21048  3312  1784  1440     4   296 /opt/nvtl/bin/ansd
+ 1028 34384 20892  2976  1456  1272     4   308 /opt/nvtl/bin/router2d
+ 1517 33172 20564  1800   848   848     4   132 /opt/nvtl/bin/vpnd
+  781 32836 20496  1700   848   768     4   132 /opt/nvtl/bin/mifi_healthd
+ 1563 31820 25264  1900  1364   344     0   132 /sbin/adbd
+  570 29636 25252  1168   736   360     0   132 /sbin/tftp_server
+  778 29368 13396  5784  3508  1960     4   132 /opt/nvtl/bin/settingsd
+ 2181 27512 12456  4696  3128  1220     4   132 /opt/nvtl/bin/sysser.fcgi
+ 1861 25136 12340  2140  1276   832     4   132 /opt/nvtl/bin/emd
+ 1387 24968 12472  1680   892   772     4   288 /opt/nvtl/bin/inseego_secured
+ 1227 24744 12392  2172  1272   816     4   132 /opt/nvtl/bin/fotad
+  950 23716 12296  2884  2124   720     0   132 /usr/bin/usb_serial
+ 1571 23580 12276  1420   688   708     4   132 /opt/nvtl/bin/diag_read diag_read
+  549 23348 19048  1532  1264   240     0   132 /usr/bin/port_bridge at_mdm0 at_usb0
+ 2185 20848  4496  5976  3528  1456     4   132 /opt/nvtl/bin/restapi.fcgi
+ 1852 19112  4356  4764  3496  1252     4   132 /opt/nvtl/bin/nua_timer_watchdogd
+  344 15316  3976  2836  2116   712     4   132 nvtl_dnsd bridge0 53 /etc/dns_cache.txt
+  535 15212 10996  1668  1204   460     0   132 ipacmdiag
+ 1040  9360   496  1292   756   520     4   132 /opt/nvtl/bin/devuid
+ 2925  9012   572  3280  2708   572     0   132 /opt/nvtl/bin/hostapd /tmp/wifi/hostapd/wlan1_hostapd.conf -f /tmp/wifi/hostapd/wlan1_hostapd.log
+ 2431  9008   568  3288  2708   568     0   132 /opt/nvtl/bin/hostapd /tmp/wifi/hostapd/wlan0_hostapd.conf -f /tmp/wifi/hostapd/wlan0_hostapd.log
+  768  8020   424  1388   888   480     4   132 /opt/nvtl/bin/msgbusd
+  960  8008   424  1628  1200   420     4   132 /opt/nvtl/bin/mifi_watchdogd
+ 3686  5864  2060  2988   776  1720     0   132 dhcpd -f -cf /opt/nvtl/tmp/router2/dhcpd.conf -lf /opt/nvtl/tmp/router2/dhcpd.leases
+ 2176  5816  1508  2300   468  1368    16   132 /usr/sbin/lighttpd -f /etc/lighttpd/lighttpd.conf
+  730  3256   684  1092   560   532     0   132 {syslogd_monitor} /bin/sh /opt/nvtl/bin/syslogd_monitor.sh
+  910  2872   300   772   580   188     0   132 {nvtl_mem_diag.s} /bin/sh /opt/nvtl/bin/nvtl_mem_diag.sh daemon 1024 10 15 5 60 30 15 3 2 1 0 5
+18918  2872   300   640   552    88     0   132 {exe} ash /opt/nvtl/bin/save_var_log.sh
+18925  2872   300   612   516    84     0   132 top -b -n 1 -m
+ 2411  2872   300   484   396    80     0   132 crond
+ 2274  2872   300   616   532    72     0   132 /sbin/getty 115200 ttyMSM0 vt100
+18917  2872   300   556   484    72     0   132 sh -c /opt/nvtl/bin/save_var_log.sh
+18846  2740   168   408   348    60     0   132 sleep 60
+18899  2740   168   408   348    60     0   132 sleep 20
+ 1978  2568   504  1164   780   276    88   132 avahi-daemon: running [inseego.local]
+ 1979  2436   372   428   356   160    88   132 avahi-daemon: chroot helper
+  677  2284   324   328   220    92     0   132 /usr/sbin/rngd
+  268  2280   364   936   712   268    96   132 udevd --daemon
+  283  2280   364   736   604   240   112   132 udevd --daemon
+  284  2280   364   644   520   236   112   132 udevd --daemon
+  315  2156   376   780   600   136     0   132 /sbin/syslogd -z 1024 -q 1024 -o 10 -m 0 -f /etc/syslog.conf
+  756  1728   320   596   488   100     4   132 /opt/nvtl/bin/mifi_debugd
+32339  1652   324   516   416   100    32   132 radvd -C /opt/nvtl/tmp/router2/radvd.conf -m syslog
+32341  1652   324   336   280    88    32   132 radvd -C /opt/nvtl/tmp/router2/radvd.conf -m syslog
+    1  1480   296   572   468    72     0   132 init [3]
+  659  1460   296   228   140    76     0   132 qrtr-ns
+  524  1320   164   300   248    48     0   132 /sbin/init_mss

@@ -1,0 +1,155 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__aeabi_unwind_cpp_pr0
+libgcc_s.so.1
+__cxa_finalize
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+MbVar_Init
+MbVar_Cleanup
+MsgBus_Create
+MsgBus_SetCallback
+MsgBus_Connect
+MsgBus_Disconnect
+MsgBus_Release
+MsgBus_Subscribe
+MsgBusDelete
+MsgBusGet
+MsgBusPublishBinary
+MsgBusPublishInt32
+MsgBusPublishInt64
+MsgBusPublishFloat
+MsgBusPublishDouble
+localtime
+MsgBusPublishString
+MsgBusSetBinary
+MsgBusSetInt32
+MsgBusSetInt64
+MsgBusSetFloat
+MsgBusSetDouble
+MsgBusSetString
+__bss_start
+mifi_dbg_start
+libmifimsgbus.so
+libmificommon.so
+libwatchdog_api.so
+libmifi_debug.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+librt.so.1
+libpthread.so.0
+libstdc++.so.6
+libm.so.6
+H	KxD	J{D
+MSGBUS: success.
+MSGBUS: unknown error.
+What is channel: 
+MsgBusDelete returned %d (%s)
+MsgBus_Subscribe returned %d (%s)
+Listening in on notifications on %s
+How many bytes would you like to send? 
+What character would you like to fill the data with? 
+MsgBusPublishBinary returned %d (%s)
+unable to allocate %u bytes
+What is string value: 
+MsgBusPublishString returned %d (%s)
+What is double value: 
+MsgBusPublishDouble returned %d (%s)
+What is float value: 
+MsgBusPublishFloat returned %d (%s)
+What is int32 value: 
+MsgBusPublishInt64 returned %d (%s)
+MsgBusPublishInt32 returned %d (%s)
+MsgBusSetBinary returned %d (%s)
+MsgBusSetString returned %d (%s)
+MsgBusSetDouble returned %d (%s)
+MsgBusSetFloat returned %d (%s)
+MsgBusSetInt64 returned %d (%s)
+MsgBusSetInt32 returned %d (%s)
+last updated time:[%s]
+data type:[
+data:[%d]
+data:[%lld]
+data:[%f]
+data:[%lf]
+data:[%s]
+len:[%d] (bytes)
+Unknown]
+MsgBusGet returned %d (%s)
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+nvtl.msgbus.channels.list
+list[%d]:[%s]
+Active msgbus channels are:
+received on %s 
+int32 data:[%d]
+int64 data:[%lld]
+float data:[%f]
+double data:[%lf]
+string data:[%s]
+binary data len:[%d] (bytes)
+command [%s]
+MsgBus_Create failed
+MsgBus_Connect returned %d
+MsgBus_SetCallback returned %d
+command [%s] not found.
+MsgBus_Disconnect returned %d
+MsgBus_Release returned %d
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+print_channels
+Prints out all the active channels.
+MsgBusGet
+get data on specified channel.
+MsgBusSetInt32
+set an int32 data on specified channel.
+MsgBusSetInt64
+set an int64 data on specified channel.
+MsgBusSetFloat
+set a float data on specified channel.
+MsgBusSetDouble
+set a double data on specified channel.
+MsgBusSetString
+set a null terminated string data on specified channel.
+MsgBusSetBinary
+set a binary blob data on specified channel.
+MsgBusPublishInt32
+publish an int32 data on specified channel.
+MsgBusPublishInt64
+publish an int64 data on specified channel.
+MsgBusPublishFloat
+publish a float data on specified channel.
+MsgBusPublishDouble
+publish a double data on specified channel.
+MsgBusPublishString
+publish a null terminated string data on specified channel.
+MsgBusPublishBinary
+publish a binary blob data on specified channel.
+MsgBus_Subscribe
+subscribe for notifications on specified channel.
+MsgBusDelete
+deletes data on specified channel.
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

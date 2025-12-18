@@ -1,0 +1,63 @@
+<div id="device_info">
+	<h1><tmpl_udf GET_PO_TEXT("device_info_menu_text", gProductName)></h1>
+	<h3><tmpl_var truncate(_("webui", "device_info_manufacturer_label"), (size(_("webui", "device_info_manufacturer_label")) - size(":")))></h3>
+io <tmpl_var _("webui", "webui_product_name")> gamintojas.</p>
+	<h3><tmpl_var truncate(_("webui", "device_info_model_label"), (size(_("webui", "device_info_model_label")) - size(":")))></h3>
+		<p>Oficialus 
+renginio modelio pavadinimas ir numeris.</p>
+	<h3><tmpl_var truncate(_("webui", "device_info_global_os_version_label"), (size(_("webui", "device_info_global_os_version_label")) - size(":")))></h3>
+iuo metu 
+diegtos programin
+rangos versija. Tai pagrindin
+s versijos numeris; informacija apie 
+ susijusi su 
+vairiais programin
+rangos komponentais.</p>
+	<tmpl_if showSDMVersion>
+		<h3><tmpl_var truncate(_("webui", "device_info_global_sdm_version_label"), (size(_("webui", "device_info_global_sdm_version_label")) - size(":")))></h3>
+ios versijos numeris susij
+renginio valdymo komponentu. Prireikus 
+renginio valdymo programin
+rangos komponentas atnaujinamas automati
+kai.</p>
+	</tmpl_if>
+	<div class="blockgroup">
+		<tmpl_if showMifiOsVersion>
+			<h4><tmpl_var truncate(_("webui", "device_info_os_version_label"), (size(_("webui", "device_info_os_version_label")) - size(":")))></h4>
+			<p>Tai OS (operacin
+s sistemos) ir jos komponent
+ versijos numeris.</p>
+		</tmpl_if>
+			<h4><tmpl_var truncate(_("webui", "device_info_modem_version_label"), (size(_("webui", "device_info_modem_version_label")) - size(":")))></h4>
+			<p>4G modemo komponentui tai yra 
+iuo metu 
+diegtos programin
+s aparatin
+rangos (programin
+rangos) versija.</p>
+		<tmpl_if showWifiFwVersion>
+ programin
+s aparatin
+rangos versija</h4>
+ komponentui tai yra 
+iuo metu 
+diegtos programin
+s aparatin
+rangos (programin
+rangos) versija.</p>
+		</tmpl_if>
+		<h4><tmpl_var truncate(_("webui", "device_info_web_ui_version_label"), (size(_("webui", "device_info_web_ui_version_label")) - size(":")))></h4>
+iniatinklio s
+sajos versijos numeris.</p>
+		<tmpl_if showLcdVersion>
+			<h4><tmpl_var truncate(_("webui", "device_info_lcd_ui_version_label"), (size(_("webui", "device_info_lcd_ui_version_label")) - size(":")))></h4>
+renginio ekran
+ios programin
+rangos versijos numeris ir naudotojo bei sistemos s
+veika su ekrano turiniu.</p>
+		</tmpl_if>
+		<h4><tmpl_var truncate(_("webui", "device_info_pri_version_label"), (size(_("webui", "device_info_pri_version_label")) - size(":")))></h4>
+			<p>Taip nustatoma 
+iuo metu 
+renginiui pritaikyta konfig
+racijos versija.</p>

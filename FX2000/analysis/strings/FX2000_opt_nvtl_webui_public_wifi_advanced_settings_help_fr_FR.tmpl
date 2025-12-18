@@ -1,0 +1,118 @@
+<!-- WiFi Advanced -->
+<div id="wifi_advanced">
+	<h1>Wi-Fi</h1>
+	<h2>Vue d
+ensemble</h2>
+	<p>Normalement, ces param
+tres Wi-Fi peuvent 
+tre laiss
+ leurs valeurs par d
+faut, mais si n
+cessaire, vous pouvez les ajuster pour les adapter 
+ votre environnement particulier.</p>
+	<h2>Commande Marche/Arr
+t Wi-Fi</h2>
+	<p>Utilisez cette commande pour activer ou d
+sactiver le Wi-Fi selon les besoins. S
+il est d
+seau Wi-Fi <tmpl_var _("webui", "webui_product_name_with_suffix")> ne sera pas disponible, de telle sorte que la seule fa
+on de se connecter au <tmpl_var _("webui", "webui_product_name")> sera d
+utiliser un c
+ble USB.</p>
+	<h3>Autoriser les modifications des param
+tres Wi-Fi 
+ partir de l
+cran Jetpack</h3>
+	<p>Utilisez cette commande pour activer ou d
+sactiver le Wi-Fi selon les besoins. S
+il est d
+seau Wi-Fi ne sera pas disponible, de telle sorte que la seule fa
+on de se connecter sera d
+utiliser un c
+ble USB.</p>
+	<h3><tmpl_var _("webui", "wifi_advanced_max_connections_label")></h3>
+finissez le nombre d
+appareils pouvant se connecter simultan
+ment au(x) r
+seau(x) Wi-Fi <tmpl_var _("webui", "webui_product_name_with_suffix")>.</p>
+	<h2><tmpl_var _("webui", "wifi_advanced_profile_title")></h2>
+	<p>Ces param
+terminent comment chaque bande (2,4
+GHz et 5
+GHz) est utilis
+e. Ils d
+terminent 
+galement si le r
+seau Wi-Fi invit
+ est disponible.</p>
+	<tmpl_if SwapToggleButtonAction>
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_ghz_band_label")></h3>
+		<p>Le mode 802.11 
+GHz qui est automatiquement d
+affiche.</p>
+	<tmpl_else>
+		<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_ghz_band_label")></h3>
+lectionnez l
+option souhait
+e pour appliquer cette bande au r
+seau principal, au r
+seau invit
+ ou pour d
+sactiver cette bande.</p>
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_advanced_five_ghz_band_label")></h3>
+lectionnez l
+option souhait
+e pour appliquer cette bande au r
+seau principal, au r
+seau invit
+ ou pour d
+sactiver cette bande. Veuillez noter que vous ne pouvez pas d
+sactiver les deux bandes.</p>
+	<h2><tmpl_var _("webui", "wifi_advanced_two_point_four_g_band_options_title")></h2>
+	<p>Ces param
+tres sont masqu
+faut, mais vous pouvez cliquer sur l
+te/le lien pour les rendre visibles. Ces param
+tres sont utilis
+s chaque fois que la bande de 2,4
+GHz est active.</p>
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_g_802_11_mode_label")></h3>
+	<p>Utilisez ce param
+tre pour modifier le mode Wi-Fi, si n
+cessaire. Habituellement, vous laissez ce param
+ sa valeur par d
+faut.</p>
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_g_channel_label")></h3>
+	<p>Il doit 
+ sur <strong>Automatique</strong>, sauf si vous devez choisir un canal particulier pour votre environnement.</p>
+	<h2><tmpl_var _("webui", "wifi_advanced_five_g_options_title")></h2>
+	<p>Ces param
+tres sont masqu
+faut, mais vous pouvez cliquer sur l
+te/le lien pour les rendre visibles. Ces param
+tres sont utilis
+s chaque fois que la bande de 5
+GHz est active.</p>
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_802_11_mode_label")></h3>
+	<p>Utilisez ce param
+tre pour modifier le mode Wi-Fi, si n
+cessaire. En g
+ral, il n
+y a pas de raison de modifier la valeur par d
+faut.</p>
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_bandwidth_label")></h3>
+lectionnez l
+option souhait
+e. La valeur par d
+faut doit 
+tre utilis
+e, sauf si vous subissez des interf
+rences avec d
+autres appareils Wi-Fi. Dans ce cas, la r
+duction de la bande passante peut diminuer l
+rence.</p>
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_channel_label")></h3>
+	<p>Il doit 
+ sur <strong>Automatique</strong>, sauf si vous devez choisir un canal particulier pour votre environnement.</p>
+<!-- id="wifi_advanced" -->

@@ -1,0 +1,2075 @@
+
+div.radio span {
+    background-position: inherit !important;
+}
+  
+.btn {
+    line-height: 16px !important;
+}
+.btn-primary {
+    border: 1px solid #0082ca;
+}
+
+/* Desktops */
+
+@media (min-width: 1921px) {
+
+
+}
+
+/*  Laptops, Desktops */
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+
+}
+
+/*  Laptops, Desktops */
+
+@media (min-width: 1367px) and (max-width: 1440px) {
+
+    body#file_sharing .toggleFileSharingSettings .ig_4{
+		width: 40%;
+		margin: 0px 10px;
+	 }
+	 .col.label + .col.input {
+		width: 70% !important;
+
+	}
+	.duaReset button{
+		margin-left:20px;
+		margin-top: 107px;
+		font-size: 12px;
+	}
+}
+
+/*  Laptops, Desktops */
+
+@media (min-width: 1281px) and (max-width: 1366px) {
+
+}
+
+/*  Laptops, Desktops */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    #main {
+        max-width: 100%;
+    }
+    #sidebar.left .linkWrap {
+        font-size: 18px !important;
+    }
+
+    #sideload_software_install #softwareInstallContent
+	{
+        background-image: url("");
+        text-align:center;
+	}
+}
+
+
+/* Tablets, Ipads [ portrait ] */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+      /* layout.css overrides */
+      html,
+      body {
+          min-width: 0;
+      }
+      /* style.css overrides */
+      html,
+      html a,
+      body,
+      button,
+      input,
+      select,
+      textarea {
+          text-rendering: auto;
+          /* Reset to default. Not supported by mobile versions of webkit. */
+      }
+      #container {
+          /* Sticky Footer Stuff */
+          margin: 0 auto -125px;
+          /* the bottom margin is the negative value of the footer's height */
+          overflow: hidden;
+      }
+      #container_inner {
+          /* Push down to compensate for floating header */
+      }
+      #header {
+          position: relative;
+          width: 100%;
+          z-index: 5;
+      }
+      .page #app_container,
+      .tabbed_page #app_container,
+      html.rtl .page #app_container,
+      html.rtl .tabbed_page #app_container {
+          width: 100%;
+      }
+      #header_inner,
+      html.rtl #header_inner {
+          width: auto;
+          padding: 20px 10px;
+      }
+  
+      /* Hide status area and side bar */
+      #status_area,
+      #sidebar {
+          display: none;
+      }
+  
+      /* Header Mobile Menu */
+      #header_mobile_menu {
+          display: block;
+          float: right;
+          margin-right: 0;
+          margin-left: 10px;
+      }
+      html.rtl #header_mobile_menu {
+          float: left;
+          margin-left: 0;
+          margin-right: 10px;
+      }
+      #header_mobile_menu li {
+          display: block;
+          height: auto;
+          float: right;
+          margin-left: 10px;
+      }
+      html.rtl #header_mobile_menu li {
+          float: left;
+          margin-left: 0;
+          margin-right: 10px;
+      }
+      #header_mobile_menu li a {
+          /* hide any button/link text */
+          color: rgba(0, 0, 0, 0) !important;
+          text-transform: capitalize;
+          /* end hide any button/link text */
+          text-transform: none;
+          line-height: normal;
+          display: block;
+          width: 36px;
+          height: 36px;
+          padding: 0;
+          margin-top: 0;
+          overflow: hidden;
+          float: none;
+          cursor: pointer;
+      }
+      /* Notifications */
+      div.notifications_wrapper.global {}
+      #mobile_status_area {
+          display: block;
+      }
+      
+      /* Mobile menu */
+      #mobile_menu {
+          position: absolute;
+          z-index: 100;
+          top: 76px;
+          box-shadow: -2px 2px 10px #bbb;
+          overflow: hidden;
+          min-width: 45%;
+          background-color: #fff;
+      }
+      /* Hide these from the Denali generated menu. */
+      #mobile_menu li.menu-home,
+      #mobile_menu ul.level-3 li.settings-advanced-bengal-advanced {
+          display: none;
+      }
+      #mobile_navigation_ext li.first a {
+          border-top: none;
+      }
+      #mobile_menu a {
+          font-size: 1em;
+          /* 14px */
+          line-height: 2em;
+          /* 28px */
+          padding: 10px 20px;
+          display: block;
+          /* So they're easier for touch */
+      }
+      #mobile_navigation ul li a {
+          padding: 10px 20px 10px 30px;
+      }
+      html.rtl #mobile_navigation ul li a {
+          padding: 10px 30px 10px 20px;
+      }
+      #mobile_navigation ul li ul li a {
+          padding: 10px 20px 10px 40px;
+      }
+      html.rtl #mobile_navigation ul li ul li a {
+          padding: 10px 40px 10px 20px;
+      }
+      /* Accordian Styles */
+      #mobile_navigation a.parent span.indicator {
+          display: block;
+          float: right;
+          margin-left: 20px !important;
+      }
+      html.rtl #mobile_navigation a.parent span.indicator {
+          float: left;
+          margin-left: 0 !important;
+          margin-right: 20px !important;
+      }
+      #mobile_navigation a.parent span.indicator,
+      #mobile_navigation a.parent span.right,
+      #mobile_navigation a.parent span.left {
+          width: 8px;
+          height: 14px;
+          margin: 6px 0;
+      }
+      #mobile_navigation li ul {
+          display: none;
+      }
+      #mobile_navigation li.active>ul {
+          display: block;
+      }
+
+      /* Hide tabs ... */
+      .tabs_container .tabs {
+          display: none;
+      }
+      .tabs_container>.row {
+          display: none;
+      }
+      /* ... except for those tabs in the page content. */
+      fieldset .tabs_container .tabs {
+          display: block;
+          top: 0;
+          margin-bottom: 10px;
+      }
+      #main .tier_1_content {
+          border-top: none;
+          padding: 10px 10px 0 10px;
+      }
+      .tier_2_content {
+          padding-top: 0px !important;
+      }
+      #main {
+          width: 100%;
+      }
+      .page #app_container,
+      .tabbed_page #app_container,
+      html.rtl .page #app_container,
+      html.rtl .tabbed_page #app_container {
+          background-image: none;
+          float: none;
+          margin: 0 auto;
+          padding-left: 0px;
+          width: 98%;
+      }
+      .page #app_inner,
+      .tabbed_page #app_inner,
+      html.rtl .page #app_inner,
+      html.rtl .tabbed_page #app_inner {
+        padding: 20px 0px;
+      }
+      .shortcut {
+          margin: 0 7px 10px;
+          width: 30%;
+      }
+      /* =============================================================================
+   HELP LINKS
+   ========================================================================== */
+      #pageHeadRow a.helpLink {
+          display: none;
+      }
+      #mobile_navigation_ext li.mobile_help a.helpLink {
+          width: auto;
+          height: auto;
+          background-image: none;
+          float: none;
+          margin-top: 0;
+      }
+      /* =============================================================================
+   MODAL DIALOG
+   ========================================================================== */
+      .ui-dialog {
+          width: 100% !important;
+          /* Force to window width. */
+      }
+      /* =============================================================================
+   APP FORM/TABLE LAYOUT
+   ========================================================================== */
+      /* Rows & Columns */
+      /* Add border for wide orientation  for sub-tables */
+      div.sub_table div.row {
+          padding-bottom: 0;
+          padding-top: 10px;
+      }
+      div.sub_table div.row:first-child {
+          padding-top: 0;
+          border-top: none;
+      }
+      form table div.col.label {
+          margin-top: 0;
+      }
+      html.rtl div.col.label,
+      html.rtl form div.col.label {
+          width: auto;
+      }
+      div.col.help,
+      form div.col.help {
+          float: right;
+          clear: both;
+          margin-top: 0;
+          width: auto;
+      }
+      div.col.help,
+      form div.col.help {
+          width: auto;
+          padding-top: 5px;
+      }
+      div.col.help,
+      div.col.inline_error {
+          line-height: 1.75em;
+      }
+      html.rtl div.col.help,
+      html.rtl form div.col.help,
+      html.rtl div.col.inline_error,
+      html.rtl form div.col.inline_error {
+          width: auto;
+          float: left;
+      }
+      /* =============================================================================
+   UNIFORM
+   ========================================================================== */
+      #adv_port_filtering div.selector.fixedWidth,
+      #adv_port_forward div.selector.fixedWidth {
+          width: 120px !important;
+      }
+      #adv_port_filtering div.selector.fixedWidth span,
+      #adv_port_forward div.selector.fixedWidth span {
+          width: 85px !important;
+      }
+      table tbody tr td input.text {
+          width: 90%;
+      }
+      /* =============================================================================
+   LOGIN FORM
+   ========================================================================== */
+      #login_inner {
+          padding: 20px;
+      }
+      #login.login_page #login_container {
+          background-image: none;
+          margin-left: 0;
+      }
+      html.rtl .login_page #login_container {
+          background-image: none;
+          margin-right: 0;
+      }
+      #login_content {
+          max-width: 100%;
+      }
+      #login_content #inputPasswordCol {
+          margin-right: 10px;
+      }
+      html.rtl #login_content #inputPasswordCol {
+          margin-right: 0;
+          margin-left: 10px;
+      }
+      #login form div.row {
+          padding-bottom: 0;
+          border-bottom: none;
+      }
+      #login form div.col {
+          margin-bottom: 10px;
+      }
+      #login form div.col.input {
+          width: auto;
+          float: left;
+      }
+      #login form div.col.inline_error {
+          clear: both;
+          margin-left: 0;
+          margin-right: 0;
+      }
+      /* =============================================================================
+   FOOTER & STICKY FOOTER
+   ========================================================================== */
+      #push {
+          height: 125px;
+          /* #push must be the same height as #footer + borders */
+      }
+      #footer_inner,
+      #logo_device {
+          width: 100%;
+      }
+      #copyright {
+          line-height: 1.25em;
+      }
+      .footer_inner {
+          width: unset;
+      }
+      /* style.css overrides */
+      /* =============================================================================
+   ERROR PAGES
+   ========================================================================== */
+      .error_page #app_container,
+      .error_page h2 {
+          width: auto;
+      }
+      .error_page #app_container {
+          margin: 0;
+          padding: 20px;
+      }
+      /* form.css overrides */
+      .input input,
+      .input textarea {
+          width: auto;
+      }
+      .product-img {
+          display: none;
+      }
+      /* =============================================================================
+   PROGRESS / DATA USAGE BAR
+   ========================================================================== */
+      .progress_bar_wrapper,
+      .progress_bar_wrapper #data_plan_usage_bar_col,
+      .progress_bar_wrapper #refresh_btn_col {
+          width: 100%;
+      }
+      .progress_bar_wrapper #refresh_btn_col {
+          text-align: left;
+      }
+      html.rtl .progress_bar_wrapper #refresh_btn_col {
+          text-align: right;
+      }
+      /* =============================================================================
+   DEVICE INFO & STATUS DIAGNOSTICS PAGES
+   ========================================================================== */
+      #device_info div.col.input,
+      #status_diagnostics div.col.input {
+          width: auto;
+      }
+      /* =============================================================================
+   RESTARTING PAGE
+   ========================================================================== */
+      #restarting #main #app_container {
+          background-image: none;
+          min-height: 0;
+          margin-left: 0;
+      }
+      html.rtl #restarting #app_container {
+          background-image: none;
+          margin-right: 0;
+      }
+      #restarting #restartingContentInner {
+          padding: 100px 20px;
+      }
+      /* ==|== mns page styles ===============================================
+   ========================================================================== */
+      #networkListTableHeader .loading {
+          margin-left: 0px;
+      }
+      #NetworksSelectMNS {
+          margin-left: 0px;
+      }
+      /* =============================================================================
+   RESETTING PAGE
+   ========================================================================== */
+      #resetting #main #app_container {
+          background-image: none;
+          min-height: 0;
+          margin-left: 0;
+      }
+      html.rtl #resetting #app_container {
+          background-image: none;
+          margin-right: 0;
+      }
+      #resetting #resettingContentInner {
+          padding: 100px 50px;
+          margin-left: 355px;
+      }
+      /* =============================================================================
+   SHUTDOWN PAGE
+   ========================================================================== */
+      #shutdown #main #app_container {
+          background-image: none;
+          min-height: 0;
+          margin-left: 0;
+      }
+      html.rtl #shutdown #app_container {
+          background-image: none;
+          margin-right: 0;
+      }
+      #shutdownContent {
+          text-align: center;
+      }
+      #shutdownContentInner {
+          padding: 20px;
+      }
+      /* =============================================================================
+   BENGAL PREFERENCES PAGE
+   ========================================================================== */
+      #ucf_animation {
+          margin-left: 10px;
+          float: right;
+      }
+      html.rtl #ucf_animation {
+          margin-left: 0;
+          margin-right: 10px;
+          float: left;
+      }
+      #ucf>p {
+          float: left;
+          width: 60%;
+      }
+      html.rtl #ucf>p {
+          float: right;
+      }
+      #ucf>.table {
+          clear: both;
+      }
+      .page #app_inner,
+      .tabbed_page #app_inner {
+          border-left: none;
+      }
+      .filetype .uploader {
+          float: right;
+          width: auto;
+      }
+      /*************************
+   *	Four column layout   *
+   *************************/
+      .col-secondary {
+          width: 100%;
+          margin-left: 0%;
+      }
+      div#uniform-GPSPortNumberSave {
+          margin-right: -107%;
+          margin-top: -15%;
+      }
+      .inline_error {
+          margin-left: 50%;
+      }
+      .col-primary {
+          width: 100%;
+      }
+      .col-primary .col.label-teeny {
+          width: 43%;
+          margin-right: 0%;
+      }
+      .col-primary .col.input-textbox {
+          width: 52%;
+      }
+      .col-secondary .col.label-long {
+          width: 65%;
+      }
+      .col-secondary .col.input-checkbox {
+          width: 30%;
+      }
+      .col-secondary .col.input-portnum {
+          width: 20%;
+      }
+      .col-secondary .col.label-teeny {
+          width: 50%;
+      }
+      .scrimp {
+          width: 100%;
+      }
+      #carrier_logo {
+          left: 65px;
+      }
+      #carrier_logo img {
+          max-height: 60px;
+          margin-top: 10px
+      }
+      #mobile_status_area ul.status {
+          float: left;
+      }
+      #data_usage.tabbed_page #app_inner,
+      #connected_devices.tabbed_page #app_inner,
+      #file_sharing.tabbed_page #app_inner {
+          padding-top: 34px;
+      }
+      #ui-id-1 #app_container {
+          width: 100%;
+      }
+      #apps_home #logo #deviceImg {}
+      #connected_devices table.devicesTable tbody .deviceName {
+          padding-left: 0px;
+      }
+      #header_inner {
+        min-height: 80px;
+    }
+    #app_container #app_inner {
+        padding: 10px;
+    }
+      h3.productName {
+        position: absolute;
+        bottom: 30px !important;
+        left: 168px  !important;
+     }
+     #apps_home .ig_section .ig_col {
+        border: 0px !important;
+        display: block;
+        width: 100%;
+    }
+    fieldset#home .ig_col .ig_card {
+        border: 1px solid grey !important;
+        margin-bottom: 10px;
+    }
+    #main_inner {
+        padding: 0px;
+    }
+    #connectedDevices {
+        height: inherit !important;
+        padding-bottom: 20px;
+    }
+}
+/* Tablets, Ipads [ landscape ] */
+
+@media (min-width: 768px) and (max-width: 1024px)  and (orientation: landscape) {
+ 
+    .page #main_inner,
+	.tabbed_page #main_inner {
+	    padding: 0px;
+	}
+
+	.page #app_container,
+	.tabbed_page #app_container {
+	    padding-left: 0px;
+	}
+
+	#app_container #app_inner {
+	    padding: 10px;
+    }
+    .footer
+	{
+		width: 100%;
+	}
+	.page #main_inner,
+	.tabbed_page #main_inner {
+	    padding: 0px;
+	}
+
+	.page #app_container,
+	.tabbed_page #app_container {
+	    padding-left: 0px;
+	}
+
+	#app_container #app_inner {
+	    /* padding: 10px; */
+    } 
+    #apps_home .ig_section .ig_col {
+        border: 0px !important;
+        display: block;
+        width: 100%;
+    }
+    fieldset#home .ig_col .ig_card {
+        border: 1px solid grey !important;
+        margin-bottom: 10px;
+    }
+    #main_inner {
+        padding: 0px;
+    }
+}
+
+/* Low Resolution Tablets, Mobiles [ Landscape ] */
+
+@media (min-width: 481px) and (max-width: 767px) {
+    #apps_home .ig_section .ig_col {
+        border: 0px !important;
+        display: block;
+        width: 100%;
+    }
+    fieldset#home .ig_col .ig_card {
+        border: 1px solid grey !important;
+        margin-bottom: 10px;
+    }
+    #main_inner {
+        padding: 0px;
+    }
+         
+	#data_usage_settings .col.label+.col.input {
+		width: 90% !important;
+    }
+    #data_usage_stats .ig_col {
+		width:100% !important;
+	}
+	.duCircleBlock {
+		margin: auto;
+	}
+	.duaReset {
+		padding: 0px 10px;
+	}
+	.duaReset button {
+		margin-top: inherit;
+		margin-left: 0px;
+		width: 100%;
+	}
+	.footer_fixed {
+		position: inherit !important;
+	}
+    .progress_bar_wrapper #data_plan_usage_bar_col .lineUsage {
+        float: right;
+        text-align: right;
+        width: 90%;
+    }
+    .progress_bar_wrapper #data_plan_usage_bar_col #lineUsageDetails,
+    .progress_bar_wrapper #data_plan_usage_bar_col #totalUsageDetails,
+    .progress_bar_wrapper #data_plan_usage_bar_col #remainingUsageDetails {
+        width: 100%;
+        display: inline-flex;
+        float: left;
+    }
+    .progress_bar_wrapper #data_plan_usage_bar_col .remainingusage {
+        text-align: left;
+    }
+    .progress_bar_wrapper #data_plan_usage_bar_col .totalUsageColor {
+        margin-left: 0%;
+    }
+    /* =============================================================================
+	 BENGAL PREFERENCES PAGE
+	 ========================================================================== */
+    #ucf_animation {
+        margin-left: 0;
+        float: left;
+    }
+    html.rtl #ucf_animation {
+        margin-left: 0;
+        margin-right: 0;
+        float: right;
+    }
+    #ucf>p,
+    html.rtl #ucf>p {
+        float: none;
+        width: auto;
+    }
+    /* =============================================================================
+	 ADVANCED MAC FILTERING PAGE
+	 ADVANCED PORT FILTERING PAGE
+	 ADVANCED PORT FORWARDING PAGE
+	 ADVANCED VPN PROFILES PAGE
+	 PARENTAL CONTROL DEVICES PAGE
+	 ========================================================================== */
+    /* Force table to not be like tables anymore */
+    #adv_macfilter table,
+    #adv_macfilter thead,
+    #adv_macfilter tfoot,
+    #adv_macfilter tbody,
+    #adv_macfilter tr,
+    #adv_macfilter th,
+    #adv_macfilter td,
+    #portFilteringCustomApplicationsList,
+    #portFilteringCustomApplicationsList thead,
+    #portFilteringCustomApplicationsList tfoot,
+    #portFilteringCustomApplicationsList tbody,
+    #portFilteringCustomApplicationsList tr,
+    #portFilteringCustomApplicationsList th,
+    #portFilteringCustomApplicationsList td,
+    #portForwardingCustomApplicationsList,
+    #portForwardingCustomApplicationsList thead,
+    #portForwardingCustomApplicationsList tfoot,
+    #portForwardingCustomApplicationsList tbody,
+    #portForwardingCustomApplicationsList tr,
+    #portForwardingCustomApplicationsList th,
+    #portForwardingCustomApplicationsList td,
+    #vpnProfilesTable,
+    #vpnProfilesTable thead,
+    #vpnProfilesTable tfoot,
+    #vpnProfilesTable tbody,
+    #vpnProfilesTable tr,
+    #vpnProfilesTable th,
+    #vpnProfilesTable td,
+    #parentalctrl_device table,
+    #parentalctrl_device thead,
+    #parentalctrl_device tfoot,
+    #parentalctrl_device tbody,
+    #parentalctrl_device tr,
+    #parentalctrl_device th,
+    #parentalctrl_device td {
+        display: block;
+    }
+    #adv_macfilter thead,
+    #adv_macfilter tfoot,
+    #adv_macfilter colgroup,
+    #portFilteringCustomApplicationsList thead,
+    #portFilteringCustomApplicationsList tfoot,
+    #portForwardingCustomApplicationsList thead,
+    #portForwardingCustomApplicationsList tfoot,
+    #vpnProfilesTable thead,
+    #vpnProfilesTable tfoot,
+    #parentalctrl_device thead,
+    #parentalctrl_device tfoot,
+    #portFilteringCustomApplicationsList colgroup,
+    #portForwardingCustomApplicationsList colgroup,
+    #vpnProfilesTable colgroup,
+    #parentalctrl_device colgroup {
+        display: none !important;
+    }
+    #adv_macfilter table col,
+    #portForwardingCustomApplicationsList col,
+    #vpnProfilesTable col,
+    #parentalctrl_device table col {
+        width: 100% !important;
+    }
+    /* Contain floats for cells */
+    #adv_macfilter table tr:before,
+    #adv_macfilter table tr:after,
+    #adv_macfilter table tr td:before,
+    #adv_macfilter table tr td:after,
+    #portFilteringCustomApplicationsList td:before,
+    #portFilteringCustomApplicationsList td:after,
+    #portForwardingCustomApplicationsList td:before,
+    #portForwardingCustomApplicationsList td:after,
+    #vpnProfilesTable tr:before,
+    #vpnProfilesTable tr:after,
+    #parentalctrl_device table tr:before,
+    #parentalctrl_device table tr:after,
+    #parentalctrl_device table tr td:before,
+    #parentalctrl_device table tr td:after {
+        content: "";
+        display: table;
+    }
+    #adv_macfilter table tr:after,
+    #adv_macfilter table tr td:after,
+    #portFilteringCustomApplicationsList td:after,
+    #portForwardingCustomApplicationsList td:after,
+    #vpnProfilesTable tr:after,
+    #parentalctrl_device table tr:after,
+    #parentalctrl_device table tr td:after {
+        clear: both;
+    }
+    #adv_macfilter table tr,
+    #adv_macfilter table tr td,
+    #parentalctrl_device table tr,
+    #parentalctrl_device table tr td {
+        height: auto;
+        min-height: 0;
+        zoom: 1;
+    }
+    #adv_macfilter table tr,
+    #parentalctrl_device table tr,
+    #portFilteringCustomApplicationsList tr,
+    #portForwardingCustomApplicationsList tr,
+    #vpnProfilesTable tr {
+        display: block !important;
+        height: auto;
+        min-height: 0;
+        padding: 5px 10px;
+    }
+    #adv_macfilter table tr td,
+    #parentalctrl_device table tr td,
+    #portFilteringCustomApplicationsList td,
+    #portForwardingCustomApplicationsList td,
+    #vpnProfilesTable td {
+        width: 100% !important;
+        padding: 5px 0;
+        line-height: 27px;
+    }
+    #vpnProfilesTable td.edit,
+    #vpnProfilesTable td.deleteColumn,
+    #vpnProfilesTable td.buttonColumn {
+        width: auto;
+        float: left;
+        border: none;
+    }
+    html.rtl #vpnProfilesTable td.edit,
+    html.rtl #vpnProfilesTable td.deleteColumn,
+    html.rtl #vpnProfilesTable td.buttonColumn {
+        float: right;
+    }
+    #vpnProfilesTable td.buttonColumn {
+        float: right;
+    }
+    html.rtl #vpnProfilesTable td.buttonColumn {
+        float: left;
+        text-align: left;
+    }
+    #adv_macfilter table tr td:first-child,
+    #adv_macfilter table tr.deviceFooterRow td,
+    #parentalctrl_device table tr td:first-child,
+    #parentalctrl_device table tr.deviceListRow td,
+    #portFilteringCustomApplicationsList td:first-child,
+    #portForwardingCustomApplicationsList td:first-child,
+    #vpnProfilesTable td:first-child {
+        border-top: none;
+    }
+    #adv_macfilter th,
+    #adv_macfilter td,
+    #parentalctrl_device th,
+    #parentalctrl_device td {
+        width: 100% !important;
+        line-height: normal;
+        float: none;
+    }
+    /* Connected Device Icons */
+    #parentalctrl_device table.devicesTable tbody tr td.icon span,
+    #parentalctrl_device table.devicesTable tbody tr td.icon span {
+        text-align: left !important;
+        margin: 0 !important;
+    }
+    html.rtl #parentalctrl_device table.devicesTable tbody tr td.icon span,
+    html.rtl #parentalctrl_device table.devicesTable tbody tr td.icon span {
+        text-align: right !important;
+        margin: 0 !important;
+    }
+    #adv_macfilter table.devicesTable tbody tr td.interfaceType span.wifi,
+    #adv_macfilter table.devicesTable tbody tr td.interfaceType span.usb,
+    #parentalctrl_device table.devicesTable tbody tr td.icon span.wifi,
+    #parentalctrl_device table.devicesTable tbody tr td.icon span.usb {
+        margin: 6px 0 !important;
+    }
+    #adv_macfilter .devicesTable label,
+    #adv_macfilter .devicesTable .label,
+    #portFilteringCustomApplicationsList label,
+    #portForwardingCustomApplicationsList label,
+    #parentalctrl_device .devicesTable label,
+    #parentalctrl_device .devicesTable .label {
+        display: block !important;
+        float: left;
+        text-align: left;
+    }
+    html.rtl #adv_macfilter .devicesTable label,
+    html.rtl #adv_macfilter .devicesTable .label,
+    html.rtl #portFilteringCustomApplicationsList label,
+    html.rtl #portForwardingCustomApplicationsList label,
+    html.rtl #parentalctrl_device .devicesTable label,
+    html.rtl #parentalctrl_device .devicesTable .label {
+        float: right;
+        margin-right: 0;
+        margin-left: 10px;
+        text-align: right;
+    }
+    #adv_macfilter table.devicesTable tr.deviceFooterRow .blocked,
+    #adv_macfilter table.devicesTable tr.deviceFooterRow .filter {
+        width: auto;
+        text-align: left;
+    }
+    html.rtl #adv_macfilter table.devicesTable tr.deviceFooterRow .blocked,
+    html.rtl #adv_macfilter table.devicesTable tr.deviceFooterRow .filter {
+        text-align: right;
+    }
+    #parentalctrl_device table.devicesTable td.filter {
+        text-align: left !important;
+    }
+    html.rtl #parentalctrl_device table.devicesTable td.filter {
+        text-align: right !important;
+    }
+    #parentalctrl_device table.devicesTable tr.deviceListRow td.filter .label {
+        display: block !important;
+    }
+    #adv_macfilter td input,
+    #adv_macfilter td div.checker,
+    #adv_macfilter td div.selector,
+    #parentalctrl_device td input,
+    #parentalctrl_device td div.checker,
+    #parentalctrl_device td div.selector,
+    #parentalctrl_device tr.deviceInformationRow td span.macAddress,
+    #portFilteringCustomApplicationsList td input,
+    #portFilteringCustomApplicationsList td div.checker,
+    #portFilteringCustomApplicationsList td div.selector,
+    #portForwardingCustomApplicationsList td input,
+    #portForwardingCustomApplicationsList td div.checker,
+    #portForwardingCustomApplicationsList td div.selector {
+        float: right;
+        margin-right: 0;
+    }
+    #adv_macfilter tr.deviceInformationRow td.icon {
+        float: left;
+        width: auto !important;
+        margin-right: 10px;
+    }
+    html.rtl #adv_macfilter td input,
+    html.rtl #adv_macfilter td div.checker,
+    html.rtl #adv_macfilter td div.selector,
+    html.rtl #parentalctrl_device td input,
+    html.rtl #parentalctrl_device td div.checker,
+    html.rtl #parentalctrl_device td div.selector,
+    html.rtl #parentalctrl_device tr.deviceInformationRow td span.macAddress,
+    html.rtl #portFilteringCustomApplicationsList td input,
+    html.rtl #portFilteringCustomApplicationsList td div.checker,
+    html.rtl #portFilteringCustomApplicationsList td div.selector,
+    html.rtl #portForwardingCustomApplicationsList td input,
+    html.rtl #portForwardingCustomApplicationsList td div.checker,
+    html.rtl #portForwardingCustomApplicationsList td div.selector {
+        float: left;
+    }
+    html.rtl #adv_macfilter tr.deviceInformationRow td.icon {
+        float: right;
+        margin-right: 0;
+        margin-left: 10px;
+    }
+    #adv_macfilter tr td .selector select,
+    #adv_macfilter tr td input,
+    #parentalctrl_device tr td .selector select,
+    #parentalctrl_device tr td input,
+    #portFilteringCustomApplicationsList td input,
+    #portForwardingCustomApplicationsList td input {
+        width: auto !important;
+    }
+    #portFilteringCustomApplicationsList td,
+    #portForwardingCustomApplicationsList td,
+    #vpnProfilesTable tr {
+        line-height: 27px;
+        zoom: 1;
+    }
+    #adv_port_filtering td p.error,
+    #adv_port_forward td p.error {
+        margin: 27px 0 0 0;
+    }
+    /* =============================================================================
+	 ERROR PAGES
+	 ========================================================================== */
+    .error_page #app_container {
+        top: 0;
+    }
+    /* =============================================================================
+	 MESSAGES PAGE
+	 ========================================================================== */
+    /* Force table to not be like tables anymore */
+    #smsInbox table,
+    #smsInbox thead,
+    #smsInbox tfoot,
+    #smsInbox tbody,
+    #smsInbox tr,
+    #smsInbox th,
+    #smsInbox td {
+        display: block;
+    }
+    #smsInbox thead,
+    #smsInbox tfoot {
+        display: none !important;
+    }
+    /* Contain floats for rows */
+    #smsInbox table tr:before,
+    #smsInbox table tr:after {
+        content: "";
+        display: table;
+    }
+    #smsInbox table tr:after {
+        clear: both;
+    }
+    #smsInbox table tr {
+        display: block !important;
+        height: auto;
+        min-height: 0;
+        padding: 10px 0;
+        zoom: 1;
+    }
+    #smsInbox td.message .messageContent {
+        width: auto;
+        overflow-x: visible;
+    }
+    #ConnectedDevicesPrimaryTable,
+    #ConnectedDevicesPrimaryTable thead,
+    #ConnectedDevicesPrimaryTable tfoot,
+    #ConnectedDevicesPrimaryTable tbody,
+    #ConnectedDevicesPrimaryTable tr,
+    #ConnectedDevicesPrimaryTable th,
+    #ConnectedDevicesPrimaryTable td,
+    #BlockedDevicesTable,
+    #BlockedDevicesTable thead,
+    #BlockedDevicesTable tfoot,
+    #BlockedDevicesTable tbody,
+    #BlockedDevicesTable tr,
+    #BlockedDevicesTable th,
+    #BlockedDevicesTable td {
+        display: block;
+        text-align: left;
+        clear: both;
+    }
+    #adv_macfilter table tr,
+	#parentalctrl_device table tr,
+	#portFilteringCustomApplicationsList tr,
+	#portForwardingCustomApplicationsList tr,
+	#vpnProfilesTable tr
+	{
+		border-top: 2px solid #ccc;
+	}
+
+	#adv_macfilter table tr td,
+	#parentalctrl_device table tr td,
+	#portFilteringCustomApplicationsList td,
+	#portForwardingCustomApplicationsList td,
+	#vpnProfilesTable td
+	{
+		border-top: 1px solid #ccc;
+	}
+
+	#adv_macfilter .devicesTable label,
+	#adv_macfilter .devicesTable .label,
+	#portFilteringCustomApplicationsList label,
+	#portForwardingCustomApplicationsList label,
+	#parentalctrl_device .devicesTable label,
+	#parentalctrl_device .devicesTable .label
+	{
+		font-weight: bold;
+	}
+
+	#parentalctrl_device table.devicesTable tr.deviceInformationRow td.deviceInformation .macAddressLabel
+	{
+		font-weight: bold;
+    }
+    #apps_home .ig_section  .ig_col{
+		border: 0px;
+		display:block;
+		width: 100%
+	}
+		#apps_home .ig_section .ig_col > div{
+		border: 0px;
+	}
+	#apps_home .ig_section .ig_card {
+		border: 0px !important;
+		min-height: auto;
+		height: auto;
+	}
+	fieldset#home .ig_col .ig_col {
+		border-width: 0px !important;
+	}
+	fieldset#home .ig_col  .ig_card {
+		border: 1px solid grey !important;
+    }
+
+        /* Hide status area and side bar */
+        #status_area,
+        #sidebar {
+            display: none;
+        }
+     /* Header Mobile Menu */
+     #header_mobile_menu {
+        display: block;
+        float: right;
+        margin-right: 0;
+        margin-left: 10px;
+    }
+    html.rtl #header_mobile_menu {
+        float: left;
+        margin-left: 0;
+        margin-right: 10px;
+    }
+    #header_mobile_menu li {
+        display: block;
+        height: auto;
+        float: right;
+        margin-left: 10px;
+    }
+    html.rtl #header_mobile_menu li {
+        float: left;
+        margin-left: 0;
+        margin-right: 10px;
+    }
+    #header_mobile_menu li a {
+        /* hide any button/link text */
+        color: rgba(0, 0, 0, 0) !important;
+        text-transform: capitalize;
+        /* end hide any button/link text */
+        text-transform: none;
+        line-height: normal;
+        display: block;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        margin-top: 0;
+        overflow: hidden;
+        float: none;
+        cursor: pointer;
+    }
+    
+      /* Hide these from the Denali generated menu. */
+      #mobile_menu li.menu-home,
+      #mobile_menu ul.level-3 li.settings-advanced-bengal-advanced {
+          display: none;
+      }
+      #mobile_navigation_ext li.first a {
+          border-top: none;
+      }
+      #mobile_menu a {
+          font-size: 1em;
+          /* 14px */
+          line-height: 2em;
+          /* 28px */
+          padding: 10px 20px;
+          display: block;
+          /* So they're easier for touch */
+      }
+      #mobile_navigation ul li a {
+          padding: 10px 20px 10px 30px;
+      }
+      html.rtl #mobile_navigation ul li a {
+          padding: 10px 30px 10px 20px;
+      }
+      #mobile_navigation ul li ul li a {
+          padding: 10px 20px 10px 40px;
+      }
+      html.rtl #mobile_navigation ul li ul li a {
+          padding: 10px 40px 10px 20px;
+      }
+      /* Accordian Styles */
+      #mobile_navigation a.parent span.indicator {
+          display: block;
+          float: right;
+          margin-left: 20px !important;
+      }
+      html.rtl #mobile_navigation a.parent span.indicator {
+          float: left;
+          margin-left: 0 !important;
+          margin-right: 20px !important;
+      }
+      #mobile_navigation a.parent span.indicator,
+      #mobile_navigation a.parent span.right,
+      #mobile_navigation a.parent span.left {
+          width: 8px;
+          height: 14px;
+          margin: 6px 0;
+      }
+      #mobile_navigation li ul {
+          display: none;
+      }
+      #mobile_navigation li.active>ul {
+          display: block;
+      }
+
+      /* Hide tabs ... */
+      .tabs_container .tabs {
+          display: none;
+      }
+      .tabs_container>.row {
+          display: none;
+      }
+      /* ... except for those tabs in the page content. */
+      fieldset .tabs_container .tabs {
+          display: block;
+          top: 0;
+          margin-bottom: 10px;
+      }
+      #main .tier_1_content {
+          border-top: none;
+          padding: 10px 10px 0 10px;
+      }
+      .tier_2_content {
+          padding-top: 0px !important;
+      }
+      #main {
+          width: 100%;
+          margin-top: 10px;
+      }
+      .page #app_container,
+      .tabbed_page #app_container,
+      html.rtl .page #app_container,
+      html.rtl .tabbed_page #app_container {
+          background-image: none;
+          float: none;
+          margin: 0 auto;
+          padding-left: 0px;
+          width: 98%;
+      }
+      .page #app_inner,
+      .tabbed_page #app_inner,
+      html.rtl .page #app_inner,
+      html.rtl .tabbed_page #app_inner {
+        padding: 20px 0px;
+      }
+      #header_inner {
+          min-height: 80px;
+          width: auto;
+    padding: 20px 10px;
+      }
+
+      #carrier_logo img {
+          max-height: 60px;
+          margin-top: 10px;
+      }
+
+      #carrier_logo {
+          left: 65px;
+      }
+
+      h3.productName {
+          position: absolute;
+          bottom: 14px;
+          left: 168px;
+      }
+
+      #mobile_status_area {
+          display: block;
+      }
+
+      #mobile_status_area ul.status {
+          float: left;
+      }
+}
+
+/* Low Resolution Tablets, Mobiles [ portrait ] */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    fieldset#home .ig_col .ig_card {
+        border: 1px solid grey !important;}
+    /* =============================================================================
+ HEADER
+ ========================================================================== */
+    #carrier_logo {
+        position: relative;
+    }
+    #header {
+        padding-bottom: 0px;
+    }
+    #header #header_inner {
+        height: auto;
+        background: #fff;
+    }
+    #container_inner {}
+    .tabs_container .tier_1_content {
+        border-top: none;
+    }
+    body.no_status_bar #carrier_logo {
+        display: block;
+    }
+    #mobile_menu {
+        top: 142px;
+    }
+    #main_inner {
+        margin-top: 10px;
+        padding: 0px 10px;
+
+    }
+    #main_inner #app_container {}
+    #app_container #app_inner {
+        padding-top: 10px;
+    }
+    #status_area ul.status
+        {
+        margin-right: 10px;
+    }
+    #mobile_status_area ul.status {
+        margin-right: 10px;
+    }
+    #header_mobile_menu {
+        margin-top: -53px;
+    }
+    /* =============================================================================
+ CONTAINER & STICKY FOOTER
+ ========================================================================== */
+    #container {
+        /* Sticky Footer Stuff */
+        margin: 0 auto -140px;
+        /* the bottom margin is the negative value of the footer's height */
+    }
+    .footer .copyright p {
+        float: right;
+    }
+    .logo_device {
+        width: 100%;
+    }
+    .copyright {
+        width: 100%;
+        padding-top: 10px;
+    }
+    .mifi_device {
+        width: 100%;
+        padding-top: 10px;
+    }
+    .footer {
+        height: 130px;
+    }
+    /* =============================================================================
+ FOOTER & STICKY FOOTER
+ ========================================================================== */
+    #push {
+        height: 140px;
+        /* #push must be the same height as #footer + borders */
+    }
+    /* =============================================================================
+ MODAL DIALOG
+ ========================================================================== */
+    .ui-dialog-content {
+        height: 100% !important;
+        /* Force to window height. */
+        overflow: visible;
+    }
+    .ui-dialog {
+        height: auto !important;
+        /* Force to window height. */
+        top: 0 !important;
+        /* Force to top position. */
+    }
+    .ui-dialog-titlebar-close {
+        width: 20px;
+        height: 20px;
+        z-index: 1010;
+    }
+    /* =============================================================================
+ PARENTAL CONTROL SITES PAGE
+ ========================================================================== */
+    #parentalctrl_site table.parentalControlSiteTable td input.text {
+        width: auto;
+    }
+    #parentalctrl_site #parentalControlSiteFilter div.col,
+    html.rtl #parentalctrl_site #parentalControlSiteFilter div.col,
+    #parentalctrl_site #parentalControlSiteFilter div.sites_count,
+    html.rtl #parentalctrl_site #parentalControlSiteFilter div.sites_count {
+        float: none;
+        padding: 0 !important;
+    }
+    /* =============================================================================
+ GPS PAGE
+ ========================================================================== */
+    #gps_status #gps_panel #map_canvas {
+        height: 200px;
+    }
+    #gps_status #gps_table div.row {
+        width: auto;
+        float: none;
+        padding: 0;
+        margin: 0;
+    }
+    #gps_status #gps_table div.row+div.row {
+        margin-top: 10px;
+    }
+    #gps_status #gps_table div.col {
+        width: auto;
+    }
+    #gps_status #gps_panel a#downloadGpsDriver {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        line-height: normal;
+        height: auto;
+        text-align: center;
+    }
+    .pco-container {
+        margin: 0 auto;
+        width: 90%;
+    }
+    /* =============================================================================
+ WIFI
+ ========================================================================== */
+    .table .row .input {
+        width: 100%;
+    }
+    .table .input input {
+        width: 95%;
+    }
+    .table .row .help {
+        float: left;
+    }
+    #connected_devices tr.editDeviceRow td input {
+        width: 89% !important;
+    }
+    #connected_devices table tr.editDeviceRow {
+        float: right;
+        width: 100%;
+    }
+    .table .row .input.m_chkbox_widthauto {
+        width: auto;
+    }
+    /* =============================================================================
+ Help
+ ========================================================================== */
+    .col-md-6 {
+        margin-top: 20px;
+        width: 100%;
+    }
+    .shortcut {
+        margin: 0 0 20px;
+        width: 100%;
+        min-height: auto;
+    }
+    table {
+        width: 100%;
+        table-layout: fixed;
+        word-wrap: break-word;
+    }
+    button.secondary {
+        /* padding: 0 12px; */
+        height: 25px;
+        line-height: 25px;
+        margin-top: 2%;
+    }
+    .col-secondary {
+        width: 100%;
+        margin-left: 0%;
+    }
+    .col-primary .col.label-teeny {
+        width: 100%;
+    }
+    .col-primary .col.input-textbox {
+        width: 100%;
+    }
+    div#uniform-GPSPortNumberSave {
+        margin-top: -32%;
+    }
+    .inline_error {
+        margin-left: 44%;
+    }
+    .progress_bar_wrapper #data_plan_usage_bar_col .totalUsageColor {
+        margin-left: 0px;
+    }
+    .progress_bar_wrapper #data_plan_usage_bar_col .lineUsage {
+        float: right;
+        text-align: right;
+    }
+    .right-move {
+        margin-left: 6%;
+    }
+    .left-move {
+        margin-right: 6%;
+    }
+    .tabs_container .tabs {
+        width: 84%;
+    }
+    .ui-dialog-buttonset {
+        margin-right: 20%;
+    }
+    .wider-display {
+        display: none;
+    }
+    .tiney-display {
+        display: block;
+    }
+    #smsInbox .delete {
+        width: 25%;
+        float: left;
+    }
+    #smsInbox input[type="checkbox"] {
+        margin-top: 6px;
+    }
+    #wifi_advanced_settings_form .table .label {
+        width: 25%;
+    }
+    #wifi_advanced_settings_form .table .rb {
+        width: 36%;
+    }
+    #apps_home #logo #deviceImg {}
+    #dataUsage {
+        width: 100%;
+    }
+    #apps_home #logo #deviceImg {}
+
+    #wifi_advanced_settings_form .table .label {
+        width: 24% !important;
+    }
+	#toggle_mobile_menu {
+		z-index: 999999 !important;
+	 }
+	#carrier_logo {display: inline;}
+    .footer .logo_device {
+        width: 100% !important;
+    }
+    .footer .logo_device a {
+        display: block !important;
+        width: 100% !important;
+        text-align: center;
+    }
+    .copyright,
+    .mifi_device {
+        width: 100% !important;
+        float: none;
+        line-height: inherit;
+        text-align: center !important;
+	}
+	.mifi_device a p{ display:block;text-align: center; width: 100%; font-size: 10px;}
+    .footer .copyright p {
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        float: none;
+        text-align: center;
+        line-height: 14px;
+	}
+	#header_inner, html.rtl #header_inner {
+		/* width: auto; */
+		padding: 10px 10px !important;
+    }
+      .page #app_container,
+      .tabbed_page #app_container,
+      html.rtl .page #app_container,
+      html.rtl .tabbed_page #app_container {
+          background-image: none;
+          float: none;
+          margin: 0 auto;
+          padding-left: 0px;
+          width: 98%;
+      }
+      .page #app_inner,
+      .tabbed_page #app_inner,
+      html.rtl .page #app_inner,
+      html.rtl .tabbed_page #app_inner {
+        padding: 20px 0px;
+      }
+
+      #carrier_logo img {
+          max-height: 60px;
+          margin-top: 10px;
+      }
+
+      #carrier_logo {
+          left: 65px;
+      }
+
+      h3.productName {
+          position: absolute;
+          bottom: 14px;
+          left: 168px;
+      }
+
+      #mobile_status_area {
+          display: block;
+      }
+
+      #mobile_status_area ul.status {
+          float: left;
+      }
+      
+        /* Hide status area and side bar */
+        #status_area,
+        #sidebar {
+            display: none;
+        }
+     /* Header Mobile Menu */
+     #header_mobile_menu {
+        display: block;
+        float: right;
+        margin-right: 0;
+        margin-left: 10px;
+    }
+    html.rtl #header_mobile_menu {
+        float: left;
+        margin-left: 0;
+        margin-right: 10px;
+    }
+    #header_mobile_menu li {
+        display: block;
+        height: auto;
+        float: right;
+        margin-left: 10px;
+    }
+    html.rtl #header_mobile_menu li {
+        float: left;
+        margin-left: 0;
+        margin-right: 10px;
+    }
+    #header_mobile_menu li a {
+        /* hide any button/link text */
+        color: rgba(0, 0, 0, 0) !important;
+        text-transform: capitalize;
+        /* end hide any button/link text */
+        text-transform: none;
+        line-height: normal;
+        display: block;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        margin-top: 0;
+        overflow: hidden;
+        float: none;
+        cursor: pointer;
+    }
+    
+      /* Hide these from the Denali generated menu. */
+      #mobile_menu li.menu-home,
+      #mobile_menu ul.level-3 li.settings-advanced-bengal-advanced {
+          display: none;
+      }
+      #mobile_navigation_ext li.first a {
+          border-top: none;
+      }
+      #mobile_menu a {
+          font-size: 1em;
+          /* 14px */
+          line-height: 2em;
+          /* 28px */
+          padding: 10px 20px;
+          display: block;
+          /* So they're easier for touch */
+      }
+      #mobile_navigation ul li a {
+          padding: 10px 20px 10px 30px;
+      }
+      html.rtl #mobile_navigation ul li a {
+          padding: 10px 30px 10px 20px;
+      }
+      #mobile_navigation ul li ul li a {
+          padding: 10px 20px 10px 40px;
+      }
+      html.rtl #mobile_navigation ul li ul li a {
+          padding: 10px 40px 10px 20px;
+      }
+      /* Accordian Styles */
+      #mobile_navigation a.parent span.indicator {
+          display: block;
+          float: right;
+          margin-left: 20px !important;
+      }
+      html.rtl #mobile_navigation a.parent span.indicator {
+          float: left;
+          margin-left: 0 !important;
+          margin-right: 20px !important;
+      }
+      #mobile_navigation a.parent span.indicator,
+      #mobile_navigation a.parent span.right,
+      #mobile_navigation a.parent span.left {
+          width: 8px;
+          height: 14px;
+          margin: 6px 0;
+      }
+      #mobile_navigation li ul {
+          display: none;
+      }
+      #mobile_navigation li.active>ul {
+          display: block;
+      }
+      /* Hide tabs ... */
+      .tabs_container .tabs {
+          display: none;
+      }
+      .tabs_container>.row {
+          display: none;
+      }
+      /* ... except for those tabs in the page content. */
+      fieldset .tabs_container .tabs {
+          display: block;
+          top: 0;
+          margin-bottom: 10px;
+      }
+      #main .tier_1_content {
+          border-top: none;
+          padding: 10px 10px 0 10px;
+      }
+      .tier_2_content {
+          padding-top: 0px !important;
+      }
+      #apps_home .ig_section .ig_col {
+        border: 0px;
+        display: block;
+        width: 100%;
+    }
+      #main {
+          width: 100%;
+          margin-top: 10px;
+      }
+      .page #app_container,
+      .tabbed_page #app_container,
+      html.rtl .page #app_container,
+      html.rtl .tabbed_page #app_container {
+          background-image: none;
+          float: none;
+          margin: 0 auto;
+          padding-left: 0px;
+          width: 98%;
+      }
+      .page #app_inner,
+      .tabbed_page #app_inner,
+      html.rtl .page #app_inner,
+      html.rtl .tabbed_page #app_inner {
+        padding: 20px 0px;
+      }
+      #header_inner {
+          min-height: 80px;
+      }
+
+      #carrier_logo img {
+          max-height: 60px;
+          margin-top: 10px;
+      }
+
+      #carrier_logo {
+          left: 65px;
+      }
+
+      h3.productName {
+          position: absolute;
+          bottom: 14px;
+          left: 168px;
+      }
+
+      #mobile_status_area {
+          display: block;
+      }
+
+      #mobile_status_area ul.status {
+          float: left;
+      }
+      h3.productName {
+        position: absolute;
+        bottom: 60px;
+        left: 180px;
+      }
+      #connectedDevices {
+        height: inherit !important;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .scrimp.shrink {
+        width: 82%;
+    }
+    .petite {
+        width: 82%;
+    }
+    .col.label.shrink {
+        width: 40% !important;
+    }
+    /* Mobile Subnavigation fix */
+    .page #pageHeadCol,
+    .tabbed_page #pageHeadCol {
+        width: auto;
+    }
+    #pageHeadRow {
+        display: block;
+        padding: 0px 10px;
+    }
+    #pageHeadCol {
+        width: 97%;
+    }
+    .breadcrumb {
+        padding: 5px 0px;
+    }
+    /* Hide tabs ... */
+    .tabs_container .tabs {
+        display: none;
+    }
+    .tabs_container>.row {
+        display: none;
+    }
+    .tabbed_page #pageHeadRow {
+        margin-bottom: 0px !important;
+    }
+}
+
+@media screen and (max-width: 640px)
+{
+    #app_content button {
+        width: 100%;
+        margin: 0px;
+        display: block;
+    }
+    .btn50 {
+        width: 100% !important;
+        margin-left: 0px  !important;
+        margin-top: 0px  !important;
+    }
+    .btn50 button {
+        padding: 10px 20px !important; 
+        height: inherit !important;
+        line-height: inherit !important;
+    }
+    #toggle_mobile_menu {
+        z-index: 999999 !important;
+    }
+    #mobile_menu {
+        min-width: 60% !important;
+    }
+    #apps_home .ig_section .ig_col {
+        border: 0px !important;
+        display: block;
+        width: 100%;
+    }
+    .input-textbox {
+        width: 100% !important;
+    }
+    fieldset#home .ig_col .ig_card {
+        border: 1px solid grey !important;
+        margin-bottom: 10px;
+    }
+    #app_container {
+        padding: 0px 10px;
+    }
+
+    #apps_home .ig_section .ig_col {
+        border: 0px;
+        display: block;
+        width: 100%;
+    }
+    fieldset#home .ig_col .ig_card {
+        border: 1px solid grey !important;
+        margin-bottom: 10px;
+    }
+    #main_inner {
+        padding: 0px;
+    }
+    h3.productName {
+        position: absolute;
+        bottom: 14px;
+        left: 78px !important;
+    }
+    .col.label + .col.input {
+        width: 100% !important;
+    }
+    #mobile_status_area ul.status {
+        margin-right: 2px;
+    }
+    #mobile_status_area ul.status:last-child {
+        margin-right: 0px;
+    }
+}
+@media screen and (max-width: 375px)
+{
+    h3.productName {
+        position: absolute;
+        bottom: 32px !important;
+        left: 88px !important;
+    }
+}
+@media screen and (max-width: 320px) {
+    /* =============================================================================
+ APP FORM/TABLE LAYOUT
+ ========================================================================== */
+    /* Rows & Columns */
+    #login_content form div.col {
+        float: none;
+    }
+    #adv_macfilter table tr td,
+    #parentalctrl_device table tr td,
+    #portFilteringCustomApplicationsList td,
+    #portForwardingCustomApplicationsList td,
+    #vpnProfilesTable td {
+        border-top: none;
+    }
+    /* =============================================================================
+ MOBILE STATUS BAR
+ ========================================================================== */
+    #mobile_status_area ul#mobile_statusBar_tech_grp,
+    #mobile_status_area ul.sim_status_error li#item_mobile_statusBar_network,
+    #mobile_status_area ul.wan_tech_error li#item_mobile_statusBar_network {
+        display: block;
+    }
+    #mobile_status_area ul.status {
+        margin-right: 4px;
+    }
+    html.rtl #mobile_status_area ul.status {
+        margin-right: 0;
+        margin-left: 10px;
+    }
+    /* =============================================================================
+ RESTARTING PAGE
+ ========================================================================== */
+    #restarting #restartingContent h2 {
+        line-height: normal;
+    }
+    /* =============================================================================
+ CONTAINER & STICKY FOOTER
+ ========================================================================== */
+    #container {
+        /* Sticky Footer Stuff */
+        margin: 0 auto -150px;
+        /* the bottom margin is the negative value of the footer's height */
+    }
+    /* =============================================================================
+ FOOTER & STICKY FOOTER
+ ========================================================================== */
+    #push {
+        height: 150px;
+        /* #push must be the same height as #footer + borders */
+    }
+    .table .row {
+        /* width: 90%; */
+    }
+    .table .col.col-secondary {
+        float: left;
+    }
+    .ui-dialog-buttonset {
+        margin-right: 7%;
+    }
+    #apps_home #logo #deviceImg {
+        padding-left: 0px;
+    }
+    .tile {
+        width: 85%;
+    }
+    #dataUsage {
+        width: 85%;
+    }
+    #apps_home #logo #deviceImg {
+        width: 100%;
+        height: 100%;
+    }
+    .tile {
+        width: 85%;
+    }
+}
+/* Safari browser specific styles */
+@media not all and (min-resolution:.001dpcm) { 
+	@media {
+
+		#ui-id-1 #app_container {
+			width: 666px;
+		}
+
+		div#uniform-GPSPortNumberSave {
+			margin-top: 0%;
+		}
+
+		#ui-id-1 select#securityQuestion {
+			background: #f7f7f7;
+		}
+	}
+}
+
+
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+    #wwan_settings .scrimp.shrink {
+        width: 72.5%;
+    }
+}
+@media screen and (width: 1440px) {
+    #wwan_settings .scrimp.shrink {
+        width: 68.3%;
+        max-width: 68.3%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #wwan_settings .scrimp.shrink {
+        width: 69.5%;
+    }
+    #wwan_settings .col.textCol.shrink-text {
+        width: 78%;
+    }
+}
+@media screen and (max-width: 640px) {
+    #wwan_settings .scrimp.shrink {
+        width: 99%;
+    }
+    #wwan_settings .col.textCol.shrink-text {
+        width: 77%;
+    }
+    #app_content button {
+        height: inherit;
+        line-height: inherit;
+    }
+}
+@media screen and (max-width: 480px) {
+    .btn.eye, .btn.eye-slash{ 
+        position: relative;
+        float: right;
+        top: -35px;
+        }
+}
+@media screen and (max-width: 425px) {
+    #wwan_settings .col.textCol.shrink-text {
+        width: 73%;
+    }
+}
+
+@media screen and (min-width: 640px)
+{
+    #device_preferences div.primary {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 640px)
+{
+    #device_preferences div.primary {
+      width: 100%;
+    }
+    #slider {
+      width: 43%;
+    }
+}
+
+@media screen and (min-width:1024px)
+{
+    #device_preferences div.primary {
+        width: inherit;
+    }
+        #device_preferences div.primary .scrimp {
+        width: 60%;
+    }
+}

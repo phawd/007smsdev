@@ -1,0 +1,283 @@
+<!-- Diagnostics -->
+<div id="status_diagnostics">
+	<h1><tmpl_var _("webui", "status_diagnostics_menu_text")></h1>
+	<h2>Descripci
+	<p>Esta p
+gina contiene informaci
+n acerca del <tmpl_var _("webui", "webui_product_name")> y de las redes disponibles. 
+sela seg
+n sea necesario para la resoluci
+n de problemas; no es necesaria para el funcionamiento normal. </p>
+	<h2><tmpl_var _("webui", "status_diagnostics_modem_sub_header_text")></h2>
+	<tmpl_if showPhoneNumber>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_phone_number_label"), (size(_("webui", "status_diagnostics_phone_number_label")) - size(":")))></h3>
+		<p>Este es el n
+mero de tel
+fono del <tmpl_var _("webui", "webui_product_name")>.</p>
+	</tmpl_if>
+	<tmpl_if showImei>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imei_label"), (size(_("webui", "status_diagnostics_imei_label")) - size(":")))></h3>
+		<p>El IMEI (International Mobile Equipment Identity, identidad internacional de equipos m
+viles) de este dispositivo. El IMEI es un c
+digo de 15 o 17 d
+gitos usado para identificar exclusivamente una estaci
+vil individual en una red de <tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>. El IMEI no cambia cuando se cambia la tarjeta SIM. </p>
+	</tmpl_if>
+	<tmpl_if showImeisv>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imeisv_label"), (size(_("webui", "status_diagnostics_imeisv_label")) - size(":")))></h3>
+		<p>Este campo combina el IMEI con un n
+mero de aprobaci
+n para este tipo de dispositivo. </p>
+	</tmpl_if>
+	<tmpl_if showMeid>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_meid_label"), (size(_("webui", "status_diagnostics_meid_label")) - size(":")))></h3>
+		<p>El MEID (Mobile Equipment ID, ID de equipo m
+vil) es un n
+nico usado para identificar una estaci
+vil individual en una red de CDMA. </p>
+	</tmpl_if>
+	<tmpl_if showIMSI>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imsi_label"), (size(_("webui", "status_diagnostics_imsi_label")) - size(":")))></h3>
+		<p>Una identidad de abonado m
+vil internacional (IMSI) es un n
+nico asociado con todos los usuarios de tel
+viles de la red del sistema global para comunicaciones m
+viles (GSM) y del sistema universal de telecomunicaciones m
+viles (UMTS) que se utilizan para identificar a un abonado GSM.
+	</tmpl_if>
+	<tmpl_if showFwVersion>					
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_fw_version_label"), (size(_("webui", "status_diagnostics_fw_version_label")) - size(":")))></h3>
+		<p>La versi
+n del firmware (software) instalado actualmente en el m
+dem. </p>
+	</tmpl_if>
+	<tmpl_if showSimStatus>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_sim_status_label"), (size(_("webui", "status_diagnostics_sim_status_label")) - size(":")))></h3>
+		<p>Indica el estado de la tarjeta SIM. Si falta la tarjeta SIM, o este campo indica alguna forma de error de la tarjeta SIM, no es posible la conexi
+n a la red m
+vil. </p>
+	</tmpl_if>
+	<tmpl_if showICCID>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_iccid_label"), (size(_("webui", "status_diagnostics_iccid_label")) - size(":")))>
+		<p>Este n
+nico de ID se asigna a la tarjeta SIM. No aparece si no hay una tarjeta SIM instalada o si existe una condici
+n de error de la tarjeta SIM. </p>
+	</tmpl_if>
+	<tmpl_if showModemDetails>
+		<tmpl_if showMINMSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_msid_label"), (size(_("webui", "status_diagnostics_msid_label")) - size(":")))></h3>
+			<p>Esta ID se usa para identificar a un suscriptor en la red de datos m
+viles.</p>
+		</tmpl_if>
+		<tmpl_if showESN>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_esn_label"), (size(_("webui", "status_diagnostics_esn_label")) - size(":")))></h3>
+			<p>El N
+mero de serie Electr
+nico (Electronic Serial Number, ESN) es el m
+todo tradicional para identificar dispositivos en redes CDMA de manera 
+nica, pero ha sido reemplazado por el MEID. En el caso de los dispositivos que usan un MEID (como este dispositivo), el ESN est
+ en blanco o es un pseudo-ESN que no tiene la garant
+a de ser 
+nico.</p>
+ 		</tmpl_if>
+		<tmpl_if showHomeSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_home_sid_label"), (size(_("webui", "status_diagnostics_home_sid_label")) - size(":")))></h3>
+			<p>El SID (System ID, ID del sistema) es un identificador de red que indica el punto de conexi
+n a la red de datos m
+viles.</p>
+		</tmpl_if>
+		<tmpl_if showERIVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_eri_version_label"), (size(_("webui", "status_diagnostics_eri_version_label")) - size(":")))></h3>
+			<p>La tabla del ERI (Enhanced Roaming Indicator, Indicador de Itinerancia Optimizado) contiene informaci
+n acerca de cada red de itinerancia a la cual se puede conectar el dispositivo m
+vil. Este campo indica la versi
+n de ERI actualmente instalada. La tabla de ERI se actualiza autom
+ticamente.</p>
+		</tmpl_if>
+ 		<tmpl_if showPRLVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_prl_version_label"), (size(_("webui", "status_diagnostics_prl_version_label")) - size(":")))></h3>
+			<p>La PRL (Preferred Roaming List, Lista de Itinerancia Preferida) se usa para seleccionar una red cuando hay varias redes disponibles. Este campo indica la versi
+n de PRL actualmente instalada. La PRL se actualiza autom
+ticamente. </p>			
+		</tmpl_if>
+	</tmpl_if>
+	<tmpl_if lteSupported>			
+		<h2>Red 5G/4G LTE</h2>
+		<tmpl_if showInternetStatus4G>	
+			<h3>Estado</h3>
+			<p>Para la red <tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>, los posibles valores de estado son: </p>
+			<div class="blockgroup">
+				<ul>
+					<li>No disponible: no se ha detectado una red <tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>.</li>
+					<li>Disponible: se ha detectado una red <tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>.</li>
+				</ul>
+			</div>
+			<p> Los siguientes datos solo se proporcionan si la red <tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")> est
+ disponible. </p>
+		</tmpl_if>
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>Es el nombre de la red <tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>. </p>
+		</tmpl_if>
+		<tmpl_if showSignalStrength>		
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_signal_strength_label"), (size(_("webui", "status_diagnostics_fourg_signal_strength_label")) - size(" (RSRP):")))></h3>
+			<p>Indica la intensidad de la se
+al <tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>, medida en dBm. Los valores absolutos m
+s elevados indican una se
+s fuerte, por lo que -80 dBm es una se
+s fuerte que -90 dBm. <tmpl_udf GET_PO_TEXT("status_diagnostics_lte_note_text")> </p>
+		</tmpl_if>
+		<tmpl_if (is3G or is3GCDMA or is3GGSM)>
+                        <h3><tmpl_var truncate(_("webui", "status_diagnostics_sinr_label"), (size(_("webui", "status_diagnostics_sinr_label")) - size(":")))></h3>
+                        <p> La relaci
+al-interferencia-m
+s-ruido (SINR) es la tasa de transferencia de informaci
+                <tmpl_else>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_snr_label"), (size(_("webui", "status_diagnostics_snr_label")) - size(":")))></h3>
+			<p>SNR es una medida de calidad de la se
+al. Un n
+mero mayor indica una mejor se
+al. </p>
+		</tmpl_if>		
+		<tmpl_if showLteBand>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_lte_band_label"), (size(_("webui", "status_diagnostics_lte_band_label")) - size(":")))></h3>
+			<p>Las redes <tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")> pueden usar diferentes bandas en diferentes regiones. Este campo indica la banda usada para la conexi
+n <tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")> actual. </p>
+		</tmpl_if>
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_roaming_label"), (size(_("webui", "status_diagnostics_fourg_roaming_label")) - size(":")))></h3>
+			<p>Indica si la conexi
+n actual es una conexi
+n de itinerancia. </p>
+		</tmpl_if>
+		<tmpl_if showCellID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_cellid_label"), (size(_("webui", "status_diagnostics_cellid_label")) - size(":")))></h3>
+			<p> Este valor identifica la torre de telefon
+a celular actualmente en uso. </p>
+		</tmpl_if>
+	</tmpl_if>
+	<tmpl_if isHSPATechnology>	
+		<h2><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> Estado</h2>
+		<h3>Estado</h3>
+		<p> Para la red <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>, se admiten los siguientes estados: </p>
+		<div class="blockgroup">
+				<li>No disponible: no se ha detectado una red <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>.</li>
+				<li>Disponible: se ha detectado una red <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>.</li>
+			</ul>
+		</div>
+		<p> Los elementos de datos siguientes solo se proveen si la red est
+ disponible. </p>
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p> Es el nombre de la red <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>. </p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p> La tecnolog
+a actual en uso para la red <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>. Los posibles valores, desde el m
+s lento hasta el m
+pido, son: </p>
+				<tmpl_if gsmSupported>
+					<li>GPRS</li>
+				</tmpl_if>
+				<tmpl_if wcdmaSupported>
+					<li>UMTS</li>
+				</tmpl_if>
+				<tmpl_if cdmaSupported>
+					<li>HSPA+</li>
+					<li>HSPA+ DC</li>
+				</tmpl_if>
+				<tmpl_if evdoSupported>
+					<li>EDGE</li>
+					<li>HSDPA</li>
+					<li>HSUPA</li>
+				</tmpl_if>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_networkid_label"), (size(_("webui", "status_diagnostics_networkid_label")) - size(":")))></h3>
+			<p> El nombre y/o ID de la Red M
+vil Terrestre P
+blica (Public Land Mobile Network, PLMN). </p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_rssi_label"), (size(_("webui", "status_diagnostics_rssi_label")) - size(":")))></h3>
+			<p> Este indica el RSSI para la se
+al <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>. RSSI es una medida de la fuerza de la se
+al en decibeles, relativa a un milivatio. Siempre es negativa debido a que los dispositivos m
+viles de radio son mucho menos potentes que un milivatio. Los valores absolutos m
+s elevados indican una se
+s fuerte, por lo que -50 dBm es una se
+s fuerte que -70 dBm. </p>
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_roaming_label"), (size(_("webui", "status_diagnostics_roaming_label")) - size(":")))></h3>
+			<p> Indica si la conexi
+n actual es una conexi
+n de itinerancia. </p>
+		</tmpl_if>
+		<tmpl_if show3g>
+			<h2><tmpl_var _("webui", "status_diagnostics_threeg_label")></h2>
+			<h3>Estado</h3>
+			<p>Los valores de estado posibles son: </p>
+			<div class="blockgroup">
+				<ul>
+					<li>No disponible: no se ha detectado una red 3G.</li>
+					<li>Disponible: se ha detectado una red 3G.</li>
+				</ul>
+			</div>
+			<p> Los elementos de datos siguientes solo se proveen si la red est
+ disponible. </p>
+			<tmpl_if showNetworkOperator>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_network_label"), (size(_("webui", "status_diagnostics_threeg_network_label")) - size(":")))></h3>
+				<p>Es el nombre de la red 3G. </p>
+			</tmpl_if>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_onex_label"), (size(_("webui", "status_diagnostics_threeg_onex_label")) - size(":")))></h3>
+			<p>RSSI es una medida de intensidad de la se
+al. La unidad es decibeles, en relaci
+n con 1 milivatio, y siempre es negativa porque los dispositivos de radio m
+viles son mucho menos potentes que 1 milivatio. Los valores absolutos m
+s elevados indican una se
+s fuerte, por lo que -50 dBm es una se
+s fuerte que -70 dBm. Este campo indica el RSSI de la se
+al 1xRTT. </p>
+			<tmpl_if show3gEvdoRssi>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_evdo_label"), (size(_("webui", "status_diagnostics_threeg_evdo_label")) - size(":")))></h3>
+				<p>RSSI es una medida de intensidad de la se
+al. Este campo indica el RSSI para la se
+al EVDO o eHRPD. </p>
+ 			</tmpl_if>
+			<tmpl_if show3gTechnology>
+ 				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+				<p>La tecnolog
+a actual en uso para la red 3G. Posibles valores son 1xRTT, EVDO o eHRPD. </p>
+ 			</tmpl_if>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_ecio_label"), (size(_("webui", "status_diagnostics_threeg_ecio_label")) - size(":")))></h3>
+			<p>Ec/Io es una medida de la "limpieza" de la se
+al, y es un tipo de relaci
+al-ruido. Los valores t
+picos van de -10 a -40. Un valor de -4 ser
+a una se
+al muy "limpia".</p>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_sid_label"), (size(_("webui", "status_diagnostics_threeg_sid_label")) - size(":")))></h3>
+			<p>La SID (ID del sistema) es un identificador de red que indica el punto de conexi
+n actual con la red de datos m
+viles. Un grupo de torres de telefon
+a celular puede tener el mismo valor de SID. Este campo indica la SID actual. </p>		
+			<tmpl_if showRoaming>
+				<h3>Itinerancia</h3>
+				<p> Indica si la conexi
+n actual es una conexi
+n de itinerancia. </p>			
+			</tmpl_if>
+			<tmpl_if linkToFieldTest>	
+				<h2><tmpl_var _("webui", "status_diagnostics_field_test_button")></h2>
+				<p>El bot
+n "Prueba de campo" proporciona una lista de par
+metros de red de nivel bajo que puede ser 
+tiles para el personal de asistencia t
+cnica cuando debe resolver problemas de conectividad de red. </p>
+				<p>Este bot
+n solo est
+ disponible si la red 3G est
+ disponible. </p>
+			</tmpl_if>
+		</tmpl_if>
+	</tmpl_if>
+<!-- id="status_diagnostics" -->

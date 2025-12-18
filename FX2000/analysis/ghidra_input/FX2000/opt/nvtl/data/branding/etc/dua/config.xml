@@ -1,0 +1,14 @@
+<Config>
+	<DataUsageAgent>
+		<AgentUrl></AgentUrl>
+		<RequestTemplate></RequestTemplate>
+		<!--agentServerSyncInterval - interval at which to check with server(seconds). Sync should not occur more frequently than this -->
+		<AgentServerSyncInterval>300</AgentServerSyncInterval>
+		<!--update WDCP config when there is a change of this -->
+		<!--RequestTimeout - timeout in seconds to keep the request up , 0 to mean no timeout -->
+		<RequestTimeout>0</RequestTimeout>
+		<!--update WDCP config when there is a change of this -->
+		<!--RequestRetries - number of times to retry the request after a mandatory first try fails -->
+		<RequestRetries>0</RequestRetries>
+	</DataUsageAgent>
+</Config>

@@ -1,0 +1,61 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+	<h2>Yleiskatsaus</h2>
+		<p>Nämä asetukset koskevat paikallista verkkoasi tai LAN-verkkoasi. Tämän laitteen LAN-verkko koostuu tästä laitteesta ja kaikista siihen yhdistetyistä laitteista (mukaan lukien Ethernetin kautta yhdistetyt laitteet, jos sellaisia on).</p>
+			
+	<h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+
+	<tmpl_if LANIPAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+		<p>Tämän laitteen IP-osoite, paikallisesta verkosta katsottuna. Voit yleensä käyttää oletusarvoa.</p>
+	</tmpl_if>
+
+	<tmpl_if LANSubnetMaskShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+		<p>Oletusarvo 255.255.255.0 on vakio pienille (luokan ”C”) verkoille. Jos muutat LAN-verkon IP-osoitetta, varmista, että käytät oikeaa aliverkon peitettä.</p>
+	</tmpl_if>
+		
+	<tmpl_if LANMacAddressShow>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+		<p>MAC-osoite on yksilöllinen verkkotunniste, joka määritetään verkkolaite valmistettaessa. Tämä vain luku -kenttä näyttää tämän laitteen Wi-Fi- ja USB-liittymien MAC-osoitteen.</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPEnableShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+		<p>Tämän pitäisi yleensä olla valittuna. DHCP-palvelin määrittää IP-osoitteen jokaiselle yhdistetylle laitteelle. Jos DHCP-palvelin oli kytkettynä pois päältä, kullekin yhdistetylle laitteelle on määritettävä kiinteä IP-osoite.</p>
+	</tmpl_if>
+
+	<tmpl_if LANLANDHCPLeaseTimeShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+		<p>Tämä kenttä määrittää, kuinka usein yhdistettyjen laitteiden on uusittava DHCP-palvelimen niille määrittämä IP-osoite. Tämä voidaan yleensä jättää oletusarvoon, mutta voit muuttaa tätä arvoa, jos sinulla on erityisvaatimuksia.</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPStartAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>Jos haluat muuttaa DHCP-palvelimen käyttämää IP-osoitealuetta, voit tehdä sen muuttamalla tätä arvoa. Tämä vaihtoehto on tarkoitettu vain asiantuntijakäyttäjille.</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPEndAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+		<p>Tämä osoittaa niiden IP-osoitteiden alueen, jotka voidaan määrittää yhdistetyille laitteille. Jos yhdistetyssä laitteessa on käytössä kiinteä IP-osoite, käytä IP-osoitetta, joka on tämän alueen ulkopuolella.</p>
+	</tmpl_if>
+
+	<tmpl_if LANReservedIPAddressShow>		
+	<h3><tmpl_var truncate(_("webui", "adv_lan_reservedIp_button"), (size(_("webui", "adv_lan_reservedIp_button")) - size(":")))></h3>
+		<p>Tätä ominaisuutta voidaan käyttää varmistamaan, että <tmpl_var _("webui", "webui_product_name")> määrittää yhdistetylle laitteelle aina saman IP-osoitteen. Tätä painiketta napsauttamalla pääset tämän ominaisuuden asetusnäyttöön.</p>
+	</tmpl_if>
+		
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>Jos jotkin yhdistetyt laitteesi tukevat IPv6:ta, tämä asetus pitäisi kytkeä päälle. IPv6:n kautta yhdistetyt laitteet voivat tällöin muodostaa IPv6-yhteyksiä Internetiin.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+			<p>Tämä on tämän laitteen IPv6-osoite. Link-Local-osoitetta (paikallista osoitetta) käytetään IPv6-tietoliikenteessä samassa verkossa olevien laitteiden välillä.</p>
+	</tmpl_if>	
+			
+</div>
+<!-- id="lan" -->
+

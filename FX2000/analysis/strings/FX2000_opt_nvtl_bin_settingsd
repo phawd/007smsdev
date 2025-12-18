@@ -1,0 +1,226 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+libpthread.so.0
+mifi_dbg_get_level_name
+mifi_dbg_log
+pthread_self
+ts_list_push
+mifi_dbg_syslog
+__errno_location
+libdl.so.2
+closedir
+ts_list_init
+mq_unlink
+hdestroy
+mq_close
+ts_list_pop
+ts_list_destroy
+MifiConfig_CreateBackup
+MsgBusSetInt32
+xmldata_close
+MifiConfig_RestoreBackup
+xmldata_open
+MifiConfig_FactoryReset
+xmldata_initialize
+xmldata_getint32_default
+xmldata_shutdown
+xmldata_getcount
+xmldata_getstring
+mifi_dbg_start
+xmldata_set_validate
+msgq_create
+watchdog_application_register
+msgq_receive
+msgq_resp_preprocess
+msgq_resp_postprocess
+mifi_dbg_stop
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+__bss_start
+libmificommon.so
+libwatchdog_api.so
+libmifi_debug.so
+libmifimsgbus.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifi_config.so
+libsettings_api.so
+H	KxD	J{D
+/dev/null
+SETTINGS
+[%s]:[%s] - registering settings %s, %d, %x
+[%s]:[%s] - Preparing to load .so's @ [%s].
+[%s]:[%s] - Error opening %s: %s.
+initialize_settings
+[%s]:[%s] - Error loading function pointer %s->initialize_settings: %s.
+[%s]:[%s] - Loaded settings module for %s
+[%s]:[%s] - Finished loading initialize_settings from .so's @ [%s].
+[%s]:[%s] - load_shared_libraries - begin.
+/opt/nvtl/lib/settings
+/opt/nvtl/data/branding/lib/settings
+[%s]:[%s] - load_shared_libraries - end.
+[%s]:[%s] - Unloading settings subsystem modules
+[%s]:[%s] - Request for Settings Backup
+[%s]:[%s] - MifiConfig_CreateBackup failed with error %d
+[%s]:[%s] - Request for Settings Restore ; path of restore file: %s
+settings.ready
+[%s]:[%s] - MifiConfig_RestoreBackup failed with error %d
+[%s]:[%s] - Request for Factory Reset
+rm /etc/hosts
+[%s]:[%s] - MifiConfig_FactoryReset failed with error %d
+[%s]:[%s] - %s: id: %s, data: %x
+[%s]:[%s] - %s: get function not defined
+[%s]:[%s] - %s: set function not defined
+[%s]:[%s] - evt_msg->type %d not implemented
+/sysconf/features.xml
+/Features/USBTethering
+/Features/RadioTechnologies
+/Features/WiFiAccessPoint
+/Features/WiFiDualSsid
+/Features/WiFiStation
+/Features/GPS
+/Features/ComSubsystem
+/Features/PowerSave
+/Features/IPv6
+/Features/DataDownloadAcceleration
+/Features/SMSMobileTerminated
+/Features/SMSMobileOriginated
+/Features/Voice
+/Features/ParentalControl
+/Features/TR069
+/Features/WDCP
+/Features/Ethernet
+/Features/SmartAgent
+/Features/OneWire
+/Features/Accelerometer
+/Features/BatteryPack
+/Features/USBSerial
+/Features/Ignition
+/Features/IPPassthrough
+/Features/Webui
+/Features/Deviceui
+/Features/VPN
+/Features/DNS
+/Features/OMADM
+/Features/OMADMFumo
+/Features/NUA
+/Features/LWM2M
+/Features/CloudEngine
+/Features/FOTA
+/Features/ANS
+/Features/FileSharing
+/Features/DUS
+/Features/DUA
+/Features/SAM
+/Features/LED
+/Features/CDRA
+/Features/PCO
+/Features/AutoAPN
+/Features/LocationSurvey
+/Features/SIMMgr
+/Features/MultiSIM
+/Features/CC
+/Features/CUMCLIENT
+/Features/Bluetooth
+/Features/CBSD
+/Features/Longship
+/tmp/bt.txt
+/Features/BSA
+/Features/MiFiHealth
+/Features/RESTAPI
+/Features/DeviceAgent
+/Features/DCI
+/Features/FailSafe
+/Features/LowMemReboot
+/Features/MultiProfile
+/Features/RemoteOOB
+[%s]:[%s] - Failed to open features file: %s
+features.xml
+/opt/nvtl/etc/settings/config.xml
+/Config/Branding/ReadFactorySKU
+/Config/Branding/ReadFactoryModel
+/Config/Branding/ProductSKU
+/Config/Branding/Model
+/Config/Branding/CarrierBrand
+[%s]:[%s] - Failed to open configuration file: %s
+/sysconf/branding.xml
+/Branding/Model
+/Branding/Version
+/Branding/Carrier
+/Branding/Omadm/Agent
+/Branding/DataUsage/Agent
+/opt/nvtl/data/branding/carrier
+[%s]:[%s] - Failed to open branding file: %s
+branding.xml
+/Settings/Product/VariantSKU
+/Settings/Product/Model
+/Settings/VersionInfo/CuteVersion
+[%s]:[%s] - Preparing to load carrier_settings from subsystem modules
+/opt/nvtl/lib/carrier
+initialize_carrier_settings
+[%s]:[%s] - Error loading function pointer %s->initialize_carrier_settings: %s.
+[%s]:[%s] - Calling initialize_carrier_settings() for %s
+[%s]:[%s] - initialize_carrier_settings() for %s failed.
+/opt/nvtl/data/branding/carrier_init_done
+[%s]:[%s] - Could not find directory [%s] to apply carrier_initializations.
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - Error initializing settings configuration, terminating.
+[%s]:[%s] - Settings Subsystem loading product features
+[%s]:[%s] - Settings Subsystem reading branding-info
+/opt/nvtl/data/fota/staging/result_success
+[%s]:[%s] - Settings Subsystem applying branding-info
+[%s]:[%s] - Settings Subsystem loading product settings
+/sysconf/settings_def.xml
+/sysconf/settings.xml
+[%s]:[%s] - Error allocating message buffer: %d, terminating.
+/settings_mq
+[%s]:[%s] - Error opening message queue: %d, terminating.
+[%s]:[%s] - Settings initialized. Notifying ready status on %s channel
+settings_main_thread
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - msgq receive len: %d, payload_length: %d, rc: %d.
+[%s]:[%s] - msgq receive expected len: %d, rc: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - Settings subsystem initiating shut down
+[%s]:[%s] - %s Server Terminating.
+settings_get_setting_impl
+settings_set_setting_impl
+SETTINGS
+[%s]:[%s] - %s: MsgBus_Create Failed
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

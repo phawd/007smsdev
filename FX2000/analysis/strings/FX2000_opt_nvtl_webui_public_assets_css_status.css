@@ -1,0 +1,336 @@
+/* =============================================================================
+ Status Area Styles
+ ========================================================================== */
+.status_hide,
+#mobile_status_area {
+    display: none;
+/* #mobile_status_area exposed via mobile.css. */
+#status_area ul.status,
+#mobile_status_area ul.status {
+    float: right;
+    margin-right: 10px;
+#status_area ul.status:first-child,
+#mobile_status_area ul.status:first-child {
+    margin-right: 0;
+#status_area ul.status li,
+#mobile_status_area ul.status li {
+    display: block;
+    float: left;
+    margin-left: 10px;
+#status_bar ul.status li span,
+#mobile_status_bar ul.status li span {
+    display: block !important;
+    white-space: nowrap;
+    height: 25px;
+#status_area ul.status li:first-child,
+#mobile_status_area ul.status li:first-child {
+    margin-left: 0;
+/* =============================================================================
+   status_login
+   ========================================================================== */
+#status_login {
+    margin-left: 20px;
+#status_login li {
+    line-height: 1.143em;
+    /* 16px */
+#status_login .login a,
+  #status_login .logout a,
+  #status_login .home a {
+    display: block;
+    padding-right: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: right;
+/* =============================================================================
+   status_bars
+   ========================================================================== */
+#status_bar {
+    margin: 6px 0px;
+    float: right;
+#mobile_status_bar {
+    float: right;
+    padding: 10px 0;
+#mobile_status_bar {
+    padding: 10px 0;
+#status_bar ul.status li span,
+#mobile_status_bar ul.status li span {
+    background-image: url("../images/status/icn-sprite-status_icons.png");
+    background-repeat: no-repeat;
+    line-height: 25px !important;
+#status_bar ul.status li span.text {
+    background-image: none;
+#mobile_status_bar ul.status li span.text {
+    background-image: none;
+#mobile_status_bar ul.status li#item_mobile_statusBar_network span.text {
+    max-width: 10em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+/* Limit the width of the operator name for mobile. */
+/****************** updated ******************/
+/* Status Bar BG Image alignment */
+#status_area {
+    top: 9px;
+    right: 0;
+    position: relative;
+#status_area #statusBar_battery_grp,
+  #status_area #statusBar_connected_devices_grp,
+  #status_area #statusBar_activity_grp,
+  #status_area #statusBar_tech_grp,
+  #status_area #statusBar_sim_grp,
+  #status_area #statusBar_network_grp,
+  #status_area #statusBar_roamingFemto_grp,
+  #status_area #statusBar_airplane_grp,
+  #status_area #statusBar_ethernet_grp {
+    margin-top: inherit !important;
+    margin: 4px 3px !important;
+/* Battery */
+#statusBar_battery,
+#mobile_statusBar_battery {
+    width: 32px;
+    padding-right: 35px;
+    text-align: right;
+  /* AC */
+  /* USB */
+#statusBar_battery.batt_none,
+  #mobile_statusBar_battery.batt_none {
+    background-position: 635px -388px;
+#statusBar_battery.batt_low,
+  #mobile_statusBar_battery.batt_low {
+    background-image: url("../images/status/ani-status-battery_low.gif") !important;
+    background-position: 36px 0px;
+#statusBar_battery.batt_critical,
+  #mobile_statusBar_battery.batt_critical {
+    background-position: -635px -388px;
+#statusBar_battery.batt_0,
+  #mobile_statusBar_battery.batt_0 {
+    background-position: 10px -388px;
+#statusBar_battery.batt_1,
+  #mobile_statusBar_battery.batt_1 {
+    background-position: -61px -388px;
+#statusBar_battery.batt_2,
+  #mobile_statusBar_battery.batt_2 {
+    background-position: -132px -388px;
+#statusBar_battery.batt_3,
+  #mobile_statusBar_battery.batt_3 {
+    background-position: -203px -388px;
+#statusBar_battery.batt_4,
+  #mobile_statusBar_battery.batt_4 {
+    background-position: -277px -388px;
+#statusBar_battery.batt_chargingsourceac,
+  #mobile_statusBar_battery.batt_chargingsourceac {
+    background-position: -491px -388px;
+#statusBar_battery.batt_chargingsourceac_low,
+  #mobile_statusBar_battery.batt_chargingsourceac_low {
+    background-position: -707px -388px;
+#statusBar_battery.batt_chargingsourceac_critical,
+  #mobile_statusBar_battery.batt_chargingsourceac_critical {
+    background-position: -707px -388px;
+#statusBar_battery.batt_chargingsourceac_0,
+  #mobile_statusBar_battery.batt_chargingsourceac_0 {
+    background-position: -707px -388px;
+#statusBar_battery.batt_chargingsourceac_1,
+  #mobile_statusBar_battery.batt_chargingsourceac_1 {
+    background-position: -779px -388px;
+#statusBar_battery.batt_chargingsourceac_2,
+  #mobile_statusBar_battery.batt_chargingsourceac_2 {
+    background-position: -851px -388px;
+#statusBar_battery.batt_chargingsourceac_3,
+  #mobile_statusBar_battery.batt_chargingsourceac_3 {
+    background-position: -923px -388px;
+#statusBar_battery.batt_chargingsourceac_4,
+  #mobile_statusBar_battery.batt_chargingsourceac_4 {
+    background-position: -995px -388px;
+#statusBar_battery.batt_chargingsourceusb,
+  #mobile_statusBar_battery.batt_chargingsourceusb {
+    background-position: -563px -388px;
+#statusBar_battery.batt_chargingsourceusb_low,
+  #mobile_statusBar_battery.batt_chargingsourceusb_low {
+    background-position: -1066px -388px;
+#statusBar_battery.batt_chargingsourceusb_critical,
+  #mobile_statusBar_battery.batt_chargingsourceusb_critical {
+    background-position: -1066px -388px;
+#statusBar_battery.batt_chargingsourceusb_0,
+  #mobile_statusBar_battery.batt_chargingsourceusb_0 {
+    background-position: -1138px -388px;
+#statusBar_battery.batt_chargingsourceusb_1,
+  #mobile_statusBar_battery.batt_chargingsourceusb_1 {
+    background-position: -1138px -388px;
+#statusBar_battery.batt_chargingsourceusb_2,
+  #mobile_statusBar_battery.batt_chargingsourceusb_2 {
+    background-position: -1211px -388px;
+#statusBar_battery.batt_chargingsourceusb_3,
+  #mobile_statusBar_battery.batt_chargingsourceusb_3 {
+    background-position: -1283px -388px;
+#statusBar_battery.batt_chargingsourceusb_4,
+  #mobile_statusBar_battery.batt_chargingsourceusb_4 {
+    background-position: -1355px -388px;
+/* Connected Devices */
+#statusBar_connected_devices.tethered_usb,
+#mobile_statusBar_connected_devices.tethered_usb {
+    background-position: -957px -172px;
+    width: 30px;
+#statusBar_connected_devices.tethered_usb_disconnected,
+#mobile_statusBar_connected_devices.tethered_usb_disconnected {
+    width: 30px;
+/* Activity Group */
+#statusBar_activity.activity_none,
+#mobile_statusBar_activity.activity_none {
+  /*background-position: -677px -172px; */
+    background-image: none !important;
+#statusBar_activity.activity_idle,
+#mobile_statusBar_activity.activity_idle {
+  /*background-position: -677px -172px; */
+    background-image: none !important;
+#statusBar_activity.activity_downlink,
+#mobile_statusBar_activity.activity_downlink {
+    width: 20px;
+    background-position: -595px -172px;
+#statusBar_activity.activity_uplink,
+#mobile_statusBar_activity.activity_uplink {
+    width: 20px;
+    background-position: -525px -172px;
+#statusBar_activity.activity_uplinkdownlink,
+#mobile_statusBar_activity.activity_uplinkdownlink {
+    width: 30px;
+    background-position: -670px  -172px;
+/* Tech */
+#statusBar_tech.tech_none,
+#mobile_statusBar_tech.tech_none {
+    background-image: none !important;
+#statusBar_tech.tech_1x,
+#mobile_statusBar_tech.tech_1x {
+    width: 20px;
+    background-position: -386px -100px;
+#statusBar_tech.tech_e,
+#mobile_statusBar_tech.tech_e {
+    width: 12px;
+    background-position: -741px  -100px;
+#statusBar_tech.tech_h,
+#mobile_statusBar_tech.tech_h {
+    width: 12px;
+    background-position: -815px -100px;
+#statusBar_tech.tech_2g,
+#mobile_statusBar_tech.tech_2g {
+    width: 25px;
+    background-position: -887px -100px;
+#statusBar_tech.tech_3g,
+#mobile_statusBar_tech.tech_3g {
+    width: 25px;
+    background-position: -459px -100px;
+#statusBar_tech.tech_4g,
+#mobile_statusBar_tech.tech_4g {
+    width: 25px;
+    background-position: -1173px -100px;
+#statusBar_tech.tech_4glte,
+#mobile_statusBar_tech.tech_4glte {
+    width: 25px;
+    background-position: -599px -100px;
+#statusBar_tech.tech_4glte_plus,
+#mobile_statusBar_tech.tech_4glte_plus {
+    width: 25px;
+    background-position: -1032px -100px;
+#statusBar_tech.tech_4glte_slash,
+#mobile_statusBar_tech.tech_4glte_slash {
+    width: 30px;
+    background-position: -527px -100px;
+#statusBar_tech.tech_5g,
+#mobile_statusBar_tech.tech_5g {
+    width: 25px;
+    background-position: -1103px -100px;
+#statusBar_tech.tech_5guw,
+#mobile_statusBar_tech.tech_5guw {
+    width: 25px;
+    background-position: -957px -100px;
+#statusBar_tech.tech_5guwb,
+#mobile_statusBar_tech.tech_5guwb {
+    width: 25px;
+    background-position: -1030px -100px;
+/* SIM */
+/* Network */
+#statusBar_rssi.sim_icon,
+#mobile_statusBar_rssi.sim_icon {
+    width: 20px;
+    background-position: -25px -534px;
+#statusBar_rssi.no_service,
+#mobile_statusBar_rssi.no_service {
+    width: 20px;
+    background-position: -460px -27px;
+#statusBar_rssi.sim_error,
+#mobile_statusBar_rssi.sim_error {
+    width: 20px;
+    background-position: -97px -534px;
+#statusBar_rssi.sim_locked,
+#mobile_statusBar_rssi.sim_locked {
+    width: 20px;
+    background-position: -169px -534px;
+#statusBar_rssi.sim_no_sim,
+#mobile_statusBar_rssi.sim_no_sim {
+    width: 20px;
+    background-position: -241px -534px;
+#statusBar_rssi.rssi_0,
+#mobile_statusBar_rssi.rssi_0 {
+    width: 18px;
+    background-position: -526px -28px;
+#statusBar_rssi.rssi_1,
+#mobile_statusBar_rssi.rssi_1 {
+    width: 18px;
+    background-position: -599px -28px;
+#statusBar_rssi.rssi_2,
+#mobile_statusBar_rssi.rssi_2 {
+    width: 18px;
+    background-position: -672px -28px;
+#statusBar_rssi.rssi_3,
+#mobile_statusBar_rssi.rssi_3 {
+    width: 18px;
+    background-position: -744px -28px;
+#statusBar_rssi.rssi_4,
+#mobile_statusBar_rssi.rssi_4 {
+    width: 18px;
+    background-position: -816px -28px;
+#statusBar_rssi.rssi_5,
+#mobile_statusBar_rssi.rssi_5 {
+    width: 18px;
+    background-position: -888px -28px;
+/* Roaming Femto */
+#statusBar_femto_roam.femto_roam_none,
+#mobile_statusBar_femto_roam.femto_roam_none {
+    background-image: none !important;
+#statusBar_femto_roam.femto_on,
+#mobile_statusBar_femto_roam.femto_on {
+    width: 18px;
+    background-position: -240px -172px;
+#statusBar_femto_roam.roam_flash,
+#mobile_statusBar_femto_roam.roam_flash {
+    width: 25px;
+    background-image: url("../images/status/ani-status-roaming.gif") !important;
+#statusBar_femto_roam.roam_domestic,
+#mobile_statusBar_femto_roam.roam_domestic {
+    width: 15px;
+    background-position: -25px -171px;
+#statusBar_femto_roam.roam_international,
+#mobile_statusBar_femto_roam.roam_international {
+    width: 18px;
+    background-position: -170px -171px;
+/* statusBar_airplane */
+#statusBar_airplane.airplane_airplanemodeon,
+#mobile_statusBar_airplane.airplane_airplanemodeon {
+    width: 21px;
+    background-position: -458px -171px;
+#statusBar_airplane.airplane_airplanemodeoff, #statusBar_airplane.airplane_lowbatteryoff, #statusBar_airplane.airplane_none,
+#mobile_statusBar_airplane.airplane_airplanemodeoff,
+#mobile_statusBar_airplane.airplane_lowbatteryoff,
+#mobile_statusBar_airplane.airplane_none {
+    background-image: none !important;
+/* Ethernet  */
+#statusBar_ethernet,
+#mobile_statusBar_ethernet {
+    width: 30px;
+#statusBar_ethernet.ethernet_disabled,
+  #mobile_statusBar_ethernet.ethernet_disabled {
+    background-image: none !important;
+#statusBar_ethernet.ethernet_enabled,
+  #mobile_statusBar_ethernet.ethernet_enabled {
+    background-position: -1101px -171px;
+#statusBar_ethernet.ethernet_connected,
+  #mobile_statusBar_ethernet.ethernet_connected {
+    background-position: -1029px -171px;

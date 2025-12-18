@@ -1,0 +1,36 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+iame ekrane yra daug parink
+ nustatyti tok
+ <tmpl_var _("webui", "webui_product_name")> veikimo b
+, kuris geriau atitikt
+ poreikius.</p>
+	<h3>Kalba</h3>
+	<p>Pasirinkite norim
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+	<p>Nurodykite format
+, kuriuo 
+iniatinklio s
+sajoje bus rodoma data.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+	<p>Nurodykite format
+, kuriuo 
+iniatinklio s
+sajoje bus rodomas laikas.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+	<p>Pasirinkite vienet
+, kuris bus naudojamas GPS auk
+ros ir tikslumui nustatyti.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+	<p>Nurodykite, kaip bus rodomi de
+imtainiai skai
+ (.) arba kablel
+ (,) galima pasirinkti naudoti kaip de
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+		<p>Eterneto indikatorius rodomas b
+senos juostoje, kai 
+jungtas eterneto prievadas; prie
+ingu atveju jis b
+ptas.</p>
+	</tmpl_if>

@@ -1,0 +1,188 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+tr069_is_running
+tr069_get_error_string
+tr069_get_enabled_status
+tr069_set_enabled_status
+tr069_get_acs_server_config
+tr069_set_acs_server_config
+tr069_get_acs_client_config
+tr069_set_acs_client_config
+tr069_get_xmpp_config_list
+tr069_set_xmpp_config_list
+tr069_get_preserve_config
+tr069_set_preserve_config
+tr069_get_modified_status
+tr069_set_modified_status
+tr069_reset_factory_default
+tr069_restart
+tr069_mon_add_service
+tr069_mon_list_services
+mifi_dbg_start
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+librt.so.1
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+librouter2_api.so
+libuci.so
+libtr069_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+is_running
+Tells if the associated process is running.
+get_status
+To get the TR069 status
+set_status
+To set the TR069 status
+get_acs_server_config
+To get the TR069 server configuration
+set_acs_server_config
+To set the TR069 server configuration
+get_acs_client_config
+To get the TR069 client configuration
+set_acs_client_config
+To set the TR069 client configuration
+get_xmpp_config
+To get the TR069 XMPP configuration
+set_xmpp_config
+To set the TR069 XMPP configuration
+get_preserve_tr069_config
+To get the TR069 Configuration Preserve status when factory reset initiated
+set_preserve_tr069_config
+To set the TR069 Configuration Preserve status when factory reset initiated
+get_tr069_config_modifed
+To get the TR069 Configuration modified status when configurations are modified
+set_tr069_config_modifed
+To set the TR069 Configuration modified status when configurations are modified
+tr069_factory_reset
+To perform factory reset 
+tr069_restart
+To perform TR069 restart 
+add_tr069_mon_service
+To TR069 add monitor services
+list_tr069_mon_service
+List all monitor services. This will use by the development team.
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+tr069_is_running returned %d (%s)
+%s returned %d (%s)
+TR069 is:   [%s]
+Enter TR069 status (0=Disable, 1=Enable): 
+TR069 Server UserName : [%s]
+TR069 Server Password : [%s]
+TR069 Server URL : [%s]
+TR069 Server Port Number : [%d]
+TR069 Cellular WAN-Interface Type : [%d]
+TR069 Server IP Type : [%d]
+Enter Username: 
+Enter Password: 
+Enter URL: 
+Enter Port number: 
+Enter Cellular-WAN Interface Type (1=Cellular(rmnet_data0), 0=USB(eth0)): 
+Enter IP Type (1=IPV4, 0=IPV6): 
+username=[%s], password=[%s], URL=[%s], port=[%d], Interface=[%d], IPType=[%d]
+TR069 Client UserName : [%s]
+TR069 Client Password : [%s]
+TR069 Client Port Number: [%d]
+TR069 Client Connection Request : [%d]
+TR069 Client Authenticate Mode: [%d]
+TR069 Client Time Interval(secs) : [%d]
+TR069 Client CWMP Version : [%d]
+TR069 Client Log Level : [%d]
+Enter Connection Request Authentication Type (0=Disable, 1=Enable): 
+Enter Authentication Mode (0=Basic, 1=Digest): 
+Enter Periodic Inform Interval (PII) time(0:600)Sec: 
+Enter CWMP version: 
+Enter Log Level (0=CRITICAL, 1=WARNING, 2=NOTICE, 3=INFO, 4=DEBUG): 
+username=[%s], password=[%s], Port Number=[%d], Connection Type=[%d], Authenticate Mode=[%d], Interval=[%d], CWMP Version=[%d], Log Level=[%d]
+TR069 XMPP UserName : [%s]
+TR069 XMPP Password : [%s]
+TR069 XMPP URL: [%s]
+TR069 XMPP Jabber ID : [%s]
+TR069 XMPP Port Number: [%d]
+TR069 XMPP Feature(0:Disable,1: Enabled) : [%d]
+Enter Jabber ID: 
+Enter XMPP status (0=Disable, 1=Enable): 
+username=[%s], password=[%s], URL=[%s], Jabber ID=[%s], Port Number=[%d], Level=[%d]
+Enter TR069 Restore settings (0=Disable, 1=Enable): 
+Modified status: [%d]
+Enter TR069 configuration modified  (0=Not Modified, 1=Modified): 
+Enter the service name:
+Enter the service command:
+Enter the service to be monitored <ON=1, OFF=0>:
+%s: [%d]: name=%s, cmd=<%s> pid=%d running=%d monitor=%d restarted=%d
+tr069_list_tr069_mon_services returned %d (%s)
+command [%s]
+command [%s] not found.
+cmd_tr069_get_status
+cmd_tr069_set_status
+cmd_tr069_get_acs_server_config
+cmd_tr069_set_acs_server_config
+cmd_tr069_get_acs_client_config
+cmd_tr069_set_acs_client_config
+cmd_tr069_get_xmpp_config
+cmd_tr069_set_xmpp_config
+cmd_get_preserve_tr069_config
+cmd_set_preserve_tr069_config
+cmd_get_tr069_config_modified
+cmd_set_tr069_config_modified
+cmd_tr069_factory_reset
+cmd_tr069_restart
+cmd_add_tr069_mon_service
+cmd_list_tr069_mon_services
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

@@ -1,0 +1,414 @@
+<tmpl_if isHidden>
+   <div class="notification app error">
+       <tmpl_var _("webui", "webui_app_hidden_text")>
+   </div>
+<tmpl_else>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	$(function()
+	{
+		if ("<tmpl_var reboot>" === "true") {
+			window.location = "<tmpl_udf GET_URI('restarting')>";
+		}
+
+		if ("<tmpl_var factoryReset>" === "true") {
+			window.location = "<tmpl_udf GET_URI('resetting')>";
+		}
+
+		// To prevent folks with javascript turned off from submitting the login form
+		// or entering a clear text password, we'll use javascript to insert the
+		// inputPassword fields after the label and insert the submit button.
+		$('<input type="password" class="password<tmpl_if passcodeBackupError> error</tmpl_if>" name="passcodeInput" id="passcodeBackup" value="" autocomplete="off" /> <span toggle="#passcodeBackup" class="eye toggle-password"></span>')
+		.appendTo("#passcodeBackupRow div.input");
+
+		$('<button type="submit" id="downloadConfig" class="primary" <tmpl_if isLocked>disabled="disabled"</tmpl_if> ><tmpl_var _("webui", "backup_restore_backup_now_button")></button>')
+		.appendTo("#passcodeBackupButtonRow")
+		.on("click", function(e) {
+			var theForm = $(this).closest("form");
+			clearErrors();
+			securePasscode(e, theForm);
+		});
+
+		$('#downloadConfig').prop('disabled',true);
+		$('#passcodeBackup').keyup(function(){
+			$('#downloadConfig').prop('disabled', this.value == "" ? true : false);   
+		});  
+
+		$('<input type="password" class="password<tmpl_if passcodeRestoreError> error</tmpl_if>" name="passcodeInput" id="passcodeRestore" value="" autocomplete="off" /> <span toggle="#passcodeRestore" class="eye toggle-password"></span>')
+			.appendTo("#passcodeRestoreRow div.input");
+
+		$('<button type="submit" id="uploadConfig" class="primary" <tmpl_if isLocked>disabled="disabled"</tmpl_if> ><tmpl_var _("webui", "backup_restore_restore_now_button")></button>')
+		.appendTo("#passcodeRestoreButtonRow")
+		.on("click", function(e) {
+			var theForm = $(this).closest("form");
+			clearErrors();
+			var msg = "<p><tmpl_udf GET_PO_TEXT("backup_restore_confirm_modal_restore_text", gProductName)></p>";
+			var title = '<tmpl_var _("webui", "backup_restore_modal_restore_jetpack_title")>';
+			var rightButton = '<tmpl_var _("webui", "backup_restore_restore_now_button")>';
+			var leftButton = '<tmpl_var _("webui", "webui_modal_cancel_button")>';
+			securePasscode(e, theForm, msg, title, rightButton, leftButton);
+		});
+
+		var downloadButtonEnabled = false;
+		var restoreButtonEnabled = false;
+		$("#uploadConfig").prop("disabled",true);
+		$('#passcodeRestore').keyup(function() {
+			downloadButtonEnabled = (this.value == "") ? false : true;
+			if (downloadButtonEnabled && restoreButtonEnabled)
+				$('#uploadConfig').attr("disabled", false);
+			else
+				$('#uploadConfig').attr("disabled", true);
+		});
+		$('#restoreConfigFile').change(function () {
+			restoreButtonEnabled = ($('#restoreConfigFile').val().length == 0) ? false :true;
+			if (restoreButtonEnabled && downloadButtonEnabled)
+				$('#uploadConfig').attr("disabled", false);
+			else
+				$('#uploadConfig').attr("disabled", true);
+		});
+
+		<tmpl_unless isLocked>
+		$("#restoreFactory").click(function(e) {
+			var theForm = $(this).closest("form");
+			clearErrors();
+			var msg = '<p><tmpl_udf GET_PO_TEXT("backup_restore_confirm_modal_factory_restore_text", gProductName)></p>';
+			var title = '<tmpl_var _("webui", "backup_restore_modal_reset_jetpack_title")>';
+			var rightButton = '<tmpl_var _("webui", "backup_modal_confirm_reset_button")>';
+			var leftButton = '<tmpl_var _("webui", "webui_modal_cancel_button")>';
+			makeModal(e, theForm, msg,title,rightButton,leftButton);
+		});
+		</tmpl_unless>
+
+		// We need to apply uniform, if available, to all the dynamically added elements above.
+		if (jQuery.uniform) {
+			// This is for uniform 1 and uniform 2 compatibility.
+			var uniformOptions = (typeof $.uniform.options !== "undefined") ? $.uniform.options : $.uniform.defaults;
+			if (uniformOptions.filter) {
+				$("#passcodeBackupRow, #passcodeBackupButtonRow, #passcodeRestoreRow, #passcodeRestoreButtonRow")
+					.find(uniformOptions.filter)
+					.filter(":input:not(input:file)")
+					.uniform()
+					.closest("div.button")
+					.addClass("secondary");
+			}
+		}
+
+		$("#restartDevice").on("click", function(e) {
+			<tmpl_unless isLocked>
+			e.preventDefault();
+			var msg = '<p><tmpl_var _("webui", "backup_restore_confirm_modal_restart_button")></p>';
+			var url = '<tmpl_udf GET_URI("restarting")>';
+			var title = '<tmpl_var _("webui", "backup_restore_modal_restart_jetpack_title")>';
+			var rightButton = '<tmpl_var _("webui","backup_modal_confirm_restart_button")>';
+			var leftButton = '<tmpl_var _("webui", "webui_modal_cancel_button")>';
+			showModal(msg, url, title, rightButton, leftButton);
+			</tmpl_unless>
+		});
+
+		$("#shutdownDevice").on("click", function(e) {
+			<tmpl_unless isLocked>
+			e.preventDefault();
+			var msg = '<p><tmpl_var _("webui", "backup_restore_confirm_modal_shutdown_button")></p>';
+			var url = '<tmpl_udf GET_URI("shutdown")>';
+			var title = '<tmpl_var _("webui", "backup_restore_modal_turn_off_jetpack_title")>';
+			var rightButton = '<tmpl_var _("webui", "backup_modal_turn_off_confirm_button")>'; 
+			var leftButton = '<tmpl_var _("webui", "webui_modal_cancel_button")>';
+			showModal(msg, url, title, rightButton, leftButton);
+			</tmpl_unless>
+		});
+
+		$(".toggle-password").click(function () {
+                $(this).toggleClass("eye eye-slash");
+                var input = $($(this).attr("toggle"));
+                if (input.attr("type") == "password") {
+                    input.attr("type", "text");
+                } else {
+                    input.attr("type", "password");
+                }
+            });
+	});
+
+	function showModal(msg, url , title, rightButton, leftButton)
+	{
+		var title = title || '<tmpl_var _("webui", "webui_modal_title")>';
+		var leftButton = leftButton || '<tmpl_var _("webui", "webui_modal_cancel_button")>';
+		var rightButton = rightButton || '<tmpl_var _("webui", "webui_modal_confirm_button")>';
+		modalPopup.createWindow(
+			title,
+			msg,
+			430, 200,
+			[
+				{
+					text: leftButton,
+					className: "cancel"
+				},
+				{
+					text: rightButton,
+					className: "primary",
+					trigger: function(){
+						location.replace(url);
+					}
+				}
+			]
+		);
+	}
+
+	function clearErrors()
+	{
+		$(".notification").remove();
+		$("div").find(".inline_error").remove();
+    }
+
+	function resetForm(f)
+	{
+		f.find(":input").filter(':input:not(input[name="formAction"], input[name="gSecureToken"], input[name="redirectLocation"])').val("").prop({"checked" : false, "selected" : false});
+		if(jQuery.uniform) {
+			// This is for uniform 1 and uniform 2 compatibility.
+			var fileDefaultText = (typeof $.uniform.options !== "undefined") ? $.uniform.options.fileDefaultText : $.uniform.defaults.fileDefaultHtml;
+			f.find(".uploader .filename").html(fileDefaultText);
+			$.uniform.update();
+		}
+
+		f[0].reset();
+	}
+
+	// If a password is entered, we must hash it before sending.
+	// If password field is empty, let the code behind handle any error.
+	function securePasscode(e, theForm, msg, title, rightButton, leftButton)
+	{
+		var title = title || '<tmpl_var _("webui", "webui_modal_title")>';
+		var leftButton = leftButton || '<tmpl_var _("webui", "webui_modal_cancel_button")>';
+		var rightButton = rightButton || '<tmpl_var _("webui", "webui_modal_confirm_button")>';
+		var needModal = typeof msg !== 'undefined' ? true : false;
+
+		var shaPassCode = theForm.find('input[name="shaPassword"]');
+		var passCode = theForm.find('input[name="passcodeInput"]');
+		if (passCode.val() !== "") {
+			e.preventDefault();
+			var secToken = "<tmpl_var secToken>";
+			if(secToken === "") {
+				$("#clientSideAuthError").remove();
+				theForm.prepend("<p id='clientSideAuthError' class='error'><tmpl_var _('webui', 'backup_restore_no_security_token_error_text')></p>");
+			} else {
+				var inputPw = passCode.val();
+				var shaPw = Sha1.hash(inputPw + secToken);
+				shaPassCode.val(shaPw);
+				// We can't post the passCode in plain text.
+				passCode.val("");
+				if(needModal) {
+					makeModal(e, theForm, msg, title, rightButton, leftButton, shaPassCode);
+				} else {
+					theForm.submit();
+					shaPassCode.val("");
+				}
+			}
+		}
+	}
+
+	function makeModal(e, theForm, msg,title,rightButton, leftButton, shaPassCode)
+	{
+		var title = title || '<tmpl_var _("webui", "webui_modal_title")>';
+		var leftButton = leftButton || '<tmpl_var _("webui", "webui_modal_cancel_button")>';
+		var rightButton = rightButton || '<tmpl_var _("webui", "webui_modal_confirm_button")>';
+		e.preventDefault();
+		modalPopup.createWindow(
+			title,
+			msg,
+			430, "auto",
+			[
+				{
+					text: leftButton,
+					className: "cancel",
+					trigger: function(){
+						resetForm(theForm);
+					}
+				},
+				{
+					text: rightButton,
+					className: "primary",
+					trigger: function(){
+						theForm.submit();
+						shaPassCode.val("");
+					}
+				}
+			],
+			null,
+			function() {
+				resetForm(theForm);
+			}
+		);
+	}
+/* ]]> */
+</script>
+
+<tmpl_if isLocked>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+	</div>
+</tmpl_if>
+
+<p class="note">
+	<tmpl_udf GET_PO_TEXT("backup_restore_intro", gProductName)>
+</p>
+
+<tmpl_if errorCount>
+	<div class="notification app error">
+		<div class="notification_inner">
+			<p>
+				<tmpl_var _("webui", "webui_operation_failed_text")>
+			</p>
+		</div>
+	</div>
+</tmpl_if>
+
+<form id="buForm" method="POST" action="<tmpl_udf GET_URI('backup_restore')>">
+	<div id="backup_field" class="first">
+		<input type="hidden" name="formAction" id="backupForm" value="backup" />
+		<input type="hidden" name="shaPassword" id="shaPasswordBackup" value="" />
+		<input type="hidden" name="gSecureToken" value="<tmpl_var gSecureToken>" />
+
+		<h2 class="sectionHead"><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+
+		<p class="note">
+			<tmpl_udf GET_PO_TEXT("backup_restore_the_backup_subintro_text", gProductNumber)>
+		</p>
+
+		<div class="table">
+			<div id="passcodeBackupRow" class="form-group">
+				<div class="label">
+					<label for="passcodeBackup"><tmpl_udf GET_PO_TEXT("backup_restore_admin_login_label", gProductName)></label>
+				</div>
+				<div class="input"></div>
+				<tmpl_if showHelpText>
+					<div class="help">
+						<tmpl_var _("webui", "backup_restore_passcode_max_retries_warning_text")>
+					</div>
+				</tmpl_if>
+				<tmpl_if backupError>
+					<div class="inline_error">
+						<tmpl_var backupError>
+					</div>
+				</tmpl_if>
+				<tmpl_if backupAuthError>
+					<div class="inline_error">
+						<tmpl_var backupAuthError>
+					</div>
+				</tmpl_if>
+			</div>
+		</div><!-- /.table -->
+
+		<tmpl_unless showHelpText>
+			<div>
+				<tmpl_var _("webui", "backup_restore_passcode_max_retries_warning_text")>
+			</div>
+		</tmpl_unless>
+
+		<div id="passcodeBackupButtonRow" class="button_container align-right clearfix"></div>
+	</div>
+</form>
+
+<form id="rsForm" method="POST" action="<tmpl_udf GET_URI('backup_restore')>" enctype="multipart/form-data">
+	<div id="restore_field">
+		<tmpl_if restartingUrl>
+			<input type="hidden" id="restoreRedirectLocation" name="redirectLocation" value="<tmpl_var restartingUrl>" />
+		</tmpl_if>
+		<input type="hidden" name="formAction" id="restoreForm" value="restore" />
+		<input type="hidden" name="shaPassword" id="shaPasswordRestore" value="" />
+		<input type="hidden" name="gSecureToken" value="<tmpl_var gSecureToken>" />
+
+		<h2 class="sectionHead"><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+
+		<p class="note">
+			<tmpl_var _("webui", "backup_restore_the_restore_subintro_text")>
+		</p>
+
+		<div class="table">
+			<div id="passcodeRestoreRow" class="form-group">
+				<div class="label">
+					<label for="passcodeRestore"><tmpl_udf GET_PO_TEXT("backup_restore_admin_login_label", gProductName)></label>
+				</div>
+				<div class="input"></div>
+				<tmpl_if showHelpText>
+					<div class="help">
+						<tmpl_var _("webui", "backup_restore_passcode_max_retries_warning_text")>
+					</div>
+				</tmpl_if>	
+				<tmpl_if restoreAuthError>
+					<div class="inline_error">
+						<tmpl_var restoreAuthError>
+					</div>
+				</tmpl_if>
+			</div>
+
+			<tmpl_unless showHelpText>
+				<div>
+					<tmpl_var _("webui", "backup_restore_passcode_max_retries_warning_text")>
+				</div>
+				<br>
+			</tmpl_unless>
+
+			<div class="form-group">
+				<div class="label">
+					<h4><label><tmpl_var _("webui", "backup_restore_file_select_label")></label></h4>
+				</div>
+				<div class="input filetype">
+					<input type="file" name="restoreConfigFile" id="restoreConfigFile"<tmpl_if restoreConfigFileError> class="error"</tmpl_if> />
+				</div>
+				<tmpl_if restoreError>
+					<div class="inline_error"><tmpl_var restoreError></div>
+				</tmpl_if>
+			</div>
+		</div><!-- /.table -->
+
+		<div id="passcodeRestoreButtonRow" class="button_container align-right clearfix"></div>
+	</div>
+</form>
+
+<form id="FactoryRsForm" method="POST" action="<tmpl_udf GET_URI('backup_restore')>">
+	<div id="factory_restore_field" class="third">
+		<tmpl_if resettingUrl>
+			<input type="hidden" id="defaultRedirectLocation" name="redirectLocation" value="<tmpl_var resettingUrl>" />
+		</tmpl_if>
+		<input type="hidden" name="formAction" id="factoryRestoreForm" value="factory" />
+		<input type="hidden" name="gSecureToken" value="<tmpl_var gSecureToken>" />
+
+		<h2 class="sectionHead"><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+
+		<p class="note">
+			<tmpl_var _("webui", "backup_restore_factory_restore_subintro_text")>
+		</p>
+
+		<div id="factoryrestorRow" class="button_container align-right clearfix">
+			<button type="submit" id="restoreFactory" class="primary" <tmpl_if isLocked>disabled="disabled"</tmpl_if> ><tmpl_var _("webui", "backup_restore_factroy_restore_button")></button>
+		</div>
+	</div>
+
+	<tmpl_if dispalyRestartAndShutdown>
+		<div class="button_container clearfix">
+			<button type="button" id="restartDevice" class="secondary" <tmpl_if isLocked>disabled="disabled"</tmpl_if> ><tmpl_udf GET_PO_TEXT("backup_restore_restart_device_button", gProductName)></button>
+			<button type="button" id="shutdownDevice" class="primary" <tmpl_if isLocked>disabled="disabled"</tmpl_if> ><tmpl_udf GET_PO_TEXT("backup_restore_turn_off_device_button", gProductName)></button>
+		</div>
+	</tmpl_if>
+
+	<tmpl_if showRestartTurnOffNewLayout>
+		<div>
+			<h2 class="sectionHead"><tmpl_udf GET_PO_TEXT("backup_restore_restart_device_sub_header_text", gProductNumber)></h2>
+			<p class="note">
+			<tmpl_udf GET_PO_TEXT("backup_restore_restart_device_text", gProductNumber)>
+			</p>
+			<div class="button_container align-right clearfix">
+			<button type="button" id="restartDevice" class="primary" <tmpl_if isLocked>disabled="disabled"</tmpl_if> ><tmpl_udf GET_PO_TEXT("backup_restore_restart_device_button", gProductName)></button>
+			</div>
+		<tmpl_if ShowTurnOffJetpack>			
+			<h2 class="sectionHead"><tmpl_udf GET_PO_TEXT("backup_restore_turn_off_sub_header_text", gProductNumber)></h2>
+			<p class="note">
+			<tmpl_udf GET_PO_TEXT("backup_restore_turn_off_device_text", gProductNumber)>
+			</p>
+			<div class="button_container align-right clearfix">
+			<button type="button" id="shutdownDevice" class="primary" <tmpl_if isLocked>disabled="disabled"</tmpl_if> ><tmpl_udf GET_PO_TEXT("backup_restore_turn_off_device_button", gProductName)></button>
+			</div>
+		</tmpl_if>
+		</div>
+	</tmpl_if>
+</form>
+</tmpl_if>

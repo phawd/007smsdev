@@ -1,0 +1,16 @@
+<div class="warning">
+	<h2 class="sectionHead"><tmpl_var _("webui", "adv_settings_virtual_intro_part1_text")></h2>
+	<p><tmpl_udf GET_PO_TEXT("adv_settings_virtual_intro_part2_text", gProductNumber)></p>
+	<p><tmpl_var _("webui", "adv_settings_virtual_intro_part3_text")></p>
+<tmpl_if showBackButton>
+	<div class="button_container clearfix">
+		<button class="tertiary" onclick="history.back();">
+			<tmpl_var _("webui", "webui_modal_back_button")>
+		</button>
+		<a href="<tmpl_udf GET_URI(RedirectAppId)>" class="btn primary"><tmpl_var _("webui", "webui_modal_continue_button")></a>
+</tmpl_if>
+<tmpl_unless showBackButton>
+		<div class="button_container clearfix">
+			<a href="<tmpl_udf GET_URI(RedirectAppId)>" class="btn primary" style="float: right;"><tmpl_var _("webui", "webui_modal_continue_button")></a>
+		</div>
+</tmpl_unless>

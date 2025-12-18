@@ -1,0 +1,82 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>Cela affiche l
+tat de la connexion 
+ Internet au moyen dur
+seau mobile. 
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>Le nom du r
+seau mobile auquel cet appareil est actuellement connect
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>Indique la connexion de donn
+es mobiles actuelle, par exemple, 5G.	
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>Pour la session Internet en cours, la p
+riode de temps 
+e depuis l
+tablissement de la connexion. 
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))>
+	<p>Pour la session Internet en cours, la quantit
+ de donn
+ues. Ce compteur part de z
+ro une fois la connexion 
+tablie. 
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>Pour la session Internet en cours, la quantit
+ de donn
+es transmises. Ce compteur part de z
+ro une fois la connexion 
+tablie. 
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+        	L
+adresse IP Internet attribu
+ cet appareil.
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))>
+	        Le masque de r
+seau associ
+adresse IP ci-dessus.
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	        L
+adresse IP de la passerelle associ
+adresse IP ci-dessus.
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))>
+	        Le serveur de noms de domaine actuellement utilis
+ par cet appareil.
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+adresse IPv6 globale du <tmpl_var _("webui", "webui_product_name")> est affich
+	Ce champ sera vide si la connexion IPv6 est d
+e ou il ne sera pas pris en charge par la connexion r
+seau actuelle. </p>
+	<tmpl_if InternetStatusViewSessionShow>
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+	<p>Le journal de la session contient les donn
+es suivantes
+Date et heure   (lorsque la connexion a commenc
+me format que les informations sur la session en cours)</p>
+ments re
+us    (format comme pour la session en cours)</p>
+ments transmis   (format comme pour la session en cours)</p>
+es totales  (somme des donn
+ues et transmises, m
+me format que pour la session en cours)</p>
+rance   (itin
+rance/partiel/vide) vide = r
+seau domestique</p>
+IPv4   (adresse IP WWAN IPv4)</p>
+IPv6   (adresse IP WWAN IPv6)</p>
+	<p>Les journaux sont class
+s par ordre chronologique. </p>
+utilisateur ne peut pas modifier l
+ordre et il n
+y a pas d
+options relatives au journal de la session.</p>
+	</tmpl_if>
+<!-- id="status_internet" -->

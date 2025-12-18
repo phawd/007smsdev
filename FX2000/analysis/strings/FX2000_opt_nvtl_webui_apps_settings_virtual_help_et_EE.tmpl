@@ -1,0 +1,32 @@
+<div id="settings_virtual">
+psemad seaded</h1>
+	<tmpl_if appsList>
+levaade</h2>T
+psem men
+ annab juurdep
+rgmistele lehtedele ja s
+tetele.<div class="blockgroup">
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title>&nbsp;-&nbsp;<tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+		<p>Pange t
+hele, et normaalse t
+ ja tavaolukordade puhul ei ole vaja 
+hegi selle seade vaikev
+rtustest muuta. Muutke neid seadeid ainult siis, kui seda n
+uab konkreetne olukord.</p>
+	</tmpl_if>
+	<h2>Nupud</h2>
+	<tmpl_if showBackButton>
+		<h3>Mine tagasi</h3>
+psake seda eelmisele lehele naasmiseks.</p>
+	</tmpl_if>
+	<tmpl_unless showBackButton>
+tka</h3>
+		<p>Kasutage seda t
+psematele lehtedele liikumiseks.</p>
+	</tmpl_unless>

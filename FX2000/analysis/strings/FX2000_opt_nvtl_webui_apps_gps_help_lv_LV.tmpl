@@ -1,0 +1,105 @@
+<div id="gps_status">
+	<h1><tmpl_var _("webui", "gps_status_menu_text")></h1>
+rskats</h2>
+ <tmpl_var _("webui", "webui_product_name")> ier
+ce ir ietver GPS uztv
+ju. GPS uztv
+js var noteikt j
+s vietu, bie
+i pat iek
+s.<tmpl_if GPSOverWiFiEnableShow>
+ ir redzama pa
+s vieta, un atra
+s vietas inform
+ciju var kop
+got ar datoriem, kuriem ir izveidots savienojums, izmantojot funkciju GPS, izmantojot Wi-Fi.</tmpl_if>
+	<h2>GPS izmanto
+ana</h2>
+	<tmpl_if GPSEnableShow>
+		<h3><tmpl_var _("webui", "gps_status_enable_label")></h3>
+		<p>Izmantojiet 
+anas/izsl
+anas vad
+klu, lai p
+c nepiecie
+bas iesl
+gtu vai izsl
+gtu GPS funkciju.</p>
+		<h3><tmpl_udf GET_PO_TEXT("gps_status_startup_state_label", gProductName)></h3>
+is iestat
+jums nosaka, kad GPS uztv
+gsies, kad tas b
+gts.</p>
+		<p>Ja iesl
+gts, GPS uztv
+gsies, tikl
+dz <tmpl_var _("webui", "webui_product_name")> tiks izsl
+gts. Tas b
+s atkal j
+s nepiecie
+ams GPS uztv
+	</tmpl_if>
+		<h3>GPS statuss</h3>
+		<p>Ja GPS uztv
+l nav ieguvis labojumu (atra
+s vietu), par
+s statuss <strong>Mekl
+ana</strong>. Kad labojums ir ieg
+ts, tiek par
+cija par pa
+s vietu un tiek par
+ta Google karte, lai vizu
+s vietu.</p>
+		<h2><tmpl_var _("webui", "gps_status_map_section_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "gps_status_latitude_label"), (size(_("webui", "gps_status_latitude_label")) - size(":")))></h3>
+s vietas labojuma 
+fiskais platums.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_longitude_label"), (size(_("webui", "gps_status_longitude_label")) - size(":")))></h3>
+s vietas labojuma 
+fiskais garums.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_altitude_label"), (size(_("webui", "gps_status_altitude_label")) - size(":")))></h3>
+s vietas labojuma augstums.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_accuracy_label"), (size(_("webui", "gps_status_accuracy_label")) - size(":")))></h3>
+		<p>Tas ir GPS uztv
+s horizont
+cijas precizit
+		<tmpl_if GPSOverWiFiEnableShow>
+			<tmpl_if GPSPortNumberShow>		
+				<h2><tmpl_var _("webui", "gps_status_enable_sub_header_text")></h2>
+				<h3><tmpl_var truncate(_("webui", "gps_status_gps_over_wifi_label"), (size(_("webui", "gps_status_gps_over_wifi_label")) - size(":")))></h3>
+				<p>GPS datus <tmpl_var _("webui", "webui_product_name")> nodro
+ina Nacion
+ras elektronikas asoci
+cijas (NMEA) teksta pl
+smas veid
+				<p>NMEA (GPS) porta izmanto
+ana ir standarta metode lietojumprogramm
+m, lai piek
+tu GPS datu pl
+smai sist
+ Windows un cit
+anas platform
+s. Lai izveidotu 
+o portu, lejupiel
+jiet un instal
+jiet savai platformai GPS, izmantojot Wi-Fi draiveri. 
+is draiveris izveidos NMEA portu, ieg
+s GPS datus no <tmpl_var _("webui", "webui_product_name")> un padar
+os GPS datus pieejamus NMEA lietojumprogramm
+				<h3><tmpl_var truncate(_("webui", "gps_status_port_number_label"), (size(_("webui", "gps_status_port_number_label")) - size(":")))></h3>
+is ir porta numurs, ko datora draivera programmat
+ra izmanto, lai izveidotu savienojumu ar 
+ci un ieg
+tu GPS datus. Ja vien nav pamatota iemesla, porta numurs nav j
+maina.</p>
+			</tmpl_if>
+		</tmpl_if>
+	<tmpl_if GPSDownloadDriversShow>
+		<h3><tmpl_var _("webui", "gps_status_wifi_driver_download_link")></h3>
+		<p>Izmantojiet 
+o opciju, lai piek
+tu pieejamo draiveru lejupiel
+des lapai.<tmpl_if GPSOverWiFiEnableShow>
+ie draiveri ir nepiecie
+ami, lai izmantotu GPS, lietojot Wi-Fi.</tmpl_if>
+	</tmpl_if>

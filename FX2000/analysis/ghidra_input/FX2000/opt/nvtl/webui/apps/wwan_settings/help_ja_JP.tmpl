@@ -1,0 +1,79 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p>このオン/オフ設定を使用して、セルラーデータをオフにし、モバイルネットワークへのアクセスを防止することができます。 これにより、接続されたデバイスがインターネットに接続し、モバイルデータプランを使用できなくなります。 通常の操作では、この設定をオンのままにしておく必要があります。</p>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>接続基本設定</h3>
+			<p>希望のオプションを選択して、<tmpl_var _("webui", "webui_product_name")> がモバイルネットワークへのデータ接続を確立するタイミングをコントロールします。</p>
+	</tmpl_if>
+
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>この設定を使用して、必要に応じて国際ローミングと国内ローミングをオンまたはオフにします。 ローミング時には追加のデータ料金がかかる場合があります。</p>
+	</tmpl_if>
+
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p>デフォルト値は「<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>」です。 <tmpl_var _("webui", "webui_product_name")> は利用可能な最良のテクノロジーを選択します。</p>
+		<p>必要に応じて、これを変更して、使用するネットワークテクノロジーを制限できます。</p>
+	</tmpl_if>
+
+	<h3>手動ネットワーク選択</h3>
+		
+	<p>
+		この機能は、自動ネットワーク選択を有効にするがオフになっている場合にのみ使用できます。 これは、複数のネットワークが利用可能で、どのネットワークを使用するかを設定している場合に役立ちます。
+	</p>
+	<p>
+		「ネットワークの選択」ボタンをクリックして、利用可能なネットワークをスキャンします。次に、目的のネットワークを選択できます。
+	</p>
+	
+	
+	<tmpl_if showApnSettings>
+		<tmpl_if ShowAdvancedSettingsToggleButton>
+			<h2>高度な設定</h2>
+			<p>
+				この見出し/リンクを使用して、必要に応じて詳細設定を表示または非表示にします。
+			</p>
+		</tmpl_if>
+
+		<h3>
+			<tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))>
+		</h3>
+		<p>
+			APNは事前設定されています。 （独自のAPNを使用する）法人アカウントがない限り、APNを変更しないでください。
+		</p>
+
+		<p>
+			APNを変更する必要がある場合は、モバイルネットワークサービスプロバイダーから提供された値を入力します。
+		</p>
+
+		<tmpl_if showApnAuthenticationSettings>		
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))>
+			</h3>
+			<div class="blockgroup">
+				<p>サービスプロバイダーが指定したオプションを選択します。</p>
+				<ul>
+					<li>なし</li>
+					<li>PAP</li>
+					<li>CHAP</li>
+				</ul>
+			</div>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))>
+			</h3>
+			<p>
+				認証が <strong>なし</strong>、これは空白のままにすることができます。 それ以外の場合は、サービスプロバイダーが指定した値を入力します。
+			</p>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))>
+			</h3>
+			<p>
+				認証が <strong>なし</strong>、これは空白のままにすることができます。 それ以外の場合は、サービスプロバイダーが指定した値を入力します。
+			</p>
+		</tmpl_if>
+	</tmpl_if>
+</div>

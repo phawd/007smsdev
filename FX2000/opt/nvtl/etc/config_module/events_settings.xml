@@ -1,0 +1,150 @@
+<Root data_type="Object">
+	<events data_type="Object">
+		<wan_data_usage data_type="Object">
+			<wan_interface data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<is_unique>0</is_unique>
+					<default_value>1</default_value>
+					<possible_values>
+						<possible_value>1</possible_value>
+					</possible_values>
+					<legends>
+						<legend>
+							<key>1</key>
+							<value>WWAN</value>
+						</legend>
+					</legends>
+					<remarks>WAN Interface value is always WWAN</remarks>
+				</__ATTRIBUTES__>
+			</wan_interface>
+			<wwan data_type="Object">
+				<sim_slot_number data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<default_value>1</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>1</possible_value>
+							<possible_value>2</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</sim_slot_number>
+				<is_active data_type="Boolean">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>   
+						<default_value>false</default_value>   
+						<is_unique>0</is_unique>   
+						<possible_values>
+							<possible_value>true</possible_value>
+							<possible_value>false</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</is_active>
+				<imsi data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>IMSI in string format</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</imsi>
+				<iccid data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>ICCID in string format</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</iccid>
+				<level data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>1</default_value>
+						<possible_values>
+							<possible_value>1</possible_value>
+							<possible_value>2</possible_value>
+						</possible_values>
+						<legends>
+							<legend>
+								<key>1</key>
+								<value>Usage warning level as set by user has been hit</value>
+							</legend>
+							<legend>
+								<key>2</key>
+								<value>100% of usage level has been hit</value>
+							</legend>
+						</legends>
+					</__ATTRIBUTES__>
+				</level>
+			</wwan>
+		</wan_data_usage>
+		<oob_connected_clients data_type="Object">
+			<serial_port data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<is_unique>0</is_unique>
+					<default_value>ttyUSB0</default_value>
+					<possible_values>
+						<possible_value>Any serial port</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</serial_port>
+			<status data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<is_unique>0</is_unique>
+					<default_value>1</default_value>
+					<possible_values>
+						<possible_value>0</possible_value>
+						<possible_value>1</possible_value>
+						<possible_value>2</possible_value>
+					</possible_values>
+					<legends>
+						<legend>
+							<key>0</key>
+							<value>Disconnected</value>
+						</legend>
+						<legend>
+							<key>1</key>
+							<value>Connected</value>
+						</legend>
+						<legend>
+							<key>2</key>
+							<value>Unknown</value>
+						</legend>
+					</legends>
+				</__ATTRIBUTES__>
+			</status>
+		</oob_connected_clients>
+	</events>
+	<imei data_type="String">
+		<__ATTRIBUTES__>
+			<is_required>1</is_required>
+			<default_value>Any String</default_value>
+			<is_unique>0</is_unique>
+			<possible_values>
+				<possible_value>
+				Any String
+				</possible_value>
+			</possible_values>
+		</__ATTRIBUTES__>
+	</imei>
+	<timestamp data_type="String">
+		<__ATTRIBUTES__>
+			<is_required>1</is_required>
+			<default_value>0</default_value>
+			<is_unique>0</is_unique>
+			<possible_values>
+				<possible_value>
+				Unix epoch time representing number of seconds elapsed since epoch reference time.
+				</possible_value>
+			</possible_values>
+		</__ATTRIBUTES__>
+	</timestamp>
+</Root>

@@ -1,0 +1,869 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+	</div>
+<tmpl_else>
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		//convenience variables
+		var isRoaming = ("<tmpl_var isRoaming>" == "1") ? true : false;
+		var noService = ("<tmpl_var isNotInService>" == "1") ? true : false;
+		var isNonVerizon = ("<tmpl_var isNonVerizon>" == "1") ? true : false;
+		var isUpdateStarted = false;
+		var checkForUpdateClicked = false;
+		var softwareUpdateStatus = <tmpl_var updateStatus>;
+		var softwareUpdateStatusVal = <tmpl_var value>;
+		var configUpdateVersion = "<tmpl_var version>";
+		var userInitiated = <tmpl_var isUserInitiated>;
+		var estimatedUpgradeTime = <tmpl_var installationDuration>;
+		var installDeferred = false;
+		var previousStatus = 0;
+		var historyExpanded = 0;
+		var downloadPopupShown = 0;
+		var profileupdatecancle = 0;
+		var customDesc = "";
+		var customDownloadMsg = "";
+		var customReadyToInstallMsg = "";
+		var customInstallSuccessMsg = "";
+		var customInstallFailMsg = "";
+		var acChargerConnected = (("<tmpl_var lowBatteryWithChargerThresholdLimit>" != "-1") && ("<tmpl_var chargingSource>" === $.uiEnums.CHARGINGSOURCE_AC)) ? 1 : 0;
+
+		<tmpl_if CIDCShow>
+			var profileUpdateStatus = <tmpl_var profileUpdateStatus>;
+		</tmpl_if>
+ 
+		$(function()
+		{
+			<tmpl_if CIDCShow>
+				console.log("profileUpdateStatus on start up : ", profileUpdateStatus);
+				updateStatus(profileUpdateStatus);
+			</tmpl_if>
+
+				$(document).ajaxSuccess(function(e, xhr, settings) {
+					if((xhr.responseText) && (settings.dataType == "json")){
+						try {
+							var obj = jQuery.parseJSON(xhr.responseText || "null");
+
+							var simStatusObj;
+							var connStatusObj;
+
+							if(typeof obj.statusData.isDualSimSupported != "undefined")
+							{
+								if(obj.statusData.isDualSimSupported == 1) {
+									if(obj.statusData.statusBarActiveSimSlot == 2) {
+										simStatusObj = "statusBarSim2Status";
+										connStatusObj = "statusBarSim2ConnectionState";
+									} else {
+										simStatusObj = "statusBarSimStatus";
+										connStatusObj = "statusBarConnectionState";
+									}
+								} else {
+									simStatusObj = "statusBarSimStatus";
+									connStatusObj = "statusBarConnectionState";
+								}
+							}
+
+							// Check for roaming only when sim is "ready"
+							if ((typeof obj.statusData[simStatusObj] !== "undefined") && (obj.statusData[simStatusObj] == $.uiEnums.SIMSTATUS_READY)) {
+								if ( typeof obj.statusData.statusBarRoaming !== "undefined") {
+									isRoaming = (obj.statusData.statusBarRoaming === $.uiEnums.ROAMNONE) ? false : true;
+								}
+								if ( typeof obj.statusData[connStatusObj] !== "undefined") {
+									noService = ((obj.statusData[connStatusObj] === $.uiEnums.WANSTATE_NOSERVICE) || (obj.statusData[connStatusObj] === $.uiEnums.WANSTATE_SEARCHING)) ? true : false;
+								}
+							}
+				<tmpl_if CIDCShow>
+				//console.log("getStatusUpdate() in ajaxSuccess");
+				getStatusUpdate();
+				</tmpl_if>
+
+							if(typeof obj.statusData.StatusBarSoftwareUpdateStatus !== "undefined") {
+								softwareUpdateStatus = obj.statusData.StatusBarSoftwareUpdateStatus;
+								softwareUpdateStatusVal = obj.statusData.StatusBarSoftwareUpdateValue;
+								configUpdateVersion = obj.statusData.StatusBarSoftwareUpdateVersion;
+								estimatedUpgradeTime = obj.statusData.StatusBarSoftwareUpdateInstallationDuration;
+								userInitiated = obj.statusData.StatusBarSoftwareUpdateUserInitiated;
+								processUpdatedStatus();
+							}
+
+							if((typeof obj.statusData.StatusBarSoftwareUpdateCustomDesc !== "undefined") && (typeof obj.statusData.StatusBarSoftwareUpdateCustomDesc !== "")) {
+								customDesc = obj.statusData.StatusBarSoftwareUpdateCustomDesc;
+								customDownloadMsg = obj.statusData.StatusBarSoftwareUpdateCustomDownloadMsg;
+								customReadyToInstallMsg = obj.statusData.StatusBarSoftwareUpdateCustomReadyToInstallMsg;
+								customInstallSuccessMsg = obj.statusData.StatusBarSoftwareUpdateCustomInstallSuccessMsg;
+								customInstallFailMsg = obj.statusData.StatusBarSoftwareUpdateCustomInstallFailMsg;
+								processUpdatedStatus();
+							}
+
+							if (typeof obj.statusData.statusBarBatteryChargingSource !== "undefined") {
+								<tmpl_unless IN_SET(lowBatteryWithChargerThresholdLimit, "-1")>
+									if (obj.statusData.statusBarBatteryChargingSource === $.uiEnums.CHARGINGSOURCE_AC) {
+										acChargerConnected = 1;
+									} else {
+										acChargerConnected = 0;
+									}
+								</tmpl_unless>
+							}
+						} catch(e) {}
+					}
+				});
+
+			<tmpl_if SuOptOutButtonShow>
+				if (jQuery.fn.slideButton) {
+				   $("#enableOptOut").slideButton({
+					   change : function($input) {                     						   
+						   if($input.is(":checked") === true) {                            
+							   console.log("ON");
+							   optOutFunctionality($input.is(":checked"), $input);                            
+						   } else {                            
+							   console.log("OFF");							   
+							   showConfirmation($input.is(":checked"), $input);
+						   }
+					   }
+				   });
+				}
+			</tmpl_if>
+
+			$("#UpdateStatusText").html('');
+
+			processUpdatedStatus();
+
+			<tmpl_if HiddenIfNeverUpdated>
+				<tmpl_if SystemUpdateHappened>
+					$("#UpdateHistory").show();
+				<tmpl_else>
+					$("#UpdateHistory").hide();
+				</tmpl_if>
+			<tmpl_else>
+				$("#UpdateHistory").show();
+			</tmpl_if>
+
+			<tmpl_if ToggleSystemUpdateHistory>
+				$("#HistoryTableToggle").on("click", function() {
+						if (historyExpanded == 0) {
+							historyExpanded = 1;
+							$("#HistoryTableToggle").html("<tmpl_var _('webui', 'software_update_history_sub_header_hide_text')>");
+						} else {
+							historyExpanded = 0;
+							$("#HistoryTableToggle").html("<tmpl_var _('webui', 'software_update_history_sub_header_show_text')>");
+						}
+						$("#HistoryTable").slideToggle();
+					});
+			</tmpl_if>
+			<tmpl_unless isLocked>
+				<tmpl_if SoftwareUpdateInstallNowShow>
+					<tmpl_unless SoftwareUpdateInstallNowLocked>
+						$("#installNow").on("click", getInstallationConfirmation);
+					</tmpl_unless>
+				</tmpl_if>
+
+				<tmpl_if SoftwareUpdateInstallLaterShow>
+					<tmpl_unless SoftwareUpdateInstallLaterLocked>
+						$("#installLater").on("click", function() {
+							showDeferPopup();
+
+							$.post("<tmpl_udf GET_URI('software_update_defer')>", {
+								gSecureToken : "<tmpl_var gSecureToken>"
+							}, function(data) {
+								installDeferred = true;
+								$("#installLater").hide();
+							});
+						});
+					</tmpl_unless>
+				</tmpl_if>
+
+				<tmpl_if SoftwareUpdateCheckShow>
+					<tmpl_unless SoftwareUpdateCheckLocked>
+						$("#checkForUpdate").on("click", function(){
+							<tmpl_if ProductCarrierValidation>
+								if (isRoaming) {
+									$("#UpdateStatusText").html("<tmpl_var _('webui', 'software_update_check_for_update_error_status_text')>");
+									showPopup("<tmpl_var _('webui', 'software_update_check_for_update_roaming_header_text')>", "<p><tmpl_var _('webui', 'software_update_roaming_error_text')></p>");
+								} else if (noService){
+									$("#UpdateStatusText").html("<tmpl_var _('webui', 'software_update_check_for_update_error_status_text')>");
+									showPopup("<tmpl_var _('webui', 'software_update_check_for_update_cannot_connect_header_text')>", "<p><tmpl_udf GET_PO_TEXT("software_update_connection_error_text",gProductName)></p>");
+								} else if (isNonVerizon){
+									$("#UpdateStatusText").html("<tmpl_var _('webui', 'software_update_check_for_update_error_status_text')>");
+									showPopup("<tmpl_var _('webui', 'software_update_check_for_update_non_verizon_header_text')>", "<p><tmpl_var _('webui', 'software_update_non_verizon_network_error_text')></p>");
+								} else {
+									$("#UpdateStatusText").html("<tmpl_udf GET_PO_TEXT( 'software_update_check_update_progress_text', gProductName, gProductNumber)>");
+									$("#UpdateStatusIndicator").show();
+									$("#checkForUpdate").hide();
+									triggerCheckForUpdate();
+								}
+							<tmpl_else>
+								$("#UpdateStatusText").html("<tmpl_udf GET_PO_TEXT('software_update_check_update_progress_text', gProductName, gProductNumber)>");
+								$("#UpdateStatusIndicator").show();
+								$("#checkForUpdate").hide();
+								triggerCheckForUpdate();
+							</tmpl_if>
+						});
+					</tmpl_unless>
+				</tmpl_if>
+			</tmpl_unless>
+
+			<tmpl_if CIDCShow>
+				$("#profileUpdateButton").on("click", function(){
+					$("#profileUpdateStatus").find(".input").html("");
+					$("#profileUpdateButton").hide();
+					updateStatus(4);    // Show connecting to NW status and spinner immediatly after clicking this button.
+					$.ajax({
+						url : '<tmpl_udf GET_URI("software_update_profile_update")>',
+						type : "POST",
+						data : {
+							gSecureToken : "<tmpl_var gSecureToken>"
+						},
+						dataType : "json",
+						success : function(data) {
+							//console.log("profileUpdateStatus : ", data.profileUpdateStatus);
+							//getStatusUpdate();
+						},
+						error : function(xhr, textStatus, errorThrown) {
+							console.error("profileupdate error");
+						},
+						complete : function() {
+							console.log("profileupdate complete");
+							getStatusUpdate();
+						}
+					});
+				});
+
+				$("#profileUpdateOkButton").on("click", function(){
+					profileupdatecancle = 0;
+					$("#profileUpdateOkButton").hide();
+					$("#profileUpdateButton").show();
+					$(".spinner").hide();
+					$("#profileUpdateStatus").find(".input").html("");                
+
+					$.ajax({
+						url : '<tmpl_udf GET_URI("software_update_profile_update_ok")>',
+						type : "POST",
+						data : {
+							gSecureToken : "<tmpl_var gSecureToken>"
+						},
+						dataType : "json",
+						success : function(data, textStatus, xhr){
+							if ((xhr.readyState == 4 ) && (xhr.status == 200)) {
+								console.log("profileUpdateOkButton success");
+							}               
+						},
+						error : function(xhr, textStatus, errorThrown){
+							console.error("profileUpdateOkButton error");
+						},
+						complete : function(xhr, textStatus){
+							console.log("profileUpdateOkButton complete");
+						}
+					});
+				});
+
+				$("#profileUpdateCancleButton").on("click", function(){
+					profileupdatecancle = 1;
+					$("#profileUpdateCancleButton").hide();
+					$("#profileUpdateButton").show();
+					$(".spinner").hide();
+					$("#profileUpdateStatus").find(".input").html("");
+
+					$.ajax({
+						url : '<tmpl_udf GET_URI("software_update_profile_update_cancle")>',
+						type : "POST",
+						data : {
+							gSecureToken : "<tmpl_var gSecureToken>"
+						},
+						dataType : "json",
+						success : function(data, textStatus, xhr){
+							if ((xhr.readyState == 4 ) && (xhr.status == 200)) {
+								console.log("profileUpdateCancleButton success");
+							}               
+						},
+						error : function(xhr, textStatus, errorThrown){
+							console.error("profileUpdateCancleButton error");
+						},
+						complete : function(xhr, textStatus){
+							console.log("profileUpdateCancleButton complete");
+						}                    
+					});
+				});
+			
+
+				function getStatusUpdate()
+				{
+					//console.log("getStatusUpdate()");
+					$.ajax({
+						url : '<tmpl_udf GET_URI("software_update_profile_update_status")>',
+						type : "GET",
+						dataType : "json",
+						success : function(data) {
+							//console.log("getStatusUpdate() success");
+							var data_string = data.profileUpdateStatus;
+							//console.log("data_string-updateStatus : ", data_string);
+							updateStatus(data_string);
+						},
+						error : function(xhr, textStatus, errorThrown) {
+							console.error("getStatusUpdate() error");
+						},
+						complete : function(xhr, textStatus) {
+							//console.log("getStatusUpdate() complete");
+							var data_string = xhr.responseJSON["profileUpdateStatus"];
+							console.log("profileUpdateStatus : ", data_string);
+							if ((profileupdatecancle !== 1) && ((data_string == 4) || (data_string == 5))) {
+								setTimeout(function(){
+									// updateStatus(data_string);
+									getStatusUpdate();
+								}, 5000);
+							}
+						}
+					});
+				}
+
+				function updateStatus(data)
+				{
+					//console.log("updateStatus()-profileUpdateStatus : ", data);
+					$("#profileUpdateStatus").find(".input").html("");
+					$(".spinner").hide();
+					$("#profileUpdateOkButton").hide();
+					$("#profileUpdateCancleButton").hide();
+					$("#profileUpdateButton").hide();
+					if (4 == data) {                     // profile_connecting_network    
+						$("#profileUpdateStatus").find(".input").append("<tmpl_var _('webui', 'software_update_profile_connecting_network_text')>");
+						$("#profileUpdateCancleButton").show();
+						$(".spinner").show();
+						console.log("4 == data");
+					} else if (5 == data) {             // profile_configuring_device
+						$("#profileUpdateStatus").find(".input").append("<tmpl_var _('webui', 'software_update_profile_configuring_device_text')>");
+						$("#profileUpdateCancleButton").show();
+						$(".spinner").show();
+					} else if (3 == data) {             // profile_update_success
+						$("#profileUpdateStatus").find(".input").append("<tmpl_var _('webui', 'software_update_profile_update_success_text')>");
+						$("#profileUpdateOkButton").show();
+						//profileupdatecancle = 1;
+					} else if (8 == data) {             // profile_update_failed
+						$("#profileUpdateStatus").find(".input").append("<tmpl_var _('webui', 'software_update_profile_update_failed_text')>");
+						$("#profileUpdateOkButton").show();
+						//profileupdatecancle = 1;
+					} else if (0 == data){             // profile_update_none
+						$("#profileUpdateStatus").find(".input").append("");
+						$("#profileUpdateButton").show();
+					} else {
+						console.log("updateStatus-data : ", data);
+					}
+				}
+			</tmpl_if>
+		
+			<tmpl_if SuOptOutButtonShow>
+				function optOutFunctionality(bool, $simSwitch) {
+					if (jQuery.fn.slideButton) $simSwitch.slideButton("addLoader");
+					var url = (bool) ? "<tmpl_udf GET_URI('opt_out_enable')>" : "<tmpl_udf GET_URI('opt_out_disable')>";
+					$.ajax({
+						url : url,
+						type : "POST",
+						data : {
+						   gSecureToken : "<tmpl_var gSecureToken>"
+						},
+						dataType : "json",
+						success : function(data, textStatus, xhr){
+						   // If no network connected, success event still occurs.
+						   // We need to implicitly see an xhr.status greater than 0 to know we've actually
+						   // made contact.
+						   if ((xhr.readyState == 4 ) && (xhr.status == 200)) {
+						   }
+						},
+						error : function(xhr, textStatus, errorThrown){                 
+						   if (jQuery.fn.slideButton) $simSwitch.slideButton("undo");
+						},
+						complete : function(xhr, textStatus){                   
+						   if (jQuery.fn.slideButton) $simSwitch.slideButton("removeLoader");                  
+						}
+					});
+				}
+			</tmpl_if>
+
+			function processUpdatedStatus()
+			{
+				console.log("swStatus["+softwareUpdateStatus+"] prevStatus["+previousStatus+"] chkUpdtClk["+checkForUpdateClicked+"] swStatusVal["+softwareUpdateStatusVal+"] defer["+installDeferred+"] isUpdStrt["+isUpdateStarted+"] userInitiated[" + userInitiated + "]")
+				if (softwareUpdateStatus === 1) { // WEBUI_SOFIWARE_UPDATE_CHECK_IN_PROGRESS
+					if (!checkForUpdateClicked) {
+						checkForUpdateClicked = true;
+						isUpdateStarted = true;
+						$("#UpdateStatusText").html("<tmpl_udf GET_PO_TEXT( 'software_update_check_update_progress_text', gProductName, gProductNumber)>");
+						$("#UpdateStatusIndicator").show();
+						$("#checkForUpdate").hide();
+					}
+				} else if (softwareUpdateStatus === 2) { // WEBUI_SOFTWARE_UPDATE_CONFIGURATION_UPDATED
+					$("#UpdateStatusText").html("<tmpl_udf GET_PO_TEXT( 'software_update_configuration_updated_line1_text', gProductName, gProductNumber)>" + configUpdateVersion + "<tmpl_var _('webui', 'software_update_configuration_updated_line2_text')>");
+					$("#UpdateStatusIndicator").hide();
+					$("#checkForUpdate").show();
+					isUpdateStarted = false;
+					checkForUpdateClicked = false;
+				} else if (softwareUpdateStatus === 3) { // WEBUI_SOFTWARE_UPDATE_NOT_AVAILABLE
+					$("#UpdateStatusText").html("<tmpl_udf GET_PO_TEXT( 'software_update_not_available_text', gProductName, gProductNumber)>");
+					$("#UpdateStatusIndicator").hide();
+					$("#download_progress_wrapper").hide();
+					$("#installNow").hide();
+					$("#installLater").hide();
+					$("#checkForUpdate").show();
+					isUpdateStarted = false;
+					checkForUpdateClicked = false;
+				} else if (softwareUpdateStatus === 4) { // WEBUI_SOFTWARE_UPDATE_AVAILABLE
+					$("#UpdateStatusText").html("<tmpl_var _('webui', 'software_update_check_for_update_success_status_text')>");
+					$("#UpdateStatusIndicator").hide();
+					$("#checkForUpdate").hide();
+					isUpdateStarted = true;
+					if ((previousStatus != 0) && (softwareUpdateStatus != previousStatus) && (userInitiated == 1)) {
+						downloadPopupShown = 1;
+						showPopup('<tmpl_var _("webui", "software_update_upgrade_available_text")>', '<p><tmpl_udf GET_PO_TEXT( "software_update_upgrade_available_message_text", gProductName, gProductNumber)></p>');
+					}                
+				} else if (softwareUpdateStatus === 5) { // WEBUI_SOFTWARE_UPDATE_DOWNLOAD_PROGRESS
+					if (customDownloadMsg.length) {
+						$("#UpdateStatusText").html(customDownloadMsg);
+					} else {
+						$("#UpdateStatusText").html("<tmpl_udf GET_PO_TEXT( 'software_update_download_in_progress_text', gProductName, gProductNumber)>");
+					}
+					$("#UpdateStatusIndicator").hide();
+					$("#checkForUpdate").hide();
+					isUpdateStarted = true;
+					$("#download_progress_wrapper").show();
+					$("#lineUsagePercentage").attr('style', 'width: ' + softwareUpdateStatusVal + '%');
+					if (softwareUpdateStatusVal >= 5) {                                                              
+						$("#lineUsagePercentage").html(softwareUpdateStatusVal + '%');                           
+					} 
+				} else if (softwareUpdateStatus === 6) { // WEBUI_SOFTWARE_UPDATE_READY_TO_INSTALL
+					if (downloadPopupShown) {
+						downloadPopupShown = 0;
+						modalPopup.destroyWindow();
+					}
+					isUpdateStarted = true;
+					$("#checkForUpdate").hide();
+					$("#installNow").show();
+					if (!installDeferred) {
+						$("#installLater").show();
+					}
+					if (customReadyToInstallMsg.length) {
+						$("#UpdateStatusText").html(customReadyToInstallMsg);
+					} else {
+						$("#UpdateStatusText").html("<tmpl_udf GET_PO_TEXT( 'software_update_ready_to_install_text', gProductName, gProductNumber)>");
+					}
+					$("#UpdateStatusIndicator").hide();
+					$("#download_progress_wrapper").hide();
+				} else if (softwareUpdateStatus === 7) { // WEBUI_SOFTWARE_UPDATE_INSTALLATION_STARTED
+					window.location = '<tmpl_udf GET_URI("software_install")>';
+				} else if (softwareUpdateStatus === 11) { // WEBUI_SOFTWARE_UPDATE_CANCELLED
+					if (isUpdateStarted) {
+						$("#UpdateStatusText").html('');
+						$("#UpdateStatusIndicator").hide();
+						$("#installLater").hide();
+						$("#installNow").hide();
+						$("#download_progress_wrapper").hide();
+						$("#checkForUpdate").show();
+						isUpdateStarted = false;
+						checkForUpdateClicked = false;
+						if (downloadPopupShown) {
+							downloadPopupShown = 0;
+							modalPopup.destroyWindow();
+						}
+					$("#UpdateStatusText").html("<tmpl_var _('webui', 'software_update_cancelled_text')>");
+					}		
+				} else if (softwareUpdateStatus === 10) { // WEBUI_SOFTWARE_UPDATE_INSTALLATION_DEFERREDD
+					isUpdateStarted = true;
+					installDeferred = true;
+					$("#checkForUpdate").hide();
+					$("#installNow").show();
+					$("#installLater").hide();
+					if (customReadyToInstallMsg.length) {
+						$("#UpdateStatusText").html(customReadyToInstallMsg);
+					} else {
+						$("#UpdateStatusText").html("<tmpl_udf GET_PO_TEXT( 'software_update_ready_to_install_text', gProductName, gProductNumber)>");
+					}
+					$("#UpdateStatusIndicator").hide();
+					$("#download_progress_wrapper").hide();
+				} else if (softwareUpdateStatus === 9) { // WEBUI_SOFTWARE_UPDATE_ERROR                        
+					if ((isUpdateStarted) || (previousStatus === 0))  {
+						$("#UpdateStatusText").html('');
+						$("#UpdateStatusIndicator").hide();
+						$("#installLater").hide();
+						$("#installNow").hide();
+						$("#download_progress_wrapper").hide();
+						$("#checkForUpdate").show();                    
+						checkForUpdateClicked = false;
+
+						if (softwareUpdateStatusVal === 6) { // WEBUI_SOFTWARE_UPDATE_CHECK_FAILED_LOW_BATTERY_ERROR
+							if ((isUpdateStarted) || ((previousStatus != 0) && (softwareUpdateStatus != previousStatus))) {
+								$("#UpdateStatusText").html("<tmpl_var _('webui', 'software_update_check_for_update_error_status_text')>");
+								if (acChargerConnected) {
+									showPopup("<tmpl_var _('webui', 'software_update_low_battery_header_text')>", "<p><tmpl_udf GET_PO_TEXT("software_update_check_for_update_low_battery_error_text", gProductName, gProductNumber, lowBatteryWithChargerThresholdLimit)></p>");
+								} else {
+									showPopup("<tmpl_var _('webui', 'software_update_low_battery_header_text')>", "<p><tmpl_udf GET_PO_TEXT("software_update_check_for_update_low_battery_error_text", gProductName, gProductNumber, lowBatteryThresholdLimit)></p>");
+								}
+							}
+						} else if (softwareUpdateStatusVal === 3) { // WEBUI_SOFTWARE_UPDATE_LOW_BATTERY_ERROR                                
+							$("#UpdateStatusText").html("<tmpl_udf GET_PO_TEXT( 'software_update_ready_to_install_text', gProductName, gProductNumber)>");
+							if ((previousStatus != 0) && (softwareUpdateStatus != previousStatus)) {
+								if (acChargerConnected) {
+									showPopup("<tmpl_var _('webui', 'software_update_low_battery_header_text')>", "<p><tmpl_udf GET_PO_TEXT( 'software_update_battery_low_error_text', gProductName, gProductNumber, lowBatteryWithChargerThresholdLimit)></p>");
+								} else {
+									showPopup("<tmpl_var _('webui', 'software_update_low_battery_header_text')>", "<p><tmpl_udf GET_PO_TEXT( 'software_update_battery_low_error_text', gProductName, gProductNumber, lowBatteryThresholdLimit)></p>");
+								}
+							}
+							$("#installNow").show();
+							$("#checkForUpdate").hide();
+						} else if (softwareUpdateStatusVal === 1) { // WEBUI_SOFTWARE_UPDATE_DOWNLOAD_FAILED_ERROR
+							$("#UpdateStatusText").html("<tmpl_var _('webui', 'software_update_download_failed_text')>");
+							if (downloadPopupShown) {
+								downloadPopupShown = 0;
+								modalPopup.destroyWindow();
+							}
+						} else if (softwareUpdateStatusVal === 2) { // WEBUI_SOFTWARE_UPDATE_INSTALLATION_FAILED_ERROR
+							if (customInstallFailMsg.length) {
+								$("#UpdateStatusText").html(customInstallFailMsg);
+							} else {
+								$("#UpdateStatusText").html("<tmpl_var _('webui', 'software_update_installation_failed_text')>");
+							}
+							//if ((previousStatus != 0) && (softwareUpdateStatus != previousStatus)) {
+							//    showPopup("<tmpl_var _('webui', 'software_update_installation_failed_text')>", "<p><tmpl_var _('webui', 'software_update_installation_failed_text')></p>");
+							//}                        
+						} else if (softwareUpdateStatusVal === 7) { // WEBUI_SOFTWARE_UPDATE_CHECK_FAILED_FAILSAFE_ERROR
+							if ((isUpdateStarted) || ((previousStatus != 0) && (softwareUpdateStatus != previousStatus))) {
+								$("#UpdateStatusText").html('');
+								showPopup("<tmpl_var _('webui', 'software_update_check_for_update_failsafe_error_header_text')>", "<p><tmpl_var _("webui", "software_update_check_for_update_failsafe_error_status_text")></p>");
+							}
+						} else if (softwareUpdateStatusVal === 0) { // WEBUI_SOFTWARE_UPDATE_CHECK_FAILED_ERROR                        
+							if ((isUpdateStarted) || ((previousStatus != 0) && (softwareUpdateStatus != previousStatus))) {
+								$("#UpdateStatusText").html("<tmpl_var _('webui', 'software_update_check_for_update_error_status_text')>");
+								showPopup("<tmpl_var _('webui', 'software_update_check_for_update_cannot_connect_header_text')>", "<p><tmpl_udf GET_PO_TEXT("software_update_connection_error_text",gProductName)></p>");
+							}                        
+						} else if (softwareUpdateStatusVal === 4) { // WEBUI_SOFTWARE_UPDATE_ROAMING_ERROR                        
+							if ((previousStatus != 0) && (softwareUpdateStatus != previousStatus)) {
+								$("#UpdateStatusText").html("<tmpl_var _('webui', 'software_update_check_for_update_error_status_text')>");
+								showPopup("<tmpl_var _('webui', 'software_update_check_for_update_roaming_header_text')>", "<p><tmpl_var _('webui', 'software_update_roaming_error_text')></p>");
+							}                        
+						} else if (softwareUpdateStatusVal === 5) { // WEBUI_SOFTWARE_UPDATE_NETWORK_COVERAGE_ERROR                        
+							if ((previousStatus != 0) && (softwareUpdateStatus != previousStatus)) {
+								$("#UpdateStatusText").html("<tmpl_var _('webui', 'software_update_check_for_update_error_status_text')>");
+								showPopup("<tmpl_var _('webui', 'software_update_check_for_update_cannot_connect_header_text')>", "<p><tmpl_udf GET_PO_TEXT(" software_update_connection_error_text",gProductName)></p>");
+							}                        
+						}
+						isUpdateStarted = false;
+					}
+				}
+				previousStatus = softwareUpdateStatus;
+			}
+
+			function undoChange($el) {
+				if (jQuery.fn.slideButton) $el.slideButton("undo");				
+			}
+
+			function showConfirmation(bool, $enableOptOut) {
+				console.log("showConfirmation start");
+				modalPopup.createWindow('<tmpl_var _("webui", "software_update_automatic_update_off_modal_title")>', "<p><tmpl_var _('webui', 'software_update_automatic_update_off_confirmation_text')></p>", 430, 'auto', [{
+							text : '<tmpl_var _("webui", "webui_modal_cancel_button")>',
+							className : "cancel",
+							trigger : function () {
+								undoChange($enableOptOut);
+							}
+					}, {
+							text : '<tmpl_var _("webui", "webui_modal_confirm_button")>',
+							className : "primary",
+							trigger : function() {
+									optOutFunctionality(bool, $enableOptOut)
+							}
+					}], null, function(){
+					undoChange($enableOptOut);
+					});
+				return false;
+			}
+
+			function triggerCheckForUpdate()
+			{
+				<tmpl_if SoftwareUpdateCheckShow>
+					<tmpl_unless SoftwareUpdateCheckLocked>
+						isUpdateStarted = true;
+						checkForUpdateClicked = true;
+						previousStatus = 1;
+						$.ajax({
+							url : '<tmpl_udf GET_URI("software_update_check")>',
+							type : "POST",
+							data : { gSecureToken : "<tmpl_var gSecureToken>" },
+							dataType : "json",
+							error : function(xhr, textStatus, errorThrown) {
+								showPopup("<tmpl_var _('webui', 'software_update_check_for_update_text')>", "<p><tmpl_udf GET_PO_TEXT( "software_update_connection_error_text",gProductName)></p>");
+								$("#UpdateStatusIndicator").hide();
+								$("#checkForUpdate").show();
+							}
+						});
+					</tmpl_unless>
+				</tmpl_if>
+			}
+
+			function showPopup(title, msg)
+			{
+				modalPopup.createWindow(title, msg, 430, "auto", [{
+					text : '<tmpl_var _("webui", "webui_modal_ok_button")>',
+					className : "primary",
+					trigger: function() {
+						if (downloadPopupShown) {
+							downloadPopupShown = 0;
+						}                   
+					}
+				}], null, function(){
+					if (downloadPopupShown) {
+						downloadPopupShown = 0;
+					}
+				});
+			}
+
+			function getInstallationConfirmation()
+			{
+				<tmpl_if SoftwareUpdateInstallNowShow>
+					<tmpl_unless SoftwareUpdateInstallNowLocked>
+						modalPopup.createWindow("<tmpl_var _('webui', 'software_update_confirm_install_text')>", "<p><tmpl_udf GET_PO_TEXT( 'software_update_confirm_install_line1_text', gProductName, gProductNumber)>"+estimatedUpgradeTime+"<tmpl_var _('webui', 'software_update_confirm_install_line2_text')></p>", 430, "auto", [{
+							text : <tmpl_if InstallNowPopupWithTwoButtonsShow>
+										'<tmpl_var _("webui", "webui_modal_yes_button")>',
+									<tmpl_else>
+										'<tmpl_var _("webui", "webui_modal_ok_button")>',
+									</tmpl_if>
+							className : "primary",
+							trigger : function() {
+								if ((softwareUpdateStatus === 9) && (softwareUpdateStatusVal === 3)) {
+									if (acChargerConnected) {
+										showPopup("<tmpl_var _('webui', 'software_update_low_battery_header_text')>", "<p><tmpl_udf GET_PO_TEXT( 'software_update_battery_low_error_text', gProductName, gProductNumber, lowBatteryWithChargerThresholdLimit)></p>");
+									} else {
+										showPopup("<tmpl_var _('webui', 'software_update_low_battery_header_text')>", "<p><tmpl_udf GET_PO_TEXT( 'software_update_battery_low_error_text', gProductName, gProductNumber, lowBatteryThresholdLimit)></p>");
+									}
+									isUpdateStarted = false;
+									checkForUpdateClicked = false;
+									$("#installNow").show();
+									$("#checkForUpdate").hide();
+
+								} else {
+									$.post("<tmpl_udf GET_URI('software_update_install_now')>", {
+										gSecureToken : "<tmpl_var gSecureToken>"
+									}, function(data) {
+										//redirect to installation page
+										//window.location = "<tmpl_udf GET_URI('software_install')>";
+									});
+								}
+							}                        
+						<tmpl_if InstallNowPopupWithTwoButtonsShow>
+						}, {
+							text : '<tmpl_var _("webui", "webui_modal_no_button")>',
+							className : "cancel",
+							trigger : function() {
+								showDeferPopup();
+							}
+						</tmpl_if> 
+						}], null, function(){
+							<tmpl_if InstallNowPopupWithTwoButtonsShow>
+								showDeferPopup();
+							</tmpl_if> 
+						});
+					</tmpl_unless>
+				</tmpl_if>
+			}
+
+			function showDeferPopup()
+			{
+				<tmpl_if SoftwareUpdateInstallLaterShow>
+					<tmpl_unless SoftwareUpdateInstallLaterLocked>
+						showPopup("<tmpl_var _('webui', 'software_update_menu_text')>", "<tmpl_var _('webui', 'software_update_defer_message_text')>");
+					</tmpl_unless>
+				</tmpl_if>
+			}
+		});
+		/* ]]> */
+	</script>
+
+<tmpl_if isLocked>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+	</div>
+</tmpl_if>
+
+<fieldset id="versionInfo" class="first">
+	<h2 class="sectionHead"><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+	<div class="table noblock">
+		<!-- Software Version -->
+		<div class="form-group clearfix">
+			<tmpl_unless IN_SET(fmVersion, "unknown")>
+                                <div class="form-group">
+                                        <div class="label"><tmpl_var _("webui", "software_update_current_software_modem_version_label")></div>
+                                        <div class="input" id="fmVersion"><tmpl_var fmVersion></div>
+                                </div><!-- /.row -->
+                        </tmpl_unless>
+
+                        <tmpl_unless IN_SET(kernelVersion, "unknown")>
+                                <div class="form-group">
+                                        <div class="label"><tmpl_var _("webui", "software_update_current_software_kernel_version_label")></div>
+                                        <div class="input" id="kernelVersion"><tmpl_var kernelVersion></div>
+                                </div><!-- /.row -->
+                        </tmpl_unless>
+
+                        <tmpl_if showAppVersion>
+                                <tmpl_unless IN_SET(appVersion, "unknown")>
+                                        <div class="form-group">
+                                                <div class="label"><tmpl_var _("webui", "software_update_current_software_app_version_label")></div>
+                                                <div class="input" id="appVersion"><tmpl_var appVersion></div>
+                                        </div><!-- /.row -->
+                                </tmpl_unless>
+                        </tmpl_if>
+
+			<tmpl_unless IN_SET(cuteVersion, "unknown")>
+                                <div class="form-group">
+                                        <div class="label"><tmpl_var _("webui", "software_update_current_software_cute_version_label")></div>
+                                        <div class="input" id="cuteVersion"><tmpl_var cuteVersion></div>
+                                </div><!-- /.row -->
+                        </tmpl_unless>
+
+                        <tmpl_unless IN_SET(priVersion, "unknown")>
+                                <div class="form-group">
+                                        <div class="label"><tmpl_var _("webui", "software_update_current_software_pri_version_label")></div>
+                                        <div class="input" id="priVersion"><tmpl_var priVersion></div>
+                                </div><!-- /.row -->
+                        </tmpl_unless>			
+		</div>
+		<!-- Configuration Version -->
+		<tmpl_if ConfigurationVersionShow>
+			<div class="form-group clearfix">
+				<div class="label">
+					<tmpl_var _("webui", "software_update_current_software_configuration_version_label")>
+				</div>
+				<div class="input" id="configurationVersion">
+					<tmpl_var configurationVersion>
+				</div>
+			</div>
+		</tmpl_if>
+	</div>
+</fieldset>
+	
+	<tmpl_if CIDCShow>
+		<fieldset id="profileUpdate">
+			<h2 class="sectionHead"><tmpl_var _("webui", "software_update_profile_update_header_text")></h2>
+			<div class="table">
+				<div class="form-group clearfix" id="profileUpdateStatus">
+					<div class="label">
+						<tmpl_var _("webui", "software_update_profile_update_status_label")>
+					</div>
+					<div class="input">
+						<tmpl_var profileUpdateStatus>
+					</div>
+					<div class="spinner"></div>
+					<div class="clearfix">
+						<button type="button" id="profileUpdateButton" class="primary">
+							<tmpl_var _("webui", "software_update_profile_update_button_text")>
+						</button>
+						<button type="button" id="profileUpdateCancleButton" class="primary">
+							<tmpl_var _("webui", "webui_modal_cancel_button")>
+						</button>
+						<button type="button" id="profileUpdateOkButton" class="primary">
+							<tmpl_var _("webui", "webui_modal_ok_button")>
+						</button>
+					</div>
+				</div>                
+			</div>
+		</fieldset>
+	</tmpl_if>
+
+	<tmpl_if SuOptOutButtonShow>
+		<fieldset id="optOutSWUpdate" class="first">
+		   <h2 class="sectionHead"><tmpl_var _("webui", "software_update_opt_out_update_sub_header_text")></h2>
+			<div class="toggleSettingContainer align-field" id="optOutSWUpdate">
+			<div class="form-group">
+				<label for="enableOptOut">
+					<tmpl_var _("webui", "software_update_opt_out_update_label")>
+				</label>
+				<div class="toggle" >
+					<input class="toggleSwitchCheckbox" type="checkbox" id="enableOptOut" name="enableOptOut"<tmpl_if IN_SET(enableOptOut, "on" "1")> checked="checked"</tmpl_if><tmpl_if automaticSWUpdateLocked> disabled="disabled" </tmpl_if> <tmpl_if isLocked>disabled="disabled"</tmpl_if> />
+				</div>
+			</div>
+		</div>
+		</fieldset>
+	</tmpl_if>
+
+	<tmpl_if SoftwareUpdateCheckSectionShow>
+		<fieldset id="updateSoftware">
+			<h2 class="sectionHead"><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+			<div class="table noblock">
+				<div class="form-group clearfix">
+					<div class="label">
+						<tmpl_var _("webui", "software_update_check_for_update_time_label")>
+					</div>
+					<div class="input" id="LastCheckForUpdateTime">
+						<tmpl_var LastCheckForUpdateTime>
+					</div>
+				</div>
+				
+				<div class="form-group clearfix">
+					<div class="label">
+						<tmpl_var _("webui", "software_update_check_for_update_status_label")>
+					</div>
+					<div class="input input-textbox" id="UpdateStatus">
+						<div id="UpdateStatusText">
+							<tmpl_unless SystemUpdateHappened>
+								<tmpl_var _("webui", "software_update_last_update_never_text")>
+							</tmpl_unless>
+						</div>
+						<div id="UpdateStatusIndicator" style="display:none;">
+							<table>
+								<tr>
+									<td class="loading"></td>
+									<td><tmpl_var _("webui", "software_update_please_wait_text")></td>
+								</tr>
+							</table>
+						</div>
+						<div id="download_progress_wrapper" class="progress_bar_wrapper clearfix" style="display:none;">
+							<div id="download_progress_bar" class="data_usage progress_bar ui-progressbar">
+								<div id="totalUsagePercentage" class="ui-widget-header" style="width:100%;"></div>
+								<div id="lineUsagePercentage" class="ui-widget-header-line" style="width:0%;"></div>
+							</div>
+							<span id="ProgressBarZeroPercent"><tmpl_var _("webui", "webui_numeric_zero_text")><tmpl_var _("webui", "webui_percentage_symbol")></span>
+							<span id="ProgressBarHundredPercent"><tmpl_var _("webui", "webui_numeric_one_text")><tmpl_var _("webui", "webui_numeric_zero_text")><tmpl_var _("webui", "webui_numeric_zero_text")><tmpl_var _("webui", "webui_percentage_symbol")></span>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.table -->
+
+			<br/>
+
+			<tmpl_if SoftwareUpdateCheckShow>
+				<div class="button_container align-field clearfix">	
+				<button type="button" id="checkForUpdate" class="primary" <tmpl_if SoftwareUpdateCheckLocked>disabled="disabled"</tmpl_if> <tmpl_if isLocked> disabled="disabled"</tmpl_if>>
+					<tmpl_var _("webui", "software_update_check_for_update_button")>
+				</button>
+				</div>
+			</tmpl_if>
+
+			<div class="form-group clearfix">
+				<tmpl_if ToggleSystemUpdateHistory>
+					<div class="label" id="installButtonsLabel">&nbsp;</div>
+				</tmpl_if>
+				<div class="col" id="installBtns">
+					<tmpl_if SoftwareUpdateInstallNowShow>
+						<button type="button" id="installNow" class="primary" style="display:none;" <tmpl_if SoftwareUpdateInstallNowLocked>disabled="disabled"</tmpl_if> <tmpl_if isLocked> disabled="disabled"</tmpl_if>>
+							<tmpl_var _("webui", "software_update_install_now_button")>
+						</button>
+					</tmpl_if>
+
+					<tmpl_if SoftwareUpdateInstallLaterShow>
+						<button type="button" id="installLater" class="secondary" style="display:none;" <tmpl_if SoftwareUpdateInstallLaterLocked>disabled="disabled"</tmpl_if> <tmpl_if isLocked> disabled="disabled"</tmpl_if>>
+							<tmpl_var _("webui", "software_update_install_later_button")>
+						</button>
+					</tmpl_if>
+				</div>
+			</div>
+		</fieldset>
+	</tmpl_if>
+
+	<br/>
+
+	<tmpl_if LastSoftwareUpdateSectionShow>
+		<tmpl_include "last_record_format.tmpl">
+	</tmpl_if>
+
+	<br/>
+
+	<fieldset id="UpdateHistory">
+		<h2 <tmpl_if ToggleSystemUpdateHistory>class="hideShowSection" id="HistoryTableToggle"<tmpl_else>class="sectionHead"</tmpl_if>><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+		<div id="HistoryTable" <tmpl_if ToggleSystemUpdateHistory>style="display:none;"</tmpl_if>>
+			<tmpl_include "history_table_format.tmpl">
+		</div>
+	</fieldset>
+</tmpl_if> <!-- isHidden -->
+

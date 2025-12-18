@@ -1,0 +1,16 @@
+<Config>
+	<Init>
+		<Profile>mifi</Profile> <!-- powersave profiles supported. mifi (for rooney type device) usb(for metcalf type devices) -->
+		<PollingInterval>5</PollingInterval> <!-- polling interval between each iteration of powersave process -->
+		<FreqScalingEnabled>1</FreqScalingEnabled> <!-- dynamic frequency scaling enabled/disabled -->
+		<FreqScalingGovernor>performance</FreqScalingGovernor> <!-- dynamic frequency scaling governor -->
+		<FreqScalingOptions>50</FreqScalingOptions> <!-- dynamic frequency scaling options -->
+	</Init>
+	<Suspend>
+		<Condition>dsm state online_battery lpm_ac</Condition> <!-- check for dsm state online_battery, online_ac, lpm_ac -->
+		<Condition>ifc bridge0 idle 10</Condition> <!-- check for activity on a given interface with a specified timeout in seconds -->
+		<Condition>usb state suspended</Condition> <!-- check for usb state suspended/resumed -->
+		<Condition>display state off</Condition> <!-- check for display state -->
+		<PeriodicWakeup>60</PeriodicWakeup> <!-- time in seconds for the device to wakeup from suspend for checking temperature etc -->
+	</Suspend>
+</Config>

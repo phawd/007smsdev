@@ -1,0 +1,80 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>Administratoriaus slapta
+odis</h1>
+valga</h2>
+	<p>Administratoriaus slapta
+odis naudojamas prisijungti prie 
+ios <tmpl_var _("webui", "webui_product_name")> administratoriaus svetain
+s. Puslapyje <em>Administratoriaus slapta
+odis</em> galite pakeisti administratoriaus slapta
+ ir nustatyti tam tikr
+ su administratoriaus slapta
+iu susijusi
+ saugos parinkt
+	<h2>Keisti <tmpl_var _("webui", "webui_product_name")> administratoriaus slapta
+dami pakeisti dabartin
+ administratoriaus slapta
+, pirmiausia turite 
+emiau esan
+iame lauke 
+vesti dabartin
+ administratoriaus slapta
+. Ekranas tada bus atnaujintas, o jame pateikta parinktis nustatyti nauj
+ administratoriaus slapta
+ ir saugumo klausim
+, naudotin
+ praradus administratoriaus slapta
+	<h3>Dabartinis <tmpl_var _("webui", "webui_product_name")> administratoriaus slapta
+odis</h3>
+iame lauke 
+veskite dabartin
+ <tmpl_var _("webui", "webui_product_name")> administratoriaus slapta
+. Atminkite, kad jei per daug kart
+vesite neteising
+ioje <tmpl_var _("webui", "webui_product_name")> administratoriaus svetain
+blokuoti. Norint i
+, <tmpl_var _("webui", "webui_product_name")> reikia paleisti i
+ naujo.</p>
+	<tmpl_if showDisplayPascode>
+		<h2>Rodyti <tmpl_var _("webui", "webui_product_name")> administratoriaus slapta
+		<p>Jei 
+i nuostata 
+JUNGTA, rodoma 
+*********
+i nuostata I
+JUNGTA, administratoriaus slapta
+odis gali b
+ti rodomas 
+ ekrane.</p>
+	</tmpl_if>
+	<h2>Keisti <tmpl_var _("webui", "webui_product_name")> administratoriaus slapta
+	<h3>Naujas administratoriaus slapta
+odis</h3>
+veskite nauj
+ administratoriaus slapta
+ naudodami tik raides, skai
+ius ir standartinius skyrybos 
+enklus. Slapta
+ turi sudaryti bent 8 
+enklai.</p>
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+iame lauke i
+veskite nauj
+ administratoriaus slapta
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+is saugumo klausimas naudojamas, jei prarandamas administratoriaus slapta
+odis ir naudojama parinktis 
+au administratoriaus slapta
+. Pasirinkite norim
+ klausim
+emiau esan
+iame lauke pateikite atsakym
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Pateikite atsakym
+ pirmiau pasirinkt
+ saugumo klausim
+. Atminkite, kad atsakymuose skiriamos did
+iosios ir ma
+osios raid
+<!-- id="set_passcode" -->

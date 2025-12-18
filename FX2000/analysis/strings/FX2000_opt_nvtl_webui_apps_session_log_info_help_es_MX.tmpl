@@ -1,0 +1,31 @@
+<!-- Internet  Sessions -->
+<div id="session_log_info">
+	<h1><tmpl_var _("webui", "session_log_info_menu_text")></h1>
+	<p>El registro de sesi
+n contiene los siguientes datos:</p>
+	<p>- Fecha y hora: la fecha y la hora en que comenz
+ la sesi
+n de Internet.</p>
+	<p>- Duraci
+n: el tiempo total de la sesi
+n de Internet.</p>
+	<p>- Datos recibidos: la cantidad de datos recibidos para la sesi
+n de Internet. Este contador comienza de cero cuando se establece la conexi
+	<p>- Datos transmitidos: la cantidad de datos transmitidos para la sesi
+n de Internet. Este contador comienza de cero cuando se establece la conexi
+	<p>- Datos totales: la cantidad total de datos para la sesi
+n de Internet. Esta es la suma de los datos recibidos y los datos transmitidos.</p>
+	<tmpl_if RoamingStatusShow>
+		<p>- Itinerancia (itinerancia/parcial/en blanco) En blanco = red dom
+stica</p>
+	</tmpl_if>
+	<p>- IPv4: la direcci
+n IP para la sesi
+	<p>- IPv6: la direcci
+n IPv6 global para la sesi
+n (en blanco si IPv6 est
+ desactivado o no es compatible con la conexi
+n de red actual o el operador).</p>
+	<p>El registro est
+ en orden de fecha. </p>
+	<p>El usuario no puede cambiar el orden y no hay opciones relacionadas con el registro de sesi

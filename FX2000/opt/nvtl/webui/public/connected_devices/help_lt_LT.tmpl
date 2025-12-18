@@ -1,0 +1,81 @@
+<!-- Connected Devices -->
+<div id="connected_devices">
+	<h1><tmpl_var _("webui", "connected_devices_menu_text")></h1>
+	<h2>Apžvalga</h2>
+	<p>
+		Šiame puslapyje rodoma išsami informacija apie kiekvieną prie <tmpl_var _("webui", "webui_product_name")> prijungtą įrenginį, taip pat pateikiamas visų užblokuotų įrenginių sąrašas.
+	</p>
+
+	<h2><tmpl_var _("webui", "connected_devices_sub_header_text")></h2>
+	<p>
+		Šioje lentelėje pateikiamas visų prie „Wi-Fi“ tinklo prijungtų įrenginių sąrašas. „Wi-Fi“ tinklo pavadinimas rodomas po antraštės. Jei mobiliąją saitvietę naudojantis kompiuteris prijungiamas <tmpl_var _("webui", "webui_product_name")> per USB laidą, tas kompiuteris bus nurodytas šioje lentelėje.
+	</p>
+	<p>
+		Rodoma tokia informacija apie kiekvieną prijungtą įrenginį:
+	</p>
+
+	<h3>Ryšio tipas</h3>
+	<p>Piktograma nurodo kiekvieno prijungto įrenginio ryšio tipą.</p>
+
+	<h3>Pavadinimas</h3>
+	<p>
+		Dažniausiai tai būna prijungto įrenginio pagrindinio kompiuterio pavadinimas, nustatytas pačiame prijungtame įrenginyje. Retais atvejais pagrindinio kompiuterio pavadinimas gali būti netinkamas. Jei prijungto įrenginio pavadinimui pakeisti naudojote parinktį „Redaguoti“, vietoje pagrindinio kompiuterio pavadinimo rodomas jūsų pateiktas pavadinimas.
+	</p>
+	<p>
+		Norėdami pakeisti bet kurio prijungto įrenginio pavadinimą, galite naudoti parinktį „Redaguoti“.
+	</p>
+	
+	<h3>IP adresas</h3>
+	<p>Prijungto įrenginio IP adresas.</p>
+
+	<h3>
+		<tmpl_var truncate(_("webui", "connected_devices_mac_address_label"), (size(_("webui", "connected_devices_mac_address_label")) - size(":")))>
+	</h3>
+	<p>
+		MAC adresas yra unikalusis šio prijungto įrenginio tinklo identifikatorius.
+	</p>
+
+	<tmpl_if isIPv6Supported>
+		<h3>
+			<tmpl_var truncate(_("webui", "connected_devices_link_local_label"), (size(_("webui", "connected_devices_link_local_label")) - size(":")))>
+		</h3>
+		<p>
+			Jei prijungtas įrenginys palaiko IPv6, rodomas vietinio ryšio IPv6 adresas.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if GuestWifiSupported>
+		<h2><tmpl_var _("webui", "connected_devices_guest_title")></h2>
+		<p>
+			Jei naudojamas svečio „Wi-Fi“ tinklas, šioje lentelėje pateikiamas visų prie svečio „Wi-Fi“ tinklo prijungtų įrenginių sąrašas. „Wi-Fi“ tinklo pavadinimas rodomas po antraštės.
+		</p>
+		
+		<p>
+			Čia išvardytų įrenginių pateikimas ir veikimas yra identiškas pagrindiniame tinkle išvardytų įrenginių pateikimui ir veikimui.
+		</p>
+	</tmpl_if>
+	
+	<h2>Įrenginių blokavimas ir blokavimo panaikinimas</h2>
+	<h3>Mygtukas „Užblokuoti“</h3>
+	<p>
+		Spustelėjus mygtuką „Užblokuoti“ atjungiamas prijungtas įrenginys ir neleidžiama jo vėl prijungti. Tada užblokuotas įrenginys rodomas užblokuotųjų sąraše.
+	</p>
+	<p>
+		Užblokuoti įrenginiai blokuojami ir svečio, ir pagrindiniame tinkle.
+	</p>
+	<p>
+		Šią parinktį galima naudoti su kiekvienu prijungtu įrenginiu, išskyrus savo įrenginį ir bet kurį per USB prijungtą įrenginį.
+	</p>
+	
+	<h3>Užblokuotųjų sąrašas</h3>
+	<p>
+		Pateikiamas visų jūsų užblokuotų įrenginių sąrašas. Atminkite, kad šie įrenginiai šiuo metu neprijungti ir jų prisijungimas užblokuotas, todėl jie neturi IP adreso. Dėl to jie identifikuojami pagal savo pavadinimą ir MAC adresą.
+	</p>
+	
+	<h3>Mygtukas „Panaikinti užblokavimą“</h3>
+	<p>
+		Spustelėjus mygtuką „Panaikinti užblokavimą“ panaikinamas anksčiau blokuoto įrenginio užblokavimas, leidžiant jam vėl prisijungti. Atblokuotas įrenginys pašalinamas iš užblokuotųjų sąrašo ir, kai prisijungia, vėl rodomas prijungtų įrenginių sąraše.
+	</p>
+</div>
+<!-- id="connected_devices" -->
+

@@ -1,0 +1,304 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+fota_api_is_running
+fota_get_max_allowed_pkg_size
+fota_get_sideload_max_allowed_pkg_size
+fota_create_session
+fota_clear_session
+fota_cfg_save_new_record
+fota_cfg_get_current_record
+fota_get_update_status
+fota_get_revert_status
+fota_get_last_successful_record
+fota_get_time_of_last_update_check
+fota_set_time_of_last_update_check
+fota_get_full_update_history
+snprintf
+fota_get_current_sess_record
+fota_abort_current_sess
+getopt_long
+fota_modify_record_by_id
+fota_validate_update_pkg
+fota_start_installation
+fota_start_installation_wait_time
+fota_sideload_start_installation
+fota_sua_update_start
+fota_incr_install_defer_count
+fota_decrypt_pkg
+fota_do_factory_reset
+fota_stop_in_recovery
+fota_do_file_operation
+fota_sideload_prepare_package
+fota_get_install_progress_status
+fota_get_kernel_version
+mifi_dbg_start
+__bss_start
+libfota_api.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+librt.so.1
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libcrypto.so.1.1
+libpowersave_api.so
+libmodem2_api.so
+H	KxD	J{D
+sideload_prepare
+Private API, Sideload pkg unpack, decrypt and create final file.
+Private API, Test file operations.
+Private API, decrypt a package.
+factory_reset
+Private API, execute fota application factory reset.
+stop_in_recovery
+Private API, stop in recovery mode for debug.
+------------------
+Below list is popular commands
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if FOTA process is running.
+max_pkg_size
+Get the maximum package size allowed for OMADM/NUA download
+sideload_max_pkg_size
+Get the maximum package size allowed for sideload download
+new_session
+Create new session with FOTA process.
+clear_session
+Clear the existing session.
+cfg_save_new_record
+Save CFG update information to history DB.
+cfg_get_current_record
+Get latest CFG update version from DB.
+update_status
+Show update status.
+revert_status
+Show revert status.
+last_success
+Show history of last successful update.
+last_update_check
+Show time when last update check was done.
+set_last_update_check
+Update time when last update check was done.
+full_history
+Show all update history records.
+abort_session
+Abort current fota session if exists.
+current_record
+Get current fota session record, if exists.
+incr_defer_count
+Increase installation defer count by 1.
+modify_record
+Modify an existing record based on ID.
+verify_pkg
+Unpack and validate update package.
+Start installation of update.
+install_wait
+Start installation of update with wait time in seconds.
+sideload_install
+Start sideload of an update package.
+sua_update_start
+install_progress_status
+Get install progress status.
+get_kernel_version
+Get MiFiOS kernel version.
+filepath
+status_str
+update_date
+update_type
+pkg_name
+est_update_time
+post_dnld_msg
+post_dnld_url
+install_defer_count
+FOTA: success.
+FOTA: general error.
+FOTA: one or more bad parameters passed into a function.
+FOTA: one or more buffer type parameters passed into API is too small.
+FOTA: the feature is unsupported.
+FOTA: process not running.
+FOTA: a device reset is required for the operation to take effect.
+FOTA: memory allocation failed.
+FOTA: error in memory allocation.
+FOTA: Session is already taken by some other agent
+FOTA: Session lock with matching ID doesn't exist
+FOTA: Cannot find update package in the path specified
+FOTA: Update package is not a Linux regular file
+FOTA: Update package too big
+FOTA: Not enough flash space to complete operation
+FOTA: package decryption failed
+FOTA: package validation failed
+FOTA: device version and package source version not matching
+FOTA: failed to kickoff installation
+FOTA: failed to find respective record in history database
+FOTA: Sideload session in progress
+FOTA: File not found
+FOTA: File creation failed
+FOTA: File write failed
+FOTA: File read found
+FOTA: FOTA installation in progress
+FOTA: unknown error.
+  ---------------------------------------------------------------------------
+ %25s - %s
+  ---------------------------------------------------------------------------
+fota_api_is_running returned %d (%s)
+fota_get_max_allowed_pkg_size returned %d (%s)
+Max package size in bytes:[%u]
+fota_get_sideload_max_allowed_pkg_size returned %d (%s)
+%s %s <Agent name>
+fota_create_session returned %d (%s)
+fota_clear_session returned %d (%s)
+%s %s <configuration version> <update date> <device fw/sw version>
+For example:
+%s %s "B14.NVT.MiFi7730L.0" "05-18-2016-17:45:27" "9x40RNY-3.08-2.33"
+fota_cfg_save_new_record returned %d (%s)
+fota_cfg_get_current_record returned %d (%s)
+Configuration version:[%s]
+Update date:[%s]
+fw version:[%s]
+Records to print:[%d]
+Record no:[%d]
+------------
+Record id:[%u]
+FOTA_RECORD_TYPE_CFG
+FOTA_RECORD_TYPE_REVERTED_CFG
+FOTA_RECORD_TYPE_SU
+Record type:[%d](%s)
+Version:[%s]
+Status:[%d](%s)
+Package Name:[%s]
+Description:[%s]
+Size in bytes:[%ld]
+Mandatory
+Optional
+Update type:[%d](%s)
+Source:[%s]
+Vendor:[%s]
+Est upd. time:[%d]
+post_dnld_msg:[%s]
+post_dnld_url:[%s]
+Agent:[%s]
+Boot preference:[%d]
+install_defer_count:[%d]
+fota_get_update_status returned %d (%s)
+fota_get_revert_status returned %d (%s)
+fota_get_last_successful_record returned %d (%s)
+fota_get_time_of_last_update_check returned %d (%s)
+Last update check timestamp:[%s]
+%s %s <timestamp in format "m-d-Y-H:M:S">
+%s %s "06-29-2016-18:28:39"
+fota_set_time_of_last_update_check returned %d (%s)
+fota_get_full_update_history returned %d (%s)
+No upgrade history
+calloc returned %d (%s)
+fota_get_current_sess_record returned %d (%s)
+%s %s <Agent name> <result code> <result string>
+fota_abort_current_sess returned %d (%s)
+a:b:c:d:e:f:g:q:i:j:k:l:m:n:o:p:
+%s %s [<options>]
+Where as options can be:
+	-%c(%s)
+Printing Input settings:
+fota_modify_record_by_id returned %d (%s)
+a:p:t:l:v:n:d:s:m:
+For example:
+%s verify_pkg -a test -p /tmp/upgrade.zip -t 0 -l 150 -v MDM9X25-2.43.3-1.99 -n "name" -d "description" -s "From CLI" -m "NVTL"
+fota_validate_update_pkg returned %d (%s)
+record_id=[%u]
+%s %s <Agent name> <Boot preference>
+Where as boot preferece value is(int):
+FOTA_BOOT_ONLINE=%d
+FOTA_BOOT_SHUTDOWN=%d
+FOTA_BOOT_LPM=%d
+fota_start_installation returned %d (%s)
+FOTA installation started, watch device about to reboot!!
+%s %s <Agent name> <Boot preference> <wait_secs>
+%s %s <Agent name> <pkg path> <modem version> <mifios version> <pri version>
+Example usage:
+%s %s "sideload_agent" "/tmp/sideload.enc" "9x40RNY-3.08" "2.33" "0"
+fota_sideload_start_installation returned %d (%s)
+Sideload installation started, watch device about to reboot!!
+Estimated update time:[%u] min
+%s %s <model> <imei> <mdn> <modem version> <mifios version> <pri version>
+%s %s "MIFI8800L" "990009310000164" "15412460694" "SDx20ALP-1.18" "2.96" "0"
+fota_sua_update_start returned %d (%s)
+fota_incr_install_defer_count returned %d (%s)
+%s %s <private_key> <signer_cert> <encryp_input> <output_file> <temp_file> <use_min_flash>
+/opt/nvtl/etc/fota/device.pem
+%s %s %s %s input.enc output.zip /tmp/temp_file 1
+/opt/nvtl/etc/fota/build_cert.pem
+fota_decrypt_pkg returned %d (%s)
+fota_do_factory_reset returned %d (%s)
+%s %s <0/1(stop in recovery mode)>
+fota_stop_in_recovery returned %d (%s)
+%s %s <fops> <fpath> [<data>]
+where as fops is:
+%d-->FOTA_FOPS_CREATE_ONLY
+%d-->FOTA_FOPS_CREATE_AND_WRITE
+%d-->FOTA_FOPS_READ_STR
+%d-->FOTA_FOPS_READ_UINT32
+%d-->FOTA_FOPS_REMOVE
+Missing data arguement
+fota_do_file_operation returned %d (%s)
+data=[%s], len=%u
+data=[%u], len=%u
+%s %s <Path to sideload package file>
+fota_sideload_prepare_package returned %d (%s)
+fota_get_install_progress_status returned %d (%s)
+FOTA is not in progress
+FOTA in progress
+FOTA in progress and about to reboot
+Error. progress ststus is [%d]
+fota_get_kernel_version returned %d (%s)
+kernel version :[%s]
+Failed to get kernel version
+command [%s]
+command [%s] not found.
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

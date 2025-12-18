@@ -1,0 +1,364 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+wifi_get_error_string
+wifi_api_is_running
+wifi_log_internal_config
+wifi_start_wps_session
+wifi_stop_wps_session
+wifi_get_ap_profile
+wifi_get_capabilities
+wifi_set_ap_profile
+wifi_get_ap_settings
+wifi_set_ap_settings
+wifi_get_wlan_settings
+wifi_get_ap_chlist2_4
+wifi_get_ap_chlist5
+wifi_set_wlan_settings
+wifi_get_mac
+wifi_get_enabled
+wifi_set_enabled
+wifi_ap_get_associate_sta_list
+wifi_get_sta_enabled
+wifi_set_sta_enabled
+wifi_get_ap_enabled
+wifi_set_ap_enabled
+wifi_ap_apply_profiles
+__isoc99_sscanf
+GLIBC_2.7
+wifi_update_blacklist_mac
+wifi_get_pindex_from_intf
+wifi_set_power_save_enabled
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+mifi_dbg_start
+__bss_start
+librt.so.1
+libmifimsgbus.so
+libxmldata_api.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+librouter2_api.so
+libdmdb_api.so
+libmificommon.so
+libmifi_debug.so
+libxml2.so.2
+libz.so.1
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libwifi_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+Logs the internal status of wifi.
+get_ap_profile
+Gets the wifi profile.
+set_ap_profile
+Sets the wifi profile.
+start_wps
+Starts the WPS session on the given interface.
+stop_wps
+Stops the WPS session on the given interface.
+get_caps
+Gets the wifi chip capabilities.
+Gets the wifi mac address.
+get_enable
+Gets the Wifi feature status
+set_enable
+Sets the Wifi feature status
+get_ap_enable
+Gets the Wifi AP enable.
+set_ap_enable
+Sets the Wifi AP enable.
+get_sta_enable
+Gets the Wifi STA enable.
+set_sta_enable
+Sets the Wifi STA enable.
+get_sta_list
+Gets wifi interface associated stations list
+set_all_profiles
+Sets Wifi all profiles.
+set_profile_status
+Sets Wifi profile status.
+set_ap_settings
+Sets Wifi AP settings.
+get_ap_settings
+Gets Wifi AP settings.
+get_settings
+Gets Wifi settings.
+set_settings
+Sets Wifi settings.
+add_mac_blist
+Sets a MAC addr to blacklist.
+get_pindex
+Gets profile index from interface index.
+set_wifi_ps
+Sets power save mode only for Wifi.
+get_band_status
+Gets 2GHZ/5GHZ Enabled/Disabled Status
+get_ap_chlist2_4
+Get 2.4 GHZ channel list
+get_ap_chlist5
+Get 5GHZ  channel list
+  --------------------------------------------------------------------------- 
+  %-25s - %s
+  ---------------------------------------------------------------------------
+wifi_is_running returned %d (%s)
+wifi_cmd_log returned %d (%s)
+BGNPLUSAX
+ACNPLUSAX
+WPA2 MIX
+WPA3 Transition
+OWE Transition
+TKIP & AES
+secondary
+Invalid number of command line parameters!!!
+<Profile Index [1-4]> <WPS Methos PIN or PBC [1/2]> <PIN if PIN method>.
+Invalid Profile index.
+Invalid WPS method.
+Enter the AP profile index (1-%d):
+Invalid wifi interface index.
+Invalid wifi AP index is given.
+Enter the WPS methos PIN or PBC (1-2):
+Enter WPS Pin:
+wifi_start_wps_session returned %d (%s)
+<AP profile index [1-4]>
+Invalid AP profile index.
+Enter the Wifi AP profile index (1-%d):
+Invalid wifi AP profile index.
+Invalid wifi profile index given.
+wifi_stop_wps_session returned %d (%s)
+<Profile Index> 
+Invalid profile index.
+Enter the Wifi profile index (1-4):
+Invalid Wifi profile %d index.
+wifi_get_ap_profile returned %d (%s)
+Profile status         : [%d]
+Profile name           : [%s]
+SSID                   : [%s]
+Ignore broadcast SSID  : [%d]
+Wifi privacy           : [%d]
+Interface Feature Flags: [
+BLACKLIST, 
+WHITELIST, 
+INTERFACE_ISOLATION, 
+NO_GUEST_FILE_SHARING, 
+NO_GUEST_WEB_ACCESS
+WPS status             : [%d]
+Channel                : [%d]
+Channel width          : [%s]
+Mode                   : [%s]
+Security type          : [%s]
+Encryption type        : [%s]
+Authentication type    : [%s]
+WEP key index          : [%d]
+WEP key%d             : [%s]
+WPA Pre-Shared Key     : [%s]
+Failed to read the capabilities.
+<profile index (1-5)> <status (0/1)> <profile-name> <ssid> <ignore-broadcast_ssid (0/1)> <wps (0/1)>
+<Privacy (0/1)> <Interface feature mask (0-31)> <mode (1-14)> <channel> <channel width (1-3)> <security type (0-5)>
+ <Encryption type (1-5)> <auth-type (1-2)> <WEP Index (0-3)> <Wep Keys-4> <passphrase>
+Invalid Profile index: error code:%d (%s)
+Invalid Profile status: error code:%d (%s)
+Invalid Broadcast SSID status: error code:%d (%s)
+Invalid WPS status: error code:%d (%s)
+Invalid Wifi privacy: error code:%d (%s)
+Invalid IfaceFeatureMask: error code:%d (%s)
+Invalid Wifi mode: error code:%d (%s)
+Invalid Channel: error code:%d (%s)
+Invalid Channel Width: error code:%d (%s)
+Invalid Wifi security type: error code:%d (%s)
+Invalid Wifi encryption type: error code:%d (%s)
+Invalid authentication type: error code:%d (%s)
+Invalid Wifi WEP index: error code:%d (%s)
+Profile index (1-5): 
+Invalid profile Index: error code:%d (%s)
+Profile status (0/1): 
+Invalid profile status: error code:%d (%s)
+Profile name (1 - %d characters): 
+SSID (1 - %d characters):
+Broadcast SSID  (broadcast=0 /no broadcast=1): 
+Invalid broadcast SSID status: error code:%d (%s)
+WPS status (0/1): 
+Wifi privacy (0/1): 
+Interface Feature Mask (1=BL, 2=WL, 3=BL/WL 4=II, 5=II/BL, 6=II/WL, 7=BL/WL/II, 8=GF, 16=GW): 
+Invalid Interface feature Mask: error code:%d (%s)
+Mode (1=BGN, 2=BG, 3=B, 4=G_2.4, 5=GN_2.4, 6=N_2.4, 7=AC_2.4, 8=A, 9=N_5, 10=AN, 11=AC_5, 12=AC_ONLY_5, 13=BGN_PLUS_AX_2.4, 14=ACN_PLUS_AX_5): 
+Channel (1-11=2.4 GHz., x-y=5 GHz., 0=ACS): 
+Channel Width (1=20 MHz, 2=40 MHz, 3=80 MHz): 
+Invalid channel width: error code:%d (%s)
+Security type (0=None, 1=WEP, 2=WPA, 3=WPA2, 4=WPA2MIX, 5=WPA3, 6=WPA3 Transition, 7=OWE, 8=OWE Transition): 
+Invalid Wifi Security: error code:%d (%s)
+Enryption Mode (1=64 bit, 2=128 bit, 3=TKIP, 4=AES, 5=TKIP & AES): 
+Invalid Wifi Encryption: error code:%d (%s)
+Passphrase Key for WPA,WPA2, WPA2Mix Mode or WPA3 Mode (8 - %d characters): 
+Authentiction Type <1=Open, 2=Shared>:
+Invalid Wifi authentiction type: error code:%d (%s)
+WEP Index (0-3): 
+WEP %d Key :
+wifi_set_ap_profile returned %d (%s)
+wifi_get_ap_settings returned %d (%s)
+AP mode is             : [%d] 
+Max Number of Clients  : [%d]
+<AP mode (0/1)> <Max Clients (0-30)>
+Invalid AP status: error code:%d (%s)
+Invalid Max number of STA: error code:%d (%s)
+AP status (0/1): 
+Max number of clients: 
+Invalid Max number of clients: error code:%d (%s)
+wifi_set_ap_settings returned %d (%s)
+wifi_get_wlan_settings returned %d (%s)
+Wifi is                     : [%d]
+Country Code                : [%s]
+Wifi 2.4 Ghz Channel list: %s
+Wifi 5 Ghz Channel list: %s
+<Wifi status (0/1)>  <Country code (US/JP)>
+Invalid Wifi status: error code:%d (%s)
+Wifi status (0/1): 
+Country Code (US/JP): 
+wifi_set_wlan_settings returned %d (%s)
+wifi_get_capabilities returned %d (%s)
+WPS Available                      : [%d]
+Allowed Wifi modes                 : [
+Wifi support max clients           : [%d]
+Wifi system max clients allowed    : [%d]
+Wifi Max number of interface       : [%d]
+Countries Supported                : [%s]
+Wifi US 2.4 GHz supported channels : [
+Wifi US 5 GHz supported channels   : [
+Wifi JP 2.4 GHz supported channels : [
+Wifi JP 5 GHz supported channels   : [
+<Interface index 0/1>
+Invalid interface index.
+Enter the Wifi interface index 0/1:
+Invalid Wifi interface index.
+wifi_get_mac_addr returned %d (%s)
+The mac address for Wifi interface is :[%02x:%02x:%02x:%02x:%02x:%02x]
+Invalid number of arguments.
+wifi_get_enable returned %d (%s)
+Wifi feature is :[%d] 
+<Wifi Status 0/1>
+Invalid wifi status.
+Enter Wifi status 0/1 (OFF/ON):
+Invalid Wifi status.
+wifi_set_enable returned %d (%s)
+wifi_ap_get_associate_sta_list returned %d (%s)
+STA associated with the AP are : [%d]
+ MAC Addr[%d]: [%02x:%02x:%02x:%02x:%02x:%02x]
+wifi_get_sta_enabled returned %d (%s)
+Wifi STA mode is :[%d] 
+<STA Mode status (0/1)> 
+wifi_set_ap_enabled returned %d (%s)
+Enter STA status (0=Disable, 1=Enable):
+Invalid STA mode status.
+wifi_set_sta_enabled returned %d (%s)
+wifi_get_ap_enabled returned %d (%s)
+Wifi AP mode is :[%d] 
+<AP Mode status (0/1)> 
+Enter AP status (0=Disable, 1=Enable):
+Invalid AP mode status.
+wifi_ap_apply_profiles returned %d (%s)
+Wifi profiles applied successfully.
+<Profile Index [1-4]> <Profile Status [0/1]>.
+Invalid profile status.
+Enter the profile index (1-4):
+Enter the profile status (0=Disable, 1=Enable):
+<Blacklist MAC address> <Reason code(1=WL,2=BL,3=Both)> <Ifname>.
+wifi_update_blacklist_mac returned %d (%s)
+Invalid MAC address.
+Mac=[%s]
+%02X:%02X:%02X:%02X:%02X:%02X
+Invalid blacklist reason
+Enter blacklist MAC address:
+Enter the Reason for blacklist(1=WL,2=BL,3=Both):
+Invalid blacklist status.
+Enter the interface name <wlan0/wlan1>:
+Invalid MAC address given.
+<Interface Index>.
+wifi_get_pindex_from_intf returned %d (%s)
+Profile index on the interface %d is :%d 
+<Turn on/off Wifi due to powersave (0/1)> 
+wifi_set_power_save_enabled %d (%s)
+Enter Wifi status due to powersave (0=Disable, 1=Enable):
+Invalid Wifi status due to powersave.
+wifi_set_power_save_enabled returned %d (%s)
+wifi.5ghz.disabled
+wifi_cli: Received 5GHZ profile disabled status
+wifi.5ghz.enabled
+wifi_cli: Received 5GHZ profile enabled status
+wifi.2ghz.disabled
+wifi_cli: Received 2.4GHZ profile disabled status
+wifi.2ghz.enabled
+wifi_cli: Received 2GHZ profile enabled status
+WIFI_CLI_MBH
+%s: MsgBus_Create Failed
+%s: MsgBus_Connect Failed
+%s: MsgBus_SetCallback Failed
+%s: MsgBus_Subscribe to WiFi 5GHZ profiles disabled status
+%s: MsgBus_Subscribe to WiFi 5GHZ profiles enabled status
+%s: MsgBus_Subscribe to WiFi 2.4GHZ profiles disabled status
+%s: MsgBus_Subscribe to WiFi 2.4GHZ profiles enabled status
+%s: Init MsgBus done
+%s: Disable Message bus interface
+Invalid band status.
+Enter the Wifi band (0=2.4GHZ, 1=5GHZ) to wait for 0/1:
+Enter the Wifi band status(0=DISABLE, 1=ENABLE) to wait for 0/1:
+wifi_get_band_status: band=%d to wait for status is :[%d] 
+wifi_get_band_status: WIFI_2GHZ disabled waiting for enabled status
+wifi_get_band_status: WIFI_2GHZ enabled waiting for disabled status
+wifi_get_band_status: WIFI_5GHZ disabled waiting for enabled status
+wifi_get_band_status: WIFI_5GHZ enabled waiting for disabled status
+Error attaching to the message bus, terminating.
+command [%s]
+command [%s] not found.
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

@@ -1,0 +1,351 @@
+<!-- Diagnostics -->
+<div id="status_diagnostics">
+	<h1><tmpl_var _("webui", "status_diagnostics_menu_text")></h1>
+versikt</h2>
+	<p>Denna sida inneh
+ller information om <tmpl_var _("webui", "webui_product_name")> och tillg
+ngliga n
+tverk. Anv
+nd den efter behov f
+kning. Det kr
+vs inte f
+r normal drift.</p>
+	<h2><tmpl_var _("webui", "status_diagnostics_modem_sub_header_text")></h2>
+	<tmpl_if showPhoneNumber>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_phone_number_label"), (size(_("webui", "status_diagnostics_phone_number_label")) - size(":")))></h3>
+		<p>Detta 
+r telefonnumret till <tmpl_var _("webui", "webui_product_name")>.</p>
+	</tmpl_if>
+	<tmpl_if showImei>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imei_label"), (size(_("webui", "status_diagnostics_imei_label")) - size(":")))></h3>
+		<p>IMEI (International Mobile Equipment Identity) f
+r denna enhet. IMEI 
+r en 15- eller 17-siffrig kod som anv
+r att identifiera en enskild mobilstation i ett<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>n
+tverk. IMEI 
+ndras inte n
+r SIM byts ut.</p>
+	</tmpl_if>
+	<tmpl_if showImeisv>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imeisv_label"), (size(_("webui", "status_diagnostics_imeisv_label")) - size(":")))></h3>
+		<p>Detta f
+lt kombinerar IMEI med ett godk
+nnandenummer f
+r typen av enhet.</p>
+	</tmpl_if>
+	<tmpl_if showMeid>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_meid_label"), (size(_("webui", "status_diagnostics_meid_label")) - size(":")))></h3>
+		<p>MEID (Mobile Equipment ID) 
+r ett unikt nummer som anv
+r att identifiera en enskild mobilstation i ett CDMA-n
+tverk.</p>
+	</tmpl_if>
+	<tmpl_if showIMSI>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imsi_label"), (size(_("webui", "status_diagnostics_imsi_label")) - size(":")))></h3>
+		<p>Ett internationellt mobilabonnent-id (IMSI, International Mobile Subscriber Identity) 
+r ett unikt nummer associerat med alla GSM- (Global System for Mobile Communications) och UMTS-n
+tverks (Universal Mobile Telecommunications System) mobiltelefonanv
+ndare som anv
+r att identifiera en GSM-abonnent.</p>
+	</tmpl_if>
+	<tmpl_if showFwVersion>					
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_fw_version_label"), (size(_("webui", "status_diagnostics_fw_version_label")) - size(":")))></h3>
+		<p>Den version av den inbyggda programvaran (firmware) som f
+rvarande 
+r installerad i modemet.</p>
+	</tmpl_if>
+	<tmpl_if showSimStatus>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_sim_status_label"), (size(_("webui", "status_diagnostics_sim_status_label")) - size(":")))></h3>
+		<p>Detta indikerar SIM-kortets status. Om SIM-kortet saknas, eller om detta f
+lt indikerar n
+gon form av SIM-fel, 
+r det inte m
+jligt att ansluta till mobiln
+tet.</p>
+	</tmpl_if>
+	<tmpl_if showICCID>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_iccid_label"), (size(_("webui", "status_diagnostics_iccid_label")) - size(":")))></h3>
+		<p>Detta unika id-nummer 
+r tilldelat till SIM-kortet. Det visas inte om det inte finns n
+got installerat SIM, eller om det f
+religger ett SIM-feltillst
+	</tmpl_if>
+	<tmpl_if showModemDetails>
+		<tmpl_if showMINMSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_msid_label"), (size(_("webui", "status_diagnostics_msid_label")) - size(":")))></h3>
+			<p>Detta id anv
+r att identifiera en abonnent i mobildatan
+tet.</p>
+		</tmpl_if>
+		<tmpl_if showESN>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_esn_label"), (size(_("webui", "status_diagnostics_esn_label")) - size(":")))></h3>
+			<p>Elektroniskt serienummer (ESN) 
+r den traditionella metoden f
+r att unikt identifiera enheter i CDMA-n
+tverk, men det har ersatts av MEID. F
+r enheter som anv
+nder en MEID (som den h
+r enheten) 
+r ESN antingen tomt eller ett pseudo-ESN som inte garanteras vara unikt.</p>
+ 		</tmpl_if>
+ 		<tmpl_if showHomeSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_home_sid_label"), (size(_("webui", "status_diagnostics_home_sid_label")) - size(":")))></h3>
+			<p>SID (System-id) 
+tverks-id som indikerar kopplingspunkten till mobildatan
+tet.</p>
+		</tmpl_if>
+		<tmpl_if showERIVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_eri_version_label"), (size(_("webui", "status_diagnostics_eri_version_label")) - size(":")))></h3>
+			<p>Tabellen ERI (Enhanced Roaming Indicator) inneh
+ller information om varje roamingn
+tverk som den mobila enheten f
+r ansluta till. Det h
+ltet indikerar vilken ERI-version som f
+rvarande 
+r installerad. ERI-tabellen uppdateras automatiskt.</p>
+ 		</tmpl_if>
+ 		<tmpl_if showPRLVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_prl_version_label"), (size(_("webui", "status_diagnostics_prl_version_label")) - size(":")))></h3>
+			<p>PRL (Preferred Roaming List) anv
+lja ett n
+r flera n
+ngliga. Detta f
+lt indikerar vilken version av PRL som f
+rvarande 
+r installerad. PRL uppdateras automatiskt.</p>
+		</tmpl_if>			
+	</tmpl_if>
+	<tmpl_if lteSupported>			
+		<h2 class="sectionHead">5G/4G LTE-n
+tverk</h2>
+		<tmpl_if showInternetStatus4G>	
+			<h3>Status</h3>
+r<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>n
+tverket 
+jliga statusv
+rdena:</p>
+			<div class="blockgroup">
+				<ul>
+					<li>Ej tillg
+ inget<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>n
+tverk har detekterats.</li>
+					<li>Tillg
+ ett<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>n
+tverk har detekterats.</li>
+				</ul>
+			</div>
+ljande dataobjekt tillhandah
+lls endast om<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>n
+tverket 
+ngligt.</p>
+		</tmpl_if>
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>Detta 
+r namnet p
+<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>n
+tverk.</p>
+		</tmpl_if>
+		<tmpl_if showSignalStrength>			
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_signal_strength_label"), (size(_("webui", "status_diagnostics_fourg_signal_strength_label")) - size(" (RSRP):")))></h3>
+			<p>Detta indikerar styrkan p
+<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>signalen, m
+tt i dBm. H
+gre absoluta v
+rden indikerar en starkare signal, s
+ -80 dBm 
+r en starkare signal 
+n -90 dBm.<tmpl_udf GET_PO_TEXT("status_diagnostics_lte_note_text")>
+		</tmpl_if>
+		<tmpl_if showSNR>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_sinr_label"), (size(_("webui", "status_diagnostics_sinr_label")) - size(":")))></h3>
+			<p>SNR 
+ signalkvaliteten. H
+gre siffror indikerar en b
+ttre signal.</p>
+		</tmpl_if>
+		<tmpl_if showLteBand>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_lte_band_label"), (size(_("webui", "status_diagnostics_lte_band_label")) - size(":")))></h3>
+			<p><tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>n
+tverk kan anv
+nda olika band i olika regioner. Detta f
+lt indikerar det band som anv
+r den nuvarande<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>anslutningen.</p>
+		</tmpl_if>
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_roaming_label"), (size(_("webui", "status_diagnostics_fourg_roaming_label")) - size(":")))></h3>
+			<p>Detta indikerar om den nuvarande anslutningen 
+r en roaminganslutning.</p>
+		</tmpl_if>
+	</tmpl_if>
+	<tmpl_if isHSPATechnology>	
+		<h2><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> Status</h2>
+		<h3>Status</h3>
+r <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>-n
+tverket st
+ljande tillst
+		<div class="blockgroup">
+				<li>Ej tillg
+ inget <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>-n
+tverk har detekterats.</li>
+				<li>Tillg
+ ett <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>-n
+tverk har detekterats.</li>
+			</ul>
+		</div>
+ljande dataobjekt tillhandah
+lls endast om n
+tverket 
+ngligt.</p>
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>Detta 
+r namnet p
+ <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>-n
+tverket.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p>Den nuvarande teknik som anv
+r <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>-n
+tverket. M
+rden, fr
+ngsammast till snabbast, 
+				<tmpl_if gsmSupported>
+					<li>GPRS</li>
+				</tmpl_if>
+				<tmpl_if wcdmaSupported>
+					<li>UMTS</li>
+				</tmpl_if>
+				<tmpl_if cdmaSupported>
+					<li>HSPA+</li>
+					<li>HSPA + DC</li>
+				</tmpl_if>
+				<tmpl_if evdoSupported>
+					<li>EDGE</li>
+					<li>HSDPA</li>
+					<li>HSUPA</li>
+				</tmpl_if>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_networkid_label"), (size(_("webui", "status_diagnostics_networkid_label")) - size(":")))></h3>
+			<p>Namnet och/eller id:t f
+r PLMN-n
+tverket (Public Land Mobile Network).</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_cellid_label"), (size(_("webui", "status_diagnostics_cellid_label")) - size(":")))></h3>
+			<p>Detta v
+rde identifierar den basstation som f
+rvarande anv
+nds.</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_rssi_label"), (size(_("webui", "status_diagnostics_rssi_label")) - size(":")))></h3>
+			<p>Detta indikerar RSSI f
+r <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>-signalen. RSSI 
+ signalstyrka i decibel, relativt en milliwatt. Det 
+r alltid negativt eftersom mobila radioenheter 
+r mycket mindre kraftfulla 
+n en milliwatt. H
+gre absoluta v
+rden indikerar en starkare signal, s
+ -50 dBm 
+r en starkare signal 
+n -70 dBm.</p>
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_roaming_label"), (size(_("webui", "status_diagnostics_roaming_label")) - size(":")))></h3>
+			<p>Detta indikerar om den nuvarande anslutningen 
+r en roaminganslutning.</p>
+		</tmpl_if>
+		<tmpl_if show3g>
+			<h2><tmpl_var _("webui", "status_diagnostics_threeg_label")></h2>
+			<h3>Status</h3>
+			<p>De m
+jliga statusv
+			<div class="blockgroup">
+				<ul>
+					<li>Ej tillg
+ inget 3G-n
+tverk har detekterats.</li>
+					<li>Tillg
+ ett 3G-n
+tverk har detekterats.</li>
+				</ul>
+			</div>
+ljande dataobjekt tillhandah
+lls endast om n
+tverket 
+ngligt.</p>
+			<tmpl_if showNetworkOperator>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_network_label"), (size(_("webui", "status_diagnostics_threeg_network_label")) - size(":")))></h3>
+				<p>Detta 
+r namnet p
+tverket.</p>
+			</tmpl_if>
+			<tmpl_if show3g1xRssi>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_onex_label"), (size(_("webui", "status_diagnostics_threeg_onex_label")) - size(":")))></h3>
+			<p>RSSI 
+ signalstyrka. Enheten 
+r decibel relativt 1 milliwatt och 
+r alltid negativ eftersom mobila radioenheter 
+r mycket mindre kraftfulla 
+n 1 milliwatt. H
+gre absoluta v
+rden indikerar en starkare signal, s
+ -50 dBm 
+r en starkare signal 
+n -70 dBm. Detta f
+lt indikerar RSSI f
+r 1xRTT-signalen.</p>
+			</tmpl_if>
+			<tmpl_if show3gEvdoRssi>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_evdo_label"), (size(_("webui", "status_diagnostics_threeg_evdo_label")) - size(":")))></h3>
+				<p>RSSI 
+ signalstyrka. Detta f
+lt indikerar RSSI f
+r EVDO- eller eHRPD-signalen.</p>
+ 			</tmpl_if>
+			<tmpl_if show3gTechnology>
+ 				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+				<p>Den nuvarande teknik som anv
+tverket. M
+r 1xRTT, EVDO eller eHRPD.</p>
+ 			</tmpl_if>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_ecio_label"), (size(_("webui", "status_diagnostics_threeg_ecio_label")) - size(":")))></h3>
+			<p>Ec/Io 
+ signalen 
+r en typ av signal-till-brusf
+llande. Typiska v
+rden varierar fr
+n -10 till -40. Ett v
+ -4 skulle vara en mycket 
+ signal.</p>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_sid_label"), (size(_("webui", "status_diagnostics_threeg_sid_label")) - size(":")))></h3>
+			<p>SID (System-id) 
+tverks-id som indikerar den nuvarande kopplingspunkten till mobildatan
+tet. En grupp basstationer kan ha samma SID-v
+rde. Det h
+ltet indikerar nuvarande SID.</p>		
+			<tmpl_if showRoaming>
+				<h3>Roaming</h3>
+				<p>Detta indikerar om den nuvarande anslutningen 
+r en roaminganslutning.</p>			
+			</tmpl_if>
+			<tmpl_if linkToFieldTest>	
+				<h2><tmpl_var _("webui", "status_diagnostics_field_test_button")></h2>
+				<p>Knappen 
+ kommer att tillhandah
+lla en lista 
+tverksparametrar p
+ som kan vara till hj
+r teknisk supportpersonal n
+r de fels
+ker problem med n
+tverksanslutning.</p>
+				<p>Den h
+r knappen 
+r endast tillg
+nglig om 3G-n
+tverket 
+ngligt.</p>
+			</tmpl_if>
+		</tmpl_if>
+	</tmpl_if>
+<!-- id="status_diagnostics" -->

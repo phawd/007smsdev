@@ -1,0 +1,824 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+mifi_dbg_get_level_name
+mifi_dbg_log
+mifi_dbg_syslog
+MsgBusSetBinary
+libpthread.so.0
+msgq_does_queue_exist
+msgq_send_sync
+strncasecmp
+closedir
+snprintf
+vpn_mon_add_service
+get_pidof_service
+ifc_get_address
+router2_get_lan_settings
+inet_pton
+MsgBusPublishString
+get_interface_stats2
+MsgBusGet
+settings_get_features
+vpn_get_auto_connect_enabled
+vpn_get_ipsec_vpn_enabled
+vpn_get_wguard_vpn_enabled
+vpn_get_settings
+vpn_get_ipsec_settings
+vpn_get_wguard_settings
+vpn_get_openvpn_settings
+vpn_get_openvpn_config_file_settings
+pthread_self
+mifi_dbg_start
+__errno_location
+msgq_create
+watchdog_application_register
+msgq_receive
+msgq_resp_preprocess
+msgq_resp_postprocess
+mq_close
+mq_unlink
+mifi_dbg_stop
+vpn_update_connected_clients_count
+vpn_update_wan_connection_status
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+service_monitor_add
+service_monitor_list
+msgq_resp_handler
+pthread_create
+msgq_send_async
+pthread_join
+__bss_start
+libmificommon.so
+libmifimsgbus.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+librouter2_api.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libwan_mgr_api.so
+libfactory_reset_api.so
+libvpn_api.so
+H	KxD	J{D
+[%s]:[%s] - VPN Settings:Server Type:0x%x CONN State:0x%x Manual:%d Retry Count:%d
+[%s]:[%s] - WAN Type:0x%x Name:%s State:0x%x Failed Reason:0x%x
+[%s]:[%s] - IPSec VPN Automatically(1) or Manually(0): %d
+[%s]:[%s] - IPsec VPN Tunnel Enabled(0-Disable, 1-Enable):%d
+[%s]:[%s] - IPsec VPN Left Firewall Enabled(0-Disable, 1-Enable):%d
+[%s]:[%s] - IPSec VPN Tunnel Name:[%s]
+[%s]:[%s] - IPsec Anonymous mode(0-Disable, 1-Enable):%d
+[%s]:[%s] - IPSec VPN Local ID: [%s]
+[%s]:[%s] - IPSec VPN Local IP: [%s]
+[%s]:[%s] - IPSec VPN Local Subnet: [%s]
+[%s]:[%s] - IPSec Anonymous Mode : [%d]
+[%s]:[%s] - IPSec VPN Remote ID: [%s]
+[%s]:[%s] - IPSec VPN Remote IP: [%s]
+[%s]:[%s] - IPSec VPN Remote Subnet: [%s]
+[%s]:[%s] - IPSec IKE Verion: [%d]
+[%s]:[%s] - IPSec Phase1 Key Lifetime: [%s]
+[%s]:[%s] - IPSec Phase1 Proposal: [%s]
+[%s]:[%s] - IPSec Phase2 Key Lifetime: [%s]
+[%s]:[%s] - IPSec Phase2 Proposal: [%s]
+[%s]:[%s] - IPSec IKE Client Authentication Type: [%d]
+[%s]:[%s] - IPSec Client Certificate Type: [%d]
+[%s]:[%s] - IPSec Local Certificate Name(with Absolute Path): [%s]
+[%s]:[%s] - IPSec Local Private Key Name: [%s]
+[%s]:[%s] - IPSec IKE Server Authentication Type: [%d]
+[%s]:[%s] - IPSec IKE Server certificate name: [%s]
+[%s]:[%s] - IPSec Connection State: [%d]
+[%s]:[%s] - %s -BEGIN- 
+[%s]:[%s] - Started time is greater than current time. Something is wrong.
+[%s]:[%s] - %s -END- 
+vpn.connection.status.changed
+[%s]:[%s] - %s VPN State: Server Type:%d Conn State:0x%x Failed Reason:0x%x Index:%d, Intf:%s
+/opt/nvtl/tmp/vpn/
+[%s]:[%s] - %s() script File %s doesn't exist.
+[%s]:[%s] - %s(): Running command %s
+[%s]:[%s] - Error in running the script:%s, rc=%d
+/router2_mq
+[%s]:[%s] - %s - BEGIN
+[%s]:[%s] - %s(): file name is empty
+echo 0 > %s
+[%s]:[%s] - %s - END
+[%s]:[%s] - %s: openvpn files is(%s).
+[%s]:[%s] - %s: openvpn file remote address is(%s).
+/var/log/openvpn_log
+[%s]:[%s] - %s: file open failed - %s
+%s: No openvpn configuration file is avaliable(%s).
+%s: More than one openvpn configuration files are avaliable(%s).
+%s: failed to open uploaded openvpn configuration file location(%s).
+%s: failed to create openvpn regular expression compile for not allowed cmds.
+[%s]:[%s] - %s
+%s: failed to create openvpn regular expression compile for allowed cmds.
+[%s]:[%s] - %s: openvpn configuration file location is (%s).
+[%s]:[%s] - %s: openvpn configuration file found allowed command(%s).
+%s: openvpn configuration file found invalid dev type(%s).
+%s: openvpn configuration file failed to parse remote command(%s).
+comp-lzo
+[%s]:[%s] - %s: openvpn enable LZO compression: [%d]
+[%s]:[%s] - %s: openvpn found LZO compression 'no' mode
+[%s]:[%s] - %s: openvpn found LZO compression 'yes' mode
+adaptive
+[%s]:[%s] - %s: openvpn found LZO compression 'adaptive' mode
+%s: openvpn configuration file found unknown mode in lzo command(%s).
+%s: openvpn configuration file can not find ca certificate file(%s).
+tls-auth 
+<tls-auth>
+</tls-auth>
+%s: Not looking for internal certificate but still got end of certificate(%s).
+%s: openvpn configuration file found not allowed command(%s).
+[%s]:[%s] - %s: openvpn configuration file temp data (%s).
+%s: openvpn configuration file is invalid due to either client or remote or dev commands are defined. There is also possible to wrongly configured certificates inside the config file.
+%s: openvpn configuration file is invalid due to ca certificate is not defined.
+Openvpn ca certificate is not defined.
+%s: failed to open uploaded openvpn configuration file(%s).
+[%s]:[%s] - %s - rc:%d END
+^local|^remote-random-hostname|^show|^http-proxy|^socks-proxy|^ipchange|^topology|^tun-ipv6|^dev-node|^lladdr|^iproute|^ifconfig|^route|^client-nat|^redirect|^up|^down|^setenv|^user|^group|^cd|^chroot|^section|^daemon|^syslog|^errors-to-stderr|^log|^writepid|^nice|^remap-usr1|^status|^mute|^management|^plugin|^server|^test|^capath|^tls-verify|^tls-export-cert|^askpass|^auth-nocache|^crl-verify
+^client|^dev |^remote |^comp-lzo|^ca |^<ca>|^</ca>|^cert |^<cert>|^</cert>|^key |^<key>|^</key>|^tls-auth |^<tls-auth>|^</tls-auth>
+[%s]:[%s] - OpenVPN set URL: [%s]
+rm -rf /opt/nvtl/tmp/vpn/openvpn/*
+[%s]:[%s] - %s: No active WAN. Type:%d Status:%d Intf:%s.
+So Failed to generate openvpn configuration.
+/opt/nvtl/data/vpn/openvpn/
+cp -rf %s* %s
+/opt/nvtl/tmp/vpn/openvpn/
+/opt/nvtl/tmp/vpn/openvpn/openvpn_configure
+/opt/nvtl/tmp/vpn/openvpn/openvpn_auth_configure
+/opt/nvtl/tmp/vpn/openvpn/openvpn_deconfigure.sh
+/opt/nvtl/tmp/vpn/openvpn/openvpn-up.sh
+/opt/nvtl/tmp/vpn/openvpn/openvpn-down.sh
+/opt/nvtl/tmp/vpn/openvpn/openvpn_connect.sh
+[%s]:[%s] - [%s:%d] file open failed : %s
+/opt/nvtl/tmp/vpn/openvpn/openvpn_disconnect.sh
+persist-tun
+persist-key
+persist-remote-ip
+resolv-retry infinite
+proto tcp
+proto udp
+remote %s %d
+tls-auth %s 1
+cipher AES-128-CBC
+cipher AES-192-CBC
+cipher AES-256-CBC
+cipher BF-CBC
+cipher CAST5-CBC
+cipher DES-CBC
+cipher DES-EDE-CBC
+cipher DES-EDE3-CBC
+cipher DESX-CBC
+cipher RC2-CBC
+cipher RC2-40-CBC
+cipher RC2-64-CBC
+auth MD5
+auth RSA-MD5
+auth SHA
+auth RSA-SHA
+auth RSA-SHA1
+auth DSA-SHA
+auth DSA-SHA-old
+auth MDC2
+auth RSA-MDC2
+auth DSA-SHA1
+auth RSA-SHA1-2
+auth DSA
+auth RIPEMD160
+auth RSA-RIPEMD160
+auth MD4
+auth RSA-MD4
+auth ecdsa-with-SHA1
+auth SHA256
+auth RSA-SHA256
+auth SHA224
+auth RSA-SHA224
+auth SHA384
+auth RSA-SHA384
+auth SHA512
+auth RSA-SHA512
+auth whirlpool
+auth SHA1
+[%s]:[%s] - %s: OpenVPN doesn't support lzo compression, setting to 'comp-lzo no'
+comp-lzo no
+connect-retry-max 1
+script-security 2
+auth-user-pass openvpn_auth_configure
+up openvpn-up.sh
+down openvpn-down.sh
+#!/bin/sh
+# remove configuration for OpenVPN
+rm -f %s
+# Parses DHCP options from openvpn to update resolv.conf and add route to tunnel interface.
+if [ -n "$foreign_option_1" ] ; then
+    DNS=$(echo "$foreign_option_1" | cut -d " " -f 3)
+    echo "nameserver $DNS" > /tmp/openvpn_resolv.conf
+if [ -n "$foreign_option_2" ] ; then
+    DNS=$(echo "$foreign_option_2" | cut -d " " -f 3)
+echo `date +%%s` > %sopenvpn
+if [ -f /tmp/openvpn_resolv.conf ];then
+    cp /etc/resolv.dnsmasq /tmp/resolv.dnsmasq
+    cp /tmp/openvpn_resolv.conf /etc/resolv.dnsmasq
+    killall dnsmasq
+iptables -I FORWARD -i tun0 -o %s -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -I FORWARD -i %s -o tun0 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -t nat -I POSTROUTING -o tun0 -j MASQUERADE
+route del default dev %s
+# Revert resolv.conf to orginal and delete route of tunnel interface.
+echo %d > %sopenvpn
+iptables -t nat -D POSTROUTING -o tun0 -j MASQUERADE
+iptables -D FORWARD -i %s -o tun0 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -D FORWARD -i tun0 -o %s -m state --state ESTABLISHED,RELATED -j ACCEPT
+route add default dev %s
+    cp /tmp/resolv.dnsmasq /etc/resolv.dnsmasq
+    rm /tmp/openvpn_resolv.conf
+APP=openvpn
+APPDIR=/usr/sbin
+PID=`pidof $APP`
+if [ -z "$PID" ]
+   echo "Starting $APP"
+   ${APPDIR}/${APP} --cd %s --config %s >> /dev/null &
+   echo "$APP is already running."
+if [ -n "$PID" ]
+   echo "Stopping $APP, pid = $PID"
+   kill $PID
+COUNTER=0
+while [ $COUNTER -lt 10 ]
+   if [ -n "$PID" ]
+      echo "waiting for $APP to die..."
+      sleep 1
+      break
+   let COUNTER=COUNTER+1
+if [ $COUNTER -ge 10 ]
+   echo "$APP did not die, force killing"
+   kill -9 $PID
+   echo "$APP has stopped"
+touch /var/log/openvpn_log
+sed -i '1,/^comp-lzo.*/s/^comp-lzo.*/comp-lzo no/' %s
+[%s]:[%s] - OpenVPN doesn't support lzo compression [mode:%d]
+[%s]:[%s] - %s - BEGIN with Index:%d
+[%s]:[%s] - %s: IPSec tunnel ID[%d] is invalid.
+[%s]:[%s] - %s: IPSec tunnel ID[%d], Exceeds IPSec tunnel limit(%d).
+[%s]:[%s] - %s: No active WAN. Type:%d Status:%d Intf:%s.
+So Failed to generate IPSec configuration.
+[%s]:[%s] - %s: Opening file: %s
+/opt/nvtl/tmp/vpn/ipsec/ipsec_client_del.sh
+/opt/nvtl/tmp/vpn/ipsec/ipsec_conn%d_log
+touch %s
+LOGFILE='%s'
+echo "Usage: sh %s <tun_idx>"
+echo "Deleting Configuration for IPSec[$1]." > $LOGFILE
+/etc/ipsec.conf
+if [ -f %s ];then
+	start_var=`grep  -n -m1 "IPSec\[$1\]:### BEGIN ###" %s | cut -f1 -d':'`
+	end_var=`grep  -n -m1 "IPSec\[$1\]:### END ###" %s | cut -f1 -d':'`
+	[ ! -z "$start_var" ] && [ ! -z "$end_var" ] && sed -i "${start_var},${end_var}d" %s || echo "Entry for 'IPSec[$1]' not found to be deleted." >> $LOGFILE 
+/etc/ipsec.secrets
+	[ ! -z "$start_var" ] && [ ! -z "$end_var" ] && sed -i "${start_var},${end_var}d" %s || echo "Entry for 'IPSec[$1]' not found to deleted." >> $LOGFILE 
+/opt/nvtl/tmp/vpn/ipsec/
+rm -f %sipsec_client_connect$1.sh
+rm -f %sipsec_client_disconnect$1.sh
+rm -f %snvtl-ipsec-up-down$1.sh
+rm -f %sipsec$1
+[%s]:[%s] - %s: Write for file: %s DONE.
+sh %s %d
+/etc/strongswan.d/charon_nvtl.conf
+charon {
+	install_routes = no
+	filelog {
+    /var/log/charon.log {
+       time_format = %%b %%e %%T
+       ike_name = yes
+       append = no
+       default = 2
+       flush_line = yes
+    stderr {
+       ike = 2
+       knl = 3
+  syslog {
+    identifier = charon-custom
+    auth {
+      default = -1
+      ike = 0
+# IPSec[%d]:### BEGIN ###
+  ikelifetime=%s
+  ikelifetime=3h
+  lifetime=%s
+  lifetime=1h
+  auto=start
+  keyingtries=%%forever
+  closeaction=restart
+  auto=add
+  keyingtries=%d
+  type=tunnel
+  ike=%s
+  esp=%s
+  keyexchange=ikev1
+  keyexchange=ikev2
+# /etc/ipsec.secrets - secrets for IKE/IPsec authentication
+%s %s : PSK "%s"
+  leftauth=psk
+  mark=%%unique
+  mobike=no
+%s : EAP "%s"
+  leftauth=eap-mschapv2
+  eap_identity="%s"
+  leftsourceip=%%config
+  leftauth=pubkey
+  leftcert=%s
+: P12 %s "%s"
+: RSA %s
+/opt/nvtl/data/vpn/ipsec/
+/etc/ipsec.d/
+cd %s; tar -xvf %s%s ; chmod -R 775 *
+[%s]:[%s] - %s: Extract Tar file:%s%s, sys_rc=0x%x
+  rightauth=psk
+  rightauth=eap-mschapv2
+  rightauth=pubkey
+/etc/ipsec.d/cacerts/
+sudo openssl x509 -inform der -in %s%s -out %s%s
+[%s]:[%s] - %s:%d Update Server's PEM Certificate:%s%s, sys_rc=0x%x
+  rightca=%s%s
+  leftid=%s
+  leftid=%%any
+  rightid=%s
+  rightid=%%any
+  left=%s
+  left=%%defaultroute
+[%s]:[%s] - %s: Anonymous:%d local server:%s	remote server:%s
+local subnet:%s	remote subnet:%s
+  leftsubnet=%s
+[%s]:[%s] - %s: Anonymous Mode is enabled for IPSec[%d]:%s.
+  right=%%any
+  rightsubnet=0.0.0.0/0
+0.0.0.0/0
+  right=%s
+  rightsubnet=%s
+[%s]:[%s] - %s: Remote Server is not configured or empty
+  dpdaction=restart
+  dpdaction=clear
+  dpdaction=hold
+[%s]:[%s] - %s - Unknown DPD action[%d]
+  dpddelay=%d
+  dpdtimeout=%d
+  leftfirewall=yes
+  leftfirewall=no
+# IPSec[%d]:### END ###
+/opt/nvtl/tmp/vpn/ipsec/ipsec_client_connect%d.sh
+PID=`pidof charon`
+   echo "Down %s connection and stop IPSec service, pid = $PID"
+   ipsec down %s > %s&
+   ipsec stop
+echo "Starting IPSec"
+ipsec restart
+ipsec up %s > %s&
+iptables -A INPUT -i ipsec0 -p icmp -j ACCEPT
+iptables -I FORWARD 1 -s %s -d %s -i ipsec0 -o %s -j ACCEPT
+iptables -I FORWARD 2 -s %s -d %s -i %s -o ipsec0 -j ACCEPT
+iptables -I FORWARD 3 -i %s -o ipsec0 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -I FORWARD 4 -i ipsec0 -o %s -m state --state ESTABLISHED,RELATED -j ACCEPT
+/opt/nvtl/tmp/vpn/ipsec/ipsec_client_disconnect%d.sh
+[%s]:[%s] - %s: Open file - %s
+iptables -D INPUT -i ipsec0 -p icmp -j ACCEPT
+iptables -D FORWARD -s %s -d %s -i ipsec0 -o %s -j ACCEPT
+iptables -D FORWARD -s %s -d %s -i %s -o ipsec0 -j ACCEPT
+iptables -D FORWARD -i %s -o ipsec0 -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT
+iptables -D FORWARD -i ipsec0 -o %s -m state --state ESTABLISHED,RELATED -j ACCEPT
+/opt/nvtl/data/vpn/ipsec/ipsec_failure_update.sh
+[%s]:[%s] - Failed to check IPSec Connection Failure[%d]:%s
+[%s]:[%s] - %s -IPSec Conn[%d]:%s
+ , state:%d fail:%d reason:%d
+[%s]:[%s] - %s(): unable to open file(%s)
+failed: Connection timed out
+[%s]:[%s] - %s(): VPN connection is failed due to server not bound
+AUTH: Received control message: AUTH_FAILED
+[%s]:[%s] - %s(): VPN connection is failed due to Authentication
+Cannot load CA certificate file
+error=certificate has expired
+[%s]:[%s] - %s(): VPN connection is failed due to certificate errors
+does not have OpenVPN Static Key format
+Insufficient key material
+[%s]:[%s] - %s(): VPN connection is failed due to key errors
+[%s]:[%s] - %s: Failed to update VPN State Info
+[%s]:[%s] - %s -IPSec connection en:%d auto:%d
+/opt/nvtl/data/vpn/ipsec/ipsec_state_update.sh
+sh %s %s %d
+[%s]:[%s] - Failed to check IPSec Status[%d]:%s
+[%s]:[%s] - %s - connection[%d]:%s
+ curr state:%d prev state:%d
+/opt/nvtl/tmp/vpn/ipsec/ipsec%d
+echo `date +%%s` > %s
+[%s]:[%s] - %s - uptime file:%s cmd:%s
+[%s]:[%s] - %s - WGuard connection en:%d auto:%d
+/opt/nvtl/data/vpn/wguard/wguard_state_update.sh
+[%s]:[%s] - Failed to check WGuard Status for %s tunnel.
+[%s]:[%s] - %s -WGuard connection:[%s] End Point IP:%s
+ curr state:%d prev state:%d
+/opt/nvtl/tmp/vpn/wguard/wguard%d
+[%s]:[%s] - %s - BEGIN IPSec VPN:%d IPSec service enabled:%hu
+ipsec restart
+[%s]:[%s] - %s - IPSec VPN Service Started
+ipsec stop
+[%s]:[%s] - %s - IPSec VPN Service Disabled
+[%s]:[%s] - %s: WGuard tunnel ID[%d] is invalid.
+[%s]:[%s] - %s: WGuard tunnel ID[%d], Exceeds WGuard tunnel limit(%d).
+[%s]:[%s] - %s: No active WAN. Type:%d Status:%d Intf:%s.
+Generate WGuard VPN %s tunnel configuration.
+/opt/nvtl/tmp/vpn/wguard/wguard_client_connect%d.sh
+/opt/nvtl/tmp/vpn/wguard/wguard_client_disconnect%d.sh
+[%s]:[%s] - %s: file open failed - %s, now created it.
+[%s]:[%s] - %s: Active WAN. Type:%d Status:%d Intf:%s. gVPN TunnelName:%s - en[%d] sys_rc:%d
+[%s]:[%s] - %s: pkey=[%s], path=[%s], pkey_file_name=[%s]
+echo -n %s > %s/%s
+[%s]:[%s] - %s: buff=[%s]
+[%s]:[%s] - %s: Set key path
+ip link add dev %s type wireguard
+[%s]:[%s] - %s: Added WG device 
+if [ -f %s/%s_psk ];then
+  wg set %s listen-port %d private-key %s/%s peer %s preshared-key %s/%s_psk allowed-ips %s endpoint %s:%d persistent-keepalive %d
+  wg set %s listen-port %d private-key %s/%s peer %s allowed-ips %s endpoint %s:%d persistent-keepalive %d
+[%s]:[%s] - %s: WG set completed
+ip address add %s/24 dev %s
+[%s]:[%s] - %s: Set WG address
+ip link set up dev %s
+[%s]:[%s] - %s: Setup device
+iptables -w -A INSEEGO_FILTER_INPUT -p icmp -i %s -j ACCEPT
+iptables -w -D INSEEGO_FILTER_INPUT -p icmp -i %s -j ACCEPT
+iptables -A INSEEGO_FILTER_FORWARD -i %s -o %s -j ACCEPT
+iptables -A INSEEGO_FILTER_FORWARD -o %s -i %s -j ACCEPT
+iptables  -w -A INSEEGO_FILTER_INPUT -p all -i %s -j ACCEPT
+iptables -D INSEEGO_FILTER_FORWARD -i %s -o %s -j ACCEPT
+iptables -D INSEEGO_FILTER_FORWARD -o %s -i %s -j ACCEPT
+iptables  -w -D INSEEGO_FILTER_INPUT -p all -i %s -j ACCEPT
+[%s]:[%s] - %s: finit_disconnect=%p
+[%s]:[%s] - %s - allowed_ips:%s
+[%s]:[%s] - %s - strok failed for allowed_ips 
+[%s]:[%s] - %s - Add route for allowed_ips:%s
+ip route add %s dev %s
+ip route del %s dev %s
+wg set %s peer %s remove
+ip link del dev %s
+  rm -f %s/%s_psk
+[%s]:[%s] - %s - Created Connect, Disconnect for WGuard VPN i.e. dev %s, sys_rc:%d
+[%s]:[%s] - %s:%d VPN Server type:%d index:%d
+[%s]:[%s] - %s:%d IPSec Service:%d or Tunnel ID[%d] is disabled
+[%s]:[%s] - %s:%d Invalid IPSec tunnel ID[%d]
+[%s]:[%s] - Connecting IPSec tunnel[%d]
+[%s]:[%s] - %s:%d Invalid WGuard tunnel ID[%d]
+[%s]:[%s] - Connecting WGuard tunnel[%d]
+[%s]:[%s] - %s:%d Unsupported Server type [%d].
+[%s]:[%s] - Current Available WAN: [%s] Type: [0x%x], State: [0x%x] family:0x%x
+[%s]:[%s] - WAN is not connected, so not starting VPN
+[%s]:[%s] - Initiating IPSec tunnel[name:%s index:%d] since it is auto enabled.
+[%s]:[%s] - Unable to establish an IPSec tunnel[name:%s index:%d], no WAN available
+[%s]:[%s] - Initiating WGuard tunnel %s since it is auto enabled.
+[%s]:[%s] - Unable to establish an WGuard tunnel %s, no WAN available
+[%s]:[%s] - Also VPN connection max retries is reached.Still not established tunnel.
+[%s]:[%s] - %s:%d VPN Server type:%d index:%d g_server type:%d
+[%s]:[%s] - Could not Start IPSEC %s connection, please enable it.
+[%s]:[%s] - WGUARD %dth connection is disabled, please enable it to connect.
+[%s]:[%s] - %s: Failed to publish VPN State Info
+[%s]:[%s] - OpenVPN retrying to establish tunnel. Retry is[%d]
+[%s]:[%s] - OpenVPN connection max retries is reached. still not established tunnel.
+[%s]:[%s] - Get tunnel IP.
+[%s]:[%s] - Tunnel IP address is [%s], subnet is [%s]
+[%s]:[%s] - Both LAN IP and VPN IP are in same network. So disconnecting VPN and publish msgbus event
+LAN_IP_is_same_as_VPN_address
+vpn.connection.error
+[%s]:[%s] - inet_pton is failed for vpn address.
+[%s]:[%s] - inet_pton is failed for lan address.
+[%s]:[%s] - Failed to get LAN settings. rc=[%d]
+[%s]:[%s] - Tunnel is established, but not yet get the IP address.
+[%s]:[%s] - %s:%d Event with server type:%d Index[IPSec:%d, WGuard:%d] Wevent:0x%x
+[%s]:[%s] - %s:%d WGuard VPN state[%d]:0x%x
+[%s]:[%s] - IPSec VPN[%d]:%s. Auto Connect enabled, no Disconnect allowed.
+[%s]:[%s] - VPN is disconnecting because of no clients connected.
+[%s]:[%s] - Clients are connected, so starting tunnel establishment.
+[%s]:[%s] - WAN Connection status update received: WAN type:0x%x, status:0x%x
+[%s]:[%s] - WAN moved to ROUTED mode
+[%s]:[%s] - WAN moved to NON-ROUTED mode
+[%s]:[%s] - [%s:%d] Unknown Server Type:%d received.
+[%s]:[%s] - [%s:%d] received event 0x%x not handled event
+[%s]:[%s] - VPN auto connect status : [%d]
+[%s]:[%s] - VPN server type: [%d]
+[%s]:[%s] - VPN connection retries: [%d]
+[%s]:[%s] - PPTP VPN SET URL: [%s]
+[%s]:[%s] - PPTP VPN SET Username: [%s]
+[%s]:[%s] - PPTP VPN SET Password: [%s]
+[%s]:[%s] - PPTP VPN SET Authentication Type: [%d]
+[%s]:[%s] - OpenVPN set Username: [%s]
+[%s]:[%s] - OpenVPN set Password: [%s]
+[%s]:[%s] - OpenVPN set protocol: [%d]
+[%s]:[%s] - OpenVPN set port number: [%d]
+[%s]:[%s] - OpenVPN set Root CA certificate file name: [%s]
+[%s]:[%s] - OpenVPN set client certificate file name: [%s]
+[%s]:[%s] - OpenVPN set client key certificate file name: [%s]
+[%s]:[%s] - OpenVPN set TLS authentication file name: [%s]
+[%s]:[%s] - OpenVPN set encryption: [%d]
+[%s]:[%s] - OpenVPN set LZO compression enabled: [%d]
+rm -rf /opt/nvtl/data/vpn/openvpn/*
+cp -rf %s/* %s
+[%s]:[%s] - OpenVPN config file name: [%s]
+[%s]:[%s] - OpenVPN config file URL: [%s]
+[%s]:[%s] - OpenVPN config file Username: [%s]
+[%s]:[%s] - OpenVPN config file Password: [%s]
+[%s]:[%s] - L2TP VPN SET URL: [%s]
+[%s]:[%s] - L2TP VPN SET Username: [%s]
+[%s]:[%s] - L2TP VPN SET Password: [%s]
+[%s]:[%s] - L2TP VPN SET Authentication Type: [%d]
+[%s]:[%s] - IPSec VPN Service Status : [%d]
+[%s]:[%s] - IPSec VPN Local Certificate Name with Absolute Path: [%s]
+[%s]:[%s] - IPSec VPN Local Private Key Name: [%s]
+[%s]:[%s] - WGuard VPN Service Status : [%d]
+[%s]:[%s] - %s IPSec[%d]:%s Started Time:%u 
+[%s]:[%s] - %s WGuard Tunnel:[%s] End Point IP: %s Started Time:%u 
+/opt/nvtl/tmp/vpn/openvpn/openvpn
+[%s]:[%s] - Started time is empty. Something is wrong.
+[%s]:[%s] - Failed to get VPN started time.
+[%s]:[%s] - Failed to get tunnel interface stats.
+rm -f /var/log/openvpn_log
+rm -f /var/log/ipsecvpn_log
+rm -f /etc/ipsec.conf
+rm -f /etc/ipsec.secrets
+rm -rf /etc/ipsec.d/cacerts/*
+rm -rf /opt/nvtl/tmp/vpn/ipsec/*
+rm -rf /opt/nvtl/data/vpn/ipsec/*
+rm -f /var/log/wguardvpn_log
+rm -rf /opt/nvtl/tmp/vpn/wguard/*
+rm -rf /opt/nvtl/data/vpn/wguard/*
+[%s]:[%s] - Request for Factory Reset
+[%s]:[%s] - Clear openvpn config settings
+rm -rf /var/log/openvpn_log
+[%s]:[%s] - Clear IPSec[%d] configuration settings
+[%s]:[%s] - Clear WGuard[%d] configuration settings
+[%s]:[%s] - Clear all vpn settings
+/dev/null
+[%s]:[%s] - %s -Event:0x%x VPN Server:0x%x- 
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - VPN Disabled in features.xml
+/opt/nvtl/data/vpn/ipsec/ipsec_change_default.sh
+[%s]:[%s] - Creating IPSec Change Default Script...
+#Script to Change IPSec Default Behavior.
+#Usage- sh <script-name>
+#!/bin/sh
+CHARON_CONFIG="/etc/strongswan.d/charon.conf"
+sed -i 's/# retransmit_base/retransmit_base/' $CHARON_CONFIG
+sed -i 's/# retransmit_jitter/retransmit_jitter/' $CHARON_CONFIG
+sed -i 's/# retransmit_limit = 0/retransmit_limit = 120/' $CHARON_CONFIG
+sed -i 's/# retransmit_timeout/retransmit_timeout/' $CHARON_CONFIG
+sed -i 's/# retransmit_tries/retransmit_tries/' $CHARON_CONFIG
+sed -i 's/# make_before_break = no/make_before_break = yes/' $CHARON_CONFIG
+ipsec reload &
+[%s]:[%s] - IPSec Change Default Script Created.
+[%s]:[%s] - Creating IPSec Update Script...
+#Script to update IPSec current connection status.
+#Usage- sh <script-name> <conn-name>
+#Return connection status.
+#!/bin/sh
+state_cmd="ipsec status $1"
+var=`eval $state_cmd | grep -i established`
+if [[ "$var" == "" ]]; then
+var=`eval $state_cmd | grep -vi security | grep CONNECTING`
+  if [[ "$var" == "" ]]; then
+    #DISCONNECTED
+    cur_state=3
+    if [ -f /opt/nvtl/data/vpn/ipsec/ipsec_failure_update.sh ]; then
+      fail=`sh /opt/nvtl/data/vpn/ipsec/ipsec_failure_update.sh $2`
+      if [ $fail -ne "0" ]; then
+        #CONNECTION_FAILED
+        cur_state=4
+      fi
+    #CONNECTING
+    cur_state=1
+    #CONNECTED
+    cur_state=2
+echo $cur_state
+[%s]:[%s] - IPSec Update Script Created.
+[%s]:[%s] - Creating IPSec Connection fail Update Script...
+#Script to update IPSec Connection Failure Reason.
+#Usage- sh <script-name> <tun_idx>
+#Return Connection Failure Reason.
+#!/bin/sh
+LOG="/opt/nvtl/tmp/vpn/ipsec/ipsec_conn$1_log"
+state_cmd="establishing IKE_SA failed, peer not responding"
+var=`grep -i "$state_cmd" $LOG`
+if [ ! -z "$var" ]; then
+  echo 7
+  state_cmd="received NO_PROPOSAL_CHOSEN notify error"
+  var=`grep -i "$state_cmd" $LOG`
+  if [ ! -z "$var" ]; then
+    echo 8
+    echo 0
+[%s]:[%s] - IPSec Failure Update Script Created.
+[%s]:[%s] - Creating WGuard Update Script...
+#Script to update WGuard current connection status.
+#Usage- sh <script-name> <conn-name>
+#Return connection status.
+#!/bin/sh
+WGUARD_CMD_LOGS=/opt/nvtl/tmp/vpn/wguard/wgvpn-log
+state_cmd="wg show wg$1"
+wgshow=$($state_cmd)
+date_str=$(date)
+printf "${date_str} :\n ${wgshow}
+" >> $WGUARD_CMD_LOGS
+if [ -z "$wgshow" ] ; then
+  date_str=$(date)
+  printf "${date_str} :wg$1 - NOT CONNECTED\n" >> $WGUARD_CMD_LOGS
+  cur_state=0 #VPN_STATE_NOTCONNECTED
+  handshake=$($state_cmd | grep "latest handshake:")
+  if [ -z "$handshake" ] ; then
+    date_str=$(date)
+    printf "${date_str} : wg$1: Running, still not connected. Please check network connectivity.\n" >> $WGUARD_CMD_LOGS
+    cur_state=4 #VPN_STATE_CONNECT_FAILED
+    inhour=$($state_cmd | grep "latest handshake:" | grep -i "hour")
+    if [ ! -z "$inhour" ] ; then
+      date_str=$(date)
+      printf "${date_str} : wg$1: Running, network might be down.\n" >> $WGUARD_CMD_LOGS
+      cur_state=5 #VPN_STATE_STALE_HANDSHAKE
+    else
+      inmin=$($state_cmd | grep "latest handshake:" | grep -i "minute")
+      if [ -z "$inmin" ] ; then
+        date_str=$(date)
+        printf "${date_str} : wg$1: Running and Connected.\n" >> $WGUARD_CMD_LOGS
+        cur_state=2 #VPN_STATE_CONNECTED
+      else
+        min=$($state_cmd | grep "latest handshake:" | cut -f2 -d':' | cut -f2 -d' ')
+        #min=`echo $min | sed -e 's/ //g'`
+        date_str=$(date)
+        if [[ $min -gt 2 ]] ; then
+          printf "${date_str} : wg$1: Running, but not active from more than ${min} minutes.\n" >> $WGUARD_CMD_LOGS
+          cur_state=5 #VPN_STATE_STALE_HANDSHAKE
+        else
+          printf "${date_str} : wg$1: Running and Connected.\n" >> $WGUARD_CMD_LOGS
+          cur_state=2 #VPN_STATE_CONNECTED
+        fi
+      fi
+echo $cur_state
+[%s]:[%s] - WGuard Update Script Created.
+[%s]:[%s] - Settings VPN Auto:%d rc:0x%x
+[%s]:[%s] - Settings IPSec VPN Service:%d rc:0x%x
+[%s]:[%s] - Settings WGuard VPN Service:%d rc:0x%x
+[%s]:[%s] - VPN initialized with the following settings: 
+[%s]:[%s] - auto connect: [%d]
+[%s]:[%s] - server type: [%d]
+[%s]:[%s] - retries: [%d]
+[%s]:[%s] - Attempt [%d] to retrieve bridge interface.Returned:%d Success.
+[%s]:[%s] - %s(): Start IPSec service.
+[%s]:[%s] - Failed to initialize ipsec settings. vpn_get_ipsec_settings returned [%d]
+[%s]:[%s] - %s:%d IPSec Tunnel:%d Details:
+/opt/nvtl/data/vpn/ipsec/ipsec_auto_run.sh
+#!/bin/sh
+[%s]:[%s] - Failed to initialize wguard settings. vpn_get_wguard_settings returned [%d]
+[%s]:[%s] - %s WGuard Auto enabled.Tunnel[%s] End Point IP: %s Started Time:%u .
+[%s]:[%s] - Failed to initialize openvpn settings. vpn_get_openvpn_settings returned [%d]
+[%s]:[%s] - OpenVPN URL: [%s]
+[%s]:[%s] - OpenVPN Username: [%s]
+[%s]:[%s] - OpenVPN Password: [%s]
+[%s]:[%s] - OpenVPN protocol: [%d]
+[%s]:[%s] - OpenVPN port number: [%d]
+[%s]:[%s] - OpenVPN Root CA certificate file name: [%s]
+[%s]:[%s] - OpenVPN client certificate file name: [%s]
+[%s]:[%s] - OpenVPN client key certificate file name: [%s]
+[%s]:[%s] - OpenVPN TLS authentication file name: [%s]
+[%s]:[%s] - OpenVPN encryption: [%d]
+[%s]:[%s] - OpenVPN LZO compression enabled: [%d]
+[%s]:[%s] - Failed to initialize openvpn config file settings. vpn_get_openvpn_config_file_settings returned [%d]
+[%s]:[%s] - Failed to initialize settings. vpn_get_settings returned [%d]
+[%s]:[%s] - Failed to initialize settings. vpn_get_auto_connect returned [%d]
+[%s]:[%s] - Info: Auto - OpenVPN:%d  IPSec:%d, server_type:%d, state:%d.
+[%s]:[%s] - %s - Started IPSec Auto enabled tunnels at bootup time.
+[%s]:[%s] - Auto connect enabled. Restarted VPN server_type:%d state:%d
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+/opt/nvtl/tmp/vpn/pptp/
+/opt/nvtl/tmp/vpn/l2tp/
+/opt/nvtl/tmp/vpn/wguard/
+/opt/nvtl/data/vpn/wguard/
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - Error initializing vpn settings, terminating.
+[%s]:[%s] - Error opening message queue: %d, terminating.
+vpn_main_thread
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s Server Terminating.
+update_up_time
+publish_vpn_connection_status
+vpn_setup_run_script
+get_vpn_started_time_from_file
+get_vpn_started_time_from_file
+validate_openvpn_config_inside_files
+validate_openvpn_remote_cmd
+validate_openvpn_configuration
+openvpn_configure
+openvpn_client_connect
+openvpn_client_disconnect
+ipsec_client_configure
+ipsec_client_configure
+ipsec_client_connect
+ipsec_client_disconnect
+update_ipsec_connect_failure
+update_openvpn_connect_failure
+update_openvpn_connect_failure
+ipsec_conn_state_send
+ipsec_conn_state_update_idx
+ipsec_conn_state_update_idx
+wguard_conn_state_send
+wguard_conn_state_update_idx
+wguard_conn_state_update_idx
+ipsec_conn_state_update
+wguard_client_configure
+wguard_client_connect
+wguard_client_disconnect
+vpn_connect
+vpn_disconnect
+openvpn_conn_state_send
+vpn_state_machine
+get_connection_statistics
+vpn_server_conn_update
+vpn_settings_init
+vpn_settings_init
+vpn_auto_run
+vpn_state_update
+dmdb.connected.device.list
+[%s]:[%s] - %s: connected device list notification
+wan_mgr.wan_status_change
+[%s]:[%s] - %s: WAN Status change notification
+[%s]:[%s] - %s: MsgBus_Create Failed
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe to Connected client DMDB channel Failed
+[%s]:[%s] - %s: MsgBus_Subscribe to WAN connection status CCM channel Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+vpn_msgbus_handler
+[%s]:[%s] - %s: service_monitor_add() failed
+[%s]:[%s] - %s: Start with pthread ID:%lu, process ID:%d.
+/vpn_mon_mq
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+vpn_moniter_thread
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: g_vpn_mon.service_coun=[%u]
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Terminate Thread Example, TID: %lu.
+handle_event_message
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

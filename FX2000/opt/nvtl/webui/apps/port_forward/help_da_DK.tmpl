@@ -1,0 +1,46 @@
+<!-- Port Forwarding -->
+<div id="port_forward">
+	<h1>Videresendelse af port</h1>
+	<h2>Oversigt</h2>
+	<p>Funktionen Videresendelse af port gør det muligt at videresende indkommende trafik fra internettet til en bestemt computer eller enhed på dit Wi-Fi-netværk. Normalt blokerer den indbyggede firewall indgående trafik fra internettet. Du bruger Videresendelse af port til at give internetbrugere adgang til enhver server, du kører på din computer, såsom en web-, FTP- eller e-mailserver. For nogle onlinespil skal Videresendelse af port bruges, for at spillet kan fungere korrekt. Bemærk, at brug af Videresendelse af port skaber en sikkerhedsrisiko og bør forblive slukket, når den ikke er påkrævet.</p>
+<p><strong>Bemærk:</strong> Nogle trådløse mobilnetværk giver dig en IP-adresse på deres eget netværk i stedet for en internet-IP-adresse. I dette tilfælde kan Videresendelse af port ikke bruges, fordi internetbrugere ikke kan nå din IP-adresse.</p>
+
+	<h2>Videresendelse af port af applikationer</h2>
+	<h3>Applikationsafkrydsningsfelter</h3>
+		<p>En række almindelige serverapplikationer er vist. Følg denne procedure for at bruge en af disse applikationer:</p>
+		<ol>
+			<li>Installér applikationen på en computer, der er tilsluttet denne enheds Wi-Fi-netværk.</li>
+			<li>På computeren skal du kontrollere dens IP-adresse for Wi-Fi-netværket. Alternativt kan du kontrollere computerens IP-adresse på skærmen Tilsluttede enheder.</li>
+			<li>Indtast computerens IP-adresse på denne skærm i feltet <strong>Tilsluttet enheds IP-adresse</strong> ved siden af applikationen.</li>
+			<li>Tænd denne applikation på denne skærm ved at markere dens afkrydsningsfelt.</li>
+			<li>Gem dine ændringer.</li>
+			<li>På skærmen <strong>Nuværende status</strong> skal du notere denne IP-adresse på denne enhed.</li>
+			<li>Bed brugere på internettet om at oprette forbindelse til denne IP-adresse på denne enhed. Disse tilslutningsanmodninger videresendes til den IP-adresse, der er specificeret i trin 3.</li>
+		</ol>
+
+	<h2>Brugerdefinerede applikationer</h2>
+	<p>Denne funktion giver dig mulighed for at definere dine egne applikationer. Når de først er defineret, kan disse applikationer tændes eller slukkes på samme måde som prædefinerede applikationer. For at definere en applikation skal du kende de porte og den protokol (TCP, UDP), der bruges af applikationen til indgående trafik. For at starte skal du klikke på knappen <strong>Tilføj brugerdefineret applikation</strong> og derefter angive følgende data.</p>
+	<h3>Applikationsafkrydsningsfelt</h3>
+	<p>Brug dette til at tænde for et program, når du har defineret det.</p>
+	<h3>Applikationsnavn</h3>
+	<p>Indtast et passende navn til det program, du definerer.</p>
+
+	<h3>Tilsluttet enheds IP-adresse</h3>
+	<p>Indtast IP-adressen på den tilsluttede enhed, der vil modtage denne trafik.</p>
+
+	<h3>Porttype og portnumre</h3>
+		<p>Hver applikation har sit eget portinterval. Indtast begyndelsen og slutningen af portintervallet for hver applikation.</p>
+		<div class="blockgroup">
+			<ul>
+				<li>For et portinterval skal du indtaste begyndelsen på intervallet i feltet <strong>Fra</strong> og slutningen af intervallet i feltet <strong>Til</strong>.</li>
+				<li>For en oversat port skal du indtaste portnummeret i både feltet <strong>Ext</strong> og feltet <strong>Int</strong>.</li>
+			</ul>
+		</div>
+	<h3>Protokol</h3>
+	<p>For hvert portinterval skal du vælge den protokol (TCP eller UDP), der bruges af det pågældende portinterval.</p>
+		
+	<h3>Slet</h3>
+	<p>Brug dette afkrydsningsfelt til at slette et brugerdefineret program.</p>
+</div>
+<!-- id="port_forward" -->
+

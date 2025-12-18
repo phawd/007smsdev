@@ -1,0 +1,439 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+<tmpl_else>
+	<tmpl_if isLocked>
+		<div class="notification app error">
+			<tmpl_var _("webui", "webui_app_locked_text")>
+		</div>
+	</tmpl_if>
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		$(function()
+			$(document).ajaxSuccess(function(e, xhr, settings) {
+				if((xhr.responseText) && (settings.dataType == "json")){
+					try {
+						var obj = jQuery.parseJSON(xhr.responseText || "null");
+						if(typeof obj.statusData.statusBarSINR !== "undefined") {
+							$("#internetStatusSINR").text(obj.statusData.statusBarSINR + "<tmpl_var _('webui', 'status_diagnostics_db_unit')>");
+						if(typeof obj.statusData.statusBarSNR !== "undefined") {
+							$("#internetStatusSNR").text(obj.statusData.statusBarSNR + "<tmpl_var _('webui', 'status_diagnostics_db_unit')>");
+						if(typeof obj.statusData.statusBarBand !== "undefined") {
+							$("#band").html(obj.statusData.statusBarBand);
+						if(typeof obj.statusData.statusBarBandwidth !== "undefined") {
+							$("#bandwidth").html(obj.statusData.statusBarBandwidth);
+					} catch(e) {}
+			<tmpl_if DiagnosticsFieldTestShow>
+					<tmpl_unless DiagnosticsFieldTestLocked>
+					$("#fieldTestBtn").on("click", function(){
+						window.open("<tmpl_udf GET_URI('field_test_info')>");
+					});
+				</tmpl_unless>
+			</tmpl_if>
+		/* ]]> */
+	</script>
+	<p class="note">
+		<tmpl_var _("webui", "status_diagnostics_intro")>
+	<fieldset class="first">
+		<h2 class="sectionHead"><tmpl_var _("webui", "status_diagnostics_modem_sub_header_text")></h2>
+		<div class="table noblock">
+		<tmpl_if showPhoneNumber>
+			<div class="form-group">
+				<div class="label">
+					<tmpl_var _("webui", "status_diagnostics_phone_number_label")>
+				</div>
+				<div class="input" x-ms-format-detection="none" id="modemInfoPhoneNumber">
+					<tmpl_var modemInfoPhoneNumber>
+				</div>
+			</div>
+		</tmpl_if>
+		<tmpl_if showImei>
+			<div class="form-group">
+				<div class="label">
+					<tmpl_var _("webui", "status_diagnostics_imei_label")>
+				</div>
+				<div class="input" id="modemInfoIMEI">
+					<tmpl_var modemInfoIMEI>
+				</div>
+			</div>
+		</tmpl_if>
+		<tmpl_if showImeisv>
+			<div class="form-group">
+				<div class="label">
+					<tmpl_var _("webui", "status_diagnostics_imeisv_label")>
+				</div>
+				<div class="input" id="modemInfoIMEISV">
+					<tmpl_var modemInfoIMEISV>
+				</div>
+			</div>
+		</tmpl_if>
+		<tmpl_if showMeid>
+			<div class="form-group">
+				<div class="label">
+					<tmpl_var _("webui", "status_diagnostics_meid_label")>
+				</div>
+				<div class="input" id="modemInfoMEID">
+					<tmpl_var modemInfoMEID>
+				</div>
+			</div>
+		</tmpl_if>
+		<tmpl_if showIMSI>
+			<div class="form-group">
+				<div class="label">
+					<tmpl_var _("webui", "status_diagnostics_imsi_label")>
+				</div>
+				<div class="input" id="modemInfoIMSI">
+					<tmpl_var modemInfoIMSI>
+				</div>
+			</div>
+		</tmpl_if>
+		<tmpl_if showFwVersion>
+			<div class="form-group">
+				<div class="label">
+					<tmpl_var _("webui", "status_diagnostics_fw_version_label")>
+				</div>
+				<div class="input" id="modemInfoFwVersion">
+					<tmpl_var modemInfoFwVersion>
+				</div>
+			</div>
+		</tmpl_if>
+		<tmpl_if showSimStatus>
+			<div class="form-group">
+				<div class="label">
+					<tmpl_var _("webui", "status_diagnostics_sim_status_label")>
+				</div>
+				<div class="input" id="simStatus">
+					<tmpl_var simStatus>
+				</div>
+			</div>
+		</tmpl_if>
+		<tmpl_if showICCID>
+			<div class="form-group">
+				<div class="label">
+					<tmpl_var _("webui", "status_diagnostics_iccid_label")>
+				</div>
+				<div class="input" id="modemInfoICCID">
+					<tmpl_var modemInfoICCID>
+				</div>
+			</div>
+		</tmpl_if>
+		<tmpl_if showModemDetails>
+			<tmpl_if showMINMSID>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_msid_label")>
+					</div>
+					<div class="input" id="modemInfoMSID">
+						<tmpl_var modemInfoMSID>
+					</div>
+				</div>
+			</tmpl_if>
+			<tmpl_if showESN>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_esn_label")>
+					</div>
+					<div class="input" id="modemInfoESN">
+						<tmpl_var modemInfoESN>
+					</div>
+				</div>
+			</tmpl_if>
+			<tmpl_if showHomeSID>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_home_sid_label")>
+					</div>
+					<div class="input" id="modemInfoHomeSID">
+						<tmpl_var modemInfoHomeSID>
+					</div>
+				</div>
+			</tmpl_if>
+			<tmpl_if showERIVersion>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_eri_version_label")>
+					</div>
+					<div class="input" id="modemInfoERIVersion">
+						<tmpl_var modemInfoERIVersion>
+					</div>
+				</div>
+			</tmpl_if>
+			<tmpl_if showPRLVersion>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_prl_version_label")>
+					</div>
+					<div class="input" id="modemInfoPRLVersion">
+						<tmpl_var modemInfoPRLVersion>
+					</div>
+				</div>
+			</tmpl_if>
+		</tmpl_if>
+		</div><!-- /.table -->
+	</fieldset>
+	<tmpl_if lteSupported>
+	<fieldset>
+		<h2 class="sectionHead"><tmpl_var _("webui", "status_diagnostics_network_sub_header_text")></h2>
+		<div class="table noblock">
+			<tmpl_if showInternetStatus4G>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_fourg_status_label")>
+					</div>
+					<div class="input" id="internetStatus4G">
+						<tmpl_var internetStatus4G>
+					</div>
+				</div>
+			</tmpl_if>
+			<tmpl_if showTechnology>			
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_technology_label")>
+					</div>
+					<div class="input" id="internetStatusTech">
+						<tmpl_var internetStatusTech>
+					</div>
+				</div>
+			</tmpl_if>
+			<tmpl_if showLteBand>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_lte_band_label")>
+					</div>
+					<div class="input" id="band">
+						<tmpl_var band>
+					</div>
+				</div>
+			</tmpl_if>
+			<tmpl_if showBandwidth>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_bandwidth_label")>
+					</div>
+					<div class="input" id="bandwidth">
+						<tmpl_var bandwidth>
+					</div>
+				</div>
+			</tmpl_if>
+			<tmpl_if showNetworkOperator>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_fourg_network_operator_label")>
+					</div>
+					<div class="input" id="internetStatusNetworkOperator4G">
+						<tmpl_var internetStatusNetworkOperator>
+					</div>
+				</div>
+			</tmpl_if>
+			<tmpl_if showSignalStrength>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_if is4G>
+							<tmpl_var _("webui", "status_diagnostics_fourg_signal_strength_label")>
+						<tmpl_else>
+							<tmpl_var _("webui", "status_diagnostics_non_fourg_signal_strength_label")>
+						</tmpl_if>
+					</div>
+					<div class="input" id="internetStatus4gRSSI">
+						<tmpl_var internetStatus4gRSSI><tmpl_var _("webui", "status_diagnostics_signal_strength_unit")>
+					</div>
+				</div>
+			</tmpl_if>
+			<tmpl_if (is3G or is3GCDMA or is3GGSM)>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_sinr_label")>
+					</div>
+					<div class="input" id="internetStatusSINR">
+						<tmpl_var internetStatusSINR><tmpl_var _("webui", "status_diagnostics_db_unit")>
+					</div>
+				</div>
+			<tmpl_else>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_snr_label")>
+					</div>
+					<div class="input" id="internetStatusSNR">
+						<tmpl_var internetStatusSNR><tmpl_var _("webui", "status_diagnostics_db_unit")>
+					</div>
+				</div>
+			</tmpl_if>
+			<tmpl_if showRoaming>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_fourg_roaming_label")>
+					</div>
+					<div class="input" id="internetStatus4gRoaming">
+						<tmpl_var internetStatus4gRoaming>
+					</div>
+				</div>
+			</tmpl_if>
+			<tmpl_if showCellID>
+                                <div class="form-group">
+                                        <div class="label">
+                                                <tmpl_var _("webui", "status_diagnostics_cellid_label")>
+                                        </div>
+                                        <div class="input" id="internetStatusCellID">
+                                                <tmpl_var internetStatusCellID>
+                                        </div>
+                                </div>
+			</tmpl_if>
+		</div><!-- /.table -->
+	</fieldset>
+	</tmpl_if>
+	<tmpl_if isHSPATechnology>
+		<fieldset>
+			<h3 class="sectionHead"><tmpl_var _("webui", "status_diagnostics_hspa_status_sub_header_text")></h3>
+			<div class="table">
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_internet_label")>
+					</div>
+					<div class="input" id="internetStatus3GhSPA">
+						<tmpl_var internetStatus3GGSM>
+					</div>
+				</div>
+			<tmpl_if showNetworkOperator>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_threeg_network_label")>
+					</div>
+					<div class="input" id="internetStatusNetworkOperator">
+						<tmpl_if is3GGSM><tmpl_var internetStatusNetworkOperator></tmpl_if>
+					</div>
+				</div>
+			</tmpl_if>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_technology_label")>
+					</div>
+					<div class="input" id="internetStatusTech">
+						<tmpl_if is3GGSM><tmpl_var internetStatusTech></tmpl_if>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_networkid_label")>
+					</div>
+					<div class="input" id="internetStatusNetworkID">
+						<tmpl_if is3GGSM><tmpl_var internetStatusNetworkID></tmpl_if>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_cellid_label")>
+					</div>
+					<div class="input" id="internetStatusCellID">
+						<tmpl_if is3GGSM><tmpl_var internetStatusCellID></tmpl_if>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_rssi_label")>
+					</div>
+					<div class="input" id="internetStatus3gRSSI">
+						<tmpl_if is3GGSM><tmpl_if internetStatus3gRSSI><tmpl_var internetStatus3gRSSI><tmpl_var _("webui", "status_diagnostics_signal_strength_unit")></tmpl_if></tmpl_if>
+					</div>
+				</div>
+			<tmpl_if showRoaming>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_roaming_label")>
+					</div>
+					<div class="input" id="internetStatus3gRoamingHSPA">
+						<tmpl_if is3GGSM><tmpl_var internetStatus3gRoaming></tmpl_if>
+					</div>
+				</div>
+			</tmpl_if>
+			</div><!-- /.table -->
+		</fieldset>
+	</tmpl_if>
+	<tmpl_if show3g>
+		<fieldset>
+			<h3 class="sectionHead"><tmpl_var _("webui", "status_diagnostics_threeg_label")></h3>
+			<div class="table">
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_threeg_status_label")>
+					</div>
+					<div class="input" id="internetStatus3G">
+						<tmpl_var internetStatus3GCDMA>
+					</div>
+				</div>
+				<tmpl_if showNetworkOperator>
+					<div class="form-group">
+						<div class="label">
+							<tmpl_var _("webui", "status_diagnostics_threeg_network_label")>
+						</div>
+						<div class="input" id="internetStatusNetworkOperator3G">
+							<tmpl_if is3GCDMA><tmpl_var internetStatusNetworkOperator></tmpl_if>
+						</div>
+					</div>
+				</tmpl_if>
+				<tmpl_if show3g1xRssi>
+					<div class="form-group">
+						<div class="label">
+							<tmpl_var _("webui", "status_diagnostics_threeg_onex_label")>
+						</div>
+						<div class="input" id="internetStatus3G1xRSSI">
+							<tmpl_if internetStatus3G1xRSSI><tmpl_var internetStatus3G1xRSSI><tmpl_var _("webui", "status_diagnostics_signal_strength_unit_text")></tmpl_if>
+						</div>
+					</div>
+				</tmpl_if>
+				<tmpl_if show3gEvdoRssi>
+					<div class="form-group">
+						<div class="label">
+							<tmpl_var _("webui", "status_diagnostics_threeg_evdo_label")>
+						</div>
+						<div class="input" id="internetStatus3GEVDORSSI">
+							<tmpl_if internetStatus3GEVDORSSI><tmpl_var internetStatus3GEVDORSSI><tmpl_var _("webui", "status_diagnostics_signal_strength_unit")></tmpl_if>
+						</div>
+					</div>
+				</tmpl_if>
+				<tmpl_if show3gTechnology>
+					<div class="form-group">
+						<div class="label">
+							<tmpl_var _("webui", "status_diagnostics_threeg_technology_label")>
+						</div>
+						<div class="input" id="internetStatus3GTechnology">
+							<tmpl_if is3GCDMA><tmpl_var internetStatusTech></tmpl_if>
+						</div>
+					</div>
+				</tmpl_if>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_threeg_ecio_label")>
+					</div>
+					<div class="input" id="internetStatus3gECIo">
+						<tmpl_if is3GCDMA><tmpl_var internetStatus3GECIo><tmpl_var _("webui", "status_diagnostics_db_unit")></tmpl_if>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="label">
+						<tmpl_var _("webui", "status_diagnostics_threeg_sid_label")>
+					</div>
+					<div class="input" id="internetStatus3GSID">
+						<tmpl_if is3GCDMA><tmpl_var internetStatus3GSID></tmpl_if>
+					</div>
+				</div>
+				<tmpl_if showRoaming>
+					<div class="form-group">
+						<div class="label">
+							<tmpl_var _("webui", "status_diagnostics_threegroaming_label")>
+						</div>
+						<div class="input" id="internetStatus3gRoaming">
+							<tmpl_if is3GCDMA><tmpl_var internetStatus3gRoaming></tmpl_if>
+						</div>
+					</div>
+				</tmpl_if>
+			</div><!-- /.table -->
+		</fieldset>
+		<tmpl_if DiagnosticsFieldTestShow>
+			<div class="clearfix">
+				<button type="button" id="fieldTestBtn" class="secondary"<tmpl_unless is3G> disabled="disabled"</tmpl_unless> <tmpl_unless isVerizonSIM> disabled="disabled"</tmpl_unless> <tmpl_if DiagnosticsFieldTestLocked> disabled="disabled"</tmpl_if>>
+					<tmpl_var _("webui","status_diagnostics_field_test_button")>
+				</button>
+			</div>
+		</tmpl_if>
+	</tmpl_if>
+</tmpl_if><!-- isHidden -->

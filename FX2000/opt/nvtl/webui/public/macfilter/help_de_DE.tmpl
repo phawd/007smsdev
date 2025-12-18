@@ -1,0 +1,34 @@
+<!-- MAC Filter -->
+<div id="macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+	<h2>Übersicht</h2>
+	<p>Wenn die MAC-Filterfunktion aktiviert ist, verhindert sie den Zugriff auf dieses WLAN-Netzwerk durch ein Gerät, das nicht in der Liste „MAC-Adressfilter“ aufgeführt ist. Der Filter gilt nur für das WLAN-Netzwerk und hat keinen Einfluss auf USB-Geräte.</p>
+	
+	<h2>EIN/AUS-Steuerung</h2>
+	<p>Mit diesem Regler können Sie den MAC-Filter je nach Bedarf aktivieren oder deaktivieren. Bevor Sie den Filter aktivieren, müssen Sie sicherstellen, dass einige Geräte zugelassen sind. Beachten Sie, dass beim Aktivieren des MAC-Filters alle verbundenen Geräte getrennt werden, die nicht in der Liste „MAC-Adressfilter“ aufgeführt sind.</p>
+	
+	<h2>Geräteliste</h2>
+	
+	<p>Alle bekannten Geräte sind hier aufgelistet, ausgenommen die USB-Geräte. Über die Kontrollkästchen können Sie Geräte in die Liste „MAC-Adressfilter“ aufnehmen bzw. davon ausschließen.</p>
+
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Über die Aktualisierungsschaltfläche können Sie die Liste nach Bedarf aktualisieren.</p>
+		
+	<h2>Betrieb</h2>
+	
+	<h3>Gesperrte Geräte vs. MAC-Filter</h3>
+	<p>Die Interaktion zwischen „gesperrten“ Geräten und dem „MAC-Filter“ ist wie folgt:</p>
+	<div class="blockgroup">
+	<ul>
+	<li>Gesperrte Geräte werden immer vom WLAN-Netzwerk blockiert, unabhängig davon, ob der MAC-Filter aktiviert oder deaktiviert ist.</li>
+	<li>Wenn der MAC-Filter aktiviert ist und ein Gerät in der Liste „Gesperrt“ aufgeführt wird, nicht aber in der Liste „MAC-Adressfilter“, kann es keine Verbindung herstellen. Sowohl der MAC-Filter als auch die Sperrung würden eine Verbindung verhindern.</li>
+
+	<li>Wenn der MAC-Filter aktiviert ist und sich ein Gerät in der MAC-Adressfilterliste befindet, kann das Gerät eine Verbindung herstellen. Nachdem die Verbindung hergestellt wurde, kann es dann entweder durch Entfernen aus der Liste des MAC-Adressfilters oder durch Verwendung der Funktion „Sperren“ gesperrt werden. Im Allgemeinen sollte eine Sperre nur vorübergehend genutzt werden, und der MAC-Filter, wenn Sie ein Gerät dauerhaft sperren möchten.</li>
+	</ul>
+	</div>
+	
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+	<p>Fügen Sie ein neues Gerät über diese Schaltfläche zur Geräteliste hinzu.</p>
+
+ </div>
+<!--  macfilter  -->

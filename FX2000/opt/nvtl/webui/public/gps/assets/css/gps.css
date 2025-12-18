@@ -1,0 +1,42 @@
+#nmeaOverWifiSupportTable
+{
+	display: none;
+}
+
+#gps_panel #map_canvas
+{
+	border-left: 1px solid #e3e3e3;
+	border-right: 1px solid #e3e3e3;
+	height: 300px;
+}
+
+/* Google Maps has display issues with box-sizing: border-box, so we need to set it to default. */
+#gps_panel #map_canvas *
+{
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+#gps_table
+{
+	margin-top: 10px;
+}
+
+#gps_table div.row
+{
+	width: 48%;
+	float: left;
+	padding: 0 1%;
+}
+
+#gps_table div.col
+{
+	width: auto;
+	margin: 0;
+}
+
+#gps_table div.col.label
+{
+	width: 50%;
+}

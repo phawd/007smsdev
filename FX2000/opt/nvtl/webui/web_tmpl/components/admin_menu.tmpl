@@ -1,0 +1,169 @@
+<script type="text/javascript">
+	var smsTitle = '<tmpl_var _("webui", "sms_menu_text")>'; <tmpl_comment> This is used as header for SMS popup when clicked from sms notification</tmpl_comment>
+	var loginClicked = false;
+
+	$(function()
+	{
+		// Menu Accordion.
+		$("#administrator").on("click", function() 
+		{
+			showHideAdminMenu();
+		});
+
+		$("#restart_jetpack, .restart_jetpack").on("click", function() 
+		{
+			showHideAdminMenu();
+			var headertitle = "<tmpl_udf GET_PO_TEXT("restart_jetpack_text")>";
+			var msg = '<p><tmpl_udf GET_PO_TEXT("restart_jetpack_confirmation_text", gProductName)></p>';
+			var url = '<tmpl_udf GET_URI("restarting")>';
+			showModal(msg, url, headertitle);
+		});
+
+		$("#logout, .logout").on("click", function() 
+		{
+			if ($(".sub_menu").hasClass("active_sub_menu")) {
+					showHideAdminMenu();
+			}
+			var msg = '<p><tmpl_var _("webui", "admin_menu_login_confirmation_text")></p>';
+			var url = '<tmpl_udf GET_URI("logout")>';
+			var headertitle = '<tmpl_var _("webui", "vzw_header_logout_link")>';
+			showModal(msg, url, headertitle);
+		});
+
+		$("#sms, #messages").on("click", function() 
+		{
+			var width = 900;
+			var height = "auto";
+			showHideAdminMenu();
+			var url = '<tmpl_udf GET_URI("sms")>';
+			<tmpl_if IN_SET(gIsLoggedIn, "1", "true")>
+			var title = '<tmpl_var _("webui", "sms_menu_text")>';
+				loadHtmlPage(title, url, width, height);
+			<tmpl_else>
+				var title = '<tmpl_var _("webui", "vzw_header_login_link")>';
+				loadHtmlPage(title, url, width, height);
+			</tmpl_if>
+		});
+
+		$("#admin_settings, .admin_settings").on("click", function() 
+		{
+			var width = 700;
+			var height = "auto";
+
+			showHideAdminMenu();
+			var url = '<tmpl_udf GET_URI("set_passcode")>';
+			
+			<tmpl_if IN_SET(gIsLoggedIn, "1", "true")>
+				var title = '<tmpl_var _("webui", "admin_settings_change_password_menu_text")>';
+			<tmpl_else>
+				var title = '<tmpl_var _("webui", "vzw_header_login_link")>';
+			</tmpl_if>
+			loadHtmlPage(title, url, width, height);
+		});
+
+		$("#login, .login").on("click", function() 
+		{
+			if(!loginClicked) {
+				loginClicked = true;
+				var width = 700;
+				var height = "auto";
+				if ($(".sub_menu").hasClass("active_sub_menu")) {
+					showHideAdminMenu();
+				}
+				var url = '<tmpl_udf GET_URI("login")>';
+				var title = '<tmpl_var _("webui", "vzw_header_login_link")>';
+				var open = null;
+				var close = function() {
+					loginClicked = false;
+				}
+				loadHtmlPage(title, url, width, height, null, close);
+			}
+		});
+		
+		$(document).click(function (e) {
+			// Check if click was triggered on or within #status_login
+			if ($(e.target).closest("#status_login").length > 0) {
+				return false;
+			}
+
+			if ($(".sub_menu").hasClass("active_sub_menu")) {
+				$(".sub_menu").removeClass("active_sub_menu");
+				$("#administrator").addClass("closed").removeClass("opened");
+			}
+		});
+	});
+
+	function showHideAdminMenu()
+	{
+		if ($(".sub_menu").hasClass("active_sub_menu")) {
+			$(".sub_menu").removeClass("active_sub_menu");
+			$("#administrator").addClass("closed").removeClass("opened");
+			$("#header").css("overflow", "hidden");
+			$("a.helpLink").css("position","unset");
+		} else {
+			$(".sub_menu").addClass("active_sub_menu");
+			$("#administrator").addClass("opened").removeClass("closed");
+			$("#header").css("overflow", "visible");
+		}
+	}
+
+	function showModal(msg, url, headertitle)
+	{
+		var title = '<tmpl_var _("webui", "webui_modal_title")>';
+		if (headertitle)
+			title = headertitle;
+		modalPopup.createWindow(
+			title,
+			msg,
+			430, 200,
+			[
+				{
+					text: '<tmpl_var _("webui", "webui_modal_cancel_button")>',
+					className: "cancel"
+				},
+				{
+					text: '<tmpl_var _("webui", "webui_modal_confirm_button")>',
+					className: "primary",
+					trigger: function(){
+						location.replace(url);
+					}
+				}
+			]
+		);
+	}
+
+	function loadHtmlPage(title, url, popupWidth, poputHeight, open, close)
+	{
+		var width = popupWidth || 900;
+		var height = poputHeight || 700;
+		var open = open || function(){};
+		var close = close || function() {};
+
+		modalPopup.loadPage(
+			title,
+			url,
+			width, 
+			height, 
+			null, 
+			open, 
+			function() {
+				close();
+				if(typeof gRedirectUrl != 'undefined'&& gRedirectUrl != ""){
+					location.replace('<tmpl_var gRedirectUrl>') 
+				}
+			},
+			true
+		);
+	}
+
+	/* ]]> */
+</script>
+<ul id="admin_navigation">
+	<tmpl_if gIsSMSEnabled>
+		<li id="sms"><tmpl_var _("webui", "sms_menu_text")></li>
+	</tmpl_if>
+	<tmpl_if gIsAdminSettingsEnabled>
+		<li id="admin_settings" <tmpl_if IN_SET(gIsPromptChangePassword, "1", "true")> <tmpl_if gIsDefaultPassword> class="disable"</tmpl_if></tmpl_if>> <tmpl_var _("webui", "admin_settings_change_password_menu_text")></li>
+	</tmpl_if>
+	<li id="restart_jetpack"><tmpl_udf GET_PO_TEXT("restart_jetpack_text", gProductName)></li>
+</ul>

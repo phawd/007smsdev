@@ -1,0 +1,28 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+	<h2>Visão geral</h2>
+		<p>Um firewall protege seus dispositivos conectados contra o tráfego de entrada mal-intencionado da internet. O firewall não pode ser desativado, mas as configurações a seguir estão disponíveis. </p>
+			
+	<h2>Configurações</h2>
+			
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+		<p>Esse recurso permite que o software de cliente VPN em dispositivos conectados se conecte através desse dispositivo a servidores VPN remotos. Normalmente, essa opção deve permanecer ativada. </p>
+
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+			<p>Normalmente, o firewall bloqueará solicitações de conexão IPv6 destinadas a um dispositivo conectado ao IPv6. </p>
+			<p> Caso deseje permitir que essas solicitações de conexão cheguem até o dispositivo conectado pretendido, ative essa configuração. O Modo Transparente só deve ser ativado quando necessário, pois ele reduz a proteção proporcionada pelo firewall <tmpl_var _("webui", "webui_product_name")>. </p>
+	</tmpl_if>
+			
+	<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+	<p> Se selecionado, o dispositivo conectado especificado como o endereço IP DMZ (destino DMZ) receberá todo o tráfego que, de outro modo, seria bloqueado pelo firewall. Isso pode ajudar alguns aplicativos problemáticos da rede a funcionar corretamente, mas o dispositivo DMZ precisa ter o seu próprio firewall para se proteger contra o tráfego mal-intencionado. </p>
+	<h3>Caixa de seleção DMZ</h3>
+				
+		<p>Use essa caixa de seleção para ativar ou desativar este recurso conforme necessidade. De forma geral, o DMZ deve permanecer desativado, a menos que seja realmente necessário. </p>
+	<h3>Endereço IP de destino</h3>
+		<p>Insira neste campo o endereço IP do dispositivo conectado que deseja transformar no dispositivo DMZ (destino DMZ). Você pode verificar o endereço IP de cada um dos dispositivos conectados na tela de dispositivos conectados. </p>
+			
+</div>
+<!-- id="firewall" -->
+

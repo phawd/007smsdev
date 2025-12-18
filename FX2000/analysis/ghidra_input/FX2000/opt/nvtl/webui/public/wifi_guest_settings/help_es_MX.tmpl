@@ -1,0 +1,76 @@
+<!-- wifi_guest_settings -->
+<div id="wifi_guest_settings">	
+	<h1>Wi-Fi - Red de invitados </h1>
+	<p>
+		La red de Wi-Fi de invitados se puede usar para proporcionar acceso temporal a Internet por medio de la red de Wi-Fi <tmpl_var _("webui", "webui_product_name_with_suffix")>. Para conectarse a la red de Wi-Fi de invitados, los dispositivos conectados deben usar la configuración de Wi-Fi que se muestra en esta pantalla. 
+	</p>
+	
+	<p>
+		Para activar la red de Invitados, use la pantalla Wi-Fi General en esta Interfaz de administración web, o la opción "Selección de banda de Wi-Fi" en la aplicación de Wi-Fi en la pantalla táctil <tmpl_var _("webui", "webui_product_name_with_suffix")>. 
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_guest_ssid_label")></h3>
+	<p>
+		Esto configura el nombre de la red o SSID para la red de Wi-Fi de invitados. Ingrese un nombre adecuado. El nombre puede tener 32 caracteres de largo como máximo. 
+	</p>
+	
+	<h3><tmpl_var _("webui", "wifi_guest_security_label")></h3>
+	<p> Seleccione la opción deseada para seguridad de Wi-Fi. </p>
+	
+	<ul>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> permite que otras personas controlen su tráfico de Wi-Fi y usen su plan de datos para acceder a Internet. De ser posible, se debe evitar el uso de esta opción. 
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> es el método más reciente y seguro, y debe usarse de ser posible. 
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> se puede usar si alguno de sus dispositivos más antiguos no admiten WPA2. 
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa3_transition_text")></strong> se puede usar para dispositivos de queja WPA2 y WPA3.
+		</li>
+	</ul>
+
+	<h3><tmpl_var _("webui", "wifi_guest_password_label")></h3>
+	<p>
+		Si se seleccionó una configuración diferente de <strong>Ninguno</strong> en el campo <strong>Seguridad</strong>, se requiere una contraseña de Wi-Fi. 
+	</p>
+	<p>
+		Ingrese la contraseña de Wi-Fi en este campo. También puede usar el botón "Generar nueva clave" para que se inserte una contraseña aleatoria segura en este campo. Recuerde guardar sus cambios si usa esta opción.
+	</p>
+	
+	<p>
+		Esta configuración está oculta de manera predeterminada, pero puede hacer clic en el encabezado/enlace para hacerla visible. Normalmente, estas opciones se pueden dejar en sus valores predeterminados, pero pueden cambiarse, de ser necesario, para que se adapten a su entorno en particular.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_ssid_label", gProductName)></h3>
+	<p>
+		Si este parámetro está seleccionado, este nombre de Wi-Fi no será visible en la pantalla táctil. Si no está seleccionado, el nombre de la red se puede visualizar en la pantalla táctil dentro de la aplicación de Wi-Fi.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_password_label", gProductName)></h3>
+	<p>
+		Si este parámetro está seleccionado, esta contraseña de Wi-Fi no será visible en la pantalla táctil. Si no está seleccionado, la contraseña se puede visualizar en la pantalla táctil dentro de la aplicación de Wi-Fi.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_guest_broadcast_ssid_label")></h3>
+	<p>
+		Si se marca esta configuración, esta red Wi-Fi aparece en la lista de redes Wi-Fi disponibles en sus dispositivos conectados.Si no está marcada, esta red será invisible.
+	</p>
+
+	<tmpl_if showWiFiGuestWPS>
+		<h3><tmpl_var _("webui", "wifi_guest_wps_label")></h3>
+		<p>
+			La configuración protegida de Wi-Fi (WPS) es un sistema para permitir que dispositivos con Wi-Fi se conecten a una red Wi-Fi sin tener que ingresar la clave de red de forma manual. Si desea usar WPS, marque esta opción.
+		</p>
+	</tmpl_if>
+
+	<h3><tmpl_var _("webui", "wifi_guest_privacy_label")></h3>
+	<p>
+		Si se marca esta configuración, cada dispositivo conectado se aísla de todos los demás dispositivos conectados. Esto ofrece una seguridad adicional si algunos dispositivos conectados son desconocidos o no se confía completamente en ellos. Para el funcionamiento normal, esta opción no debería marcarse.
+	</p>
+
+</div>
+
+<!-- id="wifi_guest_settings" -->

@@ -1,0 +1,278 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+GLIBC_2.4
+libc.so.6
+libbluetooth_api.so
+bluetooth_is_running
+msgq_does_queue_exist
+bluetooth_scan_for_devices
+msgq_send_sync
+bluetooth_get_scan_status
+bluetooth_set_scan_complete
+bluetooth_pair_device
+bluetooth_unpair_device
+bluetooth_delete_device
+settings_set_setting
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+bluetooth_get_settings
+settings_get_setting
+bluetooth_set_settings
+bluetooth_get_device_settings
+bluetooth_set_device_settings
+bluetooth_get_device_list
+msgq_send_sync_large_payload
+bluetooth_get_device_info
+bluetooth_get_fw_ver
+bluetooth_get_error_string
+bluetooth_add_scanned_device
+__errno_location
+libpthread.so.0
+bluetooth_update_device_info
+bluetooth_get_ecompass_coordinates
+bluetooth_get_ecompass_tracking_data
+bluetooth_set_ecompass_tracking_data
+bluetooth_get_settings_general_impl
+xmldata_getuint32_default
+bluetooth_set_settings_general_impl
+xmldata_setuint32
+xmldata_save
+MsgBusSetInt32
+bluetooth_get_settings_device_impl
+xmldata_getcount
+nv_sys_lowercase
+xmldata_getstring
+xmldata_getuint32
+bluetooth_set_settings_device_impl
+xmldata_setstring
+xmldata_insertnode_with_attr
+xmldata_insertnode
+MsgBusSetString
+bluetooth_set_settings_device_delete_impl
+xmldata_deletenode
+bluetooth_settings_get_device_list_impl
+xmldata_getint32
+initialize_settings
+bluetooth_factory_reset_impl
+initialize_factory_reset_func
+__bss_start
+librt.so.1
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+H	KxD	J{D
+/bluetooth_mq
+bluetooth.settings.sensor.delete
+BLUETOOTH
+[%s]:[%s] - Settings Update: Bluetooth Device: mac: [%s] deleted
+bluetooth.settings.general
+[%s]:[%s] - settings_get_setting result code:%d
+[%s]:[%s] - Settings Update: enable: [%d], scan_interval: [%d]
+bluetooth.settings.sensor
+[%s]:[%s] - Settings Update: Bluetooth Device: mac: [%s], name: [%s], type: [%d]
+[%s]:[%s] - Settings Update: Bluetooth Device: LowTempThreshold: [%d], HighTempThreshold: [%d]
+[%s]:[%s] - Settings Update: Bluetooth Device: LowTempThreshold: [%d], HighTempThreshold: [%d], LowRHThreshold: [%d], HighRHThreshold: [%d], 
+bluetooth.settings.sensor.list
+[%s]:[%s] - settings_get_setting(%s) failed with code: %d
+[%s]:[%s] - Sending sync BLUETOOTH_MSG_GET_DEVICE_LIST to BLUETOOTH process.
+BLUETOOTH: success.
+BLUETOOTH: general error.
+BLUETOOTH: one or more bad parameters passed into a function.
+BLUETOOTH: one or more buffer type parameters passed into API is too small.
+BLUETOOTH: the feature is unsupported.
+BLUETOOTH: process not running.
+BLUETOOTH: a device reset is required for the operation to take effect.
+BLUETOOTH: API not implemented for the platform.
+BLUETOOTH: device not found.
+BLUETOOTH: operation not allowed due to bluetooth being disabled
+BLUETOOTH: unknown error.
+[%s]:[%s] - Sending sync BLUETOOTH_MSG_ADD_SCANNED_DEVICE to BLUETOOTH process.
+[%s]:[%s] - %s failed to find queue %s, errno: %d.
+[%s]:[%s] - Sending sync BLUETOOTH_MSG_UPDATE_DEVICE_INFO to BLUETOOTH process.
+bluetooth_add_scanned_device
+bluetooth_update_device_info
+/Settings/Bluetooth/Enabled
+/Settings/Bluetooth/ScanInterval
+bluetooth.settings.general
+/Settings/Bluetooth/Devices/Device
+/Settings/Bluetooth/Devices/Device[%d]/@id
+/Settings/Bluetooth/Devices/Device[%d]/Name
+/Settings/Bluetooth/Devices/Device[%d]/Type
+/Settings/Bluetooth/Devices/Device[%d]/Paired
+/Settings/Bluetooth/Devices/Device[%d]/SerialNumber
+/Settings/Bluetooth/Devices/Device[%d]/Model
+/Settings/Bluetooth/Devices/Device[%d]/Manufacturer
+/Settings/Bluetooth/Devices/Device[%d]/LowTempThreshold
+/Settings/Bluetooth/Devices/Device[%d]/HighTempThreshold
+/Settings/Bluetooth/Devices/Device[%d]/LowRHThreshold
+/Settings/Bluetooth/Devices/Device[%d]/HighRHThreshold
+BLUETOOTH
+[%s]:[%s] - %s: %x(Invalid Param)
+[%s]:[%s] - %s: %x(Buffer Insufficient) len : %d, size : %d
+/Settings/Bluetooth/Devices
+Device[@id='%s']
+/Settings/Bluetooth/Devices/Device[%d]
+SerialNumber
+/SerialNumber
+Manufacturer
+/Manufacturer
+LowTempThreshold
+/LowTempThreshold
+HighTempThreshold
+/HighTempThreshold
+LowRHThreshold
+/LowRHThreshold
+HighRHThreshold
+/HighRHThreshold
+bluetooth.settings.sensor
+[%s]:[%s] - %s: Retrieved device list from settings
+bluetooth.settings.sensor.delete
+bluetooth.settings.sensor.list
+bluetooth_set_settings_device_impl
+bluetooth_settings_get_device_list_impl
+BLUETOOTH
+[%s]:[%s] - Enter bluetooth_factory_reset_impl
+[%s]:[%s] - Exit bluetooth_factory_reset_impl
+GCC: (GNU) 8.2.0
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/watchdog/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/config
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/xmldata/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/logging/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/bluetooth/src
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/bluetooth/src/../include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/bluetooth/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/factory_reset/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/usr/src/linux/usr/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel/config/../.
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-iprefix /opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/bin/arm-oe-linux-gnueabi/../../lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/bluetooth/src/bluetooth_api.c
+-mfpu=neon
+-mfloat-abi=hard
+-mcpu=arm10tdmi
+-mtls-dialect=gnu
+-march=armv5t
+-auxbase-strip bluetooth_api.o
+-frecord-gcc-switches
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/bluetooth/src/bluetooth_settings.c
+-auxbase-strip bluetooth_settings.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/bluetooth/src/bluetooth_factory_reset.c
+-auxbase-strip bluetooth_factory_reset.o
+gold 1.16
+call_weak_fn
+crtstuff.c
+__TMC_LIST__
+deregister_tm_clones
+register_tm_clones
+__do_global_dtors_aux
+completed.11339
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+bluetooth_api.c
+validate_bluetooth_settings_t
+validate_bluetooth_device_settings_t
+validate_bluetooth_device_info_t
+translate_settings_error_code
+__func__.8848
+__func__.8854
+bluetooth_settings.c
+__func__.9164
+__func__.9199
+bluetooth_factory_reset.c
+__FRAME_END__
+__dso_handle
+__TMC_END__
+_DYNAMIC
+_GLOBAL_OFFSET_TABLE_
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+bluetooth_is_running
+msgq_does_queue_exist
+bluetooth_scan_for_devices
+msgq_send_sync
+bluetooth_get_scan_status
+bluetooth_set_scan_complete
+bluetooth_pair_device
+bluetooth_unpair_device
+bluetooth_delete_device
+settings_set_setting
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+bluetooth_get_settings
+settings_get_setting
+bluetooth_set_settings
+bluetooth_get_device_settings
+bluetooth_set_device_settings
+bluetooth_get_device_list
+msgq_send_sync_large_payload
+bluetooth_get_device_info
+bluetooth_get_fw_ver
+bluetooth_get_error_string
+bluetooth_add_scanned_device
+__errno_location
+bluetooth_update_device_info
+bluetooth_get_ecompass_coordinates
+bluetooth_get_ecompass_tracking_data
+bluetooth_set_ecompass_tracking_data
+bluetooth_get_settings_general_impl
+xmldata_getuint32_default
+bluetooth_set_settings_general_impl
+xmldata_setuint32
+xmldata_save
+MsgBusSetInt32
+bluetooth_get_settings_device_impl
+xmldata_getcount
+nv_sys_lowercase
+xmldata_getstring
+xmldata_getuint32
+bluetooth_set_settings_device_impl
+xmldata_setstring
+xmldata_insertnode_with_attr
+xmldata_insertnode
+MsgBusSetString
+bluetooth_set_settings_device_delete_impl
+xmldata_deletenode
+bluetooth_settings_get_device_list_impl
+xmldata_getint32
+initialize_settings
+bluetooth_factory_reset_impl
+initialize_factory_reset_func
+__bss_start
+.init_array
+.fini_array
+.comment
+.rel.plt
+.ARM.attributes
+.eh_frame_hdr
+.gnu.version_r
+.rel.dyn
+.gnu.version
+.note.gnu.gold-version
+.GCC.command.line
+.eh_frame
+.tm_clone_table
+.note.gnu.build-id
+.gnu.version_d
+.dynamic
+.shstrtab

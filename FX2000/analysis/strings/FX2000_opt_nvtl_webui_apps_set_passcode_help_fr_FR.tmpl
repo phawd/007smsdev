@@ -1,0 +1,78 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>Mot de pass
+ administrateur</h1>
+	<h2>Vue d
+ensemble</h2>
+	<p>Le mot de pass
+ administrateur est utilis
+ pour se connecter au site web administrateur de ce <tmpl_var _("webui", "webui_product_name")>. La page <em>Mot de pass
+ administrateur</em> vous permet de modifier le mot de pass
+ administrateur et de d
+finir certaines options de s
+ relatives au mot de pass
+ administrateur.</p>
+	<h2>Modifier le mot de pass
+ administrateur <tmpl_var _("webui", "webui_product_name")></h2>
+	<p>Pour modifier le mot de pass
+ administrateur actuel, vous devez d
+abord saisir le mot de pass
+ administrateur actuel dans le champ ci-dessous. L
+cran se met alors 
+ jour et offre la possibilit
+finir un nouveau mot de pass
+ administrateur et une question de s
+ utiliser en cas de perte de ce dernier.</p>
+	<h3>Mot de pass
+ administrateur <tmpl_var _("webui", "webui_product_name")> actuel</h3>
+	<p>Saisissez le mot de pass
+ administrateur actuel <tmpl_var _("webui", "webui_product_name")> dans ce champ. Veuillez noter que si vous saisissez une valeur incorrecte trop souvent, votre acc
+ ce site web administrateur <tmpl_var _("webui", "webui_product_name")> sera bloqu
+. Pour d
+verrouiller, red
+marrez le <tmpl_var _("webui", "webui_product_name")>.</p>
+	<tmpl_if showDisplayPascode>
+		<h2>Afficher le mot de pass
+ administrateur <tmpl_var _("webui", "webui_product_name")></h2>
+		<p>Si ce param
+tre est activ
+, alors ********* s
+affiche. Si ce param
+tre est d
+, alors le mot de pass
+ administrateur s
+affiche sur l
+cran du Jetpack.</p>
+	</tmpl_if>
+	<h2>Modifier le mot de pass
+ administrateur <tmpl_var _("webui", "webui_product_name")></h2>
+	<h3>Nouveau mot de pass
+ administrateur</h3>
+	<p>Saisissez le nouveau mot de pass
+ administrateur en utilisant uniquement des lettres, des chiffres et des symboles de ponctuation standard. Le mot de pass
+ doit comporter au moins 8
+res.</p>
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p>Saisissez 
+ nouveau le nouveau mot de pass
+ administrateur dans ce champ.</p>
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>Cette question de s
+ est utilis
+e en cas de perte du mot de pass
+ administrateur et lorsque l
+ai oubli
+ le mot de pass
+ administrateur
+ est utilis
+lectionnez la question souhait
+e, et fournissez une r
+ponse dans le champ ci-dessous.</p>
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Fournissez une r
+ la question de s
+lectionn
+e ci-dessus. Veuillez noter que les r
+ponses sont sensibles 
+ la casse.</p>
+<!-- id="set_passcode" -->

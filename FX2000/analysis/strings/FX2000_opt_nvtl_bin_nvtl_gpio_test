@@ -1,0 +1,122 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+libpthread.so.0
+_ITM_registerTMCloneTable
+__cxa_finalize
+mifi_dbg_start
+__isoc99_scanf
+GLIBC_2.7
+mifi_dbg_stop
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+mifi_init_notify_thread
+mifi_register_event_handler
+mifi_unregister_event_handler
+mifi_shutdown_notify_thread
+__bss_start
+librt.so.1
+libmifi_debug.so
+libmifi_events.so
+libmificommon.so
+H	KxD	J{D
+gpio_app_callback: GPIO%d value = %d
+Enter 1 to register the GPIO
+Enter 2 to unregister GPIO
+Enter 3 to get the GPIO value: 
+Enter 4 to set the GPIO value 
+Enter 5 to get the GPIO direction: 
+Enter 6 to set the GPIO direction: 
+Enter 7 to set the GPIO pull: 
+Enter 8 to set the GPIO wakeup: 
+Enter 9 to get the IO EXPANDER PIN direction: 
+Enter 10 to set the IO EXPANDER PIN direction: 
+Enter 11 to get the IO EXPANDER PIN value: 
+Enter 12 to set the IO EXPANDER PIN value: 
+Enter 99 to exit
+nvtl_gpio_register(%d) failed. rc=%d 
+nvtl_gpio_unregister(%d) failed. rc=%d 
+nvtl_gpio_get_value failed 
+GPIO%d value = %d
+nvtl_gpio_set_value failed
+nvtl_gpio_get_direction failed 
+GPIO%d direction = %s
+DIRECTION#
+nvtl_gpio_set_direction failed 
+PULL(0 = none, 1 = down, 2=keeper, 3=up)#
+nvtl_gpio_set_default_pull failed 
+GPIO%d pull = %d
+WAKEUP(0 = disable, 1=rising, 2=falling, 3=both)#
+nvtl_gpio_set_wakeup failed 
+GPIO%d wakeup = %d
+IO_EXPANDER#
+nvtl_io_expander_get_direction failed 
+IO_EXPANDER%d direction = %s
+nvtl_io_expander_set_direction failed 
+nvtl_io_expander_get_value failed 
+IO_EXPANDER%d value = %d
+nvtl_io_expander_set_value failed
+[%s]:[%s] - nvtl_gpio_lib: failed to open %s [%d]
+[%s]:[%s] - nvtl_gpio_lib: failed to write %s=%s [%d]
+[%s]:[%s] - nvtl_gpio_lib: failed to read %s [%d]
+/sys/class/gpio
+%s/gpio%d
+%s/export
+[%s]:[%s] - nvtl_gpio_lib: gpio%d export failed! [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d exported [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d invalid gpio [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d path doesn't exist! [%d]
+%s/gpio%d/value
+[%s]:[%s] - nvtl_gpio_lib: gpio%d get value failed! [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d get value = %c [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d set value = %s failed! [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d set value = %s [%d]
+%s/gpio%d/direction
+[%s]:[%s] - nvtl_gpio_lib: gpio%d get direction failed! [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d get direction = %s [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d invalid direction %s [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d set direction=%s failed! [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d set direction = %s [%d]
+/sys/devices/platform/gpio_event
+[%s]:[%s] - nvtl_gpio_lib: failed to set gpio%d default pull=%d
+[%s]:[%s] - nvtl_gpio_lib: gpio%d set default pull=%d
+%s/wakeup
+[%s]:[%s] - nvtl_gpio_lib: failed to set gpio%d wakeup=%d
+[%s]:[%s] - nvtl_gpio_lib: gpio%d set wakeup=%d
+[%s]:[%s] - nvtl_gpio_lib: incorrect event from %d [%d]
+[%s]:[%s] - nvtl_gpio_lib: nvtl_gpio_callback:gpio%d value=%d
+[%s]:[%s] - nvtl_gpio_lib: gpio%d: invalid gpio [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d already registered
+[%s]:[%s] - nvtl_gpio_lib: no memory for registering gpio%d [%d]
+[%s]:[%s] - nvtl_gpio_lib: mifi_init_notify_thread failed [%d]
+[%s]:[%s] - nvtl_gpio_lib: mifi_register_event_handler(MIFI_DRIVER_GPIO) failed [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio event thread started
+%s/register
+[%s]:[%s] - nvtl_gpio_lib: failed to register gpio%d for event callback
+[%s]:[%s] - nvtl_gpio_lib: gpio%d registered for event callback
+%s/unregister
+[%s]:[%s] - nvtl_gpio_lib: failed to open file = %s [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio event thread terminated
+[%s]:[%s] - nvtl_gpio_lib: gpio%d unregistered for event callback
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

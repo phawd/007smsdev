@@ -1,0 +1,3 @@
+<option value="0"<tmpl_if IN_SET(gatewaySettingValue, 0)> selected="selected"</tmpl_if>><tmpl_var _("webui", "adv_lan_gateway_setting_options_default_option")></option> <!-- uses default gateway and netmask -->
+<option value="1"<tmpl_if IN_SET(gatewaySettingValue, 1)> selected="selected"</tmpl_if>><tmpl_var _("webui", "adv_lan_gateway_setting_options_use_modem_option")></option> <!-- Use gateway and netmask from modem -->
+<option value="2"<tmpl_if IN_SET(gatewaySettingValue, 2)> selected="selected"</tmpl_if>><tmpl_var _("webui", "adv_lan_gateway_setting_options_manual_option")></option> <!-- Configure gateway and netmask manually -->

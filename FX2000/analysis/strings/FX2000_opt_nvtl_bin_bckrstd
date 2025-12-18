@@ -1,0 +1,80 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+mq_unlink
+librt.so.1
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+libpthread.so.0
+mq_close
+mifi_dbg_get_level_name
+mifi_dbg_log
+__errno_location
+pthread_self
+mifi_dbg_start
+mifi_dbg_syslog
+msgq_create
+watchdog_application_register
+msgq_receive
+msgq_resp_preprocess
+msgq_resp_postprocess
+watchdog_application_send_keep_alive
+mifi_dbg_stop
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libmificommon.so
+libxmldata_api.so
+libmifimsgbus.so
+libbckrst_api.so
+H	KxD	J{D
+/dev/null
+[%s]:[%s] - Get backup file
+[%s]:[%s] - Set backup file
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - Error initializing bckrst configuration, terminating.
+/bckrst_mq
+[%s]:[%s] - Error opening message queue: %d, terminating.
+bckrst_main_thread
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - Kick watchdog here
+[%s]:[%s] - %s Server Terminating.
+[%s]:[%s] - %s: MsgBus_Create Failed
+BCKRST_MBH
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

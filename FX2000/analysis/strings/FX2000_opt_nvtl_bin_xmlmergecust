@@ -1,0 +1,113 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+xmlXPathFreeContext
+LIBXML2_2.4.30
+libxml2.so.2
+xmlFreeDoc
+xmlCleanupParser
+xmlReadFile
+LIBXML2_2.6.0
+xmlXPathNewContext
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+xmlReadMemory
+__errno_location
+strerror
+xmlSaveFile
+xmlXPathEvalExpression
+xmlXPathFreeObject
+snprintf
+xmlGetProp
+xmlNodeGetContent
+xmlEncodeEntitiesReentrant
+xmlNodeSetContent
+xmlNewNode
+xmlNewProp
+xmlDocCopyNode
+xmlAddChild
+xmlUnlinkNode
+xmlFreeNode
+xmlTextReaderNodeType
+xmlTextReaderName
+xmlTextReaderAttributeCount
+xmlTextReaderMoveToFirstAttribute
+LIBXML2_2.5.0
+xmlTextReaderValue
+xmlTextReaderMoveToNextAttribute
+xmlNewTextReaderFilename
+xmlTextReaderRead
+xmlFreeTextReader
+xmlInitParser
+__bss_start
+libmificommon.so
+libmifi_debug.so
+libz.so.1
+libstdc++.so.6
+libm.so.6
+libgcc_s.so.1
+H	KxD	J{D
+[%s]:[%s] - Unable to create new XPath context for %s
+[%s]:[%s] - Unable to parse file %s
+[%s]:[%s] - xml_read_memory: %s
+[%s]:[%s] - Unable to save to %s
+[%s]:[%s] - Error: unable to evaluate xpath expression "%s"
+[%s]:[%s] - Unable to check if node exists:%s
+[%s]:[%s] - Error: unable to evaluate xpath expression "%s"
+[%s]:[%s] - Unable to get property %s for node:%s
+[%s]:[%s] - Unable to get node name for %s
+[%s]:[%s] - Unable to get node value for %s
+[%s]:[%s] - Unable to copy node value for %s
+[%s]:[%s] - Unable to create node path for %s
+[%s]:[%s] - Unable to set node value for %s
+[%s]:[%s] - %s: +Error Inavlid attribute syntax: xparent=%s, nodename=%s
+[%s]:[%s] - %s: +Error: xmlAddChild failed, xparent=%s, nodename=%s
+[%s]:[%s] - %s: +Error: xmlDocCopyNode failed, xparent=%s, nodename=%s
+[%s]:[%s] - %s: +Error - pNodeSet and nodeTab doesn't exists,xparent:%s
+[%s]:[%s] - +Error: unable to evaluate xpath expression "%s"
+[%s]:[%s] - Unable to insert node with attribute %s for %s
+[%s]:[%s] - %s: ++Error xml_create_node_path_if_possible_with_attr failed xpath=%s, base=%s
+[%s]:[%s] - Unable to create node %s
+[%s]:[%s] - Unable to get node count for %s
+[%s]:[%s] - Unable to insert node for %s at %s
+[%s]:[%s] - Unable to delete node at %s
+/opt/nvtl/bin/nvtl_xml.sh validate_xml %s %s
+/opt/nvtl/bin/nvtl_xml.sh backup_xml %s %s
+/opt/nvtl/bin/nvtl_xml.sh calculate_checksum %s %s
+xml_insert_node_with_attr
+xml_create_node_path_if_possible_with_attr
+@%s='%s'
+ and @%s='%s'
+%s : failed to parse
+Unable to open %s
+Failed to create xml object
+Failed to load source xml file
+failed to parse tmplt file %s
+Unable to open tmplt file %s
+Failed to create xml state
+Failed to load dest xml file
+usage: xmlmerge [xmlfrom].xml [xmlto].xml <[tmplt].xml>
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

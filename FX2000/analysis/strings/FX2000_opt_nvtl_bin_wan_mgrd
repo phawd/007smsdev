@@ -1,0 +1,330 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+pthread_create
+libpthread.so.0
+__cxa_finalize
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+pthread_join
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+xmldata_initialize
+xmldata_getint32
+xmldata_shutdown
+mq_close
+xmldata_setint32
+mq_unlink
+MsgBusGet
+wan_mgr_get_supported_wan_count
+wan_mgr_get_wan_priorities_settings
+wan_mgr_get_auto_switch
+wan_mgr_get_manual_wan
+wan_mgr_get_failback_settings
+wan_mgr_get_no_con_timeout
+router2_utils_get_wan_type_str
+wan_mgr_state_str
+wan_mgr_disconnect_reason_str
+gettimeofday
+mifi_stop_timer
+wan_mon_register_deregister_wan
+wan_mgr_send_status
+pthread_self
+mifi_start_timer
+router2_deconfig_internet_routing_ipv4
+__errno_location
+router2_deconfig_internet_routing_ipv6
+router2_config_internet_routing_ipv4
+router2_config_internet_routing_ipv6
+mifi_timer_update_interval
+wan_mgr_get_wan_monitor_settings
+dsm_reset_device
+mifi_dbg_start
+msgq_create
+mifi_timer_init
+watchdog_application_register
+msgq_receive
+msgq_resp_handler
+dmdb_get_connected_device_list
+get_interface_counters
+router2_check_dns_connectivity
+wan_mon_send_wan_state_not_avail
+wan_mon_send_wan_state_online
+msgq_does_queue_exist
+msgq_send_async
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+__bss_start
+libmifimsgbus.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libsqlite3.so.0
+librouter2_api.so
+libwan_mgr_api.so
+H	KxD	J{D
+/dev/null
+[%s]:[%s] - Buffer is empty
+/opt/nvtl/data/wan_mgr/config.xml
+[%s]:[%s] - Failed to open configuration file: %s
+[%s]:[%s] - Invoked %s()
+/Config/WanMgr/RecoveryFlag
+/Config/WanMgr/RecoveryCount
+/Config/WanMgr/SuccessfulRecoveryCount
+settings.ready
+[%s]:[%s] - settings subsystem is not ready. retries left %d
+[%s]:[%s] - settings subsystem initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings subsystem not ready?
+[%s]:[%s] - Failed to initialize wan_mgr_get_supported_wan_count settings. %d
+[%s]:[%s] - Failed to initialize wan_mgr_get_wan_priorities_settings settings. %d
+[%s]:[%s] - Failed to initialize wan_mgr_get_auto_switch_enabled settings. %d
+[%s]:[%s] - Failed to initialize wan_mgr_get_manual_wan_settings settings. %d
+[%s]:[%s] - Failed to initialize wan_mgr_get_failback_settings settings. %d
+[%s]:[%s] - Failed to initialize wan_mgr_get_no_con_timeout settings. %d
+[%s]:[%s] - Invoked %s() for WAN [%s] state [%s] reason [%s]
+[%s]:[%s] - %s(): %s not supported by WAN Manager
+[%s]:[%s] - mifios_wan_mgr: %s moved to ROUTED.
+[%s]:[%s] - mifios_wan_mgr: %s stopped ROUTING for reason %s, time spent on this WAN %d secs.
+[%s]:[%s] - successful recovery count %d
+[%s]:[%s] - mifios_wan_mgr: [%s] priority [%d] state [%s] reason [%s] 
+[%s]:[%s] - WAN status update to Interface Manager Failed for %s
+[%s]:[%s] - connectivity Timer could NOT be STARTED - FAILURE
+[%s]:[%s] - Routed WAN : [%s] priority [%d] IPV4 [%d] IPV6 [%d]
+[%s]:[%s] - %s(): Device in NO INTERNET CONNECTION state
+[%s]:[%s] -  %s doesnot have data available so skipping
+[%s]:[%s] - Next Online WAN Available: [%s] priority [%d] IPV4 [%d] IPV6 [%d] reason [%s]
+[%s]:[%s] - mifios_wan_mgr: %s(): %s stopped routing for IPV4
+[%s]:[%s] - mifios_wan_mgr: %s(): router2_deconfig_internet_routing_ipv4 failed for %s
+[%s]:[%s] - mifios_wan_mgr: %s(): %s stopped routing for IPV6
+[%s]:[%s] - mifios_wan_mgr: %s(): router2_deconfig_internet_routing_ipv6 failed for %s
+[%s]:[%s] - mifios_wan_mgr: %s(): %s started routing for IPV4
+[%s]:[%s] - mifios_wan_mgr: %s(): router2_config_internet_routing_ipv4 failed for %s
+[%s]:[%s] - mifios_wan_mgr: %s(): %s started routing for IPV6
+[%s]:[%s] - mifios_wan_mgr: %s(): router2_config_internet_routing_ipv6 failed for %s
+[%s]:[%s] - mifios_wan_mgr: %s(): Device in NO INTERNET CONNECTION state
+[%s]:[%s] - Invoked %s() for %s
+[%s]:[%s] - mifios_wan_mgr: %s() WAN switching to [%s]
+[%s]:[%s] - mifios_wan_mgr: %s() WAN switching from [%s] to [%s]
+[%s]:[%s] - Auto Switch is disabled - So remaining on the %s
+[%s]:[%s] - mifios_wan_mgr: %s() WAN switching from [None] to [%s]
+[%s]:[%s] - %s() Failback Timer Stopped [%zu]
+[%s]:[%s] - %s() Failback Timer already in progress due to higher priority WAN down
+[%s]:[%s] - %s() Failback Timer NOT STARTED - FAILURE
+[%s]:[%s] - %s() Failback Timer Started [%zu]
+[%s]:[%s] - %s() Null parameter passed
+[%s]:[%s] - Auto Switch Disabled - Nothing to do
+[%s]:[%s] - Failback Timer [%zu] interval updated to %d min
+[%s]:[%s] - Suppoted WAN Count: [%d]
+Disabled
+[%s]:[%s] - Auto-Switch Status: [%s]
+[%s]:[%s] - Manual WAN: [%s]
+[%s]:[%s] - Suppoted WAN Priorities:
+[%s]:[%s] - WAN Type [%s]
+[%s]:[%s] - WAN Priority [%d]
+[%s]:[%s] - Failback Status : [%s]
+[%s]:[%s] - Failback Timer :  [%d] min
+[%s]:[%s] - WAN Monitor Status: [%s]
+[%s]:[%s] - Use Connected Devices status :[%s]
+[%s]:[%s] - WAN Retry Count: [%d]
+[%s]:[%s] - Routed WAN monitor interval: [%d] sec
+[%s]:[%s] - Online WAN monitor interval: [%d] min
+[%s]:[%s] - Failed WAN monitor interval: [%d] sec
+[%s]:[%s] - DNS URL-1: [%s]
+[%s]:[%s] - DNS URL-2: [%s]
+[%s]:[%s] - DNS URL-3: [%s]
+[%s]:[%s] - %s(): router2_deconfig_internet_routing_ipv4 failed for %s
+[%s]:[%s] - %s(): router2_deconfig_internet_routing_ipv6 failed for %s
+[%s]:[%s] - mifios_wan_mgr: %s() router2_config_internet_routing_ipv4 failed for %s
+[%s]:[%s] - %s(): router2_config_internet_routing_ipv6 failed for %s
+[%s]:[%s] - mifios_wan_mgr: %s() BRINGING DOWN %s for Configuration ERRORS
+[%s]:[%s] - mifios_wan_mgr: %s() WAN Management failed for %s
+[%s]:[%s] - %s(): Auto Switch feature is enabled, can't activate the manual WAN.
+[%s]:[%s] - Configured Manual WAN : [%s] priority [%d] state [%s] reason [%s] IPV4 [%d] IPV6 [%d]
+[%s]:[%s] - %s(): WAN Management failed for %s
+[%s]:[%s] - %s(): Failback Timer stopped [%zu]
+[%s]:[%s] - mifios_wan_mgr: [SELF RECOVERY] Rebooting the device
+[%s]:[%s] - mifios_wan_mgr: REGISTER_WAN: %s for family %s 
+[%s]:[%s] - mifios_wan_mgr: %s() router2_config_internet_routing_ipv4 failed for  %s 
+[%s]:[%s] - mifios_wan_mgr: DEREGISTER_WAN: %s for family %s 
+[%s]:[%s] - mifios_wan_mgr: DEREGISTER_WAN: WAN Management failed for %s
+[%s]:[%s] - mifios_wan_mgr: WAN_NOT_AVAIL: %s
+[%s]:[%s] - WAN_NOT_AVAIL: WAN Management failed for %s.
+[%s]:[%s] - Self recovery Timer could NOT be STARTED - FAILURE
+[%s]:[%s] - mifios_wan_mgr: [SELF RECOVERY] Timer Started [%zu] interval [%d] sec
+[%s]:[%s] - mifios_wan_mgr: WAN_ONLINE: %s
+[%s]:[%s] - mifios_wan_mgr: WAN_ONLINE: %s could not be moved to Routed
+[%s]:[%s] - mifios_wan_mgr: WAN_DATA_LIMIT_REACHED: %s
+[%s]:[%s] - mifios_wan_mgr: WAN_DATA_LIMIT_REACHED: %s could not be handled
+[%s]:[%s] - mifios_wan_mgr: WAN_DATA_LIMIT_AVAILABLE: %s
+[%s]:[%s] - mifios_wan_mgr: WAN_DATA_LIMIT_AVAILABLE: %s could not be handled
+[%s]:[%s] - %s(): Unknown Event type received
+[%s]:[%s] - Invoked WAN Manager %s()
+[%s]:[%s] - WAN Manager could not handle event %d
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Failed to initilize the WAN manager Settings.
+/wan_mgr_mq
+[%s]:[%s] - Error opening message queue: %d, terminating.
+[%s]:[%s] - Failed to initilize the WAN manager config.
+[%s]:[%s] - Failed to initilize the WAN manager MsgBus.
+wan_mgr_main_thread
+[%s]:[%s] - Ready for events
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s Server Terminating.
+wan_mgr_config_init
+wan_mgr_settings_init
+wan_mgr_update_wan_status_info
+wan_mgr_wan_info_list_init
+wan_mgr_connectivity_timer_expired
+get_routed_wan
+wan_mgr_get_next_avail_priority_wan
+wan_mgr_switch_wan
+wan_mgr_wan_data_available
+wan_mgr_wan_data_limit_reached
+wan_mgr_failback_timer_expired
+wan_mgr_start_failback
+wan_mgr_set_failback_impl
+wan_mgr_get_wan_count_impl
+wan_mgr_log_status
+wan_mgr_wan_up_handler
+wan_mgr_wan_down_handler
+wan_mgr_bring_down_wan
+wan_mgr_set_priority_list_impl
+wan_mgr_set_auto_switch_impl
+wan_mgr_set_no_con_timeout_impl
+wan_mgr_set_manual_wan_impl
+is_self_recovery_required
+wan_mgr_wan_state_handler
+handle_event_message
+[%s]:[%s] - Invoked %s() for %s
+[%s]:[%s] - %s is in state %s, inconsistent state
+[%s]:[%s] - Unexpected Error, Entry NOT present for wan %d
+[%s]:[%s] - %s(): Unable to add %s to monitoring
+[%s]:[%s] - %s(): No Connected devices present, no need for WAN monitoring on %s
+[%s]:[%s] - %s(): Interface acitivity is present for %s, no need for DNS probe
+[%s]:[%s] - mifios_wan_mon: [%s] DNS Probe failed for url [%s]
+[%s]:[%s] - mifios_wan_mon: DNS Probe Failed for %s watchdog_triggers %llu failed_triggers %llu remaining retries %d
+[%s]:[%s] - mifios_wan_mon: DNS Probe Success for %s watchdog_triggers %llu failed_triggers %llu remaining retries %d
+[%s]:[%s] - Invoked %s()
+[%s]:[%s] - %s(): %s not found in WAN Monitor
+[%s]:[%s] - %s(): [%s] timer_id [%zu]
+[%s]:[%s] - %s() callback handler data null
+[%s]:[%s] - Failed to stop monitoring for %s
+[%s]:[%s] - %s(): Unable to add %s in WAN Monitor
+[%s]:[%s] - mifi_start_timer returned 0
+[%s]:[%s] - %s(): for wan %s with timer_id %zu with interval %d sec
+[%s]:[%s] - ERROR: Unable to stop monitoring for WAN %s
+[%s]:[%s] - ERROR: Unable to start monitoring for WAN %s
+[%s]:[%s] - %s(): Invalid Param passed.
+[%s]:[%s] - %s() Invalid WAN %d is passed to Wan monitor 
+[%s]:[%s] - mifios_wan_mon: %s(): for  %s with state %s
+[%s]:[%s] - Unexpected Error: %s already monitored, Duplicate registration recieved
+[%s]:[%s] - Attaching DNS Monitoring to %s FAILED
+[%s]:[%s] - Unexpected Error: %s not present
+[%s]:[%s] - Detaching DNS Monitoring for %s FAILED
+[%s]:[%s] - Unexpected Error: Unknown state recieved for WAN %s
+settings.ready
+[%s]:[%s] - settings subsystem is not ready. retries left %d
+[%s]:[%s] - settings subsystem initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings subsystem not ready?
+[%s]:[%s] - Failed to initialize wan_mgr_get_wan_monitor_settings settings. %d
+[%s]:[%s] - Invoked WAN Monitor %s()
+[%s]:[%s] - Null pointer recieved in Event handler for WAN Monitoring
+[%s]:[%s] - %s: Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - %s: Failed to get the WAN monitor settings.
+/wan_mgr_mon_mq
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+wan_mgr_moniter_thread
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s(): Terminate unsuccessful
+[%s]:[%s] - %s: Terminate Thread Example, TID: %lu.
+wan_mon_get_wan_info
+wan_mon_add_wan_info
+del_wan_mon_wan_info
+wan_mgr_mon_interface_activity
+wan_mon_check_dns_connectivity
+stop_monitor
+monitor_handler
+start_monitor
+wan_mgr_get_telemetry_info
+register_deregister_wan_with_mon
+wan_mon_settings_init
+handle_event_message
+wan_mgr_mon
+wan_mgr_mon_init
+wan_mgr_mon_terminate
+[%s]:[%s] - %s channel %s
+sim_mgr.cellular_wan_data.exhausted
+[%s]:[%s] - %s: Cellular Data Exhausted 
+sim_mgr.cellular_wan_data.available
+[%s]:[%s] - %s: Cellular Data Available
+/wan_mgr_mq
+[%s]:[%s] - %s: MsgBus_Create Failed
+WAN_MGR_MBH
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe to Cellular Data Exhaustion
+[%s]:[%s] - %s: MsgBus_Subscribe to Cellular Data Available
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+wan_mgr_msgbus_handler
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

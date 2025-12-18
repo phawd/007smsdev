@@ -1,0 +1,77 @@
+<!-- Software Update -->
+<div id="software_update">
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+	<h2>Vis
+o geral</h2>
+		<p> As atualiza
+es do software s
+o entregues automaticamente pela rede m
+vel. Esta p
+gina permite que voc
+ monitore as atualiza
+es. </p>
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+	<h3>Vers
+o atual do software</h3>
+		<p> Este campo indica a vers
+o do software instalado atualmente neste dispositivo. </p>
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var truncate(_("webui", "software_update_current_software_configuration_version_label"), (size(_("webui", "software_update_current_software_configuration_version_label")) - size(":")))></h3>
+					<tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")>
+				</p>
+		</tmpl_if>
+	</tmpl_if>
+	<h2><tmpl_var truncate(_("webui", "software_update_check_for_update_sub_header_text"), (size(_("webui", "software_update_check_for_update_sub_header_text"))))></h2>
+	<h3><tmpl_var truncate(_("webui", "software_update_check_for_update_time_label"), (size(_("webui", "software_update_check_for_update_time_label")) - size(":")))></h3>
+		<p> Este campo indica a 
+ltima verifica
+o do <tmpl_var _("webui", "webui_product_name")> para ver se havia uma atualiza
+o dispon
+vel. Voc
+ pode verificar uma atualiza
+o manualmente, atrav
+s do bot
+o "Verificar atualiza
+o". </p>
+	<h3>Bot
+o "Verificar atualiza
+		<p> Voc
+ pode usar esse bot
+o para verificar se h
+ alguma atualiza
+o dispon
+vel para o seu <tmpl_var _("webui", "webui_product_name")>. Isso n
+o costuma ser necess
+rio, pois as atualiza
+o enviadas automaticamente ao <tmpl_var _("webui", "webui_product_name")>. Se voc
+ efetuar essa verifica
+o e houver uma atualiza
+o dispon
+vel, ela ser
+ baixada automaticamente. </p>
+	<h3><tmpl_var truncate(_("webui", "software_update_check_for_update_status_label"), (size(_("webui", "software_update_check_for_update_status_label")) - size(":")))></h3>
+		<p> Normalmente, estar
+ em branco, mas se voc
+ fizer uma verifica
+o de atualiza
+o, o resultado ser
+ mostrado aqui. Al
+m disso, se uma atualiza
+o estiver sendo baixada, o progresso do download 
+ mostrado aqui. </p>
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+		<p> Este painel exibe os detalhes da 
+ltima atualiza
+o do software. </p>
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+		<p> Este painel pode ser aberto clicando no link/t
+tulo. O Hist
+rico de Atualiza
+es do Sistema cont
+m detalhes das 
+ltimas <tmpl_var SoftwareUpdateHistoryCount> atualiza
+es que foram baixadas e instaladas neste dispositivo. Se nenhuma atualiza
+o tiver sido instalada, este painel mostrar
+o atual do software. </p>
+<!-- end Software Update -->

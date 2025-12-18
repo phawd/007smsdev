@@ -1,0 +1,48 @@
+<div id="gps_status">
+	<h1><tmpl_var _("webui", "gps_status_menu_text")></h1>
+	<h2>Übersicht</h2>
+	<p>Dieses <tmpl_var _("webui", "webui_product_name")>-Gerät enthält einen GPS-Empfänger. Der GPS-Empfänger kann Ihren aktuellen Standort bestimmen, oft sogar in Innenräumen.<tmpl_if GPSOverWiFiEnableShow>Der aktuelle Standort wird auf dieser Seite angezeigt, und die Standortinformationen können mithilfe der Funktion „GPS über WLAN“ mit den verbundenen Computern ausgetauscht werden.</tmpl_if>
+	</p>
+
+	<h2>GPS verwenden</h2>
+
+	<tmpl_if GPSEnableShow>
+		<h3><tmpl_var _("webui", "gps_status_enable_label")></h3>
+		<p>Über dieses EIN/AUS-Steuerelement können Sie die GPS-Funktion nach Bedarf aktivieren oder deaktivieren.</p>
+		<h3><tmpl_udf GET_PO_TEXT("gps_status_startup_state_label", gProductName)></h3>
+		<p>Damit wird festgelegt, wann sich der GPS-Empfänger ausschaltet, sobald er eingeschaltet ist.</p>
+		<p>Wenn „EIN“ eingestellt ist, schaltet sich der GPS-Empfänger aus, sobald das <tmpl_var _("webui", "webui_product_name")> abgeschaltet wird. Wenn Sie den GPS-Empfänger das nächste Mal benötigen, müssen Sie ihn wieder einschalten.</p>	
+	</tmpl_if>
+
+		<h3>GPS-Status</h3>
+		<p>Wenn der GPS-Empfänger noch keinen Bezugspunkt (Standort) erhalten hat, wird der Status <strong>Suchen</strong> angezeigt. Sobald ein Bezugspunkt gefunden wurde, werden die folgenden Informationen zum aktuellen Standort angezeigt. Außerdem erscheint eine Google-Karte, auf der der aktuelle Standort dargestellt wird.</p>
+		<h2><tmpl_var _("webui", "gps_status_map_section_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "gps_status_latitude_label"), (size(_("webui", "gps_status_latitude_label")) - size(":")))></h3>
+		<p>Der Breitengrad für die letzte Bezugspunktbestimmung.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_longitude_label"), (size(_("webui", "gps_status_longitude_label")) - size(":")))></h3>
+		<p>Der Längengrad für die letzte Bezugspunktbestimmung.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_altitude_label"), (size(_("webui", "gps_status_altitude_label")) - size(":")))></h3>
+		<p>Die Höhe für die letzte Bezugspunktbestimmung.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_accuracy_label"), (size(_("webui", "gps_status_accuracy_label")) - size(":")))></h3>
+		<p>Das ist ein Maß für die Genauigkeit der vom GPS-Empfänger ermittelten horizontalen Position.</p>
+		<tmpl_if GPSOverWiFiEnableShow>
+			<tmpl_if GPSPortNumberShow>		
+				<h2><tmpl_var _("webui", "gps_status_enable_sub_header_text")></h2>
+			
+				<h3><tmpl_var truncate(_("webui", "gps_status_gps_over_wifi_label"), (size(_("webui", "gps_status_gps_over_wifi_label")) - size(":")))></h3>
+				<p>GPS-Daten werden vom <tmpl_var _("webui", "webui_product_name")> in Form eines Textstreams im NMEA-Format (National Marine Electronics Association) bereitgestellt.</p>
+				<p>NMEA-Ports (GPS-Port) werden unter Windows und anderen Computerplattformen standardmäßig von Anwendungen verwendet, um auf einen GPS-Datenstream zuzugreifen. Um diesen Port zu erstellen, müssen Sie den Treiber „GPS über WLAN“ für Ihre Plattform herunterladen und installieren. Dieser Treiber erstellt den NMEA-Port, ruft GPS-Daten vom <tmpl_var _("webui", "webui_product_name")> ab und stellt diese GPS-Daten NMEA-fähigen Anwendungen zur Verfügung.</p>
+
+				<h3><tmpl_var truncate(_("webui", "gps_status_port_number_label"), (size(_("webui", "gps_status_port_number_label")) - size(":")))></h3>
+				<p>Das ist die Portnummer, die von der Treibersoftware auf Ihrem Computer verwendet wird, um eine Verbindung zu diesem Gerät herzustellen und die GPS-Daten abzurufen. Ändern Sie diese Portnummer nur, wenn es unbedingt erforderlich ist.</p>
+			</tmpl_if>
+		</tmpl_if>
+
+	<tmpl_if GPSDownloadDriversShow>
+		<h3><tmpl_var _("webui", "gps_status_wifi_driver_download_link")></h3>
+		<p>Damit gelangen Sie auf die Download-Seite, auf der die verfügbaren Treiber bereitgestellt werden.<tmpl_if GPSOverWiFiEnableShow>Diese Treiber sind für die Nutzung der Funktion „GPS über WLAN“ erforderlich.</tmpl_if>
+		</p>
+	</tmpl_if>
+					
+</div>
+

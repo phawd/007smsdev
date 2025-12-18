@@ -1,0 +1,149 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+	<h2>Descripci
+n general</h2>
+	<p>Estos ajustes se aplican a su red local o LAN. Para este dispositivo, la LAN consta de este dispositivo y todos los dispositivos conectados (incluidos los dispositivos conectados a Ethernet, si existen).</p>
+	<tmpl_if showIPPTEnable>
+	<h3>Contrase
+a IP</h3>
+            Si se utiliza, la funci
+n de la contrase
+a IP asigna la direcci
+n IP de Internet a un dispositivo conectado.
+    </p>
+    <ul>
+            <li>El dispositivo de contrase
+a debe ser el 
+nico dispositivo en la interfaz seleccionada. Los dem
+s dispositivos de esta interfaz se ignorar
+n y no tendr
+n acceso a Internet.
+            </li>
+            <li>Los dispositivos de la otra interfaz o interfaces funcionan normalmente.
+            </li>
+            <li>Cuando se activa la funci
+n de contrase
+a IP, no se pueden utilizar las siguientes funciones:
+            <ul>
+                    <li>Enrutamiento de puertos </li>
+                    <li>Filtrado de puertos </li>
+                    <li>DMZ </li>
+            </ul>
+    </li></ul>
+    <li>
+            Cuando se activa la funci
+n de contrase
+a IP, se debe reiniciar el <tmpl_var _("webui", "webui_product_name")>. Por lo general, esto significa que se asignar
+ una nueva direcci
+n IP de Internet al <tmpl_var _("webui", "webui_product_name")> despu
+s del reinicio.
+    </li>
+    <h3>Activar la funci
+n de contrase
+a IP</h3>
+            Use esta funci
+n para activar o desactivar la funci
+n de contrase
+a IP seg
+n sea necesario.
+    </p>
+    <tmpl_if showIPPTInterface>
+    <h3>Interfaz de paso</h3>
+            Seleccione la interfaz utilizada por el dispositivo de red que desea que se convierta en el dispositivo de contrase
+            NOTA: Cuando el IPPT est
+ habilitado en una interfaz, todas las dem
+s interfaces estar
+n deshabilitadas.
+    </p>
+    </tmpl_if>
+    </tmpl_if>
+    <h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+	<tmpl_if LANIPAddressShow>			
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+			La direcci
+n IP de este dispositivo, tal como se ve desde la red local.
+			Normalmente, puede usar el valor predeterminado.
+	</tmpl_if>
+	<tmpl_if LANSubnetMaskShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+			El valor predeterminado 255.255.255.0 es el est
+ndar para las redes peque
+as (clase 
+			Si cambia la direcci
+n IP de LAN, aseg
+rese de utilizar la m
+scara de subred correcta para el rango de direcciones IP de la direcci
+n IP de LAN.
+	</tmpl_if>
+	<tmpl_if LANMacAddressShow>	
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+			La direcci
+n MAC es un identificador de red 
+nico que se asigna cuando se fabrica un dispositivo de red.
+			Este campo de solo lectura muestra la direcci
+n MAC de las interfaces de este dispositivo.
+	</tmpl_if>
+	<tmpl_if LANDHCPEnableShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+		<p>Por lo general, debe dejarse marcado. El servidor DHCP asigna una direcci
+n IP a cada dispositivo conectado. Si el servidor DHCP est
+ apagado, deber
+ asignarse una direcci
+n IP fija a cada dispositivo conectado.
+	</tmpl_if>
+	<tmpl_if LANLANDHCPLeaseTimeShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+		<p>La cantidad de minutos en los que los dispositivos conectados deben renovar la direcci
+n IP que les asign
+ el servidor DHCP. Normalmente, esto se puede dejar en el valor predeterminado, pero si tiene requisitos especiales, puede cambiarlo.
+	</tmpl_if>
+	<tmpl_if LANDHCPStartAddressShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>El inicio del rango de direcciones IP utilizado por el servidor DHCP. Si la IP est
+ configurada en el dispositivo cliente, use una direcci
+n IP fuera de este rango de DHCP; si la direcci
+n IP se establece mediante una reserva de IP, normalmente estar
+ dentro de este rango. NOTA: Solo los usuarios expertos deber
+an cambiar este ajuste.
+	</tmpl_if>
+	<tmpl_if LANDHCPEndAddressShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+		<p>El final del rango de direcciones IP utilizado por el servidor DHCP. Si la IP est
+ configurada en el dispositivo cliente, use una direcci
+n IP fuera de este rango de DHCP; si la direcci
+n IP se establece mediante una reserva de IP, normalmente estar
+ dentro de este rango. NOTA: Solo los usuarios expertos deber
+an cambiar este ajuste. 
+	</tmpl_if>
+	<tmpl_if LANReservedIPAddressShow>		
+	<h3><tmpl_var truncate(_("webui", "adv_lan_reservedIp_button"), (size(_("webui", "adv_lan_reservedIp_button")) - size(":")))></h3>
+		<p>Esta funci
+n se puede utilizar para garantizar que el <tmpl_var _("webui", "webui_product_name")> siempre le asignar
+ la misma direcci
+n IP a un dispositivo conectado. Haga clic en este bot
+n para acceder a la pantalla de configuraci
+n de esta funci
+	</tmpl_if>
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>Si algunos de sus dispositivos conectados son compatibles con IPv6, se deben activar estos ajustes.
+			Los dispositivos conectados a IPv6 podr
+n realizar conexiones IPv6 a Internet.
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+			<p>Esta es la direcci
+n IPv6 de este dispositivo. La direcci
+n Enlace-Local se utiliza para la comunicaci
+n IPv6 entre dispositivos en la misma red. </p>
+	</tmpl_if>	
+	<tmpl_if showLANDeviceName>
+                <h2><tmpl_var _("webui", "adv_lan_web_management_header_text")></h2>
+                <h3><tmpl_var truncate(_("webui", "adv_lan_url_name_label"), (size(_("webui", "adv_lan_url_name_label")) - size(":")))></h3>
+                <p>La URL para acceder a la interfaz de usuario de administraci
+n web local del dispositivo se basa en el nombre del dispositivo en la p
+gina de Preferencias del usuario.</p>
+        </tmpl_if>
+<!-- id="lan" -->

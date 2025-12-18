@@ -1,0 +1,82 @@
+name: PR Safety Checks
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize, ready_for_review]
+
+jobs:
+  pr-safety:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run PR safety check (DO IT guard)
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            if (!pr) {
+              core.info('No pull request data available.');
+              return;
+            }
+
+            // Patterns matching files or code patterns considered high risk
+            const dangerousPaths = [
+              'app/src/main/java/com/zerosms/testing/core/at/',
+              'tools/zerosms_cli.py',
+              'docs/SAFE_OPERATIONS_GUIDE.md'
+            ];
+
+            const dangerousKeywords = [
+              'write_nv', 'unlock_carrier', 'validate_spc', 'modem2_cli',
+              'nwnvitem', 'nwcli', 'unlock_carrier', 'spc'
+            ];
+
+            // Fetch files changed in PR and scan patches for keywords
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.number,
+            });
+
+            let requiresDoIt = false;
+
+            for (const f of files) {
+              const filename = f.filename || '';
+              // Path-based checks
+              if (dangerousPaths.some(p => filename.startsWith(p))) {
+                requiresDoIt = true;
+                break;
+              }
+              // Patch content check
+              if (f.patch) {
+                for (const kw of dangerousKeywords) {
+                  if (f.patch.includes(kw)) {
+                    requiresDoIt = true;
+                    break;
+                  }
+                }
+                if (requiresDoIt) break;
+              }
+            }
+
+            if (!requiresDoIt) {
+              core.info('No high-risk changes detected.');
+              return;
+            }
+
+            // If high-risk changes found, require explicit DO IT and a summary
+            const body = (pr.body || '').toLowerCase();
+            const hasDoIt = /do it/i.test(pr.body || '');
+            const hasSummary = body.includes('summary');
+            const hasTesting = body.includes('test') || body.includes('testing');
+
+            if (!hasDoIt) {
+              core.setFailed('PR changes target NV/device flows — add explicit "DO IT" line in the PR description along with a safety plan (see docs/SAFE_OPERATIONS_GUIDE.md). Example: DO IT');
+            } else {
+              core.info('DO IT present in PR body.');
+              if (!hasSummary || !hasTesting) {
+                core.warning('Please include a clear Summary and Testing steps in the PR body.');
+              }
+            }

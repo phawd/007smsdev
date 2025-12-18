@@ -1,0 +1,81 @@
+<!-- Backup and Restore -->
+<div id="backup_restore">
+         <h1><tmpl_var _("webui", "backup_restore_menu_text")></h1>
+         <h2>
+bersicht</h2>
+         <p>
+ber diese Funktion k
+nnen Sie eine Kopie der Konfigurationseinstellungen dieses Ger
+ts in einer Datei auf dem Computer sichern (herunterladen) oder eine zuvor gespeicherte Konfigurationsdatei wiederherstellen (hochladen). In dieser Konfigurationsdatei sind alle Einstellungen f
+r die Ger
+te-, Router- und Systemfunktionen enthalten. Einstellungen oder Daten f
+r das 4G-/5G-Modem sind nicht enthalten. Hinweis: Eine Datei kann zur Wiederherstellung nur auf dem Ger
+t verwendet werden, von dem sie stammt.
+         </p>
+         <p>
+            
+ber diesen Bildschirm haben Sie die M
+glichkeit, alle Einstellungen auf die werkseitigen Standardwerte zur
+ckzusetzen.
+         </p>
+         <h2><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+         <h3>Admin-Kennwort</h3>
+         <p>
+                 Geben Sie das aktuelle Admin-Kennwort f
+r <tmpl_var _("webui", "webui_product_name")> in dieses Feld ein.
+         </p>
+         <h3><tmpl_var _("webui", "backup_restore_backup_now_button")></h3>
+         <p>
+                 Klicken Sie auf die Schaltfl
+Herunterladen
+, um eine Kopie der aktuellen Konfigurationsdatei auf Ihren Computer herunterzuladen. Wenn im Browser die Aufforderung zum Speichern erfolgt, k
+nnen Sie die Datei bei Bedarf umbenennen.
+         </p>
+         <p class="note">
+                 <strong>Hinweis:</strong> Die Sicherungsdatei kann auf dem heruntergeladenen System oder einem anderen Ger
+t nicht bearbeitet oder angezeigt werden. Diese Datei kann nur f
+r dieses Modell von <tmpl_var _("webui", "webui_product_name")>wiederhergestellt werden, und die Einstellungen k
+nnen nur 
+ber die Webschnittstelle angezeigt oder ge
+ndert werden.
+         </p>
+         <h2><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+         <h3>Admin-Kennwort</h3>
+         <p>
+                 Geben Sie das aktuelle Admin-Kennwort f
+r <tmpl_var _("webui", "webui_product_name")> in dieses Feld ein.
+         </p>
+         <h3><tmpl_var truncate(_("webui", "backup_restore_file_select_label"), (size(_("webui", "backup_restore_file_select_label")) - size(":")))></h3>
+         <p>
+                 W
+hlen Sie die Konfigurationsdatei, die Sie zuvor von diesem <tmpl_var _("webui", "webui_product_name")> auf Ihren Computer heruntergeladen haben.
+         </p>
+         <h3>Schaltfl
+Jetzt wiederherstellen
+         <p>Nachdem Sie eine Konfigurationsdatei ausgew
+hlt haben, klicken Sie auf diese Schaltfl
+che, um das Hochladen der Datei zu starten. Nach dem Hochladen wird die Konfigurationsdatei sofort angewendet, und das Ger
+t wird neu gestartet.
+         </p>
+         <p class="note">
+                 <strong>Hinweis:</strong> Das Hochladen einer Konfigurationsdatei 
+ndert ALLE vorhandenen Einstellungen entsprechend der Konfigurationsdatei ab. Alle bestehenden Verbindungen zu diesem <tmpl_var _("webui", "webui_product_name")>werden unterbrochen, einschlie
+lich dieser Webbrowser-Sitzung.
+         </p>
+         <h2><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+         <p>
+                 Klicken Sie auf die Schaltfl
+che <strong>Auf Werkseinstellungen zur
+cksetzen</strong>, um alle Einstellungen auf die werkseitigen Standardwerte zur
+ckzusetzen. Das f
+hrt zu einem Neustart und damit dazu, dass alle bestehenden Verbindungen zu diesem <tmpl_var _("webui", "webui_product_name")> unterbrochen werden, einschlie
+lich dieser Webbrowser-Sitzung.
+         </p>
+         <h2>Ger
+t neu starten</h2>
+         <p>
+                 
+ber diese Schaltfl
+che schalten Sie das <tmpl_var _("webui", "webui_product_name")> aus und wieder ein.
+         </p>
+ <!-- id="backup_restore" -->

@@ -1,0 +1,331 @@
+#!/bin/sh
+prepare()
+	PAGESIZE=4
+	WAIT_IN_USEC=10000
+	STRACE_LOGS=/tmp/stracelogs
+    logname=`echo ${0##*/} | cut -d . -f 1`
+    STORE_LOG=/tmp/$logname.txt
+    STORE_LOG=/dev/null
+    if [ "$nvtllogdir" == "" ]; then
+	    nvtllogdir=/opt/nvtl/log
+    logdir=$nvtllogdir/$logname
+    if [ ! -d $logdir ]; then
+	    mkdir -p $logdir
+msgbuscli_listing()
+	msgbusclilogfile=$1
+	MSGBUSCLI="msgbus_cli MsgBusGet"
+	$MSGBUSCLI nvtl.psm.refresh >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.psm.state_event >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.psm.capacity_event >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.psm.status_event >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.psm.voltage_event >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.psm.time_to_full_event >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.psm.temp_event >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.psm.batt_det_event >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.psm.chg_det_event >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.psm.pwr_button_event >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.psm.pa_temp_event >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.psm.fact_reset >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.psm.event >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.psm.cmd_tx >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.psm.cmd_rx >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ans.notifications >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ans.configuration.refresh >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.dus.usage.info >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.dus.usage.level >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.dus.traffic.status >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.credentials.pwd.reminder >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.webui.screentimeout >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.stealthmode >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.sys.reset >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.wan.signal >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.voice.signal >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.voicemail.indication >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.sys.client_list >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.sms.unread >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.sms.changed >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.sd.state >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.smb.state >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.avahi.state >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.dlna.state >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.wps.session.status >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.wps.session.mac >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.fota.state >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.wan.connection >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.sim.status >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.gps.fix >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.gps.status >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.current.backhaul >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.modem.signal >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.time.changed >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.plmn_mode >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.cellular_data_mode >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.radio_mode >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.mns_disabled >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.network_reject_cause >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.pin_info >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.fota.dldd >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.fota.uts >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.fota.uts_install_only >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.fota.reboot >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.fota.install_started >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.fota.upgrade_done >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.fota.download_progress >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.fota.network_error >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.fota.not_available_pkg >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.fota.silent_upgrade >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.admin_call.state >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.ota_call.state >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.eri >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.uicc.launch.browser >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.uicc.display_text >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.uicc.display_text >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.roam_conf_required >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.wifi_settings >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm.pip_tone >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.netmon.traffic.eth >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.netmon.traffic.wifi >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.netmon.traffic.usb >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.powersave.deepsleep >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.powersave.broadcast >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.powersave.receive >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.watchdog.command >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.voice.refresh >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.voice.vcm_call_state >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.voice.vcm_serv_state >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.voice.dtm_state >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.voice.dnp_state >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.voice.cmd_rx >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.voice.settings >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.voice.dtmf >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.voice.hook_status >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ui.i18n >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ui.wifi.profile >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ui.wifi.settings >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ui.display_wifi_key_on_screen >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ui.display_admin_key_on_screen >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ui.admin_key >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm4sim.wan_tech_e.tech_modes >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm4sim.lan_settings.ip >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm4sim.lan_settings.subnetmask >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm4sim.lan_settings.ipv6 >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm4sim.mac_filter.enable >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm4sim.mac_filter.list >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm4sim.ip_client.list >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm4sim.mac_database_update.mac >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm4sim.mac_database_update.entry >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.ccm4sim.mac_database_update.type >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.omadm.dm >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.omadm.ui >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.devui.act.status >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.nomadm.fota.tx >> $msgbusclilogfile
+	$MSGBUSCLI nvtl.nomadm.fota.rx >> $msgbusclilogfile
+store_logs()
+    echo "Enter:store logs" | tee -a $STORE_LOG
+	arg1=$1
+    echo "regulator registers ..." | tee -a $STORE_LOG        
+    date >> $logdir/regulator.txt
+    for t in /sys/class/regulator/*; do
+	    echo -n "reg=" >> $logdir/regulator.txt
+	    cat $t/name >> $logdir/regulator.txt
+		if [ -f $t/min_microvolts ] ; then
+			echo -n "min_uV=" >> $logdir/regulator.txt
+			cat $t/min_microvolts  >> $logdir/regulator.txt
+		if [ -f $t/microvolts ] ; then
+			echo -n "uV=" >> $logdir/regulator.txt
+			cat $t/microvolts >> $logdir/regulator.txt
+		if [ -f $t/max_microvolts ] ; then
+			echo -n "max_uV=" >> $logdir/regulator.txt
+			cat $t/max_microvolts >> $logdir/regulator.txt
+	    for j in /sys/kernel/debug/regulator/`cat $t/name`/*; do
+			tmp=`echo ${j##*/} | cut -d . -f 1`
+		    echo -e -n $tmp"\t:" >> $logdir/regulator.txt
+	        cat $j >> $logdir/regulator.txt
+	    done
+        echo >> $logdir/regulator.txt
+    done
+	echo "battery values ..." | tee -a $STORE_LOG
+	date >> $logdir/batt.txt
+	for t in /sys/class/power_supply/bq27500-0/* /sys/devices/virtual/batt_sim/batt_sim/control/* /sys/devices/platform/msm_ssbi.0/pm8018-core/pm8xxx-adc/*
+		if [ -f $t ] && [ -r $t ]
+			tmp=`echo ${t##*/} | cut -d . -f 1`
+			echo -e -n $tmp"\t:" >> $logdir/batt.txt
+			cat $t >> $logdir/batt.txt
+	        echo >> $logdir/batt.txt
+    echo "charger registers ..." | tee -a $STORE_LOG        
+    date >> $logdir/charger.txt
+	dump_chg_drv >> $logdir/charger.txt
+    echo "dmesg ..."  | tee -a $STORE_LOG
+    date >> $logdir/dmesg.txt
+    dmesg >> $logdir/dmesg.txt
+    echo "LSMOD -----------" >> $logdir/dmesg.txt
+    lsmod >> $logdir/dmesg.txt
+    echo "gpio ..."  | tee -a $STORE_LOG
+    date >> $logdir/gpio.txt
+    cat /sys/kernel/debug/gpio >> $logdir/gpio.txt
+    echo >> $logdir/gpio.txt
+    for t in /sys/class/gpio/*; do
+    	if [ -f $t/value ] ; then
+			tmp=`echo ${t##*/} | cut -d . -f 1`
+		    echo -e -n $tmp"\t:" >> $logdir/gpio.txt
+		    cat $t/value >> $logdir/gpio.txt
+		    echo >> $logdir/gpio.txt
+    done
+    echo "processor usage ..." | tee -a $STORE_LOG
+    date >> $logdir/ps-top-rl.txt 
+    echo "uptime" >> $logdir/ps-top-rl.txt
+    uptime >> $logdir/ps-top-rl.txt
+    echo "runlevel" >> $logdir/ps-top-rl.txt
+    runlevel >> $logdir/ps-top-rl.txt
+    echo "TOP" >> $logdir/ps-top-rl.txt
+    top -b -n 1 >> $logdir/ps-top-rl.txt
+    echo "PS" >> $logdir/ps-top-rl.txt
+    ps >> $logdir/ps-top-rl.txt
+    date >> $logdir/threads.txt
+    list_threads.sh >> $logdir/threads.txt
+    echo "cur freq ..."  | tee -a $STORE_LOG
+    date >> $logdir/cpuinfo.txt
+    echo "scaling_cur_freq" >> $logdir/cpuinfo.txt
+    cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq >> $logdir/cpuinfo.txt
+    echo "cpuinfo" >> $logdir/cpuinfo.txt
+    cat /proc/cpuinfo >> $logdir/cpuinfo.txt
+    echo "mem, cpu, du, df ..."  | tee -a $STORE_LOG
+    date >> $logdir/meminfo.txt
+    free -t -m >> $logdir/meminfo.txt
+    cat /proc/meminfo >> $logdir/meminfo.txt
+	echo m > /proc/sysrq-trigger
+	grep Normal /var/log/messages | tail -1 >> $logdir/meminfo.txt
+	memused=0
+	for file in /proc/*; do
+		if [ -f "$file/statm" ] && [ -f $file/cmdline ]
+			process_cmdline=`cat "$file/cmdline"`
+			if [ "$process_cmdline" != "" ]
+				process=`cat "$file/stat" | cut -d" " -f2`
+				process_name=`echo $process | sed s/\(// | sed s/\)//`
+				resident=`cat "$file/statm" | cut -d" " -f2`
+				let  "resident = resident * $PAGESIZE"
+				memused=$(($memused+$resident))
+				echo -e -n "$resident\t" >> $logdir/meminfo.txt
+				echo "$process_name" >> $logdir/meminfo.txt
+	echo -e "$memused\t:TOTAL RAM USAGE">>$logdir/meminfo.txt
+    date >> $logdir/dudf.txt
+    du -h -c -d 1 / >> $logdir/dudf.txt
+    df -h -a >> $logdir/dudf.txt
+    echo "proc stuff ..." | tee -a $STORE_LOG        
+    date >> $logdir/proc.txt
+    echo "/proc/partitions" >> $logdir/proc.txt
+    cat /proc/partitions >> $logdir/proc.txt
+    echo "/proc/iomem" >> $logdir/proc.txt
+    cat /proc/iomem >> $logdir/proc.txt
+    echo "/proc/interrupts" >> $logdir/proc.txt
+    cat /proc/interrupts >> $logdir/proc.txt
+	mkdir -p $STRACE_LOGS
+	killall strace
+	for file in /proc/*; do
+		if [ -f $file/cmdline ] ; then
+			process_cmdline=`cat "$file/cmdline"`
+			if [ "$process_cmdline" != "" ]
+				pid=`cat "$file/stat" |  cut -d " " -f1`
+				process=`cat "$file/stat" | cut -d" " -f2`
+				process_name=`echo $process | sed s/\(// | sed s/\)//`
+			    date > $STRACE_LOGS/$process_name.txt
+				echo "$process_name" >> $STRACE_LOGS/$process_name.txt
+				strace -p $pid 1>>$STRACE_LOGS/$process_name.txt 2>&1 &
+				strace_pid=$!
+				usleep $WAIT_IN_USEC
+				kill -HUP $strace_pid
+	killall strace
+    echo "sockstat ..." | tee -a $STORE_LOG        
+    date >> $logdir/sockstat.txt
+    for t in /proc/*; do
+        if [ -f $t/cmdline ] ; then
+			process_cmdline=`cat "$t/cmdline"`
+			if [ "$process_cmdline" != "" ]
+		        echo -e -n "proc\t:" >> $logdir/sockstat.txt
+		    	echo $process_cmdline >> $logdir/sockstat.txt
+			    if [ -f $t/net/sockstat ] ; then
+				    cat $t/net/sockstat >> $logdir/sockstat.txt
+        fi
+        echo >> $logdir/sockstat.txt
+    done
+    echo "iptables, route, ifconfig, brctl ..."  | tee -a $STORE_LOG
+    date >> $logdir/iptables.txt
+    iptables -L -v >> $logdir/iptables.txt
+    iptables -t nat -L -v >> $logdir/iptables.txt
+    iptables -t filter -L -v >> $logdir/iptables.txt
+    iptables -t mangle -L -v >> $logdir/iptables.txt
+    route -n >> $logdir/iptables.txt
+    date >> $logdir/ifconfig.txt
+    ifconfig -a >> $logdir/ifconfig.txt
+    brctl show >> $logdir/ifconfig.txt
+#    echo "memusage ..."  | tee -a $STORE_LOG
+#	mem_usage_script=nvtl_memusage.sh   
+#	echo "launching mem usage script" | tee -a $STORE_LOG   
+#	/opt/nvtl/bin/$mem_usage_script &
+    echo "versions ..." | tee -a $STORE_LOG        
+    cat /opt/nvtl/etc/mifios-version >> $logdir/mifiosversion.txt
+    ccmcli version >> $logdir/mifiosversion.txt
+    echo "queues ..." | tee -a $STORE_LOG        
+	mkdir -p /dev/mqueue
+	mount -t mqueue none /dev/mqueue
+	for t in /dev/mqueue/*; do
+		echo $t >>  $logdir/queue.txt
+		cat $t >> $logdir/queue.txt
+	mifi_psm_mb_evt -s >> $logdir/queue.txt
+	umount /dev/mqueue
+	msgbuscli_listing $logdir/queue.txt
+    echo "copying system log ..." | tee -a $STORE_LOG        
+    cp -f $nvtllogdir/messages* $logdir/
+	mv $nvtllogdir/*storelogs* ../
+    cp -f $nvtllogdir/*log* $logdir/
+	mv ../*storelogs* $nvtllogdir/
+#    echo "enabling mifi_debug for modem, ccms, psm ..." | tee -a $STORE_LOG        
+#    mifi_debug_cli modem debug
+#    mifi_debug_cli ccms debug
+#    mifi_debug_cli psm debug
+    echo "Copying var/log ..." | tee -a $STORE_LOG        
+    mkdir -p $logdir/var/log
+    cp -R /var/log/ $logdir/var/
+    echo "Copying /tmp ..." | tee -a $STORE_LOG        
+    mkdir -p $logdir/tmp
+    cp -R /tmp/ $logdir/
+    echo "Copying /sysconf ..." | tee -a $STORE_LOG        
+    mkdir -p $logdir/sysconf
+    cp -R /sysconf/ $logdir/
+    echo "Copying /opt/nvtl/omadm ..." | tee -a $STORE_LOG        
+    mkdir -p $logdir/omadm
+	cp -R /opt/nvtl/omadm/ $logdir/
+    echo "Creating archive ..." | tee -a $STORE_LOG        
+    datestring=`date +%Y%m%d_%H%M%S_`
+    debuglogzipfile=$datestring$logname.tar
+    zipfilepath=$nvtllogdir/$debuglogzipfile
+    rm -f $zipfilepath.gz
+    cd $nvtllogdir
+    tar -cv -f $zipfilepath $logdir
+    gzip $zipfilepath
+    echo -n "Created :" | tee -a $STORE_LOG 
+    ls -l $zipfilepath.gz | tee -a $STORE_LOG 
+    rm -rf $logdir
+    if [ "$arg1" != "" ] ; then
+    	echo "Moving $zipfilepath.gz $arg1 ..." | tee -a $STORE_LOG 
+    	mv $zipfilepath.gz $arg1
+    	ls -l $arg1 | tee -a $STORE_LOG 
+    echo "Exit:store logs" | tee -a $STORE_LOG
+    sync
+ensure_one_instance()
+	SCRIPTNAME=`basename $0`
+	PIDFILE=/var/run/${SCRIPTNAME}.pid
+	if [ -f ${PIDFILE} ]; then
+#verify if the process is actually still running under this pid
+	   	OLDPID=`cat ${PIDFILE}`
+	   	RESULT=`ps | grep ${OLDPID} | grep ${SCRIPTNAME}`  
+	   	if [ -n "${RESULT}" ]; then
+		 	echo "Script already running! Exiting" | tee -a $STORE_LOG
+		 	exit 255
+#grab pid of this process and update the pid file with it
+	PID=`ps | grep ${SCRIPTNAME} | head -n1 |  awk ' {print $1;} '`
+	echo ${PID} > ${PIDFILE}
+remove_pidfile()
+	if [ -f ${PIDFILE} ]; then
+ 		echo "removing PIDFILE:${PIDFILE}" | tee -a $STORE_LOG
+ 		rm ${PIDFILE}

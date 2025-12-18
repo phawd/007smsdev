@@ -1,0 +1,19 @@
+<!-- Internet  Sessions -->
+<div id="session_log_info">
+	<h1><tmpl_var _("webui", "session_log_info_menu_text")></h1>
+
+	<p>Sesiju žurnālā ir tālāk norādītie dati.</p>
+	<p>- Datums un laiks (kad izveidots savienojums)</p>
+	<p>- Ilgums (tādā pašā formātā kā informācija par pašreizējo sesiju)</p>
+	<p>- Saņemts (formāts kā pašreizējai sesijai)</p>
+	<p>- Pārsūtīts (formāts kā pašreizējai sesijai)</p>
+	<p>- Kopējais datu apjoms (Rx un Tx summa, formāts tāds pats kā pašreizējās sesijas informācijai)</p>
+	<tmpl_if RoamingStatusShow>
+                <p>- Roaming (Roaming / Teilweise / leer) Leer = Heimnetzwerk </p>
+        </tmpl_if>
+	<p>- IPv4 (IPv4 WWAN IP adrese)</p>
+	<p>- IPv6 (IPv6 WWAN IP adrese)</p>
+
+	<p>Žurnāls ir datumu secībā.</p>
+	<p>Lietotājs nevar mainīt secību, un nav ar sesiju žurnālu saistītu opciju.</p>
+</div>

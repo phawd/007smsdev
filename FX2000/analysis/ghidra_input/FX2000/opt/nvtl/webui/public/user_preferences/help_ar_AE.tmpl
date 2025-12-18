@@ -1,0 +1,30 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+	<p>ﺖﺤﺗﻮﻳ ﻩﺬﻫ ﺎﻠﺷﺎﺷﺓ ﻊﻟﻯ ﺎﻠﻋﺪﻳﺩ ﻢﻧ ﺎﻠﺨﻳﺍﺭﺎﺗ ﺎﻠﺘﻳ ﺖﺴﻤﺣ ﻞﻛ ﺐﻀﺒﻃ ﺖﺸﻐﻴﻟ ﺞﻫﺍﺯ  ﻞﺘﻠﺒﻳﺓ ﺎﺤﺘﻳﺎﺟﺎﺘﻛ ﺐﺸﻜﻟ ﺄﻔﻀﻟ.</p>
+	<tmpl_if showDeviceName>
+                <h3><tmpl_var truncate(_("webui", "preferences_device_name_label"),(size(_("webui", "preferences_device_name_label")) - size(":")))></h3>
+                <p>
+                        يشير اسم الجهاز إلى اسم شبكة الجهاز وعنوان URL للوصول إلى واجهة مستخدم إدارة الويب المحلية للجهاز.
+                </p>
+        </tmpl_if>
+	<h3>اللغة</h3>
+	<p>حدد اللغة المطلوبة.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+	<p>حدد التنسيق الذي يتم عرض التاريخ به على هذه الواجهة المستندة إلى الويب.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+	<p>حدد التنسيق الذي يتم عرض الوقت به على هذه الواجهة المستندة إلى الويب.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+	<p>حدد الوحدة المراد استخدامها لارتفاع GPS ودقته.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+	<p>حدد كيفية عرض الأرقام العشرية. يمكن تحديد النقطة (.) أو الفاصلة (،) للاستخدام كنقطة عشرية.</p>
+
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+		<p>يظهر مؤشر Ethernet على شريط الحالة عند تمكين منفذ Ethernet؛ ويكون مخفيًا في الحالات الأخرى.</p>
+	</tmpl_if>
+	
+</div>

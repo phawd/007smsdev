@@ -1,0 +1,33 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>Administratorpassord</h1>
+	<h2>Oversikt</h2>
+	<p>Administratorpassordet brukes til å logge på dette <tmpl_var _("webui", "webui_product_name")> administratornettstedet. På <em>Administratorpassord</em> -siden kan du endre administratorpassordet og angi et sikkerhetsalternativ knyttet til administratorpassordet.</p>
+
+
+	<h2>Endre <tmpl_var _("webui", "webui_product_name")>-administratorpassordet</h2>
+	<p>Du må først oppgi gjeldende administratorpassord i feltet nedenfor for å bytte til gjeldende administratorpassord. Skjermen oppdateres deretter, og gir deg muligheten til å angi et nytt administratorpassord og et sikkerhetsspørsmål for bruk hvis administratorpassordet mistes.</p>
+
+	<h3>Gjeldende <tmpl_var _("webui", "webui_product_name")> Administratorpassord</h3>
+	<p>Skriv inn gjeldende <tmpl_var _("webui", "webui_product_name")>-administratorpassord i dette feltet. Merk at hvis du oppgir feil verdi for mange ganger, vil du bli låst ute fra dette <tmpl_var _("webui", "webui_product_name")> Administratornettstedet. For å åpne denne låsen, <tmpl_var _("webui", "webui_product_name")> må startes på nytt.</p>
+	<tmpl_if showDisplayPascode>
+		<h2>Vis <tmpl_var _("webui", "webui_product_name")>-administratorpassordet</h2>
+		<p>Hvis denne innstillingen er PÅ, vises *********. Hvis denne innstillingen er AV, kan administratorpassordet leses på Jetpack-skjermen.</p>
+	</tmpl_if>
+
+	<h2>Endre <tmpl_var _("webui", "webui_product_name")>-administratorpassordet</h2>
+	<h3>Nytt administratorpassord</h3>
+	<p>Angi det nye administratorpassordet, ved bruk av kun bokstaver, tall og standard tegnsettingssymboler. Passordet må være minst seks tegn langt.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p>Skriv inn det nye administratorpassordet på nytt i dette feltet.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>Dette sikkerhetsspørsmålet brukes hvis administratorpassordet går tapt, og alternativet «Jeg har glemt administratorpassordet» blir brukt. Velg ønsket spørsmål, og gi svar i feltet nedenfor.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Gi svar på sikkerhetsspørsmålet valgt ovenfor. Vær oppmerksom på at svarene bruker store og små bokstaver.</p>
+
+</div>
+<!-- id="set_passcode" -->
+

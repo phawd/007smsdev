@@ -1,0 +1,45 @@
+<!-- Software Update -->
+<div id="software_update">
+
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+
+	<h2>Ülevaade</h2>
+
+		<p>Tarkvaravärskendused edastatakse mobiilsidevõrgu kaudu automaatselt. Sellel lehel saate neid värskendusi jälgida.</p>
+
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+
+	<h3>Praegune tarkvaraversioon</h3>
+	
+		<p>See väli näitab seadmesse paigaldatud tarkvara versiooni.</p>
+
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var _("webui", "software_update_current_software_configuration_version_label")></h3>
+			
+				<p><tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")></p>
+		</tmpl_if>
+	
+		<h2><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+
+		<h3><tmpl_var _("webui", "software_update_check_for_update_time_label")></h3>
+
+		<p>See väli näitab, millal <tmpl_var _("webui", "webui_product_name")> viimati kontrollis, kas värskendus on saadaval. Värskendust saate käsitsi kontrollida nupuga Otsi uuendusi.</p>
+	
+		<h3>Nupp Otsi uuendusi</h3>
+		<p>Selle abil saate kontrollida, kas seadme <tmpl_var _("webui", "webui_product_name")> jaoks on saadaval värskendus. Tavaliselt ei ole see vajalik, kuna värskendused tõugatakse automaatselt seadmele <tmpl_var _("webui", "webui_product_name")>. Kui teete selle kontrolli ja värskendus on saadaval, laaditakse see automaatselt alla.</p>
+	</tmpl_if>
+
+	<h3><tmpl_var _("webui", "software_update_check_for_update_status_label")></h3>
+
+		<p>Tavaliselt on see tühi, kuid kui otsite värskendust, kuvatakse selle kontrolli tulemus siin. Kui värskendust alla laaditakse, kuvatakse siin ka allalaadimise edenemine.</p>
+	
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+		
+		<p>See paneel kuvab viimase tarkvarauuenduse üksikasjad.</p>
+	
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+	
+		<p>Seda paneeli saab avada lingil/pealkirjal klõpsates. Süsteemivärskenduste ajalugu sisaldab sellesse seadmesse allalaaditud ja paigaldatud viimaste <tmpl_var SoftwareUpdateHistoryCount> värskenduste üksikasju. Kui värskendusi pole paigaldatud, näitab see paneel praegust tarkvaraversiooni.</p>
+</div>
+<!-- end Software Update -->

@@ -1,0 +1,118 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+anas/izsl
+anas iestat
+jumu varat izmantot, ja nepiecie
+ams, lai izsl
+gtu mobilo datu savienojumu un liegtu piek
+uvi mobilajam t
+klam. Tas ne
+auj pievienotaj
+m izveidot savienojumu ar internetu un izmantot j
+su mobilo datu pl
+nu. Norm
+lai darb
+is iestat
+jums ir j
+gts.</p>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Savienojuma preference</h3>
+			<p>Atlasiet v
+lamo opciju, lai noteiktu, kad <tmpl_var _("webui", "webui_product_name")> izveidos datu savienojumu ar mobilo t
+klu.</p>
+	</tmpl_if>
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>Izmantojiet 
+o iestat
+jumu, lai p
+c nepiecie
+bas iesl
+gtu vai izsl
+gtu starptautisko un iek
+zemes viesabon
+anu. Viesabon
+anas laik
+ var tikt piem
+rota papildu maksa par datu p
+rraidi.</p>
+	</tmpl_if>
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p>Noklus
+ba ir "<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>". <tmpl_var _("webui", "webui_product_name")> izv
+sies lab
+ko pieejamo tehnolo
+iju.</p>
+		<p>Ja v
+laties, varat to main
+t, lai ierobe
+otu izmantojam
+kla tehnolo
+ijas.</p>
+	</tmpl_if>
+	<h3>Manu
+kla atlase</h3>
+ funkcija ir pieejama tikai tad, ja ir izsl
+gta autom
+kla atlase. Tas var b
+gi, ja ir pieejami vair
+kli un j
+roku dodat k
+dam no t
+		Noklik
+iniet uz pogas "Atlas
+klu", lai mekl
+tu pieejamos t
+c tam varat izv
+ties vajadz
+	<tmpl_if showApnSettings>
+		<tmpl_if ShowAdvancedSettingsToggleButton>
+			<h2>Papildu iestat
+jumi</h2>
+				Izmantojiet 
+o virsrakstu/saiti, lai p
+c nepiecie
+tu vai pasl
+ptu papildu iestat
+		</tmpl_if>
+			<tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))>
+			APN ir iepriek
+ konfigur
+ts; APN nav j
+maina, ja vien jums nav uz
+muma konta (ar savu APN).
+			Ja nepiecie
+ams main
+t APN, ievadiet mobil
+kla pakalpojumu sniedz
+ja nodro
+		<tmpl_if showApnAuthenticationSettings>		
+				<tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))>
+			</h3>
+			<div class="blockgroup">
+				<p>Atlasiet pakalpojumu sniedz
+to opciju.</p>
+				<ul>
+					<li>Nav</li>
+					<li>PAP</li>
+					<li>CHAP</li>
+				</ul>
+			</div>
+				<tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))>
+			</h3>
+				Ja iestat
+juma Autentifik
+ba ir <strong>Nav</strong>, to var atst
+ ievadiet sava pakalpojumu sniedz
+				<tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))>
+			</h3>
+				Ja iestat
+juma Autentifik
+ba ir <strong>Nav</strong>, to var atst
+ ievadiet sava pakalpojumu sniedz
+		</tmpl_if>
+	</tmpl_if>

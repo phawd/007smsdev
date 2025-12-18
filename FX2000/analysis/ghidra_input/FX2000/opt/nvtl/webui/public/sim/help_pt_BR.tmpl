@@ -1,0 +1,48 @@
+<!-- SIM Lock -->
+<div id="adv_sim">
+        <h1><tmpl_var _("webui", "adv_sim_menu_text")></h1>
+        <h2>Visão geral</h2>
+        <p>O cartão SIM dentro do seu <tmpl_var _("webui", "webui_product_name")> pode ser bloqueado com o uso de um PIN. Se o cartão SIM estiver bloqueado, você precisará inserir o PIN antes de se conectar à rede móvel. Depois de inserido, o PIN é lembrado até o próximo desligamento. </p>
+
+	<p> Além de permitir que você insira o PIN do SIM quando necessário, esta página também permite que você desbloqueie o seu cartão SIM ou altere o PIN do SIM. Normalmente, é preciso inserir o PIN existente para alterar o SIM. Para um SIM da Novatel Wireless, o PIN padrão é disponibilizado pelo seu provedor de serviços. </p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_pin_lock_feature_label"), (size(_("webui", "adv_sim_pin_lock_feature_label")) - size(":")))>
+</h3>
+		<p>O campo indica se o recurso de bloqueio do SIM está ou não em uso. Se estiver "Ligado", o bloqueio do PIN foi ativado e o PIN do SIM deverá ser inserido para se conectar à rede móvel. Se estiver "Desligado", o recurso de bloqueio do PIN não está ativado e o PIN do SIM não é necessário. </p>
+
+	<h3><tmpl_var truncate(_("webui", "adv_sim_status_label"), (size(_("webui", "adv_sim_status_label")) - size(":")))></h3>
+	<p>O campo indica o status atual do cartão SIM. Os valores possíveis são: </p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>Pronto - este é o status normal. O PIN do SIM não é utilizado. </li>
+	        <li>PIN bloqueado - o PIN do SIM deve ser inserido para que você possa utilizar a rede móvel.</li>
+	        <li>PUK bloqueado - o PUK do SIM deve ser inserido para continuar. O PUK pode ser obtido com o seu provedor de serviços.</li>
+	        <li>Desbloqueado - o PIN do SIM é necessário, mas já foi inserido. </li>
+	        <li>Sem SIM - nenhum SIM foi detectado. Se você tiver um SIM, verifique se está inserido corretamente.</li>
+	        <li>Erro de SIM - o SIM foi detectado, mas não respondeu conforme o esperado e não pode ser utilizado. </li>       
+	        </ul>
+	</div>
+        <h2>Operações do SIM</h2>
+        <p>As ações disponíveis dependem do status atual do SIM. Todas as operações possíveis estão listadas e explicadas abaixo. </p>
+
+		<h3>Bloqueio do PIN</h3>
+		<p>Se o SIM estiver atualmente bloqueado pelo PIN, será solicitado que você insira o PIN. Observe que, se for inserido um PIN incorreto várias vezes, o SIM fica bloqueado pelo PUK. Um contador na página indica quantas tentativas incorretas resultam no bloqueio do PUK. Se o PUK estiver bloqueado, ele precisará ser obtido com o seu fornecedor de serviços. </p>
+		<h3>Bloqueio do PUK</h3>
+		<p>Se o SIM estiver atualmente bloqueado pelo PUK, a única operação possível será inserir o PUK. Observe que, se for inserido um PUK incorreto várias vezes, o SIM ficará permanentemente inutilizável. Você precisará adquirir um novo SIM. Um contador na página indica quantas tentativas ainda restam. </p>
+		<h3><tmpl_var _("webui", "adv_sim_enable_pin_lock_option")></h3>
+		<p>Isso configura o SIM para que seja necessário inserir um PIN no momento da inicialização para se conectar à rede móvel. Para efetuar essa operação, você precisa inserir o PIN atual. </p>
+
+		<h3><tmpl_var _("webui", "adv_sim_disable_pin_option")></h3>
+		<p>Você pode usar essa configuração para desativar o bloqueio do PIN que foi ativado anteriormente, de modo que não seja mais necessário inserir um PIN para se conectar à rede móvel. Para efetuar essa operação, você precisa inserir o PIN atual. </p>
+		<h3><tmpl_var _("webui", "adv_sim_change_pin_option")></h3>
+		<p>Para alterar o PIN existente, selecione esta opção e, em seguida, insira os dados necessários: </p>
+		<div class="blockgroup">
+			<ul>
+			<li>PIN atual</li>
+			<li>Novo PIN</li>
+			<li>Confirmar novo PIN</li>
+			</ul>
+		</div>
+		<p>Para um SIM da Verizon Wireless, o novo PIN deve conter 4, 6 ou 8 dígitos. O PIN padrão é disponibilizado pelo seu provedor de serviços. </p>
+</div>
+<!-- id="adv_sim" -->
+

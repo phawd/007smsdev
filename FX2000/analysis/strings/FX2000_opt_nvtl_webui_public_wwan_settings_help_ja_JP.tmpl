@@ -1,0 +1,41 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+<tmpl_var _("webui", "webui_product_name")> 
+	</tmpl_if>
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+	</tmpl_if>
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>
+ <tmpl_var _("webui", "webui_product_name")> 
+	</tmpl_if>
+	<tmpl_unless apnProfileSettings>
+		<tmpl_if NetworksFourGLTEAPNShow>
+			<h3><tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))></h3>
+			<p>APN
+		</tmpl_if>
+		<tmpl_if NetworksCustomAPNShow>
+			<h3><tmpl_var truncate(_("webui", "wwan_settings_custom_apn_label"), (size(_("webui", "wwan_settings_custom_apn_label")) - size(":")))></h3>
+		</tmpl_if>
+	<tmpl_else>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_apn_label"), (size(_("webui", "wwan_settings_apn_label")) - size(":")))></h3>
+		<p>APN
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))></h3>
+		<div class="blockgroup">
+				<li>
+				<li>PAP</li>
+				<li>CHAP</li>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))></h3>
+ <strong>
+</strong>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))></h3>
+ <strong>
+</strong>
+	</tmpl_unless>

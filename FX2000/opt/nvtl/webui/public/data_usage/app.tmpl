@@ -1,0 +1,487 @@
+<script type="text/javascript">
+		/* <![CDATA[ */
+		var retrievalStartText = $("<i/>").html('<tmpl_var _("webui", "data_usage_retrieval_start_text")>').text();
+		var retrievalErrorText = $("<i/>").html('<tmpl_var _("webui", "data_usage_retrieval_error_text")>').text();
+		//convenience variables
+		var date = new Date();
+		var timeoutMaxWait;
+		var lastRequestTime = 0;
+		var delayTime = 3000; // 3 seconds
+		var retrievalDelay = 2000; // 2 seconds
+		var maxRetrievalSec = 15000; // 15 seconds
+		var stopPolling = false;
+		var barPercentage = "<tmpl_var barPercentageRemaining>"
+		var sessionStarted = false;
+
+
+		$(function () {
+
+			var storeDataReceived = "<tmpl_var internetStatusDataReceived>";
+			var storeDataSent = "<tmpl_var internetStatusDataSent>";			
+
+			$(document).ajaxSuccess(function(e, xhr, settings) {
+				if((xhr.responseText) && (settings.dataType == "json")){
+					try {
+						var obj = jQuery.parseJSON(xhr.responseText || "null");						
+
+						if(typeof obj.statusData.statusBarBytesReceived !== "undefined") {
+							if(obj.statusData.statusBarBytesReceived != storeDataReceived) {
+								$("#sessionDataReceived").text(bytesToSize(obj.statusData.statusBarBytesReceived, 2));
+								storeDataReceived = obj.statusData.statusBarBytesReceived;
+							}
+						}
+
+						if(typeof obj.statusData.statusBarBytesTransmitted !== "undefined") {
+							if(obj.statusData.statusBarBytesTransmitted != storeDataSent) {
+								$("#sessionStatusDataSent").text(bytesToSize(obj.statusData.statusBarBytesTransmitted, 2));
+								storeDataSent = obj.statusData.statusBarBytesTransmitted;
+							}
+						}
+
+						if(typeof obj.statusData.statusBarConnectionDuration !== "undefined") {
+							$("#sessionConnectedTime").text(formatConnectedDurationTime(obj.statusData.statusBarConnectionDuration) + "<tmpl_var _('webui', 'data_usage_connection_time_text_label')>");
+						}
+
+						getSessionStartInfo();
+
+					} catch(e) {}
+				}
+
+			});
+			
+			function bytesToSize(bytes, precision)
+			{
+				var sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+				var posttxt = 0;
+				if (bytes == 0) return '0';
+				while( bytes >= 1024 ) {
+					posttxt++;
+					bytes = bytes / 1024;
+				}
+				return Number(bytes).toFixed(precision).replace(".", "<tmpl_var localNumericFormat>")+ " " + sizes[posttxt];
+			}
+
+			function formatConnectedDurationTime(seconds)
+			{
+				var days = Math.floor(seconds / 86400);
+				var hours = Math.floor((seconds - (days * 86400)) / 3600);
+				var minutes = Math.floor((seconds - (days * 86400) - (hours * 3600)) / 60);
+				var seconds = seconds - (days * 86400) - (hours * 3600) - (minutes * 60);
+				var time = "";
+
+				days = (days < 10) ? "0" + days : String(days);
+				hours = (hours < 10) ? "0" + hours : String(hours);
+				minutes = (minutes < 10) ? "0" + minutes : String(minutes);
+				time += days + ":" + hours + ":" + minutes + ":";
+				time += (seconds < 10) ? "0" + seconds : String(seconds);
+
+				return time;
+			}
+
+			$(".ig_section, #data_usage_form").hide();
+			var updatedUsedData = "<tmpl_var lineUsage>";
+
+			var statusBarSimStatus = '<tmpl_var isSimReady>';
+			var simOk = "false";
+			if(statusBarSimStatus) {
+				simOk = "true";
+			}
+
+			if(simOk == "false") {
+				dataUsageNotAvailable();
+			} else {
+				//start loop to wait for data usage info to become available
+				triggerUsageRetrieval();
+			}
+	
+			$("button.reset").click(function () {
+				modalPopup.createWindow("<tmpl_var _('webui', 'webui_modal_title')>",
+					"<p><tmpl_var _('webui', 'data_usage_reset_confirm_modal_text')></p>", 430, 250,
+					[{
+						text: "<tmpl_var _('webui', 'webui_modal_cancel_button')>",
+						className: "cancel"
+					}, {
+						text: "<tmpl_var _('webui', 'webui_modal_confirm_button')>",
+						className: "primary",
+						trigger: postData
+					}]);
+			});
+
+			$(document).on('submit', 'form#data_usage_form', function () {
+				var errors = false;
+				var regxp = /^\d+(\.\d{1,2})?$/;
+				var dataUsageLimitValue = $("#dataUsagePlanLimit").val();
+				var isNumValid = regxp.test(dataUsageLimitValue);
+
+				if ((dataUsageLimitValue < 1) || (isNaN(dataUsageLimitValue)) || (!isNumValid)) {
+					$("#dataUsagePlanLimitError").remove();
+					$("#dataUsagePlanLimit").after("<div id='dataUsagePlanLimitError' class='inline_error'> <tmpl_var _('webui', 'data_usage_maximum_limit_error_text')> </div>");
+					errors = true;
+				}
+				if (errors === true) {
+					return false;
+				} else {
+					return true;
+				}
+			});
+
+		});
+
+		function getSessionStartInfo() {
+			if(sessionStarted == false) {
+				$.ajax({
+					url : "<tmpl_udf GET_URI('data_usage_get_session_start_info')>",
+					type : "GET",
+					dataType : "json",
+					success : function(data) {
+						if(data["sessionCount"] > 0) {
+							$("#sessionStartDate").append(data["sessionStartDate"]);
+							sessionStarted = true;
+						}
+					},
+					error : function(xhr, textStatus, errorThrown) {
+					},
+					complete : function(xhr, textStatus) {						
+					}
+				});
+			}
+		}
+
+		function triggerUsageRetrieval(){
+			$("#retrieval_status").addClass('loading').text(retrievalStartText);
+			$.ajax({
+				url : "<tmpl_udf GET_URI('data_usage_retrieve')>",
+				type : "GET",
+				dataType : "json",
+				success : function(data) {
+					maxRetrievalSec = data["maxRetrievalDuration"]*1000;
+					// Let's give some time before first checking usage
+					setTimeout(kickOff, retrievalDelay);
+				},
+				error : function(xhr, textStatus, errorThrown) {
+					//something went wrong with the trigger, simply revert to proper message
+					dataUsageNotAvailable();
+				}
+			});
+		}
+
+		function kickOff(){
+			timeoutMaxWait = setTimeout(function(){
+				dataUsageNotAvailable();
+				clearTimeout(timeoutMaxWait);
+				stopPolling = true;
+			}, maxRetrievalSec);
+			backYet();
+		}
+
+		function backYet(){
+			$.ajax({
+				url : "<tmpl_udf GET_URI('data_usage_info')>",
+				type : "GET",
+				dataType : "json",
+				timeout : maxRetrievalSec,
+				success: function(data, textStatus, xhr) {
+					// If no network connected, success event still occurs.
+					// We need to implicitly see an xhr.status greater than 0 to know we've actually made contact.
+					if ( (xhr.readyState == 4 ) && (xhr.status > 0) ) {
+						if( (data["usageInformationAvailable"] != false)) {
+							//$(".spinner").hide();
+							$("#retrieval_status").hide();
+							$("#data_usage_stats").show();
+							$("#data_usage_settings").show();
+							$(".ig_section, #data_usage_form").show();
+
+							clearTimeout(timeoutMaxWait);
+							stopPolling = true;
+							
+							if (data.dataUsagePlanLimit == "0 GB") { // Non case.
+								$("#usageLimit").text(data.lineUsage + " " + data.unit);
+							} else {
+								$("#usageTitle").html('<tmpl_var _("webui", "data_usage_my_plan_text")>' + ' ' + + data["allowance"] + ' ' + data["unit"] + '<tmpl_var _("webui", "apps_home_allowance_description_text")>');
+								$("#dataUsageTitle").html('<tmpl_var _("webui", "apps_home_general_data_usage_text")>' + ' ' +'<span class="usage_data">' + data["remainingUsage"] + ' ' + data["unit"] + '</span> <tmpl_var _("webui", "apps_home_remaining_text")>');
+								$("#usedPercentage").html('<span class="count">' + data["barPercentageRemaining"] + '%'+'</span>' );
+								//$("#totalUsagePercentage").attr('style', 'width: ' + data["barPercentageTotalShrUsage"] + '%');
+								$("#remainingData").html('<span class="dataInfo">' + data["remainingUsage"] + ' ' + data["unit"] +'</span>');
+								$("#dataUsed").html(data["lineUsage"] + ' ' + data["unit"] + ' ' +'<tmpl_var _("webui", "apps_home_data_used_text")>' );
+								$("#dataRemaining").html(data["remainingUsage"] + ' ' + data["unit"] +'<tmpl_var _("webui", "data_usage_remaining_text")>' );
+								$("#remainingText").html('<tmpl_var _("webui", "data_usage_remaining_text")>');
+							   // var progressPercent = $('.progress-wrap').data('progress-percent');
+								$('.progress-wrap').data('progress-percent', 'data["barPercentageRemaining"]')
+								
+							}
+							$("#deviceUsage").html('<tmpl_var _("webui", "apps_home_cycle_ends_text")>' + ' ' + data["cycleEndDt"]);           
+							$("#data_plan_circle_inner").html(data["daysLeft"]);
+							if (data["daysLeft"] == 1 ){
+								$("#data_plan_circle_outer").html('<tmpl_var _("webui", "data_usage_day_to_go_text")>');
+							} else {
+								$("#data_plan_circle_outer").html('<tmpl_var _("webui", "data_usage_days_to_go_text")>');
+							}
+							barPercentage = data["barPercentageRemaining"];
+							moveProgressBar(); //Progress Bar 
+						}					
+
+						$("#txUsage").text(data["txUsage"] + " " + data.unit);
+						$("#rxUsage").text(data["rxUsage"] + " " + data.unit);
+						$("#TotalUsage").text(data["lineUsage"] + " " + data.unit);	                        
+					}
+			
+				},
+				error: function (xhr, textStatus, errorThrown) {
+					dataUsageNotAvailable();
+				},
+				complete : function(xhr, textStatus) {
+					if(stopPolling == false) {
+						// Long Polling, until timeout.
+						// timeout doesn't seem to kick in if no network response is returned.
+						// All this delay nonsense is for Window's benefit.
+						var diff = date.getTime() - lastRequestTime;
+						var delay = (diff > delayTime) ? 0 : delayTime - diff;
+						lastRequestTime = date.getTime();
+						setTimeout(backYet, delay);
+					}
+				}
+			});
+	   
+		}
+
+		function dataUsageNotAvailable() {
+			$("#data_usage_stats").hide();
+			$("#data_usage_settings").hide();
+			$(".ig_section, #data_usage_form").hide();
+			$("#retrieval_status").removeClass('loading').text(retrievalErrorText);
+		}
+
+		function postData() {
+			$.ajax({
+				url: '<tmpl_udf GET_URI("data_usage_reset_date")>',
+				type: "POST",
+				data: {
+					gSecureToken: "<tmpl_var gSecureToken>"
+				},
+				dataType: "json",
+				complete: function () {
+					window.location.reload(true);
+				}
+			});
+		}
+		// on browser resize...
+		$(window).resize(function() {
+			moveProgressBar();
+		});
+
+		// PROGRESS
+		function moveProgressBar() {
+		
+			var getPercent = (barPercentage / 100);
+			var getProgressWrapWidth = $('.progress-wrap').width();
+			var progressTotal = getPercent * getProgressWrapWidth;
+			var animationLength = 2500;
+			
+			// on page load, animate percentage bar to data percentage length
+			// .stop() used to prevent animation queueing
+			$('.progress-bar').stop().animate({
+				left: progressTotal
+			}, animationLength);
+		}
+		$('.count').each(function () {
+			$(this).prop('Counter',0).animate({
+				Counter: $(this).text()
+			}, {
+				duration: 3000,
+				easing: 'linear',
+				step: function (now) {
+					$(this).text(Math.ceil(now));
+				}
+			});
+		});
+		/* ]]> */
+</script>
+
+<tmpl_if gPostSuccess>
+	<div class="notification app success">
+		<div class="notification_inner">
+			<p>
+				<tmpl_var _("webui", "webui_save_code_success_text")>
+			</p>
+		</div>
+	</div>
+</tmpl_if>
+<!-- <h1 class="subSectionHead"> <tmpl_var _("webui", "data_usage_menu_text")></h1> -->
+ <tmpl_if showUsageIntroText>
+                <p class="note">
+                        <tmpl_var _("webui", "data_usage_intro_text")>
+                </p>
+        </tmpl_if>
+
+
+<div id="retrieval_status" class="usage_status"></div>
+<fieldset id="data_usage_stats" class="first" style="display:none;">
+	<tmpl_block "other_none_table">
+		<div class="table">
+			<div class="row clearfix">
+				<div class="col label">
+					<tmpl_var _("webui", "data_usage_data_used_label")>
+				</div>
+				<div class="col input" id="usageLimit">
+					<tmpl_var lineUsage>&nbsp;<tmpl_var unit>
+				</div>
+			</div>
+			<div class="row clearfix">
+				<div class="col label">
+					<tmpl_var _("webui", "data_usage_days_remaining_label")>
+				</div>
+				<div class="col input">
+					<tmpl_var daysLeft>
+				</div>
+			</div>
+		</div><!-- /.table -->
+	</tmpl_block>
+
+	<tmpl_if IN_SET(dataUsagePlanLimit, "0 GB")>
+		<tmpl_call "other_none_table">
+	<tmpl_else>
+		<div class="ig_section ig_group">
+			<div class="ig_row">
+				<div class="ig_col ig_3">
+					<div id="data_plan_circle" class="duCircleBlock">
+						<div class="duCircle">
+							<div id="usedPercentage" class="percent"><span class="count">100</span>%</div>
+							<div class="dataInfo"> <span id="remainingData"></span> of<span id="remainingText"></span></div>
+							<div class="remainingDaysCircleHolder">
+								<div id="data_plan_circle_inner" class="remainingDaysCircle">
+		
+								</div>
+							</div>
+						</div>
+						<span id="data_plan_circle_outer"></span>
+					</div>
+				</div>
+
+				<div class="ig_col ig_6">
+						<!-- bar -->
+						<div id="data_plan_wrapper" class="progress_bar_wrapper clearfix">
+							<div id="data_plan_usage_bar_col" class="clearfix" >
+								<div id="status_title" class="data_usage_status clearfix"><h3 class="title" id="usageTitle"></h3></div>
+								<div id="dataUsageTitle"></div>
+								<br>
+								<div class="used"><span class="usedBox">&nbsp;</span> <span id="dataUsed"></span> </div><div class="remaining"><span class="remainingBox">&nbsp;</span> <span id="dataRemaining"></span> </div>
+								<div class="progress-wrap progress" data-progress-percent="<tmpl_var barPercentageRemaining>">
+									<div class="progress-bar progress"></div>
+								</div>
+							</div>
+							<div id="data_plan_usage_bar_footer" class="clearfix">
+								<div class="lineUsage" id="deviceUsage" x-ms-format-detection="none"></div>
+							</div>
+						</div>
+						<!-- /bar -->
+				</div>
+
+				<div class="ig_col ig_3 duaReset">		
+					<button type="button" class="btn btn-secondary reset">
+						<tmpl_var _("webui", "data_usage_reset_button")>
+					</button>
+				</div>
+			</div>
+		</div>
+	</tmpl_if>
+</fieldset>
+
+<form id="data_usage_form" method="POST" action="<tmpl_udf GET_URI('data_usage')>">
+	<fieldset id="data_usage_settings" class="last" style="display:none;">
+		<input type="hidden" name="gSecureToken" id="gSecureToken" value="<tmpl_var gSecureToken>" />
+		<div class="table">
+			<div class="row clearfix">
+				<div class="col label">
+					<label for="dataUsagePlanStartDay"> <tmpl_var _("webui", "data_usage_billing_cycle_label")></label>
+				</div>
+				<div class="col input">
+					<select name="dataUsagePlanStartDay" id="dataUsagePlanStartDay">
+						<tmpl_include "usage_plan_start_day_options.tmpl">
+					</select>
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col label">
+					<label for="dataUsagePlanLimit"><tmpl_var _("webui", "data_usage_plan_limit_label")></label>
+				</div>
+				<div class="col input">
+					<input  id="dataUsagePlanLimit" name="dataUsagePlanLimit" value="<tmpl_var dataUsagePlanLimit >"  type="text">
+				</div>
+				<div id="dataUsagePlanLimitInfo" class="">
+					<tmpl_var _("webui", "data_usage_plan_limit_help_text")>
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col label">
+					<label for="sessionStartDate"><tmpl_var _("webui", "data_usage_connection_start_time_label")></label>
+				</div>
+				<div class="col input" id="sessionStartDate">
+					<tmpl_var sessionStartDate >
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col label">
+					<label for="sessionConnectedTime"><tmpl_var _("webui", "data_usage_connection_time_label")></label>
+				</div>
+				<div class="col input" id="sessionConnectedTime">
+					<tmpl_var sessionConnectedTime ><tmpl_var _("webui", "data_usage_connection_time_text_label")>
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col label">
+					<label for="sessionStatusDataSent"><tmpl_var _("webui", "data_usage_transmitted_label")></label>
+				</div>
+				<div class="col input" id="sessionStatusDataSent">
+					<tmpl_var sessionStatusDataSent >
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col label">
+					<label for="sessionDataReceived"><tmpl_var _("webui", "data_usage_received_label")></label>
+				</div>
+				<div class="col input" id="sessionDataReceived">
+					<tmpl_var sessionDataReceived >
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col label">
+					<label for="txUsage"><tmpl_var _("webui", "data_usage_plan_tx_label")></label>
+				</div>
+				<div class="col input" id="txUsage">					
+					<tmpl_var txUsage >
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col label">
+					<label for="rxUsage"><tmpl_var _("webui", "data_usage_plan_rx_label")></label>
+				</div>
+				<div class="col input" id="rxUsage">
+					<tmpl_var rxUsage >
+				</div>
+			</div>
+
+			<div class="row clearfix">
+				<div class="col label">
+					<label for="rxUsage"><tmpl_var _("webui", "data_usage_plan_total_usage_label")></label>
+				</div>
+				<div class="col input" id="TotalUsage">
+					<tmpl_var lineUsage >
+				</div>
+			</div>
+
+		</div><!-- /.table -->
+	</fieldset>
+
+	<div class=" clearfix">
+		<button type="submit" class="btn btn-primary ig_3">
+			<tmpl_var _("webui", "webui_save_button")>
+		</button>
+	</div>
+</form>

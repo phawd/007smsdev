@@ -1,0 +1,61 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+	<h2>Översikt</h2>
+		<p>Dessa inställningar gäller för ditt lokala nätverk eller LAN. För den här enheten består LAN av den här enheten och alla anslutna enheter (inklusive de Ethernet-anslutna enheterna, i förekommande fall).</p>
+			
+	<h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+
+	<tmpl_if LANIPAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+		<p>IP-adressen för den här enheten, sett från det lokala nätverket. Normalt sett kan du använda standardvärdet.</p>
+	</tmpl_if>
+
+	<tmpl_if LANSubnetMaskShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+		<p>Standardvärdet 255.255.255.0 är standard för små nätverk (klass ”C”). Om du ändrar LAN-IP-adressen, se till att du använder rätt subnätmask.</p>
+	</tmpl_if>
+		
+	<tmpl_if LANMacAddressShow>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+		<p>MAC-adressen är ett unikt nätverks-id som tilldelas när en nätverksenhet tillverkas. Det här skrivskyddade fältet visar MAC-adressen för Wi-Fi- och USB-gränssnitten på den här enheten.</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPEnableShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+		<p>Normalt bör detta lämnas markerat. DHCP-servern tilldelar en IP-adress till varje ansluten enhet. Om DHCP-servern stängts av måste varje ansluten enhet tilldelas en fast IP-adress.</p>
+	</tmpl_if>
+
+	<tmpl_if LANLANDHCPLeaseTimeShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+		<p>Det här fältet avgör hur ofta anslutna enheter måste förnya den IP-adress som tilldelats dem av DHCP-servern. Vanligtvis kan standardvärdet behållas, men om du har speciella krav kan du ändra detta värde.</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPStartAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>Om du vill ändra IP-adressintervallet som används av DHCP-servern kan du göra det genom att ändra detta värde. Detta alternativ är endast för experter.</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPEndAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+		<p>Detta indikerar intervallet med IP-adresser som kan allokeras till anslutna enheter. Om du använder en fast IP-adress på en ansluten enhet bör du använda en IP-adress som ligger utanför detta intervall.</p>
+	</tmpl_if>
+
+	<tmpl_if LANReservedIPAddressShow>		
+	<h3><tmpl_var truncate(_("webui", "adv_lan_reservedIp_help_label"), (size(_("webui", "adv_lan_reservedIp_help_label")) - size(":")))></h3>
+		<p>Den här funktionen kan användas för att säkerställa att en ansluten enhet alltid tilldelas samma IP-adress av <tmpl_var _("webui", "webui_product_name")>. Klicka på den här knappen för att öppna konfigurationsskärmen för den här funktionen.</p>
+	</tmpl_if>
+		
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>Om vissa av dina anslutna enheter stöder IPv6 bör den här inställningen vara aktiverad. IPv6-anslutna enheter kommer sedan att kunna upprätta IPv6-anslutningar till internet.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+			<p>Detta är denna enhets IPv6-adress. Den lokala länkadressen används för IPv6-kommunikation mellan enheter i samma nätverk.</p>
+	</tmpl_if>	
+			
+</div>
+<!-- id="lan" -->
+

@@ -1,0 +1,91 @@
+<!-- Connected Devices -->
+<div id="connected_devices">
+	<h1><tmpl_var _("webui", "connected_devices_menu_text")></h1>
+bersicht</h2>
+		Auf dieser Seite werden Informationen zu jedem Ger
+t angezeigt, das mit dem <tmpl_var _("webui", "webui_product_name")> verbunden ist, zus
+tzlich werden auch alle gesperrten Ger
+te aufgef
+	<h2><tmpl_var _("webui", "connected_devices_sub_header_text")></h2>
+		In dieser Tabelle werden alle mit dem WLAN-Netzwerk verbundenen Ger
+te aufgef
+hrt. Der Name des WLAN-Netzwerks wird nach der 
+berschrift angezeigt. Wenn ein Computer 
+ber ein USB-Kabel mit dem <tmpl_var _("webui", "webui_product_name")> verbunden ist, wird dieser Computer in dieser Tabelle aufgef
+		Die folgenden Informationen werden f
+r jedes verbundene Ger
+t angezeigt:
+	<h3>Verbindungstyp</h3>
+		Ein Symbol zeigt den Verbindungstyp f
+r jedes verbundene Ger
+	<h3>Name</h3>
+		Normalerweise ist dies der Hostname des verbundenen Ger
+ts, der auf dem verbundenen Ger
+t selbst festgelegt wurde. In seltenen F
+llen kann es vorkommen, dass kein Hostname verf
+gbar ist. Wenn Sie 
+ber die Option 
+Bearbeiten
+ den Namen f
+r ein verbundenes Ger
+t festgelegt haben, wird anstelle des Hostnamens der von Ihnen angegebene Name angezeigt.
+ber die Option 
+Bearbeiten
+nnen Sie den Namen jedes verbundenen Ger
+	<h3>IP-Adresse</h3>
+		Die IP-Adresse des verbundenen Ger
+		<tmpl_var truncate(_("webui", "connected_devices_mac_address_label"), (size(_("webui", "connected_devices_mac_address_label")) - size(":")))>
+		Die MAC-Adresse ist eine eindeutige Netzwerkkennung f
+r dieses verbundene Ger
+	<tmpl_if isIPv6Supported>
+			<tmpl_var truncate(_("webui", "connected_devices_link_local_label"), (size(_("webui", "connected_devices_link_local_label")) - size(":")))>
+			Wenn das verbundene Ger
+t IPv6 unterst
+tzt, wird die verbindungslokale IPv6-Adresse angezeigt.
+	</tmpl_if>
+	<tmpl_if GuestWifiSupported>
+		<h2><tmpl_var _("webui", "connected_devices_guest_title")></h2>
+			Wird das WLAN-Gastnetzwerk verwendet, werden in dieser Tabelle alle Ger
+te aufgef
+hrt, die mit diesem Netzwerk verbunden sind. Der Name des WLAN-Netzwerks wird nach der 
+berschrift angezeigt.
+			Darstellung und Betrieb f
+r die hier aufgef
+hrten Ger
+te ist identisch mit den Ger
+ten, die unter dem prim
+ren Netzwerk aufgef
+hrt sind.
+	</tmpl_if>
+	<h2>Sperren und Entsperren von Ger
+ten</h2>
+	<h3>Schaltfl
+		Ein Klick auf die Schaltfl
+ trennt das verbundene Ger
+t und verhindert die erneute Verbindung. Das gesperrte Ger
+t wird in der Sperrliste aufgef
+		Gesperrte Ger
+te werden sowohl im prim
+ren als auch im Gastnetzwerk gesperrt.
+		Diese Option ist f
+r jedes verbundene Ger
+t, ausgenommen das eigene Ger
+t, und f
+r jedes 
+ber USB verbundene Ger
+	<h3>Sperrliste</h3>
+		Hier werden alle Ger
+te aufgelistet, die Sie gesperrt haben. Hinweis: Diese Ger
+te haben keine IP-Adresse, da sie derzeit nicht verbunden und f
+r den Verbindungsaufbau gesperrt sind. Stattdessen werden sie durch ihren Namen und die MAC-Adresse gekennzeichnete.
+	<h3>Schaltfl
+Entsperren
+		Wenn Sie auf die Schaltfl
+Entsperren
+ klicken, wird die Sperrung eines zuvor gesperrten Ger
+ts aufgehoben, so dass es wieder eine Verbindung herstellen kann. Das entsperrte Ger
+t wird aus der Sperrliste gel
+scht und erscheint wieder in der Liste 
+Verbundene Ger
+, wenn es eine Verbindung herstellt.
+<!-- id="connected_devices" -->

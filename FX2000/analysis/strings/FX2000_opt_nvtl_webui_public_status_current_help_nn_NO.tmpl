@@ -1,0 +1,66 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>Dette viser tilkoblingsstatusen for internettilkoblingen via mobilnettverket.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>Navnet p
+ mobilnettverket som denne enheten for 
+yeblikket er koblet til.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>Nettverksteknologien som brukes for den gjeldende tilkoblingen. LTE er den raskeste, tilgjengelige teknologien.</p> 
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>Tiden som har g
+tt siden tilkoblingen ble opprettet for den gjeldende internett
+kten.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))></h3>
+	<p>Mottatt datamengde for den gjeldende internett
+kten. Denne telleren starter fra null n
+r tilkoblingen er opprettet.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>Overf
+rt datamengde for den gjeldende internett
+kten. Denne telleren starter fra null n
+r tilkoblingen er opprettet.</p>
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+	<p>Internett-IP-adressen som er tilordnet denne enheten.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))></h3>
+	<p>Nettverksmasken tilknyttet IP-adressen ovenfor.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	<p>IP-adressen til gateway-en som er tilknyttet IP-adressen ovenfor.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))></h3>
+	<p>Domenenavnserveren som for 
+yeblikket brukes av denne enheten.</p>
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+	<p>Den globale IPv6-adressen for <tmpl_var _("webui", "webui_product_name")> vises her. Dette vil v
+re tomt hvis IPv6 er sl
+tt av, eller ikke st
+ttes av den gjeldende nettverkstilkoblingen.</p>
+	<tmpl_if InternetStatusViewSessionShow>
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+ktloggen inneholder f
+lgende data:</p>
+	<p>- Dato og tid (n
+r tilkobling startet)</p>
+	<p>- Varighet (samme format som gjeldende 
+ktinformasjon)</p>
+	<p>- Mottatt (format som for gjeldende 
+	<p>- Overf
+rt (format som for gjeldende 
+	<p>- Totaldata (summen av Rx og Tx, format som for gjeldende 
+ktinformasjon)</p>
+ Roaming (Roaming/Delvis/tom) Tom = hjemmenettverk</p>
+	<p>- IPv4 (IPv4 WWAN IP-adresse)</p>
+ IPv6 (IPv6 WWAN IP-adresse)</p>
+	<p>Loggen er ordnet etter dato.</p>
+	<p>Bruker kan ikke endre rekkef
+lgen, og det er ingen alternativer knyttet til 
+ktloggen.</p>
+	</tmpl_if>
+<!-- id="status_internet" -->

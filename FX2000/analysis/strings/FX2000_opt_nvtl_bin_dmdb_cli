@@ -1,0 +1,510 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+localtime
+strftime
+dmdb_update_device_list
+dmdb_get_error_string
+dmdb_update_wan_session_states
+strptime
+dmdb_new_data_session
+dmdb_update_data_session
+__isoc99_sscanf
+GLIBC_2.7
+dmdb_update_eth_wan_connection_stats
+dmdb_new_eth_session
+dmdb_update_eth_session
+__isoc99_scanf
+dmdb_is_running
+dmdb_get_configuration
+dmdb_set_device
+dmdb_get_device
+dmdb_delete_device
+dmdb_get_known_device_list
+dmdb_get_connected_device_list
+dmdb_get_device_settings_list
+dmdb_set_device_settings_list
+dmdb_get_list_by_name
+dmdb_get_whitelist
+dmdb_search_whitelist
+dmdb_get_blacklist
+dmdb_search_blacklist
+dmdb_get_internet_blocked_list
+dmdb_search_internet_blocked_list
+dmdb_get_reserved_ip_list
+dmdb_search_reserved_ip_list
+dmdb_get_mac_filter_enabled
+dmdb_set_mac_filter_enabled
+dmdb_get_mac_filter_type
+dmdb_set_mac_filter_type
+dmdb_dus_get_data_usage_statistics
+dmdb_dus_get_usage_reset_date
+dmdb_dus_delete_usage_prior_to_date
+dmdb_dus_get_sim_usage_reset_date
+dmdb_dus_delete_sim_usage_prior_to_date
+dmdb_dus_get_session_log
+dmdb_dus_eth_get_data_usage_statistics
+dmdb_dus_eth_get_usage_reset_date
+dmdb_dus_eth_delete_usage_prior_to_date
+dmdb_dus_eth_get_mac_usage_reset_date
+dmdb_dus_eth_delete_mac_usage_prior_to_date
+dmdb_dus_eth_get_session_log
+dmdb_dus_get_usage_log
+dmdb_dus_get_traffic_status
+dmdb_dus_get_records_for_client_upload
+dmdb_dus_set_client_upload_state
+dmdb_dus_set_usage_data
+dmdb_get_site_access_monitor_enabled
+dmdb_set_site_access_monitor_enabled
+dmdb_sa_get_site_access_statistics
+dmdb_update_site_access
+dmdb_configure_site_access_monitor
+dmdb_sa_delete_sites_prior_to_date
+dmdb_configure_mac_filter
+dmdb_configure_white_list
+dmdb_configure_black_list
+dmdb_mdm_update_sim_info
+mifi_dbg_start
+__bss_start
+librt.so.1
+libmifimsgbus.so
+libxmldata_api.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+librouter2_api.so
+libwifi_api.so
+libccm2_api.so
+libusb_api.so
+libsqlite3.so.0
+H	KxD	J{D
+----------------
+Private API Commands
+update_device_list
+Private API: inserts or updates a device record - used internally by the device monitor thread.
+update_wan_session_states
+Private API: triggers a change in the wwan session state - used internally by the dmdb message bus handler.
+new_data_session
+Private API: inserts a new data session - used internally by the data usage thread.
+update_data_session
+Private API: updates an existing data session - used internally by the data usage thread.
+update_eth_wan_session_stats
+Private API: triggers a change in the wwan session styats - used internally by the dmdb message bus handler.
+new_eth_data_session
+update_eth_data_session
+update_site_access
+Private API: inserts a site access record if necessary - used internally by the site access thread.
+configure_site_access_monitor
+Private API: starts or stops SAM based on the enabeld setting - used internally by the dmdb msgbus handler.
+configure_mac_filter
+Private API: updates the mac filter type - used internally by the dmdb msgbus handler.
+configure_white_list
+Private API: updates the white list for device monitor - used internally by the dmdb msgbus handler.
+configure_black_list
+Private API: updates the black list for device monitor - used internally by the dmdb msgbus handler.
+update_sim_info
+Sets the current sim information in the db and flushes usage logs if necessary.
+General Commands
+Prints out usage and command listing.
+rc_to_str
+Converts an error code to the string.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+get_configuration
+Gets the dmdb configuration parameters.
+Device Database Commands
+set_device
+Adds or updates a device in the database.
+get_device
+Gets a device record searching by mac id.
+get_known_device_list
+Returns the entire list of known devices.
+get_connected_device_list
+Returns the entire list of currently connected devices.
+get_device_settings_list
+Returns the entire list of devices with modified settings.
+set_device_settings_list
+Updates the device settings.
+delete_device
+Deletes a device based on mac id.
+get_list_by_name
+Select all devices with the specified name.
+get_whitelist
+Retrieves the whitelisted devices.
+search_whitelist
+Searches the whitelist for a specific mac id.
+get_blacklist
+Retrieves the blacklisted devices.
+search_blacklist
+Searches the blacklist for a specific mac id.
+get_internet_blocked_list
+Retrieves the list of devices blocked from accessing the internet.
+search_internet_blocked_list
+Searches the internet blocked list for a specific mac id.
+get_reserved_ip_list
+Retrieves the devices with a reserved ip address.
+search_reserved_ip_list
+Searches the reserved ip list for a specific mac id.
+get_mac_filter_enabled
+Gets the mac filter enabled state (1 or 0).
+set_mac_filter_enabled
+Sets the mac filter enabled state (1 or 0).
+get_mac_filter_type
+Gets the mac filter type which is one of (enabled, whitelist, blacklist).
+set_mac_filter_type
+Sets the mac filter type to one of (enabled, whitelist, blacklist).
+Data Usage Database Commands
+get_data_usage_statistics
+Get global data usage statistics.
+get_usage_reset_date
+Get the last reset data for usage info.
+delete_usage_prior_to_date
+Deletes usage data prior to date.
+get_sim_usage_reset_date
+Get the last reset data for usage info per sim.
+delete_sim_usage_prior_to_date
+Deletes usage data prior to date per sim.
+get_session_log
+Get filtered session info.
+set_usage_data
+Sets session usage per IP address/connected client
+get_usage_log
+get_traffic_status
+Returns the current traffic status indicator.
+get_client_upload_records
+Return all records marked for upload.
+set_client_upload_state
+Enables/Disables usage history and prepares for upload/completes upload.
+get_eth_data_usage_statistics
+Get global data usage statistics for ethernet.
+get_eth_usage_reset_date
+Get the last reset data for usage info for ethernet.
+delete_eth_usage_prior_to_date
+Deletes usage data prior to date for ethernet.
+get_eth_mac_usage_reset_date
+Get the last reset data for usage info per mac for ethernet.
+delete_eth_mac_usage_prior_to_date
+Deletes usage data prior to date per mac for ethernet.
+get_eth_session_log
+Get filtered session info for ethernet.
+Site Access Database Commands
+get_site_access_monitor_enabled
+Gets the SAM enabled state (1 or 0).
+set_site_access_monitor_enabled
+Sets the SAM enabled state (1 or 0).
+get_site_access_statistics
+Get site access logs.
+delete_sites_prior_to_date
+Delete site access data prior to date
+%smac:[%s]
+%ssettings.name:[%s]
+%ssettings.type:[%d]
+%ssettings.blacklist:[%d]
+%ssettings.whitelist:[%d]
+%ssettings.internet_blocked:[%d]
+%ssettings.reserved_ip:[%s]
+%sentry.id:[%d]
+%sentry.hostname:[%s]
+%sentry.vendor_class:[%s]
+%sentry.param_req_list:[%s]
+%Y-%m-%d %H:%M:%S
+%sentry.last_connected:[%s]
+WIFI Primary
+WIFI Secondary
+Ethernet
+%sentry.interface:[%s]
+%sdata.connected:[%d]
+%sdata.iptype:[%s]
+%sdata.ipv4:[%s]
+%sdata.ipv6:[%s]
+%sdata.link_local:[%s]
+%sdata.lease_time:[%d]
+%sdata.wifi_band:[%d]
+type:[none]
+type:[whitelist]
+type:[blacklist]
+type:[both]
+type:[unknown]
+Enter a mac address: 
+Enter a connected state (0 or 1): 
+Enter an interface id (0 - 3): 
+Enter an iptype (0 or 1): 
+Enter an IPv4 address: 
+Enter an IPv6 address: 
+Enter a link local address: 
+Enter a lease time in seconds: 
+%s returned %d (%s)
+Interactive Mode Only Supported
+Interface[%d]:
+Enter ccm_available_wan_e type (0-4): 
+Enter IPv4 state (0-3): 
+Enter IPv4 interface name: 
+Enter IPv6 state (0-3): 
+Enter IPv6 interface name: 
+Enter an imsi:
+Enter an iccid:
+Enter an mdn:
+Enter firmware version:
+Enter an interface type (0 - 3): 
+Enter a start time (in YYYY-mm-dd hh:MM:SS format): 
+Enter an end time (in YYYY-mm-dd hh:MM:SS format): 
+Enter a roam status (0 - 64), (0 for home): 
+Enter a data bearer (0 - 0xffff): 
+Enter IPv4 bytes received: 
+Enter IPv4 bytes sent: 
+Enter IPv6 bytes received: 
+Enter IPv6 bytes sent: 
+Enter session state (1-start, 2-connected, 3-stop): 
+Enter MAC address: 
+%x:%x:%x:%x:%x:%x
+Enter IPv4 interface (eth0,1, etc): 
+Enter IPv4 address: 
+Enter ipv4 bytes rx: 
+Enter ipv4 bytes tx: 
+Enter IPv6 interface (eth0,1, etc): 
+Enter IPv6 address: 
+Enter ipv6 bytes rx: 
+Enter ipv6 bytes tx: 
+Enter a mac:
+Enter an interface name: 
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+Enter dmdb error code: 
+Error code 0x%X is [%s]
+max_devices:[%d]
+max_data_sessions:[%d]
+data_usage_write_freq:[%d]
+max_site_access_records:[%d]
+site_access_threshold:[%d]
+traffic_status_low_transfer_threshold:[%d]
+traffic_status_receive_threshold:[%d]
+traffic_status_transmit_threshold:[%d]
+Enter a name: 
+Enter a type (0-13): 
+Enter 1 or 0, Whitelisted(1), Not Whitelisted(0): 
+Enter 1 or 0, Blacklisted(1), Not Blacklisted(0): 
+Enter 1 or 0, Internet blocked(1), Internet not blocked(0): 
+Enter a reserved IP or hit enter for none: 
+size %d bytes passed in.
+count:[%d]
+list[%d].
+the buffer was insufficient, at least %d bytes are required.
+Enter 1 to randomly create up to %d devices or 0 to enter them manually: 
+Enter the number of devices to create: 
+74:e5:43:54:58:%02x
+74:e5:43:54:59:%02x
+Device_%03d
+192.168.1.%d
+Enter a mac address <enter blank to quit>: 
+Enter a device name: 
+enabled:[%d]
+Enter 1 to enabled mac filter or 0 to disable it: 
+select a mac filter type:
+None(disabled)=%d
+Whitelist=%d
+Blacklist=%d
+Enter a start date or leave emtpy to skip: 
+Enter a end date or leave emtpy to skip: 
+Enter a imsi or leave emtpy to skip: 
+Enter a iccid or leave emtpy to skip: 
+Enter a mdn or leave emtpy to skip: 
+Enter a bearer type (1 = 3G, 2 = LTE, 4 = WIMAX, 8 = WIFI, 16 = USB, 32 = ETH, -1 = ALL or leave emtpy to skip: 
+tx_non_roaming:[%llu]
+rx_non_roaming:[%llu]
+tx_roaming_ERI:[%llu]
+rx_roaming_ERI:[%llu]
+tx_roaming_domestic:[%llu]
+rx_roaming_domestic:[%llu]
+tx_roaming_flash:[%llu]
+rx_roaming_flash:[%llu]
+tx_roaming_international:[%llu]
+rx_roaming_international:[%llu]
+reset_date:[%s]
+Enter a reset date: 
+Enter an imsi: 
+%sid:[%d]
+%sinterface:[%d]
+%sunique_id(imsi):[%s]
+%siccid:[%s]
+%smdn:[%s]
+%sfw_version: [%s]
+%sroam_status[%d]
+%sdata_bearer:[%d]
+%sstart_time:[%s]
+%send_time:[%s]
+%sipv4:[%s]
+%sipv6:[%s]
+%srx_ipv4:[%llu]
+%stx_ipv4:[%llu]
+%srx_ipv6:[%llu]
+%stx_ipv6:[%llu]
+%sinterface:[%s]
+%sunique_id(mac):[%s]
+%sdevice_id:[%d]
+%ssession_id:[%d]
+%srx:[%llu]
+%stx:[%llu]
+%srx IPv4:[%llu]
+%stx IPv4:[%llu]
+%srx IPv6:[%llu]
+%stx IPv6:[%llu]
+%sclient id:[%s]
+%sname:[%s]
+%sfw_version:[%s]
+%svendor_class:[%s]
+%sparam_req_list:[%s]
+%sduration:[%ld]
+%sdomain:[%s]
+%stime:[%s]
+Enter a start date (in YYYY-mm-dd hh:MM:SS format) or leave emtpy to skip: 
+Enter a end date (in YYYY-mm-dd hh:MM:SS format) or leave emtpy to skip: 
+Enter an imsi or leave emtpy to skip: 
+Enter an iccid or leave emtpy to skip: 
+Enter an mdn or leave emtpy to skip: 
+Enter an interface type (1 -4) or leave empty to skip: 
+Enter a data_bearer (1 -4) or leave empty to skip: 
+Enter a roam status or leave empty to skip: 
+session[%d].
+total_rx:[%llu]
+total_tx:[%llu]
+Enter a mac or leave emtpy to skip: 
+tx:[%llu]
+rx:[%llu]
+Enter an mac: 
+Enter an mac or leave emtpy to skip: 
+usage_log[%d].
+Uplink/Downlink
+Downlink
+traffic_status:[%d] (%s)
+Enter an mdn to filter the list: 
+Out of memory error.
+client_log[%d].
+Enter a valid upload state 
+PREPARE(%d), COMPLETE(%d), TERMINATE(%d), RESUME(%d): 
+Enter a valid mdn: 
+Enter a MAC address: 
+Enter bytes received: 
+Enter bytes transmitted: 
+Enter 1 to enabled SAM or 0 to disable it: 
+statistics[%d].
+Enter 1 to randomly create up to %d site access records or 0 to enter them manually: 
+Enter the number of records to create: 
+test.%03d.domain.org
+Enter domain name: 
+Enter 1 to enable SAM or 0 to disable SAM: 
+Enter a valid mac filter enabled state (0 or 1): 
+Enter a valid mac filter type (1-whitelist or 2-blacklist): 
+Enter a valid iccid: 
+Enter a valid imsi: 
+command [%s]
+command [%s] not found.
+cmd_update_device_list
+cmd_update_wan_session_states
+cmd_new_data_session
+cmd_update_data_session
+cmd_update_eth_wan_session_stats
+cmd_new_eth_data_session
+cmd_update_eth_data_session
+cmd_is_running
+cmd_get_configuration
+cmd_set_device
+cmd_get_device
+cmd_delete_device
+cmd_get_known_device_list
+cmd_get_connected_device_list
+cmd_get_device_settings_list
+cmd_set_device_settings_list
+cmd_get_list_by_name
+cmd_get_whitelist
+cmd_search_whitelist
+cmd_get_blacklist
+cmd_search_blacklist
+cmd_get_internet_blocked_list
+cmd_search_internet_blocked_list
+cmd_get_reserved_ip_list
+cmd_search_reserved_ip_list
+cmd_get_mac_filter_enabled
+cmd_set_mac_filter_enabled
+cmd_get_mac_filter_type
+cmd_set_mac_filter_type
+cmd_get_data_usage_statistics
+cmd_get_usage_reset_date
+cmd_delete_usage_prior_to_date
+cmd_get_sim_usage_reset_date
+cmd_delete_sim_usage_prior_to_date
+cmd_get_session_log
+cmd_get_eth_data_usage_statistics
+cmd_get_eth_usage_reset_date
+cmd_delete_eth_usage_prior_to_date
+cmd_get_eth_mac_usage_reset_date
+cmd_delete_eth_mac_usage_prior_to_date
+cmd_get_eth_session_log
+cmd_get_usage_log
+cmd_get_traffic_status
+cmd_get_client_upload_records
+cmd_set_client_upload_state
+cmd_set_usage_data
+cmd_get_site_access_monitor_enabled
+cmd_set_site_access_monitor_enabled
+cmd_get_site_access_statistics
+cmd_update_site_access
+cmd_configure_site_access_monitor
+cmd_delete_sites_prior_to_date
+cmd_configure_mac_filter
+cmd_configure_white_list
+cmd_configure_black_list
+cmd_update_sim_info
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

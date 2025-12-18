@@ -1,0 +1,85 @@
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var date = new Date();
+	var lastRequestTime = 0;
+	var delayTime = 1000; // 1 second
+	var restartingDelay = 20000; // 20 seconds
+	var maxRestartingSec = 60000; // 60 seconds
+	var isRedirecting = false;
+	var rebootErrorText = $("<i/>").html('<tmpl_var _("webui", "restarting_reboot_error_text")>').text();
+	$(function()
+		$.ajax({
+			url : '<tmpl_udf GET_URI("restarting_do_reboot")>',
+			type : "POST",
+			data : { gSecureToken : "<tmpl_var gSecureToken>" },
+			dataType : "json",
+			success : function(data) {
+				if(data["rebooting"]){
+					// Let's give the reboot some time before checking if device has returned.
+					setTimeout(kickOff, restartingDelay);
+				} else {
+					$("#statusText").text(rebootErrorText);
+			error : function(xhr, textStatus, errorThrown) {
+				// Since this error occurred due to connection-reset,
+				// we are considering this as a valid case
+				setTimeout(kickOff, restartingDelay);
+	function kickOff()
+		setTimeout(function(){
+			var notification = $('<div class="notification"></div>');
+			var notificationInner = $('<div class="notification_inner clearfix"></div>');
+			var p1 = $('<h2 <tmpl_if ShowCustomNonResponding> class="padding-topzero margin-bottom"> </tmpl_if> > <tmpl_udf GET_PO_TEXT("restarting_loading_text", gProductNumber)></h2>');
+			var p2 = $('<p <tmpl_if ShowCustomNonResponding> class="padding-top no-loading-left" </tmpl_if> ><tmpl_udf GET_PO_TEXT( "restarting_device_not_respond_notification_title", gProductName)><tmpl_udf GET_PO_TEXT( "restarting_device_not_respond_notification_text", gProductName)></p>');
+			notificationInner.append(p1, p2);
+			notification.append(notificationInner);
+			var linkHome = $("<a href='/' <tmpl_if ShowCustomNonResponding> class='no-loading' </tmpl_if> id='homeLink'><tmpl_var _('webui', 'restarting_home_page_link_text')></a>");
+			$("#restartingContentInner").empty().append(notification, linkHome);
+		}, maxRestartingSec);
+		backYet();
+	function backYet()
+		$.ajax({
+			url : "/srv/status",
+			type : 'GET',
+			dataType : "json",
+			timeout : maxRestartingSec,
+			success: function(data, textStatus, xhr) {
+				// If no network connected, success event still occurs.
+				// We need to implicitly see an xhr.status greater than 0 to know we've actually made contact.
+				if ( (xhr.readyState == 4 ) && (xhr.status > 0) ) {
+					<tmpl_if ShowRedirectToLoginPage>
+						window.location.href = "/login";
+					<tmpl_else>
+						window.location.href = "/";
+					</tmpl_if>
+					isRedirecting = true;
+			complete : function(xhr, textStatus) {
+				// Long Polling, until timeout.
+				// timeout doesn't seem to kick in if no network response is returned.
+				// All this delay nonsense is for Window's benefit.
+				if(isRedirecting == false)
+					var diff = date.getTime() - lastRequestTime;
+					var delay = (diff > delayTime) ? 0 : delayTime - diff;
+					lastRequestTime = date.getTime();
+					setTimeout(backYet, delay);
+	/* ]]> */
+</script>
+<tmpl_if ShowDeviceImage>
+	<div id="restartingContent showImage">
+		<div id="restartingContentInner">
+			<div id="restartHead">
+				<h2><tmpl_udf  GET_PO_TEXT("restarting_loading_text", gProductNumber)></h2>
+			</div>
+			<p id="statusText">
+				<tmpl_udf GET_PO_TEXT("restarting_status_text", gProductNumber)>
+			<p class="spinner">&nbsp;</p>
+		</div>
+<tmpl_else>
+	<div id="restartingContent">
+		<div id="restartingContentInner">
+			<div id="restartHead">
+				<h2><tmpl_udf GET_PO_TEXT("restarting_loading_text", gProductNumber)></h2>
+			</div>
+			<p id="statusText">
+				<tmpl_udf GET_PO_TEXT("restarting_status_text", gProductNumber)>
+			<p class="spinner">&nbsp;</p>
+		</div>
+</tmpl_if>

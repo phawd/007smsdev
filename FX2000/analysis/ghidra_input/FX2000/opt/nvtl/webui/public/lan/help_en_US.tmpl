@@ -1,0 +1,116 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+	<h2>Overview</h2>
+	<p>These settings apply to your local network or LAN. For this device, the LAN consists of this device and all connected devices (including the Ethernet connected devices, if they exist).</p>
+
+	<tmpl_if IPPTEnableShow>
+	<h3>IP Passthrough</h3>
+    <p>
+            If used, the IP Passthrough features assigns the Internet IP address to one connected device.
+    </p>
+    <ul>
+            <li>The passthrough device must be the only device on the selected interface. Other devices on this interface will be ignored, and will not have Internet access.
+            </li>
+            <li>Devices on the other interface or interfaces function normally.
+            </li>
+            <li>When IP passthrough is enabled, the following features cannot be used:
+            <ul>
+                    <li>Port Forwarding </li>
+                    <li>Port Filtering </li>
+                    <li>DMZ </li>
+            </ul>
+    </ul>
+    <li>
+            When IP Passthrough is enabled, the <tmpl_var _("webui", "webui_product_name")> must restart. Normally, this means a new Internet IP address will be assigned to the <tmpl_var _("webui", "webui_product_name")> after the restart.
+    </li>
+
+    <h3>Enable IP Passthrough</h3>
+    <p>
+            Use this to turn the IP Passthrough feature on or off as needed.
+    </p>
+    <tmpl_if IPPTInterfaceShow>
+    <h3>Passthrough Interface</h3>
+    <p>
+            Select the interface used by the network device you wish to become the IP Passthrough device.
+            NOTE: When IPPT is enabled on an interface, all other interfaces will be disabled.
+    </p>
+    </tmpl_if>
+    </tmpl_if>
+
+    <h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+	<tmpl_if LANIPAddressShow>			
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+		<p>
+			The IP address for this device, as seen from the local network.
+			Normally, you can use the default value.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if LANSubnetMaskShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+		<p>
+			The default value 255.255.255.0 is standard for small (class "C") networks.
+			If you change the LAN IP Address, ensure you use the correct Subnet Mask for the IP address range of the LAN IP address..
+		</p>
+	</tmpl_if>
+		
+	<tmpl_if LANMacAddressShow>	
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+		<p>
+			The MAC address is a unique network identifier, assigned when a network device is manufactured.
+			This read-only field displays the MAC Address for the interfaces on this device.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPEnableShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+		<p>Normally, this should be left checked. The DHCP server allocates an IP address to each connected device. If the DHCP Server was turned off, then each connected device would need to be assigned a fixed IP address.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if LANLANDHCPLeaseTimeShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+		<p>The number of minutes in which connected devices must renew the IP address assigned to them by the DHCP server. Normally, this can be left at the default value, but if you have special requirements, you can change this value.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPStartAddressShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>The start of the IP address range used by the DHCP server. If the IP is set on the client device, use an IP address outside of this DHCP range; if the IP address is set using an IP reservation, it will usually be inside this range. NOTE: Only expert users should change this setting.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPEndAddressShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+		<p>The end of the IP address range used by the DHCP server. If the IP is set on the client device, use an IP address outside of this DHCP range; if the IP address is set using an IP reservation, it will usually be inside this range. NOTE: Only expert users should change this setting. 
+		</p>
+	</tmpl_if>
+
+	<tmpl_if LANReservedIPAddressShow>		
+	<h3><tmpl_var truncate(_("webui", "adv_lan_reservedIp_help_label"), (size(_("webui", "adv_lan_reservedIp_help_label")) - size(":")))></h3>
+		<p>This feature can be used to ensure that a connected device will always be allocated the same IP Address by the <tmpl_var _("webui", "webui_product_name")>. Click this button to access the setup screen for this feature.
+		</p>
+	</tmpl_if>
+		
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>If some of your connected devices support IPv6, this setting should be turned on.
+			IPv6 connected devices will then be able to make IPv6 connections to the Internet.
+			</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+			<p>This is the IPv6 address of this device. The Link-Local address is used for IPv6 communication between devices on the same network. </p>
+	</tmpl_if>	
+	
+	<tmpl_if showLANDeviceName>
+		<h2><tmpl_var _("webui", "adv_lan_web_management_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_url_name_label"), (size(_("webui", "adv_lan_url_name_label")) - size(":")))></h3>
+		<p>Device Name indicates device network name and URL to access the device local web management UI.</p>
+	</tmpl_if>
+			
+</div>
+<!-- id="lan" -->
+

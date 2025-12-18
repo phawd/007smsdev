@@ -1,0 +1,476 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+GLIBC_2.4
+libc.so.6
+libcom_subsystem_api.so
+resp_topic_fn_list
+handle_set_ack_response
+handle_get_data_response
+get_bolt_data
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+snprintf
+comm_subsystem_cleanup
+commsub_init
+set_callbacks
+commsub_connect
+mosquitto_subscribe
+MOSQ_1.0
+libmosquitto.so.1
+mosquitto_publish
+run_loop
+set_bolt_data
+mosquitto_lib_init
+mosquitto_new
+on_disconnect
+mosquitto_disconnect
+mosquitto_connect_callback_set
+mosquitto_disconnect_callback_set
+mosquitto_publish_callback_set
+mosquitto_subscribe_callback_set
+mosquitto_message_callback_set
+mosquitto_connect
+libpthread.so.0
+doSomeThing
+pthread_create
+strerror
+mosquitto_loop_forever
+MOSQ_1.1
+pthread_cancel
+mosquitto_destroy
+mosquitto_lib_cleanup
+comm_sub_set_ipq_debug_mode
+comm_sub_execute_shell_cmd
+comm_sub_get_ipqcm_conn_state
+comm_sub_get_ipqcm_auto_connect_state
+comm_sub_ipqcm_start_data_call
+comm_sub_ipqcm_stop_data_call
+comm_sub_get_primary_ssid_broadcast_status
+comm_sub_set_primary_ssid_broadcast_status
+comm_sub_get_primary_ssid_name
+comm_sub_set_primary_ssid_name
+comm_sub_get_primary_wifi_password
+comm_sub_set_primary_wifi_password
+comm_sub_get_primary_wifi_band_selection
+comm_sub_set_primary_wifi_band_selection
+comm_sub_get_guest_ssid_broadcast_status
+comm_sub_set_guest_ssid_broadcast_status
+comm_sub_get_guest_ssid_name
+comm_sub_set_guest_ssid_name
+comm_sub_get_guest_wifi_password
+comm_sub_set_guest_wifi_password
+comm_sub_get_guest_wifi_band_selection
+comm_sub_set_guest_wifi_band_selection
+__bss_start
+librt.so.1
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libxml2.so.2
+libz.so.1
+libcurl.so.4
+libssl.so.1.1
+libcrypto.so.1.1
+libmifi_debug.so
+libmificommon.so
+libxmldata_api.so
+libmifimsgbus.so
+libfactory_reset_api.so
+libmodem2_api.so
+libgps_api.so
+libfota_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libsysintclient.so
+H	KxD	J{D
+/tmp/commsub_debug_log.txt
+/opt/nvtl/log/commsub_debug_log.txt
+COM_SUBSYSTEM
+[%s]:[%s] - Cannot allocate memory..
+[%s]:[%s] - local_topic : %s remote_topic : %s
+[%s]:[%s] - commsub_init() failure
+[%s]:[%s] - set_callbacks() failure
+[%s]:[%s] - commsub_connect() failure
+[%s]:[%s] - subscribe
+[%s]:[%s] - publish
+BOLT/%s/ack
+client_%d
+[%s]:[%s] - -- Disconnected successfully
+[%s]:[%s] - -- connected successfully
+[%s]:[%s] - connection refused
+[%s]:[%s] - -- published successfully
+[%s]:[%s] - Buffer Mismatch
+[%s]:[%s] - ack = %d 
+[%s]:[%s] - API-- got message @ %s: (%d, QoS %d, %s) '%s'
+[%s]:[%s] - invalid message
+[%s]:[%s] - -- subscribed successfully
+localhost
+/bin/insg/install_pci.sh up
+[%s]:[%s] - *** timed out
+[%s]:[%s] - Release the memory allocated to client..
+[%s]:[%s] - 
+can't create delay thread :[%s]
+[%s]:[%s] - error number : %d
+debug/setDebugMode
+misc/executeShellCmd
+ipqcm/getConnectionState
+ipqcm/getAutoConnectionState
+ipqcm/startDataCall
+ipqcm/stopDataCall
+wifi/getPrimarySSIDBroadCastStatus
+wifi/setPrimarySSIDBroadCastStatus
+wifi/getPrimarySSIDName
+wifi/setPrimarySSIDName
+wifi/getPrimaryWiFiPassword
+wifi/setPrimaryWiFiPassword
+wifi/getPrimaryWiFiBandSelection
+wifi/setPrimaryWiFiBandSelection
+wifi/getGuestSSIDBroadCastStatus
+wifi/setGuestSSIDBroadCastStatus
+wifi/getGuestSSIDName
+wifi/setGuestSSIDName
+wifi/getGuestWiFiPassword
+wifi/setGuestWiFiPassword
+wifi/getGuestWiFiBandSelection
+wifi/setGuestWiFiBandSelection
+BOLT/debug/setDebugMode/ack
+BOLT/misc/executeShellCmd/ack
+BOLT/ipqcm/startDataCall/ack
+BOLT/ipqcm/stopDataCall/ack
+BOLT/debug/getMultiwanStatus
+BOLT/ipqcm/getConnectionState
+BOLT/ipqcm/getAutoConnectionState
+BOLT/wifi/getPrimarySSIDBroadCastStatus
+BOLT/wifi/getPrimarySSIDName
+BOLT/wifi/getPrimaryWiFiPassword
+BOLT/wifi/getPrimaryWiFiBandSelection
+BOLT/wifi/getGuestSSIDBroadCastStatus
+BOLT/wifi/getGuestSSIDName
+BOLT/wifi/getGuestWiFiPassword
+BOLT/wifi/getGuestWiFiBandSelection
+GCC: (GNU) 8.2.0
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/watchdog/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/config
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/com_subsystem/src
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/com_subsystem/src/../include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/logging/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/xmldata/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/modem2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/gps/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/factory_reset/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/bluetooth_peripheral/inc/
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/apps_framework/sys_interface/include/
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/fota/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/com_subsystem/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sim_mgr/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/router2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wifi/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/file_sharing/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/ccm2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dmdb/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sms/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/ans/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/usb/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/sensor/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/usr/src/linux/usr/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel/config/../.
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/libxml2
+-iprefix /opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/bin/arm-oe-linux-gnueabi/../../lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/com_subsystem/src/com_subsystem_api.c
+-mfpu=neon
+-mfloat-abi=hard
+-mcpu=arm10tdmi
+-mtls-dialect=gnu
+-march=armv5t
+-auxbase-strip com_subsystem_api.o
+-Wno-unused-parameter
+-Wstrict-prototypes
+-Wno-trigraphs
+-Wformat-truncation=0
+-Wstringop-overflow=0
+-frecord-gcc-switches
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/com_subsystem/src
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/include
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits/types
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/sys
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/com_subsystem/inc
+com_subsystem_api.c
+stddef.h
+struct_FILE.h
+sys_errlist.h
+pthreadtypes-32.h
+mosquitto.h
+unistd.h
+getopt_core.h
+com_subsystem.h
+com_subsystem_api.h
+primary_wifi_band_selection
+on_disconnect
+_IO_read_ptr
+comm_sub_execute_shell_cmd
+MOSQ_ERR_NOMEM
+_shortbuf
+payloadlen
+comm_sub_set_guest_ssid_name
+_IO_read_base
+_IO_buf_base
+long long unsigned int
+COMM_SUB_ERROR
+on_connect
+client_info
+GNU C17 8.2.0 -mfpu=neon -mfloat-abi=hard -mfpu=neon -mfloat-abi=hard -mcpu=arm10tdmi -mtls-dialect=gnu -marm -march=armv5t -g -frecord-gcc-switches -fpic
+MOSQ_ERR_PROXY
+topic_func
+_codecvt
+__timezone
+long long int
+signed char
+buffer_len
+MOSQ_ERR_SUB_EXISTS
+guest_ssid_name
+MOSQ_ERR_PROTOCOL
+_IO_read_end
+long int
+MOSQ_ERR_SUCCESS
+mosquitto_message
+comm_sub_set_primary_ssid_name
+_IO_buf_end
+MOSQ_ERR_LOOKUP
+_IO_codecvt
+__quad_t
+comm_sub_set_ipq_debug_mode
+get_bolt_data
+MOSQ_ERR_NOT_SUPPORTED
+on_message
+granted_qos
+COMM_SUB_ERR_NOMEM
+comm_sub_set_guest_wifi_password
+MOSQ_ERR_MALFORMED_PACKET
+timezone
+MOSQ_ERR_UNKNOWN
+on_subscribe
+COMM_SUB_SUCCESS
+commsub_connect
+_IO_marker
+MOSQ_ERR_ERRNO
+MOSQ_ERR_NO_SUBSCRIBERS
+unsigned int
+set_callbacks
+_freeres_buf
+comm_sub_get_primary_wifi_band_selection
+COMM_SUB_ERR_TIMEOUT
+long unsigned int
+comm_sub_get_guest_ssid_name
+_IO_write_ptr
+MOSQ_ERR_CONN_PENDING
+sys_nerr
+comm_sub_get_ipqcm_auto_connect_state
+short unsigned int
+_IO_wide_data
+guest_ssid_broadcast_status
+_IO_save_base
+COMM_SUB_ERR_NO_CONNECTION
+MOSQ_ERR_NO_CONN
+run_loop
+set_bolt_data
+MOSQ_ERR_MALFORMED_UTF8
+resp_len
+comm_sub_set_guest_wifi_band_selection
+comm_sub_set_primary_wifi_band_selection
+MOSQ_ERR_OVERSIZE_PACKET
+commsub_init
+MOSQ_ERR_QOS_NOT_SUPPORTED
+on_publish
+MOSQ_ERR_CONN_LOST
+handle_get_data_response
+comm_sub_ipqcm_start_data_call
+ipv6_address
+COMM_SUB_ERR_BUFF_MISMATCH
+comm_sub_get_guest_ssid_broadcast_status
+resp_topic_fn_list
+MOSQ_ERR_OCSP
+handle_set_ack_response
+_IO_write_end
+guest_wifi_band_selection
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/agents/com_subsystem/src/com_subsystem_api.c
+_IO_lock_t
+_IO_FILE
+__environ
+__daylight
+MOSQ_ERR_KEEPALIVE
+MOSQ_ERR_CONN_REFUSED
+_old_offset
+sys_errlist
+comm_sub_set_primary_ssid_broadcast_status
+_markers
+_freeres_list
+pthread_t
+commsub_err_t
+unsigned char
+comm_sub_get_primary_ssid_broadcast_status
+short int
+comm_sub_get_guest_wifi_password
+_vtable_offset
+MOSQ_ERR_TLS
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/com_subsystem
+COMM_SUB_ERR_INPUT_ERROR
+MOSQ_ERR_AUTH
+daylight
+MOSQ_ERR_TLS_HANDSHAKE
+long double
+COMM_SUB_ERR_REMOTE_API_FAILED
+primary_ssid_broadcast_status
+__off64_t
+_cur_column
+comm_sub_get_primary_ssid_name
+MOSQ_ERR_AUTH_CONTINUE
+_IO_save_end
+remote_topic
+MOSQ_ERR_DUPLICATE_PROPERTY
+MOSQ_ERR_INVAL
+doSomeThing
+comm_sub_set_guest_ssid_broadcast_status
+primary_ssid_name
+comm_subsystem_cleanup
+comm_sub_ipqcm_stop_data_call
+comm_sub_get_ipqcm_conn_state
+_unused2
+primary_wifi_password
+mosq_err_t
+ipv4_address
+guest_wifi_password
+comm_sub_get_guest_wifi_band_selection
+_IO_backup_base
+local_topic
+MOSQ_ERR_PLUGIN_DEFER
+qos_count
+comm_sub_get_primary_wifi_password
+comm_sub_set_primary_wifi_password
+MOSQ_ERR_EAI
+_wide_data
+MOSQ_ERR_NOT_FOUND
+__tzname
+MOSQ_ERR_PAYLOAD_SIZE
+_IO_write_base
+mosquitto
+MOSQ_ERR_ACL_DENIED
+commsub_connection_state_t
+gold 1.16
+call_weak_fn
+crtstuff.c
+__TMC_LIST__
+deregister_tm_clones
+register_tm_clones
+__do_global_dtors_aux
+completed.11339
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+com_subsystem_api.c
+on_connect
+on_publish
+on_message
+on_subscribe
+__FRAME_END__
+__dso_handle
+__TMC_END__
+_DYNAMIC
+_GLOBAL_OFFSET_TABLE_
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+resp_topic_fn_list
+handle_set_ack_response
+handle_get_data_response
+get_bolt_data
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+snprintf
+comm_subsystem_cleanup
+commsub_init
+set_callbacks
+commsub_connect
+mosquitto_subscribe
+mosquitto_publish
+run_loop
+set_bolt_data
+mosquitto_lib_init
+mosquitto_new
+on_disconnect
+mosquitto_disconnect
+mosquitto_connect_callback_set
+mosquitto_disconnect_callback_set
+mosquitto_publish_callback_set
+mosquitto_subscribe_callback_set
+mosquitto_message_callback_set
+mosquitto_connect
+doSomeThing
+pthread_create
+strerror
+mosquitto_loop_forever
+pthread_cancel
+mosquitto_destroy
+mosquitto_lib_cleanup
+comm_sub_set_ipq_debug_mode
+comm_sub_execute_shell_cmd
+comm_sub_get_ipqcm_conn_state
+comm_sub_get_ipqcm_auto_connect_state
+comm_sub_ipqcm_start_data_call
+comm_sub_ipqcm_stop_data_call
+comm_sub_get_primary_ssid_broadcast_status
+comm_sub_set_primary_ssid_broadcast_status
+comm_sub_get_primary_ssid_name
+comm_sub_set_primary_ssid_name
+comm_sub_get_primary_wifi_password
+comm_sub_set_primary_wifi_password
+comm_sub_get_primary_wifi_band_selection
+comm_sub_set_primary_wifi_band_selection
+comm_sub_get_guest_ssid_broadcast_status
+comm_sub_set_guest_ssid_broadcast_status
+comm_sub_get_guest_ssid_name
+comm_sub_set_guest_ssid_name
+comm_sub_get_guest_wifi_password
+comm_sub_set_guest_wifi_password
+comm_sub_get_guest_wifi_band_selection
+comm_sub_set_guest_wifi_band_selection
+__bss_start
+.init_array
+.fini_array
+.debug_abbrev
+.comment
+.rel.plt
+.ARM.attributes
+.debug_aranges
+.debug_str
+.eh_frame_hdr
+.gnu.version_r
+.debug_info
+.rel.dyn
+.gnu.version
+.note.gnu.gold-version
+.debug_line
+.GCC.command.line
+.eh_frame
+.debug_frame
+.tm_clone_table
+.note.gnu.build-id
+.gnu.version_d
+.dynamic
+.shstrtab

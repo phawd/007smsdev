@@ -1,0 +1,24 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+	<p>Šiame ekrane yra daug parinkčių, leidžiančių nustatyti tokį <tmpl_var _("webui", "webui_product_name")> veikimo būdą, kuris geriau atitiktų jūsų poreikius.</p>
+	<h3>Kalba</h3>
+	<p>Pasirinkite norimą kalbą.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+	<p>Nurodykite formatą, kuriuo šioje žiniatinklio sąsajoje bus rodoma data.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+	<p>Nurodykite formatą, kuriuo šioje žiniatinklio sąsajoje bus rodomas laikas.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+	<p>Pasirinkite vienetą, kuris bus naudojamas GPS aukščiui virš jūros ir tikslumui nustatyti.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+	<p>Nurodykite, kaip bus rodomi dešimtainiai skaičiai. Tašką (.) arba kablelį (,) galima pasirinkti naudoti kaip dešimtainį tašką.</p>
+
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+		<p>Eterneto indikatorius rodomas būsenos juostoje, kai įjungtas eterneto prievadas; priešingu atveju jis būna paslėptas.</p>
+	</tmpl_if>
+	
+</div>

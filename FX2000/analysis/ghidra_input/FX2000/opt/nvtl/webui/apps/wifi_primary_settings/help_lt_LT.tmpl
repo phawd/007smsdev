@@ -1,0 +1,73 @@
+<!-- wifi_primary_settings -->
+<div id="wifi_primary_settings">
+	<h1>„Wi-Fi“ – pagrindinis tinklas</h1>
+	
+	<h2>Apžvalga</h2>
+	<p>
+		Norint prisijungti prie <tmpl_var _("webui", "webui_product_name_with_suffix")> pagrindinio „Wi-Fi“ tinklo, prijungtuose įrenginiuose turi būti naudojamos šiame ekrane rodomos „Wi-Fi“ nuostatos. Jei pakeisite šias nuostatas, esami prijungti įrenginiai gali prarasti ryšį.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_ssid_label")></h3>
+	<p>
+		Nustatomas „Wi-Fi“ tinklo pavadinimas arba SSID. Įveskite tinkamą pavadinimą. Pavadinimą gali sudaryti iki 32 ženklų.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_security_label")></h3>
+	<p>
+		Pasirinkite norimą „Wi-Fi“ saugos parinktį.
+	</p>
+
+	<ul>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> leidžia kitiems asmenims stebėti jūsų „Wi-Fi“ srautą ir naudoti jūsų duomenų planą prieigai prie interneto. Jei įmanoma, reikėtų vengti naudoti šią parinktį.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> yra naujausias ir saugiausias būdas, todėl, jei įmanoma, turėtų būti naudojamas.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> galima naudoti, jei kai kurie senesni įrenginiai nepalaiko WPA2.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> gali būti naudojamas WPA2 ir WPA3 skundų įrenginiams.
+		</li>
+	</ul>	
+	
+	<h3><tmpl_var _("webui", "wifi_primary_password_label")></h3>
+	<p>
+		Šiame lauke įveskite „Wi-Fi“ slaptažodį. Taip pat galite naudoti mygtuką „Generuoti naują raktą“, kad į šį lauką būtų įvestas sudėtingas atsitiktinis slaptažodis. Jei naudojate šią parinktį, nepamirškite įrašyti pakeitimų.
+	</p>
+
+	<p>
+		Kaip numatyta, šios nuostatos yra paslėptos, tačiau galite spustelėti antraštę / saitą, kad jos būtų matomos. 
+		Paprastai galima palikti numatytąsias šių parinkčių vertes, tačiau prireikus jas galima pakeisti, kad atitiktų konkrečią aplinką.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_ssid_label", gProductName)></h3>
+	<p>
+		Jei ši nuostata pažymėta, „Wi-Fi“ pavadinimą galima nuskaityti <tmpl_var _("webui", "webui_product_name_with_suffix")> jutikliniame ekrane naudojant „Wi-Fi“ meniu parinktį. Jei atžymėta, pavadinimas rodomas kaip „******“.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_password_label", gProductName)></h3>
+	<p>
+		Jei ši nuostata pažymėta, „Wi-Fi“ slaptažodį galima nuskaityti <tmpl_var _("webui", "webui_product_name_with_suffix")> jutikliniame ekrane naudojant „Wi-Fi“ meniu parinktį. Jei atžymėta, slaptažodis rodomas kaip „******“.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_broadcast_ssid_label")></h3>
+	<p>
+		Jei ši nuostata pažymėta, šis „Wi-Fi“ tinklas bus rodomas jūsų prijungtų įrenginių galimų „Wi-Fi“ tinklų sąraše. Jei atžymėta, šis tinklas bus nematomas.
+	</p>
+	<tmpl_if showWiFiPrimaryWPS>
+		<h3><tmpl_var _("webui", "wifi_primary_wps_label")></h3>
+		<p>
+			„Wi-Fi“ apsaugotoji sąranka (WPS) – tai sistema, leidžianti „Wi-Fi“ įrenginiams prisijungti prie „Wi-Fi“ tinklo neautomatiškai neįvedant tinklo rakto. Jei norite naudoti WPS, šią parinktį pažymėkite.
+		</p>
+	</tmpl_if>
+	
+	<h3><tmpl_var _("webui", "wifi_primary_privacy_label")></h3>
+	<p>
+		Jei ši nuostata pažymėta, kiekvienas prijungtas įrenginys atskiriamas nuo visų kitų prijungtų įrenginių. Taip užtikrinamas papildomas saugumas, jei kai kurie prijungti įrenginiai yra nežinomi arba nevisiškai patikimi. Įprastai veikiant šią nuostatą reikia atžymėti.
+	</p>
+</div>
+
+<!-- id="wifi_primary_settings" -->
+

@@ -1,0 +1,65 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p>Du kan bruke denne ON / OFF-innstillingen når det er nødvendig for å slå av mobildata og forhindre tilgang til mobilnettverket. Dette forhindrer tilkoblede enheter fra å koble seg til internett og bruke din mobile dataplan. For normal drift må denne innstillingen være på.</p>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Tilkoblingspreferanse</h3>
+			<p>Velg ønsket alternativ for å kontrollere når <tmpl_var _("webui", "webui_product_name")> vil etablere en datatilkobling til mobilnettverket.</p>
+	</tmpl_if>
+
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>Bruk denne innstillingen for å slå internasjonal og innenlandsk roaming av eller på etter behov. Ekstra datakostnader kan påløpe ved roaming.</p>
+	</tmpl_if>
+
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p>Standardverdien er «<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>». <tmpl_var _("webui", "webui_product_name")> vil velge den beste tilgjengelige teknologien.</p>
+		<p>Hvis du ønsker, kan du endre dette for å begrense nettverksteknologiene som skal brukes.</p>
+	</tmpl_if>
+
+	<h3>Manuelt nettverksvalg</h3>
+		
+	<p>Denne funksjonen er tilgjengelig kun hvis aktivering av automatisk nettverksvalg er slått av. Dette kan være nyttig hvis flere nettverk er tilgjengelige, og du har en preferanse for hvilket som brukes.</p>
+	<p>Klikk på «Velg nettverk»-knappen for å søke etter tilgjengelige nettverk; deretter kan du velge ønsket nettverk.</p>
+	
+	
+	<tmpl_unless apnProfileSettings>
+		
+
+		<tmpl_if NetworksFourGLTEAPNShow>
+			<h3><tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))></h3>
+			<p>APN er forhåndskonfigurert; du bør ikke endre APN med mindre du har en bedriftskonto (med din egen APN).</p>
+		</tmpl_if>
+
+
+
+		<tmpl_if NetworksCustomAPNShow>
+			<h3><tmpl_var truncate(_("webui", "wwan_settings_custom_apn_label"), (size(_("webui", "wwan_settings_custom_apn_label")) - size(":")))></h3>
+			<p>Denne APN-enheten brukes hvis du endrer SIM-kortet til et SIM-kort som ikke er fra Verizon. Ellers blir det ignorert og virker ikke.</p>
+		</tmpl_if>
+	<tmpl_else>
+		<h2>Avanserte innstillinger</h2>
+		<p>Bruk denne overskriften/lenken til å vise eller skjule avanserte innstillinger etter behov.</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_apn_label"), (size(_("webui", "wwan_settings_apn_label")) - size(":")))></h3>
+		<p>Hvis du må endre APN, angir du verdien som leveres av mobilnettverksleverandøren.</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p>Velg alternativet som er spesifisert av tjenesteleverandøren.</p>
+			<ul>
+				<li>Ingen</li>
+				<li>PAP</li>
+				<li>CHAP</li>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))></h3>
+		<p>Hvis godkjenningen er <strong>Ingen</strong>, kan dette stå tomt. Ellers angir du verdien som er angitt av tjenesteleverandøren.</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))></h3>
+		<p>Hvis godkjenningen er <strong>Ingen</strong>, kan dette stå tomt. Ellers angir du verdien som er angitt av tjenesteleverandøren.</p>
+
+	</tmpl_unless>
+
+</div>

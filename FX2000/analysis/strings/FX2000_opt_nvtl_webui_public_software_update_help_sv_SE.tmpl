@@ -1,0 +1,59 @@
+<!-- Software Update -->
+<div id="software_update">
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+versikt</h2>
+		<p>Programuppdateringar levereras automatiskt via mobiln
+tet. Den h
+r sidan l
+ter dig 
+vervaka dessa uppdateringar.</p>
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+	<h3>Nuvarande programvaruversion</h3>
+		<p>Det h
+ltet indikerar vilken version av programvaran som f
+rvarande 
+r installerad p
+r enheten.</p>
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var _("webui", "software_update_current_software_configuration_version_label")></h3>
+				<p><tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")></p>
+		</tmpl_if>
+		<h2><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+		<h3><tmpl_var _("webui", "software_update_check_for_update_time_label")></h3>
+		<p>Det h
+ltet indikerar n
+r <tmpl_var _("webui", "webui_product_name")> senast kontrollerade om det finns n
+gon tillg
+nglig uppdatering. Du kan s
+ka efter en uppdatering manuellt med knappen 
+k efter uppdatering
+		<h3>Knappen S
+k efter uppdatering</h3>
+		<p>Du kan anv
+nda den f
+r att kontrollera om det finns en uppdatering tillg
+r din <tmpl_var _("webui", "webui_product_name")>. Normalt 
+r detta inte n
+ndigt, eftersom uppdateringar automatiskt aviseras till <tmpl_var _("webui", "webui_product_name")>. Om du utf
+r kontrollen och en uppdatering 
+nglig laddas den ned automatiskt.</p>
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "software_update_check_for_update_status_label")></h3>
+		<p>Normalt kommer detta att vara tomt, men om du s
+ker efter en uppdatering visas resultatet av den kontrollen h
+r. Dessutom visas nedladdningsf
+rloppet h
+r om en uppdatering laddas ned.</p>
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+		<p>Den h
+r panelen visar uppgifterna om den senaste programuppdateringen.</p>
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+		<p>Den h
+r panelen kan 
+ppnas genom att man klickar p
+nken/rubriken. Systemuppdateringshistoriken inneh
+ller uppgifter om de senaste <tmpl_var SoftwareUpdateHistoryCount> uppdateringarna som har laddats ned och installerats p
+r enheten. Om inga uppdateringar har installerats, visar den h
+r panelen den nuvarande programvaruversionen.</p>
+<!-- end Software Update -->

@@ -1,0 +1,33 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>管理者パスワード:</h1>
+	<h2>概要</h2>
+	<p>管理者パスワードはこの<tmpl_var _("webui", "webui_product_name")> 管理ウェブサイトにサインインするために使用されます。 <em>管理者パスワード</em> ページでは、管理者パスワードを変更したり、管理者パスワードに関連するセキュリティオプションを設定したりできます。</p>
+
+
+	<h2><tmpl_var _("webui", "webui_product_name")> 管理者パスワードを変更する</h2>
+	<p>現在の管理者パスワードに変更するには、まず下のフィールドに現在の管理者パスワードを入力する必要があります。 画面が更新され、新しい管理者パスワードを設定するオプションと、管理者パスワードを紛失した場合に使用するセキュリティの質問が表示されます。</p>
+
+	<h3>現在の <tmpl_var _("webui", "webui_product_name")> 管理者パスワード</h3>
+	<p>このフィールドに現在の <tmpl_var _("webui", "webui_product_name")> 管理者パスワードを入力してください。 誤った値を何度も入力すると、<tmpl_var _("webui", "webui_product_name")> 管理ウェブサイトからロックアウトされることに注意してください。 このロックをクリアするには、 <tmpl_var _("webui", "webui_product_name")> を再起動する必要があります。</p>
+	<tmpl_if showDisplayPascode>
+		<h2><tmpl_var _("webui", "webui_product_name")> 管理者パスワードを表示する</h2>
+		<p>この設定がオンの場合、*********が表示されます。 この設定がオフの場合、管理者パスワードはJetpackのディスプレイで確認できます。</p>
+	</tmpl_if>
+
+	<h2><tmpl_var _("webui", "webui_product_name")> 管理者パスワードを変更する</h2>
+	<h3>新しい管理者パスワード</h3>
+	<p>文字、数字、標準の句読記号のみを使用して、新しい管理者パスワードを入力します。 パスワードは必ず8文字以上にしてください。</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p>このフィールドに新しい管理者パスワードを再入力してください。</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>このセキュリティ質問は、管理者パスワードを紛失し、「管理者パスワードを忘れた場合」オプションが使用された場合に使用されます。 希望の質問を選択し、下のフィールドに回答を入力してください。</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>上記で選択したセキュリティの質問に答えてください。 回答では大文字と小文字が区別されることに注意してください。</p>
+
+</div>
+<!-- id="set_passcode" -->
+

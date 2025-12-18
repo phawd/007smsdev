@@ -1,0 +1,24 @@
+<!-- Internet  Sessions -->
+<div id="session_log_info">
+	<h1><tmpl_var _("webui", "session_log_info_menu_text")></h1>
+	<p>Le journal de session contient les donn
+es suivantes
+	<p>- Date et heure (lorsque la connexion a commenc
+	<p>- Dur
+me format que les informations sur la session en cours)</p>
+ments re
+us (format comme pour la session en cours)</p>
+ments transmis (format comme pour la session en cours)</p>
+	<p>- Donn
+es totales (somme de Rx et Tx, format comme pour la session en cours)</p>
+	<tmpl_if RoamingStatusShow>
+                <p>- Roaming (Roaming / Teilweise / leer) Leer = Heimnetzwerk </p>
+        </tmpl_if>
+	<p>- IPv4 (adresse IP WWAN IPv4)</p>
+	<p>- IPv6 (adresse IP WWAN IPv6)</p>
+	<p>Les journaux sont class
+s par ordre chronologique.</p>
+utilisateur ne peut pas modifier l
+ordre et il n
+y a pas d
+options relatives au journal de session.</p>

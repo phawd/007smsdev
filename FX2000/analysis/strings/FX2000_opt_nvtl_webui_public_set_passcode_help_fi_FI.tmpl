@@ -1,0 +1,69 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>Yll
+n salasana</h1>
+	<h2>Yleiskatsaus</h2>
+n salasanalla kirjaudutaan sis
+lle <tmpl_var _("webui", "webui_product_name")>-laitteen yll
+n verkkosivustolle. <em>Admin Password</em> (Yll
+n salasana) -sivulla voit vaihtaa yll
+n salasanaa ja asettaa joitakin yll
+n salasanaan liittyvi
+ suojausasetuksia.</p>
+	<h2>Vaihda <tmpl_var _("webui", "webui_product_name")>-laitteen yll
+n salasana</h2>
+	<p>Jotta voit vaihtaa nykyisen yll
+n salasanan, sinun on ensin sy
+ nykyinen yll
+n salasana alla olevaan kentt
+ivittyy ja tarjoaa mahdollisuutta asettaa uusi yll
+n salasana ja turvakysymys, jota k
+n, jos yll
+n salasana katoaa.</p>
+	<h3>Nykyinen <tmpl_var _("webui", "webui_product_name")>-laitteen yll
+n salasana</h3>
+ nykyinen <tmpl_var _("webui", "webui_product_name")>-laitteen yll
+n salasana t
+n. Huomaa, ett
+n arvon liian monta kertaa, sinut lukitaan ulos t
+ <tmpl_var _("webui", "webui_product_name")>-laitteen yll
+n verkkosivustolta. Jotta voit poistaa t
+n lukituksen, <tmpl_var _("webui", "webui_product_name")> on k
+ynnistett
+ uudelleen.</p>
+	<tmpl_if showDisplayPascode>
+ <tmpl_var _("webui", "webui_product_name")>-laitteen yll
+n salasana</h2>
+		<p>Jos t
+ asetus on kytketty P
+LLE, ******** n
+kyy. Jos t
+ asetus on kytketty POIS P
+n salasana voidaan lukea Jetpackin n
+	</tmpl_if>
+	<h2>Vaihda <tmpl_var _("webui", "webui_product_name")>-laitteen yll
+n salasana</h2>
+	<h3>Uusi yll
+n salasana</h3>
+ uusi yll
+n salasana k
+ vain kirjaimia, numeroita ja tavanomaisia v
+limerkkej
+. Salasanan on oltava v
+n 8 merkki
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+ uusi yll
+n salasana uudelleen t
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+ turvakysymyst
+n, jos yll
+n salasana katoaa ja 
+I forgot the Admin Password
+ (Unohdin yll
+n salasanan) -vaihtoehtoa k
+n. Valitse haluttu kysymys ja anna vastaus alla olevaan kentt
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Anna vastaus yll
+ valittuun turvakysymykseen. Huomaa, ett
+ vastauksissa huomioidaan kirjainkoko.</p>
+<!-- id="set_passcode" -->

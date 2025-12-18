@@ -1,0 +1,81 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>Muestra el estado de la conexi
+n a Internet a trav
+s de la red m
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>El nombre de la red m
+vil a la que este dispositivo est
+ conectado actualmente. 
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>Indica la conexi
+n actual de datos de telefon
+vil, por ejemplo, 5G.	
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>Para la sesi
+n de internet actual, el per
+odo transcurrido desde que se estableci
+ la conexi
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))>
+	<p>Para la sesi
+n actual de Internet, la cantidad de datos recibidos. Este contador empieza de cero cuando se establece la conexi
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>Para la sesi
+n actual de Internet, la cantidad de datos transmitidos. Este contador empieza de cero cuando se establece la conexi
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+        	La direcci
+n IP de Internet asignada a este dispositivo.
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))>
+	        La m
+scara de red asociada con la direcci
+n IP que se indica arriba.
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	        La direcci
+n IP de la puerta de enlace asociada con la direcci
+n IP que se indica arriba.
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))>
+	        El servidor del nombre de dominio usado actualmente por este dispositivo.
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+ se muestra la direcci
+n IPv6 global para <tmpl_var _("webui", "webui_product_name")>. 
+ en blanco si IPv6 est
+ desactivado o no es compatible con la conexi
+n de red actual. </p>
+	<tmpl_if InternetStatusViewSessionShow>
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+	<p>El registro de sesi
+n contiene los siguientes datos:</p>
+	<p>- Fecha y hora (cuando se inici
+ la conexi
+	<p>- Duraci
+n (mismo formato que la informaci
+n de la sesi
+n actual)</p>
+	<p>- Recibido (formato de la sesi
+n actual)</p>
+	<p>- Transmitido (formato de la sesi
+n actual)</p>
+	<p>- Datos totales (suma de recepci
+n y transmisi
+n, formato de informaci
+n de la sesi
+n actual)</p>
+	<p>- Itinerancia (itinerancia/parcial/en blanco) En blanco = red dom
+stica</p>
+	<p>- IPv4 (direcci
+n IP WWAN IPv4)</p>
+	<p>- IPv6 (direcci
+n IP WWAN IPv6)</p>
+	<p>El registro est
+ en orden de fecha. </p>
+	<p>El usuario no puede cambiar el orden y no hay opciones relacionadas con el registro de sesi
+	</tmpl_if>
+<!-- id="status_internet" -->

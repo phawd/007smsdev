@@ -1,0 +1,74 @@
+<!-- SIM Lock -->
+<div id="adv_sim_manager">
+        <h1><tmpl_var _("webui", "adv_sim_manager_menu_text")></h1>
+        <h2>Descripci
+        <p>La tarjeta SIM que est
+ dentro de su <tmpl_var _("webui", "webui_product_name")> puede bloquearse usando un PIN. Si se bloquea la tarjeta SIM, debe ingresar un PIN antes de conectarse a la red m
+vil. Una vez ingresado, el PIN es recordado hasta el siguiente apagado. </p>
+	<p> Adem
+s de permitirle ingresar el PIN de la tarjeta SIM cuando sea necesario, esta p
+gina le permite desbloquear su tarjeta SIM o cambiar el PIN de la tarjeta SIM. Generalmente, debe ingresar el PIN existente para cambiar la tarjeta SIM. En el caso de las tarjetas SIM Novatel Wireless, puede obtener el PIN predeterminado de su proveedor de servicio. </p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_pin_lock_feature_label"), (size(_("webui", "adv_sim_manager_pin_lock_feature_label")) - size(":")))>
+		<p>El campo indica si la funci
+n de bloqueo con PIN est
+ en uso o no. Si est
+ "Encendido", se ha activado el bloqueo con PIN y se debe ingresar el PIN de la tarjeta PIN para conectarse a la red m
+vil. Si est
+ en "Apagado", la funci
+n de bloqueo con PIN no est
+ activada y no se requiere el PIN de la tarjeta SIM. </p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_status_label"), (size(_("webui", "adv_sim_manager_status_label")) - size(":")))></h3>
+	<p>El campo indica el estado actual de la tarjeta SIM. Los valores posibles son: </p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>Listo: este es el estado normal. El PIN de la tarjeta SIM no se ha utilizado. </li>
+	        <li>Bloqueada con PIN: debe ingresarse el PIN de la tarjeta SIM antes de poder usar la red m
+vil.</li>
+	        <li>Bloqueada con PUK: debe ingresarse el PUK de la tarjeta SIM para poder continuar. Puede obtener el PUK de su proveedor de servicios.</li>
+	        <li>Desbloqueado: se necesita el PIN de la tarjeta SIM, pero ya ha sido ingresado. </li>
+	        <li>Sin SIM: no se ha detectado la tarjeta SIM. Si tiene una tarjeta SIM, compruebe que est
+ insertada correctamente.</li>
+	        <li>Error de tarjeta SIM: se detect
+ una tarjeta SIM, pero no respondi
+ como se esperaba y no puede usarse. </li>       
+	        </ul>
+        <h2>Operaciones con la tarjeta SIM</h2>
+        <p>Las acciones disponibles dependen del estado actual de la tarjeta SIM. Todas las operaciones posibles se detallan y explican a continuaci
+		<h3>Bloqueo con PIN</h3>
+		<p>Si la tarjeta actualmente est
+ bloqueada con un PIN, se le indicar
+ que ingrese el PIN. Observe que si se ingresa un PIN incorrecto demasiadas veces, la tarjeta SIM se bloquea con un PUK. Un contador en la p
+gina indica cu
+ntas entradas incorrectas causar
+n el bloqueo con PUK. Una vez que se bloquea con PUK, debe obtenerse el PUK del proveedor de servicios. </p>
+		<h3>Bloqueo con PUK</h3>
+		<p>Si la tarjeta SIM actualmente est
+ bloqueada con un PUK, la 
+nica operaci
+n posible es ingresar el PUK. Observe que si se ingresa un PUK incorrecto demasiadas veces, la tarjeta SIM quedar
+ inutilizable de forma permanente. Deber
+ obtener una nueva tarjeta SIM. Un contador en pantalla indica cu
+ntos intentos de ingreso quedan. </p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_enable_pin_lock_option")></h3>
+		<p>Configura la tarjeta SIM de tal forma que se requiere el ingreso de un PIN en el arranque para conectarse con la red m
+vil. Para realizar esta operaci
+n, debe ingresar el PIN actual. </p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_disable_pin_option")></h3>
+		<p>Puede usar esta configuraci
+n para desactivar un bloqueo con PIN que anteriormente se activ
+, para que ya no se requiera el ingreso de un PIN para conectarse a una red m
+vil. Para realizar esta operaci
+n, debe ingresar el PIN actual. </p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_change_pin_option")></h3>
+		<p>Para cambiar el PIN existente, seleccione esta opci
+n y luego ingrese los datos necesarios: </p>
+		<div class="blockgroup">
+			<li>PIN actual</li>
+			<li>Nuevo PIN</li>
+			<li>Confirmar nuevo PIN</li>
+			</ul>
+		</div>
+		<p>En el caso de la tarjeta SIM Verizon Wireless, el nuevo PIN debe tener 4, 6 u 8 d
+gitos. El PIN predeterminado est
+ disponible de su proveedor de servicio. </p>
+<!-- id="adv_sim_manager" -->

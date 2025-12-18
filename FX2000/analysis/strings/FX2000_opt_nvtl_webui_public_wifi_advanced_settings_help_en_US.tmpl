@@ -1,0 +1,44 @@
+<!-- WiFi Advanced -->
+<div id="wifi_advanced">
+	<h1>Wi-Fi</h1>
+	<h2>Overview</h2>
+	Normally these Wi-Fi settings can be left at their default values, but if necessary, you can adjust them to suit your particular environment.
+	<h2>Wi-Fi On/Off Control</h2>
+	Use this control to turn the Wi-Fi on or off as required. 
+	If turned off, the <tmpl_var _("webui", "webui_product_name_with_suffix")> Wi-Fi network will not be available, so the only way to connect to the <tmpl_var _("webui", "webui_product_name")> 		will be to use a USB cable.
+	<tmpl_if WifiDisplaySettingShow>
+		<h3>Allow Wi-Fi setting changes to be made from the Jetpack screen</h3>
+		Use this control to turn the Wi-Fi on or off as required. If turned off, the Wi-Fi network will not be available, so the only way to connect to the will be to use a USB cable.
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_advanced_max_connections_label")></h3>
+	Set how many devices can simultaneously connect to the <tmpl_var _("webui", "webui_product_name_with_suffix")> Wi-Fi network(s).
+	<h2><tmpl_var _("webui", "wifi_advanced_profile_title")></h2>
+	These setting determine how each band (2.4 GHz and 5 GHz) is used, and determine if the Guest Wi-Fi network is available.
+	<tmpl_if SwapToggleButtonAction>
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_ghz_band_label")></h3>
+		The 2.4 GHz 802.11 Mode that is automatically detected is shown.
+	<tmpl_else>
+		<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_ghz_band_label")></h3>
+		Select the desired option, to apply this band to the Primary network, Guest network, or turn off this band.
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_advanced_five_ghz_band_label")></h3>
+	Select the desired option, to apply this band to the Primary network, Guest network, or turn off this band. Note that you cannot turn off both bands. 
+	<h2><tmpl_var _("webui", "wifi_advanced_two_point_four_g_band_options_title")></h2>
+	These settings are hidden by default, but you can click on the heading/link to make them visible.
+	These settings are used whenever the 2.4 GHz band is active. 
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_g_802_11_mode_label")></h3>
+	Use this setting to change the Wi-Fi mode, if required. 
+	Usually you leave this setting at its default value.
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_g_channel_label")></h3>
+	This should be left on <strong>Automatic</strong> unless you need to choose a particular channel for your environment.
+	<h2><tmpl_var _("webui", "wifi_advanced_five_g_options_title")></h2>
+	These settings are hidden by default, but you can click on the heading/link to make them visible.
+	These settings are used whenever the 5 GHz band is active.
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_802_11_mode_label")></h3>
+	Use this setting to change the Wi-Fi mode, if required. 
+	Generally, there is no reason to change the default value.
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_bandwidth_label")></h3>
+	Select the desired option. The default value should be used unless you experience interference with other Wi-Fi devices. In that case, reducing the bandwidth may reduce the interference.
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_channel_label")></h3>
+	This should be left on <strong>Automatic</strong> unless you need to choose a particular channel for your environment.
+<!-- id="wifi_advanced" -->

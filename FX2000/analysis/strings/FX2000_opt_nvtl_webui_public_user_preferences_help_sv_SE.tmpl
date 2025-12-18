@@ -1,0 +1,32 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+	<p>Den h
+rmen inneh
+nga alternativ som l
+ter dig st
+lla in hur<tmpl_var _("webui", "webui_product_name")> ska bete sig f
+ttre tillgodose dina behov.</p>
+	<h3>Spr
+nskat spr
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+	<p>Specificera i vilket format datumet visas i det h
+r webbaserade gr
+nssnittet.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+	<p>Specificera i vilket format tiden visas i det h
+r webbaserade gr
+nssnittet.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+lj den enhet som ska anv
+ver havet och precision.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+	<p>Specificera hur decimaltal ska visas. Punkt (.) eller komma (,) kan v
+ndning som skiljetecken f
+r decimal.</p>
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+		<p>Ethernet-indikator visas i statusf
+r Ethernet-porten 
+r aktiverad, annars 
+r den dold.</p>
+	</tmpl_if>

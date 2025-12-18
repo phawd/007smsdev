@@ -1,0 +1,82 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p> Puede usar esta configuraci
+n de ENCENDER/APAGAR cuando sea necesario desactivar los datos m
+viles e impedir el acceso a la red m
+vil. Esto evita que los dispositivos conectados tengan acceso a Internet y utilicen su plan de datos m
+viles. Para un funcionamiento normal, esta configuraci
+n debe estar encendida. </p>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Preferencia de conexi
+			<p> Seleccione la opci
+n deseada para controlar en qu
+ momento el <tmpl_var _("webui", "webui_product_name")> establecer
+ una conexi
+n de datos a la red m
+vil. </p>
+	</tmpl_if>
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>Use esta configuraci
+n para activar o desactivar el roaming internacional y nacional seg
+n sea necesario. Se pueden aplicar cargos adicionales por datos en itinerancia.</p>
+	</tmpl_if>
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p> El valor predeterminado es "<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>". El <tmpl_var _("webui", "webui_product_name")> seleccionar
+ la mejor tecnolog
+a disponible. </p>
+		<p> Si lo desea, puede cambiar esto para limitar las tecnolog
+as de red que se usar
+	</tmpl_if>
+	<h3>Selecci
+n de red manual</h3>
+	<p> Esta caracter
+stica, disponible solo si la opci
+n de habilitar la selecci
+tica de red est
+ desactivada. Esto puede ser 
+til si hay varias redes disponibles y usted tiene preferencia sobre cu
+l se usa. </p>
+	<p> Haga clic en el bot
+n "Seleccionar red" para buscar las redes disponibles; entonces, podr
+ seleccionar la red deseada. </p>
+	<tmpl_if showApnSettings>
+		<tmpl_if showAdvancedSettingsToggleButton>
+			<h2>Configuraci
+n avanzada</h2>
+			<p>Use este Encabezado/Enlace para mostrar u ocultar la configuraci
+n avanzada seg
+n sea necesario. </p>
+		</tmpl_if>
+			<tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))>
+			El APN est
+ configurado previamente; usted no deber
+a cambiar el APN a menos que tenga una cuenta corporativa (con su propio APN).
+		<p> Si necesita cambiar el APN, ingrese el valor proporcionado por su proveedor de servicio de redes m
+viles. </p>
+		<tmpl_if showApnAuthenticationSettings>		
+				<tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))>
+			</h3>
+			<div class="blockgroup">
+				<p>Elija la opci
+n especificada por su proveedor de servicio. </p>
+				<ul>
+					<li>Ninguna</li>
+					<li>PAP</li>
+					<li>CHAP</li>
+				</ul>
+			</div>
+				<tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))>
+			</h3>
+				Si la Autenticaci
+n es <strong>Ninguna</strong>, este campo puede quedar en blanco. De lo contrario, ingrese el valor especificado por su proveedor de servicio. 
+				<tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))>
+			</h3>
+				Si la Autenticaci
+n es <strong>Ninguna</strong>, este campo puede quedar en blanco. De lo contrario, ingrese el valor especificado por su proveedor de servicio. 
+		</tmpl_if>
+	</tmpl_if>

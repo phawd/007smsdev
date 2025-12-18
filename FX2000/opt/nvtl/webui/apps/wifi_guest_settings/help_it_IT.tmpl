@@ -1,0 +1,78 @@
+<!-- wifi_guest_settings -->
+<div id="wifi_guest_settings">	
+	<h1>Wi-Fi - Rete ospite</h1>
+	<p>
+		La rete Wi-Fi ospite può essere utilizzata per fornire accesso temporaneo a Internet tramite la rete Wi-Fi di <tmpl_var _("webui", "webui_product_name_with_suffix")>. Per connettersi alla rete Wi-Fi ospite, i dispositivi connessi devono utilizzare le impostazioni Wi-Fi mostrate in questa schermata.
+	</p>
+	
+	<p>
+		Per attivare la rete ospite, utilizza la schermata Generale Wi-Fi presente nell’interfaccia web di amministrazione o l&#39;opzione "Selezione banda Wi-Fi" nell&#39;app Wi-Fi sul touch screen di <tmpl_var _("webui", "webui_product_name_with_suffix")>.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_guest_ssid_label")></h3>
+	<p>
+		Questo imposta il nome della rete o l’SSID della rete Wi-Fi ospite. Inserisci un nome adatto. Il nome può contenere fino a 32 caratteri.
+	</p>
+	
+	<h3><tmpl_var _("webui", "wifi_guest_security_label")></h3>
+	<p>
+		Seleziona l&#39;opzione di sicurezza per il Wi-Fi desiderata.
+	</p>
+	
+	<ul>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> consente a terzi di monitorare il traffico Wi-Fi e di utilizzare il piano dati per accedere a Internet. Se possibile, si dovrebbe evitare di utilizzare questa opzione.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> è il metodo più recente e sicuro e, se possibile, lo si dovrebbe utilizzare.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> può essere utilizzato se alcuni dei dispositivi meno recenti non supportano il WPA2.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> può essere utilizzato per dispositivi conformi a WPA2 e WPA3.
+		</li>
+	</ul>
+
+	<h3><tmpl_var _("webui", "wifi_guest_password_label")></h3>
+	<p>
+		Se si seleziona un&#39;impostazione diversa da <strong>Nessuna</strong> nel campo <strong>Sicurezza</strong>, viene richiesta una password Wi-Fi.
+	</p>
+
+	<p>
+		Inserisci la password Wi-Fi in questo campo. Puoi anche utilizzare il pulsante "Genera nuova chiave" per inserire in questo campo una password casuale sicura. Se usi questa opzione, ricorda di salvare le modifiche.
+	</p>
+	
+	<p>
+		Per impostazione predefinita queste impostazioni sono nascoste, ma è possibile fare clic sull&#39;intestazione/link per renderle visibili. 
+		Normalmente queste opzioni possono essere lasciate sui valori predefiniti, ma possono essere modificate se necessario per adattarsi al proprio ambiente.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_ssid_label", gProductName)></h3>
+	<p>
+		Se questa impostazione è selezionata, è possibile leggere il nome Wi-Fi sul touch screen di <tmpl_var _("webui", "webui_product_name_with_suffix")>, utilizzando l&#39;opzione "Wi-Fi" presente nel menu. Se non è selezionata, il nome appare come ******.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_password_label", gProductName)></h3>
+	<p>
+		Se questa impostazione è selezionata, è possibile leggere la password Wi-Fi sul touch screen di <tmpl_var _("webui", "webui_product_name_with_suffix")>, utilizzando l&#39;opzione "Wi-Fi" presente nel menu. Se non è selezionata, la password appare come ******.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_guest_broadcast_ssid_label")></h3>
+	<p>
+		Se questa impostazione è selezionata, la rete Wi-Fi viene visualizzata nell&#39;elenco delle reti Wi-Fi disponibili dei dispositivi connessi. Se non selezionato, questa rete sarà invisibile.
+	</p>
+	<tmpl_if showWiFiGuestWPS>
+		<h3><tmpl_var _("webui", "wifi_guest_wps_label")></h3>
+		<p>
+			Il Wi-Fi Protected Setup (WPS) è un sistema che consente ai dispositivi Wi-Fi di connettersi a una rete Wi-Fi senza dover inserire manualmente la chiave di rete. Se desideri utilizzare il WPS, seleziona questa opzione.
+		</p>
+	</tmpl_if>
+
+	<h3><tmpl_var _("webui", "wifi_guest_privacy_label")></h3>
+	<p>
+		Se questa impostazione è selezionata, ciascun dispositivo connesso viene isolato da tutti gli altri dispositivi connessi. Ciò fornisce un’ulteriore sicurezza quando alcuni dispositivi connessi sono sconosciuti o non completamente affidabili. Per il normale funzionamento, deselezionare questa opzione.
+	</p>
+</div>
+
+<!-- id="wifi_guest_settings" -->

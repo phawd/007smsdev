@@ -1,0 +1,157 @@
+Thu 1 00:00:27 CMD: iptables -w --flush -t filter from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:28 CMD: iptables -w --flush -t mangle from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:28 CMD: iptables -w --flush -t nat from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:28 CMD: brctl addbr bridge0 from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:28 CMD: brctl setfd bridge0 0 from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:28 CMD: ifconfig bridge0 10.14.0.1 up from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:28 CMD: ifconfig bridge0 netmask 255.255.255.0 from /opt/nvtl/tmp/router2/router_init.sh. 
+Executing cmd: "echo 0 > /proc/sys/net/ipv4/ip_forward" from "/opt/nvtl/tmp/router2/router_init.sh". 
+Executing cmd: "echo 0 > /proc/sys/net/ipv6/conf/all/forwarding" from "/opt/nvtl/tmp/router2/router_init.sh". 
+Executing cmd: "echo 0 > /proc/sys/net/ipv6/conf/all/proxy_ndp" from "/opt/nvtl/tmp/router2/router_init.sh". 
+Thu 1 00:00:28 CMD: iptables -w -t filter -N INSEEGO_FILTER_INPUT from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:29 CMD: iptables -w -t filter -A INPUT -j INSEEGO_FILTER_INPUT from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:29 CMD: iptables -w -t filter -N INSEEGO_FILTER_OUTPUT from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:29 CMD: iptables -w -t filter -A OUTPUT -j INSEEGO_FILTER_OUTPUT from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:29 CMD: iptables -w -t filter -N INSEEGO_FILTER_FORWARD from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:29 CMD: iptables -w -t filter -A FORWARD -j INSEEGO_FILTER_FORWARD from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:30 CMD: iptables -w -t mangle -N INSEEGO_MANGLE_PREROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:30 CMD: iptables -w -t mangle -I PREROUTING -j INSEEGO_MANGLE_PREROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:30 CMD: iptables -w -t mangle -N INSEEGO_MANGLE_POSTROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:30 CMD: iptables -w -t mangle -I POSTROUTING -j INSEEGO_MANGLE_POSTROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:31 CMD: iptables -w -t nat -N INSEEGO_NAT_PREROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:31 CMD: iptables -w -t nat -I PREROUTING -j INSEEGO_NAT_PREROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:31 CMD: iptables -w -t nat -N INSEEGO_NAT_POSTROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:31 CMD: iptables -w -t nat -I POSTROUTING -j INSEEGO_NAT_POSTROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:31 CMD: iptables -w -t filter -N INSEEGO_MNGACCS_INPUT from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:32 CMD: iptables -w -t filter -N INSEEGO_MNGACCS_OUTPUT from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:32 CMD: iptables -w -t filter -N INSEEGO_MNGACCS_FORWARD from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:32 CMD: iptables -w -t nat -N INSEEGO_MNGACCS_PREROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:32 CMD: iptables -w -t nat -N INSEEGO_MNGACCS_POSTROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:32 CMD: iptables -w -t nat -N INSEEGO_MNGACCS_INPUT from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:32 CMD: iptables -w -t nat -N INSEEGO_MNGACCS_OUTPUT from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:32 CMD: iptables -w -t nat -N CUSTOMER_DNS_OVERRIDE from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:33 CMD: ip6tables -w -t filter -N INSEEGO_FILTER_INPUT from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:33 CMD: ip6tables -w -t filter -I INPUT -j INSEEGO_FILTER_INPUT from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:33 CMD: ip6tables -w -t filter -N INSEEGO_FILTER_OUTPUT from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:33 CMD: ip6tables -w -t filter -I OUTPUT -j INSEEGO_FILTER_OUTPUT from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:33 CMD: ip6tables -w -t filter -N INSEEGO_FILTER_FORWARD from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:34 CMD: ip6tables -w -t filter -I FORWARD -j INSEEGO_FILTER_FORWARD from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:34 CMD: ip6tables -w -t mangle -N INSEEGO_MANGLE_POSTROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:34 CMD: ip6tables -w -t mangle -A POSTROUTING -j INSEEGO_MANGLE_POSTROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:34 CMD: ip6tables -w -t mangle -N INSEEGO_MANGLE_PREROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:34 CMD: ip6tables -w -t mangle -A PREROUTING -j INSEEGO_MANGLE_PREROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:34 CMD: ip6tables -w -t filter -N INSEEGO_MNGACCS_INPUT from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:34 CMD: ip6tables -w -t filter -N INSEEGO_MNGACCS_OUTPUT from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:34 CMD: ip6tables -w -t filter -N INSEEGO_MNGACCS_FORWARD from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:34 CMD: ip6tables -w -t nat -N INSEEGO_MNGACCS_PREROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:35 CMD: ip6tables -w -t nat -N INSEEGO_MNGACCS_POSTROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:35 CMD: ip6tables -w -t nat -N INSEEGO_MNGACCS_INPUT from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:35 CMD: ip6tables -w -t nat -N INSEEGO_MNGACCS_OUTPUT from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:35 CMD: ip6tables -w -t nat -N CUSTOMER_DNS_OVERRIDE from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:35 CMD: ip6tables -w -t nat -N INSEEGO_NAT_PREROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:35 CMD: ip6tables -w -t nat -I PREROUTING -j INSEEGO_NAT_PREROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:35 CMD: ip6tables -w -t nat -N INSEEGO_NAT_POSTROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:35 CMD: ip6tables -w -t nat -I POSTROUTING -j INSEEGO_NAT_POSTROUTING from /opt/nvtl/tmp/router2/router_init.sh. 
+Executing cmd: "sh /opt/nvtl/tmp/router2/init_internet_block.sh" from "/opt/nvtl/tmp/router2/router_init.sh". 
+Thu 1 00:00:36 CMD: touch /opt/nvtl/tmp/router2/dhcpd.leases from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:36 CMD: sh /opt/nvtl/tmp/router2/init_dhcpd.sh from /opt/nvtl/tmp/router2/router_init.sh. 
+Thu 1 00:00:36 CMD: exit 0 from /opt/nvtl/tmp/router2/init_dhcpd.sh. 
+Thu 1 00:00:36 CMD: exit 0 from /opt/nvtl/tmp/router2/router_init.sh. 
+Internet Systems Consortium DHCP Server 4.1.2
+Copyright 2004-2010 Internet Systems Consortium.
+All rights reserved.
+For info, please visit https://www.isc.org/software/dhcp/
+Wrote 0 leases to leases file.
+Listening on LPF/bridge0/e2:ed:4d:e5:2d:52/my-net
+Sending on   LPF/bridge0/e2:ed:4d:e5:2d:52/my-net
+Sending on   Socket/fallback/fallback-net
+Thu 1 00:00:38 CMD: /opt/nvtl/bin/stop_process.sh dnsmasq from /opt/nvtl/tmp/router2/dns_services.sh. 
+Executing cmd: "is_nvtl_dnsd_running=`pidof nvtl_dnsd`" from "/opt/nvtl/tmp/router2/dns_services.sh". 
+Thu 1 00:00:38 CMD: iptables -w -t nat -A INSEEGO_NAT_PREROUTING -i bridge0 -p tcp --dport 80 -d 0/0 -j DNAT --to 10.14.0.1 from /opt/nvtl/tmp/router2/dns_services.sh. 
+Thu 1 00:00:39 CMD: exit 0 from /opt/nvtl/tmp/router2/dns_services.sh. 
+Thu 1 00:00:39 CMD: /opt/nvtl/bin/stop_process.sh dhcpd from /opt/nvtl/tmp/router2/deinit_dhcpd.sh. 
+Thu 1 00:00:40 CMD: exit 0 from /opt/nvtl/tmp/router2/deinit_dhcpd.sh. 
+Thu 1 00:00:40 CMD: exit 0 from /opt/nvtl/tmp/router2/init_dhcpd.sh. 
+Thu 1 00:00:40 CMD: exit 0 from /opt/nvtl/tmp/router2/deinit_internet_block.sh. 
+Thu 1 00:00:40 CMD: exit 0 from /opt/nvtl/tmp/router2/init_internet_block.sh. 
+Thu 1 00:00:40 CMD: exit 0 from /opt/nvtl/tmp/router2/init_eth0_mac_filter.sh. 
+Thu 1 00:00:41 CMD: exit 0 from /opt/nvtl/tmp/router2/init_lan_isolate.sh. 
+Thu 1 00:00:41 CMD: ls /sys/devices/virtual/net/bridge0/brif/ from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Executing cmd: "list_of_ifc=" from "/opt/nvtl/tmp/router2/init_bridge.sh". 
+Executing cmd: "ifc=eth0" from "/opt/nvtl/tmp/router2/init_bridge.sh". 
+Thu 1 00:00:41 CMD: ifconfig eth0 169.254.4.1 netmask 255.255.255.0 up from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:41 CMD: brctl addif bridge0 eth0 from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:41 CMD: echo We failed to find the MAC address of wlan0 interface. from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:41 CMD: ifconfig bridge0 hw ether 00:15:FF:01:76:63 from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:42 CMD: sh /opt/nvtl/tmp/router2/deinit_dhcpd.sh from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:42 CMD: /opt/nvtl/bin/stop_process.sh dhcpd from /opt/nvtl/tmp/router2/deinit_dhcpd.sh. 
+Thu 1 00:00:42 CMD: exit 0 from /opt/nvtl/tmp/router2/deinit_dhcpd.sh. 
+Executing cmd: "is_radvd_running=`pidof radvd`" from "/opt/nvtl/tmp/router2/init_bridge.sh". 
+Thu 1 00:00:42 CMD: echo radvd is not running  from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:42 CMD: exit 0 from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:43 CMD: exit 0 from /opt/nvtl/tmp/router2/init_rndis0_mac_filter.sh. 
+Thu 1 00:00:43 CMD: exit 0 from /opt/nvtl/tmp/router2/deinit_lan_isolate.sh. 
+Thu 1 00:00:43 CMD: exit 0 from /opt/nvtl/tmp/router2/init_lan_isolate.sh. 
+Thu 1 00:00:43 CMD: ls /sys/devices/virtual/net/bridge0/brif/ from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Executing cmd: "list_of_ifc=eth0" from "/opt/nvtl/tmp/router2/init_bridge.sh". 
+Executing cmd: "ifc=rndis0" from "/opt/nvtl/tmp/router2/init_bridge.sh". 
+Thu 1 00:00:44 CMD: brctl delif bridge0 rndis0 from /opt/nvtl/tmp/router2/init_bridge.sh. 
+brctl: bridge bridge0: Invalid argument
+Command: "brctl delif bridge0 rndis0" FAILED with status 1 from "/opt/nvtl/tmp/router2/init_bridge.sh" Please Fix 
+Thu 1 00:00:44 CMD: ifconfig bridge0 hw ether 18:EE:86:4F:EE:22 from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:45 CMD: sh /opt/nvtl/tmp/router2/deinit_dhcpd.sh from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:45 CMD: /opt/nvtl/bin/stop_process.sh dhcpd from /opt/nvtl/tmp/router2/deinit_dhcpd.sh. 
+Thu 1 00:00:46 CMD: exit 0 from /opt/nvtl/tmp/router2/deinit_dhcpd.sh. 
+Executing cmd: "is_radvd_running=`pidof radvd`" from "/opt/nvtl/tmp/router2/init_bridge.sh". 
+Thu 1 00:00:46 CMD: echo radvd is not running  from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:46 CMD: exit 0 from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:46 CMD: exit 0 from /opt/nvtl/tmp/router2/deinit_rndis0_mac_filter.sh. 
+Thu 1 00:00:46 CMD: exit 0 from /opt/nvtl/tmp/router2/init_rndis0_mac_filter.sh. 
+Thu 1 00:00:46 CMD: exit 0 from /opt/nvtl/tmp/router2/deinit_lan_isolate.sh. 
+Thu 1 00:00:46 CMD: exit 0 from /opt/nvtl/tmp/router2/init_lan_isolate.sh. 
+Thu 1 00:00:46 CMD: ls /sys/devices/virtual/net/bridge0/brif/ from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Executing cmd: "list_of_ifc=eth0" from "/opt/nvtl/tmp/router2/init_bridge.sh". 
+Executing cmd: "ifc=rndis0" from "/opt/nvtl/tmp/router2/init_bridge.sh". 
+Thu 1 00:00:46 CMD: ifconfig rndis0 169.254.3.1 netmask 255.255.255.0 up from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:47 CMD: brctl addif bridge0 rndis0 from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:47 CMD: sleep 1 from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:48 CMD: ifconfig bridge0 hw ether 18:EE:86:4F:EE:22 from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:48 CMD: sh /opt/nvtl/tmp/router2/deinit_dhcpd.sh from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:48 CMD: /opt/nvtl/bin/stop_process.sh dhcpd from /opt/nvtl/tmp/router2/deinit_dhcpd.sh. 
+Thu 1 00:00:48 CMD: exit 0 from /opt/nvtl/tmp/router2/deinit_dhcpd.sh. 
+Executing cmd: "is_radvd_running=`pidof radvd`" from "/opt/nvtl/tmp/router2/init_bridge.sh". 
+Thu 1 00:00:48 CMD: echo radvd is not running  from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:48 CMD: exit 0 from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:49 CMD: exit 0 from /opt/nvtl/tmp/router2/init_dhcpd.sh. 
+Thu 1 00:00:51 CMD: exit 0 from /opt/nvtl/tmp/router2/init_wlan0_mac_filter.sh. 
+Thu 1 00:00:51 CMD: exit 0 from /opt/nvtl/tmp/router2/deinit_lan_isolate.sh. 
+Thu 1 00:00:51 CMD: exit 0 from /opt/nvtl/tmp/router2/init_lan_isolate.sh. 
+Thu 1 00:00:51 CMD: ls /sys/devices/virtual/net/bridge0/brif/ from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Executing cmd: "list_of_ifc=eth0
+rndis0" from "/opt/nvtl/tmp/router2/init_bridge.sh". 
+Executing cmd: "ifc=wlan0" from "/opt/nvtl/tmp/router2/init_bridge.sh". 
+Thu 1 00:00:51 CMD: brctl addif bridge0 wlan0 from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:52 CMD: ifconfig bridge0 hw ether 18:EE:86:4F:EE:22 from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:52 CMD: sh /opt/nvtl/tmp/router2/deinit_dhcpd.sh from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:52 CMD: /opt/nvtl/bin/stop_process.sh dhcpd from /opt/nvtl/tmp/router2/deinit_dhcpd.sh. 
+Thu 1 00:00:52 CMD: exit 0 from /opt/nvtl/tmp/router2/deinit_dhcpd.sh. 
+Executing cmd: "is_radvd_running=`pidof radvd`" from "/opt/nvtl/tmp/router2/init_bridge.sh". 
+Thu 1 00:00:52 CMD: echo radvd is not running  from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:52 CMD: exit 0 from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:54 CMD: exit 0 from /opt/nvtl/tmp/router2/init_wlan1_mac_filter.sh. 
+Thu 1 00:00:54 CMD: exit 0 from /opt/nvtl/tmp/router2/deinit_lan_isolate.sh. 
+Thu 1 00:00:54 CMD: exit 0 from /opt/nvtl/tmp/router2/init_lan_isolate.sh. 
+Thu 1 00:00:54 CMD: ls /sys/devices/virtual/net/bridge0/brif/ from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Executing cmd: "list_of_ifc=eth0
+rndis0
+wlan0" from "/opt/nvtl/tmp/router2/init_bridge.sh". 
+Executing cmd: "ifc=wlan1" from "/opt/nvtl/tmp/router2/init_bridge.sh". 
+Thu 1 00:00:54 CMD: brctl addif bridge0 wlan1 from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:54 CMD: ifconfig bridge0 hw ether 18:EE:86:4F:EE:22 from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:54 CMD: sh /opt/nvtl/tmp/router2/deinit_dhcpd.sh from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:54 CMD: /opt/nvtl/bin/stop_process.sh dhcpd from /opt/nvtl/tmp/router2/deinit_dhcpd.sh. 
+Thu 1 00:00:54 CMD: exit 0 from /opt/nvtl/tmp/router2/deinit_dhcpd.sh. 
+Executing cmd: "is_radvd_running=`pidof radvd`" from "/opt/nvtl/tmp/router2/init_bridge.sh". 
+Thu 1 00:00:54 CMD: echo radvd is not running  from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:00:54 CMD: exit 0 from /opt/nvtl/tmp/router2/init_bridge.sh. 
+Thu 1 00:01:00 CMD: exit 0 from /opt/nvtl/tmp/router2/init_dhcpd.sh. 

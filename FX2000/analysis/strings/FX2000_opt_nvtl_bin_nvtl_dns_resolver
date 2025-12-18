@@ -1,0 +1,94 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+inet_ntoa
+__cxa_finalize
+libpthread.so.0
+vsnprintf
+getaddrinfo
+mifi_dbg_get_level_name
+inet_ntop
+mifi_dbg_syslog
+freeaddrinfo
+mifi_dbg_log
+mifi_dbg_start
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+librt.so.1
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libsqlite3.so.0
+H	KxD	J{D
+[%s]:[%s] - %s
+[%s]:[%s] - fill_dns_cache : %s %x %x
+ fseek_beg = %d 
+ fread_data = %d %s
+ fwrite_to_file = %d 
+DNSS_client :%s %x %x
+dummy ip = %s real ip = %s
+iptables -w -t nat -A INSEEGO_NAT_PREROUTING -i %s -d %s -j DNAT --to %s
+Resolving %s
+%s: Not Resolved
+Resolved: IPv%d address: %s (%s)
+/opt/nvtl/tmp/router2/dns_cache.txt
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/router2/src/router2_httpr_dns_resolver.c
+mifi_dbg_start() has failed in %s
+Bad arguments: lan_ifc cache_file 
+ntl_dns_resolver
+file open error
+error in getting dns cache entries from file
+Total Enries :%d
+Failed to resolve cached dns entries
+Failed to create captive portal repair script
+Error in writing DNS cache to file
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

@@ -1,0 +1,494 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+cbsd_get_error_string
+cbsd_is_running
+cbsd_get_sas_settings
+cbsd_get_runtime_config_params
+modem2_get_b48_max_eirp
+__isoc99_sscanf
+GLIBC_2.7
+modem2_get_fcc_id
+modem2_get_info
+settings_get_setting
+gps_get_last_fix
+snprintf
+cbsd_details_validation
+__isoc99_scanf
+cbsd_set_sas_settings
+cbsd_reset_settings
+cbsd_get_cpi_settings
+cbsd_set_cpi_settings
+cbsd_get_cert_settings
+cbsd_set_cert_settings
+cbsd_get_antenna_settings
+cbsd_set_antenna_settings
+cbsd_set_runtime_config_params
+cbsd_register_device
+cbsd_grant_device
+cbsd_spectruminquiry_device
+cbsd_heartbeat_device
+cbsd_unregister_device
+cbsd_relinquish_device
+cbsd_get_registration_status
+cbsd_get_registration_status_string
+cbsd_get_response_code_string
+cbsd_connection_timer_expired
+mifi_dbg_start
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libwifi_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+librt.so.1
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libccm2_api.so
+libdmdb_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+librouter2_api.so
+libcbsd_api.so
+libgps_api.so
+libbluetooth_api.so
+libcurl.so.4
+libssl.so.1.1
+libcrypto.so.1.1
+libjansson.so.4
+libcbsd_util.so
+H	KxD	J{D
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+get_sas_settings
+Get the CBSD SAS settings
+set_sas_settings
+Set the CBSD SAS settings
+reset_sas_settings
+Reset the CBSD SAS settings
+get_cpi_settings
+Get the CBSD CPI settings
+set_cpi_settings
+Set the CBSD CPI settings
+reset_cpi_settings
+Reset the CBSD CPI settings
+get_cert_settings
+Get the CBSD Certificate settings
+set_cert_settings
+Set the CBSD Certificate settings
+reset_cert_settings
+Reset the CBSD Certificate settings
+get_antenna_settings
+Get the CBSD Antenna settings
+set_antenna_settings
+Set the CBSD Antenna settings
+reset_antenna_settings
+Reset the CBSD Antenna settings
+get_cbsd_info
+Get CBSD FCC id and serial number
+validate_cbsd_details
+Validate the CBSD details
+runtime_config
+CBSD runtime configure params.
+register
+CBSD register.
+CBSD grant.
+spectrum
+CBSD spectruminquiry.
+heartbeat
+CBSD heartbeat.
+relinquish
+CBSD relinquish.
+deregister
+CBSD deregister.
+get_reg_status
+CBSD get register status.
+conn_timer_expired
+CBSD Connection timer expired.
+only_register
+only send the register request to SAS
+complete
+Complete registration process
+winnf_tests
+CBSD WINNF tests support
+federated_tests
+CBSD Federated tests support
+get_rt_config_params
+Get the CBSD runtime config params
+reset_rt_config_params
+Get the CBSD reset runtime config params
+set_testmode
+Set the CBSD testmode
+set_coordinates
+Set the CBSD co-ordinates(latitude,longitude)
+set_frequency_range
+Set the CBSD frequency range
+set_heartbeat_count
+Set the CBSD heartbeat count
+set_meascapability
+Set the CBSD MeasCapability
+set_fccid
+Set the CBSD FCC id
+set_cbsdserialnum
+Set the CBSD Serial number
+set_maxeirp
+Set the CBSD MaxEirp
+device_json
+Set the CBSD device_json
+spectrum_json
+Set the CBSD spectrum_json
+grant_json
+Set the CBSD grant_json
+heartbeat_json
+Set the CBSD heartbeat_json
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+cbsd_is_running returned %d (%s)
+Operator = [%s]
+URL = [%s]
+Version = [%s]
+CBSD_UserID = [%s]
+cbsd_get_sas_settings_test returned %d (%s)
+Failed to read the default configurations, rc = %d
+Failed to read the FCCID value from modem, rc = %d
+Failed to read the FID value from bluetooth, rc = %d
+cbsd.settings.anteena
+Failed to get antenna settings
+cbsd.settings.defaults
+Failed to get default settings
+Failed to read the latitude and longitude value from modem, rc = %d
+CBSD FCC ID%*c= [%s]
+CBSD serial number%*c= [%s]
+CBSD Category%*c= [%s]
+CBSD latitude%*c= [%s]
+CBSD longitude%*c= [%s]
+CBSD Height%*c= [%f]
+CBSD HeightType%*c= [%s]
+CBSD IndoorDeployment%*c= [%s]
+CBSD MeasCapability%*c= [%s]
+CBSD LowFrequency%*c= [%lld]
+CBSD HighFrequency%*c= [%lld]
+CBSD MaxEirp%*c= [%f]
+CBSD AntennaGain%*c= [%d]
+CBSD AntennaBeamwidth%*c= [%d]
+CBSD AntennaAzimuth%*c= [%d]
+CBSD AntennaDowntilt%*c= [%d]
+CBSD radioTechnology%*c= [%s]
+CBSD details are validated successfully
+CBSD details are incomplete
+cbsd_details_validation returned %d (%s)
+cbsd_cli set_sas_settings <operator> <URL> <Version> <CBSD UserID>
+%s returned %d (%s)
+Enter Operator : 
+Enter URL : 
+Enter Version: 
+Enter CBSD UserID : 
+cbsd_set_sas_settings returned %d (%s)
+cbsd_reset_settings returned %d (%s)
+UserID = [%s]
+Name = [%s]
+PrivateKey = [%s]
+cbsd_cli set_cpi_settings <UserID> <Name> <PrivateKey>
+Enter UserID : 
+Enter Name : 
+Enter PrivateKey: 
+Certificate = [%s]
+CA_Certificate = [%s]
+PrivateKeyPassPharse = [%s]
+cbsd_cli set_cpi_settings <Certificate> <CA_Certificate> <PrivateKey> <PrivateKeyPassPharse>
+Enter Certificate : 
+Enter CA Certificate : 
+Enter PrivateKeyPassPharse: 
+Azimuth = [%d]
+Downtilt = [%d]
+cbsd_get_antenna_settings returned %d (%s)
+cbsd_cli set_antenna_settings <Azimuth> <Downtilt>
+Enter Azimuth : 
+Enter Downtilt : 
+cbsd_set_antenna_settings returned %d (%s)
+cbsd_cli device_json
+Enter device json with [0-wo_cpi, 1-cpi] :
+Enter device json : 
+Enter device cpi json : 
+Enter device cpi data json : 
+cbsd_set_runtime_config_params returned %d (%s)
+cbsd_cli spectrum_json <device json file>
+Enter spectrum json : 
+cbsd_cli heartbeat_json <heartbeat json file>
+Enter heartbeat json : 
+Enter heartbeat state [0-granted, 1-authorised]: 
+cbsd_cli grant_json <grant json file>
+Enter grant json : 
+FCC ID%*c= [%s]
+Longitude%*c= [%lf]
+Latitude%*c= [%lf]
+MeasCapability%*c= [%s]
+MeasCapability apply%*c= [%d]
+Test mode%*c= [%d]
+MaxEirp%*c= [%f]
+Heartbeat_count%*c= [%d]
+Device_json file%*c= [%s]
+/opt/nvtl/data/cbsd/runtimeconfig
+Unable to open file [ %s]
+Device json data :: %s
+Device_cpi_json file%*c= [%s]
+Device_cpi_json data :: %s
+Device_cpidata_json file%*c= [	%s]
+Device_cpidata_json data :: %s
+Spectrum_json file%*c= [%s]
+Spectrum_json data :: %s
+Grant_json%*c= [%s]
+Grant_json data :: %s
+Heartbeat state%*c= [%d]
+Heartbeat_json file%*c= [%s]
+Heartbeat_json data :: %s
+cmd_get_rt_config_params returned %d (%s)
+Resetting the runtime configurations
+cbsd_cli set_cbsdserialnum <serialnum>
+Enter CBSD serial number : 
+Enter MaxEirp value: 
+cbsd_cli set_fccid <fccid>
+Enter FCC_ID : 
+cbsd_cli set_meascapability <MeasCapability>
+Enter MeasCapability : 
+Enter apply changes for MeasCapability[0-No, 1-Yes] : 
+cbsd_cli set_testmode <0-disable, 1-enable>
+Enter test_mode [0-disable, 1-enable] : 
+cbsd_cli set_coordinates_settings <heartbeat_count value>
+Enter count : 
+cbsd_cli set_coordinates_settings <longitude> <latitude> <apply>
+Enter longitude : 
+Enter latitude : 
+Enter low frequency : 
+Enter high frequency : 
+%s %s <option>
+Option ::
+Option ::
+Invalid registration request
+cbsd_register_device returned %d (%s)
+CBSD grant successfully
+cbsd_grant_device returned %d (%s)
+CBSD spectruminquiry successfully
+cbsd_spectruminquiry_device returned %d (%s)
+cbsd_heartbeat_device returned %d (%s)
+CBSD deregisterd successfully
+cbsd_unregister_device returned %d (%s)
+CBSD relinquish successfully
+cbsd_relinquish_device returned %d (%s)
+CBSD Get registraction successfully.
+ Registration setting:[%d]
+ Registration status:[%s]
+ Registration response code:[%s]
+ Registration response message:[%s]
+cbsd_get_registration_status returned %d (%s)
+CBSD post connection timer expired successfully
+cbsd_connection_timer_expired returned %d (%s)
+command [%s]
+command [%s] not found.
+cmd_set_sas_settings
+cmd_set_cpi_settings
+cmd_set_cert_settings
+cmd_set_antenna_settings
+cmd_device_json
+cmd_spectrum_json
+cmd_heartbeat_json
+cmd_grant_json
+cmd_set_serialnum
+cmd_set_maxeirp
+cmd_set_fccid
+cmd_set_meascapability
+cmd_set_testmode
+cmd_set_heartbeat_count
+cmd_set_coordinates_settings
+cmd_set_frequency_settings
+Prints out usage and command listing.
+Successful CBSD Cat-B (Outdoor)- CPI signed install parameters via SAS portal GUI (before the registration request is sent)
+Successful CBSD Cat-B (Outdoor) - CPI signed install parameters via Registration 
+Supports with 'No measurement capability'
+Supports with measurement capability 'RECEIVED_POWER_WITHOUT_GRANT'
+Supports with measurement capability 'RECEIVED_POWER_WITH_GRANT'
+Supports with measurement capabilities 'RECEIVED_POWER_WITHOUT_GRANT' and 'RECEIVED_POWER_WITH_GRANT'
+Supports optional 'groupingParam'  - INTERFERENCE_COORDINATION
+GRANT_04
+Single Grant - Grant Renew
+Grant remains in suspend state due to DPA activity post-CPAS
+Grant authorized (DPA de-activated) and grant suspended (DPA activated) 
+ERRORHDLG_01
+Successful handling of 'zero channels available' in Spectrum Inquiry Response
+ERRORHDLG_02
+Successful recovery from response code 102 (MISSING_PARAM) in Registration Response message
+ERRORHDLG_03
+Successful recovery from response code 103 (INVALID_VALUE) in Registration Response message
+ERRORHDLG_04
+CBSD successfully recovers from power outage during Registered state
+ERRORHDLG_05
+CBSD successfully recovers from power outage during Granted state
+ERRORHDLG_06
+CBSD successfully recovers from power outage during pre-CPAS Heartbeat state
+ERRORHDLG_07
+CBSD successfully recovers from power outage during post-CPAS Heartbeat state
+ERRORHDLG_08
+Soak Test
+Unsuccessful registration of Cat B as Cat A without CPI
+Invalid case
+Failed to get runtime config params
+Setting the Federated testcase [%s]
+Failed to set federated testcase
+Setting the Testmode
+Failed to set testmode
+Sending the CBSD registration request
+CBSD registration failed
+Sending the CBSD de-registration request
+CBSD unregister failed
+Failed to reset runtime config params
+Setting the heart beat limit to %d
+Failed to set Heartbeat count
+Sending the CBSD spectruminquiry request
+CBSD spectruminquiry failed
+Sending the CBSD grant request
+CBSD grant failed
+Setting the frequency range low::[%lld] high::[%lld]
+Failed to set frequency range
+Failed to reset the runtime configurations
+Failed to set Heartbeat count to 10
+Setting the Meas Capability to [%s]
+Failed to set the runtime configurations
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+%s %s %s <option>
+Option ::
+Option ::
+"RECEIVED_POWER_WITHOUT_GRANT"
+"RECEIVED_POWER_WITH_GRANT"
+"RECEIVED_POWER_WITH_GRANT","RECEIVED_POWER_WITHOUT_GRANT"
+Invalid Federated test case
+Prints out usage and command listing.
+WINNF.FT.C.REG.1
+Multi-Step registration
+WINNF.FT.C.REG.5
+Single-Step registration for CBSD with CPI signed data
+WINNF.FT.C.REG.8
+Missing Required parameters (responseCode 102)
+WINNF.FT.C.REG.10
+Pending registration (responseCode 200)
+WINNF.FT.C.REG.12
+Invalid parameter (responseCode 103)
+WINNF.FT.C.REG.14
+Blacklisted CBSD (responseCode 101)
+WINNF.FT.C.REG.16
+Unsupported SAS protocol version (responseCode 100)
+WINNF.FT.C.REG.18
+Group Error (responseCode 201)
+WINNF.FT.C.GRA.1
+Unsuccessful Grant responseCode=400 (INTERFERENCE)
+WINNF.FT.C.GRA.2
+Unsuccessful Grant responseCode=401 (GRANT_CONFLICT)
+WINNF.FT.C.HBT.1
+Heartbeat Success Case (first Heartbeat Response)
+WINNF.FT.C.HBT.3
+Heartbeat responseCode=105 (DEREGISTER)
+WINNF.FT.C.HBT.4
+Heartbeat responseCode=500 (TERMINATED_GRANT)
+WINNF.FT.C.HBT.5
+Heartbeat responseCode=501 (SUSPENDED_GRANT) in First Heartbeat Response
+WINNF.FT.C.HBT.6
+Heartbeat responseCode=501 (SUSPENDED_GRANT) in Subsequent Heartbeat Response
+WINNF.FT.C.HBT.7
+Heartbeat responseCode=502 (UNSYNC_OP_PARAM)
+WINNF.FT.C.HBT.9
+Heartbeat Response Absent (First Heartbeat)
+WINNF.FT.C.HBT.10
+Heartbeat Response Absent (Subsequent Heartbeat)
+WINNF.FT.C.RLQ.1
+Successful Relinquishment
+WINNF.FT.C.DRG.1
+Successful Deregistration
+WINNF.FT.C.SCS.1
+Successful TLS connection between UUT and SAS Test Harness
+WINNF.FT.C.SCS.2
+TLS failure due to revoked certificate
+WINNF.FT.C.SCS.3
+TLS failure due to expired server certificate
+WINNF.FT.C.SCS.4
+TLS failure when SAS Test Harness certificate is issue by unknown CA
+WINNF.FT.C.SCS.5
+TLS failure when certificate at the SAS Test Harness is corrupted
+WINNF.PT.C.HBT
+UUT RF Transmit Power Measurement
+Invalid testcase
+Failed to get runtime config params
+Setting the Winnf testcase [%s]
+Failed to set WINNF testcase
+Setting the Testmode
+Failed to set testmode
+Sending the CBSD registration request
+CBSD registration failed
+Failed to reset runtime config params
+Failed to set WINNF testcases
+Sending the CBSD spectruminquiry request
+CBSD spectruminquiry failed
+Sending the CBSD grant request
+CBSD grant failed
+Setting the heart beat limit to %d
+Failed to set Heartbeat limit to 10
+Failed to set the testmodes
+Failed to restore runtime config params
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+%s %s %s <option>
+Option ::
+Option ::
+Invalid WINNF test case
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

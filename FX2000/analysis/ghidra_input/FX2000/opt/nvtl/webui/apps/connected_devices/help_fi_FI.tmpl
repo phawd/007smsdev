@@ -1,0 +1,83 @@
+<!-- Connected Devices -->
+<div id="connected_devices">
+	<h1><tmpl_var _("webui", "connected_devices_menu_text")></h1>
+	<h2>Yleiskatsaus</h2>
+	<p>
+		Tällä sivulla näytetään tiedot jokaisesta laitteesta, joka on yhdistetty <tmpl_var _("webui", "webui_product_name")>-laitteeseen, ja luetellaan myös kaikki estetyt laitteet.
+	</p>
+
+	<h2><tmpl_var _("webui", "connected_devices_sub_header_text")></h2>
+	<p>
+		Tässä taulukossa luetellaan kaikki Wi-Fi-verkkoon yhdistetyt laitteet. Wi-Fi-verkon nimi näkyy otsikon jälkeen. Jos yhteys on jaettu ja tietokone on liitetty <tmpl_var _("webui", "webui_product_name")>-laitteeseen USB-kaapelia käyttäen, kyseinen tietokone mainitaan tässä taulukossa.
+	</p>
+	<p>
+		Seuraavat tiedot näytetään jokaisesta yhdistetystä laitteesta:
+	</p>
+
+	<h3>Yhteyden tyyppi</h3>
+	<p>
+		Kuvake ilmaisee kunkin yhdistetyn laitteen yhteyden tyypin.
+	</p>
+
+	<h3>Nimi</h3>
+	<p>
+		Tämä on yleensä yhdistetyn laitteen isäntänimi, joka on asetettu yhdistetyssä laitteessa. Joskus harvoin isäntänimi ei ehkä ole käytettävissä. Jos olet muuttanut yhdistetyn laitteen nimeä ”Edit” (Muokkaa) -vaihtoehtoa käyttäen, antamasi nimi näytetään isäntänimen sijaan.
+	</p>
+	<p>
+		Voit muuttaa minkä tahansa yhdistetyn laitteen nimeä ”Edit” (Muokkaa) -vaihtoehdon avulla.
+	</p>
+	
+	<h3>IP-osoite</h3>
+	<p>Yhdistetyn laitteen IP-osoite.</p>
+
+	<h3>
+		<tmpl_var truncate(_("webui", "connected_devices_mac_address_label"), (size(_("webui", "connected_devices_mac_address_label")) - size(":")))>
+	</h3>
+	<p>
+		MAC-osoite on tämän yhdistetyn laitteen yksilöllinen verkkotunniste.
+	</p>
+
+	<tmpl_if isIPv6Supported>
+		<h3>
+			<tmpl_var truncate(_("webui", "connected_devices_link_local_label"), (size(_("webui", "connected_devices_link_local_label")) - size(":")))>
+		</h3>
+		<p>
+			Jos yhdistetty laite tukee IPv6:ta, näkyviin tulee Link-Local IPv6 -osoite (paikallinen osoite).
+		</p>
+	</tmpl_if>
+
+	<tmpl_if GuestWifiSupported>
+		<h2><tmpl_var _("webui", "connected_devices_guest_title")></h2>
+		<p>
+			Jos Wi-Fi-vierasverkko on käytössä, tässä taulukossa luetellaan kaikki Wi-Fi-vierasverkkoon yhdistetyt laitteet. Wi-Fi-verkon nimi näkyy otsikon jälkeen.
+		</p>
+		
+		<p>
+			Tässä lueteltujen laitteiden esitystapa ja toiminta ovat samat kuin Primary Network (Ensisijainen verkko) -kohdan alla lueteltujen laitteiden.
+		</p>
+	</tmpl_if>
+	
+	<h2>Laitteiden estäminen ja eston poistaminen</h2>
+	<h3>Block (Estä) -painike</h3>
+	<p>
+		”Block” (Estä) -painikkeen napsauttaminen katkaisee yhdistetyn laitteen yhteyden ja estää sitä muodostamasta uudelleen yhteyttä. Estetty laite näkyy sitten estettyjen laitteiden luettelossa.
+	</p>
+	<p>
+		Estetyiltä laitteilta on estetty pääsy sekä vierasverkkoon että ensisijaiseen verkkoon.
+	</p>
+	<p>
+		Tämä vaihtoehto on käytettävissä jokaisessa yhdistetyssä laitteessa, paitsi omassa laitteessasi, ja kaikissa USB:n kautta yhdistetyissä laitteissa.
+	</p>
+	
+	<h3>Estettyjen laitteiden luettelo</h3>
+	<p>
+		Tässä luettelossa on mainittu kaikki estämäsi laitteet. Huomaa, että koska näitä laitteita ei ole tällä hetkellä yhdistetty ja yhteyden muodostaminen on estetty niiltä, niillä ei ole IP-osoitetta. Sen sijaan ne tunnistaa niiden nimestä ja MAC-osoitteesta.
+	</p>
+	
+	<h3>Unblock (Poista esto) -painike</h3>
+	<p>
+		Unblock (Poista esto) -painikkeen napsauttaminen poistaa aiemmin estetyn laitteen eston ja vapauttaa sen muodostamaan jälleen yhteyden. Estetty laite poistetaan estettyjen laitteiden luettelosta, ja se näkyy uudelleen yhdistettyjen laitteiden luettelossa, kun se muodostaa yhteyden.
+	</p>
+</div>
+<!-- id="connected_devices" -->
+

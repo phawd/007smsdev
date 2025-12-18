@@ -1,0 +1,92 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_manager_menu_text")></h1>
+        <h2>Yleiskatsaus</h2>
+        <p><tmpl_var _("webui", "webui_product_name")>-laitteessasi oleva SIM-kortti voidaan lukita PIN-koodilla. Jos SIM-kortti on lukittu, sinun on sy
+ PIN-koodi ennen yhteyden muodostamisesta matkapuhelinverkkoon. Kun PIN-koodi on sy
+tetty, se muistetaan seuraavaan virrankatkaisuun asti.</p>
+ sivulla voit sy
+ SIM-kortin PIN-koodin tarvittaessa sek
+ avata SIM-kortin lukituksen tai vaihtaa SIM-kortin PIN-koodin. SIM-kortin vaihtamiseen tarvitaan yleens
+ nykyinen PIN-koodi. Saat Novatel Wirelessin SIM-kortin oletusarvoisen PIN-koodin palveluntarjoajaltasi.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_pin_lock_feature_label"), (size(_("webui", "adv_sim_manager_pin_lock_feature_label")) - size(":")))></h3>
+		<p>Kent
+ ilmoitetaan, onko PIN-lukitus k
+ vai ei. Jos siin
+), PIN-lukitus on kytketty p
+lle ja SIM-kortin PIN-koodi on sy
+, jotta matkapuhelinverkkoon voidaan muodostaa yhteys. Jos siin
+ (Pois p
+), PIN-lukitusta ei ole kytketty p
+ SIM-kortin PIN-koodia tarvita.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_status_label"), (size(_("webui", "adv_sim_manager_status_label")) - size(":")))></h3>
+	<p>Kent
+ ilmoitetaan SIM-kortin nykyinen tila. Mahdollisia arvoja ovat seuraavat:</p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>Ready (Valmis) 
+ on tavanomainen tila. SIM-kortin PIN-koodi ei ole k
+	        <li>PIN Locked (Lukittu PIN-koodilla) 
+ SIM-kortin PIN-koodi on sy
+, ennen kuin voit k
+ matkapuhelinverkkoa.</li>
+	        <li>PUK Locked (Lukittu PUK-koodilla) 
+ SIM-kortin PUK-koodi on sy
+, jotta voidaan jatkaa. Saat PUK-koodin palveluntarjoajaltasi.</li>
+	        <li>Unlocked (Lukitus avattu) 
+ SIM-kortin PIN-koodi tarvitaan, mutta se on jo sy
+tetty.</li>
+	        <li>No SIM (Ei SIM-korttia) 
+ SIM-korttia ei havaittu. Jos sinulla on SIM-kortti, tarkista, ett
+ se on asetettu oikein.</li>
+	        <li>SIM Error (SIM-kortin virhe) 
+ SIM-kortti havaittiin, mutta se ei vastannut odotetulla tavalla eik
+.</li>       
+	        </ul>
+        <h2>SIM-korttitoiminnot</h2>
+        <p>K
+ olevat toiminnot riippuvat SIM-kortin nykyisest
+ tilasta. Kaikki mahdolliset toiminnot on lueteltu ja selitetty alla.</p>
+		<h3>PIN-lukitus</h3>
+		<p>Jos SIM-kortti on t
+ hetkell
+ lukittu PIN-koodilla, sinua pyydet
+n PIN-koodi. Huomaa, ett
+ PIN-koodi sy
+n liian monta kertaa, SIM-korttiin asetetaan PUK-lukitus. Sivulla oleva laskuri ilmoittaa, kuinka monen v
+kerran j
+lkeen PUK-lukitus asetetaan. Kun kortti on lukittu PUK-koodilla, palveluntarjoajalta on hankittava PUK-koodi.</p>
+		<h3>PUK-lukitus</h3>
+		<p>Jos SIM-kortti on t
+ hetkell
+ lukittu PUK-koodilla, ainoa mahdollinen toimenpide on PUK-koodin sy
+minen. Huomaa, ett
+ PUK-koodi sy
+n liian monta kertaa, SIM-kortista tulee pysyv
+kelvoton. Sinun on hankittava uusi SIM-kortti. Sivulla oleva laskuri ilmoittaa, kuinka monta sy
+		<h3><tmpl_var _("webui", "adv_sim_manager_enable_pin_lock_option")></h3>
+ asettaa SIM-kortin niin, ett
+ PIN-koodi on sy
+ynnistett
+, jotta matkapuhelinverkkoon voidaan muodostaa yhteys. Jotta t
+n toiminnon voi suorittaa, sinun on sy
+ nykyinen PIN-koodi.</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_disable_pin_option")></h3>
+ asetuksella voit kytke
+ PIN-lukituksen, joka kytkettiin aiemmin p
+lle, jotta PIN-koodia ei tarvitse en
+, kun matkapuhelinverkkoon muodostetaan yhteys. Jotta t
+n toiminnon voi suorittaa, sinun on sy
+ nykyinen PIN-koodi.</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_change_pin_option")></h3>
+		<p>Voit vaihtaa nykyisen PIN-koodin valitsemalla t
+n vaihtoehdon ja sy
+ sitten tarvittavat tiedot:</p>
+		<div class="blockgroup">
+			<li>Nykyinen PIN-koodi</li>
+			<li>Uusi PIN-koodi</li>
+			<li>Vahvista uusi PIN-koodi</li>
+			</ul>
+		</div>
+		<p><tmpl_var _("webui", "adv_sim_manager_name_text")></p>
+<!-- id="sim" -->

@@ -1,0 +1,79 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p>Šo ieslēgšanas/izslēgšanas iestatījumu varat izmantot, ja nepieciešams, lai izslēgtu mobilo datu savienojumu un liegtu piekļuvi mobilajam tīklam. Tas neļauj pievienotajām ierīcēm izveidot savienojumu ar internetu un izmantot jūsu mobilo datu plānu. Normālai darbībai šis iestatījums ir jāatstāj ieslēgts.</p>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Savienojuma preference</h3>
+			<p>Atlasiet vēlamo opciju, lai noteiktu, kad <tmpl_var _("webui", "webui_product_name")> izveidos datu savienojumu ar mobilo tīklu.</p>
+	</tmpl_if>
+
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>Izmantojiet šo iestatījumu, lai pēc nepieciešamības ieslēgtu vai izslēgtu starptautisko un iekšzemes viesabonēšanu. Viesabonēšanas laikā var tikt piemērota papildu maksa par datu pārraidi.</p>
+	</tmpl_if>
+
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p>Noklusējuma vērtība ir "<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>". <tmpl_var _("webui", "webui_product_name")> izvēlēsies labāko pieejamo tehnoloģiju.</p>
+		<p>Ja vēlaties, varat to mainīt, lai ierobežotu izmantojamās tīkla tehnoloģijas.</p>
+	</tmpl_if>
+
+	<h3>Manuāla tīkla atlase</h3>
+		
+	<p>
+		Šī funkcija ir pieejama tikai tad, ja ir izslēgta automātiskā tīkla atlase. Tas var būt noderīgi, ja ir pieejami vairāki tīkli un jūs priekšroku dodat kādam no tīkliem.
+	</p>
+	<p>
+		Noklikšķiniet uz pogas "Atlasīt tīklu", lai meklētu pieejamos tīklus; pēc tam varat izvēlēties vajadzīgo tīklu.
+	</p>
+	
+	
+	<tmpl_if showApnSettings>
+		<tmpl_if ShowAdvancedSettingsToggleButton>
+			<h2>Papildu iestatījumi</h2>
+			<p>
+				Izmantojiet šo virsrakstu/saiti, lai pēc nepieciešamības parādītu vai paslēptu papildu iestatījumus.
+			</p>
+		</tmpl_if>
+
+		<h3>
+			<tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))>
+		</h3>
+		<p>
+			APN ir iepriekš konfigurēts; APN nav jāmaina, ja vien jums nav uzņēmuma konta (ar savu APN).
+		</p>
+
+		<p>
+			Ja nepieciešams mainīt APN, ievadiet mobilā tīkla pakalpojumu sniedzēja nodrošināto vērtību.
+		</p>
+
+		<tmpl_if showApnAuthenticationSettings>		
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))>
+			</h3>
+			<div class="blockgroup">
+				<p>Atlasiet pakalpojumu sniedzēja norādīto opciju.</p>
+				<ul>
+					<li>Nav</li>
+					<li>PAP</li>
+					<li>CHAP</li>
+				</ul>
+			</div>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))>
+			</h3>
+			<p>
+				Ja iestatījuma Autentifikācija vērtība ir <strong>Nav</strong>, to var atstāt tukšu. Pretējā gadījumā ievadiet sava pakalpojumu sniedzēja norādīto vērtību.
+			</p>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))>
+			</h3>
+			<p>
+				Ja iestatījuma Autentifikācija vērtība ir <strong>Nav</strong>, to var atstāt tukšu. Pretējā gadījumā ievadiet sava pakalpojumu sniedzēja norādīto vērtību.
+			</p>
+		</tmpl_if>
+	</tmpl_if>
+</div>

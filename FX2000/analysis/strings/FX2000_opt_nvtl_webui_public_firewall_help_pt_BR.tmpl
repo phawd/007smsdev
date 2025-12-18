@@ -1,0 +1,51 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+	<h2>Vis
+o geral</h2>
+		<p>Um firewall protege seus dispositivos conectados contra o tr
+fego de entrada mal-intencionado da internet. O firewall n
+o pode ser desativado, mas as configura
+es a seguir est
+o dispon
+veis. </p>
+	<h2>Configura
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+		<p>Esse recurso permite que o software de cliente VPN em dispositivos conectados se conecte atrav
+s desse dispositivo a servidores VPN remotos. Normalmente, essa op
+o deve permanecer ativada. </p>
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+			<p>Normalmente, o firewall bloquear
+ solicita
+es de conex
+o IPv6 destinadas a um dispositivo conectado ao IPv6. </p>
+			<p> Caso deseje permitir que essas solicita
+es de conex
+o cheguem at
+ o dispositivo conectado pretendido, ative essa configura
+o. O Modo Transparente s
+ deve ser ativado quando necess
+rio, pois ele reduz a prote
+o proporcionada pelo firewall <tmpl_var _("webui", "webui_product_name")>. </p>
+	</tmpl_if>
+	<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+	<p> Se selecionado, o dispositivo conectado especificado como o endere
+o IP DMZ (destino DMZ) receber
+ todo o tr
+fego que, de outro modo, seria bloqueado pelo firewall. Isso pode ajudar alguns aplicativos problem
+ticos da rede a funcionar corretamente, mas o dispositivo DMZ precisa ter o seu pr
+prio firewall para se proteger contra o tr
+fego mal-intencionado. </p>
+	<h3>Caixa de sele
+o DMZ</h3>
+		<p>Use essa caixa de sele
+o para ativar ou desativar este recurso conforme necessidade. De forma geral, o DMZ deve permanecer desativado, a menos que seja realmente necess
+rio. </p>
+	<h3>Endere
+o IP de destino</h3>
+		<p>Insira neste campo o endere
+o IP do dispositivo conectado que deseja transformar no dispositivo DMZ (destino DMZ). Voc
+ pode verificar o endere
+o IP de cada um dos dispositivos conectados na tela de dispositivos conectados. </p>
+<!-- id="firewall" -->

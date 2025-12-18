@@ -1,0 +1,1682 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+strerror
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+libpthread.so.0
+sys_getLastSoftwareUpdateStatus
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+snprintf
+sys_getSoftwareUpdateABFailsafeIsRunning
+strftime
+gettimeofday
+gmtime_r
+sys_getNetworkTimeZoneAndDst
+asctime_r
+difftime
+su_api_start_install
+pthread_create
+sys_getFotaInstallStatus
+pthread_mutex_init
+__ctype_b_loc
+pthread_mutex_lock
+pthread_mutex_unlock
+strtoull
+closedir
+sys_getSoftwareUpdateRevertStatus
+localtime
+msgq_send_async
+pthread_self
+mifi_dbg_start
+__errno_location
+msgq_create
+mifi_security_init
+watchdog_application_register
+pthread_join
+msgq_receive
+msgq_resp_preprocess
+msgq_resp_postprocess
+mq_close
+mq_unlink
+mifi_security_shutdown
+mifi_dbg_stop
+su_api_is_running
+nua_api_sys_indication
+sys_getCellularDataConnectionState
+su_api_indicate_failsafe_status
+su_api_indicate_fota_revert_status
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+MsgBus_Unsubscribe
+pthread_detach
+nua_api_timer_timeout_ind
+timer_delete
+timer_create
+timer_settime
+sys_getBatteryStatus
+sys_changeSystemRunlevel
+sys_registerDevicePowerDownHandoff
+sys_getHardwareInfo
+sys_getSystemVersion
+sys_validateHomeNetwork
+sys_getCellularDataConnectionStatus
+nua_get_settings_impl
+xmldata_getuint32_default
+xmldata_getint32_default
+xmldata_getstring
+nua_set_settings_impl
+xmldata_setuint32
+xmldata_setint32
+xmldata_setstring
+xmldata_save
+MsgBusSetInt32
+initialize_settings
+MsgBusSetBinary
+sys_getLastSuccessfulSoftwareUpdateInfo
+sys_incrementSoftwareUpdateDeferCount
+sys_installSoftwareUpdate
+sys_installSoftwareUpdateWithDelay
+sys_abortCurrentSoftwareUpdateSession
+sys_setSoftwareUpdateInfo
+sys_getCurrentSoftwareUpdateInfo
+sys_getSoftwareUpdateInfoByID
+sys_getSoftwareUpdateMaxPackageSize
+sys_getSourceVersionFromPkg
+sys_getTargetVersionFromPkg
+sys_validateSoftwareUpdatePackage
+sys_createSoftwareUpdateSession
+sys_terminateSoftwareUpdateSession
+sys_setLastSoftwareUpdateCheckTime
+nua_factory_reset_impl
+initialize_factory_reset_func
+mifi_security_aes128_decrypt
+mifi_security_decrypt_file
+nua_api_job_response_ind
+mifi_security_encrypt_file
+cloud_engine_io_action_start
+nua_api_engine_ready_ind
+msgq_resp_handler
+MsgBusGet
+msgq_does_queue_exist
+mifi_security_hmac_create_signature
+curl_slist_append
+curl_easy_setopt
+curl_easy_perform
+curl_easy_getinfo
+curl_easy_reset
+curl_slist_free_all
+curl_global_init
+curl_easy_init
+curl_easy_cleanup
+curl_global_cleanup
+msgq_send
+mifi_security_aes128_encrypt
+settings_get_setting
+xmldata_initialize
+xmldata_getstring_default
+xmldata_getcount
+xmldata_shutdown
+settings_get_features
+xmlXPathEvalExpression
+LIBXML2_2.4.30
+libxml2.so.2
+xmlNewNode
+xmlDocCopyNode
+xmlAddChild
+xmlUnlinkNode
+xmlFreeNode
+xmlXPathFreeObject
+xmlNodeGetContent
+xmlStrlen
+xmlEncodeEntitiesReentrant
+xmlEncodeSpecialChars
+xmlNodeSetContentLen
+xmlKeepBlanksDefault
+xmlReadFile
+LIBXML2_2.6.0
+xmlXPathNewContext
+xmlFreeDoc
+xmlSaveFormatFileEnc
+xmlXPathFreeContext
+__bss_start
+__lxstat
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libgps_api.so
+libfactory_reset_api.so
+libsms_api.so
+libwifi_api.so
+libccm2_api.so
+librouter2_api.so
+libfile_sharing_api.so
+libfota_api.so
+libled_api.so
+libbuzzer_api.so
+libans_api.so
+libusb_api.so
+libemd_api.so
+libsensor_api.so
+libvpn_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libwan_mgr_api.so
+libcbsd_api.so
+libsysintclient.so
+libcurl.so.4
+libssl.so.1.1
+libcrypto.so.1.1
+libcloud_engine_api.so
+libnua_api.so
+H	KxD	J{D
+/dev/null
+[%s]:[%s] - %s: sys_getLastSoftwareUpdateStatus() failed rc=%d, ignore
+[%s]:[%s] - %s: Found FOTA status:%d (%s), rec:%u
+[%s]:[%s] - %s: nua_reg_save_su_result() failed
+/tmp/nua_fota_installation_success
+[%s]:[%s] - %s: nua_reg_save_su_loop_poll_interval(10) failed
+[%s]:[%s] - %s: Consecutive SU loop interval=[10] set
+[%s]:[%s] - %s: nua_reg_read_activity_info() failed
+[%s]:[%s] - %s: Activity update_check=[0]
+[%s]:[%s] - %s: Activity dlfinish=[0]
+%m%d%Y%H%M%S
+[%s]:[%s] - %s: nua_sys_get_device_version() failed, rc=[%d]
+[%s]:[%s] - %s: nua_cloud_report_activity() failed, rc=[%d]
+[%s]:[%s] - %s: nua_reg_read_dlddd_record_no() failed
+[%s]:[%s] - %s: No SU record exists in DD
+[%s]:[%s] - %s: nua_dldd_read_su_record_by_index(%d) failed
+[%s]:[%s] - %s: nua_validate_su_conditions in_trigger[%s]
+[%s]:[%s] - %s: A/B failsafe process is running
+[%s]:[%s] - %s: A/B failsafe process is not running
+[%s]:[%s] - %s: nua_reg_read_su_trigger() failed, rc=[%d]
+[%s]:[%s] - %s: Device under roaming
+[%s]:[%s] - %s: Device roam check pass
+[%s]:[%s] - %s: Device data call not up
+[%s]:[%s] - %s: Data call check pass
+[%s]:[%s] - %s: Battery is low.
+[%s]:[%s] - %s: Battery check pass
+[%s]:[%s] - %s: nua_sys_get_device_info() failed, rc=[%d]
+[%s]:[%s] - %s: Model string [%s] 
+[%s]:[%s] - %s: Customer Strig[%s]
+[%s]:[%s] - %s: getModelStringAndCustomerID() failed, rc=[%d]
+%s/%s/%s/%s/%s
+%s/%s/%s/%s
+[%s]:[%s] - %s: nua_reg_read_test_mode_url() failed
+%s/%s/%s/%s/%s/%s
+[%s]:[%s] - %s: Final URL=[%s], len=[%d]
+[%s]:[%s] - %s: nua_validate_su_conditions() failed, rc=[%d]
+[%s]:[%s] - %s: nua_determine_server_url() failed, rc=[%d]
+[%s]:[%s] - %s: nua_cloud_start_update_check_session() failed, rc=[%d]
+[%s]:[%s] - %s: nua_reg_save_su_trigger() failed
+[%s]:[%s] - %s: nua_reg_save_state() failed
+[%s]:[%s] - [NUA_TIMER]%s: nua_timer_delete(NUA_TIMER_ID_RETRY) failed, rc=[%d]
+[%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_RETRY - deleted
+[%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_RETRY
+[%s]:[%s] - [NUA_TIMER]%s: nua_timer_delete() failed, rc=[%d]
+nua_retry_alarm_handler
+[%s]:[%s] - [NUA_TIMER]%s: nua_timer_start(NUA_TIMER_ID_RETRY) failed,rc=[%d]
+[%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_RETRY - started, interval=[%u]
+[%s]:[%s] - %s: gmtime() failed
+%m-%d-%Y-%H:%M:%S
+[%s]:[%s] - %s: Couldn't save auto install timestamp
+[%s]:[%s] - %s: SU Auto-install new timestamp=[%s] saved
+[%s]:[%s] - %s: nua_reg_save_su_loop_poll_interval(0) failed
+[%s]:[%s] - %s: Couldn't save poll timestamp
+[%s]:[%s] - %s: New timestamp=[%s] saved
+[%s]:[%s] - %s: Couldn't save su condition timestamp
+[%s]:[%s] - %s: SU condition [%s] new timestamp=[%s] saved
+[%s]:[%s] - %s: Current time=[%ld] < recorded time=[%ld]
+[%s]:[%s] - %s: Previous timestamp is 0, saving new one
+[%s]:[%s] - %s: SU condition [%s] elapsed time=[%ld] seconds
+[%s]:[%s] - %s: Reset only SU Condition counters
+[%s]:[%s] - %s: Reset all retry counters
+[%s]:[%s] - %s: Cfg-short-retry value is zero, abort report
+[%s]:[%s] - %s: retries for reporting results disabled
+[%s]:[%s] - %s: Max retries exceeded. elapsed=[%u], max=[%u].
+[%s]:[%s] - %s: nua_reg_save_report_retry_count(%d) failed, abort.
+[%s]:[%s] - %s: Next retry in=[%u] seconds
+[%s]:[%s] - %s: Cfg-short-retry value is zero, abort DL
+[%s]:[%s] - %s: DL session retries disabled
+[%s]:[%s] - %s: nua_reg_save_dl_retry_count(%d) failed, abort.
+DL Retry times expired
+[%s]:[%s] - %s: nua_session_create_result_from_err() failed
+[%s]:[%s] - %s: nua_retry_start_timer(%u, 0) failed, abort the update. is_dl_session=[%d]
+[%s]:[%s] - %s: DL session SU-condition retry time exceeded - elapsed=[%u], max=[%u].
+SU condition failed
+[%s]:[%s] - %s: Report session SU-condition retry time exceeded - elapsed=[%u], max=[%u].
+[%s]:[%s] - %s: Next retry in=[%u] seconds. is_dl_session=[%d]
+[%s]:[%s] - %s: Device is roaming, Wait for home-network.
+[%s]:[%s] - %s: For UI initiated transactions, roaming should be fine.
+[%s]:[%s] - %s: opr_err[%d].
+[%s]:[%s] - %s: SU_OPR_ERR_COMMS_FATAL - is_dl=[%d]
+communication error
+[%s]:[%s] - %s: SU_OPR_ERR_STORAGE - is_dl=[%d]
+registry operation error
+[%s]:[%s] - %s: SU_OPR_ERR_DEVICE_IN_ROAMING - is_dl=[%d]
+[%s]:[%s] - %s: SU_OPR_ERR_OTA_CALL_NOT_PRESENT - is_dl=[%d]
+[%s]:[%s] - %s: SU_OPR_ERR_DL_GENERAL - is_dl=[%d]
+[%s]:[%s] - %s: Should never happen, un-handled error=[%d]. is_dl=[%d]
+[%s]:[%s] - %s: nua_reg_save_state(%d) failed
+[%s]:[%s] - %s: run state machine again
+nua_session_err_actions
+[%s]:[%s] - %s: nua_public_notify_ready_for_download_to_apps() failed
+[%s]:[%s] - %s: Scheduled NUA_JOB_REQ_REPORT_ACT_DLSTART
+nua_start_download_ready
+[%s]:[%s] - %s: is_dl[%d] access_type[%d] 
+dl_retry_test
+dl_report_test
+[%s]:[%s] - In %s. 
+[%s]:[%s] - %s: transfer is already active
+[%s]:[%s] - %s: nua_read_su_record_from_dd() failed, abort report
+[%s]:[%s] - %s: nua_su_cond_retry_counter_reset() failed
+[%s]:[%s] - %s: nua_cloud_start_download_session() failed
+[%s]:[%s] - %s: DL schedule success, file offset=[%u], retry_count=[%u]
+[%s]:[%s] - %s: conn_timeout[%d] campaign_id[%d] 
+[%s]:[%s] - %s: nua_reg_read_su_result() failed, abort report
+[%s]:[%s] - %s: nua_cloud_report_results() failed
+[%s]:[%s] - %s: Report-result schedule success, retry_count=[%u]
+[%s]:[%s] - %s: is_data_update[%d].
+nua_sucondition_update
+[%s]:[%s] - %s: sys_getNetworkTimeZoneAndDst() failed, rc=[%d]
+[%s]:[%s] - [NUA_TIMER]%s: curr_hour[%d] window_open[%d] window_end[%d].
+[%s]:[%s] - [NUA_TIMER]%s: curr_hour passed silent-window-interval, try next day.
+[%s]:[%s] - [NUA_TIMER]%s: curr_hour is less than silent-window-interval.
+[%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_AUTO_INSTALL, triggering installation.
+[%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_AUTO_INSTALL - utc=[%lu], local-time=[%s], New-time=[%s], adjusted_sec=[%lu] interval=[%lu]
+[%s]:[%s] - [NUA_TIMER]%s: nua_timer_start(NUA_TIMER_ID_AUTO_INSTALL) failed, rc=[%d]
+[%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_AUTO_INSTALL local-timer started, intvl=[%u]
+[%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_AUTO_INSTALL
+[%s]:[%s] - [NUA_TIMER]%s: ignore timer, since state=[%s]
+[%s]:[%s] - %s: Starting auto install
+[%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_SU_POLL
+nua_poll_alarm_handler
+[%s]:[%s] - %s: picked [SU loop] interval=[%u]
+[%s]:[%s] - %s: picked [test] interval=[%u]
+[%s]:[%s] - %s: picked [cloud] interval=[%u]
+[%s]:[%s] - %s: picked [cfg] interval=[%u]
+/opt/nvtl/data/nua/autoinstall_time
+[%s]:[%s] - %s: Unable to read NUA_AUTOINSTALL_COOKIE cookie
+[%s]:[%s] - %s: picked [SU record - Auto install Mins] interval=[%u]
+[%s]:[%s] - %s: picked [Cfg - Auto install Mins] interval=[%u]
+[%s]:[%s] - [NUA_TIMER]%s: Auto install feature disabled
+[%s]:[%s] - [NUA_TIMER]%s: Don't start timer in not applicable state=[%s]
+[%s]:[%s] - %s: System time invalid, time now=[%ld] < time last=[%ld], schedule from cfg=[%u]
+[%s]:[%s] - %s: Starting auto install, elapsed=[%u], cfg_intvl=[%u]
+[%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_AUTO_INSTALL already running. ignore intvl=[%u]
+[%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_AUTO_INSTALL started, intvl=[%u], elapsed_time=[%u], cfg=[%u]
+[%s]:[%s] - %s: polling is disabled
+[%s]:[%s] - %s: polling feature disabled
+[%s]:[%s] - %s: System time invalid, time now=[%ld] < time last=[%ld]
+[%s]:[%s] - %s: Detected factory reset, so will check update after 2 minutes
+[%s]:[%s] - %s: Scheduling check for update, elapsed=[%u], cfg_intvl=[%u]
+[%s]:[%s] - %s: Waiting for HOME(SU condition)
+[%s]:[%s] - %s: Waiting for Data(SU condition)
+[%s]:[%s] - %s: nua_schedule_update_check() failed, rc=[%d]
+[%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_SU_POLL already running. ignore intvl=[%u]
+[%s]:[%s] - [NUA_TIMER]%s: nua_timer_start(NUA_TIMER_ID_SU_POLL) failed, rc=[%d]
+[%s]:[%s] - [NUA_TIMER]%s: NUA_TIMER_ID_SU_POLL started, intvl=[%u], elapsed_time=[%u], cfg_poll_intvl=[%u]
+[%s]:[%s] - %s: cleaning up
+[%s]:[%s] - %s: nua_fota_release_session_lock() failed
+[%s]:[%s] - %s: nua_reg_backup_tags() failed
+[%s]:[%s] - %s: nua_reg_reset_fota_tags() failed
+/opt/nvtl/data/nua
+[%s]:[%s] - %s: No action required
+[%s]:[%s] - %s: Trigger count, now=[%u], allowed=[%u]
+[%s]:[%s] - %s: nua_reg_save_auto_install_trigger_count() failed
+[%s]:[%s] - %s: nua_public_notify_update_confirm_to_apps() failed
+[%s]:[%s] - %s: Waiting 10 seconds to installation kickoff
+[%s]:[%s] - (bl_att) %s: su_api_start_install() failed, rc:%d.
+[%s]:[%s] - %s: Installation kickoff successful
+[%s]:[%s] - In %s caller[%s] 
+nua_power_on_msg_handle
+[%s]:[%s] - %s: nua_engine is not yet ready, no state machine handling for caller [%s] 
+[%s]:[%s] - %s: cur=[%d][%s], prev=[%s], caller=[%s]
+[%s]:[%s] - %s: nua_idle_state_clean_up() failed
+[%s]:[%s] - %s: nua_idle_poll_check_next_attempt() failed
+[%s]:[%s] - %s: nua_check_auto_install_trigger() failed, rc=[%d]
+[%s]:[%s] - %s: nua_check_auto_install_timer() failed
+[%s]:[%s] - %s: nua_public_notify_update_confirm_to_apps() failed, rc=[%d]
+[%s]:[%s] - %s: Battery check failed, monitor based on msgbus events
+[%s]:[%s] - %s: Could not create thread to low battery kickoff installation.
+[%s]:[%s] - %s: nua_start_download_ready() failed
+[%s]:[%s] - %s: nua_start_download() failed
+[%s]:[%s] - %s - sys_getFotaInstallStatus API failed with error code %d. Try sysintcli getFotaInstallStatus from command line.
+[%s]:[%s] - %s: FOTA installation is not yet completed.
+[%s]:[%s] - %s: nua_get_firmware_update_results() failed to fetch results.
+[%s]:[%s] - %s: nua_reg_save_state(SU_STATE_INSTALL_COMPLETED) failed.
+[%s]:[%s] - %s: nua_public_notify_update_status_to_apps() failed.
+[%s]:[%s] - %s: nua_retry_counter_reset() failed
+[%s]:[%s] - %s: nua_start_report_session() failed.
+[%s]:[%s] - %s: Some thing wrong, state cannot be [%d][%s]
+[%s]:[%s] - %s: Cur state=[%s] is not download
+[%s]:[%s] - %s: Current operation is not of FOTA download
+[%s]:[%s] - %s: Not a fota download, ignore this progress 
+[%s]:[%s] - %s: nua_reg_save_dl_file_offset() failed, rc=[%d]
+[%s]:[%s] - %s: total_size is 0
+[%s]:[%s] - %s: nua_public_notify_download_progress_to_apps(%u) failed
+[%s]:[%s] - %s: nua_reg_read_dl_progress() failed, rc=[%d]
+[%s]:[%s] - %s: status[%d]. 
+[%s]:[%s] - %s: [%s]
+[%s]:[%s] - %s: Reporting result success
+[%s]:[%s] - %s: %s
+[%s]:[%s] - %s: nua_session_err_actions() failed, goto idle
+[%s]:[%s] - %s: Give up. on critical error=[%d][%s]
+[%s]:[%s] - %s: run state machine
+nua_job_process_report_results_finish
+[%s]:[%s] - In %s, status[%d]. 
+[%s]:[%s] - %s: Not a fota download, goto idle
+[%s]:[%s] - %s: Making offset as 0 as NUA received error[%d] from CURL.
+[%s]:[%s] - %s: [%s] curl_err[%d]
+Unable to find FOTA record in DLDD
+[%s]:[%s] - %s: nua_fota_verify_update_package() failed, rc=[%d]
+PKG verification failure
+[%s]:[%s] - %s: Scheduled NUA_JOB_REQ_REPORT_ACT_DLFINISH
+HTTP code=[403]
+HTTP code=[404]
+[%s]:[%s] - %s: Making offset as 0 as NUA received HTTP_FORBIDDEN/HTTP_NOT_FOUND error.
+[%s]:[%s] - %s: nua_session_err_actions() failed, report results
+Unable to process curl error
+Download file is oversize
+Unable to process storage error
+nua_job_process_pkg_download_finish_status
+[%s]:[%s] - %s: nua_dldd_read_activity_record_by_index() failed
+[%s]:[%s] - %s: Invalid campaing_id
+[%s]:[%s] - %s: nua_dldd_read_su_record_by_index() failed
+Failed to read SU record in DD
+Invalid campaign ID in DD
+[%s]:[%s] - %s: nua_fota_get_max_supported_pkg_size() failed
+Failed to read max pkg size
+[%s]:[%s] - %s: Oversize package, max=[%u], actual=[%u]
+Pkg size exceeded limit
+Unable to get device version
+[%s]:[%s] - %s: Versions - Device=[%s], New=[%s]
+[%s]:[%s] - %s: Device already at new version
+Already at newest version
+[%s]:[%s] - %s: nua_dldd_parse_descriptor() failed
+[%s]:[%s] - %s: No records in DD
+[%s]:[%s] - %s: nua_process_activity_record() failed
+[%s]:[%s] - %s: nua_process_su_record() failed
+[%s]:[%s] - %s: nua_reg_save_dlddd_record_no() failed
+/opt/nvtl/data/nua/custom_msgs.bin
+[%s]:[%s] - %s: nua_fota_acquire_session_lock() failed
+[%s]:[%s] - %s: Give up. error=[%d][%s][%s]
+[%s]:[%s] - %s: nua_schedule_activity_report() failed, rc=[%d]
+[%s]:[%s] - %s: Scheduled NUA_JOB_REQ_REPORT_ACT_UPD_CHECK
+nua_job_process_update_check_status
+[%s]:[%s] - %s: Opened dir:%s
+mifi_health_checkin_diag.bz2
+[%s]:[%s] - %s: Activity UPD_CHECK report status=[%d][%s]
+[%s]:[%s] - %s: Activity DLSTART report status=[%d][%s]
+[%s]:[%s] - %s: Activity DLFINISH report status=[%d][%s]
+[%s]:[%s] - %s: Activity AB_FAILSAFE_START report status=[%d][%s]
+[%s]:[%s] - %s: Activity AB_FAILSAFE_FINISH report status=[%d][%s]
+[%s]:[%s] - %s: Activity FOTAREVERT report status=[%d][%s]
+/tmp/mifi_health_daily_log
+nua_job_process_report_activity_finish
+[%s]:[%s] - %s: ref_req[%d]. 
+[%s]:[%s] - %s: Received resp for NUA_JOB_REQ_CHECK_UPDATE
+[%s]:[%s] - %s: status type cannot be [%d]
+[%s]:[%s] - %s: Received progress update
+[%s]:[%s] - %s: Download finish response
+[%s]:[%s] - %s: Report results finish response
+[%s]:[%s] - %s: Unknown reference request [%d]
+[%s]:[%s] - %s: Scheduled NUA_JOB_REQ_REPORT_ACT_ABFAILSAFESTART
+[%s]:[%s] - %s: Scheduled NUA_JOB_REQ_REPORT_ACT_FOTAREVERT
+[%s]:[%s] - %s: sys_getSoftwareUpdateRevertStatus failed, returned [%d]
+[%s]:[%s] - %s: curr_su_auto_poll_enabled:[%d] updated_su_auto_poll_enabled:[%d]
+[%s]:[%s] - %s: auto poll is disabled, so stopping timer.
+[%s]:[%s] - %s: auto poll is enabled, so call state machines to start timer.
+nua_settings_updated_handle
+[%s]:[%s] - %s: NUA_MSG_ENGINE_READY received
+[%s]:[%s] - %s: Scheduled NUA_JOB_REQ_REPORT_ACT_ABFAILSAFEFINISH
+[%s]:[%s] - %s: Cloud storage communication not enabled in configuration settings.
+[%s]:[%s] - %s: Event type: %d
+[%s]:[%s] - %s: Directory not present even after created once
+mkdir -p 
+[%s]:[%s] - %s: Failed to create NUA data directory, rc:%d
+[%s]:[%s] - %s: Successfully created Data directory
+[%s]:[%s] - %s: Data directory found
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - Error initializing nua configuration, terminating.
+[%s]:[%s] - Error initializing nua settings, terminating.
+[%s]:[%s] - Could not read IMEI even after %d seconds, continue
+/opt/nvtl/data/nua/imei
+[%s]:[%s] - Could not read IMEI from cookie[%s], continue
+[%s]:[%s] - Read IMEI[%s] from cookie[%s].
+[%s]:[%s] - No WWAN service after %d seconds, continue
+[%s]:[%s] - Error opening message queue: %d, terminating.
+[%s]:[%s] - Error failed to start communication engine.
+nua_main_thread
+[%s]:[%s] - NUA data directory not present, terminating.
+[%s]:[%s] - nua_reg_init() failed , terminating.
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s Server Terminating.
+nua_get_firmware_update_results
+nua_schedule_activity_report
+nua_read_su_record_from_dd
+nua_validate_su_conditions
+getModelStringAndCustomerID
+nua_determine_server_url
+nua_schedule_new_update_check
+nua_retry_delete_timer
+nua_retry_alarm_handler
+nua_retry_start_timer
+nua_session_create_result_from_err
+nua_get_utc_timestamp
+nua_su_auto_install_save_timestamp
+nua_poll_reset_timestamp
+nua_su_cond_save_timestamp
+nua_su_cond_calculate_elapsed_time
+nua_su_cond_retry_counter_reset
+nua_retry_counter_reset
+nua_compute_report_retry_value
+nua_compute_dl_retry_value
+nua_compute_retry_logic
+nua_compute_su_condition_retry_logic
+nua_session_err_actions
+nua_start_download_ready
+nua_debug_retry_logic_compute
+nua_start_download
+nua_start_report_session
+nua_sucondition_update
+nua_check_local_time
+nua_auto_install_alarm_handler
+nua_poll_alarm_handler
+nua_idle_poll_get_next_interval
+nua_find_auto_install_mins
+nua_check_auto_install_timer
+nua_idle_poll_check_next_attempt
+nua_idle_state_clean_up
+nua_check_auto_install_trigger
+nua_low_battery_installation_helper
+nua_state_machine
+nua_state_machine
+nua_is_fota_download_in_progress
+nua_job_process_pkg_dl_progress
+nua_job_process_report_results_finish
+nua_job_process_pkg_download_finish_status
+nua_process_activity_record
+nua_process_su_record
+nua_process_download_descriptor
+nua_job_process_update_check_status
+mifi_health_logs_cleanup
+nua_job_process_report_activity_finish
+nua_job_response_msg_handle
+nua_power_on_msg_handle
+nua_settings_updated_handle_helper
+nua_handle_event_message
+nua_start_communication_engine
+nua_post_internal_event
+verify_and_create_app_data_dir
+nua.settings
+modem2.wap.push
+modem2.roam_state
+ccm2.wan_connection
+modem2.service
+dsm.broadcast
+cloud_engine.status
+fota.revert_status
+mifi_health.ab_failsafe_start
+mifi_health.ab_failsafe_end
+[%s]:[%s] - %s: Missing data on msgbus
+[%s]:[%s] - %s: NUA not running, discard roaming ind
+[%s]:[%s] - %s: NUA not running, discard DSM_CHARGER_DET_AC
+[%s]:[%s] - %s: NUA not running, discard MSGBUS_DSM_BATTERY_CAPACITY
+[%s]:[%s] - %s: DSM_FOTA_UPDATE_SHUTDOWN received
+[%s]:[%s] - %s: DSM_FOTA_UPDATE_REBOOT received
+[%s]:[%s] - %s: Invalid handoff type:%d from DSM
+Connected
+Not Connected
+[%s]:[%s] - %s: IPv4 State:[%s], IPv6 State:[%s]
+[%s]:[%s] - %s: MSGBUS_MIFI_HEALTH_AB_FAILSAFE_START recieved
+[%s]:[%s] - %s: MSGBUS_MIFI_HEALTH_AB_FAILSAFE_END recieved
+[%s]:[%s] - %s: initiator_id[%s] cld-status[%d]
+[%s]:[%s] - %s: initiator_id[%s] is_download[%d] cur_offset[%f] total_size[%f] 
+[%s]:[%s] - %s: nua_cloud_io_status_ind(NUA_JOB_RESP_IO_PROGRESS) failed rc=[%d]
+[%s]:[%s] - %s: initiator_id[%s] ref_req[%d] status[%s]
+[%s]:[%s] - %s: nua_cloud_io_status_ind(NUA_JOB_RESP_FINISHED) failed rc=[%d]
+[%s]:[%s] - %s: FOTA_REVERT_STATUS_MESSAGE_BUS_CHANNEL recieved
+[%s]:[%s] - %s: MsgBus_Create Failed
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe failed for:%s
+[%s]:[%s] - %s: MsgBus subscribed to:%s
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Failed to un-subscribe channel[%s]
+[%s]:[%s] - %s: Disable Message bus interface
+msgbus_receive_roam_state_events
+msgbus_receive_dsm_events
+nua_msgbus_handler
+nua_mbh_init
+nua_mbh_deinit
+[%s]:[%s] - [NUA_TIMER]%s: Timer expired nua-id:%u
+[%s]:[%s] - [NUA_TIMER]%s: nua_api_timer_timeout_ind(%d) failed, rc= %d
+[%s]:[%s] - [NUA_TIMER]%s: thread exit, timer nua-id:%d
+[%s]:[%s] - [NUA_TIMER]%s: caller_ref_id: %d
+[%s]:[%s] - [NUA_TIMER]%s: NUA Timer not found for ref id: [%u]
+[%s]:[%s] - [NUA_TIMER]%s: Found timer with nua-id:%u, ref-id:%u, os-id:%ld
+[%s]:[%s] - [NUA_TIMER]%s: timer_delete(%ld) failed for nua-id:%d, ref id:%u
+[%s]:[%s] - [NUA_TIMER]%s: Timer deleted - nua-id:%u, caller_ref_id:%u
+[%s]:[%s] - [NUA_TIMER]%s: Input buffer is NULL
+[%s]:[%s] - [NUA_TIMER]%s: caller_ref_id:%d
+[%s]:[%s] - [NUA_TIMER]%s: Timer CB is NULL
+[%s]:[%s] - [NUA_TIMER]%s: Invalid timer interval:%lu
+[%s]:[%s] - [NUA_TIMER]%s: NUA Timers not available
+[%s]:[%s] - [NUA_TIMER]%s: timer_create() failed -- sig:%d
+[%s]:[%s] - [NUA_TIMER]%s: timer_settime() failed for caller-id:%u (interval:%lu), errno:%d
+[%s]:[%s] - [NUA_TIMER]%s: Timer started - NUA id:%u, OS id:%ld, caller id:%u, interval:%lu, repeat:%u, obsolute:%u
+[%s]:[%s] - [NUA_TIMER]%s: NUA Timer not found for nua-id:%u
+[%s]:[%s] - [NUA_TIMER]%s: nua-id:%u, caller-ref-id:%u timeout
+[%s]:[%s] - [NUA_TIMER]%s: Error in NUA Timer CB:%p for nua-id:%d
+nua_timer_thread
+nua_timer_is_running
+nua_timer_delete
+nua_timer_start
+nua_timer_timeout_msg_handle
+[%s]:[%s] - %s: Chg. connected
+[%s]:[%s] - %s: Capacity=[%u] > threshold=[%u]
+[%s]:[%s] - %s: +++
+[%s]:[%s] - %s: sys_getBatteryStatus() failed, rc=%d
+[%s]:[%s] - %s: usb_tethered=[%u], chg_connected=[%u], capacity=[%u]
+[%s]:[%s] - %s: Waiting 10 seconds to installation kickoff
+[%s]:[%s] - (bl_att) %s: su_api_start_install() failed, rc:%d.
+[%s]:[%s] - %s: Installation kickoff successful
+[%s]:[%s] - %s: nua_sys_get_battery_status() failed, cannot proceed with install rc=%d
+[%s]:[%s] - %s: Battery check disabled!!
+[%s]:[%s] - %s: Battery check pass
+[%s]:[%s] - %s: Battery check failed(chg=[%u], capacity=[%u])
+[%s]:[%s] - %s: capacity = %u, chg_connected = %u
+[%s]:[%s] - %s: Battery check disabled
+[%s]:[%s] - %s: Monitor disabled
+[%s]:[%s] - %s: Battery check failed (chg=[%u], capacity=[%u])
+[%s]:[%s] - %s: nua_public_notify_update_confirm_to_apps() failed, rc=[%d]
+[%s]:[%s] - %s: Could not create thread to kickoff installation.
+[%s]:[%s] - %s: runlevel[%d]
+[%s]:[%s] - %s: sys_changeSystemRunlevel(%d) failed, rc=%d
+[%s]:[%s] - %s: Success [%d]
+[%s]:[%s] - %s: sys_registerDeviceShutdownHandoff() failed, rc=%d
+registered
+de-registered
+[%s]:[%s] - %s: Handoff=[%s]
+[%s]:[%s] - %s: Begin shutdown
+telinit 0
+[%s]:[%s] - %s: Begin Reboot
+telinit 6
+[%s]:[%s] - %s: nua_sys_change_runlevel(%d) failed, rc=[%d], try backup
+[%s]:[%s] - %s: Install on shutdown feature not supported, ignore handoff
+[%s]:[%s] - %s: Installation already started!!, ignore powerdown
+[%s]:[%s] - %s: NUA state[%d] != SU_STATE_INSTALL_POSTPONED
+[%s]:[%s] - %s: Battery check failed, choosing regular powerdown
+[%s]:[%s] - %s: Set boot pref to LPM!! (ac[%d], tether[%d])
+[%s]:[%s] - %s: Set boot pref to shutdown!! (ac[%d], tether[%d])
+[%s]:[%s] - %s: Starting installation, power-down handoff type=[%d]
+[%s]:[%s] - %s: public_start_install failed, rc=%d
+[%s]:[%s] - %s:++
+/opt/nvtl/data/nua/freset_cookie
+[%s]:[%s] - %s: Starting clean up
+/opt/nvtl/data/nua/custom_msgs.bin
+/opt/nvtl/data/nua
+[%s]:[%s] - %s: Failed to cleanup data directory, rc=[%d]
+[%s]:[%s] - %s: Cleanup done
+[%s]:[%s] - %s: ++
+[%s]:[%s] - %s: Unable to create factory reset cookie
+[%s]:[%s] - %s: sys_getHardwareInfo() failed, rc=%d
+[%s]:[%s] - %s: sys_getHardwareInfo() MFG=%s
+/opt/nvtl/data/nua/imei
+[%s]:[%s] - Could not read IMEI from cookie[%s], continue
+[%s]:[%s] - Read IMEI[%s] from cookie[%s].
+[%s]:[%s] - %s: Unable to create/update NUA_IMEI_PATH cookie
+[%s]:[%s] - %s: sys_getHardwareInfo() IMEI=%s
+[%s]:[%s] - %s: sys_getHardwareInfo() Model=%s
+[%s]:[%s] - %s: outBuf=[%s]
+/root/fake_version
+[%s]:[%s] - %s: Read fake version=[%s]
+[%s]:[%s] - %s: sys_getSystemVersion() failed, rc=%d
+[%s]:[%s] - %s: device version=[%s], len=[%d]
+[%s]:[%s] - %s: NUA is not yet ready, drop event
+[%s]:[%s] - %s: in service=[%u]
+[%s]:[%s] - %s: nua_reg_read_su_trigger() failed, rc=[%d]
+[%s]:[%s] - %s: Device is roaming, Wait for home-network.
+[%s]:[%s] - %s: Device has no connectivity, Wait for data-connection.
+[%s]:[%s] - %s: Waiting 60 seconds to check SU conditions
+[%s]:[%s] - %s: nua_reg_read_su_trigger() failed
+[%s]:[%s] - %s: su_check_conditions failed.
+[%s]:[%s] - %s: Sent DATA_CALL_CONNECTED indication event
+[%s]:[%s] - %s: connected=[%u]
+[%s]:[%s] - %s: For UI transactions, roaming should be fine.
+[%s]:[%s] - %s: Could not create thread to track su_check_conditions.
+[%s]:[%s] - %s: Home=[%u]
+[%s]:[%s] - %s: nua_sys_validateHomeNetwork() failed, rc=[%d]
+[%s]:[%s] - %s: Roam status=%s
+[%s]:[%s] - %s: sys_getCellularDataConnectionStatus() failed, rc=[%d]
+[%s]:[%s] - %s: Data call up
+[%s]:[%s] - %s: Data call not up, sys_call_status=[%d]
+[%s]:[%s] - %s: IMEI[%s] read from modem (Elapsed: %d)
+[%s]:[%s] - %s: NUA_IMEI_PATH file not found
+[%s]:[%s] - %s: Unable to read NUA_IMEI_PATH cookie
+[%s]:[%s] - %s: (Elapsed time: %d)
+[%s]:[%s] - %s: Could not read IMEI.
+[%s]:[%s] - %s: Found coverage (Elapsed: %d, Min srv time:%d)
+[%s]:[%s] - %s: Out of coverage (Elapsed time: %d)
+[%s]:[%s] - %s: NUA_SYS_SETTINGS_UPDATED
+[%s]:[%s] - %s: NUA_SYS_APP_FACTORY_RESET
+[%s]:[%s] - %s: NUA_SYS_POWER_INDICATION
+[%s]:[%s] - %s: NUA_SYS_BATTERY_CAPACITY
+[%s]:[%s] - %s: NUA_SYS_POWERDOWN_HANDOFF
+[%s]:[%s] - %s: Unsupported system event:%d
+nua_sys_battery_apply_rules
+nua_sys_get_battery_status
+nua_sys_low_battery_installation_helper
+nua_sys_battery_check
+nua_sys_handle_battery_indication_helper
+nua_sys_handle_battery_indication
+nua_sys_change_runlevel
+nua_sys_register_for_dsm_powerdown_handoff
+nua_sys_execute_regular_shutdown
+nua_sys_powerdown_handoff
+nua_sys_execute_pending_factory_reset
+nua_sys_factory_reset
+nua_sys_get_device_info
+nua_sys_get_device_version
+nua_sys_service_indication
+nua_sys_data_call_indication_helper
+nua_sys_data_call_indication
+nua_sys_roam_indication
+nua_sys_is_device_roaming
+nua_sys_is_data_call_up
+nua_check_if_modem_is_up
+nua_confirm_wwan_service
+nua_sys_indications_msg_handle
+/Settings/NUA/EnableFUMO
+/Settings/NUA/EnableAutoPoll
+/Settings/NUA/LowBatteryThreshold
+/Settings/NUA/LowBatteryThresholdWithCharger
+/Settings/NUA/ModelString
+/Settings/NUA/CustomerID
+nua.settings
+/opt/nvtl/data/nua/reg.xml_temp
+[%s]:[%s] - %s: nua_xml_save() failed
+/opt/nvtl/data/nua/reg.xml
+[%s]:[%s] - %s: nua_xml_open_new() failed
+/reg/testMode/serverUrl
+/reg/testMode/serverAlias
+[%s]:[%s] - %s: g_reg_tags[%d].xpath=[%s], value=[%s]
+[%s]:[%s] - %s: nua_xml_write_value_ex() failed
+[%s]:[%s] - %s: nua_xml_write_value() failed, xpath=[%s]
+[%s]:[%s] - %s: xpath=[%s] not found in registry
+/reg/suResult/reason
+[%s]:[%s] - %s: nua_xml_open() failed
+[%s]:[%s] - %s: nua_reg_write_str_value() failed
+[%s]:[%s] - %s: nua_reg_save_file() failed
+[%s]:[%s] - %s: Unknown data type specified=[%d]
+[%s]:[%s] - %s: Invalid registry tag=[%s]
+[%s]:[%s] - %s: nua_xml_read_value() failed, xpath=[%s]
+[%s]:[%s] - %s: pthread_mutex_init failed for registry_mutex
+[%s]:[%s] - %s: create registry file
+[%s]:[%s] - %s: nua_reg_create_file() failed
+/reg/activity/campaignID
+[%s]:[%s] - %s: nua_reg_write_uint32_t_value() failed
+/reg/activity/poll/interval
+/reg/activity/poll/valid
+/reg/activity/mifiHealth
+/reg/activity/access/sigVer
+/reg/activity/type/updateCheck
+/reg/activity/type/dlFinish
+/reg/activity/access/pubUrl
+[%s]:[%s] - %s: nua_reg_write_str_value() failed, xpath=[%s]
+/reg/activity/access/host
+/reg/activity/access/rPath
+/reg/activity/access/bucket
+/reg/activity/access/akey
+/reg/activity/access/skey
+[%s]:[%s] - %s: nua_reg_read_uint32_t_value() failed
+/reg/suResult/update
+/reg/suResult/modemPRI
+/reg/suResult/linuxPRI
+/reg/dd/fotaRecordNo
+/reg/dd/activityRecordNo
+/reg/dd/totalRecordCount
+/reg/poll/secSinceEpoch
+/reg/poll/timeStamp
+/reg/autoInstall/secSinceEpoch
+/reg/autoInstall/timeStamp
+/reg/retryCount/roamingSeconds
+/reg/retryCount/roamingTimeStamp
+/reg/retryCount/noDataSeconds
+/reg/retryCount/noDataTimestamp
+[%s]:[%s] - %s: Registry doesn't exists, create new one
+[%s]:[%s] - %s: nua_xml_write_value_ex(xpath=[%s]) failed
+[%s]:[%s] - %s: nua_xml_read_value(xpath=[%s]) failed
+[%s]:[%s] - %s: nua_reg_write_str_value(xpath=[%s]) failed
+/reg/state/previous
+[%s]:[%s] - %s: Couldn't read state from registry=[%s]
+/reg/state/current
+/reg/state/previousToLowBattery
+/reg/debug/dlRetryLogic
+/reg/debug/reportRetryLogic
+/reg/debug/roamRetryLogic
+/reg/debug/nodataRetryLogic
+/reg/suLoopUpdateCheckInterval
+/reg/suAutoInstallTriggerCount
+/reg/retryCount/download
+/reg/download/offset
+/reg/download/progress
+/reg/retryCount/report
+/reg/suTrigger
+/reg/testMode/enabled
+/reg/testMode/cfgUrlIndex
+/reg/testMode/pollInternval
+/reg/testMode/fakeIMEI
+[%s]:[%s] - %s: trigger[%s]
+[%s]:[%s] - %s: Unknown state specified=[%d]
+[%s]:[%s] - %s: new[%s] curr[%s]
+[%s]:[%s] - %s: state transition [%s]-->[%s]
+[%s]:[%s] - %s: state_prior_to_low_batt transition [%s]-->[%s]
+nua_reg_save_file
+nua_reg_create_file
+nua_reg_write_uint32_t_value
+nua_reg_write_str_value
+nua_reg_save_tag_value
+convert_and_copy_data
+nua_reg_read_tag_value
+nua_reg_read_uint32_t_value
+nua_reg_init
+nua_reg_save_activity_info
+nua_reg_read_activity_info
+nua_reg_save_su_result
+nua_reg_read_su_result
+nua_reg_read_dlddd_record_no
+nua_reg_save_dlddd_record_no
+nua_reg_save_poll_timestamp
+nua_reg_save_auto_install_timestamp
+nua_reg_save_sucond_timestamp
+nua_reg_reset_fota_tags
+nua_reg_backup_tags
+nua_reg_read_state
+nua_reg_read_state_before_low_battery
+nua_reg_save_su_trigger
+nua_reg_save_state
+nua_reg_save_state_before_low_battery
+[%s]:[%s] - %s: nua_reg_read_dlddd_record_no() failed
+[%s]:[%s] - %s: No SU record exists in DD
+[%s]:[%s] - %s: nua_dldd_read_su_record_by_index(%d) failed
+[%s]:[%s] - %s: Sending out %u(type=%s, bl_err=%s)
+su.broadcast
+[%s]:[%s] - %s: MsgBusSetBinary() failed
+[%s]:[%s] - %s: Sending out MSGBUS_SU_UPDATE_LOW_BATTERY, capacity=[%u]
+[%s]:[%s] - %s: nua_reg_read_su_result() failed, abort report
+SU_OPR_ERR_OK
+[%s]:[%s] - %s: Sending out MSGBUS_SU_UPDATE_STATUS, status=[%u][%s]
+[%s]:[%s] - %s: Sending out MSGBUS_SU_READY_FOR_DOWNLOAD
+[%s]:[%s] - %s: nua_fota_get_current_record_from_history() failed rc=[%d], continue
+[%s]:[%s] - %s: Sending out MSGBUS_SU_UPDATE_STARTING (Est. update time = %d minutes)
+[%s]:[%s] - %s: Sending out MSGBUS_SU_UPDATE_CONFIRM, est_upd_time=[%u], defer_count=[%u]
+[%s]:[%s] - %s: Sending out MSGBUS_SU_DOWNLOAD_PROGRESS, prog=%d
+[%s]:[%s] - %s: Sending out MSGBUS_SU_ASYNC_STATUS with err=%d
+[%s]:[%s] - %s: nua_reg_save_su_result() failed, rc=[%d]
+[%s]:[%s] - %s: NUA state [%d] [%s]
+[%s]:[%s] - %s: fota_status_code=[%d]
+/tmp/nua_fota_installation_success
+[%s]:[%s] - %s: NUA_FOTA_SUCCESS_COOKIE present
+[%s]:[%s] - %s: Initiator=[%s]
+[%s]:[%s] - %s: NUA not ready
+[%s]:[%s] - %s: A NUA session is already in progress
+NUA is busy
+[%s]:[%s] - %s: nua_schedule_update_check() failed, rc=[%d]
+su conditions failed
+[%s]:[%s] - %s: Initiated update check with server, initiator=[%s]
+[%s]:[%s] - %s: No update found for installation
+No update found for installation
+[%s]:[%s] - %s: nua_public_notify_update_start_to_apps() failed, rc=[%d], continue
+[%s]:[%s] - %s: FOTA waits [%d] seconds to kickoff installation
+[%s]:[%s] - %s: nua_fota_start_update_installation_with_delay() failed, rc=%d
+[%s]:[%s] - %s: success
+[%s]:[%s] - %s: Install defer feature not supported
+[%s]:[%s] - %s: Update already deferred
+[%s]:[%s] - %s: Update is not ready for install, defer not allowed
+[%s]:[%s] - %s: nua_sys_register_for_dsm_powerdown_handoff() failed
+[%s]:[%s] - %s: nua_reg_save_state() failed
+[%s]:[%s] - %s: Update has been deferred.
+[%s]:[%s] - %s: Cannot change IOT test mode
+[%s]:[%s] - %s: Test mode already disabled
+[%s]:[%s] - %s: Test mode already enabled
+[%s]:[%s] - %s: nua_reg_save_test_mode(%d) failed
+Disabled
+[%s]:[%s] - %s: Test mode=[%s]
+[%s]:[%s] - %s: Cannot change IOT test URL
+[%s]:[%s] - %s: Invalid URL specified
+[%s]:[%s] - %s: nua_reg_save_test_mode_url(%s, %s) failed
+[%s]:[%s] - %s: nua_reg_save_test_mode_cfg_url_index(%d) failed
+[%s]:[%s] - %s: Success, Alias=[%s], URL=[%s], index=[%d]
+[%s]:[%s] - %s: Test URL count=[%d]
+[%s]:[%s] - %s: nua_sys_get_device_version() failed, rc=[%d]
+[%s]:[%s] - %s: getModelStringAndCustomerID() failed, rc=[%d]
+%s/%s/%s/%s/%s
+%s/%s/%s/%s
+[%s]:[%s] - %s: nua_reg_read_test_mode_url() failed
+[%s]:[%s] - %s: Read test Alias=[%s], url=[%s], index=[%d], active=[%u]
+[%s]:[%s] - %s: SU state is not SU_STATE_IDLE. Cannot set IMEI
+[%s]:[%s] - %s: New test IMEI=[%s]
+[%s]:[%s] - %s: SU state is not SU_STATE_IDLE. Cannot set poll internval
+[%s]:[%s] - %s: New poll interval=[%u]
+[%s]:[%s] - %s: picked [SU loop] interval=[%u]
+[%s]:[%s] - %s: picked [test] interval=[%u]
+[%s]:[%s] - %s: picked [cloud] interval=[%u]
+[%s]:[%s] - %s: picked [cfg] interval=[%u]
+/opt/nvtl/data/nua/autoinstall_time
+[%s]:[%s] - %s: Unable to read NUA_AUTOINSTALL_COOKIE cookie
+[%s]:[%s] - %s: nua_read_su_record_from_dd() failed, abort report
+[%s]:[%s] - %s: picked [SU record - Auto install Mins] interval=[%u]
+[%s]:[%s] - %s: picked [Cfg - Auto install Mins] interval=[%u]
+[%s]:[%s] - %s: NUA_MSG_PUBLIC_GET_STATUS
+[%s]:[%s] - %s: NUA_MSG_PUBLIC_GET_INSTALLATION_STATUS
+[%s]:[%s] - %s: NUA_MSG_PUBLIC_CHECK_FOR_UPDATE
+[%s]:[%s] - %s: nua_public_check_for_update() failed. async_err[%d] 
+[%s]:[%s] - %s: NUA_MSG_PUBLIC_GET_DOWNLOAD_PROGRESS
+[%s]:[%s] - %s: NUA_MSG_PUBLIC_START_INSTALL
+[%s]:[%s] - %s: NUA_MSG_PUBLIC_DEFER_INSTALL
+[%s]:[%s] - %s: NUA_MSG_PUBLIC_SET_TEST_MODE
+[%s]:[%s] - %s: NUA_MSG_PUBLIC_GET_TEST_MODE
+[%s]:[%s] - %s: NUA_MSG_PUBLIC_SET_TEST_URL
+[%s]:[%s] - %s: NUA_MSG_PUBLIC_GET_TEST_URL
+[%s]:[%s] - %s: NUA_MSG_PUBLIC_GET_TEST_URL_COUNT
+[%s]:[%s] - %s: NUA_MSG_PUBLIC_SET_TEST_IMEI
+[%s]:[%s] - %s: NUA_MSG_PUBLIC_SET_TEST_POLL_INTERVAL
+[%s]:[%s] - %s: NUA_MSG_PUBLIC_GET_TEST_POLL_INTERVAL
+[%s]:[%s] - %s: NUA_MSG_PUBLIC_GET_AUTOINSTALL_TIME
+[%s]:[%s] - %s: Unsupported public event:%d
+nua_read_su_record_from_dd
+nua_public_notify_comm_session_to_apps
+nua_public_notify_low_battery_to_apps
+nua_public_notify_update_status_to_apps
+nua_public_notify_ready_for_download_to_apps
+nua_public_notify_update_start_to_apps
+nua_public_notify_update_confirm_to_apps
+nua_public_notify_download_progress_to_apps
+nua_public_notify_async_err_status_to_apps
+nua_public_get_status
+nua_public_get_installation_status
+nua_public_check_for_update
+nua_public_start_install
+nua_public_defer_install
+nua_public_set_test_mode
+nua_public_set_test_url
+nua_public_get_test_url_count
+nua_public_get_test_url
+public_set_test_imei
+public_set_test_poll_interval
+public_get_test_poll_interval
+public_get_autoinstall_time
+nua_public_api_msg_handle
+[%s]:[%s] - %s: sys_getLastSuccessfulSoftwareUpdateInfo() failed, rc=%d
+[%s]:[%s] - %s: No record found
+[%s]:[%s] - %s: update_date=%s
+[%s]:[%s] - %s: sys_incrementSoftwareUpdateDeferCount() failed, rc=%d
+[%s]:[%s] - %s: sys_installSoftwareUpdate() failed, rc=%d
+[%s]:[%s] - %s: sys_installSoftwareUpdateWithDelay() failed, rc=%d
+[%s]:[%s] - %s: sys_abortCurrentSoftwareUpdateSession() failed, rc=%d
+[%s]:[%s] - %s: sys_setSoftwareUpdateInfo() failed, rc=%d
+[%s]:[%s] - %s: sys_getCurrentSoftwareUpdateInfo() failed, rc=%d
+[%s]:[%s] - %s: sys_getSoftwareUpdateInfoByID() failed, rc=%d
+[%s]:[%s] - %s: +++
+[%s]:[%s] - %s: sys_getSoftwareUpdateMaxPackageSize() failed, rc=%d
+[%s]:[%s] - %s: max_size:%u
+[%s]:[%s] - %s: type=[%d]
+[%s]:[%s] - %s: sys_getSourceVersionFromPkg() failed, rc=[%d]
+[%s]:[%s] - %s: pkg src version=[%u]
+[%s]:[%s] - %s: sys_getTargetVersionFromPkg() failed, rc=[%d]
+[%s]:[%s] - %s: pkg tgt version=[%u]
+[%s]:[%s] - %s: invalid pkg version type=[%d]
+[%s]:[%s] - %s: Validating package...
+[%s]:[%s] - %s: nua_reg_read_su_trigger() failed, rc=[%d]
+/opt/nvtl/data/fota/upgrade.zip
+[%s]:[%s] - %s: sys_validateSoftwareUpdatePackage() failed, rc=%d (record id:%u)
+[%s]:[%s] - %s: Package validation success, record id:[%u]
+[%s]:[%s] - %s: fota session lock acquired
+[%s]:[%s] - %s: fota session not available.
+[%s]:[%s] - %s: fota_create_session() failed, rc=%d
+[%s]:[%s] - %s: FOTA lock cleared
+[%s]:[%s] - %s: fota_clear_session() failed, rc=%d
+%m-%d-%Y-%H:%M:%S
+[%s]:[%s] - %s: sys_setLastSoftwareUpdateCheckTime() failed, rc=%d
+nua_fota_get_last_fw_update_timestamp
+nua_fota_step_up_update_defer_count
+nua_fota_start_update_installation
+nua_fota_start_update_installation_with_delay
+nua_fota_end_session
+nua_fota_modify_record_in_history
+nua_fota_get_current_record_from_history
+nua_fota_get_matching_record
+nua_fota_get_max_supported_pkg_size
+nua_fota_read_version_from_package
+nua_fota_verify_update_package
+nua_fota_acquire_session_lock
+nua_fota_release_session_lock
+nua_fota_save_time_of_last_update_check
+[%s]:[%s] - Enter nua_factory_reset_impl
+[%s]:[%s] - %s: nua_api_sys_indication() failed, rc= %d
+[%s]:[%s] - Exit nua_factory_reset_impl
+nua_factory_reset_impl
+[%s]:[%s] - %s: Input exceeded buffer size, xpath=[%s]
+[%s]:[%s] - %s: index=[%d], type=[%d], value=[%s]
+%s/node()/text()
+[%s]:[%s] - %s: Could not find updateDescription node.
+[%s]:[%s] - %s: XPath=[%s], count=[%d]
+%s/*[%d]
+[%s]:[%s] - %s: Couldn't read xpath=[%s]
+[%s]:[%s] - %s: Value is empty for xpath=[%s]
+[%s]:[%s] - %s: XPath=[%s], value=[%s]
+[%s]:[%s] - %s: end
+/access/public/url
+[%s]:[%s] - %s: Value cannot be empty for xpath=[%s]
+/access/aws/signatureVer
+/access/aws/host
+/access/aws/bucketName
+/access/aws/relativePath
+/access/aws/accessKey
+/access/aws/secretKey
+/access/accessType
+[%s]:[%s] - %s: Invalid access type value=[%s], xpath=[%s]
+/enabled
+[%s]:[%s] - %s: Invalid value=[%s] for xpath[%s]
+%s[%d]/%s
+[%s]:[%s] - %s: nua_xml_read_value(%s)
+7GcZkMxD5V4G6bLwG8DpdXBIJFIWN6by
+[%s]:[%s] - %s: mifi_security_aes128_decrypt(imei_range) failed
+/descriptor/record
+%s[%d]%s
+/exceptionList
+[%s]:[%s] - %s: something wrong with exceptionList xpath in the record
+/exceptionList/imei
+[%s]:[%s] - %s: something wrong with exceptionList-imei xpath in the record
+[%s]:[%s] - %s: IMEI tag count=[%d] found
+[%s]:[%s] - %s: Couldn't read IMEI[%d]
+[%s]:[%s] - %s: in=[%s], DDLD[%d]=[%s] found
+[%s]:[%s] - %s: IMEI match=[%d] found in exceptionList
+/exceptionList/imei_range
+[%s]:[%s] - %s: something wrong with exceptionList-imei_range xpath in the record
+[%s]:[%s] - %s: IMEI-Range tag count=[%d] found
+[%s]:[%s] - %s: nua_dldd_read_imei_range() failed
+[%s]:[%s] - %s: nua_dldd_read_imei_range()
+[%s]:[%s] - %s: Empty IMEI-Range tag at [%d]
+[%s]:[%s] - %s: device imei=[%llu], start=[%llu], end=[%llu]
+[%s]:[%s] - %s: IMEI-Range match=[%d] found in exceptionList:imei_range
+/deviceList/imei
+[%s]:[%s] - %s: No IMEI listed in the record
+[%s]:[%s] - %s: IMEI match=[%d] found
+/deviceList/imei_range
+[%s]:[%s] - %s: No imei_range listed in the record
+[%s]:[%s] - %s: IMEI-Range match=[%d] found
+/opt/nvtl/data/nua/dl_desc.secure
+[%s]:[%s] - %s: File=[NUA_DD_SECURE_PATH] not found
+/opt/nvtl/etc/nua/dldd-server_cert.pem
+JJ7LDHM37SaXXUbWrxQXKJV7abQ0
+/opt/nvtl/etc/nua/dldd-device_pkey.pem
+/tmp/dldd_temp
+/opt/nvtl/data/nua/dl_desc
+[%s]:[%s] - %s: mifi_security_decrypt_file() failed
+/typeVersion
+/campaignID
+/futureCheckinInterval
+/mifiHealthDiagLogsEnable
+/activityType
+[%s]:[%s] - %s: No activity type listed in the record
+updateCheck
+downloadFinish
+%s[%d]/type
+[%s]:[%s] - %s: record=[%d] doesn't match
+/fileRevision
+/descriptor
+/descVersion
+[%s]:[%s] - %s: DLDD - File revision=[%s], FMT version=[%s]
+[%s]:[%s] - %s: nua_xml_open() failed
+[%s]:[%s] - %s: No records found
+activity
+[%s]:[%s] - %s: DD records - total=[%u], fota_index=[%u], act_index=[%u]
+[%s]:[%s] - %s: Failed to parse record=[%d]
+[%s]:[%s] - %s: SU record no=[%d], read success
+[%s]:[%s] - %s: Activity record no=[%d], read success
+save_su_target_version
+update_custom_msg
+save_custom_msg
+save_su_upd_description
+save_su_pkg_name
+parse_access_node_public
+parse_leaf_element
+parse_access_node
+parse_su_report_result_node
+nua_dldd_read_imei_range
+nua_dldd_match_imei
+nua_dldd_decrypt_descriptor
+nua_dldd_parse_activity_record
+nua_dldd_parse_su_record
+nua_dldd_get_index_by_record_type
+nua_dldd_get_revision
+nua_dldd_parse_descriptor
+nua_dldd_read_su_record_by_index
+nua_dldd_read_activity_record_by_index
+[%s]:[%s] - %s: nua_api_job_response_ind() failed, reason=[%s]
+[%s]:[%s] - %s: nua_reg_read_activity_info() failed 
+/tmp/mifi_health_daily_log
+%s_%u_%s_%s
+mifi_health_checkin_diag.bz2
+[%s]:[%s] - %s: Activity cookie name=[%s]
+bzip2 -c 
+%s %s > %s/%s
+[%s]:[%s] - %s: bzip2 command=[%s]
+[%s]:[%s] - %s: bzip2 command failed (%s) failed, rc=%d
+/opt/nvtl/data/nua
+%s/%s.plain
+[%s]:[%s] - %s: fopen(%s) failed to create cookie
+<?xml version="1.0" encoding="UTF-8"?>
+<activity>
+<swv>%s</swv>
+</activity>
+[%s]:[%s] - %s: nua_file_sync_and_close() failed, rc=[%d]
+/opt/nvtl/etc/nua/report-device_cert.pem
+EsMMfIjboKKKx7zhNldevIsKR0dO
+/opt/nvtl/etc/nua/report-device_pkey.pem
+/tmp/report_cookie_temp
+/opt/nvtl/etc/nua/report-server_cert.pem
+[%s]:[%s] - %s: mifi_security_encrypt_file() failed, rc=[%d]
+%s_%u_%s_fota_report_%d_%d_%d
+[%s]:[%s] - %s: report cookie name=[%s]
+<result>
+<downloadRetryCount>%u</downloadRetryCount>
+<reportRetryCount>%u</reportRetryCount>
+<updateFailReason>%s</updateFailReason>
+<modemPRIFailReason>%d</modemPRIFailReason>
+<linuxPRIFailReason>%d</linuxPRIFailReason>
+</result>
+xX1jvjFNZ7MinOCQWOaKYe3s0Qdu9Fw6
+[%s]:[%s] - %s: mifi_security_aes128_decrypt(akey) failed
+[%s]:[%s] - %s: New Akey buffered
+dK8D0WeEmEfSwuaJFyELbvh9OBflyqDM
+[%s]:[%s] - %s: mifi_security_aes128_decrypt(skey) failed
+[%s]:[%s] - %s: New Skey buffered
+/opt/nvtl/data/nua/dl_desc.secure
+[%s]:[%s] - %s: cloud_engine_io_action_start() failed
+cloud_engine_io_action_start failed
+[%s]:[%s] - %s: transfer is already active.
+nua_cloud_io busy
+[%s]:[%s] - %s: cur_offset=[%u]
+[%s]:[%s] - %s: nua_cloud_decrypt_aws_keys() failed.
+/opt/nvtl/data/nua/pkg.secure
+/opt/nvtl/data/fota/upgrade.zip
+[%s]:[%s] - %s: update status=[%u]
+[%s]:[%s] - %s: nua_cloud_create_report_cookie() failed.
+cookie creation failed
+aws key decryption failed
+fota_dlready
+fota_dlfinish
+failsafe_start
+failsafe_finish
+fota_revert
+[%s]:[%s] - %s: Unknown activity request.
+unknown activity request
+[%s]:[%s] - %s: nua_cloud_create_activity_cookie() failed.
+[%s]:[%s] - %s: Uploading activity cookie=[%s]
+/failsafe/
+[%s]:[%s] - %s: req[%d].
+[%s]:[%s] - %s: NUA_JOB_REQ_REPORT_RESULTS
+[%s]:[%s] - %s: unknown job request=[%d]
+[%s]:[%s] - %s: ref_req[%d].
+[%s]:[%s] - %s: unknown IO thread response type=[%d]
+[%s]:[%s] - %s: Ignore file offset=[%u] while downloading descriptor file.
+[%s]:[%s] - %s: DLDD file download status=[%d][%s]
+[%s]:[%s] - %s: PKG Download offset=[%f] total=[%f]
+[%s]:[%s] - %s: PKG Download operation finish. status=[%d][%s]
+[%s]:[%s] - %s: Activity=[%d] upload operation finish. status=[%d][%s]
+[%s]:[%s] - %s: Report result status=[%d][%s]
+[%s]:[%s] - %s: unknown reference job request=[%u]
+[%s]:[%s] - %s: nua_api_job_response_ind() failed
+[%s]:[%s] - %s: Started thread ID:[%lu], process ID=[%d]
+[%s]:[%s] - %s: nua_cloud_req_t=[%ld],nua_cloud_io_status_t=[%ld], nua_job_req_report_results_t=[%ld],nua_job_req_update_check_t=[%ld],nua_job_req_start_pkg_download_t=[%ld] 
+/nua_cloud_mq
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+nua_cloud
+nua_cloud_thread
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+cloud_engine.ready
+[%s]:[%s] - Cloud engine is not ready, retries left %d
+[%s]:[%s] - Cloud engine is initialized successfully
+[%s]:[%s] - Cloud Engine is not ready.
+[%s]:[%s] - %s: NUA Cloud thread not running
+[%s]:[%s] - %s: Terminate Thread Example, TID: %lu.
+[%s]:[%s] - %s: msgq_send_sync(NUA_JOB_REQ_START_PKG_DOWNLOAD) failed, rc=[%d]
+[%s]:[%s] - %s: NUA_JOB_REQ_CHECK_UPDATE
+[%s]:[%s] - %s: msgq_send_sync(NUA_JOB_REQ_CHECK_UPDATE) failed, rc=[%d]
+[%s]:[%s] - %s: NUA_JOB_REQ_REPORT_RESULTS. 
+[%s]:[%s] - %s: msgq_send_sync(NUA_JOB_REQ_REPORT_RESULTS) failed, rc=[%d]
+[%s]:[%s] - %s: NUA Cloud, invalid activity request
+[%s]:[%s] - %s: msgq_send_async() failed, rc=[%d]
+[%s]:[%s] - %s: msgq_send_sync(NUA_JOB_REQ_REPORT_ACT_DLSTART) failed, rc=[%d]
+[%s]:[%s] - %s: msgq_send_sync(NUA_JOB_REQ_REPORT_ACT_UPD_CHECK) failed, rc=[%d]
+[%s]:[%s] - %s: NUA_CLOUD_MSG_IO_STATUS. 
+[%s]:[%s] - %s: msgq_send_sync(NUA_CLOUD_MSG_IO_STATUS) failed, rc=[%d]
+nua_cloud_send_error
+nua_cloud_create_activity_cookie
+nua_cloud_create_report_cookie
+nua_cloud_decrypt_aws_keys
+nua_cloud_job_req_check_update
+nua_cloud_job_req_start_pkg_download
+nua_cloud_job_req_report_results
+nua_cloud_job_req_report_activity
+nua_cloud_handle_job_req
+nua_cloud_handle_io_status
+nua_cloud_state_machine
+nua_cloud_terminate
+nua_cloud_start_download_session
+nua_cloud_start_update_check_session
+nua_cloud_report_results
+nua_cloud_report_activity
+nua_cloud_report_activity_dlstart
+nua_cloud_report_activity_dlfinish
+nua_cloud_io_status_ind
+[%s]:[%s] - In %s .
+[%s]:[%s] - %s: nua_cloud_io_status_ind() failed rc=[%d]
+[%s]:[%s] - %s: dlnow=[%ld], dltotal=[%ld]
+[%s]:[%s] - %s: inHostname: empty
+https://
+%a, %d %b %Y %H:%M:%S %z
+%s failed, rc=[%d]
+[%s]:[%s] - %s: %s
+Memory alloc failure
+application/octet-stream
+HMAC signature failed
+[%s]:[%s] - %s: Success, sig=[%s]
+extract_host_name_only()
+[%s]:[%s] - %s: Host name=[%s]
+Host: %s
+Date: %s
+Content-Type: %s
+Authorization: AWS %s:%s
+CURLOPT_HTTPHEADER
+[%s]:[%s] - %s: file not present=[%s]
+Upload file not found
+[%s]:[%s] - %s: fopen() failed, [%s]
+Cannot open upload file
+CURLOPT_UPLOAD
+CURLOPT_PUT
+CURLOPT_READDATA
+CURLOPT_INFILESIZE_LARGE
+CURLOPT_LOW_SPEED_LIMIT
+CURLOPT_LOW_SPEED_TIME
+[%s]:[%s] - In %s conn_timeout[%d].
+[%s]:[%s] - %s: Offset=[%u] > actual size=[%ld], start from file size
+[%s]:[%s] - %s: fopen() failed on file=[%s]
+Unable to open download file
+[%s]:[%s] - %s: fseek(%u) failed.
+fseek failed
+libcurl-agent/1.0
+CURLOPT_USERAGENT
+CURLOPT_WRITEFUNCTION
+CURLOPT_WRITEDATA
+CURLOPT_RESUME_FROM
+CURLOPT_XFERINFOFUNCTION
+CURLOPT_XFERINFODATA
+CURLOPT_NOPROGRESS
+[%s]:[%s] - %s: inOffset=[%u], actual offset=[%u]
+CURLOPT_ERRORBUFFER
+CURLOPT_SSL_VERIFYPEER
+[%s]:[%s] - %s: disable_cert_verify is set
+CURLOPT_SSL_VERIFYHOST
+CURLOPT_URL
+[%s]:[%s] - %s: Found data for http error=[%ld], saving.
+/opt/nvtl/data/nua/cloud_err_data
+[%s]:[%s] - %s: action[%d] access[%d] req[%d] timeout[%d] url[%s] 
+[%s]:[%s] - %s: curl_easy_perform rc[%d]. 
+[%s]:[%s] - %s: curl error=[%s], retry after 2 second
+[%s]:[%s] - %s: curl_easy_getinfo rc[%d]. 
+CURLINFO_RESPONSE_CODE
+HTTP code=[%ld]
+[%s]:[%s] - %s: Success, ref-req=[%d], HTTP code=[%ld]
+[%s]:[%s] - %s: Failed HTTP status ref-req=[%d], code=[%ld]
+[%s]:[%s] - %s: file=[%s], bucket=[%s], host=[%s], path=[%s]
+[%s]:[%s] - %s: nua_cloud_io_create_aws_signature() failed
+[%s]:[%s] - %s: nua_cloud_io_aws_create_http_header() failed
+Download
+[%s]:[%s] - %s: Action=[%s] failed, status=[%s], url=[%s]
+/tmp/mifi_health_daily_log
+[%s]:[%s] - %s: Action=[%s] success, status=[%s], file_size=[%u], url=[%s]
+mifi_health
+NUA_IO_ACT_DOWN
+NUA_IO_ACT_UP
+[%s]:[%s] - %s: started action=[%s]
+[%s]:[%s] - %s: nua_cloud_io_aws_setup() failed
+[%s]:[%s] - %s: Headers=[%p]
+Invalid input
+[%s]:[%s] - %s: final - url=[%s]
+[%s]:[%s] - %s: nua_cloud_io_setup_upload_options() failed
+[%s]:[%s] - %s: fhandle=[%p]
+[%s]:[%s] - %s: nua_cloud_io_setup_common_options() failed
+[%s]:[%s] - %s: Triggering nua_cloud_io_perform_curl. 
+[%s]:[%s] - %s: Started thread ID:[%lu], process ID=[%d]
+/nua_cloud_io_mq
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+[%s]:[%s] - %s: curl_global_init() failed, rc=[%d]
+[%s]:[%s] - %s: curl_easy_init() failed
+[%s]:[%s] - %s: mq_receive() failed, rc=[%d], errno=[%d]
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - %s: msgq_send() failed, rc=[%d], errno=[%d]
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: created TID:[%lu]
+[%s]:[%s] - %s: +++
+nua_cloud_io_send_status
+nua_cloud_io_send_progress
+nua_cloud_io_xferinfo_cb
+extract_host_name_only
+nua_cloud_io_create_aws_signature
+nua_cloud_io_aws_create_http_header
+nua_cloud_io_setup_upload_options
+nua_cloud_io_setup_download_options
+nua_cloud_io_setup_common_options
+nua_cloud_io_save_server_error_response
+nua_cloud_io_perform_curl
+nua_cloud_io_aws_setup
+nua_cloud_io_print_status
+nua_cloud_io_action
+nua_cloud_io_action_thread
+nua_cloud_io_action_start
+nua_cloud_io_init
+nua_cloud_io_shutdown
+[%s]:[%s] - %s: +++
+[%s]:[%s] - %s: nua_sys_get_device_info(IMEI) failed, rc=[%d]
+7GcZkMxD5V4G6bLwG8DpdXBIJFIWN6by
+[%s]:[%s] - %s: mifi_security_aes128_encrypt() failed
+[%s]:[%s] - %s: encrypted=[%s][%d]
+[%s]:[%s] - %s: enable[%d].
+[%s]:[%s] - %s: ret[%d].
+nua.settings
+[%s]:[%s] - %s: Failed to read (%s) rc=%d
+[%s]:[%s] - %s: NUA settings:
+[%s]:[%s] - %s: fumo_enabled: %d
+[%s]:[%s] - %s: su_mo_auto_poll_enabled: %d
+[%s]:[%s] - %s: low_battery_threshold: %d
+[%s]:[%s] - %s: low_battery_threshold_with_charger: %d
+[%s]:[%s] - %s: model_string: %s
+[%s]:[%s] - %s: customerID: %s
+[%s]:[%s] - %s: powersave feature not supported
+[%s]:[%s] - %s: Power on trigger - elapsed=[%u], cfg=[%u]
+/opt/nvtl/data/branding/etc/nua/config.xml
+/opt/nvtl/etc/nua/config.xml
+[%s]:[%s] - %s: Failed to open configuration file: %s
+/Config/modelString
+/Config/customerId
+/Config/bootupDelayForModem
+/Config/bootupDelayForWwan
+/Config/backend/cloudStorage/enabled
+/Config/backend/cloudStorage/ddFileName
+/Config/backend/cloudStorage/ddFileSize
+/Config/backend/cloudStorage/connectionTimeoutSec
+/Config/backend/cloudStorage/disableCertVerify
+https://mifiupdates.novatelwireless.com/prod
+/Config/backend/cloudStorage/production/url/value
+/Config/backend/cloudStorage/test/url
+[%s]:[%s] - %s: No. of test URL exceeded max limit. found=[%d] > allowed=[%d]
+[%s]:[%s] - %s: Test URL count=[%d]
+%s[%d]/value
+%s[%d]/alias
+/Config/backend/cloudStorage/key/ddDecryption
+/Config/backend/cloudStorage/key/resultEncryption
+/Config/softwareUpdate/retry/maxRoamingRetries
+/Config/softwareUpdate/retry/maxNoDataRetries
+/Config/softwareUpdate/retry/maxDownloadRetries
+/Config/softwareUpdate/retry/maxReportRetries
+/Config/softwareUpdate/retry/shortRetryIntervalSec
+/Config/softwareUpdate/retry/longRetryIntervalSec
+/Config/softwareUpdate/supportPriOnlyUpdate
+/Config/softwareUpdate/preInstallKickOffWaitSec
+/Config/softwareUpdate/pollIntervalDays
+/Config/softwareUpdate/installDefer
+/Config/softwareUpdate/installAtPowerDown
+/Config/softwareUpdate/installAtPowerUpTriggerCount
+/Config/softwareUpdate/SUCheckCondition/DenyIfRoaming
+/Config/softwareUpdate/SUCheckCondition/DenyUIFotaIfRoaming
+/Config/softwareUpdate/SUCheckCondition/DenyIfNoCoverage
+/Config/softwareUpdate/SUCheckCondition/DenyIfNoDataCall
+/Config/softwareUpdate/SUCheckCondition/DenyIfLowBattery
+/Config/softwareUpdate/BatteryCheck/Enabled
+/Config/softwareUpdate/BatteryCheck/MonitorEnabled
+/Config/softwareUpdate/BatteryCheck/IgnoreCharger
+/Config/softwareUpdate/version/platformPrefix
+/Config/softwareUpdate/version/noModemVersion
+/Config/softwareUpdate/autoInstall/minutesAfterDL
+/Config/softwareUpdate/autoInstall/InstallInLocalTime/Enabled
+/Config/softwareUpdate/autoInstall/InstallInLocalTime/InstallWindowOpen
+/Config/softwareUpdate/autoInstall/InstallInLocalTime/InstallWindowEnd
+/Config/softwareUpdate/BroadcastMsgbusEvents
+settings.ready
+[%s]:[%s] - %s: settings sub-system is not ready. retries left %d
+[%s]:[%s] - %s: settings sub-system initialized successfully
+[%s]:[%s] - %s: Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - NUA (fota) disabled in features.xml
+[%s]:[%s] - Failed to initialize settings. nua_cache_refresh_settings returned %d
+nua_cache_set_imei
+nua_cache_set_wait_for_data
+nua_cache_set_wait_for_home
+nua_cache_is_wait_for_data_set
+nua_cache_is_wait_for_home_set
+nua_cache_refresh_settings
+nua_is_powersave_supported
+nua_check_poweron_install_trigger
+nua_config_init
+nua_settings_init
+OUT_OF_BOUNDS
+SU_OPR_ERR_OK
+SU_OPR_ERR_CALL
+SU_OPR_ERR_BUFFER
+SU_OPR_ERR_FEATURE_DISABLED
+SU_OPR_ERR_MEM_ALLOC_FIALURE
+SU_OPR_ERR_STORAGE
+SU_OPR_ERR_DEVICE_IN_ROAMING
+SU_OPR_ERR_NO_MOBILE_COVERAGE
+SU_OPR_ERR_BATT_LOW_FOR_INSTALL
+SU_OPR_ERR_OTA_CALL_DISABLED
+SU_OPR_ERR_OTA_CALL_FAILED
+SU_OPR_ERR_OTA_CALL_CONNECT_PROG
+SU_OPR_ERR_OTA_CALL_DNS_QUERY
+SU_OPR_ERR_OTA_CALL_NOT_PRESENT
+SU_OPR_ERR_SYS_INTF_FAILURE
+SU_OPR_ERR_DM_NO_UPD_PKG
+SU_OPR_ERR_ROAMING_OR_EMERGENCY
+SU_OPR_ERR_WIFI_NOT_AVAILABLE
+SU_OPR_ERR_DL_FILE_TOO_BIG
+SU_OPR_ERR_DL_CURL_RANGE
+SU_OPR_ERR_DL_CURL_API
+SU_OPR_ERR_DL_GENERAL
+SU_OPR_ERR_DL_NETWORK
+SU_OPR_ERR_DL_PKG_VALIDATION_FAILED
+SU_OPR_ERR_CANCEL
+SU_OPR_ERR_DM_GENERAL
+SU_OPR_ERR_DM_NETWORK
+SU_OPR_ERR_DM_IN_PROGRESS
+SU_OPR_ERR_DM_SU_CANCEL
+SU_OPR_ERR_DM_TREE_NODE
+SU_OPR_ERR_BOOTSTRAP
+SU_OPR_ERR_SYNML_CMD
+SU_OPR_ERR_NIA
+SU_OPR_ERR_AUTH
+SU_OPR_ERR_COMMS
+SU_OPR_ERR_COMMS_FATAL
+SU_OPR_ERR_ABORT
+SU_OPR_ERR_UNDEFINED
+SU_OPR_ERR_DD_PARSE
+SU_OPR_ERR_HTTP
+SU_OPR_ERR_HTTP_400
+SU_OPR_ERR_HTTP_401
+SU_OPR_ERR_HTTP_402
+SU_OPR_ERR_HTTP_403
+SU_OPR_ERR_HTTP_404
+SU_OPR_ERR_HTTP_405
+SU_OPR_ERR_HTTP_406
+SU_OPR_ERR_HTTP_407
+SU_OPR_ERR_HTTP_408
+SU_OPR_ERR_HTTP_409
+SU_OPR_ERR_HTTP_500
+SU_OPR_ERR_HTTP_501
+SU_OPR_ERR_HTTP_502
+SU_OPR_ERR_HTTP_503
+SU_STATE_NOTREADY
+SU_STATE_READY
+SU_STATE_IDLE
+SU_STATE_NI_SESSION
+SU_STATE_CHECKING_UPDATE
+SU_STATE_READY_FOR_DOWNLOAD
+SU_STATE_DOWNLOADING
+SU_STATE_READY_FOR_INSTALL
+SU_STATE_INSTALL_POSTPONED
+SU_STATE_BATT_TOO_LOW_FOR_INSTALL
+SU_STATE_INSTALL_IN_PROGRESS
+SU_STATE_INSTALL_COMPLETED
+SU_STATE_REPORTING_RESULTS
+[%s]:[%s] - %s
+Printing NUA configuration settings:
+model_str=[%s]
+cust_str=[%s]
+bootup_wwan_delay_secs=[%u]
+backend.cloud.enabled=[%u]
+backend.cloud.conn_timeout=[%u]
+backend.cloud.disable_cert_verify=[%u]
+backend.cloud.dd_file_name=[%s]
+backend.cloud.dd_file_size_max=[%u]
+backend.cloud.url.production=[%s]
+backend.cloud.url_test[%u]=[%s][%s]
+backend.cloud.key.dd=[%s]
+backend.cloud.key.result_d=[%s]
+su.retry.max_retry_no_data=[%u]
+su.retry.max_retry_roam=[%u]
+su.retry.max_retry_download=[%u]
+su.retry.max_retry_report=[%u]
+su.retry.retry_short_secs=[%u]
+su.retry.retry_long_secs=[%u]
+su.pri_only_update_supported=[%u]
+su.pre_install_wait_secs=[%u]
+su.su_device_poll_timer_days=[%u]
+su.install_defer_supported=[%u]
+su.install_at_powerdown=[%u]
+su.install_at_powerup=[%u]
+su.broadcast_msgbus_events=[%u]
+su.su_conds.deny_if_roaming=[%u]
+su.su_conds.deny_ui_fota_if_roaming=[%u]
+su.su_conds.deny_if_no_coverage=[%u]
+su.su_conds.deny_if_no_data_call=[%u]
+su.su_conds.deny_if_low_battery=[%u]
+su.batt_check.enabled=[%u]
+su.batt_check.monitor_enabled=[%u]
+su.batt_check.ignore_charger=[%u]
+su.ver.platform_prefix=[%s]
+su.ver.no_modem_version=[%u]
+su.ai.min_after_dl=[%u]
+su.ai.local_time_enabled=[%u]
+su.ai.window_open=[%u]
+su.ai.window_end=[%u]
+[%s]:[%s] - %s: NUA_TEST_DL_RETRY_LOGIC, enable=[%d]
+[%s]:[%s] - %s: NUA_TEST_REPORT_RETRY_LOGIC, enable=[%d]
+[%s]:[%s] - %s: NUA_TEST_ROAM_RETRY_LOGIC, enable=[%d]
+[%s]:[%s] - %s: NUA_TEST_NODATA_RETRY_LOGIC, enable=[%d]
+[%s]:[%s] - %s: NUA_TEST_GET_DEV_INFO
+[%s]:[%s] - %s: NUA_TEST_GET_ROAM_STATUS
+[%s]:[%s] - %s: NUA_TEST_GET_CALL_STATUS
+[%s]:[%s] - %s: NUA_TEST_GET_VERSION
+[%s]:[%s] - %s: Unsupported event:%d
+nua_test_msg_handle
+[%s]:[%s] - %s: xmlXPathEvalExpression() failed, xparent=[%s]
+[%s]:[%s] - %s: Unable to insert node=[%s] at [%s]
+[%s]:[%s] - %s: Unable to create node path=[%s]
+[%s]:[%s] - %s: Null parameters
+[%s]:[%s] - %s: Invalid input values
+[%s]:[%s] - %s: xmlXPathEvalExpression() failed, XPath=[%s]
+[%s]:[%s] - %s: xmlXPathNodeSetIsEmpty() is true , XPath=[%s]
+[%s]:[%s] - %s: xmlNodeGetContent() failed, XPath=[%s]
+[%s]:[%s] - %s: XPath=[%s] value len=[%ld] > buf size=[%d]
+[%s]:[%s] - %s: XPath=[%s], value=[%s]
+[%s]:[%s] - %s: XPath=[%s] does not have any node.
+[%s]:[%s] - %s: XPath=[%s] is not a node.
+[%s]:[%s] - %s: xmlEncodeEntitiesReentrant() failed, XPath=[%s]
+[%s]:[%s] - %s: xmlEncodeSpecialChars() failed, XPath=[%s]
+[%s]:[%s] - %s: XPath=[%s], encoded=[%s], org_value=[%s]
+[%s]:[%s] - %s: unable to get node count, XPath=[%s]
+[%s]:[%s] - %s: fopen() failed, file=[%s]
+[%s]:[%s] - %s: xmlReadFile(%s) failed
+[%s]:[%s] - %s: xmlXPathNewContext() failed
+[%s]:[%s] - %s: fname=[%s]
+[%s]:[%s] - %s: xmlSaveFormatFile(%s) failed
+[%s]:[%s] - %s: fname=[%s] saved, bytes=[%d]
+nua_xml_insert_node
+nua_xml_create_node_path
+nua_xml_do_operation
+nua_xml_get_node_count
+nua_xml_open_new
+nua_xml_open
+nua_xml_save
+/opt/nvtl/data/nua/reg.xml
+/opt/nvtl/data/nua/custom_msgs.bin
+/tmp/nua_fota_installation_success
+[%s]:[%s] - %s: Skip=[%s]
+[%s]:[%s] - %s: Opened dir=[%s]
+[%s]:[%s] - %s: stat failed for=[%s]
+[%s]:[%s] - %s: Entering sub directory: %s
+[%s]:[%s] - %s: Deleting=[%s]
+[%s]:[%s] - %s: Remove failed on=[%s], erronno=[%d]
+/opt/nvtl/data/nua
+[%s]:[%s] - %s: Remove failed for=[%s], erronno[%d]
+[%s]:[%s] - %s: unlink failed ret=%d for file:%s
+[%s]:[%s] - %s: Removed file: %s
+[%s]:[%s] - %s: rename(%s, %s) failed=[%s]
+[%s]:[%s] - %s: fsyncing=[%s]
+[%s]:[%s] - %s: File not found [%s]
+[%s]:[%s] - %s: Read str=[%s] from file=[%s]
+[%s]:[%s] - %s: Cannot open dir, errno:%d
+[%s]:[%s] - %s: syncing %s complete
+[%s]:[%s] - %s: fopen() creation failed for %s
+[%s]:[%s] - %s: file (%s) write failed expected:%d, returned:%d
+[%s]:[%s] - %s: unlink failed for:%s rc=%d, errno:%d
+[%s]:[%s] - %s: File created :%s
+nua_file_is_delete_ok
+nua_dir_clean_up
+nua_file_remove
+nua_file_move
+nua_read_str_from_file
+nua_file_sync_and_close
+nua_file_create
+/reg/state/current
+SU_STATE_NOTREADY
+/reg/state/previous
+SU_STATE_NOTREADY
+/reg/state/previousToLowBattery
+/reg/poll/timeStamp
+/reg/poll/secSinceEpoch
+/reg/activity/campaignID
+/reg/activity/type/updateCheck
+/reg/activity/type/dlFinish
+/reg/activity/poll/valid
+/reg/activity/poll/interval
+/reg/activity/access/pubUrl
+/reg/activity/access/sigVer
+/reg/activity/access/host
+/reg/activity/access/rPath
+/reg/activity/access/bucket
+/reg/activity/access/akey
+/reg/activity/access/skey
+/reg/suLoopUpdateCheckInterval
+/reg/suTrigger
+/reg/suAutoInstallTriggerCount
+/reg/retryCount/download
+/reg/download/offset
+/reg/download/progress
+/reg/retryCount/report
+/reg/retryCount/roamingTimeStamp
+/reg/retryCount/roamingSeconds
+/reg/retryCount/noDataTimestamp
+/reg/retryCount/noDataSeconds
+/reg/autoInstall/timeStamp
+/reg/autoInstall/secSinceEpoch
+/reg/dd/fotaRecordNo
+/reg/dd/activityRecordNo
+/reg/dd/totalRecordCount
+/reg/debug/dlRetryLogic
+/reg/debug/reportRetryLogic
+/reg/debug/roamRetryLogic
+/reg/debug/nodataRetryLogic
+/reg/testMode/enabled
+/reg/testMode/serverUrl
+/reg/testMode/serverAlias
+/reg/testMode/cfgUrlIndex
+/reg/testMode/pollInternval
+/reg/testMode/fakeIMEI
+/reg/suResult/update
+/reg/suResult/old/update
+/reg/suResult/modemPRI
+/reg/suResult/old/modemPRI
+/reg/suResult/linuxPRI
+/reg/suResult/old/linuxPRI
+/reg/suResult/reason
+FOTA_RESULT_NO_UPGRADE
+/reg/suResult/old/reason
+/reg/suResult/reasonLinuxPRI
+FOTA_RESULT_NO_UPGRADE
+/reg/suResult/old/reasonLinuxPRI
+/reg/suResult/reasonModemPRI
+FOTA_RESULT_NO_UPGRADE
+/reg/suResult/old/reasonModemPRI
+/typeVersion
+/campaignID
+/version
+/updateDescription
+/downloadMsg
+/readyToInstallMsg
+/installationSuccessMsg
+/installationFailureMsg
+/pkgName
+/estimatedUpdateTime
+/securePackage
+/autoInstallMins
+/download
+/report/result
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

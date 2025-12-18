@@ -1,0 +1,388 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+libpthread.so.0
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+mq_close
+mq_unlink
+sys_getHardwareInfo
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+sys_getSystemVersion
+lwm2m_file_is_exists
+closedir
+lwm2m_file_read_str
+snprintf
+sys_getLWM2MKey
+pthread_self
+sys_getSMSInbox
+sys_getCellularDataConnectionStats
+sys_getCellularServiceStats
+__errno_location
+sys_getGPSFixData
+sys_getSubscriberInfo
+sys_getCellularNon5GServiceStats
+sys_getModemProfile
+sys_getActiveModemProfileIndex
+sys_setModemProfile
+xmldata_initialize
+xmldata_getstring_default
+xmldata_getstring
+xmldata_getuint32_default
+xmldata_shutdown
+MsgBusGet
+settings_get_features
+settings_get_setting
+sys_setPowerSaveLockEnabled
+sys_getCellularServiceStatus
+sys_getcellularDeviceManagementDataConnectionStatus
+sys_cellularDeviceManagementAPNCallConnectEx
+sys_cellularDeviceManagementAPNCallDisconnect
+mifi_dbg_start
+lwm2m_file_create
+msgq_create
+MsgBusSetInt32
+msgq_receive
+msgq_resp_preprocess
+msgq_resp_postprocess
+watchdog_application_register
+mifi_dbg_stop
+lwm2m_sys_get_connectivity_extn_info
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+MsgBus_Unsubscribe
+__bss_start
+libwatchdog_api.so
+librouter2_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libgps_api.so
+libfactory_reset_api.so
+libsms_api.so
+libwifi_api.so
+libccm2_api.so
+libfile_sharing_api.so
+libfota_api.so
+libled_api.so
+libbuzzer_api.so
+libans_api.so
+libusb_api.so
+libemd_api.so
+libsensor_api.so
+libvpn_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libwan_mgr_api.so
+libcbsd_api.so
+libsysintclient.so
+liblwm2m_model_api.so
+H	KxD	J{D
+/dev/null
+[%s]:[%s] - %s: sys_getHardwareInfo failed, returned (%d). Try sysintcli getHardwareInfo from cli.
+[%s]:[%s] - %s: sys_getSystemVersion failed, returned (%d). Try sysintcli getSystemVersion from cli.
+/opt/nvtl/data/lwm2m/dummy_mfg
+/opt/nvtl/data/lwm2m/dummy_imei
+/opt/nvtl/data/lwm2m/dummy_model
+/opt/nvtl/data/lwm2m/dummy_secret_key
+[%s]:[%s] - %s: sys_getLWM2MKey failed, returned (%d). Try sysintcli getLWM2MKey from cli.
+[%s]:[%s] - %s: outBuf[%s]
+[%s]:[%s] - %s:+++
+[%s]:[%s] - %s: sys_getSMSInbox failed, returned (%d).
+[%s]:[%s] - %s: sys_getCellularDataConnectionStats failed, returned (%d).
+[%s]:[%s] - %s: conn_stat.ipv4_tx_data [%d] conn_stat.ipv6_tx_data [%d] conn_stat.ipv4_rx_data [%d] conn_stat.ipv6_rx_data [%d] 
+[%s]:[%s] - %s:--- End
+[%s]:[%s] - %s: sys_getCellularServiceStats failed, returned (%d).
+[%s]:[%s] - %s: lwm2m_get_dm_modem_profile failed.
+[%s]:[%s] - %s: lwm2m_get_active_modem_profile failed.
+/tmp/deviceip
+[%s]:[%s] - %s: read deviceip from ipq[%s].
+/tmp/routerip
+[%s]:[%s] - %s: read routerip from ipq[%s].
+/opt/nvtl/bin/com_subsystem_cli ipq_get_conn_state 4 | grep 'modem connection state' | awk -F '[' '{print $2}' | sed -e 's/]//g'
+[%s]:[%s] - %s: script[%s] cmd_stat[%d] exit_code[%d].
+[%s]:[%s] - %s: script[%s] execution is success, buf[%s].
+/opt/nvtl/bin/com_subsystem_cli execute_shell_cmd '/sbin/ifstatus lan | grep -A3 ipv4 | xargs | cut -d, -f1 | cut -d " " -f5 | xargs echo -n > /tmp/routerip' 5
+/opt/nvtl/bin/com_subsystem_cli execute_shell_cmd '/bin/insg/commsub_cli send_file_to_bolt /tmp/routerip /tmp/routerip 10' 10
+/opt/nvtl/bin/com_subsystem_cli execute_shell_cmd '/sbin/check_wan_connection active_interface | xargs echo -n > /tmp/active_iface' 5
+/opt/nvtl/bin/com_subsystem_cli execute_shell_cmd '/bin/insg/commsub_cli send_file_to_bolt /tmp/active_iface /tmp/active_iface 10' 10
+/tmp/active_iface
+[%s]:[%s] - %s: read active_iface from ipq[%s].
+/opt/nvtl/bin/com_subsystem_cli execute_shell_cmd '/sbin/ifstatus 
+| grep -A3 ipv4 | xargs | cut -d, -f1 | cut -d " " -f5 | xargs echo -n > /tmp/deviceip' 5
+/opt/nvtl/bin/com_subsystem_cli execute_shell_cmd ' /bin/insg/commsub_cli send_file_to_bolt /tmp/deviceip /tmp/deviceip 10' 10
+[%s]:[%s] - %s: sys_getGPSFixData failed, returned (%d). Try sysintcli getGPSFixData from cli.
+[%s]:[%s] -  End: %s sys Interface value lat=[%lf] long=[%lf] alti=[%f] timestamp=[%u] 
+[%s]:[%s] -  End: %s lat=[%lf] long=[%lf] alti=[%f] timestamp=[%u] 
+[%s]:[%s] -  End: %s 
+[%s]:[%s] - %s: sys_getSubscriberInfo failed, returned (%d). Try sysintcli getSubscriberInfo from cli.
+[%s]:[%s] - %s: sys_getCellularNon5GServiceStats failed, returned (%d). Try sysintcli getCellularNon5GServiceStats from cli.
+/opt/nvtl/data/lwm2m/dummy_imsi
+[%s]:[%s] - %s: [DUMMY] IMSI[%s] 
+[%s]:[%s] - End: %s
+[%s]:[%s] - %s: sys_getModemProfile failed, returned (%d). Try sysintcli getModemProfile having 3GPP type and index from cli.
+[%s]:[%s] - %s: Profile idx[%d]  name=[%s] apn=[%s] enable=[%d]
+/opt/nvtl/data/lwm2m/dummy_dm_apn
+[%s]:[%s] - %s: [DUMMY] APN[%s] 
+[%s]:[%s] - %s: sys_getActiveModemProfileIndex failed, returned (%d). Try sysintcli getActiveModemProfileIndex having type is 3GPP from cli.
+[%s]:[%s] - p_index=[%i] 
+/opt/nvtl/data/lwm2m/dummy_active_apn
+[%s]:[%s] - %s: sys_setModemProfile failed, returned (%d). Try sysintcli setModemProfile having type(%d) and index(%d) from cli.
+[%s]:[%s] - %s: set_modem_profile index(%d) type(%d) is sucess.
+/opt/nvtl/data/branding/etc/lwm2m/config.xml
+/opt/nvtl/etc/lwm2m/config.xml
+[%s]:[%s] - %s: Could not find LWM2M configuration file.
+/Config/Carrier
+/Config/modelString
+/Config/Sdm/TestServerPort
+/Config/Sdm/TestServerURL
+/Config/Sdm/ServerPort
+/Config/Sdm/ServerURL
+/Config/Sdm/BootstrapTestServerPort
+/Config/Sdm/BootstrapTestServerURL
+/Config/Sdm/BootstrapServerPort
+/Config/Sdm/BootstrapServerURL
+/Config/Sdm/ConfigVersion
+/Config/Sdm/DevType
+/Config/Sdm/SocketConnectionUpdateInterval
+/Config/ApnRetries
+/Config/ApnRetryPeriod
+/Config/ApnRetryBackOffPeriod
+/Config/DeviceInfo/Manufacturer
+/Config/DeviceInfo/DeviceID
+/Config/DeviceInfo/DeviceModel
+/Config/DeviceInfo/SoftwareVersion
+/Config/DeviceInfo/HardwareVersion
+/Config/DeviceInfo/FirmwareVersion
+/Config/UseInternetCallForDm
+/Config/ConnectToDm
+[%s]:[%s] - Printing LWM2M configuration settings:
+[%s]:[%s] - Carrier=[%s]
+[%s]:[%s] - Model=[%s]
+[%s]:[%s] - sdm testserver_url=[%s]
+[%s]:[%s] - sdm testserver_port=[%d]
+[%s]:[%s] - sdm server_url=[%s]
+[%s]:[%s] - sdm server_port=[%d]
+[%s]:[%s] - sdm bootstrap testserver_url=[%s]
+[%s]:[%s] - sdm bootstrap testserver_port=[%d]
+[%s]:[%s] - sdm bootstrap server_url=[%s]
+[%s]:[%s] - sdm bootstrap server_port=[%d]
+[%s]:[%s] - sdm config_ver=[%s]
+[%s]:[%s] - sdm dev_type=[%s]
+[%s]:[%s] - sdm socket_update_interval=[%d]
+[%s]:[%s] - APN Retries =[%d]
+[%s]:[%s] - APNRetryPeriod =[%d]
+[%s]:[%s] - APNRetryBackOffPeriod =[%d]
+[%s]:[%s] - UseInternetCallForDm =[%d]
+[%s]:[%s] - [lwm2m_app]: Failed tobootstrap open configuration file: %s
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - LWM2M Disabled in features.xml
+lwm2m.settings
+[%s]:[%s] - %s: Failed to read (%s) rc=%d
+[%s]:[%s] - %s: LWM2M settings
+[%s]:[%s] - %s: lifetime: [%u]
+[%s]:[%s] - %s: dm_call.retries: [%u]
+[%s]:[%s] - %s: dm_call.retry_interval: [%u]
+[%s]:[%s] - %s: data_call.retries: [%u]
+[%s]:[%s] - %s: data_call.retry_interval: [%u]
+[%s]:[%s] - %s: auth.retries: [%u]
+[%s]:[%s] - %s: auth.retry_interval: [%u]
+[%s]:[%s] - %s: watchdog.retry_interval: [%u]
+[%s]:[%s] - %s: read_from_ipq: [%u]
+[%s]:[%s] - %s: mcc_mnc_list: [%s]
+[%s]:[%s] - %s: sys_setPowerSaveLockEnabled() failed, rc=%d
+[%s]:[%s] - %s: sys_getCellularServiceStatus() failed, rc=%d
+[%s]:[%s] - %s: Not in SYS_WAN_SERVICE_STATUS_INSERVICE.
+[%s]:[%s] - %s: sys_getCellularServiceStats() failed, rc=%d
+[%s]:[%s] - %s: lwm2m_get_wan_coverage_status() failed, rc:%d, try again
+[%s]:[%s] - %s: Found coverage tech:%d (Elapsed: %d, Min srv time:%d)
+[%s]:[%s] - %s: tech:%d (Elapsed time: %d)
+[%s]:[%s] - %s: Out of coverage tech:%d (Elapsed time: %d)
+/opt/nvtl/data/lwm2m/lifetime
+[%s]:[%s] - %s: lifetime[%u]
+[%s]:[%s] - %s: enable[%d]
+[%s]:[%s] - %s: lwm2m_get_active_modem_profile curr_apn_disable[%d] is success
+[%s]:[%s] - %s: lwm2m_set_modem_profile index(%d) enable(%d) failed (%d).
+[%s]:[%s] - %s: lwm2m_set_modem_profile index(%d) enable(%d) is successful.
+[%s]:[%s] - %s: lwm2m_get_dm_modem_profile curr_apn_disable[%d] is success
+[%s]:[%s] - %s: lwm2m_set_modem_profile index(%d) disable(%d) is successful.
+[%s]:[%s] - [LWM2M_CALL_STATUS] %s: +++
+[%s]:[%s] - [LWM2M_CALL_STATUS] %s: sys_getcellularDeviceManagementDataConnectionStatus() failed, rc=%d
+[%s]:[%s] - [LWM2M_CALL_STATUS] %s: Connection up V4
+[%s]:[%s] - [LWM2M_CALL_STATUS] %s: Connection drop on V4
+[%s]:[%s] - [LWM2M_CALL_STATUS] %s: Connection up V6
+[%s]:[%s] - [LWM2M_CALL_STATUS] %s: Connection drop on V6
+[%s]:[%s] - [LWM2M_CALL_STATUS] %s: IPv4 (State:%d, Intf:%s), IPv6(State:%d, Intf:%s), ip_type:%d, DNS:%s
+[%s]:[%s] - [LWM2M_CALL_START] %s: +++
+[%s]:[%s] - [LWM2M_CALL_START] %s: lwm2m_confirm_wwan_service(%d) failed, rc=[%d]
+[%s]:[%s] - [LWM2M_CALL_START] %s: lwm2m_get_ota_call_status_impl(%d) failed, rc=[%d]
+[%s]:[%s] - [LWM2M_CALL_START] %s: call already up!!
+lwm2m_data_call_id
+[%s]:[%s] - [LWM2M_CALL_START] %s: Call taking longer than [%d] expected try again
+[%s]:[%s] - [LWM2M_CALL_START] %s: Success(v4=[%s], v6=[%s], ip_type=[%d], resolve=[%s])
+[%s]:[%s] - [LWM2M_CALL_START] %s: sys_*APNCallConnectEx() failed with %d
+[%s]:[%s] - [LWM2M_CALL_STOP] %s: +++
+[%s]:[%s] - [LWM2M_CALL_STOP] %s: OTA call stopped
+[%s]:[%s] - [LWM2M_CALL_STOP] %s: sys_*CallDisconnect() failed, rc=%d
+/opt/nvtl/data/lwm2m/use_ota_call
+/opt/nvtl/data/lwm2m/no_ota_call
+[%s]:[%s] - %s: use_ota_call[%u]
+[%s]:[%s] - LWM2M_MSG_GET_DEV_INFO
+[%s]:[%s] - LWM2M_MSG_GET_CONFIG
+[%s]:[%s] - LWM2M_MSG_GET_CONNECTIVITY_STATISTICS
+[%s]:[%s] - LWM2M_MSG_GET_CONNECTIVITY_MONITORING
+[%s]:[%s] - LWM2M_MSG_GET_LOC_INFO 
+[%s]:[%s] - LWM2M_MSG_GET_CONNECTIVITY_EXTENSION_INFO 
+[%s]:[%s] - LWM2M_MSG_GET_APN_DM_CONNECTION_PROFILE_INFO 
+[%s]:[%s] - LWM2M_MSG_GET_APN_ACTIVE_CONNECTION_PROFILE_INFO 
+[%s]:[%s] - LWM2M_MSG_GET_OTA_CALL_STATUS 
+[%s]:[%s] - LWM2M_MSG_START_OTA_CALL 
+[%s]:[%s] - LWM2M_MSG_STOP_OTA_CALL 
+[%s]:[%s] - LWM2M_MSG_GET_LIFETIME 
+[%s]:[%s] - LWM2M_MSG_ENABLE_DISABLE_ACTIVE_APN 
+[%s]:[%s] - LWM2M_MSG_ENABLE_DISABLE_DM_APN 
+[%s]:[%s] - LWM2M_USE_OTA_CALL 
+[%s]:[%s] - LWM2M_HANDLE_EVENT UNKNOWN MSG_TYPE 
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - Error initializing lwm2m configurations, terminating.
+/opt/nvtl/data/lwm2m
+[%s]:[%s] - %s: Opened dir:%s
+/opt/nvtl/data/lwm2m/dm_call_retry_count_
+[%s]:[%s] - Model_starting Deleting file: [%s].
+/opt/nvtl/data/lwm2m/dm_call_retry_start_time_
+/opt/nvtl/data/lwm2m/device_id
+[%s]:[%s] - Error in creating LWM2M_DEVICE_ID_FILE.
+/opt/nvtl/data/lwm2m/use_bootstrap
+/opt/nvtl/data/lwm2m/no_bootstrap
+[%s]:[%s] - Error in creating LWM2M_NO_BOOTSTRAP_COOKIE.
+[%s]:[%s] - Error in creating LWM2M_BOOTSTRAP_COOKIE.
+[%s]:[%s] - Error in creating LWM2M_APP_NO_DM.
+[%s]:[%s] - Error in creating LWM2M_APP_USE_DM.
+[%s]:[%s] - Error initializing lwm2m settings, terminating.
+/lwm2m_model_mq
+[%s]:[%s] - Error opening message queue: %d, terminating.
+lwm2m_model.ready
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+lwm2m_model_main_thread
+[%s]:[%s] - Model_shutdown Deleting file: [%s].
+[%s]:[%s] - %s Server Terminating.
+lwm2m_get_dev_info_impl
+lwm2m_get_conn_statisics
+lwm2m_get_conn_monitoring
+lwm2m_get_conn_monitoring
+lwm2m_get_loc_info_impl
+lwm2m_get_connectivity_extn_info_impl
+lwm2m_get_dm_modem_profile
+lwm2m_get_active_modem_profile
+lwm2m_set_modem_profile
+lwm2m_set_modem_profile
+lwm2m_get_active_profile_info_impl
+lwm2m_get_dm_profile_info_impl
+lwm2m_config_init
+lwm2m_settings_init
+lwm2m_wakelock_acquire
+lwm2m_wakelock_release
+lwm2m_get_wan_coverage_status
+lwm2m_confirm_wwan_service
+lwm2m_get_lifetime_value
+lwm2m_enable_disable_active_apn_impl
+lwm2m_enable_disable_dm_apn_impl
+lwm2m_get_ota_call_status_impl
+lwm2m_start_ota_call_impl
+lwm2m_stop_ota_call_impl
+lwm2m_use_ota_call_impl
+modem2.wap.push
+modem2.sim_switch_status
+modem2.sim_slots_init_done
+[%s]:[%s] - %s: Missing data on msgbus
+[%s]:[%s] - %s: Need to combine multiple WAP SMS into one.
+[%s]:[%s] - %s: WAP Push length = %d < LWM2M_WAP_MIN_LEN(%d)
+[%s]:[%s] - %s: chop_value=%d
+[%s]:[%s] - %s: LWM2M WAP Push Message=%s chop_value=%d
+/tmp/lwm2m_wap_push_rcvd
+[%s]:[%s] - %s: Not LWM2M WAP Push msg
+[%s]:[%s] - [lwm2m_sim_switch]%s: MSGBUS_MODEM2_SIM_SLOTS_INIT_DONE_CHAN sim_mgr_init_status:[%d]
+[%s]:[%s] - [lwm2m_sim_switch] lwm2m_sys_get_connectivity_extn_info failed, returned rc(%d).
+[%s]:[%s] - [lwm2m_sim_switch]%s: MSGBUS_MODEM2_SIM_SWITCH_STATUS sim_switch_status:[%d], sim_mgr_init_status:[%d]
+[%s]:[%s] - [lwm2m_sim_switch] SIM_SWITCH is done.
+[%s]:[%s] - [lwm2m_sim_switch] same imsi[%s]..nothing to do.
+[%s]:[%s] - [lwm2m_sim_switch] cur_imsi[%s] new_imsi[%s], restart LWM2M client.
+/opt/nvtl/bin/lwm2m_watchdog.sh restart
+[%s]:[%s] - %s: MsgBus_Create Failed
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe failed for:%s
+LWM2M_MBH
+[%s]:[%s] - %s: MsgBus subscribed to:%s
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Failed to un-subscribe channel[%s]
+[%s]:[%s] - %s: Disable Message bus interface
+msgbus_receive_wap_push_event
+lwm2m_msgbus_handler
+lwm2m_mbh_init
+lwm2m_mbh_deinit
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

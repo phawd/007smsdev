@@ -1,0 +1,240 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+dsm_get_error_string
+dsm_is_running
+dsm_get_state
+dsm_get_string
+__isoc99_scanf
+GLIBC_2.7
+dsm_set_persistent_mode
+dsm_shutdown_device
+dsm_reset_device
+settings_get_features
+dsm_send_devui_safe_shutdown_ack
+dsm_send_lpm_safe_exit_ack
+dsm_set_display_state
+dsm_get_battery_capability
+dsm_get_settings
+dsm_set_settings
+dsm_send_battery_id
+dsm_send_battery_temperature_state
+dsm_send_battery_temperature
+dsm_send_battery_voltage_state
+dsm_send_battery_capacity
+dsm_settings_changed
+dsm_send_modem_safe_shutdown_ack
+dsm_send_modem_state_changed
+dsm_set_suspend_wakeup_time
+dsm_set_usb_device_type
+dsm_set_usb_typec_pwr_role_pref
+dsm_get_ui_controls_shutdown_enabled
+dsm_get_usb_default_mode
+dsm_set_usb_default_mode
+dsm_get_wifi_mac_addr
+dsm_get_usb_mac_addr
+dsm_get_persistent_rl
+dsm_set_persistent_rl
+mifi_dbg_start
+__bss_start
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+librt.so.1
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+get_state
+Test of an sync api call to get dsm state.
+set_persistent_mode
+Test of an sync api call to set persistent mode in dsm.
+shutdown_device
+Test of an sync api call to release wakelock on dsm.
+reset_device
+Test of an sync api call to send suspend ready to dsm.
+devui_safe_shutdown_ack
+Test of an sync api call to send deep_sleep ready to dsm.
+lpm_safe_exit_ack
+Test of an sync api call to send lpm safe exit to dsm.
+set_display_state
+Test of an sync api call to set display state in dsm.
+get_settings
+Test of an sync api call to get data from settings dsm.
+set_settings
+Test of an sync api call to set data to settings dsm.
+send_battery_id
+Test of an async api call to send dsm state change.
+send_battery_temperature_state
+Test of an async api call to send charger detection change.
+send_battery_temperature_value
+Test of an sync api call to send battery detection change.
+send_battery_voltage_state
+Test of an async api call to send battery status change.
+send_battery_capacity
+Test of an async api call to send temperature change.
+settings_changed
+Test of an async api call to send power button press.
+send_modem_safe_shutdown_ack
+Test of an async api call to send modem safe shutdown acknowledgement.
+send_modem_state_changed
+Test of an async api call to send modem runlevel state change.
+set_suspend_wakeup_time
+Test of an async api call to set suspend wakeup time.
+set_usb_device_type
+Test of an async api call to set USB device type.
+set_usb_typec_pwr_role_pref
+Test of an async api call to set USB Type-C power role preference.
+get_ui_controls_shutdown_enabled
+Test of an sync api call to get the ui_controls_shutdown_enabled config item.
+get_default_usb_mode
+Get USB default mode
+set_default_usb_mode
+Set USB default mode
+get_usb_mac_address
+Get USB MAC address
+get_wifi_mac_address
+Get WiFi MAC address
+get_persistent_rl
+Get persistent runlevel
+set_persistent_rl
+Set persistent runlevel
+get_battery_capability
+Get battery capability
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+%s returned %d (%s)
+power_on_cause: [%s]
+power_state: [%s]
+charger_det: [%s]
+battery_det: [%s]
+battery_state: [%s]
+battery_voltage_state: [%s]
+battery_temperature_state: [%s]
+battery_capacity: [%d]
+battery_current: [%d]
+battery_temperature: [%d] deci-c
+battery_voltage: [%d]
+battery_id: [%d]
+usb_det: [%s]
+usb_state: [%s]
+dcp_det: [%s]
+battery_pack_state: [%s]
+power_button: [%s]
+display_state: [%s]
+typec_pwr_role: [%s]
+usb_device_type: [%s]
+What is persistent runlevel (1-5):  
+What is forced (1-forced, 0-wait for ack):  
+What is set display state (0-off, 1-on):  
+battery_capability: [%d]
+settings.critical_battery_threshold: [%d]
+settings.battery_pack_active: [%d]
+settings.battery_pack_low_battery_threshold: [%d]
+What is critical_battery_threshold (0-100): 
+What is battery_pack_active (0-1): 
+What is battery_pack_low_battery_threshold (0-100): 
+What is battery id (0-invalid, 1-valid):  
+What is battery temperature state(0-normal, 1-warning, 2-poweroff, 3-High temperature, 4-Extreme High temperature):  
+What is battery temperature value:  
+What is battery voltage state(0-normal, 1-warning, 2-low):  
+What is battery capacity:  
+What is setting changed(0-false, 1-true):  
+What is runlevel(1-lpm, 2-ftm, 3-online):  
+What is suspend wakeup time:  
+What is USB device type:  
+What is USB Type-C power role preference:  
+ui_controls_shutdown_enabled: [%d]
+USB mode=[%d]
+Enter 0 for Debug, and 1 for End user mode:
+What is the no of WiFi Macs:
+WiFi1=[%s]
+WiFi2=[%s]
+USB_Host=[%s]
+USB_Device=[%s]
+is_persistent=[%d]
+     Runlevel=[%d]
+Is runlevel persistent 0/1:
+Enter runlevel 2/3/4:
+command [%s]
+command [%s] not found.
+cmd_is_running
+cmd_get_state
+cmd_set_persistent_mode
+cmd_shutdown_device
+cmd_reset_device
+cmd_devui_safe_shutdown_ack
+cmd_lpm_safe_exit_ack
+cmd_set_display_state
+cmd_get_battery_capability
+cmd_get_settings
+cmd_set_settings
+cmd_send_battery_id
+cmd_send_battery_temperature_state
+cmd_send_battery_temperature_value
+cmd_send_battery_voltage_state
+cmd_send_battery_capacity
+cmd_settings_changed
+cmd_send_modem_safe_shutdown_ack
+cmd_send_modem_state_changed
+cmd_set_suspend_wakeup_time
+cmd_set_usb_device_type
+cmd_set_usb_typec_pwr_role_pref
+cmd_get_ui_controls_shutdown_enabled
+cmd_get_default_usb_mode
+cmd_set_default_usb_mode
+cmd_get_wifi_mac_address
+cmd_get_usb_mac_address
+cmd_get_persistent_rl
+cmd_set_persistent_rl
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

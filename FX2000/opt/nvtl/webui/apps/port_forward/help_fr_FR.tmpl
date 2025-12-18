@@ -1,0 +1,189 @@
+<!-- Port Forwarding -->
+<div id="port_forward">
+	<h1>Réacheminement de port</h1>
+	<h2>Vue d’ensemble</h2>
+	<p>Le réacheminement de port permet de transférer des applications spécifiques vers un appareil particulier connecté à votre réseau. Normalement, le pare-feu intégré bloque le trafic Internet entrant. Le réacheminement de port permet aux internautes d’accéder à n’importe quel serveur que vous utilisez sur votre ordinateur, tel qu’un serveur Web, FTP ou de messagerie.
+	<b>Important :</b> Le réacheminement de port crée un risque de sécurité et ne doit être activé que s’il est nécessaire.
+	Certains réseaux mobiles vous fournissent une adresse IP sur leur propre réseau plutôt qu’une adresse IP sur Internet. Dans ce cas, le réacheminement de port ne peut pas être utilisé, car les internautes ne peuvent pas atteindre votre adresse IP.
+	</p>
+
+	<h2>Applications de réacheminement de port</h2>
+	<h3>Cases à cocher de l’application</h3>
+		<p>
+			Cochez la case située à côté de chaque application de réacheminement de port que vous souhaitez autoriser. Pour transférer tout le trafic WAN entrant sur un port spécifique vers un seul client LAN, saisissez l’adresse IP de l’appareil cible dans le champ Adresse IP de l’application.
+		</p>
+		<ol>
+			<li>1. Installez l’application sur un ordinateur qui est connecté au réseau de cet appareil.</li>
+			<li>2. Sur l’ordinateur, vous pouvez vérifier l’adresse IP de ce dernier sur l’écran Appareils connectés.</li>
+			<li>3. Sur cet écran, saisissez l’adresse IP de l’ordinateur dans le champ <strong>Adresse IP de l’appareil connecté</strong> à côté de l’application.</li>
+			<li>4. Activez cette application sur cet écran en sélectionnant sa case à cocher.</li>
+			<li>5. Enregistrez vos modifications.</li>
+			<li>6. Sur l’écran <strong>État actuel</strong>, notez l’adresse IP Internet de cet appareil.</li>
+			<li>7. Demandez aux utilisateurs sur Internet de se connecter à l’adresse IP Internet de cet appareil. Ces demandes de connexion seront transmises à l’adresse IP spécifiée à l’étape 3.</li>
+		</ol>
+
+		<p>
+			Le tableau suivant indique les numéros de port et les informations de protocole pour chaque application de réacheminement de port répertoriée.
+		</p>
+
+			<table class="portForwardingTable" id="">
+	 	<thead>
+			<tr class="">
+				<th class=""> Nom de l’application</th>
+				<th class="">Port</th>
+				<th class="">TCP*</th>
+				<th class="">STCP*</th>
+				<th class="">UDP*</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td> DNS</td>
+				<td> 53</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Oui</td>
+			</tr>
+
+			<tr>
+				<td> Contrôle FTP (commande)</td>
+				<td> 21</td>
+				<td> Oui</td>
+				<td> Oui</td>
+				<td> Attribué</td>
+			</tr>
+
+			<tr>
+				<td> Transfert de données FTP</td>
+				<td> 20</td>
+				<td> Oui</td>
+				<td> Oui</td>
+				<td> Attribué</td>
+			</tr>
+
+			<tr>
+				<td> HTTP</td>
+				<td> 80</td>
+				<td> Oui</td>
+				<td> Oui</td>
+				<td> Attribué</td>
+			</tr>
+
+			<tr>
+				<td> HTTPS</td>
+				<td> 443</td>
+				<td> Oui</td>
+				<td> Oui</td>
+				<td> Attribué</td>
+			</tr>
+
+			<tr>
+				<td> NNTP</td>
+				<td> 119</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Attribué</td>
+			</tr>
+
+			<tr>
+				<td> POP3</td>
+				<td> 110</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Attribué</td>
+			</tr>
+
+			<tr>
+				<td> POP3S</td>
+				<td> 995</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Oui</td>
+			</tr>
+
+			<tr>
+				<td> SMTP</td>
+				<td> 25</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Attribué</td>
+			</tr>
+
+			<tr>
+				<td> SecureSMTP</td>
+				<td> 465</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Non</td>
+			</tr>
+
+			<tr>
+				<td> SNMP</td>
+				<td> 161</td>
+				<td> Attribué</td>
+				<td> Non</td>
+				<td> Oui</td>
+			</tr>
+
+			<tr>
+				<td> Telnet</td>
+				<td> 23</td>
+				<td> Oui</td>
+				<td> Non</td>
+				<td> Attribué</td>
+			</tr>
+
+			<tr>
+				<td> TFTP</td>
+				<td> 69</td>
+				<td> Attribué</td>
+				<td> Non</td>
+				<td> Oui</td>
+			</tr>
+			
+		</tbody>
+
+	</table>
+
+	<p><b>Oui</b> indique que le protocole est standardisé pour le numéro de port.</p>
+	<p><b>Non</b> indique que le protocole n’est pas standardisé pour le numéro de port.</p>
+	<p><b>Attribué</b> indique que le numéro de port est attribué par l’IANA (Internet Assigned Numbers Authority) pour l’utilisation du protocole, mais peut ne pas être standardisé.</p>	
+
+	<h2>Applications personnalisées</h2>
+	<p>Cette fonctionnalité vous permet de définir vos propres applications. Une fois définies, ces applications peuvent être activées ou désactivées de la même manière que les applications prédéfinies. Pour définir une application, vous devez connaître les ports et le protocole (TCP, UDP) utilisés par l’application pour le trafic entrant. Pour commencer, cliquez sur le bouton <strong>Ajouter une application personnalisée</strong>, puis fournissez les données suivantes. 
+	</p>
+	<h3>Case à cocher de l’application</h3>
+	<p>Cochez cette case si vous souhaitez que la nouvelle application puisse accéder à Internet (en activant le réacheminement de port).
+	</p>
+	<h3>Nom de l’application</h3>
+	<p>
+		Saisissez un nom approprié pour l’application que vous définissez.
+	</p>
+
+	<h3>Adresse IP de l’appareil connecté</h3>
+	<p>
+		Saisissez l’adresse IP de l’appareil connecté qui recevra ce trafic.
+	</p>
+
+	<h3>Type de port et numéros de port</h3>
+		<p>Chaque application a sa propre plage de ports. Indiquez le début et la fin de la plage de ports pour chaque application.
+		</p>
+		<div class="blockgroup">
+			<ul>
+				<li>Pour la plage de ports, saisissez le début de la plage dans le champ <strong>De</strong> et la fin de la plage dans le champ <strong>À</strong>.</li>
+				<li>Pour un port de traduction, saisissez le numéro de port dans les champs <strong>Ext</strong> et <strong>Int</strong>.</li>
+			</ul>
+		</div>
+	<h3>Protocole</h3>
+	<p>
+		Pour chaque plage de ports, sélectionnez le protocole (TCP ou UDP) utilisé par cette étendue de port.
+	</p>
+		
+	<h3>Supprimer</h3>
+	<p>Utilisez cette case à cocher pour supprimer une application personnalisée.
+	</p>
+	<p><b>REMARQUE :</b> Cliquez de nouveau sur l’onglet Réacheminement de port pour supprimer les applications personnalisées de l’écran. </p>
+
+</div>
+<!-- id="port_forward" -->
+

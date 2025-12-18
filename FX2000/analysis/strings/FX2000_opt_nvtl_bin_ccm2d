@@ -1,0 +1,639 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+clock_gettime
+librt.so.1
+gethostbyname
+watchdog_application_send_keep_alive
+inet_addr
+libpthread.so.0
+inet_ntoa
+shutdown
+gmtime_r
+ccm2_wwan_get_autoconnect_state
+mifi_dbg_get_level_name
+mifi_dbg_log
+wifi_get_ap_enabled
+mifi_dbg_syslog
+wifi_set_ap_enabled
+wifi_get_sta_enabled
+wifi_set_sta_enabled
+modem2_is_radio_enabled
+modem2_set_radio_enabled
+modem2_get_current_state
+modem2_network_attach
+modem2_get_pco_event
+wifi_get_enabled
+wifi_set_enabled
+usb_get_state
+usb_set_tether_enabled_temp
+router2_get_ip_passthrough
+inet_ntop
+pthread_join
+MsgBusGet
+pthread_create
+settings_get_features
+xmldata_initialize
+xmldata_getint32_default
+xmldata_getstring
+xmldata_shutdown
+ccm2_get_ipv6_enabled
+ccm2_get_cellular_data_enabled
+ccm2_get_wifi_ap_mode_enabled
+ccm2_get_wifi_station_mode_enabled
+ccm2_get_airplane_mode_enabled
+ccm2_get_wifi_enabled_while_usbtethered
+ccm2_get_static_ip
+ccm2_get_ntp_url
+ccm2_wan_get_wan_prio
+ccm2_wwan_get_autoconnect
+pthread_self
+mifi_dbg_start
+__errno_location
+msgq_create
+watchdog_application_register
+modem2_api_is_running
+msgq_receive
+msgq_resp_handler
+mq_close
+mq_unlink
+mifi_dbg_stop
+ccm2_wan_disconnect
+ccm2_wan_connection_stats_event
+ccm2_update_pco_event
+ccm2_update_usb_iface
+ccm2_wan_mgr_register
+ccm2_setup_wan_details
+ccm2_wan_cm_eth
+ccm2_wan_cm_wwan
+ccm2_autoconnect_update_client_count
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+modem2_start_call
+modem2_stop_call
+modem2_validate_home_network
+ccm2_dm_get_call_state
+modem2_get_active_tech_profile
+modem2_get_tech_profile
+modem2_get_pdn_override_param
+modem2_sim_get_carrier
+MsgBusSetBinary
+modem2_get_call_throttle_status
+modem2_get_call_status
+ccm2_get_ipv6_preferred_list
+msgq_does_queue_exist
+msgq_send_async
+msgq_send_sync
+router2_config_apps_routing_ipv4
+router2_deconfig_apps_routing_ipv4
+modem2_get_service_info
+router2_config_dm_routing_ipv4
+router2_config_dm_routing_ipv6
+router2_config_interface_routing_ipv4
+router2_config_internet_routing_ipv4
+router2_deconfig_dm_routing_ipv4
+router2_deconfig_dm_routing_ipv6
+router2_deconfig_internet_routing_ipv4
+router2_deconfig_interface_routing_ipv4
+router2_deconfig_internet_routing_ipv6
+router2_deconfig_interface_routing_ipv6
+modem2_get_signal_stats
+modem2_get_test_sim_status
+wan_mgr_register_wan
+router2_config_interface_routing_ipv6
+MsgBusSetInt32
+wan_mgr_deregister_wan
+get_interface_counters
+ifc_get_address6
+wan_mgr_get_wan_telemetry_info_list
+wan_mgr_get_supported_wan_count
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libusb_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libmificommon.so
+libxmldata_api.so
+libmifimsgbus.so
+libmodem2_api.so
+librouter2_api.so
+libdsm_api.so
+libwifi_api.so
+libemd_api.so
+libwan_mgr_api.so
+libccm2_api.so
+H	KxD	J{D
+/dev/kmsg
+[MIFI_TIMESTAMP] - 
+/dev/null
+ccm_autoconnect_data_call_id
+[%s]:[%s] - sending auto connect set failed [%d]
+[%s]:[%s] - %s: WiFi enabled %d, temp_tether_wifi %d, usb_connected %d
+[%s]:[%s] - %s: failed to get WiFi AP enabled rc=0x%X
+[%s]:[%s] - %s: WiFi enabled %d, state_wifi_ap %d
+[%s]:[%s] - %s: failed to set WiFi AP enabled rc=0x%X
+[%s]:[%s] - %s: set WiFi AP enabled %d
+[%s]:[%s] - %s: failed to get WiFi STN enabled rc=0x%X
+[%s]:[%s] - %s: failed to set WiFi STN enabled rc=0x%X
+[%s]:[%s] - %s: set WiFi STN enabled %d
+[%s]:[%s] - %s: WiFi disabled, no AP STN changes
+[%s]:[%s] - %s: failed to get WWAN enabled 0x%X
+[%s]:[%s] - %s: failed to set WWAN enabled 0x%X
+[%s]:[%s] - %s: set WWAN enabled %d
+[%s]:[%s] - %s enabling radio
+[%s]:[%s] - %s wan states 1 %d, %d
+[%s]:[%s] - %s enabling wan
+[%s]:[%s] - %s auto-connecting call states %d
+[%s]:[%s] - %s wan states 2 %d, %d
+[%s]:[%s] - %s re-routing, states: %d, %d
+[%s]:[%s] - %s enable:[%d], pco:[%d], attach:[%d], pco_disable:[%d], cached_pco:[%d]
+[%s]:[%s] - %s PCO value accepted, ignoring additional pco indication: %d
+[%s]:[%s] - %s Unrecognized pco value: %d
+[%s]:[%s] - pco event found on startup: pco value [%d], pdn [%d]
+[%s]:[%s] - set ipv6 enabled:[%d]
+[%s]:[%s] - sending ipv6 set failed [%d]
+[%s]:[%s] - sending ipv6 set failed cust apn [%d]
+[%s]:[%s] - set cellular data enabled:[%d]
+[%s]:[%s] - gets wifi mode enabled
+[%s]:[%s] - call to wifi_get_enabled failed, rc=0x%X
+[%s]:[%s] - set wifi mode enabled:[%d]
+[%s]:[%s] - call to wifi_set_enabled failed, rc=0x%X
+[%s]:[%s] - set wifi ap mode enabled:[%d]
+[%s]:[%s] - set wifi station mode enabled:[%d]
+[%s]:[%s] - set airplane mode enabled:[%d]
+[%s]:[%s] - set wifi while usbtethered enabled:[%d]
+[%s]:[%s] - %s: tmp_tether_mode=%d g_ccm2.temp_tether_wifi=%d g_ccm2.settings.wifi_while_usbtethered=%d
+[%s]:[%s] - %s: usb_get_state() failed: rc=%d
+[%s]:[%s] - %s: USB not in a configured state
+[%s]:[%s] - %s: evt_msg->data.tmp_tether_mode is invalid
+[%s]:[%s] - %s: g_ccm2.temp_tether_wifi=%d temp_tether_wifi=%d temp_tether_usb=%d
+[%s]:[%s] - %s: usb_set_tether_enabled_temp() failed: rc=%d
+[%s]:[%s] - %s: return=%d: g_ccm2.ip_passthrough_supported=%d r2_ippt_setting.active=%d
+[%s]:[%s] - set static ip :[%s]
+[%s]:[%s] - set NTP URL1 to %s
+[%s]:[%s] - set NTP URL2 to %s
+[%s]:[%s] - set NTP URL3 to %s
+[%s]:[%s] - get the current wan
+[%s]:[%s] - get the wan stats
+[%s]:[%s] - get the wan states
+[%s]:[%s] - set wan prio 
+[%s]:[%s] - WAN prio [%d]:[%s]
+[%s]:[%s] - wan connect
+[%s]:[%s] - wan disconnect
+[%s]:[%s] - set autoconnect enabled:[%d]
+[%s]:[%s] - wwan connect
+[%s]:[%s] - wwan disconnect
+[%s]:[%s] - wwan update for wan_cm
+[%s]:[%s] - Ethernet WAN update for wan_cm
+[%s]:[%s] - register with wan mager from wan_cm
+[%s]:[%s] - Updating the WAN details to WAN CM
+[%s]:[%s] - %s: connected=%d
+[%s]:[%s] - wwan send wan connection stats for [%s]
+[%s]:[%s] - send roam state [%d], home network [%d]
+[%s]:[%s] - send pco event [%d], pdn [%d]
+[%s]:[%s] - accept pco event initiated
+[%s]:[%s] - get airplane mode disabled status
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+/opt/nvtl/etc/ccm2/config.xml
+/Config/AirPlaneMode/WiFiDisabled
+/Config/AirPlaneMode/CellDataDisabled
+/Config/AutoConnectInterval
+/Config/Interfaces/USB
+/Config/Interfaces/USB2
+[%s]:[%s] - CCM2 initialized with the following configurations: 
+[%s]:[%s] - Wifi Disabled while in Airplane Mode: %d
+[%s]:[%s] - Cellular Data Disabled while in Airplane Mode: %d
+[%s]:[%s] - Auto Connect processing interval: %d
+[%s]:[%s] - Failed to open configuration file: %s
+[%s]:[%s] - CCM2 initialized with the following settings: 
+[%s]:[%s] - Celldata Enabled: %d
+[%s]:[%s] - WiFi AP Enabled: %d
+[%s]:[%s] - WiFi STN Enabled: %d
+[%s]:[%s] - Airplane Mode Enabled: %d
+[%s]:[%s] - WiFi while USBTethered Enabled: %d
+[%s]:[%s] - StaticIP Enabled: %s
+[%s]:[%s] - NTP URL Enabled: %s
+[%s]:[%s] - Autoconnect Enabled: %d
+[%s]:[%s] - Failed to initialize settings. %s returned %d
+CCM2 Starting
+[%s]:[%s] - MIFI_TIMESTAMP:CCM2 Starting
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error attaching to the message bus.
+/ccm2_mq
+[%s]:[%s] - Error opening message queue: %d, terminating.
+[%s]:[%s] - Error initializing ccm2 configuration, terminating.
+[%s]:[%s] - Error initializing ccm2 settings, terminating.
+ccm_main_thread
+[%s]:[%s] - sending auto connect set failed 0x[%X]
+[%s]:[%s] - sending ipv6 set failed 0x[%X]
+[%s]:[%s] - sending ipv6 set to cust_apn failed 0x[%X]
+modem2.time_change
+[%s]:[%s] - %s: initilize network time, rc:0x%X
+[%s]:[%s] - MsgBusGet returned NULL data pointer
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s Server Terminating.
+update_radio_enabled_state
+reset_pco_state
+enable_pco_state
+ccm2_set_wifi_enabled_while_tethered_temp_impl
+ccm2_is_IPPT_enabled
+ccm2_update_usb_iface_impl
+ccm2_settings_init
+[%s]:[%s] - %s channel %s
+eth.wan_status
+[%s]:[%s] - Ethernet WAN connected.
+[%s]:[%s] - Ethernet WAN disconnected.
+modem2.conn_stats
+modem2.emergency_mode
+[%s]:[%s] - MDM_EVT_EMERGENCY_MODE: emergency_mode=%d
+modem2.uim_state
+[%s]:[%s] - MSGBUS_MODEM2_EVT_UIM_STATE_CHAN: sim_status=%d
+[%s]:[%s] - MSGBUS_MODEM2_EVT_UIM_STATE_CHAN: pco_value=%d intended=%d
+modem2.profile_changed
+[%s]:[%s] - MSGBUS_MODEM2_PROFILE_CHANGED_CHAN: state=%d
+modem2.service
+[%s]:[%s] - MSGBUS_MODEM2_EVT_SERVICE_CHAN: state=%d
+usb.attached_to_bridge
+[%s]:[%s] - %s: From channel %s received message [%d]
+CCM2_MBH
+mifi_health.ab_failsafe_start
+[%s]:[%s] - %s: mifi health failsafe start with payload %d and result %d
+mifi_health.ab_failsafe_end
+[%s]:[%s] - %s: mifi health failsafe end with payload %d and result %d
+cbsd.authorization_status
+[%s]:[%s] - %s: cbsd authorization end with payload %d and result %d
+[%s]:[%s] - %s: From channel %s received message [%d]!
+eth.wan_details
+[%s]:[%s] - %s CCM received WAN interface details Name [%s], wan_type[%d] ip_family[%d] 
+eth.wan_connect
+modem2.roam_state
+modem2.conn_state
+[%s]:[%s] - %s CCM received internet fam=%d connection status, wwan state=%d, end_reason=%d, verbose=%d
+[%s]:[%s] - %s CCM received DU fam=%d connection status, wwan state=%d
+[%s]:[%s] - %s CCM received DM fam=%d connection status, wwan state=%d
+modem2.call_fail
+[%s]:[%s] - %s CCM received internet fam=%d call failed, end reason=%d, verbose=%d
+[%s]:[%s] - %s CCM received DU fam=%d call failed, end reason=%d
+[%s]:[%s] - %s CCM received DM fam=%d call failed, end reason=%d
+modem2.time_change
+[%s]:[%s] - %s: update network time, rc:0x%X
+dmdb.connected.device.list
+[%s]:[%s] - CCM received MSGBUS_MODEM2_EVT_CALL_FAIL_CHAN
+modem2.sim.pco_event
+[%s]:[%s] - CCM received MSGBUS_MODEM2_SIM_PCO_CHAN pco_value: %d, pdn: %d
+[%s]:[%s] - MSGBUS_MODEM2_PROFILE_CHANGED_CHAN
+[%s]:[%s] - %s: From channel %s received message !
+[%s]:[%s] - %s: MsgBus_Create Failed
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe Refresh Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+ccm2_msgbus_handler
+/dev/kmsg
+[MIFI_TIMESTAMP] - 
+[%s]:[%s] - %s: active_pco_value %d
+[%s]:[%s] - %s: auto connect prevented by PCO value: %d
+[%s]:[%s] - %s:Cellular Data is disabled
+[%s]:[%s] - %s:Connect V4
+ccm_autoconnect
+[%s]:[%s] - %s:%s: IPv4 call failed - rc = %d
+CCM2 IPV4 data call Connected
+[%s]:[%s] - %s:MIFI_TIMESTAMP:CCM2 IPV4 data call Connected
+[%s]:[%s] - %s:Connect V6
+[%s]:[%s] - %s:%s: IPv6 call failed - rc = %d
+CCM2 IPV6 data call Connected
+[%s]:[%s] - %s:MIFI_TIMESTAMP:CCM2 IPV6 data call Connected
+ccm_autoconnect_data_call_id
+[%s]:[%s] - %s:Disconnect V4
+[%s]:[%s] - %s:%s: IPv4 stop call failed - rc = %d
+[%s]:[%s] - %s:Disconnect V6
+[%s]:[%s] - %s:%s: IPv6 stop call failed - rc = %d
+/opt/nvtl/data/omadm/fr_restore_cookie
+[%s]:[%s] - %s:%s:  device not activated
+[%s]:[%s] - %s:Performing ipv6 auto-connect based on service
+[%s]:[%s] - %s:%s:Performing ipv4 auto-connect based on service
+[%s]:[%s] - %s:Performing ipv4 auto-connect based on service and not roaming
+[%s]:[%s] - %s:Performing ipv6 auto-connect based on service and not roaming
+[%s]:[%s] - %s:Performing ipv4 auto-connect based on connected clients
+[%s]:[%s] - %s:%s:  clients have been disconnected for at least %d seconds, disconnecting
+[%s]:[%s] - %s:Performing ipv4 auto-disconnect based on connected clients
+[%s]:[%s] - %s:Performing ipv6 auto-connect based on connected clients
+[%s]:[%s] - %s:Performing ipv6 auto-disconnect based on connected clients
+[%s]:[%s] - %s: failed to get PDP type
+[%s]:[%s] - %s: failed to get active tech profile index
+[%s]:[%s] - %s: failed to get CLAT enabled
+ccm2.connection_prerequisite_status
+[%s]:[%s] - [RECOVERY] %s: CCM2_MSG_USER_DISCONNECT
+[%s]:[%s] - [RECOVERY] %s: CCM2_MSG_PCO_DISCONNECT
+[%s]:[%s] - [RECOVERY] %s: CCM2_MSG_OMADM_APN_RESTORE
+[%s]:[%s] - %s: failed to get WWAN enabled %d
+[%s]:[%s] - [RECOVERY] %s: CCM2_MSG_MODEM_RADIO_DISABLED
+[%s]:[%s] - [RECOVERY] %s: CCM2_AUTOCONNECT_NONE
+[%s]:[%s] - [RECOVERY] %s: CCM2_AUTOCONNECT_IF_NOT_ROAMING[%d]
+[%s]:[%s] - %s: autoconnect enable status [%s]
+[%s]:[%s] - %s: autoconnect interval [%d]
+[%s]:[%s] - %s: autoconnect internet apn config.
+[%s]:[%s] - %s: autoconnect unknown apn %d.
+[%s]:[%s] - %s: autoconnect call failed %d, wan state %d.
+CCM2 IPV4 unexpected WWAN event received while connecting, ignoring event. 
+[%s]:[%s] - %s:MIFI_TIMESTAMP:CCM2 IPV4 WWAN event %d received while connecting, ignoring event.
+[%s]:[%s] - {mifios_wanevent}: IPv6 call throttle state cleared.
+[%s]:[%s] - {mifios_wanevent}: call fail code %d, throttling further IPv4 calls.
+[%s]:[%s] - %s: call fail code %d, not throttling IPv4 calls.
+[%s]:[%s] - %s: autoconnect V4 wwan state: [%s] 
+CCM2 IPV4 WWAN connection is now IDLE
+[%s]:[%s] - %s:MIFI_TIMESTAMP:CCM2 IPV4 WWAN connection is now IDLE
+CCM2 IPV6 unexpected WWAN event received while connecting, ignoring event. 
+[%s]:[%s] - %s:MIFI_TIMESTAMP:CCM2 IPV6 WWAN event %d received while connecting, ignoring event.
+[%s]:[%s] - {mifios_wanevent}: IPv4 call throttle state cleared.
+[%s]:[%s] - {mifios_wanevent}: call fail code %d, throttling further IPv6 calls.
+[%s]:[%s] - %s: call fail code %d, not throttling IPv6 calls.
+[%s]:[%s] - %s: autoconnect V6 wwan state: [%s] end_reason: [%d]
+CCM2 IPV6 WWAN connection is now IDLE
+[%s]:[%s] - %s:MIFI_TIMESTAMP:CCM2 IPV6 WWAN connection is now IDLE
+[%s]:[%s] - %s: backoff counter reached.
+[%s]:[%s] - %s: ipv6 enable status [%d]
+[%s]:[%s] - %s: connect
+[%s]:[%s] - %s: auto connect
+[%s]:[%s] - %s: disconnect, v4 state: %d, v6 state: %d
+[%s]:[%s] - %s: disconnect
+[%s]:[%s] - %s: roaming status - home:[%d] roam[%d] usr_connect [%d] usr_disconnect [%d]
+[%s]:[%s] - %s: client count:[%d]
+[%s]:[%s] - {mifios_wanevent}: IPv4 and IPv6 call throttle state reset.
+[%s]:[%s] - %s: Start with pthread ID:%lu, process ID:%d.
+/autoconnect_mq
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+[%s]:[%s] - %s: Error initilizing v4 call status:%d
+[%s]:[%s] - %s: Error initilizing v6 call status:%d
+[%s]:[%s] - %s: autoconnect V6 wwan state: [%s] 
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: Check Autoconnect
+[%s]:[%s] - %s: Thread Exiting, run %d.
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Terminate Thread Example, TID: %lu.
+[%s]:[%s] - %s: send ac enabled async msg.
+[%s]:[%s] - %s: send ac interval async msg.
+[%s]:[%s] - %s: send wwan state async msg.
+[%s]:[%s] - %s: send v6 enabled async msg.
+[%s]:[%s] - %s: send wwan connect async msg.
+[%s]:[%s] - %s: send update roaming async msg.
+[%s]:[%s] - %s: send set pco sync msg.
+[%s]:[%s] - %s: send clear pco sync msg.
+[%s]:[%s] - %s: send reset throttled state async msg.
+has_valid_phone_number
+wwan_connect
+wwan_disconnect
+connect_service_v6
+connect_service_v4
+connect_roaming_v4
+connect_roaming_v6
+connect_client_v4
+connect_client_v6
+get_pdp_info
+get_clat_enabled
+check_autoconnect
+update_wwan_state
+[%s]:[%s] - %s: apps start call
+ccm_cust_apn
+[%s]:[%s] - %s: Error making APPS APN v4 route:0x%X
+/opt/nvtl/tmp/router2/resolv_data_usage.conf
+[%s]:[%s] - %s: Apps v4 call started:[%s]
+[%s]:[%s] - %s: Apps v4 call already started:[%s]
+[%s]:[%s] - %s: Error making APPS APN v4 call:0x%X
+[%s]:[%s] - %s: apps stop call
+[%s]:[%s] - %s: Error not stopping APPS APN v4 due to reference count
+[%s]:[%s] - %s: Error stoping APPS APN v4 call:0x%X
+[%s]:[%s] - %s: Apps v4 call stopped
+[%s]:[%s] - %s: dm start call
+[%s]:[%s] - %s: Error getting Modem Service State:0x%X
+[%s]:[%s] - %s: Error making Device Management APN v4 route:0x%X
+/opt/nvtl/tmp/router2/resolv_dm.conf
+[%s]:[%s] - %s: DM v4 call started:[%s]
+[%s]:[%s] - %s: DM v4 call already started:[%s]
+[%s]:[%s] - %s: Error making Device Management APN v4 call:0x%X
+[%s]:[%s] - %s: DM v6 call started:[%s]
+[%s]:[%s] - %s: DM v6 call already started:[%s]
+/etc/resolv.dnsmasq
+[%s]:[%s] - %s: Internet APN v4 interface routing started:[%s]
+[%s]:[%s] - %s: Error making Internet APN v4 route:0x%X
+[%s]:[%s] - %s: Internet APN v4 internet routing started:[%s]
+[%s]:[%s] - %s: Internet APN call already started:[%s]
+[%s]:[%s] - %s: Error making Internet APN v4 call:0x%X
+[%s]:[%s] - %s: dm stop call (Internet APN:(%d))
+[%s]:[%s] - %s: Error not stopping DM APN v4 due to reference count
+[%s]:[%s] - %s: Error stoping Device Management APN v4 call:0x%X
+[%s]:[%s] - %s: Device Management v4 call stopped
+[%s]:[%s] - %s: Error not stopping DM APN v6 due to reference count
+[%s]:[%s] - %s: Error stoping Device Management APN v6 call:0x%X
+[%s]:[%s] - %s: Device Management v6 call stopped
+[%s]:[%s] - %s: Error not stopping INTERNET-DM APN v4 due to reference count
+[%s]:[%s] - %s: Error stoping Internet APN v4 call:0x%X
+[%s]:[%s] - %s: Internet v4 call stopped
+[%s]:[%s] - %s: ipv6 enable status [%d]
+[%s]:[%s] - %s: applications apn config.
+[%s]:[%s] - %s: application apn v4 call stopped
+ccm2.apps_status
+[%s]:[%s] - %s: device management apn config.
+[%s]:[%s] - %s: Device Management apn v4 call stopped
+[%s]:[%s] - %s: Device Management apn v6 call stopped
+ccm2.device_management_status
+[%s]:[%s] - %s: internet apn config, DM used Internet APN.
+[%s]:[%s] - %s: autoconnect unknown apn %d.
+[%s]:[%s] - %s: Start with pthread ID:%lu, process ID:%d.
+/cust_apn_mq
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Terminate Thread Example, TID: %lu.
+[%s]:[%s] - %s: send v6 enabled async msg.
+[%s]:[%s] - %s: send wwan state async msg.
+/dev/kmsg
+[MIFI_TIMESTAMP] - 
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to get cbsd feature. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+cbsd.authorization_status
+[%s]:[%s] - %s: cbsd_authorization value:[%d]
+[%s]:[%s] - %s: cbsd is already authorized.
+[%s]:[%s] - %s:
+ Unable to get signal status from modem2_get_signal_stats
+[%s]:[%s] - %s:Modem is not in band 48
+[%s]:[%s] - %s:Modem is in band 48
+/opt/nvtl/etc/cbsd/config.xml
+/Config/Countrycode
+[%s]:[%s] - Countrycodes: %s
+[%s]:[%s] - Config file failed to initialize [%s]
+[%s]:[%s] - Operator ID from device: %s
+[%s]:[%s] - Countrycode from device: %s
+[%s]:[%s] - The country code [%s] from config.xml
+[%s]:[%s] - The device country code [%s] matched with country code [%s]from config.xml
+[%s]:[%s] - The device country code[%s] not matched with country code from config.xml
+[%s]:[%s] - %s: ip_fam=%d wan=%d
+[%s]:[%s] - %s:%s IPV4 interface already connected [%s] with different IP - reconfiguring
+[%s]:[%s] - %s:%s  router2_config_interface_routing_ipv4() failed [%s], rc=[%d]
+CCM2 IPV4 Data Interface Configuraton Done
+[%s]:[%s] - %s:MIFI_TIMESTAMP:CCM2 IPV4 Data Interface Configuraton Done
+[%s]:[%s] - %s() WAN Registration with WAN Manager Failed for %s for family IPV4
+[%s]:[%s] - %s:%s IPV6 interface already connected [%s] with different IP - reconfiguring
+[%s]:[%s] - %s:%s  router2_config_interface_routing_ipv6() failed [%s], rc=[%d]
+[%s]:[%s] - [%s]:[%d] is_cbsd_authorization_required :[%d]
+[%s]:[%s] - %s() WAN Registration with WAN Manager Failed for %s for family IPV6
+CCM2 IPV6 data call Routed
+[%s]:[%s] - %s:MIFI_TIMESTAMP:CCM2 IPV6 data call Routed
+CCM2 IPV6 Data Interface Configuraton Done
+[%s]:[%s] - %s:MIFI_TIMESTAMP:CCM2 IPV6 Data Interface Configuraton Done
+[%s]:[%s] - %s:%s ipv4 interface already connected [%s]
+[%s]:[%s] - WAN Registration with WAN Manager Failed
+ccm2.wan_connection
+[%s]:[%s] - %s:%s Deregistration with WAN Manager Failed for %s for family IPV4
+[%s]:[%s] - %s:%s  router2_deconfig_interface_routing_ipv4() failed [%s], rc=[%d]
+CCM2 IPV4 Data Interface Configuraton Removed
+[%s]:[%s] - %s:MIFI_TIMESTAMP:CCM2 IPV4 Data Interface Configuraton Removed
+[%s]:[%s] - %s:%s Deregistration with WAN Manager Failed for %s for family IPV6
+[%s]:[%s] - %s:%s  router2_deconfig_interface_routing_ipv6() failed [%s], rc=[%d]
+CCM2 IPV6 Data Interface Configuraton Removed
+[%s]:[%s] - %s:MIFI_TIMESTAMP:CCM2 IPV6 Data Interface Configuraton Removed
+[%s]:[%s] - %s:%s ipv4 not connected [%s]
+[%s]:[%s] - %s:%s ipv4 not connected on interface [%s]
+CCM2 IPV4 data call Routing Cleared
+[%s]:[%s] - %s:MIFI_TIMESTAMP:CCM2 IPV4 data call Routing Cleared
+[%s]:[%s] - %s:WAN already connected.
+[%s]:[%s] - %s:%s failed to determine WAN.
+[%s]:[%s] - %s:WAN already disconnected.
+[%s]:[%s] - %s:V4 WAN stated moved to %s.
+[%s]:[%s] - %s:V6 WAN stated moved to %s.
+[%s]:[%s] - %s: RX counter rollover. prev rx bytes = %llu, cur rx bytes = %llu, rollover ct = %llu
+[%s]:[%s] - %s: TX counter rollover. prev tx bytes = %llu, cur tx bytes = %llu, rollover ct = %llu
+[%s]:[%s] - %s: rX6 counter rollover. prev rx bytes = %llu, cur rx bytes = %llu, rollover ct = %llu
+[%s]:[%s] - %s: TX6 counter rollover. prev tx bytes = %llu, cur tx bytes = %llu, rollover ct = %llu
+ccm2.wan_stats
+[%s]:[%s] - %s: Send WAN stats on %s.
+[%s]:[%s] - %s:%s Processing Priority [%d] WAN [%d:%s] is v4 [%s] and v6 [%s] iface:[%s] [%s].
+[%s]:[%s] - %s:%s Processed Priority [%d] WAN [%d:%s] is disabled.
+[%s]:[%s] - %s:%s WAITING/IDLE interface %s, %s for WAN [%s], wan_type: %d.
+[%s]:[%s] - %s:V4 WAN state moved to %s.
+[%s]:[%s] - %s:V6 WAN state moved to %s.
+[%s]:[%s] - %s:%s Processed Priority [%d] WAN [%d:%s] is v4 [%s] and v6 [%s] iface:[%s] [%s].
+[%s]:[%s] - %s: wan=%d enabled=%d
+[%s]:[%s] - %s:V4 and V6 WAN stated moved to %s.
+[%s]:[%s] - %s:%s failed to determine WAN [%s].
+[%s]:[%s] - %s: WAN [%s] V4 CONNECTED [%s] Dur [%ld].
+[%s]:[%s] - %s: WAN [%s] V4 IDLE.
+[%s]:[%s] - %s: WAN [%s] V4 not valid connect state %d
+[%s]:[%s] - %s: WAN [%s] V6 CONNECTED [%s] Dur [%ld].
+[%s]:[%s] - %s: WAN [%s] V6 IDLE.
+[%s]:[%s] - %s: WAN [%s] V6 not valid connect state %d
+[%s]:[%s] - %s: Eth WAN [%s] V4 CONNECTED [%s] at [%ld].
+[%s]:[%s] - %s: Eth WAN [%s] V4 IDLE.
+[%s]:[%s] - %s:%s failed to determine Eth WAN [%s].
+[%s]:[%s] - %s: WAN [%s] not enabled.
+[%s]:[%s] - %s:%s WWAN is already routed.
+is_cbsd_authorization_required
+connect_wan
+disconnect_wan
+wan_cm_wan_connect
+wan_cm_get_wan_stats
+wan_cm_determine_wan
+wan_cm_enable_wan
+wan_cm_wwan
+wan_cm_update_wan_details
+wan_cm_ethernet_wan
+wan_cm_wifi_wan
+wan_cm_connect_if_necessary
+wan_cm_register_wanmgr
+[%s]:[%s] - time server ip = %s
+[%s]:[%s] - send() socket error to time NTP Server: rc=%d
+[%s]:[%s] - time send() number of bytes = %d
+[%s]:[%s] - time select()
+[%s]:[%s] - select timeout XTRA time NTP Server: rc=%d
+[%s]:[%s] - recv() socket call XTRA time now, select rc = %d
+[%s]:[%s] - recv() socket error to XTRA time NTP Server: rc=%d
+[%s]:[%s] - Successfully Read time from NTP Server, size:%d
+[%s]:[%s] - time server reports %02d/%02d/%02d %02d:%02d:%02d
+[%s]:[%s] - {mifios_sysevent}:%s System time set to %02d/%02d/%02d %02d:%02d:%02d
+[%s]:[%s] - System time set failed
+[%s]:[%s] - %s: source priority status:[%s:%d].
+[%s]:[%s] - %s: Time provided by %s looks invalid.
+[%s]:[%s] - {mifios_sysevent}:%s CCM updated system time from %s
+[%s]:[%s] - %s: Cellular Network Time Update.
+ccm2.time_update
+[%s]:[%s] - %s: Update ntp delay to:[%d].
+[%s]:[%s] - %s: Update ntp retries to:[%d].
+[%s]:[%s] - %s: Update ntp url1 to:[%s].
+[%s]:[%s] - %s: Update ntp url2 to:[%s].
+[%s]:[%s] - %s: Update ntp url3 to:[%s].
+[%s]:[%s] - %s: NTP new time:[%d], url: [%s], rc: [%d].
+[%s]:[%s] - %s: NTP error retrieving time, rc: [%d].
+ccm_timesync
+[%s]:[%s] - %s: skipping NTP due to time since last query [%d] not exceeding minimum time of [%d].
+[%s]:[%s] - %s: Start with pthread ID:%lu, process ID:%d.
+/timesync_mq
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Terminate Thread Example, TID: %lu.
+[%s]:[%s] - %s: send network time to timesync thread.
+[%s]:[%s] - %s: send NTP URL to timesync thread.
+[%s]:[%s] - %s: send NTP update time to timesync thread.
+WiFi WAN
+Ethernet WAN
+Invalid State
+NotAvailable
+Initializing
+Searching
+Connecting
+Connected
+Disconnecting
+Activating
+No Service
+Not activated
+Manual connect, autoconnect disabled
+Autoconnect when clients are connected
+Autoconnect when service is available
+Autoconnect when service is available and not roaming
+Invalid state
+Invalid Source
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

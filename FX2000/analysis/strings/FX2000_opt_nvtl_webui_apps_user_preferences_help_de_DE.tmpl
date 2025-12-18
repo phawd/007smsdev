@@ -1,0 +1,35 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+	<p>Auf diesem Bildschirm werden viele Optionen angezeigt. Dar
+nnen Sie das Verhalten von Ger
+t bedarfsgerecht f
+r Ihre Anforderungen einstellen.
+	<tmpl_if showDeviceName>
+                <h3><tmpl_var truncate(_("webui", "preferences_device_name_label"),(size(_("webui", "preferences_device_name_label")) - size(":")))></h3>
+                <p>
+                        Der Ger
+tename gibt den Netzwerknamen des Ger
+ts und die URL f
+r den Zugriff auf die lokale Webverwaltungs-Schnittstelle f
+r das Ger
+                </p>
+        </tmpl_if>
+	<h3>Sprache</h3>
+hlen Sie die gew
+nschte Sprache aus. </p>
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+		Geben Sie das Format f
+r die Datumsanzeige auf dieser webbasierten Schnittstelle an.
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+		Geben Sie das Zeitformat f
+r die Anzeige der Uhrzeit auf dieser webbasierten Schnittstelle an.
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+		Geben Sie das Format f
+r die Anzeige der Entfernung auf dieser webbasierten Schnittstelle an.
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+		Legen Sie fest, wie Dezimalzahlen angezeigt werden. Als Dezimaltrennzeichen kann Punkt (.) oder Komma (,) gew
+hlt werden.
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+			Die Ethernet-Anzeige wird in der Statusleiste angezeigt, wenn der Ethernet-Anschluss aktiviert ist. Andernfalls ist sie ausgeblendet.
+	</tmpl_if>

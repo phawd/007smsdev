@@ -1,0 +1,40 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+	<h2>Oversikt</h2>
+		<p>En brannmur beskytter dine tilkoblede enheter mot skadelig innkommende trafikk fra internett. Brannmuren kan ikke slås av, men følgende innstillinger er tilgjengelige.</p>
+			
+	<h2>Innstillinger</h2>
+			
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+	<tmpl_unless ShowDmzActive>
+		<h3>VPN Gjennomgang</h3>
+	</tmpl_unless>
+		<p>Denne funksjonen lar VPN-klientprogramvare på tilkoblede enheter koble seg via denne enheten til eksterne VPN-servere. Normalt bør dette alternativet være på.</p>
+
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+		<tmpl_unless ShowDmzActive>
+			<h3>IPv6 gjennomsiktig modus</h3>
+		</tmpl_unless>
+			<p>Normalt vil brannmuren blokkere innkommende IPv6-tilkoblingsforespørsler beregnet på en IPv6-tilkoblet enhet.</p>
+			<p>Hvis du vil la disse innkommende tilkoblingsforespørslene nå frem til den tiltenkte tilkoblede enheten, må du slå på denne innstillingen. Gjennomsiktig modus skal bare slås på når det er nødvendig, ettersom det reduserer beskyttelsen gitt av <tmpl_var _("webui", "webui_product_name")> brannmuren.</p>
+	</tmpl_if>
+	
+	<tmpl_if ShowDmzActive>
+		<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+	<tmpl_else>
+		<h2>DMZ</h2>
+	</tmpl_if>
+	<p>Hvis det er avkrysset, vil den tilkoblede enheten som er spesifisert som DMZ IP-adresse (DMZ-destinasjon) motta all trafikk som ellers ville blitt blokkert av brannmuren. Dette kan hjelpe noen vanskelige nettverksprogrammer til å fungere ordentlig, men DMZ-enheten bør ha sin egen brannmur for å beskytte seg mot skadelig trafikk.</p>
+	<tmpl_if ShowDmzActive>
+	<h3>DMZ-avkryssingsrute</h3>
+				
+		<p>Bruk denne til å slå denne funksjonen av eller på etter behov. Generelt sett bør DMZ være av, med mindre det virkelig er nødvendig.</p>	
+	</tmpl_if>
+	<h3>Destinasjons-IP-adresse</h3>
+		<p>Skriv inn IP-adressen til den tilkoblede enheten som du ønsker skal bli DMZ-enheten (DMZ-destinasjon), i dette feltet. Du kan sjekke IP-adressen til hver tilkoblet enhet på skjermen for tilkoblede enheter.</p>
+			
+</div>
+<!-- id="firewall" -->
+

@@ -1,0 +1,28 @@
+<!-- Backup and Restore -->
+<div id="backup_restore">
+         <h1><tmpl_var _("webui", "backup_restore_menu_text")></h1>
+
+         <h2>Yleiskatsaus</h2>
+         <p>Tällä ominaisuudella voit varmuuskopioida (ladata) määritysasetusten kopion tältä laitteelta tietokoneellasi olevaan tiedostoon tai palauttaa (lähettää) aiemmin tallennetun määritystiedoston. Tämä määritystiedosto sisältää kaikki laitteen, reitittimen ja järjestelmän toimintojen asetukset. Se ei sisällä 4G-modeemin asetuksia tai dataa. Huomaa, että voit palauttaa tiedoston vain samalle laitteelle, josta se on peräisin.</p>
+         <p>Tästä näytöstä on myös mahdollista palauttaa kaikki asetukset tehtaan oletusarvoihin.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+         <h3>Ylläpitäjän salasana</h3>
+         <p>Syötä nykyinen <tmpl_var _("webui", "webui_product_name")>-laitteen ylläpitäjän salasana tähän kenttään.</p>
+         <h3><tmpl_var _("webui", "backup_restore_backup_now_button")></h3>
+         <p>Lataa nykyisen määritystiedoston kopio tietokoneellesi napsauttamalla Download (Lataa) -painiketta. Jos selaimesi kehottaa sinua tallentamaan tiedoston, voit halutessasi nimetä sen uudelleen.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+
+         <h3>Ylläpitäjän salasana</h3>
+         <p>Syötä nykyinen <tmpl_var _("webui", "webui_product_name")>-laitteen ylläpitäjän salasana tähän kenttään.</p>
+         <h3><tmpl_var truncate(_("webui", "backup_restore_file_select_label"), (size(_("webui", "backup_restore_file_select_label")) - size(":")))></h3>
+         <p>Valitse määritystiedosto, jonka olet aiemmin ladannut tältä <tmpl_var _("webui", "webui_product_name")>-laitteelta tietokoneellesi.</p>
+         <h3>Restore Now (Palauta nyt) -painike</h3>
+         <p>Kun olet valinnut määritystiedoston, aloita tiedoston lähettäminen napsauttamalla tätä painiketta. Lähettämisen jälkeen määritystiedosto otetaan välittömästi käyttöön ja tämä laite käynnistetään uudelleen.</p>
+         <p class="note"><strong>Huomautus:</strong> Määritystiedoston lähettäminen muuttaa KAIKKI nykyiset asetukset määritystiedoston mukaisiksi. Tämä voi muuttaa nykyisiä Wi-Fi-asetuksia ja katkaista kaikki nykyiset yhteydet tähän <tmpl_var _("webui", "webui_product_name")>-laitteeseen, tämä verkkoselainistunto mukaan lukien.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+         <p>Palauta kaikki asetukset tehtaan oletusarvoihin napsauttamalla <strong>Restore Factory Defaults</strong> (Palauta tehdasasetukset) -painiketta. Tämä aiheuttaa uudelleenkäynnistyksen ja voi muuttaa nykyisiä Wi-Fi-asetuksia sekä katkaista kaikki nykyiset yhteydet tähän <tmpl_var _("webui", "webui_product_name")>-laitteeseen, tämä verkkoselainistunto mukaan lukien.</p>
+</div>
+ <!-- id="backup_restore" -->

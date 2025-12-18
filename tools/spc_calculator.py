@@ -27,6 +27,13 @@ import subprocess
 import argparse
 import re
 import sys
+import os
+sys.path.append(os.path.dirname(__file__))
+try:
+    from zerosms_safety import confirm_danger
+except Exception:
+    def confirm_danger(allow_flag: bool = False, prompt: str | None = None, force_yes: bool = False) -> bool:  # type: ignore
+        return allow_flag or os.environ.get("ZEROSMS_DANGER_DO_IT", "0") == "1"
 from typing import Dict, Tuple
 from dataclasses import dataclass
 
@@ -63,6 +70,9 @@ NV_ITEMS = {
     34821: "MAX_SPC_ATTEMPTS",   # Maximum SPC validation attempts
     60044: "PRI_VERSION",        # Carrier PRI version string
 }
+
+# Danger gating flag (set by CLI --danger-do-it)
+DANGER_DO_IT = False
 
 
 # ==============================================================================
@@ -299,6 +309,16 @@ def attempt_carrier_unlock(spc: str = DEFAULT_SPC) -> Tuple[bool, str]:
     if not valid:
         return False, f"SPC validation required first: {msg}"
     
+    # Confirm unlock attempt
+    if not confirm_danger(
+        allow_flag=DANGER_DO_IT,
+        prompt=(
+            "About to attempt carrier unlock. This may permanently lock the "
+            "device. Type 'DO IT' to proceed: "
+        ),
+    ):
+        return False, "Aborted by user: carrier unlock not confirmed"
+
     # Attempt unlock
     cmd = '/opt/nvtl/bin/modem2_cli unlock_carrier'
     success, output = run_adb_command(cmd, timeout=60)
@@ -336,7 +356,14 @@ Examples:
     parser.add_argument('--show-default', action='store_true',
                         help='Show default SPC code')
     
+    parser.add_argument(
+        '--danger-do-it', action='store_true',
+        help='Enable dangerous operations (unlock). Requires typing DO IT.'
+    )
     args = parser.parse_args()
+
+    global DANGER_DO_IT
+    DANGER_DO_IT = args.danger_do_it
     
     if args.show_default:
         print(f"Default SPC: {get_default_spc()}")

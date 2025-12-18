@@ -1,0 +1,32 @@
+<div id="settings_virtual">
+	<h1>Avancerede indstillinger</h1>
+	<tmpl_if appsList>
+		<h2>Oversigt</h2>Den avancerede menu giver adgang til de f
+lgende sider og indstillinger:<div class="blockgroup">
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title>
+<tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+		<p>Bem
+rk, at for normal drift og normale situationer beh
+ver ingen af disse indstillinger at 
+ndres fra deres standardv
+rdier. Skift kun disse indstillinger, hvis din s
+rlige situation kr
+ndringer.</p>
+	</tmpl_if>
+	<h2>Knapper</h2>
+	<tmpl_if showBackButton>
+ tilbage</h3>
+		<p>Klik p
+ denne for at vende tilbage til den forrige side.</p>
+	</tmpl_if>
+	<tmpl_unless showBackButton>
+		<h3>Forts
+		<p>Brug denne til at forts
+tte til de avancerede sider.</p>
+	</tmpl_unless>

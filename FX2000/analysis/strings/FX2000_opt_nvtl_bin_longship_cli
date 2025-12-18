@@ -1,0 +1,309 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+longship_get_error_string
+longship_is_running
+snprintf
+__isoc99_sscanf
+GLIBC_2.7
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+longship_set_webui_config
+__isoc99_scanf
+longship_factory_reset_device
+strtoull
+sys_getWiFiPrimaryProfile
+sys_getWiFiGuestProfile
+dmdb_get_connected_device_list
+longship_device_reboot
+sys_setPortForwardingApplicationList
+sys_setPortFilteringApplicationList
+router2_set_static_route_list
+sys_setDevice
+vpn_get_wguard_settings
+disconnect_vpn
+libpthread.so.0
+vpn_set_wguard_settings
+connect_vpn
+vpn_clear_wguard_cfg_settings
+longship_ztp_begin_new_session
+longship_ztp_status
+longship_install_ztp_pkg
+longship_delete_ztp_pkg
+longship_install_fota_pkg
+mifi_dbg_start
+mifi_dbg_stop
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+librouter2_api.so
+libwan_mgr_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+librt.so.1
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libvpn_api.so
+libgps_api.so
+libfactory_reset_api.so
+libsms_api.so
+libwifi_api.so
+libccm2_api.so
+libfile_sharing_api.so
+libfota_api.so
+libled_api.so
+libbuzzer_api.so
+libans_api.so
+libusb_api.so
+libemd_api.so
+libsensor_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libcbsd_api.so
+libsysintclient.so
+liblongship_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+print_client_list
+Print dmdb client list in JSON format
+factory_reset_device
+Factory reset device with specified time interval, but calls Factory reset API
+set_webui_config
+Configure webgui pages
+reboot_device
+Reboots device with specified time interval, but calls DSM Reset API
+set_reserved_ip_list
+Set reserved IP list from input text file
+set_portfwd_list
+Set port forward list from input text file
+set_portfilter_list
+Set port port filter list from input text file
+set_stroute_list
+Set static route list from input text file
+set_wg_tunnel
+Setup WG data tunnel
+install_ztp_pkg
+Install ZTP package.
+delete_ztp_pkg
+Delete the installed ZTP package
+install_fota_pkg
+Install FOTA package for firmware update
+ztp_begin_new_session
+Start New ZTP session based on url or IP
+ztp_get_status
+Find the status of the ZTP
+update_data_usage
+Update DB to data usage
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+longship_is_running returned %d (%s)
+LONGSHIP
+[%s]:[%s] - %s: Calling longship_set_webui_config()
+[%s]:[%s] - %s: longship_set_webui_config() failed, rc=[%d]
+longship_set_webui_config() failed, rc=[%d]
+[%s]:[%s] - %s: Successful
+Successful
+Enter the delay before issuing reset: 
+Enter the operation ID, which will be relayed back to MA:
+[%s]:[%s] - %s: longship_factory_reset_device(), delay=[%d], operation_id=[%s]
+[%s]:[%s] - %s: longship_factory_reset_device() failed, rc=[%d]
+longship_factory_reset_device() failed, rc=[%d]
+Successfully req sent
+Tunnel file doesn't exists, continue
+line=[%s], mac=[%s], peerip=[%s], key=[%s], id=[%s], intf=[%s]
+sscanf() failed on line=[%s], ret=[%d]
+DB file doesn't exists
+line=[%s], label=[%s], value=[%llu], intf_value=[%llu]
+%s/statistics/%s_bytes
+/sys/class/net/%s/statistics/%s_bytes
+%s: [%s] in_t_bytes=[%llu] in_intf_bytes=[%llu] new=[%llu] new_intf=[%llu] [+%llu]
+%s:%llu:%llu
+Couldn't add:%s, reached max count:%d
+DT_%s_%s_TX
+DT_%s_%s_RX
+RMNET_DATA0_TX
+rmnet_data0
+RMNET_DATA0_RX
+rmnet_data0
+Enter DB file:
+Enter Tun file:
+Enter New DB file:
+Run in Debug mode 0/1:
+"rndis0":{
+"ecm0":{
+"eth0":{
+"unknown":{
+"device_name":"%s",
+"device_ip":"%s",
+"rx_bytes":"0",
+"tx_bytes":"0"}]
+Enter interface name: 
+wifi_24ghz
+wifi_5ghz
+wifi_both
+Unknown interface provided:%s
+[%s]:[%s] - %s: %s
+Enter the delay before issuing reboot: 
+Choose force: 1 or 0
+[%s]:[%s] - %s: longship_device_reboot(), delay=[%d], force=[%d]
+[%s]:[%s] - %s: longship_device_reboot() failed, rc=[%d]
+longship_device_reboot() failed, rc=[%d]
+File format: List of:$enable (0/1),$name,$ipAddr,$PortMapType (0/1/2 Range/Single/Translate),$startPort,$EndPort,$type (1/2/3 tcp/udp/both)
+Specify the path for portfwd list file: 
+[%s]:[%s] - %s: List file not found=[%s]
+File not found
+line=[%s], Enable=[%d], Name=[%s], IP=[%s], PortMapType=[%d], start=[%d], end=[%d], type=[%d]
+[%s]:[%s] - %s: line=[%s], Enable=[%d], Name=[%s], IP=[%s], PortMapType=[%d], start=[%d], end=[%d], type=[%d]
+[%s]:[%s] - %s: sscanf() failed on line=[%s], ret=[%d]
+[%s]:[%s] - %s: sys_setPortForwardingApplicationList, count=[%d]
+[%s]:[%s] - %s: sys_setPortForwardingApplicationList() failed, rc=[%d]
+sys_setPortForwardingApplicationList() failed, rc=[%d]
+Successfully set
+File format: List of:$enable (0/1),$name,$sourcePort,$destPort,$type (1/2/3 tcp/udp/both)
+Specify the path for port filter list file: 
+line=[%s], Enable=[%d], Name=[%s], start=[%d], end=[%d], type=[%d]
+[%s]:[%s] - %s: line=[%s], Enable=[%d], Name=[%s], start=[%d], end=[%d], type=[%d]
+[%s]:[%s] - %s: sys_setPortFilteringApplicationList, count=[%d]
+[%s]:[%s] - %s: sys_setPortFilteringApplicationList() failed, rc=[%d]
+sys_setPortFilteringApplicationList() failed, rc=[%d]
+File format: List of: $route_type(4 or 6),$network,$gateway,$interface (router2_wan_type_t),$metric(int)
+Specify the path for static route list file:
+line=[%s], route_type=[%d], Network=[%s], Gateway=[%s], iftype=[%d], metric=[%d]
+[%s]:[%s] - %s: line=[%s], route_type=[%d], Network=[%s], Gateway=[%s], iftype=[%d], metric=[%d]
+[%s]:[%s] - %s: Set static routes, count=[%d]
+router2_set_static_route_list() failed, rc=[%d]
+[%s]:[%s] - %s: router2_set_static_route_list() failed, rc=[%d]
+File format: List of: MacAddress,IPAddress,Hostname,
+Specify the path for reserved IP list file:
+[%s]:[%s] - %s: Reserved IP list file not found
+line=[%s], MAC=[%s], IP=[%s] host_name=[%s]
+[%s]:[%s] - %s:line=[%s], MAC=[%s], IP=[%s] host_name=[%s]
+sscanf() failed on line=[%s], ret=[%d]
+Calling SetDevice
+[%s]:[%s] - %s: Calling Set device
+sys_setDevice() failed, rc=[%d]
+[%s]:[%s] - %s: sys_setDevice() failed, rc=[%d]
+Client%d
+[%s]:[%s] - %s: vpn_get_wguard_settings(%d) failed - rc=[%d], use this index
+[%s]:[%s] - %s: WG Disconnect - index=[%d], name=[%s]
+[%s]:[%s] - %s: disconnect_vpn(), rc=[%d], anyway use index=[%d]
+/opt/nvtl/data/longship/ztp/dTWireguardKey
+[%s]:[%s] - %s: dTWireguardKey Key file not found
+line=[%s], pkey=[%s], pub=[%s]
+/opt/nvtl/data/longship/ztp/deviceDataPrivateKey%d
+[%s]:[%s] - %s: Could not create Key file
+/opt/nvtl/data/longship/ztp
+deviceDataPrivateKey%d
+[%s]:[%s] - %s: Could not find public key in dTWireguardKey
+          2            3         4            5            6         7          8          9        10          11       12
+Syntax: $add(1)    $tun_name $listen_port $peer_pubkey, $tun_ip, $peer_ip, $list_file, $endpt, $endpt_port, $keep_alive  $ownpubKey
+		 (Or) 
+Syntax: $delete(0) $tun_name
+[%s]:[%s] - %s: No Empty index
+[%s]:[%s] - %s: Selected-index=[%d], first_empty_index=[%d], found_index=[%d], tun_name=[%s]
+[%s]:[%s] - %s: Allowed IP list not found
+[%s]:[%s] - %s: Couldn't find public key
+[%s]:[%s] - %s: tun_idx=[%d], listen_port=[%d], tun_ip=[%s],allowed_ips=[%s],endpt_ip=[%s],endpt_port=[%d],keep_alive=[%d]
+[%s]:[%s] - %s: vpn_set_wguard_settings(), rc=[%d]
+[%s]:[%s] - %s: Connect VPN - index=[%d]
+[%s]:[%s] - %s: connect_vpn(), rc=[%d]
+[%s]:[%s] - %s: Not tunnel by the name=[%s]
+[%s]:[%s] - %s: disconnect_vpn(), rc=[%d]
+[%s]:[%s] - %s: WG Delete settings: index=[%d], name=[%s] - Set
+[%s]:[%s] - %s: vpn_clear_wguard_cfg_settings(), rc=[%d]
+rm -f %s/%s
+What is EM hostname/IP: 
+Is this IP address: 
+[%s]:[%s] - %s: Hostname=[%s], is_ip=[%d], is_ssl=[%d]
+[%s]:[%s] - %s: longship_ztp_begin_new_session(), rc=[%d]
+Successful Set
+[%s]:[%s] - %s: longship_ztp_status(), rc=[%d]
+[%s]:[%s] - %s: status=[%d], verbose=[%s]
+status=[%d], verbose=[%s]
+What is ZTP package file PATH: 
+[%s]:[%s] - %s: longship_install_ztp_pkg(), filepath=[%s]
+[%s]:[%s] - %s: longship_install_ztp_pkg(), rc=[%d]
+issue factory reset after delete:
+[%s]:[%s] - %s: longship_delete_ztp_pkg(), delay=[%d], factory_reset=[%d]
+[%s]:[%s] - %s: longship_delete_ztp_pkg(), rc=[%d]
+longship_delete_ztp_pkg() failed, rc=[%d]
+What is operation ID: 
+What is FOTA package file PATH: 
+[%s]:[%s] - %s: longship_install_fota_pkg(), ID=[%s], filepath=[%s]
+/tmp/longship_fota_req_status
+[%s]:[%s] - %s: longship_install_fota_pkg(), rc=[%d], resp_str=[%s]
+longship_install_fota_pkg() failed, rc=[%d]
+[%s]:[%s] - %s: Successful, resp_str=[%s]
+command [%s]
+command [%s] not found.
+cmd_set_webui_config
+cmd_factory_reset_device
+cmd_print_client_list
+cmd_reboot_device
+cmd_set_portfwd_list
+cmd_set_portfilter_list
+cmd_set_static_routes_list
+cmd_set_reserved_ip_list
+wg_find_empty_index
+wg_find_pkey
+cmd_set_wg_tunnel
+cmd_ztp_begin_new_session
+cmd_ztp_status
+cmd_install_ztp_pkg
+cmd_delete_ztp_pkg
+cmd_install_fota_pkg
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

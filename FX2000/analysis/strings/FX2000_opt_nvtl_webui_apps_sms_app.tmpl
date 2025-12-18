@@ -1,0 +1,185 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+<tmpl_else>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	var smsCount = parseInt("<tmpl_var smsUnreadCount>");
+	var inboxCount = parseInt("<tmpl_var smsInboxCount>");
+	var deleteMsgCount = 0;
+	$(function()
+		$(document).ajaxSuccess(function(e, xhr, settings) {
+			if ((xhr.responseText) && (settings.dataType == "json")) {
+				try {
+					var obj = jQuery.parseJSON(xhr.responseText || "null");
+					if(typeof obj.statusData.statusBarSmsUnreadCount !== "undefined") {
+						var newSMSCount = parseInt(obj.statusData.statusBarSmsUnreadCount);
+						if (newSMSCount != smsCount) {
+							getSMSList();
+				} catch(e) {}
+		// Click Event Bindings
+		// Set unread messages to read when clicked
+		$("#smsInbox").find(".Unread").on("click", function(){
+				setSMSState($(this));
+		var smsuniEl = "select, textarea, input:not(.toggleSettingContainer input:checkbox)";
+                $(smsuniEl).uniform();
+		// Delete Message
+		<tmpl_if SMSDeleteShow>
+		$("#deleteMessage").on("click", function() {
+			$('td [type="checkbox"]').each(function(i, chk) {
+			    if (chk.checked) {
+				    var msgRow = $(this).closest("tr");
+					$.post("<tmpl_udf GET_URI('sms_delete_message')>", {
+						msgid : msgRow.data("msgid"),
+						gSecureToken : "<tmpl_var gSecureToken>"
+					}, function(data){
+						getSMSList();
+					});
+			    }
+			deleteMsgCount = 0
+		</tmpl_if>
+	function checkBoxToggled(index)
+		var tmpID = "#msgDelete" + index;
+		if ($(tmpID).attr("checked")) {
+			$(tmpID).attr("checked", false);
+			deleteMsgCount -= 1
+		} else {
+			$(tmpID).attr("checked", true);
+			deleteMsgCount += 1
+		if (deleteMsgCount > 0) {
+			$("#deleteMessage").prop("disabled", false);
+		} else {
+			$("#deleteMessage").prop("disabled", true);
+	function setSMSState($el) {
+		$.post("<tmpl_udf GET_URI('sms_set_state')>",{
+			msgid : $el.data("msgid"),
+			gSecureToken : "<tmpl_var gSecureToken>"
+		}, function(data){
+			$el.off("click").removeClass("Unread").addClass("Read");
+			if(smsCount > 0) smsCount--;
+	function getSMSList()
+		var width = $(window).width();
+		var url = '<tmpl_udf GET_URI("sms_list_refresh")>';
+		$.get(url, function(data) {
+			$("#smsInbox").empty();
+			if(data.smsInboxCount){
+				inboxCount = data.smsInboxCount;
+				smsCount = data.smsUnreadCount;
+				var title = '<tr class="headingRow">';
+				title += '<th class="sender"><tmpl_var _("webui", "sms_time_label")></th>';
+				title += '<th class="timeReceived"><tmpl_var _("webui", "sms_date_label")></th>';
+				title += '<th class="message"><tmpl_var _("webui", "sms_message_label")></th>';
+				title += '</tr>';
+				$("#smsInbox").append(title);
+				if(width < 480) {
+					$.each(data.messageList, function(idx, sms) {
+						var index=idx+1;
+						var row = '<tr data-msgid="'+ sms.msgid + '" class="' + sms.readState  + '">';
+						row += '<td><p class="sender">' + "From : " + sms.senderAddr + '</p></td>'
+						row += '<td><p class="timeReceived">' + "Date : " + sms.msgTime + '</p></td>';
+						row += '<td><p class="message">' + "Message : " + sms.msgContent + '</p></td>';
+						row += '<td>';
+						row += '<td><p class="delete">' + "Delete : " + '</p></td>';
+						row += '<input type="checkbox" name="msgDelete' + index + '" id="msgDelete' + index + '" onchange="checkBoxToggled(' + index + ')" />';
+						row += '</td>';
+						row += '</tr>';
+						row += '<br>;'
+						$("#smsInbox").append(row);
+					});
+				} else {
+					$.each(data.messageList, function(idx, sms) {
+						var index=idx+1;
+						var row = '<tr data-msgid="'+ sms.msgid + '" class="' + sms.readState  + '">';
+						row += '<td><p class="sender">' + sms.senderAddr + '</p></td>';
+						row += '<td><p class="timeReceived">' + sms.msgTime + '</p></td>';
+						row += '<td><p class="message">' + sms.msgContent + '</p></td>';
+						row += '<td>';
+						row += '<input type="checkbox" name="msgDelete' + index + '" id="msgDelete' + index + '" onchange="checkBoxToggled(' + index + ')" />';
+						row += '</td>';
+						row += '</tr>';
+						row += '<br>;'
+						$("#smsInbox").append(row);
+					});
+				var smsuniEl = "select, textarea, input:not(.toggleSettingContainer input:checkbox)";
+				$(smsuniEl).uniform();
+				$("#smsInbox").find(".Unread").on("click", function() {
+					setSMSState($(this));
+				$("#deleteMessage").show();
+				if (deleteMsgCount > 0) {
+					$("#deleteMessage").prop("disabled", false);
+				} else {
+					$("#deleteMessage").prop("disabled", true);
+			} else {
+				var row = '<tr>';
+				row += '<td class="error"><tmpl_var _("webui", "sms_no_messages_error_text")></td>';
+				row += '</tr>';
+				$("#smsInbox").append(row);
+				$("#deleteMessage").hide();
+		}, "json");
+	/* ]]> */
+</script>
+<tmpl_if isLocked>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+</tmpl_if>
+<p class="note">
+	<tmpl_var _("webui", "sms_intro")>
+<tmpl_unless IN_SET(smsInboxCount, -1)>
+	<div class="wideTableWrap wider-display">
+		<table id="smsInbox">
+			<tmpl_if messageList>
+				<colgroup>
+					<col class="sender" />
+					<col class="timeReceived" />
+					<col class="message" />
+					<col class="checkbox" />
+				</colgroup>
+				<thead>
+					<tr class="headingRow">
+						<th class="sender"><tmpl_var _("webui", "sms_time_label")></th>
+						<th class="timeReceived"><tmpl_var _("webui", "sms_date_label")></th>
+						<th class="message"><tmpl_var _("webui", "sms_message_label")></th>
+					</tr>
+				</thead>
+				<tmpl_foreach messageList as item>
+					<tr data-msgid="<tmpl_var item.msgid>" class="<tmpl_var item.readState>">
+						<td><p class="sender"><tmpl_var item.senderAddr></p></td>
+						<td><p class="timeReceived"><tmpl_var item.msgTime></p></td>
+						<td><p class="message"><tmpl_var item.msgContent></p></td>
+						<td>
+							<input type="checkbox" name="msgDelete<tmpl_var (item.__index__ + 1)>" id="msgDelete<tmpl_var (item.__index__ + 1)>" onchange="checkBoxToggled(<tmpl_var (item.__index__ + 1)>)" />
+						</td>
+					</tr>
+				</tmpl_foreach>
+			<tmpl_else>
+				<tr>
+					<td class="error"><tmpl_var _("webui", "sms_no_messages_error_text")></td>
+				</tr>
+			</tmpl_if>
+		</table>
+	<div class="wideTableWrap tiney-display">
+		<table id="smsInbox">
+			<tmpl_if messageList>
+				<tmpl_foreach messageList as item>
+					<tr data-msgid="<tmpl_var item.msgid>" class="<tmpl_var item.readState> tiney-display">
+						<td><p class="sender">From : <tmpl_var item.senderAddr></p></td>
+						<td><p class="timeReceived">Date : <tmpl_var item.msgTime></p></td>
+						<td><p class="message">Message : <tmpl_var item.msgContent></p></td>
+						<td>
+							<p class="delete">Delete : </p>
+							<input type="checkbox" name="msgDelete<tmpl_var (item.__index__ + 1)>" id="msgDelete<tmpl_var (item.__index__ + 1)>" onchange="checkBoxToggled(<tmpl_var (item.__index__ + 1)>)" />
+						</td>
+					</tr>
+				</tmpl_foreach>
+			<tmpl_else>
+				<tr>
+					<td class="error"><tmpl_var _("webui", "sms_no_messages_error_text")></td>
+				</tr>
+			</tmpl_if>
+		</table>
+	<div class="button_container clearfix">
+		<button type="button" id="deleteMessage" class="primary" <tmpl_unless messageList>style="display:none;"</tmpl_unless><tmpl_if isLocked> disabled="disabled"</tmpl_if> disabled="disabled">
+			<tmpl_var _("webui", "sms_delete_button_text")>
+		</button>
+</tmpl_unless>
+</tmpl_if><!-- isHidden -->

@@ -1,0 +1,34 @@
+<!-- MAC Filter -->
+<div id="macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+	<h2>Oversigt</h2>
+	<p>Når Mac-filterfunktionen er tændt, forhindrer den adgang til dette Wi-Fi-netværk for enhver enhed, der ikke er inkluderet i listen "Mac-adressefilter". Filteret gælder kun for Wi-Fi-netværket og har ingen effekt på USB-enheder.</p>
+	
+	<h2>TIL/FRA-kontrol</h2>
+	<p>Brug denne kontrol til at tænde eller slukke Mac-filteret efter behov. Før du tænder for det, skal du sikre dig, at nogle enheder er tilladt. Bemærk, at når Mac-filteret tændes, vil enhver tilsluttet enhed, der ikke er på listen "Mac-adressefilter", straks blive koblet fra.</p>
+	
+	<h2>Enhedsliste</h2>
+	
+	<p>Alle kendte enheder er vist her, undtagen USB-enheder. Brug de medfølgende afkrydsningsfelter til at inkludere eller ekskludere enheder fra listen "Mac-adressefilter".</p>
+
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Brug opdateringsknappen til at opdatere listen efter behov.</p>
+		
+	<h2>Drift</h2>
+	
+	<h3>Blokeret versus Mac-filter</h3>
+	<p>Interaktionen mellem "blokerede" enheder og "Mac-filteret" er:</p>
+	<div class="blockgroup">
+	<ul>
+	<li>Blokerede enheder blokeres altid fra Wi-Fi-netværket, uanset om Mac-filteret er tændt eller slukket.</li>
+	<li>Hvis MAC-filteret er tændt, og en enhed er på listen Blokeret, men ikke i listen Mac-adressefilter, kan den ikke oprette forbindelse. Både Mac-filter og blokering forhindrer forbindelse.</li>
+
+	<li>Hvis Mac-filteret er tændt, og en enhed findes på MAC-adressefilterlisten, er enheden i stand til at oprette forbindelse. Når den er tilsluttet, kan den derefter blokeres enten ved at fjerne den fra Mac-adressefilterlisten eller ved at bruge funktionen "Blokér". Generelt skal "Blokér" bruges til midlertidig blokering og Mac-filter til permanent blokering.</li>
+	</ul>
+	</div>
+	
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+	<p>Brug denne knap til at tilføje en ny enhed til enhedslisten.</p>
+
+ </div>
+<!--  macfilter  -->

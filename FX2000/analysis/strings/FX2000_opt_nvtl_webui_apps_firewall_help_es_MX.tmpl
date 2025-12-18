@@ -1,0 +1,62 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+	<h2>Descripci
+n general</h2>
+		<p>El firewall del <tmpl_var _("webui", "webui_product_name")> determina qu
+fico de Internet puede pasar entre el portal y los dispositivos conectados, y protege sus dispositivos del tr
+fico entrante malicioso desde Internet. El firewall no se puede desactivar. Use la pesta
+a Firewall para ajustar el nivel de seguridad general del firewall, designar un dispositivo espec
+fico para recibir todo el tr
+fico y configurar reglas espec
+ficas de firewall.  
+	<h2>Ajustes</h2>
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+	<tmpl_unless ShowDmzActive>
+		<h3>Contrase
+a VPN</h3>
+	</tmpl_unless>
+		<p>Esta funci
+n permite que se conecte el software del cliente VPN en dispositivos conectados, a trav
+s de este dispositivo, a servidores VPN remotos. Normalmente, esta opci
+n debe dejarse habilitada. 	</p>
+<tmpl_if showTransparentMode>
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+		<tmpl_unless ShowDmzActive>
+			<h3>Modo transparente IPv6</h3>
+		</tmpl_unless>
+			<p>Normalmente, el firewall bloquear
+ las solicitudes de conexi
+n IPv6 entrantes destinadas a un dispositivo conectado IPv6.
+				Si desea permitir que estas solicitudes de conexi
+n entrantes lleguen al dispositivo conectado indicado, active este ajuste.  El Modo transparente solo debe activarse cuando sea necesario, ya que reduce la protecci
+n provista por el firewall del <tmpl_var _("webui", "webui_product_name")>.
+	</tmpl_if>
+</tmpl_if>
+	<tmpl_if ShowDmzActive>
+		<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+	<tmpl_else>
+		<h2>DMZ</h2>
+	</tmpl_if>
+		Si se marca, el dispositivo conectado especificado como la direcci
+n IP de DMZ (el destino de la DMZ) recibir
+ todo el tr
+fico que, de lo contrario, ser
+a bloqueado por el firewall. <b>NOTA:</b> Esto puede ayudar a que algunas aplicaciones de red problem
+ticas funcionen correctamente, pero el dispositivo DMZ debe tener su propio firewall para protegerse contra el tr
+fico malicioso.
+	<tmpl_if ShowDmzActive>
+	<h3>Casilla de verificaci
+n de DMZ</h3>
+		<p>Use esta casilla para activar o desactivar esta funci
+n sea necesario. Generalmente, el DMZ deber
+a estar desactivar a menos que sea realmente necesario.</p>	
+	</tmpl_if>
+	<h3>Direcci
+n IP de destino</h3>
+		<p>Ingrese la direcci
+n IP del dispositivo conectado que desea establecer como dispositivo DMZ (destino DMZ) en este campo.
+		Puede ver la direcci
+n IP de cada dispositivo conectado en la pantalla Dispositivos conectados.
+<!-- id="firewall" -->

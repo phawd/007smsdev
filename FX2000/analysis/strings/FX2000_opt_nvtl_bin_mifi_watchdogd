@@ -1,0 +1,122 @@
+/lib/ld-linux-armhf.so.3
+snprintf
+GLIBC_2.4
+libc.so.6
+libpthread.so.0
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+ts_list_enum_start
+ts_list_enum_next
+ts_list_enum_end
+clock_gettime
+librt.so.1
+vsnprintf
+mifi_dbg_get_level_name
+mifi_dbg_log
+mifi_dbg_syslog
+ts_list_push
+ts_list_size
+sigaction
+mifi_dbg_start
+pthread_self
+ts_list_init
+xmldata_initialize
+xmldata_getint32_default
+xmldata_shutdown
+watchdog_get_settings
+sigemptyset
+sigaddset
+sigprocmask
+msgq_receive
+msgq_resp_preprocess
+__errno_location
+strerror
+mq_close
+mq_unlink
+ts_list_pop
+ts_list_destroy
+mifi_dbg_stop
+msgq_resp_postprocess
+msgq_create
+ts_list_enum_remove_cur
+__bss_start
+libmificommon.so
+libmifi_debug.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libdl.so.2
+libwatchdog_api.so
+H	KxD	J{D
+watchdog_suspend_impl
+watchdog_resume_impl
+WATCHDOG
+[%s]:[%s] - %s
+Registered %s app for watchdog activity
+/dev/watchdog
+Failed to open watchdog device, abort
+Failed to set watchdog interval to: %d
+All apps checked in, petting watchdog
+Closing watchdog
+%s Process Start with pthread ID:%lu, process ID:%d.
+Loading configuration for watchdog
+/opt/nvtl/etc/watchdog/config.xml
+/Config/WarningInterval
+/Config/IntervalPadding
+watchdog initialized with the following configurations: 
+warning_interval: %d
+interval_padding: %d
+Failed to open configuration file: %s
+Configuration loaded for watchdog
+Loading settings for watchdog
+settings sub-system is not ready ( %d) . retries left %d
+settings sub-system initialized successfully
+watchdog interval too low in settings(%d). Setting it to the minimum(%d)
+watchdog initialized with the following settings: 
+Enabled: %d
+Interval: %d
+Watchdog is not enabled: exiting
+Settings loaded for watchdog
+Creating msg queue
+/watchdog_q
+Failed to open message queue, abort
+Watchdog process fully initialized. Starting operation now...
+pselect() ret = %d, errno = %d, %s
+Watchdog timer has elapsed, initiating reboot
+Possible App that has lead to watchdog triggered reboot (%s)
+/opt/nvtl/bin/mifi_health_cli wd_app_crash_ind %s
+/opt/nvtl/bin/save_var_log.sh
+App (%s) has not reported with %d seconds remaining, last report %d seconds ago. Expected to be reporting every %d seconds
+Processing alive msg from: %s
+Processing alive msg: registering app: %s
+Processing registration msg from: %s
+Ignoring duplicate registration msg from: %s
+Unregistering %s from watchdog activity
+%s: watchdog closing handle for suspend
+%s: watchdog re-opening handle
+%s: watchdog: no active clients
+Watchdog operation ending, performing cleanup
+Closing msgq
+%s Server Terminating.
+Failed to initialize settings. Settings sub-system not ready?
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

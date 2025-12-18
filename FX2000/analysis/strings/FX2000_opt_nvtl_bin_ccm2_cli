@@ -1,0 +1,351 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+__isoc99_scanf
+GLIBC_2.7
+ccm2_get_error_string
+ccm2_is_running
+ccm2_get_ipv6_enabled
+ccm2_set_ipv6_enabled
+ccm2_get_cellular_data_enabled
+ccm2_set_cellular_data_enabled
+ccm2_get_wifi_enabled
+ccm2_set_wifi_enabled
+ccm2_get_wifi_ap_mode_enabled
+ccm2_set_wifi_ap_mode_enabled
+ccm2_get_wifi_station_mode_enabled
+ccm2_set_wifi_station_mode_enabled
+ccm2_get_airplane_mode_enabled
+ccm2_set_airplane_mode_enabled
+ccm2_get_wifi_enabled_while_usbtethered
+ccm2_set_wifi_enabled_while_usbtethered
+ccm2_set_wifi_enabled_while_usbtethered_temp
+ccm2_get_static_ip
+inet_ntop
+inet_pton
+ccm2_set_static_ip
+ccm2_get_ntp_url
+ccm2_set_ntp_url
+ccm2_wan_get_current_wan
+ccm2_wan_get_wan_stats
+ccm2_wan_get_conn_state
+ccm2_wan_get_wan_prio
+ccm2_wan_set_wan_prio
+ccm2_wan_connect
+ccm2_wan_disconnect
+ccm2_wwan_get_autoconnect
+ccm2_wwan_set_autoconnect
+ccm2_wwan_connect
+ccm2_wwan_disconnect
+ccm2_wwan_get_autoconnect_state
+ccm2_autoconnect_update_client_count
+ccm2_apps_call_start
+ccm2_apps_call_stop
+ccm2_apps_get_call_state
+ccm2_dm_call_start
+ccm2_dm_call_stop
+ccm2_dm_get_call_state
+ccm2_update_roam_state
+ccm2_update_usb_iface
+MsgBusSetBinary
+ccm2_wan_connection_stats_event
+ccm2_update_pco_event
+ccm2_accept_pco_event
+ccm2_get_airplane_mode_disable_status
+ccm2_autoconnect_get_call_throttle_state
+mifi_dbg_start
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libusb_api.so
+libpthread.so.0
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libmificommon.so
+libxmldata_api.so
+libmifimsgbus.so
+libmodem2_api.so
+librouter2_api.so
+libdsm_api.so
+libwifi_api.so
+libemd_api.so
+libwan_mgr_api.so
+libccm2_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+rc_to_str
+converts the ccm2 error code to a string.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+get_ipv6_enabled
+get the enabled status of ipv6.
+set_ipv6_enabled
+set the enabled status of ipv6.
+get_cell_data_enabled
+get the enabled status of cellular data.
+set_cell_data_enabled
+set the enabled status of cellular data.
+get_wifi_enabled
+get the enabled status of wifi.
+set_wifi_enabled
+set the enabled status of wifi.
+get_wifi_ap_enabled
+get the enabled status of wifi ap enabled.
+set_wifi_ap_enabled
+set the enabled status of wifi ap enabled.
+get_wifi_stn_enabled
+get the enabled status of wifi stn enabled.
+set_wifi_stn_enabled
+set the enabled status of wifi stn enabled.
+get_air_mode_enabled
+get the enabled status of airplane mode enabled.
+set_air_mode_enabled
+set the enabled status of airplane mode enabled.
+get_wifi_while_usbteth
+get the enabled status of wifi while usbtethered.
+set_wifi_while_usbteth
+set the enabled status of wifi while usbtethered.
+set_wifi_while_usbteth_temp
+set the enabled status of wifi while usbtethered temparary setting.
+get_static_ip
+get the static IP address for ethernet or usbtethered.
+set_static_ip
+set the static IP address for ethernet or usbtethered.
+get_ntp_url
+get the NTP URL being using for time souce.
+set_ntp_url
+set the NTP URL being using for time souce.
+get_curr_wan
+Gets the currently connected wan.
+get_curr_wan_stats
+Gets the currently connected wan stats.
+get_conn_state
+Gets the connection information of all WANs.
+get_wan_prio
+Gets WAN priority order.
+set_wan_prio
+Sets WAN priority order.
+wan_connect
+Connects the highest priority available WAN to L3.
+wan_disconnect
+Disonnects the available WAN from L3.
+get_wwan_ac
+Gets the autoconnect status.
+set_wwan_ac
+Sets the autoconnect status.
+get_wwan_ac_state
+Private API:Gets the autoconnect internal state information.
+set_wwan_ac_client_count
+Private API:Sets the client count in autoconnect.
+wwan_connect
+Starts a modem connection.
+wwan_disconnect
+Stops a modem connection.
+apps_call_start
+Starts a apps call.
+apps_call_stop
+Stops a apps call.
+apps_call_state
+gets the apps call state.
+dm_call_start
+Starts a device management call.
+dm_call_stop
+Stops a device management call.
+dm_call_state
+gets the device management call state.
+accept_pco_event
+Temporarily restores data connectivity so the user may subscribe, manage, etc
+get_airplane_mode_disable_status
+indicates which radios are disabled during airplane mode.
+get_call_throttle_state
+Retrieves the throttled state of the internet calls.
+update_roam_state
+Private API:update the roam state.
+update_usb_iface
+Private API:update the status of the USB iface connection status.
+set_network_time
+Private API:update time via network time.
+send_wan_stats_evt
+Private API:send wan connections stats event.
+update_pco_event
+Private API: handle an incoming pco event.
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+Enter ccm2 error code: 
+Errorcode 0x%X is [%s]
+ccm_is_running returned %d (%s)
+ccm_get_ipv6_enabled returned %d (%s)
+enabled:[%d]
+What is enabled status [0|1]:  
+ccm_set_ipv6_enabled returned %d (%s)
+ccm_get_cell_data_enabled returned %d (%s)
+ccm_set_cell_data_enabled returned %d (%s)
+ccm_get_wifi_enabled returned %d (%s)
+ccm_set_wifi_enabled returned %d (%s)
+ccm_get_wifi_ap_enabled returned %d (%s)
+ccm_set_wifi_ap_enabled returned %d (%s)
+ccm_get_wifi_stn_enabled returned %d (%s)
+ccm_set_wifi_stn_enabled returned %d (%s)
+ccm_get_air_mode_enabled returned %d (%s)
+ccm_set_air_mode_enabled returned %d (%s)
+ccm_get_wifi_while_usbteth returned %d (%s)
+ccm_set_wifi_while_usbteth returned %d (%s)
+Tether      = %d
+Tether only = %d
+No Tether   = %d
+What is enabled status:  
+ccm_set_wifi_while_usbteth_temp returned %d (%s)
+ccm_get_static_ip returned %d (%s)
+What is ip address [x.x.x.x]:  
+ccm_set_static_ip returned %d (%s)
+ccm_get_ntp_url returned %d (%s)
+min_delay:[%d]
+retries:[%d]
+url1:[%s]
+url2:[%s]
+url3:[%s]
+What is ntp min delay (seconds):  
+What is ntp retry count:  
+What is ntp url1:  
+What is ntp url2:  
+What is ntp url3:  
+ccm_set_ntp_url returned %d (%s)
+ccm_get_curr_wan returned %d (%s)
+Wan:[%s]
+V4 IF:[%s]
+V6 IF:[%s]
+Wan:[%d=%s]
+What is WAN:  
+ccm_get_curr_wan_stats returned %d (%s)
+V4 Connection State:[%s]
+V4 Bytes Rx:[%lld]
+V4 Bytes Tx:[%lld]
+V4 Duration:[%d]
+V4 ifc:[%s]
+V4 IP Addr:[%s]
+V4 Subnet:[%s]
+V4 Gateway:[%s]
+V6 Connection State:[%s]
+V6 Bytes Rx:[%lld]
+V6 Bytes Tx:[%lld]
+V6 Duration:[%d]
+V6 ifc:[%s]
+V6 IP Addr:[%s]
+V6 Gateway:[%s]
+ccm_get_conn_state returned %d (%s)
+V6 IF:[%s]
+ccm_get_wan_prio returned %d (%s)
+Prio:[%d] Wan:[%s]
+Index:[%d] Wan:[%s]
+What is WAN Priority %d Index:  
+ccm_set_wan_prio returned %d (%s)
+ccm_wan_connect returned %d (%s)
+ccm_wan_disconnect returned %d (%s)
+ccm_get_wwan_ac returned %d (%s)
+Autoconnect Type:[%d] %s
+Autoconnect Index: %d Type:[%s]
+What is Autoconnect Index: 
+ccm_set_wwan_ac returned %d (%s)
+Enter an optional call id (<enter> for default):  
+ccm_wwan_connect returned %d (%s)
+ccm_wwan_disconnect returned %d (%s)
+ccm_get_wwan_ac_state returned %d (%s)
+Run:[%d]
+Feature V6:[%d]
+AC Enabled:[%d] %s
+AC Interval:[%d]
+V6 Enabled:[%d]
+V4 apn:[%d]
+V4 wwan_state:[%s]
+V6 apn:[%d]
+V6 wwan_state:[%s]
+Did User Connect:[%d]
+Did User Disconnect:[%d]
+LAN Client Count:[%d]
+What is LAN Client Count: 
+ccm_set_wwan_ac_client_count returned %d (%s)
+Enter an optional call id:  
+ccm_apps_call_start returned %d (%s)
+v4 state:[%s]
+ifc_v4:[%s]
+resolv_conf:[%s]
+Force the operation? (0=no, 1=yes): 
+ccm_apps_call_stop returned %d (%s)
+ccm_apps_call_state returned %d (%s)
+ccm_dm_call_start returned %d (%s)
+v6 state:[%s]
+ifc_v6:[%s]
+Force operation? (0=no, 1=yes): 
+ccm_dm_call_stop returned %d (%s)
+ccm_dm_call_state returned %d (%s)
+Roam state[0-home:1-domestic:2-intl:3-flash:>3-ERI indication]: 
+Home[0:1]: 
+ccm_update_roam_state returned %d (%s)
+Connected status[0:1]: 
+ccm_update_usb_iface returned %d (%s)
+Month[1-12]: 
+Day Of Month: 
+Minute: 
+Second: 
+modem2.time_change
+ccm_set_network_time returned %d (%s)
+Enter WAN type: 
+ccm_send_wan_stats_evt returned %d (%s)
+Enter a pco value [%d-%d]:
+Enter pdn indicator [%d-%d]: 
+ccm_udpate_pco_event returned %d (%s)
+ccm_accept_pco_event returned %d (%s)
+ccm_get_airplane_mode_disable_status returned %d (%s)
+Radio Disable status = [0x%X]
+WiFi Disabled
+Cellular Disabled
+ccm2_autoconnect_get_call_throttle_status returned %d (%s)
+IPv4 Throttled = [%d]
+IPv6 Throttled = [%d]
+command [%s] not found.
+WiFi WAN
+Ethernet WAN
+Invalid State
+NotAvailable
+Initializing
+Searching
+Connecting
+Connected
+Disconnecting
+Activating
+No Service
+Not activated
+Manual connect, autoconnect disabled
+Autoconnect when clients are connected
+Autoconnect when service is available
+Autoconnect when service is available and not roaming
+Invalid state
+Invalid Source
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

@@ -1,0 +1,71 @@
+<!-- wifi_primary_settings -->
+<div id="wifi_primary_settings">
+	<h1>Wi-Fi - Prim
+	<h2>Oversigt</h2>
+		For at oprette forbindelse til <tmpl_var _("webui", "webui_product_name_with_suffix")>s prim
+re Wi-Fi-netv
+rk skal tilsluttede enheder bruge de Wi-Fi-indstillinger, der vises p
+ denne sk
+rm. Hvis du 
+ndrer disse indstillinger, kan eksisterende tilsluttede enheder muligvis miste deres forbindelse.
+	<h3><tmpl_var _("webui", "wifi_primary_ssid_label")></h3>
+		Dette indstiller netv
+rksnavnet eller SSID til Wi-Fi-netv
+rket. Indtast et passende navn. Navnet kan v
+re op til 32 tegn langt.
+	<h3><tmpl_var _("webui", "wifi_primary_security_label")></h3>
+nskede mulighed for Wi-Fi-sikkerhed.
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> giver andre mennesker mulighed for at overv
+ge din Wi-Fi-trafik og bruge din dataplan til at f
+ adgang til internettet. Hvis det overhovedet er muligt, b
+r brug af denne indstilling undg
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> er den nyeste og mest sikre metode og b
+r bruges, hvis det er muligt.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> kan bruges, hvis nogle af dine 
+ldre enheder ikke underst
+tter WPA2.
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> kan bruges til WPA2- og WPA3-klageenheder.
+	<h3><tmpl_var _("webui", "wifi_primary_password_label")></h3>
+		Indtast Wi-Fi-adgangskoden i dette felt. Du kan ogs
+ bruge knappen "Gener
+gle" til at inds
+tte en st
+rk, tilf
+ldig adgangskode i dette felt. Husk at gemme dine 
+ndringer, hvis du bruger denne indstilling.
+		Disse indstillinger er som standard skjulte, men du kan klikke p
+ overskriften/linket for at g
+re dem synlige. 
+		Normalt kan disse indstillinger forblive u
+ndrede med deres standardv
+rdier, men de kan om n
+dvendigt 
+ndres, s
+ de passer til dit s
+rlige milj
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_ssid_label", gProductName)></h3>
+		Hvis denne indstilling er markeret, er Wi-Fi-navnet l
+ <tmpl_var _("webui", "webui_product_name_with_suffix")>s ber
+rm ved hj
+lp af menuindstillingen "Wi-Fi". Hvis den ikke er markeret, vises navnet som ******.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_password_label", gProductName)></h3>
+		Hvis denne indstilling er markeret, er Wi-Fi-adgangskoden l
+ <tmpl_var _("webui", "webui_product_name_with_suffix")>s ber
+rm ved hj
+lp af menuindstillingen "Wi-Fi". Hvis den ikke er markeret, vises adgangskoden som ******.
+	<h3><tmpl_var _("webui", "wifi_primary_broadcast_ssid_label")></h3>
+		Hvis denne indstilling er markeret, vises dette Wi-Fi-netv
+ listen over tilg
+ngelige Wi-Fi-netv
+ dine tilsluttede enheder. Hvis den ikke er markeret, vil dette netv
+re usynligt.
+	<tmpl_if showWiFiPrimaryWPS>
+		<h3><tmpl_var _("webui", "wifi_primary_wps_label")></h3>
+			Wi-Fi Protected Setup (WPS) er et system, der tillader Wi-Fi-enheder at oprette forbindelse til et Wi-Fi-netv
+rk, uden at man manuelt skal indtaste netv
+glen. Hvis du 
+nsker at bruge WPS, skal du markere denne indstilling.
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_primary_privacy_label")></h3>
+		Hvis denne indstilling er markeret, isoleres hver tilsluttet enhed fra alle andre tilsluttede enheder. Dette giver ekstra sikkerhed, hvis nogle tilsluttede enheder er ukendte, eller du ikke helt har tillid til dem. Ved normal drift skal denne ikke markeres.
+<!-- id="wifi_primary_settings" -->

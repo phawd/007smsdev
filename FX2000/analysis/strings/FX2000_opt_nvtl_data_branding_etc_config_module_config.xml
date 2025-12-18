@@ -1,0 +1,2452 @@
+	<Config>
+		<AdminPasswordSettings data_type="Object">
+			<AdminPassword data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any string</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Must not be blank
+						</validation>
+						<validation>
+							Must be 8 characters long
+						</validation>
+						<validation>
+							Max length: 32 characters
+						</validation>
+						<validation>
+							Must contain Alpha-numeric, one lowercase, one uppercase and special characters
+						</validation>
+						<validation>
+							Ascii Range 32-126
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</AdminPassword>
+			<AdminPasswordSecurityQuestion data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>
+							What is your date of birth? (mm/dd/yyyy)
+						</possible_value>
+						<possible_value>
+							What is your mother's maiden name?
+						</possible_value>
+						<possible_value>
+							What is the name of the street you grew up on?
+						</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</AdminPasswordSecurityQuestion>
+			<AdminPasswordSecurityAnswer data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any string</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Must not be blank
+						</validation>
+						<validation>
+							Max length: 255 characters
+						</validation>
+						<validation>
+							Ascii Range 32-126
+						</validation>
+						<validation>
+							If date of birth is selected, then it should be in valid date format of mm/dd/yyyy
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</AdminPasswordSecurityAnswer>
+		</AdminPasswordSettings>
+		<DataUsageSettings data_type="Object">
+			<SIM data_type="Array">
+				<SlotNumber data_type="Integer">
+				<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>1</default_value>
+						<possible_values>
+							<possible_value>1</possible_value>
+							<possible_value>2</possible_value>
+						</possible_values>
+						<remarks>SlotNumber or IMSI or ICCID should be sent in addition with associated DataUsageSettings parameters</remarks>
+					</__ATTRIBUTES__>
+				</SlotNumber>
+				<IMSI data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+						<remarks>SlotNumber or IMSI or ICCID should be sent in addition with associated DataUsageSettings parameters</remarks>
+					</__ATTRIBUTES__>
+				</IMSI>
+				<ICCID data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+						<remarks>SlotNumber or IMSI or ICCID should be sent in addition with associated DataUsageSettings parameters</remarks>
+					</__ATTRIBUTES__>
+				</ICCID>
+				<MaxUsageLevel data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>10 GB</default_value>
+						<possible_range>
+							<min>0</min>
+							<max>999</max>
+						</possible_range>
+						<remarks>MaxUsageLevel should be 0 and should not be allowed for modification in UI if MeteredConnection is false</remarks>
+					</__ATTRIBUTES__>
+				</MaxUsageLevel>
+				<MeteredConnection data_type="Boolean">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>true</default_value>
+						<possible_values>
+							<possible_value>false</possible_value>
+							<possible_value>true</possible_value>
+						</possible_values>
+						<remarks>MaxUsageLevel should be 0 and should not be allowed for modification in UI if MeteredConnection is false</remarks>
+					</__ATTRIBUTES__>
+				</MeteredConnection>
+				<CycleStartDay data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>1</default_value>
+						<possible_range>
+							<min>1</min>
+							<max>31</max>
+						</possible_range>
+					</__ATTRIBUTES__>
+				</CycleStartDay>
+				<WarningLevel data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>80</default_value>
+						<possible_range>
+							<min>50</min>
+							<max>90</max>
+						</possible_range>
+						<unit>percentage</unit>
+						<remarks>If MeteredConnection is false then WarningLevel should not be allowed for modification in UI</remarks>
+					</__ATTRIBUTES__>
+				</WarningLevel>
+			</SIM>
+			<Ethernet data_type="Array">
+				<MAC data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Formatted MAC Address String</possible_value>
+						</possible_values>
+						<remarks>MAC should be sent in addition with associated DataUsageSettings parameters</remarks>
+					</__ATTRIBUTES__>
+				</MAC>
+				<MaxUsageLevel data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>10 GB</default_value>
+						<possible_range>
+							<min>0</min>
+							<max>999</max>
+						</possible_range>
+						<remarks>MaxUsageLevel should be 0 and should not be allowed for modification in UI if MeteredConnection is false</remarks>
+				</__ATTRIBUTES__>
+				</MaxUsageLevel>
+				<MeteredConnection data_type="Boolean">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>true</default_value>
+						<possible_values>
+							<possible_value>false</possible_value>
+							<possible_value>true</possible_value>
+						</possible_values>
+						<remarks>MaxUsageLevel should be 0 and should not be allowed for modification in UI if MeteredConnection is false</remarks>
+					</__ATTRIBUTES__>
+				</MeteredConnection>
+				<CycleStartDay data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>1</default_value>
+						<possible_range>
+							<min>1</min>
+							<max>31</max>
+						</possible_range>
+				</__ATTRIBUTES__>
+				</CycleStartDay>
+				<WarningLevel data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>80</default_value>
+						<possible_range>
+							<min>50</min>
+							<max>90</max>
+						</possible_range>
+						<unit>percentage</unit>
+						<remarks>If MeteredConnection is false then WarningLevel should not be allowed for modification in UI</remarks>
+					</__ATTRIBUTES__>
+				</WarningLevel>
+			</Ethernet>
+		</DataUsageSettings>
+		<CarrierSettings data_type="Object">
+			<EnableAutoNetworkSelection data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>true</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+					<ui_behavior>
+						<show_options>on</show_options>
+						<show_options>off</show_options>
+					</ui_behavior>
+				</__ATTRIBUTES__>
+			</EnableAutoNetworkSelection>
+		<APN data_type="String">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>Add APN</possible_value>
+					<possible_value>fast.t-mobile.com</possible_value>
+					<possible_value>b2b.static</possible_value>
+					<possible_value>B2B.tmobile.com</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+								ASCII range: 32-126
+						</validation>
+							<validation>
+								Max length 62 characters
+							</validation>
+					</validations>
+				<remarks>
+					When Add APN is selected, thenUI should show Add APN new field and should send entered value as part of APN field.
+				</remarks>
+			</__ATTRIBUTES__>
+		</APN>
+			<Authentication data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>None</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>None</possible_value>
+						<possible_value>PAP</possible_value>
+						<possible_value>CHAP</possible_value>
+						<possible_value>PAP or CHAP</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+            </Authentication>
+            <UserName data_type="String">
+            	<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any username policy based value</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+            </UserName>
+            <Password data_type="String">
+            	<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any valid string</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+            </Password>
+			<PDPType data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>3</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>0</possible_value>
+						<possible_value>2</possible_value>
+						<possible_value>3</possible_value>
+					</possible_values>
+					<legends>
+						<legend>
+							<key>0</key>
+							<value>IPv4</value>
+						</legend>
+						<legend>
+							<key>2</key>
+							<value>IPv6</value>
+						</legend>
+						<legend>
+							<key>3</key>
+							<value>IPv4v6</value>
+						</legend>
+					</legends>
+				</__ATTRIBUTES__>
+			</PDPType>
+			<NetworkTechnology data_type = "Integer">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>50</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>50</possible_value>
+						<possible_value>18</possible_value>
+						<possible_value>32</possible_value>
+					</possible_values>
+					<legends>
+						<legend>
+							<key>50</key>
+							<value>Auto(LTE/5G)</value>
+						</legend>
+						<legend>
+							<key>18</key>
+							<value>LTE/UMTS</value>
+						</legend>
+						<legend>
+							<key>32</key>
+							<value>5G</value>
+						</legend>
+					</legends>
+					<remarks>Hide 5G Network Mode dropdown when 4G LTE is selected and should display only Auto and SA if Network Technology is 5G</remarks>
+				</__ATTRIBUTES__>
+			</NetworkTechnology>
+			<FiveGNetworkMode data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>0</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>0</possible_value>
+						<possible_value>1</possible_value>
+						<possible_value>2</possible_value>
+					</possible_values>
+					<legends>
+						<legend>
+							<key>0</key>
+							<value>Auto(NSA/SA)</value>
+						</legend>
+						<legend>
+							<key>1</key>
+							<value>SA</value>
+						</legend>
+						<legend>
+							<key>2</key>
+							<value>NSA</value>
+						</legend>
+					</legends>
+					<remarks>Hide 5G Network Mode dropdown when 4G LTE is selected and should display only Auto and SA if Network Technology is 5G</remarks>
+				</__ATTRIBUTES__>
+			</FiveGNetworkMode>
+		</CarrierSettings>
+		<WiFiNetworkSettings data_type="Object">
+			<WiFiSSID data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>Skyus-455B</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any string</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Must not be blank
+						</validation>
+						<validation>
+							Name can
+t begin and end with spaces
+						</validation>
+						<validation>
+							Name length should be less than or equal to 32 characters
+						</validation>
+						<validation>
+							Name length should be with in 32 to 126 ascii range
+						</validation>
+						<validation>
+							SSID should not be same as Guest SSID
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</WiFiSSID>
+			<WiFiSecurityMode data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>WPA3/WPA2 Transition</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>
+							WPA2 Personal PSK (AES)
+						</possible_value>
+						<possible_value>
+							WPA/WPA2 Mixed Mode
+						</possible_value>
+						<possible_value>
+							WPA3/WPA2 Transition
+						</possible_value>
+						<possible_value>
+							None
+						</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</WiFiSecurityMode>
+			<WiFiKey data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>   
+						<possible_value>Any string</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Must not be blank if WiFiSecurityMode is not none
+						</validation>
+						<validation>
+							Key length should be between 8 to 63 characters
+						</validation>
+						<validation>
+							Name length should be with in 32 to 126 ascii range
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</WiFiKey>
+			<WiFiSSIDBroadcastEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>true</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							BroadcastEnabled Cannot be turned OFF if WiFiWPSEnabled is ON
+						</validation>	
+					</validations>
+				</__ATTRIBUTES__>
+			</WiFiSSIDBroadcastEnabled>
+			<WiFiPrivacySeparationEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>true</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</WiFiPrivacySeparationEnabled>
+			<WiFiWPSEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Cannot be turned ON if the MAC Filter is ON
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</WiFiWPSEnabled>
+		</WiFiNetworkSettings>
+		<WiFiGuestNetworkSettings data_type="Object">
+			<WiFiGuestSSID data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>Skyus-455B</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any string</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Must not be blank
+						</validation>
+						<validation>
+							Name can
+t begin and end with spaces
+						</validation>
+						<validation>
+							SSID should not be same as Primary SSID
+						</validation>
+						<validation>
+							Name length should be less than or equal to 32 characters
+						</validation>
+						<validation>
+							Name length should be with in 32 to 126 ascii range
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</WiFiGuestSSID>
+			<WiFiGuestSecurityMode data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>WPA3/WPA2 Transition</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>
+							WPA2 Personal PSK (AES)
+						</possible_value>
+						<possible_value>
+							WPA/WPA2 Mixed Mode
+						</possible_value>
+						<possible_value>
+							WPA3/WPA2 Transition
+						</possible_value>
+						<possible_value>
+							None
+						</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</WiFiGuestSecurityMode>
+			<WiFiGuestKey data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>   
+						<possible_value>Any string</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Must not be blank if WiFiSecurityMode is not none
+						</validation>
+						<validation>
+							Key length should be between 8 to 32 characters
+						</validation>
+						<validation>
+							Name length should be with in 32 to 126 ascii range
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</WiFiGuestKey>
+			<WiFiGuestSSIDBroadcastEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>true</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							BroadcastEnabled Cannot be turned OFF if WiFiGuestWPSEnabled is ON
+						</validation>	
+					</validations>
+				</__ATTRIBUTES__>
+			</WiFiGuestSSIDBroadcastEnabled>
+			<WiFiGuestPrivacySeparationEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</WiFiGuestPrivacySeparationEnabled>
+			<WiFiGuestWPSEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</WiFiGuestWPSEnabled>
+		</WiFiGuestNetworkSettings>
+		<WiFiAdvancedSettings data_type="Object">
+			<WiFiEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>true</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+					<ui_behavior>
+						<show_options>on</show_options>
+						<show_options>off</show_options>
+					</ui_behavior>
+					<validations>
+                       <validation>
+                           Should be allowed to enable the Wi-Fi only when IPv4Passthrough is disabled
+                      </validation>
+                  </validations>
+				</__ATTRIBUTES__>
+			</WiFiEnabled>
+			<WiFi24GHzBand data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>Primary network</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>None</possible_value>
+						<possible_value>Primary network</possible_value>
+						<possible_value>Guest network</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+                    		Should not allow to set WiFi24GHzBand and WiFi5GHzBand set to None
+                		</validation>
+                	</validations>
+				</__ATTRIBUTES__>
+			</WiFi24GHzBand>
+			<WiFi5GHzBand data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>Primary network</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>None</possible_value>
+						<possible_value>Primary network</possible_value>
+						<possible_value>Guest network</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+                    		Should not allow to set WiFi24GHzBand and WiFi5GHzBand set to None
+                		</validation>
+                	</validations>
+				</__ATTRIBUTES__>
+			</WiFi5GHzBand>
+			<WiFi24GHz80211Mode data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>802.11bgn/ax</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>802.11bgn</possible_value>
+						<possible_value>802.11bgn/ax</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</WiFi24GHz80211Mode>
+			<WiFi5GHz80211Mode data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>802.11acn/ax</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>802.11acn</possible_value>
+						<possible_value>802.11ac</possible_value>
+						<possible_value>802.11acn/ax</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</WiFi5GHz80211Mode>
+			<WiFi5GHzBandwidth data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>80</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>20</possible_value>
+						<possible_value>40</possible_value>
+						<possible_value>80</possible_value>
+					</possible_values>
+					<unit>MHz</unit>
+				</__ATTRIBUTES__>
+			</WiFi5GHzBandwidth>
+			<WiFi24GHzChannel data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>0</default_value>
+					<is_unique>0</is_unique>
+					<possible_range>
+						<min>0</min>
+						<max>11</max>
+					</possible_range>
+					<remarks>0 implies automatic. if 0 is recieved change that to Automatic</remarks>
+				</__ATTRIBUTES__>
+			</WiFi24GHzChannel>
+			<WiFi5GHzChannel data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>0</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>0</possible_value>
+						<possible_value>36</possible_value>
+						<possible_value>40</possible_value>
+						<possible_value>44</possible_value>
+						<possible_value>48</possible_value>
+						<possible_value>149</possible_value>
+						<possible_value>153</possible_value>
+						<possible_value>157</possible_value>
+						<possible_value>161</possible_value>
+					</possible_values>
+					<remarks>0 implies automatic. if 0 is recieved change that to Automatic</remarks>
+				</__ATTRIBUTES__>
+			</WiFi5GHzChannel>
+			<WiFiMaxClients data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>15</default_value>
+					<is_unique>0</is_unique>
+					<possible_range>
+						<min>1</min>
+						<max>60</max>
+					</possible_range>
+				</__ATTRIBUTES__>
+			</WiFiMaxClients>
+		</WiFiAdvancedSettings>
+		<Preferences data_type="Object">
+			<DeviceName data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any Valid Name</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any Valid Device Name</possible_value>
+					</possible_values>
+					<validations>
+						<validation>Should not be empty</validation>
+						<validation>Allows only Alpha-numeric characters and hypen</validation>
+						<validation>Name length Should be less than or equal to 255 characters</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</DeviceName>
+			<EthernetEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>true</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</EthernetEnabled>
+			<Language data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>English</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>English</possible_value>
+						<possible_value>Espanol</possible_value>
+						<possible_value>
+</possible_value>
+						<possible_value>Fran
+ais</possible_value>
+						<possible_value>Deutsch</possible_value>
+						<possible_value>Italiano</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</Language>
+			<Date data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>mm/dd/yyyy</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>mm/dd/yyyy</possible_value>
+						<possible_value>dd/mm/yyyy</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</Date>
+			<Time data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>12</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>12</possible_value>
+						<possible_value>24</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</Time>
+			<NumberFormat data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>3,234.00</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>3.234,00</possible_value>
+						<possible_value>3,234.00</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</NumberFormat>
+			<Distance data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>feet</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>feet</possible_value>
+						<possible_value>meters</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</Distance>
+			<CPERebootEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<is_unique>0</is_unique>
+					<default_value>true</default_value>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+					<remarks>Should disable the CPERebootDuration, CPERebootTime and CPEScheduleDay fields when CPERebootEnabled is disabled</remarks>
+				</__ATTRIBUTES__>
+			</CPERebootEnabled>
+			<CPERebootDuration data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<is_unique>0</is_unique>
+					<default_value>15</default_value>
+					<possible_range>
+						<min>15</min>
+						<max>30</max>
+					</possible_range>
+					<unit>Minutes</unit>
+					<remarks>StartTime +/- Duration CPE/Device will be getting rebooted and Should be only Configure/controllable by Cloud-UI not by User</remarks>
+				</__ATTRIBUTES__>
+			</CPERebootDuration>
+			<CPERebootTime data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<is_unique>0</is_unique>
+					<default_value>02:00</default_value>
+					<remarks>Should be in 24 hour (HH:MM) format</remarks>
+				</__ATTRIBUTES__>
+			</CPERebootTime>
+			<CPERebootScheduledDay data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<is_unique>1</is_unique>
+					<default_value>6</default_value>
+					<possible_range>
+						<min>0</min>
+						<max>6</max>
+					</possible_range>
+					<legends>
+						<legend>
+							<key>0</key>
+							<value>Monday</value>
+						</legend>
+						<legend>
+							<key>1</key>
+							<value>Tuesday</value>
+						</legend>
+						<legend>
+							<key>2</key>
+							<value>Wednesday</value>
+						</legend>
+						<legend>
+							<key>3</key>
+							<value>Thursday</value>
+						</legend>
+						<legend>
+							<key>4</key>
+							<value>Friday</value>
+						</legend>
+						<legend>
+							<key>5</key>
+							<value>Saturday</value>
+						</legend>
+						<legend>
+							<key>6</key>
+							<value>Sunday</value>
+						</legend>
+					</legends>
+				</__ATTRIBUTES__>
+			</CPERebootScheduledDay>
+		</Preferences>
+		<SoftwareUpdate data_type="Object">
+			<OptoutEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>1</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</OptoutEnabled>
+		</SoftwareUpdate>
+		<GPSSettings data_type="Object">
+			<GPSEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>    
+					<default_value>false</default_value>    
+					<is_unique>0</is_unique>    
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values> 
+					<validations>
+						<validation> When turned OFF, should not allow or hide it from user to modify the remaining GPS options
+						</validation>
+					</validations> 
+				</__ATTRIBUTES__>
+			</GPSEnabled>
+			<GPSTurnOff data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>    
+					<default_value>false</default_value>    
+					<is_unique>0</is_unique>    
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>  
+				</__ATTRIBUTES__>
+			</GPSTurnOff>
+			<GPSNMEAOverWiFiEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>    
+					<default_value>false</default_value>    
+					<is_unique>0</is_unique>    
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>  
+				</__ATTRIBUTES__>
+			</GPSNMEAOverWiFiEnabled>
+            <GPSNMEAOverWiFiPortNumber data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>11010</default_value>
+					<is_unique>0</is_unique>
+					<possible_range>
+						<min>1024</min>
+						<max>65535</max>
+					</possible_range>
+				</__ATTRIBUTES__>
+			</GPSNMEAOverWiFiPortNumber>
+		</GPSSettings>
+		<LANSettings data_type="Object">
+			<IPv4Passthrough data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+					<validations>
+                       <validation>
+                           Should turn Off the Wi-Fi when IPPT is enabled
+                       </validation>
+                       <validation>
+                           Should be allowed to enable IPv4Passthrough only when Port Forwarding, DMZ and Port Filtering is disabled
+                       </validation>
+                    </validations>
+					<remarks>If Enabled then IPv4 related information will be disabled.</remarks>
+				</__ATTRIBUTES__>
+			</IPv4Passthrough>
+			<IpptInterface data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>USB</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Ethernet</possible_value>
+						<possible_value>USB</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</IpptInterface>
+			<RouterIPv4Address data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any Valid IP</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Valid IPv4 address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Field should be Enabled only when IPv4Passthrough is disabled
+						</validation>
+						<validation>
+							must not be blank
+						</validation>
+						<validation>
+							Should not be network or broadcast ip
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</RouterIPv4Address>
+			<RouterSubnetMask data_type="String">	
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any Valid Subnet</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>	
+						<possible_value>Any string</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Field should be Enabled only when IPv4Passthrough is disabled
+						</validation>
+						<validation>
+							must not be blank
+						</validation>
+						<validation>
+							Should be valid IP
+						</validation>
+						<validation>
+							Can be 1-32 in bit format or valid subnet ip in dotted notation
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</RouterSubnetMask>
+			<DHCPEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Field should be Enabled only when IPv4Passthrough is disabled
+						</validation>
+						<validation>
+							Should not allow the user to assign Reserved IP to devices if DHCP is disabled
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</DHCPEnabled>
+			<DHCPLeaseTime data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>1440</default_value>
+					<is_unique>0</is_unique>
+					<possible_range>
+						<min>1</min>
+						<max>71582788</max>
+					</possible_range>
+					<unit>minutes</unit>
+					<validations>
+						<validation>
+							Field should be Enabled only when IPv4Passthrough is disabled
+						</validation>
+						<validation>
+							should be enabled only when DHCPEnabled is enabled
+						</validation>	
+					</validations>
+				</__ATTRIBUTES__>
+			</DHCPLeaseTime>
+			<IPv6Enabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</IPv6Enabled>
+			<DHCPAddressRangeStart data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>Any Valid IP</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Valid IPv4 address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Field should be Enabled only when IPv4Passthrough is disabled
+						</validation>
+						<validation>
+							should be enabled only when DHCPEnabled is enabled
+						</validation>
+						<validation>
+							should not be blank
+						</validation>
+						<validation>
+							Same range as RouterIPv4Address
+						</validation>
+						<validation>
+							Should not be network or broadcast ip
+						</validation>
+						<validation>
+							Must leave at least 16 addresses above for use by DHCP server as device supports a maximum of 15 clients
+						</validation>
+						<validation>
+							DHCPAddressRangeStart should be less than the DHCPAddressRangeEnd
+						</validation>
+						<validation>
+							RouterIPv4Address should not be with in the DHCPAddressRangeStart and DHCPAddressRangeEnd
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</DHCPAddressRangeStart>
+			<DHCPAddressRangeEnd data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>Any Valid IP</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Valid IPv4 address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Field should be Enabled only when IPv4Passthrough is disabled
+						</validation>
+						<validation>
+							should be enabled only when DHCPEnabled is enabled
+						</validation>
+						<validation>
+							should not be blank
+						</validation>
+						<validation>
+							Same range as RouterIPv4Address
+						</validation>
+						<validation>
+							Should not be network or broadcast ip
+						</validation>
+						<validation>
+							DHCPAddressRangeEnd should be greater than the DHCPAddressRangeStart
+						</validation>
+						<validation>
+							RouterIPv4Address should not be with in the DHCPAddressRangeStart and DHCPAddressRangeEnd
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</DHCPAddressRangeEnd>
+		</LANSettings>
+        <ManualDNSSettings data_type="Object">
+			<ManualDNSEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</ManualDNSEnabled>
+			<ManualDNSAddress1 data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>0</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Valid IPv4 or IPv6 address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Enabled only when ManualDNSEnabled
+						</validation>
+						<validation>
+							Must not be blank if ManualDNSEnabled is true
+						</validation>
+						<validation>
+							Should not be network or broadcast IP
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</ManualDNSAddress1>
+			<ManualDNSAddress2 data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>0</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Valid IPv4 or IPv6 address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Enabled only when ManualDNSEnabled
+						</validation>
+						<validation>
+							Blank allowed even if ManualDNSEnabled is true
+						</validation>
+						<validation>
+							Should not be network or broadcast IP
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</ManualDNSAddress2>
+		</ManualDNSSettings>
+		<WanSettings data_type="Object">
+			<KeepAliveEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>true</possible_value>
+						<possible_value>false</possible_value>
+					</possible_values>
+					<ui_behavior>
+						<show_options>on</show_options>
+						<show_options>off</show_options>
+					</ui_behavior>
+				</__ATTRIBUTES__>
+			</KeepAliveEnabled>
+			<WanLookupAddress1 data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>Any valid URL or IP address</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any valid URL or IP address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Must not be empty
+						</validation>
+						<validation>
+							Should be valid IPv4 address or url without HTTP or HTTPS prefix
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</WanLookupAddress1>
+			<WanLookupAddress2 data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>Any valid URL or IP address</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any valid URL or IP address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Must not be empty
+						</validation>
+						<validation>
+							Should be valid IPv4 address or url without HTTP or HTTPS prefix
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</WanLookupAddress2>
+			<WanLookupAddress3 data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>Any valid URL or IP address</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any valid URL or IP address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Must not be empty
+						</validation>
+						<validation>
+							Should be valid IPv4 address or url without HTTP or HTTPS prefix
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</WanLookupAddress3>
+			<WanKeepAliveInterval data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>30</default_value>
+					<is_unique>0</is_unique>
+					<possible_range>
+						<min>30</min>
+						<max>86400</max>
+					</possible_range>
+					<unit>seconds</unit>
+				</__ATTRIBUTES__>
+			</WanKeepAliveInterval>
+			<WanNumberofAttempts data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>3</default_value>
+					<is_unique>0</is_unique>
+					<possible_range>
+						<min>0</min>
+						<max>10</max>
+					</possible_range>
+					<unit>seconds</unit>
+				</__ATTRIBUTES__>
+			</WanNumberofAttempts>
+			<WanRetryInterval data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>10</default_value>
+					<is_unique>0</is_unique>
+					<possible_range>
+						<min>10</min>
+						<max>600</max>
+					</possible_range>
+					<unit>seconds</unit>
+				</__ATTRIBUTES__>
+			</WanRetryInterval>
+		</WanSettings>
+		<FirewallSettings data_type="Object">
+			<VPNPassthroughEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</VPNPassthroughEnabled>
+			<IPv6TransparentModeEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</IPv6TransparentModeEnabled>
+			<DMZEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							It can be turned ON only when the PortForwarding is OFF
+						</validation>
+						<validation>
+                            Should be allowed to enable DMZ only when IPv4Passthrough is disabled
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</DMZEnabled>
+			<DMZIpAddress data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Valid IPv4 Address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Should not be empty if DMZEnabled is enabled
+						</validation>
+						<validation>
+							Should not be LAN IP address
+						</validation>
+						<validation>
+							Should not be Network or Broadcast IP
+						</validation>
+						<validation>
+							Should be with-in the same subnet set in the LAN settings
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</DMZIpAddress>
+			<WANPingEnablement data_type="Boolean">
+               <__ATTRIBUTES__>
+                   <is_required>0</is_required>
+                   <default_value>false</default_value>
+                   <is_unique>0</is_unique>
+                   <possible_values>
+                       <possible_value>false</possible_value>
+                       <possible_value>true</possible_value>
+                    </possible_values>
+                    <remarks>Allow the device to respond to ICMP pings from the WAN/Internet</remarks>
+               </__ATTRIBUTES__>
+           </WANPingEnablement>
+		</FirewallSettings>
+		<MACFilterSettings data_type="Object">
+			<MACFilterEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+					<validations>
+						<validation>Wi-Fi Primary Network WPS should not be ON</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</MACFilterEnabled>
+			<DevicesList data_type="Array">
+				<DeviceName data_type="String">	
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<default_value>String</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>String</possible_value>
+						</possible_values>
+						<validations>
+							<validation>
+								Blank allowed
+							</validation>	
+							<validation>
+								Duplicate name allowed
+							</validation>
+							<validation>
+								ASCII range: 32-126
+							</validation>
+							<validation>
+								Max length 64 characters
+							</validation>
+						</validations>
+					</__ATTRIBUTES__>
+				</DeviceName>
+				<DeviceMacAddress data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<default_value>MAC</default_value>
+						<is_unique>0</is_unique>
+						<validations>
+							<validation>
+								Duplicate Not allowed
+							</validation>
+							<validation>
+								Blank not allowed
+							</validation>
+							<validation>
+								If DeviceName and DeviceMacAddress are blank, discard the entry silently
+							</validation>
+						</validations>
+					</__ATTRIBUTES__>
+				</DeviceMacAddress>
+				<DeviceStatus data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<default_value>String</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</DeviceStatus>
+				<DeviceFilterEnabled data_type="Boolean">
+					<__ATTRIBUTES__>
+						<is_required>0</is_required>
+						<default_value>false</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>false</possible_value>
+							<possible_value>true</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</DeviceFilterEnabled>
+			</DevicesList>
+		</MACFilterSettings>
+		<PortFilteringSettings data_type="Object">
+			<PortFilteringEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+					<validations>
+                       <validation>
+                           Should be allowed to enable Port Filtering only when IPv4Passthrough is disabled
+                       </validation>
+                    </validations>
+				</__ATTRIBUTES__>
+			</PortFilteringEnabled>
+			<PortFilteringEmail data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</PortFilteringEmail>
+			<PortFilteringFTP data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</PortFilteringFTP>
+			<PortFilteringHTTP data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</PortFilteringHTTP>
+			<PortFilteringHTTPS data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</PortFilteringHTTPS>
+			<PortFilteringTelnet data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</PortFilteringTelnet>
+			<PortFilteringCustomApplications data_type="Array">
+				<AppEnabled data_type="Boolean">
+					<__ATTRIBUTES__>
+						<is_required>0</is_required>
+						<default_value>false</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>false</possible_value>
+							<possible_value>true</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</AppEnabled>
+				<AppName data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<default_value>String</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>String</possible_value>
+						</possible_values>
+						<validations>
+							<validation>
+								Blank not allowed
+							</validation>
+							<validation>
+								Max length: 24 characters
+							</validation>
+							<validation>
+								Should not match with other custom application name
+							</validation>
+							<validation>
+								ASCII range 32-126
+							</validation>
+						</validations>
+					</__ATTRIBUTES__>
+				</AppName>
+				<AppStartPortNumber data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<default_value>0</default_value>
+						<is_unique>0</is_unique>
+						<possible_range>
+							<min>1</min>
+							<max>65535</max>
+						</possible_range>
+						<validations>
+							<validation>
+								Start port should be less than or equal to end port
+							</validation>
+						</validations>
+					    <remarks>The start port and end port should be displayed as empty to the user instead of default value.The default value added here is to keep the JSON syntactically correct.</remarks>
+					</__ATTRIBUTES__>
+				</AppStartPortNumber>
+				<AppEndPortNumber data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<default_value>0</default_value>
+						<is_unique>0</is_unique>
+						<possible_range>
+							<min>1</min>
+							<max>65535</max>
+						</possible_range>
+						<validations>
+							<validation>
+								End port should be greater than or equal to start port
+							</validation>
+						</validations>
+					    <remarks>The start port and end port should be displayed as empty to the user instead of default value.The default value added here is to keep the JSON syntactically correct.</remarks>
+					</__ATTRIBUTES__>
+				</AppEndPortNumber>
+				<AppType data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<default_value>TCP</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>TCP</possible_value>
+							<possible_value>UDP</possible_value>
+							<possible_value>TCP/UDP</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</AppType>
+			</PortFilteringCustomApplications>
+		</PortFilteringSettings>
+		<PortForwardingSettings data_type="Object">
+			<PortForwardingEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							It can be turned ON only when the DMZ is OFF
+						</validation>
+						<validation>
+							Should be allowed to enable Port Forwarding only when IPv4Passthrough is disable
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</PortForwardingEnabled>
+			<PortForwardingDNS data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</PortForwardingDNS>
+			<PortForwardingDNSIpAddress data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value></default_value>
+					<is_unique>0</is_unique>
+					<possible_values>	
+						<possible_value>Valid IP Address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Should be enabled only when PortForwardingDNS is enabled
+						</validation>
+						<validation>
+							Should be valid IP Address
+						</validation>
+						<validation>
+							Should be on same subnet
+						</validation>
+						<validation>
+							Should not be empty
+						</validation>
+						<validation>
+							Should not be network or broadcast ip
+						</validation>
+						<validation>
+							Should not be LAN IP
+						</validation>
+					</validations>
+					<port_numbers>
+						<port_number>53</port_number>
+					</port_numbers>
+				</__ATTRIBUTES__>
+			</PortForwardingDNSIpAddress>
+			<PortForwardingFTP data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</PortForwardingFTP>
+			<PortForwardingFTPIpAddress data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value></default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Valid IP Address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Should be enabled only when PortForwardingFTP is enabled
+						</validation>
+						<validation>
+							Should be valid IP Address
+						</validation>
+						<validation>
+							Should be on same subnet
+						</validation>
+						<validation>
+							Should not be empty
+						</validation>
+						<validation>
+							Should not be network or broadcast ip
+						</validation>
+						<validation>
+							Should not be LAN IP
+						</validation>
+					</validations>
+					<port_numbers>
+						<port_number>20</port_number>
+						<port_number>21</port_number>
+					</port_numbers>
+				</__ATTRIBUTES__>
+			</PortForwardingFTPIpAddress>
+			<PortForwardingHTTP data_type="Boolean">	
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</PortForwardingHTTP>
+			<PortForwardingHTTPIpAddress data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value></default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Valid IP Address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Should be enabled only when PortForwardingHTTP is enabled
+						</validation>
+						<validation>
+							Should be valid IP Address
+						</validation>
+						<validation>
+							Should be on same subnet
+						</validation>
+						<validation>
+							Should not be empty
+						</validation>
+						<validation>
+							Should not be network or broadcast ip
+						</validation>
+						<validation>
+							Should not be LAN IP
+						</validation>
+					</validations>
+					<port_numbers>
+						<port_number>80</port_number>
+						<port_number>443</port_number>
+					</port_numbers>
+				</__ATTRIBUTES__>
+			</PortForwardingHTTPIpAddress>
+			<PortForwardingNNTP data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</PortForwardingNNTP>
+			<PortForwardingNNTPIpAddress data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value></default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Valid IP Address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Should be enabled only when PortForwardingNNTP is enabled
+						</validation>
+						<validation>
+							Should be valid IP Address
+						</validation>
+						<validation>
+							Should be on same subnet
+						</validation>
+						<validation>
+							Should not be empty
+						</validation>
+						<validation>
+							Should not be network or broadcast ip
+						</validation>
+						<validation>
+							Should not be LAN IP
+						</validation>
+					</validations>
+					<port_numbers>
+						<port_number>119</port_number>
+					</port_numbers>
+				</__ATTRIBUTES__>
+			</PortForwardingNNTPIpAddress>
+			<PortForwardingPOP3 data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</PortForwardingPOP3>
+			<PortForwardingPOP3IpAddress data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value></default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Valid IP Address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Should be enabled only when PortForwardingPOP3 is enabled
+						</validation>
+						<validation>
+							Should be valid IP Address
+						</validation>
+						<validation>
+							Should be on same subnet
+						</validation>
+						<validation>
+							Should not be empty
+						</validation>
+						<validation>
+							Should not be network or broadcast ip
+						</validation>
+						<validation>
+							Should not be LAN IP
+						</validation>
+					</validations>
+					<port_numbers>
+						<port_number>110</port_number>
+						<port_number>995</port_number>
+					</port_numbers>
+				</__ATTRIBUTES__>
+			</PortForwardingPOP3IpAddress>
+			<PortForwardingSMTP data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</PortForwardingSMTP>
+			<PortForwardingSMTPIpAddress data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value></default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Valid IP Address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Should be enabled only when PortForwardingSMTP is enabled
+						</validation>
+						<validation>
+							Should be valid IP Address
+						</validation>
+						<validation>
+							Should be on same subnet
+						</validation>
+						<validation>
+							Should not be empty
+						</validation>
+						<validation>
+							Should not be network or broadcast ip
+						</validation>
+						<validation>
+							Should not be LAN IP
+						</validation>
+					</validations>
+					<port_numbers>
+						<port_number>25</port_number>
+						<port_number>465</port_number>
+						<port_number>587</port_number>
+					</port_numbers>
+				</__ATTRIBUTES__>
+			</PortForwardingSMTPIpAddress>
+			<PortForwardingSNMP data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</PortForwardingSNMP>
+			<PortForwardingSNMPIpAddress data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value></default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Valid IP Address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Should be enabled only when PortForwardingSNMP is enabled
+						</validation>
+						<validation>
+							Should be valid IP Address
+						</validation>
+						<validation>
+							Should be on same subnet
+						</validation>
+						<validation>
+							Should not be empty
+						</validation>
+						<validation>
+							Should not be network or broadcast ip
+						</validation>
+						<validation>
+							Should not be LAN IP
+						</validation>
+					</validations>
+					<port_numbers>
+						<port_number>161</port_number>
+					</port_numbers>
+				</__ATTRIBUTES__>
+			</PortForwardingSNMPIpAddress>
+			<PortForwardingTelnet data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</PortForwardingTelnet>
+			<PortForwardingTelnetIpAddress data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value></default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Valid IP Address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Should be enabled only when PortForwardingTelnet is enabled
+						</validation>
+						<validation>
+							Should be valid IP Address
+						</validation>
+						<validation>
+							Should be on same subnet
+						</validation>
+						<validation>
+							Should not be empty
+						</validation>
+						<validation>
+							Should not be network or broadcast ip
+						</validation>
+						<validation>
+							Should not be LAN IP
+						</validation>
+					</validations>
+					<port_numbers>
+						<port_number>23</port_number>
+					</port_numbers>
+				</__ATTRIBUTES__>
+			</PortForwardingTelnetIpAddress>
+			<PortForwardingTFTP data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</PortForwardingTFTP>
+			<PortForwardingTFTPIpAddress data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value></default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Valid IP Address</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Should be enabled only when PortForwardingTFTP is enabled
+						</validation>
+						<validation>
+							Should be valid IP Address
+						</validation>
+						<validation>
+							Should be on same subnet
+						</validation>
+						<validation>
+							Should not be empty
+						</validation>
+						<validation>
+							Should not be network or broadcast ip
+						</validation>
+						<validation>
+							Should not be LAN IP
+						</validation>
+					</validations>
+					<port_numbers>
+						<port_number>69</port_number>
+					</port_numbers>
+				</__ATTRIBUTES__>
+			</PortForwardingTFTPIpAddress>
+			<PortForwardingCustomApplications data_type="Array">
+				<AppEnabled data_type="Boolean">
+					<__ATTRIBUTES__>
+						<is_required>0</is_required>
+						<default_value>false</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>false</possible_value>
+							<possible_value>true</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</AppEnabled>
+				<AppName data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<default_value>String</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+						<validations>
+							<validation>
+								Cannot be blank
+							</validation>
+							<validation>
+								Max length: 24 characters
+							</validation>
+							<validation>
+								Should not be same name as other custom applicaiton name
+							</validation>
+						</validations>
+					</__ATTRIBUTES__>
+				</AppName>
+				<AppIpAddress data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<default_value></default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>Valid IP Address</possible_value>
+						</possible_values>
+						<validations>
+							<validation>
+								Should be valid IP Address
+							</validation>
+							<validation>
+								Should be on same subnet
+							</validation>
+							<validation>
+								Should not be empty
+							</validation>
+							<validation>
+								Should not be network or broadcast ip
+							</validation>
+							<validation>
+								Should not be LAN IP
+							</validation>
+						</validations>
+					</__ATTRIBUTES__>
+				</AppIpAddress>
+				<AppPortType data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<default_value>Range</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>Range</possible_value>
+							<possible_value>Translate</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</AppPortType>
+				<AppStartPortNumber data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<default_value>0</default_value>
+						<is_unique>0</is_unique>
+						<possible_range>
+							<min>1</min>
+							<max>65535</max>
+						</possible_range>
+						<validations>
+							<validation>
+								Port range should not overlap with the other default or custom application. Allowed if AppEnabled flag is disabled
+							</validation>
+							<validation>
+								If AppPortType is Range, Start port should be less than or equal to end port
+							</validation>
+						</validations>
+					    <remarks>The start port and end port should be displayed as empty to the user instead of default value.The default value added here is to keep the JSON syntactically correct.</remarks>
+					</__ATTRIBUTES__>
+				</AppStartPortNumber>
+				<AppEndPortNumber data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<default_value>0</default_value>
+						<is_unique>0</is_unique>
+						<possible_range>
+							<min>1</min>
+							<max>65535</max>
+						</possible_range>
+						<validations>
+							<validation>
+								Port range should not overlap with the other default or custom application. Allowed if AppEnabled flag is disabled
+							</validation>
+							<validation>
+								If AppPortType is Range, End port should be greater than or equal to start port
+							</validation>
+						</validations>
+					    <remarks>The start port and end port should be displayed as empty to the user instead of default value.The default value added here is to keep the JSON syntactically correct.</remarks>
+					</__ATTRIBUTES__>
+				</AppEndPortNumber>
+				<AppType data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<default_value>TCP</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>TCP</possible_value>
+							<possible_value>UDP</possible_value>
+							<possible_value>TCP/UDP</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</AppType>
+			</PortForwardingCustomApplications>
+		</PortForwardingSettings>
+		<DeviceAgent data_type="Object">
+			<DeviceAgentEnabled data_type="Boolean">
+				<__ATTRIBUTES__>	
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>1</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</DeviceAgentEnabled>
+			<CheckinDuration data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>900</default_value>
+					<is_unique>1</is_unique>
+					<possible_range>
+						<min>5</min>
+						<max>86400</max>
+					</possible_range>
+					<unit>Seconds</unit>
+				</__ATTRIBUTES__>
+			</CheckinDuration>
+			<HeartBeatTimerEnabled data_type="Boolean">
+				<__ATTRIBUTES__>	
+					<is_required>0</is_required>
+					<default_value>false</default_value>
+					<is_unique>1</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+					<remarks>This field should not be shown in cloud UI. This field is used to show or hide heartbeattimer and it should be shown only when heartbeattimerenabled is true</remarks>
+				</__ATTRIBUTES__>
+			</HeartBeatTimerEnabled>
+			<HeartBeatTimer data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>1680</default_value>
+					<is_unique>1</is_unique>
+					<possible_range>
+						<min>30</min>
+						<max>64800</max>
+					</possible_range>
+					<unit>Seconds</unit>
+				</__ATTRIBUTES__>
+			</HeartBeatTimer>
+		</DeviceAgent>
+		<BlockedDevices data_type="Array">
+			<DeviceMacAddress data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value></default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>MAC address formatted string. aa:bb:cc:dd:ee:ff</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Must be valid MAC address
+						</validation>
+	                    <validation>
+							Should not contain duplicate entries
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</DeviceMacAddress>
+		</BlockedDevices>
+		<WhiteListedDevices data_type="Array">
+			<DeviceMacAddress data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value></default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>MAC address formatted string. aa:bb:cc:dd:ee:ff</possible_value>
+					</possible_values>
+					<validations>
+						<validation>
+							Must be valid MAC address
+						</validation>
+	                    <validation>
+							Should not contain duplicate entries
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</DeviceMacAddress>
+		</WhiteListedDevices>
+		<LogsSettings data_type="Object">
+			<LogsEnabled data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>false</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>false</possible_value>
+						<possible_value>true</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</LogsEnabled>
+			<LogsDuration data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>3</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>1</possible_value>
+						<possible_value>2</possible_value>
+						<possible_value>3</possible_value>
+						<possible_value>4</possible_value>
+					</possible_values>
+					<unit>
+						Duration in day. For e.g. 1 day, 2 days
+					</unit>
+					<validations>
+						<validation>
+							Enabled only when LogsEnabled is true
+						</validation>
+					</validations>
+				</__ATTRIBUTES__>
+			</LogsDuration>
+		</LogsSettings>
+		<USBSerialSettings data_type="Object">
+			<ReceiveBufferSizeThreshold data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>200</default_value>
+					<is_unique>0</is_unique>
+					<possible_range>
+						<min>16</min>
+						<max>1024</max>
+					</possible_range>
+					<unit>
+						kb
+					</unit>
+				</__ATTRIBUTES__>
+			</ReceiveBufferSizeThreshold>
+			<ReceiveTimeThreshold data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>0</is_required>
+					<default_value>500</default_value>
+					<is_unique>0</is_unique>
+					<possible_range>
+						<min>100</min>
+						<max>1000</max>
+					</possible_range>
+					<unit>
+						milliseconds
+					</unit>
+				</__ATTRIBUTES__>
+			</ReceiveTimeThreshold>
+			<SerialPortConfiguration data_type="Array">
+				<SessionSerialPort data_type="String">	
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<default_value></default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</SessionSerialPort>
+				<BaudRate data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>0</is_required>
+						<default_value>115200</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>300</possible_value>
+                        	<possible_value>1200</possible_value>
+                        	<possible_value>2400</possible_value>
+                        	<possible_value>4800</possible_value>
+                        	<possible_value>9600</possible_value>
+                        	<possible_value>19200</possible_value>
+                        	<possible_value>38400</possible_value>
+                        	<possible_value>57600</possible_value>
+                        	<possible_value>115200</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</BaudRate>
+				<DataBits data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>0</is_required>
+						<default_value>8</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>7</possible_value>
+                        	<possible_value>8</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</DataBits>
+				<Parity data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>0</is_required>
+						<default_value>0</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>0</possible_value>
+                        	<possible_value>1</possible_value>
+						</possible_values>
+						<legends>
+						<legend>
+							<key>0</key>
+							<value>No</value>
+						</legend>
+						<legend>
+							<key>1</key>
+							<value>Yes</value>
+						</legend>
+					</legends>
+					</__ATTRIBUTES__>
+				</Parity>
+				<StopBits data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>0</is_required>
+						<default_value>1</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>1</possible_value>
+                        	<possible_value>2</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</StopBits>
+				<FlowControl data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>0</is_required>
+						<default_value>0</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>0</possible_value>
+                        	<possible_value>1</possible_value>
+							<possible_value>2</possible_value>
+						</possible_values>
+						<legends>
+							<legend>
+								<key>0</key>
+								<value>None</value>
+							</legend>
+							<legend>
+								<key>1</key>
+								<value>Software</value>
+							</legend>
+							<legend>
+								<key>2</key>
+								<value>Hardware</value>
+							</legend>
+						</legends>
+					</__ATTRIBUTES__>
+				</FlowControl>
+			</SerialPortConfiguration>
+		</USBSerialSettings>
+	</Config>
+	<imei data_type="String">
+		<__ATTRIBUTES__>
+			<is_required>1</is_required>
+			<default_value>Any String</default_value>
+			<is_unique>0</is_unique>
+			<possible_values>
+				<possible_value>Any String</possible_value>
+			</possible_values>
+		</__ATTRIBUTES__>
+	</imei>
+	<timestamp data_type="String">
+		<__ATTRIBUTES__>
+			<is_required>1</is_required>
+			<default_value>0</default_value>
+			<is_unique>0</is_unique>
+			<possible_values>
+				<possible_value>Unix epoch time representing number of seconds elapsed since epoch reference time.</possible_value>
+			</possible_values>
+		</__ATTRIBUTES__>
+	</timestamp>

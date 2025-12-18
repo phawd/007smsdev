@@ -1,0 +1,18 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<h2>Pārskats</h2>
+	<p>Šīs īsziņas parasti sūta jūsu pakalpojumu sniedzējs. Jūs nedrīkstat mēģināt atbildēt, tāpēc atbildes funkcija nav nodrošināta.</p>
+	<h2>Saturs</h2>
+	<tmpl_if showMessageCounter>
+		<h3>Ziņojumu skaitītāji</h3>
+		<p>Divi skaitītāji ekrāna augšpusē norāda nelasīto (jauno) ziņojumu skaitu un kopējo ziņojumu skaitu.</p>	
+		<p>Ņemiet vērā, ka visi ziņojumi ir iestatīti kā "lasīti", kad tie tiek parādīti šajā ekrānā.</p>
+	</tmpl_if>
+	<h3>Ziņojumu saraksts</h3>
+	<p>Visi ziņojumi tiek norādīti datumu secībā. Nelasīti (jauni) ziņojumi tiek norādīti ar ikonu. Ziņojumi tiek automātiski atzīmēti kā "lasīti", tiklīdz tie tiek parādīti šajā lapā, tāpēc nākamajā lapas atvēršanas reizē tie vairs netiks rādīti kā nelasīti.</p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p>Šī poga atrodas ziņojumu saraksta beigās. Izmantojiet to pēc nepieciešamības, lai dzēstu visus ziņojumus.</p>
+	</tmpl_if>
+</div>

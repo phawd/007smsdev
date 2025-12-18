@@ -1,0 +1,262 @@
+#!/bin/sh
+# Script that activates the configfs based on the usb configuration 
+export SHELL=/bin/sh PATH=$PATH:/opt/nvtl/bin LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/nvtl/lib
+UDC_VAL=""
+ADBD_FILE=/opt/nvtl/bin/adbd
+run_configfs () 
+    case $1 in
+        1) 
+          echo -n "Starting USB gadget debug mode --> LPM "
+   	  pkill adbd
+          if [ -f "$ADBD_FILE" ]; then
+          start-stop-daemon -S -b -a /opt/nvtl/bin/adbd         
+          else
+          /etc/launch_adbd start
+          fi  
+          cd /sys/kernel/config/usb_gadget/g1
+          rm os_desc/c* 2> /dev/null
+	  rm configs/c*/f* 2> /dev/null
+	  rm -rf configs/c.2 configs/c.3 2> /dev/null
+          ln -s functions/ffs.adb configs/c.1/f1
+          ln -s functions/hid.hid configs/c.1/f2
+  	  echo "binding UDC with Gadget..." 
+          echo $UDC_VAL > UDC
+          cd /
+ 	  echo "done"      
+          ;;
+       2)
+          echo -n "Starting USB gadget debug mode --> FTM(rndis)"
+	  pkill adbd
+          if [ -f "$ADBD_FILE" ]; then
+          start-stop-daemon -S -b -a /opt/nvtl/bin/adbd         
+          else
+          /etc/launch_adbd start
+          fi  
+          cd /sys/kernel/config/usb_gadget/g1
+          rm os_desc/c* 2> /dev/null
+          rm configs/c*/f* 2> /dev/null
+	  rm -rf configs/c.2 configs/c.3 2> /dev/null
+          echo 0x05c6 > idVendor
+          echo 0x90B6 > idProduct
+          ln -s functions/gsi.rndis configs/c.1/f1
+          ln -s functions/cser.dun.0 configs/c.1/f2
+          ln -s functions/diag.diag configs/c.1/f3
+          ln -s functions/ffs.adb configs/c.1/f4
+          ln -s functions/hid.hid configs/c.1/f5
+          echo 0xA0 > configs/c.1/bmAttributes
+	  echo "binding UDC with Gadget..." 
+          echo $UDC_VAL > UDC
+          cd  /
+ 	  echo "done"      
+          ;;
+       3)
+          echo -n "Starting USB gadget debug mode --> Online(rndis)"
+	  pkill adbd
+          if [ -f "$ADBD_FILE" ]; then
+          start-stop-daemon -S -b -a /opt/nvtl/bin/adbd         
+          else
+          /etc/launch_adbd start
+          fi  
+          cd /sys/kernel/config/usb_gadget/g1
+          rm os_desc/c* 2> /dev/null
+          rm configs/c*/f* 2> /dev/null
+	  rm -rf configs/c.2 configs/c.3 2> /dev/null
+          echo 0x05c6 > idVendor
+          echo 0x90B6 > idProduct
+	  sleep 3
+          ln -s functions/gsi.rndis configs/c.1/f1
+          ln -s functions/cser.dun.0 configs/c.1/f2
+          ln -s functions/diag.diag configs/c.1/f3
+          ln -s functions/ffs.adb configs/c.1/f4
+          ln -s functions/hid.hid configs/c.1/f5
+          echo 0xA0 > configs/c.1/bmAttributes
+	  echo "binding UDC with Gadget..." 
+          echo $UDC_VAL > UDC
+          cd /
+     	  echo "done"      
+          ;;
+       4) 
+          echo -n "Starting USB gadget debug mode --> LTM"
+	  pkill adbd
+          if [ -f "$ADBD_FILE" ]; then
+          start-stop-daemon -S -b -a /opt/nvtl/bin/adbd         
+          else
+          /etc/launch_adbd start
+          fi  
+          cd /sys/kernel/config/usb_gadget/g1
+          rm os_desc/c* 2> /dev/null
+          rm configs/c*/f* 2> /dev/null
+   	  rm -rf configs/c.2 configs/c.3 2> /dev/null
+          echo 0x05c6 > idVendor
+          echo 0x90DB > idProduct
+	  ln -s functions/diag.diag configs/c.1/f1
+          ln -s functions/cser.dun.0 configs/c.1/f2
+   	  ln -s functions/gsi.rmnet configs/c.1/f3
+          ln -s functions/gsi.dpl configs/c.1/f4
+	  ln -s functions/qdss.qdss configs/c.1/f5
+          ln -s functions/ffs.adb configs/c.1/f6
+          ln -s functions/hid.hid configs/c.1/f7
+  	  echo "binding UDC with Gadget..." 
+          echo $UDC_VAL > UDC
+          cd /
+ 	  echo "done"      
+          ;;
+     5) 
+          echo -n "Starting USB gadget eum mode --> LPM (no tether)"
+	  pkill adbd
+          if [ -f "$ADBD_FILE" ]; then
+          start-stop-daemon -S -b -a /opt/nvtl/bin/adbd         
+          else
+          /etc/launch_adbd start
+          fi  
+          cd /sys/kernel/config/usb_gadget/g1
+          rm os_desc/c* 2> /dev/null
+          rm configs/c*/f* 2> /dev/null
+	  rm -rf configs/c.2 configs/c.3 2> /dev/null
+          echo "hid,mass_storage" > configs/c.1/strings/0x409/configuration
+          ln -s functions/hid.hid configs/c.1/f1
+          ln -s functions/mass_storage.0 configs/c.1/f2
+	  echo "binding UDC with Gadget..." 
+          echo $UDC_VAL > UDC
+          cd /
+     	  echo "done"      
+          ;;
+     6) 
+          echo -n "Starting USB gadget eum mode --> online(rndis)"
+	  pkill adbd
+          if [ -f "$ADBD_FILE" ]; then
+          start-stop-daemon -S -b -a /opt/nvtl/bin/adbd         
+          else
+          /etc/launch_adbd start
+          fi  
+          cd /sys/kernel/config/usb_gadget/g1
+          rm os_desc/c* 2> /dev/null
+          rm configs/c*/f* 2> /dev/null
+	  rm -rf configs/c.2 configs/c.3 2> /dev/null
+          echo "rndis" > configs/c.1/strings/0x409/configuration
+          ln -s functions/gsi.rndis configs/c.1/f1
+          echo 0xA0 > configs/c.1/bmAttributes
+   	  echo "binding UDC with Gadget..." 
+          echo $UDC_VAL > UDC
+          cd /
+    	  echo "done"      
+          ;;
+       7)
+          echo -n "Starting USB gadget debug mode --> FTM(ecm)"
+	  pkill adbd
+          if [ -f "$ADBD_FILE" ]; then
+          start-stop-daemon -S -b -a /opt/nvtl/bin/adbd         
+          else
+          /etc/launch_adbd start
+          fi  
+          cd /sys/kernel/config/usb_gadget/g1
+          rm os_desc/c* 2> /dev/null
+          rm configs/c*/f* 2> /dev/null
+	  rm -rf configs/c.2 configs/c.3 2> /dev/null
+          ln -s functions/gsi.ecm configs/c.1/f1
+	  ln -s functions/cser.dun.0 configs/c.1/f2
+	  ln -s functions/diag.diag configs/c.1/f3
+          ln -s functions/ffs.adb configs/c.1/f4
+          ln -s functions/hid.hid configs/c.1/f5
+	  echo "binding UDC with Gadget..." 
+          echo $UDC_VAL > UDC
+          cd  /
+ 	  echo "done"      
+          ;;
+       8)
+          echo -n "Starting USB gadget debug mode --> Online(ecm)"
+	  pkill adbd
+          if [ -f "$ADBD_FILE" ]; then
+          start-stop-daemon -S -b -a /opt/nvtl/bin/adbd         
+          else
+          /etc/launch_adbd start
+          fi  
+          cd /sys/kernel/config/usb_gadget/g1
+          rm os_desc/c* 2> /dev/null
+          rm configs/c*/f* 2> /dev/null
+	  rm -rf configs/c.2 configs/c.3 2> /dev/null
+          ln -s functions/gsi.ecm configs/c.1/f1
+  	  ln -s functions/cser.dun.0 configs/c.1/f2
+  	  ln -s functions/diag.diag configs/c.1/f3
+          ln -s functions/ffs.adb configs/c.1/f4
+          ln -s functions/hid.hid configs/c.1/f5
+	  echo "binding UDC with Gadget..." 
+          echo $UDC_VAL > UDC
+          cd /
+     	  echo "done"      
+          ;;
+      9) 
+          echo -n "Starting USB gadget eum mode --> online(ecm)"
+	  pkill adbd
+          if [ -f "$ADBD_FILE" ]; then
+          start-stop-daemon -S -b -a /opt/nvtl/bin/adbd         
+          else
+          /etc/launch_adbd start
+          fi  
+          cd /sys/kernel/config/usb_gadget/g1
+          rm os_desc/c* 2> /dev/null
+          rm configs/c*/f* 2> /dev/null
+	  rm -rf configs/c.2 configs/c.3 2> /dev/null
+          echo "ecm,mass_storage" > configs/c.1/strings/0x409/configuration
+          ln -s functions/gsi.ecm configs/c.1/f1
+          ln -s functions/mass_storage.0 configs/c.1/f2
+          echo 0xA0 > configs/c.1/bmAttributes
+   	  echo "binding UDC with Gadget..." 
+          echo $UDC_VAL > UDC
+          cd /
+    	  echo "done"      
+          ;;
+       10)
+          echo -n "Starting USB gadget debug mode --> Online(no thether)"
+	  pkill adbd
+          if [ -f "$ADBD_FILE" ]; then
+          start-stop-daemon -S -b -a /opt/nvtl/bin/adbd         
+          else
+          /etc/launch_adbd start
+          fi  
+          cd /sys/kernel/config/usb_gadget/g1
+          rm os_desc/c* 2> /dev/null
+          rm configs/c*/f* 2> /dev/null
+	  rm -rf configs/c.2 configs/c.3 2> /dev/null
+          echo 0x05c6 > idVendor
+          echo 0x901F > idProduct
+          echo "diag,adb,dun,hid" > configs/c.1./strings/0x409/configuration
+          ln -s functions/diag.diag configs/c.1/f1
+          ln -s functions/ffs.adb configs/c.1/f2
+          ln -s functions/cser.dun.0 configs/c.1/f3
+          ln -s functions/hid.hid configs/c.1/f4
+          echo 0xA0 > configs/c.1/bmAttributes
+	  echo "binding UDC with Gadget..." 
+          echo $UDC_VAL > UDC
+          cd /
+     	  echo "done"      
+          ;;
+     11)
+          echo -n "Starting USB gadget eum mode --> Online (rndis,hid,mass_storage tether)"
+          pkill adbd
+          if [ -f "$ADBD_FILE" ]; then
+          start-stop-daemon -S -b -a /opt/nvtl/bin/adbd
+          else
+          /etc/launch_adbd start
+          fi
+          cd /sys/kernel/config/usb_gadget/g1
+          rm os_desc/c* 2> /dev/null
+          rm configs/c*/f* 2> /dev/null
+          rm -rf configs/c.2 configs/c.3 2> /dev/null
+          echo "rndis,hid,mass_storage" > configs/c.1/strings/0x409/configuration
+          ln -s functions/gsi.rndis configs/c.1/f1
+          ln -s functions/hid.hid configs/c.1/f2
+          ln -s functions/mass_storage.0 configs/c.1/f3
+          echo "binding UDC with Gadget..."
+          echo $UDC_VAL > UDC
+          cd /
+          echo "done"
+          ;;
+   	  pkill adbd
+          cd /sys/kernel/config/usb_gadget/g1
+	  rm configs/c*/f* 2> /dev/null
+	  rm -rf configs/c.2 configs/c.3 2> /dev/null
+	  echo "" > UDC
+	  exit 1
+UDC_VAL=$(ls /sys/class/udc)
+run_configfs $1 

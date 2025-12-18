@@ -1,0 +1,47 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_manager_menu_text")></h1>
+        <h2>Pārskats</h2>
+        <p>SIM karti, kas ievietota jūsu <tmpl_var _("webui", "webui_product_name")>, var bloķēt, izmantojot PIN kodu. Ja SIM karte ir bloķēta, pirms savienojuma ar mobilo tīklu izveides ir jāievada PIN kods. Kad PIN kods ir ievadīts, tas tiek saglabāts līdz nākamajai izslēgšanai.</p>
+
+	<p>Papildus iespējai nepieciešamības gadījumā ievadīt SIM kartes PIN kodu šajā lapā varat arī atbloķēt SIM karti vai mainīt SIM kartes PIN kodu. Parasti, lai mainītu SIM karti, ir jānorāda esošais PIN kods. Novatel Wireless SIM kartes noklusējuma PIN kods ir pieejams pie pakalpojumu sniedzēja.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_pin_lock_feature_label"), (size(_("webui", "adv_sim_manager_pin_lock_feature_label")) - size(":")))></h3>
+		<p>Lauks norāda, vai PIN koda bloķēšanas funkcija tiek vai netiek izmantota. Ja iestatījums ir ieslēgts, PIN koda bloķēšana ir ieslēgta, un, lai izveidotu savienojumu ar mobilo tīklu, jāievada SIM kartes PIN kods. Ja iestatījums ir izslēgts, PIN koda bloķēšanas funkcija nav ieslēgta, un SIM kartes PIN kods nav jāievada.</p>
+
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_status_label"), (size(_("webui", "adv_sim_manager_status_label")) - size(":")))></h3>
+	<p>Laukā ir norādīts SIM kartes pašreizējais statuss. Iespējamas tālāk norādītās vērtības.</p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>Gatavs — šis ir normāls stāvoklis. SIM kartes PIN kods netiek izmantots.</li>
+	        <li>PIN koda bloķēšana — lai izmantotu mobilo tīklu, jāievada SIM kartes PIN kods.</li>
+	        <li>PUK koda bloķēšana — lai turpinātu, jāievada SIM kartes PUK kods. PUK kodu varat saņemt no sava pakalpojumu sniedzēja.</li>
+	        <li>Atbloķēts — SIM kartes PIN kods ir nepieciešams, bet tas jau ir ievadīts.</li>
+	        <li>Nav SIM kartes — SIM karte netika noteikta. Ja jums ir SIM karte, pārbaudiet, vai tā ir ievietota pareizi.</li>
+	        <li>SIM kartes kļūda — tika noteikta SIM karte, bet tā neatbildēja, kā paredzēts, un to nevar izmantot.</li>       
+	        </ul>
+	</div>
+        <h2>SIM kartes darbības</h2>
+        <p>Pieejamās darbības ir atkarīgas no pašreizējā SIM kartes statusa. Visas iespējamās darbības ir norādītas un izskaidrotas tālāk.</p>
+
+		<h3>PIN koda bloķēšana</h3>
+		<p>Ja SIM karte pašlaik ir bloķēta ar PIN kodu, tiek parādīta uzvedne ievadīt PIN kodu. Ņemiet vērā: ja pārāk daudz reižu ievadīsiet nepareizu PIN kodu, SIM karte tiek bloķēta ar PUK kodu. Skaitītājs lapā norāda, cik nepareizu ierakstu izraisīs PUK koda bloķēšanu. Kad izmantota bloķēšana ar PUK kodu, PUK kods ir jāiegūst no jūsu pakalpojumu sniedzēja.</p>
+		<h3>PUK koda bloķēšana</h3>
+		<p>Ja SIM karte pašlaik ir bloķēta ar PUK kodu, vienīgā iespējamā darbība ir ievadīt PUK kodu. Ņemiet vērā: ja pārāk daudz reižu ievadīsiet nepareizu PUK kodu, SIM karte kļūs neatgriezeniski nelietojama. Jums būs jāiegādājas jauna SIM karte. Skaitītājs lapā norāda atlikušo ievades mēģinājumu skaitu.</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_enable_pin_lock_option")></h3>
+		<p>Tādējādi SIM karte tiek iestatīta tā, lai pēc startēšanas būtu jāievada PIN kods, lai izveidotu savienojumu ar mobilo tīklu. Lai veiktu šo darbību, ir jāievada pašreizējais PIN kods.</p>
+
+		<h3><tmpl_var _("webui", "adv_sim_manager_disable_pin_option")></h3>
+		<p>Šo iestatījumu var izmantot, lai izslēgtu iepriekš ieslēgtu PIN koda bloķēšanu un lai PIN koda ievadīšana vairs nebūtu nepieciešama savienojuma ar mobilo tīklu izveidei. Lai veiktu šo darbību, ir jāievada pašreizējais PIN kods.</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_change_pin_option")></h3>
+		<p>Lai mainītu esošo PIN kodu, atlasiet šo opciju un pēc tam ievadiet nepieciešamos datus:</p>
+		<div class="blockgroup">
+			<ul>
+			<li>Pašreizējais PIN kods</li>
+			<li>Jaunais PIN kods</li>
+			<li>Apstipriniet jauno PIN kodu</li>
+			</ul>
+		</div>
+		<p><tmpl_var _("webui", "adv_sim_manager_name_text")></p>
+</div>
+<!-- id="sim" -->
+

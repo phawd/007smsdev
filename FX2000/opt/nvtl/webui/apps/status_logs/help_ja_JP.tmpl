@@ -1,0 +1,31 @@
+<!-- Status Logs -->
+<div id="status_logs">
+	<h1><tmpl_var _("webui", "status_logs_menu_text")></h1>
+	<h2>概要</h2>
+	<p>ログ情報はトラブルシューティングに役立ちますが、通常の操作では必要ありません。</p>
+	
+	<h2>設定</h2>
+	<h3><tmpl_var _("webui", "status_logs_enable_logs_label")></h3>
+	<p>必要に応じてログをオンにします。</p>
+	<h3><tmpl_var _("webui", "status_logs_delete_sys_logs_label")></h3>
+	<p>この設定で、システムログデータが保持される期間を決定します。 必要なオプションを選択します。</p>
+	<p>ログがいっぱいになったら、この設定に関係なく、最も古いデータが破棄されるのでご注意ください。</p>
+	
+	<h2>ログデータ</h2>
+	<p>提供されるタブでは、表示するログデータのタイプを選択できます。</p>
+	<h3><tmpl_var _("webui", "status_logs_mobile_network_log_href")></h3>
+	<p>このログには、モバイルネットワークへの接続に関するデータが含まれています。</p>
+	<h3><tmpl_var _("webui", "status_logs_system_log_href")></h3>
+	<p>このログには、このデバイスで発生したモバイルデータ接続以外のイベントが記録されます。</p>
+	
+	<h2>ボタン</h2>
+	
+	<h3><tmpl_var _("webui", "status_logs_clear_log_btn")></h3>
+	<p>このボタンをクリックすると、既存のログデータがすべて削除されます。 これにより、新しいデータが読みやすくなります。</p>
+	<h3><tmpl_var _("webui", "status_logs_refresh_btn")></h3>
+	<p>この機能を活用して、表示されているログデータを更新します。</p>
+	<h3><tmpl_var _("webui", "status_logs_download_btn")></h3>
+	<p>コンピューターまたは接続済みのデバイスにログデータをダウンロードする場合は、このボタンを使用します。</p>
+	
+</div>
+<!-- end Status Logs -->

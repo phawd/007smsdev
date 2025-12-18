@@ -1,0 +1,457 @@
+<Root data_type="Object">
+	<golden_record data_type="Object">
+		<model_number data_type="String">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>Any String</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</model_number>
+		<sku data_type="String">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>Any String</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</sku>
+		<mac_address data_type="String">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>Valid MAC address formatted  String</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</mac_address>
+		<ipv4_address data_type="String">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>Any IPv4 formatted address</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</ipv4_address>
+		<ipv6_address data_type="String">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>Any IPv6 formatted ddress </possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</ipv6_address>
+		<modem_version data_type="String">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>Any String</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</modem_version>
+		<device_version data_type="String">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>Any String</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</device_version>
+		<cute_version data_type="String">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>Any String</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</cute_version>
+		<pri data_type="String">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>Any String</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</pri>
+		<external_antenna data_type="Boolean">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>true</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>true</possible_value>
+					<possible_value>false</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</external_antenna>
+		<WiFi data_type="Object">
+			<ssid data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any String</possible_value>
+					</possible_values>
+					<remarks>This is Primary SSID/Network.</remarks>
+				</__ATTRIBUTES__>
+			</ssid>
+			<password data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any String</possible_value>
+					</possible_values>
+					<remarks>This Password is related to Primary SSID/Network.</remarks>
+				</__ATTRIBUTES__>
+			</password>
+		</WiFi>
+		<installation_details data_type="Object">
+			<installer_id data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<is_unique>0</is_unique>
+					<default_value>Any String</default_value>
+					<possible_values>
+						<possible_value>Any String</possible_value>
+					</possible_values>
+					<remarks>This can be Installer Name or E-Mail or Any other identifier</remarks>
+				</__ATTRIBUTES__>
+			</installer_id>
+			<start_time data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<is_unique>0</is_unique>
+					<default_value>Any String</default_value>
+					<possible_values>
+						<possible_value>Any String</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</start_time>
+			<end_time data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<is_unique>0</is_unique>
+					<default_value>Any String</default_value>
+					<possible_values>
+						<possible_value>Any String</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</end_time>
+			<location data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<is_unique>0</is_unique>
+					<default_value>Any String</default_value>
+					<possible_values>
+						<possible_value>Any String</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</location>
+			<eCompass data_type="Object">
+				<x data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>1</default_value>
+						<possible_values>
+							<possible_value>Any Integer</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</x>
+				<y data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>1</default_value>
+						<possible_values>
+							<possible_value>Any Integer</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</y>
+				<z data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>1</default_value>
+						<possible_values>
+							<possible_value>Any Integer</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</z>
+			</eCompass>
+			<GPS data_type="Object">
+				<latitude data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</latitude>
+				<longitude data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</longitude>
+				<altitude data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</altitude>
+			</GPS>
+			<mobile_details data_type="Object">
+				<manufacturer data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</manufacturer>
+				<model data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</model>
+				<operating_system data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</operating_system>
+				<installer_passcode data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</installer_passcode>
+			</mobile_details>
+		</installation_details>
+		<WAN data_type="Object">
+			<sim data_type="Array">
+				<sim_slot_number data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<default_value>1</default_value>
+						<is_unique>0</is_unique>
+						<possible_values>
+							<possible_value>1</possible_value>
+							<possible_value>2</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</sim_slot_number>
+				<is_active data_type="Boolean">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>   
+						<default_value>false</default_value>   
+						<is_unique>0</is_unique>   
+						<possible_values>
+							<possible_value>true</possible_value>
+							<possible_value>false</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</is_active>
+				<operator data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</operator>
+				<iccid data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</iccid>
+				<imsi data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</imsi>
+				<ecgi data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</ecgi>
+				<pci data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</pci>
+				<band data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</band>
+				<technology data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</technology>
+				<bearer_type data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</bearer_type>
+				<rsrp data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</rsrp>
+				<performance_rating data_type="String">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>Any String</default_value>
+						<possible_values>
+							<possible_value>Any String</possible_value>
+						</possible_values>
+					</__ATTRIBUTES__>
+				</performance_rating>
+				<snr data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>0</default_value>
+						<possible_values>
+							<possible_value>Any Possible Integer Value</possible_value>
+						</possible_values>
+						<unit>dB</unit>
+					</__ATTRIBUTES__>
+				</snr>
+				<sinr data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>0</default_value>
+						<possible_values>
+							<possible_value>Any Possible Integer Value</possible_value>
+						</possible_values>
+						<unit>dB</unit>
+					</__ATTRIBUTES__>
+				</sinr>
+				<rsrq data_type="Integer">
+					<__ATTRIBUTES__>
+						<is_required>1</is_required>
+						<is_unique>0</is_unique>
+						<default_value>-10</default_value>
+						<possible_values>
+							<possible_value>Any Possible Signed Integer Value</possible_value>
+						</possible_values>
+						<unit>dB</unit>
+					</__ATTRIBUTES__>
+				</rsrq>
+			</sim>
+		</WAN>
+	</golden_record>
+	<imei data_type="String">
+		<__ATTRIBUTES__>
+			<is_required>1</is_required>
+			<is_unique>0</is_unique>
+			<default_value>Any String</default_value>
+			<possible_values>
+				<possible_value>Any String</possible_value>
+			</possible_values>
+		</__ATTRIBUTES__>
+	</imei>
+	<timestamp data_type="String">
+		<__ATTRIBUTES__>
+			<is_required>1</is_required>
+			<is_unique>0</is_unique>
+			<default_value>0</default_value>
+			<possible_values>
+				<possible_value>Unix epoch time representing number of seconds elapsed since epoch reference time.</possible_value>
+			</possible_values>
+		</__ATTRIBUTES__>
+	</timestamp>
+</Root>

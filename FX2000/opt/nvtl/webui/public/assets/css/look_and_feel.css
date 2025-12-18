@@ -1,0 +1,2433 @@
+/* =============================================================================
+ * LOOK_AND_FEEL.CSS
+ *
+ * Define all fonts, colors, and images here.
+ * ========================================================================== */
+
+
+#navigationTabsOne li.tabitem a {
+    font-size: 16px;
+}
+
+#navigationTabsTwo li.tabitem a {
+    font-size: 14px;
+}
+
+/* =============================================================================
+ LAYOUT.CSS
+ ========================================================================== */
+/* ==|== header styles =====================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+#header
+{
+}
+
+#header_inner
+{
+	min-height: 107px;
+}
+
+/* ==|== page layout styles =================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+.page #app_container,
+.tabbed_page #app_container
+{
+	background: url("../images/backgrounds/bg_navigation_divider.png") repeat-y;
+}
+
+html.rtl .page #app_container,
+html.rtl .tabbed_page #app_container
+{
+	background: url("../images/backgrounds/bg_navigation_divider.png") repeat-y right top;
+}
+
+/* ==|== app form/table layout styles =======================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+/* Specific Columns */
+
+div.col.help,
+form div.col.help
+{
+	color: #666;
+}
+div.inline_help{ padding-left: 20px; text-align: left;}
+/* form#adv_lan_form .checker{ float:left;} */
+
+div.sub_table div.col.label
+{
+	font-weight: normal;
+}
+
+/* ==|== table styles =======================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+table tbody tr:first-child
+{
+	border-top: 1px solid #ccc;
+}
+
+table tbody tr
+{
+	border-bottom: 1px solid #ccc;
+}
+
+table tbody tr:hover,
+table tbody tr.hover
+{
+	background-color: #eee;
+}
+
+table th
+{
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+}
+
+/* ==|== footer styles ======================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+
+#inseegoLogo
+{
+	float: left;
+}
+
+.logoDevice
+{
+	width: 30%;
+	padding-top: 10px;
+}
+
+.copyright {
+	width: 55%;
+	padding-top: 20px;
+	text-align: center;
+}
+
+.mifi_device {
+	width: 30%;
+	padding-top: 20px;
+}
+
+.mifi_device p#powered {
+	color: #000;
+	font-weight: 400;
+	font-size: 1.25em;
+}
+.mifi_device p#powered:hover {
+    border-bottom: 1px solid #0088ca;
+}
+
+/* =============================================================================
+ STYLE.CSS
+ ========================================================================== */
+/* ==|== html/body styles ===================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+html, body
+{
+	font-family: 'MyriadPro-Regular', sans-serif;
+	background-color: #ffffff;
+	color: #333;
+}
+* {
+	font-family: 'MyriadPro-Regular', sans-serif;
+}
+
+html, html a, body, button, input, select, textarea
+{
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.004);
+}
+
+/* ==|== links styles ========================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+a
+{
+	color: #0088ca;
+	line-height: 1.6em;
+	text-decoration: none;
+}
+
+a:visited
+{
+	color: #0088ca;
+}
+
+a:hover, a:focus
+{
+	color: #666666;
+}
+#help_wrapper a{
+	border-bottom: 1px solid #0088ca;
+}
+#help_wrapper a:hover{
+	border-bottom: 1px solid #0088ca;
+}
+/* Add external icon to external links in just the
+application area of the page and the help pages. */
+#app_container a[href^="http"],
+#help_wrapper a[href^="http"]
+{
+	padding-right: 20px;
+	background: url("../images/icons/icn-external_link.png") no-repeat right;
+	color: #0088ca;
+	cursor: pointer;
+}
+a[href^="http"]:hover{
+	color: #666666 !important;
+}
+
+html.rtl #app_container a[href^="http"],
+html.rtl #help_wrapper a[href^="http"],
+.external
+{
+	background: url("../images/icons/icn-external_link.png") no-repeat;
+}
+
+a.moreLink
+{
+	background: url("../images/icons/icn-link_arrow.png") no-repeat right center;
+}
+
+html.rtl a.gohome, a.moreLink
+{
+	background: url("../images/icons/icn-link_arrow.png") no-repeat left center;
+}
+
+/* ==|== typographic styles =================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+b, strong
+{
+	font-weight: bold;
+}
+
+/* ==|== page header/navigation icons sprite ================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+h1.pageHead, #navigation li a
+{
+}
+
+/* ==|== page headers styles ================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+h1
+{
+	color: #333;
+}
+
+h1.pageHead.about
+{
+	background-position: left 0;
+}
+
+html.rtl h1.pageHead.about
+{
+	background-position: right 0;
+}
+
+h1.pageHead.connected-devices
+{
+	background-position: left -83px;
+}
+
+html.rtl h1.pageHead.connected-devices
+{
+	background-position: right -83px;
+}
+
+h1.pageHead.data-usage
+{
+	background-position: left -164px;
+}
+
+html.rtl h1.pageHead.data-usage
+{
+	background-position: right -164px;
+}
+
+h1.pageHead.settings
+{
+	background-position: left -242px;
+}
+
+html.rtl h1.pageHead.settings
+{
+	background-position: right -242px;
+}
+
+h1.pageHead.messages
+{
+	background-position: left -321px;
+}
+
+html.rtl h1.pageHead.messages
+{
+	background-position: right -321px;
+}
+
+h1.pageHead.parental-controls
+{
+	background-position: left -486px;
+}
+
+html.rtl h1.pageHead.parental-controls
+{
+	background-position: right -486px;
+}
+
+h1.pageHead.customer-care
+{
+	background-position: left -569px;
+}
+
+html.rtl h1.pageHead.customer-care
+{
+	background-position: right -569px;
+}
+
+h1.pageHead.gps
+{
+	background-position: left -653px;
+}
+
+html.rtl h1.pageHead.gps
+{
+	background-position: right -653px;
+}
+
+/* Old Screen Sharing Icon */
+/*
+h1.pageHead.screen-sharing
+{
+	background-position: left -734px;
+}
+
+html.rtl h1.pageHead.screen-sharing
+{
+	background-position: right -734px;
+}
+*/
+
+h1.pageHead.screen-sharing
+{
+	background-position: left -817px;
+}
+
+html.rtl h1.pageHead.screen-sharing
+{
+	background-position: right -817px;
+}
+
+/* ==|== main navigation styles =============================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+#navigation li .about
+{
+	background-position: 0 3px;
+}
+#navigation li .help {
+    background-position: 0 -566px;
+}
+html.rtl #navigation li .about
+{
+	background-position: 176px 3px;
+}
+
+#navigation li .connected-devices
+{
+	background-position: 0 -79px;
+}
+
+html.rtl #navigation li .connected-devices
+{
+	background-position: 176px -79px;
+}
+
+#navigation li .data-usage
+{
+	background-position: 0 -162px;
+}
+
+html.rtl #navigation li .data-usage
+{
+	background-position: 176px -162px;
+}
+
+#navigation li .settings
+{
+	background-position: 0 -240px;
+}
+
+html.rtl #navigation li .settings
+{
+	background-position: 176px -240px;
+}
+
+#navigation li .messages
+{
+	background-position: 0 -319px;
+}
+
+html.rtl #navigation li .messages
+{
+	background-position: 176px -319px;
+}
+
+#navigation li .menu-home
+{
+	background-position: 0 -402px;
+}
+
+html.rtl #navigation li .menu-home
+{
+	background-position: 176px -402px;
+}
+
+#navigation li .parental-controls
+{
+	background-position: 2px -484px;
+}
+
+html.rtl #navigation li .parental-controls
+{
+	background-position: 178px -484px;
+}
+
+#navigation li .customer-care
+{
+	background-position: 0 -568px;
+}
+
+html.rtl #navigation li .customer-care
+{
+	background-position: 177px -568px;
+}
+
+#navigation li .gps
+{
+	background-position: 0 -651px;
+}
+
+html.rtl #navigation li .gps
+{
+	background-position: 177px -651px;
+}
+
+/* Old Screen Sharing Icon */
+/*
+#navigation li .screen-sharing
+{
+	background-position: 0 -731px;
+}
+
+html.rtl #navigation li .screen-sharing
+{
+	background-position: 176px -731px;
+}
+*/
+
+#navigation li .screen-sharing
+{
+	background-position: 0 -813px;
+}
+
+html.rtl #navigation li .screen-sharing
+{
+	background-position: 176px -813px;
+}
+
+#navigation li.menuitem
+{
+	
+}
+
+#navigation li:hover,
+#navigation li:focus,
+#navigation li.active
+{
+	
+}
+#navigation li
+{
+border-bottom: 2px solid #d8dada;
+}
+
+#navigation li a
+{
+	box-sizing:border-box;
+	color: #000000;
+	border-left: 5px solid transparent;
+	font-size: 20px;
+}
+
+#navigation li.active a
+{
+
+	background-color: #fff;
+}
+
+#navigation li:hover a,
+#navigation li a:hover,
+#navigation li:focus a,
+#navigation li a:focus,
+#navigation li.active a
+{
+	color: #333;
+	border-left: 5px solid #0082ca;
+	/*background-color: #fff;*/
+}
+
+/* Count Badges */
+
+#navigation .badge
+{
+	color:#fff ;
+	font-weight: bold;
+	background-color: #cd040b;
+	border-radius: 10px;
+}
+
+/* ==|== headers styles =====================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+h2
+{
+	font-weight: bold;
+}
+
+h2.loading
+{
+	/* See .loading style definition. */
+	background-position: left center !important;
+}
+
+html.rtl h2.loading
+{
+	/* See .loading style definition. */
+	background-position: right center !important;
+}
+
+h2.sectionHead,
+h2.tableHeader.sectionHead
+{
+    font-weight: bold;
+}
+
+h3,
+h3.subSectionHead,
+h3.tableHeader.subSectionHead
+{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+h3.tableHeader.subSectionHead
+{
+    font-weight: normal;
+}
+
+h4
+{
+	font-size: 14px;
+}
+
+/* ==|== tabs styles ========================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+.tabs_container .tabs ul li
+{
+}
+
+html.rtl .tabs_container .tabs ul li
+{
+	border-right: none;
+	border-left: 1px solid #e5e5e5;
+}
+
+.tabs_container .tabs ul li a
+{
+	color: #000;
+}
+
+.tabs_container .tabs ul li:hover a,
+.tabs_container .tabs ul li a:focus
+{
+	color: #000;
+	font-weight: bold;
+}
+
+.tabs_container .tabs ul li.active
+{
+	background-color: #fff;
+	border-bottom: 5px solid #0082ca;
+}
+
+.tabs_container .tabs ul li.active a
+{
+	font-weight: bold;
+	color: #000;
+}
+
+.tier_1_content
+{
+	border-top: 2px solid #ccc;
+}
+
+.tabs_container.tier_2 .tabs ul li a
+{
+	color: #333;
+}
+
+.tabs_container.tier_2 .tabs ul li:hover a,
+.tabs_container.tier_2 .tabs ul li a:focus
+{
+	
+}
+
+.tabs_container.tier_2 .tabs ul li.active
+{	
+	border: none;
+	border-bottom: 5px solid #0082ca;
+	margin: 0px 10px;
+}
+
+.tabs_container.tier_2 .tabs ul li.active a
+{
+	font-weight: normal;
+}
+
+/* ==|== hide show section links styles =====================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+.hideShowSection
+{
+	color: #06c !important;
+}
+
+h1.hideShowSection,
+h2.hideShowSection,
+h3.hideShowSection,
+h4.hideShowSection
+{
+	font-weight: normal;
+}
+
+.hideShowSection:visited
+{
+	color: #06c !important;
+}
+
+.hideShowSection:hover,
+.hideShowSection:focus
+{
+	color: #b00000 !important;
+}
+
+/* ==|== primary styles =====================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+
+div.red_warning, p.red_warning
+{
+	color: #b00000;
+}
+
+fieldset .note
+{
+	background-image: none;
+}
+
+.loading
+{
+	background: url("../images/ajax_loader_f7f7f7.gif") no-repeat center;
+	min-height: 32px;
+	min-width: 32px;
+}
+.spinner
+{
+	background: url("../images/black-spinner.gif") no-repeat center;
+    height: 64px;
+    width: 64px;
+    background-size: 100%;
+    margin: auto;
+}
+
+/* ==|== progress bar styles ================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+.progress_bar_wrapper .ui-progressbar
+{
+	background: url("../images/progress_bars/bg-data-usage-base.png") repeat-x left center;
+	border-radius: 4px;
+	border: 2px solid #000;
+}
+
+/* shared */
+.progress_bar_wrapper .ui-progressbar .ui-widget-header
+{
+	background-color: #fff;
+}
+
+/* device */
+.progress_bar_wrapper .ui-progressbar .ui-widget-header-line
+{
+	background: #A9A9A9;
+}
+
+/* shared */
+#data_usage .progress_bar_wrapper .ui-progressbar .ui-widget-header
+{
+	background-color: #FF9900;
+}
+
+/* device */
+#apps_home .progress_bar_wrapper .ui-progressbar .ui-widget-header,
+#data_usage .progress_bar_wrapper .ui-progressbar .ui-widget-header-line
+{	
+	background-color: #006600;
+}
+
+.progress_bar_wrapper #data_plan_usage_bar_col .title
+{
+	font-weight: bold;
+}
+
+/* ==|== page-related application styles ====================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+#pageHeadRow
+{
+}
+
+/* ==|== error pages styles ==================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+.error_page h1
+{
+	font-weight: normal;
+}
+
+.error_page h1 strong
+{
+	font-weight: normal;
+}
+
+.error_page h2
+{
+	font-weight: normal;
+}
+
+/* ==|== login page styles ==================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+.login_page #login_container
+{
+	background: url("/assets/images/heros/marquee-left.png") no-repeat left -20px;
+}
+
+html.rtl .login_page #login_container
+{
+	background: url("/assets/images/heros/marquee-right.png") no-repeat right -20px;
+}
+
+.login_page h1.pageHead
+{
+	background-image: none;
+}
+
+.login_page form fieldset
+{
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	border-radius: 6px;
+}
+
+/* ==|== data usage page styles =============================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+.data_usage_confirmation .title,
+#data_usage .title
+{
+	font-weight: bold;
+}
+
+#data_usage h3
+{
+	font-weight: normal;
+}
+
+/* ==|== devices table styles ===============================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+/* Connected Device Icons */
+table.devicesTable tbody tr td.icon span
+{
+	background-image: url("../images/icons/connected_devices/block-connected-device-icon.png");
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-size: 97%;
+}
+
+#ConnectedDevicesPrimaryTable th, #BlockedDevicesTable th
+{
+	text-align: center;
+}
+
+/* Connected Device Icons */
+table.devicesTable tbody tr td.icon span.unknown,
+table.devicesTable tbody tr td.icon span.generic
+{
+	background-image: none;
+}
+
+table.devicesTable tbody tr td.icon span.desktop
+{
+	background-position: 0 0;
+}
+
+table.devicesTable tbody tr td.icon span.phone
+{
+	background-position: 0 -74px;
+}
+
+table.devicesTable tbody tr td.icon span.tablet
+{
+	background-position: 0 -148px;
+}
+
+table.devicesTable tbody tr td.icon span.other
+{
+	background-position: 0 -222px;
+}
+
+/* Connection Types Icons */
+table.devicesTable tbody tr td.interfaceType span.wifi,
+table.devicesTable tbody tr td.interfaceType span.usb,
+table.devicesTable tbody tr td.interfaceType span.ethernet
+{
+	background-image: url("../images/icons/connected_devices/icn-sprite-connected_devices_conn_types.png");
+	background-repeat: no-repeat;
+}
+
+table.devicesTable tbody tr td.interfaceType span.wifi
+{
+	/*background-position: -20px -25px;*/
+}
+
+table.devicesTable tbody tr td.interfaceType span.usb
+{
+	background-position: -20px -101px;
+}
+
+table.devicesTable tbody tr td.interfaceType span.ethernet
+{
+	background-position: -20px -164px;
+}
+
+table.devicesTable button.edit
+{
+	background-image: url("../images/icons/icn-edit.png");
+}
+
+table.devicesTable button.edit:hover
+{
+	background-position: 0 -20px;
+}
+
+table.devicesTable .editDeviceRow .buttonColumn .actionBtn
+{
+	background-image: url("../images/icons/icn-save.png");
+}
+
+/* ==|== messages page styles ===============================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+#smsInbox .Unread
+{
+	font-weight: bold;
+}
+
+/* ==|== parental control pages styles =======================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+.addParentalControlSite
+{
+	background-image: url("../images/icons/icn-sprite-small.png");
+	background-repeat: no-repeat;
+	background-position: -24px -1175px;
+}
+
+.addParentalControlSite:hover, .addParentalControlSite:active
+{
+	background-position: -24px -1247px;
+}
+
+.addParentalControlSite:focus
+{
+	background-position: -24px -1319px;
+}
+
+#parentalctrl_schedule #scheduleTable div.two_hour_divide
+{
+	border-right: 1px solid #ccc;
+}
+
+html.rtl #parentalctrl_schedule #scheduleTable div.two_hour_divide
+{
+	border-right: none;
+	border-left: 1px solid #ccc;
+}
+
+#parentalctrl_schedule #scheduleTable div.last
+{
+	border-right: none;
+}
+
+html.rtl #parentalctrl_schedule #scheduleTable div.last
+{
+	border-left: none;
+}
+
+#parentalctrl_schedule #scheduleTable .time_bar
+{
+	background-color: #ccc;
+}
+
+#parentalctrl_schedule #scheduleTable .time_segment
+{
+	background-color: #43b7e9;
+}
+
+#parentalctrl_schedule #timePeriodForm
+{
+	border: 1px solid #e5e5e5;
+	background-color: #fff;
+}
+
+#parentalctrl_schedule button.actionBtn,
+#parentalctrl_schedule button.cancelActionBtn,
+#parentalctrl_schedule button.deletePeriod
+{
+	background-image: url("../images/icons/icn-sprite-small.png");
+	background-repeat: no-repeat;
+	border: none;
+}
+
+#parentalctrl_schedule button.deletePeriod
+{
+	background-position: -24px -742px;
+}
+
+#parentalctrl_schedule button.deletePeriod:hover
+{
+	background-position: -24px -814px;
+}
+
+#parentalctrl_schedule button.deletePeriod:focus
+{
+	background-position: -24px -886px;
+}
+
+#parentalctrl_schedule .actionBtn
+{
+	background-position: -22px -1390px;
+}
+
+#parentalctrl_schedule .actionBtn:hover
+{
+	background-position: -22px -1462px;
+}
+
+#parentalctrl_schedule .actionBtn:focus
+{
+	background-position: -22px -1534px;
+}
+
+#parentalctrl_schedule .cancelActionBtn
+{
+	background-position: -23px -1607px;
+}
+
+#parentalctrl_schedule .cancelActionBtn:hover
+{
+	background-position: -23px -1678px;
+}
+
+#parentalctrl_schedule .cancelActionBtn:focus
+{
+	background-position: -23px -1750px;
+}
+
+/* ==|== advanced port filtering/forwarding pages styles ====================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+.addCustomApp
+{
+}
+
+table.portFilteringTable tbody tr.portInformationRow .portNumber
+{
+	color: #666;
+}
+
+/* ==|== restarting, resetting and shutdown pages styles ===============================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+#restarting #restartingContent, #shutdown #shutdownContent, #resetting #resettingContent
+{
+	/* background: url("/assets/images/heros/marquee-left.png") no-repeat left 0;
+	background-position: 0px 10px;
+	min-height: 400px;
+	margin-left: -60px; */
+}
+#restartingContent, #shutdownContent, #resettingContent {
+	display:table; 
+	margin: auto;
+	width: 80%;
+	height: 60vh;
+}
+#restartingContentInner, #shutdownContentInner, #resettingContentInner{
+	display: table-cell;
+	vertical-align:top;
+	padding-top: 50px;
+}
+#shutdown #shutdownContent {
+	/* background-position: 0px 50px; */
+}
+
+body#restarting #restartingContentInner p, #shutdownContentInner p, #resettingContent p{
+	padding: 10px 0px;
+	float: left;
+}
+#shutdownContentInner p:nth-child(3){
+	margin-left: 10px;
+}
+body#restarting .footer, body#shutdown .footer, body#resetting .footer{
+ position: absolute !important;
+ bottom: 0px;
+ left: 0px; 
+ right: 0px;
+}
+/** DebugLogs / Lab Test Info / Field Test Info */
+body#debug_logs #app_content, body#lab_test_info #app_content, body#field_test_info #app_content,  body#sideload_software_update #app_content {
+	padding-top: 50px;
+	width: 80%;
+	margin:auto;
+}
+body#debug_logs #app_content h1 {
+    border-bottom: 1px solid #0082ca;
+    padding: 4px 0px;
+    margin-top: 20px;
+    font-size: 1.15em;
+}
+
+body#lab_test_info #app_content h3, body#field_test_info #app_content h3,  body#sideload_software_update #app_content h3 {
+    border-bottom: 1px solid #0082ca;
+    padding: 4px 0px;
+    margin-top: 20px;
+    font-size: 1.15em;
+}
+body#sideload_software_update .button_container {
+	float: left;
+}
+
+
+html.rtl #restarting #app_container, html.rtl #shutdown #app_container, html.rtl #resetting #app_container
+{
+	/* background: url("/assets/images/heros/marquee-right.png") no-repeat right 0; */
+}
+
+/* ==|== preferences page styles =====================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+#ucf_animation
+{
+	border: 1px solid #ccc;
+	background-color: #fff;
+}
+
+/* ==|== modal dialog styles ================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+.ui-dialog
+{
+	border: 1px solid #d2d2d2;
+	background-color: #ffffff;
+}
+
+.ui-dialog-titlebar
+{
+	background-color: #fff; 
+}
+
+.ui-dialog-titlebar span
+{
+	/* font-weight: bold;
+	color: #fff; */
+}
+.ui-dialog-content {
+    padding: 0px 20px;
+    display: table;
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+.ui-dialog-content h3
+{
+	font-weight: bold;
+}
+
+.ui-dialog-titlebar-close span.ui-icon-closethick
+{
+	background: transparent url("../images/modal/close_button.png") top;
+	background-repeat: no-repeat;
+}
+
+.ui-dialog-titlebar-close.ui-state-hover span.ui-icon-closethick,
+.ui-dialog-titlebar-close:focus span.ui-icon-closethick
+{
+	background-position: 0 0px;
+}
+
+.ui-widget-overlay
+{
+	background-color: #000;
+}
+
+.ui-dialog-buttonpane
+{
+	background: transparent none;
+}
+
+/* ==|== help dialog styles =================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+#help_wrapper div h3
+{
+	color: #06c;
+}
+
+#help_wrapper div .note
+{
+	font-style: italic;
+}
+
+a.helpLink
+{
+	background: url("../images/icons/icn-help.png") no-repeat;
+	background-position: 0px 0px;
+	background-size: 16px;
+}
+
+a.helpLink:hover, a.helpLink:active
+{
+	background-size: 18px;
+}
+
+/* ==|== no javascript component styles =====================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+#noscript
+{
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+}
+
+#noscript h1,
+#noscript h4
+{
+	font-weight: bold;
+}
+
+/* =============================================================================
+ STATUS.CSS
+ ========================================================================== */
+/* ==|== status area styles =================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+#status_area ul.status li,
+#mobile_status_area ul.status li
+{
+	font-weight: bold;
+	color: #000;
+}
+
+#status_area ul.status li
+{
+	text-shadow:none !important;
+}
+
+/* ==|== status login styles ================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+#status_login
+{
+	background: url("../images/uniform/selector/bg-dropdown_arrow.png") no-repeat center right;
+	background-position:90%;
+	color: #000;
+	font-weight: bold;
+	border: 2px solid #D8DADA;
+	padding: 5px 10px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+html.rtl #status_login
+{
+	background: url("../images/uniform/selector/bg-dropdown_arrow.png") no-repeat center left;
+}
+
+#status_login .login a:visited,
+#status_login .logout a:visited,
+#status_login .home a:visited
+{
+	color: #000;
+}
+
+#status_login .login a:hover,
+#status_login .logout a:hover,
+#status_login .login a:focus,
+#status_login .logout a:focus,
+#status_login .home a:hover,
+#status_login .home a:focus
+{
+	color: #000;
+}
+
+/* =============================================================================
+ MESSAGES.CSS
+ ========================================================================== */
+div.notification.global.warning, div.notification.global.critical, div.notification.global.alert
+{
+	/* We need to embed the warning image here so it will display when connection is lost. */
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAdCAMAAAD4tU6IAAAABGdBTUEAALGPC/xhBQAAAE5QTFRFAAAAnx0knx0knx0knx0knx0knx0knx0knx0k2UBApxgduwsOzxAQpRkgqhYbsxAUuA0QvgkLwQcJxgQFyQIC/O/vohsi////nx0kzAAAkTWDBwAAAAl0Uk5TABC/II9wQO/fOde6jAAAAMdJREFUKM+N00kShCAQRFHAeZ618v4XbVRQQCA613/Bg4AxZ5yz+LggEvEo3adpT2NFQg3QUBJJRAe5ToSLnOYzmSkPJmWPa30ZKjJa0FZVi4WyALgYgO04NmAoeAC8AoccsPrhCY3QCUYv/AarxAtXYJ344AqsEw/8BFvJB36BreQDv8B24sBv8Ln76q7Z8BvszoQrsDsTrl/Y3QvXYLnWOIsBf8Bn8opM+AO20Qb8BTvoFy5qRFZLOKcplkzE/0mY/KKxCfYDI5cvoRxO2aMAAAAASUVORK5CYII=");
+	background-repeat: no-repeat;
+	background-position: 10px 5px;
+}
+
+html.rtl div.notification.global.warning, html.rtl div.notification.global.critical, html.rtl div.notification.global.alert
+{
+	background-position: right 5px;
+}
+
+div.notification.app.warning, div.notification.app.critical
+{
+	background: url("../images/icons/notification/icn-warning.png") no-repeat;
+}
+
+div.notification.global.success, div.notification.app.success
+{
+	background: url("../images/icons/notification/icn-success.png") no-repeat;
+}
+
+div.notification.global.error, div.notification.app.error
+{
+	background: url("../images/icons/notification/icn-error.png") no-repeat;
+	color: #b00000;
+}
+
+div.notification .title
+{
+	font-weight: bold;
+}
+
+div.notification p.form-error
+{
+	color: #b00000;
+}
+
+/* =============================================================================
+ FORM.CSS
+ ========================================================================== */
+.error, input:invalid, textarea:invalid, select:invalid
+{
+	border-color: #b00000;
+	color: #b00000;
+}
+
+/* ==|== form inputs styles =================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+input, textarea
+{
+	background-color: #fcfcfc;
+	border-bottom: 1px solid #efefef;
+	border-right: 1px solid #efefef;
+	border-top: 1px solid #cdcdcd;
+	border-left: 1px solid #cdcdcd;
+	color: #333;
+	padding: 4px;
+}
+
+html.rtl input, html.rtl textarea
+{
+	border-left: 1px solid #efefef;
+	border-right: 1px solid #cdcdcd;
+}
+
+/* ==|== form buttons styles ================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+ .btn {
+	 padding: 10px 20px;
+	 cursor: pointer;
+	 display:inline-block;
+ }
+
+ .btn-secondary {
+     border: 1px solid #0082ca;
+     background-color: #fff;
+     color: #000000;
+     font-weight: bold;
+ }
+ .btn-primary{
+ background-color: #0082ca;
+ /* border: none; */
+ color: #fff;
+ /* padding: 12px 20px; */
+}
+.btn-block{
+	width: 90%;
+}
+.padding_10r{
+	padding-right: 10px;
+}
+.padding_10l{
+	padding-left: 10px;
+}
+
+button.primary, a.btn.primary
+{
+    background-color: #0082ca;
+    /* border: none; */
+    color: #fff;
+    /* padding: 0px 10px; */
+
+}
+
+button.secondary, a.btn.secondary,
+button.multi, a.btn.multi,
+button.cancel, a.btn.cancel
+{
+border: 1px solid #0082ca;
+background-color:#fff;
+color: #000000;
+   /* padding: 8px 10px;*/
+}
+
+button.primary.active,
+a.btn.primary.active,
+button.primary:active,
+a.btn.primary:active
+{
+	/*background: #c61818 url("../images/forms/buttons/bg-primary_active.png") repeat-x;*/
+	background-color: #000;
+    font-weight: bold;
+}
+
+button.secondary.active, a.btn.secondary.active, button.secondary:active,
+a.btn.secondary:active, button.cancel.active, a.btn.cancel.active,
+button.cancel:active, a.btn.cancel:active, button.multi.active,
+a.btn.multi.active, button.multi:active, a.btn.multi:active
+{
+	/*background: #f5f4f4 url("../images/forms/buttons/bg-secondary_active.png") repeat-x;*/
+}
+
+button[disabled], button.disabled, a.btn.disabled
+{
+	color: #fff;
+	background-color: #9b9b9b !important;
+	padding: 10px 20px;
+	border: 1px solid   #9b9b9b;
+}
+
+/* Button Highlight */
+button:focus,
+button.focus,
+button:hover,
+button.hover,
+a.btn:focus,
+a.btn.focus,
+a.btn:hover,
+a.btn.hover
+{
+	border-color: #7199c0;
+	-webkit-box-shadow: 0 0 3px 2px #7199c0;
+	box-shadow: 0 0 3px 2px #7199c0;
+}
+
+
+/* ==|== toggle setting container styles ====================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+.toggleSettingContainer .desc label
+{
+	font-weight: bold;
+	display: inline;
+}
+
+.col-primary .desc label {
+	font-weight: normal;
+	font-size: 1em;
+}
+
+.col-secondary .desc label {
+	font-weight: normal;
+	font-size: 1em;
+	display: unset;
+}
+
+/* ==|== toggle switch styles ===============================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+/* .slidebutton-focus
+{
+	background: url("../images/toggle_switch/bg-toggle-focus.png") no-repeat center;
+}
+
+.slidebutton-label-on, .slidebutton-label-off
+{
+	font-weight: bold;
+}
+
+.slidebutton-label-on
+{
+	background: url("../images/toggle_switch/on.png") no-repeat;
+	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+}
+
+.slidebutton-label-off
+{
+	background: url("../images/toggle_switch/off.png") no-repeat right 0;
+	text-shadow: 0px 0px 2px #353535;
+}
+
+.slidebutton-handle
+{
+	background: url("../images/toggle_switch/slider_left.png") no-repeat 0 0;
+}
+
+html.rtl .slidebutton-handle
+{
+	background: url("../images/toggle_switch/slider_right.png") no-repeat right 0;
+}
+
+.slidebutton-handle-right
+{
+	background: url("../images/toggle_switch/slider_right.png") no-repeat right 0;
+}
+
+html.rtl .slidebutton-handle-right
+{
+	background: url("../images/toggle_switch/slider_left.png") no-repeat 0 0;
+}
+
+.slidebutton-handle-middle
+{
+	background: url("../images/toggle_switch/slider_center.png") center;
+}
+
+.slidebutton-loader
+{
+	background: #fff url("../images/toggle_switch/toggle-loader.gif") no-repeat center;
+} */
+
+/* =============================================================================
+ UNIFORM.CSS
+ ========================================================================== */
+/* LABELS */
+label.disabled
+{
+	color: #ccc;
+}
+
+/* INPUT & TEXTAREA */
+input.text,
+input.email,
+input.password,
+textarea.uniform
+{
+    padding: 8.5px 10px;
+    border: 1px solid #8F8F8F;
+    background-color: #ffffff;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+html.rtl input.text,
+html.rtl input.email,
+html.rtl input.password,
+html.rtl textarea.uniform
+{
+    border: 1px solid #8F8F8F;
+    background-color: #ffffff;
+}
+
+
+/* Select */
+div.selector
+{
+	background: #fff url("../images/uniform/selector/bg-dropdown.png") repeat-x left bottom;
+	padding: 4px;
+	border: 1px solid #8F8F8F;
+	background-color: #ffffff;
+}
+
+html.rtl div.selector
+{
+	background: #fff url("../images/uniform/selector/bg-dropdown.png") repeat-x right bottom;
+	border: 1px solid #8F8F8F;
+}
+
+button.down_arrow
+{
+	width: 20px;
+	height: 15px;
+	background-image: url("../images/uniform/selector/bg-dropdown_arrow.png");
+    background-color: transparent !important;
+    background-repeat: no-repeat;
+}
+
+button.up_arrow
+{
+	width: 20px;
+	height: 15px;
+	background-image: url("../images/uniform/selector/bg-up_arrow.png");
+    background-color: transparent !important;
+    background-repeat: no-repeat;
+}
+
+div.selector span
+{
+	color: #000000;
+	background: #ffffff url("../images/uniform/selector/bg-dropdown_arrow.png") no-repeat right center;
+	background-position: 99%;
+}
+
+html.rtl div.selector span
+{
+	background: url("../images/uniform/selector/bg-dropdown_arrow.png") no-repeat left center;
+}
+
+div.selector:active,
+div.selector.active
+{
+	background: #f7f7f7 url("../images/uniform/selector/bg-dropdown_active.png") repeat-x;
+	border-bottom: 1px solid #cdcdcd;
+	border-right: 1px solid #cdcdcd;
+	border-top: 1px solid #efefef;
+	border-left: 1px solid #efefef;
+}
+
+html.rtl div.selector:active,
+html.rtl div.selector.active
+{
+	border-left: 1px solid #cdcdcd;
+	border-right: 1px solid #efefef;
+}
+
+/* Checkbox */
+div.checker
+{
+	border-bottom: 1px solid #efefef;
+	border-right: 1px solid #efefef;
+	border-top: 1px solid #cdcdcd;
+	border-left: 1px solid #cdcdcd;
+}
+
+div.checker
+{
+	border-left: 1px solid #efefef;
+	border-right: 1px solid #cdcdcd;
+}
+
+div.checker span
+{
+	background: url("../images/uniform/checker/bg-checker.png") no-repeat center center;
+	background-size:cover;
+}
+
+/*#connected_devices div.checker span,*/
+#gps div.checker span
+{
+	background: url("../images/uniform/checker/save-changes.png") no-repeat center center;
+	background-size:cover;
+}
+
+div.checker span.checked
+{
+	background: url("../images/uniform/checker/save-changes.png") no-repeat center center;
+	background-size: 25px;
+}
+
+/*#connected_devices div.checker span.checked,*/
+#gps div.checker span.checked
+{
+	background: url("../images/uniform/checker/save-changes.png") no-repeat center center;
+	width: 20px;	
+	height: 16px;
+}
+
+#gps div.checker span.checked
+{
+	background: url("../images/uniform/checker/save-changes.png") no-repeat center center;
+	width: 22px;	
+	height: 18px;
+}
+
+div.checker:active,
+div.checker.active
+{
+	border-bottom: 1px solid #cdcdcd;
+	border-right: 1px solid #cdcdcd;
+	border-top: 1px solid #efefef;
+	border-left: 1px solid #efefef;
+}
+
+html.rtl div.checker:active,
+html.rtl div.checker.active
+{
+	border-left: 1px solid #cdcdcd;
+	border-right: 1px solid #efefef;
+}
+
+div.checker:active span,
+div.checker.active span
+{
+	background: url("../images/uniform/checker/bg-checker.png") no-repeat center center;
+}
+
+div.checker:active span.checked,
+div.checker.active span.checked
+{
+	background: url("../images/uniform/checker/save-changes.png") no-repeat center center;
+	background-size: 22px;
+}
+
+/* Radio */
+/*.sprite-icn-radio-inactive-unchecked*/
+div.radio span
+{
+	/*background-image: url("../images/uniform/radio/sprite-uniform_radio.png");
+	background-position: 5px -1355px;
+	background-repeat: no-repeat;*/
+	background-image: url("../images/uniform/radio/radio_inactive.svg");
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+
+}
+
+/*.sprite-icn-radio-active-unchecked*/
+div.radio:active span,
+div.radio.active span
+{
+	/*background-position: 5px -63px;*/
+}
+
+/*.sprite-icn-radio-focus-inactive-unchecked*/
+div.radio.focus span,
+div.radio:focus span,
+div.radio:hover span
+{
+	/*background-position: 0 -1215px;*/
+}
+
+/*.sprite-icn-radio-focus-inactive-unchecked-ie8*/
+.ie8 div.radio.focus span,
+.ie8 div.radio:focus span,
+.ie8 div.radio:hover span
+{
+	background-position: 5px -1142px;
+}
+
+/*.sprite-icn-radio-focus-active-unchecked*/
+div.radio.focus:active span,
+div.radio:focus:active span,
+div.radio:active:hover span,
+div.radio.active:hover span,
+div.radio.active.focus span
+{
+	/*background-position: 0 -618px;*/
+}
+
+/*.sprite-icn-radio-focus-active-unchecked-ie8*/
+.ie8 div.radio.focus:active span,
+.ie8 div.radio:focus:active span,
+.ie8 div.radio:active:hover span,
+.ie8 div.radio.active:hover span,
+.ie8 div.radio.active.focus span
+{
+	background-position: 5px -546px;
+}
+
+/*.sprite-icn-radio-inactive-checked*/
+div.radio span.checked
+{
+	/*background-position: 5px -1287px;*/
+	background-position: 0px 5px;
+	background-image: url("../images/uniform/radio/radio_active.svg");
+	background-repeat: no-repeat;
+}
+
+/*.sprite-icn-radio-active-checked*/
+div.radio:active span.checked,
+div.radio.active span.checked {
+	background-position: 5px 5px;
+}
+
+/*.sprite-icn-radio-focus-inactive-checked*/
+div.radio.focus span.checked,
+div.radio:focus span.checked,
+div.radio:hover span.checked
+{
+	/*background-position: 0 -1070px;*/
+}
+
+/*.sprite-icn-radio-focus-inactive-checked-ie8*/
+.ie8 div.radio.focus span.checked,
+.ie8 div.radio:focus span.checked,
+.ie8 div.radio:hover span.checked
+{
+	background-position: 5px -998px;
+}
+
+/*.sprite-icn-radio-focus-active-checked*/
+div.radio.focus:active span.checked,
+div.radio:focus:active span.checked,
+div.radio:active:hover span.checked,
+div.radio.active:hover span.checked,
+div.radio.active.focus span.checked
+{
+	background-position: 0 -474px;
+	background-position: 0px 5px;
+    background-image: url("../images/uniform/radio/radio_active.svg");
+    background-repeat: no-repeat;
+}
+
+/*.sprite-icn-radio-focus-active-checked-ie8*/
+.ie8 div.radio.focus:active span.checked,
+.ie8 div.radio:focus:active span.checked,
+.ie8 div.radio:active:hover span.checked,
+.ie8 div.radio.active:hover span.checked,
+.ie8 div.radio.active.focus span.checked
+{
+	background-position: 5px -402px;
+}
+
+/*.sprite-icn-radio-error-inactive-unchecked*/
+div.radio.error span
+{
+	background-position: 5px -334px;
+}
+
+/*.sprite-icn-radio-error-active-unchecked*/
+div.radio.error:active span,
+div.radio.error.active span
+{
+	background-position: 5px -199px;
+}
+
+/*.sprite-icn-radio-focus-error-inactive-unchecked*/
+div.radio.error.focus span,
+div.radio.error:focus span,
+div.radio.error:hover span
+{
+	background-position: 0 -926px;
+}
+
+/*.sprite-icn-radio-focus-error-active-unchecked*/
+div.radio.error.focus:active span,
+div.radio.error:focus:active span,
+div.radio.error:active:hover span,
+div.radio.error.active:hover span,
+div.radio.error.active.focus span
+{
+	background-position: 0 -772px;
+}
+
+/*.sprite-icn-radio-error-inactive-checked*/
+div.radio.error span.checked
+{
+	background-position: 5px -267px;
+}
+
+/*.sprite-icn-radio-error-active-checked*/
+div.radio.error:active span.checked,
+div.radio.error.active span.checked {
+	background-position: 5px -131px;
+}
+
+/*.sprite-icn-radio-focus-error-inactive-checked*/
+div.radio.error.focus span.checked,
+div.radio.error:focus span.checked,
+div.radio.error:hover span.checked
+{
+	background-position: 0 -849px;
+}
+
+/*.sprite-icn-radio-focus-error-active-checked*/
+div.radio.error.focus:active span.checked,
+div.radio.error:focus:active span.checked,
+div.radio.error:active:hover span.checked,
+div.radio.error.active:hover span.checked,
+div.radio.error.active.focus span.checked
+{
+	background-position: 0 -695px;
+}
+
+/* Uploader */
+div.uploader
+{
+	border-top: 1px solid #cdcdcd;
+	border-left: 1px solid #cdcdcd;
+	border-right: 1px solid #efefef;
+	border-bottom: 1px solid #efefef;
+}
+
+html.rtl div.uploader
+{
+	border-right: 1px solid #cdcdcd;
+	border-left: 1px solid #efefef;
+}
+
+div.uploader span
+{
+	color: #333;
+}
+
+div.uploader span.action
+{
+	border-left: 1px solid #cdcdcd;
+	background: #f7f7f7 url("../images/uniform/selector/bg-dropdown.png") repeat-x left bottom;
+}
+
+div.uploader span.filename
+{
+	background-color: #fff;
+}
+
+div.uploader.active,
+div.uploader:active
+{
+	border-top: 1px solid #efefef;
+	border-left: 1px solid #efefef;
+	border-right: 1px solid #cdcdcd;
+	border-bottom: 1px solid #cdcdcd;
+}
+
+html.rtl div.uploader.active,
+html.rtl div.uploader:active
+{
+	border-right: 1px solid #efefef;
+	border-left: 1px solid #cdcdcd;
+}
+
+div.uploader.active span.action,
+div.uploader:active span.action
+{
+	border-left: 1px solid #cdcdcd;
+	background: #f7f7f7 url("../images/uniform/selector/bg-dropdown_active.png") repeat;
+}
+
+/* PRESENTATION */
+
+/* Button Submit & Primary Actions */
+div.button.primary
+{
+	background: #8e0606 url("../images/forms/buttons/bg-primary.png") repeat-x;
+	border: none;
+	font-weight: bold;
+	color: #fff;
+}
+
+div.button.secondary
+{
+	background: #d2d2d2 url("../images/forms/buttons/bg-secondary.png") repeat-x;
+	border: 1px solid #ccc;
+	font-weight: bold;
+	color: #000;
+}
+
+div.button.primary:active, div.button.primary.active
+{
+	background: #c61818 url("../images/forms/buttons/bg-primary_active.png") repeat-x;
+}
+
+div.button.secondary:active, div.button.secondary.active
+{
+	background: #f5f4f4 url("../images/forms/buttons/bg-secondary_active.png") repeat-x;
+}
+
+div.button.disabled
+{
+	background-image: none !important;
+	color: #fff;
+	background-color: #c2c2c2 !important;
+}
+
+/*.button div.icon
+{
+	background: url('../images/forms/button_icons_sprite.png') no-repeat;
+	background-position: 0 0;
+	border: none;
+}
+
+.button div.icon.none {
+	display: none;
+}
+
+.button div.icon.list
+{
+	background-position: 0 0;
+}
+
+.button div.icon.refresh
+{
+	background-position: 0 -32px;
+}
+
+.button div.icon.add
+{
+	background-position: 0 -65px;
+	margin-top: 7px;
+}
+
+.button div.icon.edit
+{
+	background-position: 0 -94px;
+}
+
+.button div.icon.done
+{
+	background-position: 0 -125px;
+}
+
+.button div.icon.close
+{
+	background-position: 0 -154px;
+}
+
+.button div.icon.browse
+{
+	background-position: 0 -184px;
+}
+
+.button div.icon.ios
+{
+	background-position: 0 -216px;
+}
+
+.button div.icon.android
+{
+	background-position: 0 -248px;
+}
+
+.button div.icon.clear
+{
+	background-position: 0 -280px;
+}
+
+.button div.icon.restart
+{
+	background-position: 0 -312px;
+}
+
+.button div.icon.rescan
+{
+	background-position: 0 -344px;
+}*/
+
+/* Form Element Highlight */
+div.checker:focus,
+div.selector:focus,
+input.text:focus,
+input.email:focus,
+input.password:focus,
+textarea.uniform:focus,
+div.checker.focus,
+div.selector.focus,
+input.text.focus,
+input.email.focus,
+input.password.focus,
+textarea.uniform.focus,
+div.checker:hover,
+div.selector:hover,
+input.text:hover,
+input.email:hover,
+input.password:hover,
+textarea.uniform:hover,
+div.checker.hover,
+div.selector.hover,
+input.text.hover,
+input.email.hover,
+input.password.hover,
+textarea.uniform.hover
+{
+	border-color: #0082ca;
+}
+
+input[disabled],
+textarea[disabled],
+div.checker.disabled,
+div.radio.disabled,
+div.selector.disabled,
+div.uploader.disabled
+{
+	border-color: #9b9b9b !important;
+}
+
+/* Button Highlight */
+div.button:focus,
+div.button.focus,
+div.button:hover,
+div.button.hover
+{
+	border-color: #0082ca;
+}
+
+/* Errors */
+div.checker.error,
+div.selector.error,
+div.uploader.error,
+input.text.error,
+input.email.error,
+input.password.error,
+textarea.uniform.error
+{
+	border-color: #b00000;
+	color: #b00000;
+}
+
+div.selector.error span,
+div.uploader.error span.filename
+{
+	color: #b00000;
+}
+
+/* =============================================================================
+ MOBILE_768.CSS
+ ========================================================================== */
+/* ==|== navigation styles ==================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+
+
+.sub_menu {
+	width:18%;
+	position:absolute;
+	top:35px;
+	right:0px;
+	z-index:-1;
+	background:#ffffff;
+	border: 2px solid #000000;
+}
+
+#admin_navigation li#administrator {
+    border-bottom: 2px solid #000000;
+}
+
+.active_sub_menu {
+	z-index:900;
+	opacity:1;
+}
+
+div#status_login {
+	display: table;
+	float: right;
+	padding-right: 0px;
+	background: none; 
+}
+	
+div#status_login a {
+	display: inline-table;
+	float: left; 
+}
+	
+div#status_login span#administrator {
+	float: right;
+	width: 16px;
+	height: 19px; 
+}
+  
+#administrator.opened {
+	background: url("../images/uniform/selector/bg-up_arrow.png") no-repeat right; 
+}
+  
+#administrator.closed {
+	background: url("../images/uniform/selector/bg-dropdown_arrow.png") no-repeat right; 
+}
+
+#admin_navigation li:hover{
+	border-left: 5px solid #0082ca;
+}
+
+/* html.rtl #administrator {
+	background: url("../images/uniform/selector/bg-up_arrow.png") no-repeat left;
+} */
+
+#admin_menu h4{
+	color: #000;
+	font-weight: bold;
+	padding-right: 30px;
+}
+
+ul#admin_navigation li {
+	border-bottom: 1px solid #e5e5e5;
+	padding: 12px 5px 7px 5px;
+	font-weight: bold;
+	cursor: pointer;
+	border-left: 5px solid transparent;
+}
+
+ul#admin_navigation li:hover{
+	border-left: 5px solid #0088ca;
+}
+
+#header_mobile_menu {
+	baground-color: #fff;
+}
+#header_mobile_menu li a
+{
+	background: url("../images/icons/navigation/mobile-menu.png") no-repeat;
+    background-position: -5px 0px;
+    background-size: 33px;
+}
+
+#header_mobile_menu #mobile_status_header_link.expand
+{
+	background-position: -18px -306px;
+}
+
+#header_mobile_menu #mobile_status_header_link.collapsed
+{
+	background-position: -18px -234px;
+}
+
+#header_mobile_menu #mobile_home_header_link
+{
+}
+
+#header_mobile_menu #toggle_mobile_menu.closed
+{
+	background-size: 33px;
+}
+
+#header_mobile_menu #toggle_mobile_menu.opened
+{
+	background-size: 35px;
+}
+#mobile_menu
+{
+	position: absolute;
+	z-index: 895;
+	top: 76px;
+	box-shadow: -2px 2px 10px #bbb;
+	overflow: hidden;
+	min-width: 45%;
+	background-color: #fff;
+}
+
+#mobile_menu li a
+{
+	color: #000;
+	border-top: 1px solid #d8dada;
+	border-bottom: 1px solid #d8dada;
+	text-decoration: none;
+	border-left: 5px solid transparent;
+}
+
+#mobile_menu ul.level-1 li.last:last-child > a
+{
+	border-bottom: none;
+}
+
+/*
+#mobile_menu ul.level-1 li.last.active > a.parent
+{
+	border-bottom: 1px solid #f2f2f2;
+}
+*/
+
+#mobile_menu ul.level-1 li a
+{
+	/* background-color: #666666; */
+}
+
+
+#mobile_menu ul.level-1 li.active > a.parent
+{
+	background-color: #0082ca;
+	color: #fff;
+}
+
+
+#mobile_menu ul.level-2 li a
+{
+	/* background-color: #999999; */
+}
+
+
+#mobile_menu ul.level-2 li.active > a.parent
+{
+	background-color: #0082ca;
+	color: #fff;
+}
+
+
+#mobile_menu ul.level-3 li a
+{
+	/* background-color: #999999; */
+	color: #000000;
+}
+
+#mobile_menu ul.level-1 li > a.active,
+#mobile_menu ul.level-2 li > a.active,
+#mobile_menu ul.level-3 li > a.active
+{
+	border-left: 5px solid #0082ca;
+	color: #0082ca;
+}
+
+#mobile_menu ul.level-1 li > a:active{
+	border-left: 5px solid #0082ca;
+}
+#mobile_menu ul li > ul{
+	border: 1px solid #0082ca;
+}
+#mobile_menu ul li > ul li ul{
+
+padding-left: 2px;
+background-color:#0082ca;
+}
+#mobile_menu ul li > ul li ul li{
+	background-color:#fff;
+}
+
+
+
+/* Accordian Styles */
+#mobile_navigation a.parent span.indicator
+{
+	background: url("../images/icons/navigation/icn-sprite-mobile.png") no-repeat;
+}
+
+#mobile_navigation a.parent span.indicator,
+#mobile_navigation a.parent span.right
+{
+	background-position: -31px -605px;
+}
+
+html.rtl #mobile_navigation a.parent span.indicator,
+#mobile_navigation a.parent span.left
+{
+	background-position: -31px -677px;
+}
+
+#mobile_navigation a.parent span.up
+{
+	background-position: -28px -753px;
+}
+
+#mobile_navigation a.parent span.indicator.active,
+#mobile_navigation a.parent span.down
+{
+	background-position: -28px -825px;
+}
+
+/* ==|== app form/table layout styles =======================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+/* Rows & Columns */
+/* Add border for wide orientation  for sub-tables */
+div.sub_table div.row
+{
+	border-bottom: none;
+	border-top: 1px solid #ccc;
+}
+
+/* ==|== table layout styles ================================================
+ Author: joscott@nvtl.com
+ ========================================================================== */
+
+.inline_error {
+	color: #b00000;
+}
+
+#closePopUp {
+    /* position: absolute;
+    bottom: 35px;
+    margin-left: 40%; */
+}
+
+#carrier_logo {
+    color: #333;
+    height: 90px;
+}
+
+#carrier_logo img {
+    margin-top: 20px;
+}
+h3.productName,h3.productNumber{
+	position: absolute;
+    bottom: 16px;
+    left: 190px;
+}
+/* 
+#apps_home #checkForUpdate {
+	background-image: none !important;
+	color: #fff;
+	background-color: #000 !important;
+	border: medium none !important;
+	border-radius: 20px;
+	padding: 6px 20px;
+} */
+
+.droppable[disabled] {
+	background-image: none !important;
+	color: #000;
+	background-color: #e2e2e0 !important;
+}
+
+.productName {
+	color: #747676;
+}
+
+.productNumber {
+	color: #747676;
+	margin-left: 175px;
+}
+#dataUsage {box-sizing: border-box;}
+#dataUsage.tile h2,
+#wifi.tile h2,
+#connectedDevices.tile h2,
+#mifiShare.tile h2,
+#settings.tile h2,
+#about.tile h2,
+#help.tile h2 {
+	font-size: 24px;
+}
+
+#mifiShare.tile .tileContent .label,
+#help.tile .tileContent .label,
+#about.tile .tileContent .label,
+#settings.tile .tileContent .label,
+#wifi.tile .tileContent .label {
+	font-size: 16px;
+}
+
+.col.label {
+	font-weight: bold;
+    display:block;
+    clear:both;
+}
+.ig_col .col.label {
+	display:block;
+	float:none;
+	width: 90% !important;
+	
+	}
+.col.label-inline {
+	font-weight: bold;
+	line-height:26px;
+	width: 25%;
+}
+.col.label + .col.input {
+    width: 55%;
+}
+.noblock .col.label {
+	width: 222px !important;
+	float: left;
+
+}
+.noblock .col.label + .col.input {
+	width: 214px;
+	float: left;
+}
+h2{
+    border-bottom: 2px solid #0082ca;
+    padding: 4px 0px;
+    margin-top: 20px;
+}
+.btn50{
+    width: 95%;
+    margin-left: 5%;
+    margin-top: 22px;
+}
+.btn50 button{
+	display: block;
+    width: 100%;
+}
+
+@media screen and (max-width: 640px) {
+    #wifi_advanced_settings_form .noblock .col.label {
+        width: 170px !important;
+	}
+	.rb {
+		max-width: 25% !important;
+	}
+}
+@media screen and (max-width: 420px) {
+    #wifi_advanced_settings_form .noblock .col.label {
+        width: 120px !important;
+    }
+}
+@media screen and (max-width: 320px) {
+    #wifi_advanced_settings_form .noblock .col.label {
+        width: 110px !important;
+	}
+	#wifi_advanced_settings_form .col.rb label {
+		display: block;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

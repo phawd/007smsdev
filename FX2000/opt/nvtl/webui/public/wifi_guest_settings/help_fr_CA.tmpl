@@ -1,0 +1,78 @@
+<!-- wifi_guest_settings -->
+<div id="wifi_guest_settings">	
+	<h1>Wi-Fi - Réseau invité</h1>
+	<p>
+		Le réseau Wi-Fi invité peut être utilisé pour fournir un accès temporaire à Internet via le réseau Wi-Fi <tmpl_var _("webui", "webui_product_name_with_suffix")>. Pour se connecter au réseau Wi-Fi invité, les appareils connectés doivent utiliser les paramètres Wi-Fi affichés sur cet écran.
+	</p>
+	
+	<p>
+		Pour activer le réseau invité, utilisez l’écran général Wi-Fi dans cette interface d’administration web, ou l’option « Sélection d’une bande Wi-Fi » dans l’application Wi-Fi sur l’écran tactile <tmpl_var _("webui", "webui_product_name_with_suffix")>.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_guest_ssid_label")></h3>
+	<p>
+		Cette fonctionnalité permet de définir le nom du réseau ou le SSID du réseau Wi-Fi invité. Saisissez un nom approprié. Le nom peut comporter jusqu’à 32 caractères.
+	</p>
+	
+	<h3><tmpl_var _("webui", "wifi_guest_security_label")></h3>
+	<p>
+		Sélectionnez l’option souhaitée pour la sécurité Wi-Fi.
+	</p>
+	
+	<ul>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> permet à d’autres personnes de surveiller votre trafic Wi-Fi et d’utiliser votre forfait de données pour accéder à Internet. Si possible, évitez d’utiliser cette option.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> est la méthode la plus récente et la plus sûre, et devrait être utilisée si possible.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> peut être utilisé si certains de vos anciens appareils ne prennent pas en charge le WPA2.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> peut être utilisé pour les appareils conformes à WPA2 et WPA3.
+		</li>
+	</ul>
+
+	<h3><tmpl_var _("webui", "wifi_guest_password_label")></h3>
+	<p>
+		Si un paramètre autre que <strong>Aucun</strong> a été sélectionné dans le champ <strong>Sécurité</strong>, un mot de passe Wi-Fi est nécessaire.
+	</p>
+	<p>
+		Saisissez le mot de passe Wi-Fi dans ce champ. Vous pouvez également utiliser le bouton « Générer une nouvelle clé » pour insérer un mot de passe aléatoire fort dans ce champ. N’oubliez pas de sauvegarder vos modifications si vous utilisez cette option.
+	</p>
+	
+	<p>
+		Ces paramètres sont masqués par défaut, mais vous pouvez cliquer sur l’en-tête/le lien pour les rendre visibles. 
+		Normalement, ces options peuvent être laissées à leurs valeurs par défaut, mais elles peuvent être modifiées si nécessaire pour s’adapter à votre environnement particulier.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_ssid_label", gProductName)></h3>
+	<p>
+		Si ce paramètre est coché, le nom Wi-Fi est lisible sur l’écran tactile <tmpl_var _("webui", "webui_product_name_with_suffix")> grâce à l’option de menu « Wi-Fi ». S’il n’est pas coché, le nom apparaît comme ******.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_password_label", gProductName)></h3>
+	<p>
+		Si ce paramètre est coché, le mot de passe Wi-Fi est lisible sur l’écran tactile <tmpl_var _("webui", "webui_product_name_with_suffix")> grâce à l’option de menu « Wi-Fi ». S’il n’est pas coché, le mot de passe apparaît comme ******.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_guest_broadcast_ssid_label")></h3>
+	<p>
+		Si ce paramètre est coché, ce réseau Wi-Fi apparaît dans la liste des réseaux Wi-Fi disponibles sur vos appareils connectés. S’il n’est pas coché, ce réseau sera invisible.
+	</p>
+	
+	<tmpl_if showWiFiGuestWPS>
+		<h3><tmpl_var _("webui", "wifi_guest_wps_label")></h3>
+		<p>
+			Le Wi-Fi Protected Setup (WPS) est un système permettant aux appareils Wi-Fi de se connecter à un réseau Wi-Fi sans avoir à saisir manuellement la clé du réseau. Si vous souhaitez utiliser le WPS, cochez cette option.
+		</p>
+	</tmpl_if>
+
+	<h3><tmpl_var _("webui", "wifi_guest_privacy_label")></h3>
+	<p>
+		Si ce paramètre est coché, chaque appareil connecté est isolé de tous les autres appareils connectés. Cela apporte une sécurité supplémentaire si certains appareils connectés sont inconnus ou ne sont pas totalement fiables. Pour un fonctionnement normal, ce paramètre ne devrait pas être coché.
+	</p>
+</div>
+
+<!-- id="wifi_guest_settings" -->

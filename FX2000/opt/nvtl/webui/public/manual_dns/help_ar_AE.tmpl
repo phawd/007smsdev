@@ -1,0 +1,16 @@
+<!-- Manual DNS -->
+<div id="manual_dns">
+	<h1><tmpl_var _("webui", "adv_manual_dns_menu_text")></h1>
+	<h2>نظرة عامة</h2>
+	<p>عادة، يتم توفير عنوان DNS تلقائيًا. تسمح لك هذه الصفحة بتحديد DNS يدويًا، إذا لزم الأمر.</p>
+
+	<h2>الإعدادات</h2>
+
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_enable_label"), (size(_("webui", "adv_manual_dns_enable_label")) - size(":")))></h3>
+	<p>استخدم هذا الإعداد لتشغيل ميزة DNS اليدوية أو إيقاف تشغيلها. إذا تم تشغيلها، فيجب توفير البيانات التالية.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address1_label"), (size(_("webui", "adv_manual_dns_address1_label")) - size(":")))></h3>
+	<p>أدخل عنوان IP الخاص بـ DNS الأساسي المطلوب. يجب إدخال هذا العنوان لاستخدام ميزة DNS اليدوية.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address2_label"), (size(_("webui", "adv_manual_dns_address2_label")) - size(":")))></h3>
+	<p>أدخل عنوان IP الخاص بـ DNS الثانوي (الاحتياطي). هذا العنوان اختياري ويمكن تركه فارغًا إذا رغبت في ذلك.</p>
+</div>
+<!-- id="manual_dns" -->

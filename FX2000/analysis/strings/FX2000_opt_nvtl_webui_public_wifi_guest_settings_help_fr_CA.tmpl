@@ -1,0 +1,127 @@
+<!-- wifi_guest_settings -->
+<div id="wifi_guest_settings">	
+	<h1>Wi-Fi - R
+seau invit
+seau Wi-Fi invit
+tre utilis
+ pour fournir un acc
+s temporaire 
+ Internet via le r
+seau Wi-Fi <tmpl_var _("webui", "webui_product_name_with_suffix")>. Pour se connecter au r
+seau Wi-Fi invit
+, les appareils connect
+s doivent utiliser les param
+tres Wi-Fi affich
+s sur cet 
+		Pour activer le r
+seau invit
+, utilisez l
+ral Wi-Fi dans cette interface d
+administration web, ou l
+lection d
+une bande Wi-Fi
+application Wi-Fi sur l
+cran tactile <tmpl_var _("webui", "webui_product_name_with_suffix")>.
+	<h3><tmpl_var _("webui", "wifi_guest_ssid_label")></h3>
+		Cette fonctionnalit
+ permet de d
+finir le nom du r
+seau ou le SSID du r
+seau Wi-Fi invit
+. Saisissez un nom appropri
+. Le nom peut comporter jusqu
+	<h3><tmpl_var _("webui", "wifi_guest_security_label")></h3>
+lectionnez l
+option souhait
+e pour la s
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> permet 
+autres personnes de surveiller votre trafic Wi-Fi et d
+utiliser votre forfait de donn
+es pour acc
+ Internet. Si possible, 
+utiliser cette option.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> est la m
+thode la plus r
+cente et la plus s
+re, et devrait 
+tre utilis
+e si possible.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> peut 
+tre utilis
+ si certains de vos anciens appareils ne prennent pas en charge le WPA2.
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> peut 
+tre utilis
+ pour les appareils conformes 
+ WPA2 et WPA3.
+	<h3><tmpl_var _("webui", "wifi_guest_password_label")></h3>
+		Si un param
+tre autre que <strong>Aucun</strong> a 
+lectionn
+ dans le champ <strong>S
+</strong>, un mot de passe Wi-Fi est n
+cessaire.
+		Saisissez le mot de passe Wi-Fi dans ce champ. Vous pouvez 
+galement utiliser le bouton 
+rer une nouvelle cl
+ pour ins
+rer un mot de passe al
+atoire fort dans ce champ. N
+oubliez pas de sauvegarder vos modifications si vous utilisez cette option.
+		Ces param
+tres sont masqu
+faut, mais vous pouvez cliquer sur l
+te/le lien pour les rendre visibles. 
+		Normalement, ces options peuvent 
+tre laiss
+ leurs valeurs par d
+faut, mais elles peuvent 
+tre modifi
+cessaire pour s
+adapter 
+ votre environnement particulier.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_ssid_label", gProductName)></h3>
+		Si ce param
+tre est coch
+, le nom Wi-Fi est lisible sur l
+cran tactile <tmpl_var _("webui", "webui_product_name_with_suffix")> gr
+option de menu 
+est pas coch
+, le nom appara
+t comme ******.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_password_label", gProductName)></h3>
+		Si ce param
+tre est coch
+, le mot de passe Wi-Fi est lisible sur l
+cran tactile <tmpl_var _("webui", "webui_product_name_with_suffix")> gr
+option de menu 
+est pas coch
+, le mot de passe appara
+t comme ******.
+	<h3><tmpl_var _("webui", "wifi_guest_broadcast_ssid_label")></h3>
+		Si ce param
+tre est coch
+seau Wi-Fi appara
+t dans la liste des r
+seaux Wi-Fi disponibles sur vos appareils connect
+est pas coch
+seau sera invisible.
+	<tmpl_if showWiFiGuestWPS>
+		<h3><tmpl_var _("webui", "wifi_guest_wps_label")></h3>
+			Le Wi-Fi Protected Setup (WPS) est un syst
+me permettant aux appareils Wi-Fi de se connecter 
+seau Wi-Fi sans avoir 
+ saisir manuellement la cl
+seau. Si vous souhaitez utiliser le WPS, cochez cette option.
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_guest_privacy_label")></h3>
+		Si ce param
+tre est coch
+, chaque appareil connect
+ est isol
+ de tous les autres appareils connect
+s. Cela apporte une s
+mentaire si certains appareils connect
+s sont inconnus ou ne sont pas totalement fiables. Pour un fonctionnement normal, ce param
+tre ne devrait pas 
+tre coch
+<!-- id="wifi_guest_settings" -->

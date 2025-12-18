@@ -1,0 +1,19 @@
+<Config>
+	<ResetKey>
+		<!-- Reset key time out value in sec -->
+		<Timeout>5</Timeout>
+		<!-- Reset key input event path -->
+		<EventPath>/dev/input/event1</EventPath>
+		<!-- Reset key input event code -->
+		<EventCode>408</EventCode>
+	</ResetKey>
+	<DataWipe>
+		<!-- Data Wipe enabled(1) disabled(0) -->
+		<Enabled>0</Enabled>
+	</DataWipe>
+	<Fota>
+		<!-- If enabled, ignores factory reset when fota in progress -->
+		<Enabled>0</Enabled>	
+	</Fota>
+
+</Config>

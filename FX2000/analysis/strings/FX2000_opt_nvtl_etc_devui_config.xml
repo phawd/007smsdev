@@ -1,0 +1,170 @@
+<Config>
+	<Features>
+		<SnapShotEnabled>0</SnapShotEnabled>
+		<ShowBlockedLimitCheck>0</ShowBlockedLimitCheck> <!--When change the value, need to change in WebUI config file -->
+		<ShowLanguageSelection>1</ShowLanguageSelection> <!--When change the value, need to change in WebUI config file -->
+		<ShowInfoPanelList>1</ShowInfoPanelList> <!-- Disabled if swipe not allowed in info panel -->
+		<ShowDataUsageSettings>0</ShowDataUsageSettings> <!--Enabled for Whistler and Disabled for Rooney and Franco-->
+		<ShowRealVersion>0</ShowRealVersion>
+		<ShowConfigurationVersion>0</ShowConfigurationVersion> <!--Disabled for Whistler and Enabled for Rooney and Franco-->
+		<ShowRoamSetting>0</ShowRoamSetting> <!--Enabled
+ for Whistler and disabled for Rooney and Franco-->
+		<ProductCarrierValidation>1</ProductCarrierValidation>
+		<ShowMenuIcons>0</ShowMenuIcons> 		<!--Enabled
+ for Rooney, Whistler and disabled for Alpine-->
+		<ShowSystemUpdateOption>1</ShowSystemUpdateOption>   <!--Enabled
+ for Alpine, disabled for Rooney, Rooneyx, whistler-->
+		<ShowUsbPromptOnWifiOff>1</ShowUsbPromptOnWifiOff>   <!--Enabled
+ for Alpine, disabled for Rooney, Rooneyx, whistler-->
+		<ShowSMSLocalTimeSupport>1</ShowSMSLocalTimeSupport>
+		<!-- Audio alerts feature flag -->
+		<ShowStartupShutdownAudioAlert>1</ShowStartupShutdownAudioAlert> <!--Enabled for Whistler , Rooney and Rooneyx-->
+		<ShowExternalChargingAudioAlert>1</ShowExternalChargingAudioAlert> <!--Enabled for Whistler , Rooney and Rooneyx-->
+		<ShowSimErrorAudioAlert>1</ShowSimErrorAudioAlert> <!--Enabled for Whistler , Rooney and Rooneyx-->
+		<ShowServiceNotificationAudioAlert>1</ShowServiceNotificationAudioAlert> <!--Disabled for Whistler and Enabled for Rooney and Franco-->
+		<ShowLowBatteryAudioAlert>1</ShowLowBatteryAudioAlert> <!--Enabled for Whistler , Rooney and Rooneyx-->
+		<ShowBatteryChargingAudioAlert>1</ShowBatteryChargingAudioAlert> <!--Enabled for Whistler , Rooney and Rooneyx-->
+		<ShowCriticalLowBatteryAudioAlert>1</ShowCriticalLowBatteryAudioAlert> <!--Enabled for Whistler , Rooney and Rooneyx-->
+		<ShowUsbModeAudioAlert>1</ShowUsbModeAudioAlert> <!--Disabled for Whistler and Enabled for Rooney and Franco-->
+		<ShowNewMessageAudioAlert>1</ShowNewMessageAudioAlert> <!--Disabled for Rooneyx and enabled in all other products -->
+		<ShowMassStorageAudioAlert>1</ShowMassStorageAudioAlert><!--Enabled for Whistler , Rooney and Rooneyx-->
+		<ShowRoamingAudioAlert>1</ShowRoamingAudioAlert> <!--Enabled for Whistler , Rooney and Rooneyx-->
+		<ShowWifiOffAudioAlert>1</ShowWifiOffAudioAlert> <!--Enabled for Whistler , Rooney and Rooneyx-->
+		<ShowNewDeviceJoinedAudioAlert>1</ShowNewDeviceJoinedAudioAlert> <!--Enabled for Whistler , Rooney and Rooneyx-->
+		<ShowNetworkSelectionAudioAlert>1</ShowNetworkSelectionAudioAlert> <!--Enabled for Whistler , Rooney and Rooneyx-->
+		<ShowSoftwareUpdateAudioAlert>1</ShowSoftwareUpdateAudioAlert> <!--Enabled for Whistler , Rooney and Rooneyx-->
+		<ShowAPNValidationSupport>1</ShowAPNValidationSupport><!--Enabled for Rooney-->
+		<ShowNonVerizonRoamingIcon>1</ShowNonVerizonRoamingIcon><!--Enabled for Rooney-->
+		<ShowLastUpdateStatus>1</ShowLastUpdateStatus><!--Enabled for Alpine-->
+		<ShowInstallConfirmationPrompt>0</ShowInstallConfirmationPrompt><!--Disabled for Alpine-->
+		<ShowNewRoamingIndicator>1</ShowNewRoamingIndicator><!--Show R for roaming in Alpine-->
+		<ShowTetherIcon>1</ShowTetherIcon><!--ShowTetherIcon for Alpine-->
+		<ShowUCImage>0</ShowUCImage>
+		<ShowAPNName>1</ShowAPNName><!--ShowAPNName for Alpine-->
+		<ShowIpAddress>1</ShowIpAddress><!--ShowIpAddress for Alpine-->
+		<ShowSnr>1</ShowSnr><!--ShowSnr for Kirin-->
+		<ShowWpsTryAgainButton>1</ShowWpsTryAgainButton><!--Show try again when wps is failed in alpine-->
+		<ShowSUAvailablePrompt>0</ShowSUAvailablePrompt>
+		<SwapButtonPositions>1</SwapButtonPositions>
+		<ShowCombinedConnectedDevicesCount>1</ShowCombinedConnectedDevicesCount><!--Show total device count inlcuding both primary and guest-->
+		<ShowUnlockSimNavigation>0</ShowUnlockSimNavigation><!--Disabled Unlock Sim Navigation for Alpine-->
+		<SwapPinPushButton>1</SwapPinPushButton><!--To show push button then pin first in Alpine-->
+		<ShowRoundedButton>1</ShowRoundedButton>
+		<ShowUpdateProfile>0</ShowUpdateProfile><!--To show profile update screen for kirin -->
+	</Features>
+	<Configs>
+		<Brightness>80</Brightness>
+		<FotaNoPackageTimeout>60</FotaNoPackageTimeout>
+		<ProductCarrierNetwork>1</ProductCarrierNetwork> <!-- 0-Information not available,1-Verizon Wireless,2-Bell Mobility Canada,3-T-Mobile USA,4-AT&T USA,5-Telus Canada,6-Unknown carrier -->
+		<MaxBlockedDevices>10</MaxBlockedDevices> <!--When change the value, need to change in WebUI config file -->
+		<LowBatteryPercentage>15</LowBatteryPercentage> <!--if changed here then please do change in WebUI and ANS config file -->
+		<ToggleButtonEnableColor>#000000</ToggleButtonEnableColor>
+		<ArrowEnableColor>#000000</ArrowEnableColor>
+		<DisableColor>#747676</DisableColor>
+		<TextColor>#000000</TextColor>
+		<HomeScreenButtonsColor>#fff</HomeScreenButtonsColor>
+		<ScrollBarColor>#747676</ScrollBarColor>
+		<SoftwareUpdateBarColor>#959595</SoftwareUpdateBarColor>
+		<SoftwareUpdateBarBackGroundColor>#fff</SoftwareUpdateBarBackGroundColor>
+		<ButtonBackgroundColor>#000000</ButtonBackgroundColor>
+		<LeftButtonColor>#000000</LeftButtonColor>
+		<RightButtonColor>#fff</RightButtonColor>
+		<SingleButtonColor>#fff</SingleButtonColor>
+		<LeftButtonTextColor>#fff</LeftButtonTextColor>
+		<RightButtonTextColor>#000000</RightButtonTextColor>
+		<SingleButtonTextColor>#000000</SingleButtonTextColor>
+		<HeaderTitleAlignment>0</HeaderTitleAlignment>  <!-- 0 - left, 1 - center, and 2 - right -->
+		<ButtonBorderWidth>2</ButtonBorderWidth>
+		<ButtonRadius>30</ButtonRadius>
+		<ScrollBarWidth>5</ScrollBarWidth>
+		<DefaultScrollBarSize>2</DefaultScrollBarSize>
+		<FontWeight>1</FontWeight>  <!-- 1-bold, 0-Normal -->
+		<CriticalBatteryThreshold>1</CriticalBatteryThreshold>
+		<SMSValidYear>2017</SMSValidYear>
+		<MDNDelimiter>1</MDNDelimiter> <!-- 0 for "space", 1 for '.', 2 for "hypen"-->
+		<AutomaticTechMode>50</AutomaticTechMode> <!-- Need to change in ans config and webui common config file, if AutomaticTechMode is changed-->
+		<MnsTechMode>2</MnsTechMode> <!-- MnsTechMode = SYS_WAN_RADIO_TECH_WCDMA -->
+									  <!-- Need to change in webui common config file, if MnsTechMode is changed-->
+		<DefaultAPN>VZWINTERNET</DefaultAPN><!-- Need to change in wwan setting webui configuration file, if Default APn is changed-->
+		<ShutDownScreen>1</ShutDownScreen><!--This is used for Kirin and Hess to differentiate shutdown screen -->
+	</Configs>
+	<InfoPanel>
+		<DefaultPanelIndex>4</DefaultPanelIndex> <!-- index starts from 1 and if changed, need to provide the number in panel order -->
+		<Panels>
+			<Panel>
+				<Enabled>1</Enabled>
+				<QML>InfoPanelNetwork.qml</QML>
+			</Panel>
+			<Panel>
+				<Enabled>1</Enabled>
+				<QML>InfoPanelMessages.qml</QML>
+			</Panel>
+			<Panel>
+				<Enabled>1</Enabled>
+				<QML>InfoPanelUniversalCharging.qml</QML>
+			</Panel>
+			<Panel>
+				<Enabled>1</Enabled>
+				<QML>InfoPanelMiFiSharing.qml</QML>
+			</Panel>
+			<Panel>
+				<Enabled>1</Enabled>
+				<QML>InfoPanelDataUsage.qml</QML>
+			</Panel>
+			<Panel>
+				<Enabled>0</Enabled>
+				<QML>InfoPanelNotifications.qml</QML>
+			</Panel>
+		</Panels>
+	</InfoPanel>
+		<!-- The order here directly corresponds to the order in menu list -->
+		<App id="sim_unlock">
+			<Enabled>1</Enabled>
+			<Title>sim_label</Title>
+		</App>
+		<App id="wifi">
+			<Enabled>1</Enabled>
+			<Title>wifi_label</Title>
+		</App>
+		<App id="connected_devices">
+			<Enabled>1</Enabled>
+			<Title>connected_devices_label</Title>
+		</App>
+		<App id="data_usage">
+			<Enabled>1</Enabled>
+			<Title>data_usage_label</Title>
+		</App>
+		<App id="settings">
+			<Enabled>1</Enabled>
+			<Title>settings_label</Title>
+		</App>
+		<App id="universal_charging">
+			<Enabled>1</Enabled>
+			<Title>ucf_label</Title>
+		</App>
+		<App id="file_sharing">
+			<Enabled>1</Enabled>
+			<Title>file_sharing_label</Title>
+		</App>
+		<App id="software_update">
+			<Enabled>1</Enabled>
+			<Title>software_update_label</Title>
+		</App>
+		<App id="sms">
+			<Enabled>1</Enabled>
+			<Title>sms_label</Title>
+		</App>
+		<App id="mifi_info">
+			<Enabled>1</Enabled>
+			<Title>about_label</Title>
+		</App>
+        	<App id="help">
+			<Enabled>1</Enabled>
+			<Title>help_label</Title>
+		</App>
+		<App id="home">
+			<Enabled>1</Enabled>
+			<Title>home_label</Title>
+		</App>
+	</Menu>
+</Config>

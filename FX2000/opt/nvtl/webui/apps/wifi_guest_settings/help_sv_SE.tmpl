@@ -1,0 +1,78 @@
+<!-- wifi_guest_settings -->
+<div id="wifi_guest_settings">	
+	<h1>Wi-Fi – Gästnätverk</h1>
+	<p>
+		Wi-Fi-nätverket för gäster kan användas för att ge tillfällig tillgång till internet via <tmpl_var _("webui", "webui_product_name_with_suffix")>s Wi-Fi-nätverk. För att ansluta till Wi-Fi-nätverket för gäster måste anslutna enheter använda de Wi-Fi-inställningar som visas på den här skärmen.
+	</p>
+	
+	<p>
+		För att sätta på gästnätverket använder du skärmen Wi-Fi allmänt i det här Webbadmin-gränssnittet eller alternativet ”Val av Wi-Fi-band” i Wi-Fi-appen på <tmpl_var _("webui", "webui_product_name_with_suffix")>s pekskärm.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_guest_ssid_label")></h3>
+	<p>
+		Detta ställer in nätverksnamnet eller SSID för Wi-Fi-nätverket för gäster. Ange ett lämpligt namn. Namnet kan vara upp till 32 tecken långt.
+	</p>
+	
+	<h3><tmpl_var _("webui", "wifi_guest_security_label")></h3>
+	<p>
+		Välj önskat alternativ för Wi-Fi-säkerhet.
+	</p>
+	
+	<ul>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> gör att andra kan övervaka din Wi-Fi-trafik och använda din dataplan för att få åtkomst till internet. Om det över huvud taget är möjligt bör detta alternativ undvikas.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> är den senaste och säkraste metoden och bör användas om möjligt.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> kan användas om några av dina äldre enheter inte stöder WPA2.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> kan användas för WPA2- och WPA3-klagomålsenheter.
+		</li>
+	</ul>
+
+	<h3><tmpl_var _("webui", "wifi_guest_password_label")></h3>
+	<p>
+		Om en annan inställning än <strong>Ingen</strong> valdes i fältet <strong>Säkerhet</strong> krävs ett Wi-Fi-lösenord.
+	</p>
+
+	<p>
+		Ange Wi-Fi-lösenordet i det här fältet. Du kan även använda knappen ”Generera ny nyckel” för att få ett starkt slumpmässigt lösenord infogat i det här fältet. Kom ihåg att spara dina ändringar om du använder det här alternativet.
+	</p>
+	
+	<p>
+		Dessa inställningar är dolda som standard, men du kan klicka på rubriken/länken för att synliggöra dem. Normalt sett kan dessa alternativ lämnas med sina standardvärden, men kan ändras vid behov för att passa din speciella miljö.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_ssid_label", gProductName)></h3>
+	<p>
+		Om den här inställningen är markerad är Wi-Fi-namnet läsligt på <tmpl_var _("webui", "webui_product_name_with_suffix")>s pekskärm via menyalternativet ”Wi-Fi”. Om den inte är markerat visas namnet som ******.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_password_label", gProductName)></h3>
+	<p>
+		Om den här inställningen är markerad är Wi-Fi-lösenordet läsligt på <tmpl_var _("webui", "webui_product_name_with_suffix")>s pekskärm via menyalternativet ”Wi-Fi”. Om den inte är markerat visas lösenordet som ******.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_guest_broadcast_ssid_label")></h3>
+	<p>
+		Hvis denne innstillingen er krysset av, vises dette wifi-nettverket i listen over tilgjengelige wifi-nettverk på de tilkoblede enhetene dine. Hvis det ikke er krysset av, vil dette nettverket være usynlig.
+	</p>
+	
+	<tmpl_if showWiFiGuestWPS>
+		<h3><tmpl_var _("webui", "wifi_guest_wps_label")></h3>
+		<p>
+			Wi-Fi med skyddad konfiguration (WPS) är ett system för att tillåta Wi-Fi-enheter att ansluta till ett Wi-Fi-nätverk utan att nätverksnyckeln måste anges manuellt. Om du vill använda WPS markerar du det här alternativet.
+		</p>
+	</tmpl_if>
+
+	<h3><tmpl_var _("webui", "wifi_guest_privacy_label")></h3>
+	<p>
+		Om denna inställning är markerad isoleras varje ansluten enhet från alla andra anslutna enheter. Detta ger ytterligare säkerhet om vissa anslutna enheter är okända eller inte helt betrodda. För normal drift bör detta vara avmarkerat.
+	</p>
+</div>
+
+<!-- id="wifi_guest_settings" -->

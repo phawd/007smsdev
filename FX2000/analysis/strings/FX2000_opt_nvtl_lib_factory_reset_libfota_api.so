@@ -1,0 +1,348 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+GLIBC_2.4
+libc.so.6
+libfota_api.so
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+__ctype_b_loc
+fota_api_is_running
+msgq_does_queue_exist
+fota_get_max_allowed_pkg_size
+msgq_send_sync
+fota_get_sideload_max_allowed_pkg_size
+fota_create_session
+snprintf
+fota_clear_session
+fota_cfg_save_new_record
+fota_cfg_get_current_record
+fota_get_source_version_from_package
+fota_get_target_version_from_package
+fota_get_revert_status
+fota_get_update_status
+fota_get_install_progress_status
+fota_get_last_successful_record
+fota_get_time_of_last_update_check
+fota_set_time_of_last_update_check
+fota_get_full_update_history
+fota_validate_update_pkg
+msgq_send_sync_to
+fota_start_installation
+fota_start_installation_wait_time
+fota_do_factory_reset
+fota_stop_in_recovery
+fota_abort_current_sess
+fota_get_current_sess_record
+fota_get_record_by_id
+fota_modify_record_by_id
+fota_incr_install_defer_count
+fota_decrypt_pkg
+fota_sideload_start_installation
+fota_do_file_operation
+fota_sideload_prepare_package
+fota_sua_update_start
+fota_get_kernel_version
+fota_get_test_settings_impl
+fota_set_test_settings_impl
+initialize_settings
+fota_factory_reset_impl
+initialize_factory_reset_func
+__bss_start
+librt.so.1
+libpthread.so.0
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libcrypto.so.1.1
+libpowersave_api.so
+libmodem2_api.so
+H	KxD	J{D
+[%s]:[%s] - %s: Empty string
+[%s]:[%s] - %s: invalid string length (%d)
+/fota_mq
+[%s]:[%s] - %s: +++
+[%s]:[%s] - %s: Input buffer NULL
+[%s]:[%s] - Process not running
+[%s]:[%s] - Input string validation failed
+[%s]:[%s] - Input string for cfg_version validation failed
+[%s]:[%s] - Input string for update_date validation failed
+[%s]:[%s] - Input string for device_fw_version validation failed
+[%s]:[%s] - process not running
+[%s]:[%s] - *cfg_version is empty
+[%s]:[%s] - *update_date is empty
+[%s]:[%s] - *device_fw_version is empty
+[%s]:[%s] - %s: *agent validation failed
+[%s]:[%s] - %s: process not running
+[%s]:[%s] - %s: msgq_send_sync() failed, rc=[%d]
+[%s]:[%s] - *record is NULL
+[%s]:[%s] - *valid is NULL
+[%s]:[%s] - Input agent string validation failed
+[%s]:[%s] - *status is empty
+[%s]:[%s] - *record is empty
+[%s]:[%s] - *valid is empty
+[%s]:[%s] - *timestamp is empty
+[%s]:[%s] - Buffer length is not enough
+[%s]:[%s] - *timestamp validation failed
+[%s]:[%s] - *no_of_records is empty
+[%s]:[%s] - *record_id_list is empty
+[%s]:[%s] - FOTA_MSG_GET_NO_OF_RECORDS failed:%d
+[%s]:[%s] - %s: Record count[%u] doesn't match items in id list [%s]
+[%s]:[%s] - %s: Token[%s] is not a number, org list[%s]
+[%s]:[%s] - %s: Getting record with ID [%u] failed
+[%s]:[%s] - *out_rec_id is empty
+[%s]:[%s] - *dl_pkg_info is empty
+[%s]:[%s] - Input agent ID string validation failed
+[%s]:[%s] - Input file string validation failed
+[%s]:[%s] - %s: boot preference:%d
+[%s]:[%s] - Invalid boot preference:%d
+[%s]:[%s] - agent validation failed
+[%s]:[%s] - result_str validation failed
+[%s]:[%s] - *rec is empty
+[%s]:[%s] - *info is empty
+[%s]:[%s] - private_key validation failed
+[%s]:[%s] - signer_cert validation failed
+[%s]:[%s] - encryp_input validation failed
+[%s]:[%s] - output_file validation failed
+[%s]:[%s] - temp_file validation failed
+[%s]:[%s] - use_min_flash validation failed
+[%s]:[%s] - *estimated_update_time is empty
+[%s]:[%s] - pkg validation failed
+[%s]:[%s] - ver parameter NULL
+[%s]:[%s] - File path empty
+[%s]:[%s] - Invalid file operation
+[%s]:[%s] - Input data or len cannot be NULL
+[%s]:[%s] - len parameter cannot be >%d or 0
+[%s]:[%s] - %s: sua parameter empty
+[%s]:[%s] - Input kernel version validation failed
+fota_verify_string
+fota_get_max_allowed_pkg_size
+fota_get_sideload_max_allowed_pkg_size
+fota_create_session
+fota_clear_session
+fota_cfg_save_new_record
+fota_cfg_get_current_record
+fota_get_package_version
+fota_get_revert_status
+fota_get_update_status
+fota_get_install_progress_status
+fota_get_last_successful_record
+fota_get_time_of_last_update_check
+fota_set_time_of_last_update_check
+fota_get_full_update_history
+fota_validate_update_pkg
+fota_start_installation
+fota_start_installation_wait_time
+fota_do_factory_reset
+fota_stop_in_recovery
+fota_abort_current_sess
+fota_get_current_sess_record
+fota_get_record_by_id
+fota_modify_record_by_id
+fota_incr_install_defer_count
+fota_decrypt_pkg
+fota_sideload_start_installation
+fota_do_file_operation
+fota_sideload_prepare_package
+fota_sua_update_start
+fota_get_kernel_version
+fota.settings
+[%s]:[%s] - %s: ++
+[%s]:[%s] - %s: fota_do_factory_reset() failed, rc= %d
+fota_factory_reset_impl
+GCC: (GNU) 8.2.0
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/watchdog/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/config
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/xmldata/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/logging/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/mal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi-framework
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/loc-hal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi/loc_sdx55
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/usr/src/linux/usr/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dsm/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/fota/src
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/fota/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/powersave/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/factory_reset/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/modem2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel/config/../.
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/ThirdParty/redbend/vRM/include
+-iprefix /opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/bin/arm-oe-linux-gnueabi/../../lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/fota/src/fota_api.c
+-mfpu=neon
+-mfloat-abi=hard
+-mcpu=arm10tdmi
+-mtls-dialect=gnu
+-march=armv5t
+-auxbase-strip fota_api.o
+-Wno-unused-parameter
+-Wstrict-prototypes
+-Wno-trigraphs
+-Wformat-truncation=0
+-frecord-gcc-switches
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/fota/src/fota_settings.c
+-auxbase-strip fota_settings.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/fota/src/fota_factory_reset.c
+-auxbase-strip fota_factory_reset.o
+gold 1.16
+call_weak_fn
+crtstuff.c
+__TMC_LIST__
+deregister_tm_clones
+register_tm_clones
+__do_global_dtors_aux
+completed.11339
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+fota_api.c
+fota_verify_string
+__func__.9283
+is_str_a_number
+__func__.9299
+__func__.9305
+__func__.9311
+__func__.9317
+__func__.9325
+__func__.9332
+fota_get_package_version
+__func__.9340
+__func__.9355
+__func__.9363
+__func__.9369
+__func__.9376
+__func__.9383
+__func__.9389
+__func__.9401
+__func__.9413
+__func__.9420
+__func__.9428
+__func__.9434
+__func__.9440
+__func__.9448
+__func__.9453
+__func__.9458
+__func__.9463
+__func__.9469
+__func__.9480
+__func__.9489
+__func__.9498
+__func__.9504
+__func__.9510
+__func__.9516
+fota_settings.c
+fota_factory_reset.c
+__func__.8926
+__FRAME_END__
+__dso_handle
+__TMC_END__
+_DYNAMIC
+_GLOBAL_OFFSET_TABLE_
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+__ctype_b_loc
+fota_api_is_running
+msgq_does_queue_exist
+fota_get_max_allowed_pkg_size
+msgq_send_sync
+fota_get_sideload_max_allowed_pkg_size
+fota_create_session
+snprintf
+fota_clear_session
+fota_cfg_save_new_record
+fota_cfg_get_current_record
+fota_get_source_version_from_package
+fota_get_target_version_from_package
+fota_get_revert_status
+fota_get_update_status
+fota_get_install_progress_status
+fota_get_last_successful_record
+fota_get_time_of_last_update_check
+fota_set_time_of_last_update_check
+fota_get_full_update_history
+fota_validate_update_pkg
+msgq_send_sync_to
+fota_start_installation
+fota_start_installation_wait_time
+fota_do_factory_reset
+fota_stop_in_recovery
+fota_abort_current_sess
+fota_get_current_sess_record
+fota_get_record_by_id
+fota_modify_record_by_id
+fota_incr_install_defer_count
+fota_decrypt_pkg
+fota_sideload_start_installation
+fota_do_file_operation
+fota_sideload_prepare_package
+fota_sua_update_start
+fota_get_kernel_version
+fota_get_test_settings_impl
+fota_set_test_settings_impl
+initialize_settings
+fota_factory_reset_impl
+initialize_factory_reset_func
+__bss_start
+.init_array
+.fini_array
+.comment
+.rel.plt
+.ARM.attributes
+.eh_frame_hdr
+.gnu.version_r
+.rel.dyn
+.gnu.version
+.note.gnu.gold-version
+.GCC.command.line
+.eh_frame
+.tm_clone_table
+.note.gnu.build-id
+.gnu.version_d
+.dynamic
+.shstrtab

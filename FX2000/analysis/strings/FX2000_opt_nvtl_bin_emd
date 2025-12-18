@@ -1,0 +1,231 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+mq_close
+librt.so.1
+__cxa_finalize
+mq_unlink
+libpthread.so.0
+clock_gettime
+watchdog_application_send_keep_alive
+emd_eth_wan_g
+emd_eth_wan_session
+recvfrom
+MsgBusGet
+mifi_dbg_get_level_name
+mifi_dbg_log
+pthread_self
+mifi_dbg_syslog
+settings_get_features
+xmldata_initialize
+xmldata_getstring
+__errno_location
+strerror
+emd_get_eth_enabled
+emd_get_ethernet_iface_type
+emd_get_ethernet_static_ip_conf
+router2_modify_bridge_interfaces
+__isoc99_fscanf
+GLIBC_2.7
+inet_pton
+router2_config_interface_routing_ipv4
+wan_mgr_register_wan
+wan_mgr_get_error_string
+wan_mgr_deregister_wan
+router2_deconfig_interface_routing_ipv4
+MsgBusSetBinary
+get_interface_counters
+mifi_dbg_start
+msgq_create
+watchdog_application_register
+msgq_receive
+msgq_resp_handler
+msgq_does_queue_exist
+msgq_send_async
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+__bss_start
+libmifimsgbus.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libusb_api.so
+libfactory_reset_api.so
+librouter2_api.so
+libwan_mgr_api.so
+libemd_api.so
+H	KxD	J{D
+/dev/kmsg
+[MIFI_TIMESTAMP] - 
+/dev/null
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - Ethernet Interface is not available in features.xml
+/opt/nvtl/etc/emd/config.xml
+/Config/EthernetInterfaces[%d]/Interface
+[%s]:[%s] - Failed to open configuration file: %s
+[%s]:[%s] - %s: ifname =%s
+[%s]:[%s] - %s: socket() failed: %s
+[%s]:[%s] - %s: ioctl(SIOCGIFFLAGS) failed: %s
+[%s]:[%s] - %s: bringing up ifc_name=%s
+[%s]:[%s] - %s: ioctl(SIOCSIFFLAGS) failed: %s
+[%s]:[%s] - Failed to get MAC address since passed argument is NULL.
+[%s]:[%s] - ifname: %s
+[%s]:[%s] - Error getting hw address: %d
+[%s]:[%s] - get_ethernet_mac_addr: Mac : %2.2x:%2.2x:%2.2x:%2.2x:%2.2x:%2.2x 
+[%s]:[%s] - settings subsystem is not ready. retries left %d
+[%s]:[%s] - settings subsystem initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings subsystem not ready?
+[%s]:[%s] - Failed to initialize emd_get_eth_status_settings settings. %d
+[%s]:[%s] - Ethernet status is %d
+[%s]:[%s] - Failed to initialize emd_get_ethernet_iface_type settings. %d
+[%s]:[%s] - Failed to initialize emd_get_eth_static_wan_settings settings. %d
+[%s]:[%s] - Failed to create the socket for link check.
+[%s]:[%s] - Failed to get the interface %s flags.
+[%s]:[%s] - %s() Invalid data passed.
+[%s]:[%s] - Failed to Add %s interface in bridge.
+/opt/nvtl/tmp/emd/dhcp.info
+ipaddr=%s
+netmask=%s
+gateway=%s
+[%s]:[%s] - WAN IP configuration is not valid 
+[%s]:[%s] - Failed to open the %s file
+/sbin/udhcpc
+/etc/udhcpc.script
+[%s]:[%s] - udhcpc cmd =[%s]
+[%s]:[%s] - Failed to fork()
+[%s]:[%s] - Failed to launch the DHCP client.
+[%s]:[%s] - Stoping UDHCPC with PID [%d]
+[%s]:[%s] - Etherenet WAN Link UP.
+[%s]:[%s] - IP configuration received from udhcpc is not valid.
+[%s]:[%s] - IP Address [%s], mask[%s] gw[%s] dns1[%s] dns2[%s]
+[%s]:[%s] - %s ipv4 interface already connected on Ethernet Wan 
+[%s]:[%s] - %s  router2_config_interface_routing_ipv4() failed Ethernet Wan, rc=[%d]
+EMD Ethernet IPV4 data interface Call up
+[%s]:[%s] - %s:MIFI_TIMESTAMP:EMD IPV4 data Ethernet interface call up
+[%s]:[%s] - Registration with WAN Management Failed with error %s
+[%s]:[%s] - UDHCPC started with PID [%d], waiting for IP to receive.
+[%s]:[%s] - %s() Deregistration with WAN Management Failed with error %s
+[%s]:[%s] - Failed router2_deconfig_interface_routing_ipv4()
+[%s]:[%s] - %s() : Ethernet WAN interface link is down
+[%s]:[%s] - %s() : Failed to send stats
+[%s]:[%s] - %s() : Succesfully sent the stats
+[%s]:[%s] - Ethernet WAN Link down, connect the cable.
+eth.wan_details
+[%s]:[%s] - %s Ethernet ipv4 interface already connected
+[%s]:[%s] - %s router2_config_interface_routing_ipv4() failed [%s], rc=[%d]
+EMD IPV4 data Ethernet interface Call Up
+[%s]:[%s] - Ethernet WAN Link is down, connect the cable.
+[%s]:[%s] - Ethernet WAN failure router2_deconfig_interface_routing_ipv4()
+[%s]:[%s] - %s() : Successfully sent stats
+[%s]:[%s] - Trying to configure the Ethernet status, in which it is currently.
+ifconfig %s down
+[%s]:[%s] - Invalid Ethernet interface configured.
+[%s]:[%s] - router2_deconfig_interface_routing_ipv4 Failed 
+[%s]:[%s] - Ethernet WAN Link down for Dynamic WAN, connect the cable.
+[%s]:[%s] - Ethernet WAN Link is down for Static WAN, connect the cable.
+[%s]:[%s] - if_name size is greater than fname
+/sys/class/net/%s/carrier
+[%s]:[%s] - Error in opening file
+[%s]:[%s] - Netlink event wan up %s
+[%s]:[%s] - Netlink event wan down %s
+[%s]:[%s] - %s() Failed to get the stats emd_eth_wan_session = %d, interface=%s
+[%s]:[%s] - Ethernet WAN (%s) : Session ID = %d , [Rx = %llu , Tx = %llu]
+[%s]:[%s] -  Current [Rx = %llu , Tx = %llu]
+[%s]:[%s] - Updated Previous bytes [Rx_bytes = %llu, Tx_bytes = %llu]
+[%s]:[%s] - DISCONNECTED Session [Rx = %llu , Tx = %llu]
+[%s]:[%s] - Invalid (Session ID=%d)
+emd_eth.wan_stats
+[%s]:[%s] - Ethernet WAN (%s) : session ID = %d, [Rx_bytes = %llu, Tx_bytes = %llu] on channel %s
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+/opt/nvtl/tmp/emd/
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - Error in applying the settings for EMD.
+[%s]:[%s] - Error opening netlink socket: %d, terminating.
+[%s]:[%s] - Error opening message queue: %d, terminating.
+emd_main_thread
+[%s]:[%s] - Ready for events
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s() : Periodically fetching and sending the stats
+[%s]:[%s] - %s Server Terminating.
+eth_ifconfig_up
+emd_setup_init
+emd_do_dhcp_on_iface
+emd_check_static_ip_config
+ethernet_linkdown
+emd_eth_get_wan_stats
+[%s]:[%s] - Invoked %s()
+[%s]:[%s] - %s(): Event Data Null
+wan_mgr.wan_status_change
+[%s]:[%s] - %s EMD received WAN interface Name [%d], status[%d] disconnect reason[%d] 
+[%s]:[%s] - %s Ethernet WAN is ROUTED, session ID=%d
+[%s]:[%s] - %s() : Failed to send stats
+[%s]:[%s] - %s() : Successfully sent stats
+[%s]:[%s] - %s Ethernet WAN is NOT ROUTED
+[%s]:[%s] - %s: MsgBus_Create Failed
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe to IFC STATUS channel Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+emd_wan_link_status
+emd_msgbus_handler
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

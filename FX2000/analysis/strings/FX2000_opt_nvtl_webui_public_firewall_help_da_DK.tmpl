@@ -1,0 +1,53 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+	<h2>Oversigt</h2>
+		<p>En firewall beskytter dine tilsluttede enheder mod ondsindet indg
+ende trafik fra internettet. Firewallen kan ikke slukkes, men de f
+lgende indstillinger er tilg
+ngelige.</p>
+	<h2>Indstillinger</h2>
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+	<tmpl_unless ShowDmzActive>
+		<h3>VPN-passthrough</h3>
+	</tmpl_unless>
+		<p>Denne funktion tillader VPN-klientsoftware p
+ tilsluttede enheder at oprette forbindelse via denne enhed til eksterne VPN-servere. Normalt skal denne indstilling v
+ndt.</p>
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+		<tmpl_unless ShowDmzActive>
+			<h3>IPv6 gennemsigtig tilstand</h3>
+		</tmpl_unless>
+			<p>Normalt blokerer firewall indg
+ende anmodninger om IPv6-forbindelse, der er beregnet til en IPv6-tilsluttet enhed.</p>
+			<p>Hvis du vil tillade, at disse indg
+ende forbindelsesanmodninger n
+r frem til den tilsigtede tilsluttede enhed, skal du sl
+ denne indstilling til. Gennemsigtig tilstand skal kun t
+r det er n
+dvendigt, da det reducerer beskyttelsen fra <tmpl_var _("webui", "webui_product_name")> firewall.</p>
+	</tmpl_if>
+	<tmpl_if ShowDmzActive>
+		<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+	<tmpl_else>
+		<h2>DMZ</h2>
+	</tmpl_if>
+	<p>Hvis den er markeret, modtager den tilsluttede enhed, der er specificeret som DMZ IP-adresse (DMZ-destination) al trafik, som ellers ville blive blokeret af firewall. Dette kan hj
+lpe visse besv
+rlige netv
+rksapplikationer til at fungere korrekt, men DMZ-enheden skal have sin egen firewall til at beskytte sig mod ondsindet trafik.</p>
+	<tmpl_if ShowDmzActive>
+	<h3>DMZ-afkrydsningsfelt</h3>
+		<p>Brug dette til at sl
+ denne funktion til eller fra efter behov. Generelt skal DMZ v
+re slukket, medmindre det virkelig er n
+dvendigt.</p>	
+	</tmpl_if>
+	<h3>Destinationens IP-adresse</h3>
+		<p>Indtast IP-adressen p
+ den tilsluttede enhed, du 
+nsker skal blive DMZ-enheden (DMZ-destination), i dette felt. Du kan kontrollere IP-adressen p
+ hver tilsluttet enhed p
+rmen til den tilsluttede enhed.</p>
+<!-- id="firewall" -->

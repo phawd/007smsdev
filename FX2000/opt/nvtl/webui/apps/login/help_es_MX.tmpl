@@ -1,0 +1,10 @@
+<!-- Login -->
+<div id="login">
+	<h1><tmpl_var _("webui", "webui_product_name")> Inicio de sesión <tmpl_var _("webui", "webui_product_number")> de MiFi</h1>
+	<p> Ingrese la Contraseña de administrador <tmpl_var _("webui", "webui_product_name")> para continuar. </p>
+	<tmpl_if showForgotPassword>
+	<p> Si no conoce la contraseña, use la opción <strong>Olvidé la contraseña de administrador</strong>. </p>
+	</tmpl_if>
+	<p>Si ingresa una contraseña incorrecta demasiadas veces, se bloqueará. Para cancelar el bloqueo, debe reiniciar el <tmpl_var _("webui", "webui_product_name")>. </p>
+</div>
+<!-- id="login" -->

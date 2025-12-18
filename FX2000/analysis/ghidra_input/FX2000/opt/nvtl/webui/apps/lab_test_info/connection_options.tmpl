@@ -1,0 +1,3 @@
+<option value="1"<tmpl_if IN_SET(ConnectionType, 1)> selected="selected"</tmpl_if>><tmpl_var _("webui", "lab_test_info_connection_type_auto_connect_text")></option> <!-- Auto-connect -->
+<option value="2"<tmpl_if IN_SET(ConnectionType, 2)> selected="selected"</tmpl_if>><tmpl_var _("webui", "lab_test_info_connection_type_auto_connect_except_roaming_text")></option> <!-- Auto-connect except when roaming -->
+<option value="0"<tmpl_if IN_SET(ConnectionType, 0)> selected="selected"</tmpl_if>><tmpl_var _("webui", "lab_test_info_connection_type_manual_connect_text")></option> <!-- Manual Connection -->

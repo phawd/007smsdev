@@ -1,0 +1,28 @@
+<!-- Backup and Restore -->
+<div id="backup_restore">
+         <h1><tmpl_var _("webui", "backup_restore_menu_text")></h1>
+
+         <h2>Pārskats</h2>
+         <p>Izmantojiet šo funkciju, lai dublētu (lejupielādētu) konfigurācijas iestatījumu kopiju no šīs ierīces datorā esošā failā vai atjaunotu (augšupielādētu) iepriekš saglabātu konfigurācijas failu. Šajā konfigurācijas failā ir visi ierīces, maršrutētāja un sistēmas funkciju iestatījumi. Tajā nav 4G modema iestatījumu vai datu. Ņemiet vērā, ka failu var atjaunot tikai tajā pašā ierīcē, no kuras tas nācis.</p>
+         <p>Šajā ekrānā var arī visus iestatījumus atiestatīt rūpnīcas noklusējuma vērtībās.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+         <h3>Administratora parole</h3>
+         <p>Šajā laukā ievadiet pašreizējo <tmpl_var _("webui", "webui_product_name")> administratora paroli.</p>
+         <h3><tmpl_var _("webui", "backup_restore_backup_now_button")></h3>
+         <p>Noklikšķiniet uz pogas Lejupielādēt, lai datorā lejupielādētu pašreizējā konfigurācijas faila kopiju. Ja pārlūkprogrammā tiek parādīta uzvedne ar aicinājumu saglabāt failu, varat to pārdēvēt.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+
+         <h3>Administratora parole</h3>
+         <p>Šajā laukā ievadiet pašreizējo <tmpl_var _("webui", "webui_product_name")> administratora paroli.</p>
+         <h3><tmpl_var truncate(_("webui", "backup_restore_file_select_label"), (size(_("webui", "backup_restore_file_select_label")) - size(":")))></h3>
+         <p>Atlasiet konfigurācijas failu, kuru iepriekš lejupielādējāt no šī <tmpl_var _("webui", "webui_product_name")> datora.</p>
+         <h3>Poga Atjaunot tūlīt</h3>
+         <p>Pēc konfigurācijas faila atlasīšanas noklikšķiniet uz šīs pogas, lai sāktu faila augšupielādi. Pēc augšupielādes konfigurācijas fails tiek nekavējoties lietots, un ierīce tiek restartēta.</p>
+         <p class="note"><strong>Piezīme.</strong> Augšupielādējot konfigurācijas failu, VISI esošie iestatījumi tiek mainīti, lai tie atbilstu konfigurācijas failam. Tādējādi var tikt mainīti pašreizējie Wi-Fi iestatījumi, pārtraucot visus esošos savienojumus ar šo <tmpl_var _("webui", "webui_product_name")>, tostarp šo tīmekļa pārlūkprogrammas sesiju.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+         <p>Noklikšķiniet uz pogas <strong>Atjaunot rūpnīcas noklusējuma iestatījumus</strong>, lai atiestatītu visus iestatījumus rūpnīcas noklusējuma vērtībās. Tas izraisa restartēšanu un var mainīt pašreizējos Wi-Fi iestatījumus, pārtraucot visus esošos savienojumus ar šo <tmpl_var _("webui", "webui_product_name")>, tostarp šo tīmekļa pārlūkprogrammas sesiju.</p>
+</div>
+ <!-- id="backup_restore" -->

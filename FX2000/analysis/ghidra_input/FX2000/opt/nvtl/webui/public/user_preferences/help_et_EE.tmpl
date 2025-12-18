@@ -1,0 +1,24 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+	<p>Sellel ekraanil on palju suvandeid, mis võimaldavad seadistada seadme <tmpl_var _("webui", "webui_product_name")> käitumist nii, et see vastaks paremini teie vajadustele.</p>
+	<h3>Keel</h3>
+	<p>Valige soovitud keel.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+	<p>Määrake vorming, milles kuupäev selles veebipõhises liideses kuvatakse.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+	<p>Määrake vorming, milles kellaaeg selles veebipõhises liideses kuvatakse.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+	<p>Valige GPS-i kõrguse ja täpsuse määramiseks kasutatav seade.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+	<p>Määrake kümnendarvude kuvamise viis. Kümnendkoha märkimiseks saab valida punkti (.) või koma (,).</p>
+
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+		<p>Etherneti indikaator kuvatakse olekuribal, kui Etherneti port on lubatud; muidu on see varjatud.</p>
+	</tmpl_if>
+	
+</div>

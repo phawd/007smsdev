@@ -1,0 +1,178 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+libpthread.so.0
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+comm_sub_set_ipq_debug_mode
+__isoc99_scanf
+GLIBC_2.7
+comm_sub_execute_shell_cmd
+comm_sub_get_ipqcm_conn_state
+comm_sub_get_ipqcm_auto_connect_state
+comm_sub_ipqcm_start_data_call
+comm_sub_ipqcm_stop_data_call
+comm_sub_get_primary_ssid_broadcast_status
+comm_sub_get_primary_ssid_name
+comm_sub_get_primary_wifi_password
+comm_sub_get_primary_wifi_band_selection
+comm_sub_get_guest_ssid_broadcast_status
+comm_sub_get_guest_ssid_name
+comm_sub_get_guest_wifi_password
+comm_sub_get_guest_wifi_band_selection
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libmosquitto.so.1
+libxml2.so.2
+libz.so.1
+libcurl.so.4
+libssl.so.1.1
+libcrypto.so.1.1
+libmifi_debug.so
+libmificommon.so
+libxmldata_api.so
+libmifimsgbus.so
+libfactory_reset_api.so
+libmodem2_api.so
+libgps_api.so
+libfota_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libsysintclient.so
+libcom_subsystem_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+ipq_set_debug_mode
+Set IPQ debug mode.
+ipq_get_conn_state
+Get IPQ modem connection state.
+ipq_get_auto_connect_state
+Get modem auto connection state from IPQ.
+ipq_start_data_call
+Start data call in IPQ
+ipq_stop_data_call
+Stop data call in IPQ
+execute_shell_cmd
+execute shell cmd on IPQ
+debug_log_status
+enable/disable debug logs
+get_primary_wifi_ssid_broadcast_status
+Getting Primary Wifi SSID broadcast status
+get_primary_wifi_ssid_name
+Getting Primary Wifi SSID name
+get_primary_wifi_password
+Getting Primary Wifi Password
+get_primary_wifi_band_selection
+Getting Primary Wifi Band Selection
+get_guest_wifi_ssid_broadcast_status
+Getting Guest Wifi SSID broadcast status
+get_guest_wifi_ssid_name
+Getting Guest Wifi SSID name
+get_guest_wifi_password
+Getting Guest Wifi Password
+get_guest_wifi_band_selection
+Getting Guest Wifi Band Selection
+comm_sub_success
+comm_sub_err_timeout
+comm_sub_err_no_connection
+comm_sub_err_no_mem
+comm_sub_err_buff_mismatch
+comm_sub_err_remote_api_failed
+comm_sub_err_invalid_input
+unknown error
+  --------------------------------------------------------------------------- 
+  %-25s - %s
+  ---------------------------------------------------------------------------
+%s returned %d 
+Argument missing..
+1.function 2.value: [0/1] 3.timeout
+%s returned %d %s
+Enter shell_cmd : 
+Enter timeout :
+shell cmd : [ %s ]
+1.function 2.timeout
+modem connection state     [ %d ] 
+modem connection ipv4 addr [ %s ] 
+modem connection ipv6 addr [ %s ] 
+modem auto connection state     [ %d ] 
+ Primary 5g Wifi Ssid Broadcast status length : %d
+ Primary 5g Wifi Ssid Broadcast status        : %d
+ Primary 2g Wifi Ssid Broadcast status length : %d
+ Primary 2g Wifi Ssid Broadcast status        : %d
+ Primary 5g Wifi Ssid name length : %d
+ Primary 5g Wifi Ssid name        : %s
+ Primary 2g Wifi Ssid name length : %d
+ Primary 2g Wifi Ssid name        : %s
+ Primary 5g Wifi password length : %d
+ Primary 5g Wifi password        : %s
+ Primary 2g Wifi password length : %d
+ Primary 2g Wifi password        : %s
+ Primary 5g Wifi band selection length : %d
+ Primary 5g Wifi band selection        : %d
+ Primary 2g Wifi band selection length : %d
+ Primary 2g Wifi band selection        : %d
+ Guest 5g Wifi Ssid Broadcast status length : %d
+ Guest 5g Wifi Ssid Broadcast status        : %d
+ Guest 2g Wifi Ssid Broadcast status length : %d
+ Guest 2g Wifi Ssid Broadcast status        : %d
+ Guest 5g Wifi Ssid name length : %d
+ Guest 5g Wifi Ssid name        : %s
+ Guest 2g Wifi Ssid name length : %d
+ Guest 2g Wifi Ssid name        : %s
+ Guest 5g Wifi password length : %d
+ Guest 5g Wifi password        : %s
+ Guest 2g Wifi password length : %d
+ Guest 2g Wifi password        : %s
+ Guest 5g Wifi band selection length : %d
+ Guest 5g Wifi band selection        : %d
+ Guest 2g Wifi band selection length : %d
+ Guest 2g Wifi band selection        : %d
+logs : debug_log[1/0] 
+debug_log [ %d ]
+touch /tmp/commsub_debug_log.txt
+/tmp/commsub_debug_log.txt
+rm /tmp/commsub_debug_log.txt
+touch /opt/nvtl/log/commsub_debug_log.txt
+/opt/nvtl/log/commsub_debug_log.txt
+rm /opt/nvtl/log/commsub_debug_log.txt
+command [%s]
+command [%s] not found.
+cmd_help
+commsub_cli_set_ipq_debug_mode
+commsub_cli_execute_shell_cmd
+commsub_cli_ipqcm_get_conn_state
+commsub_cli_get_ipqcm_auto_connect_state
+commsub_cli_ipqcm_start_data_call
+commsub_cli_ipqcm_stop_data_call
+commsub_cli_get_primary_wifi_ssid_broadcast_status
+commsub_cli_get_primary_wifi_ssid_name
+commsub_cli_get_primary_wifi_password
+commsub_cli_get_primary_wifi_band_selection
+commsub_cli_get_guest_wifi_ssid_broadcast_status
+commsub_cli_get_guest_wifi_ssid_name
+commsub_cli_get_guest_wifi_password
+commsub_cli_get_guest_wifi_band_selection
+commsub_cli_debug_log_status
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

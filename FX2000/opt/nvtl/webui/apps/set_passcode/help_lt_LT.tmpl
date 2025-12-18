@@ -1,0 +1,33 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>Administratoriaus slaptažodis</h1>
+	<h2>Apžvalga</h2>
+	<p>Administratoriaus slaptažodis naudojamas prisijungti prie šios <tmpl_var _("webui", "webui_product_name")> administratoriaus svetainės. Puslapyje <em>Administratoriaus slaptažodis</em> galite pakeisti administratoriaus slaptažodį ir nustatyti tam tikrą su administratoriaus slaptažodžiu susijusią saugos parinktį.</p>
+
+
+	<h2>Keisti <tmpl_var _("webui", "webui_product_name")> administratoriaus slaptažodį</h2>
+	<p>Norėdami pakeisti dabartinį administratoriaus slaptažodį, pirmiausia turite žemiau esančiame lauke įvesti dabartinį administratoriaus slaptažodį. Ekranas tada bus atnaujintas, o jame pateikta parinktis nustatyti naują administratoriaus slaptažodį ir saugumo klausimą, naudotiną praradus administratoriaus slaptažodį.</p>
+
+	<h3>Dabartinis <tmpl_var _("webui", "webui_product_name")> administratoriaus slaptažodis</h3>
+	<p>Šiame lauke įveskite dabartinį <tmpl_var _("webui", "webui_product_name")> administratoriaus slaptažodį. Atminkite, kad jei per daug kartų įvesite neteisingą reikšmę, šioje <tmpl_var _("webui", "webui_product_name")> administratoriaus svetainėje būsite užblokuoti. Norint išvalyti šį užraktą, <tmpl_var _("webui", "webui_product_name")> reikia paleisti iš naujo.</p>
+	<tmpl_if showDisplayPascode>
+		<h2>Rodyti <tmpl_var _("webui", "webui_product_name")> administratoriaus slaptažodį</h2>
+		<p>Jei ši nuostata ĮJUNGTA, rodoma „*********“. Jei ši nuostata IŠJUNGTA, administratoriaus slaptažodis gali būti rodomas „Jetpack“ ekrane.</p>
+	</tmpl_if>
+
+	<h2>Keisti <tmpl_var _("webui", "webui_product_name")> administratoriaus slaptažodį</h2>
+	<h3>Naujas administratoriaus slaptažodis</h3>
+	<p>Įveskite naują administratoriaus slaptažodį naudodami tik raides, skaičius ir standartinius skyrybos ženklus. Slaptažodį turi sudaryti bent 8 ženklai.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p>Šiame lauke iš naujo įveskite naują administratoriaus slaptažodį.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>Šis saugumo klausimas naudojamas, jei prarandamas administratoriaus slaptažodis ir naudojama parinktis „Pamiršau administratoriaus slaptažodį“. Pasirinkite norimą klausimą ir žemiau esančiame lauke pateikite atsakymą.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Pateikite atsakymą į pirmiau pasirinktą saugumo klausimą. Atminkite, kad atsakymuose skiriamos didžiosios ir mažosios raidės.</p>
+
+</div>
+<!-- id="set_passcode" -->
+

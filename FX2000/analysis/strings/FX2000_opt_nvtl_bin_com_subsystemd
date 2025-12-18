@@ -1,0 +1,697 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+mifi_dbg_start
+settings_get_features
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+libpthread.so.0
+mosquitto_subscribe
+MOSQ_1.0
+libmosquitto.so.1
+mifi_dbg_stop
+snprintf
+mosquitto_lib_init
+mosquitto_new
+mosquitto_connect_callback_set
+mosquitto_disconnect_callback_set
+mosquitto_publish_callback_set
+mosquitto_subscribe_callback_set
+mosquitto_message_callback_set
+mosquitto_connect
+mosquitto_loop_forever
+MOSQ_1.1
+mosquitto_destroy
+mosquitto_lib_cleanup
+mosquitto_publish
+MsgBus_Subscribe
+MsgBus_Unsubscribe
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+modem2_api_is_running
+modem2_get_info
+modem2_get_diag_info
+modem2_get_service_info
+modem2_get_pri_tech_profile
+modem2_is_radio_enabled
+modem2_sim_get_status
+modem2_get_current_state
+modem2_get_call_status
+modem2_get_signal_stats
+modem2_get_active_band
+modem2_get_active_tech_profile
+modem2_set_active_tech_profile
+modem2_get_tech_profile
+modem2_set_tech_profile
+modem2_sim_unlock_puk
+modem2_sim_enable_pin
+modem2_enable_data_call
+modem2_get_network_time
+modem2_validate_home_network
+modem2_sim_change_pin
+modem2_sim_unlock_pin
+modem2_get_enabled_tech_modes
+modem2_set_enabled_tech_modes
+modem2_set_pri_tech_profile
+modem2_roaming_set_enabled
+modem2_roaming_get_enabled
+modem2_get_5g_status
+modem2_get_5g_active_band_pci
+modem2_get_ca_band_list
+modem2_sim_mgr_get_active_slot
+modem2_sim_mgr_get_slot_state
+modem2_sim_mgr_get_state
+modem2_uim_switch_slot
+modem2_sim_mgr_get_active_imsi
+modem2_sim_mgr_set_active_imsi
+modem2_uim_get_physical_slot_status
+modem2_sim_mgr_get_sim_switch_status
+modem2_sim_mgr_get_num_sims
+modem2_sim_mgr_set_imsi_priority
+modem2_sim_mgr_get_imsi_priority
+modem2_sim_mgr_get_imsi_simConfig_db
+modem2_sim_mgr_get_sim_init_status
+modem2_get_test_sim_status
+modem2_get_custom_apn_from_database_using_imsi
+modem2_get_custom_apn_from_database_using_iccid
+modem2_get_tx_rx_info
+modem2_get_ecgi
+modem2_sim_get_carrier
+modem2_get_nr5g_disable_mode
+modem2_set_nr5g_disable_mode
+modem2_network_attach
+gps_api_is_running
+gps_get_status
+gps_get_last_fix
+gps_get_privacy_setting
+gps_set_privacy_setting
+gps_start
+gps_stop
+factory_reset_do_reset
+sys_getSystemVersion
+MsgBusSetBinary
+MsgBusSetInt32
+MsgBusPublishBinary
+fota_api_is_running
+fota_create_session
+fota_clear_session
+fota_validate_update_pkg
+fota_start_installation
+fota_get_update_status
+fota_get_record_by_id
+fota_get_max_allowed_pkg_size
+sim_mgr_api_is_running
+sim_mgr_api_get_is_multi_sim_supported
+sim_mgr_api_get_switch_mode
+sim_mgr_api_set_switch_mode
+sim_mgr_api_get_active_sim
+sim_mgr_api_get_sim_info
+sim_mgr_api_set_active_sim
+sim_mgr_api_set_active_iccid_pin_locked
+sim_mgr_api_get_prio_sim
+sim_mgr_api_set_prio_sim
+sim_mgr_api_get_sim_switch_status
+sim_mgr_api_get_priority_SIM_configs
+sim_mgr_api_set_priority_SIM_configs
+sim_mgr_api_set_sig_qlty_configs
+sim_mgr_api_get_sig_qlty_configs
+sim_mgr_api_get_auto_algo_configs
+sim_mgr_api_set_auto_algo_configs
+sim_mgr_api_delete_sim
+__bss_start
+librt.so.1
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libxml2.so.2
+libz.so.1
+libcurl.so.4
+libssl.so.1.1
+libcrypto.so.1.1
+libmifi_debug.so
+libmificommon.so
+libxmldata_api.so
+libmifimsgbus.so
+libfactory_reset_api.so
+libmodem2_api.so
+libgps_api.so
+libfota_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libsysintclient.so
+H	KxD	J{D
+COM_SUBSYSTEM
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - Stoping com_subsystem application as feature not enabled
+[%s]:[%s] - Satish.. Starting com_subsystem application
+/tmp/commsub_debug_log.txt
+/opt/nvtl/log/commsub_debug_log.txt
+[%s]:[%s] - mbh init failed
+[%s]:[%s] - init() failure
+[%s]:[%s] - set_callbacks() failure
+[%s]:[%s] - connect() failure
+/opt/nvtl/bin/ipq_com_ip.sh start
+[%s]:[%s] - mbh deinit failed
+[%s]:[%s] - Stopping com_subsystem application
+client_%d
+[%s]:[%s] - mosquitto lib init start 
+[%s]:[%s] - mosquitto lib init done 
+[%s]:[%s] - -- connected successfully
+[%s]:[%s] - -- connection refused
+[%s]:[%s] - -- disconnect successfully
+[%s]:[%s] - -- published successfully
+[%s]:[%s] - on message entered 
+[%s]:[%s] - APP-- got message @ %s: (%d, QoS %d, %s) '%s'
+[%s]:[%s] - invalid topic message
+[%s]:[%s] - -- subscribed successfully
+localhost
+[%s]:[%s] - Came out of loop
+[%s]:[%s] - com_mosq failure
+[%s]:[%s] - publish err
+[%s]:[%s] - published event
+IPQ/Event/trigger/%s
+/tmp/commsub_debug_log.txt
+/opt/nvtl/log/commsub_debug_log.txt
+COM_SUBSYSTEM
+[%s]:[%s] - snprintf
+[%s]:[%s] - %s: MsgBus_Subscribe Refresh Failed
+COM_SUBSYSTEM_MBH
+[%s]:[%s] - %s: MsgBus_Unsubscribe Refresh Failed
+[%s]:[%s] - %s: MsgBus_Create Failed
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+/tmp/commsub_debug_log.txt
+/opt/nvtl/log/commsub_debug_log.txt
+COM_SUBSYSTEM
+[%s]:[%s] - modem2_is_running  
+IPQ/modem2/isRunning
+[%s]:[%s] - snprintf
+[%s]:[%s] - modem2_api_is_running
+[%s]:[%s] - data = %d 
+[%s]:[%s] - publish
+[%s]:[%s] - get_info 
+IPQ/modem2/getInfo
+[%s]:[%s] - get_info failed sat
+[%s]:[%s] - publish failed
+[%s]:[%s] - get_diag_info 
+IPQ/modem2/getDiagInfo
+[%s]:[%s] - get_diag_info failed sat
+[%s]:[%s] - get_service_info 
+IPQ/modem2/getServiceInfo
+[%s]:[%s] - get_pri_tech_profile 
+[%s]:[%s] - Payload NULL
+IPQ/modem2/getPriTechProfile
+[%s]:[%s] - get_pri_tech_profile failed : %d 
+[%s]:[%s] - modem2_is_radio_enabled 
+IPQ/modem2/isRadioEnabled
+[%s]:[%s] - modem2_is_radio_enabled failed 
+[%s]:[%s] - modem2_sim_get_status 
+IPQ/modem2/getSimStatus
+[%s]:[%s] - modem2_sim_get_status failed 
+[%s]:[%s] - modem2_get_current_state 
+IPQ/modem2/getCurrentState
+[%s]:[%s] - modem2_get_current_state failed 
+[%s]:[%s] - modem2_get_call_status 
+IPQ/modem2/getCallStatus
+[%s]:[%s] - modem2_get_call_status failed 
+[%s]:[%s] - modem2_get_signal_stats 
+IPQ/modem2/getSignalStats
+[%s]:[%s] - modem2_get_signal_stats failed 
+[%s]:[%s] - modem2_get_active_band 
+IPQ/modem2/getActiveBand
+[%s]:[%s] - modem2_get_active_band failed 
+[%s]:[%s] - get_active_tech_profile 
+IPQ/modem2/getActiveTechProfile
+[%s]:[%s] - get_active_tech_profile failed 
+[%s]:[%s] - set_active_tech_profile 
+IPQ/modem2/setActiveTechProfile/ack
+[%s]:[%s] - set_active_tech_profile failed 
+[%s]:[%s] - get_tech_profile 
+IPQ/modem2/getTechProfile
+[%s]:[%s] - get_tech_profile failed 
+[%s]:[%s] - set_tech_profile 
+IPQ/modem2/setTechProfile/ack
+[%s]:[%s] - set_tech_profile failed type %d, index : %d 
+[%s]:[%s] - modem2_sim_unlock_puk 
+IPQ/modem2/simUnlockPuk/ack
+[%s]:[%s] - modem2_sim_enable_pin failed 
+[%s]:[%s] - modem2_sim_enable_pin 
+IPQ/modem2/simEnablePin/ack
+[%s]:[%s] - modem2_enable_data_call 
+IPQ/modem2/enableDataCall/ack
+[%s]:[%s] - modem2_enable_data_call failed 
+[%s]:[%s] - modem2_set_custom_apn_from_database 
+IPQ/modem2/setCustomApn2DB/ack
+[%s]:[%s] - modem2_get_custom_apn_from_database failed 
+[%s]:[%s] - modem2_get_custom_apn_from_database 
+IPQ/modem2/getCustomApn2DB
+[%s]:[%s] - modem2_get_network_time 
+IPQ/modem2/getNetworkTime
+[%s]:[%s] - modem2_get_network_time failed 
+[%s]:[%s] - modem2_validate_home_network 
+IPQ/modem2/validateHomeNetwork
+[%s]:[%s] - handle_modem2_validate_home_network failed 
+[%s]:[%s] - modem2_sim_change_pin 
+IPQ/modem2/simChangePin/ack
+[%s]:[%s] - modem2_sim_change_pin failed 
+[%s]:[%s] - modem2_sim_unlock_pin 
+IPQ/modem2/simUnlockPin/ack
+[%s]:[%s] - modem2_sim_unlock_pin failed 
+[%s]:[%s] - modem2_get_enabled_tech_modes 
+IPQ/modem2/getEnabledTechModes
+[%s]:[%s] - modem2_get_enabled_tech_modes failed 
+[%s]:[%s] - modem2_set_enabled_tech_modes 
+IPQ/modem2/setEnabledTechModes/ack
+[%s]:[%s] - modem2_set_enabled_tech_modes failed 
+[%s]:[%s] - set_pri_tech_profile 
+IPQ/modem2/setPriTechProfile/ack
+[%s]:[%s] - set_pri_tech_profile failed: apn : %d 
+[%s]:[%s] - set_roaming_enabled 
+IPQ/modem2/roamingSetEnabled/ack
+[%s]:[%s] - set_roaming_enabled failed: enabled : %d 
+[%s]:[%s] - modem2_get_roaming_enabled
+IPQ/modem2/roamingGetEnabled
+[%s]:[%s] - modem2_get_roaming_enabled failed 
+[%s]:[%s] - handle_modem2_get_5g_status
+IPQ/modem2/get5gStatus
+[%s]:[%s] - handle_modem2_get_5g_band_pci
+IPQ/modem2/get5gBandPci
+[%s]:[%s] - handle_modem2_get_ca_band_list
+IPQ/modem2/getCaBandList
+[%s]:[%s] - handle_modem2 get active slot
+IPQ/modem2/getActiveSlot
+[%s]:[%s] - get active slot failed
+[%s]:[%s] - handle_modem2_get_slot_info
+IPQ/modem2/getSlotInfo
+[%s]:[%s] - get slot info failed
+[%s]:[%s] - handle_modem2_get_slots_info
+IPQ/modem2/getSlotsInfo
+[%s]:[%s] - structure size : %d(%d)
+[%s]:[%s] - getSlotsInfo failed
+[%s]:[%s] - handle_modem2_switch_slot
+[%s]:[%s] - handle_modem2_switch_slot1 - req slot: %d
+IPQ/modem2/switchSlot/ack
+[%s]:[%s] - handle_modem2_switch_slot - req slot: %d
+[%s]:[%s] - switch slot failed
+[%s]:[%s] - handle_modem2_get_active_sim_imsi
+IPQ/modem2/getActiveSimImsi
+[%s]:[%s] - get active sim imsi failed
+[%s]:[%s] - Active IMSI : %s
+[%s]:[%s] - handle_modem2_set_active_sim_imsi
+IPQ/modem2/setActiveSimImsi/ack
+[%s]:[%s] - Received IMSI : %s
+[%s]:[%s] - set active sim imsi failed
+[%s]:[%s] - handle_modem2_get_physical_slot_status
+IPQ/modem2/getPhysicalSlotStatus
+[%s]:[%s] - get physical slots status failed
+[%s]:[%s] - handle_modem2_get_sim_switch_status
+IPQ/modem2/getSimSwitchStatus
+[%s]:[%s] - get sim switch status failed
+[%s]:[%s] - handle_modem2_get_num_of_sims
+IPQ/modem2/getNumOfSims
+[%s]:[%s] - get number of sims failed
+[%s]:[%s] - handle_modem2_set_imsi_priority
+IPQ/modem2/setImsiPriority/ack
+[%s]:[%s] - set IMSI priority failed
+[%s]:[%s] - handle_modem2_get_imsi_priority
+IPQ/modem2/getImsiPriority
+[%s]:[%s] - get Imsi Priority failed
+[%s]:[%s] - handle_modem2_get_imsi_simConfig_db
+IPQ/modem2/getImsiSimConfigDb
+[%s]:[%s] - get Imsi imsi simConfig db failed
+[%s]:[%s] - handle_modem2 get Sim Slots Initialization status
+IPQ/modem2/getSimSlotsInitStatus
+[%s]:[%s] - get sim slots initialization status failed
+[%s]:[%s] - handle_modem2 get test Sim status
+IPQ/modem2/getTestSimStatus
+[%s]:[%s] - get test sim status failed
+[%s]:[%s] - handle_modem2 get profile from custom database using imsi
+IPQ/modem2/getProfileFromCustomDBUsingIMSI
+[%s]:[%s] - get APN from database using imsi failed
+[%s]:[%s] - handle_modem2 get profile from custom database using iccid
+IPQ/modem2/getProfileFromCustomDBUsingICCID
+[%s]:[%s] - get APN from database using iccid failed
+[%s]:[%s] - handle_modem2 get tx rx info
+IPQ/modem2/getTxRxInfo
+[%s]:[%s] - get Tx Rx Info failed
+[%s]:[%s] - handle_modem2 get ecgi
+IPQ/modem2/getECGI
+[%s]:[%s] - get ecgi Info failed
+[%s]:[%s] - handle_modem2 get sim carrier
+IPQ/modem2/getSimCarrier
+[%s]:[%s] - get sim carrier failed
+[%s]:[%s] - modem2_get_nr5g_disable_mode 
+IPQ/modem2/getNr5gDisableMode
+[%s]:[%s] - modem2_get_nr5g_disable_mode failed 
+[%s]:[%s] - modem2_set_nr5g_disable_mode 
+IPQ/modem2/setNr5gDisableMode/ack
+[%s]:[%s] - modem2_set_nr5g_disable_mode failed 
+[%s]:[%s] - modem2_network_attach 
+IPQ/modem2/networkAttach/ack
+[%s]:[%s] - modem2_network_attach failed 
+/tmp/commsub_debug_log.txt
+/opt/nvtl/log/commsub_debug_log.txt
+COM_SUBSYSTEM
+[%s]:[%s] - gps_is_running  
+IPQ/gps/isRunning
+[%s]:[%s] - snprintf
+[%s]:[%s] - gps_api_is_running
+[%s]:[%s] - data = %d 
+[%s]:[%s] - publish
+[%s]:[%s] - gps_get_status  
+IPQ/gps/getStatus
+[%s]:[%s] - gps_get_status
+[%s]:[%s] - publish failed
+[%s]:[%s] - gps_get_last_fix 
+IPQ/gps/getLastFix
+[%s]:[%s] - gps_get_last_fix
+[%s]:[%s] - latitude:[%lf]
+[%s]:[%s] - longitude:[%lf]
+[%s]:[%s] - gps_get_privacy  
+IPQ/gps/getPrivacy
+[%s]:[%s] - gps_get_privacy_setting
+[%s]:[%s] - privacy = %d 
+[%s]:[%s] - gps_set_privacy  
+[%s]:[%s] - Payload NULL
+IPQ/gps/setPrivacy/ack
+[%s]:[%s] - ack = %d 
+[%s]:[%s] - gps_start 
+IPQ/gps/start/ack
+[%s]:[%s] - gps_stop 
+IPQ/gps/stop/ack
+/tmp/commsub_debug_log.txt
+/opt/nvtl/log/commsub_debug_log.txt
+COM_SUBSYSTEM
+[%s]:[%s] - Payload NULL
+[%s]:[%s] - Unregister event %s 
+IPQ/Event/unregister/ack
+[%s]:[%s] - snprintf
+[%s]:[%s] - com_subsystem_mbh_unsubscribe failed
+[%s]:[%s] - publish failed
+[%s]:[%s] - ack = %d 
+[%s]:[%s] - publish
+[%s]:[%s] - Register event %s 
+IPQ/Event/register/ack
+[%s]:[%s] - com_subsystem_mbh_subscribe failed
+/tmp/commsub_debug_log.txt
+/opt/nvtl/log/commsub_debug_log.txt
+COM_SUBSYSTEM
+[%s]:[%s] - commsub_is_running  
+IPQ/commsub/isRunning
+[%s]:[%s] - snprintf
+[%s]:[%s] - data = %d 
+[%s]:[%s] - publish
+[%s]:[%s] - %s: Failed to run command
+[%s]:[%s] - %s: Result-->%s (sizeof result: %d, length of result:%d )
+/opt/nvtl/bin/vbat.sh | cut -f 2 -s -d ':'
+[%s]:[%s] - my mvolts : %lf 
+[%s]:[%s] - battery_get_status  
+IPQ/battery/getStatus
+[%s]:[%s] - set_ssh  
+[%s]:[%s] - dropbear start..  
+/opt/nvtl/bin/commsub_dropbear.sh start
+[%s]:[%s] - dropbear stop..  
+/opt/nvtl/bin/commsub_dropbear.sh stop
+[%s]:[%s] - debug_set_ssh  
+[%s]:[%s] - Payload NULL
+IPQ/debug/setSsh/ack
+[%s]:[%s] - ack = %d 
+[%s]:[%s] - reboot
+[%s]:[%s] - system_reboot 
+IPQ/system/reboot/ack
+[%s]:[%s] - exec cmd
+[%s]:[%s] - system_execute_shell_cmd:%s 
+IPQ/system/executeShellCmd/ack
+[%s]:[%s] - system_set_factory_default 
+IPQ/system/setFactoryReset/ack
+[%s]:[%s] - system_get_linux_version 
+IPQ/system/getLinuxVersion
+[%s]:[%s] - command : %s 
+[%s]:[%s] - system_get_linux_version failed
+[%s]:[%s] - publish failed
+[%s]:[%s] - system_get_serial_number 
+IPQ/system/getSerialNumber
+cat /sys/bus/soc/devices/soc0/serial_number
+[%s]:[%s] - system_get_serial_number failed
+[%s]:[%s] - Serial Number : %s 
+[%s]:[%s] - system_set_led 
+IPQ/system/setLed/ack
+/opt/nvtl/bin/commsub_led.sh %s %d
+[%s]:[%s] - commnad : %s 
+[%s]:[%s] - msgbus_broadcast:%d : %d
+[%s]:[%s] - %s:MSGBUS_COMSUB_AUTO_CONNECT_CONFIG - %d : %d
+ccm2.connection_prerequisite_status
+[%s]:[%s] - %s:MSGBUS_COMSUB_ROAM_CONFIG - %d : %d
+[%s]:[%s] - %s:MSGBUS_COMSUB_DATA_IPV4(V6)_CALL_ATTEMPT - %d : %d
+modem2.call_attempt
+[%s]:[%s] - %s:MSGBUS_COMSUB_DATA_IPV4_CALL_STATUS - %d
+modem2.conn_state
+[%s]:[%s] - %s:MSGBUS_COMSUB_MWAN3_CONNECTION_STATUS 
+wan_mgr.wan_status_change
+sim_mgr.conn_recovery.start
+sim_mgr.conn_recovery.stop
+comsub.broadcast
+[%s]:[%s] - MsgBusPublishBinary() failed
+[%s]:[%s] - system_post_msgbus_events: 
+IPQ/system/postMsgbusEvent/ack
+[%s]:[%s] - system_post_msgbus_events:%d : %d
+exce_shell_cmd
+msgbus_broadcast
+/tmp/commsub_debug_log.txt
+/opt/nvtl/log/commsub_debug_log.txt
+COM_SUBSYSTEM
+[%s]:[%s] - fota_is_running  
+IPQ/fota/isRunning
+[%s]:[%s] - snprintf
+[%s]:[%s] - fota_api_is_running failed
+[%s]:[%s] - data = %d 
+[%s]:[%s] - publish
+[%s]:[%s] - fota_create_session 
+[%s]:[%s] - Payload NULL
+IPQ/fota/createSession/ack
+[%s]:[%s] - ack = %d 
+[%s]:[%s] - fota_clear_session 
+IPQ/fota/clearSession/ack
+[%s]:[%s] - fota_validate_update_pkg 
+IPQ/fota/validateUpdatePkg
+[%s]:[%s] - fota_validate_update_pkg failed
+[%s]:[%s] - publish failed
+[%s]:[%s] - fota_start_installation 
+IPQ/fota/startInstallation/ack
+[%s]:[%s] - fota_get_update_status 
+IPQ/fota/getUpdateStatus
+[%s]:[%s] - fota_get_update_status failed
+[%s]:[%s] - fota_get_record_by_id 
+IPQ/fota/getRecordById
+[%s]:[%s] - fota_get_record_by_id failed
+[%s]:[%s] - fota_get_max_allowed_pkg_size 
+IPQ/fota/getMaxAllowedPkgSize
+[%s]:[%s] - fota_get_max_allowed_pkg_size failed
+/tmp/commsub_debug_log.txt
+/opt/nvtl/log/commsub_debug_log.txt
+COM_SUBSYSTEM
+[%s]:[%s] - bluetooth_get_ble_status 
+IPQ/bluetooth/getBleStatus
+[%s]:[%s] - snprintf
+[%s]:[%s] - bluetooth_get_ble_status failed
+[%s]:[%s] - publish failed
+[%s]:[%s] - publish
+[%s]:[%s] - bluetooth_set_enable_ble 
+[%s]:[%s] - Payload NULL
+IPQ/bluetooth/setBleStatus/ack
+[%s]:[%s] - ack = %d 
+[%s]:[%s] - bluetooth_get_fid 
+IPQ/bluetooth/getFID
+[%s]:[%s] - bluetooth_get_fid failed
+/tmp/commsub_debug_log.txt
+/opt/nvtl/log/commsub_debug_log.txt
+COM_SUBSYSTEM
+[%s]:[%s] - sim_mgr_is_running  
+IPQ/sim_mgr/isRunning
+[%s]:[%s] - snprintf
+[%s]:[%s] - sim_mgr_api_is_not_running
+[%s]:[%s] - data = %d 
+[%s]:[%s] - publish
+[%s]:[%s] - sim_mgr_api_is_multi_sim_supported 
+IPQ/sim_mgr/isMultiSimSupported
+[%s]:[%s] - get_switch_mode failed
+[%s]:[%s] - publish failed
+[%s]:[%s] - sim_mgr_api_get_switch_mode 
+IPQ/sim_mgr/getSwitchMode
+[%s]:[%s] - sim_mgr_api_set_switch_mode
+IPQ/sim_mgr/setSwitchMode/ack
+[%s]:[%s] - sim_mgr_api_set_switch_mode failed
+[%s]:[%s] - sim_mgr_api_get_active_sim 
+IPQ/sim_mgr/getActiveSim
+[%s]:[%s] - get active sim failed
+[%s]:[%s] - sim_mgr_api_get_sim_info 
+IPQ/sim_mgr/getSimInfo
+[%s]:[%s] - sim_mgr_api_get_sim_info failed
+[%s]:[%s] - sim_mgr_api_set_active_sim 
+IPQ/sim_mgr/setActiveSim/ack
+[%s]:[%s] - sim_mgr_api_set_active_sim : %s 
+[%s]:[%s] - sim_mgr_api_set_active_sim failed
+[%s]:[%s] - sim_mgr_api_set_active_pin_locked_sim 
+IPQ/sim_mgr/setActivePinLockedSim/ack
+[%s]:[%s] - sim_mgr_api_set_active_sim_iccid_pin_locked : %s 
+[%s]:[%s] - sim_mgr_api_set_active_iccid_pin_locked failed
+[%s]:[%s] - sim_mgr_api_get_priority_sim 
+IPQ/sim_mgr/getPrioSim
+[%s]:[%s] - get priority sim failed
+[%s]:[%s] - sim_mgr_api_set_prio_sim 
+IPQ/sim_mgr/setPrioSim/ack
+[%s]:[%s] - sim_mgr_api_set_prio_sim failed
+IPQ/sim_mgr/getSimSwitchStatus
+[%s]:[%s] - sim_mgr_api_get_sim_switch_status failed
+[%s]:[%s] - sim_mgr_api_get_priority_SIM_configs 
+IPQ/sim_mgr/getPrioritySimConfigs
+[%s]:[%s] - ssim_mgr_api_get_priority_SIM_configs failed
+[%s]:[%s] - sim_mgr_api_set_priority_SIM_configs 
+IPQ/sim_mgr/setPrioritySimConfigs/ack
+[%s]:[%s] - sim_mgr_api_set_priority_SIM_configs failed
+[%s]:[%s] - sim_mgr_api_set_sig_qlty_configs 
+IPQ/sim_mgr/setSigQltyConfigs/ack
+[%s]:[%s] - sim_mgr_api_set_sig_qlty_configs failed
+[%s]:[%s] - sim_mgr_api_get_sig_qlty_configs 
+IPQ/sim_mgr/getSigQltyConfigs
+[%s]:[%s] - sim_mgr_api_get_sig_qlty_configs failed
+[%s]:[%s] - sim_mgr_api_get_auto_algo_configs 
+IPQ/sim_mgr/getAutoAlgoConfigs
+[%s]:[%s] - sim_mgr_api_get_auto_algo_configs failed
+[%s]:[%s] - sim_mgr_api_set_auto_algo_configs 
+IPQ/sim_mgr/setAutoAlgoConfigs/ack
+[%s]:[%s] - sim_mgr_api_set_auto_algo_configs failed
+[%s]:[%s] - sim_mgr_api_delete_sim 
+IPQ/sim_mgr/deleteSim/ack
+[%s]:[%s] - sim_mgr_api_delete_sim failed
+BOLT/commsub/isRunning
+BOLT/modem2/isRunning
+BOLT/modem2/getInfo
+BOLT/modem2/getDiagInfo
+BOLT/modem2/getServiceInfo
+BOLT/modem2/isRadioEnabled
+BOLT/modem2/getSimStatus
+BOLT/modem2/getCurrentState
+BOLT/modem2/getCallStatus
+BOLT/modem2/getSignalStats
+BOLT/modem2/getActiveBand
+BOLT/modem2/getActiveTechProfile
+BOLT/modem2/setActiveTechProfile
+BOLT/modem2/getTechProfile
+BOLT/modem2/setTechProfile
+BOLT/modem2/simUnlockPuk
+BOLT/modem2/simEnablePin
+BOLT/modem2/enableDataCall
+BOLT/modem2/setCustomApn2DB
+BOLT/modem2/getCustomApn2DB
+BOLT/modem2/getNetworkTime
+BOLT/modem2/validateHomeNetwork
+BOLT/modem2/simChangePin
+BOLT/modem2/simUnlockPin
+BOLT/modem2/getEnabledTechModes
+BOLT/modem2/setEnabledTechModes
+BOLT/modem2/setPriTechProfile
+BOLT/modem2/getPriTechProfile
+BOLT/modem2/roamingGetEnabled
+BOLT/modem2/roamingSetEnabled
+BOLT/modem2/get5gStatus
+BOLT/modem2/get5gBandPci
+BOLT/modem2/getCaBandList
+BOLT/modem2/getActiveSlot
+BOLT/modem2/getSlotInfo
+BOLT/modem2/getSlotsInfo
+BOLT/modem2/switchSlot
+BOLT/modem2/getActiveSimImsi
+BOLT/modem2/setActiveSimImsi
+BOLT/modem2/getPhysicalSlotStatus
+BOLT/modem2/getSimSwitchStatus
+BOLT/modem2/getNumOfSims
+BOLT/modem2/getImsiPriority
+BOLT/modem2/setImsiPriority
+BOLT/modem2/getImsiSimConfigDb
+BOLT/modem2/getSimSlotsInitStatus
+BOLT/modem2/getTestSimStatus
+BOLT/modem2/getProfileFromCustomDBUsingIMSI
+BOLT/modem2/getProfileFromCustomDBUsingICCID
+BOLT/modem2/getTxRxInfo
+BOLT/modem2/getECGI
+BOLT/modem2/getSimCarrier
+BOLT/modem2/getNr5gDisableMode
+BOLT/modem2/setNr5gDisableMode
+BOLT/modem2/networkAttach
+BOLT/gps/isRunning
+BOLT/gps/getPrivacy
+BOLT/gps/setPrivacy
+BOLT/gps/start
+BOLT/gps/stop
+BOLT/gps/getStatus
+BOLT/gps/getLastFix
+BOLT/Event/register
+BOLT/Event/unregister
+BOLT/battery/getStatus
+BOLT/debug/setSsh
+BOLT/system/reboot
+BOLT/system/setFactoryReset
+BOLT/system/getLinuxVersion
+BOLT/system/setLed
+BOLT/system/executeShellCmd
+BOLT/system/postMsgbusEvent
+BOLT/system/getSerialNumber
+BOLT/fota/isRunning
+BOLT/fota/createSession
+BOLT/fota/clearSession
+BOLT/fota/validateUpdatePkg
+BOLT/fota/startInstallation
+BOLT/fota/getUpdateStatus
+BOLT/fota/getRecordById
+BOLT/fota/getMaxAllowedPkgSize
+BOLT/bluetooth/getBleStatus
+BOLT/bluetooth/setBleStatus
+BOLT/bluetooth/getFID
+BOLT/sim_mgr/isRunning
+BOLT/sim_mgr/isMultiSimSupported
+BOLT/sim_mgr/getSwitchMode
+BOLT/sim_mgr/setSwitchMode
+BOLT/sim_mgr/getSimInfo
+BOLT/sim_mgr/getSimSwitchStatus
+BOLT/sim_mgr/setPrioSim
+BOLT/sim_mgr/getPrioSim
+BOLT/sim_mgr/getActiveSim
+BOLT/sim_mgr/setActiveSim
+BOLT/sim_mgr/getPrioritySimConfigs
+BOLT/sim_mgr/setPrioritySimConfigs
+BOLT/sim_mgr/getSigQltyConfigs
+BOLT/sim_mgr/setSigQltyConfigs
+BOLT/sim_mgr/getAutoAlgoConfigs
+BOLT/sim_mgr/setAutoAlgoConfigs
+BOLT/sim_mgr/deleteSim
+BOLT/sim_mgr/setActivePinLockedSim
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

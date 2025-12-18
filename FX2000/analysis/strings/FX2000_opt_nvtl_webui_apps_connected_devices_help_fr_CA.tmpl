@@ -1,0 +1,119 @@
+<!-- Connected Devices -->
+<div id="connected_devices">
+	<h1><tmpl_var _("webui", "connected_devices_menu_text")></h1>
+	<h2>Vue d
+ensemble</h2>
+		Cette page affiche les d
+tails de chaque appareil connect
+ au <tmpl_var _("webui", "webui_product_name")>, ainsi qu
+une liste des appareils bloqu
+	<h2><tmpl_var _("webui", "connected_devices_sub_header_text")></h2>
+		Ce tableau r
+pertorie tous les appareils connect
+seau Wi-Fi. Le nom du r
+seau Wi-Fi est affich
+s le titre. Si un ordinateur est connect
+ en partage de connexion 
+ <tmpl_var _("webui", "webui_product_name")> 
+ble USB, cet ordinateur sera r
+ dans ce tableau.
+		Les informations suivantes sont affich
+es pour chaque appareil connect
+	<h3>Type de connexion</h3>
+	<p>Une ic
+ne indique le type de connexion pour chaque appareil connect
+	<h3>Nom</h3>
+		Normalement, il s
+agit du nom d
+appareil connect
+, comme d
+fini sur l
+appareil connect
+me. Dans de rares cas, le nom d
+te peut 
+tre indisponible. Si vous avez utilis
+Modifier
+ pour modifier le nom d
+un appareil connect
+, le nom que vous avez fourni s
+affiche 
+ la place du nom d
+		Vous pouvez utiliser l
+Modifier
+ pour modifier le nom de tout appareil connect
+	<h3>Adresse IP</h3>
+adresse IP de l
+appareil connect
+		<tmpl_var truncate(_("webui", "connected_devices_mac_address_label"), (size(_("webui", "connected_devices_mac_address_label")) - size(":")))>
+adresse MAC est un identifiant r
+seau unique pour cet appareil connect
+	<tmpl_if isIPv6Supported>
+			<tmpl_var truncate(_("webui", "connected_devices_link_local_label"), (size(_("webui", "connected_devices_link_local_label")) - size(":")))>
+appareil connect
+ prend en charge IPv6, l
+adresse IPv6 locale de liaison s
+affiche.
+	</tmpl_if>
+	<tmpl_if GuestWifiSupported>
+		<h2><tmpl_var _("webui", "connected_devices_guest_title")></h2>
+			Si le r
+seau Wi-Fi invit
+ est utilis
+, ce tableau r
+pertorie tous les appareils connect
+seau Wi-Fi invit
+. Le nom du r
+seau Wi-Fi est affich
+s le titre.
+			La pr
+sentation et le fonctionnement des appareils 
+s ici sont identiques 
+ ceux des appareils r
+s dans le r
+seau principal.
+	</tmpl_if>
+	<h2>Blocage et d
+blocage des appareils en cours</h2>
+	<h3>Bouton Bloquer</h3>
+		Cliquer sur le bouton 
+connecte l
+appareil connect
+che de se reconnecter. L
+appareil bloqu
+t alors dans la liste des appareils bloqu
+		Les appareils bloqu
+s sont bloqu
+ la fois sur le r
+seau invit
+ et sur le r
+seau principal.
+		Cette option peut 
+tre utilis
+e avec chaque appareil connect
+exception de votre propre appareil, et de tout appareil connect
+ par USB.
+	<h3>Liste bloqu
+une liste des appareils que vous avez bloqu
+s. Veuillez noter que dans la mesure o
+ ces appareils ne sont pas actuellement connect
+s et que leur connexion est bloqu
+e, ils n
+ont pas d
+adresse IP. 
+ la place, ils sont identifi
+s par leur nom et leur adresse MAC.
+	<h3>Bouton D
+bloquer</h3>
+		Lorsque vous cliquez sur le bouton D
+bloquer, vous d
+bloquez un appareil pr
+demment bloqu
+, ce qui lui permet de se connecter 
+ nouveau. L
+appareil d
+ est supprim
+ de la liste des appareils bloqu
+tra dans la liste des appareils connect
+s lorsqu
+il se connecte.
+<!-- id="connected_devices" -->

@@ -1,0 +1,214 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+	<h2>Vue d
+ensemble</h2>
+	<p>Ces param
+appliquent 
+ votre r
+seau local ou LAN. Pour cet appareil, le LAN se compose de cet appareil et de tous les appareils connect
+s (y compris les appareils connect
+s par Ethernet, le cas 
+ant).</p>
+	<tmpl_if showIPPTEnable>
+	<h3>Passthrough IP</h3>
+            Si elles sont activ
+es, les fonctionnalit
+s Passthrough IP attribuent l
+adresse IP Internet 
+ un appareil connect
+    </p>
+    <ul>
+            <li>L
+appareil utilis
+ avec Passthrough IP doit 
+tre le seul appareil sur l
+interface s
+lectionn
+e. Les autres appareils de cette interface seront ignor
+auront pas acc
+ Internet.
+            </li>
+            <li>Les appareils de l
+autre ou des autres interfaces fonctionnent normalement.
+            </li>
+            <li>Lorsque la fonctionnalit
+ Passthrough IP est activ
+e, les fonctionnalit
+s suivantes ne peuvent pas 
+tre utilis
+            <ul>
+                    <li>R
+acheminement de port </li>
+                    <li>Filtrage des ports </li>
+                    <li>DMZ </li>
+            </ul>
+    </li></ul>
+    <li>
+            Lorsque la fonctionnalit
+ Passthrough IP est activ
+e, le <tmpl_var _("webui", "webui_product_name")> doit red
+marrer. Normalement, cela signifie qu
+une nouvelle adresse IP Internet sera attribu
+e au <tmpl_var _("webui", "webui_product_name")> apr
+s le red
+marrage.
+    </li>
+    <h3>Activer la fonctionnalit
+ Passthrough IP</h3>
+            Utilisez pour activer ou d
+sactiver la fonctionnalit
+ Passthrough
+IP selon vos besoins.
+    </p>
+    <tmpl_if showIPPTInterface>
+    <h3>Interface Passthrough</h3>
+            S
+lectionnez l
+interface utilis
+e par le p
+seau auquel vous souhaitez appliquer l
+appareil Passthrough IP.
+            REMARQUE
+: lorsque la fonctionnalit
+ Passthrough IP est activ
+e sur une interface, toutes les autres interfaces sont d
+    </p>
+    </tmpl_if>
+    </tmpl_if>
+    <h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+	<tmpl_if LANIPAddressShow>			
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+adresse IP de cet appareil, vue depuis le r
+seau local.
+			Normalement, vous pouvez utiliser la valeur par d
+	</tmpl_if>
+	<tmpl_if LANSubnetMaskShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+			La valeur par d
+faut 255.255.255.0 est la valeur standard pour les petits r
+seaux (classe 
+			Si vous changez l
+seau local, assurez-vous d
+utiliser le masque de sous-r
+seau correct pour la plage d
+adresses
+seau local.
+	</tmpl_if>
+	<tmpl_if LANMacAddressShow>	
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+adresse MAC est un identifiant r
+seau unique, attribu
+ lors de la fabrication d
+			Ce champ en lecture seule affiche l
+MAC pour les interfaces de cet appareil.
+	</tmpl_if>
+	<tmpl_if LANDHCPEnableShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+		<p>En temps normal, cette case doit rester coch
+e. Le serveur DHCP attribue une adresse IP 
+ chaque appareil connect
+. Si le serveur DHCP est d
+, il faudrait alors attribuer une adresse IP fixe 
+ chaque appareil connect
+	</tmpl_if>
+	<tmpl_if LANLANDHCPLeaseTimeShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+		<p>il s
+agit du nombre de minutes pendant lesquelles les appareils connect
+s doivent renouveler l
+IP qui leur a 
+ attribu
+e par le serveur
+DHCP. Il est possible normalement de laisser la valeur par d
+faut, mais si vous avez des exigences particuli
+res, vous pouvez modifier cette valeur.
+	</tmpl_if>
+	<tmpl_if LANDHCPStartAddressShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>Il s
+agit du d
+but de la plage d
+adresses
+IP utilis
+e par le serveur
+DHCP. Si l
+IP est d
+fini sur l
+appareil du client, vous devez utiliser une adresse
+IP en dehors de cette plage
+DHCP. Si l
+IP est d
+finie avec une r
+servation
+IP, elle se trouvera g
+ralement 
+rieur de cette plage. REMARQUE
+: Seuls les utilisateurs exp
+s peuvent modifier ce param
+	</tmpl_if>
+	<tmpl_if LANDHCPEndAddressShow>
+	<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+		<p>La fin de la plage d
+adresses
+IP utilis
+e par le serveur
+DHCP. Si l
+IP est d
+fini sur l
+appareil du client, vous devez utiliser une adresse
+IP en dehors de cette plage
+DHCP. Si l
+IP est d
+finie avec une r
+servation
+IP, elle se trouvera g
+ralement 
+rieur de cette plage. REMARQUE
+: Seuls les utilisateurs exp
+s peuvent modifier ce param
+	</tmpl_if>
+	<tmpl_if LANReservedIPAddressShow>		
+	<h3><tmpl_var truncate(_("webui", "adv_lan_reservedIp_button"), (size(_("webui", "adv_lan_reservedIp_button")) - size(":")))></h3>
+		<p>Cette fonctionnalit
+tre utilis
+e pour garantir qu
+un appareil connect
+ se verra toujours attribuer la m
+me adresse IP par le <tmpl_var _("webui", "webui_product_name")>. Cliquez sur ce bouton pour acc
+cran de configuration de cette fonctionnalit
+	</tmpl_if>
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>Si certains de vos appareils connect
+s prennent en charge la connexion IPv6, ce param
+tre doit 
+tre activ
+			Les appareils connect
+s en IPv6 pourront alors 
+tablir des connexions IPv6 
+ Internet.
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+			<p>Il s
+agit de l
+adresse IPv6 de cet appareil. L
+adresse locale de liaison est utilis
+e pour la communication IPv6 entre les appareils d
+seau. </p>
+	</tmpl_if>	
+	<tmpl_if showLANDeviceName>
+                <h2><tmpl_var _("webui", "adv_lan_web_management_header_text")></h2>
+                <h3><tmpl_var truncate(_("webui", "adv_lan_url_name_label"), (size(_("webui", "adv_lan_url_name_label")) - size(":")))></h3>
+                <p>L
+URL permettant d
+interface utilisateur de gestion Web locale de l
+appareil est bas
+e sur le nom de l
+appareil sur la page Pr
+rences de l
+utilisateur.</p>
+        </tmpl_if>
+<!-- id="lan" -->

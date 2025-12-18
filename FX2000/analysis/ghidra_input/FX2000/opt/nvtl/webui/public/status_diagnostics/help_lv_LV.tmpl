@@ -1,0 +1,210 @@
+<!-- Diagnostics -->
+<div id="status_diagnostics">
+	<h1><tmpl_var _("webui", "status_diagnostics_menu_text")></h1>
+	<h2>Pārskats</h2>
+	<p>Šajā lapā ir informācija par <tmpl_var _("webui", "webui_product_name")> un pieejamajiem tīkliem. Izmantojiet to pēc nepieciešamības traucējumu novēršanai; tas nav nepieciešams normālai darbībai.</p>
+	<h2><tmpl_var _("webui", "status_diagnostics_modem_sub_header_text")></h2>
+
+	<tmpl_if showPhoneNumber>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_phone_number_label"), (size(_("webui", "status_diagnostics_phone_number_label")) - size(":")))></h3>
+		<p>Šis ir <tmpl_var _("webui", "webui_product_name")> tālruņa numurs.</p>
+	</tmpl_if>
+
+	<tmpl_if showImei>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imei_label"), (size(_("webui", "status_diagnostics_imei_label")) - size(":")))></h3>
+		<p>IMEI (International Mobile Equipment Identity — starptautiskā mobilā aprīkojuma identitāte) šai ierīcei. IMEI ir 15 vai 17 ciparu kods, ko izmanto, lai unikāli identificētu atsevišķu mobilo staciju<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>tīklā. Mainot SIM karti, IMEI nemainās.</p>
+	</tmpl_if>
+
+	<tmpl_if showImeisv>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imeisv_label"), (size(_("webui", "status_diagnostics_imeisv_label")) - size(":")))></h3>
+		<p>Šajā laukā IMEI apvieno ar šā tipa ierīces apstiprinājuma numuru.</p>
+	</tmpl_if>
+
+	<tmpl_if showMeid>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_meid_label"), (size(_("webui", "status_diagnostics_meid_label")) - size(":")))></h3>
+		<p>MEID (mobilā aprīkojuma ID) ir unikāls numurs, ko izmanto, lai identificētu atsevišķu mobilo staciju CDMA tīklā.</p>
+	</tmpl_if>
+
+	<tmpl_if showIMSI>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imsi_label"), (size(_("webui", "status_diagnostics_imsi_label")) - size(":")))></h3>
+		<p>Starptautiskā mobilo sakaru abonenta identitāte (IMSI) ir unikāls numurs, kas saistīts ar visiem Globālās mobilo sakaru sistēmas (GSM) un Universālās mobilo telekomunikāciju sistēmas (UMTS) tīkla mobilo tālruņu lietotājiem, kurus izmanto GSM abonenta identificēšanai.</p>
+	</tmpl_if>
+	
+	<tmpl_if showFwVersion>					
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_fw_version_label"), (size(_("webui", "status_diagnostics_fw_version_label")) - size(":")))></h3>
+		<p>Modemā pašreiz instalētās programmaparatūras (programmatūras) versija.</p>
+	</tmpl_if>
+
+	<tmpl_if showSimStatus>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_sim_status_label"), (size(_("webui", "status_diagnostics_sim_status_label")) - size(":")))></h3>
+		<p>Tas norāda SIM kartes statusu. Ja trūkst SIM kartes vai šis lauks norāda uz kādu SIM kartes kļūdu, savienojums ar mobilo tīklu nav iespējams.</p>
+	</tmpl_if>
+
+	<tmpl_if showICCID>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_iccid_label"), (size(_("webui", "status_diagnostics_iccid_label")) - size(":")))></h3>
+		<p>Šis unikālais ID numurs tiek piešķirts SIM kartei. Tas netiek rādīts, ja SIM karte nav instalēta vai pastāv SIM kartes kļūdas stāvoklis.</p>
+	</tmpl_if>
+
+	<tmpl_if showModemDetails>
+		<tmpl_if showMINMSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_msid_label"), (size(_("webui", "status_diagnostics_msid_label")) - size(":")))></h3>
+			<p>Šis ID tiek izmantots, lai identificētu abonentu mobilo datu tīklā.</p>
+		</tmpl_if>
+		<tmpl_if showESN>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_esn_label"), (size(_("webui", "status_diagnostics_esn_label")) - size(":")))></h3>
+			<p>Elektroniskais sērijas numurs (ESN) ir tradicionāla metode ierīču unikālai identificēšanai CDMA tīklos, bet to aizstāj MEID. Ierīcēm, kurās tiek izmantots MEID (piemēram, šai ierīcei), ESN ir tukšs vai tiek izmantots pseido-ESN, kas nav garantēts kā unikāls.</p>
+ 		</tmpl_if>
+ 		<tmpl_if showHomeSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_home_sid_label"), (size(_("webui", "status_diagnostics_home_sid_label")) - size(":")))></h3>
+			<p>SID (sistēmas ID) ir tīkla identifikators, kas norāda piesaistes punktu mobilo datu tīklam.</p>
+		</tmpl_if>
+		<tmpl_if showERIVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_eri_version_label"), (size(_("webui", "status_diagnostics_eri_version_label")) - size(":")))></h3>
+			<p>ERI (Enhanced Roaming Indicator — uzlabotās viesabonēšanas indikatoru) tabulā ir informācija par katru viesabonēšanas tīklu, ar kuru mobilajai ierīcei ir atļauts izveidot savienojumu. Šajā laukā ir norādīta pašlaik instalētā ERI versija. ERI tabula tiek atjaunināta automātiski.</p>
+ 		</tmpl_if>
+ 		<tmpl_if showPRLVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_prl_version_label"), (size(_("webui", "status_diagnostics_prl_version_label")) - size(":")))></h3>
+			<p>PRL (Preferred Roaming List — vēlamās viesabonēšanas saraksts) tiek izmantots, lai atlasītu tīklu, ja ir pieejami vairāki tīkli. Šajā laukā norādīta pašreiz instalētā PRL versija. PRL tiek atjaunināts automātiski.</p>
+		</tmpl_if>			
+	</tmpl_if>
+	<tmpl_if lteSupported>			
+		<h2 class="sectionHead">5G/4G LTE tīkls</h2>
+		
+		<tmpl_if showInternetStatus4G>	
+			<h3>Statuss</h3>
+			<p>Tīklam<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>iespējamās statusa vērtības ir tālāk norādītās.</p>
+			<div class="blockgroup">
+				<ul>
+					<li>Nav pieejams —<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>tīkls nav noteikts.</li>
+					<li>Pieejams —<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>tīkls ir noteikts.</li>
+				</ul>
+			</div>
+			<p>Tālāk norādītos datu vienumus iesniedz tikai tad, ja<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>tīkls ir pieejams.</p>
+		</tmpl_if>
+
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>Šis ir<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>tīkla nosaukums.</p>
+		</tmpl_if>
+
+		<tmpl_if showSignalStrength>			
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_signal_strength_label"), (size(_("webui", "status_diagnostics_fourg_signal_strength_label")) - size(" (RSRP):")))></h3>
+			<p>Norāda<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>signāla stiprumu, ko mēra dBm. Augstākas absolūtās vērtības norāda spēcīgāku signālu, tāpēc -80 dBm ir spēcīgāks signāls nekā -90 dBm.<tmpl_udf GET_PO_TEXT("status_diagnostics_lte_note_text")>
+			</p>
+		</tmpl_if>
+
+		<tmpl_if showSNR>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_sinr_label"), (size(_("webui", "status_diagnostics_sinr_label")) - size(":")))></h3>
+			<p>SNR ir signāla kvalitātes rādītājs. Lielāki skaitļi norāda uz labāku signālu.</p>
+		</tmpl_if>
+
+		<tmpl_if showLteBand>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_lte_band_label"), (size(_("webui", "status_diagnostics_lte_band_label")) - size(":")))></h3>
+			<p><tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>tīkli var izmantot dažādas joslas dažādos reģionos. Šis lauks norāda joslu, kas izmantota pašreizējam<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>savienojumam.</p>
+		</tmpl_if>
+
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_roaming_label"), (size(_("webui", "status_diagnostics_fourg_roaming_label")) - size(":")))></h3>
+			<p>Tas norāda, vai pašreizējais savienojums ir viesabonēšanas savienojums.</p>
+		</tmpl_if>
+	</tmpl_if>
+		
+	<tmpl_if isHSPATechnology>	
+		<h2><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> Statuss</h2>
+			
+		<h3>Statuss</h3>
+		<p><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> tīklam tiek atbalstīti tālāk norādītie statusi.</p>
+		<div class="blockgroup">
+			<ul>
+				<li>Nav pieejams — <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> tīkls nav noteikts.</li>
+				<li>Pieejams — <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> tīkls ir noteikts.</li>
+			</ul>
+		</div>
+		<p>Tālāk norādītie datu vienumi tiek nodrošināti tikai tad, ja tīkls ir pieejams.</p>
+
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>Šis ir <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> tīkla nosaukums.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p>Pašreizējā <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> tīklā izmantotā tehnoloģija. Iespējamās vērtības no lēnākās līdz ātrākajai ir šādas:</p>
+			<ul>
+				<tmpl_if gsmSupported>
+					<li>GPRS</li>
+				</tmpl_if>
+				<tmpl_if wcdmaSupported>
+					<li>UMTS</li>
+				</tmpl_if>
+				<tmpl_if cdmaSupported>
+					<li>HSPA+</li>
+					<li>HSPA+ DC</li>
+				</tmpl_if>
+				<tmpl_if evdoSupported>
+					<li>MALA</li>
+					<li>HSDPA</li>
+					<li>HSUPA</li>
+				</tmpl_if>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_networkid_label"), (size(_("webui", "status_diagnostics_networkid_label")) - size(":")))></h3>
+			<p>Publiskā sauszemes mobilā tīkla (PLMN) nosaukums un/vai ID.</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_cellid_label"), (size(_("webui", "status_diagnostics_cellid_label")) - size(":")))></h3>
+			<p>Šī vērtība identificē pašlaik izmantoto mobilo sakaru torni.</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_rssi_label"), (size(_("webui", "status_diagnostics_rssi_label")) - size(":")))></h3>
+			<p>Tas norāda <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> signāla RSSI. RSSI ir signāla stipruma mērījums decibelos attiecībā pret vienu milivatu. Tas vienmēr ir negatīvs, jo mobilo radioierīču jauda ir daudz mazāka par vienu milivatu. Augstākas absolūtās vērtības norāda uz spēcīgāku signālu, tāpēc -50dBm ir spēcīgāks signāls nekā -70dBm.</p>
+
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_roaming_label"), (size(_("webui", "status_diagnostics_roaming_label")) - size(":")))></h3>
+			<p>Tas norāda, vai pašreizējais savienojums ir viesabonēšanas savienojums.</p>
+
+		</tmpl_if>
+		<tmpl_if show3g>
+			<h2><tmpl_var _("webui", "status_diagnostics_threeg_label")></h2>
+			
+			<h3>Statuss</h3>
+			<p>Tālāk norādītas iespējamās statusa vērtības.</p>
+			<div class="blockgroup">
+				<ul>
+					<li>Nav pieejams — 3G tīkls nav noteikts.</li>
+					<li>Pieejams — 3G tīkls ir noteikts.</li>
+				</ul>
+			</div>
+			<p>Tālāk norādītie datu vienumi tiek nodrošināti tikai tad, ja tīkls ir pieejams.</p>
+			<tmpl_if showNetworkOperator>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_network_label"), (size(_("webui", "status_diagnostics_threeg_network_label")) - size(":")))></h3>
+				<p>Šis ir 3G tīkla nosaukums.</p>
+			</tmpl_if>
+			<tmpl_if show3g1xRssi>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_onex_label"), (size(_("webui", "status_diagnostics_threeg_onex_label")) - size(":")))></h3>
+			<p>RSSI ir signāla stipruma mērs. Mērvienība ir decibeli attiecībā pret 1 milivatu, un tā vienmēr ir negatīva, jo mobilo radioierīču jauda ir daudz mazāk par 1 milivatu. Augstākas absolūtās vērtības norāda uz spēcīgāku signālu, tāpēc -50 dBm ir spēcīgāks signāls nekā -70 dBm. Šis lauks norāda 1xRTT signāla RSSI.</p>
+			</tmpl_if>
+			<tmpl_if show3gEvdoRssi>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_evdo_label"), (size(_("webui", "status_diagnostics_threeg_evdo_label")) - size(":")))></h3>
+				<p>RSSI ir signāla stipruma mērs. Šis lauks norāda EVDO vai eHRPD signāla RSSI.</p>
+ 			</tmpl_if>
+			<tmpl_if show3gTechnology>
+ 				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+				<p>Pašreizējā tehnoloģija, ko izmanto 3G tīklā. Iespējamās vērtības ir 1xRTT, EVDO vai eHRPD.</p>
+ 			</tmpl_if>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_ecio_label"), (size(_("webui", "status_diagnostics_threeg_ecio_label")) - size(":")))></h3>
+			<p>Ec/Io ir signāla "tīruma" rādītājs, un tas ir signāla un trokšņa attiecības koeficients. Tipiskās vērtības ir diapazonā no -10 līdz -40. Vērtība -4 būtu ļoti "tīrs" signāls.</p>
+ 
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_sid_label"), (size(_("webui", "status_diagnostics_threeg_sid_label")) - size(":")))></h3>
+			<p>SID (sistēmas ID) ir tīkla identifikators, kas norāda pašreizējo piesaistes punktu mobilo datu tīklam. Mobilo sakaru torņu grupai var būt vienāda SID vērtība. Šis lauks norāda pašreizējo SID.</p>		
+			<tmpl_if showRoaming>
+				<h3>Viesabonēšana</h3>
+				<p>Tas norāda, vai pašreizējais savienojums ir viesabonēšanas savienojums.</p>			
+			</tmpl_if>
+			<tmpl_if linkToFieldTest>	
+				<h2><tmpl_var _("webui", "status_diagnostics_field_test_button")></h2>
+				<p>Poga "Izmēģinājums ekspluatācijas apstākļos" nodrošina zema līmeņa tīkla parametru sarakstu, kas var noderēt tehniskā atbalsta darbiniekiem, kad tie novērš tīkla savienojamības problēmas.</p>
+				
+				<p>Šī poga ir pieejama tikai tad, ja ir pieejams 3G tīkls.</p>
+			</tmpl_if>
+		</tmpl_if>
+	</tmpl_if>
+			
+</div>
+<!-- id="status_diagnostics" -->
+		

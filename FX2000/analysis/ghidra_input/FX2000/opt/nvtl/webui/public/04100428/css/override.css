@@ -1,0 +1,555 @@
+/* Use this Stylesheet to override */
+
+html[dir="rtl"] a.helpLink,
+html.rtl a.helpLink {
+     -webkit-transform: scaleX(-1);
+     transform: scaleX(-1);
+}
+
+html.rtl #internetStatusIP6Address {
+	unicode-bidi: plaintext;
+	text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+	#smsInbox td span.smsMobile {
+		display: block !important;
+	}
+}
+@media screen and (min-width: 768px) {
+	#smsInbox td span.smsMobile {
+		display: none !important;
+  }
+}
+
+.loading {
+    background-position: right;
+}
+
+html[dir="rtl"] .loading {
+    background-position: left;
+}
+
+#apps_home h1 {
+    text-decoration: none;
+}
+
+#restarting #restartingContent #restartingContentInner .notification {
+    padding-left: 35px !important;
+}
+
+#status_logs .help {
+    display: block;
+    padding: 0px;
+}
+
+#settings_virtual #pageHeadCol + a.helpLink {
+	display: none;
+}
+
+/* Dropdown Menu fix */
+:lang(en) .sub_menu {
+  max-width: 115px;
+}
+:lang(es) .sub_menu {
+  max-width: 190px;
+}
+:lang(ar) .sub_menu {
+  max-width: 120px;
+}
+:lang(fr) .sub_menu {
+  max-width: 180px;
+}
+:lang(da) .sub_menu {
+  max-width: 165px;
+}
+:lang(de) .sub_menu {
+  max-width: 140px;
+}
+:lang(et) .sub_menu {
+  max-width: 155px;
+}
+:lang(fi) .sub_menu {
+  max-width: 165px;
+}
+:lang(it) .sub_menu {
+  max-width: 185px;
+}
+:lang(ja) .sub_menu {
+  max-width: 130px;
+}
+:lang(lv) .sub_menu {
+  max-width: 170px;
+}
+:lang(lt) .sub_menu {
+  max-width: 180px;
+}
+:lang(nn) .sub_menu {
+  max-width: 165px;
+}
+:lang(sv) .sub_menu {
+  max-width: 135px;
+}
+
+  #restarting #restartingContent #restartingContentInner #homeLink {
+      margin-left: 35px;
+  }
+  
+
+
+.button_container.align-field {
+  text-align: left;
+  margin-right: inherit;
+}
+
+.button_container.align-field button {
+  float: inherit !important;
+}
+
+.button_container.align-right {
+  text-align: left;
+}
+
+body#settings_virtual .button_container a.btn.primary {
+  float: left !important;
+}
+
+html.rtl .button_container.align-field {
+  text-align: right;
+  margin-left: inherit;
+}
+
+html.rtl .button_container.align-right {
+  text-align: left;
+}
+
+html.rtl body#settings_virtual .button_container a.btn.primary {
+  float: right !important;
+}
+
+html.rtl #installBtns #installNow {
+  float: left !important;
+}
+
+html.rtl #installBtns #installLater {
+  float: right !important;
+}
+
+div#UpdateStatusText {
+  margin-bottom: 6px;
+}
+
+#sim_manager .form-group .selector,
+#cbsd .form-group .selector,
+#sim_manager .form-group select {
+  display: inline-block;
+  min-width: 280px;
+}
+
+button#configureVpnSettings {
+  float: left;
+}
+
+html.rtl button#configureVpnSettings {
+  float: right;
+}
+
+#macFilterTable #savechanges.primary {
+  width: inherit;
+  float: right;
+}
+
+html.rtl #macFilterTable #savechanges.primary {
+  width: inherit;
+  float: left;
+}
+
+#lan .tier_2_content,
+#inseego_connect .tier_2_content,
+#status_logs .tier_1_content {
+  padding-top: 0px;
+}
+
+#advanced_lan_settings_2 {
+  margin-top: 0px;
+}
+
+#advanced_lan_settings_2 .sectionHead {
+  margin-top: 0px;
+}
+
+#advanced_lan_settings_2 .note {
+  display: none;
+}
+
+#port_forward .button_container.align-right > button:first-child,
+#port_filtering .button_container.align-right > button:first-child {
+  margin-right: 10px !important;
+}
+
+#status_logs #downLoadLogForm {
+  display: inline;
+  float: inherit;
+}
+html.rtl #status_logs #downLoadLogForm {
+  float: inherit  !important;
+}
+
+body.no_status_bar .productName {
+  display: none !important;
+}
+
+span#WifiAdvancedMaxConnections {
+  display: inline-block;
+  padding-top: 4px;
+}
+
+.table.dual-band .col.rb .tooltip {
+  float: none !important;
+}
+
+html[dir="rtl"] #backup_restore .button_container.align-right button:first-child {
+  float: right !important;
+}
+html[dir="rtl"] #connectedSaveChanges {
+  float: right;
+}
+#connectedSaveChanges {
+  float:left;
+}
+
+form#wifi_guest_settings_form .table .button_container,
+form#wifi_primary_settings_form .table .button_container
+{ margin: 10px 0px 0px 0px;}
+
+.dialog_page form#setPasscodeForm .button_container.align-field button {
+  float: inherit !important;
+  margin-left: 0px!important;
+}
+
+html.rtl .dialog_page form#setPasscodeForm .button_container.align-field {
+  text-align: right;
+}
+
+html.rtl .button_container.align-right {
+  text-align: right;
+}
+
+#vpn #vpnConnectDisconnect{
+margin-left: 10px !important;
+}
+
+html.rtl #vpn #vpnConnectDisconnect{
+  margin-left: 0px !important;
+  margin-right: 10px !important;
+  float: none;
+}
+
+div#mnsStatus {
+  line-height: inherit;
+}
+
+.ui-dialog-content .notification .notification_inner > p{
+  max-width: fit-content;
+}
+
+@media screen and (max-width: 1366px) {
+
+  #primaryPwd span>span:first-child,
+  #guestPwd span>span:first-child {
+    width: calc(100% - 30px);
+  }
+}
+
+/* About Spacing */
+#status_current .tier_1_content,
+#session_log_info .tier_1_content,
+#status_diagnostics .tier_1_content,
+#device_info .tier_1_content {
+  padding: 0px;
+}
+
+#status_current .form-group,
+#status_diagnostics .form-group,
+#device_info .form-group {
+  margin-bottom: 0px
+}
+
+#status_current fieldset,
+#status_diagnostics fieldset,
+#device_info .fieldset {
+  margin-top: 0px;
+}
+
+#status_logs .notification {
+  margin-top: 10px;
+  }
+
+#portandipAddresses .label {
+  padding: 0px;
+}
+
+#portandipAddresses .input span .radio {
+  display: inline-table;
+}
+
+#remote-admin-settings .table>.form-group label,
+#remote-admin-settings .table>.form-group .checker {
+  padding: 0px;
+}
+
+#settings_virtual .warning,  #settings_virtual .warning h2.sectionHead  {
+padding-top:0px !important;
+margin-top:0px
+}
+
+#sim_manager #SIMPinCurrent {
+  /* margin-left: 4px; */
+  width: 282px;
+}
+
+/* DATA USAGE */
+#data_usage #retrieval_status.loading {
+  height: inherit;
+  line-height: 32px;
+}
+
+body#data_usage .form-group .label,
+body#data_usage .form-group .input {
+  padding: 0px !important;
+  line-height: 16px;
+  font-size: normal;
+}
+
+#gps_remote button#editButton {
+   min-width: inherit !important;
+}
+
+#gps_remote button#deleteButton {
+    color: #0082ca;
+    min-width: inherit !important;
+    padding: 0px !important;
+    border: none !important;
+    text-decoration: underline;
+}
+
+table#simManagerTable td,
+table#simManagerTable th {
+        text-align:left;
+}
+
+div #simManagerSpinnerTable {
+        margin-top: 50px;
+        text-align: center;
+}
+
+#wwan_settings #NetworksFourGLTEAPNAuthenticationOptionsHolder .selector,
+#wwan_settings #NetworksFourGLTEAPNAuthenticationOptionsHolder select {
+  display: inline-block;
+  min-width: 280px;
+}
+
+#status_login {
+  border-radius: 0px !important;
+}
+.sub_menu {
+border: 2px solid #D8DADA;
+}
+
+.ui-dialog-titlebar {
+border-bottom: 1px solid #e9e9e9;
+margin-bottom: 15px
+}
+.ui-dialog-title{
+text-decoration: none !important;
+}
+
+/*Disable Change password link */
+li#admin_settings.disable, ul#mobile_navigation_ext .admin_settings.disabled, ul#mobile_navigation_ext .admin_settings.disabled a{
+  pointer-events: none;
+  color: #999;
+  cursor: not-allowed !important;
+}
+
+#inputDefaultPassword {
+  margin-top: 10px;
+}
+
+#sim_manager #simPinInput label{
+  margin-right: 4px;
+}
+#sim_manager #simPinInput input{
+max-width: 282px;
+}
+
+#keyInfo {
+  display:block;
+  padding-left:0px;
+}
+
+#data_usage #data_usage_settings .label, #data_usage #data_usage_settings label  {width: 100% !important; max-width:280px!important; }
+#data_usage #data_usage_settings label:after { content: ":"; }
+#data_usage #data_usage_settings .form-group.lbl-append .input { width: 300px; }
+
+#status_current .tier_1_content,
+#session_log_info .tier_1_content,
+#status_diagnostics .tier_1_content,
+#device_info .tier_1_content,
+#status_logs .tier_1_content
+{
+  padding: 0px;
+}
+#https_support .button_container button.primary {
+  float: left;
+}
+html[dir="rtl"] #https_support .button_container button.primary,
+  html.rtl #https_support .button_container button.primary {
+  float: right;
+}
+
+.tier_1_content > div.notification.app, .tier_2_content > div.notification.app  {
+  margin-top: 10px;
+}
+h1.pageHead {
+  text-decoration: none !important;
+}
+
+#advanced_gateway_settings .form-group .input .selector,
+#advanced_gateway_settings .form-group .input select {
+  display: inline-block;
+  min-width: 280px !important;
+  max-width: 280px !important;
+}
+
+html.rtl #advanced_gateway_settings .input .inline_error {
+  margin-right: 0px !important;
+}
+
+input[readonly],
+.checker.disabled:hover {
+  border-color: #9b9b9b !important;
+  cursor: not-allowed;
+  box-shadow: none !important;
+}
+
+#macfilter .toggleSettingContainer {
+  margin-top: 15px;
+}
+
+input[type="password"]:disabled + .eye {
+  display: inline-table;
+  background: url(../images/icons/eye-disabled.png) no-repeat;
+  -moz-background-size: cover;
+  background-size: cover;
+  pointer-events:none;
+}
+input[type="password"]:disabled + .eye-slash {
+  display: inline-table;
+  background: url(../images/icons/eye-slash-disabled.png) no-repeat;
+  -moz-background-size: cover;
+  background-size: cover;
+  pointer-events:none;
+}
+
+#software_update .tier_1_content,
+#backup_restore .tier_1_content,
+#sim_manager .tier_1_content,
+#vpn .tier_1_content,
+#gps .tier_1_content {
+  padding-top: 0px;
+}
+
+#user_preferences .tier_1_content,
+#wwan_settings .tier_2_content,
+#manual_dns .tier_2_content,
+#firewall .tier_2_content,
+#macfilter .tier_2_content,
+#port_filtering .tier_2_content,
+#port_forward .tier_2_content {
+  padding-top: 10px;
+}
+
+#newpasswd input[type="password"] {
+  padding-right: 35px !important;
+}
+
+#newpasswd .input{
+  height: 36px;
+}
+
+#wwan_settings .selector,
+#wwan_settngs .select {
+  min-width: 280px !important
+}
+
+#advancedSettingsHeading {
+  border-bottom: 2px solid #0082ca;
+}
+
+html.rtl #gps .ui-dialog-buttonset button:last-child {
+  float: left;
+}
+
+html.rtl #gps .ui-dialog-buttonset button:first-child {
+  float: right;
+}
+
+html[dir="rtl"] #retrieval_status.loading,
+html.rtl #retrieval_status.loading {
+  padding-left: 0px;
+}
+
+html.rtl #statusBar_ethernet_grp {
+  float: right !important;
+}
+
+@media screen and (min-width: 640px) {
+  html.rtl #status_bar {
+    width: -webkit-calc(100% - 350px);
+    width: -moz-calc(100% - 350px);
+    width: calc(100% - 350px);
+  }
+}
+
+html.rtl #port_forward .button_container button.primary,
+html.rtl #port_filtering .button_container button.primary {
+  float: inherit;
+  margin-right: 10px !important;
+}
+
+html.rtl #port_forward .button_container.align-right>button:first-child,
+html.rtl #port_filtering .button_container.align-right>button:first-child {
+  margin-right: 0px !important;
+}
+
+.securityQuesitonTable div#oKButton {
+  text-align:left !important; 
+}
+
+html.rtl .securityQuesitonTable div#oKButton {
+  text-align:right !important; 
+}
+
+html.rtl .action_links_container a.btn.primary {
+float:right;
+margin-right:0px;
+}
+
+fieldset#verizonGlobal .table:first-child > .form-group:nth-child(1)  label,
+fieldset#verizonGlobal .table:first-child > .form-group:nth-child(2)  label
+{
+    width: 455px!important;
+}
+@media screen and (max-width:780px){
+    fieldset#verizonGlobal .table:first-child > .form-group:nth-child(1)  label{
+    max-width: 218px !important;
+}
+}
+
+td.networkType {
+    white-space:nowrap;
+}
+#gps .ui-dialog-titlebar {     
+         border-bottom: 2px solid #0082ca;  
+}
+

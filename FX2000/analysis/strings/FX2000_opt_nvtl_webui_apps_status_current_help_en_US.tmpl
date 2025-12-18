@@ -1,0 +1,47 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>This displays the connection status for the Internet connection via the mobile network. 
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>The name of the mobile network to which this device is currently connected. 
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>Indicates the current cellular data connection, for example, 5G.	
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>For the current Internet session, the period of time that has elapsed since the connection was established. 
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))>
+	<p>For the current Internet session, the amount of data received. This counter starts from zero when the connection is established. 
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>For the current Internet session, the amount of data transmitted. This counter starts from zero when the connection is established. 
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+        	The Internet IP address assigned to this device.
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))>
+	        The network mask associated with the IP address above.
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	        The gateway IP address associated with the IP address above.
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))>
+	        The Domain Name Server currently used by this device.
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+	<p>The global IPv6 address for the <tmpl_var _("webui", "webui_product_name")> is displayed here. 
+	This will be blank if IPv6 is turned off, or is not supported by the current network connection. </p>
+	<tmpl_if InternetStatusViewSessionShow>
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+	<p>The session log contains the following data:</p>
+	<p>- Date & Time   (when connected started)</p>
+	<p>- Duration  (same format as current session info)</p>
+	<p>- Received    (format as for current session)</p>
+	<p>- Transmitted   (format as for current session)</p>
+	<p>- Total Data  (sum of Rx and Tx, format as for current session info)</p>
+	<p>- Roaming   (Roaming/Partial/blank) Blank=home network</p>
+	<p>- IPv4   (IPv4 WWAN IP address)</p>
+	<p>- IPv6   (IPv6 WWAN IP address)</p>
+	<p>Log is in date order. </p>
+	<p>User cannot change the order, and there are no options relating to the session log.</p>
+	</tmpl_if>
+<!-- id="status_internet" -->

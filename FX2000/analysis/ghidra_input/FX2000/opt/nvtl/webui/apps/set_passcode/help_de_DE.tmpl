@@ -1,0 +1,33 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>Admin-Kennwort</h1>
+	<h2>Übersicht</h2>
+	<p>Das Admin-Kennwort wird für die Anmeldung auf dieser <tmpl_var _("webui", "webui_product_name")>-Admin-Website verwendet Auf der Seite <em>Admin-Kennwort</em> können Sie das Admin-Kennwort ändern und einige Sicherheitsoptionen für das Admin-Kennwort festlegen.</p>
+
+
+	<h2>Das <tmpl_var _("webui", "webui_product_name")>-Admin-Kennwort ändern</h2>
+	<p>Um das aktuelle Admin-Kennwort zu ändern, müssen Sie zuerst das aktuelle Admin-Kennwort in das Feld unten eingeben. Der Bildschirm wird dann aktualisiert, und Sie haben die Möglichkeit, ein neues Admin-Kennwort und eine Sicherheitsfrage festzulegen, falls das Admin-Kennwort verloren gehen sollte.</p>
+
+	<h3>Aktuelles <tmpl_var _("webui", "webui_product_name")>-Admin-Kennwort</h3>
+	<p>Geben Sie das aktuelle Admin-Kennwort für <tmpl_var _("webui", "webui_product_name")> in dieses Feld ein. Hinweis: Wenn Sie zu häufig einen falschen Wert eingeben, werden Sie für die <tmpl_var _("webui", "webui_product_name")>-Admin-Website gesperrt. Um diese Sperre aufzuheben, ist ein Neustart von <tmpl_var _("webui", "webui_product_name")> erforderlich.</p>
+	<tmpl_if showDisplayPascode>
+		<h2>Das <tmpl_var _("webui", "webui_product_name")>-Admin-Kennwort anzeigen</h2>
+		<p>Wenn „EIN“ eingestellt ist, wird *********** angezeigt. Wenn „AUS“ eingestellt ist, dann kann das Admin-Kennwort auf dem Display des Jetpacks abgelesen werden.</p>
+	</tmpl_if>
+
+	<h2>Das <tmpl_var _("webui", "webui_product_name")>-Admin-Kennwort ändern</h2>
+	<h3>Neues Admin-Kennwort</h3>
+	<p>Geben Sie das neue Admin-Kennwort ein. Verwenden Sie dafür nur Buchstaben, Zahlen und Standard-Interpunktionssymbole. Das Kennwort muss mindestens 8 Zeichen lang sein.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p>Geben Sie das neue Admin-Kennwort in diesem Feld erneut ein.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>Diese Sicherheitsfrage wird verwendet, wenn das Admin-Kennwort verloren geht und die Option „Ich habe das Admin-Kennwort vergessen“ verwendet wird. Wählen Sie die gewünschte Frage aus und geben Sie die Antwort in das untenstehende Feld ein.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Geben Sie eine Antwort auf die oben ausgewählte Sicherheitsfrage. Hinweis: Bei den Antworten wird die Groß-/Kleinschreibung berücksichtigt.</p>
+
+</div>
+<!-- id="set_passcode" -->
+

@@ -1,0 +1,33 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>Administraatori parool</h1>
+	<h2>Ülevaade</h2>
+	<p>Administraatori parooli kasutatakse <tmpl_var _("webui", "webui_product_name")> administraatori veebisaidile sisselogimiseks. Lehel <em>Administraatori parool</em> saate muuta administraatori parooli ja määrata mõne administraatori parooliga seotud turbesuvandi.</p>
+
+
+	<h2>Muuda <tmpl_var _("webui", "webui_product_name")> administraatori parooli</h2>
+	<p>Praegusele administraatori parooli muutmiseks peate esmalt sisestama praeguse administraatori parooli allolevale väljale. Seejärel värskendatakse ekraani ja pakutakse võimalust määrata administraatori parool ja turbeküsimus kasutamiseks, kui administraatori parool kaob.</p>
+
+	<h3>Praegune <tmpl_var _("webui", "webui_product_name")> administraatori parool</h3>
+	<p>Sisestage sellele väljale praegune <tmpl_var _("webui", "webui_product_name")> administraatori parool. Pange tähele, et kui sisestate vale väärtuse liiga palju kordi, siis te kaotate ligipääsu sellele <tmpl_var _("webui", "webui_product_name")> administraatori veebisaidile. Lukustuse eemaldamiseks <tmpl_var _("webui", "webui_product_name")> tuleb süsteem taaskäivitada.</p>
+	<tmpl_if showDisplayPascode>
+		<h2><tmpl_var _("webui", "webui_product_name")> Administraatori parooli kuvamine</h2>
+		<p>Kui see säte on SEES, kuvatakse ********. Kui see säte on VÄLJA lülitatud, saab Jetpacki kuvalt lugeda administraatori parooli.</p>
+	</tmpl_if>
+
+	<h2>Muuda <tmpl_var _("webui", "webui_product_name")> administraatori parooli</h2>
+	<h3>Uus administraatori parool</h3>
+	<p>Sisestage uus administraatori parool, kasutades ainult tähti, numbreid ja standardseid kirjavahemärke. Parool peab olema vähemalt 8 tähemärki pikk.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p>Sisestage uus administraatori parool sellele väljale uuesti.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>Seda turbeküsimust kasutatakse, kui administraatori parool on kadunud ja kasutatakse suvandit „Unustasin administraatori parooli“. Valige soovitud küsimus ja vastake alloleval väljal.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Sisestage vastus ülaltoodud turvaküsimusele. Pange tähele, et vastused on tõstutundlikud.</p>
+
+</div>
+<!-- id="set_passcode" -->
+

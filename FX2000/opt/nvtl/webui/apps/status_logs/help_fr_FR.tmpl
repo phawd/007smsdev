@@ -1,0 +1,36 @@
+<!-- Status Logs -->
+<div id="status_logs">
+	<h1><tmpl_var _("webui", "status_logs_menu_text")></h1>
+	<h2>Vue d’ensemble</h2>
+	<p>
+		Les informations du journal sont utiles pour le dépannage, mais ne sont pas nécessaires pour le fonctionnement normal.
+	</p>
+	
+	<h2>Paramètres</h2>
+	<h3><tmpl_var truncate(_("webui", "status_logs_enable_logs_label"), (size(_("webui", "status_logs_enable_logs_label")) - size(":")))></h3>
+	<p>Cochez cette case pour activer les journaux en cas de besoin.</p>
+	<h3><tmpl_var truncate(_("webui", "status_logs_delete_sys_logs_label"), (size(_("webui", "status_logs_delete_sys_logs_label")) - size(":")))></h3>
+	<p>Utilisez la liste déroulante pour sélectionner le moment où les journaux seront effacés. Sélectionnez l’option souhaitée.</p>
+	<p>Notez que si le journal est plein, les données les plus anciennes sont supprimées, quel que soit ce paramètre.</p>
+	
+	<h2>Données du journal</h2>
+	<p>Les onglets fournis vous permettent de sélectionner le type de données de journal à afficher.
+	</p>
+	<h3><tmpl_var _("webui", "status_logs_mobile_network_log_href")></h3>
+	<p>Ce journal contient des données concernant les connexions au réseau mobile.
+	</p>
+	<h3><tmpl_var _("webui", "status_logs_system_log_href")></h3>
+	<p>Ce journal enregistre les événements, autres que les connexions de données mobiles, qui se sont produits sur cet appareil.
+	</p>
+	
+	<h2>Boutons</h2>
+	
+	<h3><tmpl_var _("webui", "status_logs_clear_log_btn")></h3>
+	<p>Cliquer sur ce bouton entraîne la suppression de toutes les données de journal existantes. Les nouvelles données sont ainsi plus faciles à lire.</p>
+	<h3><tmpl_var _("webui", "status_logs_refresh_btn")></h3>
+	<p>Utilisez cette fonctionnalité pour mettre à jour les données du journal qui s’affichent.</p>
+	<h3><tmpl_var _("webui", "status_logs_download_btn")></h3>
+	<p>Utilisez ce bouton si vous souhaitez télécharger les données du journal sur votre ordinateur ou sur l’appareil connecté.</p>
+	
+</div>
+<!-- end Status Logs -->

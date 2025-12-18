@@ -1,0 +1,184 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+GLIBC_2.4
+libc.so.6
+libdua_api.so
+mifi_dbg_get_level_name
+mifi_dbg_log
+msgq_send_sync
+dua_is_running
+msgq_does_queue_exist
+dua_get_data_usage_info
+dua_get_interface_data_usage_info
+dua_get_data_usage_settings_info
+settings_get_setting
+mifi_dbg_syslog
+dua_set_data_usage_settings_info
+settings_set_setting
+dua_get_active_interface
+dua_get_interface_info
+dua_set_interface_info
+dua_get_error_string
+dua_trigger_data_usage_sync
+msgq_send_async
+dua_get_active_interface_level
+dua_get_data_usage_settings
+xmldata_getuint32
+xmldata_getstring
+dua_get_interface_details
+xmldata_getnodename
+xmldata_getcount
+xmldata_getint32
+dua_set_data_usage_settings
+xmldata_setuint32
+xmldata_setstring
+xmldata_save
+MsgBusSetInt32
+xmldata_insertnode
+dua_set_interface_details
+xmldata_insertnode_with_attr
+xmldata_deletenode
+initialize_settings
+initialize_carrier_settings
+__aeabi_unwind_cpp_pr0
+libgcc_s.so.1
+__bss_start
+librt.so.1
+libpthread.so.0
+libmificommon.so
+libmifi_debug.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libuisupport.so
+libsqlite3.so.0
+libfcgi.so.0
+libfcgi++.so.0
+libdl.so.2
+libcurl.so.4
+libcares.so.2
+libcrypto.so.1.1
+libssl.so.1.1
+libctpp2.so.2
+libcgicc.so.3
+libiconv.so.2
+H	KxD	J{D
+dua_set_data_usage_settings_info
+dua_get_interface_info
+dua_set_interface_info
+[%s]:[%s] - Sending sync get message to DUA process.
+[%s]:[%s] - Sending sync get interface data usage message to DUA process.
+nvtl.dua.settings
+[%s]:[%s] - settings_get_setting result code for interface type %d:%d
+[%s]:[%s] - %s: BEGIN
+[%s]:[%s] - Settings Update for Interface Type: [%d], Data Usage Cycle Day: [%d], Data Usage Limit: [%s] Level1 Threshold: [%d]
+[%s]:[%s] - %s: END returned %d
+[%s]:[%s] - Sending sync get active interface message to DUA process.
+[%s]:[%s] - %s: Invalid interfaces data structure found
+[%s]:[%s] - %s: Invalid interface type found
+[%s]:[%s] - %s: msgq does not exist
+[%s]:[%s] - %s: Get settings from MSGBUS_DUA_INTERFACES_LIST
+nvtl.dua.interfaces
+[%s]:[%s] - settings_get_setting result codet %d
+[%s]:[%s] - %s: END
+[%s]:[%s] - Settings Update for interfaces
+DUA: unknown error.
+DUA: success.
+DUA: one or more bad parameters passed into a function.
+DUA: one or more buffer type parameters passed into API is too small.
+DUA: the feature is unsupported.
+DUA: process not running.
+DUA: general error.
+[%s]:[%s] - Sending async private message to DUA process.
+[%s]:[%s] - The Active interface level is at LEVEL ZERO
+[%s]:[%s] - The Active interface level is at LEVEL ONE
+[%s]:[%s] - The Active interface level is at LEVELFULL
+/Settings/DataUsagePlanDetails/Interfaces/Interface
+%s[%s='%s']/CycleStartDay
+%s[%s='%s']/UsageLimit
+%s[%s='%s']/Level1Threshold
+[%s]:[%s] - %s - BEGIN
+/Settings/DataUsagePlanDetails/MaxSIMsSupported
+[%s]:[%s] - %s - MAXSIMSSUPPORTED not found initalized with default 
+[%s]:[%s] - %s - max_sims_supported is %d
+[%s]:[%s] - %s - count of interfaces is %d
+%s[%d]/@type
+%s[%d]/@imsi
+%s[%d]/@iccid
+%s[%d]/@epoch
+%s[%d]/@mac
+[%s]:[%s] - %s - Invalid type found in interfaces list in settings
+[%s]:[%s] - %s - END
+nvtl.dua.settings.updated
+CycleStartDay
+%s[%d]/CycleStartDay
+UsageLimit
+%s[%d]/UsageLimit
+Level1Threshold
+%s[%d]/Level1Threshold
+[%s]:[%s] - %s - Buffer is insufficient
+[%s]:[%s] - %s - num_interfaces is <= 0
+[%s]:[%s] - %s - Checking node for Interfaces
+/Settings/DataUsagePlanDetails/Interfaces
+[%s]:[%s] - %s - Creating node Interfaces as node not found
+/Settings/DataUsagePlanDetails
+Interfaces
+[%s]:[%s] - %s - Insertion of node Interfaces failed
+[%s]:[%s] - %s - Interfaces is already present
+[%s]:[%s] - %s - Processing mac %s
+[%s]:[%s] - %s - Checking eth wan is present in Interface[1]
+%s[1]/@type
+[%s]:[%s] - %s - eth wan is present, hence replace mac alone
+%s[1]/@mac
+Interface[@type='eth'][@mac='%s']
+[%s]:[%s] - %s - Foudn wan entry is intact, can proceed for sim interfaces
+[%s]:[%s] - %s - Processing imsi %s iccid %s epoch %u
+[%s]:[%s] - %s - Checking node for Interface[%d]
+[%s]:[%s] - %s - Creating node Interface as node not found
+Interface[@type='sim'][@imsi='%s'][@iccid='%s'][@epoch='%u']
+[%s]:[%s] - %s - simslot found non -1 = %d
+/Settings/DataUsagePlanDetails/SIMs
+[%s]:[%s] - %s - SIMs node not present
+[%s]:[%s] - %s - SIMs node present
+/Settings/DataUsagePlanDetails/SIMs/SIM
+%s[@id='%d']
+[%s]:[%s] - %s - SIM id %d settings being retrieved
+%s[@id='%d']/CycleStartDay
+%s[@id='%d']/UsageLimit
+[%s]:[%s] - %s - Deleted SIM, oneUpdateHappened: %d
+[%s]:[%s] - %s - Checking if we need to delete SIMs - count %d multisim_enabled %d oneUpdateHappened %d
+[%s]:[%s] - %s - SIMs node is deleted as SIM count is 0
+[%s]:[%s] - %s - Node already exists for %d
+[%s]:[%s] - %s: DUA feature[%d] agent[%s]
+[%s]:[%s] - %s: Running script[%s].
+[%s]:[%s] - %s: script[%s] execution failed with exit code:[%d].
+[%s]:[%s] - %s: script[%s] execution is success.
+[%s]:[%s] - %s - END 
+dua_get_interface_details
+dua_set_interface_details
+int initialize_carrier_settings(void*, void*)
+/opt/nvtl/bin/dua_carrier.sh 
+gold 1.16
+.shstrtab
+.note.gnu.build-id
+.gnu.version
+.gnu.version_d
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

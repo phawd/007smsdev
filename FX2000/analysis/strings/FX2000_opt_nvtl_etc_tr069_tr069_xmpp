@@ -1,0 +1,8 @@
+config xmpp 'xmpp'
+	option ConnReqXMPPConnection ''
+	option allowed_jid ''
+#Log levels: Critical=0, Warning=1, Notice=2, Info=3, Debug=4
+	option log_level '0'
+	option capath '/etc/ssl/certs/'
+	option verify_peer '0'
+	option verify_severity '0'

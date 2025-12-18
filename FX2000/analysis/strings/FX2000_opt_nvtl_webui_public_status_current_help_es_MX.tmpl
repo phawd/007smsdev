@@ -1,0 +1,85 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>Esta muestra el estado de conexi
+n para la conexi
+n a Internet por medio de la red m
+vil. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>El nombre de la red m
+vil a la cual este dispositivo est
+ conectado actualmente. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>La tecnolog
+a de red utilizada para la conexi
+n actual. LTE es la tecnolog
+pidamente est
+ disponible. </p> 
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>Para la sesi
+n de Internet actual, el per
+odo transcurrido desde que se estableci
+ la conexi
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))>
+	<p>Para la sesi
+n actual de Internet, la cantidad de datos recibidos. Este contador empieza de cero cuando se establece la conexi
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>Para la sesi
+n actual de Internet, la cantidad de datos transmitidos. Este contador empieza de cero cuando se establece la conexi
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+	<p> La direcci
+n de IP de Internet asignada a este dispositivo. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))>
+	<p> La m
+scara de red asociada con la direcci
+n de IP anterior. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	<p> La direcci
+n de IP de la pasarela asociada con la direcci
+n de IP anterior. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))>
+	<p> El servidor del nombre de dominio actualmente usado por este dispositivo. </p>
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+	<p>La direcci
+n de IPv6 global para el <tmpl_var _("webui", "webui_product_name")> se muestra aqu
+. Quedar
+ en blanco si el IPv6 est
+ desactivado o si no est
+ admitido por la conexi
+n de red actual. </p>
+	<tmpl_if InternetStatusViewSessionShow>
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+	<p>El registro de la sesi
+n contiene los siguientes datos:</p>
+	<p>- Fecha y hora   (cu
+ndo comenz
+ la conexi
+	<p>- Duraci
+n (con el mismo formato que la informaci
+n de sesi
+n actual)</p>
+	<p>- Recibido    (formato en cuanto a la sesi
+n actual)</p>
+	<p>- Transmitido    (formato en cuanto a la sesi
+n actual)</p>
+	<p>- Datos totales  (suma de Rx y Tx, formato en cuanto a la informaci
+n de sesi
+n actual)</p>
+	<p>- Roaming   (Roaming/Parcial/en blanco) En blanco=red dom
+stica</p>
+	<p>- IPv4   (Direcci
+n IP IPv4 WWAN)</p>
+	<p>- IPv6   (Direcci
+n IP IPv6 WWAN)</p>
+	<p>El registro est
+ en orden de fecha. </p>
+	<p>El usuario no puede cambiar el orden y no existen opciones relacionadas con el registro de sesi
+	</tmpl_if>
+<!-- id="status_internet" -->

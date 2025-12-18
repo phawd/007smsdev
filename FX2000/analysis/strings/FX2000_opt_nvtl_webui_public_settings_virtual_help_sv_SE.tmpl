@@ -1,0 +1,42 @@
+<div id="settings_virtual">
+	<h1>Avancerade inst
+llningar</h1>
+	<tmpl_if appsList>
+versikt</h2>Menyn Avancerat ger 
+tkomst till f
+ljande sidor och inst
+llningar:<div class="blockgroup">
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title>&nbsp;-&nbsp;<tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+		<p>Observera att f
+r normal drift och normala situationer beh
+ver inga av dessa inst
+llningar 
+ndras fr
+n sina standardv
+ndra endast dessa inst
+llningar om din s
+rskilda situation kr
+ndringar.</p>
+	</tmpl_if>
+	<h2>Knappar</h2>
+	<tmpl_if showBackButton>
+ tillbaka</h3>
+		<p>Klicka p
+ denna f
+ till den f
+ende sidan.</p>
+	</tmpl_if>
+	<tmpl_unless showBackButton>
+		<h3>Forts
+		<p>Anv
+nd denna f
+r att forts
+tta till de f
+ljande sidorna.</p>
+	</tmpl_unless>

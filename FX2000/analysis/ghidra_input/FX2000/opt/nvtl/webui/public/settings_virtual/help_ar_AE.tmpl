@@ -1,0 +1,27 @@
+<div id="settings_virtual">
+	<h1>الإعدادات المتقدمة</h1>
+	
+	<tmpl_if appsList>
+		<h2>نظرة عامة</h2>تتيح القائمة المتقدمة إمكانية الوصول إلى الصفحات والإعدادات التالية:<div class="blockgroup">
+			<ul>
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title> - <tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+		<p>لاحظ أنه من أجل التشغيل العادي والمواقف العادية، ينبغي عدم تغيير أيٍ من هذه الإعدادات عن قيمها الافتراضية. يجب عدم تغيير هذه الإعدادات إلا إذا كان وضعك يتطلب تغييرات.</p>
+	</tmpl_if>
+
+	<h2>الأزرار</h2>
+	<tmpl_if showBackButton>
+		<h3>رجوع</h3>
+		<p>انقر فوق هذا للعودة إلى الصفحة السابقة.</p>
+	</tmpl_if>
+	<tmpl_unless showBackButton>
+		<h3>متابعة</h3>
+		<p>استخدم هذا للمتابعة إلى الصفحات المتقدمة.</p>
+	</tmpl_unless>
+
+</div>

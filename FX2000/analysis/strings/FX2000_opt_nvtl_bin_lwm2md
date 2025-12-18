@@ -1,0 +1,4413 @@
+/lib/ld-linux-armhf.so.3
+__libc_csu_fini
+GLIBC_2.4
+libc.so.6
+__libc_csu_init
+data_start
+_IO_stdin_used
+__libc_start_main
+__data_start
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+avs_time_duration_diff
+avs_sched_time_of_next
+avs_time_monotonic_now
+avs_time_duration_less
+AVS_TIME_DURATION_ZERO
+anjay_security_object_purge
+anjay_security_object_add_instance
+anjay_server_object_purge
+anjay_server_object_add_instance
+demo_find_object
+demo_reload_servers
+avs_stream_file_create
+anjay_attr_storage_persist
+avs_stream_cleanup
+anjay_security_object_persist
+anjay_server_object_persist
+anjay_access_control_persist
+anjay_schedule_registration_update
+anjay_delete
+avs_list_detach__
+strerror
+avs_free
+firmware_update_destroy
+iosched_release
+anjay_access_control_set_acl
+__assert_fail
+avs_calloc
+avs_list_adjust_allocated_ptr__
+avs_list_append_ptr__
+anjay_register_object
+anjay_new
+iosched_create
+anjay_attr_storage_install
+iosched_poll_entry_new
+anjay_security_object_install
+anjay_server_object_install
+location_object_create
+apn_conn_profile_object_create
+libm.so.6
+cm_object_create
+cs_object_create
+device_object_create
+TLS_method
+OPENSSL_1_1_0
+libssl.so.1.1
+portfolio_object_create
+DTLS_method
+att_connectivity_extension_object_create
+SSL_CTX_new
+event_log_object_create
+location_open_csv
+SSL_CTX_set_options
+anjay_security_object_restore
+SSL_write
+anjay_server_object_restore
+SSL_read
+anjay_access_control_restore
+SSL_CTX_free
+firmware_update_install
+SSL_CTX_use_PrivateKey
+anjay_attr_storage_restore
+EVP_PKEY_free
+libcrypto.so.1.1
+DEMO_POLLIN
+SSL_CTX_set_psk_client_callback
+DEMO_POLLHUP
+ERR_clear_error
+demo_command_dispatch
+location_object_release
+SSL_CTX_set_verify
+location_notify_time_dependent
+apn_conn_profile_object_release
+apn_conn_profile_get_instances
+cm_object_release
+cm_notify_time_dependent
+cs_object_release
+device_object_release
+portfolio_object_release
+portfolio_get_instances
+att_connectivity_extension_object_release
+att_connectivity_extension_object_get_instances
+event_log_object_release
+anjay_serve
+avs_net_socket_get_system
+anjay_get_sockets
+iosched_entry_remove
+avs_list_insert__
+avs_list_assert_acyclic__
+event_log_get_sched
+BIO_free
+avs_time_real_now
+X509_STORE_add_crl
+X509_LOOKUP_file
+X509_STORE_add_lookup
+anjay_sched_calculate_wait_time_ms
+d2i_X509
+avs_time_duration_valid
+X509_CRL_free
+avs_time_duration_to_scalar
+BIO_new_mem_buf
+ERR_peek_last_error
+PEM_read_bio_PrivateKey
+PEM_read_bio_X509
+iosched_run
+d2i_X509_CRL
+anjay_sched_run
+d2i_AutoPrivateKey
+avs_sched_run
+snprintf
+PEM_read_bio_X509_CRL
+localtime
+RAND_bytes
+strftime
+OPENSSL_init_crypto
+avs_log_set_handler
+RAND_status
+avs_log_set_level__
+RAND_seed
+argv_store
+ERR_peek_error
+demo_parse_argv
+X509_STORE_load_locations
+avs_log_set_extended_handler
+__sysv_signal
+OPENSSL_init_ssl
+avs_log_reset
+X509_load_crl_file
+EVP_PKEY_up_ref
+X509_STORE_add_cert
+BIO_set_data
+BIO_set_flags
+BIO_meth_new
+BIO_meth_set_write
+SSL_get_current_compression
+BIO_get_data
+BIO_clear_flags
+__ctype_b_loc
+BIO_set_init
+demo_parse_long
+EVP_CIPHER_iv_length
+__errno_location
+SSL_CIPHER_get_name
+EVP_MD_size
+avs_malloc
+EVP_CIPHER_block_size
+__isoc99_sscanf
+GLIBC_2.7
+EVP_get_cipherbyname
+SSL_CIPHER_get_digest_nid
+EVP_get_digestbyname
+EVP_CIPHER_flags
+SSL_SESSION_free
+SSL_connect
+getopt_long
+SSL_accept
+SSL_set_cipher_list
+SSL_shutdown
+avs_crypto_certificate_chain_info_from_file
+SSL_free
+avs_net_security_info_from_certificates
+d2i_SSL_SESSION
+avs_crypto_certificate_chain_info_from_path
+SSL_set_session
+avs_time_duration_from_fscalar
+BIO_meth_set_create
+avs_realloc
+BIO_meth_set_destroy
+avs_strtok
+BIO_meth_free
+avs_strdup
+BIO_meth_set_read
+ANJAY_TRANSPORT_SET_ALL
+BIO_meth_set_puts
+anjay_transport_schedule_reconnect
+BIO_meth_set_gets
+firmware_update_set_package_path
+BIO_meth_set_ctrl
+avs_list_size__
+SSL_set_verify
+avs_list_nth__
+SSL_get0_param
+avs_net_socket_get_local_port
+X509_VERIFY_PARAM_set1_ip_asc
+anjay_get_socket_entries
+X509_VERIFY_PARAM_set1_host
+anjay_transport_enter_offline
+SSL_set_ex_data
+anjay_transport_exit_offline
+SSL_ctrl
+anjay_notify_changed
+SSL_dane_enable
+anjay_notify_instances_changed
+SSL_dane_tlsa_add
+anjay_unregister_object
+i2d_SSL_SESSION
+anjay_download_set_next_block_offset
+SSL_CTX_ctrl
+avs_net_security_info_from_psk
+SSL_CTX_sess_set_new_cb
+anjay_download
+ERR_get_error
+avs_list_append__
+ERR_error_string
+SSL_CIPHER_find
+anjay_attr_storage_set_resource_attrs
+SSL_get_ex_data
+anjay_attr_storage_set_instance_attrs
+X509_STORE_CTX_free
+anjay_attr_storage_set_object_attrs
+SSL_CTX_dane_enable
+ANJAY_DM_R_ATTRIBUTES_EMPTY
+SSL_CTX_set_default_verify_paths
+avs_time_duration_from_scalar
+anjay_disable_server_with_timeout
+SSL_CTX_get_cert_store
+AVS_TIME_DURATION_INVALID
+X509_STORE_CTX_init
+anjay_enable_server
+X509_STORE_CTX_get1_issuer
+anjay_all_connections_failed
+X509_free
+anjay_resource_observation_status
+SSL_CTX_use_certificate
+binary_app_data_container_write
+X509_up_ref
+event_log_write_data
+X509_cmp
+anjay_fw_update_set_result
+X509_STORE_CTX_new
+anjay_ongoing_registration_exists
+X509_VERIFY_PARAM_set1_ip
+SSL_set_bio
+SSL_session_reused
+argv_get
+argv_append
+geo_distance_m
+fetch_bytes
+anjay_get_bytes
+open_temporary_file
+iosched_instant_entry_new
+avs_list_find_ptr__
+lwm2m_get_cfg
+anjay_ret_i64
+anjay_dm_emit
+anjay_dm_emit_res
+anjay_ret_string
+anjay_ret_bool
+anjay_get_string
+anjay_get_bool
+lwm2m_enable_disable_dm_apn
+lwm2m_enable_disable_active_apn
+avs_list_simple_clone__
+lwm2m_sys_get_dm_profile_info
+lwm2m_sys_get_active_profile_info
+apn_conn_profile_list_activated
+anjay_ret_bytes
+anjay_dm_transaction_NOOP
+binary_app_data_container_object_create
+binary_app_data_container_object_release
+binary_app_data_container_get_instances
+anjay_ret_bytes_begin
+anjay_ret_bytes_append
+anjay_ret_objlnk
+anjay_get_i32
+anjay_dm_list_instances_SINGLE
+cell_connectivity_object_create
+cell_connectivity_object_release
+lwm2m_sys_get_connectivity_monitoring
+__isoc99_fscanf
+avs_net_socket_interface_name
+lwm2m_sys_get_connectivity_statistics
+lwm2m_sys_get_device_info
+avs_simple_snprintf
+SSL_get_current_cipher
+SSL_CIPHER_get_cipher_nid
+AVS_TIME_REAL_INVALID
+OBJ_nid2sn
+download_diagnostics_object_create
+download_diagnostics_object_release
+OPENSSL_sk_num
+avs_time_duration_add
+OPENSSL_sk_value
+avs_sched_del
+OPENSSL_sk_find
+anjay_execute_get_next_arg
+anjay_execute_get_arg_value
+avs_sched_at_impl__
+avs_sched_new
+avs_sched_cleanup
+anjay_get_rx_bytes
+anjay_get_tx_bytes
+anjay_get_num_incoming_retransmissions
+anjay_get_num_outgoing_retransmissions
+anjay_ret_double
+ext_dev_info_object_create
+ext_dev_info_object_release
+ext_dev_info_notify_time_dependent
+anjay_get_double
+geopoints_object_create
+geopoints_object_release
+geopoints_get_instances
+geopoints_notify_time_dependent
+location_get
+lwm2m_sys_get_location_info
+avs_rand_r
+lwm2m_file_is_exists
+lwm2m_file_create
+lwm2m_sys_get_connectivity_extn_info
+avs_convert_be32
+anjay_get_float
+anjay_get_objlnk
+TEST_OBJECT
+test_object_create
+test_object_release
+test_get_instances
+test_notify_time_dependent
+avs_convert_be16
+avs_persistence_bool
+avs_persistence_u8
+avs_persistence_bytes
+avs_persistence_store_context_create
+avs_persistence_string
+anjay_etag_new
+avs_persistence_restore_context_create
+anjay_fw_update_install
+anjay_get_i64
+ip_ping_object_create
+ip_ping_object_release
+lwm2m_use_ota_call
+lwm2m_get_ota_call_status
+lwm2m_ota_start_call
+lwm2m_ota_stop_call
+lwm2m_ota_dns_query
+lwm2m_file_read_str
+lwm2m_file_read_bin
+__bss_start
+avs_sched_data
+DTLS_set_timer_cb
+OPENSSL_1_1_1
+avs_coap_udp_tx_params_valid
+avs_coap_udp_response_cache_create
+avs_crypto_prng_new
+avs_mutex_lock
+avs_mutex_unlock
+avs_resched_at_impl__
+anjay_get_version
+avs_mutex_create
+avs_mutex_cleanup
+avs_coap_udp_response_cache_release
+avs_crypto_prng_free
+avs_coap_options_get_string_it
+avs_coap_code_to_string
+avs_coap_options_get_u16
+avs_coap_options_get_content_format
+avs_coap_code_get_class
+avs_coap_options_validate_critical
+avs_coap_code_is_client_error
+avs_coap_udp_max_transmit_wait
+avs_coap_udp_exchange_lifetime
+avs_coap_streaming_handle_incoming_packet
+anjay_get_scheduler
+anjay_sched_time_to_next
+anjay_sched_time_to_next_ms
+anjay_etag_clone
+anjay_download_abort
+avs_coap_options_set_content_format
+avs_coap_streaming_setup_response
+avs_log_should_log__
+avs_log_internal_forced_l__
+avs_time_duration_equal
+avs_net_socket_get_opt
+avs_coap_strerror
+avs_coap_get_stats
+avs_coap_ctx_cleanup
+avs_net_socket_shutdown
+avs_net_socket_cleanup
+avs_url_percent_decode
+avs_url_validate_relative_path
+avs_url_user
+avs_url_password
+avs_url_host
+avs_url_port
+avs_url_path
+avs_url_protocol
+avs_url_parse_lenient
+avs_url_free
+anjay_binding_mode_valid
+avs_coap_options_add_string_f
+avs_int64_as_string_impl__
+avs_coap_options_add_string
+avs_strncasecmp
+anjay_security_config_from_dm
+strtoull
+avs_stream_write_f
+avs_double_as_string_impl__
+avs_stream_write
+ANJAY_DM_OI_ATTRIBUTES_EMPTY
+avs_stream_read_reliably
+avs_stream_peek
+avs_stream_outbuf_set_buffer
+avs_stream_outbuf_offset
+AVS_STREAM_OUTBUF_STATIC_INITIALIZER
+avs_stream_read
+avs_base64_decode_custom
+AVS_BASE64_DEFAULT_STRICT_CONFIG
+avs_ntohf
+avs_ntohd
+avs_convert_be64
+avs_htonf
+avs_htond
+avs_hexlify
+avs_rbtree_find__
+avs_rbtree_elem_new_buffer__
+avs_rbtree_attach__
+avs_rbtree_detach__
+avs_rbtree_elem_delete__
+avs_rbtree_cleanup_first__
+avs_rbtree_cleanup_next__
+avs_rbtree_delete__
+avs_rbtree_first__
+avs_sched_time
+avs_rbtree_new__
+avs_coap_exchange_cancel
+avs_coap_observe_streaming_start
+avs_rbtree_elem_next__
+avs_stream_membuf_create
+avs_coap_notify_async
+avs_rbtree_lower_bound__
+avs_rbtree_upper_bound__
+anjay_disable_server
+avs_time_duration_as_string_impl__
+avs_stream_offset
+avs_stream_membuf_take_ownership
+avs_net_socket_close
+avs_time_duration_div
+avs_time_duration_mul
+avs_coap_client_send_async_request
+avs_coap_streaming_send_request
+ANJAY_TRANSPORT_SET_IP
+ANJAY_TRANSPORT_SET_UDP
+ANJAY_TRANSPORT_SET_TCP
+anjay_transport_is_offline
+anjay_transport_set_online
+avs_crypto_certificate_chain_info_from_array
+gettimeofday
+avs_persistence_u16
+avs_persistence_list
+avs_persistence_u32
+avs_persistence_magic
+avs_persistence_direction
+avs_persistence_double
+avs_persistence_version
+anjay_attr_storage_is_modified
+anjay_attr_storage_purge
+avs_list_sort__
+avs_stream_reset
+avs_stream_membuf_fit
+anjay_security_object_is_modified
+avs_persistence_sized_buffer
+anjay_server_get_ssids
+anjay_server_object_is_modified
+avs_persistence_i64
+avs_list_find_by_value_ptr__
+AVS_TIME_MONOTONIC_INVALID
+avs_coap_options_get_etag_it
+avs_coap_async_handle_incoming_packet
+avs_coap_client_set_next_response_payload_offset
+avs_coap_udp_ctx_create
+avs_coap_ctx_set_socket
+avs_net_socket_get_remote_hostname
+avs_net_socket_get_remote_port
+avs_net_socket_connect
+avs_net_tcp_socket_create
+avs_net_udp_socket_create
+avs_net_ssl_socket_create
+avs_net_dtls_socket_create
+avs_net_socket_set_opt
+avs_base64_encoded_size
+avs_base64_encoded_size_without_padding
+avs_base64_encode_custom
+avs_time_duration_to_fscalar
+avs_init_once
+avs_uint64_as_string_impl__
+avs_net_resolved_endpoint_get_host_port
+avs_coap_ctx_has_socket
+avs_net_socket_bind
+anjay_access_control_purge
+anjay_access_control_is_modified
+anjay_access_control_install
+gai_strerror
+nearbyint
+inet_ntoa
+inet_ntop
+pthread_mutex_lock
+getaddrinfo
+pthread_condattr_init
+getnameinfo
+pthread_mutex_destroy
+getsockopt
+getpeername
+clearerr
+recvfrom
+shutdown
+vsnprintf
+pthread_condattr_destroy
+pthread_mutex_unlock
+pthread_cond_broadcast
+pthread_cond_wait
+setsockopt
+clock_gettime
+GLIBC_2.17
+freeifaddrs
+pthread_cond_timedwait
+getifaddrs
+getsockname
+pthread_mutex_init
+freeaddrinfo
+pthread_cond_init
+GLIBC_2.28
+pthread_condattr_setclock
+libpthread.so.0
+pthread_create
+pthread_mutexattr_settype
+pthread_once
+pthread_mutexattr_init
+pthread_mutex_trylock
+pthread_cond_destroy
+avs_coap_options_add_block
+avs_coap_max_incoming_message_payload
+avs_coap_code_is_request
+avs_coap_options_get_block
+avs_coap_options_remove_by_number
+avs_coap_code_is_response
+avs_coap_options_add_observe
+avs_coap_code_is_success
+avs_coap_server_accept_async_request
+avs_coap_server_setup_async_response
+avs_coap_options_get_observe
+avs_coap_observe_async_start
+avs_coap_observe_start
+avs_coap_code_get_detail
+avs_coap_code_is_server_error
+_avs_shared_buffer_acquire
+avs_crypto_prng_bytes
+avs_strerror
+avs_coap_options_add_uint
+avs_coap_options_add_etag
+avs_coap_options_add_opaque
+avs_coap_options_get_u32
+avs_coap_options_add_string_fv
+avs_coap_options_add_empty
+avs_coap_options_skip_it
+avs_coap_options_get_bytes_it
+avs_time_duration_fmul
+avs_net_socket_get_remote_host
+avs_net_socket_send
+avs_net_socket_receive
+AVS_COAP_DEFAULT_UDP_TX_PARAMS
+avs_coap_udp_ctx_set_forced_incoming_mtu
+avs_buffer_create
+avs_buffer_raw_insert_ptr
+avs_buffer_free
+avs_buffer_data_size
+avs_buffer_append_bytes
+avs_buffer_space_left
+avs_buffer_advance_ptr
+avs_buffer_fill_bytes
+avs_buffer_data
+avs_buffer_capacity
+avs_buffer_consume_bytes
+avs_coap_udp_max_transmit_span
+avs_buffer_reset
+avs_coap_notify_streaming
+avs_coap_observe_persist
+avs_coap_observe_restore
+AVS_BASE64_CHARS
+AVS_BASE64_URL_SAFE_CHARS
+AVS_BASE64_DEFAULT_LOOSE_CONFIG
+avs_base64_estimate_decoded_size
+AVS_NET_SOCKET_DEFAULT_RECV_TIMEOUT
+avs_net_socket_dane_tlsa_array_copy
+avs_net_socket_debug
+avs_net_socket_decorate
+avs_net_socket_send_to
+avs_net_socket_receive_from
+avs_net_socket_accept
+avs_net_socket_get_local_host
+avs_net_dtls_socket_decorate_in_place
+avs_net_ssl_socket_decorate_in_place
+avs_net_addrinfo_resolve_ex
+avs_net_addrinfo_delete
+avs_net_addrinfo_next
+avs_memswap
+getaddrinfohelper
+avs_net_addrinfo_rewind
+avs_crypto_certificate_chain_info_from_buffer
+avs_crypto_cert_revocation_list_info_from_file
+avs_crypto_cert_revocation_list_info_from_buffer
+avs_crypto_cert_revocation_list_info_from_array
+avs_crypto_certificate_chain_info_copy_as_array
+avs_crypto_cert_revocation_list_info_copy_as_array
+avs_crypto_certificate_chain_info_from_list
+avs_crypto_cert_revocation_list_info_from_list
+avs_crypto_certificate_chain_info_copy_as_list
+avs_crypto_cert_revocation_list_info_copy_as_list
+avs_crypto_private_key_info_from_file
+avs_crypto_private_key_info_from_buffer
+avs_crypto_private_key_info_copy
+avs_stream_copy
+avs_rbtree_size__
+avs_persistence_u64
+avs_persistence_i8
+avs_persistence_i16
+avs_persistence_i32
+avs_persistence_float
+avs_persistence_custom_allocated_list
+avs_persistence_custom_allocated_tree
+avs_persistence_tree
+avs_rbtree_simple_clone__
+avs_rbtree_last__
+avs_rbtree_elem_prev__
+avs_condvar_create
+avs_condvar_cleanup
+avs_sched_wait_until_next
+avs_condvar_wait
+avs_condvar_notify_all
+avs_sched_detach
+avs_sched_leap_time
+avs_url_percent_encode
+avs_url_validate_host
+avs_url_validate_path
+avs_url_validate
+avs_url_parse
+avs_url_copy
+avs_stream_write_some
+avs_stream_finish_message
+avs_stream_write_fv
+avs_stream_ignore_to_end
+avs_stream_getch
+avs_stream_getline
+avs_stream_peekline
+avs_stream_v_table_find_extension
+avs_stream_nonblock_read_ready
+avs_stream_nonblock_write_ready
+avs_stream_file_length
+avs_stream_file_seek
+avs_stream_membuf_ensure_free_bytes
+avs_stream_outbuf_set_offset
+avs_list_nth_ptr__
+avs_list_tail__
+avs_list_merge__
+avs_list_is_cyclic__
+avs_list_assert_sorted_ptr__
+avs_unhexlify
+avs_rand32_r
+avs_double_convertible_to_int64
+avs_double_convertible_to_uint64
+avs_simple_vsnprintf
+avs_strcasecmp
+avs_mutex_try_lock
+avs_log_internal_forced_v__
+avs_log_internal_v__
+liblwm2m_model_api.so
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m_model
+H	KxD	J{D
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/demo.c
+Cannot add Security Instance
+Cannot add Server Instance
+Error while adding new server objects
+Cannot persist attribute storage to file %s
+Cannot persist data model to file %s
+forced registration update on exit
+Anjay object not created, skipping
+out of memory
+object_entry && !*object_entry
+Cannot restore data model from file %s
+Cannot restore attribute storage persistence from file %s
+anjay_serve returned %d
+could not obtain system socket
+cannot add iosched entry
+(*entry_ptr)->iosched_entry
+/tmp/watch_lwm2m_application
+/tmp/lwm2m_wap_push_rcvd
+/tmp/kill_lwm2m_app
+LWM2M_APP_TERMINATE found, terminating LWM2M_APP
+%s: |%-15s| %-30s| %s
+%s: |%-15s| %s:%d| %s
+%Y-%m-%d %H:%M:%S
+%s.%06d %s
+avs_sched
+anjay_dm
+/tmp/lwm2m_socket_connection_send_failed
+*** ANJAY DEMO STARTUP FINISHED ***
+/tmp/lwm2m_application_started
+/tmp/refresh_lwm2m_socket_connection
+get_single_instance
+install_object
+refresh_socket_entries
+log_handler
+/tmp/anjay-fw-updated
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/demo_args.c
+could not enumerate available security modes
+unrecognized security mode %s (expected one of:%s)
+/OID/IID,SSID,ACCESS_MASK
+create ACL entry for specified /OID/IID and SSID
+client-initiated-only
+treat first URI as Bootstrap Server. If the optional "client-initiated-only" option is specified, the legacy LwM2M 1.0-style Server-Initiated bootstrap mode is not available.
+number of seconds to wait before attempting Client Initiated Bootstrap.
+number of seconds to keep the Bootstrap Server Account for after successful bootstrapping, or 0 for infinity.
+endpoint name to use.
+show this message and exit.
+disables standard input. Useful for running the client as a daemon.
+set registration lifetime. If SECONDS <= 0, use default value and don't send lifetime in Register/Update messages.
+MAX_NOTIFICATIONS
+set limit of queued notifications in queue/offline mode. 0: unlimited; >0: keep that much newest ones
+CSV_FILE
+file to load location CSV from
+location update frequency in seconds
+bind all sockets to the specified UDP port.
+PSK identity (psk mode) or Public Certificate (cert mode)
+Both are specified as hexlified strings
+CLIENT_CERT_FILE
+$(dirname $0)/../certs/client.crt.der
+DER-formatted client certificate file to load. Mutually exclusive with -i
+PSK key (psk mode) or Private Certificate (cert mode)
+PRIVATE_KEY_FILE
+$(dirname $0)/../certs/client.key.der
+DER-formatted PKCS#8 private key complementary to the certificate specified with -C. Mutually exclusive with -k
+SERVER_PUBLIC_KEY_FILE
+$(dirname $0)/../certs/server.crt.der
+DER-formatted server public key file to load.
+BINDING_MODE=UQ
+set the Binding Mode to use for the currently configured server.If Binding Mode is not set by this flag, client tries to derive itfrom URI and if it cannot, it uses the default value 'U'
+set security mode, one of: psk rpk cert nosec. Note: only affects coaps:// and coaps+*:// URLs
+server URI to use. N consecutive URIs will create N servers enumerated from 1 to N.
+enforce particular Security Instance IID for last configured server.
+enforce particular Server Instance IID for last configured server. Ignored if last configured server is an LwM2M Bootstrap Server.
+Nonnegative integer representing maximum size of an incoming CoAP packet the client should be able to handle.
+Nonnegative integer representing maximum size of a non-BLOCK CoAP packet the client should be able to send.
+Size, in bytes, of a buffer reserved for caching sent responses to detect retransmissions. Setting it to 0 disables caching mechanism.
+Send notifications as Confirmable messages by default
+If specified and nonzero, initializes the Firmware Update object in UPDATING state, and sets the result to given value after a short while
+File path to use as a marker for persisting firmware update state
+CERT_FILE
+Require certificate validation against specified file when downloading firmware over encrypted channels
+CERT_DIR
+Require certificate validation against files in specified path when downloading firmware over encrypted channels; note that the TLS backend may impose specific requirements for file names and formats
+PSK identity
+Download firmware over encrypted channels using PSK-mode encryption with the specified identity (provided as hexlified string); must be used together with --fw-psk-key
+Download firmware over encrypted channels using PSK-mode encryption with the specified key (provided as hexlified string); must be used together with --fw-psk-identity
+PERSISTENCE_FILE
+File to load attribute storage data from at startup, and store it at shutdown
+ACK_RANDOM_FACTOR
+Configures ACK_RANDOM_FACTOR (defined in RFC7252)
+ACK_TIMEOUT
+Configures ACK_TIMEOUT (defined in RFC7252) in seconds
+MAX_RETRANSMIT
+Configures MAX_RETRANSMIT (defined in RFC7252)
+DTLS_HS_RETRY_WAIT_MIN
+Configures minimum period of time to wait before sending first DTLS HS retransmission
+DTLS_HS_RETRY_WAIT_MAX
+Configures maximum period of time to wait (after last retransmission) before giving up on handshake completely
+Configures ACK_RANDOM_FACTOR (defined in RFC7252) for firmware update
+Configures ACK_TIMEOUT (defined in RFC7252) in seconds for firmware update
+Configures MAX_RETRANSMIT (defined in RFC7252) for firmware update
+Sets the library to use hierarchical content formats by default for all responses.
+Enables DTLS connection_id extension.
+CIPHERSUITE[,CIPHERSUITE...]
+TLS library defaults
+Sets the ciphersuites to be used by default for (D)TLS connections.
+Configures NSTART (defined in RFC7252)
+File to load Server, Security and Access Control object contents at startup, and store it at shutdown
+Enable alternative logger as a showcase of extended logger feature.
+Available options:
+i < AVS_ARRAY_SIZE(HELP_INFO)
+HELP_INFO[i].opt_val == options[i].val
+      (default: %s)
+value out of range: expected 32-bit signed value, got %s
+value out of range: expected 32-bit unsigned value, got %s
+value out of range: expected 16-bit unsigned value, got %s
+value out of range: expected %d-bit unsigned value, got %s
+getopt_string_ptr - buffer < (ptrdiff_t) buffer_size - 1
+colons >= 0 && colons <= 2
+Out of memory
+unrecognized cmdline argument: %s
+unrecognized free argument: %s
+/%hu/%hu,%hu,%hu
+insufficient arguments
+Invalid bootstrap optional argument: "%s"; available options: client-initiated-only
+invalid location update frequency: %s
+invalid UDP port number: %s
+Invalid identity
+Invalid key
+Undefined server. Use --server-uri/-u first
+Binding mode already defined for the current server
+Security IID already defined
+Server IID already defined
+(num_servers < 1024) && (bool) "" "Too many servers"
+invalid update result value: %s
+Multiple incompatible security information specified for firmware upgrade
+--fw-psk-identity specified more than once
+Invalid PSK identity for firmware upgrade
+--fw-psk-key specified more than once
+Invalid pre-shared key for firmware upgrade
+Expected ACK_RANDOM_FACTOR to be a floating point number
+Expected ACK_TIMEOUT to be a floating point number
+Expected MAX_RETRANSMIT to be an unsigned integer
+Expected DTLS_HS_RETRY_WAIT_MIN > 0
+Expected DTLS_HS_RETRY_WAIT_MAX > 0
+Invalid ciphersuite ID: %s
+Invalid NSTART value, expected non-negative integer, got %s
+Endpoint name not specified, please use the -e option
+At least one LwM2M Server URI needs to be specified, please use the -u option
+Certificate information cannot be loaded both from file and immediate hex data at the same time
+password
+Setting public cert but not private cert (and other way around) makes little sense
+Could not load certificate from %s
+Could not load private key from %s
+Could not load server public key from %s
+Both identity and key must be provided when using PSK for firmware upgrade security
+access-entry
+bootstrap
+bootstrap-holdoff
+bootstrap-timeout
+endpoint-name
+disable-stdin
+lifetime
+stored-notification-limit
+location-csv
+location-update-freq-s
+identity
+client-cert-file
+key-file
+server-public-key-file
+security-mode
+server-uri
+security-iid
+server-iid
+inbuf-size
+outbuf-size
+cache-size
+confirmable-notifications
+delayed-upgrade-result
+fw-updated-marker-path
+fw-cert-file
+fw-cert-path
+fw-psk-identity
+fw-psk-key
+attribute-storage-persistence-file
+ack-random-factor
+ack-timeout
+max-retransmit
+dtls-hs-retry-wait-min
+dtls-hs-retry-wait-max
+fwu-ack-random-factor
+fwu-ack-timeout
+fwu-max-retransmit
+prefer-hierarchical-formats
+use-connection-id
+ciphersuites
+dm-persistence-file
+alternative-logger
+print_help
+parse_double
+build_getopt_string
+../certs/client.crt.der
+../certs/client.key.der
+demo_parse_argv
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/demo_cmds.c
+invalid Short Server ID: %s
+could not schedule registration update
+registration update scheduled for all servers
+registration update scheduled for server %u
+Out of memory
+Unrecognized transport: %s
+could not schedule reconnect
+reconnect scheduled
+Location object not registered
+Successfully opened CSV file
+Maximum number of servers reached
+Added new server, ID == %d
+Invalid servers number: %s
+SOCKET_COUNT==%lu
+Invalid index: %s
+Index out of range: %d; num_sockets == %d
+PORT==%s
+TRANSPORT==UDP
+TRANSPORT==TCP
+TRANSPORT==%d
+NON_LWM2M_SOCKET_COUNT==%lu
+anjay_transport_enter_offline(), result == %d
+anjay_transport_exit_offline(), result == %d
+ /%hu/%hu/%hu
+notify usage:
+1. notify /OID
+2. notify /OID/IID/RID
+Invalid OID: %s
+Could not unregister object %d
+No such object to unregister: %d
+Could not re-register object %d
+No such object to register: %d
+anjay_download_set_next_block_offset() failed
+fwrite() failed
+download finished, result == %d
+%255s %255s %255s %255s
+invalid URL or target file in: %s
+could not open file: %s
+could not schedule download
+out of memory
+%255s %255s %n
+last_skip == skip
+Invalid block definition: %s
+invalid SSID: expected 0 <= ssid < 65535, got %d
+epmin=%d
+epmax=%d
+/%d/%d/%d
+failed to set resource level attributes
+failed to set instance level attributes
+failed to set object level attributes
+bad syntax - see help
+invalid arguments
+could not disable server with SSID %u
+could not enable server with SSID %u
+ALL_CONNECTIONS_FAILED==%d
+observation-status usage: observation_status /OID/IID/RID
+anjay_resource_observation_status, is_observed == %s, min_period == %d, max_eval_period == %d
+ %hu %hu %n
+invalid format
+failed to find Event Log object
+failed to write Event Log data
+Firmware Update result not specified
+ONGOING_REGISTRATION==%s
+send-update
+[ssid=0]
+Sends Update messages to LwM2M servers
+reconnect
+[transports...]
+Reconnects to LwM2M servers and sends Update messages
+set-fw-package-path
+Sets the path where the firmware package will be saved when Write /5/0/0 is performed
+open-location-csv
+filename frequency=1
+Opens a CSV file and starts using it for location information
+add-server
+Adds another LwM2M Server to connect to
+trim-servers
+Remove LwM2M Servers with specified ID and higher
+socket-count
+Display number of sockets currently listening
+get-port
+Display listening port number of a socket with the specified index (also supports Python-like negative indices)
+non-lwm2m-socket-count
+Display number of sockets currently listening that are not affiliated to any LwM2M server connetion
+get-transport
+Display transport used by a socket with the specified index (also supports Python-like negative indices)
+enter-offline
+Enters Offline mode
+exit-offline
+Exits Offline mode
+Executes anjay_notify_* on a specified path
+unregister-object
+Unregister an LwM2M Object
+reregister-object
+Re-register a previously unregistered LwM2M Object
+download-blocks
+url target_file [offset1-offset2 [offset3-[offset4 [...]]]]
+Download portions of a given URL to target_file.
+download
+url target_file [psk_identity psk_key]
+Download a file from given URL to target_file.
+set-attrs
+Syntax [/a [/b [/c [/d] ] ] ] ssid [pmin,pmax,lt,gt,st,epmin,epmax] - e.g. /a/b 1 pmin=3,pmax=4
+disable-server
+ssid reactivate_timeout
+Disables a server with given SSID for a given time (use -1 to disable idefinitely).
+enable-server
+Enables a server with given SSID.
+get-all-connections-failed
+Returns the result of anjay_all_connections_failed()
+schedule-update-on-exit
+Ensure Registration Update is scheduled for immediate execution at the point of calling anjay_delete()
+observation-status
+/OID/IID/RID
+Queries the observation status of a given Resource
+badc-write
+IID RIID value
+Writes new value to Binary App Data Container object
+set-event-log-data
+Sets LogData resource in Log Event object
+set-fw-update-result
+Attempts to set Firmware Update Result at runtime
+ongoing-registration-exists
+Display information about ongoing registrations
+Prints this message
+LwM2M Demo client
+Available commands:
+command: %s
+avs_errno
+cmd_download_blocks
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/demo_utils.c
+(g_saved_args.argv) && (bool) "" "argv_store not called before argv_get"
+(argc >= 0) && (bool) "" "unexpected negative value of argc"
+could not parse number: %s
+argv_get
+argv_store
+argv_append
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/iosched.c
+entry->type == SCHED_ENTRY_POLL
+count < max_poll_fds
+lwm2m_get_cfg() failed.
+poll_fds_count == num_entries
+get_poll_fds
+handle_poll_entries
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/objects/apn_conn_profile.c
+riid == ANJAY_ID_INVALID
+APNCP_RES_ENABLE_STATUS (Read) rid=[%d], iid=[%d] enable=[%d].
+(0) && (bool) "" "unexpected RIID for APNCP_RES_CONNECTION_ESTABLISHMENT_TIME"
+riid == 0
+(0) && (bool) "" "Read called on unknown resource"
+APNCP_RES_ENABLE_STATUS b4 (Write) rid=[%d], iid=[%d] enable=[%d].
+APNCP_RES_ENABLE_STATUS (Write) rid=[%d], iid=[%d] enable=[%d].
+(0) && (bool) "" "Write called on unknown resource"
+cannot clone APN Connection Profile repr
+(inst) && (bool) "" "could not find instance"
+apncp_resource_instances rid=[%d], iid=[%d]
+(0) && (bool) "" "Attempted to list instances in a single-instance resource"
+Got the APN DM Connection profile info 
+Got the APN Active Connection profile info 
+Instances not created
+First Instances created 
+AT&T LWM2M APN
+Second Instances created 
+AT&T INTERNET APN
+out of memory
+get_apncp
+apncp_instance_remove
+apncp_resource_read
+apncp_resource_write
+apncp_instance_reset
+apncp_resource_instances
+resource_reset
+apn_conn_profile_get_instances
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/objects/binary_app_data_container.c
+iid != ANJAY_ID_INVALID
+cannot allocate a new instance
+cannot clone resource instances list
+out of memory
+Value too long: %s
+No such instance: %u
+init_instance
+instance_create
+instance_remove
+instance_reset
+resource_read
+resource_write
+resource_reset
+list_resource_instances
+binary_app_data_container_get_instances
+binary_app_data_container_write
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/objects/cell_connectivity.c
+(0) && (bool) "" "Read called on unknown resource"
+riid == ANJAY_ID_INVALID
+(0) && (bool) "" "Attempted to list instances in a single-instance resource"
+get_cell
+cell_resource_read
+cell_resource_write
+cell_list_resource_instances
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/objects/conn_monitoring.c
+Failed to get lwm2m_sys_get_connectivity_monitoring rc = [%d]
+riid == ANJAY_ID_INVALID
+(0) && (bool) "" "unexpected RIID for CM_RES_AVAILABLE_NETWORK_BEARER"
+riid == 0
+(0) && (bool) "" "Read handler called on unknown or non-readable resource"
+(0) && (bool) "" "Attempted to list instances in a single-instance resource"
+cm_resource_read
+cm_list_resource_instances
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/objects/conn_statistics.c
+rx_bytes
+tx_bytes
+rx_count
+tx_count
+Failed rc = [%d]
+bytes = [%lld] type = [%s]
+(0) && (bool) "" "Execute called on unknown or non-executable resource"
+riid == ANJAY_ID_INVALID
+(0) && (bool) "" "Read called on unknown or non-readable resource"
+cs_resource_execute
+cs_resource_read
+cs_resource_write
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/objects/device.c
+riid == ANJAY_ID_INVALID
+lwm2m_sys_get_device_info MFG failed.
+lwm2m_sys_get_device_info Model_str failed.
+lwm2m_sys_get_device_info IMEI Serial Number failed.
+lwm2m_sys_get_device_info FW_ver failed.
+riid == 0
+lwm2m_sys_get_device_info Dev_type failed.
+lwm2m_sys_get_device_info HW_ver failed.
+lwm2m_sys_get_device_info SW_ver failed.
+(0) && (bool) "" "Read handler called on unknown or non-readable resource"
+Out of memory
+buffer too short to fit full value
+Europe/Warsaw
+(0) && (bool) "" "Executable handler called on unknown or " "non-executable resource"
+(0) && (bool) "" "Attempted to list instances in a single-instance resource"
+IMEI read from device is [%s]
+empty manufacturer part of endpoint name
+result >= 0
+((size_t) (dash - at) < manufacturer_size) && (bool) "" "manufacturer part of endpoint name too long"
+empty serial number part of endpoint name
+(serial_length < serial_size) && (bool) "" "serial number part of endpoint name too long"
+manufacturer: %s; serial number: %s
+dev_read
+dev_execute
+dev_resource_instances
+extract_device_info
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/objects/download_diagnostics.c
+download diagnostic already in progress
+cannot schedule download diagnostic
+rid == DOWNLOAD_DIAG_RUN
+riid == ANJAY_ID_INVALID
+(0) && (bool) "" "Read handler called on unknown or non-readable resource"
+Cancelling a diagnostic in progress is not supported
+!repr->dl_handle
+get_diag
+diag_resource_execute
+diag_resource_read
+diag_resource_write
+download_diagnostics_object_release
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/objects/event_log.c
+iid == 0
+riid == ANJAY_ID_INVALID
+eventlog
+instance_reset
+resource_read
+resource_write
+resource_execute
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/objects/ext_dev_info.c
+riid == ANJAY_ID_INVALID
+Dummy_OBU_ID
+PL 473N0
+01-345678-901234
+26000007
+8926000000073
+(0) && (bool) "" "Read handler called on unknown resource"
+dev_read
+get_extdev
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/objects/geopoints.c
+riid == ANJAY_ID_INVALID
+(0) && (bool) "" "Read called on unknown resource"
+cannot clone Geopoint instances
+(inst) && (bool) "" "could not find instance"
+out of memory
+Could not update geopoints, Location not installed
+get_geopoints
+geopoints_instance_remove
+geopoints_resource_read
+geopoints_resource_write
+geopoints_instance_reset
+geopoints_get_instances
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/objects/location.c
+Got the loc info 
+lwm2m_sys_get_location_info failed.
+riid == ANJAY_ID_INVALID
+get_location_data failed. 
+(0) && (bool) "" "Read called on unknown resource"
+ %lf , %lf %n
+, %lf , %lf %n
+Invalid CSV line, ignoring: %s
+Could not read data from CSV, switching back to random location mode
+Successfully created location object. 
+Invalid CSV time frequency: %ld
+Could not open CSV: %s
+CSV loaded: %s (frequency_s = %ld)
+location_resource_read
+get_location
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/objects/portfolio.c
+%s: dev_id[%s] mfg[%s] model[%s] ver[%s]
+%s: portfolio_file [%s] does not exist.
+/opt/nvtl/data/lwm2m/portfolio_
+riid < _MAX_IDENTITY_TYPE
+inst->has_identity[riid]
+%s: portfolio_data [%s] [%s] [%s] [%s]
+(0) && (bool) "" "Read called on unknown resource"
+(0) && (bool) "" "Write called on unknown resource"
+rid == RID_IDENTITY
+(0) && (bool) "" "Attempted to list instances in a single-instance resource"
+!obj->backup
+/opt/nvtl/data/lwm2m
+portfolio_
+%s: portfolio_file [%s] exist.
+SW Version read from device is [%s]
+Host device id read from device is [%s]
+Manufacture  read from device is [%s]
+Model read from device is [%s]
+%s,%s,%s,%s
+%s: create file(%s) with data[%s]
+%s:Unbale to create file(%s) with data[%s]
+Successfully created portfolio instance [%d]
+Unable to delete invalid portfolio file [%s]
+out of memory
+read_portfolio_object_data
+instance_create
+instance_remove
+instance_reset
+resource_read
+resource_read
+resource_write
+resource_reset
+list_resource_instances
+transaction_begin
+transaction_commit
+transaction_rollback
+portfolio_object_create
+portfolio_get_instances
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/objects/att_connectivity_extension.c
+ATT_CONN_EXT_OBJ find_instance
+ATT_CONN_EXT_OBJ list_instances
+ATT_CONN_EXT_OBJ array_write
+(*insert_it)->index == instance.index
+ATT_CONN_EXT_OBJ init_instance
+iid != ANJAY_ID_INVALID
+Got the ATnT Connectivity Extension  info 
+ATT_CONN_EXT_OBJ release_instance
+ATT_CONN_EXT_OBJ add_instance
+find_instance(obj, iid) == NULL
+ATT_CONN_EXT_OBJ instance_create
+ATT_CONN_EXT_OBJ instance_remove
+ATT_CONN_EXT_OBJ instance_reset
+ATT_CONN_EXT_OBJ list_resources
+ATT_CONN_EXT_OBJ list_resource_instances
+ATT_CONN_EXT_OBJ resource_read
+riid == ANJAY_ID_INVALID
+ATT_CONN_EXT_OBJ resource_write iid[%d] rid[%d] riid[%d]
+ATT_CONN_EXT_OBJ ojbect_create
+ATT_CONN_EXT_OBJ object_release
+ATT_CONN_EXT_OBJ get_instances
+out of memory
+array_write
+init_instance
+add_instance
+instance_create
+instance_remove
+instance_reset
+list_resource_instances
+resource_read
+resource_write
+att_connectivity_extension_object_get_instances
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/objects/test.c
+riid == ANJAY_ID_INVALID
+Out of memory
+(0) && (bool) "" "Read called on unknown or non-readable resource"
+inst_array
+could not read integer
+out of memory
+could not read arg value: %d
+result == ANJAY_BUFFER_TOO_SHORT
+!*out_element
+could not get read arg %d value
+got arg %d
+invalid resource %d value
+0 <= arg_number && arg_number <= UINT16_MAX
+could not save Execute arguments
+(0) && (bool) "" "Execute called on unknown or non-executable resource"
+rid == TEST_RES_INT_ARRAY
+(0) && (bool) "" "Attempted to list instances in a single-instance resource"
+get_test
+test_instance_remove
+test_instance_reset
+test_resource_read
+test_resource_write_to_array
+test_resource_write
+read_exec_arg_value
+read_exec_arg
+init_int_array_read_element
+test_resource_execute
+test_resource_reset
+test_list_resource_instances
+test_get_instances
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/tmp/anjay-fw-XXXXXX
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/firmware_update.c
+could not generate firmware filename: %s
+Created %s
+Deleted %s
+(!fw->stream) && (bool) "" "cannot set package path while a download is in progress"
+out of memory
+firmware package path set to %s
+could not read firmware metadata
+could not open file: %s
+could not read metadata from file: %s
+could not copy firmware from %s to %s
+could not rename %s to %s: %s
+could not set permissions for %s: %s
+ANJAY_FW
+invalid firmware magic
+could not open %s
+could not read from %s: %s
+unsupported firmware version: %u
+unable to check firmware CRC
+CRC mismatch: expected %08x != %08x actual
+firmware downloaded successfully
+Could not write firmware state persistence file
+!fw->stream
+Out of memory
+stream not open
+fwrite or fflush failed: %s
+Cute Firmware
+*** FIRMWARE UPDATE: %s ***
+update failed
+--delayed-upgrade-result
+could not append delayed result to argv
+anjay_fw_update_set_result failed
+execv failed (%s)
+etag && !*etag
+Invalid data in the firmware state persistence file
+Initial firmware upgrade state result: %d
+Could not administratively set firmware path
+delayed_result == %d; initializing Firmware Update in UPDATING state
+firmware_update_set_package_path
+fw_stream_open
+restore_etag
+avs_errno
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/demo/objects/ip_ping.c
+riid == ANJAY_ID_INVALID
+(0) && (bool) "" "Read handler called on unknown or non-readable resource"
+Canceling a diagnostic in progress is not supported
+Unknown host: %s
+%u %*s %*s %u
+Invalid output format of ping.
+%f/%f/%f/%f
+ping -q -c %u -Q 0x%x -W %u -s %u %s 2>&1
+Cannot prepare ping command
+Cannot start child process. Command: %s
+rid == IP_PING_RUN
+ip_ping_resource_read
+get_ip_ping
+ip_ping_resource_write
+ip_ping_resource_execute
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/anjay_config_log.h
+ANJAY_DTLS_SESSION_BUFFER_SIZE = 1024
+ANJAY_MAX_DOUBLE_STRING_SIZE = 512
+ANJAY_MAX_PK_OR_IDENTITY_SIZE = 2048
+ANJAY_MAX_SECRET_KEY_SIZE = 256
+ANJAY_MAX_URI_QUERY_SEGMENT_SIZE = 256
+ANJAY_MAX_URI_SEGMENT_SIZE = 256
+ANJAY_WITHOUT_DEREGISTER = OFF
+ANJAY_WITHOUT_IP_STICKINESS = OFF
+ANJAY_WITHOUT_PLAINTEXT = OFF
+ANJAY_WITHOUT_TLV = OFF
+ANJAY_WITH_ACCESS_CONTROL = ON
+ANJAY_WITH_BOOTSTRAP = ON
+ANJAY_WITH_CBOR = OFF
+ANJAY_WITH_COAP_DOWNLOAD = ON
+ANJAY_WITH_COAP_OSCORE = OFF
+ANJAY_WITH_CON_ATTR = OFF
+ANJAY_WITH_CORE_PERSISTENCE = OFF
+ANJAY_WITH_DISCOVER = ON
+ANJAY_WITH_DOWNLOADER = ON
+ANJAY_WITH_EST = OFF
+ANJAY_WITH_EVENT_LOOP = ON
+ANJAY_WITH_HTTP_DOWNLOAD = OFF
+ANJAY_WITH_LEGACY_CONTENT_FORMAT_SUPPORT = OFF
+ANJAY_WITH_LOGS = ON
+ANJAY_WITH_LWM2M11 = OFF
+ANJAY_WITH_LWM2M_JSON = ON
+ANJAY_WITH_MODULE_ACCESS_CONTROL = ON
+ANJAY_WITH_MODULE_ATTR_STORAGE = ON
+ANJAY_WITH_MODULE_AT_SMS = OFF
+ANJAY_WITH_MODULE_BG96_NIDD = OFF
+ANJAY_WITH_MODULE_BOOTSTRAPPER = OFF
+ANJAY_WITH_MODULE_FW_UPDATE = ON
+ANJAY_WITH_MODULE_IPSO_OBJECTS = ON
+ANJAY_WITH_MODULE_OSCORE = OFF
+ANJAY_WITH_MODULE_SECURITY = ON
+ANJAY_WITH_MODULE_SERVER = ON
+ANJAY_WITH_NET_STATS = ON
+ANJAY_WITH_NIDD = OFF
+ANJAY_WITH_OBSERVATION_STATUS = ON
+ANJAY_WITH_OBSERVE = ON
+ANJAY_WITH_SEND = OFF
+ANJAY_WITH_SENML_JSON = OFF
+ANJAY_WITH_SMS = OFF
+ANJAY_WITH_SMS_MULTIPART = OFF
+ANJAY_WITH_THREAD_SAFETY = ON
+ANJAY_WITH_TRACE_LOGS = ON
+AVS_COAP_UDP_NOTIFY_CACHE_SIZE = 4
+AVS_COMMONS_BIG_ENDIAN = OFF
+AVS_COMMONS_COMPAT_THREADING_PTHREAD_HAVE_PTHREAD_CONDATTR_SETCLOCK = ON
+AVS_COMMONS_COMPAT_THREADING_WITH_ATOMIC_SPINLOCK = ON
+AVS_COMMONS_COMPAT_THREADING_WITH_PTHREAD = ON
+AVS_COMMONS_HAVE_BUILTIN_ADD_OVERFLOW = ON
+AVS_COMMONS_HAVE_BUILTIN_MUL_OVERFLOW = ON
+AVS_COMMONS_HAVE_DLSYM = ON
+AVS_COMMONS_HAVE_NET_IF_H = ON
+AVS_COMMONS_HAVE_PRAGMA_DIAGNOSTIC = ON
+AVS_COMMONS_HAVE_VISIBILITY = ON
+AVS_COMMONS_HTTP_WITH_ZLIB = OFF
+AVS_COMMONS_LOG_MAX_LINE_LENGTH = ON
+AVS_COMMONS_LOG_USE_GLOBAL_BUFFER = OFF
+AVS_COMMONS_LOG_WITH_DEFAULT_HANDLER = ON
+AVS_COMMONS_NET_POSIX_AVS_SOCKET_HAVE_GAI_STRERROR = ON
+AVS_COMMONS_NET_POSIX_AVS_SOCKET_HAVE_GETIFADDRS = ON
+AVS_COMMONS_NET_POSIX_AVS_SOCKET_HAVE_GETNAMEINFO = ON
+AVS_COMMONS_NET_POSIX_AVS_SOCKET_HAVE_IN6_IS_ADDR_V4MAPPED = ON
+AVS_COMMONS_NET_POSIX_AVS_SOCKET_HAVE_INET_NTOP = ON
+AVS_COMMONS_NET_POSIX_AVS_SOCKET_HAVE_POLL = ON
+AVS_COMMONS_NET_POSIX_AVS_SOCKET_HAVE_RECVMSG = ON
+AVS_COMMONS_NET_WITH_DTLS = ON
+AVS_COMMONS_NET_WITH_IPV4 = ON
+AVS_COMMONS_NET_WITH_IPV6 = ON
+AVS_COMMONS_NET_WITH_MBEDTLS_LOGS = OFF
+AVS_COMMONS_NET_WITH_POSIX_AVS_SOCKET = ON
+AVS_COMMONS_NET_WITH_PSK = ON
+AVS_COMMONS_NET_WITH_SOCKET_LOG = OFF
+AVS_COMMONS_NET_WITH_TLS_SESSION_PERSISTENCE = ON
+AVS_COMMONS_POSIX_COMPAT_HEADER = OFF
+AVS_COMMONS_SCHED_THREAD_SAFE = ON
+AVS_COMMONS_STREAM_WITH_FILE = ON
+AVS_COMMONS_UNIT_POSIX_HAVE_BACKTRACE = ON
+AVS_COMMONS_UTILS_WITH_POSIX_AVS_TIME = ON
+AVS_COMMONS_UTILS_WITH_STANDARD_ALLOCATOR = ON
+AVS_COMMONS_WITHOUT_64BIT_FORMAT_SPECIFIERS = OFF
+AVS_COMMONS_WITHOUT_FLOAT_FORMAT_SPECIFIERS = OFF
+AVS_COMMONS_WITH_AVS_ALGORITHM = ON
+AVS_COMMONS_WITH_AVS_BUFFER = ON
+AVS_COMMONS_WITH_AVS_COMPAT_THREADING = ON
+AVS_COMMONS_WITH_AVS_CRYPTO = ON
+AVS_COMMONS_WITH_AVS_CRYPTO_ADVANCED_FEATURES = OFF
+AVS_COMMONS_WITH_AVS_CRYPTO_ENGINE = OFF
+AVS_COMMONS_WITH_AVS_CRYPTO_PKI = ON
+AVS_COMMONS_WITH_AVS_CRYPTO_VALGRIND = OFF
+AVS_COMMONS_WITH_AVS_HTTP = OFF
+AVS_COMMONS_WITH_AVS_LIST = ON
+AVS_COMMONS_WITH_AVS_LOG = ON
+AVS_COMMONS_WITH_AVS_NET = ON
+AVS_COMMONS_WITH_AVS_PERSISTENCE = ON
+AVS_COMMONS_WITH_AVS_RBTREE = ON
+AVS_COMMONS_WITH_AVS_SCHED = ON
+AVS_COMMONS_WITH_AVS_STREAM = ON
+AVS_COMMONS_WITH_AVS_UNIT = OFF
+AVS_COMMONS_WITH_AVS_URL = ON
+AVS_COMMONS_WITH_AVS_UTILS = ON
+AVS_COMMONS_WITH_AVS_VECTOR = OFF
+AVS_COMMONS_WITH_CUSTOM_TLS = OFF
+AVS_COMMONS_WITH_EXTERNAL_LOGGER_HEADER = OFF
+AVS_COMMONS_WITH_INTERNAL_LOGS = ON
+AVS_COMMONS_WITH_INTERNAL_TRACE = OFF
+AVS_COMMONS_WITH_MBEDTLS = OFF
+AVS_COMMONS_WITH_MBEDTLS_PKCS11_ENGINE = OFF
+AVS_COMMONS_WITH_MBEDTLS_PSA_ENGINE = OFF
+AVS_COMMONS_WITH_MBEDTLS_PSA_ENGINE_PROTECTED_STORAGE = OFF
+AVS_COMMONS_WITH_MICRO_LOGS = OFF
+AVS_COMMONS_WITH_OPENSSL = ON
+AVS_COMMONS_WITH_OPENSSL_PKCS11_ENGINE = OFF
+AVS_COMMONS_WITH_POISONING = OFF
+AVS_COMMONS_WITH_TINYDTLS = OFF
+WITH_AVS_COAP_BLOCK = ON
+WITH_AVS_COAP_DIAGNOSTIC_MESSAGES = ON
+WITH_AVS_COAP_LOGS = ON
+WITH_AVS_COAP_OBSERVE = ON
+WITH_AVS_COAP_OBSERVE_PERSISTENCE = ON
+WITH_AVS_COAP_OSCORE = OFF
+WITH_AVS_COAP_OSCORE_DRAFT_8 = OFF
+WITH_AVS_COAP_POISONING = OFF
+WITH_AVS_COAP_STREAMING_API = ON
+WITH_AVS_COAP_TCP = OFF
+WITH_AVS_COAP_TRACE_LOGS = ON
+WITH_AVS_COAP_UDP = ON
+Anjay CoAP
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/anjay_core.c
+out of memory
+endpoint name must not be null
+endpoint name could not be copied
+UDP CoAP transmission parameters are invalid: %s
+UDP DTLS Handshake transmission parameters are invalid: min >= max
+failed to create PRNG context
+Could not lock mutex
+coap_sched_job
+Initializing Anjay 2.14.1
+Could not create mutex
+deleting anjay object
+Duplicated attribute in query string: %s
+unrecognized query string: %s = %s
+key != NULL
+invalid query string: %s = %s
+could not read Request-Query
+Discover
+Write (Update)
+Write Attributes
+Bootstrap Finish
+(0) && (bool) "" "invalid enum value"
+unrecognized CoAP method: %s
+LwM2M action: %s
+invalid Uri-Path segment: %s
+superfluous empty Uri-Path segment
+prefixed Uri-Path are not supported
+bootstrap server
+server ID = %u
+invalid error code: %d
+invalid request: %s
+could not handle request: %s
+(0) && (bool) "" "Should never happen"
+server connection is not online
+!anjay->current_connection.server
+ENODEV returned from the networking layer, ignoring
+delay_ms >= 0
+parse_attributes
+action_to_string
+_anjay_max_transmit_wait_for_transport
+_anjay_exchange_lifetime_for_transport
+_anjay_bind_connection
+serve_connection
+anjay_sched_time_to_next_ms
+avs_errno
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/anjay_dm_core.c
+obj->impl.user_provided
+*obj->impl.user_provided
+obj->impl.unlocked
+*obj->impl.unlocked
+(0) && (bool) "" "Invalid installed object type"
+anjay_dm
+invalid Object /%u version format (expected X.Y, where X and Y are unsigned integers): %s
+elem_ptr_move
+*elem_ptr_move
+_anjay_dm_installed_object_oid(*elem_ptr_move) != ANJAY_ID_INVALID
+!AVS_LIST_NEXT(*elem_ptr_move)
+*obj_iter
+data model object /%u already registered
+successfully registered object /%u
+anjay_notify_instances_changed() failed on /%u
+anjay_schedule_registration_update() failed
+invalid object pointer
+Object ID %u is forbidden by the LwM2M 1.1 specification
+out of memory
+Could not lock mutex
+!anjay->current_connection.server
+def_ptr && *def_ptr
+AVS_LIST_FIND_PTR(&anjay->dm.objects, *def_ptr)
+anjay->transaction_state.depth
+cannot rollback transaction on /%u, object may be left in undefined state
+could not perform notifications about removed object %u
+successfully unregistered object /%u
+object %u is not currently registered
+object %u that is registered is not the same as the object passed for unregister
+could not create input context
+(0) && (bool) "" "should never happen"
+Discover %s
+could not setup message
+Discover %s failed!
+Execute %s
+%s is not executable
+Delete %s
+invalid transactional action
+(!in_ctx) && (bool) "" "in_ctx should be NULL for Execute"
+Invalid action for Management Interface
+Object not found: %u
+at least Object ID must be present in Uri-Path
+foreach_object: break on /%u
+foreach_object_handler failed for /%u (%d)
+%u is not a valid Instance ID
+list_instances MUST return Instance IDs in strictly ascending order; %u returned after %d
+foreach_instance: break on /%u/%u
+foreach_instance_handler failed for /%u/%u (%d)
+attempt to iterate through NULL Object
+list_instances handler for /%u failed (%d)
+%u is not a valid Resource ID
+list_resources MUST return Resource IDs in strictly ascending order; %u returned after %d
+%d is not valid anjay_dm_resource_kind_t
+%d is not valid anjay_dm_resource_presence_t
+foreach_resource: break on /%u/%u/%u
+foreach_resource_handler failed for /%u/%u/%u (%d)
+list_resources handler for /%u/%u failed (%d)
+!_anjay_dm_res_kind_valid(args.kind)
+%u is not a valid Resource Instance ID
+list_resource_instances MUST return Resource Instance IDs in strictly ascending order; %u returned after %d
+foreach_resource_instance: break on /%u/%u/%u/%u
+foreach_resource_handler failed for /%u/%u/%u/%u (%d)
+list_resource_instances handler for /%u/%u/%u failed (%d)
+_anjay_dm_installed_object_oid
+_anjay_dm_installed_object_version
+_anjay_register_object_unlocked
+unregister_object_unlocked
+anjay_unregister_object
+_anjay_debug_make_path__
+avs_errno
+invoke_transactional_action
+invoke_action
+_anjay_dm_get_sorted_instance_list
+_anjay_dm_resource_kind_and_presence
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/anjay_io_core.c
+ctx->vtable && ctx->vtable->emit
+Could not lock mutex
+!result == !!bytes_ctx
+ctx && ctx->vtable && ctx->vtable->append
+out_bytes_ctx
+!*out_bytes_ctx
+unable to determine resource type: anjay_ret_* not called during successful resource_read handler call
+_anjay_dm_emit_unlocked
+_anjay_ret_bytes_begin_unlocked
+_anjay_ret_bytes_append_unlocked
+anjay_ret_bytes_append
+_anjay_output_bytes_begin
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/anjay_notify.c
+!(*entry_ptr)->instance_set_changes.known_added_iids
+out of memory
+Could not lock mutex
+notify_clb
+delete_notify_queue_object_entry_if_empty
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/anjay_servers_utils.c
+registration_info
+Registration session changed for SSID = %u, needs re-register
+Registration Lifetime expired for SSID = %u, needs re-register
+_anjay_servers_find_by_primary_socket
+_anjay_registration_expire_time
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/anjay_stats.c
+anjay_stats
+retrieving socket stats failed (%s)
+(0) && (bool) "" "this function accepts only NET_STATS_BYTES_SENT or " "NET_STATS_BYTES_RECEIVED"
+(0) && (bool) "" "invalid enum value"
+Could not lock mutex
+get_socket_stats
+get_current_stats_of_connection
+get_stats_of_closed_connections
+_anjay_socket_cleanup
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/anjay_modules/anjay_dm_utils.h
+buffer && buffer_size > 0
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/anjay_utils_core.c
+out of memory
+out_size > 0
+out_path
+!*out_path
+out_query
+!*out_query
+strlen(transport_info->default_port) < sizeof(out_parsed_url->port)
+(0) && (bool) "" "anjay_socket_transport_t value missing in BINDING_INFOS"
+Could not get socket state
+lwm2m=%s
+lifetime == NULL || *lifetime > 0
+coap+tcp
+coaps+tcp
+URL scheme not specified
+unsupported URI scheme: %s
+!dest->ids
+Could not read security information for server /%u/%u
+Server /%u/%u does not use encrypted connection, ignoring
+could not read LwM2M server URI from %s
+Could not parse URL from %s: %s
+Security object not installed
+Could not parse URL: %s
+Matching security information not found in data model for URL: %s
+Could not lock mutex
+copy_nullable_string
+_anjay_url_parse_path_and_query
+_anjay_url_from_avs_url
+_anjay_binding_info_by_transport
+_anjay_coap_add_query_options
+_anjay_copy_tls_ciphersuites
+_anjay_dm_read_resource_string
+try_get_info_from_dm
+;ver="%s"
+</%u/%u>
+</%u/%u/%u>
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/dm/anjay_discover.c
+anjay->current_connection.server
+(0) && (bool) "" "LwM2M Discover can be performed only on Object, " "Object Instance or Resource path"
+;ssid=%u
+lwm2m="%s"
+current_lwm2m_version
+discover_resource
+_anjay_discover
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/dm/anjay_dm_attributes.c
+Could not find Server IID for Short Server ID: %u
+_anjay_uri_path_normalized( &MAKE_URI_PATH(_anjay_dm_installed_object_oid(query->obj), query->iid, query->rid, query->riid))
+_anjay_dm_effective_attrs
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/dm/anjay_dm_create.c
+anjay_dm
+65535 object instances already exist
+iid != ANJAY_ID_INVALID
+Instance Create handler for object %u failed
+Writing Resources for newly created /%u/%u failed; removing
+Instance /%u/%u already exists
+Instance Present handler for /%u/%u failed
+More than one Object Instance or broken input stream while processing Object Create
+Create %s
+_anjay_uri_path_leaf_is(&request->uri, ANJAY_ID_OID)
+created: %s
+Could not prepare response message.
+avs_errno
+dm_create_inner
+_anjay_dm_create
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/dm/anjay_dm_execute.c
+anjay_dm
+Invalid arguments passed to anjay_execute_get_arg_value(): needs a buffer with at least 2 bytes size
+Could not lock mutex
+ch == EOF || (0 <= ch && ch <= UINT8_MAX)
+state_read_argument
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/dm/anjay_dm_handlers.c
+obj_def.type == ANJAY_DM_OBJECT_USER_PROVIDED
+obj_def.impl.user_provided
+*obj_def.impl.user_provided
+(*obj_def.impl.user_provided)->handlers.object_read_default_attrs
+Could not lock mutex
+(*obj_def.impl.user_provided)->handlers.object_write_default_attrs
+(*obj_def.impl.user_provided)->handlers.list_instances
+(*obj_def.impl.user_provided)->handlers.instance_reset
+(*obj_def.impl.user_provided)->handlers.instance_create
+(*obj_def.impl.user_provided)->handlers.instance_remove
+(*obj_def.impl.user_provided)->handlers.instance_read_default_attrs
+(*obj_def.impl.user_provided) ->handlers.instance_write_default_attrs
+(*obj_def.impl.user_provided)->handlers.list_resources
+(*obj_def.impl.user_provided)->handlers.resource_read
+(*obj_def.impl.user_provided)->handlers.resource_write
+(*obj_def.impl.user_provided)->handlers.resource_execute
+(*obj_def.impl.user_provided)->handlers.resource_reset
+(*obj_def.impl.user_provided)->handlers.list_resource_instances
+(*obj_def.impl.user_provided)->handlers.resource_read_attrs
+(*obj_def.impl.user_provided)->handlers.resource_write_attrs
+(*obj_def.impl.user_provided)->handlers.transaction_begin
+(*obj_def.impl.user_provided)->handlers.transaction_validate
+(*obj_def.impl.user_provided)->handlers.transaction_commit
+(*obj_def.impl.user_provided)->handlers.transaction_rollback
+(0) && (bool) "" "unknown handler type passed"
+current_module
+obj_ptr->impl.user_provided
+*obj_ptr->impl.user_provided
+obj_ptr->impl.unlocked
+*obj_ptr->impl.unlocked
+anjay_dm
+object_read_default_attrs /%u
+object_read_default_attrs failed with code %d (%s)
+object_read_default_attrs handler not set for object /%u
+object_write_default_attrs /%u
+object_write_default_attrs failed with code %d (%s)
+object_write_default_attrs handler not set for object /%u
+list_instances /%u
+list_instances failed with code %d (%s)
+list_instances handler not set for object /%u
+instance_reset /%u/%u
+instance_reset failed with code %d (%s)
+instance_reset handler not set for object /%u
+instance_create /%u/%u
+instance_create failed with code %d (%s)
+instance_create handler not set for object /%u
+instance_remove /%u/%u
+instance_remove failed with code %d (%s)
+instance_remove handler not set for object /%u
+instance_read_default_attrs /%u/%u
+instance_read_default_attrs failed with code %d (%s)
+instance_read_default_attrs handler not set for object /%u
+instance_write_default_attrs /%u/%u
+instance_write_default_attrs failed with code %d (%s)
+instance_write_default_attrs handler not set for object /%u
+list_resources /%u/%u
+list_resources failed with code %d (%s)
+list_resources handler not set for object /%u
+resource_read %s
+resource_read failed with code %d (%s)
+resource_read handler not set for object /%u
+resource_write %s
+resource_write failed with code %d (%s)
+resource_write handler not set for object /%u
+resource_execute /%u/%u/%u
+resource_execute failed with code %d (%s)
+resource_execute handler not set for object /%u
+resource_reset /%u/%u/%u
+resource_reset failed with code %d (%s)
+resource_reset handler not set for object /%u
+list_resource_instances /%u/%u/%u
+list_resource_instances handler not set for object /%u
+list_resource_instances failed with code %d (%s)
+resource_read_attrs /%u/%u/%u
+resource_read_attrs failed with code %d (%s)
+resource_read_attrs handler not set for object /%u
+resource_write_attrs /%u/%u/%u
+resource_write_attrs failed with code %d (%s)
+resource_write_attrs handler not set for object /%u
+begin_object_transaction /%u
+transaction_begin failed with code %d (%s)
+transaction_begin handler not set for object /%u
+validate_object /%u
+transaction_validate failed with code %d (%s)
+transaction_validate handler not set for object /%u
+commit_object /%u
+transaction_commit failed with code %d (%s)
+transaction_commit handler not set for object /%u
+rollback_object /%u
+transaction_rollback failed with code %d (%s)
+transaction_rollback handler not set for object /%u
+transaction_begin
+anjay->transaction_state.depth < MAX_SANE_TRANSACTION_DEPTH
+transaction_include_object /%u
+anjay->transaction_state.depth > 0
+out of memory
+cannot rollback transaction on /%u, object may be left in undefined state
+cannot commit transaction on /%u
+transaction_validate
+Validation failed for /%u
+transaction_finish
+unlocking_object_read_default_attrs
+unlocking_object_write_default_attrs
+unlocking_list_instances
+unlocking_instance_reset
+unlocking_instance_create
+unlocking_instance_remove
+unlocking_instance_read_default_attrs
+unlocking_instance_write_default_attrs
+unlocking_list_resources
+unlocking_resource_read
+unlocking_resource_write
+unlocking_resource_execute
+unlocking_resource_reset
+unlocking_list_resource_instances
+unlocking_resource_read_attrs
+unlocking_resource_write_attrs
+unlocking_transaction_begin
+unlocking_transaction_validate
+unlocking_transaction_commit
+unlocking_transaction_rollback
+has_handler_locked
+has_handler_unlocked
+get_next_handler_from_overlay
+get_handler
+_anjay_dm_transaction_begin
+_anjay_dm_transaction_include_object
+_anjay_dm_transaction_finish_without_validation
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/dm/anjay_dm_read.c
+anjay_dm
+%s when attempted to read /%u/%u/%u/%u, skipping
+/%u/%u/%u is not readable
+/%u/%u/%u is not present, skipping
+/%u/%u/%u is not readable, skipping
+%s when attempted to read /%u/%u/%u, skipping
+_anjay_uri_path_has(uri, ANJAY_ID_OID)
+path_info->uri.ids[ANJAY_ID_OID] == _anjay_dm_installed_object_oid(obj)
+_anjay_uri_path_leaf_is(&path_info->uri, ANJAY_ID_RIID)
+Read on Resource Instances is not supported in this version of Anjay
+request->action == ANJAY_ACTION_READ
+_anjay_uri_path_has(&request->uri, ANJAY_ID_OID)
+Observe %s
+_anjay_uri_path_leaf_is(path, ANJAY_ID_RID)
+unregistered Object ID: %u
+read_object
+_anjay_dm_read
+_anjay_dm_response_details_for_read
+_anjay_dm_read_or_observe
+avs_errno
+_anjay_dm_read_resource_into_ctx
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/dm/anjay_dm_write_attrs.c
+anjay_dm
+Attempted to set attributes that fail the 'epmin < epmax' precondition
+Attempted to set negative step attribute
+Attempted to set attributes that fail the 'lt + 2*st < gt' precondition
+Write Attributes %s
+_anjay_uri_path_has(&request->uri, ANJAY_ID_OID)
+Resource Instance Attributes not supported in this version of Anjay
+_anjay_dm_write_attributes
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/anjay_modules/anjay_dm_utils.h
+(0) && (bool) "" "Unexpected request action"
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/dm/anjay_dm_write.c
+_anjay_uri_path_has(path, ANJAY_ID_RID)
+anjay_dm
+cannot write %s because the path does not point insude a multiple resource
+_anjay_uri_path_has(&path, ANJAY_ID_RID)
+%s is a multiple resource, but the payload attempted to treat it as single
+path.ids[ANJAY_ID_OID] == _anjay_dm_installed_object_oid(obj)
+Write %s
+Write on Resource Instances is not supported in this version of Anjay
+write_single_resource
+write_multiple_resource
+write_resource_impl
+_anjay_dm_write_type_from_request_action
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/dm/anjay_modules.c
+module %p is already installed
+out of memory
+attempting to uninstall a non-installed module
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/dm/anjay_query.c
+ssid != ANJAY_SSID_BOOTSTRAP
+security_iid != ANJAY_ID_INVALID
+could not get Short Server ID from %s
+_anjay_dm_ssid_exists
+_anjay_ssid_from_security_iid
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/downloader/anjay_downloader.c
+_anjay_downloader_get_anjay(dl) == anjay
+_anjay_downloader_get_anjay(dl)->sched
+downloader
+invalid anjay pointer passed
+(*ctx)->common.vtable
+Could not lock mutex
+aborting download id = %u: finished successfully
+aborting download id = %u: failed, error: %s
+aborting download id = %u: invalid response, status code: %d
+aborting download id = %u: expired
+aborting download id = %u: aborted
+ctx->common.vtable
+&_anjay_downloader_get_anjay(dl)->downloader == dl
+unrecognized protocol in URL: %s
+out_handle
+constructor
+transport currently offline for URL: %s
+dl_ctx->common.id != INVALID_DOWNLOAD_ID
+download scheduled: %s
+avs_is_err(err)
+download id = %u not found
+download id = %u not found (expired?)
+reconnect_job
+_anjay_downloader_init
+cleanup_transfer
+_anjay_downloader_call_on_next_block
+avs_errno
+call_on_download_finished
+_anjay_downloader_abort_transfer
+suspend_transfer
+reconnect_transfer
+_anjay_downloader_cleanup
+get_ctx_socket
+get_ctx_socket_transport
+find_ctx_ptr_by_socket
+_anjay_downloader_handle_packet
+_anjay_downloader_download
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/io/anjay_dynamic.c
+Could not find an appropriate output context for format: %u
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/io/anjay_senml_like_out.c
+(result == 0) && (bool) "" "buffer too small"
+(!_anjay_uri_path_outside_base(uri, &ctx->base_path)) && (bool) "" "Attempted to set path outside the context's base path. " "This is a bug in resource reading logic."
+senml_like_out
+Path already set
+Path not set
+unsupported content format
+created SenML-like context
+failed to create SenML-like encoder
+maybe_get_basename
+maybe_get_name
+senml_set_path
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/io/anjay_text.c
+ctx->num_bytes_cached == 0
+buf_size
+has_valid_padding
+text_get_some_bytes
+text_get_string
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/io/anjay_tlv_in.c
+buf_size
+(0) && (bool) "" "Invalid TLV ID type"
+child entry is longer than its parent
+parsed path %s would be outside of uri-path %s
+input context is destroyed but not fully processed yet
+tlv_get_string
+convert_id_type
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/io/anjay_tlv_out.c
+length <= 4
+(0) && (bool) "" "Invalid root path"
+(current_level(ctx)->next_id != (65535)) && (bool) "" "Attempted to serialize value without setting path. This is a " "bug in resource reading logic."
+(0) && (bool) "" "Attempted to serialize value with path set to neither " "Resource nor Resource Instance. This is a bug in " "resource reading logic."
+ctx->vtable == &STREAMED_BYTES_VTABLE
+ctx->vtable == &BUFFERED_BYTES_VTABLE
+(0) && (bool) "" "Already at root level of TLV structure"
+(_anjay_uri_path_leaf_is(&ctx->root_path, ANJAY_ID_IID)) && (bool) "" "Called tlv_start_aggregate in inappropriate state"
+current_level(ctx)->next_id != ANJAY_ID_INVALID
+(0) && (bool) "" "tlv_start_aggregate called in invalid state"
+(0) && (bool) "" "Invalid target path"
+_anjay_uri_path_has(path, ANJAY_ID_IID)
+_anjay_uri_path_has(path, ANJAY_ID_RID)
+_anjay_uri_path_has(path, ANJAY_ID_RIID)
+(0) && (bool) "" "Invalid level"
+(!_anjay_uri_path_outside_base(path, &ctx->root_path)) && (bool) "" "Attempted to set path outside the context's root path. " "This is a bug in resource reading logic."
+ctx->level == AVS_MAX(new_level, lowest_level)
+(size_t) (ctx->level + 1) <= AVS_ARRAY_SIZE(ctx->levels)
+!current_level(ctx)->entries
+_anjay_uri_path_has(uri, ANJAY_ID_OID)
+(0) && (bool) "" "Invalid URI"
+write_shortened_u32
+get_root_level
+get_current_level_value_type
+streamed_bytes_append
+buffered_bytes_append
+tlv_slave_finish
+tlv_start_aggregate
+tlv_set_path
+get_leaf_level
+get_id_from_path
+tlv_slave_start
+_anjay_output_tlv_create
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/observe/../coap/../anjay_utils_private.h
+(0) && (bool) "" "avs_hexlify() failed"
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/observe/anjay_observe_core.c
+connection_ref_cmp ret[%d]
+!observe->connection_entries
+_anjay_observe_init stored_notification_limit[%d]
+value_ptr && *value_ptr
+out of memory
+entry == new_entry
+observed_path
+(0) && (bool) "" "Observation not attached to observed paths"
+!(*conn->observations)->last_sent
+!AVS_RBTREE_FIRST(conn->observed_paths)
+!AVS_RBTREE_FIRST((*conn_ptr)->observed_paths)
+!(*conn_ptr)->unsent
+!(*conn_ptr)->unsent_last
+observation->last_sent
+Notify for token %s already scheduled earlier than requested %ld.%09lds
+Notify for token %s scheduled: %ld.%09lds
+trigger_observe
+Could not schedule automatic notification trigger, result: %d
+values[i]
+%u/%u queued notifications
+num_queued <= observe->notify_queue_limit
+conn_state->unsent
+!conn_state->unsent
+(oldest) && (bool) "" "function is not supposed to be called when there are " "no queued notifications"
+(0) && (bool) "" "is_observe_queue_full broken"
+observe->notify_queue_limit != 0
+invalid error code: %d
+invalid pmax (%i); expected pmax > 0 && pmax >= pmin (%i)
+Could not get observe attributes, result: %d
+!observation->last_sent
+!observation->last_unsent
+paths->count == 1
+!avs_coap_exchange_id_valid((*conn_ptr)->notify_exchange_id)
+!(*conn_ptr)->serialization_state.membuf_stream
+!(*conn_ptr)->serialization_state.out_ctx
+!AVS_RBTREE_FIND(conn_state->observations, observation)
+out_batch && !*out_batch
+Server requested unexpected chunk of payload (expected offset %u, got %u)
+request->action == ANJAY_ACTION_READ
+out_batches && !*out_batches
+paths->type != PATHS_POINTER_LIST || paths->count == AVS_LIST_SIZE(paths->paths)
+(0) && (bool) "" "The switch above shall be exhaustive"
+AVS_LIST_SIZE(observation->last_sent) <= 1
+network communication error while sending Notify
+Could not lock mutex
+skipping notification flush scheduling: flush already scheduled
+flush_send_queue_job
+Could not schedule notification flush
+Could not send Observe notification: %s
+!conn->serialization_state.membuf_stream
+!conn->serialization_state.out_ctx
+!is_error_value(conn->unsent)
+conn->unsent
+observation->action != ANJAY_ACTION_READ || observation->paths_count == 1
+!avs_coap_exchange_id_valid(conn->notify_exchange_id)
+Cancelling notifications flush task for server SSID %u, connection type %d
+Cancelling notification attempt for server SSID %u, connection type %d
+scheduling notifications flush for server SSID %u, connection type %d
+skipping notification flush scheduling: no appropriate connection found
+Out of memory
+Could not get attributes of path %s
+Could not read path %s for notifying
+epmin == %d set for path %s caused holding from reading a new value
+args->conn_state
+args->observation
+!args->conn_state->flush_task
+it || !end
+oid != ANJAY_ID_INVALID
+iid != ANJAY_ID_INVALID
+rid != ANJAY_ID_INVALID
+_anjay_observe_init
+delete_value
+find_or_create_observe_path_entry
+remove_path_from_observed_paths
+_anjay_observe_cleanup_connection
+delete_connection_if_empty
+newest_value
+_anjay_token_to_string
+create_observation_value
+is_observe_queue_full
+detach_first_unsent_value
+drop_oldest_queued_notification
+insert_new_value
+insert_initial_value
+create_detached_observation
+observe_remove_entry
+put_entry_into_connection_state
+read_as_batch
+initial_response_details
+avs_errno
+read_observation_values
+_anjay_observe_handle
+value_sent
+initialize_serialization_state
+handle_notify_delivery
+flush_next_unsent
+_anjay_observe_interrupt
+trigger_observe
+notify_path_changed
+observe_for_each_in_bounds
+_anjay_observe_status
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_connections.h
+conn_type >= (anjay_connection_type_t) 0 && conn_type < ANJAY_CONNECTION_LIMIT_
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_server_connections.h
+ref.server
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_activate.c
+Bootstrap Server: %s. Disabling it indefinitely.
+Non-Bootstrap Server %u: %s.
+/tmp/lwm2m_socket_connection_send_failed
+Could not lock mutex
+not reachable
+avs_is_err(err)
+server_communication_error_job
+could not schedule server_communication_error_job
+ref.conn_type != ANJAY_CONNECTION_UNSET
+avs_coap_error_recovery_action(err) == AVS_COAP_ERR_RECOVERY_RECREATE_CONTEXT
+could not initialize sockets for SSID %u
+server->registration_info.queue_mode
+Server with SSID %u is suspended due to queue mode
+Server with SSID %u is offline
+avs_is_ok(err)
+!_anjay_server_active(server)
+AVS_LIST_SIZE(server) == 1
+insert_ptr
+((!*insert_ptr || (*insert_ptr)->ssid != server->ssid)) && (bool) "" "attempting to insert a duplicate of an already existing server " "entry"
+SSID %u is not a known server
+could not reschedule server reactivation
+out of memory
+no Server Object Instance with SSID = %u, disabling skipped
+disable_server_job
+could not schedule disable_server_job
+unable to deactivate server: %u
+server %u disabled for %s
+server %u disabled
+invalid SSID: %u
+disable_server_with_timeout_job
+could not schedule disable_server_with_timeout_job
+not an inactive server: SSID = %u
+1.0-style Server-Initiated Bootstrap is disabled and Client - Initiated Bootstrap is currently not allowed, not enabling Bootstrap Server
+_anjay_server_on_server_communication_error
+_anjay_server_on_server_communication_timeout
+_anjay_get_server_connection
+_anjay_connection_get
+avs_errno
+_anjay_server_on_fatal_coap_error
+_anjay_server_on_refreshed
+_anjay_server_sched_activate
+_anjay_servers_add
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/../coap/../anjay_utils_private.h
+lwm2m_dbg: AVS_NET_SOCKET_OPT_SESSION_RESUMED called.
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_connections.h
+conn_type >= (anjay_connection_type_t) 0 && conn_type < ANJAY_CONNECTION_LIMIT_
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_server_connections.h
+ref.server
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_connections.c
+out_psk_buffer && !*out_psk_buffer
+out of memory
+read %s failed
+connection
+connection->conn_socket_
+!connection->queue_mode_close_socket_clb
+socket already connected
+Could not close the socket (?!)
+resumed connection
+reconnected
+!_anjay_connection_internal_get_socket(connection)
+could not get %s security config for server /%u/%u
+/tmp/refresh_lwm2m_socket_connection
+SOCKET_CONNECTION_REFRESH...avs_net_socket_shutdown
+out_connection
+transport required for protocol %s is not supported or offline
+server /0/%u: transport change: %s -> %c (uri: %s://%s%s%s)
+_anjay_connection_init_psk_security
+avs_errno
+_anjay_server_connection_internal_bring_online
+_anjay_connection_get
+recreate_socket
+ensure_socket_connected
+_anjay_get_server_connection
+refresh_connection
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_connections.h
+conn_type >= (anjay_connection_type_t) 0 && conn_type < ANJAY_CONNECTION_LIMIT_
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_register.c
+ssid != ANJAY_SSID_ANY
+Could not lock mutex
+scheduling update for SSID %u after %s
+send_update_sched_job
+_anjay_server_active(server)
+could not schedule next Update for server %u
+could not schedule send_update_sched_job
+no active server with SSID = %u
+payload_offset <= length
+could not read lifetime for LwM2M server %u
+lifetime returned by LwM2M server %u is <= 0
+%s</%u/%u>
+</%u>;ver="%s"
+out of memory
+could not enumerate objects
+!avs_coap_exchange_id_valid(state->exchange_id)
+*out_path == NULL
+avs_is_err(coap_err)
+mapping CoAP error (%s) to network error
+opts->size == 0
+could not initialize request headers
+server responded with %s (expected %s)
+response->code != 0
+could not store Update location
+registration successful, location = %s
+could not register to server %u
+!*move_endpoint_path
+avs_is_err(err)
+failure while receiving Register response: %s
+!endpoint_path
+sending Register
+!avs_coap_exchange_id_valid( server->registration_exchange_state.exchange_id)
+could not send Register: %s
+Register sent
+server connection is not online
+Attempting to register with LwM2M version %s
+new_params->lifetime_s >= 0
+registration successfully updated
+Update rejected: %s (expected %s)
+/tmp/refresh_lwm2m_socket_connection
+timeout while updating registration for SSID==%u; trying to refresh-server-connection
+timeout while updating registration for SSID==%u; trying to re-register
+update rejected for SSID = %u; trying to refresh-server-connection
+update rejected for SSID = %u; needs re-registration
+/tmp/lwm2m_socket_connection_send_failed
+could not send registration update[retry_refresh_connection] for SSID==%u: %d
+could not send registration update for SSID==%u: %d
+failure while receiving Update response: %s
+could not setup update request
+sending Update
+could not send Update: %s
+Update sent
+server->ssid != ANJAY_SSID_BOOTSTRAP
+No valid connection to Registration Interface for SSID = %u
+(coap) && (bool) "" "Register is not supposed to be called on a connection " "that has no CoAP context"
+Could not perform De-registration
+De-register sent
+server connection is not online, skipping
+could not send De-Register request: %s
+send_update_sched_job
+_anjay_connection_get
+schedule_next_update
+_anjay_server_primary_connection_valid
+dm_payload_writer
+query_dm
+_anjay_registration_exchange_state_cleanup
+get_endpoint_path
+map_coap_error
+setup_register_request_options
+check_register_response
+handle_register_response
+receive_register_response
+move_assign_update_params
+send_register
+avs_errno
+setup_update_request_options
+check_update_response
+receive_update_response
+send_update
+_anjay_server_ensure_valid_registration
+deregister
+_anjay_server_deregister
+_anjay_server_update_registration_info
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_connections.h
+conn_type >= (anjay_connection_type_t) 0 && conn_type < ANJAY_CONNECTION_LIMIT_
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_server_connections.h
+ref.server
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_reload.c
+Could not lock mutex
+Bootstrap is in progress, not refreshing server SSID %u
+reloading server SSID %u
+reloading active server SSID %u
+creating server SSID %u
+could not reload server SSID %u
+reloading servers
+reloading servers failed, re-scheduling job
+servers reloaded
+Security object not present, no servers to create
+%lu servers reloaded
+reload_servers_sched_job
+could not schedule reload_servers_job
+refresh_server_job
+could not schedule refresh_server_job
+(0) && (bool) "" "Invalid transport"
+_anjay_socket_transport_included
+_anjay_get_server_connection
+_anjay_connection_get
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/anjay_modules/anjay_dm_utils.h
+buffer && buffer_size > 0
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_security_generic.c
+!*out_uri
+out_transport_info
+!*out_transport_info
+could not read LwM2M server URI from %s
+could not parse LwM2M server URI: %s
+could not read LwM2M server security mode from %s
+unsupported security mode: %s
+invalid security mode: %s
+value already returned
+out of memory
+ctx->out_array
+tried to write too many bytes
+out_array
+!*out_array
+out_element_count
+read %s failed
+element_count == 1
+(((uintptr_t) buffer) % __builtin_offsetof (struct { char pad; avs_net_socket_dane_tlsa_record_t value; }, value) == 0) && (bool) "" "avs_stream_membuf_take_ownership returned misaligned " "pointer"
+unsupported security mode: %d
+server /%u/%u: security mode = %d
+_anjay_connection_security_generic_get_uri
+_anjay_dm_read_resource_string
+read_security_info_ret_bytes_append
+read_security_info
+avs_errno
+init_cert_security
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/anjay_modules/anjay_dm_utils.h
+buffer && buffer_size > 0
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_connections.h
+conn_type >= (anjay_connection_type_t) 0 && conn_type < ANJAY_CONNECTION_LIMIT_
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_server_connections.h
+ref.server
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_server_connections.c
+could not find Server instance for LwM2M server %u
+could not read binding mode for LwM2M server %u
+invalid binding mode "%s" for LwM2M server %u
+transport_info
+support for protocol %s is not enabled
+protocol %s is not present in Binding resource
+!state.selected_uri
+could not find Security Instance matching Server %u configuration
+refreshing SSID %u
+/tmp/refresh_lwm2m_socket_connection
+/tmp/lwm2m_socket_connection_send_time
+/tmp/lwm2m_socket_connection_recv_time
+Socket is idle delta(%lu), recreate socket [LWM2M_SOCKET_CONNECTION_REFRESH].
+could not find server Security IID
+connection
+_anjay_connection_internal_get_socket(connection)
+_anjay_connection_is_online(connection)
+!_anjay_connection_is_online(connection)
+connection->transport != ANJAY_SOCKET_TRANSPORT_INVALID
+_anjay_socket_transport_supported(ref.server->anjay, connection->transport)
+transport is entering offline mode, not bringing the socket online
+Could not lock mutex
+queue_mode_close_socket
+could not schedule queue mode operations
+Server has no valid registration, not flushing notifications
+_anjay_dm_read_resource_string
+rank_uri
+select_security_instance_clb
+select_security_instance
+_anjay_active_server_refresh
+avs_errno
+_anjay_get_server_connection
+_anjay_connection_get
+_anjay_connection_transport
+_anjay_connection_mark_stable
+_anjay_connection_bring_online
+_anjay_connection_schedule_queue_mode_close
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_connections.h
+conn_type >= (anjay_connection_type_t) 0 && conn_type < ANJAY_CONNECTION_LIMIT_
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_server_connections.h
+ref.server
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_servers_internal.c
+clear_server SSID %u
+cleaning up %lu servers
+!*tail_ptr
+Out of memory while building socket list
+Could not lock mutex
+no server with SSID %u
+servers_foreach_ssid: break on %u
+servers_foreach_ssid handler failed for %u (%d)
+_anjay_connection_get_coap
+_anjay_get_server_connection
+_anjay_connection_get
+add_socket_onto_list
+_anjay_collect_socket_entries
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/modules/access_control/anjay_access_control_persistence.c
+access_control
+out of memory
+Could not lock mutex
+Access Control not installed in this Anjay object
+Access Control state persisted
+Cannot restore Access Control state while the object is in transaction
+magic constant not found
+header magic constant mismatch
+Access Control state restored
+avs_errno
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/anjay_modules/dm/anjay_modules.h
+obj_ptr->type == ANJAY_DM_OBJECT_UNLOCKED
+obj_ptr->impl.unlocked
+*obj_ptr->impl.unlocked
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/modules/access_control/anjay_mod_access_control.c
+!dest->instances
+(*instances_to_move)->iid == ANJAY_ID_INVALID
+proposed_iid == (*insert_ptr)->iid
+access_control
+no free IIDs left
+!AVS_LIST_NEXT(instance)
+element with IID == %u already exists
+cannot set ACL: Server with SSID==%u does not exist
+out of memory
+cannot set ACL: object instance /%u/%u does not exist
+cannot set ACL: Access Control instance for /%u/%u does not exist and it could not be created
+error while calling anjay_notify_instances_changed()
+AVS_LIST_SIZE(dm_changes) == 1
+AVS_LIST_SIZE(dm_changes->instance_set_changes.known_added_iids) == 1
+!dm_changes->resources_changed
+Could not lock mutex
+Access Control not installed in this Anjay object
+cannot set ACL: SSID = %u is a reserved value
+cannot set ACL: invalid permission mask
+cannot set ACL: Create permission makes no sense for Object Instances
+cannot set ACL: only Create permission makes sense for creation instance
+_anjay_dm_installed_object_get_unlocked
+_anjay_access_control_clone_state
+add_instances_without_iids
+_anjay_access_control_add_instance
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/modules/attr_storage/anjay_attr_storage_persistence.c
+Could not lock mutex
+anjay_attr_storage
+Attribute Storage is not installed on this Anjay object
+Attribute Storage state persisted
+Attribute Storage state restored
+avs_errno
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/modules/attr_storage/anjay_mod_attr_storage.c
+anjay_attr_storage
+ANJAY object must not be NULL
+Could not lock mutex
+out of memory
+Attribute Storage is not installed
+(0) && (bool) "" "Invalid object for Short Server ID query"
+Attribute Storage module is not installed
+iid != ANJAY_ID_INVALID
+iid != ANJAY_ID_INVALID && rid != ANJAY_ID_INVALID
+!*args->ssid_ptr
+*args->ssid_ptr
+element_size == sizeof(uint16_t)
+!obj_entry_ptr || *obj_entry_ptr
+as_object_ptr
+attributes cannot be NULL
+SSID %u does not exist
+/%u does not exist
+object_write_default_attrs
+object_read_default_attrs
+cannot set %s level attribs: %s or %s is implemented by the backend object
+instance_write_default_attrs
+instance_read_default_attrs
+instance
+instance /%u/%u does not exist or an error occurred during querying its presence
+resource_write_attrs
+resource_read_attrs
+resource
+resource /%u/%u/%udoes not exist or an error occurred during querying its presence
+as_delete
+ssid_rid
+write_instance_attrs
+write_resource_attrs
+remove_absent_instances_and_enumerate_ssids_clb
+compare_u16ids
+remove_absent_instances
+remove_absent_resources
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/anjay_modules/dm/anjay_modules.h
+!obj_ptr->impl.unlocked
+obj_ptr->type == ANJAY_DM_OBJECT_UNLOCKED
+obj_ptr->impl.unlocked
+*obj_ptr->impl.unlocked
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/modules/fw_update/anjay_fw_update.c
+fw_update
+Firmware Update Result change: %d -> %d
+Firmware Update State change: %d -> %d
+user->state change: %d -> %d
+user->state == UPDATE_STATE_IDLE
+Could not lock mutex
+user->state == UPDATE_STATE_DOWNLOADING
+Update State %d != %d (DOWNLOADED); aborting
+fw->user_state.state == UPDATE_STATE_DOWNLOADING
+fw->user_state.state == UPDATE_STATE_IDLE || fw->user_state.state == UPDATE_STATE_DOWNLOADING
+Firmware Object state reset
+riid < AVS_ARRAY_SIZE(SUPPORTED_PROTOCOLS)
+(0) && (bool) "" "Read called on unknown or non-readable Firmware " "Update resource"
+could not write firmware
+Could not resume firmware download (result = %d), retrying from the beginning
+Could not retry firmware download
+download aborted: result = %d
+!fw->download_handle
+download started: %s
+anjay_get_bytes() failed
+write finished, %lu B written
+fw->state != UPDATE_STATE_DOWNLOADING
+(fw->download_handle) && (bool) "" "download_handle is NULL - another Write handler called " "during a PUSH-mode download?!"
+riid == ANJAY_ID_INVALID
+cannot set Package resource while updating
+cannot set Package URI resource while updating
+unsupported download protocol required for uri %s
+schedule_download_in_background failed: %d
+(0) && (bool) "" "Attempted to list instances in a single-instance resource"
+user_state_perform_upgrade() failed: %d
+rid == FW_RES_UPDATE
+Firmware Update requested, but firmware not yet downloaded (state = %d)
+perform_upgrade
+Could not copy the persisted Package URI
+ETag not set, need to start from the beginning
+Could not copy the persisted Package URI, not resuming firmware download
+Could not resume firmware download
+Invalid initial_state->result
+anjay_locked
+out of memory
+(0) && (bool) "" "invalid enum value"
+Firmware Update object not installed
+Firmware Update Result change to %d not allowed in State %d
+user_state_ensure_stream_open
+user_state_stream_write
+finish_user_stream
+get_security_config
+_anjay_dm_installed_object_get_unlocked
+avs_errno
+schedule_download
+write_firmware
+cancel_existing_download_if_in_progress
+fw_write
+fw_resource_instances
+fw_execute
+anjay_fw_update_install
+_anjay_dm_installed_object_init_unlocked
+is_result_change_allowed
+anjay_fw_update_set_result
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/anjay_modules/dm/anjay_modules.h
+!obj_ptr->impl.unlocked
+obj_ptr->type == ANJAY_DM_OBJECT_UNLOCKED
+obj_ptr->impl.unlocked
+*obj_ptr->impl.unlocked
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/modules/security/anjay_mod_security.c
+security
+out of memory
+Added instance %u (bootstrap, URI: %s)
+Added instance %u (SSID: %u, URI: %s)
+riid == ANJAY_ID_INVALID
+(0) && (bool) "" "invalid value of sec_key_or_data_type_t"
+(0) && (bool) "" "Read handler called on unknown Security resource"
+inst->public_cert_or_psk_identity.type == SEC_KEY_AS_DATA
+inst->private_cert_or_psk_key.type == SEC_KEY_AS_DATA
+(0) && (bool) "" "Write handler called on unknown Security resource"
+iid != ANJAY_ID_INVALID
+*unlocked_def == &SECURITY
+anjay_locked
+Could not lock mutex
+Security object is not registered
+Could not schedule socket reload
+del_instance
+sec_list_resources
+sec_read
+sec_write
+sec_instance_create
+sec_instance_reset
+_anjay_sec_get
+_anjay_dm_installed_object_get_unlocked
+anjay_security_object_add_instance
+anjay_security_object_purge
+anjay_security_object_is_modified
+anjay_security_object_install
+_anjay_dm_installed_object_init_unlocked
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/modules/security/anjay_security_persistence.c
+value->type == SEC_KEY_AS_DATA
+anjay_locked
+Could not lock mutex
+security_persistence
+Security Object state persisted
+Could not read Security Object header
+Header magic constant mismatch
+Security Object state restored
+handle_public_key
+handle_private_key
+anjay_security_object_persist
+avs_errno
+anjay_security_object_restore
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/modules/security/anjay_security_transaction.c
+element_size == sizeof(ssid_transport_pair_t)
+(0) && (bool) "" "invalid value of sec_key_or_data_type_t"
+/%u/%u: 
+missing mandatory 'Server URI' resource value
+security
+missing mandatory 'Bootstrap Server' resource value
+missing mandatory 'Security Mode' resource value
+missing mandatory 'Short Server ID' resource value
+Security mode %d not supported
+Incorrect protocol in Server Uri '%s' due to security configuration (coap:// instead of coaps:// or vice versa?)
+security credentials not fully configured
+SMS Security mode %d not supported
+SMS security credentials not fully configured
+!repr->saved_instances
+!repr->in_transaction
+repr->in_transaction
+ssid_transport_pair_cmp
+sec_key_or_data_valid
+_anjay_sec_transaction_begin_impl
+_anjay_sec_transaction_commit_impl
+_anjay_sec_transaction_validate_impl
+_anjay_sec_transaction_rollback_impl
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/modules/security/anjay_security_utils.c
+security
+Raw Public Key mode not supported
+Invalid Security Mode
+Secure Packet mode not supported
+Invalid SMS Security Mode
+(0) && (bool) "" "invalid value of sec_key_or_data_type_t"
+value->type == SEC_KEY_AS_DATA
+src->server_uri
+Cannot clone Server Uri resource
+Cannot clone Pk Or Identity resource
+Cannot clone Secret Key resource
+Cannot clone Server Public Key resource
+Cannot clone SMS Binding Key Parameters resource
+Cannot clone SMS Binding Secret Key(s) resource
+Cannot clone Server SMS Number resource
+Cannot clone Security Object Instances
+_anjay_sec_key_or_data_cleanup
+sec_key_or_data_clone
+_anjay_sec_clone_instance
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/anjay_modules/dm/anjay_modules.h
+!obj_ptr->impl.unlocked
+obj_ptr->type == ANJAY_DM_OBJECT_UNLOCKED
+obj_ptr->impl.unlocked
+*obj_ptr->impl.unlocked
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/modules/server/anjay_mod_server.c
+(*ptr)->iid != new_instance->iid
+out of memory
+Unsupported binding mode: %s
+Added instance %u (SSID: %u)
+iid != ANJAY_ID_INVALID
+riid == ANJAY_ID_INVALID
+(0) && (bool) "" "Read called on unknown or non-readable Server resource"
+(0) && (bool) "" "Write called on unknown or non-read/writable Server resource"
+(0) && (bool) "" "Execute called on unknown or non-executable Server resource"
+*unlocked_def == &SERVER
+anjay_locked
+Could not lock mutex
+Server object is not registered
+Could not schedule socket reload
+insert_created_instance
+del_instance
+serv_instance_create
+serv_instance_reset
+serv_list_resources
+serv_read
+serv_write
+serv_execute
+_anjay_serv_get
+_anjay_dm_installed_object_get_unlocked
+anjay_server_object_add_instance
+anjay_server_object_purge
+anjay_server_get_ssids
+anjay_server_object_is_modified
+anjay_server_object_install
+_anjay_dm_installed_object_init_unlocked
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/modules/server/anjay_server_persistence.c
+avs_persistence_direction(ctx) == AVS_PERSISTENCE_RESTORE
+server_persistence
+Invalid binding mode: %u
+Could not restore binding: %s
+(avs_persistence_direction(ctx) != AVS_PERSISTENCE_STORE || *version == PERSISTENCE_VERSION_3) && (bool) "" "persistence storing is impossible in legacy mode"
+(0) && (bool) "" "invalid enum value"
+anjay_locked
+Could not lock mutex
+Server Object state persisted
+Could not read Server Object header
+Header magic constant mismatch
+Server Object state restored
+handle_v0_v1_sized_fields
+avs_errno
+restore_v0_binding_mode
+server_instance_persistence_handler
+anjay_server_object_persist
+anjay_server_object_restore
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/modules/server/anjay_server_transaction.c
+size == sizeof(anjay_ssid_t)
+/%u/%u: 
+missing mandatory 'Short Server ID' resource value
+invalid 'Short Server ID' resource value: %u
+missing mandatory 'Binding' resource value
+missing mandatory 'Lifetime' resource value
+missing mandatory 'Notification Storing when disabled or offline' resource value
+Lifetime value is non-positive: %d
+Default Max Period is non-positive
+Default Min Period is negative
+Disable Timeout is negative
+Incorrect binding mode %s
+!repr->saved_instances
+!repr->in_transaction
+repr->in_transaction
+ssid_cmp
+_anjay_serv_transaction_begin_impl
+_anjay_serv_transaction_commit_impl
+_anjay_serv_transaction_validate_impl
+_anjay_serv_transaction_rollback_impl
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/anjay_access_utils.c
+cannot read %s = %s as uint16: value overflow
+args->ac_iid == ANJAY_ID_INVALID
+failed to read ACL!
+info->iid != ANJAY_ID_INVALID || info->action == ANJAY_ACTION_CREATE
+(0) && (bool) "" "invalid enum value"
+out of memory
+!**endptr_ptr
+!*out_acl
+AVS_LIST_SIZE(acl) > 0
+!*args->orphaned_instance_list_append_ptr
+cannot remove assigned Object Instance /%u/%u
+find_ac_instance_clb
+_anjay_instance_action_allowed
+read_acl_clb
+read_acl
+elect_instance_owner
+process_orphaned_instances_clb
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/anjay_bootstrap_core.c
+Ignoring error during BOOTSTRAP WRITE to %s: %d
+Instance Create handler for object %u failed
+Bootstrap Write %s
+Object not found: %u
+Multiple Security Object instances configured for the Bootstrap Server Account
+delete_instance: cannot delete /%d/%d: %d
+Bootstrap Delete %s
+/tmp/refresh_lwm2m_socket_connection
+lwm2m_dbg: bootstrap_delete, LWM2M_SOCKET_CONNECTION_REFRESH, created
+Could not lock mutex
+Could not find Bootstrap Server Account to purge
+Could not purge Bootstrap Server Account %u
+purge_bootstrap
+Could not schedule purge of Bootstrap Server Account %u
+Bootstrap configuration is invalid, rejecting
+Bootstrap Sequence finished
+Bootstrap configuration could not be committed, rejecting
+Could not post-process data model after bootstrap
+Bootstrap Finish failed, re-entering bootstrap phase
+could not create input context
+input ctx cleanup failed
+Bootstrap Finish not received in time - aborting
+not reachable
+timeout_bootstrap_finish
+could not schedule finish timeout
+Invalid action for Bootstrap Interface
+connection.server || result == AVS_COAP_CLIENT_REQUEST_CANCEL
+connection.conn_type != ANJAY_CONNECTION_UNSET
+server responded with %s (expected %s)
+Client-initiated Bootstrap successfully started
+could not request bootstrap: timeout
+could not send Request Bootstrap: %s
+could not initialize request headers
+!avs_coap_exchange_id_valid( anjay->bootstrap.outgoing_request_exchange_id)
+Scheduling bootstrap in %s seconds
+request_bootstrap_job
+Could not schedule Client Initiated Bootstrap
+sending Client Initiated Bootstrap
+Bootstrap server connection not available to send Request Bootstrap through
+Bootstrap already started on the same connection
+bootstrap server connection is not online
+could not find server Security IID of the Bootstrap Server
+Client Hold Off Time not set or invalid, not scheduling Client Initiated Bootstrap
+scheduling Client Initiated Bootstrap
+(0) && (bool) "" "invalid action"
+avs_errno
+bootstrap_request_response_handler
+send_request_bootstrap
+_anjay_perform_bootstrap_action_if_appropriate
+_anjay_bootstrap_cleanup
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/anjay_raw_buffer.c
+!dst->data && !dst->size
+_anjay_raw_buffer_alloc
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/include_public/avsystem/coap/option.h
+etag->size <= 8
+(0) && (bool) "" "avs_hexlify() failed"
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/downloader/../coap/../anjay_utils_private.h
+lwm2m_dbg: AVS_NET_SOCKET_OPT_SESSION_RESUMED called.
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/downloader/anjay_coap.c
+Could not lock mutex
+cleanup_coap_context
+downloader
+no ETag option
+invalid ETag option size
+ETag: %s
+!avs_coap_exchange_id_valid(dl_ctx->exchange_id)
+dl_ctx->exchange_id.value == id.value
+server responded with %s (expected %s)
+could not parse CoAP response
+remote resource expired, aborting download
+dl_ctx->bytes_downloaded == response->payload_offset
+transfer id = %u finished
+transfer id = %u: %lu B downloaded
+download failed: %s
+download request canceled
+download id = %u expired
+download id = %u cannot start: out of memory
+!avs_coap_exchange_id_valid(ctx->exchange_id)
+anjay_coap_download_ctx_t is compatible only with ANJAY_SOCKET_TRANSPORT_UDP and ANJAY_SOCKET_TRANSPORT_TCP (if they are compiled-in)
+could not create CoAP context
+could not assign socket to CoAP context
+suspending download %u
+ctx->coap
+start_download_job
+could not schedule resumption for download id = %u
+scheduling download %u resumption
+could not reconnect socket for download id = %u
+!*out_dl_ctx
+out of memory
+invalid URL: %s
+ETag too long
+invalid download config: handlers not set up
+URI scheme %s uses a non-IP transport, which is not supported for downloads
+transport_info->security != ANJAY_TRANSPORT_SECURITY_UNDEFINED
+could not create CoAP socket
+could not configure DANE TLSA record
+could not connect CoAP socket
+avs_is_err(err)
+invalid tx_params: %s
+could not schedule download job
+avs_coap_etag_hex
+abort_download_transfer
+handle_coap_response
+avs_errno
+start_download_job
+reset_coap_ctx
+suspend_coap_transfer
+_anjay_downloader_coap_ctx_new
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/io/anjay_base64_out.c
+encoded_size <= sizeof(encoded)
+new_bytes_written <= TEXT_CHUNK_SIZE
+bytes_to_store <= 2
+ctx->num_bytes_cached + bytes_to_store <= sizeof(ctx->bytes_cached)
+ctx->vtable == &BASE64_OUT_BYTES_VTABLE
+base64_ret_encode_and_write
+base64_ret_bytes_flush
+base64_ret_bytes_append
+_anjay_base64_ret_bytes_ctx_delete
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/io/anjay_batch_builder.c
+batch_data
+!REF_COUNT_MUTEX
+batch_builder
+Could not initialize thread safety for batches
+builder && *builder
+REF_COUNT_MUTEX
+Could not lock mutex
+batch && *batch
+(*batch)->ref_count
+tried to write too many bytes, expected %u, got %u
+bytes already being returned
+(!_anjay_uri_path_outside_base(path, &ctx->root_path)) && (bool) "" "Attempted to use batch builder context with resources outside " "the declared root path"
+Path already set
+Path not set
+not all declared bytes passed by user, buffer is filled with random bytes
+set_path() called without returning a value
+!obj || path_info->uri.ids[ANJAY_ID_OID] == _anjay_dm_installed_object_oid(obj)
+serialization time precedes timestamp, time measurement may be corrupted
+(result <= 0) && (bool) "" "relative time must not be positive"
+timestamp and serialization time should be both absolute or both relative
+(0) && (bool) "" "invalid enum value"
+AVS_LIST_FIND_PTR(&batch->list, it) != NULL
+_anjay_uri_path_has(&entry->path, ANJAY_ID_RID)
+make_data_with_duplicated_string
+batch_data_add
+init_ref_count_mutex
+_anjay_batch_builder_compile
+_anjay_batch_acquire
+_anjay_batch_release
+set_path
+_anjay_dm_read_into_batch
+convert_to_senml_time
+serialize_batch_entry
+_anjay_batch_data_output_entry
+_anjay_batch_data_requires_hierarchical_format
+\u00%x%x
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/io/anjay_json_encoder.c
+ctx->level < JSON_MAX_CONTEXT_LEVEL
+ctx->level == level - 1
+ctx->level
+(0) && (bool) "" "invalid data type"
+basename == NULL
+no stream provided
+failed to allocate encoder context
+"bn":"%s",
+encode_key
+element_begin
+nested_context_push
+nested_context_pop
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/io/anjay_senml_like_encoder.c
+ctx && ctx->vtable
+ctx->vtable->senml_like_encode_int
+ctx->vtable->senml_like_encode_double
+ctx->vtable->senml_like_encode_bool
+ctx->vtable->senml_like_encode_string
+ctx->vtable->senml_like_encode_objlnk
+ctx->vtable->senml_like_element_begin
+ctx->vtable->senml_like_element_end
+ctx->vtable->senml_like_bytes_begin
+ctx->vtable->senml_like_bytes_append
+ctx->vtable->senml_like_bytes_end
+ctx && *ctx && (*ctx)->vtable
+(*ctx)->vtable->senml_like_encoder_cleanup
+_anjay_senml_like_encode_int
+_anjay_senml_like_encode_double
+_anjay_senml_like_encode_bool
+_anjay_senml_like_encode_string
+_anjay_senml_like_encode_objlnk
+_anjay_senml_like_element_begin
+_anjay_senml_like_element_end
+_anjay_senml_like_bytes_begin
+_anjay_senml_like_bytes_append
+_anjay_senml_like_bytes_end
+_anjay_senml_like_encoder_cleanup
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/core/servers/anjay_connection_ip.c
+prepare_connection
+(unknown)
+Protocol %s is not supported for IP transports
+avs_is_ok(err)
+could not create CoAP socket
+could not configure DANE TLSA record: %s
+Newly created socket[%p]
+could not connect to %s:%s
+could not assign socket to CoAP/UDP context
+bound to port %s
+could not store bound local port
+could not create CoAP/UDP context
+(0) && (bool) "" "Could not convert preferred port number"
+could not bind socket to port %s
+could not bind socket to last known address [%s]:%s
+prepare_connection
+avs_errno
+try_bind_to_static_preferred_port
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/anjay_modules/dm/anjay_modules.h
+!obj_ptr->impl.unlocked
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/src/modules/access_control/anjay_access_control_handlers.c
+access_control
+out of memory
+riid == ANJAY_ID_INVALID
+(0) && (bool) "" "Read called on unknown Access Control resource"
+(0) && (bool) "" "Write called on unknown Access Control resource"
+rid == ANJAY_DM_RID_ACCESS_CONTROL_ACL
+(0) && (bool) "" "Attempted to list instances in a single-instance resource"
+!ac->in_transaction
+(0) && (bool) "" "Internal error: cannot add tree element"
+access_control->in_transaction
+Validation failed for target: /%u/%d
+Validation failed: invalid SSID: %u
+ac->in_transaction
+anjay_locked
+Could not lock mutex
+Access Control object is not registered
+Could not schedule access control instance changes notifications
+ANJAY object must not be NULL
+ac_resource_read
+ac_resource_write
+ac_resource_reset
+ac_list_resource_instances
+ac_transaction_begin
+add_ssid
+ac_transaction_validate
+ac_transaction_commit
+ac_transaction_rollback
+anjay_access_control_purge
+anjay_access_control_is_modified
+anjay_access_control_install
+_anjay_dm_installed_object_init_unlocked
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/include_public/avsystem/coap/option.h
+etag->size <= 8
+(0) && (bool) "" "avs_hexlify() failed"
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/avs_coap_ctx.h
+error > 0 && error <= UINT16_MAX
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/options/avs_coap_options.h
+avs_is_ok(err)
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/async/avs_coap_async_client.c
+state != AVS_COAP_CLIENT_REQUEST_FAIL
+avs_is_err(error)
+exchange_ptr_ptr && *exchange_ptr_ptr && **exchange_ptr_ptr
+(((__typeof__(*( (&_avs_coap_get_base(ctx)->client_exchanges))) *) avs_list_find_ptr__((void **)( intptr_t) (&_avs_coap_get_base(ctx)->client_exchanges), (char *) (intptr_t) (**exchange_ptr_ptr))) != ((void *)0)) && (bool) "" "not a started client exchange"
+!*exchange_ptr_ptr || **exchange_ptr_ptr
+exchange->by_type.client.next_response_payload_offset > 0
+non-request code %s used in request header
+partial content
+<unknown>
+(0) && (bool) "" "malformed option got through packet validation"
+exchange
+exchange %s: %s
+expected_payload_offset >= response_payload_offset
+expected_payload_offset - response_payload_offset <= (response_msg ? response_msg->payload_size : 0)
+response
+(!((__typeof__(*( (&_avs_coap_get_base(ctx)->client_exchanges))) *) avs_list_find_ptr__((void **)( intptr_t) (&_avs_coap_get_base(ctx)->client_exchanges), (char *) (intptr_t) (exchange)))) && (bool) "" "exchange must be detached"
+(request_state.state != AVS_COAP_CLIENT_REQUEST_PARTIAL_CONTENT) && (bool) "" "cleanup_exchange must not be used for intermediate responses"
+request_block
+response_block
+request_block->size % response_block->size == 0
+BLOCK%d size renegotiation impossible: seq_num overflows (%u >= %u == 2^20), ignoring size renegotiation request
+BLOCK%d size renegotiated: %u -> %u; seq_num %u -> %u
+request_block->size < response_block->size
+invalid BLOCK%d size increase requested (%u -> %u), ignoring
+exchange_expects_continue_response(exchange)
+!response_block1 || response_block1->type == AVS_COAP_BLOCK1
+(opts_result == 0) && (bool) "" "BLOCK1 option invalid or missing in request"
+BLOCK1 sequence number (%u) exceeds maximum acceptable value (%u)
+(avs_is_ok(opts_err)) && (bool) "" "options buffer is supposed to have enough space for options"
+BLOCK1 option missing in %s response
+malformed BLOCK1 option in %s response
+response_block2
+response_block2->type == AVS_COAP_BLOCK2
+(opts_result >= 0) && (bool) "" "exchange is supposed to have up to a single BLOCK2 option"
+mismatched response block offset (expected %u, got %u)
+(block2.is_bert || block2.seq_num > response_block2->seq_num) && (bool) "" "bug: invalid seq_num"
+(err.category != 22627 || err.code != AVS_COAP_ERR_MESSAGE_TOO_BIG) && (bool) "" "exchange is supposed to have enough space for adding extra " "BLOCK option"
+Response ETag mismatch: previous: %s, current: %s
+(opts_result == 0 || opts_result == 1) && (bool) "" "library allowed for construction of a malformed request"
+expected %s, got %s
+expected %s, but BLOCK2 option not found
+malformed BLOCK2 option
+(**exchange_ptr_ptr)->by_type.client.handle_response == NULL
+exchange_ptr
+*exchange_ptr
+*insert_ptr == *exchange_ptr
+unexpected %s response
+result == 0 || result == AVS_COAP_OPTION_MISSING
+new_max_block_size != block2.size
+block2.type == AVS_COAP_BLOCK2
+!response || avs_coap_code_is_response(response->code)
+result == AVS_COAP_SEND_RESULT_CANCEL
+*exchange_ptr == exchange
+!exchange_ptr || *exchange_ptr
+avs_coap_code_is_request(code)
+ctx->vtable
+!exchange
+avs_coap_client_send_async_request: client_exchange_start failed.
+avs_coap_client_send_async_request: retry client_exchange_start.
+avs_coap_code_is_request(exchange->code)
+client_exchange_send_next_chunk
+_avs_coap_client_exchange_send_first_chunk
+initial_block2_option_size
+get_response_block_option
+call_exchange_response_handler
+call_partial_response_handler
+success_state
+cleanup_exchange
+handle_request_block_size_renegotiation
+_avs_coap_err
+update_exchange_for_next_request_block
+handle_continue_response
+failure_state
+update_request_for_next_response_block
+avs_coap_etag_hex
+handle_final_response
+client_exchange_send_all
+client_exchange_start
+handle_response
+handle_failure
+on_request_delivery_finished
+client_exchange_create
+_avs_coap_options_copy
+avs_coap_client_send_async_request
+avs_errno
+_avs_coap_client_exchange_cleanup
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/avs_coap_ctx.h
+error > 0 && error <= UINT16_MAX
+coap_base->in_buffer_in_use
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/options/avs_coap_options.h
+avs_is_ok(err)
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/async/avs_coap_async_server.c
+avs_coap_code_is_response(args->response_code)
+(0) && (bool) ""
+Non-success notification code (%s): cancelling observation
+(response == ((void *)0)) && (bool) "" "response to a response makes no sense; this " "should be detected by lower layers"
+send_result == AVS_COAP_SEND_RESULT_CANCEL
+(server->delivery_handler) && (bool) "" "send_result_handler called for an exchange without " "user-defined delivery handler; this should not happen"
+(avs_is_ok(fail_err)) && (bool) "" "Error code passed for successful send"
+(avs_is_err(fail_err)) && (bool) "" "No error code passed for failed send"
+(((__typeof__(*( (&_avs_coap_get_base(ctx)->server_exchanges))) *) avs_list_find_ptr__((void **)( intptr_t) (&_avs_coap_get_base(ctx)->server_exchanges), (char *) (intptr_t) (*exchange_ptr))) != ((void *)0)) && (bool) "" "not a started server exchange"
+exchange %s timed out
+server_ctx must not be NULL
+request_handler must not be NULL
+cannot accept a request twice
+non-response code %s used in response header
+%s responses are handled internally and not allowed in avs_coap_server_setup_async_response
+no request to respond to
+response must be provided
+invalid exchange ID: %s
+Observe option in response, but observe is not established
+(0) && (bool) "" "malformed option got through packet validation"
+%s is not a valid response code, sending %s instead
+%d does not represent a correct CoAP code, sending %s instead
+invalid Observe value: %u
+exchange->by_type.server.request_handler
+avs_coap_exchange_id_equal(coap_base->request_ctx.exchange_id, exchange->id)
+full request
+partial content
+exchange %s: request_handler, %s
+looking for CoAP code %s, got %s
+(0) && (bool) "" "options buffer too small"
+exchange %s canceled by user handler
+request %s finished, but response still not set up and request handler returned 0
+(exchange_ptr) && (bool) "" "exchange cancellation by user handler should be " "detected in validate_exchange_state"
+(!is_entire_request_finished(&coap_base->request_ctx.request)) && (bool) "" "finished request without response setup is supposed to be " "handled by validate_exchange_state"
+rejecting incoming %s: on_new_request NULL
+on_new_request suceeded, but %s not accepted
+on_new_request handler canceled exchange %s immediately after accepting it
+avs_coap_code_is_request(request->code)
+(request->payload_offset + request->payload_size <= request->total_payload_size) && (bool) "" "bug: payload_offset + payload_size > total_payload_size"
+server_data
+server_data->request_key_options.capacity >= _avs_coap_options_request_key_size(&request->options)
+ctx->vtable
+ctx->vtable->receive_message
+coap_base->request_ctx.request.payload_size > 0 || coap_base->request_ctx.request.payload_offset == coap_base->request_ctx.request.total_payload_size
+avs_coap_exchange_id_valid(coap_base->request_ctx.exchange_id)
+lwm2m_dbg: AVS_NET_SOCKET_OPT_RECV_TIMEOUT called.
+(!((__typeof__(*( (&coap_base->server_exchanges))) *) avs_list_find_ptr__((void **)( intptr_t) (&coap_base->server_exchanges), (char *) (intptr_t) (exchange)))) && (bool) "" "exchange must be detached"
+avs_coap_code_is_response(exchange->code)
+exchange %s: request_handler, cleanup
+%s is not a valid response code
+delivery_handler is mandatory for reliable notifications
+server_exchange_create
+_avs_coap_options_copy
+_avs_coap_err
+send_result_handler
+server_exchange_send_next_chunk
+avs_errno
+get_request_block_option
+_avs_coap_async_incoming_packet_call_request_handler
+update_exchange_block1_option
+update_exchange_block2_option
+continue_request_exchange
+send_response_to_request_chunk
+handle_request
+_avs_coap_async_incoming_packet_handle_single
+_avs_coap_async_incoming_packet_send_response
+_avs_coap_async_incoming_packet_simple_handle_single
+_avs_coap_in_buffer_release
+_avs_coap_server_exchange_cleanup
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/avs_coap_ctx.h
+error > 0 && error <= UINT16_MAX
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/async/avs_coap_exchange.c
+write_payload(offset = %u, size %u) = %d; read %u B
+unable to get request payload (result = %d)
+(*out_bytes_read <= bytes_to_read) && (bool) "" "write_payload handler reported writing more bytes than " "requested - buffer overflow could have happened"
+(!is_pointer_part_of_enqueued_exchange(ctx, cache)) && (bool) "" "Passed eof_cache may be destroyed if the user-defined handler " "calls avs_coap_exchange_cancel. Use stack-allocated copy " "instead."
+(!is_pointer_part_of_enqueued_exchange(ctx, buffer) && !is_pointer_part_of_enqueued_exchange( ctx, buffer + buffer_size)) && (bool) "" "Passed buffer may be destroyed if the user-defined handler " "calls avs_coap_exchange_cancel. The buffer must not be a part " "of the exchange object."
+exchange
+has_block
+CoAP context unable to handle payload size declared in BLOCK option (max size = %u; required = %u)
+lowering block size: %u -> %u
+lowering block size overflows seq_num (%lu > %lu)
+(0) && (bool) "" "bug: BERT option with size less than 1024"
+(0) && (bool) "" "cannot rewrite BLOCK option even though its size did " "not change"
+calculated payload size too small to handle even smallest possible BLOCK (size %u < %u)
+(avs_coap_exchange_id_valid(id)) && (bool) "" "Calculating payload size for an exchange that does not exist " "does not make sense. If you mean to calculate size for a " "message when no exchange object is available, use " "_avs_coap_get_next_outgoing_chunk_payload_size instead"
+(!exchange->eof_cache.empty) && (bool) "" "This function does not account for extra byte for EOF " "detection. When calculating the size for an initial payload " "block, use _avs_coap_get_first_outgoing_chunk_payload_size " "instead"
+!exchange->eof_cache.empty
+payload_size <= UINT16_MAX
+_avs_coap_is_valid_block_size((uint16_t) payload_size)
+payload_offset % payload_size == 0
+bytes_to_read < sizeof(payload_buf)
+call_payload_writer
+_avs_coap_err
+fetch_payload_with_cache
+lower_block_size
+_avs_coap_exchange_get_next_outgoing_chunk_payload_size
+avs_errno
+exchange_add_initial_block_option
+_avs_coap_exchange_send_next_chunk
+%u.%02u %s
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/avs_coap_code_utils.c
+(0) && (bool) "" "buffer too small for CoAP msg code string"
+Continue
+Bad Request
+Unauthorized
+Bad Option
+Forbidden
+Not Found
+Method Not Allowed
+Not Acceptable
+Request Entity Incomplete
+Precondition Failed
+Entity Too Large
+Unsupported Content Format
+Internal Server Error
+Not Implemented
+Bad Gateway
+Service Unavailable
+Gateway Timeout
+Proxying Not Supported
+avs_coap_code_to_string
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/avs_coap_ctx.h
+error > 0 && error <= UINT16_MAX
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/avs_coap_ctx.c
+double use of shared buffer. Note: calling handle_incoming_packet from within request handler is not supported
+(*ctx)->vtable
+(*ctx)->vtable->cleanup
+failed to generate token
+no error
+shared buffer in use
+socket already set
+payload writer failed
+message too big
+time invalid
+exchange canceled
+UDP Reset received
+malformed message
+malformed options list
+block size renegotiation invalid
+truncated message received
+block seq num overflow
+ETag mismatch
+unexpected Continue response
+more data required
+TCP Abort sent
+TCP Abort received
+TCP Release received
+TCP CSM options not received
+TCP malformed CSM options received
+TCP unknown CSM critical option received
+TCP connection closed by peer
+assert failed
+feature not implemented
+feature disabled
+OSCORE data too big
+OSCORE security context outdated
+OSCORE option missing in message received by OSCORE context
+PRNG failure
+unknown error, category %u, code %u
+unknown error
+unable to reschedule timeout job
+warning: invalid critical option in query %s: %u
+_avs_coap_in_buffer_acquire
+_avs_coap_err
+avs_coap_ctx_cleanup
+get_payload_chunk_size
+_avs_coap_get_max_block_size
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/options/avs_coap_iterator.h
+!_avs_coap_optit_end(optit)
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/options/avs_coap_iterator.c
+curr >= begin
+(src->opts == dst->opts) && (bool) "" "this function assumes both src and dst point to the same " "options object"
+(dst_offset + dst_sizeof == src_offset) && (bool) "" "this function assumes src immediately follows dst"
+(new_sizeof <= src_sizeof + dst_sizeof) && (bool) "" "moving the option makes its header grow too large to avoid " "overwriting its payload"
+new_delta < UINT16_MAX
+src_length < UINT16_MAX
+moved_sizeof > 0
+_avs_coap_optit_next
+_avs_coap_optit_current
+optit_offset
+move_option_back
+_avs_coap_optit_erase
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/options/avs_coap_option.h
+delta <= _AVS_COAP_EXT_RESERVED
+length <= _AVS_COAP_EXT_RESERVED
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/options/avs_coap_option.c
+base_value < _AVS_COAP_EXT_RESERVED
+out_size
+(_avs_coap_is_valid_block_size(*out_size)) && (bool) "" "bug in out_size calculations"
+delta <= UINT16_MAX + _AVS_COAP_EXT_U16_BASE
+length <= UINT16_MAX + _AVS_COAP_EXT_U16_BASE
+(const uint8_t *) opt < endptr
+not enough space to serialize option
+opt_number_delta <= UINT16_MAX
+opt_data_size <= UINT16_MAX
+header_bytes_written == opt_header_size
+header_bytes_written + opt_data_size <= buffer_size
+!memory_regions_overlap(buffer, header_bytes_written, opt_data, opt_data_size)
+BLOCK%d(seq_num %u, size %u, more %d)
+result >= 0
+get_ext_field_size
+_avs_coap_option_block_size
+_avs_coap_option_delta
+decode_ext_value
+_avs_coap_option_content_length
+_avs_coap_option_sizeof
+_avs_coap_option_serialize
+_avs_coap_option_set_short_delta
+_avs_coap_option_set_short_length
+_avs_coap_get_opt_header_size
+_avs_coap_option_block_string
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/options/avs_coap_iterator.h
+!_avs_coap_optit_end(optit)
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/options/../avs_coap_ctx.h
+error > 0 && error <= UINT16_MAX
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/options/avs_coap_options.c
+opt_number == AVS_COAP_OPTION_BLOCK1 || opt_number == AVS_COAP_OPTION_BLOCK2
+malformed BLOCK%d option
+%s is neither a request nor response
+(0) && (bool) "" "malformed options got through packet validation"
+unexpected size (%s) > capacity (%s)
+it.curr_opt >= opts->begin
+opts->size >= opt_offset
+malformed CoAP option at offset %u
+invalid CoAP option number (%u > 65535)
+(_avs_coap_option_is_critical( non_repeatable_critical_options[i].number)) && (bool) "" "every elective option can be repeated"
+duplicated non-repeatable critical CoAP option %u
+(out_actual_size) && (bool) "" "use _avs_coap_options_valid instead"
+size mismatch: declared %u, actual %u
+invalid ETag with length >%d bytes
+invalid block size: %d, expected power of 2 between 16 and 1024 (inclusive)
+unexpected size_exponent %d for option with BERT flag set, size should be 1024
+block sequence number must be less than 2^20
+new_opt_delta <= old_opt_delta
+old_hdr_size >= new_hdr_size
+delta <= UINT16_MAX
+new_delta <= _avs_coap_option_delta(opt)
+old_opt_end >= new_opt_end
+old_opt_end <= old_options_end
+opt_number >= insert_it.prev_opt_number
+opt_num_delta <= UINT16_MAX
+options buffer too small to fit another option
+new_next_delta <= UINT16_MAX
+insert_ptr >= (uint8_t *) opts->begin
+opts->size <= opts->capacity
+written == bytes_required
+invalid formatted option size: %d, expected integer in range [0; 65535]
+out of memory
+written == (int) size
+(value_size <= 8) && (bool) "" "uint options larger than 64 bits are not supported"
+out_value
+out_info
+option %d not found
+it->opts == opts
+buffer too small to hold entire option
+bytes_read <= sizeof(out_etag->bytes)
+(opt_num <= (65535)) && (bool) "" "malformed options"
+some option only exists in one set (%u/%u)
+different value of option %u
+excess %u option in `first` set
+excess %u option in `second` set
+BLOCK%d option missing, returning 0
+expected BLOCK1 offset %u, got %u
+expected BLOCK2 offset %u, got %u
+BLOCK1 option missing
+(request_block1_offset_valid(prev_response, expected_request_payload_offset)) && (bool) "" "bug: expected_request_offset invalid"
+(!result) && (bool) "" "BUG: malformed option passed option validation"
+BLOCK2 can be used in conjunction with BLOCK1 only in final BLOCK1 request exchange
+(get_block_result >= 0) && (bool) "" "bug: block option should pass validation before"
+(0) && (bool) "" "parsed options size > bytes available: option " "validation code is incorrect"
+opt_num <= UINT16_MAX
+(_avs_coap_options_request_key_size(opts) <= buffer_size) && (bool) "" "buffer too small"
+size <= UINT16_MAX
+(0) && (bool) ""
+fill_block_data
+avs_errno
+_avs_coap_options_get_block_by_code
+_avs_coap_options_valid_until_payload_marker
+_avs_coap_optit_current
+bytes_gained_by_reducing_delta
+new_option_fits
+update_option_delta_in_place
+avs_coap_options_add_opaque
+_avs_coap_err
+avs_coap_options_add_string_fv
+avs_coap_options_add_uint
+avs_coap_options_get_content_format
+avs_coap_options_get_block
+get_option_it
+avs_coap_options_get_etag_it
+optit_skip_until
+_avs_coap_options_is_sequential_block_request
+validate_block2_in_block1_request
+_avs_coap_options_block_payload_valid
+_avs_coap_options_parse
+_avs_coap_options_request_key_size
+_avs_coap_options_copy_request_key
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/include_public/avsystem/coap/token.h
+token->size <= 8
+(0) && (bool) "" "avs_hexlify() failed"
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/udp/avs_coap_udp_header.h
+version <= 3
+token_length <= AVS_COAP_MAX_TOKEN_LENGTH
+val >= _AVS_COAP_UDP_TYPE_FIRST && val <= _AVS_COAP_UDP_TYPE_LAST
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/avs_coap_ctx.h
+error > 0 && error <= UINT16_MAX
+coap_udp
+cannot set socket: it was already set
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/udp/avs_coap_udp_ctx.c
+cache->entries <= entry && entry < cache->entries + cache->size
+entry < end
+coap_udp_notify_cache_get(cache, msg_id) == NULL
+cache->size < AVS_ARRAY_SIZE(cache->entries)
+socket MTU unknown
+socket MTU invalid: %d
+socket MTU changed: %u -> %d
+socket MTU: %d
+, Observe %u
+%s: %s (ID: %u, token: %s)%s%s%s%s%s, payload: %u B
+could not get remote host/port
+/tmp/lwm2m_socket_connection_send_failed
+/tmp/refresh_lwm2m_socket_connection
+send failed: %s
+Created LWM2M_SOCKET_CONNECTION_SEND_FAILED from coap_udp_send_serialized_msg
+Created LWM2M_SOCKET_CONNECTION_REFRESH from coap_udp_send_serialized_msg
+/tmp/lwm2m_socket_connection_send_time
+Unable to update LWM2M_SOCKET_CONNECTION_SEND_TIME
+list_ptr
+*list_ptr == NULL
+unconfirmed
+(unconfirmed->send_result_handler) && (bool) "" "unconfirmed_msg objects with no send_result_handler " "are not supposed to be created"
+(avs_is_err(fail_err)) && (bool) "" "fail_errno not set on failure"
+(avs_is_ok(fail_err)) && (bool) "" "fail_errno set on success"
+partial content
+<unknown>
+unable to schedule retransmit: get_first_retransmit_time() returned invalid time; either the monotonic clock malfunctioned, UDP tx params are too large to handle or PRNG failed
+msg %s resumed
+current_nstart(ctx) <= ctx->tx_params.nstart
+%u/%u msgs held; resuming %u
+current_nstart(ctx) == effective_nstart(ctx)
+(!((__typeof__(*( (&ctx->unconfirmed_messages))) *) avs_list_find_ptr__((void **)( intptr_t) (&ctx->unconfirmed_messages), (char *) (intptr_t) (unconfirmed)))) && (bool) "" "unconfirmed must be detached"
+msg %s: %s
+avs_coap_code_is_response(msg->header.code)
+(0) && (bool) "" "According to RFC7252 Reset MUST be empty"
+(0) && (bool) "" "invalid enum value"
+*msg_ptr
+(((__typeof__(*( (&ctx->unconfirmed_messages))) *) avs_list_find_ptr__((void **)( intptr_t) (&ctx->unconfirmed_messages), (char *) (intptr_t) (*msg_ptr)))) && (bool) "" "unconfirmed_msg must be enqueued"
+(0) && (bool) "" "invalid value of avs_coap_exchange_direction_t"
+avs_coap_token_equal(&ctx->current_request.token, token)
+msg %s: MAX_RETRANSMIT reached without response from the server
+msg %s: retry %u/%u
+LWM2M_SOCKET_CONNECTION_REFRESH created by retransmit_next_message_without_reschedule
+unable to schedule message retransmission: next_retransmit time invalid; either the monotonic clock malfunctioned or UDP tx params are too large to handle
+current_nstart(ctx) == AVS_MIN(AVS_LIST_SIZE(ctx->unconfirmed_messages), ctx->tx_params.nstart)
+next UDP retransmission: %s
+In enqueue_unconfirmed msg %s: enqueue
+ctx->tx_params.nstart > 0
+unable to enqueue msg: next_retransmit time invalid; either the monotonic clock malfunctioned, UDP tx params are too large to handle or PRNG failed
+msg %s held due to NSTART = %u
+PRNG failed
+Could not serialize the message as a valid CoAP/UDP packet
+msg->code == AVS_COAP_CODE_EMPTY
+type != AVS_COAP_UDP_TYPE_CONFIRMABLE
+/tmp/lwm2m_socket_connection_recv_failed
+LWM2M_SOCKET_CONNECTION_REFRESH created by recv_recovery_handler
+recv failed
+%s: Could not create thread to recover from recv_fail.
+[%s] created LWM2M_SOCKET_CONNECTION_RECV_FAILED
+recv: malformed packet
+/tmp/lwm2m_socket_connection_recv_time
+Unable to update LWM2M_SOCKET_CONNECTION_RECV_TIME
+LWM2M_SOCKET_CONNECTION_RECV_FAILED deleted
+avs_coap_code_is_request(msg->header.code)
+ctx->current_request.exists
+could not get remote remote host/port
+(0) && (bool) "" "Requests with ACK type make no sense"
+(0) && (bool) "" "switch above is supposed to be exhaustive"
+rejecting
+ignoring
+Received response does not match any known request, %s
+unconfirmed_ptr
+*unconfirmed_ptr
+unable to schedule msg retransmission: next_retransmit time invalid; either the monotonic clock malfunctioned or UDP tx params are too large to handle
+Unexpected Separate ACK (ID %#04x), ignoring
+!ctx->current_request.exists
+Unexpected CoAP code: %s, ignoring
+(0) && (bool) ""
+recv [truncated request]
+avs_coap_code_is_request(truncated_msg->header.code)
+recv [truncated response]
+avs_coap_code_is_response(truncated_msg->header.code)
+received truncated CoAP message with incomplete token; ignoring
+malformed CoAP message received, ignoring
+unhandled error (%s) returned from coap_udp_recv_msg()
+in_buffer
+out_buffer
+prng_ctx
+invalid UDP transmission parameters: %s
+UDP transmission parameters cause ack_timeout overflow
+failed to generate random initial msg ID
+avs_coap_udp_ctx_set_forced_incoming_mtu() called on a NULL or non-UDP context
+avs_coap_token_hex
+coap_udp_notify_cache_drop
+coap_udp_notify_cache_drop_entry
+_avs_coap_udp_header_get_type
+coap_udp_notify_cache_put
+_avs_coap_err
+find_unconfirmed_insert_ptr
+call_send_result_handler
+resume_unconfirmed_messages
+try_cleanup_unconfirmed
+confirm_unconfirmed
+fail_unconfirmed
+udp_direction
+coap_udp_ignore_current_request
+retransmit_next_message_without_reschedule
+enqueue_unconfirmed
+avs_errno
+choose_msg_type
+coap_udp_send_message
+coap_udp_send_message
+_avs_coap_udp_header_set_version
+_avs_coap_udp_header_set_token_length
+coap_udp_recv_msg
+try_send_cached_response
+handle_request
+handle_response
+find_unconfirmed_ptr_by_response
+ack_request
+handle_empty
+store_request_id
+send_empty_response
+handle_truncated_request
+handle_truncated_response
+avs_coap_udp_ctx_create
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/udp/avs_coap_udp_header.h
+val >= 0 && val <= 3
+val >= 0 && val <= _AVS_COAP_UDP_HEADER_TOKEN_LENGTH_MASK
+val >= _AVS_COAP_UDP_TYPE_FIRST && val <= _AVS_COAP_UDP_TYPE_LAST
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/avs_coap_ctx.h
+error > 0 && error <= UINT16_MAX
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/udp/avs_coap_udp_msg.c
+coap_udp
+unsupported CoAP version: %u
+invalid token longer than %u bytes
+Request code (%s) on an Acknowledgement makes no sense
+Reset message must use %s CoAP code (got %s)
+malformed CoAP/UDP header
+%s message must not have token, options nor payload
+*dispenser->read_ptr == AVS_COAP_PAYLOAD_MARKER
+payload marker must be omitted if there is no payload
+BERT option in CoAP/UDP message
+out_bytes_written
+_avs_coap_udp_header_get_token_length(&msg->header) == msg->token.size
+_avs_coap_udp_header_get_version
+_avs_coap_udp_header_get_token_length
+_avs_coap_udp_header_get_type
+_avs_coap_err
+parse_payload
+_avs_coap_udp_msg_serialize
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/udp/avs_coap_udp_msg_cache.c
+(size_t) (uintptr_t) avs_buffer_raw_insert_ptr(cache->buffer) % AVS_ALIGNOF(cache_entry_t) == 0
+remote_addr
+remote_port
+coap_udp
+out of memory
+endpoint address or port too long: addr = %s, port = %s
+added cache endpoint: %s:%s
+ep_ptr && *ep_ptr && *ep_ptr == endpoint
+removed cache endpoint: %s:%s
+(msg_size <= (65535)) && (bool) "" "messages larger than 2^16-1 are not supposed to be used with " "UDP"
+avs_buffer_data_size(cache->buffer) % AVS_ALIGNOF(cache_entry_t) == 0
+avs_is_ok(err)
+(size_t) (uintptr_t) result % AVS_ALIGNOF(cache_entry_t) == 0
+(const char *) entry >= avs_buffer_data(cache->buffer)
+entry_offset % AVS_ALIGNOF(cache_entry_t) == 0
+result % AVS_ALIGNOF(cache_entry_t) == 0
+bytes_required <= avs_buffer_capacity(cache->buffer)
+entry_valid(cache, entry)
+msg_cache: dropping msg (id = %u) to make room for a new one (size = %lu)
+msg_cache: dropping expired msg (id = %u)
+msg_cache: not enough space for %u B message
+msg_cache: message ID %u already in cache
+!entry_expired(entry, &now)
+msg_cache hit (id = %u)
+avs_coap_udp_response_cache_create
+cache_endpoint_add_ref
+cache_endpoint_del_ref
+cache_put_entry
+entry_first
+entry_valid
+entry_size
+entry_next
+cache_free_bytes
+cache_drop_expired
+_avs_coap_udp_response_cache_get
+avs_errno
+ACK_TIMEOUT below 1000 milliseconds
+ACK_RANDOM_FACTOR less than 1.0
+NSTART less than 1 is useless
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/avs_coap_ctx.h
+error > 0 && error <= UINT16_MAX
+coap_base->in_buffer_in_use
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/options/avs_coap_options.h
+!out_dest->allocated
+avs_is_ok(err)
+UNINITIALIZED
+SENDING_REQUEST
+RECEIVING_RESPONSE
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/streaming/avs_coap_streaming_client.c
+(0) && (bool) "" "unexpected enum value"
+coap_stream
+coap_stream state: %s -> %s
+coap_stream_valid(stream)
+unexpected coap_stream state change: %s -> %s
+(0) && (bool) "" "coap_stream misused"
+Suppressing error: %s
+(stream->next_outgoing_chunk.expected_offset == payload_offset) && (bool) "" "payload is supposed to be read sequentially"
+stream->state == COAP_STREAM_STATE_SENDING_REQUEST
+avs_coap_exchange_id_equal(exchange_id, stream->exchange_id)
+could not copy options: %s
+avs_buffer_data_size(stream->chunk_buffer) == 0
+response->payload_size <= avs_buffer_capacity(stream->chunk_buffer)
+%s received while handling a streaming CoAP transfer; sending Service Unavailable response
+waiting for response to %s (exchange ID %s)
+stream->state == COAP_STREAM_STATE_RECEIVING_RESPONSE
+avs_is_err(stream->err)
+avs_time_monotonic_valid(next_timeout)
+lwm2m_dbg: AVS_NET_SOCKET_OPT_RECV_TIMEOUT called.
+could not set socket timeout
+could not restore socket timeout
+Could not write to CoAP stream: exchange already processed
+avs_buffer_capacity(stream->chunk_buffer) >= next_outgoing_chunk_payload_size
+stream->response_header.options.allocated || !stream->response_header.options.capacity
+(stream->state == COAP_STREAM_STATE_RECEIVING_RESPONSE) && (bool) "" "coap_stream misused"
+discarding unread response data
+coap_stream->vtable == &_AVS_COAP_STREAM_VTABLE
+(coap_stream->chunk_buffer == ((void *)0)) && (bool) "" "chunk_buffer is not supposed to exist in UNINITIALIZED state"
+out of memory
+avs_is_err(err) || avs_buffer_data_size(coap_stream->chunk_buffer) == 0
+coap_stream_state_string
+state_transition_allowed
+feed_payload_chunk
+handle_response
+coap_stream_set_state
+_avs_coap_options_copy_as_dynamic
+avs_errno
+_avs_coap_err
+_avs_coap_in_buffer_release
+try_wait_for_response
+flush_chunk
+coap_write
+move_dynamic_response_header
+ensure_data_is_available_to_read
+perform_request
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/avs_coap_ctx.h
+error > 0 && error <= UINT16_MAX
+coap_base->in_buffer_in_use
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/options/avs_coap_options.h
+!out_dest->allocated
+avs_is_ok(err)
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/streaming/avs_coap_streaming_server.c
+(streaming_server_ctx->expected_next_outgoing_chunk_offset == payload_offset) && (bool) "" "payload is supposed to be read sequentially"
+is_sending_response_chunk(streaming_server_ctx)
+no request to respond to
+response must be provided
+Attempted to call avs_coap_streaming_setup_response() in an invalid state
+Could not copy response options
+Response not set up
+Ignoring %s unread bytes of request
+(0) && (bool) "" "malformed options got through packet validation"
+get_next_outgoing_chunk_payload_size failed: %s
+!streaming_req_ctx->server_ctx.chunk_buffer
+!streaming_req_ctx->request_has_observe_id
+!streaming_req_ctx->request_header.options.allocated
+request->payload_size <= avs_buffer_space_left( streaming_req_ctx->server_ctx.chunk_buffer)
+request_ctx == &_avs_coap_get_base(streaming_req_ctx->server_ctx.coap_ctx) ->request_ctx
+streaming_req_ctx->server_ctx.state == AVS_COAP_STREAMING_SERVER_RECEIVING_REQUEST
+Server requested a response from the middle
+(0) && (bool) "" "invalid enum value"
+avs_coap_exchange_id_valid(streaming_req_ctx->server_ctx.exchange_id) == !!streaming_req_ctx->server_ctx.chunk_buffer
+accept_async_request failed
+lwm2m_dbg: AVS_NET_SOCKET_OPT_RECV_TIMEOUT called.
+could not set socket timeout
+ctx->state == AVS_COAP_STREAMING_SERVER_FINISHED
+avs_time_duration_valid(recv_timeout)
+could not restore socket timeout
+avs_is_err(ctx->err)
+invalid state for flush_request_chunk(), aborting exchange
+CoAP server stream not ready for writing
+streaming_req_ctx->server_ctx.state == AVS_COAP_STREAMING_SERVER_FINISHED
+CoAP streaming_server read called in invalid state
+!streaming_req_ctx.server_ctx.chunk_buffer
+!streaming_req_ctx.request_header.options.allocated
+!streaming_req_ctx.response_header.options.allocated
+(0) && (bool) "" "invalid state for flush_notify_chunk()"
+CoAP notification stream not ready for writing
+CoAP notification stream already in a failed state
+unable to write notification payload, result = %d
+unable to send notification, result = %s
+notify_streaming_ctx.server_ctx.state == AVS_COAP_STREAMING_SERVER_FINISHED
+feed_payload_chunk
+_avs_coap_options_copy_as_dynamic
+avs_errno
+_avs_coap_err
+init_chunk_buffer
+request_handler
+handle_new_request
+try_wait_for_next_chunk_request
+flush_response_chunk
+handle_incoming_packet
+ensure_data_is_available_to_read
+handle_incoming_packet_with_acquired_in_buffer
+_avs_coap_in_buffer_release
+flush_notify_chunk
+avs_coap_notify_streaming
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/include_public/avsystem/coap/token.h
+token->size <= 8
+(0) && (bool) "" "avs_hexlify() failed"
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/avs_coap_ctx.h
+error > 0 && error <= UINT16_MAX
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/avs_coap_observe.c
+out of memory
+%s is not a valid request code
+Observe start: %s
+observation %s does not exist
+Observe cancel: %s
+Cannot persist observation %s: it does not exist
+Options longer than %u are not supported
+CoAP context is already initialized, cannot restore observation state
+Observe %s already exists
+Out of memory
+Observe (restored) start: %s
+avs_errno
+avs_coap_token_hex
+_avs_coap_err
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/avs_coap_ctx.h
+error > 0 && error <= UINT16_MAX
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_coap/src/avs_coap_common_utils.c
+coap_utils
+not enough space: required %u free bytes, got %u
+incomplete data: tried to read %u bytes, got %u
+(token_size <= sizeof(out_token->bytes)) && (bool) "" "bug: not enough space for valid token"
+truncated token
+_avs_coap_parse_token
+_avs_coap_err
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/algorithm/avs_base64.c
+ptr >= config.alphabet
+ptr - config.alphabet < 64
+avs_base64_decode_custom
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/net/avs_api.c
+out of memory
+association_data_buf <= association_data_buf_end
+association_data_buf == association_data_buf_end
+(*socket)->operations->cleanup
+avs_net global state initialization error
+PRNG ctx MUST NOT be NULL
+avs_net_socket_dane_tlsa_array_copy
+avs_errno
+avs_net_socket_cleanup
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/net/avs_net_global.c
+avs_is_err(err)
+_avs_net_ensure_global_state
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+AF_INET6
+AF_UNSPEC
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/net/compat/posix/avs_net_impl.c
+failure_from_errno:[%s]
+lwm2m_dbg: system_socket_net returned NULL.
+Could not switch socket to non-blocking mode (fcntl error: %s)
+setsockopt error: %s
+getsockopt error: %s
+getnameinfo() failed: %s (%d)
+(0) && (bool) "" "Invalid value of preferred_family_mode"
+family != AVS_NET_AF_UNSPEC
+cannot create socket: %s
+socket configuration problem
+/opt/nvtl/data/lwm2m/v4_iface
+%s: Cannot perform DM call without V4 Interface.
+/opt/nvtl/data/lwm2m/v6_iface
+%s: Cannot perform DM call without V6 Interface.
+%s: Interface[%s].
+%s: setsockopt(SO_BINDTODEVICE) failed: %s
+%s: setsockopt(SO_BINDTODEVICE) is success [%s]
+socket is already connected or bound
+cannot establish connection to [%s]:%s
+avs_is_err(err)
+Remote hostname %s is too long, not storing
+Remote port %s is too long, not storing
+send failed
+send returned 0
+sending fail (%lu/%lu)
+send_to fail (%lu/%lu)
+cannot resolve address for sending: [%s]:%s
+cannot create system socket: %s
+can't set socket opt
+bind error: %s
+listen error: %s
+Cannot get %s address info for %s
+Both server and client socket must have configuration.reuse_addr set to 1
+unknown error
+Error while gathering info about server_net_socket (%s). None of server_net_socket or new_net_socket has been affected.
+Error while connecting new_net_socket to %s:%s). Rolling back changes.
+Could not bind server_net_socket again. It's closed now.
+server_net_socket->operations == &net_vtable
+accept_net() called with socket of invalid type
+Server socket must be bound before calling 'accept' on it
+(0) && (bool) "" "net_vtable applies only to UDP and TCP sockets"
+interface name too long <%s>
+bad DSCP value <%x>
+bad priority value <%d>
+create_net_socket type(%d) 0:TCP 1:UDP 2:SSL 3:DTLS
+create_net_socket: memory allocated successfully
+create_net_socket: check configurations
+create_net_socket: apply configurations
+socket->socket != INVALID_SOCKET
+get_opt_net: inner MTU calculation unimplemented for TCP
+cannot get inner MTU for closed socket
+get_opt_net: unknown or unsupported option key: (avs_net_socket_opt_key_t) %d
+set_opt_net: unknown or unsupported option key: (avs_net_socket_opt_key_t) %d
+avs_errno
+get_requested_family
+resolve_addrinfo_for_socket
+try_connect
+connect_impl
+send_to_net
+receive_from_net
+accept_net
+get_fallback_inner_mtu
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/net/openssl/../avs_ssl_common.h
+SSL configuration not specified
+socket initialization error
+Out of memory
+SSL socket already connected
+avs_net_socket_connect() on backend socket failed
+Could not get backend socket state
+PSK cannot be empty
+-CHACHA20-POLY1305
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/net/openssl/avs_openssl.c
+cipher_is_aead(cipher)
+Unsupported cipher mode
+!AVS_BIO
+ssl_handshake: could not get socket state
+Could not restore session; performing full handshake
+SSL_set_session() failed; performing full handshake
+ssl_handshake: invalid socket state
+cipher list: %s
+could not set cipher list to %s
+ignoring unexpectedly large cipher ID: 0x%x
+ignoring unsupported cipher ID: 0x%04x
+ignoring non-PSK cipher ID: 0x%04x
+ignoring PSK cipher ID: 0x%04x
+(size_t) result <= socket->session_resumption_buffer_size
+!ciphersuites_string
+!PSK ALL
+cannot setup DANE extension
+SSL_dane_tlsa_add() failed
+cannot setup SNI extension
+cannot configure verify parameters for hostname %s
+cannot create BIO object
+SSL handshake failed.
+first_cert
+last_cert
+!next_cert
+could not enable DANE
+could not set default CA verify paths
+could not load CA chain
+could not load CRLs
+Server authentication disabled
+could not load client certificate
+could not load client private key
+could not rebuild client certificate chain
+configuration not provided
+(0) && (bool) "" "invalid enum value"
+Invalid DTLS handshake timeouts passed
+configuration->session_resumption_buffer
+SNI is too long (maximum allowed size is %u)
+Error while setting additional SSL configuration
+write failed
+receive_ssl: message truncated
+avs_bio_init error
+Unsupported SSL version
+Could not get OpenSSL method handle
+avs_errno
+aead_cipher_tag_len
+avs_bio_init
+new_session_cb
+fix_socket_ciphersuites
+cert_is_in_chain
+rebuild_client_cert_chain
+configure_ssl_certs
+configure_ssl
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/net/compat/posix/avs_compat_addrinfo.c
+list->ai_next
+avs_net global state initialization error
+Unsupported avs_net_af_t: %d
+Invalid port: %s
+Out of memory
+getaddrinfo() error: %s; family == (avs_net_af_t) %d
+half_addrinfo
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/net/compat/posix/avs_compat_addrinfo_helper.c
+[LWM2M_CALL_DNS] %s: server=[%s]
+[LWM2M_CALL_DNS] %s: getaddrinfo() failed=[%s]
+[LWM2M_CALL_DNS] %s: getaddrinfo(): resolution failed=[%s]
+[LWM2M_CALL_DNS] %s: ai=%p: ai_flags=%d ai_family=%d ai_socktype=%d ai_protocol=%d ai_addrlen=%u; ai_addr=%s ai_canonname=%s ai_next=%p
+[LWM2M_CALL_DNS] %s: Family=[%d], IP=[%s]
+[LWM2M_CALL_INIT] %s: Added at index=[%d] object_ptr=[0%x]
+[LWM2M_CALL_INIT] %s: no room left for obj_ptr=[0%x]
+[LWM2M_CALL_TERM] %s: deleting index=[%d] object_ptr=[0%x] duplicates=[%d]
+[LWM2M_CALL_TERM] %s: obj_prt=[0%x] not found
+[LWM2M_CALL_DNS] %s: Overflow detected!!
+[LWM2M_CALL_DNS] %s: Added server[%s] to cache[%d]
+[LWM2M_CALL_DNS] %s: cleared
+[LWM2M_CALL_DNS] %s: Server [%s] found in cache[%d], addr_count[%d]
+[LWM2M_CALL_DNS] %s: Server not found, calling router2
+/opt/nvtl/data/lwm2m/internet_dns
+/opt/nvtl/data/lwm2m/cache_dns
+[LWM2M_CALL_DNS] %s: Server[%s] resolved
+/opt/nvtl/data/lwm2m
+[LWM2M_CALL_DNS] %s: Permanent DNS cache=[%s] created
+[LWM2M_CALL_DNS] %s: lwm2m_ota_dns_query(): failed rc=%d, retries left:%d
+[LWM2M_CALL_DNS] %s: lwm2m_ota_dns_query(): failed rc=%d
+[LWM2M_CALL_DNS] %s: Try Internet APN for resolving=[%s]
+[LWM2M_CALL_DNS] %s: resolve_ip_standard(%s) failed, try read from cache
+[LWM2M_CALL_DNS] %s: Read from cache failed, give up!!!
+[LWM2M_CALL_DNS] %s: Found Permanent DNS cache=[%s], read success!!!
+[LWM2M_CALL_DNS] %s: DNS success over Internet APN, server=[%s]
+[LWM2M_CALL_START] %s: calling lwm2m_ota_start_call()
+[LWM2M_CALL_START] %s: OTA Call initiated (attempts:%d)
+[LWM2M_CALL_START] %s: Waiting for service, seconds to go:%d
+[LWM2M_CALL_START] %s: OTA Call disabled
+[LWM2M_CALL_START] %s: Failed to start OTA call, reason :%d (attempts:%d)
+[LWM2M_CALL_START] %s: Still no OTA call after %d seconds, give up
+[LWM2M_CALL_STOP] %s: calling lwm2m_ota_stop_call(), sleep(3)
+[LWM2M_CALL_STOP] %s: lwm2m_ota_stop_call() failed with %d
+[LWM2M_CALL_START] %s: lwm2m_get_ota_call_status failed, rc = %d
+[LWM2M_CALL_START] %s: PDP type=%d State (IPv4 = %d IPv6 = %d)nvtl_ota_ai_family=%d
+[LWM2M_CALL_START] %s: OTA call not UP!!!, initiating now
+[LWM2M_CALL_START] %s: nvtl_ota_start_call() failed
+[LWM2M_CALL_START] %s: Unsupported PDP IP type = %d
+[LWM2M_CALL_START] %s: OTA Call not connected (Elapsed time: %dsecs)
+[LWM2M_CALL_INTF] %s: intf=[%s] not matching=[%s][%s]
+[LWM2M_CALL_INTF] %s: intf=[%s] v4=[%s]
+[LWM2M_CALL_INTF] %s: intf=[%s] v6=[%s]
+[LWM2M_CALL_OPEN] %s: nvtl_ota_wait_for_connect failed.
+[LWM2M_CALL_OPEN] %s: dns_local_cache_reslove() failed.
+[LWM2M_CALL_OPEN]: dns.ip_addrs.ipaddr_count=[%d]
+Out of memory
+[LWM2M_CALL_OPEN] %s:nvtl_ota_ai_family:%d DNS[%d](IPv4:%s, port=%d)
+/opt/nvtl/data/lwm2m/v4_iface
+[LWM2M_CALL_OPEN] Successfully created v4_iface
+[LWM2M_CALL_OPEN] Error in creating v4_iface
+[LWM2M_CALL_OPEN] %s:nvtl_ota_ai_family:%d DNS[%d](IPv6:%s, port=%d)
+/opt/nvtl/data/lwm2m/v6_iface
+[LWM2M_CALL_OPEN] Successfully created v6_iface
+[LWM2M_CALL_OPEN] Error in creating v6_iface
+[LWM2M_CALL_OPEN] %s: Unsupported protocol family(nvtl_ota_ai_family:%d, DNS[%d](sin_family:%d)
+%s: flags[%d] family[%s] sock[%d] proto[%d] sa_family[%d] addr[%s] addr_len[%u]
+resolve_ip_standard
+ota_session_cache_add_record
+ota_session_cache_del_record
+dns_local_cache_add_record
+dns_local_cache_clear
+dns_local_cache_reslove
+nvtl_ota_start_call
+nvtl_ota_stop_call
+nvtl_ota_wait_for_connect
+query_linux_intf_ip
+getaddrinfohelper
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/crypto/avs_crypto_global.c
+avs_is_err(err)
+avs_crypto_aead
+avs_crypto global state initialization error
+_avs_crypto_ensure_global_state
+avs_errno
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/crypto/avs_crypto_utils.c
+array_ptr[i].desc.type == AVS_CRYPTO_SECURITY_INFO_CERTIFICATE_CHAIN
+array_ptr[i].desc.type == AVS_CRYPTO_SECURITY_INFO_CERT_REVOCATION_LIST
+(0) && (bool) "" "Invalid data source element type"
+avs_is_ok(err)
+list->desc.type == AVS_CRYPTO_SECURITY_INFO_CERTIFICATE_CHAIN
+list->desc.type == AVS_CRYPTO_SECURITY_INFO_CERT_REVOCATION_LIST
+!*state->tail_ptr
+element_count == 0 || element_count == 1
+buffer_ptr == ((char *) &(*out_ptr)[1]) + data_buffer_size
+(*out_ptr)->desc.type == AVS_CRYPTO_SECURITY_INFO_PRIVATE_KEY
+avs_crypto_certificate_chain_info_from_array
+avs_crypto_cert_revocation_list_info_from_array
+calculate_data_buffer_size
+avs_errno
+copy_element
+copy_as_array
+avs_crypto_certificate_chain_info_from_list
+avs_crypto_cert_revocation_list_info_from_list
+copy_into_list
+avs_crypto_private_key_info_copy
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/crypto/openssl/avs_openssl_data_loader.c
+(0) && (bool) "" "Invalid object type"
+avs_crypto_data_loader
+Buffer too big
+Garbage data after DER-encoded data
+buffer || !len
+CRL <file=%s>: going to load
+Given CRL info is empty.
+attempt to load CRL from file, but filename=NULL
+CRL cannot be loaded from path
+attempt to load CRL from buffer, but buffer=NULL
+(0) && (bool) "" "invalid data source"
+Out of memory
+Cannot open file: %s
+More than one private key specified
+avs_is_err(err) == !*out_key
+filename
+certificate <file=%s>: going to load
+client key <%s>: going to load
+Given key info is empty.
+out_key && !*out_key
+attempt to load private key from file, but filename=NULL
+private key cannot be loaded from path
+attempt to load private key from buffer, but buffer=NULL
+attempt to load certificate chain from file, but filename=NULL
+Certificate path sources cannot be used as client certificate chains
+attempt to load certificate chain from buffer, but buffer=NULL
+Given cert info is empty.
+attempt to load certificate chain from path, but path=NULL
+certificate <path=%s>: going to load
+out_cert && !*out_cert
+avs_ossl_object_pem_read
+avs_ossl_object_der_read
+avs_ossl_object_free
+avs_errno
+load_pem_or_der_objects
+load_crl_from_file
+_avs_crypto_openssl_load_crls
+load_key_from_buffer
+load_certs_from_file
+load_key_from_file
+_avs_crypto_openssl_load_private_key
+pass_cert_to_cb
+_avs_crypto_openssl_load_first_client_cert
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/crypto/openssl/avs_openssl_prng.c
+avs_crypto_prng
+reseeding required, but seed callback is not defined
+_avs_crypto_prng_reseed_if_needed
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/persistence/avs_persistence.c
+avs_persistence
+Element too big to persist (%lu is larger than %u)
+!*data_ptr
+!*size_ptr
+Cannot allocate %u bytes
+Invalid string
+list_ptr && !*list_ptr
+AVS_RBTREE_SIZE(tree) == 0
+Cannot restore to a non-empty list
+Out of memory
+Magic markers do not match
+Unsupported version number: %u
+avs_errno
+restore_sized_buffer
+restore_list
+restore_tree
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/rbtree/avs_rbtree.c
+_AVS_RB_NODE(elem)->color == RED || _AVS_RB_NODE(elem)->color == BLACK
+rb_is_node_detached(*node_ptr)
+!**tree_ptr
+(!rb_is_cleanup_in_progress(tree)) && (bool) "" "avs_rbtree_size__ called while tree deletion in progress"
+(!rb_is_cleanup_in_progress(tree)) && (bool) "" "avs_rbtree_lower_bound__ called while tree deletion in progress"
+(!rb_is_cleanup_in_progress(tree)) && (bool) "" "avs_rbtree_upper_bound__ called while tree deletion in progress"
+(!rb_is_cleanup_in_progress(tree)) && (bool) "" "avs_rbtree_find__ called while tree deletion in progress"
+elem == p_right
+_AVS_RB_RIGHT(parent) == node
+own_parent_ptr
+grandparent == _AVS_RB_PARENT(parent)
+(!rb_is_cleanup_in_progress(rb_tree_const(tree_))) && (bool) "" "avs_rbtree_attach__ called while tree deletion in progress"
+rb_is_node_detached(elem)
+(!rb_is_cleanup_in_progress(rb_tree_const(tree))) && (bool) "" "avs_rbtree_last__ called while tree deletion in progress"
+_avs_rb_node_color(elem) == BLACK
+_avs_rb_node_color(sibling) == BLACK
+_avs_rb_node_color(_AVS_RB_LEFT(sibling)) == RED
+_avs_rb_node_color(_AVS_RB_RIGHT(sibling)) == RED
+_AVS_RB_RIGHT(sibling)
+_AVS_RB_LEFT(sibling)
+(!rb_is_node_detached(elem)) && (bool) "" "cannot detach an node that's already detached"
+(!rb_is_cleanup_in_progress(rb_tree_const(tree_))) && (bool) "" "avs_rbtree_detach__ called while tree deletion in progress"
+(rb_is_node_owner(tree_, elem)) && (bool) "" "cannot detach node not owned by the tree"
+!_AVS_RB_LEFT(elem)
+_AVS_RB_PARENT(child) == elem
+tree->size > 0u
+elem_color == BLACK || _avs_rb_node_color(child) == BLACK
+_avs_rb_node_color(tree->root) == BLACK
+AVS_RBTREE_SIZE(tree) > 0u
+_AVS_RB_LEFT(*tree) == NULL
+_AVS_RB_RIGHT(*tree) == NULL
+_avs_rb_node_color
+avs_rbtree_elem_delete__
+avs_rbtree_delete__
+avs_rbtree_simple_clone__
+avs_rbtree_size__
+rb_find_ptr
+avs_rbtree_lower_bound__
+avs_rbtree_upper_bound__
+avs_rbtree_find__
+rb_sibling
+rb_own_parent_ptr
+rb_rotate_left
+rb_rotate_right
+rb_insert_fix
+avs_rbtree_attach__
+avs_rbtree_last__
+rb_swap_nodes
+rb_detach_fix
+avs_rbtree_detach__
+avs_rbtree_cleanup_next__
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/sched/avs_sched.c
+(0) && (bool) "" "could not lock mutex"
+avs_sched
+Could not initialize globals
+Out of memory
+Could not create mutex
+Could not create condition variable for task notification
+(unknown)
+Scheduler "%s" created, data == %p
+Scheduler "%s": shutting down
+Scheduler "%s": shut down
+Scheduler "%s": could not wait on condition variable
+*sched->jobs->handle_ptr == sched->jobs
+!AVS_LIST_NEXT(job)
+job->sched == sched
+avs_time_monotonic_valid(instant)
+Scheduler "%s": scheduler already shut down when attempting to schedule%s
+Scheduler "%s": could not allocate scheduler task
+((*out_handle)->sched == sched) && (bool) "" "Replacing handles used by a different scheduler is " "not supported"
+(job_ptr) && (bool) "" "dangling handle detected"
+Scheduler "%s": attempted to schedule a null callback pointer%s
+Scheduler "%s": attempted to schedule job%s at an invalid time point
+(handle_ptr == (*handle_ptr)->handle_ptr) && (bool) "" "accessing job via non-original handle"
+*job->handle_ptr == job
+Scheduler "%s": attempted to leap an invalid amount of time
+Scheduler "%s": moving all jobs by %s s
+attempted to reschedule job at an invalid time point
+nonfailing_mutex_lock
+avs_sched_data
+sched_time_of_next_locked
+avs_sched_time_of_next
+fetch_job
+execute_job
+avs_sched_run
+sched_at_locked
+avs_sched_at_impl__
+avs_sched_del
+avs_sched_detach
+avs_sched_leap_time
+avs_resched_at_impl__
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/url/avs_url.c
+*data_out_ptr == 0
+*data_out_ptr + proto_len < out_limit
+(0) && (bool) "" "Percent-encoding failed"
+bad escape format (%%XX) 
+unescape failure
+string cannot include null byte
+;?&=$-_.+!*'(),
+begin == end || *begin == ':'
+invalid username
+begin == end
+invalid password
+cannot parse credentials from URL
+**url == '\0' || **url == ']'
+expected ] at the end of host address
+**url == '\0' || **url == '/' || **url == '?' || **url == ':'
+!isdigit((unsigned char) **url)
+port should have numeric value
+*data_out_ptr < out_limit
+Out of memory
+!$&'()*+,-.:;_=~
+invalid character in IPv6+ address: %c
+host part cannot be empty
+/?~;:@&=$-_.+!*'(),
+no valid protocol in URL
+port number must be between 1 and 5 digits long
+url->path_ptr != URL_PTR_INVALID
+alloc_size > 0 && (size_t) alloc_size > offsetof(avs_url_t, data)
+url_parse_protocol
+avs_url_percent_encode
+parse_username_and_password
+url_parse_host
+url_parse_port
+url_parse_path
+is_valid_looking_hostname
+avs_url_copy
+avs_url_path
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/stream/avs_stream.c
+last_consumed_char == '\n' || avs_is_err(err)
+buffer_length > 0
+avs_errno
+consume_line_terminator
+getline_helper
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+avs_errno
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/stream/avs_stream_membuf.c
+stream->index_read == 0
+stream->index_write <= new_size
+stream->buffer
+stream->index_read <= stream->index_write
+avs_errno
+realloc_membuf
+stream_membuf_write_some
+stream_membuf_read
+stream_membuf_offset
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/include_public/avsystem/commons/avs_errno.h
+(avs_errno_t) result.code == error
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/stream/avs_stream_outbuf.c
+avs_stream
+outbuf stream offset cannot be advanced
+avs_errno
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/buffer/avs_buffer.c
+avs_buffer
+cannot allocate buffer
+not enough data
+buffer too small
+position out of bounds
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/list/avs_list.c
+!avs_list_is_cyclic__(list)
+is_list_sorted(*listptr, comparator, element_size)
+avs_list_assert_acyclic__
+avs_list_assert_sorted_ptr__
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/utils/avs_hexlify.c
+bytes_to_hexlify < SIZE_MAX / 2u
+avs_hexlify
+0123456789abcdef
+C/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/utils/avs_shared_buffer.c
+shared_buffer
+double use of a shared buffer in %s (%s:%u); last acquired in %s (%s:%u) and not released yet
+(0) && (bool) "" "double use of a shared buffer"
+_avs_shared_buffer_acquire
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/utils/avs_strings.c
+out || !out_size
+(ptr1 >= ptr2 + n || ptr2 >= ptr1 + n) && (bool) "" "memory fragments must not intersect"
+precision >= 1
+precision <= 18
+result >= 0
+avs_simple_vsnprintf
+avs_memswap
+avs_double_as_string_impl__
+Argument list too long
+Permission denied
+Address already in use
+Cannot assign requested address
+Address family not supported by protocol
+Resource temporarily unavailable
+Operation already in progress
+Bad file descriptor
+Bad message
+Device or resource busy
+No child processes
+Software caused connection abort
+Connection refused
+Connection reset by peer
+Resource deadlock avoided
+Destination address required
+Numerical argument out of domain
+File exists
+Bad address
+File too large
+No route to host
+Operation now in progress
+Interrupted system call
+Invalid argument
+Input/output error
+Transport endpoint is already connected
+Is a directory
+Too many levels of symbolic links
+Too many open files
+Too many links
+Message too long
+File name too long
+Network is down
+Network dropped connection on reset
+Network is unreachable
+Too many open files in system
+No buffer space available
+No such device
+No such file or directory
+Exec format error
+Link has been severed
+Cannot allocate memory
+No message of desired type
+Protocol not available
+No space left on device
+Function not implemented
+Block device required
+Transport endpoint is not connected
+Not a directory
+Directory not empty
+Socket operation on non-socket
+Not supported
+Inappropriate ioctl for device
+No such device or address
+Value too large for defined data type
+Operation not permitted
+Broken pipe
+Protocol error
+Protocol not supported
+Protocol wrong type for socket
+Numerical result out of range
+Read-only file system
+Illegal seek
+No such process
+Connection timed out
+Text file busy
+Invalid cross-device link
+Unknown error
+<unsupported error code>
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/utils/avs_time.c
+inout->nanoseconds >= -NS_IN_S
+inout->nanoseconds < 2 * NS_IN_S
+avs_time_duration_valid(result)
+conv->factor > 0
+(0) && (bool) "" "Invalid unit_conv operation"
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/utils/avs_x_time_conv.h
+factor > 0
+TIME_INVALID
+result >= 0
+normalize
+avs_time_duration_add
+avs_time_duration_diff
+Cunit_conv_backward_int64_t_double
+unit_conv_int64_t_int64_t
+unit_conv_double_int64_t
+avs_time_duration_mul
+avs_time_duration_fmul
+avs_time_duration_div
+avs_time_duration_as_string_impl__
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/compat/threading/pthread/avs_pthread_condvar.c
+(!*out_condvar) && (bool) "" "possible attempt to reinitialize a condition variable"
+(result == 0) && (bool) "" "pthread_cond_destroy failed"
+avs_condvar_create
+avs_condvar_cleanup
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/compat/threading/pthread/avs_pthread_init_once.c
+(0) && (bool) "" "could not initialize avs_init_once mutex"
+init_global_mutex
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/compat/threading/pthread/avs_pthread_mutex.c
+(!*out_mutex) && (bool) "" "possible attempt to reinitialize a mutex"
+(result == 0) && (bool) "" "pthread_mutex_destroy failed"
+avs_mutex_create
+avs_mutex_cleanup
+could not initialize global log state
+could not lock log mutex
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/lwm2m/src/deps/avs_commons/src/log/avs_log.c
+could not allocate level entry for module: %s
+build-target/lwm2m/src/
+%s [%s] [%s:%u]: 
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.data.rel.ro.local
+.fini_array
+.init_array
+.data.rel.ro
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

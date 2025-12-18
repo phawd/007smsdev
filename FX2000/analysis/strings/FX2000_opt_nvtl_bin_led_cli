@@ -1,0 +1,113 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+led_get_error_string
+__isoc99_scanf
+GLIBC_2.7
+led_update_system_state
+led_set_enabled
+led_get_enabled
+led_api_is_running
+mifi_dbg_start
+__bss_start
+librt.so.1
+libmifi_debug.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libbuzzer_api.so
+libans_api.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libdmdb_api.so
+libmodem2_api.so
+libwifi_api.so
+libbluetooth_api.so
+libgps_api.so
+libccm2_api.so
+librouter2_api.so
+libemd_api.so
+libwebui_api.so
+libuisupport.so
+libcurl.so.4
+libcares.so.2
+libcrypto.so.1.1
+libssl.so.1.1
+libiconv.so.2
+libled_api.so
+libmifi_leds.so
+H	KxD	J{D
+Select system-state group [0-13]
+Select system-state value [0-57]
+Group: %d, State: %d 
+led_update_system_state() returned %d (%s)
+Select LED enabled setting [0("not enabled"), 1("Enabled")]
+enabled: %d
+led_set_enabled returned %d (%s)
+led_get_enabled returned %d (%s)
+enabled[%d]
+led_api_is_running returned %d (%s)
+  ---------------------------------------------------------------------------
+ %15s - %s
+  ---------------------------------------------------------------------------
+command [%s]
+command [%s] not found.
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+get_enabled
+Test of api call to get data from led enabled setting.
+set_enabled
+Test of api call to set data to led enabled setting.
+update_system_state
+Test of api call to set system internal state.
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

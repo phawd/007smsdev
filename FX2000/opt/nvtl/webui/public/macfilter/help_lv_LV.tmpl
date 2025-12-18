@@ -1,0 +1,34 @@
+<!-- MAC Filter -->
+<div id="macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+	<h2>Pārskats</h2>
+	<p>MAC filtra funkcija, ja tā ir ieslēgta, neļaus piekļūt šim Wi-Fi tīklam nevienai ierīcei, kas nav iekļauta sarakstā MAC adrešu filtrs. Filtrs attiecas tikai uz Wi-Fi tīklu, un tas neietekmē USB ierīces.</p>
+	
+	<h2>Ieslēgšanas/izslēgšanas vadīkla</h2>
+	<p>Izmantojiet šo vadīklu, lai pēc nepieciešamības ieslēgtu vai izslēgtu MAC filtru. Pirms ieslēgšanas ir jāpārliecinās, ka dažas ierīces ir atļautas. Ņemiet vērā, ka, ieslēdzot MAC filtru, visas pievienotās ierīces, kas nav iekļautas sarakstā "MAC adrešu filtrs", tiks nekavējoties atvienotas.</p>
+	
+	<h2>Ierīču saraksts</h2>
+	
+	<p>Šeit norādītas visas zināmās ierīces, izņemot USB ierīces. Izmantojiet pieejamās izvēles rūtiņas, lai iekļautu ierīces sarakstā "MAC adrešu filtrs" vai izslēgtu no tā.</p>
+
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Izmantojiet atsvaidzināšanas pogu, lai pēc nepieciešamības atjauninātu sarakstu.</p>
+		
+	<h2>Darbība</h2>
+	
+	<h3>Bloķēts salīdzinājumā ar MAC filtru</h3>
+	<p>Tālāk norādīta bloķēto ierīču un MAC filtra mijiedarbība.</p>
+	<div class="blockgroup">
+	<ul>
+	<li>Bloķētās ierīces vienmēr tiek bloķētas Wi-Fi tīklā neatkarīgi no tā, vai MAC filtrs ir ieslēgts vai izslēgts.</li>
+	<li>Ja MAC filtrs ir ieslēgts un ierīce ir sarakstā "Bloķēts", bet nav iekļauta sarakstā "MAC adrešu filtrs", tā nevarēs izveidot savienojumu. Gan MAC filtrs, gan bloķēšana neļaus izveidot savienojumu.</li>
+
+	<li>Ja MAC filtrs ir ieslēgts un ierīce ir iekļauta sarakstā "MAC adrešu filtrs", ierīce varēs izveidot savienojumu. Pēc savienojuma izveides to var bloķēt, noņemot to no saraksta "MAC adrešu filtrs" vai izmantojot funkciju Bloķēt. Parasti funkcija Bloķēt ir jāizmanto pagaidu bloķēšanai, bet MAC filtrs — pastāvīgai bloķēšanai.</li>
+	</ul>
+	</div>
+	
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+	<p>Izmantojiet šo pogu, lai ierīču sarakstam pievienotu jaunu ierīci.</p>
+
+ </div>
+<!--  macfilter  -->

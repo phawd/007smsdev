@@ -1,0 +1,75 @@
+<!-- Software Update -->
+<div id="software_update">
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+	<h2>Descripci
+		<p> Las actualizaciones de software se env
+an autom
+ticamente por la red m
+vil. Esta p
+gina le permite controlar estas actualizaciones. </p>
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+	<h3><tmpl_var _("webui", "software_update_current_software_modem_version_label")></h3>
+        <p>
+               La version de software del modem instalada actualmente.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_kernel_version_label")></h3>
+        <p>
+                La version del sistema operativo y sus componentes.
+        </p>
+        <tmpl_if showAppVersion>
+                <h3><tmpl_var _("webui", "software_update_current_software_app_version_label")></h3>
+                <p>
+                        Version de la aplicacion instalada actualmente.
+                </p>
+        </tmpl_if>
+        <h3><tmpl_var _("webui", "software_update_current_software_cute_version_label")></h3>
+        <p>
+                La version cute del software instalado en el dispositivo actualmente.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_pri_version_label")></h3>
+        <p>
+                La version de configuracion actualmente utilizada en su dispositivo.
+        </p>
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var truncate(_("webui", "software_update_current_software_configuration_version_label"), (size(_("webui", "software_update_current_software_configuration_version_label")) - size(":")))></h3>
+					<tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")>
+				</p>
+		</tmpl_if>
+		<h2><tmpl_var truncate(_("webui", "software_update_check_for_update_sub_header_text"), (size(_("webui", "software_update_check_for_update_sub_header_text"))))></h2>
+		<h3><tmpl_var truncate(_("webui", "software_update_check_for_update_time_label"), (size(_("webui", "software_update_check_for_update_time_label")) - size(":")))></h3>
+		<p> Este campo indica cu
+ndo el <tmpl_var _("webui", "webui_product_name")> verific
+ltima vez si hay una actualizaci
+n disponible. Puede verificar manualmente si hay una actualizaci
+n usando el bot
+n "Buscar actualizaciones". </p>
+		<h3>Bot
+n Buscar actualizaciones</h3>
+		<p> Puede usar este bot
+n para verificar si hay una actualizaci
+n disponible para su <tmpl_var _("webui", "webui_product_name")>. Normalmente, esto no es necesario, ya que las actualizaciones se env
+an autom
+ticamente al <tmpl_var _("webui", "webui_product_name")>. Si lleva a cabo esta verificaci
+n, y hay una actualizaci
+n disponible, esta se descarga autom
+ticamente. </p>
+	</tmpl_if>
+	<h3><tmpl_var truncate(_("webui", "software_update_check_for_update_status_label"), (size(_("webui", "software_update_check_for_update_status_label")) - size(":")))></h3>
+		<p> Normalmente, estar
+ en blanco, pero, si busca una actualizaci
+n, el resultado de esa b
+squeda se mostrar
+s, si se descarga una actualizaci
+n, el avance de la descarga se muestra aqu
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+		<p> Este panel muestra los detalles de la 
+ltima actualizaci
+n del software. </p>
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+		<p> Este panel se puede abrir al hacer clic en el enlace/encabezado. El Historial de actualizaciones del sistema contiene detalles de las 
+ltimas actualizaciones de software que se han descargado e instalado en este dispositivo. Si no se ha instalado ninguna actualizaci
+n, este panel mostrar
+ la versi
+n del software actual. </p>
+<!-- end Software Update -->

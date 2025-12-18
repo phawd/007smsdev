@@ -1,0 +1,83 @@
+<!-- Connected Devices -->
+<div id="connected_devices">
+	<h1><tmpl_var _("webui", "connected_devices_menu_text")></h1>
+	<h2>Pārskats</h2>
+	<p>
+		Šajā lapā ir redzama detalizēta informācija par katru ierīci, kas pievienota pie <tmpl_var _("webui", "webui_product_name")>, kā arī visu bloķēto ierīču saraksts.
+	</p>
+
+	<h2><tmpl_var _("webui", "connected_devices_sub_header_text")></h2>
+	<p>
+		Šajā tabulā ir norādītas visas ierīces, kas ir savienotas ar Wi-Fi tīklu. Wi-Fi tīkla nosaukums tiek parādīts aiz virsraksta. Ja dators ir piesaistīts pie <tmpl_var _("webui", "webui_product_name")>, izmantojot USB kabeli, šis dators ir norādīts šajā tabulā.
+	</p>
+	<p>
+		Par katru pievienoto ierīci ir redzama tālāk norādītā informācija.
+	</p>
+
+	<h3>Savienojuma veids</h3>
+	<p>
+		Ikona norāda savienojuma veidu katrai pievienotajai ierīcei.
+	</p>
+	
+	<h3>Nosaukums</h3>
+	<p>
+		Parasti tas ir pievienotās ierīces resursdatora nosaukums, kas iestatīts pašā pievienotajā ierīcē. Retos gadījumos resursdatora nosaukums var nebūt pieejams. Ja izmantojāt opciju "Rediģēt", lai mainītu pievienotās ierīces nosaukumu, norādītais nosaukums ir redzams resursdatora nosaukuma vietā.
+	</p>
+	<p>	
+		Varat izmantot opciju "Rediģēt", lai mainītu jebkuras pievienotās ierīces nosaukumu.
+	</p>
+	
+	<h3>IP adrese</h3>
+	<p>Pievienotās ierīces IP adrese.</p>
+
+	<h3>
+		<tmpl_var truncate(_("webui", "connected_devices_mac_address_label"), (size(_("webui", "connected_devices_mac_address_label")) - size(":")))>
+	</h3>
+	<p>
+		MAC adrese ir unikāls tīkla identifikators šai pievienotajai ierīcei.
+	</p>
+
+	<tmpl_if isIPv6Supported>
+		<h3>
+			<tmpl_var truncate(_("webui", "connected_devices_link_local_label"), (size(_("webui", "connected_devices_link_local_label")) - size(":")))>
+		</h3>
+		<p>
+			Ja pievienotā ierīce atbalsta IPv6, tiek parādīta Link-Local IPv6 adrese.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if GuestWifiSupported>
+		<h2><tmpl_var _("webui", "connected_devices_guest_title")></h2>
+		<p>
+			Ja tiek izmantots viesa Wi-Fi tīkls, šajā tabulā ir redzamas visas ierīces, kas ir savienotas ar viesa Wi-Fi tīklu. Wi-Fi tīkla nosaukums tiek parādīts aiz virsraksta.
+		</p>
+		
+		<p>
+			Šeit norādītās ierīces un darbība ir identiska primārajā tīklā norādītajām ierīcēm.
+		</p>
+	</tmpl_if>
+	
+	<h2>Ierīču bloķēšana un atbloķēšana</h2>
+	<h3>Poga Bloķēt</h3>
+	<p>
+		Noklikšķinot uz pogas Bloķēt, pievienotā ierīce tiek atvienota un to nevar atkārtoti pievienot. Bloķētā ierīce tiek parādīta bloķēto ierīču sarakstā.
+	</p>
+	<p>
+		Bloķētās ierīces ir bloķētas gan viesu tīklā, gan primārajā tīklā.
+	</p>
+	<p>
+		Šī opcija ir pieejama lietošanai ar katru pievienoto ierīci, izņemot jūsu ierīci un jebkuru ierīci, kas pievienota, izmantojot USB.
+	</p>
+	
+	<h3>Bloķēto ierīču saraksts</h3>
+	<p>	
+		Šajā sarakstā ir norādītas visas bloķētās ierīces. Ņemiet vērā, ka, tā kā šīs ierīces pašlaik nav pievienotas un tām ir bloķēta savienojuma izveide, tām nav IP adreses. Tā vietā tās identificē pēc to nosaukuma un MAC adreses.
+	</p>
+
+	<h3>Poga Atbloķēt</h3>
+	<p>
+		Noklikšķinot uz pogas Atbloķēt, tiek atbloķēta iepriekš bloķēta ierīce, un tā atkal var izveidot savienojumu. Atbloķētā ierīce tiek dzēsta no bloķēto ierīču saraksta, un pēc savienojuma izveides tā atkal būs redzama sarakstā Savienotās ierīces.
+	</p>
+</div>
+<!-- id="connected_devices" -->
+

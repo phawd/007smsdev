@@ -1,0 +1,28 @@
+<div id="settings_virtual">
+	<h1>Lisäasetukset</h1>
+	
+	<tmpl_if appsList>
+		<h2>Yleiskatsaus</h2>Advanced (Lisäasetukset) -valikosta pääset seuraaville sivuille ja seuraaviin asetuksiin:<div class="blockgroup">
+			<ul>
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title> - <tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+		<p>Huomaa, että tavanomaisessa käytössä ja tavanomaisissa tilanteissa mitään näistä asetuksista ei tarvitse muuttaa niiden oletusarvoista. Muuta näitä asetuksia vain, jos nimenomainen tilanteesi edellyttää muutoksia.</p>
+	</tmpl_if>
+
+	<h2>Painikkeet</h2>
+	<tmpl_if showBackButton>
+		<h3>Palaa takaisin</h3>
+		<p>Tätä napsauttamalla palaat edelliselle sivulle.</p>
+	</tmpl_if>
+	
+	<tmpl_unless showBackButton>
+		<h3>Jatka</h3>
+		<p>Tällä pääset lisäasetusten sivuille.</p>
+	</tmpl_unless>
+
+</div>

@@ -1,0 +1,75 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+	<h2>Vue d
+ensemble</h2>
+		<p>Un pare-feu prot
+ge vos appareils connect
+s contre le trafic entrant malveillant provenant d
+Internet. Le pare-feu ne peut pas 
+, mais les param
+tres suivants sont disponibles.</p>
+	<h2>Param
+tres</h2>
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+	<tmpl_unless ShowDmzActive>
+		<h3>Passthrough VPN</h3>
+	</tmpl_unless>
+		<p>Cette fonctionnalit
+ autorise le logiciel client VPN sur les appareils connect
+ se connecter via cet appareil 
+ des serveurs VPN distants. Normalement, cette option devrait rester activ
+<tmpl_if showTransparentMode>
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+		<tmpl_unless ShowDmzActive>
+			<h3>Mode transparent IPv6</h3>
+		</tmpl_unless>
+			<p>Normalement, le pare-feu bloque les demandes de connexion IPv6 entrantes destin
+ un appareil connect
+ IPv6.</p>
+			<p>Si vous souhaitez autoriser ces demandes de connexion entrantes d
+atteindre l
+appareil connect
+vu, activez ce param
+tre. Le mode transparent ne doit 
+tre activ
+en cas de n
+, car il r
+duit la protection fournie par le pare-feu <tmpl_var _("webui", "webui_product_name")>.</p>
+	</tmpl_if>
+</tmpl_if>
+	<tmpl_if ShowDmzActive>
+		<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+	<tmpl_else>
+		<h2>DMZ</h2>
+	</tmpl_if>
+	<p>Si la case est coch
+appareil connect
+ comme adresse IP DMZ (destination DMZ) recevra tout le trafic qui serait autrement bloqu
+ par le pare-feu. Cela peut aider certaines applications r
+seau probl
+matiques 
+ fonctionner correctement, mais le dispositif DMZ doit 
+ de son propre pare-feu pour se prot
+ger contre le trafic malveillant.</p>
+	<tmpl_if ShowDmzActive>
+	<h3>Case 
+ cocher DMZ</h3>
+		<p>Utilisez-la pour activer ou d
+sactiver cette fonctionnalit
+ selon vos besoins. En g
+ral, la case DMZ devrait 
+e, sauf si cela est vraiment n
+cessaire.</p>	
+	</tmpl_if>
+	<h3>Adresse IP de destination</h3>
+		<p>Saisissez l
+adresse IP de l
+appareil connect
+ pour qu
+il devienne le dispositif DMZ (destination DMZ) dans ce champ. Vous pouvez v
+rifier l
+adresse IP de chaque appareil connect
+cran des appareils connect
+<!-- id="firewall" -->

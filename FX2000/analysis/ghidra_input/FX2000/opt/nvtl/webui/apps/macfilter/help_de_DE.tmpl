@@ -1,0 +1,52 @@
+<!-- MAC Filter -->
+<div id="macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+	<h2>Übersicht</h2>
+	<p>Der MAC-Filter erlaubt nur ausgewählten Geräten den Zugriff auf das <tmpl_var _("webui", "webui_product_name")>-Netzwerk über DHCP. Standardmäßig ist der MAC-Filter ausgeschaltet. Auf dieser Registerkarte können Sie den MAC-Filter aktivieren und den Gerätezugriff festlegen.
+	</p>
+	
+	<h2>EIN-/AUS-Steuerung</h2>
+	<p>Um den MAC-Filter zu verwenden, wählen Sie die Geräte aus der Geräteliste aus, für die Sie eine Verbindung zum Netzwerk über DHCP herstellen möchten, und legen Sie über den <b>EIN-/AUS-Schieberegler für den MAC-Filter</b> die Option <b>EIN</b> fest. Klicken Sie auf <b>Änderungen speichern</b>.
+	</p>
+	
+	<h2>Geräteliste</h2>
+	
+	<p>Wenn Sie den MAC-Filter aktivieren, werden alle Geräte, die nicht im Filter enthalten sind, sofort vom Netzwerk getrennt. 
+	</p>
+
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Über die Aktualisierungsschaltfläche können Sie die Liste nach Bedarf aktualisieren.
+	</p>
+		
+	<h2>Betrieb</h2>
+	
+	<h3>Gesperrte Geräte vs. MAC-Filter</h3>
+	<p>Die Interaktion zwischen „gesperrten“ Geräten und dem „MAC-Filter“ ist wie folgt:
+	</p>
+	<div class="blockgroup">
+	<ul>
+	<li>Gesperrte Geräte werden immer vom Netzwerk blockiert, unabhängig davon, ob der MAC-Filter aktiviert oder deaktiviert ist.
+	</li>
+	<li>Wenn der MAC-Filter aktiviert ist und ein Gerät in der Liste „Gesperrt“ aufgeführt wird, nicht aber in der Liste „MAC-Adressfilter“, kann es keine Verbindung herstellen. Sowohl der MAC-Filter als auch die Sperrung würden eine Verbindung verhindern.
+	</li>
+
+	<li>Wenn der MAC-Filter aktiviert ist und sich ein Gerät in der MAC-Adressfilterliste befindet, kann das Gerät eine Verbindung herstellen. 
+	Nachdem die Verbindung hergestellt wurde, kann es dann entweder durch Entfernen aus der Liste des MAC-Adressfilters oder durch Verwendung der Funktion „Sperren“ gesperrt werden.
+	Im Allgemeinen sollte eine Sperre nur vorübergehend genutzt werden, und der MAC-Filter, wenn Sie ein Gerät dauerhaft sperren möchten.
+	</li>
+	</ul>
+	</div>
+	
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+	<p>Fügen Sie ein neues Gerät über diese Schaltfläche zur Geräteliste hinzu.
+	</p>
+
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Wenn Sie alle nicht gespeicherten Änderungen verwerfen und aktualisieren möchten, klicken Sie auf <b>Liste aktualisieren</b> und dann auf <b>Bestätigen</b>.
+	</p>
+
+	<h3>So löschen Sie ein Gerät</h3>
+	<p>Um ein Gerät aus der Liste zu löschen, aktivieren Sie das zugehörige Kontrollkästchen „Löschen“ und klicken Sie auf „Änderungen speichern“.</p>
+
+ </div>
+<!--  macfilter  -->

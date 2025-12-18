@@ -1,0 +1,132 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+	</div>
+<tmpl_else>
+<script type="text/javascript">
+	/* <![CDATA[ */
+	$(function()
+	{
+		$("#InternetSessionExport").on("click", function () {
+			<tmpl_unless isLocked>
+				<tmpl_unless InternetSessionExportLocked>
+					$("#formAction").val("downloadSessionlog");
+					$("#session_log_form").submit();
+				</tmpl_unless>
+			</tmpl_unless>
+		});
+
+		// Find th of every td and set a data-th attribute which is then applied through css :before content.
+		// Screen readers still announce the hidden th.
+
+		$('td').each(function () {
+			var th = $(this).closest('table').find('th').eq(this.cellIndex);
+			var thContent = $(th).html();
+			$(this).attr('data-th', thContent);
+		});
+	});	
+	/* ]]> */
+</script>
+<tmpl_if isLocked>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_locked_text")>
+	</div>
+</tmpl_if>
+
+<div class="row clearfix">
+	<h2 class="sectionHead"><tmpl_var _("webui", "session_log_info_headding_text")></h2>
+</div>
+<p class="note"><tmpl_var _("webui", "session_log_info_note_text")></p>
+
+<fieldset id="sessionLogField" class="first">
+	<tmpl_if ((maxSessionLogs) > 0) >
+		<tmpl_if showSessionsDurationDisplay>
+			<h3 class="sectionHead"><tmpl_var _("webui", "session_log_info_sub_head_text1")><tmpl_var connectStartDate><tmpl_var _("webui", "session_log_info_sub_head_text2")><tmpl_var connectEndDate></h3>
+		</tmpl_if>
+			<tmpl_if InternetSessionExportShow>
+				<div class="button_container clearfix">
+					<form id="session_log_form" method="POST" action="<tmpl_udf GET_URI('session_log_info')>">
+						<input type="hidden" name="gSecureToken" id="gSecureToken" value="<tmpl_var gSecureToken>" />
+						<input type="hidden" name="formAction" id="formAction" value="" />
+	                    <button type="button" class="secondary refresh" name="InternetSessionExport" id="InternetSessionExport"<tmpl_if InternetSessionExportLocked>disabled="disabled"</tmpl_if> <tmpl_if isLocked> disabled="disabled"</tmpl_if>><tmpl_var _("webui", "session_log_info_download_btn")></button>
+					</form>
+	    			</div>
+			</tmpl_if>
+		<tmpl_unless showSessionsDurationDisplay>
+			<h2 class="sectionHead"><tmpl_var _("webui", "session_log_info_sub_head_text1")><tmpl_var connectStartDate><tmpl_var _("webui", "session_log_info_sub_head_text2")><tmpl_var connectEndDate></h2>
+		</tmpl_unless>
+		<table id="sessionLogTable" class="logsTable">
+			<colgroup>
+				<col class="connectTimeColumn" />
+				<col class="connectionDurationColumn" />
+				<col class="dataReceived" />
+				<col class="dataTransmitted" />
+				<col class="dataTotal" />
+				<tmpl_if RoamingStatusShow>
+				<col class="roamingStatus" />
+				</tmpl_if>
+				<col class="ipv4AddressColumn" />
+				<col class="ipv6AddressColumn" />
+			</colgroup>
+			<thead >
+				<tr>
+					<th class="connectTimeColumn"><tmpl_var _("webui", "session_log_info_head_date_time")></th>
+					<th class="connectionDurationColumn"><tmpl_var _("webui", "session_log_info_head_time_duration")></th>
+					<th class="dataReceived"><tmpl_var _("webui", "session_log_info_head_data_received")></th>
+					<th class="dataTransmitted"><tmpl_var _("webui", "session_log_info_head_data_transmitted")></th>
+					<th class="dataTotal"><tmpl_var _("webui", "session_log_info_head_data_total")></th>
+					<tmpl_if RoamingStatusShow>
+					<th class="roamingStatus"><tmpl_var _("webui", "session_log_info_head_roaming_status")></th>
+					</tmpl_if>
+					<th class="ipv4AddressColumn"><tmpl_var _("webui", "session_log_info_head_ipv4_address")></th>
+					<th class="ipv6AddressColumn"><tmpl_var _("webui", "session_log_info_head_ipv6_address")></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tmpl_foreach sessionLogList as item>
+					<tr class="sessionLogInformationRow">
+
+						<td class="connectTimeColumn">
+							<div class="col label" style="display:none;" ><tmpl_var _("webui", "session_log_info_head_date_time")></div>
+							<span class="connectTime" id="connectTime"><tmpl_var item.connectTime></span>
+						</td>
+						<td class="connectionDurationColumn">
+							<div class="col label" style="display:none;"><tmpl_var _("webui", "session_log_info_head_time_duration")></div>
+							<span class="connectTimeDuration" id="connectTimeDuration"><tmpl_var item.connectTimeDuration></span>
+						</td>
+						<td class="dataReceived">
+							<div class="col label" style="display:none;"><tmpl_var _("webui", "session_log_info_head_data_received")></div>
+							<span class="internetDataReceived" id="internetDataReceived"><tmpl_var item.internetDataReceived></span>
+						</td>
+						<td class="dataTransmitted">
+							<div class="col label" style="display:none;"><tmpl_var _("webui", "session_log_info_head_data_transmitted")></div>
+							<span class="internetDataTransmitted" id="internetDataTransmitted"><tmpl_var item.internetDataTransmitted></span>
+						</td>
+						<td class="dataTotal">
+							<div class="col label" style="display:none;"><tmpl_var _("webui", "session_log_info_head_data_total")></div>
+							<span class="internetDataTotal" id="internetDataTotal"><tmpl_var item.internetDataTotal></span>
+						</td>
+						<tmpl_if RoamingStatusShow>
+						<td class="roamingStatus">
+							<div class="col label" style="display:none;"><tmpl_var _("webui", "session_log_info_head_roaming_status")></div>
+							<span class="roamingType" id="roamingType"><tmpl_var item.roamingType></span>
+						
+						</td>
+						</tmpl_if>
+						<td class="ipv4AddressColumn">
+							<div class="col label" style="display:none;"><tmpl_var _("webui", "session_log_info_head_ipv4_address")></div>
+							<span class="ipv4Address" id="ipv4Address"><tmpl_var item.ipv4Address></span>
+						</td>
+						<td class="ipv6AddressColumn">
+							<div class="col label" style="display:none;"><tmpl_var _("webui", "session_log_info_head_ipv6_address")></div>
+							<span class="ipv6Address" id="ipv6Address"><tmpl_var item.ipv6Address></span>
+						</td>
+					</tr>
+				</tmpl_foreach>
+			</tbody>
+		</table>
+<tmpl_else>
+	<h3 class="sectionHead"><tmpl_var _("webui", "session_log_info_unavilable_text")></h3>
+</tmpl_if>
+</fieldset>
+</tmpl_if>

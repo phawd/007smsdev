@@ -1,0 +1,330 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+GLIBC_2.4
+libc.so.6
+libmifi_health_api.so
+mifi_health_is_running
+msgq_does_queue_exist
+mifi_health_ab_failsafe_is_running
+mifi_health_get_mem_diag_settings
+settings_get_setting
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+mifi_health_set_mem_diag_settings
+settings_set_setting
+mifi_health_get_ab_failsafe_settings
+mifi_health_set_ab_failsafe_settings
+mifi_health_get_lowmem_reboot_settings
+mifi_health_set_lowmem_reboot_settings
+mifi_health_get_error_string
+mifi_health_dsm_broad_cast_event
+msgq_send_async
+mifi_health_sim_mgr_broad_cast_event
+mifi_health_mss_disconnect_event
+mifi_health_modem2_signal_stats
+mifi_health_modem2_call
+mifi_health_ccm2_wan_stats
+mifi_health_bootup_event_handle
+snprintf
+mifi_health_api_shutdown_event
+mifi_health_api_reboot_event
+mifi_health_api_fr_event
+mifi_health_api_wd_app_event
+mifi_health_api_crash_event
+mifi_health_api_dsm_state
+mifi_health_api_nua_restart
+mifi_health_api_wan_mgr_priority_list
+mifi_health_api_wan_mgr_failback_settings
+mifi_health_api_wan_mgr_monitor_settings
+mifi_health_api_wan_mgr_manual_settings
+mifi_health_api_wan_mgr_auto_switch
+mifi_health_api_wan_mgr_status
+mifi_health_get_mem_diag_settings_impl
+xmldata_getuint32_default
+mifi_health_set_mem_diag_settings_impl
+xmldata_setuint32
+xmldata_save
+MsgBusSetInt32
+mifi_health_get_ab_failsafe_settings_impl
+mifi_health_set_ab_failsafe_settings_impl
+mifi_health_get_lowmem_reboot_settings_impl
+mifi_health_set_lowmem_reboot_settings_impl
+initialize_settings
+mifi_health_factory_reset_impl
+initialize_factory_reset_func
+__bss_start
+librt.so.1
+libpthread.so.0
+libwatchdog_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifi_config.so
+libsettings_api.so
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libdmdb_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+H	KxD	J{D
+/mifi_health_mq
+/opt/nvtl/log/AB_failsafe/fw_verify_in_progress
+mifi_health.settings.mem_diag
+MIFI_HEALTH
+[%s]:[%s] - settings_get_setting result code:%d
+[%s]:[%s] - Settings Update: Max log file size: [%d], Max no of backups: [%d], safe zone least mem: [%d],CriticalZoneStartMem: [%d], SafeZonePollIntervalSec: [%d], ModerateZonePollIntervalSec: [%d], CriticalZonePollIntervalSec: [%d],SafeZoneStoreMemStatsIntervalMins: [%d], ModerateZoneStoreMemStatsIntervalMins: [%d],CriticalZoneStoreMemStatsIntervalMins: [%d], EnableDebugMode: [%d], TopCPUUsageThreshold: [%d]
+mifi_health.settings.ab_failsafe
+[%s]:[%s] - Settings Update: verify_duration: [%d], crash_cnt: [%d],wdt_reboot_cnt: [%d], pdn_connect_retry_cnt: [%d]
+mifi_health.settings.lowmem_reboot
+[%s]:[%s] - Settings Update: mem_threshold: [%d], check_interval: [%d],min_uptime: [%d], reboot_time_window_open: [%d], reboot_time_window_end: [%d]
+MIFI_HEALTH: success.
+MIFI_HEALTH: general error.
+MIFI_HEALTH: one or more bad parameters passed into a function.
+MIFI_HEALTH: one or more buffer type parameters passed into API is too small.
+MIFI_HEALTH: the feature is unsupported.
+MIFI_HEALTH: process not running.
+MIFI_HEALTH: a device reset is required for the operation to take effect.
+MIFI_HEALTH: API not implemented for the platform.
+MIFI_HEALTH: user defined error message.
+MIFI_HEALTH: unknown error.
+[%s]:[%s] - %s: Invalid arguement
+[%s]:[%s] - %s: MIFI_HEALTH process, not running
+[%s]:[%s] - %s: Sending event=[%d] MIFI_HEALTH process.
+[%s]:[%s] - %s: Sending event call disconnect MIFI_HEALTH process.
+[%s]:[%s] - %s: Sending event modem2 signal to MIFI_HEALTH process.
+[%s]:[%s] - %s: Sending event ccm2 WAN stats to MIFI_HEALTH process.
+[%s]:[%s] - %s: Sending event BOOTUP to MIFI_HEALTH process.
+[%s]:[%s] - %s: Sending event SHUTDOWN to MIFI_HEALTH process.
+[%s]:[%s] - %s: Sending event REBOOT to MIFI_HEALTH process.
+[%s]:[%s] - %s: Sending event FR to MIFI_HEALTH process.
+[%s]:[%s] - %s: Sending event WD App crash to MIFI_HEALTH process.
+[%s]:[%s] - %s: Sending event Crash=[%d] MIFI_HEALTH process.
+[%s]:[%s] - %s: Sending event DSM state to MIFI_HEALTH process.
+[%s]:[%s] - %s: Sending event=[%d]  to MIFI_HEALTH process.
+mifi_health_dsm_broad_cast_event
+mifi_health_sim_mgr_broad_cast_event
+mifi_health_mss_disconnect_event
+mifi_health_modem2_signal_stats
+mifi_health_modem2_call
+mifi_health_ccm2_wan_stats
+mifi_health_bootup_event_handle
+mifi_health_api_shutdown_event
+mifi_health_api_reboot_event
+mifi_health_api_fr_event
+mifi_health_api_wd_app_event
+mifi_health_api_crash_event
+mifi_health_api_dsm_state
+mifi_health_api_nua_restart
+mifi_health_api_wan_mgr_priority_list
+mifi_health_api_wan_mgr_failback_settings
+mifi_health_api_wan_mgr_monitor_settings
+mifi_health_api_wan_mgr_manual_settings
+mifi_health_api_wan_mgr_auto_switch
+mifi_health_api_wan_mgr_status
+/Settings/MifiHealth/MemDiag/MaxLogFileSize
+/Settings/MifiHealth/MemDiag/MaxNoOfBackups
+/Settings/MifiHealth/MemDiag/SafeZoneLeastMem
+/Settings/MifiHealth/MemDiag/CriticalZoneStartMem
+/Settings/MifiHealth/MemDiag/SafeZonePollIntervalSec
+/Settings/MifiHealth/MemDiag/ModerateZonePollIntervalSec
+/Settings/MifiHealth/MemDiag/CriticalZonePollIntervalSec
+/Settings/MifiHealth/MemDiag/SafeZoneStoreMemStatsIntervalMins
+/Settings/MifiHealth/MemDiag/ModerateZoneStoreMemStatsIntervalMins
+/Settings/MifiHealth/MemDiag/CriticalZoneStoreMemStatsIntervalMins
+/Settings/MifiHealth/MemDiag/EnableDebugMode
+/Settings/MifiHealth/MemDiag/TopCPUUsageThreshold
+mifi_health.settings.mem_diag
+/Settings/MifiHealth/ABFailSafe/VerifyDuration
+/Settings/MifiHealth/ABFailSafe/CrashCount
+/Settings/MifiHealth/ABFailSafe/WdtRebootCount
+/Settings/MifiHealth/ABFailSafe/PdnConnectRetryCount
+mifi_health.settings.ab_failsafe
+/Settings/MifiHealth/LowMemReboot/MemThresholdMB
+/Settings/MifiHealth/LowMemReboot/CheckIntervalSec
+/Settings/MifiHealth/LowMemReboot/MinUptimeHours
+/Settings/MifiHealth/LowMemReboot/RebootTimeWindowOpen
+/Settings/MifiHealth/LowMemReboot/RebootTimeWindowEnd
+mifi_health.settings.lowmem_reboot
+GCC: (GNU) 8.2.0
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/watchdog/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/xmldata/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/config
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/logging/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/mal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi-framework
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/loc-hal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi/loc_sdx55
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/usr/src/linux/usr/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dsm/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dmdb/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/powersave/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/modem2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/mifi_health/src
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/mifi_health/src/../include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/mifi_health/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/factory_reset/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/router2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel/config/../.
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-iprefix /opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/bin/arm-oe-linux-gnueabi/../../lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/mifi_health/src/mifi_health_api.c
+-mfpu=neon
+-mfloat-abi=hard
+-mcpu=arm10tdmi
+-mtls-dialect=gnu
+-march=armv5t
+-auxbase-strip mifi_health_api.o
+-frecord-gcc-switches
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/mifi_health/src/mifi_health_settings.c
+-auxbase-strip mifi_health_settings.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/mifi_health/src/mifi_health_factory_reset.c
+-auxbase-strip mifi_health_factory_reset.o
+gold 1.16
+call_weak_fn
+crtstuff.c
+__TMC_LIST__
+deregister_tm_clones
+register_tm_clones
+__do_global_dtors_aux
+completed.11339
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+mifi_health_api.c
+validate_mifi_health_mem_diag_settings_data_t
+__func__.10856
+__func__.10862
+__func__.10867
+__func__.10872
+__func__.10878
+__func__.10883
+__func__.10888
+__func__.10893
+__func__.10898
+__func__.10902
+__func__.10907
+__func__.10913
+__func__.10918
+__func__.10924
+__func__.10930
+__func__.10936
+__func__.10942
+__func__.10948
+__func__.10954
+__func__.10960
+mifi_health_settings.c
+mifi_health_factory_reset.c
+__FRAME_END__
+__dso_handle
+__TMC_END__
+_DYNAMIC
+_GLOBAL_OFFSET_TABLE_
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+mifi_health_is_running
+msgq_does_queue_exist
+mifi_health_ab_failsafe_is_running
+mifi_health_get_mem_diag_settings
+settings_get_setting
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+mifi_health_set_mem_diag_settings
+settings_set_setting
+mifi_health_get_ab_failsafe_settings
+mifi_health_set_ab_failsafe_settings
+mifi_health_get_lowmem_reboot_settings
+mifi_health_set_lowmem_reboot_settings
+mifi_health_get_error_string
+mifi_health_dsm_broad_cast_event
+msgq_send_async
+mifi_health_sim_mgr_broad_cast_event
+mifi_health_mss_disconnect_event
+mifi_health_modem2_signal_stats
+mifi_health_modem2_call
+mifi_health_ccm2_wan_stats
+mifi_health_bootup_event_handle
+snprintf
+mifi_health_api_shutdown_event
+mifi_health_api_reboot_event
+mifi_health_api_fr_event
+mifi_health_api_wd_app_event
+mifi_health_api_crash_event
+mifi_health_api_dsm_state
+mifi_health_api_nua_restart
+mifi_health_api_wan_mgr_priority_list
+mifi_health_api_wan_mgr_failback_settings
+mifi_health_api_wan_mgr_monitor_settings
+mifi_health_api_wan_mgr_manual_settings
+mifi_health_api_wan_mgr_auto_switch
+mifi_health_api_wan_mgr_status
+mifi_health_get_mem_diag_settings_impl
+xmldata_getuint32_default
+mifi_health_set_mem_diag_settings_impl
+xmldata_setuint32
+xmldata_save
+MsgBusSetInt32
+mifi_health_get_ab_failsafe_settings_impl
+mifi_health_set_ab_failsafe_settings_impl
+mifi_health_get_lowmem_reboot_settings_impl
+mifi_health_set_lowmem_reboot_settings_impl
+initialize_settings
+mifi_health_factory_reset_impl
+initialize_factory_reset_func
+__bss_start
+.init_array
+.fini_array
+.comment
+.rel.plt
+.ARM.attributes
+.eh_frame_hdr
+.gnu.version_r
+.rel.dyn
+.gnu.version
+.note.gnu.gold-version
+.GCC.command.line
+.eh_frame
+.tm_clone_table
+.note.gnu.build-id
+.gnu.version_d
+.dynamic
+.shstrtab

@@ -1,0 +1,82 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>Rodoma interneto ry
+io mobiliuoju tinklu b
+sena.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>Mobiliojo ry
+io tinklo, prie kurio 
+iuo metu prijungtas 
+renginys, pavadinimas.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>Dabartiniam ry
+iui naudojama tinklo technologija. LTE yra grei
+iausia galima technologija.</p> 
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>Nuo ry
+mezgimo pra
+s dabartinio interneto seanso laiko tarpas.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))></h3>
+	<p>Per dabartin
+ interneto seans
+ kiekis. U
+mezgus ry
+iamas nulinis skaitiklis.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>Dabartinio interneto seanso perduot
+ kiekis. U
+mezgus ry
+iamas nulinis skaitiklis.</p>
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+renginiui priskirtas interneto IP adresas.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))></h3>
+	<p>Su auk
+iau nurodytu IP adresu susieta tinklo kauk
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	<p>Su auk
+iau nurodytu IP adresu susietas tinkl
+ sietuvo IP adresas.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))></h3>
+	<p>Domen
+ serveris, kur
+iuo metu naudoja 
+renginys.</p>
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+ia rodomas bendrasis <tmpl_var _("webui", "webui_product_name")> IPv6 adresas. 
+is laukas bus tu
+ias, jei IPv6 i
+jungtas arba nepalaiko dabartinio tinklo ry
+	<tmpl_if InternetStatusViewSessionShow>
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+	<p>Seanso 
+urnale pateikiami 
+ie duomenys:</p>
+ Data ir laikas (prisijungimo prad
+ (toks pat kaip dabartinio seanso duomen
+ formatas)</p>
+ Gauta (toks pat kaip dabartinio seanso formatas)</p>
+ Perduota (toks pat kaip dabartinio seanso formatas)</p>
+ viso duomen
+ (Rx ir Tx suma, toks pat, kaip ir dabartinio seanso, duomen
+ formatas)</p>
+ Tarptinklinis ry
+ys (tarptinklinis ry
+ys / dalinis / tu
+ias = nam
+ tinklas</p>
+ IPv4 (IPv4 WWAN IP adresas)</p>
+ IPv6 (IPv6 WWAN IP adresas)</p>
+urnalas pateikiamas pagal dat
+	<p>Naudotojas negali pakeisti tvarkos ir n
+ su seanso 
+urnalu susijusi
+	</tmpl_if>
+<!-- id="status_internet" -->

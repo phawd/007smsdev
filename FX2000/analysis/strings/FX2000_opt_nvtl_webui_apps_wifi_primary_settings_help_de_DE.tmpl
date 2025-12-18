@@ -1,0 +1,75 @@
+<!-- wifi_primary_settings -->
+<div id="wifi_primary_settings">
+	<h1>WLAN
+res Netzwerk</h1>
+bersicht</h2>
+		Um eine Verbindung mit dem prim
+ren WLAN-Netzwerk von <tmpl_var _("webui", "webui_product_name_with_suffix")> herzustellen, m
+ssen die verbundenen Ger
+te die auf diesem Bildschirm angezeigten WLAN-Einstellungen verwenden. Wenn Sie diese Einstellungen 
+ndern, k
+nnen vorhandene verbundene Ger
+te ihre Verbindung verlieren.
+	<h3><tmpl_var _("webui", "wifi_primary_ssid_label")></h3>
+		Hier wird der Netzwerkname oder die SSID f
+r das WLAN-Netzwerk festgelegt. Geben Sie einen geeigneten Namen ein. Der Name kann bis zu 32 Zeichen lang sein.
+	<h3><tmpl_var _("webui", "wifi_primary_security_label")></h3>
+hlen Sie die gew
+nschte Option f
+r die WLAN-Sicherheit.
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> erm
+glicht es anderen Personen, Ihren WLAN-Datenverkehr nachzuverfolgen und Ihren Datentarif f
+r den Zugang zum Internet zu nutzen. Wenn m
+glich, sollte die Verwendung dieser Option vermieden werden.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> ist die neueste und sicherste Methode und sollte wenn m
+glich genutzt werden.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> kann verwendet werden, wenn einige Ihrer 
+lteren Ger
+te WPA2 nicht unterst
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> kann f
+r WPA2- und WPA3-Beschwerdeger
+te verwendet werden.
+	<h3><tmpl_var _("webui", "wifi_primary_password_label")></h3>
+		Geben Sie das WLAN-Kennwort in dieses Feld ein. Sie k
+nnen auch die Schaltfl
+Neuen Schl
+ssel generieren
+ verwenden, um ein starkes Zufallskennwort in dieses Feld einf
+gen zu lassen. Denken Sie daran, Ihre 
+nderungen zu speichern, wenn Sie diese Option verwenden.
+		Diese Einstellungen sind standardm
+ig ausgeblendet. Wenn Sie auf die 
+berschrift/den Link klicken, werden sie angezeigt. 
+		In der Regel ist es nicht erforderlich, die Standardwerte zu 
+ndern. Sie k
+nnen Sie aber bei Bedarf an Ihre Umgebung anpassen.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_ssid_label", gProductName)></h3>
+		Wenn diese Einstellung aktiviert ist, ist der WLAN-Name 
+ber die Men
+ auf dem <tmpl_var _("webui", "webui_product_name_with_suffix")>-Touchscreen lesbar. Ist sie nicht aktiviert, wird der Name als 
+ angezeigt.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_password_label", gProductName)></h3>
+		Wenn diese Einstellung aktiviert ist, ist das WLAN-Kennwort 
+ber die Men
+ auf dem <tmpl_var _("webui", "webui_product_name_with_suffix")>-Touchscreen lesbar. Ist diese Option nicht aktiviert, wird das Kennwort als 
+ angezeigt.
+	<h3><tmpl_var _("webui", "wifi_primary_broadcast_ssid_label")></h3>
+		Wenn diese Einstellung aktiviert ist, erscheint dieses WLAN-Netzwerk in der Liste der verf
+gbaren WLAN-Netzwerke auf Ihren verbundenen Ger
+ten. Ist diese Option nicht aktiviert, ist das Netzwerk nicht sichtbar.
+	<tmpl_if showWiFiPrimaryWPS>
+		<h3><tmpl_var _("webui", "wifi_primary_wps_label")></h3>
+			Wi-Fi Protected Setup (WPS) ist ein System, das es WLAN-Ger
+glicht, sich mit einem WLAN-Netzwerk zu verbinden, ohne den Netzwerkschl
+ssel manuell eingeben zu m
+ssen. Wenn Sie die WPS verwenden m
+chten, aktivieren Sie diese Option.
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_primary_privacy_label")></h3>
+		Ist diese Einstellung aktiviert, wird jedes verbundene Ger
+t von allen anderen verbundenen Ger
+ten isoliert. Das bietet zus
+tzliche Sicherheit, wenn einige verbundene Ger
+te unbekannt oder nicht absolut vertrauensw
+rdig sind. Bei normalem Betrieb sollte diese Option nicht aktiviert werden.
+<!-- id="wifi_primary_settings" -->

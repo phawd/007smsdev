@@ -1,0 +1,136 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+powersave_get_error_string
+powersave_is_running
+__isoc99_scanf
+GLIBC_2.7
+powersave_wakelock_acquire
+powersave_wakelock_release
+powersave_get_settings
+powersave_set_settings
+powersave_dsm_state_change
+powersave_charger_det_change
+powersave_battery_det_change
+powersave_battery_state_change
+powersave_battery_temperature_state_change
+powersave_power_button_change
+powersave_ip_client_change
+mifi_dbg_start
+__bss_start
+librt.so.1
+libmifimsgbus.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libgpio.so
+libacm.so
+libpowersave_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+wakelock_acquire
+Test of an sync api call to acquire wakelock on powersave.
+wakelock_release
+Test of an sync api call to release wakelock on powersave.
+get_settings
+Test of an sync api call to get data from settings powersave.
+set_settings
+Test of an sync api call to set data to settings powersave.
+dsm_state_change
+Test of an async api call to send dsm state change.
+charger_det_change
+Test of an async api call to send charger detection change.
+battery_det_change
+Test of an sync api call to send battery detection change.
+battery_state_change
+Test of an async api call to send battery status change.
+battery_temperature_state_change
+Test of an async api call to send battery_temperature_stateerature change.
+pwr_button_state_change
+Test of an async api call to send power button press.
+ip_client_change
+Test of an async api call to send ip client change.
+  ---------------------------------------------------------------------------
+ %15s - %s
+  ---------------------------------------------------------------------------
+%s returned %d (%s)
+What is app_name:  
+settings.enabled: [%d]
+settings.deep_sleep_enabled: [%d]
+settings.deep_sleep_idle_time: [%d]
+settings.deep_sleep_wakeup_time: [%d]
+settings.shutdown_enabled: [%d]
+settings.shutdown_idle_time: [%d]
+What is enabled: 
+What is deep_sleep_enabled: 
+What is deep_sleep_idle_time: 
+What is deep_sleep_wakeup_time: 
+What is shutdown_enabled: 
+What is shutdown_idle_time: 
+What is event:  
+What is ip client count:  
+command [%s]
+command [%s] not found.
+cmd_is_running
+cmd_wakelock_acquire
+cmd_wakelock_release
+cmd_get_settings
+cmd_set_settings
+cmd_dsm_state_change
+cmd_charger_det_change
+cmd_battery_det_change
+cmd_battery_state_change
+cmd_battery_temperature_state_change
+cmd_pwr_button_state_change
+cmd_ip_client_change
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

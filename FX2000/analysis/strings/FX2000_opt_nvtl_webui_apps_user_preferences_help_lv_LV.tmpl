@@ -1,0 +1,34 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+ ir daudzas opcijas, kas 
+auj iestat
+t <tmpl_var _("webui", "webui_product_name")> darb
+bu, lai t
+k atbilstu j
+su vajadz
+	<h3>Valoda</h3>
+	<p>Atlasiet v
+lamo valodu.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+diet form
+ datums tiek r
+a interfeis
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+diet form
+ laiks tiek r
+a interfeis
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+	<p>Atlasiet GPS augstumam un precizit
+tei izmantojamo ier
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+ti decim
+mi varat atlas
+t punktu (.) vai komatu (,).</p>
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+		<p>Ja Ethernet ports ir iesp
+jots, statusa josl
+ts Ethernet indikators; pret
+ tas tiek pasl
+pts.</p>
+	</tmpl_if>

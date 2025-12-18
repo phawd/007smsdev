@@ -1,0 +1,28 @@
+<!-- Backup and Restore -->
+<div id="backup_restore">
+         <h1><tmpl_var _("webui", "backup_restore_menu_text")></h1>
+
+         <h2>Apžvalga</h2>
+         <p>Naudodami šią funkciją sukurkite atsarginę konfigūracijos nuostatų kopiją (atsisiųskite ją) iš šio įrenginio į kompiuteryje esantį failą arba atkurkite (įkelkite) anksčiau įrašytą konfigūracijos failą. Šiame konfigūracijos faile yra visos įrenginio, maršruto parinktuvo ir sistemos funkcijų nuostatos. Jame nėra jokių 4G modemo nuostatų ar duomenų. Atminkite, kad failą galite atkurti tik tame pačiame įrenginyje, iš kurio jis buvo gautas.</p>
+         <p>Šiame ekrane taip pat galima iš naujo nustatyti gamyklines numatytąsias visų nuostatų vertes.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+         <h3>Administratoriaus slaptažodis</h3>
+         <p>Šiame lauke įveskite dabartinį <tmpl_var _("webui", "webui_product_name")> administratoriaus slaptažodį.</p>
+         <h3><tmpl_var _("webui", "backup_restore_backup_now_button")></h3>
+         <p>Norėdami atsisiųsti dabartinės konfigūracijos failo kopiją į kompiuterį, spustelėkite mygtuką „Atsisiųsti“. Jei naršyklėje būsite paraginti įrašyti failą, jei norėsite, galėsite jį pervardyti.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+
+         <h3>Administratoriaus slaptažodis</h3>
+         <p>Šiame lauke įveskite dabartinį <tmpl_var _("webui", "webui_product_name")> administratoriaus slaptažodį.</p>
+         <h3><tmpl_var truncate(_("webui", "backup_restore_file_select_label"), (size(_("webui", "backup_restore_file_select_label")) - size(":")))></h3>
+         <p>Pasirinkite konfigūracijos failą, kurį anksčiau atsisiuntėte iš šio <tmpl_var _("webui", "webui_product_name")> į savo kompiuterį.</p>
+         <h3>Mygtukas „Atkurti dabar“</h3>
+         <p>Pasirinkę konfigūracijos failą, spustelėkite šį mygtuką ir pradėkite failo įkėlimo procesą. Įkėlus, konfigūracijos failas iškart pritaikomas, o šis įrenginys paleidžiamas iš naujo.</p>
+         <p class="note"><strong>Pastaba.</strong> Įkeliant konfigūracijos failą pakeičiamos VISOS esamos nuostatos, kad atitiktų konfigūracijos failą. Gali būti pakeistos dabartinės „Wi-Fi“ nuostatos ir nutraukti visi esami ryšiai su šiuo <tmpl_var _("webui", "webui_product_name")>, įskaitant šį žiniatinklio naršyklės seansą.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+         <p>Spustelėkite mygtuką <strong>Atkurti gamyklines numatytąsias nuostatas</strong>, kad būtų iš naujo nustatytos gamyklinės numatytosios visų nuostatų vertės. Dėl to paleidžiama iš naujo ir gali būti pakeistos dabartinės „Wi-Fi“ nuostatos, nutraukiant visus esamus ryšius su šiuo <tmpl_var _("webui", "webui_product_name")>, įskaitant šį žiniatinklio naršyklės seansą.</p>
+</div>
+ <!-- id="backup_restore" -->

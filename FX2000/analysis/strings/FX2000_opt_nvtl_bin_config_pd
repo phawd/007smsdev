@@ -1,0 +1,22 @@
+#!/bin/sh
+# Script that activates the configfs based on the usb configuration 
+export SHELL=/bin/sh PATH=$PATH:/opt/nvtl/bin LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/nvtl/lib
+run_swap () 
+    case $1 in
+     0) 
+          echo -n "Disable otg by turning off the vbus and vconn regulator"
+          echo 1 > /sys/class/dual_role_usb/otg_default/device/pd_regulator_disable
+     1) 
+          echo -n "Swap power role to source"
+          echo source > /sys/class/dual_role_usb/otg_default/power_role
+          ;;
+     2) 
+          echo -n "Swap power role to sink"
+          echo sink > /sys/class/dual_role_usb/otg_default/power_role
+          ;;
+     3) 
+          echo -n "Swap data role to device"
+          echo device > /sys/class/dual_role_usb/otg_default/data_role
+          ;;
+	  exit 1
+run_swap $1 

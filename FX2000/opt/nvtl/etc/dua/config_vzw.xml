@@ -1,0 +1,17 @@
+<Config>
+	<DataUsageAgent>
+		<AgentUrl>https://mobile.vzw.com/mdui/servlet/vzam/</AgentUrl>
+		<RequestTemplate>request.txt</RequestTemplate>
+		<!--agentServerSyncInterval - interval at which to check with server(seconds). Sync should not occur more frequently than this -->
+		<AgentServerSyncInterval>900</AgentServerSyncInterval>
+		<!--update WDCP config when there is a change of this -->
+		<!--RequestTimeout - timeout in seconds to keep the request up , 0 to mean no timeout -->
+		<RequestTimeout>15</RequestTimeout>
+		<!--update WDCP config when there is a change of this -->
+		<!--RequestRetries - number of times to retry the request after a mandatory first try fails -->
+		<RequestRetries>2</RequestRetries>
+		<!--DataLimitForAgentServerPing - Data limit after which the DUA should ping to server -->
+		<!--Limit value should always be in following format, limit space unit ex : "200 KB" -->
+		<MinDataThresholdToGetUsageInfo>200 KB</MinDataThresholdToGetUsageInfo>
+	</DataUsageAgent>
+</Config>

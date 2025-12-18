@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lte IE 8]><html class="no-js ie8 oldie<tmpl_if IN_SET(gLangDirection, "rtl")> rtl</tmpl_if>" lang="<tmpl_var gHtmlLang>"<tmpl_if IN_SET(gLangDirection, "rtl")> dir="<tmpl_var gLangDirection>"</tmpl_if>><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js<tmpl_if IN_SET(gLangDirection, "rtl")> rtl</tmpl_if>" lang="<tmpl_var gHtmlLang>"<tmpl_if IN_SET(gLangDirection, "rtl")> dir="<tmpl_var gLangDirection>"</tmpl_if>><!--<![endif]-->
+		<tmpl_include "meta.tmpl">
+		<title><tmpl_include "admin_title.tmpl"></title>
+		<tmpl_include "links.tmpl">
+		<tmpl_include "scripts.tmpl">
+	</head>
+	<body id="<tmpl_var gPageId>" class="login_page">
+		<div id="container">
+			<div id="container_inner">
+				<tmpl_include "notification.tmpl">
+				<tmpl_include "header.tmpl">
+				<div id="main">
+					<div id="main_inner">
+						<div id="login_container">
+							<div id="login_inner">
+								<tmpl_include "noscript.tmpl">
+								<div id="login_content">
+									<tmpl_if IN_SET(gIsLoggedIn, "1", "true")>
+										<h1 class="pageHead"><tmpl_udf GET_PO_TEXT("login_title", gProductName, gProductNumber)></h1>
+										<h2><tmpl_var _("webui", "login_logout_intro")></h2>
+										<a class="gohome" href="<tmpl_udf GET_URI('apps_home')>">
+											<tmpl_udf GET_PO_TEXT("login_home_link", gProductName)>
+										</a>
+									<tmpl_else>
+										<h1 class="pageHead"><tmpl_udf GET_PO_TEXT("login_title", gProductName, gProductNumber)></h1>
+										<h2 class="appHead"><tmpl_var _("webui", "login_intro")></h2>
+											<tmpl_include "app.tmpl">
+										<a class="gohome" href="<tmpl_udf GET_URI('apps_home')>">
+											<tmpl_udf GET_PO_TEXT("login_home_link", gProductName)>
+										</a>
+									</tmpl_if>
+								</div><!-- /#login_content -->
+							</div> <!-- /#login_inner -->
+						</div> <!-- /#login_container -->
+					</div>  <!-- /#main_inner -->
+				</div> <!-- /#main -->
+			</div> <!-- /#container_inner -->
+			<div id="push"></div> <!-- for sticky footer -->
+		</div> <!-- /#container -->
+		<tmpl_include "footer.tmpl">
+	</body>

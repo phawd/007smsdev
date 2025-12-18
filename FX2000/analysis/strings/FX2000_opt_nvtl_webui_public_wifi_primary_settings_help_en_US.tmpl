@@ -1,0 +1,30 @@
+<!-- wifi_primary_settings -->
+<div id="wifi_primary_settings">
+	<h1>Wi-Fi - Primary Network </h1>
+	<h2>Overview</h2>
+		To connect to the <tmpl_var _("webui", "webui_product_name_with_suffix")> primary Wi-Fi network, connected devices must use the Wi-Fi settings shown on this screen.
+		If you change these settings, existing connected devices may lose their connection.
+	<h3><tmpl_var _("webui", "wifi_primary_ssid_label")></h3>
+		This sets the network name or SSID for the Wi-Fi network. 
+		Enter a suitable name. The name can be up to 32 characters long.
+	<h3><tmpl_var _("webui", "wifi_primary_security_label")></h3>
+		Select the desired option for Wi-Fi security. 
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> allows other people to monitor your WI-FI traffic and use your data plan to access the internet. If at all possible, using this options should be avoided.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> is the latest and most secure method, and should be used if possible. 
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> can be used if some of your older devices do not support WPA2. 
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> can be used for WPA2 and WPA3 complaint devices.
+	<h3><tmpl_var _("webui", "wifi_primary_password_label")></h3>
+		Enter the Wi-Fi Password in this field. You can also use the "Generate New Key" button to have a strong random password inserted into this field. Remember to save your changes if you use this option.
+		These settings are hidden by default, but you can click on the heading/link to make them visible.
+		Normally these options can be left at their default values, but can be changed if necessary to suit your particular environment.
+	<h3><tmpl_var _("webui", "wifi_primary_broadcast_ssid_label")></h3>
+		If this setting is checked, this Wi-Fi network appears in the list of available Wi-Fi networks on your connected devices. 
+		If unchecked, this network will be invisible.
+	<tmpl_if showWiFiPrimaryWPS>
+		<h3><tmpl_var _("webui", "wifi_primary_wps_label")></h3>
+			Wi-Fi Protected Setup (WPS) is a system to allow Wi-Fi devices to connect to a Wi-Fi network without having to manually enter the network key.
+			If you wish to use WPS, check this option.
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_primary_privacy_label")></h3>
+		If this setting is checked, each connected device is isolated from all other connected devices. This provides additional security if some connected devices are unknown or not completely trusted. For normal operation, this should be unchecked.
+<!-- id="wifi_primary_settings" -->

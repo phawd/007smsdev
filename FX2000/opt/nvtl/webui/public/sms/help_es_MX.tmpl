@@ -1,0 +1,18 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<h2>Descripción</h2>
+	<p> Estos mensajes SMS generalmente se los envía su proveedor de servicio. No debe intentar responder y, en consecuencia, no se incluye la función Responder. </p>
+	<h2>Contenido</h2>
+	<tmpl_if showMessageCounter>
+		<h3>Contadores de mensajes</h3>
+		<p> Dos contadores en la parte superior de la pantalla indican la cantidad de mensajes (nuevos) no leídos y la cantidad total de mensajes. </p>
+		<p> Observe que todos los mensajes se definen como "leídos" una vez que se exhiben en la pantalla. </p>
+	</tmpl_if>
+	<h3>Lista de mensajes</h3>
+	<p> Todos los mensajes figuran en orden cronológico. Los mensajes no leídos (nuevos) se indican por un icono. Los mensajes se marcan automáticamente como "leídos" una vez que se muestran en esta página, de tal forma que la próxima vez que se ingresa a la página ya no se mostrarán como no leídos. </p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p> Este botón se encuentra al final de la lista de mensajes. Úselo según sea necesario para eliminar todos los mensajes. </p>
+	</tmpl_if>
+</div>

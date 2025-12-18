@@ -1,0 +1,5 @@
+<tmpl_if NetworksConnectionPreferenceShow>
+	<option value="<tmpl_var autoconnectvalue>"<tmpl_if IN_SET(NetworksConnectionPreference, autoconnectvalue)> selected="selected"</tmpl_if>><tmpl_var _("webui", "wwan_settings_connection_preference_option_auto_connect_text")></option>
+	<option value="<tmpl_var autoconnectifnotroamingvalue>"<tmpl_if IN_SET(NetworksConnectionPreference, autoconnectifnotroamingvalue)> selected="selected"</tmpl_if>><tmpl_var _("webui", "wwan_settings_connection_preference_option_not_roaming_text")></option>
+	<option value="<tmpl_var manualvalue>"<tmpl_if IN_SET(NetworksConnectionPreference, manualvalue)> selected="selected"</tmpl_if>><tmpl_var _("webui", "wwan_settings_connection_preference_option_manual_text")></option>
+</tmpl_if>

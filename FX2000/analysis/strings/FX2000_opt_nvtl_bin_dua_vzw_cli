@@ -1,0 +1,169 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+dua_get_error_string
+dua_get_active_interface_level
+__isoc99_scanf
+GLIBC_2.7
+dua_set_data_usage_settings_info
+dua_get_data_usage_settings_info
+dua_get_interface_data_usage_info
+dua_get_data_usage_info
+dua_trigger_data_usage_sync
+dua_is_running
+mifi_dbg_start
+__bss_start
+libmificommon.so
+libmifi_debug.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+librt.so.1
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libgps_api.so
+libfactory_reset_api.so
+libsms_api.so
+libwifi_api.so
+libccm2_api.so
+librouter2_api.so
+libfile_sharing_api.so
+libfota_api.so
+libled_api.so
+libbuzzer_api.so
+libans_api.so
+libusb_api.so
+libemd_api.so
+libsensor_api.so
+libvpn_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libwan_mgr_api.so
+libcbsd_api.so
+libsysintclient.so
+libwebui_api.so
+libuisupport.so
+libsqlite3.so.0
+libfcgi.so.0
+libfcgi++.so.0
+libcurl.so.4
+libcares.so.2
+libcrypto.so.1.1
+libssl.so.1.1
+libctpp2.so.2
+libcgicc.so.3
+libiconv.so.2
+libdua_vzw_api.so
+H	KxD	J{D
+Enter iface_type[0=INTERFACE_SIM,1=INTERFACE_ETH]: 
+Enter imsi 
+Enter iccid or leave empty to skip: 
+Enter mac: 
+dua_get_level_info%d (%s)
+the data usage level : ZERO
+the data usage level : ONE
+the data usage is at level : LEVELFULL
+run from cli
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+Enter imsi : 
+Enter iccid:
+What is cycle_day(1 <> 31): 
+What is usage_limit [ 0(NONE), 1(20 MB), 2(25 MB), 3(100 MB), 4(250 MB), 5(500 MB), 6(1 GB), 7(2 GB), 8(3 GB), 9(5 GB), 10(8 GB), 11(10 GB), 12(12 GB), 13(15 GB) 14(20 GB) ]:  
+What is level1_threshold(1 <> 100): 
+Enter mac or leave empty to skip: 
+dua_set_data_usage_settings_info returned %d (%s)
+Enter imsi or leave empty to skip: 
+dua_get_data_usage_settings_info returned %d (%s)
+cycle_day:[%d]
+usage_limit:[%s]
+level1_threshold:[%d]
+Enter iccid or leave empty to skp: 
+dua_get_interface_data_usage_info returned %d (%s)
+status:[%hu](0 => DATA_USAGE_INFO_STATUS_VALID, 1 => DATA_USAGE_INFO_STATUS_INVALID)
+plan_type:[%s]
+cycle_end_date:[%s]
+usage_timestamp:[%s]
+plan_limit:[%s]
+line_usage:[%s]
+shared_usage:[%s]
+tx_bytes:[%llu]
+rx_bytes:[%llu]
+plan_limit_bytes:[%llu]
+unit:[%s]
+prepay_indicator:[%s]
+mdn:[%s]
+is_data_available:[%d]
+dua_get_data_usage_info returned %d (%s)
+cycle_start_date:[%s]
+dua_trigger_data_usage_sync returned %d (%s)
+dua_is_running returned %d (%s)
+command [%s]
+command [%s] not found.
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+trigger_data_usage_sync
+Triggers a data usage sync with server.
+get_data_usage_info
+Gets data usage info.
+get_interface_data_usage_info
+Gets data usage info for a specific interface.
+get_data_usage_settings_info
+Gets data usage settings info.
+set_data_usage_settings_info
+Sets data usage settings info.
+get_active_interface_level_info
+Gets the run level info based on data usage.
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

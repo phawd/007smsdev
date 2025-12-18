@@ -1,0 +1,43 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<h2>Vis
+o geral</h2>
+	<p> Normalmente, essas mensagens de SMS s
+o do seu provedor de servi
+o deve tentar responder; assim, uma recurso de n
+o responder 
+ oferecido. </p>
+	<h2>Conte
+	<tmpl_if showMessageCounter>
+		<h3>Contadores de mensagens</h3>
+		<p> Os dois contadores na parte superior da tela indicam o n
+mero de mensagens n
+o lidas (novas) e o n
+mero total de mensagens. </p>
+		<p> Observe que todas as mensagens ficam definidas como "lidas" ap
+s serem exibidas nesta tela. </p>
+	</tmpl_if>
+	<h3>Lista de mensagens</h3>
+	<p> Todas as mensagens est
+o listadas em ordem cronol
+gica. As mensagens n
+o lidas (novas) est
+o sinalizadas com um 
+cone. As mensagens ficam marcadas automaticamente como "lidas" ap
+s serem exibidas nesta p
+gina; ou seja, da pr
+xima vez que a p
+gina for aberta, elas n
+o mais mostradas como n
+o lidas. </p>
+	<h3>Bot
+o Excluir</h3>
+	<p> Cada mensagem tem um 
+cone individual de "Excluir". Use-o para excluir mensagens. </p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p> Esse bot
+o se encontra ao final da lista de mensagens. Se necess
+rio, use-o para excluir todas as mensagens. </p>
+	</tmpl_if>

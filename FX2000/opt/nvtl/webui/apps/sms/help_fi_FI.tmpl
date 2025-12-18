@@ -1,0 +1,18 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<h2>Yleiskatsaus</h2>
+	<p>Nämä tekstiviestit ovat yleensä palveluntarjoajaltasi. Niihin ei pidä yrittää vastata, joten vastaustoimintoa ei ole tarjolla.</p>
+	<h2>Sisältö</h2>
+	<tmpl_if showMessageCounter>
+		<h3>Viestilaskurit</h3>
+		<p>Näytön yläosassa olevat kaksi laskuria ilmaisevat lukemattomien (uusien) viestien määrän ja viestien kokonaismäärän.</p>	
+		<p>Huomaa, että kaikki viestit on asetettu ”luetuiksi”, kun ne näkyvät tässä näytössä.</p>
+	</tmpl_if>
+	<h3>Viestiluettelo</h3>
+	<p>Kaikki viestit on lueteltu päivämääräjärjestyksessä. Lukemattomat (uudet) viestit ilmaistaan kuvakkeella. Viestit merkitään automaattisesti ”luetuiksi”, kun ne näkyvät tällä sivulla, joten seuraavan kerran, kun sivulle siirrytään, ne eivät enää näy lukemattomina.</p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p>Tämä painike on viestiluettelon lopussa. Voit tarvittaessa poistaa sillä kaikki viestit.</p>
+	</tmpl_if>
+</div>

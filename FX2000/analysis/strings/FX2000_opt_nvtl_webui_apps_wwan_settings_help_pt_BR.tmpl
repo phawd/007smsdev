@@ -1,0 +1,84 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p> Voc
+ pode usar essa configura
+o liga/desliga sempre que necess
+rio para desativar dados celulares e impedir o acesso 
+vel. Isso impede que dispositivos conectados se conectem 
+ internet e usem o seu plano de dados m
+veis. Para a opera
+o normal, essa configura
+o deve estar ativada. </p>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Prefer
+ncias de conex
+			<p> Selecione a op
+o desejada para controlar quando o <tmpl_var _("webui", "webui_product_name")> estabelecer
+ uma conex
+o de dados com a rede m
+vel. </p>
+	</tmpl_if>
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p> O valor padr
+ "<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>". O <tmpl_var _("webui", "webui_product_name")> selecionar
+ a melhor tecnologia dispon
+vel. </p>
+		<p> Se desejar, isso pode ser alterado para limitar as tecnologias de rede que ser
+o usadas. </p>
+	</tmpl_if>
+	<h3>Sele
+o de rede manual</h3>
+		Esse recurso, dispon
+vel apenas se a op
+o <tmpl_unless apnProfileSettings>"LTE/GSM/UMTS/HSPA"<tmpl_else>"WCDMA/GSM"</tmpl_unless> estiver escolhida para a "Tecnologia de Rede Preferencial" acima, permite que voc
+ escolha a rede m
+vel utilizada. Isso pode ser 
+til se houver v
+rias redes dispon
+veis e se voc
+ tiver uma prefer
+ncia de qual rede ser
+		Clique no bot
+o "Selecionar rede" para buscar as redes dispon
+veis; ent
+ escolher a rede desejada.
+	<tmpl_if showApnSettings>
+		<tmpl_if ShowAdvancedSettingsToggleButton>
+			<h2>Configura
+adas</h2>
+				Use este t
+tulo/link para exibir ou ocultar as configura
+adas de acordo com a necessidade.
+		</tmpl_if>
+			Se voc
+ precisar alterar o APN, insira o valor fornecido pelo seu provedor de servi
+os de rede m
+		<tmpl_if showApnAuthenticationSettings>
+				<tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))>
+			</h3>
+			<div class="blockgroup">
+				<p>Selecione a op
+o especificada pelo seu provedor de servi
+os. </p>
+				<ul>
+					<li>Nenhum</li>
+					<li>PAP</li>
+					<li>CHAP</li>
+				</ul>
+			</div>
+				<tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))>
+			</h3>
+				Se a autentica
+o for <strong>Nenhum</strong>, pode ser deixado em branco. Sen
+o, insira o valor especificado pelo seu provedor de servi
+				<tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))>
+			</h3>
+				Se a autentica
+o for <strong>Nenhum</strong>, pode ser deixado em branco. Sen
+o, insira o valor especificado pelo seu provedor de servi
+		</tmpl_if>
+	</tmpl_if>

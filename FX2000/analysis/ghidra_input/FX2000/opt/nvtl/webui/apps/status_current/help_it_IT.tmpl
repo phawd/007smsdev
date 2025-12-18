@@ -1,0 +1,73 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>Visualizza lo stato della connessione per la connessione Internet tramite la rete mobile. 
+	</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>Il nome della rete mobile a cui questo dispositivo è attualmente connesso. 
+	</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>Indica la connessione dati cellulare corrente, ad esempio: 5G.	
+	</p> 
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+	-->
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>Il periodo di tempo trascorso da quando è stata stabilita la connessione per la sessione internet corrente. 
+	</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))>
+</h3>
+	<p>La quantità di dati ricevuti durante la sessione internet corrente. Questo contatore si azzera quando viene stabilita la connessione. 
+	</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>La quantità di dati inviati durante la sessione internet corrente. Questo contatore si azzera quando viene stabilita la connessione. 
+	</p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+	<p>
+        	L'indirizzo IP assegnato a questo dispositivo.
+	</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))>
+</h3>
+	<p>
+	        La maschera di rete associata all'indirizzo IP in alto.
+	</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	<p>
+	        L'indirizzo IP del gateway associato all'indirizzo IP in alto.
+	</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))>
+</h3>
+	<p>
+	        Il Domain Name Server che il dispositivo utilizza in questo momento.
+	</p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+	<p>L'indirizzo IPv6 globale del <tmpl_var _("webui", "webui_product_name")> viene visualizzato qui. 
+	Questo campo sarà vuoto se l’IPv6 è disattivato o nel caso non sia supportato dalla connessione di rete corrente. </p>
+
+	<tmpl_if InternetStatusViewSessionShow>
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+	<p>Il log delle sessioni contiene i seguenti dati:</p>
+	<p>- Data e ora   (all'avvio della connessione)</p>
+	<p>- Durata   (stesso formato delle informazioni sulla sessione corrente)</p>
+	<p>- Ricevuti   (stesso formato della sessione corrente)</p>
+	<p>- Trasmessi   (stesso formato della sessione corrente)</p>
+	<p>- Dati totali   (somma dei dati ricevuti e trasmessi nello stesso formato delle informazioni sulla sessione corrente)</p>
+	<p>- Roaming   (roaming/parziale/vuoto) Vuoto = rete domestica</p>
+	<p>- IPv4   (indirizzo IP WWAN IPv4)</p>
+	<p>- IPv6   (indirizzo IP WWAN IPv6)</p>
+
+	<p>Il log è in ordine cronologico. </p>
+	<p>L'utente non può modificare l'ordine e non ci sono opzioni relative al log delle sessioni.</p>
+	</tmpl_if>
+
+</div> 
+<!-- id="status_internet" -->
+

@@ -1,0 +1,324 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+xmldata_initialize
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+xmldata_getuint32_default
+xmldata_shutdown
+gettimeofday
+su_api_get_status
+mifi_dbg_start
+msgq_does_queue_exist
+su_api_get_settings
+sys_getCellularDataConnectionStatus
+su_api_check_for_update
+MsgBusSetBinary
+libpthread.so.0
+mifi_dbg_stop
+xmlXPathEvalExpression
+LIBXML2_2.4.30
+libxml2.so.2
+xmlNewNode
+xmlDocCopyNode
+xmlAddChild
+xmlUnlinkNode
+xmlFreeNode
+xmlXPathFreeObject
+xmlNodeGetContent
+xmlStrlen
+snprintf
+xmlEncodeEntitiesReentrant
+xmlEncodeSpecialChars
+xmlNodeSetContentLen
+closedir
+__errno_location
+strerror
+xmlKeepBlanksDefault
+xmlReadFile
+LIBXML2_2.6.0
+xmlXPathNewContext
+xmlFreeDoc
+xmlSaveFormatFileEnc
+xmlXPathFreeContext
+__bss_start
+__lxstat
+librt.so.1
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libgps_api.so
+libfactory_reset_api.so
+libsms_api.so
+libwifi_api.so
+libccm2_api.so
+librouter2_api.so
+libfile_sharing_api.so
+libfota_api.so
+libled_api.so
+libbuzzer_api.so
+libans_api.so
+libusb_api.so
+libemd_api.so
+libsensor_api.so
+libvpn_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libwan_mgr_api.so
+libcbsd_api.so
+libsysintclient.so
+libcurl.so.4
+libssl.so.1.1
+libcrypto.so.1.1
+libcloud_engine_api.so
+libnua_api.so
+H	KxD	J{D
+/opt/nvtl/data/nua/reg.xml
+[%s]:[%s] - [timer_watchdog] %s: Failed to open registry file: %s
+/reg/activity/poll/interval
+/reg/testMode/pollInternval
+/opt/nvtl/etc/nua/config.xml
+[%s]:[%s] - [timer_watchdog] %s: Failed to open configuration file: %s
+/Config/softwareUpdate/pollIntervalDays
+/reg/poll/secSinceEpoch
+[%s]:[%s] - [timer_watchdog] %s: elapsed[%ld]=now[%ld]-last[%ld], cfg_poll_intrvl_seconds[%ld], ret[%d]
+[%s]:[%s] - [timer_watchdog] %s: su_api_get_status failed, rc[%d].
+[%s]:[%s] - [timer_watchdog] Starting nua_timer_watchdog application.
+[%s]:[%s] - [timer_watchdog] NUA sub-system is not ready. retries left %d
+[%s]:[%s] - [timer_watchdog] NUA sub-system initialized successfully.
+[%s]:[%s] - [timer_watchdog] NUA sub-system is not running, EXIT.
+[%s]:[%s] - [timer_watchdog]: Unable to read NUA settings.
+[%s]:[%s] - [timer_watchdog]: polling is disabled.
+[%s]:[%s] - [timer_watchdog]: sys_getCellularDataConnectionStatus() failed, rc=[%d]
+[%s]:[%s] - [timer_watchdog]: Data call up.
+NUA_TIMER_WATCHDOG
+[%s]:[%s] - [timer_watchdog] NUA timer is IDLE...restarting NUA.
+[%s]:[%s] - [timer_watchdog] Sending out MSGBUS_SU_RESTART.
+su.broadcast
+[%s]:[%s] - [timer_watchdog] MsgBusSetBinary() failed.
+/opt/nvtl/bin/nua.sh restart
+[%s]:[%s] - [timer_watchdog] Stopping nua_timer_watchdog application.
+read_cfg_poll_interval_secs
+read_last_poll_timestamp_secs
+check_if_nua_timer_is_idle
+read_nua_state
+[%s]:[%s] - %s: xmlXPathEvalExpression() failed, xparent=[%s]
+[%s]:[%s] - %s: Unable to insert node=[%s] at [%s]
+[%s]:[%s] - %s: Unable to create node path=[%s]
+[%s]:[%s] - %s: Null parameters
+[%s]:[%s] - %s: Invalid input values
+[%s]:[%s] - %s: xmlXPathEvalExpression() failed, XPath=[%s]
+[%s]:[%s] - %s: xmlXPathNodeSetIsEmpty() is true , XPath=[%s]
+[%s]:[%s] - %s: xmlNodeGetContent() failed, XPath=[%s]
+[%s]:[%s] - %s: XPath=[%s] value len=[%ld] > buf size=[%d]
+[%s]:[%s] - %s: XPath=[%s], value=[%s]
+[%s]:[%s] - %s: XPath=[%s] does not have any node.
+[%s]:[%s] - %s: XPath=[%s] is not a node.
+[%s]:[%s] - %s: xmlEncodeEntitiesReentrant() failed, XPath=[%s]
+[%s]:[%s] - %s: xmlEncodeSpecialChars() failed, XPath=[%s]
+[%s]:[%s] - %s: XPath=[%s], encoded=[%s], org_value=[%s]
+[%s]:[%s] - %s: unable to get node count, XPath=[%s]
+[%s]:[%s] - %s: fopen() failed, file=[%s]
+[%s]:[%s] - %s: xmlReadFile(%s) failed
+[%s]:[%s] - %s: xmlXPathNewContext() failed
+[%s]:[%s] - %s: fname=[%s]
+[%s]:[%s] - %s: xmlSaveFormatFile(%s) failed
+[%s]:[%s] - %s: fname=[%s] saved, bytes=[%d]
+nua_xml_insert_node
+nua_xml_create_node_path
+nua_xml_do_operation
+nua_xml_get_node_count
+nua_xml_open_new
+nua_xml_open
+nua_xml_save
+/opt/nvtl/data/nua/reg.xml
+/opt/nvtl/data/nua/custom_msgs.bin
+/tmp/nua_fota_installation_success
+[%s]:[%s] - %s: Skip=[%s]
+[%s]:[%s] - %s: Opened dir=[%s]
+[%s]:[%s] - %s: stat failed for=[%s]
+[%s]:[%s] - %s: Entering sub directory: %s
+[%s]:[%s] - %s: Deleting=[%s]
+[%s]:[%s] - %s: Remove failed on=[%s], erronno=[%d]
+/opt/nvtl/data/nua
+[%s]:[%s] - %s: Remove failed for=[%s], erronno[%d]
+[%s]:[%s] - %s: unlink failed ret=%d for file:%s
+[%s]:[%s] - %s: Removed file: %s
+[%s]:[%s] - %s: rename(%s, %s) failed=[%s]
+[%s]:[%s] - %s: fsyncing=[%s]
+[%s]:[%s] - %s: File not found [%s]
+[%s]:[%s] - %s: Read str=[%s] from file=[%s]
+[%s]:[%s] - %s: Cannot open dir, errno:%d
+[%s]:[%s] - %s: syncing %s complete
+[%s]:[%s] - %s: fopen() creation failed for %s
+[%s]:[%s] - %s: file (%s) write failed expected:%d, returned:%d
+[%s]:[%s] - %s: unlink failed for:%s rc=%d, errno:%d
+[%s]:[%s] - %s: File created :%s
+nua_file_is_delete_ok
+nua_dir_clean_up
+nua_file_remove
+nua_file_move
+nua_read_str_from_file
+nua_file_sync_and_close
+nua_file_create
+OUT_OF_BOUNDS
+SU_OPR_ERR_OK
+SU_OPR_ERR_CALL
+SU_OPR_ERR_BUFFER
+SU_OPR_ERR_FEATURE_DISABLED
+SU_OPR_ERR_MEM_ALLOC_FIALURE
+SU_OPR_ERR_STORAGE
+SU_OPR_ERR_DEVICE_IN_ROAMING
+SU_OPR_ERR_NO_MOBILE_COVERAGE
+SU_OPR_ERR_BATT_LOW_FOR_INSTALL
+SU_OPR_ERR_OTA_CALL_DISABLED
+SU_OPR_ERR_OTA_CALL_FAILED
+SU_OPR_ERR_OTA_CALL_CONNECT_PROG
+SU_OPR_ERR_OTA_CALL_DNS_QUERY
+SU_OPR_ERR_OTA_CALL_NOT_PRESENT
+SU_OPR_ERR_SYS_INTF_FAILURE
+SU_OPR_ERR_DM_NO_UPD_PKG
+SU_OPR_ERR_ROAMING_OR_EMERGENCY
+SU_OPR_ERR_WIFI_NOT_AVAILABLE
+SU_OPR_ERR_DL_FILE_TOO_BIG
+SU_OPR_ERR_DL_CURL_RANGE
+SU_OPR_ERR_DL_CURL_API
+SU_OPR_ERR_DL_GENERAL
+SU_OPR_ERR_DL_NETWORK
+SU_OPR_ERR_DL_PKG_VALIDATION_FAILED
+SU_OPR_ERR_CANCEL
+SU_OPR_ERR_DM_GENERAL
+SU_OPR_ERR_DM_NETWORK
+SU_OPR_ERR_DM_IN_PROGRESS
+SU_OPR_ERR_DM_SU_CANCEL
+SU_OPR_ERR_DM_TREE_NODE
+SU_OPR_ERR_BOOTSTRAP
+SU_OPR_ERR_SYNML_CMD
+SU_OPR_ERR_NIA
+SU_OPR_ERR_AUTH
+SU_OPR_ERR_COMMS
+SU_OPR_ERR_COMMS_FATAL
+SU_OPR_ERR_ABORT
+SU_OPR_ERR_UNDEFINED
+SU_OPR_ERR_DD_PARSE
+SU_OPR_ERR_HTTP
+SU_OPR_ERR_HTTP_400
+SU_OPR_ERR_HTTP_401
+SU_OPR_ERR_HTTP_402
+SU_OPR_ERR_HTTP_403
+SU_OPR_ERR_HTTP_404
+SU_OPR_ERR_HTTP_405
+SU_OPR_ERR_HTTP_406
+SU_OPR_ERR_HTTP_407
+SU_OPR_ERR_HTTP_408
+SU_OPR_ERR_HTTP_409
+SU_OPR_ERR_HTTP_500
+SU_OPR_ERR_HTTP_501
+SU_OPR_ERR_HTTP_502
+SU_OPR_ERR_HTTP_503
+SU_STATE_NOTREADY
+SU_STATE_READY
+SU_STATE_IDLE
+SU_STATE_NI_SESSION
+SU_STATE_CHECKING_UPDATE
+SU_STATE_READY_FOR_DOWNLOAD
+SU_STATE_DOWNLOADING
+SU_STATE_READY_FOR_INSTALL
+SU_STATE_INSTALL_POSTPONED
+SU_STATE_BATT_TOO_LOW_FOR_INSTALL
+SU_STATE_INSTALL_IN_PROGRESS
+SU_STATE_INSTALL_COMPLETED
+SU_STATE_REPORTING_RESULTS
+[%s]:[%s] - %s
+Printing NUA configuration settings:
+model_str=[%s]
+cust_str=[%s]
+bootup_wwan_delay_secs=[%u]
+backend.cloud.enabled=[%u]
+backend.cloud.conn_timeout=[%u]
+backend.cloud.disable_cert_verify=[%u]
+backend.cloud.dd_file_name=[%s]
+backend.cloud.dd_file_size_max=[%u]
+backend.cloud.url.production=[%s]
+backend.cloud.url_test[%u]=[%s][%s]
+backend.cloud.key.dd=[%s]
+backend.cloud.key.result_d=[%s]
+su.retry.max_retry_no_data=[%u]
+su.retry.max_retry_roam=[%u]
+su.retry.max_retry_download=[%u]
+su.retry.max_retry_report=[%u]
+su.retry.retry_short_secs=[%u]
+su.retry.retry_long_secs=[%u]
+su.pri_only_update_supported=[%u]
+su.pre_install_wait_secs=[%u]
+su.su_device_poll_timer_days=[%u]
+su.install_defer_supported=[%u]
+su.install_at_powerdown=[%u]
+su.install_at_powerup=[%u]
+su.broadcast_msgbus_events=[%u]
+su.su_conds.deny_if_roaming=[%u]
+su.su_conds.deny_ui_fota_if_roaming=[%u]
+su.su_conds.deny_if_no_coverage=[%u]
+su.su_conds.deny_if_no_data_call=[%u]
+su.su_conds.deny_if_low_battery=[%u]
+su.batt_check.enabled=[%u]
+su.batt_check.monitor_enabled=[%u]
+su.batt_check.ignore_charger=[%u]
+su.ver.platform_prefix=[%s]
+su.ver.no_modem_version=[%u]
+su.ai.min_after_dl=[%u]
+su.ai.local_time_enabled=[%u]
+su.ai.window_open=[%u]
+su.ai.window_end=[%u]
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

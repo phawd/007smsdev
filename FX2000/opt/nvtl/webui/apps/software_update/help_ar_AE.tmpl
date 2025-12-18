@@ -1,0 +1,63 @@
+<!-- Software Update -->
+<div id="software_update">
+
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+
+	<h2>نظرة عامة</h2>
+
+		<p>يتم تسليم تحديثات البرامج تلقائيًا عبر شبكة الهاتف المحمول. تسمح لك هذه الصفحة بمراقبة هذه التحديثات.</p>
+
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+	<h3><tmpl_var _("webui", "software_update_current_software_modem_version_label")></h3>
+        <p>
+                The version of software currently installed for the modem component.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_kernel_version_label")></h3>
+        <p>
+                The version number for the Operating System and its components.
+        </p>
+        <tmpl_if showAppVersion>
+                <h3><tmpl_var _("webui", "software_update_current_software_app_version_label")></h3>
+                <p>
+                        The app version currently installed.
+                </p>
+        </tmpl_if>
+        <h3><tmpl_var _("webui", "software_update_current_software_cute_version_label")></h3>
+        <p>
+                The cute version of the software currently installed on your device.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_pri_version_label")></h3>
+        <p>
+                The configuration version currently applied to your device.
+        </p>
+
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var _("webui", "software_update_current_software_configuration_version_label")></h3>
+			
+				<p><tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")></p>
+		</tmpl_if>
+	</tmpl_if>
+	
+	<h2><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+
+	<h3><tmpl_var _("webui", "software_update_check_for_update_time_label")></h3>
+
+		<p>يشير هذا الحقل إلى آخر <tmpl_var _("webui", "webui_product_name")> تم فحصه لمعرفة ما إذا كان هناك تحديث متوفر. يمكنك التحقق يدويًا من وجود تحديث باستخدام الزر "Check for Update (التحقق من وجود تحديث)".</p>
+	
+	<h3>الزر "Check for Update (التحقق من وجود تحديث)"</h3>
+		<p>يمكنك استخدام هذا للتحقق مما إذا كان هناك تحديث متاح لـ <tmpl_var _("webui", "webui_product_name")> الخاص بك. لا يكون ذلك ضروريًا عادةً، حيث يتم دفع التحديثات تلقائيًا إلى <tmpl_var _("webui", "webui_product_name")>. إذا أجريت هذا الفحص، وكان هناك تحديث متوفر، فسيتم تنزيله تلقائيًا.</p>
+
+	<h3><tmpl_var _("webui", "software_update_check_for_update_status_label")></h3>
+
+		<p>عادةً، سيكون هذا فارغًا، ولكن إذا قمت بالتحقق من وجود تحديث، فستظهر نتيجة هذا الفحص هنا. أيضًا، في حالة تنزيل تحديث، يظهر تقدم التنزيل هنا.</p>
+	
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+		
+		<p>تعرض هذه اللوحة تفاصيل آخر تحديث للبرنامج.</p>
+	
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+	
+		<p>يمكن فتح هذه اللوحة بالضغط على الرابط/العنوان. تحتوي محفوظات تحديث النظام على تفاصيل آخر تحديثات <tmpl_var SoftwareUpdateHistoryCount> التي تم تنزيلها وتثبيتها على هذا الجهاز. إذا لم يتم تثبيت أي تحديثات، فستعرض هذه اللوحة إصدار البرنامج الحالي.</p>
+</div>
+<!-- end Software Update -->

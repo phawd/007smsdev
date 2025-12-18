@@ -1,0 +1,16 @@
+<!-- Manual DNS -->
+<div id="manual_dns">
+	<h1><tmpl_var _("webui", "adv_manual_dns_menu_text")></h1>
+	<h2>Oversikt</h2>
+	<p>Normalt oppgis DNS-adressen automatisk. Denne siden lar deg spesifisere en DNS manuelt, hvis nødvendig.</p>
+
+	<h2>Innstillinger</h2>
+
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_enable_label"), (size(_("webui", "adv_manual_dns_enable_label")) - size(":")))></h3>
+	<p>Bruk denne innstillingen til å slå på eller av manuell DNS-funksjonen. Hvis den er slått på, må følgende data leveres.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address1_label"), (size(_("webui", "adv_manual_dns_address1_label")) - size(":")))></h3>
+	<p>Skriv inn IP-adressen til ønsket primær DNS. Denne adressen kreves for å bruke den manuelle DNS-funksjonen.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address2_label"), (size(_("webui", "adv_manual_dns_address2_label")) - size(":")))></h3>
+	<p>Skriv inn IP-adressen til ønsket sekundær (sikkerhetskopi-) DNS. Denne adressen er valgfri og kan stå tom hvis det er ønskelig.</p>
+</div>
+<!-- id="manual_dns" -->

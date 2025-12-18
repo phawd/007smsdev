@@ -1,0 +1,61 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_menu_text")></h1>
+        <h2>Panoramica</h2>
+        <p>La scheda SIM all&#39;interno di <tmpl_var _("webui", "webui_product_name")> pu
+ essere bloccata utilizzando un PIN. Se la scheda SIM 
+ bloccata, devi inserire il PIN prima di connetterti alla rete mobile. Una volta inserito, il PIN viene memorizzato fino al prossimo spegnimento.</p>
+	<p>Oltre a consentire di inserire il PIN della SIM quando richiesto, questa pagina consente anche di sbloccare la SIM o di modificarne il PIN. Normalmente per poter cambiare la SIM dovrai fornire il PIN esistente. Per le SIM Novatel Wireless, si pu
+ ottenere il PIN predefinito dal fornitore del servizio.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_pin_lock_feature_label"), (size(_("webui", "adv_sim_pin_lock_feature_label")) - size(":")))></h3>
+		<p>Il campo indica se la funzione di blocco con PIN 
+ in uso o meno. Se "Attiva", il blocco PIN 
+ stato attivato e per connettersi alla rete mobile si deve inserire il PIN della SIM. Se "Disattiva", la funzione di blocco PIN non 
+ attiva e il PIN della SIM non 
+ richiesto.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_status_label"), (size(_("webui", "adv_sim_status_label")) - size(":")))></h3>
+	<p>Il campo indica lo stato corrente della scheda SIM. I valori possibili sono:</p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>Pronto - si tratta dello stato normale. Il PIN della SIM non 
+ in uso.</li>
+	        <li>Bloccata con PIN - si deve inserire il PIN della SIM prima di poter utilizzare la rete mobile.</li>
+	        <li>Bloccata con PUK - per continuare, 
+ necessario inserire il PUK della SIM. Puoi ottenere il PUK dal fornitore del servizio.</li>
+	        <li>Sbloccata - il PIN della SIM 
+ richiesto, ma 
+ stato inserito.</li>
+	        <li>Nessuna SIM - non 
+ stata rilevata alcuna SIM. Se disponi di una SIM, verifica che sia inserita correttamente.</li>
+	        <li>Errore SIM - 
+ stata rilevata una SIM, ma non ha risposto come previsto e pertanto non pu
+ essere utilizzata.</li>       
+	        </ul>
+        <h2>Operazioni sulla SIM</h2>
+        <p>Le azioni disponibili dipendono dallo stato corrente della SIM. Tutte le operazioni possibili sono elencate e spiegate di seguito.</p>
+		<h3>Blocco con PIN</h3>
+		<p>Se la SIM 
+ attualmente bloccata con PIN, ti verr
+ richiesto di inserire il PIN. Se si inserisce un PIN errato per troppe volte, la SIM viene bloccata con PUK. Un contatore nella pagina indica quanti inserimenti errati causeranno il blocco con PUK. Una volta bloccato con PUK, sar
+ necessario richiedere il PUK al fornitore del servizio.</p>
+		<h3>Blocco con PUK</h3>
+		<p>Se la SIM 
+ attualmente bloccata con PUK, l&#39;unica operazione possibile 
+inserimento del PUK. Se si inserisce troppe volte un PUK errato, la SIM diventa permanentemente inutilizzabile. Dovrai richiedere una nuova SIM. Un contatore sulla pagina indica quanti tentativi di accesso rimangono.</p>
+		<h3><tmpl_var _("webui", "adv_sim_enable_pin_lock_option")></h3>
+		<p>Questo imposta la SIM in modo che, per connettersi alla rete mobile, venga richiesto l&#39;inserimento di un PIN all
+avvio. Per eseguire questa operazione, devi inserire il PIN corrente.</p>
+		<h3><tmpl_var _("webui", "adv_sim_disable_pin_option")></h3>
+		<p>Puoi utilizzare questa impostazione per disattivare un blocco PIN attivato in precedenza, cos
+ che non sia pi
+ necessario inserire un PIN per connettersi alla rete mobile. Per eseguire questa operazione, devi inserire il PIN corrente.</p>
+		<h3><tmpl_var _("webui", "adv_sim_change_pin_option")></h3>
+		<p>Per modificare il PIN esistente, seleziona questa opzione e quindi inserisci i dati richiesti:</p>
+		<div class="blockgroup">
+			<li>Pin corrente</li>
+			<li>Nuovo PIN</li>
+			<li>Conferma nuovo PIN</li>
+			</ul>
+		</div>
+		<p><tmpl_var _("webui", "adv_sim_name_text")></p>
+<!-- id="sim" -->

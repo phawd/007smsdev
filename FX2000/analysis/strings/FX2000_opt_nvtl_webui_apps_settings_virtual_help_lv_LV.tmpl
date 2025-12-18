@@ -1,0 +1,42 @@
+<div id="settings_virtual">
+	<h1>Papildu iestat
+jumi</h1>
+	<tmpl_if appsList>
+rskats</h2>Izv
+lne Papildu nodro
+ina piek
+m un iestat
+jumiem.<div class="blockgroup">
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title>&nbsp;-&nbsp;<tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+, ka norm
+lai darb
+bai un parast
+m neviens no 
+iem iestat
+jumiem nav j
+maina no to noklus
+m. Mainiet 
+os iestat
+jumus tikai tad, ja konkr
+ ir nepiecie
+amas izmai
+	</tmpl_if>
+	<h2>Pogas</h2>
+	<tmpl_if showBackButton>
+		<h3>Atgriezties</h3>
+		<p>Noklik
+iniet uz 
+s pogas, lai atgrieztos iepriek
+	</tmpl_if>
+	<tmpl_unless showBackButton>
+		<h3>Turpin
+		<p>Izmantojiet 
+o opciju, lai p
+rietu uz papildu lap
+	</tmpl_unless>

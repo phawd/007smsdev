@@ -1,0 +1,4 @@
+<option value="0"<tmpl_if IN_SET(WifiAdvanced2Dot4GChannel, 0)> selected="selected"</tmpl_if>><tmpl_var _("webui", "wifi_advanced_two_point_four_g_channel_automatic_text")></option>
+<tmpl_foreach Wifi24GhzChannelSelectionList as option>
+	<option value="<tmpl_var option.val>"<tmpl_if IN_SET(WifiAdvanced2Dot4GChannel, option.val)> selected = "selected"</tmpl_if>><tmpl_var option.label></option>
+</tmpl_foreach>

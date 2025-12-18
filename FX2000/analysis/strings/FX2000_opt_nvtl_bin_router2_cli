@@ -1,0 +1,591 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+router2_get_error_string
+router2_api_is_running
+router2_log_internal_config
+router2_get_ip_passthrough
+router2_set_ip_passthrough
+libpthread.so.0
+router2_get_dns_name
+router2_set_dns_name
+router2_get_device_name
+router2_set_device_name
+router2_get_port_fwd_app_list
+router2_set_port_fwd_app_list
+inet_pton
+router2_utils_get_wan_type_str
+router2_config_interface_routing_ipv4
+router2_deconfig_interface_routing_ipv4
+router2_config_internet_routing_ipv4
+router2_deconfig_internet_routing_ipv4
+router2_config_interface_routing_ipv6
+router2_deconfig_interface_routing_ipv6
+router2_config_internet_routing_ipv6
+router2_deconfig_internet_routing_ipv6
+router2_config_apps_routing_ipv4
+router2_deconfig_apps_routing_ipv4
+router2_config_dm_routing_ipv4
+router2_deconfig_dm_routing_ipv4
+router2_config_dm_routing_ipv6
+router2_get_firewall_severity_mode
+router2_convert_firewall_severity_to_string
+router2_set_firewall_severity_mode
+router2_deconfig_dm_routing_ipv6
+router2_get_port_filtering_enabled
+router2_set_port_filtering_enabled
+router2_get_port_forwarding_enabled
+router2_set_port_forwarding_enabled
+router2_get_port_filter_app_list
+router2_set_port_filter_app_list
+router2_get_vpn_passthrough_enabled
+router2_set_vpn_passthrough_enabled
+router2_get_dns_passthrough_enabled
+router2_set_dns_passthrough_enabled
+router2_get_http_redirect_enabled
+router2_set_http_redirect_enabled
+__isoc99_scanf
+GLIBC_2.7
+router2_dns_lookup_cust_apn
+inet_ntoa
+inet_ntop
+router2_get_mtu_value
+router2_set_mtu_value
+router2_get_ipv6_firewall_enabled
+router2_set_ipv6_firewall_enabled
+router2_get_lan_settings
+router2_set_lan_settings
+router2_get_dmz_settings
+router2_set_dmz_settings
+router2_get_gw_settings
+router2_set_gw_settings
+router2_get_dhcp_settings
+router2_set_dhcp_settings
+router2_get_manual_dns
+router2_set_manual_dns
+router2_get_dns_filter
+router2_set_dns_filter
+router2_get_public_access_list
+router2_set_public_access_list
+router2_modify_bridge_interfaces
+router2_get_active_dns
+router2_blacklist_update_event
+router2_whitelist_update_event
+router2_macfilter_update_event
+router2_internet_blocked_update_event
+router2_statistics_update_event
+rout_mon_add_service
+rout_mon_list_services
+router2_handle_usb_iface
+router2_get_bridge_iface_name
+router2_check_dns_connectivity
+router2_get_static_routes_enabled
+router2_set_static_routes_enabled
+router2_get_static_route_list
+router2_set_static_route_list
+router2_set_allowed_port_enabled
+router2_get_allowed_port_enabled
+router2_set_allowed_port_list
+router2_get_allowed_port_list
+router2_get_ippt_mode_settings
+router2_set_ippt_mode_settings
+router2_get_icmp_response_enabled
+router2_set_icmp_response_enabled
+router2_get_masquerade_rule_status
+router2_set_masquerade_rule_status
+mifi_dbg_start
+__bss_start
+librt.so.1
+libmifimsgbus.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libsqlite3.so.0
+librouter2_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+is_running
+Tells if the associated process is running.
+Logs the internal status of router2.
+get_ippt
+Gets the current IPPT settings.
+set_ippt
+Sets the current IPPT settings.
+get_dns_name
+Gets the device DNS name.
+set_dns_name
+Sets the device DNS name.
+get_device_name
+Gets the device name.
+set_device_name
+Sets the device name.
+get_port_forwarding
+Gets port forwarding status.
+set_port_forwarding
+Sets port forwarding status.
+get_port_fwd_list
+Gets the port forwarding application list.
+set_port_fwd_list
+Sets the port forwarding application list.
+start_v4_iface
+Start ipv4 interface routing.
+stop_v4_iface
+Stop ipv4 interface routing.
+start_v6_iface
+Start ipv6 interface routing.
+stop_v6_iface
+Stop ipv6 interface routing.
+start_v4
+Start routing of ipv4 internet call.
+start_v6
+Start routing of ipv6 internet call.
+start_v4_apps
+Start routing of ipv4 application apn call.
+stop_v4_apps
+start_v4_dm
+Start routing of ipv4 device management call.
+stop_v4_dm
+start_v6_dm
+Start routing of ipv6 device management call.
+stop_v6_dm
+get_port_filter
+Gets port filtering status.
+set_port_filter
+Sets port filtering status.
+get_port_filter_list
+Gets the IPv4 port filter list.
+set_port_filter_list
+Sets the IPv4 port filter list.
+get_firewallseverity
+Gets the status of Firewall Severity.
+set_firewallseverity
+Sets the status of Firewall Severity.
+get_vpnpassthrough
+Gets the status of VPN passthrough.
+set_vpnpassthrough
+Sets the status of VPN passthrough.
+get_dnspassthrough
+Gets the status of DNS passthrough.
+set_dnspassthrough
+Sets the status of DNS passthrough.
+get_http_redirect
+Gets the status of HTTP redirect.
+set_http_redirect
+Sets the status of HTTP redirect.
+dns_lookup
+Performs a custom DNS lookup.
+Gets the MTU of the router (applied to WWAN).
+Sets the MTU of the router (applied to WWAN).
+get_v6_fw
+Gets the status of IPv6 firewall.
+set_v6_fw
+Sets the status of IPv6 firewall.
+get_lan_settings
+Gets the LAN settings.
+set_lan_settings
+Sets the LAN settings.
+Gets the DMZ settings.
+Sets the DMZ settings.
+Gets the GW settings.
+Sets the GW  settings.
+get_dhcp
+Gets the DHCP settings.
+set_dhcp
+Sets the DHCP settings.
+get_manual_dns
+Gets the manual DNS settings.
+set_manual_dns
+Sets the manual DNS settings.
+get_pub_access
+Gets the public access settings.
+set_pub_access
+Sets the public access settings.
+modify_br_ifc
+Modifies the attache bridge interfaces.
+get_active_dns
+If v4 or v6 connected on internet PDN, returns the dns.
+add_rout_mon_service
+Add/Modifies the monitor services
+list_rout_mon_service
+List all monitor services.
+blacklist_update_event
+Sends blacklist update event.
+whitelist_update_event
+Sends whitelist update event.
+macfilter_update_event
+internet_blocked_update_event
+Sends internet blocked update event.
+statistics_update_event
+Sends statistics update event.
+handle_usb
+Handles USB iface.
+get_bridge_iface_name
+Get the bridge interface name.
+check_dns_connectivity
+Performs a DNS lookup for given URL on given WAN Type.
+set_allowed_ports
+Sets allowed port status.
+get_allowed_ports
+Gets allowed port status.
+set_allowed_port_list
+Set port list to allow traffic
+get_allowed_port_list
+Get port list to allow traffic
+get_static_routes
+Gets static routes enable status.
+set_static_routes
+Sets static routes enable status.
+get_static_route_list
+Gets the static route list.
+set_static_route_list
+Sets the static route list.
+get_ippt_only_wan_ip_mode
+Gets IPPT mode of operation.
+set_ippt_only_wan_ip_mode
+Sets IPPT mode of operation.
+get_icmp_response
+Gets the status of ICMP Response.
+set_icmp_response
+Sets the status of ICMP Response.
+get_dns_filter
+Gets the DNS Filter settings.
+set_dns_filter
+Sets the DNS Filter settings.
+get_masquerade_rule_status
+Gets the masquerade rule status.
+set_masquerade_rule_status
+Sets the masquerade rule status.
+  --------------------------------------------------------------------------- 
+  %-25s - %s
+  ---------------------------------------------------------------------------
+%s returned %d (%s)
+router2_is_running returned %d (%s)
+%s returned %d [%s]
+Is active:       [%d]
+DHCP Lease Time: [%d]
+Interface:       [%d]
+Start Port: [%d]  [%d]
+Port Type:  [%d]  [%d]
+Enter active (0,1): 
+Enter DHCP lease time (30 - 86400) secs : 
+Enter Interface (1=USB, 2=Ethernet): 
+Enter local port? (y/n): 
+Enter port : 
+Enter protocol (tcp=[%d],udp=[%d]): 
+IPPT settings Change requires reset of device:
+Do you want to reset the device Y/N:
+Host DNS name:       [%s]
+Enter DNS name: 
+Please reboot the device to take effect in all cases.
+Device name:[%s]
+Enter DERVICE name: 
+Port forwarding List...
+TCP & UDP
+Port translation
+fwd rule name=[%s], enabled=[%d], ip=[%s], type=[%s], range=[%s], start/ext port=[%d], end/int port=[%d]
+Record[%d]: Enable:[%d] instance:[%d] name:[%s] ipaddr:[%s] start:[%d] end:[%d] type:[%d]
+Enter the number of records: 
+Enable this port forwarding record (0,1)?: 
+Enter name: 
+Enter Ip address: 
+Enter port type (0 for range, 1 for single, 2 for translate): 
+Enter start/external Port number: 
+Enter end/internal Port number: 
+Enter protocol (1 for tcp, 2 for udp, 3 for both): 
+Invalid argements.
+<WAN IP> <WAN Netmask> <WAN gateway> <WAN DNS1> <WAN DNS2> <WAN Iface>
+Enter WAN IP Address:
+Not a valid address
+Enter WAN Mask Address:
+Enter WAN Gateway Address:
+Enter WAN DNS Address1:
+Enter WAN DNS Address2:
+Enter WAN Interface:
+WAN Type Index: %d Type:[%s]
+Enter WAN Type Index:
+What is WAN Type Index: 
+Firewall Severity is:   [%s]
+Enter Firewall Severity status (1=High, 2=Medium, 3=Low): 
+Port filtering is:   [%s]
+Enter port filtering status (0=Disable, 1=Enable): 
+Port forwarding is:   [%s]
+Enter port forwarding status (0=Disable, 1=Enable): 
+filter rule name=[%s], enabled=[%d], type=[%s], start port=[%d], end port=[%d]
+Record[%d]: Enable:[%d] name:[%s] start:[%d] end:[%d] type:[%d]
+Enable this port filtering record(0,1)?: 
+VPN passthrough is:   [%s]
+Enter VPN Passthrough status (0=Disable, 1=Enable): 
+DNS passthrough is:   [%s]
+Enter DNS Passthrough status (0=Disable, 1=Enable): 
+HTTP redirect is:   [%s]
+Enter HTTP redirect status (0=Disable, 1=Enable): 
+Enter Hostname to Lookup : 
+Enter resolv.conf path : 
+Enter v4 interface: 
+Enter v6 interface: 
+Failed to resolv the [%s] domain
+has IPv4 address : [%s]
+has IPv6 address : [%s]
+LAN MTU is [%d]
+Enter LAN MTU : 
+Ipv6 firewall status is:  [%s]
+Enter Ipv6 firewall status (0=Disable, 1=Enable): 
+Invalid status
+LAN IP address is:  [%s]
+LAN subnet mask is: [%s]
+LAN IPV6 Link Local: [%s]
+Enter LAN IP address: 
+Enter LAN subnet mask (dotted format or in bits):
+LAN settings Change requires reset of device:
+DMZ IP:  [%s]
+Disabled
+DMZ status: [%s]
+Enter DMZ Status (0=OFF, 1=ON): 
+Enter DMZ IP address: 
+Default Gateway[xx.xx.xx.1] and Netmask [255.255.255.0].
+Gateway and Netmask recieved from PDN context.
+User Configured Gateway and Netmask.
+Invalid state.
+Gateway Setting Mode is: [%d] : %s 
+Gateway Address: [%s]
+Subnet Mask: [%s]
+Gateway Setting Mode: %d Type:[%s]
+Enter Gateway Settings Mode : 
+Enter Gateway Address: 
+Enter Netmask : 
+ *** This gateway will be used only if the WAN IPv4 falls in the given subnet 
+gw settings Change requires reset of device:
+DHCP status is: [%s]
+DHCP IP range: [%s] - [%s]
+Maximum DHCP pool hosts: [%u]
+DHCP lease (in seconds): [%u]
+Enter DHCP status (0=Disable, 1=Enable): 
+Enter DHCP start IP address: 
+Enter DHCP end IP address: 
+Enter DHCP lease time (in seconds): 
+Enter DHCP pool max clients: 
+DHCP settings Change requires reset of device:
+Manual DNS status is: [%s]
+Manual DNS IP1: [%s]
+Manual DNS IP2: [%s]
+Enter manual DNS status (0=Disable, 1=Enable): 
+Enter manual DNS IP1 address: 
+Enter manual DNS IP2 address: 
+%s Manual DNS: returned %d (%s)
+DNS Filter Settings:
+Primary DNS IP: [%s]
+Secondary DNS IP: [%s]
+%s DNS Filter: returned %d (%s)
+DNS Filter status is: [%s]
+BlackList
+WhileList
+DNS Filter List Configured: [%s]
+DNS Filter Last Operation: [%s]
+DNS Filter URL List: [%s]
+Enter DNS Filter Operation (0=Delete, 1=Add): 
+Enter Primary DNS IP address: 
+Enter Secondary DNS IP address: 
+Enter DNS Filter status (0=Disable, 1=Enable): 
+Enter DNS Filter for Black or White List (0=White, 1=Black): 
+Enter URLs(separated by ','): 
+Manual DNS: %s returned %d (%s)
+Public access status is: [%s]
+Public access IP type is:[%s]
+Public access Start IP address is: [%s]
+Public access End IP address is: [%s]
+Public access port range: [%d] 
+Public access dnatport: [%d] 
+Public access protocol: [%s] 
+Record[%d]: Status:[%d] StartIPAddress:[%s] EndIPAddress:[%s] start:[%d] dnatport[%d] type:[%d]
+Enable this public access for this record(0,1)?: 
+Enter IP address type (0 for range, 1 for single): 
+Enter source start IP Address: 
+Enter source end IP Address: 
+Enter source port number: 
+Enter DNAT port number: 
+Record[%d]: Status:[%d] IPAddresstype[%d] StartIPAddress:[%s] EndIPAddress[%s] SourcePort:[%d] type:[%d]
+interfacename: 
+Attach to Bridge[0:1]: 
+Feature Mask (none=0x0,blacklist=0x1,whitelist=0x2,iface_isolate=0x4,fs_isolate=0x8,web_isolate=0x10): 
+Iface type (USB=1,ETH2,WIFI=3): 
+Active DNS values
+   Primary   v4 DNS [%s]
+   Secondary v4 DNS [%s]
+   Primary   v6 DNS [%s]
+   Secondary v6 DNS [%s]
+Enter the service name:
+Enter the service command:
+Enter the service to be monitored <ON=1, OFF=0>:
+Enter USB iface name: 
+Bridge interface name: [%s]
+Enter URL to Lookup : 
+Enter WAN Type Index:
+Static Routes Feature is:   [%s]
+Enter static routes feature status (0=Disable, 1=Enable): 
+ Static Route List... 
+RouteType[%s] Network[%s] Gateway[%s] InterfaceType[%s] Metric[%d]
+Record[%d]: Type:[%d] Network:[%s] Gateway:[%s] Interface:[%d] metric:[%d]
+Enter Route Type (IPV4 = 4  IPV6 = 6): 
+Enter the Network/Host [x.x.x.x/x] : 
+Enter Gateway [x.x.x.x] : 
+Interface Type Index: %d Type:[%s]
+Enter Metric: 
+Enter allowed port status (0=Disable, 1=Enable): 
+Allowed Ports status change requires reset of device:
+Allowed Port Status:   [%s]
+Total Args:%d, Records Count:%d
+Record[%d]: Enable:[%d] instance:[%d] Intf name List:[%s] port_list:[%s] start:[%d] end:[%d] type:[%d]
+Enable this allowed  port record (0,1)?: 
+Enter Interface  Name(s) (Separate by comma if many): 
+Enter port type (0 for range, 1 for list): 
+Enter Allowed Ports list separated by comma:
+Record[%d]: Enable:[%d] instance:[%d] name:[%s] port_list:[%s] start:[%d] end:[%d] type:[%d]
+Allowed Port List...
+Allowed Port rule : enabled=[%d], interface name=[%s], port list=[%s], type=[%s], range=[%s], start/ext port=[%d], end/int port=[%d]
+Client gets NO IP untill WAN IP is assigned
+Client gets NAT IP till WAN IP is assigned
+Invalid mode.
+IPPT mode setting is (0=Disable, 1=Enable): [%d] : %s 
+IPPT Setting Mode: %d Type:[%s]
+Enter IPPT Settings Mode : 
+IPPT mode change requires reset of device:
+ICMP Response is:   [%s]
+Enter ICMP Response status (0=Disable, 1=Enable): 
+Masquerade rule status is: [%d]
+Enter Masquerade rule status (0=Disable, 1=Enable): 
+command [%s]
+command [%s] not found.
+cmd_help
+cmd_get_ippt
+cmd_set_ippt
+cmd_get_dns_name
+cmd_set_dns_name
+cmd_get_device_name
+cmd_set_device_name
+cmd_get_port_fwd_app_list
+cmd_set_port_fwd_app_list
+get_router_struct_from_cli
+cmd_start_v4_iface
+cmd_stop_v4_iface
+cmd_start_v4
+cmd_stop_v4
+cmd_start_v6_iface
+cmd_stop_v6_iface
+cmd_start_v6
+cmd_stop_v6
+cmd_start_v4_apps
+cmd_stop_v4_apps
+cmd_start_v4_dm
+cmd_stop_v4_dm
+cmd_start_v6_dm
+cmd_get_firewall_severity_mode
+cmd_set_firewall_severity_mode
+cmd_stop_v6_dm
+cmd_get_port_filtering_status
+cmd_set_port_filtering_status
+cmd_get_port_forwarding_status
+cmd_set_port_forwarding_status
+cmd_get_port_filter_app_list
+cmd_set_port_filter_app_list
+cmd_get_vpnpassthrough_status
+cmd_set_vpnpassthrough_status
+cmd_get_dnspassthrough_status
+cmd_set_dnspassthrough_status
+cmd_get_http_redirect_status
+cmd_set_http_redirect_status
+cmd_dns_lookup
+cmd_get_mtu
+cmd_set_mtu
+cmd_get_ipv6_firewall_status
+cmd_set_ipv6_firewall_status
+cmd_get_lan_settings
+cmd_set_lan_settings
+cmd_get_dmz_settings
+cmd_set_dmz_settings
+cmd_get_gw_settings
+cmd_set_gw_settings
+cmd_get_dhcp_settings
+cmd_set_dhcp_settings
+cmd_get_manual_dns_settings
+cmd_set_manual_dns_settings
+cmd_get_dns_filter_settings
+cmd_set_dns_filter_settings
+cmd_get_public_access_settings
+cmd_set_public_access_settings
+cmd_modify_bridge_interfaces
+cmd_get_active_dns
+cmd_blacklist_update_event
+cmd_whitelist_update_event
+cmd_macfilter_update_event
+cmd_internet_blocked_update_event
+cmd_statistics_update_event
+cmd_add_rout_mon_service
+cmd_list_rout_mon_services
+cmd_handle_usb_iface
+cmd_get_bridge_iface_name
+cmd_check_dns_conn
+cmd_get_static_routes_status
+cmd_set_static_routes_status
+cmd_get_static_route_list
+cmd_set_static_route_list
+cmd_set_allowed_ports_status
+cmd_get_allowed_ports_status
+cmd_set_allowed_port_list
+cmd_get_allowed_port_list
+cmd_get_ippt_mode_settings
+cmd_set_ippt_mode_settings
+cmd_get_icmp_response_status
+cmd_set_icmp_response_status
+cmd_get_masquerade_rule_status
+cmd_set_masquerade_rule_status
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

@@ -1,0 +1,121 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_menu_text")></h1>
+        <h2>Vue d
+ensemble</h2>
+        <p>La carte SIM qui se trouve 
+rieur de votre <tmpl_var _("webui", "webui_product_name")> peut 
+tre verrouill
+e par code PIN. Si la carte SIM est verrouill
+e, vous devez saisir le code PIN avant de vous connecter au r
+seau mobile. Une fois saisi, le code PIN est m
+au prochain arr
+	<p>En plus de vous permettre de saisir le code PIN de la carte SIM lorsque vous en avez besoin, cette page vous permet 
+galement de d
+verrouiller votre carte SIM ou de modifier le code PIN de la carte SIM. En g
+ral, vous devez fournir le code PIN existant pour modifier la carte SIM. Pour une carte SIM Novatel Wireless, le code PIN par d
+faut est disponible aupr
+s de votre fournisseur de services.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_pin_lock_feature_label"), (size(_("webui", "adv_sim_pin_lock_feature_label")) - size(":")))></h3>
+		<p>Le champ indique si la fonctionnalit
+ de verrouillage par code PIN est utilis
+e ou non. Si elle est activ
+e, le verrouillage par code PIN est activ
+, et le code PIN de la carte SIM doit 
+tre saisi pour pouvoir se connecter au r
+seau mobile. Si elle est d
+e, la fonctionnalit
+ de verrouillage par code PIN n
+est pas activ
+e et le code PIN de la carte SIM n
+est pas n
+cessaire.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_status_label"), (size(_("webui", "adv_sim_status_label")) - size(":")))></h3>
+	<p>Le champ indique l
+tat actuel de la carte SIM. Les valeurs possibles sont
+	<div class="blockgroup">
+	        <ul>
+	        <li>Pr
+te - il s
+agit de l
+tat normal. Le code PIN de la carte SIM n
+est pas utilis
+	        <li>Carte PIN verrouill
+e - le code PIN de la carte SIM doit 
+tre saisi avant que vous ne puissiez utiliser le r
+seau mobile.</li>
+	        <li>Verrouill
+e par code PUK - le code PUK de la carte SIM doit 
+tre saisi pour pouvoir continuer. Vous pouvez obtenir le code PUK aupr
+s de votre fournisseur de services.</li>
+	        <li>D
+verrouill
+e - le code PIN de la carte SIM est n
+cessaire, mais il a d
+ saisi.</li>
+	        <li>Pas de carte SIM - aucune carte SIM n
+e. Si vous avez une carte SIM, v
+rifiez qu
+elle est correctement ins
+	        <li>Erreur de carte SIM - une carte SIM a 
+e, mais elle n
+agi comme pr
+vu et ne peut pas 
+tre utilis
+e.</li>       
+	        </ul>
+        <h2>Op
+rations de la carte SIM</h2>
+        <p>Les actions disponibles d
+pendent de l
+tat actuel de la carte SIM. Toutes les op
+rations possibles sont 
+es et expliqu
+es ci-dessous.</p>
+		<h3>Verrouillage par code PIN</h3>
+		<p>Si la carte SIM est actuellement verrouill
+e par code PIN, vous 
+tes invit
+ saisir le code PIN. Veuillez noter que si un code PIN incorrect est saisi trop souvent, la carte SIM est alors verrouill
+e par un code PUK. Un compteur pr
+sent sur la page indique le nombre de saisies incorrectes qui entra
+neront un verrouillage par code PUK. Une fois le verrouillage par code PUK effectu
+, vous devez obtenir le code PUK aupr
+s de votre fournisseur de services.</p>
+		<h3>Verrouillage par code PUK</h3>
+		<p>Si la carte SIM est actuellement verrouill
+e par code PUK, la seule op
+ration possible est de saisir le code PUK. Veuillez noter que si un code PUK incorrect est saisi trop souvent, la carte SIM devient inutilisable de fa
+on permanente. Vous devrez obtenir une nouvelle carte SIM. Un compteur pr
+sent sur la page indique le nombre de tentatives de saisie restantes.</p>
+		<h3><tmpl_var _("webui", "adv_sim_enable_pin_lock_option")></h3>
+		<p>La carte SIM est configur
+e de telle sorte que la saisie d
+un code PIN est n
+cessaire au d
+marrage pour se connecter au r
+seau mobile. Pour effectuer cette op
+ration, vous devez saisir le code PIN actuel.</p>
+		<h3><tmpl_var _("webui", "adv_sim_disable_pin_option")></h3>
+		<p>Vous pouvez utiliser ce param
+tre pour d
+sactiver le verrouillage par code PIN qui 
+demment activ
+, de sorte que la saisie d
+un code PIN n
+est plus n
+cessaire pour se connecter au r
+seau mobile. Pour effectuer cette op
+ration, vous devez saisir le code PIN actuel.</p>
+		<h3><tmpl_var _("webui", "adv_sim_change_pin_option")></h3>
+		<p>Pour modifier le code PIN existant, s
+lectionnez cette option puis saisissez les donn
+es requises
+		<div class="blockgroup">
+			<li>Code PIN actuel</li>
+			<li>Nouveau code PIN</li>
+			<li>Confirmer le nouveau code PIN</li>
+			</ul>
+		</div>
+		<p><tmpl_var _("webui", "adv_sim_name_text")></p>
+<!-- id="sim" -->

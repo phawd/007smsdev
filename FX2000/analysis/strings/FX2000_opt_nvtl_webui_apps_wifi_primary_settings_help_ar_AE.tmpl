@@ -1,0 +1,27 @@
+<!-- wifi_primary_settings -->
+<div id="wifi_primary_settings">
+	<h1>Wi-Fi - 
+ Wi-Fi <tmpl_var _("webui", "webui_product_name_with_suffix")> 
+	<h3><tmpl_var _("webui", "wifi_primary_ssid_label")></h3>
+ Wi-Fi. 
+	<h3><tmpl_var _("webui", "wifi_primary_security_label")></h3>
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> 
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> 
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> 
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> 
+	<h3><tmpl_var _("webui", "wifi_primary_password_label")></h3>
+ "Generate New Key (
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_ssid_label", gProductName)></h3>
+ <tmpl_var _("webui", "webui_product_name_with_suffix")>
+ "Wi-Fi". 
+ ******.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_password_label", gProductName)></h3>
+ <tmpl_var _("webui", "webui_product_name_with_suffix")>
+ "Wi-Fi". 
+ ******.
+	<h3><tmpl_var _("webui", "wifi_primary_broadcast_ssid_label")></h3>
+	<tmpl_if showWiFiPrimaryWPS>
+		<h3><tmpl_var _("webui", "wifi_primary_wps_label")></h3>
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_primary_privacy_label")></h3>
+<!-- id="wifi_primary_settings" -->

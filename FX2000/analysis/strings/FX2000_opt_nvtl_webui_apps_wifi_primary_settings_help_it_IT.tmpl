@@ -1,0 +1,48 @@
+<!-- wifi_primary_settings -->
+<div id="wifi_primary_settings">
+	<h1>Wi-Fi - Rete principale</h1>
+	<h2>Panoramica</h2>
+		Per connettersi alla rete Wi-Fi principale di <tmpl_var _("webui", "webui_product_name_with_suffix")>, i dispositivi connessi devono utilizzare le impostazioni Wi-Fi mostrate in questa schermata. Se modifichi queste impostazioni, i dispositivi attualmente connessi potrebbero perdere la propria connessione.
+	<h3><tmpl_var _("webui", "wifi_primary_ssid_label")></h3>
+		Questo imposta il nome della rete o l&#39;SSID della rete Wi-Fi. Inserisci un nome adatto. Il nome pu
+ contenere fino a 32 caratteri.
+	<h3><tmpl_var _("webui", "wifi_primary_security_label")></h3>
+		Seleziona l&#39;opzione di sicurezza per il Wi-Fi desiderata.
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> consente a terzi di monitorare il traffico Wi-Fi e di utilizzare il piano dati per accedere a Internet. Se possibile, si dovrebbe evitare di utilizzare questa opzione.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> 
+ il metodo pi
+ recente e sicuro e, se possibile, lo si dovrebbe utilizzare.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> pu
+ essere utilizzato se alcuni dei dispositivi meno recenti non supportano il WPA2.
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> pu
+ essere utilizzato per dispositivi conformi a WPA2 e WPA3.
+	<h3><tmpl_var _("webui", "wifi_primary_password_label")></h3>
+		Inserisci la password Wi-Fi in questo campo. Puoi anche utilizzare il pulsante "Genera nuova chiave" per inserire in questo campo una password casuale sicura. Se usi questa opzione, ricorda di salvare le modifiche.
+		Per impostazione predefinita queste impostazioni sono nascoste, ma 
+ possibile fare clic sull&#39;intestazione/link per renderle visibili. 
+		Normalmente queste opzioni possono essere lasciate sui valori predefiniti, ma possono essere modificate se necessario per adattarsi al proprio ambiente.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_ssid_label", gProductName)></h3>
+		Se questa impostazione 
+ selezionata, 
+ possibile leggere il nome Wi-Fi sul touch screen di <tmpl_var _("webui", "webui_product_name_with_suffix")>, utilizzando l&#39;opzione "Wi-Fi" presente nel menu. Se non 
+ selezionata, il nome appare come ******.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_password_label", gProductName)></h3>
+		Se questa impostazione 
+ selezionata, 
+ possibile leggere la password Wi-Fi sul touch screen di <tmpl_var _("webui", "webui_product_name_with_suffix")>, utilizzando l&#39;opzione "Wi-Fi" presente nel menu. Se non 
+ selezionata, la password appare come ******.
+	<h3><tmpl_var _("webui", "wifi_primary_broadcast_ssid_label")></h3>
+		Se questa impostazione 
+ selezionata, la rete Wi-Fi viene visualizzata nell&#39;elenco delle reti Wi-Fi disponibili dei dispositivi connessi. Se non selezionato, questa rete sar
+ invisibile.
+	<tmpl_if showWiFiPrimaryWPS>
+		<h3><tmpl_var _("webui", "wifi_primary_wps_label")></h3>
+			Il Wi-Fi Protected Setup (WPS) 
+ un sistema che consente ai dispositivi Wi-Fi di connettersi a una rete Wi-Fi senza dover inserire manualmente la chiave di rete. Se desideri utilizzare il WPS, seleziona questa opzione.
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_primary_privacy_label")></h3>
+		Se questa impostazione 
+ selezionata, ciascun dispositivo connesso viene isolato da tutti gli altri dispositivi connessi. Ci
+ fornisce un
+ulteriore sicurezza quando alcuni dispositivi connessi sono sconosciuti o non completamente affidabili. Per il normale funzionamento, deselezionare questa opzione.
+<!-- id="wifi_primary_settings" -->

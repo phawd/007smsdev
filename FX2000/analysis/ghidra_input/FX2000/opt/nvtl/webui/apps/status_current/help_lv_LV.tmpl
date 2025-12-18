@@ -1,0 +1,55 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>Tas parāda interneta savienojuma statusu, izmantojot mobilo tīklu.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>Tā mobilā tīkla nosaukums, ar kuru šī ierīce pašlaik ir savienota.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>Pašreizējam savienojumam izmantotā tīkla tehnoloģija. LTE ir ātrākā pieejamā tehnoloģija.</p> 
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+	-->
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>Pašreizējai interneta sesijai — laika periods, kas pagājis kopš savienojuma izveides.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))></h3>
+	<p>Pašreizējā interneta sesijā saņemto datu apjoms. Šis skaitītājs sāk skaitīt no nulles, kad ir izveidots savienojums.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>Pašreizējā interneta sesijā pārraidīto datu apjoms. Šis skaitītājs sāk skaitīt no nulles, kad ir izveidots savienojums.</p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+	<p>Šai ierīcei piešķirtā interneta IP adrese.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))></h3>
+	<p>Tīkla maska, kas saistīta ar iepriekš norādīto IP adresi.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	<p>Vārtejas IP adrese, kas saistīta ar iepriekš norādīto IP adresi.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))></h3>
+	<p>Domēnu nosaukumu serveris, ko pašlaik izmanto šī ierīce.</p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+	<p>Šeit tiek parādīta <tmpl_var _("webui", "webui_product_name")> globālā IPv6 adrese. Šis lauks būs tukšs, ja IPv6 ir izslēgts vai to neatbalsta pašreizējais tīkla savienojums.</p>
+
+	<tmpl_if InternetStatusViewSessionShow>
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+	<p>Sesiju žurnālā ir tālāk norādītie dati.</p>
+	<p>- Datums un laiks (kad izveidots savienojums)</p>
+	<p>- Ilgums (tādā pašā formātā kā informācija par pašreizējo sesiju)</p>
+	<p>- Saņemts (formāts kā pašreizējai sesijai)</p>
+	<p>- Pārsūtīts (formāts kā pašreizējai sesijai)</p>
+	<p>- Kopējais datu apjoms (Rx un Tx summa, formāts tāds pats kā pašreizējās sesijas informācijai)</p>
+	<p>- Viesabonēšana (Viesabonēšana/Daļēja/tukša) Tukšs=mājas tīkls</p>
+	<p>- IPv4 (IPv4 WWAN IP adrese)</p>
+	<p>- IPv6 (IPv6 WWAN IP adrese)</p>
+
+	<p>Žurnāls ir datumu secībā.</p>
+	<p>Lietotājs nevar mainīt secību, un nav ar sesiju žurnālu saistītu opciju.</p>
+	</tmpl_if>
+
+</div> 
+<!-- id="status_internet" -->
+

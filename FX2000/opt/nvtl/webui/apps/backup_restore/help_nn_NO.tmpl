@@ -1,0 +1,28 @@
+<!-- Backup and Restore -->
+<div id="backup_restore">
+         <h1><tmpl_var _("webui", "backup_restore_menu_text")></h1>
+
+         <h2>Oversikt</h2>
+         <p>Bruk denne funksjonen til å sikkerhetskopiere (laste ned) en kopi av konfigurasjonsinnstillingene fra denne enheten til en fil på datamaskinen, eller gjenopprette (laste opp) en tidligere lagret konfigurasjonsfil. Denne konfigurasjonsfilen inneholder alle innstillinger for enheten, ruteren og systemfunksjonene. Den inneholder ingen innstillinger eller data for 4G-modemet. Merk at du bare kan gjenopprette en fil til den samme enheten som den kom fra.</p>
+         <p>Denne skjermen gir deg også muligheten til å tilbakestille alle innstillinger til fabrikkstandardverdiene.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+         <h3>Administratorpassord</h3>
+         <p>Skriv inn gjeldende <tmpl_var _("webui", "webui_product_name")>-administratorpassord i dette feltet.</p>
+         <h3><tmpl_var _("webui", "backup_restore_backup_now_button")></h3>
+         <p>Klikk på Last ned-knappen for å laste ned en kopi av den gjeldende konfigurasjonsfilen til datamaskinen din. Hvis nettleseren din ber deg om å lagre filen, kan du gi den nytt navn hvis du ønsker.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+
+         <h3>Administratorpassord</h3>
+         <p>Skriv inn gjeldende <tmpl_var _("webui", "webui_product_name")>-administratorpassord i dette feltet.</p>
+         <h3><tmpl_var truncate(_("webui", "backup_restore_file_select_label"), (size(_("webui", "backup_restore_file_select_label")) - size(":")))></h3>
+         <p>Velg konfigurasjonsfilen du tidligere har lastet ned fra denne <tmpl_var _("webui", "webui_product_name")> til datamaskinen.</p>
+         <h3>Gjenopprett nå-knapp</h3>
+         <p>Klikk på denne knappen for å starte opplastingen når du har valgt en konfigurasjonsfil. Etter opplasting brukes konfigurasjonsfilen umiddelbart, og denne enheten startes på nytt.</p>
+         <p class="note"><strong>Merk:</strong> Når du laster opp en konfigurasjonsfil, endres ALLE de eksisterende innstillingene slik at de samsvarer med konfigurasjonsfilen. Dette kan endre de gjeldende wifi-innstillingene og bryte alle eksisterende tilkoblinger til denne <tmpl_var _("webui", "webui_product_name")>, inkludert denne nettleserøkten.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+         <p>Klikk på <strong>Gjenopprett fabrikkinnstillinger</strong>-knappen for å tilbakestille alle innstillinger til fabrikkstandardverdiene. Dette fører til en omstart og kan endre de gjeldende wifi-innstillingene og bryte alle eksisterende tilkoblinger til denne <tmpl_var _("webui", "webui_product_name")>, inkludert denne nettleserøkten.</p>
+</div>
+ <!-- id="backup_restore" -->

@@ -1,0 +1,40 @@
+<div id="settings_virtual">
+s nuostatos</h1>
+	<tmpl_if appsList>
+		<h2>Ap
+valga</h2>I
+stinis meniu suteikia prieig
+ puslapi
+ ir nuostat
+:<div class="blockgroup">
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title>
+<tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+		<p>Atminkite, kad, esant 
+prastam veikimui ir 
+prastoms situacijoms, nereikia keisti n
+ vienos i
+ nuostat
+ numatyt
+ias nuostatas keiskite tik tada, jei pakeitimus reikia atlikti esant konkre
+iai situacijai.</p>
+	</tmpl_if>
+	<h2>Mygtukai</h2>
+	<tmpl_if showBackButton>
+		<h3>Gr
+ti atgal</h3>
+		<p>Spustel
+kite, jei norite gr
+ ankstesn
+	</tmpl_if>
+	<tmpl_unless showBackButton>
+sti</h3>
+		<p>Naudokite j
+dami pereiti 
+stinius puslapius.</p>
+	</tmpl_unless>

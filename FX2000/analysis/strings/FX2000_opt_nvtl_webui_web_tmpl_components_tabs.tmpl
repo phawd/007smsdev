@@ -1,0 +1,132 @@
+<tmpl_block "app_template"><tmpl_include "app.tmpl"></tmpl_block>
+<tmpl_foreach gMenuLayout as parent> <tmpl_comment> Loop through first tier applications </tmpl_comment>
+	<tmpl_comment> These loops populate the tabs. </tmpl_comment>
+	<tmpl_if IN_SET(gPageId, parent.pageId)> <tmpl_comment> If this iteration matches the current gPageId </tmpl_comment>
+		<tmpl_unless (SIZE(parent.children) > 0 )> <tmpl_comment>and has no children </tmpl_comment>
+			<tmpl_comment>Render Title and Help Link</tmpl_comment>
+			<div id="pageHeadRow" class="clearfix">
+				<div id="pageHeadCol">
+					<tmpl_if parent.title>
+						<tmpl_if IN_SET(gPageId, "customer_care")>
+							<h1 class="pageHead <tmpl_var parent.itemClass>"><tmpl_var _("webui", "customer_care_title_text")></h1>
+						<tmpl_else>
+							<h1 class="pageHead <tmpl_var parent.itemClass>"><tmpl_var parent.title></h1>
+						</tmpl_if>
+					</tmpl_if>
+				</div>
+				<tmpl_unless isHidden><tmpl_comment> Show the help icon only when app is not hidden</tmpl_comment>
+					<a title='<tmpl_if parent.pageTitle><tmpl_var parent.pageTitle><tmpl_else><tmpl_var parent.title></tmpl_if> <tmpl_var _("webui", "tabs_help_word")>' class="helpLink parent" href="<tmpl_var gHelpURL>"></a>
+				</tmpl_unless>
+			</div>
+			<tmpl_if parent.subtext><h3><tmpl_var parent.subtext></h3></tmpl_if>
+			<tmpl_call "app_template"> <tmpl_comment>render the app </tmpl_comment>
+		</tmpl_unless>
+	</tmpl_if>
+	<tmpl_foreach parent.children as child>
+		<tmpl_if (SIZE(child.children) > 0 )><tmpl_comment>If we have third tier children </tmpl_comment>
+			<tmpl_foreach child.children as grandchild><tmpl_comment>Loop through third tier to get proper title </tmpl_comment>
+				<tmpl_if IN_SET(gPageId, grandchild.pageId)> <tmpl_comment> If this iteration matches the current gPageId </tmpl_comment>
+					<tmpl_comment>Render Title and Help Link</tmpl_comment>
+					<div id="pageHeadRow" class="clearfix">
+						<div id="pageHeadCol">
+							<tmpl_if parent.title>
+								<tmpl_if IN_SET(child.title, _("webui", "webui_app_child_title"))>
+								<h1 class="pageHead <tmpl_var parent.itemClass>"><tmpl_var parent.title></h1>
+								<tmpl_else>
+									<h1 class="pageHead <tmpl_var parent.itemClass>"><tmpl_var child.title></h1>
+								</tmpl_if>
+							</tmpl_if>
+						</div>
+						<tmpl_unless isHidden><tmpl_comment> Show the help icon only when app is not hidden</tmpl_comment>
+						 	<a title='<tmpl_if parent.pageTitle><tmpl_var parent.pageTitle><tmpl_else><tmpl_var parent.title></tmpl_if> <tmpl_var _("webui", "tabs_help_word")>' class="helpLink parent" href="<tmpl_var gHelpURL>"></a>
+						</tmpl_unless>
+					</div>
+					<tmpl_if parent.subtext><h3><tmpl_var parent.subtext></h3></tmpl_if>
+				</tmpl_if>
+			</tmpl_foreach>
+		<tmpl_else><tmpl_comment>Else we do not have third tier children </tmpl_comment>
+			<tmpl_if IN_SET(gPageId, child.pageId)><tmpl_comment> If this iteration matches the current gPageId </tmpl_comment>
+				<tmpl_comment>Render Title and Help Link</tmpl_comment>
+				<div id="pageHeadRow" class="clearfix">
+					<div id="pageHeadCol">
+						<tmpl_if parent.title>
+							<h1 class="pageHead <tmpl_var parent.itemClass>"><tmpl_var parent.title></h1>
+						</tmpl_if>
+					</div>
+					<tmpl_unless isHidden><tmpl_comment> Show the help icon only when app is not hidden</tmpl_comment>
+						<a title='<tmpl_if parent.pageTitle><tmpl_var parent.pageTitle><tmpl_else><tmpl_var parent.title></tmpl_if> <tmpl_var _("webui", "tabs_help_word")>' class="helpLink parent" href="<tmpl_var gHelpURL>"></a>
+					</tmpl_unless>
+				</div>
+				<tmpl_if parent.subtext><h3><tmpl_var parent.subtext></h3></tmpl_if>
+			</tmpl_if>
+		</tmpl_if>
+	</tmpl_foreach>
+	<tmpl_foreach parent.children as child> <tmpl_comment>Loop through second tier </tmpl_comment>
+		<tmpl_if NVTL_IN_ARRAY(gPageId, parent.children, "pageId")>
+			<tmpl_if child.__first__> <tmpl_comment> If this is the first iteration, render opening tags </tmpl_comment>
+				<div class="tabs_container tier_1 tabs_<tmpl_var SIZE(parent.children)> <tmpl_var parent.height>">
+					<div class="row clearfix">
+						<!-- <div id="tier1" class="arrow left-move"> < 
+						</div> -->
+						<div class="tabs clearfix">
+							<ul id="navigationTabsOne">
+				</tmpl_if>
+								<li class="tabitem <tmpl_var child.itemClass><tmpl_if child.__first__> first</tmpl_if><tmpl_if child.__last__> last</tmpl_if><tmpl_if (SIZE(child.children) > 0 )><tmpl_foreach child.children as grandchild><tmpl_if IN_SET(gPageId, grandchild.pageId)> active </tmpl_if></tmpl_foreach><tmpl_else><tmpl_if IN_SET(gPageId, child.pageId)> active </tmpl_if></tmpl_if>">
+									<!-- <a href="<tmpl_var child.url>"><tmpl_var child.title>CT</a> -->
+									<a href="<tmpl_var child.url>"><tmpl_var child.title></a>
+								</li>
+				<tmpl_if child.__last__> <tmpl_comment> If this is the second iteration, render closing tags </tmpl_comment>
+							</ul><tmpl_comment> /#navigationTabsOne </tmpl_comment>
+						</div><tmpl_comment> /.tabs </tmpl_comment>
+						<!-- <div id="tier1" class="arrow right-move"> > </div> -->
+						<!-- <tmpl_unless isHidden><tmpl_comment> Show the help icon only when app is not hidden</tmpl_comment>
+							<a title='<tmpl_if parent.pageTitle><tmpl_var parent.pageTitle><tmpl_else><tmpl_var parent.title></tmpl_if> <tmpl_var _("webui", "tabs_help_word")>' class="helpLink parent" href="<tmpl_var gHelpURL>"></a>
+						</tmpl_unless> -->
+					</div>
+					<div class="tier_1_content clearfix">
+			</tmpl_if>
+		</tmpl_if>
+	</tmpl_foreach>
+	<tmpl_comment> The following loops display the app_template content in the tab content div... </tmpl_comment>
+	<tmpl_foreach parent.children as child>
+		<tmpl_if IN_SET(gPageId, child.pageId)>
+			<tmpl_unless (SIZE(child.children) > 0 )><tmpl_comment>and has no children, close out the tags </tmpl_comment>
+					<tmpl_call "app_template"> <tmpl_comment>render the app </tmpl_comment>
+				</div><tmpl_comment> /.tier_1_content </tmpl_comment>
+			</div><tmpl_comment> /.tabs_container.tier_1 </tmpl_comment>
+			</tmpl_unless>
+		</tmpl_if>
+	</tmpl_foreach>
+	<tmpl_foreach parent.children as child><tmpl_comment>Loop through second tier again for second tabs section </tmpl_comment>
+		<tmpl_foreach child.children as grandchild><tmpl_comment>Loop through third tier </tmpl_comment>
+			<tmpl_if NVTL_IN_ARRAY(gPageId, child.children, "pageId")>
+				<tmpl_if grandchild.__first__> <tmpl_comment> If this is the first iteration, render opening tags </tmpl_comment>
+						<div class="tabs_container tier_2 tabs_<tmpl_var SIZE(child.children)> <tmpl_var child.height>">
+							<div class="row clearfix">
+								<!-- <div id="tier2" class="arrow left-move"> < 
+								</div> -->
+				      			<div class="tabs clearfix">
+									<ul id="navigationTabsTwo">
+					</tmpl_if>
+										<li class="tabitem <tmpl_var grandchild.itemClass><tmpl_if grandchild.__first__> first</tmpl_if><tmpl_if grandchild.__last__> last</tmpl_if><tmpl_if IN_SET(grandchild.pageId, gPageId)> active</tmpl_if>">
+											<!-- <a href="<tmpl_var url>"><tmpl_var grandchild.title>GCT</a> -->
+											<a href="<tmpl_var url>"><tmpl_var grandchild.title></a>
+										</li>
+					<tmpl_if grandchild.__last__> <tmpl_comment> If this is the second iteration, render closing tags </tmpl_comment>
+									</ul><tmpl_comment> /#navigationTabsTwo </tmpl_comment>
+								</div><tmpl_comment> /.tabs </tmpl_comment>
+								<!-- <div id="tier2" class="arrow right-move"> > 
+			   					</div> -->
+		   					</div>
+							<div class="tier_2_content clearfix">
+								<tmpl_call "app_template"> <tmpl_comment>render the app </tmpl_comment>
+							<tmpl_comment> close out the tags for third tier </tmpl_comment>
+							</div><tmpl_comment> /.tier_2_content </tmpl_comment>
+						</div><tmpl_comment> /.tabs_container.tier_2 </tmpl_comment>
+					</div><tmpl_comment> /.tier_1_content </tmpl_comment>
+				</div><tmpl_comment> /.tabs_container.tier_1 </tmpl_comment>
+				</tmpl_if>
+			</tmpl_if>
+		</tmpl_foreach>
+	</tmpl_foreach>
+</tmpl_foreach>

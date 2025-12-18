@@ -1,0 +1,88 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p>Du kan bruge denne TIL/FRA-indstilling, n
+r det er n
+dvendigt for at sl
+ mobildata fra og forhindre adgang til mobilnetv
+rket. Dette forhindrer tilsluttede enheder i at oprette forbindelse til internettet og bruge din mobile dataplan. Ved normal drift skal denne indstilling v
+ndt.</p>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Forbindelsespr
+ference</h3>
+nskede mulighed for at kontrollere, hvorn
+r <tmpl_var _("webui", "webui_product_name")> opretter en dataforbindelse til mobilnetv
+rket.</p>
+	</tmpl_if>
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>Brug denne indstilling til at t
+nde eller slukke for international og national roaming efter behov. Yderligere datagebyrer kan blive p
+lagt ved roaming.</p>
+	</tmpl_if>
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p>Standardv
+rdien er "<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>". <tmpl_var _("webui", "webui_product_name")> v
+lger den bedste tilg
+ngelige teknologi.</p>
+		<p>Hvis du vil, kan du 
+ndre dette for at begr
+nse de netv
+rksteknologier, der vil blive brugt.</p>
+	</tmpl_if>
+	<h3>Manuelt netv
+rksvalg</h3>
+		Denne funktion er kun tilg
+ngelig, hvis aktivering af automatisk netv
+rksvalg er sl
+et fra. Dette kan v
+re nyttigt, hvis flere netv
+rk er tilg
+ngelige, og du har en pr
+ference for, hvilket der skal bruges.
+		Klik p
+ knappen "V
+rk" for at scanne efter de tilg
+ngelige netv
+rk. Du kan derefter v
+lge det 
+nskede netv
+	<tmpl_if showApnSettings>
+		<tmpl_if ShowAdvancedSettingsToggleButton>
+			<h2>Avancerede indstillinger</h2>
+				Brug denne overskrift/dette link til at vise eller skjule de avancerede indstillinger efter behov.
+		</tmpl_if>
+			<tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))>
+			APN&#39;en er forudkonfigureret. Du b
+ndre APN&#39;en, medmindre du har en virksomhedskonto (med din egen APN).
+		<p>Hvis du har brug for at 
+ndre APN, skal du indtaste den v
+rdi, der leveres af din mobilnetv
+rksudbyder.</p>
+		<tmpl_if showApnAuthenticationSettings>
+				<tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))>
+			</h3>
+			<div class="blockgroup">
+				<p>V
+lg den indstilling, der er angivet af din tjenesteudbyder.</p>
+				<ul>
+					<li>Ingen</li>
+					<li>PAP</li>
+					<li>CHAP</li>
+				</ul>
+			</div>
+				<tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))>
+			</h3>
+				Hvis godkendelsen er <strong>Ingen</strong>, kan dette st
+ tomt. Ellers skal du indtaste den v
+rdi, der er angivet af din tjenesteudbyder.
+				<tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))>
+			</h3>
+				Hvis godkendelsen er <strong>Ingen</strong>, kan dette st
+ tomt. Ellers skal du indtaste den v
+rdi, der er angivet af din tjenesteudbyder.
+		</tmpl_if>
+	</tmpl_if>

@@ -1,0 +1,737 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+GLIBC_2.4
+libc.so.6
+libwan_mgr_api.so
+wan_mgr_state_str
+wan_mgr_disconnect_reason_str
+wan_mgr_get_error_string
+wan_mgr_send_status_validation
+mifi_dbg_get_level_name
+mifi_dbg_log
+wan_mgr_send_status
+wan_mgr_is_valid_hostname
+__ctype_b_loc
+validate_wan_priority_list
+wan_mgr_log_internal_config
+msgq_does_queue_exist
+msgq_send_async
+wan_mgr_api_is_running
+wan_mgr_set_manual_wan
+wan_mgr_get_wan_priorities_settings
+wan_mgr_get_supported_wan_count
+router2_utils_get_wan_type_str
+wan_mgr_get_auto_switch
+settings_set_setting
+wan_mgr_get_manual_wan
+settings_get_setting
+mifi_dbg_syslog
+wan_mgr_get_wan_telemetry_info_list
+msgq_send_sync
+wan_mgr_set_wan_monitor_settings
+wan_mgr_get_wan_monitor_settings
+wan_mgr_set_auto_switch
+wan_mgr_get_no_con_timeout
+wan_mgr_set_no_con_timeout
+wan_mgr_set_wan_priorities
+wan_mgr_set_failback_settings
+wan_mgr_get_failback_settings
+wan_mgr_register_wan
+wan_mgr_deregister_wan
+wan_mon_send_wan_state_not_avail
+MsgBusSetBinary
+wan_mon_register_deregister_wan
+wan_mon_send_wan_state_online
+wan_mgr_get_wan_priority_list_settings
+xmldata_getint32
+wan_mgr_set_wan_priority_list_settings
+xmldata_setint32
+xmldata_save
+MsgBusSetInt32
+wan_mgr_get_wan_failback_settings
+wan_mgr_set_wan_failback_settings
+wan_mgr_get_supported_wan_count_settings
+wan_mgr_get_auto_switch_settings
+wan_mgr_set_auto_switch_settings
+wan_mgr_get_wan_monitor_settings_settings
+xmldata_getstring
+wan_mgr_set_wan_monitor_properties_settings
+xmldata_setstring
+wan_mgr_get_manual_wan_settings
+wan_mgr_set_manual_wan_settings
+wan_mgr_get_no_con_timeout_settings
+wan_mgr_set_no_con_timeout_settings
+initialize_settings
+__bss_start
+librt.so.1
+libpthread.so.0
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libsqlite3.so.0
+librouter2_api.so
+H	KxD	J{D
+NOT AVAILABLE
+AVAILABLE
+INVALID STATE
+Invalid Reason
+Link Down
+Connectivity Down
+WAN Data threshold reached
+Signal Weak
+-Not Applicable-
+High Priority WAN Routed
+WAN_MGR: success.
+WAN_MGR: general error.
+WAN_MGR: one or more bad parameters passed into a function.
+WAN_MGR: one or more buffer type parameters passed into API is too small.
+WAN_MGR: the feature is unsupported.
+WAN_MGR: process not running.
+WAN_MGR: a device reset is required for the operation to take effect.
+WAN_MGR: API not implemented for the platform.
+WAN_MGR: WAN is already configured.
+WAN_MGR: WAN already registered with the process.
+WAN_MGR: unknown error.
+[%s]:[%s] - %s: +++
+[%s]:[%s] - validation of wan_type failed
+[%s]:[%s] - validation of reason is failed
+[%s]:[%s] - validation of status is failed
+/wan_mgr_mq
+[%s]:[%s] - validation of WAN name is failed: %d
+[%s]:[%s] - Failed to get wan priority settings.
+[%s]:[%s] - Failed to get the supported WAN count.
+[%s]:[%s] - Wrong WAN type [%s] configured.
+[%s]:[%s] - Failed to get the auto switch.
+[%s]:[%s] - auto switch is enabled so manual wan is not configured 
+wan_mgr.manual_wan.settings
+[%s]:[%s] - settings_get_setting(%s) failed with code: %d
+[%s]:[%s] - Failed to get response from WAN Manager for WAN INFO.
+[%s]:[%s] - Failed to get wan mgr supported WAN count
+/wan_mgr_mon_mq
+[%s]:[%s] - online retry count validation failed: %d
+[%s]:[%s] - ROUTED monitor interval validation failed: %d
+[%s]:[%s] - online monitor interval validation failed: %d
+[%s]:[%s] - failed monitor interval validation failed: %d
+[%s]:[%s] - DNS URL1 validation failed.
+[%s]:[%s] - DNS URL2 validation failed.
+wan_mgr.wan_mon.settings
+wan_mgr.auto_switch.settings
+[%s]:[%s] - validation of Auto Swicth failed: %d
+wan_mgr.wan_no_con_timeout
+[%s]:[%s] - validation of no connectivity timeout value is failed: %d
+[%s]:[%s] - Validation of WAN priority is failed: %d
+[%s]:[%s] - Validation of WAN types is failed 
+wan_mgr.wan_priority.settings
+[%s]:[%s] - Invalid WAN mgr enable value: %d
+[%s]:[%s] - ROUTED retry count validation failed: %d
+wan_mgr.wan_fail_back.settings
+wan_mgr.wan_count.settings
+wan_mgr.wan_status_change
+[%s]:[%s] - Send WAN status on [%s] for [%s] state [%s] reason [%s]
+[%s]:[%s] - %s(): Could not send msg to process %s
+wan_mgr_send_status_validation
+wan_mgr_log_internal_config
+wan_mgr_api_is_running
+wan_mgr_set_manual_wan
+wan_mgr_get_manual_wan
+wan_mgr_get_wan_telemetry_info_list
+wan_mgr_set_wan_monitor_settings
+wan_mgr_get_wan_monitor_settings
+wan_mgr_get_auto_switch
+wan_mgr_set_auto_switch
+wan_mgr_get_no_con_timeout
+wan_mgr_set_no_con_timeout
+wan_mgr_set_wan_priorities
+wan_mgr_get_wan_priorities_settings
+wan_mgr_set_failback_settings
+wan_mgr_get_failback_settings
+wan_mgr_register_wan
+wan_mgr_deregister_wan
+wan_mon_send_wan_state_not_avail
+wan_mgr_get_supported_wan_count
+wan_mon_register_deregister_wan
+wan_mon_send_wan_state_online
+[%s]:[%s] - Invoked %s
+[%s]:[%s] - %s: Invalid data
+/Settings/WanManager/WanInterfaceInfo/SupportedWanCount
+/Settings/WanManager/WanInterfaceInfo/WanPriority/WanType%d
+/Settings/WanManager/WanInterfaceInfo/WanPriority/WanPriority%d
+[%s]:[%s] - %s: Invalid length or data
+[%s]:[%s] - %s: Invalid length
+wan_mgr.wan_priority.settings
+wan_mgr.wan_priority.settings.channel
+/Settings/WanManager/Failback/Enabled
+/Settings/WanManager/Failback/FailbackTimer
+wan_mgr.wan_fail_back.settings
+wan_mgr.wan_fail_back.settings.channel
+/Settings/WanManager/WanInterfaceInfo/ManualWan/AutoSwitch
+wan_mgr.auto_switch.settings
+wan_mgr.auto_switch.settings.channel
+/Settings/WanManager/WanMonitor/Enabled
+/Settings/WanManager/WanMonitor/UseClientConnectedState
+/Settings/WanManager/WanMonitor/OnlineWanMonitorInterval
+/Settings/WanManager/WanMonitor/RoutedWanMonitorInterval
+/Settings/WanManager/WanMonitor/FailedWanMonitorInterval
+/Settings/WanManager/WanMonitor/WanRetryCount
+/Settings/WanManager/WanMonitor/DNSURL1
+/Settings/WanManager/WanMonitor/DNSURL2
+/Settings/WanManager/WanMonitor/DNSURL3
+wan_mgr.wan_mon.settings
+wan_mgr.wan_mon.settings.channel
+/Settings/WanManager/WanInterfaceInfo/ManualWan/WanType
+wan_mgr.manual_wan.settings
+wan_mgr.manual_wan.settings.channel
+/Settings/WanManager/Recovery/WanMgrNoConnectivityTimeout
+wan_mgr.wan_no_con_timeout
+wan_mgr.wan_count.settings
+wan_mgr_get_wan_priority_list_settings
+wan_mgr_set_wan_priority_list_settings
+wan_mgr_get_wan_failback_settings
+wan_mgr_set_wan_failback_settings
+wan_mgr_get_supported_wan_count_settings
+wan_mgr_get_auto_switch_settings
+wan_mgr_set_auto_switch_settings
+wan_mgr_get_wan_monitor_settings_settings
+wan_mgr_set_wan_monitor_properties_settings
+wan_mgr_get_manual_wan_settings
+wan_mgr_set_manual_wan_settings
+wan_mgr_get_no_con_timeout_settings
+wan_mgr_set_no_con_timeout_settings
+GCC: (GNU) 8.2.0
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/src
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/src/../include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/logging/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/xmldata/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/modem2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/router2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/watchdog/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/config
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dmdb/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/mal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi-framework
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/loc-hal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi/loc_sdx55
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/usr/src/linux/usr/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dsm/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/powersave/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel/config/../.
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-iprefix /opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/bin/arm-oe-linux-gnueabi/../../lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/src/wan_mgr_api.c
+-mfpu=neon
+-mfloat-abi=hard
+-mcpu=arm10tdmi
+-mtls-dialect=gnu
+-march=armv5t
+-auxbase-strip wan_mgr_api.o
+-Wno-unused-parameter
+-Wstrict-prototypes
+-Wno-trigraphs
+-frecord-gcc-switches
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/src/wan_mgr_settings.c
+-auxbase-strip wan_mgr_settings.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/src
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/include
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits/types
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/netinet
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/router2/inc
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/inc
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+wan_mgr_api.c
+stddef.h
+struct_FILE.h
+sys_errlist.h
+stdint-uintn.h
+struct_timeval.h
+router2_api.h
+wan_mgr_api.h
+unistd.h
+getopt_core.h
+wan_mgr.h
+service_monitor.h
+wan_mgr_mon.h
+Yggggggg
+jjjjjjjjji
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/src
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/include
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/bits/types
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include
+/opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/sdxprairie/usr/include/netinet
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/router2/inc
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/inc
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+wan_mgr_settings.c
+stddef.h
+struct_FILE.h
+sys_errlist.h
+stdint-uintn.h
+router2_api.h
+wan_mgr_api.h
+unistd.h
+getopt_core.h
+settings_api.h
+wan_mgr_mon_msg_type
+daylight
+wan_count_found
+_shortbuf
+WAN_MGR_MSG_SET_NO_CON_TIMEOUT
+routed_monitor_interval
+_IO_lock_t
+failback_enable
+WAN_MGR_MSG_GET_MANUAL_WAN
+_IO_buf_end
+wan_mon_wan_info_list_t
+WAN_STATE_ONLINE
+WAN_INVALID_REASON
+MSGQ_PAYLOAD_WRITE
+router2_wan_type_t
+_IO_write_end
+unsigned int
+WAN_PRIORITY_NONE
+WAN_MGR_MON_WAN_UPDATE
+_freeres_list
+WAN_MGR_GET_WAN_COUNT
+MSGQ_RESP_MAX
+wan_mgr_get_error_string
+status_info
+_old_offset
+_markers
+wan_connected_time
+timezone
+short int
+MSGQ_RESP_NONE
+WAN_REASON_NOT_APPLICABLE
+WAN_MGR_MAX
+wan_mon_register_deregister_wan
+WAN_SIGNAL_WEAK
+wan_mgr_get_auto_switch
+_ISlower
+WAN_MGR_MSG_REGISTER_WAN
+registered_ipv6
+monitor_enable
+MSGQ_PAYLOAD_NONE
+ROUTER2_TUNNEL_WG_0
+__timezone
+manual_wan
+wan_info
+wan_mgr_mon_data_type
+uint32_t
+no_con_timeout
+long long unsigned int
+ROUTER2_WAN_DATA_USAGE_APN
+_IO_save_end
+_cur_column
+wan_mgr_set_wan_monitor_settings
+routed_count
+WAN_MGR_MSG_SET_AUTO_SWITCH
+msgq_payload_type_e
+sync_queue_name
+__u6_addr8
+wan_state
+WAN_MGR_MSG_SET_WAN_MON_FLAG
+wan_mgr_get_wan_priorities_settings
+__uint16_t
+WAN_STATE_NOT_AVAILABLE
+sys_errlist
+wan_info_list
+_IO_backup_base
+WAN_PRIORITY_1
+WAN_PRIORITY_2
+WAN_PRIORITY_3
+WAN_PRIORITY_4
+WAN_PRIORITY_5
+WAN_PRIORITY_6
+wan_mgr_wan_info_list_t
+wan_mgr_mon_msg_type_e
+ifc_status
+sys_nerr
+WAN_MGR_MSG_GET_WAN_MON_FLAG
+wan_mgr_get_wan_telemetry_info_list
+ROUTER2_WAN_INTERNET_USB
+wan_switch_count
+MSGQ_RESP_SYNCHRONOUS
+mon_retries_left
+wan_mgr_send_status
+recovery_count
+_ISxdigit
+_IO_read_base
+mon_evt_msg
+WAN_MGR_MSG_MON_WAN_NOT_AVAIL
+wan_mgr_wan_info_t
+timer_id
+WAN_REASON_MAX
+__uint64_t
+WAN_MGR_MSG_DATA_LIMIT_REACHED
+wan_mon_send_wan_state_not_avail
+wan_mgr_is_valid_hostname
+WAN_STATE_AVAILABLE
+retry_count
+WAN_STATE_NONE
+WAN_MGR_MON_MSG_EXIT
+WAN_MGR_MON_MSG_MAX
+settings
+WAN_MGR_MSG_DEREGISTER_WAN
+ROUTER2_WAN_INTERNET_ETHERNET
+WAN_MGR_MSG_NONE
+service_running
+WAN_MGR_MSG_GET_WAN_INFO_LIST
+wan_mgr_wan_priority_list_t
+wan_mgr_monitor_settings_t
+_IO_marker
+wan_mon_info
+wan_mgr_send_status_validation
+watchdog_triggers
+ROUTER2_WAN_NONE
+wan_name
+wan_mgr_deregister_wan
+wan_monitor_list
+wan_mgr_set_auto_switch
+in6addr_loopback
+service_name
+WAN_CONNECTIVITY_DOWN
+wan_mgr_wan_disconnect_reason_e
+_IO_write_base
+wan_mgr_wan_priority_settings_t
+long long int
+payload_type
+wan_count
+WAN_MGR_MSG_SET_FAIL_BACK_FEATURE
+msgq_resp_type_e
+_IO_save_base
+dns_url1
+dns_url2
+dns_url3
+_IScntrl
+service_monitor
+wan_mgr_disconnect_reason_str
+__u6_addr32
+wan_mgr_log_internal_config
+WAN_PRIORITY_INVALID
+WAN_DATA_THRESHOLD_REACHED
+wan_mgr_set_no_con_timeout
+wan_mgr_set_manual_wan
+_ISdigit
+payload_socket_name
+__quad_t
+_ISspace
+_freeres_buf
+in6addr_any
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/src/wan_mgr_api.c
+GNU C17 8.2.0 -mfpu=neon -mfloat-abi=hard -mfpu=neon -mfloat-abi=hard -mcpu=arm10tdmi -mtls-dialect=gnu -marm -march=armv5t -g -frecord-gcc-switches -fpic
+monitor_wan
+wan_priorities
+long unsigned int
+wan_mgr_state_str
+failback
+auto_switch
+wan_mgr_set_failback_settings
+validate_wan_priority_list
+_vtable_offset
+WAN_MGR_MSG_SET_MON_PROPERTIES
+WAN_MGR_MSG_DATA_LIMIT_AVAILABLE
+wan_mgr_get_supported_wan_count
+wan_type
+uint16_t
+online_monitor_interval
+WAN_MGR_MSG_IS_RUNNING
+default_wan
+MSGQ_PAYLOAD_READ
+__u6_addr16
+wan_mgr_mon_wan_update
+_ISpunct
+prev_period
+_IO_read_end
+wan_mgr_get_manual_wan
+_ISprint
+WAN_STATE_ROUTED
+failure_recov_cnt
+ROUTER2_WAN_DM_APN
+long int
+WAN_LINK_DOWN
+routed_time
+recovery_flag
+priority
+_IO_wide_data
+wan_mgr_msg_type
+registered_ipv4
+uint64_t
+wan_priority
+__environ
+ROUTER2_WAN_INTERNET_WIFI
+failback_interval
+__uint8_t
+in6_addr
+_ISgraph
+WAN_MGR_MSG_MON_WAN_ONLINE
+_wide_data
+ROUTER2_WAN_INTERNET_APN
+WAN_MGR_MSG_LOG_INTERNAL_STATUS
+wan_mgr_api_is_running
+_IO_codecvt
+_codecvt
+wan_mgr_wan_status_info
+_IO_FILE
+wan_mgr_register_wan
+wan_mgr_set_wan_priorities
+_ISalpha
+online_count
+WAN_HIGH_PRIORITY_ROUTED
+wan_mgr_mon_wan_update_t
+service_monitor_data
+wan_mgr_get_wan_monitor_settings
+unsigned char
+__uint32_t
+__tzname
+wan_update
+_IO_write_ptr
+__suseconds_t
+failed_monitor_interval
+wan_mgr_get_no_con_timeout
+WAN_MGR_MSG_SET_MON_PRIORITY_LIST
+wan_mgr_get_failback_settings
+__time_t
+wan_mgr_wan_state_e
+_ISalnum
+failed_triggers
+error_code
+ROUTER2_TUNNEL_WG_1
+ROUTER2_TUNNEL_WG_2
+MSGQ_RESP_CALLBACK
+ROUTER2_WAN_MAX
+msgq_resp_type
+wan_mgr_failback_settings_t
+payload_buffer_size
+wan_mgr_msg_type_e
+_ISblank
+signed char
+WAN_MGR_MSG_SET_MANUAL_WAN
+WAN_MGR_MSG_GET_AUTO_SWITCH
+short unsigned int
+service_restarted
+wan_disconnected_time
+timeout_val
+wan_mgr_wan_type_t
+WAN_MGR_MSG_GET_MON_PROPERTIES
+__func__
+MSGQ_RESP_SYNCHRONOUS_LARGE_PAYLOAD
+_IO_read_ptr
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/wan_mgr
+wan_mon_send_wan_state_online
+wan_mgr_wan_priority_e
+_ISupper
+WAN_MGR_MSG_GET_MON_TELEMETRY
+service_pid
+successful_recov_cnt
+__daylight
+wan_mon_wan_info_t
+__off64_t
+service_cmd
+_unused2
+_IO_buf_base
+use_client_status
+wan_failback
+register_settings
+wan_mgr_set_auto_switch_settings
+wan_mgr_get_no_con_timeout_settings
+wan_mgr_get_manual_wan_settings
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/wan_mgr/src/wan_mgr_settings.c
+wan_mgr_set_no_con_timeout_settings
+wan_mgr_get_wan_monitor_settings_settings
+wan_mgr_get_auto_switch_settings
+wan_priority_list
+wan_mgr_get_wan_failback_settings
+initialize_settings
+wan_mgr_get_wan_priority_list_settings
+wan_mgr_set_wan_failback_settings
+wan_mgr_set_wan_monitor_properties_settings
+wan_mgr_set_manual_wan_settings
+wan_mgr_set_wan_priority_list_settings
+wan_mgr_get_supported_wan_count_settings
+func_ptr
+gold 1.16
+call_weak_fn
+crtstuff.c
+__TMC_LIST__
+deregister_tm_clones
+register_tm_clones
+__do_global_dtors_aux
+completed.11339
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+wan_mgr_api.c
+__func__.10649
+__func__.10678
+__func__.10682
+__func__.10693
+__func__.10708
+__func__.10725
+__func__.10737
+__func__.10749
+__func__.10761
+__func__.10773
+__func__.10785
+__func__.10797
+__func__.10814
+__func__.10832
+__func__.10844
+__func__.10856
+__func__.10867
+__func__.10874
+__func__.10879
+__func__.10885
+__func__.10899
+__func__.10904
+wan_mgr_settings.c
+__func__.10446
+__func__.10458
+__func__.10467
+__func__.10473
+__func__.10479
+__func__.10485
+__func__.10491
+__func__.10497
+__func__.10503
+__func__.10509
+__func__.10515
+__func__.10521
+__func__.10527
+__FRAME_END__
+__dso_handle
+__TMC_END__
+_DYNAMIC
+_GLOBAL_OFFSET_TABLE_
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+wan_mgr_state_str
+wan_mgr_disconnect_reason_str
+wan_mgr_get_error_string
+wan_mgr_send_status_validation
+mifi_dbg_get_level_name
+mifi_dbg_log
+wan_mgr_send_status
+wan_mgr_is_valid_hostname
+__ctype_b_loc
+validate_wan_priority_list
+wan_mgr_log_internal_config
+msgq_does_queue_exist
+msgq_send_async
+wan_mgr_api_is_running
+wan_mgr_set_manual_wan
+wan_mgr_get_wan_priorities_settings
+wan_mgr_get_supported_wan_count
+router2_utils_get_wan_type_str
+wan_mgr_get_auto_switch
+settings_set_setting
+wan_mgr_get_manual_wan
+settings_get_setting
+mifi_dbg_syslog
+wan_mgr_get_wan_telemetry_info_list
+msgq_send_sync
+wan_mgr_set_wan_monitor_settings
+wan_mgr_get_wan_monitor_settings
+wan_mgr_set_auto_switch
+wan_mgr_get_no_con_timeout
+wan_mgr_set_no_con_timeout
+wan_mgr_set_wan_priorities
+wan_mgr_set_failback_settings
+wan_mgr_get_failback_settings
+wan_mgr_register_wan
+wan_mgr_deregister_wan
+wan_mon_send_wan_state_not_avail
+MsgBusSetBinary
+wan_mon_register_deregister_wan
+wan_mon_send_wan_state_online
+wan_mgr_get_wan_priority_list_settings
+xmldata_getint32
+wan_mgr_set_wan_priority_list_settings
+xmldata_setint32
+xmldata_save
+MsgBusSetInt32
+wan_mgr_get_wan_failback_settings
+wan_mgr_set_wan_failback_settings
+wan_mgr_get_supported_wan_count_settings
+wan_mgr_get_auto_switch_settings
+wan_mgr_set_auto_switch_settings
+wan_mgr_get_wan_monitor_settings_settings
+xmldata_getstring
+wan_mgr_set_wan_monitor_properties_settings
+xmldata_setstring
+wan_mgr_get_manual_wan_settings
+wan_mgr_set_manual_wan_settings
+wan_mgr_get_no_con_timeout_settings
+wan_mgr_set_no_con_timeout_settings
+initialize_settings
+__bss_start
+.init_array
+.fini_array
+.debug_abbrev
+.comment
+.rel.plt
+.ARM.attributes
+.debug_aranges
+.debug_str
+.eh_frame_hdr
+.gnu.version_r
+.debug_info
+.rel.dyn
+.gnu.version
+.note.gnu.gold-version
+.debug_line
+.GCC.command.line
+.eh_frame
+.debug_frame
+.tm_clone_table
+.note.gnu.build-id
+.gnu.version_d
+.dynamic
+.shstrtab

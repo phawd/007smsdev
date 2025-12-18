@@ -1,0 +1,67 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+ matkapuhelinverkon kautta luodun Internet-yhteyden tilan.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>Sen matkapuhelinverkon nimi, johon t
+ laite on t
+ hetkell
+ yhdistetty.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>Nykyiseen yhteyteen k
+ytetty verkkoteknologia. LTE on nopein saatavilla oleva teknologia.</p> 
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>Nykyisen Internet-istunnon aika, joka on kulunut yhteyden luomisesta.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))></h3>
+	<p>Nykyisen Internet-istunnon vastaanotetun datan m
+ laskuri alkaa nollasta, kun yhteys muodostetaan.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>Nykyisen Internet-istunnon osalta l
+hetetyn datan m
+ laskuri alkaa nollasta, kun yhteys muodostetaan.</p>
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+lle laitteelle m
+ritetty Internetin IP-osoite.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))></h3>
+ olevaan IP-osoitteeseen liittyv
+ verkon peite.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+ olevaan IP-osoitteeseen liittyv
+n IP-osoite.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))></h3>
+	<p>Laitteen t
+ hetkell
+ verkkotunnuspalvelin.</p>
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+	<p><tmpl_var _("webui", "webui_product_name")>-laitteen yleinen IPv6-osoite n
+ on tyhj
+, jos IPv6 on kytketty pois p
+ tai jos nykyinen verkkoyhteys ei tue sit
+	<tmpl_if InternetStatusViewSessionShow>
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+	<p>Istuntoloki sis
+ seuraavat tiedot:</p>
+ ja aika (kun yhteys aloitettiin)</p>
+	<p>- kesto (sama muoto kuin nykyisen istunnon tiedoilla)</p>
+	<p>- vastaanotettu (nykyisen istunnon mukainen muoto)</p>
+hetetty (nykyisen istunnon mukainen muoto)</p>
+	<p>- kokonaisdata (Rx:n ja Tx:n summa, nykyisen istunnon tietojen mukainen muoto)</p>
+	<p>- verkkovierailu (verkkovierailu/osittainen/tyhj
+=kotiverkko</p>
+	<p>- IPv4 (IPv4 WWAN -IP-osoite)</p>
+	<p>- IPv6 (IPv6 WWAN -IP-osoite).</p>
+	<p>Loki on p
+rjestyksess
+ ei voi muuttaa j
+rjestyst
+ istuntolokiin liittyvi
+ asetuksia ole.</p>
+	</tmpl_if>
+<!-- id="status_internet" -->

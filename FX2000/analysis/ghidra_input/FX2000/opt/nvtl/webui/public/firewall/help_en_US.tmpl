@@ -1,0 +1,48 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+	<h2>Overview</h2>
+		<p>The <tmpl_var _("webui", "webui_product_name")> firewall determines which Internet traffic is allowed to pass between the gateway and connected devices and protects your connected devices from malicious incoming traffic from the Internet. The firewall cannot be turned off. Use the Firewall tab to adjust the general security level of the firewall, designate a specific device to receive all traffic, and set up specific firewall rules.  
+		</p>
+			
+	<h2>Settings</h2>
+			
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+	<tmpl_unless ShowDmzActive>
+		<h3>VPN Passthrough</h3>
+	</tmpl_unless>
+		<p>This feature allows VPN client software on connected devices to connect through this device to remote VPN servers. Normally, this option should be left on. 	</p>
+<tmpl_if showTransparentMode>
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+		<tmpl_unless ShowDmzActive>
+			<h3>IPv6 Transparent Mode</h3>
+		</tmpl_unless>
+			<p>Normally, the firewall will block incoming IPv6 connection requests intended for an IPv6 connected device.
+			</p>
+			<p>
+				If you wish to allow these incoming connection requests to reach the intended connected device, turn on this setting.  Transparent Mode should only be turned on when necessary, as it reduces the protection provided by the <tmpl_var _("webui", "webui_product_name")> firewall.
+			</p>
+	</tmpl_if>
+</tmpl_if>
+	<tmpl_if ShowDmzActive>
+		<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+	<tmpl_else>
+		<h2>DMZ</h2>
+	</tmpl_if>
+	<p>
+		If checked, then the connected device specified as the DMZ IP address (DMZ destination) will receive all traffic which would otherwise be blocked by the firewall. <b>NOTE:</b> This may assist some troublesome network applications to function properly, but the DMZ device should have its own firewall to protect itself against malicious traffic.
+	</p>
+	<tmpl_if ShowDmzActive>
+	<h3>DMZ Checkbox</h3>
+				
+		<p>Use this to turn this feature on or off as needed. Generally, DMZ should be off unless really necessary.</p>	
+	</tmpl_if>
+	<h3>Destination IP address</h3>
+		<p>Enter the IP address of the connected device you wish to become the DMZ device (DMZ destination) into this field.
+		You can check the IP address of each connected device on the connected devices screen.
+		</p>
+			
+</div>
+<!-- id="firewall" -->
+

@@ -1,0 +1,53 @@
+<div id="device_info">
+	<h1><tmpl_udf GET_PO_TEXT("device_info_menu_text", gProductName)></h1>
+	<h2><tmpl_var truncate(_("webui", "device_info_manufacturer_label"), (size(_("webui", "device_info_manufacturer_label")) - size(":")))></h2>
+		<p>Le fabricant de ce appareil.</p>
+	<h2><tmpl_var truncate(_("webui", "device_info_model_label"), (size(_("webui", "device_info_model_label")) - size(":")))></h2>
+		<p>Le nom et le num
+ro de mod
+le officiel de cet appareil.</p>
+	<tmpl_if showSDMVersion>
+		<h2><tmpl_var truncate(_("webui", "device_info_global_sdm_version_label"), (size(_("webui", "device_info_global_sdm_version_label")) - size(":")))></h2>
+		<p>Ce num
+ro de version se rapporte au composant de gestion des appareils. Le composant logiciel de gestion des appareils est mis 
+ jour automatiquement en cas de besoin.</p>
+	</tmpl_if>
+	<div class="blockgroup">
+		<h3><tmpl_var truncate(_("webui", "device_info_modem_version_label"), (size(_("webui", "device_info_modem_version_label")) - size(":")))></h3>
+		<p>Pour le composant du modem 4G, il s
+agit de la version du microprogramme (logiciel) actuellement install
+		<tmpl_if showWifiFwVersion>
+			<h3>Version du microprogramme Wi-Fi</h3>
+			<p>Pour le composant Wi-Fi, il s
+agit de la version du microprogramme (logiciel) actuellement install
+		</tmpl_if>
+		<tmpl_if showMifiOsVersion>
+			<h3><tmpl_var truncate(_("webui", "device_info_os_version_label"), (size(_("webui", "device_info_os_version_label")) - size(":")))></h3>
+est le num
+ro de version du syst
+exploitation (OS) et de ses composants.</p>
+		</tmpl_if>
+		<tmpl_if showWebUiVersion>
+			<h3><tmpl_var truncate(_("webui", "device_info_web_ui_version_label"), (size(_("webui", "device_info_web_ui_version_label")) - size(":")))></h3>
+			<p>Le num
+ro de version de l
+interface web Jetpack.</p>
+		</tmpl_if>
+		<tmpl_if showLcdVersion>
+			<h3><tmpl_var truncate(_("webui", "device_info_lcd_ui_version_label"), (size(_("webui", "device_info_lcd_ui_version_label")) - size(":")))></h3>
+			<p>Le num
+ro de version du logiciel qui contr
+cran de l
+appareil et l
+interaction de l
+utilisateur avec le contenu de l
+cran.</p>
+		</tmpl_if>
+		<h3><tmpl_var truncate(_("webui", "device_info_cute_version_label"), (size(_("webui", "device_info_cute_version_label")) - size(":")))></h3>
+		<p>La version des logiciels actuellement install
+agit du num
+ro de version principal
+; les informations suivantes sur la version concernent divers composants logiciels.</p>
+		<h3><tmpl_var truncate(_("webui", "device_info_pri_version_label"), (size(_("webui", "device_info_pri_version_label")) - size(":")))></h3>
+		<p>Ceci identifie la version de configuration actuellement appliqu
+ cet appareil.</p>

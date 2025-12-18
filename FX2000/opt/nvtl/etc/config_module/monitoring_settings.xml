@@ -1,0 +1,713 @@
+<Root data_type="Object">
+    <clients data_type="Array">
+        <mac_address data_type="String">
+            <__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>Any String</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+        </mac_address>
+		<ipv4_address data_type="String">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>Any String</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</ipv4_address>
+		<host_name data_type="String">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>Any String</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</host_name>
+		<connection_type data_type="String">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>tethering cable</possible_value>
+					<possible_value>Ethernet</possible_value>
+					<possible_value>Wi-Fi</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</connection_type>
+		<data_usage data_type="Unsigned long">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>0</default_value>
+				<is_unique>0</is_unique>
+				<unit>Bytes</unit>
+				<possible_values>
+					<possible_value>Data used in bytes</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</data_usage>
+		<ipv6_address data_type="String">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>Any IPv6 Address</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</ipv6_address>
+		<link_local_address data_type="String">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>Any IPv6 Address</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</link_local_address>
+		<network_type data_type="Integer">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>0</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>-1</possible_value>
+					<possible_value>0</possible_value>
+					<possible_value>1</possible_value>
+					<possible_value>2</possible_value>
+					<possible_value>3</possible_value>
+				</possible_values>
+				<legends>
+					<legend>
+						<key>-1</key>
+						<value>Unknown</value>
+					</legend>
+					<legend>
+						<key>0</key>
+						<value>Client connected via primary WiFi</value>
+					</legend>
+					<legend>
+						<key>1</key>
+						<value>Client connected via USB</value>
+					</legend>
+					<legend>
+						<key>2</key>
+						<value>Client connected LAN</value>
+					</legend>
+					<legend>
+						<key>3</key>
+						<value>Client connected via guest WiFi</value>
+					</legend>
+				</legends>
+			</__ATTRIBUTES__>
+		</network_type>
+    </clients>
+	<gps data_type="Object">
+		<gps_state data_type="Integer">
+            <__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>0</default_value>
+				<is_unique>1</is_unique>
+				<possible_values>
+					<possible_value>0</possible_value>
+					<possible_value>1</possible_value>
+				</possible_values>
+				<legends>
+					<legend>
+						<key>0</key>
+						<value>Disabled</value>
+					</legend>
+					<legend>
+						<key>1</key>
+						<value>Enabled</value>
+					</legend>
+				</legends>
+			</__ATTRIBUTES__>
+        </gps_state>
+		<gps_status data_type="Integer">
+            <__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>0</default_value>
+				<is_unique>1</is_unique>
+				<possible_values>
+					<possible_value>0</possible_value>
+					<possible_value>1</possible_value>
+					<possible_value>2</possible_value>
+				</possible_values>
+				<legends>
+					<legend>
+						<key>0</key>
+						<value>Not Available, that is GPS is enabled but GPS device couldn't latch to satellite</value>
+					</legend>
+					<legend>
+						<key>1</key>
+						<value>Searching</value>
+					</legend>
+					<legend>
+						<key>2</key>
+						<value>Acquired</value>
+					</legend>
+				</legends>
+			</__ATTRIBUTES__>
+        </gps_status>
+		<gps_latitude data_type="Float">
+            <__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>0.0</default_value>
+				<is_unique>1</is_unique>
+				<possible_range>
+					<min>-90.0</min>
+					<max>90.0</max>
+				</possible_range>
+				<unit>Degrees</unit>
+			</__ATTRIBUTES__>
+        </gps_latitude>
+		<gps_longitude data_type="Float">
+            <__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>0.0</default_value>
+				<is_unique>1</is_unique>
+				<possible_range>
+					<min>-180.0</min>
+					<max>180.0</max>
+				</possible_range>
+				<unit>Degrees</unit>
+			</__ATTRIBUTES__>
+        </gps_longitude>
+		<gps_heading data_type="Float">
+            <__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>0.0</default_value>
+				<is_unique>1</is_unique>
+				<possible_values>
+					<possible_value>Any possible floating point value</possible_value>
+				</possible_values>
+				<unit>Degrees</unit>
+			</__ATTRIBUTES__>
+        </gps_heading>
+		<gps_speed data_type="Integer">
+            <__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>0</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>Any possible unsigned integral number</possible_value>
+				</possible_values>
+				<unit>meters per second</unit>
+			</__ATTRIBUTES__>
+        </gps_speed>
+		<gps_altitude data_type="Integer">
+            <__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>0</default_value>
+				<is_unique>1</is_unique>
+				<possible_values>
+					<possible_value>Any possible integral number</possible_value>
+				</possible_values>
+				<unit>meters</unit>
+			</__ATTRIBUTES__>
+        </gps_altitude>
+		<gps_accuracy data_type="Integer">
+            <__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>0</default_value>
+				<is_unique>1</is_unique>
+				<possible_values>
+					<possible_value>Any possible integral number</possible_value>
+				</possible_values>
+				<unit>meters</unit>
+				<remarks>This field is sent in meters format by default</remarks>
+			</__ATTRIBUTES__>
+        </gps_accuracy>
+		<gps_satelite_view data_type="Integer">
+            <__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>0</default_value>
+				<is_unique>1</is_unique>
+				<possible_values>
+					<possible_value>Any possible integral number</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+        </gps_satelite_view>
+	</gps>
+	<wifi data_type="Object">
+		<two_dot_four_g_ssid_primary data_type="String" alias="2.4G_ssid_primary">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>String</possible_value>
+				</possible_values>
+				<remarks>Empty string implies this band is inactive</remarks>
+			</__ATTRIBUTES__>
+		</two_dot_four_g_ssid_primary>
+		<two_dot_four_g_ssid_guest data_type="String" alias="2.4G_ssid_guest">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>String</possible_value>
+				</possible_values>
+				<remarks>If not sent then implies that Guest SSID is unavailable param for the device.</remarks>
+			</__ATTRIBUTES__>
+		</two_dot_four_g_ssid_guest>
+		<five_g_ssid_primary data_type="String" alias="5G_ssid_primary">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>String</possible_value>
+				</possible_values>
+				<remarks>Empty string implies this band is inactive</remarks>
+			</__ATTRIBUTES__>
+		</five_g_ssid_primary>
+		<five_g_ssid_guest data_type="String" alias="5G_ssid_guest">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<default_value>Any String</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>String</possible_value>
+				</possible_values>
+				<remarks>If not sent then implies that Guest SSID is unavailable param for the device.</remarks>
+			</__ATTRIBUTES__>
+		</five_g_ssid_guest>
+	</wifi>
+	<wan data_type="Object">
+		<sim data_type="Object">
+			<sim_slot_number data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>1</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>1</possible_value>
+						<possible_value>2</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</sim_slot_number>
+			<is_active data_type="Boolean">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>    
+					<default_value>false</default_value>    
+					<is_unique>0</is_unique>    
+					<possible_values>
+						<possible_value>true</possible_value>
+						<possible_value>false</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</is_active>
+			<connection_status data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>0</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>0</possible_value>
+						<possible_value>1</possible_value>
+						<possible_value>2</possible_value>
+						<possible_value>3</possible_value>
+						<possible_value>4</possible_value>
+						<possible_value>5</possible_value>
+						<possible_value>6</possible_value>
+						<possible_value>7</possible_value>
+					</possible_values>
+					<legends>
+						<legend>
+							<key>0</key>
+							<value>No SIM</value>
+						</legend>
+						<legend>
+							<key>1</key>
+							<value>SIM Error</value>
+						</legend>
+						<legend>
+							<key>2</key>
+							<value>PIN Lock</value>
+						</legend>
+						<legend>
+							<key>3</key>
+							<value>PUK Lock</value>
+						</legend>
+						<legend>
+							<key>4</key>
+							<value>Searching</value>
+						</legend>
+						<legend>
+							<key>5</key>
+							<value>No Service</value>
+						</legend>
+						<legend>
+							<key>6</key>
+							<value>Ready</value>
+						</legend>
+						<legend>
+							<key>7</key>
+							<value>Connected</value>
+						</legend>
+					</legends>
+					<remarks>Convert integer value to string value based on map below given in legends field.</remarks>
+				</__ATTRIBUTES__>
+			</connection_status>
+			<apn data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any String</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</apn>
+			<anchor_band_number data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>1</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any number</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</anchor_band_number>
+			<anchor_band_frequency data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>1</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any number</possible_value>
+					</possible_values>
+					<unit>MHz</unit>
+				</__ATTRIBUTES__>
+			</anchor_band_frequency>
+			<network_5g_bearer data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>0</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>0</possible_value>
+						<possible_value>1</possible_value>
+						<possible_value>2</possible_value>
+					</possible_values>
+					<legends>
+						<legend>
+							<key>0</key>
+							<value>None</value>
+						</legend>
+						<legend>
+							<key>1</key>
+							<value>mmW</value>
+						</legend>
+						<legend>
+							<key>2</key>
+							<value>Sub6</value>
+						</legend>
+					</legends>
+				</__ATTRIBUTES__>
+			</network_5g_bearer>
+			<cell_id data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>863425879466018</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any string</possible_value>
+					</possible_values>
+					<remarks>convert this cell_id to hex and append the tower as 4 bit hex integers like so:  0x3102601520001 </remarks>
+				</__ATTRIBUTES__>
+			</cell_id>
+			<ca_bandwidth data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>1</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any number</possible_value>
+					</possible_values>
+					<unit>MHz</unit>
+				</__ATTRIBUTES__>
+			</ca_bandwidth>
+			<bandwidth data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>1</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any number</possible_value>
+					</possible_values>
+					<unit>MHz</unit>
+				</__ATTRIBUTES__>
+			</bandwidth>
+			<data_tx data_type="Unsigned long">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>0</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any possible integer denoting bytes count</possible_value>
+					</possible_values>
+					<unit>Bytes</unit>
+					<remarks>Monthly data Tx</remarks>
+				</__ATTRIBUTES__>
+			</data_tx>
+			<data_rx data_type="Unsigned long">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>0</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any possible integer denoting bytes count</possible_value>
+					</possible_values>
+					<unit>Bytes</unit>
+					<remarks>Monthly data Rx</remarks>
+				</__ATTRIBUTES__>
+			</data_rx>
+			<session_tx data_type="Unsigned long">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>0</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any possible integer denoting bytes count</possible_value>
+					</possible_values>
+					<unit>Bytes</unit>
+					<remarks>Current session data Tx</remarks>
+				</__ATTRIBUTES__>
+			</session_tx>
+			<session_rx data_type="Unsigned long">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>0</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any possible integer denoting bytes count</possible_value>
+					</possible_values>
+					<unit>Bytes</unit>
+					<remarks>Current session data Rx</remarks>
+				</__ATTRIBUTES__>
+			</session_rx>
+			<session_duration data_type="Unsigned long">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>0</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any possible integer denoting duration in seconds</possible_value>
+					</possible_values>
+					<unit>Seconds</unit>
+					<remarks>Current session elapsed time.</remarks>
+				</__ATTRIBUTES__>
+			</session_duration>
+			<billing_start_date data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>2020-01-01</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>ISO 8601 Ordered Date formatted string</possible_value>
+					</possible_values>
+					<remarks>Date format: YYYY-MM-DD</remarks>
+				</__ATTRIBUTES__>
+			</billing_start_date>
+			<operator data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any string</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</operator>
+			<ipv4_addr data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any IPv4 formatted address.</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</ipv4_addr>
+			<ipv6_addr data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any IPv6 formatted address.</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</ipv6_addr>
+			<rat data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>4G</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Edge</possible_value>
+						<possible_value>3G</possible_value>
+						<possible_value>4G</possible_value>
+						<possible_value>5G</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</rat>
+			<rssi data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>-66</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any possible integer value</possible_value>
+					</possible_values>
+					<unit>dB</unit>
+				</__ATTRIBUTES__>
+			</rssi>
+			<rsrp data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>-90</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any possible signed integer value</possible_value>
+					</possible_values>
+					<unit>dBm</unit>
+				</__ATTRIBUTES__>
+			</rsrp>
+			<rsrq data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>-10</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any possible signed integer value</possible_value>
+					</possible_values>
+					<unit>dB</unit>
+				</__ATTRIBUTES__>
+			</rsrq>
+			<sinr data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>0</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any possible integer value</possible_value>
+					</possible_values>
+					<unit>dB</unit>
+					<remarks>Valid for Cellular Technology Non-4G and Non-5G</remarks>
+				</__ATTRIBUTES__>
+			</sinr>
+			<snr data_type="Integer">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>0</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any possible integer value</possible_value>
+					</possible_values>
+					<unit>dB</unit>
+					<remarks>Valid for Cellular Technology 4G or 5G</remarks>
+				</__ATTRIBUTES__>
+			</snr>
+			<ptn data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Typical PTN values</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</ptn>
+			<imsi data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>IMSI Value in string</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</imsi>
+			<iccid data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>ICCID Value in string</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</iccid>
+			<tower data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any possible value identifying the tower</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</tower>
+			<band data_type="String">
+				<__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>It's the frequency band depending upon RAT</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+			</band>
+		</sim>
+	</wan>
+	<firedome data_type="Object">
+		<enabled data_type="Boolean">
+			<__ATTRIBUTES__>
+				<is_required>1</is_required>
+				<is_unique>0</is_unique>
+				<default_value>false</default_value>
+				<possible_values>
+					<possible_value>false</possible_value>
+					<possible_value>true</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+		</enabled>
+	</firedome>
+    <imei data_type="String">
+		<__ATTRIBUTES__>
+			<is_required>1</is_required>
+			<default_value>Any String</default_value>
+			<is_unique>0</is_unique>
+			<possible_values>
+			<possible_value>
+				Any String
+			</possible_value>
+			</possible_values>
+		</__ATTRIBUTES__>
+	</imei>
+	<timestamp data_type="String">
+		<__ATTRIBUTES__>
+			<is_required>1</is_required>
+			<default_value>0</default_value>
+			<is_unique>0</is_unique>
+			<possible_values>
+			<possible_value>
+				Unix epoch time representing number of seconds elapsed since epoch reference time.
+			</possible_value>
+			</possible_values>
+		</__ATTRIBUTES__>
+	</timestamp>
+</Root>

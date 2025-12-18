@@ -1,0 +1,53 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p> Você pode usar essa configuração liga/desliga sempre que necessário para desativar dados celulares e impedir o acesso à rede móvel. Isso impede que dispositivos conectados se conectem à internet e usem o seu plano de dados móveis. Para a operação normal, essa configuração deve estar ativada. </p>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Preferências de conexão</h3>
+			<p> Selecione a opção desejada para controlar quando o <tmpl_var _("webui", "webui_product_name")> estabelecerá uma conexão de dados com a rede móvel. </p>
+	</tmpl_if>
+
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p> O valor padrão é "<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>". O <tmpl_var _("webui", "webui_product_name")> selecionará a melhor tecnologia disponível. </p>
+		<p> Se desejar, isso pode ser alterado para limitar as tecnologias de rede que serão usadas. </p>
+	</tmpl_if>
+
+	<h3>Seleção de rede manual</h3>
+		
+	<p> Esse recurso, disponível apenas se a opção <tmpl_unless apnProfileSettings>"LTE/GSM/UMTS/HSPA"<tmpl_else>"WCDMA/GSM"</tmpl_unless> estiver escolhida para a "Tecnologia de Rede Preferencial" acima, permite que você escolha a rede móvel utilizada. Isso pode ser útil se houver várias redes disponíveis e se você tiver uma preferência de qual rede será usada. </p>
+	<p> Clique no botão "Selecionar rede" para buscar as redes disponíveis; então, você poderá escolher a rede desejada. </p>
+	
+	
+	<tmpl_unless apnProfileSettings>
+		<tmpl_if NetworksFourGLTEAPNShow>
+		</tmpl_if>
+
+		<tmpl_if NetworksCustomAPNShow>
+		</tmpl_if>
+		
+	<tmpl_else>
+		<h2>Configurações avançadas</h2>
+		<p>Use este título/link para exibir ou ocultar as configurações avançadas de acordo com a necessidade. </p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_apn_label"), (size(_("webui", "wwan_settings_apn_label")) - size(":")))></h3>
+		<p> Se você precisar alterar o APN, insira o valor fornecido pelo seu provedor de serviços de rede móvel. </p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p>Selecione a opção especificada pelo seu provedor de serviços. </p>
+			<ul>
+				<li>Nenhum</li>
+				<li>PAP</li>
+				<li>CHAP</li>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))></h3>
+		<p> Se a autenticação for <strong>Nenhum</strong>, pode ser deixado em branco. Senão, insira o valor especificado pelo seu provedor de serviços. </p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))></h3>
+		<p>Se a autenticação for <strong>Nenhum</strong>, pode ser deixado em branco. Senão, insira o valor especificado pelo seu provedor de serviços. </p>
+
+	</tmpl_unless>
+
+</div>

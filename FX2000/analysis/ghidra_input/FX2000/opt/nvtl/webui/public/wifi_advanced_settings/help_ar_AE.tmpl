@@ -1,0 +1,53 @@
+<!-- WiFi Advanced -->
+<div id="wifi_advanced">
+	<h1>Wi-Fi</h1>
+	<h2>نظرة عامة</h2>
+	<p>عادة يمكن ترك إعدادات Wi-Fi هذه عند قيمها الافتراضية، ولكن إذا لزم الأمر، يمكنك ضبطها لتناسب بيئتك الخاصة.</p>
+
+	<h2>التحكم في تشغيل/إيقاف Wi-Fi</h2>
+	<p>استخدم عنصر التحكم هذا لتشغيل Wi-Fi أو إيقاف تشغيله حسب الحاجة. في حالة إيقاف تشغيلها، <tmpl_var _("webui", "webui_product_name_with_suffix")> لن تكون شبكة Wi-Fi متاحة، لذا فإن الطريقة الوحيدة للاتصال بها <tmpl_var _("webui", "webui_product_name")> هي استخدام كبل USB.</p>
+
+	<h3>السماح بإجراء تغييرات إعدادات Wi-Fi من شاشة Jetpack</h3>
+	<p>استخدم عنصر التحكم هذا لتشغيل Wi-Fi أو إيقاف تشغيله حسب الحاجة. في حالة إيقاف تشغيلها، لن تكون شبكة Wi-Fi متاحة، لذا فإن الطريقة الوحيدة للاتصال بها هي استخدام كابل USB.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_max_connections_label")></h3>
+	<p>قم بتعيين عدد الأجهزة التي يمكن توصيلها في نفس الوقت بشبكة (شبكات) Wi-Fi <tmpl_var _("webui", "webui_product_name_with_suffix")>.</p>
+
+	<h2><tmpl_var _("webui", "wifi_advanced_profile_title")></h2>
+	<p>تحدد هذه الإعدادات كيفية استخدام كل نطاق (2.4 غيغاهرتز و5 غيغاهرتز)، وتحدد ما إذا كانت شبكة Wi-Fi الضيف متاحة أم لا.</p>
+	<tmpl_if SwapToggleButtonAction>
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_ghz_band_label")></h3>
+		<p>يتم عرض وضع 2.4 غيغاهرتز 802.11 الذي يتم اكتشافه تلقائيًا.</p>
+	<tmpl_else>
+		<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_ghz_band_label")></h3>
+		<p>حدد الخيار المطلوب لتطبيق هذا النطاق على الشبكة الأساسية أو شبكة الضيف أو قم بإيقاف تشغيل هذا النطاق.</p>
+
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_advanced_five_ghz_band_label")></h3>
+	<p>حدد الخيار المطلوب لتطبيق هذا النطاق على الشبكة الأساسية أو شبكة الضيف أو قم بإيقاف تشغيل هذا النطاق. لاحظ أنه لا يمكنك إيقاف تشغيل كلا النطاقين.</p>
+
+	<h2><tmpl_var _("webui", "wifi_advanced_two_point_four_g_band_options_title")></h2>
+	<p>يتم إخفاء هذه الإعدادات بشكل افتراضي، ولكن يمكنك النقر فوق العنوان/الرابط لجعلها مرئية. تُستخدم هذه الإعدادات عندما يكون نطاق 2.4 غيغاهرتز نشطًا.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_g_802_11_mode_label")></h3>
+	<p>استخدم هذا الإعداد لتغيير وضع Wi-Fi، إذا لزم الأمر. عادة ما تترك هذا الإعداد عند قيمته الافتراضية.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_g_channel_label")></h3>
+	<p>يجب ترك هذا على الوضع <strong>تلقائي</strong> ما لم تكن بحاجة إلى اختيار قناة معينة لبيئتك.</p>
+
+	<h2><tmpl_var _("webui", "wifi_advanced_five_g_options_title")></h2>
+	<p>يتم إخفاء هذه الإعدادات بشكل افتراضي، ولكن يمكنك النقر فوق العنوان/الرابط لجعلها مرئية. تُستخدم هذه الإعدادات عندما يكون النطاق 5 غيغاهرتز نشطًا.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_802_11_mode_label")></h3>
+	<p>استخدم هذا الإعداد لتغيير وضع Wi-Fi، إذا لزم الأمر. بشكل عام، لا يوجد سبب لتغيير القيمة الافتراضية.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_bandwidth_label")></h3>
+	<p>حدد الخيار المطلوب. يجب استخدام القيمة الافتراضية ما لم تواجه تشويشًا مع أجهزة Wi-Fi الأخرى. في هذه الحالة، قد يؤدي تقليل عرض النطاق الترددي إلى تقليل التداخل.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_channel_label")></h3>
+	<p>يجب ترك هذا على الوضع <strong>تلقائي</strong> ما لم تكن بحاجة إلى اختيار قناة معينة لبيئتك.</p>
+
+</div>
+
+<!-- id="wifi_advanced" -->
+

@@ -1,0 +1,9 @@
+<tmpl_unless IN_SET(updateHistory, "unknown")>
+    <tmpl_foreach updateHistory as record>
+        <p><tmpl_var _("webui", "software_update_last_update_success_text")><tmpl_var record.version></p>
+        <p><tmpl_var record.upgradeDate>&nbsp;<tmpl_var _("webui", "webui_app_at_text")>&nbsp;<tmpl_var record.upgradeTime></p>
+        <hr><br>
+    </tmpl_foreach>
+<tmpl_else>
+    <div><tmpl_var _("webui", "software_update_current_software_software_version_label")>&nbsp;<tmpl_var cuteVersion><tmpl_var _("webui", "webui_opening_parenthesis")><tmpl_var currentSwVersion><tmpl_var _("webui", "webui_closing_parenthesis")></div>
+</tmpl_unless>

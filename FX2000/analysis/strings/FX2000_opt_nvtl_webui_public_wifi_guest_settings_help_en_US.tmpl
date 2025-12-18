@@ -1,0 +1,31 @@
+<!-- wifi_guest_settings -->
+<div id="wifi_guest_settings">	
+	<h1>Wi-Fi - Guest Network </h1>
+		The Guest Wi-Fi network can be used to provide temporary access to Internet via the <tmpl_var _("webui", "webui_product_name_with_suffix")> Wi-Fi network.
+		To connect to the Guest Wi-Fi network, connected devices must use the Wi-Fi settings shown on this screen.
+		To turn on the Guest  network, use the Wi-Fi General screen in this Web Admin Interface.
+	<h3><tmpl_var _("webui", "wifi_guest_ssid_label")></h3>
+		This sets the network name or SSID for the Guest Wi-Fi network. 
+		Enter a suitable name. The name can be up to 32 characters long.
+	<h3><tmpl_var _("webui", "wifi_guest_security_label")></h3>
+		Select the desired option for Wi-Fi security.
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> allows other people to monitor your Wi-Fi traffic and use your data plan to access the Internet. If at all possible, using this option should be avoided. 
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> is the latest and most secure method, and should be used if possible.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> can be used if some of your older devices do not support WPA2. 
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> can be used for WPA2 and WPA3 complaint devices.
+	<h3><tmpl_var _("webui", "wifi_guest_password_label")></h3>
+		If a setting other than <strong>None</strong> was selected in the <strong>Security</strong> field, a Wi-Fi password is required.
+		Enter the Wi-Fi Password in this field. You can also use the "Generate New Key" button to have a strong random password inserted into this field. Remember to save your changes if you use this option.
+		These settings are hidden by default, but you can click on the heading/link to make them visible.
+		Normally these options can be left at their default values, but can be changed if necessary to suit your particular environment.
+	<h3><tmpl_var _("webui", "wifi_guest_broadcast_ssid_label")></h3>
+		If this setting is checked, this Wi-Fi network appears in the list of available Wi-Fi networks on your connected devices. 
+		If unchecked, this network will be invisible.
+	<tmpl_if showWiFiGuestWPS> 
+		<h3><tmpl_var _("webui", "wifi_guest_wps_label")></h3>
+			Wi-Fi Protected Setup (WPS) is a system to allow Wi-Fi devices to connect to a Wi-Fi network without having to manually enter the network key.
+			If you wish to use WPS, check this option.
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_guest_privacy_label")></h3>
+		If this setting is checked, each connected device is isolated from all other connected devices. This provides additional security if some connected devices are unknown or not completely trusted. For normal operation, this should be unchecked.
+<!-- id="wifi_guest_settings" -->

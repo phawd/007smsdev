@@ -1,0 +1,29 @@
+<div id="settings_virtual">
+	<h1>Advanced Settings</h1>
+	
+	<tmpl_if appsList>
+		<h2>Overview</h2>
+		The Advanced menu provides access to the following pages and settings:
+		<div class="blockgroup">
+			<ul>
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title>&nbsp;-&nbsp;<tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+		<p>Note that for normal operation, and normal situations, none of these settings need to be changed from their default values. Only change these settings if your particular situation requires changes.</p>
+	</tmpl_if>
+
+	<h2>Buttons</h2>
+	<tmpl_if showBackButton>
+		<h3>Go Back</h3>
+		<p>Click this to return to the previous page.</p>
+	</tmpl_if>
+	<tmpl_unless showBackButton>
+		<h3>Continue</h3>
+		<p>Use this to continue to the advanced pages.</p>
+	</tmpl_unless>
+
+</div>

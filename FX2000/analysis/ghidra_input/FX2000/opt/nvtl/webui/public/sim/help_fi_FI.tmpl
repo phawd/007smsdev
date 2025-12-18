@@ -1,0 +1,47 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_menu_text")></h1>
+        <h2>Yleiskatsaus</h2>
+        <p><tmpl_var _("webui", "webui_product_name")>-laitteessasi oleva SIM-kortti voidaan lukita PIN-koodilla. Jos SIM-kortti on lukittu, sinun on syötettävä PIN-koodi ennen yhteyden muodostamisesta matkapuhelinverkkoon. Kun PIN-koodi on syötetty, se muistetaan seuraavaan virrankatkaisuun asti.</p>
+
+	<p>Tällä sivulla voit syöttää SIM-kortin PIN-koodin tarvittaessa sekä avata SIM-kortin lukituksen tai vaihtaa SIM-kortin PIN-koodin. SIM-kortin vaihtamiseen tarvitaan yleensä nykyinen PIN-koodi. Saat Novatel Wirelessin SIM-kortin oletusarvoisen PIN-koodin palveluntarjoajaltasi.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_pin_lock_feature_label"), (size(_("webui", "adv_sim_pin_lock_feature_label")) - size(":")))></h3>
+		<p>Kentässä ilmoitetaan, onko PIN-lukitus käytössä vai ei. Jos siinä lukee ”On” (Päällä), PIN-lukitus on kytketty päälle ja SIM-kortin PIN-koodi on syötettävä, jotta matkapuhelinverkkoon voidaan muodostaa yhteys. Jos siinä lukee ”Off” (Pois päältä), PIN-lukitusta ei ole kytketty päälle eikä SIM-kortin PIN-koodia tarvita.</p>
+
+	<h3><tmpl_var truncate(_("webui", "adv_sim_status_label"), (size(_("webui", "adv_sim_status_label")) - size(":")))></h3>
+	<p>Kentässä ilmoitetaan SIM-kortin nykyinen tila. Mahdollisia arvoja ovat seuraavat:</p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>Ready (Valmis) – tämä on tavanomainen tila. SIM-kortin PIN-koodi ei ole käytössä.</li>
+	        <li>PIN Locked (Lukittu PIN-koodilla) – SIM-kortin PIN-koodi on syötettävä, ennen kuin voit käyttää matkapuhelinverkkoa.</li>
+	        <li>PUK Locked (Lukittu PUK-koodilla) – SIM-kortin PUK-koodi on syötettävä, jotta voidaan jatkaa. Saat PUK-koodin palveluntarjoajaltasi.</li>
+	        <li>Unlocked (Lukitus avattu) – SIM-kortin PIN-koodi tarvitaan, mutta se on jo syötetty.</li>
+	        <li>No SIM (Ei SIM-korttia) – SIM-korttia ei havaittu. Jos sinulla on SIM-kortti, tarkista, että se on asetettu oikein.</li>
+	        <li>SIM Error (SIM-kortin virhe) – SIM-kortti havaittiin, mutta se ei vastannut odotetulla tavalla eikä sitä voi käyttää.</li>       
+	        </ul>
+	</div>
+        <h2>SIM-korttitoiminnot</h2>
+        <p>Käytettävissä olevat toiminnot riippuvat SIM-kortin nykyisestä tilasta. Kaikki mahdolliset toiminnot on lueteltu ja selitetty alla.</p>
+
+		<h3>PIN-lukitus</h3>
+		<p>Jos SIM-kortti on tällä hetkellä lukittu PIN-koodilla, sinua pyydetään syöttämään PIN-koodi. Huomaa, että jos väärä PIN-koodi syötetään liian monta kertaa, SIM-korttiin asetetaan PUK-lukitus. Sivulla oleva laskuri ilmoittaa, kuinka monen väärän syöttökerran jälkeen PUK-lukitus asetetaan. Kun kortti on lukittu PUK-koodilla, palveluntarjoajalta on hankittava PUK-koodi.</p>
+		<h3>PUK-lukitus</h3>
+		<p>Jos SIM-kortti on tällä hetkellä lukittu PUK-koodilla, ainoa mahdollinen toimenpide on PUK-koodin syöttäminen. Huomaa, että jos väärä PUK-koodi syötetään liian monta kertaa, SIM-kortista tulee pysyvästi käyttökelvoton. Sinun on hankittava uusi SIM-kortti. Sivulla oleva laskuri ilmoittaa, kuinka monta syöttöyritystä on jäljellä.</p>
+		<h3><tmpl_var _("webui", "adv_sim_enable_pin_lock_option")></h3>
+		<p>Tämä asettaa SIM-kortin niin, että PIN-koodi on syötettävä käynnistettäessä, jotta matkapuhelinverkkoon voidaan muodostaa yhteys. Jotta tämän toiminnon voi suorittaa, sinun on syötettävä nykyinen PIN-koodi.</p>
+
+		<h3><tmpl_var _("webui", "adv_sim_disable_pin_option")></h3>
+		<p>Tällä asetuksella voit kytkeä pois päältä PIN-lukituksen, joka kytkettiin aiemmin päälle, jotta PIN-koodia ei tarvitse enää syöttää, kun matkapuhelinverkkoon muodostetaan yhteys. Jotta tämän toiminnon voi suorittaa, sinun on syötettävä nykyinen PIN-koodi.</p>
+		<h3><tmpl_var _("webui", "adv_sim_change_pin_option")></h3>
+		<p>Voit vaihtaa nykyisen PIN-koodin valitsemalla tämän vaihtoehdon ja syöttämällä sitten tarvittavat tiedot:</p>
+		<div class="blockgroup">
+			<ul>
+			<li>Nykyinen PIN-koodi</li>
+			<li>Uusi PIN-koodi</li>
+			<li>Vahvista uusi PIN-koodi</li>
+			</ul>
+		</div>
+		<p><tmpl_var _("webui", "adv_sim_name_text")></p>
+</div>
+<!-- id="sim" -->
+

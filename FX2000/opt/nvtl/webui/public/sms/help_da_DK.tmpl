@@ -1,0 +1,18 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<h2>Oversigt</h2>
+	<p>Disse sms-beskeder kommer normalt fra din tjenesteudbyder. Du skal ikke forsøge at svare, og derfor leveres der ingen svarfunktion.</p>
+	<h2>Indhold</h2>
+	<tmpl_if showMessageCounter>
+		<h3>Beskedtællere</h3>
+		<p>To tællere øverst på skærmen viser antallet af ulæste (nye) beskeder og det samlede antal beskeder.</p>	
+		<p>Bemærk, at alle beskeder er indstillet til at "læse", når de vises på denne skærm.</p>
+	</tmpl_if>
+	<h3>Beskedliste</h3>
+	<p>Alle beskeder vises i datorækkefølge. Ulæste (nye) beskeder vises med et ikon. Beskeder markeres automatisk som "læst", når de vises på denne side, så næste gang siden indtastes, vises de ikke længere som ulæste.</p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p>Denne knap findes nederst på beskedlisten. Brug den efter behov til at slette alle beskeder.</p>
+	</tmpl_if>
+</div>

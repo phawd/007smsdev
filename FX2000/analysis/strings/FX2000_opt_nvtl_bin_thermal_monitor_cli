@@ -1,0 +1,51 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__cxa_finalize
+__errno_location
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+mifi_dbg_start
+__bss_start
+thermal_monitor_get_error_string
+__isoc99_fscanf
+GLIBC_2.7
+libmifi_debug.so
+libthermal_monitor_api.so
+librt.so.1
+H	KxD	J{D
+Prints out usage and command listing
+print_error_codes
+Prints out all the error codes and their descriptions
+Report thermal zone tempature values
+Cycle reporting of thermal zone tempature values
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+/sys/class/thermal/thermal_zone%d/temp
+count_thermal_zone zone_cnt = %d
+ open() failed with error %d
+thermal_zones - 
+thermal_monitoring is not supported
+command [%s]
+command [%s] not found.
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

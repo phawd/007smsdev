@@ -1,0 +1,122 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p>Du kan anv
+nda denna P
+/AV-inst
+llning n
+ndigt att st
+nga av mobildata och f
+rhindra 
+tkomst till mobiln
+tet. Detta f
+rhindrar anslutna enheter fr
+n att ansluta till internet och anv
+nda din mobila dataplan. F
+r normal drift m
+ste denna inst
+llning l
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Anslutningsinst
+llning</h3>
+nskat alternativ f
+r att kontrollera n
+r <tmpl_var _("webui", "webui_product_name")> kommer att uppr
+tta en dataanslutning till mobiln
+tet.</p>
+	</tmpl_if>
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>Anv
+nd den h
+llningen f
+r att aktivera eller inaktivera internationell och inhemsk roaming efter behov. Ytterligare datakostnader kan tillkomma vid roaming.</p>
+	</tmpl_if>
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p>Standardv
+<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>
+. <tmpl_var _("webui", "webui_product_name")> kommer att v
+lja den b
+sta tillg
+ngliga tekniken.</p>
+		<p>Om s
+nskas kan du 
+ndra detta f
+r att begr
+nsa de n
+tverkstekniker som kommer att anv
+ndas.</p>
+	</tmpl_if>
+	<h3>Manuellt n
+tverksval</h3>
+	<p>Den h
+r funktionen 
+r endast tillg
+nglig om det aktiverade automatiska n
+tverksvalet st
+ngs av. Detta kan vara anv
+ndbart om flera n
+ngliga och du har en preferens f
+r vilket som anv
+nds.</p>
+	<p>Klicka p
+ knappen 
+r att skanna efter tillg
+ngliga n
+tverk, sedan kan du v
+tverk.</p>
+	<tmpl_unless apnProfileSettings>
+		<tmpl_if NetworksFourGLTEAPNShow>
+			<h3><tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))></h3>
+			<p>APN 
+rkonfigurerat. Du b
+ndra APN s
+vida du inte har ett f
+retagskonto (med ditt eget APN).</p>
+		</tmpl_if>
+		<tmpl_if NetworksCustomAPNShow>
+			<h3><tmpl_var truncate(_("webui", "wwan_settings_custom_apn_label"), (size(_("webui", "wwan_settings_custom_apn_label")) - size(":")))></h3>
+			<p>Detta APN anv
+nds om du 
+ndrar SIM till ett icke-Verizon SIM. Annars ignoreras det och har inte n
+gon effekt.</p>
+		</tmpl_if>
+	<tmpl_else>
+		<h2>Avancerade inst
+llningar</h2>
+		<p>Anv
+nd denna rubrik/l
+r att visa eller d
+lja de avancerade inst
+llningarna efter behov.</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_apn_label"), (size(_("webui", "wwan_settings_apn_label")) - size(":")))></h3>
+		<p>Om du beh
+ndra APN anger du det v
+rdet som tillhandah
+lls av din mobiln
+tsleverant
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))></h3>
+		<div class="blockgroup">
+lj det alternativ som specificerats av din tj
+nsteleverant
+				<li>Ingen</li>
+				<li>PAP</li>
+				<li>CHAP</li>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))></h3>
+		<p>Om autentiseringen 
+r <strong>Ingen</strong> kan detta l
+mnas tomt. Annars anger du det v
+rde som specificerats av din tj
+nsteleverant
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))></h3>
+		<p>Om autentiseringen 
+r <strong>Ingen</strong> kan detta l
+mnas tomt. Annars anger du det v
+rde som specificerats av din tj
+nsteleverant
+	</tmpl_unless>

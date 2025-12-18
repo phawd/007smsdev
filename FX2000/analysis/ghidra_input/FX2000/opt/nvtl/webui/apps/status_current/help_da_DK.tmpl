@@ -1,0 +1,54 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>Dette viser tilslutningsstatus for internetforbindelsen via mobilnetværket.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>Navnet på det mobilnetværk, som denne enhed i øjeblikket er tilsluttet.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>Den netværksteknologi, der bruges til den aktuelle forbindelse. LTE er den hurtigste tilgængelige teknologi.</p> 
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+	-->
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>For den aktuelle internetsession: det tidsrum, der er gået, siden forbindelsen blev oprettet.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))></h3>
+	<p>For den aktuelle internetsession: mængden af modtagne data. Denne tæller starter fra nul, når forbindelsen er etableret.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>For den aktuelle internetsession: mængden af transmitterede data. Denne tæller starter fra nul, når forbindelsen er etableret.</p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+	<p>Den internet-IP-adresse, der er tildelt denne enhed.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))></h3>
+	<p>Netværksmasken, der er knyttet til IP-adressen ovenfor.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	<p>IP-adressen til gatewayen, der er knyttet til IP-adressen ovenfor.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))></h3>
+	<p>Den domænenavneserver, der i øjeblikket bruges af denne enhed.</p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+	<p>Den globale IPv6-adresse til <tmpl_var _("webui", "webui_product_name")> vises her. Dette vil være tomt, hvis IPv6 er slået fra eller ikke understøttes af den aktuelle netværksforbindelse.</p>
+
+	<tmpl_if InternetStatusViewSessionShow>
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+	<p>Sessionsloggen indeholder følgende data:</p>
+	<p>- Dato og tid (for hvornår tilslutning starter)</p>
+	<p>- Varighed (samme format som de aktuelle sessionsoplysninger)</p>
+	<p>- Modtaget (format som for den aktuelle session)</p>
+	<p>- Overført (format som for den aktuelle session)</p>
+	<p>- Samlede data (summen af Rx og Tx, format som for de aktuelle sessionsoplysninger)</p>
+	<p>- Roaming (Roaming/Partial/blank) Blank = hjemmenetværk</p>
+	<p>- IPv4 (IPv4 WWAN IP-adresse)</p>
+	<p>- IPv6 (IPv6 WWAN IP-adresse)</p>
+
+	<p>Loggen er i datorækkefølge.</p>
+	<p>Brugeren kan ikke ændre rækkefølgen, og der er ingen muligheder i forbindelse med sessionsloggen.</p>
+	</tmpl_if>
+</div> 
+<!-- id="status_internet" -->
+

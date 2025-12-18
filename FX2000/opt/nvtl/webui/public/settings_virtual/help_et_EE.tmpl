@@ -1,0 +1,28 @@
+<div id="settings_virtual">
+	<h1>Täpsemad seaded</h1>
+	
+	<tmpl_if appsList>
+		<h2>Ülevaade</h2>Täpsem menüü annab juurdepääsu järgmistele lehtedele ja sätetele.<div class="blockgroup">
+			<ul>
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title>&nbsp;-&nbsp;<tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+		<p>Pange tähele, et normaalse töö ja tavaolukordade puhul ei ole vaja ühegi selle seade vaikeväärtustest muuta. Muutke neid seadeid ainult siis, kui seda nõuab konkreetne olukord.</p>
+	</tmpl_if>
+
+	<h2>Nupud</h2>
+	<tmpl_if showBackButton>
+		<h3>Mine tagasi</h3>
+		<p>Klõpsake seda eelmisele lehele naasmiseks.</p>
+	</tmpl_if>
+
+	<tmpl_unless showBackButton>
+		<h3>Jätka</h3>
+		<p>Kasutage seda täpsematele lehtedele liikumiseks.</p>
+	</tmpl_unless>
+
+</div>

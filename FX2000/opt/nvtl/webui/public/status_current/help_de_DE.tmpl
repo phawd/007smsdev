@@ -1,0 +1,55 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>Hier wird der Verbindungsstatus für die Internetverbindung über das Mobilfunknetz angezeigt.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>Der Name des Mobilfunknetzes, mit dem dieses Gerät aktuell verbunden ist.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>Die für die aktuelle Verbindung verwendete Netzwerktechnologie. LTE ist die schnellste verfügbare Technologie.</p> 
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+	-->
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>Die Zeitspanne der aktuellen Internetsitzung, die seit dem Verbindungsaufbau verstrichen ist.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))></h3>
+	<p>Die Menge der empfangenen Daten der aktuellen Internetsitzung. Dieser Zähler startet bei Null, wenn die Verbindung hergestellt wird.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>Die Menge der übertragenen Daten der aktuellen Internetsitzung. Dieser Zähler startet bei Null, wenn die Verbindung hergestellt wird.</p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+	<p>Die diesem Gerät zugewiesene Internet-IP-Adresse.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))></h3>
+	<p>Die Netzwerkmaske, die mit der obigen IP-Adresse verknüpft ist.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	<p>Die Gateway-IP-Adresse, die mit der obigen IP-Adresse verknüpft ist.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))></h3>
+	<p>Der momentan von diesem Gerät verwendete Domänennamenserver.</p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+	<p>Die globale IPv6-Adresse für das <tmpl_var _("webui", "webui_product_name")> wird hier angezeigt. Dieses Feld ist leer, wenn IPv6 abgeschaltet ist oder von der aktuellen Netzwerkverbindung nicht unterstützt wird.</p>
+
+	<tmpl_if InternetStatusViewSessionShow>
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+	<p>Folgende Daten sind im Sitzungsprotokoll enthalten:</p>
+	<p>- Datum und Uhrzeit (wann die Verbindung gestartet wurde)</p>
+	<p>- Dauer (gleiches Format wie die Informationen zur aktuellen Sitzung)</p>
+	<p>- Empfangen (Format wie für die aktuelle Sitzung)</p>
+	<p>- Übermittelt (Format wie für die aktuelle Sitzung)</p>
+	<p>- Datenvolumen insgesamt (Summe von Rx und Tx, Format wie für aktuelle Sitzungsinformationen)</p>
+	<p>- Roaming (Roaming/teilweise/leer) Leer=Heimnetzwerk</p>
+	<p>- IPv4 (IPv4-WWAN-IP-Adresse)</p>
+	<p>- IPv6 (IPv6-WWAN-IP-Adresse)</p>
+
+	<p>Das Protokoll ist nach Datum geordnet.</p>
+	<p>Der Benutzer kann die Reihenfolge nicht ändern, und es gibt keine Optionen in Bezug auf das Sitzungsprotokoll.</p>
+	</tmpl_if>
+
+</div> 
+<!-- id="status_internet" -->
+

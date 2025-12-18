@@ -1,0 +1,73 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>Cela affiche l’état de la connexion à Internet au moyen duréseau mobile. 
+	</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>Le nom du réseau mobile auquel cet appareil est actuellement connecté. 
+	</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>Indique la connexion de données mobiles actuelle, par exemple, 5G.	
+	</p> 
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+	-->
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>Pour la session Internet en cours, la période de temps écoulée depuis l’établissement de la connexion. 
+	</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))>
+</h3>
+	<p>Pour la session Internet en cours, la quantité de données reçues. Ce compteur part de zéro une fois la connexion établie. 
+	</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>Pour la session Internet en cours, la quantité de données transmises. Ce compteur part de zéro une fois la connexion établie. 
+	</p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+	<p>
+        	L’adresse IP Internet attribuée à cet appareil.
+	</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))>
+</h3>
+	<p>
+	        Le masque de réseau associé à l’adresse IP ci-dessus.
+	</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	<p>
+	        L’adresse IP de la passerelle associée à l’adresse IP ci-dessus.
+	</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))>
+</h3>
+	<p>
+	        Le serveur de noms de domaine actuellement utilisé par cet appareil.
+	</p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+	<p>L’adresse IPv6 globale du <tmpl_var _("webui", "webui_product_name")> est affichée ici. 
+	Ce champ sera vide si la connexion IPv6 est désactivée ou il ne sera pas pris en charge par la connexion réseau actuelle. </p>
+
+	<tmpl_if InternetStatusViewSessionShow>
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+	<p>Le journal de la session contient les données suivantes :</p>
+	<p>– Date et heure   (lorsque la connexion a commencé)</p>
+	<p>– Durée  (même format que les informations sur la session en cours)</p>
+	<p>– Éléments reçus    (format comme pour la session en cours)</p>
+	<p>– Éléments transmis   (format comme pour la session en cours)</p>
+	<p>– Données totales  (somme des données reçues et transmises, même format que pour la session en cours)</p>
+	<p>– Itinérance   (itinérance/partiel/vide) vide = réseau domestique</p>
+	<p>– IPv4   (adresse IP WWAN IPv4)</p>
+	<p>– IPv6   (adresse IP WWAN IPv6)</p>
+
+	<p>Les journaux sont classés par ordre chronologique. </p>
+	<p>L’utilisateur ne peut pas modifier l’ordre et il n’y a pas d’options relatives au journal de la session.</p>
+	</tmpl_if>
+
+</div> 
+<!-- id="status_internet" -->
+

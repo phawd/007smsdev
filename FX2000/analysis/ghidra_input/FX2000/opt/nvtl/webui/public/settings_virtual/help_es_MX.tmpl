@@ -1,0 +1,27 @@
+<div id="settings_virtual">
+	<h1>Configuración avanzada</h1>
+	
+	<tmpl_if appsList>
+		<h2>Descripción</h2> El menú Avanzado ofrece acceso a las siguientes páginas y ajustes: <div class="blockgroup">
+			<ul>
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title> - <tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+		<p>Tenga en cuenta que para el funcionamiento normal, y situaciones normales, no es necesario cambiar los valores predeterminados de ninguna de estas configuraciones. Solo cambie estas configuraciones si su situación en particular requiere cambios.</p>
+	</tmpl_if>
+
+	<h2>Botones</h2>
+	<tmpl_if showBackButton>
+		<h3>Volver</h3>
+		<p>Haga clic aquí para regresar a la página anterior.</p>
+	</tmpl_if>
+	<tmpl_unless showBackButton>
+		<h3>Continuar</h3>
+		<p>Use este botón para continuar a las páginas avanzadas.</p>
+	</tmpl_unless>
+
+</div>

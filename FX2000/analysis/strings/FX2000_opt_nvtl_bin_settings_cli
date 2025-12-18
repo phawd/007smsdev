@@ -1,0 +1,132 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+settings_get_error_string
+settings_is_running
+settings_get_features
+settings_get_branding_info
+settings_backup
+settings_restore
+settings_factory_reset
+mifi_dbg_start
+mifi_dbg_stop
+__bss_start
+librt.so.1
+libmificommon.so
+libwatchdog_api.so
+libmifi_debug.so
+libmifimsgbus.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifi_config.so
+libpthread.so.0
+libdl.so.2
+libsettings_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+get_features
+Get the features supported information.
+get_branding_info
+Get the branding information.
+Backs up settings file. Filepath returned to caller.
+Restores settings from the supplied filepath.
+factory_reset
+Initiates a Factory reset.
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+settings_is_running returned %d (%s)
+settings_get_features returned %d (%s)
+usb_tethering_supported:[%d]
+radio_technologies_supported:[0x%08x]
+wifi_accesspoint_supported:[%d]
+wifi_dualssid_supported:[%d]
+wifi_station_supported:[%d]
+gps_supported:[%d]
+power_save_supported:[%d]
+ipv6_supported:[%d]
+data_download_acceleration_supported:[%d]
+sms_mt_supported:[%d]
+sms_mo_supported:[%d]
+voice_supported:[%d]
+parental_controls_supported:[%d]
+tr069_supported:[%d]
+wdcp_supported:[%d]
+ethernet_supported:[%d]
+smart_agent_supported:[%d]
+one_wire_supported:[%d]
+accelerometer_supported:[%d]
+battery_pack_supported:[%d]
+usb_serial_supported:[%d]
+ignition_supported:[%d]
+ip_passthrough_supported:[%d]
+webui_supported:[%d]
+deviceui_supported:[%d]
+vpn_supported:[%d]
+dns_supported:[%d]
+omadm_supported:[%d]
+fota_supported:[%d]
+ans_supported:[%d]
+file_sharing_supported:[%d]
+dus_supported:[%d]
+dua_supported:[%d]
+sam_supported:[%d]
+led_supported:[%d]
+cdra_supported:[%d]
+pco_supported:[%d]
+auto_apn_supported:[%d]
+cc_supported:[%d]
+cumclient_supported:[%d]
+bluetooth_supported:[%d]
+bsa_supported:[%d]
+rest_api_supported:[%d]
+deviceagent_supported:[%d]
+dci_supported:[%d]
+cbsd_supported:[%d]
+remote_oob_supported:[%d]
+settings_get_branding_info returned %d (%s)
+product_sku:[%s]
+product_variant_sku:[%s]
+model:[%s]
+carrier_brand:[%s]
+cute_version:[%s]
+pri_model:[%s]
+branding_version:[%s]
+carrier_id:[%s]
+omadm_agent:[%s]
+data_usage_agent:[%s]
+settings_backup returned %d (%s)
+backup_file:[%s]
+What is the path:  
+settings_restore returned %d (%s)
+settings_factory_reset returned %d (%s)
+command [%s]
+command [%s] not found.
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

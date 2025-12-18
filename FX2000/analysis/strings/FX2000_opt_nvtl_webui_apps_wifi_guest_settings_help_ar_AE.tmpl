@@ -1,0 +1,35 @@
+<!-- wifi_guest_settings -->
+<div id="wifi_guest_settings">	
+	<h1>Wi-Fi - 
+ Guest Wi-Fi 
+ Wi-Fi <tmpl_var _("webui", "webui_product_name_with_suffix")>. 
+ Guest Wi-Fi
+ "Wi-Fi Band Selection (
+ Wi-Fi)" 
+ <tmpl_var _("webui", "webui_product_name_with_suffix")>.
+	<h3><tmpl_var _("webui", "wifi_guest_ssid_label")></h3>
+	<h3><tmpl_var _("webui", "wifi_guest_security_label")></h3>
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> 
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> 
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> 
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> 
+	<h3><tmpl_var _("webui", "wifi_guest_password_label")></h3>
+ <strong>
+</strong> 
+ <strong>
+</strong>
+ "Generate New Key (
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_ssid_label", gProductName)></h3>
+ <tmpl_var _("webui", "webui_product_name_with_suffix")>
+ "Wi-Fi". 
+ ******.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_password_label", gProductName)></h3>
+ <tmpl_var _("webui", "webui_product_name_with_suffix")>
+ "Wi-Fi". 
+ ******.
+	<h3><tmpl_var _("webui", "wifi_guest_broadcast_ssid_label")></h3>
+	<tmpl_if showWiFiGuestWPS>
+		<h3><tmpl_var _("webui", "wifi_guest_wps_label")></h3>
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_guest_privacy_label")></h3>
+<!-- id="wifi_guest_settings" -->

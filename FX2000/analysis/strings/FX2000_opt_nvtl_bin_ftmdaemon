@@ -1,0 +1,407 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+diagpkt_subsys_alloc
+__fprintf_chk
+sem_post
+libpthread.so.0
+__printf_chk
+nl_socket_alloc
+libnl-3.so.200
+genl_connect
+libnl-genl-3.so.200
+__sprintf_chk
+nlmsg_free
+nl_socket_free
+nl_socket_disable_seq_check
+__errno_location
+nl_socket_get_cb
+__stack_chk_fail
+nl_socket_add_membership
+__stack_chk_guard
+ld-linux-armhf.so.3
+nl_socket_enable_msg_peek
+nla_nest_start
+nla_nest_end
+nl_socket_set_nonblocking
+g_strlcpy
+getopt_long
+Diag_LSM_Init
+strncasecmp
+diagpkt_tbl_reg
+sem_init
+clock_gettime
+librt.so.1
+strerror
+sem_timedwait
+sem_wait
+nlmsg_hdr
+nlmsg_data
+log_status
+log_alloc
+log_commit
+nla_parse
+nla_data
+genlmsg_attrdata
+genlmsg_attrlen
+nla_get_u32
+nla_next
+nlmsg_alloc
+nl_cb_alloc
+nl_send_auto_complete
+genl_ctrl_resolve
+genlmsg_put
+nl_recvmsgs
+nl_cb_put
+gettimeofday
+nl_cb_err
+localtime
+nl_cb_set
+strftime
+strcasecmp
+cfmakeraw
+__snprintf_chk
+pthread_create
+libdl.so.2
+tcsetattr
+cfgetospeed
+__memcpy_chk
+tcgetattr
+cfsetospeed
+asprintf
+__fread_chk
+GLIBC_2.7
+__fdelt_chk
+GLIBC_2.15
+bt_nv_cmd
+__aeabi_unwind_cpp_pr0
+libgcc_s.so.1
+__aeabi_idiv
+diagpkt_free
+__bss_start
+if_nametoindex
+timer_settime
+timer_gettime
+timer_create
+libdiag.so.1
+libglib-2.0.so.0
+libbtnv.so.0
+KF:F)F0F
+!5J{D(hzD
+!2J{D(hzD
+H	KxD	J{D
+M}Dli.FD
+CI@#|DBNBh
+!SJ{DSH-
+N H~DxD0`
+X2F|DiFO
+.K/IZF{D
+oLpJ|DpK
+"H"I XyD
+ pG)K*J{D-
+NH{DNINJ
+-H+h-"9FxD
+#H9F+h?"xD
+_YnF1F8h
+ ?I}D?O@5yD*F
+NJ9F0FzD
+~D!L"J(FwX|DzD
+`pG3K4J{D-
+)JQF FzDCFO
+!KYFRF{D
+K1FRF{D F
+3M o}D)F
+/J)F ozD
+get_bt_soc_type
+Send Response = %d
+Ignore spurious DIAG packet processing & respond immediately
+Insert BT packet = %d
+Insert BT packet done
+WLAN Send Response = %d
+usage: %s [options] 
+   -n, --nodaemon      do not run as a daemon
+   -d                  show more debug messages (-dd for even more)
+   -b, --board-type    Board Type
+   -i <wlan interface>
+       --interface=<wlan interface>
+                       wlan adapter name (wlan, eth, etc.) default wlan
+   -g                  nfc ntag I2C read/write test 
+       --help          display this help and exit
+get_property %s,
+ftmdaemon I: property_get_bt: key(%s) has value: %s ret (%d)
+set_property %s %s,
+ftmdaemon I: property_set_bt: setting key(%s) to value: %s ret(%d)
+/data/misc/bluetooth/btprop
+ftmdaemon I: connecting to %s, fd = %d
+qcom.bluetooth.soc
+hdi:nb:fg
+FTM Daemon calling LSM init
+FTM Daemon: Diag_LSM_Init() failed
+FTMDaemon: Diag_LSM_Init succesful
+ftmdaemon I: bt-hci: get_bt_soc_type
+ftmdaemon E: %s: Failed to get soc type
+ftmdaemon I: qcom.bluetooth.soc set to %s
+cherokee
+ftmdaemon I: qcom.bluetooth.soc not set, so using default.
+Initialised the BT FTM cmd queue handlers 
+Wait on cmd complete from the previous command
+get clock_gettime error
+Command complete timed out
+Waiting on next Cmd to be queued
+interface
+board-type
+ntag-test
+nodaemon
+ftm_log_send_msg: Dropping packet
+Queue is empty to delete any element
+/sys/class/gpio/export
+/sys/kernel/debug/btpintest/enable
+/dev/i2c-4
+/sys/class/gpio/gpio%d/direction
+/sys/class/gpio/gpio%d/value
+OUT :HIGH Test GPIO %d FAIL data reg = %d
+OUT : HIGH Test GPIO %d FAIL data reg = %d
+OUT : Test GPIO %d PASS 
+IN : HIGH Test GPIO %d FAIL data reg = %d
+IN : LOW Test GPIO %d FAIL data reg = %d
+IN : Test GPIO %d  PASS 
+Conn test begin 
+Conn test successfully done 
+/sys/class/gpio/unexport
+board type = %d stored type = %d 
+Board type not supported %d
+Error->Send Header failed : %d
+Error->Send FTM command failed:: %d
+ftm_bt_hci_qcomm_handle_event: VERY SHORT READ!
+ftm_bt_hci_qcomm_handle_event: LONG ACL PKT!
+ftm_bt_hci_qcomm_handle_event: SHORT READ!
+ftm_bt_hci_qcomm_handle_event: Unknown packet type!
+Initializing slim bus for pin-connectivity
+/dev/pintest
+failed to open
+Failed to initialise slim bus %d
+Slim bus initiazed succesfully
+[%s] %s: EVT:
+[%s] %s: ACL packet: %d bytes
+PayLoad length: %d
+Failed to read VS event
+Failed to read HCI event
+FTM Global state = %d
+FTM_SOC_DOWNLOAD_NVM in progress
+/sys/class/rfkill/rfkill%d/type
+open(%s) failed: 
+bluetooth
+/sys/class/rfkill/rfkill%d/state
+select failed
+[%s]: Transport type is: %s
+/dev/ttyHS0
+/dev/smd3
+libbt-vendor.so.0
+ftmdaemon E: Failed to load vendor component %s
+BLUETOOTH_VENDOR_LIB_INTERFACE
+ftmdaemon E: Failed to accesst bt vendor interface
+ftmdaemon I: Turn On BT power
+ftmdaemon E: Failed to turn on power from  bt vendor interface
+ftmdaemon E: ret value: %d
+ftmdaemon E: setting ret value to 1 manually
+ftmdaemon E: FD: %x
+ftmdaemon E: Close and cleanup the interfaces
+ftmdaemon E: Not able to find vendor interface handle
+PinConnectivityTest: Sending loopback command to SOC before initiasing slimbus
+Error while writing ->
+ftm_bt_hci_pfal_nwrite: zero-length write
+[%s] %s: CMD:
+Error while reading ->
+Can't get port settings
+bt_hci_qcomm_pfal_changebaudrate: tcsetattr:
+bt_hci_qcomm_pfal_changebaudrate: tcgetattr:
+bt_hci_qcomm_pfal_changebaudrate: new baud %u FAILED, got 0x%x
+bt_hci_qcomm_pfal_changebaudrate: new baud %u SUCCESS, got 0x%x
+%s: , fd:%d: 
+pipe create error
+nv_cmd_remote failed to get BD_ADDR from NV, code %d
+nv_cmd_remote got NV_BD_ADDR_I from NV: %x:%x:%x:%x:%x:%x
+nv_cmd_remote got NV_BT_SOC_REFCLOCK_TYPE_I from NV: 0x%x
+nv_cmd_remote failed to get CLK_SHARING from NV, code %d
+nv_cmd_remote got NV_BT_SOC_CLK_SHARING_TYPE_I from NV: 0x%x
+Invalid Ref Clock option
+nv_cmd_remote failed to write SOC_REFCLOCK_TYPE to NV, code %d
+Invalid Clock Sharing option
+nv_cmd_remote failed to write SOC_CLK_SHARING_TYPE to NV, code %d
+%s : Exit with fdNtag = %d
+/dev/nq-ntag
+	 %s: either I2C issue or HW not present = %d
+ %s: Length: %d bytes 
+[-r] [-n] [-h] 
+ -r ..for NTAG I2C Read/Write test 
+ -n ..for NTAG FD Test 
+ -h HELP
+	 %s: IOCTL fail, ret = %d
+	 %s: Mem alloc fail, ret = %d
+ %s: Read from User Memory Offset 0 
+	 %s: Read fail, ret = %d
+ %s: Write Zeros to User Memory Offset 1 
+	 %s: Write fail, ret = %d
+ %s: Read from User Memory Offset 1 
+ %s: Write test data to User Memory Offset 1 
+ %s: Read test data from User Memory Offset 1 
+	 %s: nq_ntag_open() failed = %d
+NTAG I2C Read/Write test 
+Read/Write Completed Successfully 
+NTAG I2C Read/Write Failed 
+NTAG FD Test 
+Interrupt received successfully 
+Failed to receive Interrupt 
+NTAG I2C Read/Write default test 
+NTAG I2C Read/Write test Failed 
+cat /proc/modules | grep %s
+%s failed!
+/etc/init.d/wlan stop
+WLAN driver unload failed!
+WLAN driver unloaded successfully!
+%s: Unload driver failed: %d
+/etc/init.d/wlan start_ftm
+WLAN driver load failed!
+WLAN driver loaded in FTM mode successfully!
+Rx call back received with len %d
+total pkt %u, crcError pkt %u, secErr pkt %u, average rssi %d
+1Mbps     %d
+2Mbps     %d
+5.5Mbps   %d
+11Mbps    %d
+6Mbps     %d
+9Mbps     %d
+12Mbps    %d
+18Mbps    %d
+24Mbps    %d
+36Mbps    %d
+48Mbps    %d
+54Mbps    %d
+HT20 MCS0 6.5Mbps   %d (SGI: %d)
+HT20 MCS1 13Mbps    %d (SGI: %d)
+HT20 MCS2 19.5Mbps  %d (SGI: %d)
+HT20 MCS3 26Mbps    %d (SGI: %d)
+HT20 MCS4 39Mbps    %d (SGI: %d)
+HT20 MCS5 52Mbps    %d (SGI: %d)
+HT20 MCS6 58.5Mbps  %d (SGI: %d)
+HT20 MCS7 65Mbps    %d (SGI: %d)
+HT40 MCS0 13.5Mbps    %d (SGI: %d)
+HT40 MCS1 27.0Mbps    %d (SGI: %d)
+HT40 MCS2 40.5Mbps    %d (SGI: %d)
+HT40 MCS3 54Mbps      %d (SGI: %d)
+HT40 MCS4 81Mbps      %d (SGI: %d)
+HT40 MCS5 108Mbps     %d (SGI: %d)
+HT40 MCS6 121.5Mbps   %d (SGI: %d)
+HT40 MCS7 135Mbps     %d (SGI: %d)
+length %d version %d act %d
+MAC address : %02x:%02x:%02x:%02x:%02x:%02x
+Chip Thermal value: %d
+tcmd_rx TC_CMD_TLV_ID length %d
+Unknown TCMD response
+Failed to allocate diag packet! tcmd: %d
+%02X %02X 
+Invalid ftm wlan Requst Packet
+ftm_daemon: cmd: %d
+ftm_daemon: Request Packet Dump:
+Invalid data_len: %d
+Command ID rec'd: 0x%X length %d
+Failed to allocate Diag packet: %p
+Handling WLAN request of setting Mac address
+invalid data, nMac = %u, length = %u
+/persist/wlan_mac.bin
+Can't open file %s
+Intf%dMacAddress=%02X%02X%02X%02X%02X%02X
+Initializing Interface: %s
+Couldn't init tcmd transport!
+tcmd: Initialized Interface: %s
+cmdID %d response needed
+cmdID %d response not needed
+TCMD timed out!
+No response got probably timing out.... 
+Failed to allocate Diag resp packet
+ftm_daemon: get_max_transfer_size resp msg dump:
+ failed to open file: %s
+Failed to get file size 
+ftm_daemon: %s file size is: %lu
+ Bad offset 
+ftm_daemon: offset: %d
+fseek failed 
+ftm_daemon: number of bytes to be read: %d
+ failed to allocate buf memory 
+ftm_daemon: fread failed
+ftm_daemon: byte_rem: %d
+ftm_daemon: read resp msg dump:
+ftm_daemon: bdf_file = %s open in write mode
+ftm_daemon: bdf_file = %s open in append mode
+ failed to write
+ftm_daemon: write resp msg dump:
+ftm_daemon: get_filename failed: bdf_file:%s fname_len: %d
+ftm_daemon: bdf_file is  %s
+ftm_daemon: get_filename resp msg dump:
+ftm_daemon: set_filename failed: fname_length %d
+/firmware
+ftm_daemon: remount /firmware partition as rw
+mount -o rw,remount /firmware /firmware
+ftm_daemon: bdf_file set to %s
+ftm_daemon: set_filename resp msg dump:
+ Unknown Command
+timer expired
+tcmd_tx failed: %s
+couldn't init nl80211!: %s
+setting timer
+resetting timer
+nl80211: cb wrapper called
+no data!
+no data in reply
+nl80211: resp received, calling custom cb
+nl80211: unknown ep!
+Failed to allocate netlink socket.
+Failed to connect to generic netlink.
+nl80211 not found.
+testmode
+failed to join testmode group!
+failed to allocate netlink message
+Device not found
+failed to nest
+nl80211: sending message
+building message failed
+failed to allocate netlink callbacks
+nl80211: waiting for response
+ftm_bt_hci_hal_read_event
+ftm_bt_hci_pfal_set_transport
+ftm_bt_hci_pfal_nwrite
+ftm_bt_hci_pfal_init_transport
+ftm_ntag_close
+ftm_ntag_open
+PrintNtagData
+ntagi2creadwritetest
+ftm_ntag_dispatch_test
+is_wifi_driver_loaded
+load_wifi_driver_testmode
+gold 1.16
+ftmdaemon
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.hash
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.data.rel.ro.local
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes
+.gnu_debuglink

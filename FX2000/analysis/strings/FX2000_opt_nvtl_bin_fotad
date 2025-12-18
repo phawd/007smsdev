@@ -1,0 +1,731 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+libpthread.so.0
+mifi_dbg_get_level_name
+__errno_location
+mifi_dbg_syslog
+mifi_dbg_log
+__ctype_b_loc
+powersave_wakelock_acquire
+pthread_create
+powersave_wakelock_release
+MsgBusSetBinary
+MsgBusSetInt64
+snprintf
+mq_close
+mq_unlink
+xmldata_initialize
+closedir
+xmldata_getuint32_default
+xmldata_getcount
+xmldata_getstring_default
+xmldata_shutdown
+MsgBusGet
+settings_get_features
+pthread_self
+localtime
+strptime
+mifi_dbg_start
+gettimeofday
+msgq_create
+strftime
+watchdog_application_register
+msgq_receive
+msgq_resp_handler
+mifi_dbg_stop
+MD5_Init
+OPENSSL_1_1_0
+libcrypto.so.1.1
+MD5_Update
+MD5_Final
+__isoc99_sscanf
+GLIBC_2.7
+dsm_reset_device
+dsm_set_persistent_mode
+modem2_get_info
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+OPENSSL_sk_num
+OPENSSL_sk_new_null
+OPENSSL_sk_push
+OPENSSL_sk_pop_free
+OPENSSL_sk_value
+ossl_err_as_string
+BIO_s_mem
+ERR_print_errors
+BIO_ctrl
+BIO_free
+X509_STORE_new
+BIO_new_file
+PEM_X509_INFO_read_bio
+SMIME_read_PKCS7
+PKCS7_verify
+PKCS7_free
+X509_INFO_free
+X509_free
+PEM_read_bio_PrivateKey
+PKCS7_decrypt
+EVP_PKEY_free
+OPENSSL_init_crypto
+SHA256_Init
+SHA256_Update
+SHA256_Final
+PEM_read_RSA_PUBKEY
+RSA_verify
+RSA_free
+__bss_start
+__lxstat
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libpowersave_api.so
+libmodem2_api.so
+H	KxD	J{D
+/dev/null
+[%s]:[%s] - %s: Cannot open dir, errno:%d
+[%s]:[%s] - %s: complete[%s]
+/opt/nvtl/data/fota
+[%s]:[%s] - %s: unlink failed ret=%d for file:%s
+[%s]:[%s] - %s: File not found: %s
+[%s]:[%s] - %s: Read str %s from file:%s
+[%s]:[%s] - %s: Read value %u from file:%s
+[%s]:[%s] - %s: filepath:%s
+[%s]:[%s] - %s: File create failed: %s
+[%s]:[%s] - %s: file (%s) write failed expected:%d, returned:%d
+[%s]:[%s] - %s: unlink failed for:%s rc=%d, errno:%d
+[%s]:[%s] - %s: File created :%s
+[%s]:[%s] - %s: +++
+[%s]:[%s] - %s: powersave feature not supported
+[%s]:[%s] - %s: powersave_wakelock_acquire() failed, rc=%d
+[%s]:[%s] - %s: powersave_wakelock_release() failed, rc=%d
+[%s]:[%s] - %s: send out revert status=[%d], agent=[%s]
+fota.revert_status
+[%s]:[%s] - %s: MsgBusSetBinary(FOTA_REVERT_STATUS_MESSAGE_BUS_CHANNEL,..) failed, rc=[%d]
+[%s]:[%s] - %s: send out update status=[%d], agent=[%s]
+fota.update_status
+[%s]:[%s] - %s: MsgBusSetBinary(FOTA_UPDATE_STATUS_MESSAGE_BUS_CHANNEL,..) failed, rc=[%d]
+[%s]:[%s] - %s: send out upgrade status=[%d]
+fota.upgrade_status
+[%s]:[%s] - %s: MsgBusSetInt32(FOTA_UPGRADE_STATUS_MESSAGE_BUS_CHANNEL,..) failed, rc=[%d]
+[%s]:[%s] - %s: Sending out - [FOTA_BACKUP_BEFORE_UPDATE]
+fota.backup_before_update
+[%s]:[%s] - %s: MsgBusSetBinary(FOTA_BACKUP_BEFORE_UPDATE,..) failed, rc=[%d]
+[%s]:[%s] - %s: statvfs failed:%d
+[%s]:[%s] - %s: Total flash free space %ld
+[%s]:[%s] - %s: Free space available %ld < %d min required, return 0
+/opt/nvtl/data/fota/session
+/opt/nvtl/data/fota/upgrade.zip
+[%s]:[%s] - %s: Session exists and package also exists. So need to check free space. Return actial value
+[%s]:[%s] - %s: stat(%s) failed, errno:%d
+[%s]:[%s] - %s: Pkg too big:%ld
+[%s]:[%s] - %s: Not enough flash space: %ld (required:%ld)
+[%s]:[%s] - %s: Required:%ld (Available:%ld)
+[%s]:[%s] - %s: agent:%s
+[%s]:[%s] - %s: Cannot create lock file for agent:%s
+[%s]:[%s] - %s: FOTA_MSG_CREATE_SESSION_LOCK - id=%s
+[%s]:[%s] - %s: Lock with same ID exists
+[%s]:[%s] - %s: Lock not available
+[%s]:[%s] - %s: Lock create %s
+[%s]:[%s] - %s: FOTA_MSG_CLEAR_SESSION_LOCK - id=%s
+[%s]:[%s] - %s: Lock clear %s (%d)
+[%s]:[%s] - %s: FOTA_FOPS_CREATE_ONLY, fpath:%s
+[%s]:[%s] - %s: FOTA_FOPS_CREATE_AND_WRITE, fpath:%s, data len:%u
+[%s]:[%s] - %s: FOTA_FOPS_READ_STR, fpath:%s
+[%s]:[%s] - %s: FOTA_FOPS_READ_UINT32, fpath:%s
+[%s]:[%s] - %s: FOTA_FOPS_REMOVE, fpath:%s
+[%s]:[%s] - %s: Unknown file operation:%d
+/opt/nvtl/data/fota/staging/update_pre_full_fota_install
+/opt/nvtl/data/fota/sl_cookie
+[%s]:[%s] - %s: Sideload in progress, drop event(%d):
+[%s]:[%s] - %s: Full FOTA in progress, drop event(%d):
+[%s]:[%s] - %s: Handle FOTA_MSG_FILE_OPS
+[%s]:[%s] - %s: Handle FOTA_MSG_GET_LAST_SUCCESS_REC
+[%s]:[%s] - %s: Handle FOTA_MSG_GET_UPDATE_CHECK_TIME
+[%s]:[%s] - %s: Handle FOTA_MSG_SET_UPDATE_CHECK_TIME
+[%s]:[%s] - %s: Handle FOTA_MSG_GET_NO_OF_RECORDS
+[%s]:[%s] - %s: Handle FOTA_MSG_GET_RECORD_BY_INDEX
+[%s]:[%s] - %s: Handle FOTA_MSG_GET_UPDATE_STATUS
+[%s]:[%s] - %s: Handle FOTA_MSG_GET_REVERT_STATUS
+[%s]:[%s] - %s: Handle FOTA_MSG_VALIDATE_UPDATE_PKG
+[%s]:[%s] - %s: Handle FOTA_MSG_START_INSTALLATION
+[%s]:[%s] - %s: Handle FOTA_MSG_FACTORY_RESET
+[%s]:[%s] - %s: Handle FOTA_MSG_STOP_IN_RECOVERY
+/opt/nvtl/data/fota/recovery_debug_mode
+[%s]:[%s] - %s: Handle FOTA_MSG_GET_MAX_PKG_SIZE
+[%s]:[%s] - %s: Handle FOTA_MSG_GET_SIDELOAD_MAX_PKG_SIZE
+[%s]:[%s] - %s: Handle FOTA_MSG_CFG_GET_CURRENT_RECORD
+[%s]:[%s] - %s: Handle FOTA_MSG_CFG_SAVE_NEW_RECORD
+[%s]:[%s] - %s: Handle FOTA_MSG_ABORT_CURRENT_SESS
+[%s]:[%s] - %s: Handle FOTA_MSG_GET_CURRENT_SESS_RECORD
+[%s]:[%s] - %s: Handle FOTA_MSG_GET_RECORD_BY_ID
+[%s]:[%s] - %s: Handle FOTA_MSG_MODIFY_RECORD_BY_ID
+[%s]:[%s] - %s: Handle FOTA_MSG_INCR_INSTALL_DEFER_COUNT
+[%s]:[%s] - %s: Handle FOTA_MSG_DECRYPT_PKG
+[%s]:[%s] - %s: Handle FOTA_MSG_SIDELOAD_START_INSTALLATION
+[%s]:[%s] - %s: Handle FOTA_MSG_SIDELOAD_PREPARE_PACKAGE
+[%s]:[%s] - %s: Handle FOTA_MSG_SUA_UPATE_START
+[%s]:[%s] - %s: Handle FOTA_MSG_GET_KERNEL_VERSION
+[%s]:[%s] - %s: Unknown event:%d
+/opt/nvtl/etc/fota/config.xml
+/Config/MaxPkgSizeAllowed
+/Config/SideloadMaxPkgSizeAllowed
+/Config/preInstallWaitSecs
+/Config/version/platformPrefix
+/Config/version/noModemVersion
+[%s]:[%s] - FOTA initialized with the following configurations: 
+[%s]:[%s] - maximum_pkg_size=[%u] bytes
+[%s]:[%s] - sideload_maximum_pkg_size=[%u] bytes
+[%s]:[%s] - platform_prefix=[%s]
+[%s]:[%s] - no_modem_version=[%u]
+[%s]:[%s] - Failed to open configuration file: %s
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - FOTA subsystem disabled in features.xml
+[%s]:[%s] - %s: Directory not present even after created once
+mkdir -p 
+[%s]:[%s] - %s: Failed to create FOTA APP data directory, error code:%d
+[%s]:[%s] - %s: Successfully created Data directory
+[%s]:[%s] - %s: Data directory found
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - Error initializing fota configuration, terminating.
+[%s]:[%s] - Error initializing fota settings, terminating.
+/fota_mq
+[%s]:[%s] - Error opening message queue: %d, terminating.
+[%s]:[%s] - Error initializing fota data directory, terminating.
+[%s]:[%s] - Clear sideload files
+[%s]:[%s] - Clear SUA files
+[%s]:[%s] - Register with watchdog
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s Server terminating.
+sync_directory
+fota_remove_a_file
+fota_read_str_from_file
+fota_read_str_conv_to_uint32
+fota_create_a_file
+fota_wakelock_acquire
+fota_wakelock_release
+fota_broadcast_revert_status
+fota_broadcast_update_status
+fota_broadcast_upgrade_status
+fota_broadcast_backup_before_update
+get_available_flash_space
+fota_check_free_space
+create_session_lock
+handle_session_event
+handle_fota_file_ops
+handle_get_sideload_max_pkg_size
+fota_handle_event_message
+verify_and_create_app_data_dir
+/opt/nvtl/data/fota/staging/result_success
+/opt/nvtl/data/fota/staging/result_failure
+/opt/nvtl/log/AB_failsafe/fw_verify_failed
+/opt/nvtl/data/fota/staging/pri_modem_success
+/opt/nvtl/data/fota/staging/pri_modem_failure
+/opt/nvtl/data/fota/staging/pri_linux_success
+/opt/nvtl/data/fota/staging/pri_linux_failure
+[%s]:[%s] - %s: [%s] - [STAGING_UPDATE_NORESULT]
+[%s]:[%s] - %s: [%s] - [STAGING_UPDATE_SUCCESS]
+[%s]:[%s] - %s: [%s] - [STAGING_UPDATE_FAILURE]
+[%s]:[%s] - %s: [%s] - [REVERTED_STATUS]
+/opt/nvtl/data/fota/staging/update_dlpkg_verified
+[%s]:[%s] - %s: Set FOTA_STAGING_UPDATE_DLPKG_VERIFIED flag
+/opt/nvtl/data/fota/staging/full_fota
+/opt/nvtl/data/fota/staging/update_pre_full_fota_install
+[%s]:[%s] - %s: Set FOTA_STAGING_UPDATE_PRE_FULL_FOTA_INSTALL flag
+/opt/nvtl/data/fota/staging/update_pre_install
+[%s]:[%s] - %s: Set FOTA_STAGING_UPDATE_PRE_INSTALL flag
+[%s]:[%s] - %s: SHOULD NOT GET HERE
+[%s]:[%s] - %s: DLKPG verified
+[%s]:[%s] - %s: Opened dir:%s
+[%s]:[%s] - %s: stat failed for %s
+[%s]:[%s] - %s: Entering sub directory: %s
+[%s]:[%s] - %s: fsync[%s]
+[%s]:[%s] - %s: failed to open[%s]
+[%s]:[%s] - %s: Deleting: %s
+[%s]:[%s] - %s: Remove failed for: %s, erron no:%d
+[%s]:[%s] - %s: Cannot open file specified:%s
+[%s]:[%s] - %s: No digest specified
+[%s]:[%s] - %s: MD5 failed for file: %s
+[%s]:[%s] - %s: Current  digest:%s
+[%s]:[%s] - %s: Expected digest:%s
+[%s]:[%s] - %s: DlPkg Cannot open cksum_file
+%33s %255s
+[%s]:[%s] - %s: DlPkg -- file_name:%s, digest:%s
+[%s]:[%s] - %s: DlPkg MD5: Failed for file_name:%s
+[%s]:[%s] - %s: MD5 Success
+[%s]:[%s] - %s: Found stale dir for:%s, Deleting..
+[%s]:[%s] - %s: Found a file with same name as staging dir, Deleting
+[%s]:[%s] - %s: Removing stale file: %s failed
+[%s]:[%s] - %s: Creating directory:%s
+mkdir -p -m 0700
+[%s]:[%s] - %s: %s
+[%s]:[%s] - %s: Failed to create directory:%s, error code:%d
+[%s]:[%s] - %s: Directory created!!
+[%s]:[%s] - %s: Extracting file:%s to:%s
+/usr/bin/unzip -o
+%s %s %s %s >>/var/log/debug_log 2>&1
+[%s]:[%s] - %s: Unzip of %s failed, error code:%d
+/usr/bin/unzip -jo
+%s %s %s %s %s >>/var/log/debug_log 2>&1
+[%s]:[%s] - %s: Unzip of specific_file [%s] from %s failed, error code:%d
+[%s]:[%s] - %s: Called, dlpkg_name:%s
+[%s]:[%s] - %s: stat failed on DlPkg, errno:%d
+[%s]:[%s] - %s: DlPkg is not a regular file
+pkg_details.zip.enc
+[%s]:[%s] - %s: unzip_a_specific_file() failed
+[%s]:[%s] - %s: Decrpting the PKG details
+/tmp/pkg_details.zip
+/tmp/pkg_details.zip.enc
+/opt/nvtl/etc/fota/build_cert.pem
+/opt/nvtl/etc/fota/device.pem
+/opt/nvtl/data/fota/sl_temp
+[%s]:[%s] - %s: fota_decrypt_file() failed for file:%s
+[%s]:[%s] - %s: Decrypted the PKG details
+/opt/nvtl/data/fota/staging
+[%s]:[%s] - %s: create_a_fresh_dir() failed
+[%s]:[%s] - %s: unzip_a_file() failed
+/opt/nvtl/data/fota/staging/dlpkg_cksum
+[%s]:[%s] - %s: %%%%%%%%% DlPkg checksum failed
+[%s]:[%s] - %s: dir_sync_up failed[FOTA_STAGING_DIR], continue
+[%s]:[%s] - %s: DlPkg verification success
+[%s]:[%s] - %s: source file: %s, size is 0
+[%s]:[%s] - %s: source file: %s not found
+[%s]:[%s] - %s: target file: %s not found
+[%s]:[%s] - %s: fwrite of file:%s failed, expected:%d but returned:%d
+[%s]:[%s] - %s: filesize (%u) != read_count (%u)
+[%s]:[%s] - %s: fota_remove_a_file() failed to remove:%s, rc=%d
+/dev/sideload_tmp/pkg_list
+[%s]:[%s] - %s: Sideload pkg list not found!!
+/opt/nvtl/data/fota/upgrade.zip
+[%s]:[%s] - %s: File:%s not found but exists in pkg list
+[%s]:[%s] - %s: File:%s not found in pkg
+/opt/nvtl/etc/fota/build_pubkey.pem
+[%s]:[%s] - %s: fota_verify_digest_signature() failed for file:%s
+[%s]:[%s] - %s: Verified [%s]
+[%s]:[%s] - %s: append_file_and_delete_source() failed, rc=%d
+[%s]:[%s] - %s: Moving file from %s to %s 
+mv %s %s
+[%s]:[%s] - %s: Executing.. [%s]
+[%s]:[%s] - %s: Moving file from %s to %s is failed
+/dev/sideload_tmp
+[%s]:[%s] - %s: fota_remove_a_file() failed
+[%s]:[%s] - %s: sideload_decrypt_files_in_list() failed, rc=%d
+[%s]:[%s] - %s: Package preparation successful
+%m-%d-%Y-%H:%M:%S
+[%s]:[%s] - %s: inEpoch[%lu] outEpoch[%lu]
+[%s]:[%s] - %s: No active update session found!!
+[%s]:[%s] - %s: Invalid record ID inside tracking cookie (%d)
+[%s]:[%s] - %s: No record found with ID: %d
+[%s]:[%s] - %s: update_date is latest
+[%s]:[%s] - %s: update_existing_record_in_db(), failed for record ID: %d
+[%s]:[%s] - %s: update_date set to=[%s]
+/opt/nvtl/data/fota/staging/full_fota_upgrade_script
+/opt/nvtl/data/fota/staging/pre_install_script
+[%s]:[%s] - %s: started executing full fota script:%s
+[%s]:[%s] - %s: Failed to upgrade the device with full fota, error code:%d
+[%s]:[%s] - %s: full fota upgraded successfully, Going to reset for upgrading PRI configurations
+[%s]:[%s] - %s: dsm_reset_device(1) failed rc=%d, trying alternate method
+telinit 6
+[%s]:[%s] - %s: full fota upgrade script is not found in the package. So clearing of it's data.
+[%s]:[%s] - %s: Full FOTA start thread started
+[%s]:[%s] - %s: Started wait: %d secs
+[%s]:[%s] - %s: time elapsed:%d
+[%s]:[%s] - %s: dsm_set_persistent_mode(5) failed rc=%d, trying alternate method
+telinit 5
+[%s]:[%s] - %s: Installation started
+[%s]:[%s] - %s: Exit
+[%s]:[%s] - %s: boot pref:%d
+[%s]:[%s] - %s: Staging directory not present
+[%s]:[%s] - %s: Package not validated
+[%s]:[%s] - %s: Enter programming run level(5)
+[%s]:[%s] - %s: Startin FULL FOTA thread
+[%s]:[%s] - %s: pthread_create() failed errno:%d
+/opt/nvtl/data/fota/result_processed
+[%s]:[%s] - %s: Starting FOTA install wait thread
+[%s]:[%s] - %s: pthread_create() failed for wait errno:%d
+[%s]:[%s] - %s: Called 
+[%s]:[%s] - %s: FOTA_STAGING_UPDATE_FAILURE not found, returning 409
+FOTA_STAGING_UPDATE_FAILURE not found
+/opt/nvtl/data/fota/staging/result_failure_reason
+cannot map error - (%ld)
+[%s]:[%s] - %s: fumo_erro out of range: %ld
+Out of range error(%ld)
+[%s]:[%s] - %s: Found FUMO error: %ld (%s)
+[%s]:[%s] - %s: fota boot pref: online
+/opt/nvtl/data/fota/staging/shutdown
+[%s]:[%s] - %s: File delete failed: %s
+/opt/nvtl/data/fota/staging/lpm
+[%s]:[%s] - %s: fota boot pref: shutdown
+[%s]:[%s] - %s: File create failed: %s
+[%s]:[%s] - %s: fota boot pref: lpm
+[%s]:[%s] - %s: Invalid boot-up preference:%d
+/opt/nvtl/data/fota/tracking
+/opt/nvtl/data/fota/revert_processed
+/opt/nvtl/data/fota/staging/est_upd_time
+/opt/nvtl/data/fota/staging/pkg_description
+/opt/nvtl/data/fota/staging/src_ver
+/opt/nvtl/data/fota/staging/target_ver
+[%s]:[%s] - %s: File not found: %s
+[%s]:[%s] - %s: fw_ver [%s] :: device_ver [%s]
+[%s]:[%s] - %s: the device version matched[%s] with pkg src ver [%s]
+/proc/sys/kernel/osrelease
+[%s]:[%s] - %s: Unable to get the kernel version from %s
+/opt/nvtl/etc/mifios-kernel-minor-version
+[%s]:[%s] - %%% %s  %%%%
+/opt/nvtl/etc/mifios-version
+[%s]:[%s] - %s: Unable to get the mifios version from /opt/nvtl/etc/mifios-version
+[%s]:[%s] - %s: Unable to get the kernel version
+[%s]:[%s] - %s: the device firmware version :: [%s] 
+[%s]:[%s] - %s: Input Modem ver:%s, Mifios ver:%s, PRI ver:%s
+[%s]:[%s] - %s: construct_fota_version_string_from_device() failed
+[%s]:[%s] - %s: The device version[%s] is not matching with pkg src version
+[%s]:[%s] - %s: Clear fota registry
+/opt/nvtl/data/fota/session
+/opt/nvtl/log/AB_failsafe/fw_verify_failed_reason
+/opt/nvtl/log/AB_failsafe/fw_verify_failed_error_code
+/opt/nvtl/data/fota/sl_cookie
+[%s]:[%s] - %s: Deleting sideload temp files
+/opt/nvtl/data/fota/sl_dec_out
+/opt/nvtl/data/fota/staging/sua_cookie
+[%s]:[%s] - %s: Deleting SUA temp files
+No upgrade
+Upgrade success
+Upgrade failed
+/opt/nvtl/data/fota/staging/post_install_script
+/opt/nvtl/data/fota/staging/post_install_failed_script
+[%s]:[%s] - %s: Cannot allocate new record in DB for history
+REVERTED
+/opt/nvtl/data/fota/previous/config_files/src_ver
+/opt/nvtl/data/fota/previous/config_files/target_ver
+[%s]:[%s] - %s: Failed to add rec ID:%d to DB
+[%s]:[%s] - %s: Result cookie record ID=[%d] not found in DB
+/opt/nvtl/data/fota/staging/sua_pkg_desc
+/opt/nvtl/data/fota/staging/sua_pkg_name
+/opt/nvtl/data/fota/staging/sua_pkg_ver
+/opt/nvtl/data/fota/staging/sua_pkg_size
+/opt/nvtl/data/fota/staging/sua_pkg_ts
+[%s]:[%s] - %s: FOTA_REVERT_REASON not found
+%s is not found
+[%s]:[%s] - %s: %s not found..returning error code as 409
+FW-Update
+Modem-PRI
+Linux-PRI
+[%s]:[%s] - %s: FW-Update=[No update took place]
+[%s]:[%s] - %s: FW-Update=[The device is reverted to previous Firmware ]
+[%s]:[%s] - %s: Error in create_revert_record_in_history
+FW Upgrade success
+[%s]:[%s] - %s: FW-Update=[%s]
+[%s]:[%s] - %s: Modem-PRI=[%s]
+[%s]:[%s] - %s: Linux-PRI=[%s]
+[%s]:[%s] - %s: Reason=[%s]
+[%s]:[%s] - %s: FW-Update=[Failed] reason=[%d][%s]
+[%s]:[%s] - %s: Error in create_sua_record_in_history
+[%s]:[%s] - %s: No tracking cookie
+[%s]:[%s] - %s: Reason=[%d][%s] record_id= [%d]
+[%s]:[%s] - %s: Failed to copy result into DB
+[%s]:[%s] - %s: Successfully copied result into DB
+[%s]:[%s] - %s: agent_name:%s, record_id:%u, new_update_time:%u
+[%s]:[%s] - %s: Estimated update time set [new=%u, old=%u]
+FOTA_RESULT_NO_UPGRADE
+[%s]:[%s] - %s: No update happened
+[%s]:[%s] - %s: Record ID missing in result cookie
+[%s]:[%s] - %s: Result cookie record ID not found in DB
+[%s]:[%s] - %s: Found update status
+[%s]:[%s] - %s: Update detected but agent doesn't match
+[%s]:[%s] - %s: Missing PKG path or agent ID for event:%d
+[%s]:[%s] - %s: Session doesn't exists with agent ID:%s
+[%s]:[%s] - %s: Invalid Agent ID (%s), session belongs to some other agent
+[%s]:[%s] - %s: Update package file not found(%s - %s)
+[%s]:[%s] - %s: Update package is not regular file type(%s - %s)
+[%s]:[%s] - %s: Package validation failed(%s)
+Signature failed
+[%s]:[%s] - %s: Package validation success(%s)
+Installation is pending
+[%s]:[%s] - %s: Added Rec ID:%d to DB
+[%s]:[%s] - %s: Installation failed to start(%s)
+[%s]:[%s] - %s: Started installation(%s)
+[%s]:[%s] - %s: Ignore factory reset, installation has already started
+[%s]:[%s] - %s: Pending update detected with rec:%u, updating history!!
+Factory reset
+[%s]:[%s] - %s: Factory reset processing complete
+[%s]:[%s] - %s: Invalid agent ID: %s
+[%s]:[%s] - %s: Failed to copy result into DB, rec_id=%d
+[%s]:[%s] - %s: Successfully copied result:%d into DB
+[%s]:[%s] - %s: Updated install defer count:%d
+[%s]:[%s] - %s: src pkg version not found!
+[%s]:[%s] - %s: source ver=[%s]
+[%s]:[%s] - %s: tgt pkg version not found!
+[%s]:[%s] - %s: target ver=[%s]
+[%s]:[%s] - %s: invalid version type=[%d]!
+[%s]:[%s] - %s: Sideload cookie missing
+[%s]:[%s] - %s: Session lock for sideload not found
+[%s]:[%s] - %s: App not running.
+[%s]:[%s] - %s: handle_installation_kickoff() failed
+[%s]:[%s] - %s: +++
+[%s]:[%s] - %s: FOTA session lock is already taken
+[%s]:[%s] - %s: Failed to create sideload cookie
+[%s]:[%s] - %s: Failed to create session lock
+[%s]:[%s] - %s: pkg:%s not found
+/opt/nvtl/data/webui/uploads/uploadedfile
+[%s]:[%s] - %s: fota_check_free_space(), failed rc=%d
+[%s]:[%s] - %s: Unable to move the file [%s]
+[%s]:[%s] - %s: Package is already present in[%s]
+Sideload
+[%s]:[%s] - %s: handle_pkg_verfication() failed
+[%s]:[%s] - %s: Validation successful
+[%s]:[%s] - %s: check_source_package_version() failed
+[%s]:[%s] - %s: Source version match
+[%s]:[%s] - %s: Est. update time:%u, pre-install waiting for %d secs started
+[%s]:[%s] - %s: Failed to create SUA cookie
+[%s]:[%s] - %s: create_a_fresh_dir(%s) failed
+/opt/nvtl/data/fota/staging/device_info
+/opt/nvtl/data/fota/staging/device_info/device_details_mdn
+/opt/nvtl/data/fota/staging/device_info/device_details_imei
+/opt/nvtl/data/fota/staging/device_info/device_details_model
+[%s]:[%s] - %s: fota_get_sw_fw_version() failed
+/opt/nvtl/data/fota/staging/device_info/device_details_swv
+[%s]:[%s] - %s: SUA device info file creation failed
+[%s]:[%s] - %s: pre-install waiting for %d secs started
+[%s]:[%s] - %s: sideload_prepare_package(), failed rc=%d
+[%s]:[%s] - %s: +++++End
+get_result_from_staging
+set_progress_files
+is_dlpkg_verified
+dir_sync_up
+dir_clean_up
+verify_file_md5
+verify_checksum
+create_a_fresh_dir
+unzip_a_file
+unzip_a_specific_file
+unpack_and_validate_pkg
+append_file_and_delete_source
+sideload_decrypt_files_in_list
+move_file
+sideload_prepare_package
+cmp_date_str
+fota_ops_verify_installation_date
+start_full_fota_installation
+full_fota_start
+install_wait
+start_installation
+get_failure_fumo_error_code
+create_boot_preference_cookie
+verify_src_version
+get_kernel_version
+construct_fota_version_string_from_device
+construct_fota_version_string
+check_source_package_version
+clear_update_files
+clear_sideload_files
+clear_sideload_tmp_files
+clear_sua_files
+create_revert_record_in_history
+create_sua_record_in_history
+get_failure_reverted_error_code
+check_and_update_fota_results
+fota_ops_set_est_update_time
+handle_revert_status_req
+handle_update_status_req
+handle_pkg_verfication
+handle_installation_kickoff
+handle_fota_factory_reset
+handle_abort_current_session
+handle_get_current_sess_record
+handle_incr_install_defer_count
+handle_read_version_from_package
+sideload_preinstall_wait
+handle_sideload_start_installation
+sua_preinstall_wait
+sua_create_cookies
+handle_sua_update_start
+handle_sideload_prepare_package
+handle_get_kernel_version
+[%s]:[%s] - %s: +++
+[%s]:[%s] - %s: calloc failed
+/opt/nvtl/data/fota/history.bin
+[%s]:[%s] - %s: DB file:%s not found
+/opt/nvtl/data/fota/history.tmp
+[%s]:[%s] - %s: fota_create_a_file() failed, rc:%d
+[%s]:[%s] - %s: rename() failed, errno:%d
+[%s]:[%s] - %s: Done
+/opt/nvtl/data/fota/factory_cfg_rec
+[%s]:[%s] - %s: Skipping factory cfg record (ID:%d)
+[%s]:[%s] - %s: Skipping record of pending to install (ID:%d)
+[%s]:[%s] - %s: Found empty slot, index:%d
+[%s]:[%s] - %s: db[%d].rec_id:%d oldest_id:%d, idx:%d, success_rec_count:%d, cfg_rec_count:%d
+[%s]:[%s] - %s: Oldest idx:%d, success_rec_count:%d, cfg_rec_count:%d
+[%s]:[%s] - %s: Final idx:%d, success_rec_count:%d, cfg_rec_count:%d
+[%s]:[%s] - %s: Buffer allocation failed
+[%s]:[%s] - %s: read_full_db() failed, set new record id to 1
+[%s]:[%s] - %s: New record id:%d
+[%s]:[%s] - %s: Record ID cannot be 0
+[%s]:[%s] - %s: rec_to_copy=%d, temp_rec_id=%d, index=%u, factory_cfg_rec_id:%u, pending_install_rec_id:%u
+[%s]:[%s] - %s: Factory cfg id match. factory_cfg_rec_id=%u, pBuf[i].rec_id=%u, rec_to_copy=%d, temp_rec_id=%d, index=%d
+[%s]:[%s] - %s: Pending_Install id match. pending_install_rec_id=%u, pBuf[i].rec_id=%u, rec_to_copy=%d, temp_rec_id=%d, index=%d
+/opt/nvtl/data/fota/update_check
+[%s]:[%s] - %s: Record count=[%u], list=[%s]
+[%s]:[%s] - %s: Invalid record ID specified (%d)
+[%s]:[%s] - %s: No record found with ID: %d
+[%s]:[%s] - %s: update_existing_record_in_db(), failed for record ID: %d
+[%s]:[%s] - %s: Invalid update_date 
+[%s]:[%s] - %s: Invalid pkg_ver
+[%s]:[%s] - %s: Invalid device firmware version
+[%s]:[%s] - %s: Cannot allocate new record in DB for history
+[%s]:[%s] - %s: Failed to add rec ID:%d to DB
+[%s]:[%s] - %s: Failed to save factory cfg record ID:%s
+[%s]:[%s] - %s: Saved factory default cfg record ID:%d
+read_full_db
+write_to_db
+get_record_count
+copy_record_into_list
+add_record_to_db
+allocate_new_record_id
+get_record_by_index
+handle_get_record_count
+handle_get_record_by_id
+handle_modify_record_by_id
+handle_cfg_save_new_record
+[%s]:[%s] - %s: MsgBus_Create Failed
+FOTA_MBH
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+OdXVXLRLMY9h4oODu6ICENFEAdN8
+[%s]:[%s] - %s: Cannot open signer Certificate file
+[%s]:[%s] - %s: Cannot open data file:%s
+[%s]:[%s] - %s: Error while reading data in PKCS7 format
+[%s]:[%s] - %s: Error cannot open file for writing
+[%s]:[%s] - %s: Error Verification failed
+[%s]:[%s] - %s: %s: Signature verified
+[%s]:[%s] - %s: Error in Verifying data
+[%s]:[%s] - %s
+[%s]:[%s] - %s: Cannot open Device private key file
+[%s]:[%s] - %s: Invalid private key certificate file
+[%s]:[%s] - %s: Cannot open data file
+[%s]:[%s] - %s: Error while decrypting message
+[%s]:[%s] - %s: Error in decrypting
+[%s]:[%s] - %s: Cannot find one of the input files
+[%s]:[%s] - %s: Output/Temp file name, cannot be empty
+[%s]:[%s] - 
+publickey=%s
+input_file=%s
+signature_file=%s
+[%s]:[%s] - %s: Cannot find %s
+[%s]:[%s] - %s: %s: Signature Verification failed
+[%s]:[%s] - %s: %s: Signature Verified
+verify_signature
+decrypt_file
+fota_decrypt_file
+fota_verify_digest_signature
+Bad parameters
+Package too long
+Package corrupt
+Package source corrupt
+Not enough RAM for update
+Malloc failed
+Write error
+Erase error
+Read error
+Invalid support function
+Buffers not aligned
+Start addr not aligned
+File open error for read
+File open error for write
+No file for delete
+File Delete failed
+File resize failed
+File size read failed
+File close failed
+Symbolic link create failed
+Directory create failed
+Invalid operation
+Unsupported compression
+No reverse in delta
+No. of blocks less than in delta
+Sector size mismatch
+Reverse update not supported
+IFS compression not supported
+IFS not supported
+Error in scout only verify
+Not enough RAM for operation 2
+Delta file too long
+Error in signature
+No. of fragments mismatch
+No. of BCK sectors too big
+Delta file is corrupt
+Source signature mismatch
+Target signature mismatch
+Invalid backup
+Update agent version mismatch
+Version mismatch during scout
+Partition name not found
+No space left
+Read/write delta not supported
+Image delta not supported
+Invalid DP header
+Invalid DP
+Unsupported DP version
+Invalid component ordinal
+No more component deltas
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

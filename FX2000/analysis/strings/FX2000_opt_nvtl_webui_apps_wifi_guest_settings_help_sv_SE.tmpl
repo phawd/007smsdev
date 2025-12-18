@@ -1,0 +1,128 @@
+<!-- wifi_guest_settings -->
+<div id="wifi_guest_settings">	
+	<h1>Wi-Fi 
+tverk</h1>
+		Wi-Fi-n
+tverket f
+ster kan anv
+r att ge tillf
+llig tillg
+ng till internet via <tmpl_var _("webui", "webui_product_name_with_suffix")>s Wi-Fi-n
+tverk. F
+r att ansluta till Wi-Fi-n
+tverket f
+ste anslutna enheter anv
+nda de Wi-Fi-inst
+llningar som visas p
+tverket anv
+nder du sk
+rmen Wi-Fi allm
+nt i det h
+r Webbadmin-gr
+nssnittet eller alternativet 
+Val av Wi-Fi-band
+ i Wi-Fi-appen p
+ <tmpl_var _("webui", "webui_product_name_with_suffix")>s peksk
+	<h3><tmpl_var _("webui", "wifi_guest_ssid_label")></h3>
+		Detta st
+ller in n
+tverksnamnet eller SSID f
+r Wi-Fi-n
+tverket f
+ster. Ange ett l
+mpligt namn. Namnet kan vara upp till 32 tecken l
+	<h3><tmpl_var _("webui", "wifi_guest_security_label")></h3>
+nskat alternativ f
+r Wi-Fi-s
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> g
+r att andra kan 
+vervaka din Wi-Fi-trafik och anv
+nda din dataplan f
+tkomst till internet. Om det 
+ver huvud taget 
+r detta alternativ undvikas.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> 
+r den senaste och s
+kraste metoden och b
+ndas om m
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> kan anv
+ndas om n
+gra av dina 
+ldre enheter inte st
+der WPA2.
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> kan anv
+r WPA2- och WPA3-klagom
+lsenheter.
+	<h3><tmpl_var _("webui", "wifi_guest_password_label")></h3>
+		Om en annan inst
+n <strong>Ingen</strong> valdes i f
+ltet <strong>S
+kerhet</strong> kr
+vs ett Wi-Fi-l
+		Ange Wi-Fi-l
+senordet i det h
+ltet. Du kan 
+nda knappen 
+Generera ny nyckel
+ ett starkt slumpm
+senord infogat i det h
+ltet. Kom ih
+g att spara dina 
+ndringar om du anv
+nder det h
+r alternativet.
+		Dessa inst
+llningar 
+r dolda som standard, men du kan klicka p
+ rubriken/l
+r att synligg
+ra dem. Normalt sett kan dessa alternativ l
+mnas med sina standardv
+rden, men kan 
+ndras vid behov f
+r att passa din speciella milj
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_ssid_label", gProductName)></h3>
+		Om den h
+llningen 
+r markerad 
+r Wi-Fi-namnet l
+ <tmpl_var _("webui", "webui_product_name_with_suffix")>s peksk
+rm via menyalternativet 
+. Om den inte 
+r markerat visas namnet som ******.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_password_label", gProductName)></h3>
+		Om den h
+llningen 
+r markerad 
+r Wi-Fi-l
+senordet l
+ <tmpl_var _("webui", "webui_product_name_with_suffix")>s peksk
+rm via menyalternativet 
+. Om den inte 
+r markerat visas l
+senordet som ******.
+	<h3><tmpl_var _("webui", "wifi_guest_broadcast_ssid_label")></h3>
+		Hvis denne innstillingen er krysset av, vises dette wifi-nettverket i listen over tilgjengelige wifi-nettverk p
+ de tilkoblede enhetene dine. Hvis det ikke er krysset av, vil dette nettverket v
+re usynlig.
+	<tmpl_if showWiFiGuestWPS>
+		<h3><tmpl_var _("webui", "wifi_guest_wps_label")></h3>
+			Wi-Fi med skyddad konfiguration (WPS) 
+r ett system f
+r att till
+ta Wi-Fi-enheter att ansluta till ett Wi-Fi-n
+tverk utan att n
+tverksnyckeln m
+ste anges manuellt. Om du vill anv
+nda WPS markerar du det h
+r alternativet.
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_guest_privacy_label")></h3>
+		Om denna inst
+r markerad isoleras varje ansluten enhet fr
+n alla andra anslutna enheter. Detta ger ytterligare s
+kerhet om vissa anslutna enheter 
+nda eller inte helt betrodda. F
+r normal drift b
+r detta vara avmarkerat.
+<!-- id="wifi_guest_settings" -->

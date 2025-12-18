@@ -1,0 +1,53 @@
+<!-- WiFi Advanced -->
+<div id="wifi_advanced">
+	<h1>Wi-Fi</h1>
+	<h2>概要</h2>
+	<p>通常、これらのWi-Fi設定はデフォルト値のままにすることができますが、必要に応じて、特定の環境に合わせて調整できます。</p>
+
+	<h2>Wi-Fiオン/オフ制御</h2>
+	<p>このコントロールを使用して、必要に応じてWi-Fiをオンまたはオフにします。 オフにすると、 <tmpl_var _("webui", "webui_product_name_with_suffix")> Wi-Fiネットワークは利用できなくなります。そのため、<tmpl_var _("webui", "webui_product_name")> はUSBケーブルを使用することになります。</p>
+
+	<h3>Jetpack画面からWi-Fi設定の変更を許可する</h3>
+	<p>このコントロールを使用して、必要に応じてWi-Fiをオンまたはオフにします。 オフにすると、Wi-Fiネットワークは利用できなくなります。そのため、はUSBケーブルを使用することになります。</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_max_connections_label")></h3>
+	<p><tmpl_var _("webui", "webui_product_name_with_suffix")> Wi-Fiネットワークに同時に接続できるデバイスの数を設定します。</p>
+
+	<h2><tmpl_var _("webui", "wifi_advanced_profile_title")></h2>
+	<p>これらの設定で、各帯域（2.4 GHzおよび5 GHz）の使用方法を決定し、ゲストWi-Fiネットワークが利用可能かどうかを決定します。</p>
+	<tmpl_if SwapToggleButtonAction>
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_ghz_band_label")></h3>
+		<p>自動的に検出される2.4 GHz 802.11モードが表示されます。</p>
+	<tmpl_else>
+		<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_ghz_band_label")></h3>
+		<p>目的のオプションを選択して、この帯域をプライマリネットワーク、ゲストネットワークに適用するか、この帯域をオフにします。</p>
+
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_advanced_five_ghz_band_label")></h3>
+	<p>目的のオプションを選択して、この帯域をプライマリネットワーク、ゲストネットワークに適用するか、この帯域をオフにします。 両方の帯域をオフにすることはできないことにご注意ください。</p>
+
+	<h2><tmpl_var _("webui", "wifi_advanced_two_point_four_g_band_options_title")></h2>
+	<p>これらの設定はデフォルトでは非表示になっていますが、見出し/リンクをクリックして表示することができます。 これらの設定は、2.4 GHz帯域がアクティブなときは常に使用されます。</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_g_802_11_mode_label")></h3>
+	<p>このコントロールを使用して、必要に応じてWi-Fiをオンまたはオフにします。 通常、この設定はデフォルト値のままにします。</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_g_channel_label")></h3>
+	<p>これは、環境に合わせて特定のチャネルを選択する必要がない限り、<strong>自動</strong>のままにしておきます。</p>
+
+	<h2><tmpl_var _("webui", "wifi_advanced_five_g_options_title")></h2>
+	<p>これらの設定はデフォルトでは非表示になっていますが、見出し/リンクをクリックして表示することができます。 これらの設定は、5 GHz帯域がアクティブなときは常に使用されます。</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_802_11_mode_label")></h3>
+	<p>このコントロールを使用して、必要に応じてWi-Fiをオンまたはオフにします。 通常、デフォルト値を変更する理由はありません。</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_bandwidth_label")></h3>
+	<p>必要なオプションを選択します。 他のWi-Fiデバイスとの干渉が発生しない限り、デフォルト値を使用する必要があります。 その場合、帯域幅を狭めることで干渉を減らすことができます。</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_channel_label")></h3>
+	<p>これは、環境に合わせて特定のチャネルを選択する必要がない限り、<strong>自動</strong>のままにしておきます。</p>
+
+</div>
+
+<!-- id="wifi_advanced" -->
+

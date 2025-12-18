@@ -1,0 +1,75 @@
+<!-- MAC Filter -->
+<div id="macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+bersicht</h2>
+	<p>Der MAC-Filter erlaubt nur ausgew
+hlten Ger
+ten den Zugriff auf das <tmpl_var _("webui", "webui_product_name")>-Netzwerk 
+ber DHCP. Standardm
+ig ist der MAC-Filter ausgeschaltet. Auf dieser Registerkarte k
+nnen Sie den MAC-Filter aktivieren und den Ger
+tezugriff festlegen.
+	<h2>EIN-/AUS-Steuerung</h2>
+	<p>Um den MAC-Filter zu verwenden, w
+hlen Sie die Ger
+te aus der Ger
+teliste aus, f
+r die Sie eine Verbindung zum Netzwerk 
+ber DHCP herstellen m
+chten, und legen Sie 
+ber den <b>EIN-/AUS-Schieberegler f
+r den MAC-Filter</b> die Option <b>EIN</b> fest. Klicken Sie auf <b>
+nderungen speichern</b>.
+	<h2>Ger
+teliste</h2>
+	<p>Wenn Sie den MAC-Filter aktivieren, werden alle Ger
+te, die nicht im Filter enthalten sind, sofort vom Netzwerk getrennt. 
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+ber die Aktualisierungsschaltfl
+nnen Sie die Liste nach Bedarf aktualisieren.
+	<h2>Betrieb</h2>
+	<h3>Gesperrte Ger
+te vs. MAC-Filter</h3>
+	<p>Die Interaktion zwischen 
+gesperrten
+ten und dem 
+MAC-Filter
+ ist wie folgt:
+	<div class="blockgroup">
+	<li>Gesperrte Ger
+te werden immer vom Netzwerk blockiert, unabh
+ngig davon, ob der MAC-Filter aktiviert oder deaktiviert ist.
+	<li>Wenn der MAC-Filter aktiviert ist und ein Ger
+t in der Liste 
+Gesperrt
+hrt wird, nicht aber in der Liste 
+MAC-Adressfilter
+, kann es keine Verbindung herstellen. Sowohl der MAC-Filter als auch die Sperrung w
+rden eine Verbindung verhindern.
+	<li>Wenn der MAC-Filter aktiviert ist und sich ein Ger
+t in der MAC-Adressfilterliste befindet, kann das Ger
+t eine Verbindung herstellen. 
+	Nachdem die Verbindung hergestellt wurde, kann es dann entweder durch Entfernen aus der Liste des MAC-Adressfilters oder durch Verwendung der Funktion 
+ gesperrt werden.
+	Im Allgemeinen sollte eine Sperre nur vor
+bergehend genutzt werden, und der MAC-Filter, wenn Sie ein Ger
+t dauerhaft sperren m
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+gen Sie ein neues Ger
+ber diese Schaltfl
+che zur Ger
+teliste hinzu.
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Wenn Sie alle nicht gespeicherten 
+nderungen verwerfen und aktualisieren m
+chten, klicken Sie auf <b>Liste aktualisieren</b> und dann auf <b>Best
+tigen</b>.
+	<h3>So l
+schen Sie ein Ger
+	<p>Um ein Ger
+t aus der Liste zu l
+schen, aktivieren Sie das zugeh
+rige Kontrollk
+ und klicken Sie auf 
+nderungen speichern
+<!--  macfilter  -->

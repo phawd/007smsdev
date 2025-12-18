@@ -1,0 +1,25 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+bersicht</h2>
+	<p>Diese SMS-Meldungen stammen in der Regel von Ihrem Dienstanbieter. Sie sollten nicht versuchen, zu antworten. Daher ist keine Antwortfunktion vorgesehen.</p>
+	<h2>Inhalt</h2>
+	<tmpl_if showMessageCounter>
+		<h3>Meldungsz
+hler</h3>
+		<p>Zwei Z
+hler oben am Bildschirmrand geben die Anzahl der ungelesenen (neuen) Meldungen und die Gesamtzahl der Meldungen an.</p>	
+		<p>Beachten Sie, dass alle Meldungen auf 
+ gesetzt werden, sobald sie auf diesem Bildschirm angezeigt werden.</p>
+	</tmpl_if>
+	<h3>Meldungsliste</h3>
+	<p>Alle Meldungen werden nach dem Datum sortiert. Ungelesene (neue) Meldungen werden durch ein Symbol gekennzeichnet. Meldungen werden automatisch als 
+ markiert, sobald sie auf dieser Seite angezeigt werden. Wenn die Seite das n
+chste Mal aufgerufen wird, werden sie also nicht mehr als ungelesen angezeigt.</p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p>Diese Schaltfl
+che befindet sich am Ende der Meldungsliste. Dar
+nnen Sie bei Bedarf alle Meldungen l
+schen.</p>
+	</tmpl_if>

@@ -1,0 +1,78 @@
+<!-- wifi_guest_settings -->
+<div id="wifi_guest_settings">	
+	<h1>WLAN – Gastnetzwerk</h1>
+	<p>
+		Das WLAN-Gastnetzwerk kann verwendet werden, um temporären Zugang zum Internet über das <tmpl_var _("webui", "webui_product_name_with_suffix")>-WLAN-Netzwerk bereitzustellen. Um eine Verbindung mit dem WLAN-Gastnetzwerk herzustellen, müssen die verbundenen Geräte die auf diesem Bildschirm angezeigten WLAN-Einstellungen verwenden.
+	</p>
+	
+	<p>	
+		Aktivieren Sie das Gastnetzwerk über den Bildschirm „WLAN – Allgemein“ dieser Webadmin-Schnittstelle oder die Option „WLAN-Bandauswahl“ in der WLAN-App auf dem <tmpl_var _("webui", "webui_product_name_with_suffix")>-Touchscreen.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_guest_ssid_label")></h3>
+	<p>
+		Hier wird der Netzwerkname oder die SSID für das WLAN-Gastnetzwerk festgelegt. Geben Sie einen geeigneten Namen ein. Der Name kann bis zu 32 Zeichen lang sein.
+	</p>
+	
+	<h3><tmpl_var _("webui", "wifi_guest_security_label")></h3>
+	<p>
+		Wählen Sie die gewünschte Option für die WLAN-Sicherheit.
+	</p>
+	
+	<ul>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> ermöglicht es anderen Personen, Ihren WLAN-Datenverkehr nachzuverfolgen und Ihren Datentarif für den Zugang zum Internet zu nutzen. Wenn möglich, sollte die Verwendung dieser Option vermieden werden.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> ist die neueste und sicherste Methode und sollte wenn möglich genutzt werden.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> kann verwendet werden, wenn einige Ihrer älteren Geräte WPA2 nicht unterstützen.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> kann für WPA2- und WPA3-Beschwerdegeräte verwendet werden.
+		</li>
+	</ul>
+
+	<h3><tmpl_var _("webui", "wifi_guest_password_label")></h3>
+	<p>
+		Wenn im Feld <strong>Sicherheit</strong> eine andere Einstellung als <strong>Keine</strong> gewählt wurde, ist ein WLAN-Kennwort erforderlich.
+	</p>
+	<p>
+		Geben Sie das WLAN-Kennwort in dieses Feld ein. Sie können auch die Schaltfläche „Neuen Schlüssel generieren“ verwenden, um ein starkes Zufallskennwort in dieses Feld einfügen zu lassen. Denken Sie daran, Ihre Änderungen zu speichern, wenn Sie diese Option verwenden.
+	</p>
+	
+	<p>
+		Diese Einstellungen sind standardmäßig ausgeblendet. Wenn Sie auf die Überschrift/den Link klicken, werden sie angezeigt. 
+		In der Regel ist es nicht erforderlich, die Standardwerte zu ändern. Sie können Sie aber bei Bedarf an Ihre Umgebung anpassen.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_ssid_label", gProductName)></h3>
+	<p>
+		Wenn diese Einstellung aktiviert ist, ist der WLAN-Name über die Menüoption „WLAN“ auf dem <tmpl_var _("webui", "webui_product_name_with_suffix")>-Touchscreen lesbar. Ist sie nicht aktiviert, wird der Name als „******“ angezeigt.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_password_label", gProductName)></h3>
+	<p>
+		Wenn diese Einstellung aktiviert ist, ist das WLAN-Kennwort über die Menüoption „WLAN“ auf dem <tmpl_var _("webui", "webui_product_name_with_suffix")>-Touchscreen lesbar. Ist diese Option nicht aktiviert, wird das Kennwort als „******“ angezeigt.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_guest_broadcast_ssid_label")></h3>
+	<p>
+		Wenn diese Einstellung aktiviert ist, erscheint dieses WLAN-Netzwerk in der Liste der verfügbaren WLAN-Netzwerke auf Ihren verbundenen Geräten. Ist diese Option nicht aktiviert, ist das Netzwerk nicht sichtbar.
+	</p>
+
+	<tmpl_if showWiFiGuestWPS>
+		<h3><tmpl_var _("webui", "wifi_guest_wps_label")></h3>
+		<p>
+			Wi-Fi Protected Setup (WPS) ist ein System, das es WLAN-Geräten ermöglicht, sich mit einem WLAN-Netzwerk zu verbinden, ohne den Netzwerkschlüssel manuell eingeben zu müssen. Wenn Sie die WPS verwenden möchten, aktivieren Sie diese Option.
+		</p>
+	</tmpl_if>
+
+	<h3><tmpl_var _("webui", "wifi_guest_privacy_label")></h3>
+	<p>
+		Ist diese Einstellung aktiviert, wird jedes verbundene Gerät von allen anderen verbundenen Geräten isoliert. Das bietet zusätzliche Sicherheit, wenn einige verbundene Geräte unbekannt oder nicht absolut vertrauenswürdig sind. Bei normalem Betrieb sollte diese Option nicht aktiviert werden.
+	</p>
+</div>
+
+<!-- id="wifi_guest_settings" -->

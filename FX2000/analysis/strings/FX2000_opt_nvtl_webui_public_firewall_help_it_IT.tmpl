@@ -1,0 +1,43 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+	<h2>Panoramica</h2>
+		<p>I dispositivi connessi sono protetti dal traffico dannoso in entrata da Internet per mezzo di un firewall. Il firewall non pu
+ essere disattivato, ma sono consentite le seguenti impostazioni.</p>
+	<h2>Impostazioni</h2>
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+	<tmpl_unless ShowDmzActive>
+		<h3>Passthrough VPN</h3>
+	</tmpl_unless>
+		<p>Questa funzione consente al software client VPN presente sui dispositivi connessi di connettersi a server VPN remoti tramite questo dispositivo. Normalmente, questa opzione dovrebbe essere lasciata attiva.</p>
+<tmpl_if showTransparentMode>
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+		<tmpl_unless ShowDmzActive>
+			<h3>Modalit
+ trasparente IPv6</h3>
+		</tmpl_unless>
+			<p>Normalmente, il firewall bloccher
+ le richieste di connessione IPv6 in entrata destinate a un dispositivo connesso con IPv6.</p>
+			<p>Se desideri consentire alle richieste di connessione in entrata di raggiungere il dispositivo connesso previsto, attiva questa impostazione. La modalit
+ trasparente deve essere attivata solo quando necessario, poich
+ riduce la protezione fornita dal firewall di <tmpl_var _("webui", "webui_product_name")>.</p>
+	</tmpl_if>
+</tmpl_if>
+	<tmpl_if ShowDmzActive>
+		<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+	<tmpl_else>
+		<h2>DMZ</h2>
+	</tmpl_if>
+	<p>Se selezionato, il dispositivo connesso specificato come indirizzo IP DMZ (destinazione DMZ) ricever
+ tutto il traffico che altrimenti verrebbe bloccato dal firewall. Ci
+ essere d
+aiuto affinch
+ alcune applicazioni di rete problematiche funzionino correttamente, ma il dispositivo DMZ dovrebbe disporre del proprio firewall in modo da proteggersi dal traffico malevolo.</p>
+	<tmpl_if ShowDmzActive>
+	<h3>Casella di controllo DMZ</h3>
+		<p>Utilizza questa casella di controllo per attivare o disattivare questa funzione in base alle esigenze. Generalmente, il DMZ dovrebbe essere disattivo a meno che non sia veramente necessario.</p>	
+	</tmpl_if>
+	<h3>Indirizzo IP di destinazione</h3>
+		<p>Inserisci l&#39;indirizzo IP del dispositivo connesso che desideri far diventare il dispositivo DMZ (destinazione DMZ) in questo campo. Puoi verificare l&#39;indirizzo IP di ciascun dispositivo connesso sulla schermata dei dispositivi connessi.</p>
+<!-- id="firewall" -->

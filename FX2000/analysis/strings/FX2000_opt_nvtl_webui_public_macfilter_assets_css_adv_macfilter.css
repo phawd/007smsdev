@@ -1,0 +1,53 @@
+#macFilterForm table.devicesTable .deviceTypeCol button
+	margin-right: 10px;
+.RefreshDevicesList
+	padding-left: 30px;
+	padding-bottom: 5px;
+	background-image: url("../../../assets/images/icons/connected_devices/alert-icon.png");
+	background-repeat: no-repeat;
+	background-size: 22px;
+a#RefreshDevicestext {
+	text-decoration: underline;
+html.rtl #macFilterForm table.devicesTable .deviceTypeCol button
+	margin-left: 10px;
+	margin-right: 0;
+#macFilterForm table.devicesTable .deviceTypeColumn
+	width: 10%;
+	text-align: center;
+#macFilterForm table.devicesTable .deviceNameColumn,
+#macFilterForm table.devicesTable .macAddressColumn
+	width: 20%;
+#macFilterForm table.devicesTable .deviceNameColumn input,
+#macFilterForm table.devicesTable .macAddressColumn input
+	width: 100%;
+#macFilterForm table.devicesTable .macAddressColumn
+	text-align: center;
+#macFilterForm table.devicesTable .status 
+	text-align: center;
+#macFilterForm table.devicesTable .blocked,
+#macFilterForm table.devicesTable .filter
+	text-align: center;
+#macFilterForm #blockListCount,
+#macFilterForm #allowListCount
+	font-weight: bold;
+#macFilterTable #savechanges.primary {
+    width: inherit;
+    float: left !important;
+    margin-left: 10px !important;
+    margin-top:4px !important;
+#macFilterTable .macFilterbtns {
+    display: inline;
+    float: left;
+html.rtl #macFilterTable #savechanges.primary, html.rtl #macFilterTable .macFilterbtns {
+	float: right;
+#macFilterTable .macFilterbtns button#MacFilterAddDevice {
+    margin-right: 10px !important;
+html.rtl #macFilterTable .macFilterbtns button#MacFilterAddDevice {
+    margin-right: 0px !important;
+    margin-left: 10px !important;
+#macFilterTable #savechanges {
+    margin-top: 4px !important;
+html.rtl #macFilterTable #savechanges {
+    margin-top: 4px !important;
+	float: right !important;
+   margin-right: 10px !important;

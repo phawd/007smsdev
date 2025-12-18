@@ -1,0 +1,37 @@
+<!-- adv_mns -->
+<div id="adv_mns">
+	<h1>Selección de red</h1>
+	<h2>Descripción</h2>
+	<p> Este dispositivo selecciona automáticamente la red móvil óptima. Si usa redes basadas en GSM, también puede seleccionar una red manualmente. Esta función "<tmpl_var _("webui", "menu_adv_mns_text")>" es útil solamente si hay varias redes disponibles. Si se usa esta función, este dispositivo se conecta únicamente a la red especificada y pasa por alto las otras redes disponibles. </p>
+
+	<h2>Estado</h2>
+	<p> Esta sección indica si está en uso una Selección de red automática o manual. Si está en uso la Selección de red manual, también se muestra la red especificada. </p>
+
+	<h2>Operación</h2>
+	<h3><tmpl_var _("webui","adv_mns_scan_for_networks_btn")></h3>
+	<p> Si es posible la Selección de red manual, este botón estará habilitado. Haga clic en este botón si desea seleccionar una red de forma manual. Luego, el módem busca todas las redes disponibles. Esta búsqueda puede tardar hasta dos minutos. </p>
+
+	<p> Nota: Si no se muestra este botón, la Selección de red manual no está disponible en su ubicación actual con su red actual. </p>
+
+	<h3>Lista de redes</h3>
+	<div class="blockgroup">
+	<p> Todas las redes disponibles se muestran en la Lista de redes una vez que ha terminado la búsqueda de redes. Entonces puede realizar una de las siguientes operaciones: </p>
+	<ul>
+		<li> Cancelar: utilice esta opción para mantener la selección de red automática. </li>
+		<li> Actualizar: utilice esta opción para volver a buscar si no figura la red deseada. Podría tener que modificar su ubicación para mejorar la señal. </li>
+
+		<li> Seleccionar: use esta opción para activar la Selección de red manual con una red especificada. Tenga en cuenta que probablemente no sea posible conectarse a todas las redes que figuran en la lista. Si su proveedor de servicio no tiene un acuerdo de itinerancia con la red seleccionada, el intento de conexión fracasará. </li>
+	</ul>
+
+	<h3><tmpl_var _("webui","adv_mns_revert_to_automatic_btn")></h3>
+	<p> Si está en uso la Selección de red manual, este botón estará visible. Haga clic en este botón para cambiar de selección de red manual a automática. </p>
+
+	<h3>Volver a la pantalla de Redes</h3>
+	<p> Use este enlace para volver a la pantalla de Redes. </p>
+		
+	</div>
+	
+</div>
+
+<!-- id="adv_mns" -->
+

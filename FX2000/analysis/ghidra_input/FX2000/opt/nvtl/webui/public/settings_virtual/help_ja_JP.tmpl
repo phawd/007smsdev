@@ -1,0 +1,28 @@
+<div id="settings_virtual">
+	<h1>高度な設定</h1>
+	
+	<tmpl_if appsList>
+		<h2>概要</h2>詳細メニューから、次のページと設定にアクセスできます。<div class="blockgroup">
+			<ul>
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title> - <tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+		<p>通常の操作および通常の状況では、これらの設定をデフォルト値から変更する必要はありません。 特定の状況で変更が必要な場合にのみ、これらの設定を変更してください。</p>
+	</tmpl_if>
+
+	<h2>ボタン</h2>
+	<tmpl_if showBackButton>
+		<h3>戻る</h3>
+		<p>これをクリックして、前のページに戻ります。</p>
+	</tmpl_if>
+	
+	<tmpl_unless showBackButton>
+		<h3>続行する</h3>
+		<p>これを使用して、詳細ページに進みます。</p>
+	</tmpl_unless>
+
+</div>

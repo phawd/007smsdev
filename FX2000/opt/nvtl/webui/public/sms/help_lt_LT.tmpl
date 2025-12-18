@@ -1,0 +1,18 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<h2>Apžvalga</h2>
+	<p>Šiuos SMS pranešimus paprastai siunčia paslaugų teikėjas. Nereikia bandyti atsakyti, todėl nėra ir atsakymo funkcijos.</p>
+	<h2>Turinys</h2>
+	<tmpl_if showMessageCounter>
+		<h3>Pranešimų skaitikliai</h3>
+		<p>Du skaitikliai ekrano viršuje parodo neperskaitytų (naujų) pranešimų skaičių ir bendrą pranešimų skaičių.</p>	
+		<p>Atminkite, kad visi šiame ekrane rodomi pranešimai nustatyti kaip „perskaityti“.</p>
+	</tmpl_if>
+	<h3>Pranešimų sąrašas</h3>
+	<p>Visi pranešimai pateikiami pagal datą. Neperskaityti (nauji) pranešimai nurodomi piktograma. Pranešimai automatiškai pažymimi kaip „perskaityti“, kai tik jie parodomi šiame puslapyje, todėl kitą kartą įėjus į puslapį jie nebebus rodomi kaip neperskaityti.</p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p>Šis mygtukas yra pranešimų sąrašo pabaigoje. Naudokite jį norėdami pašalinti visus pranešimus.</p>
+	</tmpl_if>
+</div>

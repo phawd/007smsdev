@@ -1,0 +1,235 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+GLIBC_2.4
+libc.so.6
+libpowersave_api.so
+powersave_is_running
+msgq_does_queue_exist
+powersave_wakelock_acquire
+mifi_dbg_get_level_name
+mifi_dbg_log
+msgq_send_sync
+powersave_wakelock_release
+powersave_get_settings
+settings_get_setting
+mifi_dbg_syslog
+powersave_set_settings
+settings_set_setting
+powersave_get_error_string
+powersave_dsm_state_change
+msgq_send_async
+powersave_charger_det_change
+powersave_battery_det_change
+powersave_battery_state_change
+powersave_battery_temperature_state_change
+powersave_power_button_change
+powersave_usb_state_change
+powersave_display_state_change
+powersave_ip_client_change
+powersave_settings_changed
+powersave_get_settings_impl
+xmldata_getuint32_default
+powersave_set_settings_impl
+xmldata_setuint32
+xmldata_save
+MsgBusSetInt32
+initialize_settings
+__bss_start
+librt.so.1
+libpthread.so.0
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libgpio.so
+libacm.so
+H	KxD	J{D
+/powersave_mq
+POWERSAVE
+[%s]:[%s] - invalid param. app_name = NULL
+[%s]:[%s] - powersave queue doesn't exist. process not running?
+[%s]:[%s] - Sending POWERSAVE_MSG_WAKELOCK_ACQUIRE message to POWERSAVE process.
+[%s]:[%s] - Sending POWERSAVE_MSG_WAKELOCK_RELEASE message to POWERSAVE process.
+powersave.settings
+[%s]:[%s] - settings_get_setting result code:%d
+[%s]:[%s] - Successfully retrieved settings for %s
+[%s]:[%s] - settings->enabled: %d
+[%s]:[%s] - settings->deep_sleep_enabled: %d
+[%s]:[%s] - settings->deep_sleep_idle_time: %d
+[%s]:[%s] - settings->deep_sleep_wakeup_time: %d
+[%s]:[%s] - settings->shutdown_enabled: %d
+[%s]:[%s] - settings->shutdown_idle_time: %d
+[%s]:[%s] - Settings Update: Power Save Enabled: [%d]
+[%s]:[%s] - Settings Update: Deep Sleep Enabled: [%d],Deep Sleep Idle Time: [%d],Deep Sleep Wakeup Time: [%d]
+[%s]:[%s] - Settings Update: Shutdown Enabled: [%d], Shutdown Idle Time: [%d]
+POWERSAVE: success.
+POWERSAVE: general error.
+POWERSAVE: one or more bad parameters passed into a function.
+POWERSAVE: one or more buffer type parameters passed into API is too small.
+POWERSAVE: the feature is unsupported.
+POWERSAVE: process not running.
+POWERSAVE: a device reset is required for the operation to take effect.
+POWERSAVE: API not implemented for the platform.
+POWERSAVE: unknown error.
+[%s]:[%s] - invalid param. event = 0
+[%s]:[%s] - Sending POWERSAVE_MSG_DSM_POWER_STATE_CHANGE message to POWERSAVE process.
+[%s]:[%s] - Sending POWERSAVE_MSG_CHARGER_DET_CHANGE message to POWERSAVE process.
+[%s]:[%s] - Sending POWERSAVE_MSG_BATTERY_DET_CHANGE message to POWERSAVE process.
+[%s]:[%s] - Sending POWERSAVE_MSG_BATTERY_STATE_CHANGE message to POWERSAVE process.
+[%s]:[%s] - Sending POWERSAVE_MSG_BATTERY_TEMPERATURE_STATE_CHANGE message to POWERSAVE process.
+[%s]:[%s] - Sending POWERSAVE_MSG_POWER_BUTTON_STATE_CHANGE message to POWERSAVE process.
+[%s]:[%s] - Sending POWERSAVE_MSG_USB_STATE_CHANGE message to POWERSAVE process.
+[%s]:[%s] - Sending POWERSAVE_MSG_DISPLAY_STATE_CHANGE message to POWERSAVE process.
+[%s]:[%s] - Sending POWERSAVE_MSG_IP_CLIENT_CHANGE message to POWERSAVE process.
+[%s]:[%s] - Sending POWERSAVE_MSG_SETTINGS_CHANGED value=%d message to DSM process.
+/Settings/PowerSave/Enabled
+/Settings/PowerSave/SuspendEnabled
+/Settings/PowerSave/EnableSuspendOnlyWhenWiFiOff
+/Settings/PowerSave/DeepSleepEnabled
+/Settings/PowerSave/DeepSleepIdleTime
+/Settings/PowerSave/DeepSleepWakeupTime
+/Settings/PowerSave/ShutdownEnabled
+/Settings/PowerSave/ShutdownIdleTime
+powersave.settings
+GCC: (GNU) 8.2.0
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/xmldata/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/watchdog/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/config
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/logging/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/mal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi-framework
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/loc-hal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi/loc_sdx55
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/usr/src/linux/usr/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dsm/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/powersave/src
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/powersave/src/../include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/powersave/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/sysfs
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/accelerometer
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/gpio
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel/config/../.
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-iprefix /opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/bin/arm-oe-linux-gnueabi/../../lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/powersave/src/powersave_api.c
+-mfpu=neon
+-mfloat-abi=hard
+-mcpu=arm10tdmi
+-mtls-dialect=gnu
+-march=armv5t
+-auxbase-strip powersave_api.o
+-Wno-unused-parameter
+-Wstrict-prototypes
+-Wno-trigraphs
+-Wformat-truncation=0
+-frecord-gcc-switches
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/powersave/src/powersave_settings.c
+-auxbase-strip powersave_settings.o
+gold 1.16
+call_weak_fn
+crtstuff.c
+__TMC_LIST__
+deregister_tm_clones
+register_tm_clones
+__do_global_dtors_aux
+completed.11339
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+powersave_api.c
+powersave_settings.c
+__FRAME_END__
+__dso_handle
+__TMC_END__
+_DYNAMIC
+_GLOBAL_OFFSET_TABLE_
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+powersave_is_running
+msgq_does_queue_exist
+powersave_wakelock_acquire
+mifi_dbg_get_level_name
+mifi_dbg_log
+msgq_send_sync
+powersave_wakelock_release
+powersave_get_settings
+settings_get_setting
+mifi_dbg_syslog
+powersave_set_settings
+settings_set_setting
+powersave_get_error_string
+powersave_dsm_state_change
+msgq_send_async
+powersave_charger_det_change
+powersave_battery_det_change
+powersave_battery_state_change
+powersave_battery_temperature_state_change
+powersave_power_button_change
+powersave_usb_state_change
+powersave_display_state_change
+powersave_ip_client_change
+powersave_settings_changed
+powersave_get_settings_impl
+xmldata_getuint32_default
+powersave_set_settings_impl
+xmldata_setuint32
+xmldata_save
+MsgBusSetInt32
+initialize_settings
+__bss_start
+.init_array
+.fini_array
+.comment
+.rel.plt
+.ARM.attributes
+.eh_frame_hdr
+.gnu.version_r
+.rel.dyn
+.gnu.version
+.note.gnu.gold-version
+.GCC.command.line
+.eh_frame
+.tm_clone_table
+.note.gnu.build-id
+.gnu.version_d
+.dynamic
+.shstrtab

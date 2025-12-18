@@ -1,0 +1,37 @@
+<Config>
+	<WiFi>
+		<NumOfIface>2</NumOfIface>            <!-- Number of max radios/interfaces possible -->
+		<SystemMaxClientsAllowed>30</SystemMaxClientsAllowed> 
+		<US24ChannelsList>1,2,3,4,5,6,7,8,9,10,11</US24ChannelsList>
+		<US5ChannelsList>36,40,44,48,149,153,157,161</US5ChannelsList>
+		<JP24ChannelsList>1,2,3,4,5,6,7,8,9,10,11,12,13</JP24ChannelsList>
+		<JP5ChannelsList>36,40,44,48,149,153,157,161</JP5ChannelsList>
+		<GB24ChannelsList>1,2,3,4,5,6,7,8,9,10,11,12,13</GB24ChannelsList>
+		<GB5ChannelsList>36,40,44,48</GB5ChannelsList>
+		<AU24ChannelsList>1,2,3,4,5,6,7,8,9,10,11,12,13</AU24ChannelsList>
+		<AU5ChannelsList>36,40,44,48,149,153,157,161</AU5ChannelsList>
+		<CountriesSupported>US,JP,GB,AU,CA</CountriesSupported>
+		<APMaxInactivity>60</APMaxInactivity>
+		<MaxClientsAllowed>30</MaxClientsAllowed>
+		<ModesAllowed>16383</ModesAllowed>          <!-- 16383 = 11111111111111, i.e. (BGN, BG, B, G, GN, N_2G, AC_2G, A_5G, N_5G, AN_5G, AC_5G, AC_5_ONLY, BGN_PLUS_AX, ACN_PLUX_AX) modes are supported. --> 
+		<WPSAvailable>1</WPSAvailable>
+		<BeaconInterval>100</BeaconInterval>
+		<Preamble>1</Preamble>  
+		<WPSDeviceName>MIFI</WPSDeviceName>
+		<WPSManfName>NVTL</WPSManfName>
+		<WPSModelName>QCA6391</WPSModelName>
+		<WPSDevType>6-0050F204-1</WPSDevType>
+		<WPSFriendlyName>MIFI-WPS-AP</WPSFriendlyName>
+		<WPSConfigMethod>label display virtual_push_button push_button keypad</WPSConfigMethod>
+		<WlanDriverName>nl80211</WlanDriverName>
+		<WiFiFWVersion>1.0.1.2.193.0</WiFiFWVersion>
+		<Interface index="1">
+			<Enabled>1</Enabled>                      <!-- Wifi Interface is enabled or not, on(1), off(0) -->
+			<Name>wlan0</Name>
+		</Interface>
+		<Interface index="2">
+			<Enabled>1</Enabled>                      <!-- Wifi interface is enabled or not, on(1), off(0) -->
+			<Name>wlan1</Name>
+		</Interface>
+	</WiFi>
+</Config>

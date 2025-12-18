@@ -1,0 +1,73 @@
+<div id="gps_status">
+	<h1><tmpl_var _("webui", "gps_status_menu_text")></h1>
+	<h2>Oversikt</h2>
+	<p>Denne <tmpl_var _("webui", "webui_product_name")>-enheten har en GPS-mottaker. GPS-mottakeren kan bestemme din n
+rende plassering, ofte til og med innend
+rs.<tmpl_if GPSOverWiFiEnableShow>Den gjeldende plasseringen vises p
+ denne siden, og posisjonsinformasjonen kan deles med tilkoblede datamaskiner ved 
+ bruke GPS via wifi-funksjonen.</tmpl_if>
+	<h2>Bruker GPS</h2>
+	<tmpl_if GPSEnableShow>
+		<h3><tmpl_var _("webui", "gps_status_enable_label")></h3>
+		<p>Bruk denne P
+/AV-kontrollen for 
+ GPS-funksjonen av eller p
+ etter behov.</p>
+		<h3><tmpl_udf GET_PO_TEXT("gps_status_startup_state_label", gProductName)></h3>
+r den er p
+ bestemmer denne innstillingen n
+r GPS-mottakeren vil sl
+s av.</p>
+		<p>Hvis P
+s GPS-mottakeren av n
+r <tmpl_var _("webui", "webui_product_name")> avsluttes. Du m
+ igjen neste gang du trenger GPS-mottakeren.</p>
+	</tmpl_if>
+		<h3>GPS-status</h3>
+		<p>Hvis GPS-mottakeren enn
+ ikke har f
+sning (plassering), vil en <strong>S
+ker</strong>-status vises. N
+sning er oppn
+dd, vises f
+lgende informasjon om gjeldende plassering, og et Google-kart kommer til syne for 
+ indikere den gjeldende plasseringen visuelt.</p>
+		<h2><tmpl_var _("webui", "gps_status_map_section_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "gps_status_latitude_label"), (size(_("webui", "gps_status_latitude_label")) - size(":")))></h3>
+		<p>Breddegrad for den siste plasseringsl
+sningen.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_longitude_label"), (size(_("webui", "gps_status_longitude_label")) - size(":")))></h3>
+		<p>Lengdegrad for den siste plasseringsl
+sningen.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_altitude_label"), (size(_("webui", "gps_status_altitude_label")) - size(":")))></h3>
+yden over havet for den siste plasseringsl
+sningen.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_accuracy_label"), (size(_("webui", "gps_status_accuracy_label")) - size(":")))></h3>
+		<p>Dette er et m
+yaktigheten av den horisontale posisjonen som GPS-mottakeren oppn
+		<tmpl_if GPSOverWiFiEnableShow>
+			<tmpl_if GPSPortNumberShow>		
+				<h2><tmpl_var _("webui", "gps_status_enable_sub_header_text")></h2>
+				<h3><tmpl_var truncate(_("webui", "gps_status_gps_over_wifi_label"), (size(_("webui", "gps_status_gps_over_wifi_label")) - size(":")))></h3>
+				<p>GPS-data leveres av <tmpl_var _("webui", "webui_product_name")> i form av en tekststr
+m fra National Marine Electronics Association (NMEA).</p>
+ bruke en NMEA-port (GPS) er en standard metode for programmer for 
+ tilgang til en GPS-datastr
+m i Windows og andre databehandlingsplattformer. For 
+ opprette denne porten, m
+ du laste ned og installere GPS via wifi-driveren for plattformen din. Denne driveren oppretter NMEA-porten, henter GPS-data fra <tmpl_var _("webui", "webui_product_name")>, og gj
+r disse GPS-dataene tilgjengelige for NMEA-bevisste programmer.</p>
+				<h3><tmpl_var truncate(_("webui", "gps_status_port_number_label"), (size(_("webui", "gps_status_port_number_label")) - size(":")))></h3>
+				<p>Dette er portnummeret som brukes av driverprogramvaren p
+ datamaskinen for 
+ opprette en forbindelse til denne enheten og motta GPS-data. Med mindre det er en god grunn til det, b
+r du ikke endre portnummeret.</p>
+			</tmpl_if>
+		</tmpl_if>
+	<tmpl_if GPSDownloadDriversShow>
+		<h3><tmpl_var _("webui", "gps_status_wifi_driver_download_link")></h3>
+		<p>Bruk dette for 
+ tilgang til nedlastingssiden for de tilgjengelige driverne.<tmpl_if GPSOverWiFiEnableShow>Disse driverne er n
+dvendige for 
+ bruke GPS via wifi-funksjonen.</tmpl_if>
+	</tmpl_if>

@@ -44,6 +44,8 @@ import argparse
 from typing import Dict, List, Tuple, Any, Optional
 from dataclasses import dataclass
 from enum import Enum, IntFlag
+from pathlib import Path
+import os
 
 # ============================================================================
 # CONSTANTS
@@ -123,6 +125,7 @@ NV_IMEI = 550
 NV_SIM_LOCK = 3461
 NV_SUBSIDY_LOCK = 4399
 NV_PRI_VERSION = 60044
+NV_NCK = 60004  # 0xEA64 (master NCK stored in NV)
 
 # EFS Paths
 EFS_LTE_BANDPREF = "/nv/item_files/modem/mmode/lte_bandpref"
@@ -437,6 +440,271 @@ def nv_write(item_id: int, index: int, data: bytes) -> Tuple[bool, str]:
 
     msg = f"Wrote NV {item_id} (⚠️ WARNING: write_nv bug exists!)"
     return True, msg
+
+
+def bytes_to_printable_ascii(data: bytes) -> str:
+    """Convert raw bytes to printable ASCII string with non-printable bytes removed."""
+    try:
+        # Strip trailing nulls and non-ascii
+        s = data.split(b"\x00")[0].decode("utf-8", errors="ignore")
+        # Filter non-printable
+        printable = "".join([c for c in s if 32 <= ord(c) <= 126])
+        return printable
+    except Exception:
+        return ""
+
+
+def efs_read_file(efs_path: str, local_tmp: str = None) -> Tuple[bool, str, bytes]:
+    """Read an EFS file to a temporary local path on the device and return contents."""
+    if local_tmp is None:
+        local_tmp = f"/tmp/efs_read_{int(time.time())}.bin"
+
+    cmd = f"{NWCLI} qmi_idl read_file {local_tmp} {efs_path}"
+    output, rc = adb_shell(cmd)
+    if rc != 0:
+        return False, output, b""
+
+    # Pull file from device to local temp
+    local_dest = f"/tmp/{Path(efs_path).name}.{int(time.time())}"
+    try:
+        subprocess.run(["adb", "pull", local_tmp, local_dest], capture_output=True, timeout=15)
+        with open(local_dest, "rb") as f:
+            data = f.read()
+        # Cleanup local temp
+        try:
+            os.remove(local_dest)
+        except Exception:
+            pass
+        return True, output, data
+    except Exception as e:
+        return False, f"Failed to adb-pull {local_tmp}: {e}", b""
+
+
+def backup_items(backup_dir: str = None, items: Optional[List[int]] = None, efs_paths: Optional[List[str]] = None) -> Tuple[bool, str]:
+    """Backup NV items and EFS files to local backup directory.
+
+    Returns (success, backup_path)
+    """
+    if backup_dir is None:
+        backup_dir = f"tools/backups/backup_{int(time.time())}"
+    Path(backup_dir).mkdir(parents=True, exist_ok=True)
+
+    nv_items = items or [NV_NCK, NV_IMEI, NV_PRI_VERSION, NV_SIM_LOCK, NV_SUBSIDY_LOCK]
+    efs_list = efs_paths or [EFS_DEVICE_CONFIG]
+
+    for nv in nv_items:
+        success, msg, data = nv_read(nv)
+        if not success:
+            # Continue but record that read failed
+            with open(os.path.join(backup_dir, f"nv_{nv}.txt"), "w") as f:
+                f.write(f"ERROR: {msg}\n")
+            continue
+        # Write raw bytes to file
+        with open(os.path.join(backup_dir, f"nv_{nv}.bin"), "wb") as f:
+            f.write(data)
+
+    for efs in efs_list:
+        success, msg, data = efs_read_file(efs)
+        if not success:
+            with open(os.path.join(backup_dir, f"efs_{Path(efs).name}.txt"), "w") as f:
+                f.write(f"ERROR: {msg}\n")
+            continue
+        with open(os.path.join(backup_dir, f"efs_{Path(efs).name}"), "wb") as f:
+            f.write(data)
+
+    return True, backup_dir
+
+
+def find_nck_in_backups(nv_id: int = NV_NCK) -> Optional[bytes]:
+    """Search for common backup locations for a given NV and return raw bytes if found.
+
+    Heuristic sources:
+      - tools/backups/*/nv_<nv_id>.bin
+      - mifi_backup/complete_device_dump/*
+      - mifi_backup/proprietary_analysis/ (search for nv_<nv_id>.bin or references)
+    """
+    # First: tools/backups
+    backups_root = Path("tools/backups")
+    if backups_root.exists():
+        # find newest backup files first
+        for b in sorted(backups_root.iterdir(), key=lambda p: p.stat().st_ctime, reverse=True):
+            candidate = b / f"nv_{nv_id}.bin"
+            if candidate.exists():
+                try:
+                    return candidate.read_bytes()
+                except Exception:
+                    continue
+
+    # Second: mifi_backup (raw dumps may contain a file named nv_60004.bin)
+    mb_root = Path("mifi_backup")
+    if mb_root.exists():
+        for candidate in mb_root.rglob(f"nv_{nv_id}.bin"):
+            try:
+                return candidate.read_bytes()
+            except Exception:
+                continue
+
+    # Finally: search for files containing the hex sequence or 'NCK' label
+    for candidate in mb_root.rglob("*.bin") if mb_root.exists() else []:
+        try:
+            data = candidate.read_bytes()
+            if len(data) >= 6 and b"NCK" in data[:200] or data.count(b"\x00") < len(data):
+                # crude heuristic: ignore empty files
+                return data
+        except Exception:
+            continue
+
+    return None
+
+
+def show_nck(full: bool = False, from_backup: bool = False, confirm_flag: bool = False) -> Tuple[bool, str]:
+    """Attempt to read and display the master NCK (NV 0xEA64 / 60004).
+
+    Default behavior: show a masked version of the NCK (last 4 characters) if found.
+    If full=True, reveal the complete NCK but require explicit confirmation via
+    confirm_flag or the ZEROSMS_DANGER_DO_IT env var (confirm_danger guard).
+
+    from_backup: if True, attempt to read from local backups/mifi_backup and skip device read.
+    """
+    # Import gate helper lazily to avoid import loops in test harness
+    from zerosms_safety import confirm_danger
+
+    # If we should reveal the full NCK, require confirm
+    if full and not confirm_flag and not confirm_danger(allow_flag=True):
+        return False, "Aborted: Confirmation required to reveal full NCK"
+
+    data: Optional[bytes] = None
+
+    # Try device NV read first unless from_backup is explicitly set
+    if not from_backup:
+        success, msg, nv_data = nv_read(NV_NCK)
+        if success and nv_data:
+            data = nv_data
+        else:
+            # Try backup fallback if device read didn't work
+            data = find_nck_in_backups(NV_NCK)
+    else:
+        data = find_nck_in_backups(NV_NCK)
+
+    if not data:
+        return False, "NCK not found (device read failed and no backups found)"
+
+    ascii_val = bytes_to_printable_ascii(data)
+    # If ascii conversion is empty, use hex
+    if not ascii_val:
+        printable = data.hex()
+    else:
+        printable = ascii_val
+
+    if full:
+        return True, f"NCK (NV {NV_NCK}): {printable}"
+
+    # Mask all but last 4 characters if the printable string is long enough
+    if len(printable) > 4:
+        masked = "*" * max(0, len(printable) - 4) + printable[-4:]
+        return True, f"NCK (NV {NV_NCK}): {masked}"
+    else:
+        # If short, don't mask too aggressively
+        return True, f"NCK (NV {NV_NCK}): {'*' * (len(printable) - 1) + printable[-1]}"
+
+
+def pri_override_nv(item_id: int, new_value: str, confirm_flag: bool = False) -> Tuple[bool, str]:
+    """Override an NV item with a new ASCII or hex value (dangerous!).
+
+    This operation is gated behind confirm_danger and will create a local backup
+    before performing the write.
+    """
+    from zerosms_safety import confirm_danger
+    if not confirm_flag and not confirm_danger(allow_flag=True):
+        return False, "Aborted: Confirmation required for NV write"
+
+    # Create a backup
+    ok, backup_path = backup_items()
+    if not ok:
+        return False, f"Could not create backup: {backup_path}"
+
+    # Convert new_value: if hex (0x or hex string) then parse; otherwise ascii
+    data: bytes
+    try:
+        if new_value.startswith("0x"):
+            data = bytes.fromhex(new_value[2:])
+        elif all(c in "0123456789abcdefABCDEF" for c in new_value) and len(new_value) % 2 == 0:
+            # treat as hex bytes
+            data = bytes.fromhex(new_value)
+        else:
+            data = new_value.encode("utf-8")
+    except Exception as e:
+        return False, f"Invalid new_value format: {e}"
+
+    # Write NV (dangerous)
+    success, msg = nv_write(item_id, 0, data)
+    if not success:
+        return False, msg
+
+    # Verify
+    ok, vmsg, vdata = nv_read(item_id)
+    if not ok:
+        return False, f"Write succeeded but verify failed: {vmsg}"
+
+    if vdata == data or data.hex() in vdata.hex():
+        return True, f"NV {item_id} override successful; backup at {backup_path}"
+    else:
+        return False, "NV verification mismatch after write"
+
+
+def pri_rollback_nv(backup_dir: str = None, item_id: Optional[int] = None, confirm_flag: bool = False) -> Tuple[bool, str]:
+    """Restore an NV/EFS item from a backup directory.
+    If backup_dir is None, the latest backup folder under tools/backups is chosen.
+    If item_id is provided, only restore that NV item; otherwise restore all items in backup dir.
+    """
+    from zerosms_safety import confirm_danger
+    if not confirm_flag and not confirm_danger(allow_flag=True):
+        return False, "Aborted: Confirmation required for NV/EFS restore"
+
+    # Find latest backup dir if none specified
+    if backup_dir is None:
+        backups_root = Path("tools/backups")
+        if not backups_root.exists():
+            return False, "No backups found"
+        latest = max(backups_root.iterdir(), key=lambda p: p.stat().st_ctime)
+        backup_dir = str(latest)
+
+    backup_path_obj = Path(backup_dir)
+    if not backup_path_obj.exists():
+        return False, f"Backup path not found: {backup_dir}"
+
+    # Restore a specific NV if given
+    if item_id:
+        nv_file = backup_path_obj / f"nv_{item_id}.bin"
+        if not nv_file.exists():
+            return False, f"Backup for NV {item_id} not found in {backup_dir}"
+        data = nv_file.read_bytes()
+        success, msg = nv_write(item_id, 0, data)
+        if not success:
+            return False, f"Failed to write NV {item_id}: {msg}"
+        return True, f"Restored NV {item_id} from {backup_dir}"
+
+    # Otherwise, restore all NVs present
+    restored = []
+    for fpath in backup_path_obj.glob("nv_*.bin"):
+        fid = int(fpath.stem.split("_")[1])
+        data = fpath.read_bytes()
+        success, msg = nv_write(fid, 0, data)
+        if success:
+            restored.append(fid)
+        else:
+            return False, f"Failed to restore NV {fid}: {msg}"
+
+    # EFS restore: write any efs_ files back
+    for efs_file in backup_path_obj.glob("efs_*"):
+        # Derive original path name
+        if efs_file.name.startswith("efs_device_config"):
+            local_path = str(efs_file)
+            success, msg = efs_write_large_file(local_path, EFS_DEVICE_CONFIG)
+            if not success:
+                return False, f"Failed to restore EFS {efs_file.name}: {msg}"
+
+    return True, f"Restored NVs: {restored} and EFS from {backup_dir}"
 
 
 # ============================================================================
@@ -3259,6 +3527,43 @@ Examples:
     at = subparsers.add_parser("at", help="Send AT command")
     at.add_argument("command", help="AT command")
 
+    # Show NCK (sensitive) - read NV 0xEA64 (60004)
+    show_nck = subparsers.add_parser("show-nck", help="Display device NCK (sensitive)")
+    show_nck.add_argument(
+        "--full",
+        dest="full",
+        action="store_true",
+        help="Reveal the full NCK (requires confirmation via --danger-do-it or env ZEROSMS_DANGER_DO_IT=1)",
+    )
+    show_nck.add_argument(
+        "--from-backup",
+        dest="from_backup",
+        action="store_true",
+        help="Read NCK from local backups (tools/backups or mifi_backup) instead of the device",
+    )
+    show_nck.add_argument(
+        "--danger-do-it",
+        dest="danger_do_it",
+        action="store_true",
+        help="Skip interactive prompt for confirming full NCK reveals",
+    )
+
+    # Backup NV/EFS
+    backup = subparsers.add_parser("backup", help="Backup key NV items and EFS files")
+    backup.add_argument("--backup-dir", help="Local path to store backup (default: tools/backups)")
+
+    # PRI override (dangerous)
+    pri_override = subparsers.add_parser("pri-override", help="Override NV item (requires DO IT)")
+    pri_override.add_argument("nv_id", type=int, help="NV item id to override (e.g. 60004)")
+    pri_override.add_argument("value", help="New value: ascii or hex string (prefix with 0x)")
+    pri_override.add_argument("--danger-do-it", dest="danger_do_it", action="store_true")
+
+    # PRI rollback from backup
+    pri_rollback = subparsers.add_parser("pri-rollback", help="Rollback NV/EFS from backup (requires DO IT)")
+    pri_rollback.add_argument("--backup-dir", help="Path to backup to restore (default: latest under tools/backups)")
+    pri_rollback.add_argument("--nv-id", type=int, help="Optional NV ID to restore only")
+    pri_rollback.add_argument("--danger-do-it", dest="danger_do_it", action="store_true")
+
     args = parser.parse_args()
 
     if not args.command:
@@ -3361,6 +3666,23 @@ Examples:
     elif args.command == "at":
         output, success = send_at_command(args.command)
         print(f"{'SUCCESS' if success else 'FAILED'}:\n{output}")
+
+    elif args.command == "show-nck":
+        success, msg = show_nck(full=args.full, from_backup=args.from_backup, confirm_flag=args.danger_do_it)
+        print(f"{'SUCCESS' if success else 'FAILED'}: {msg}")
+
+    elif args.command == "backup":
+        success, backup_path = backup_items(backup_dir=args.backup_dir)
+        print(f"{'SUCCESS' if success else 'FAILED'}: {backup_path}")
+
+    elif args.command == "pri-override":
+        # Danger zone
+        success, msg = pri_override_nv(args.nv_id, args.value, confirm_flag=args.danger_do_it)
+        print(f"{'SUCCESS' if success else 'FAILED'}: {msg}")
+
+    elif args.command == "pri-rollback":
+        success, msg = pri_rollback_nv(backup_dir=args.backup_dir, item_id=args.nv_id, confirm_flag=args.danger_do_it)
+        print(f"{'SUCCESS' if success else 'FAILED'}: {msg}")
 
 
 if __name__ == "__main__":

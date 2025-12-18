@@ -1,0 +1,73 @@
+<!-- Connected Devices -->
+<div id="connected_devices">
+	<h1><tmpl_var _("webui", "connected_devices_menu_text")></h1>
+	<h2>Oversigt</h2>
+		Denne side viser detaljer om hver enhed, der er tilsluttet <tmpl_var _("webui", "webui_product_name")>, og opremser ogs
+ alle blokerede enheder.
+	<h2><tmpl_var _("webui", "connected_devices_sub_header_text")></h2>
+		Denne tabel viser alle enheder, der er tilsluttet Wi-Fi-netv
+rket. Wi-Fi-netv
+rksnavnet vises efter overskriften. Hvis en computer er tetheret til <tmpl_var _("webui", "webui_product_name")> ved hj
+lp af et USB-kabel, vil den computer blive vist i denne tabel.
+lgende oplysninger vises for hver tilsluttet enhed:
+	<h3>Forbindelsestype</h3>
+		Et ikon angiver forbindelsestypen for hver tilsluttet enhed.
+	<h3>Navn</h3>
+		Normalt er dette v
+rtsnavnet p
+ den tilsluttede enhed, som indstillet p
+ selve den tilsluttede enhed. I sj
+ldne tilf
+lde er v
+rtsnavnet muligvis ikke tilg
+ngeligt. Hvis du har brugt indstillingen "Redig
+r" til at 
+ndre navnet p
+ en tilsluttet enhed, vises det navn, du har angivet, i stedet for v
+rtsnavnet.
+		Du kan bruge indstillingen "Redig
+r" til at 
+ndre navnet p
+ enhver tilsluttet enhed.
+	<h3>IP-adresse</h3>
+	<p>IP-adressen p
+ den tilsluttede enhed.</p>
+		<tmpl_var truncate(_("webui", "connected_devices_mac_address_label"), (size(_("webui", "connected_devices_mac_address_label")) - size(":")))>
+	<p>Mac-adressen er en unik netv
+rksidentifikator for denne tilsluttede enhed.</p>
+	<tmpl_if isIPv6Supported>
+			<tmpl_var truncate(_("webui", "connected_devices_link_local_label"), (size(_("webui", "connected_devices_link_local_label")) - size(":")))>
+			Hvis den tilsluttede enhed underst
+tter IPv6, vises Link-Local IPv6-adressen.
+	</tmpl_if>
+	<tmpl_if GuestWifiSupported>
+		<h2><tmpl_var _("webui", "connected_devices_guest_title")></h2>
+			Hvis Wi-Fi-g
+rket er i brug, opremser denne tabel alle enheder, der er forbundet til Wi-Fi-g
+rket. Wi-Fi-netv
+rksnavnet vises efter overskriften.
+sentation og betjening af enheder, der er anf
+rt her, er identisk med enheder, der er anf
+rt under det prim
+	</tmpl_if>
+	<h2>Blokering og fjernelse af blokering af enheder</h2>
+	<h3>Blokeringsknap</h3>
+		Hvis du klikker p
+ knappen "Blok
+r", bliver den tilsluttede enhed koblet fra og forhindret i at oprette forbindelse igen. Den blokerede enhed vises derefter p
+ listen Blokerede.
+		Blokerede enheder blokeres fra b
+rket og det prim
+		Denne mulighed er tilg
+ngelig til brug med hver tilsluttet enhed, undtagen din egen enhed og enhver enhed, der er tilsluttet via USB.
+	<h3>Listen Blokerede</h3>
+		Denne viser alle enheder, du har blokeret. Bem
+rk, at da disse enheder ikke er tilkoblet i 
+jeblikket og er blokeret fra at oprette forbindelse, har de ikke en IP-adresse. I stedet identificeres de med deres navn og Mac-adresse.
+	<h3>Knappen Fjern blokering</h3>
+		Hvis du klikker p
+ knappen Fjern blokering, fjernes blokeringen af en tidligere blokeret enhed, og den frig
+res til igen at oprette forbindelse. Den ikke-blokerede enhed slettes fra listen Blokerede og vises igen p
+ listen Tilsluttede enheder, n
+r den opretter forbindelse.
+<!-- id="connected_devices" -->

@@ -1,0 +1,44 @@
+name: Update device inventory
+
+on:
+  schedule:
+    - cron: '0 8 * * 1' # weekly on Monday at 08:00 UTC
+  workflow_dispatch: {}
+
+jobs:
+  update-inventory:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install requirements
+        run: python -m pip install --upgrade pip && pip install -r tools/requirements.txt
+
+      - name: Run device updater (safe)
+        run: bash tools/update_device_info.sh
+
+      - name: Create pull request with changes
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: update device inventory (auto)'
+          branch: 'auto/update-device-inventory-${{ github.run_id }}'
+          title: 'Automated device inventory update'
+          body: |
+            This PR updates `docs/device_inventory.md` using `tools/update_device_info.sh`.
+            The job runs on a schedule and opens a draft PR for human review. If this
+            change touches device safety guidance, please add a `PHASE_*` note and a
+            review by a device expert before merging.
+          labels: 'automated, device-inventory'
+          draft: true
+

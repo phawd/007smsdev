@@ -1,0 +1,19 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<h2>Overview</h2>
+		These SMS messages are normally from your service provider.
+		You should not attempt to reply, and therefore no reply feature is provided.
+	<h2>Content</h2>
+	<tmpl_if showMessageCounter>
+		<h3>Message Counters</h3>
+			Two counters at the top of the screen indicate the number of unread (new) messages and the total number of messages.
+			Note that all messages are set to "read" once they are displayed on this screen.
+	</tmpl_if>
+	<h3>Message List</h3>
+		All messages are listed in date order. Unread (new) messages are indicated by an icon. Messages are automatically marked as "read" once they are displayed on this page, so the next time the page is entered, they will no longer be shown as unread.
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+			This button is at the end of the message list.
+			Use it as needed to delete all messages.
+	</tmpl_if>

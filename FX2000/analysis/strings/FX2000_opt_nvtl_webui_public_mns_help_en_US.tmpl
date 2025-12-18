@@ -1,0 +1,25 @@
+<!-- mns -->
+<div id="mns">
+	<h1>Network Selection</h1>
+	<h2>Overview</h2>
+	This device automatically selects the optimal mobile network. If using GSM-based networks, you can also select a network manually. This "<tmpl_var _("webui", "menu_adv_mns_text")>" feature is only useful if multiple networks are available. If this feature is used, this device connects only to the specified network and ignores other available networks.
+	<h2>Status</h2>
+	This section indicates if Automatic or Manual Network Selection is in use.
+	If Manual Network Selection is in use, the specified network is also displayed.
+	<h2>Operation</h2>
+	<h3><tmpl_var _("webui","adv_mns_scan_for_networks_btn")></h3>
+	If Manual Network Selection is possible, this button is available.
+	Click this button if you wish to manually select a network. The modem then scans for all available networks. This scan may take up to two minutes.
+	Note: If this button is not displayed, then Manual Network Selection is not available in your current location, using your current network.
+	<h3>Network List</h3>
+	<div class="blockgroup">
+	All available networks are displayed in the Network List once a network scan has been completed. You can then perform one of the following operations:
+			Cancel - Use this option to retain Automatic network selection.
+			Refresh - use this to scan again if the desired network is not listed. You may need to change your location to improve the signal.
+			Select - use this option to turn on Manual Network Selection with the specified network.  Note that it may not be possible to connect to all listed networks. If your service provider does not have a roaming agreement with the selected network, the connection attempt will fail.
+	<h3><tmpl_var _("webui","adv_mns_revert_to_automatic_btn")></h3>
+	If Manual Network Selection is in use, this button is visible.
+	Click this button to change from Manual to Automatic network selection.
+	<h3>Return to Networks Screen</h3>
+	Use this link to return to the Networks screen.
+<!-- id="mns" -->

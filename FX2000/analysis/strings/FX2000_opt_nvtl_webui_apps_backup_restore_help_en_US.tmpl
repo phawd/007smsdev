@@ -1,0 +1,45 @@
+<!-- Backup and Restore -->
+<div id="backup_restore">
+         <h1><tmpl_var _("webui", "backup_restore_menu_text")></h1>
+         <h2>Overview</h2>
+         <p>Use this feature to back up (download) a copy of the configuration settings from this device to a file on your computer, or restore (upload) a previously-saved configuration file. This configuration file contains all settings for the device, router and system functions. It does not contain any settings or data for the 4G/5G modem. Note that you can only restore a file to the same device it came from.
+         </p>
+         <p>
+            This screen also provides the ability to reset all settings to the factory default values.
+         </p>
+         <h2><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+         <h3>Admin Password</h3>
+         <p>
+                 Enter the current <tmpl_var _("webui", "webui_product_name")> Admin password in this field.
+         </p>
+         <h3><tmpl_var _("webui", "backup_restore_backup_now_button")></h3>
+         <p>
+                 Click the Download button to download a copy of the current configuration file to your computer. If your browser prompts you to save the file, you can rename it if desired.
+         </p>
+         <p class="note">
+                 <strong>Note:</strong> The backup file cannot be edited or viewed on the downloaded system or on any other device. This file can only be restored for this model of <tmpl_var _("webui", "webui_product_name")>, and settings can only be viewed or changed using the Web UI.
+         </p>
+         <h2><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+         <h3>Admin Password</h3>
+         <p>
+                 Enter the current <tmpl_var _("webui", "webui_product_name")> Admin password in this field.
+         </p>
+         <h3><tmpl_var truncate(_("webui", "backup_restore_file_select_label"), (size(_("webui", "backup_restore_file_select_label")) - size(":")))></h3>
+         <p>
+                 Select the configuration file you previously downloaded from this <tmpl_var _("webui", "webui_product_name")> to your computer.
+         </p>
+         <h3>Restore Now Button</h3>
+         <p>After selecting a configuration file, click this button to begin the file upload. After uploading, the configuration file is immediately applied, and this device restarted.
+         </p>
+         <p class="note">
+                 <strong>Note:</strong> Uploading a configuration file changes ALL of the existing settings to match the configuration file. All existing connections will break  to this <tmpl_var _("webui", "webui_product_name")>, including this web browser session.
+         </p>
+         <h2><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+         <p>
+                 Click the <strong>Restore Factory Defaults</strong> button to reset all settings to their factory default values. This causes a restart, breaking all existing connections to this <tmpl_var _("webui", "webui_product_name")>, including this web browser session.
+         </p>
+         <h2>Restart Device</h2>
+         <p>
+                 This button turns your <tmpl_var _("webui", "webui_product_name")> off and on again.
+         </p>
+ <!-- id="backup_restore" -->

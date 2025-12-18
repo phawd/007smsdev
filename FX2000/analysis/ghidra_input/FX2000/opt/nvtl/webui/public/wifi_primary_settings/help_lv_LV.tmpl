@@ -1,0 +1,74 @@
+<!-- wifi_primary_settings -->
+<div id="wifi_primary_settings">
+	<h1>Wi-Fi - primārais tīkls</h1>
+	
+	<h2>Pārskats</h2>
+	<p>
+		Lai izveidotu savienojumu ar <tmpl_var _("webui", "webui_product_name_with_suffix")> primāro Wi-Fi tīklu, pievienotajām ierīcēm ir jāizmanto šajā ekrānā redzamie Wi-Fi iestatījumi. Mainot šos iestatījumus, esošās pievienotās ierīces var zaudēt savienojumu.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_ssid_label")></h3>
+	<p>
+		Šādi tiek iestatīts Wi-Fi tīkla nosaukums vai SSID. Ievadiet piemērotu nosaukumu. Nosaukumā var būt līdz 32 rakstzīmēm.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_security_label")></h3>
+	<p>
+		Atlasiet vēlamo Wi-Fi drošības opciju.
+	</p>
+
+	<ul>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> ļauj citām personām pārraudzīt jūsu Wi-Fi trafiku un izmantot jūsu datu plānu, lai piekļūtu internetam. Ja vien iespējams, jāizvairās no šīs iespējas izmantošanas.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> ir jaunākā un drošākā metode, un, ja iespējams, tā ir jāizmanto.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> var izmantot, ja dažas no vecākām ierīcēm neatbalsta WPA2.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> var izmantot WPA2 un WPA3 sūdzību ierīcēm.
+		</li>
+	</ul>	
+	
+	<h3><tmpl_var _("webui", "wifi_primary_password_label")></h3>
+	<p>
+		Šajā laukā ievadiet Wi-Fi paroli. Varat arī izmantot pogu "Ģenerēt jaunu atslēgu", lai šajā laukā pēc nejaušības principa ievietotu spēcīgu paroli. Neaizmirstiet saglabāt izmaiņas, ja izmantojat šo opciju.
+	</p>
+
+	<p>
+		Šie iestatījumi pēc noklusējuma ir paslēpti, taču varat noklikšķināt uz virsraksta/saites, lai padarītu tos redzamus. 
+		Parasti šīm opcijām var atstāt noklusējuma vērtības, bet, ja nepieciešams, tās var mainīt atbilstoši konkrētajai videi.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_ssid_label", gProductName)></h3>
+	<p>
+		Ja šis iestatījums ir atzīmēts, Wi-Fi nosaukums ir nolasāms <tmpl_var _("webui", "webui_product_name_with_suffix")> skārienekrānā, izmantojot izvēlnes opciju "Wi-Fi". Ja izvēles rūtiņa nav atzīmēta, nosaukums redzams kā ******.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_password_label", gProductName)></h3>
+	<p>
+		Ja šis iestatījums ir atzīmēts, Wi-Fi parole ir nolasāma <tmpl_var _("webui", "webui_product_name_with_suffix")> skārienekrānā, izmantojot izvēlnes opciju "Wi-Fi". Ja tā nav atzīmēta, parole tiek rādīta kā ******.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_broadcast_ssid_label")></h3>
+	<p>
+		Ja šis iestatījums ir atzīmēts, šis Wi-Fi tīkls tiek parādīts jūsu pievienotajās ierīcēs pieejamo Wi-Fi tīklu sarakstā. Ja tā nav atzīmēta, šis tīkls būs neredzams.
+	</p>
+
+	<tmpl_if showWiFiPrimaryWPS>
+	<h3><tmpl_var _("webui", "wifi_primary_wps_label")></h3>
+	<p>
+		Wi-Fi aizsargātā iestatīšana (WPS) ir sistēma, kas ļauj Wi-Fi ierīcēm izveidot savienojumu ar Wi-Fi tīklu, manuāli neievadot tīkla atslēgu. Ja vēlaties izmantot WPS, atzīmējiet šo opciju.
+	</p>
+	</tmpl_if>
+
+	<h3><tmpl_var _("webui", "wifi_primary_privacy_label")></h3>
+	<p>
+		Ja šis iestatījums ir atzīmēts, katra pievienotā ierīce tiek izolēta no visām pārējām pievienotajām ierīcēm. Tādējādi tiek panākta papildu drošība, ja dažas pievienotās ierīces nav zināmas vai nav pilnībā uzticamas. Normālai darbībai šī izvēles rūtiņa nav jāatzīmē.
+	</p>
+</div>
+
+<!-- id="wifi_primary_settings" -->
+

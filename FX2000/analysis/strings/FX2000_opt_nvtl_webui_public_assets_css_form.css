@@ -1,0 +1,275 @@
+/* =============================================================================
+ * FORM.CSS
+ * uniform.css can overwrite any style here.
+ * ========================================================================== */
+/* Colors for form validity */
+input:valid, textarea:valid, select:valid
+input[disabled], textarea[disabled], select[disabled]
+	opacity: .75;
+	cursor: default;
+	/*user-select: none;*/
+.ie8 input[disabled], .ie8 textarea[disabled], .ie8 select[disabled]
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
+/* Specific Input Widths */
+.input select, .input-textbox select, .input div.selector select, td select
+	width: 100%;
+td div.selector, td div.selector span
+	width: auto !important;
+.input input, .input textarea
+	width: 203px;
+/* =============================================================================
+ * FORMS
+ ========================================================================== */
+input, textarea
+	padding: 4px;
+/* Button Submit & Primary Actions */
+button, a.btn
+	font-size: inherit;
+	display: inline-block;
+.button_container,
+.action_links_container
+	margin-top: 20px;
+	margin-bottom: 20px;
+.button_container div.button.primary,
+.button_container button.primary,
+.button_container a.btn.primary,
+.action_links_container div.button.primary,
+.action_links_container button.primary,
+.action_links_container a.btn.primary,
+html.rtl .button_container div.button.secondary,
+html.rtl .button_container button.secondary,
+html.rtl .button_container a.btn.secondary,
+html.rtl .action_links_container div.button.secondary,
+html.rtl .action_links_container button.secondary,
+html.rtl .action_links_container a.btn.secondary,
+html.rtl .button_container div.button.cancel,
+html.rtl .button_container button.cancel,
+html.rtl .button_container a.btn.cancel
+	/*display: flex;*/
+	margin: 0 auto;
+	float: none;
+#settings_virtual .button_container .btn.primary {
+	float: left;
+	margin: 0 0 5px 0px;
+.button_container div.button.secondary,
+.button_container button.secondary,
+.button_container a.btn.secondary,
+.action_links_container div.button.secondary,
+.action_links_container button.secondary,
+.action_links_container a.btn.secondary,
+.button_container div.button.cancel,
+.button_container button.cancel,
+.button_container a.btn.cancel,
+html.rtl .button_container div.button.primary,
+html.rtl .button_container button.primary,
+html.rtl .button_container a.btn.primary,
+html.rtl .action_links_container div.button.primary,
+html.rtl .action_links_container button.primary,
+html.rtl .action_links_container a.btn.primary
+	float: left;
+	margin: 0 10px 5px 0;
+button.primary, a.btn.primary
+    border: 1px solid #0082ca;
+button.secondary, a.btn.secondary,
+button.multi, a.btn.multi,
+button.cancel, a.btn.cancel
+button[disabled], button.disabled, a.btn.disabled
+	cursor: default;
+/* We don't want to highlight icon buttons. */
+/* We don't want to highlight the dialog close button, either. */
+button.icon:focus,
+button.icon.focus,
+button.icon:hover,
+button.icon.hover,
+button.ui-button-icon-only:focus,
+button.ui-button-icon-only.focus,
+button.ui-button-icon-only:hover,
+button.ui-button-icon-only.hover
+	border-color: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+ * Disable Button Highlight when Disabled
+ * Disable Cancel Button Highlight
+button[disabled],
+button.disabled,
+a.btn.disabled
+/*button.cancel:hover,
+button.cancel:focus*/
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+/*=============================================
+=            Toggle Button            =
+=============================================*/
+.toggleSettingContainer
+    position: relative;
+    border-spacing: 0 5px;
+    display: table;
+.toggleSettingContainerInner
+    display: table-row;
+.toggleSettingContainer .desc,
+.toggleSettingContainer .toggle
+    display: table-cell;
+    vertical-align: middle;
+.toggleSettingContainer .desc
+    width: 100%;
+    padding-right: 10px;
+.toggleSettingContainer .desc label
+    font-size: 1.15em; /* 16px */
+.toggleSettingContainer .desc p
+    margin-top: 8px;
+.scrimp .slidebutton-container {
+    margin-left: 30px;
+.slidebutton-container
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        /* prevent text selection */
+        -khtml-user-select: none;
+        -o-user-select: none;
+        -moz-user-select: none;
+        -moz-user-focus: ignore;
+        -moz-user-input: disabled;
+        height: 18px;
+        /* set default width based on ON/OFF labels */
+        width: 45px;
+        margin-left: 20px;
+        padding: 2px;
+        border-radius: 50px;
+        background-color: #ccc;
+.slidebutton-container input
+        position: absolute;
+        top: 9px;
+        left: 34px;
+        -moz-opacity: 0.0;
+        opacity: 0.0;
+        /* allow checking of input if visible */
+        -moz-user-input: enabled !important;
+.ie8 .slidebutton-container input                                                               
+{                                                                                               
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);                             
+}                                                                                               
+                                                                                                
+.slidebutton-disabled                                                                           
+{                                                                                               
+		opacity: 0.5;   
+		cursor:no-drop;                                                                       
+.slidebutton-disabled  input[disabled]                                                                       
+{                                                                                            
+	opacity: 0 !important;   
+		cursor:no-drop;                                                                       
+.slidebutton-disabled .slidebutton-handle-middle{
+	cursor: no-drop !important;
+}                                                                                        
+                                                                                                
+/* MS alpha filter opacity effect doesn't seem to apply to the div and its child divs as a unit.
+   So we have to dim back disabled sliders like this.*/                   
+.ie8 .slidebutton-disabled div                                            
+{                                                                         
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+        filter: alpha(opacity=50);           
+.slidebutton-label-on, .slidebutton-label-off                                                   
+{                                                                                               
+        position: absolute;                                                                     
+        display: block;                                                                         
+        white-space: nowrap;                                                                    
+        font-size: 17px;                                                                        
+        text-transform: uppercase;                                                              
+        cursor: inherit;                                                                        
+        width: auto;                                                                            
+        overflow: hidden;                                                                       
+        z-index: 1;         
+        border-radius:50px;                                                                  
+}                                                                         
+                                                                          
+.slidebutton-label-on                                                     
+{                                                                         
+        left: 0px;                                                                            
+}                                
+                     
+                                                                   
+.slidebutton-label-off                                             
+{                                                                         
+        right: 0px;                                                
+}                                                                  
+                                                                   
+.slidebutton-label-on div, .slidebutton-label-off div
+{                                                    
+        color: #fff;                                                                            
+        line-height: 16px;                                                                      
+        text-align: center;                                                                     
+        width: 40px;                                                                            
+.slidebutton-label-off div                                                                      
+        width: 40px;
+}                                                                                               
+                                                                                                
+.slidebutton-handle                                                                             
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        z-index: 3;
+        padding-left: 3px;
+        margin-left: 0px;
+        height: 18px;                                                                           
+        /* set default width based on ON/OFF labels */
+        width: 18px;
+}                                                                                               
+                                                                                                
+.slidebutton-handle-right                                                                       
+{                                                                                               
+        height: 100%;                                                                           
+        width: 100%;                                                      
+        padding-right: 3px;                                               
+        z-index: 3;                                                       
+}                                                                         
+                                                                                                
+.slidebutton-handle-middle                             
+{                                                                  
+        height: 100%;                                              
+        width: 100%;                                                      
+        z-index: 3;                                                
+}                                                                  
+                                                                   
+.slidebutton-loader                                   
+{                                                     
+        position: absolute;                                                                     
+        height: 100%;                                                                           
+        width: 100%;                                                                            
+        margin: -2px;                                                                           
+        z-index: 999;                                                                           
+        opacity: 0.6;                                                                           
+}                                                                         
+                                                                          
+.ie8 .slidebutton-loader                                                  
+{                                                                         
+        background-color: transparent;                
+        filter:                                       
+                progid:DXImageTransform.Microsoft.Alpha(Opacity=60)
+                progid:DXImageTransform.Microsoft.Gradient(startColorstr=#3cFFFFFF, endColorstr=#3cFFFFFF);
+.slidebutton-focus
+    background: url("../images/toggle_switch/bg-toggle-focus.png") no-repeat center;
+.slidebutton-label-on, .slidebutton-label-off
+    font-weight: bold;
+    font-family: NHaasGroteskTXPro-55Rg, Helvetica, sans-serif;
+.slidebutton-label-on
+    background: url("../images/toggle_switch/on.png") no-repeat;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+.slidebutton-label-off
+    background: url("../images/toggle_switch/off.png") no-repeat right 0;
+    text-shadow: 0px 0px 2px #353535;
+.slidebutton-handle
+  background: url("../images/toggle_switch/slider_left.png") no-repeat 0 0; 
+html.rtl .slidebutton-handle
+    background: url("../images/toggle_switch/slider_right.png") no-repeat right 0;
+.slidebutton-handle-right
+    background: url("../images/toggle_switch/slider_right.png") no-repeat right 0;
+html.rtl .slidebutton-handle-right
+    background: url("../images/toggle_switch/slider_left.png") no-repeat 0 0;
+.slidebutton-handle-middle
+    background: url("../images/toggle_switch/slider_center.png") center;
+.slidebutton-loader
+    background: #fff url("../images/toggle_switch/toggle-loader.gif") no-repeat center;
+.slidebutton-container.isOff {
+			background-color: #9b9b9b;
+.slidebutton-container.isOn {
+			background-color: #0083ca;
+/*=====  End of Toggle Button  ======*/

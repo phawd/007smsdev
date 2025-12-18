@@ -1,0 +1,5 @@
+<option value="0"<tmpl_if IN_SET(fivegNetworkPreference, 0)> selected="selected"</tmpl_if>><tmpl_var _("webui", "wwan_settings_5g_auto_text")></option> <!-- uses both nsa and sa -->
+<option value="1"<tmpl_if IN_SET(fivegNetworkPreference, 1)> selected="selected"</tmpl_if>><tmpl_var _("webui", "wwan_settings_5g_sa_text")></option> <!-- Use only sa -->
+<tmpl_unless IN_SET(NetworksPreferredTechnology, 32)>
+	<option value="2"<tmpl_if IN_SET(fivegNetworkPreference, 2)> selected="selected"</tmpl_if>><tmpl_var _("webui", "wwan_settings_5g_nsa_text")></option> <!-- Use only nsa-->
+</tmpl_unless>

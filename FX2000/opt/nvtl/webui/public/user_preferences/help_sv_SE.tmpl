@@ -1,0 +1,24 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+	<p>Den här skärmen innehåller många alternativ som låter dig ställa in hur<tmpl_var _("webui", "webui_product_name")> ska bete sig för att bättre tillgodose dina behov.</p>
+	<h3>Språk</h3>
+	<p>Välj önskat språk.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+	<p>Specificera i vilket format datumet visas i det här webbaserade gränssnittet.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+	<p>Specificera i vilket format tiden visas i det här webbaserade gränssnittet.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+	<p>Välj den enhet som ska användas för GPS höjd över havet och precision.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+	<p>Specificera hur decimaltal ska visas. Punkt (.) eller komma (,) kan väljas för användning som skiljetecken för decimal.</p>
+
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+		<p>Ethernet-indikator visas i statusfältet när Ethernet-porten är aktiverad, annars är den dold.</p>
+	</tmpl_if>
+	
+</div>

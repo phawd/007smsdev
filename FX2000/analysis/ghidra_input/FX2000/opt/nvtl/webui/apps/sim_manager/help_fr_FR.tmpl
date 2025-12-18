@@ -1,0 +1,57 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_manager_menu_text")></h1>
+        <h2>Vue d’ensemble</h2>
+        <p>La carte SIM qui se trouve à l’intérieur de votre <tmpl_var _("webui", "webui_product_name")> peut être verrouillée par code PIN. Si la carte SIM est verrouillée, vous devez saisir le code PIN avant de vous connecter au réseau mobile. Une fois saisi, le code PIN est mémorisé jusqu’au prochain arrêt.</p>
+
+	<p>En plus de vous permettre de saisir le code PIN de la carte SIM lorsque vous en avez besoin, cette page vous permet également de déverrouiller votre carte SIM ou de modifier le code PIN de la carte SIM. En général, vous devez fournir le code PIN existant pour modifier la carte SIM. Pour une carte SIM Novatel Wireless, le code PIN par défaut est disponible auprès de votre fournisseur de services.</p>
+
+	<p><b>Activer le changement automatique de carte SIM :</b> déplacez le curseur marche/arrêt sur marche pour activer le changement automatique de carte SIM. Lorsque cette fonction est activée, la carte SIM est changée automatiquement si la carte SIM active est déconnectée. Lorsque cette fonction est désactivée, vous pouvez basculer manuellement entre les cartes SIM et modifier les paramètres de cartes SIM sur cette page.</p>
+
+	<p><b>Logement SIM :</b> le numéro du logement de carte SIM.</p>
+
+	<p><b>IMSI :<b> le numéro d’identité internationale d’abonné mobile (International Mobile Equipment Identity, IMSI) pour votre appareil. Il s’agit d’un numéro unique, généralement composé de quinze chiffres, qui identifie un abonné GSM (Global System for Mobile Communications).</p>
+
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_pin_lock_feature_label"), (size(_("webui", "adv_sim_manager_pin_lock_feature_label")) - size(":")))></h3>
+		<p>Le champ indique si la fonctionnalité de verrouillage par code PIN est utilisée ou non. Si elle est activée, le verrouillage par code PIN est activé, et le code PIN de la carte SIM doit être saisi pour pouvoir se connecter au réseau mobile. Si elle est désactivée, la fonctionnalité de verrouillage par code PIN n’est pas activée et le code PIN de la carte SIM n’est pas nécessaire.</p>
+
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_status_label"), (size(_("webui", "adv_sim_manager_status_label")) - size(":")))></h3>
+	<p>Le champ indique l’état actuel de la carte SIM. Les valeurs possibles sont :</p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>Prête - il s’agit de l’état normal. Le code PIN de la carte SIM n’est pas utilisé.</li>
+	        <li>Carte PIN verrouillée - le code PIN de la carte SIM doit être saisi avant que vous ne puissiez utiliser le réseau mobile.</li>
+	        <li>Verrouillée par code PUK - le code PUK de la carte SIM doit être saisi pour pouvoir continuer. Vous pouvez obtenir le code PUK auprès de votre fournisseur de services.</li>
+	        <li>Déverrouillée - le code PIN de la carte SIM est nécessaire, mais il a déjà été saisi.</li>
+	        <li>Pas de carte SIM - aucune carte SIM n’a été détectée. Si vous avez une carte SIM, vérifiez qu’elle est correctement insérée.</li>
+	        <li>Erreur de carte SIM - une carte SIM a été détectée, mais elle n’a pas réagi comme prévu et ne peut pas être utilisée.</li>       
+	        </ul>
+	</div>
+
+	<p><b>Priorité :</b> indique si la carte SIM est de priorité normale ou préférée.</p>
+
+    <h2>Opérations de la carte SIM</h2>
+    <p>Les actions disponibles dépendent de l’état actuel de la carte SIM. Toutes les opérations possibles sont énumérées et expliquées ci-dessous.</p>
+
+	<h3>Verrouillage par code PIN</h3>
+	<p>Si la carte SIM est actuellement verrouillée par code PIN, vous êtes invité à saisir le code PIN. Veuillez noter que si un code PIN incorrect est saisi trop souvent, la carte SIM est alors verrouillée par un code PUK. Un compteur présent sur la page indique le nombre de saisies incorrectes qui entraîneront un verrouillage par code PUK. Une fois le verrouillage par code PUK effectué, vous devez obtenir le code PUK auprès de votre fournisseur de services.</p>
+	<h3>Verrouillage par code PUK</h3>
+	<p>Si la carte SIM est actuellement verrouillée par code PUK, la seule opération possible est de saisir le code PUK. Veuillez noter que si un code PUK incorrect est saisi trop souvent, la carte SIM devient inutilisable de façon permanente. Vous devrez obtenir une nouvelle carte SIM. Un compteur présent sur la page indique le nombre de tentatives de saisie restantes.</p>
+	<h3><tmpl_var _("webui", "adv_sim_manager_enable_pin_lock_option")></h3>
+	<p>La carte SIM est configurée de telle sorte que la saisie d’un code PIN est nécessaire au démarrage pour se connecter au réseau mobile. Pour effectuer cette opération, vous devez saisir le code PIN actuel.</p>
+
+	<h3><tmpl_var _("webui", "adv_sim_manager_disable_pin_option")></h3>
+	<p>Vous pouvez utiliser ce paramètre pour désactiver le verrouillage par code PIN qui était précédemment activé, de sorte que la saisie d’un code PIN n’est plus nécessaire pour se connecter au réseau mobile. Pour effectuer cette opération, vous devez saisir le code PIN actuel.</p>
+	<h3><tmpl_var _("webui", "adv_sim_manager_change_pin_option")></h3>
+	<p>Pour modifier le code PIN existant, sélectionnez cette option puis saisissez les données requises :</p>
+	<div class="blockgroup">
+		<ul>
+		<li>Code PIN actuel</li>
+		<li>Nouveau code PIN</li>
+		<li>Confirmer le nouveau code PIN</li>
+		</ul>
+	</div>
+	<p><tmpl_var _("webui", "adv_sim_manager_name_text")></p>
+</div>
+<!-- id="sim" -->
+

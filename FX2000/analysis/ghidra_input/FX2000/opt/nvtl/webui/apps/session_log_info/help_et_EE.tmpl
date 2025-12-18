@@ -1,0 +1,19 @@
+<!-- Internet  Sessions -->
+<div id="session_log_info">
+	<h1><tmpl_var _("webui", "session_log_info_menu_text")></h1>
+
+	<p>Seansilogi sisaldab järgmisi andmeid.</p>
+	<p>– Kuupäev ja kellaaeg (ühenduse loomisel)</p>
+	<p>– Kestus (praeguse seansi teabega samas vormingus)</p>
+	<p>– Vastu võetud (vorming nagu praeguse seansi puhul)</p>
+	<p>– Edastatud (vorming nagu praeguse seansi puhul)</p>
+	<p>– Koguandmed (Rx ja Tx summa, vorming nagu praeguse seansi teabe puhul)</p>
+	<tmpl_if RoamingStatusShow>
+                <p>- Roaming (Roaming / Teilweise / leer) Leer = Heimnetzwerk </p>
+        </tmpl_if>
+	<p>– IPv4 (IPv4 WWAN IP-aadress)</p>
+	<p>– IPv6 (IPv6 WWAN IP-aadress)</p>
+
+	<p>Logi on kuupäevade järjekorras.</p>
+	<p>Kasutaja ei saa tellimust muuta ja seansilogiga pole seotud suvandeid.</p>
+</div>

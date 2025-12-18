@@ -1,0 +1,76 @@
+<!-- wifi_guest_settings -->
+<div id="wifi_guest_settings">	
+	<h1>Wi-Fi - G
+		Wi-Fi-g
+rket kan bruges til at give midlertidig adgang til internettet via <tmpl_var _("webui", "webui_product_name_with_suffix")> Wi-Fi-netv
+rk. For at oprette forbindelse til Wi-Fi-g
+rket, skal tilsluttede enheder bruge de Wi-Fi-indstillinger, der vises p
+ denne sk
+		Hvis du vil aktivere g
+rket, skal du bruge den generelle Wi-Fi-sk
+rm i denne webadministratorinterface eller "Wi-Fi-valg af b
+nd" i Wi-Fi-appen p
+ <tmpl_var _("webui", "webui_product_name_with_suffix")>s ber
+	<h3><tmpl_var _("webui", "wifi_guest_ssid_label")></h3>
+		Dette indstiller netv
+rksnavnet eller SSID for Wi-Fi-g
+rket. Indtast et passende navn. Navnet kan v
+re op til 32 tegn langt.
+	<h3><tmpl_var _("webui", "wifi_guest_security_label")></h3>
+nskede mulighed for Wi-Fi-sikkerhed.
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> giver andre mennesker mulighed for at overv
+ge din Wi-Fi-trafik og bruge din dataplan til at f
+ adgang til internettet. Hvis det overhovedet er muligt, b
+r brug af denne indstilling undg
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> er den nyeste og mest sikre metode og b
+r bruges, hvis det er muligt.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> kan bruges, hvis nogle af dine 
+ldre enheder ikke underst
+tter WPA2.
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> kan bruges til WPA2- og WPA3-klageenheder.
+	<h3><tmpl_var _("webui", "wifi_guest_password_label")></h3>
+		Hvis en anden indstilling end <strong>Ingen</strong> blev valgt i feltet <strong>Sikkerhed</strong>, kr
+ves der en Wi-Fi-adgangskode.
+		Indtast Wi-Fi-adgangskoden i dette felt. Du kan ogs
+ bruge knappen "Gener
+gle" til at inds
+tte en st
+rk, tilf
+ldig adgangskode i dette felt. Husk at gemme dine 
+ndringer, hvis du bruger denne indstilling.
+		Disse indstillinger er som standard skjulte, men du kan klikke p
+ overskriften/linket for at g
+re dem synlige. 
+		Normalt kan disse indstillinger forblive u
+ndrede med deres standardv
+rdier, men de kan om n
+dvendigt 
+ndres, s
+ de passer til dit s
+rlige milj
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_ssid_label", gProductName)></h3>
+		Hvis denne indstilling er markeret, er Wi-Fi-navnet l
+ <tmpl_var _("webui", "webui_product_name_with_suffix")>s ber
+rm ved hj
+lp af menuindstillingen "Wi-Fi". Hvis den ikke er markeret, vises navnet som ******.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_password_label", gProductName)></h3>
+		Hvis denne indstilling er markeret, er Wi-Fi-adgangskoden l
+ <tmpl_var _("webui", "webui_product_name_with_suffix")>s ber
+rm ved hj
+lp af menuindstillingen "Wi-Fi". Hvis den ikke er markeret, vises adgangskoden som ******.
+	<h3><tmpl_var _("webui", "wifi_guest_broadcast_ssid_label")></h3>
+		Hvis denne indstilling er markeret, vises dette Wi-Fi-netv
+ listen over tilg
+ngelige Wi-Fi-netv
+ dine tilsluttede enheder. Hvis den ikke er markeret, vil dette netv
+re usynligt.
+	<tmpl_if showWiFiGuestWPS>
+		<h3><tmpl_var _("webui", "wifi_guest_wps_label")></h3>
+			Wi-Fi Protected Setup (WPS) er et system, der tillader Wi-Fi-enheder at oprette forbindelse til et Wi-Fi-netv
+rk, uden at man manuelt skal indtaste netv
+glen. Hvis du 
+nsker at bruge WPS, skal du markere denne indstilling.
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_guest_privacy_label")></h3>
+		Hvis denne indstilling er markeret, isoleres hver tilsluttet enhed fra alle andre tilsluttede enheder. Dette giver ekstra sikkerhed, hvis nogle tilsluttede enheder er ukendte, eller du ikke helt har tillid til dem. Ved normal drift skal denne ikke markeres.
+<!-- id="wifi_guest_settings" -->

@@ -1,0 +1,98 @@
+__gmon_start__
+GLIBC_2.4
+libc.so.6
+libmifi_upi_image.so
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+posix_memalign
+mifi_dbg_get_level_name
+__errno_location
+libpthread.so.0
+strerror
+mifi_dbg_log
+mifi_upi_image_nand_cache_enable
+RB_ReadBackupBlock
+mifi_upi_image_init
+RB_ReadImage
+RB_EraseBackupBlock
+mifi_get_partition_name_from_address
+mifi_get_address_offset_in_partition
+mtd_find_partition_by_name
+mifi_erase_sector
+RB_WriteBackupBlock
+RB_WriteBlock
+RB_WriteBackupPartOfBlock
+mifi_write_data
+mifi_read_data
+RB_ReadImageNewKey
+RB_GetBlockSize
+mifi_get_sector_size
+__bss_start
+libmifi_debug.so
+libmifi_mtd.so
+H	KxD	J{D
+[%s]:[%s] - %s: posix_memalign() failed: %s
+[%s]:[%s] - %s: g_nc.ncb[%d].block_buffer=%p
+[%s]:[%s] - %s: g_nc.enable=%d block_address=%08x g_nc.wr_index=%d g_nc.rd_index=%d g_nc.num_valid_buffers=%u
+[%s]:[%s] - %s: found buffer: index=g_nc.rd_index=%d
+[%s]:[%s] - %s: found buffer: index=%d
+[%s]:[%s] - %s: buffer not found: g_nc.wr_index=%u g_nc.num_valid_buffers=%u
+[%s]:[%s] - %s: block_address=%08x g_nc.num_valid_buffers=%u g_nc.wr_index=%u
+[%s]:[%s] - %s: block_address=%08x found: j=%d
+[%s]:[%s] - %s: swap j=%d with g_nc.wr_index=%u
+[%s]:[%s] - %s: block_address=%08x not found
+[%s]:[%s] - %s: called
+[%s]:[%s] - %s: pbBuffer=%p dwBlockAddress=%08lx dwSize=%08lx
+[%s]:[%s] - %s: Error: Either dwBlockAddress %08lx is not in range or Block Aligned Boundary
+[%s]:[%s] - %s: dwStartAddress=%08lx
+[%s]:[%s] - %s: Failed to Retrieve a Partition Name for dwStartAddress=%08lx
+[%s]:[%s] - %s: Failed to determing relative_offset in Partition %s forfor dwStartAddress=%08lx
+[%s]:[%s] - %s: mtd_find_partition_by_name(%s) failed
+[%s]:[%s] - %s: Failed to Erase Backup Blocks in %s partition @ dwStartAddress = %08lx transalates to partition relative_offset=%08lx
+[%s]:[%s] - %s: Error: Either dwStartAddress %08lx is not in range or Block Aligned Boundary
+[%s]:[%s] - %s: dwBlockStartAddress=%08lx pbBuffer=%p
+[%s]:[%s] - %s: Error: Either dwBlockStartAddress %08lx is not in range or Block Aligned Boundary
+[%s]:[%s] - %s: dwStartAddress=%08lx dwSize=%08lx pbBuffer=%p
+[%s]:[%s] - %s: Error: dwBlockAddress %08lx is not Block Aligned
+[%s]:[%s] - %s: Failed to Retrieve a Partition Name for dwBlockAddress=%08lx
+[%s]:[%s] - %s: Failed to determing relative_offset in Partition %s forfor dwBlockAddress=%08lx
+[%s]:[%s] - %s: Failed to Write Data to %s partition @ dwBlockAddress = %08lx transalates to partition relative_offset=%08lx
+[%s]:[%s] - %s: partition=%s dwBlockAddress=%08lx relative_offset=%08lx write_count=%u
+[%s]:[%s] - %s: dwStartAddress=%08lx dwSize=%lu
+[%s]:[%s] - %s: Failed to get relative_offset in Partition=%s for dwStartAddress=%08lx
+[%s]:[%s] - %s: mifi_read_data() failed: partition=%s dwStartAddress=%08lx relative_offset=%08lx
+[%s]:[%s] - %s: partition=%s block_start_addr=%08lx dwStartAddress=%08lx partition_offset=%08lx offset_in_temp_buf=%08x dwSize=%lu read_count=%u
+[%s]:[%s] - %s: block_start_addr=%08lx dwStartAddress=%08lx offset_in_temp_buf=%08x dwSize=%lu hit_count=%u
+[%s]:[%s] - %s: mifi_get_sector_size(NULL, 'boot') failed
+[%s]:[%s] - %s: nand_cache_init(%d) failed
+[%s]:[%s] - %s: nand_block_size=%dKB sector_size=%dKB
+[%s]:[%s] - %s: BackupPart from %s Partition from Addr %08lx to %08lx Size = %d KB 
+nand_cache_init
+nand_cache_get_buffer
+nand_cache_invalidate
+nand_cache_invalidate_all
+mifi_upi_image_nand_cache_enable
+RB_ReadBackupBlock
+RB_EraseBackupBlock
+RB_WriteBackupBlock
+RB_WriteBackupPartOfBlock
+RB_WriteBlock
+RB_ReadImage
+mifi_upi_image_init
+gold 1.16
+.shstrtab
+.note.gnu.build-id
+.gnu.version
+.gnu.version_d
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

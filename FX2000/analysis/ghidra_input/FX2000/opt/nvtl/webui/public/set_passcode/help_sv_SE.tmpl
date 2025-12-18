@@ -1,0 +1,33 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>Admin-lösenord</h1>
+	<h2>Översikt</h2>
+	<p>Admin-lösenordet används för att logga in på Admin-webbplatsen för denna <tmpl_var _("webui", "webui_product_name")>. Sidan <em>Admin-lösenord</em> låter dig ändra Admin-lösenordet och ställa in vissa säkerhetsalternativ som rör Admin-lösenordet.</p>
+
+
+	<h2>Ändra Admin-lösenordet för <tmpl_var _("webui", "webui_product_name")></h2>
+	<p>För att byta till nuvarande Admin-lösenord måste du först ange det nuvarande Admin-lösenordet i fältet nedan. Skärmen uppdateras sedan och ger möjlighet att ställa in ett nytt Admin-lösenord och en säkerhetsfråga som kan användas om Admin-lösenordet förloras.</p>
+
+	<h3>Nuvarande Admin-lösenord för <tmpl_var _("webui", "webui_product_name")></h3>
+	<p>Ange det nuvarande Admin-lösenordet för <tmpl_var _("webui", "webui_product_name")> i det här fältet. Observera att om du anger ett felaktigt värde för många gånger kommer du att bli utlåst från Admin-webbplatsen för denna <tmpl_var _("webui", "webui_product_name")>. För att rensa detta lås måste <tmpl_var _("webui", "webui_product_name")> startas om.</p>
+	<tmpl_if showDisplayPascode>
+		<h2>Visa Admin-lösenordet för <tmpl_var _("webui", "webui_product_name")></h2>
+		<p>Om den här inställningen är PÅ visas *********. Om den här inställningen är AV kan Admin-lösenordet läsas på Jetpacks display.</p>
+	</tmpl_if>
+
+	<h2>Ändra Admin-lösenordet för <tmpl_var _("webui", "webui_product_name")></h2>
+	<h3>Nytt Admin-lösenord</h3>
+	<p>Ange det nya Admin-lösenordet med enbart bokstäver, siffror och vanliga skiljetecken. Lösenordet måste vara minst eight tecken långt.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p>Ange det nya Admin-lösenordet igen i det här fältet.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>Denna säkerhetsfråga används om Admin-lösenordet förloras och alternativet ”Jag har glömt Admin-lösenordet” används. Välj önskad fråga och ange ett svar i fältet nedan.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Ange ett svar på säkerhetsfrågan som valts ovan. Observera att svaren är skiftlägeskänsliga.</p>
+
+</div>
+<!-- id="set_passcode" -->
+

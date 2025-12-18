@@ -1,0 +1,77 @@
+<!-- MAC Filter -->
+<div id="macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+	<h2>Vue d
+ensemble</h2>
+	<p>Le filtre
+MAC permet uniquement aux appareils s
+lectionn
+der au r
+seau <tmpl_var _("webui", "webui_product_name")> par le serveur
+DHCP. Le filtre
+MAC est d
+faut. Vous pouvez utiliser cet onglet pour activer le filtre
+MAC et sp
+cifier l
+appareil.
+	<h2>Commande Marche/Arr
+	<p>Pour utiliser le filtre
+lectionnez dans la liste des appareils le ou les appareils que vous souhaitez autoriser 
+ se connecter au r
+seau par le serveur
+DHCP et d
+placez le curseur <b>marche/arr
+t du filtre
+MAC</b> pour qu
+il soit activ
+ (en position
+<b>marche</b>). Cliquez sur
+<b>Enregistrer les modifications</b>.
+	<h2>Liste des appareils</h2>
+activation du filtre
+connecte imm
+diatement tous les appareils qui ne sont pas inclus dans le filtre du r
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Utilisez le bouton d
+actualisation pour mettre 
+ jour la liste si n
+cessaire.
+	<h2>Fonctionnement</h2>
+	<h3>Filtre bloqu
+ versus filtre MAC</h3>
+interaction entre les appareils 
+filtre MAC
+	<div class="blockgroup">
+	<li>Les appareils bloqu
+s sont toujours bloqu
+s sur le r
+seau, que le filtre MAC soit activ
+	<li>Si le filtre MAC est activ
+ et si un appareil figure dans la liste des appareils bloqu
+s, mais pas dans la liste Filtre d
+adresses MAC, il ne pourra pas se connecter. Le filtre MAC et le blocage emp
+cheraient la connexion.
+	<li>Si le filtre MAC est activ
+ et si un appareil figure dans la liste Filtre d
+adresses MAC, alors l
+appareil pourra se connecter. 
+	Une fois connect
+, il peut alors 
+tre bloqu
+ soit en le retirant de la liste Filtre d
+adresses MAC, soit en utilisant la fonctionnalit
+ral, la fonctionnalit
+tre utilis
+e pour un blocage temporaire, et le filtre MAC pour un blocage permanent.
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+	<p>Utilisez ce bouton pour ajouter un appareil 
+ la liste des appareils.
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Pour supprimer les modifications non enregistr
+es et actualiser la liste, cliquez sur
+<b>Actualiser la liste</b> et <b>Confirmer</b>.
+	<h3>Supprimer un appareil</h3>
+	<p>Pour supprimer un appareil de la liste, cochez sa case
+Supprimer et cliquez sur
+Enregistrer les modifications.</p>
+<!--  macfilter  -->

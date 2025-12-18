@@ -1,0 +1,24 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+	<p>Tämä näyttö sisältää monia vaihtoehtoja, joiden avulla voit asettaa <tmpl_var _("webui", "webui_product_name")>-laitteen toimimaan paremmin tarpeidesi mukaisesti.</p>
+	<h3>Kieli</h3>
+	<p>Valitse haluttu kieli.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+	<p>Määritä muoto, jossa päivämäärä näytetään tässä verkkokäyttöliittymässä.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+	<p>Määritä muoto, jossa aika näytetään tässä verkkokäyttöliittymässä.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+	<p>Valitse yksikkö, jota käytetään GPS-korkeuden ja -tarkkuuden määrittämiseen.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+	<p>Määritä, miten desimaaliluvut näytetään. Desimaalipilkkuna voidaan käyttää pistettä (.) tai pilkkua (,).</p>
+
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+		<p>Ethernet-ilmaisin näkyy tilapalkissa, kun Ethernet-portti on käytössä; muutoin se on piilotettu.</p>
+	</tmpl_if>
+	
+</div>

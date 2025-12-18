@@ -1,0 +1,33 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1><tmpl_udf GET_PO_TEXT("set_passcode_menu_text", gProductName)></h1>
+	<h2>Descripción</h2>
+	<p> La Contraseña de administrador se usa para iniciar sesión en este sitio web del administrador de <tmpl_var _("webui", "webui_product_name")>. La página de <em>Contraseña de administrador</em> le permite cambiar la Contraseña de administrador y definir algunas opciones de seguridad relacionadas con la Contraseña de administrador. </p>
+
+
+	<h2>Cambiar la Contraseña de administrador de <tmpl_var _("webui", "webui_product_name")></h2>
+	<p>Para cambiar la Contraseña de administrador actual, primero debe ingresar la Contraseña de administrador actual en el campo que aparece a continuación. La pantalla entonces se actualizará y proporcionará la opción para definir una nueva Contraseña de administrador y una pregunta de seguridad para usar en el caso de que se pierda esa contraseña. </p>
+
+	<h3>Contraseña de administrador de <tmpl_var _("webui", "webui_product_name")> actual</h3>
+	<p> Ingrese la Contraseña de administrador <tmpl_var _("webui", "webui_product_name")> actual en este campo. Tenga en cuenta que, si ingresa un valor incorrecto demasiadas veces, se bloqueará su acceso a este sitio web del administrador de <tmpl_var _("webui", "webui_product_name")>. Para cancelar este bloqueo, se debe reiniciar el <tmpl_var _("webui", "webui_product_name")>. </p>
+	<tmpl_if showDisplayPascode>
+		<h2>Mostrar la Contraseña de administrador de <tmpl_var _("webui", "webui_product_name")></h2>
+		<p>Si esta configuración está ACTIVADA, la Contraseña de administrador se puede leer en la pantalla del <tmpl_var _("webui", "webui_product_name")>. Si esta configuración está DESACTIVADA, se muestra, en cambio, ***********. </p>
+	</tmpl_if>
+
+	<h2>Cambiar la Contraseña de administrador de <tmpl_var _("webui", "webui_product_name")></h2>
+	<h3>Nueva contraseña de administrador</h3>
+	<p> Ingrese la nueva Contraseña de administrador usando únicamente letras, números y símbolos de puntuación estándar. La contraseña debe tener al menos 8 caracteres de largo. </p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p> Vuelva a ingresar la nueva Contraseña de administrador en este campo. </p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>Esta pregunta de seguridad se usa si se pierde la Contraseña de administrador y se usa la opción "Olvidé la Contraseña de administrador". Seleccione la pregunta deseada y proporcione una respuesta en el campo que aparece a continuación. </p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Proporcione una respuesta a la pregunta de seguridad que seleccionó anteriormente. Tenga en cuenta que las respuestas distinguen entre mayúsculas y minúsculas. </p>
+
+</div>
+<!-- id="set_passcode" -->
+

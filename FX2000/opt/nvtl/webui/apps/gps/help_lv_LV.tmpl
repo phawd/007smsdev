@@ -1,0 +1,48 @@
+<div id="gps_status">
+	<h1><tmpl_var _("webui", "gps_status_menu_text")></h1>
+	<h2>Pārskats</h2>
+	<p>Šī <tmpl_var _("webui", "webui_product_name")> ierīce ir ietver GPS uztvērēju. GPS uztvērējs var noteikt jūsu pašreizējo atrašanās vietu, bieži pat iekštelpās.<tmpl_if GPSOverWiFiEnableShow>Šajā lapā ir redzama pašreizējā atrašanās vieta, un atrašanās vietas informāciju var kopīgot ar datoriem, kuriem ir izveidots savienojums, izmantojot funkciju GPS, izmantojot Wi-Fi.</tmpl_if>
+	</p>
+
+	<h2>GPS izmantošana</h2>
+
+	<tmpl_if GPSEnableShow>
+		<h3><tmpl_var _("webui", "gps_status_enable_label")></h3>
+		<p>Izmantojiet šo ieslēgšanas/izslēgšanas vadīklu, lai pēc nepieciešamības ieslēgtu vai izslēgtu GPS funkciju.</p>
+		<h3><tmpl_udf GET_PO_TEXT("gps_status_startup_state_label", gProductName)></h3>
+		<p>Šis iestatījums nosaka, kad GPS uztvērējs izslēgsies, kad tas būs ieslēgts.</p>
+		<p>Ja ieslēgts, GPS uztvērējs izslēgsies, tiklīdz <tmpl_var _("webui", "webui_product_name")> tiks izslēgts. Tas būs atkal jāieslēdz nākamajā reizē, kad būs nepieciešams GPS uztvērējs.</p>
+	</tmpl_if>
+
+		<h3>GPS statuss</h3>
+		<p>Ja GPS uztvērējs vēl nav ieguvis labojumu (atrašanās vietu), parādās statuss <strong>Meklēšana</strong>. Kad labojums ir iegūts, tiek parādīta tālāk norādītā informācija par pašreizējo atrašanās vietu un tiek parādīta Google karte, lai vizuāli norādītu pašreizējo atrašanās vietu.</p>
+		<h2><tmpl_var _("webui", "gps_status_map_section_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "gps_status_latitude_label"), (size(_("webui", "gps_status_latitude_label")) - size(":")))></h3>
+		<p>Pēdējā atrašanās vietas labojuma ģeogrāfiskais platums.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_longitude_label"), (size(_("webui", "gps_status_longitude_label")) - size(":")))></h3>
+		<p>Pēdējā atrašanās vietas labojuma ģeogrāfiskais garums.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_altitude_label"), (size(_("webui", "gps_status_altitude_label")) - size(":")))></h3>
+		<p>Pēdējā atrašanās vietas labojuma augstums.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_accuracy_label"), (size(_("webui", "gps_status_accuracy_label")) - size(":")))></h3>
+		<p>Tas ir GPS uztvērēja iegūtās horizontālās pozīcijas precizitātes mērs.</p>
+		<tmpl_if GPSOverWiFiEnableShow>
+			<tmpl_if GPSPortNumberShow>		
+				<h2><tmpl_var _("webui", "gps_status_enable_sub_header_text")></h2>
+			
+				<h3><tmpl_var truncate(_("webui", "gps_status_gps_over_wifi_label"), (size(_("webui", "gps_status_gps_over_wifi_label")) - size(":")))></h3>
+				<p>GPS datus <tmpl_var _("webui", "webui_product_name")> nodrošina Nacionālās Jūras elektronikas asociācijas (NMEA) teksta plūsmas veidā.</p>
+				<p>NMEA (GPS) porta izmantošana ir standarta metode lietojumprogrammām, lai piekļūtu GPS datu plūsmai sistēmā Windows un citās skaitļošanas platformās. Lai izveidotu šo portu, lejupielādējiet un instalējiet savai platformai GPS, izmantojot Wi-Fi draiveri. Šis draiveris izveidos NMEA portu, iegūs GPS datus no <tmpl_var _("webui", "webui_product_name")> un padarīs šos GPS datus pieejamus NMEA lietojumprogrammām.</p>
+
+				<h3><tmpl_var truncate(_("webui", "gps_status_port_number_label"), (size(_("webui", "gps_status_port_number_label")) - size(":")))></h3>
+				<p>Šis ir porta numurs, ko datora draivera programmatūra izmanto, lai izveidotu savienojumu ar šo ierīci un iegūtu GPS datus. Ja vien nav pamatota iemesla, porta numurs nav jāmaina.</p>
+			</tmpl_if>
+		</tmpl_if>
+
+	<tmpl_if GPSDownloadDriversShow>
+		<h3><tmpl_var _("webui", "gps_status_wifi_driver_download_link")></h3>
+		<p>Izmantojiet šo opciju, lai piekļūtu pieejamo draiveru lejupielādes lapai.<tmpl_if GPSOverWiFiEnableShow>Šie draiveri ir nepieciešami, lai izmantotu GPS, lietojot Wi-Fi.</tmpl_if>
+		</p>
+	</tmpl_if>
+					
+</div>
+

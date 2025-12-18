@@ -1,0 +1,51 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>Administraatori parool</h1>
+levaade</h2>
+	<p>Administraatori parooli kasutatakse <tmpl_var _("webui", "webui_product_name")> administraatori veebisaidile sisselogimiseks. Lehel <em>Administraatori parool</em> saate muuta administraatori parooli ja m
+ne administraatori parooliga seotud turbesuvandi.</p>
+	<h2>Muuda <tmpl_var _("webui", "webui_product_name")> administraatori parooli</h2>
+	<p>Praegusele administraatori parooli muutmiseks peate esmalt sisestama praeguse administraatori parooli allolevale v
+ljale. Seej
+rskendatakse ekraani ja pakutakse v
+imalust m
+rata administraatori parool ja turbek
+simus kasutamiseks, kui administraatori parool kaob.</p>
+	<h3>Praegune <tmpl_var _("webui", "webui_product_name")> administraatori parool</h3>
+	<p>Sisestage sellele v
+ljale praegune <tmpl_var _("webui", "webui_product_name")> administraatori parool. Pange t
+hele, et kui sisestate vale v
+rtuse liiga palju kordi, siis te kaotate ligip
+su sellele <tmpl_var _("webui", "webui_product_name")> administraatori veebisaidile. Lukustuse eemaldamiseks <tmpl_var _("webui", "webui_product_name")> tuleb s
+steem taask
+ivitada.</p>
+	<tmpl_if showDisplayPascode>
+		<h2><tmpl_var _("webui", "webui_product_name")> Administraatori parooli kuvamine</h2>
+		<p>Kui see s
+te on SEES, kuvatakse ********. Kui see s
+litatud, saab Jetpacki kuvalt lugeda administraatori parooli.</p>
+	</tmpl_if>
+	<h2>Muuda <tmpl_var _("webui", "webui_product_name")> administraatori parooli</h2>
+	<h3>Uus administraatori parool</h3>
+	<p>Sisestage uus administraatori parool, kasutades ainult t
+hti, numbreid ja standardseid kirjavahem
+rke. Parool peab olema v
+hemalt 8 t
+rki pikk.</p>
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p>Sisestage uus administraatori parool sellele v
+ljale uuesti.</p>
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>Seda turbek
+simust kasutatakse, kui administraatori parool on kadunud ja kasutatakse suvandit 
+Unustasin administraatori parooli
+. Valige soovitud k
+simus ja vastake alloleval v
+ljal.</p>
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Sisestage vastus 
+laltoodud turvak
+simusele. Pange t
+hele, et vastused on t
+stutundlikud.</p>
+<!-- id="set_passcode" -->

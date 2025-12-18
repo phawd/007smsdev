@@ -1,0 +1,265 @@
+<!-- Diagnostics -->
+<div id="status_diagnostics">
+	<h1><tmpl_var _("webui", "status_diagnostics_menu_text")></h1>
+	<h2>نظرة عامة</h2>
+	<p>تعرض علامة التبويب هذه معلومات تفصيلية تستخدم فقط لاستكشاف الأخطاء وإصلاحها أو الدعم الفني.  
+	</p>
+	<h2><tmpl_var _("webui", "status_diagnostics_modem_sub_header_text")></h2>
+
+	<tmpl_if showPhoneNumber>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_phone_number_label"), (size(_("webui", "status_diagnostics_phone_number_label")) - size(":")))></h3>
+		<p>هذا هو رقم هاتف <tmpl_var _("webui", "webui_product_name")>.</p>
+	</tmpl_if>
+
+	<tmpl_if showImei>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imei_label"), (size(_("webui", "status_diagnostics_imei_label")) - size(":")))></h3>
+		<p>IMEI (الهوية الدولية للمعدات المتحركة) لهذا الجهاز. IMEI هو رمز مكون من 15 أو 17 رقمًا يُستخدم لتحديد محطة متنقلة فردية بشكل فريد على شبكة <tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")> . لا يتغير IMEI عند تغيير بطاقة SIM. 
+	</p>
+	</tmpl_if>
+
+	<tmpl_if showImeisv>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imeisv_label"), (size(_("webui", "status_diagnostics_imeisv_label")) - size(":")))></h3>
+		<p>يجمع هذا الحقل بين IMEI ورقم الموافقة لهذا النوع من الأجهزة.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if showMeid>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_meid_label"), (size(_("webui", "status_diagnostics_meid_label")) - size(":")))></h3>
+		<p>MEID (معرّف الجهاز المحمول) هو رقم فريد يستخدم لتحديد محطة متنقلة فردية على شبكة CDMA. 		      </p>
+	</tmpl_if>
+
+	<tmpl_if showIMSI>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imsi_label"), (size(_("webui", "status_diagnostics_imsi_label")) - size(":")))></h3>
+		<p>الرقم الدولي لمشتركي الهاتف المحمول (IMSI)، رقمٌ فريد مرتبط بجميع مستخدمي الهاتف المحمول على شبكة النظام العالمي للاتصالات المتنقلة (GSM) والنظام العالمي للاتصالات المتنقلة (UMTS) المستخدم لتحديد مشترك GSM.
+		</p>
+	</tmpl_if>
+						
+	<tmpl_if showFwVersion>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_fw_version_label"), (size(_("webui", "status_diagnostics_fw_version_label")) - size(":")))></h3>
+		<p>إصدار البرنامج الثابت (البرنامج) المثبت حاليًا في المودم.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if showSimStatus>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_sim_status_label"), (size(_("webui", "status_diagnostics_sim_status_label")) - size(":")))></h3>
+		<p>يشير هذا إلى حالة بطاقة SIM. إذا كانت بطاقة SIM مفقودة، أو يشير هذا الحقل إلى شكل من أشكال خطأ بطاقة SIM، فلا يمكن الاتصال بشبكة الهاتف المحمول. 
+		</p>
+	</tmpl_if>
+
+	<tmpl_if showICCID>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_iccid_label"), (size(_("webui", "status_diagnostics_iccid_label")) - size(":")))>
+		</h3>
+		<p>يتم تعيين رقم المعرف الفريد هذا لبطاقة SIM. لا يتم عرض هذا الرقم في حالة عدم وجود بطاقة SIM مثبتة، أو وجود حالة خطأ في بطاقة SIM. 
+		</p>
+	</tmpl_if>
+
+	<tmpl_if showModemDetails>
+		<tmpl_if showMINMSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_msid_label"), (size(_("webui", "status_diagnostics_msid_label")) - size(":")))></h3>
+			<p>يتم استخدام هذا المعرف لتعريف المشترك على شبكة بيانات الهاتف.</p>
+		</tmpl_if>
+		<tmpl_if showESN>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_esn_label"), (size(_("webui", "status_diagnostics_esn_label")) - size(":")))></h3>
+			<p>الرقم التسلسلي الإلكتروني (ESN)، الطريقة التقليدية لتحديد الأجهزة بشكل فريد على شبكات CDMA، ولكن تم استبداله بواسطة MEID. بالنسبة للأجهزة التي تستخدم MEID (مثل هذا الجهاز)، تكون ESN إما فارغة أو ESN زائفة، مما يجعلها غير مضمونة لتكون فريدة.</p>
+ 		</tmpl_if>
+ 		<tmpl_if showHomeSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_home_sid_label"), (size(_("webui", "status_diagnostics_home_sid_label")) - size(":")))></h3>
+			<p>SID (معرف النظام) هو معرف شبكة يشير إلى نقطة التعلق بشبكة بيانات الجهاز المحمول.</p>
+		</tmpl_if>
+		<tmpl_if showERIVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_eri_version_label"), (size(_("webui", "status_diagnostics_eri_version_label")) - size(":")))></h3>
+			<p>يحتوي جدول ERI (مؤشر التجوال المحسن) على معلومات حول كل شبكة تجوال يُسمح للجهاز المحمول بالاتصال بها. يشير هذا الحقل إلى إصدار ERI المثبت حاليًا. يتم تحديث جدول ERI تلقائيًا.</p>
+ 		</tmpl_if>
+ 		<tmpl_if showPRLVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_prl_version_label"), (size(_("webui", "status_diagnostics_prl_version_label")) - size(":")))></h3>
+			<p>تُستخدم قائمة PRL (قائمة التجوال المُفضَّلة) لتحديد شبكة في حالة توفر عدة شبكات. يشير هذا الحقل إلى إصدار PRL المثبت حاليًا. يتم تحديث PRL تلقائيًا.</p>
+		</tmpl_if>			
+	</tmpl_if>
+
+	<tmpl_if lteSupported>			
+		<h2 class="sectionHead">شبكة 5G/4G LTE</h2>
+		<tmpl_if showInternetStatus4G>			
+			<h3>الحالة</h3>
+			<p>بالنسبة إلى شبكة، فإن قيم الحالة المحتملة هي:<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>
+			</p>
+			<div class="blockgroup">
+				<ul>
+					<li>غير متوفر - لم يتم الكشف عن شبكة <tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>.</li>
+					<li>متوفر - تم الكشف عن شبكة <tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>.</li>
+				</ul>
+			</div>
+
+			<p>
+			يتم توفير عناصر البيانات التالية فقط إذا كانت شبكة <tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")> متوفرة.
+			</p>
+		</tmpl_if>
+
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p> اسم مشغل شبكة الأجهزة المحمولة (MNO).
+			</p>
+		</tmpl_if>
+
+		<tmpl_if showSignalStrength>			
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_signal_strength_label"), (size(_("webui", "status_diagnostics_fourg_signal_strength_label")) - size(" (RSRP):")))></h3>
+			<p>هذا يشير إلى قوة <tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")> إشارة تقاس بالديسيبل. تشير القيم المطلقة الأعلى إلى إشارة أقوى، لذا فإن -80 ديسيبل مللي واط تعد إشارة أقوى من -90 ديسيبل مللي واط. <tmpl_udf GET_PO_TEXT("status_diagnostics_lte_note_text")>
+			</p>
+		</tmpl_if>
+
+		<tmpl_if (is3G or is3GCDMA or is3GGSM)>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_sinr_label"), (size(_("webui", "status_diagnostics_sinr_label")) - size(":")))></h3>
+			<p> الإشارة إلى التداخل بالإضافة إلى نسبة الضوضاء. مقياس خاص بتقنية LTE لجودة الإشارة، مع مراعاة التداخل والضوضاء. قيم SINR موجبة، وتكون الأرقام الأعلى أفضل.</p>
+		<tmpl_else>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_snr_label"), (size(_("webui", "status_diagnostics_snr_label")) - size(":")))></h3>
+			<p>SNR هي وحدة قياس جودة الإشارة. تشير الأرقام الأعلى إلى إشارة أفضل.
+			</p>
+		</tmpl_if>	
+
+		<tmpl_if showLteBand>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_lte_band_label"), (size(_("webui", "status_diagnostics_lte_band_label")) - size(":")))></h3>
+			<p><tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")> قد تستخدم الشبكات نطاقات مختلفة في مناطق مختلفة. يشير هذا الحقل إلى النطاق المستخدم إلى الاتصال <tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")> الحالي.
+			</p>
+		</tmpl_if>
+
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_roaming_label"), (size(_("webui", "status_diagnostics_fourg_roaming_label")) - size(":")))></h3>
+			<p>يشير هذا إلى ما إذا كان الاتصال الحالي هو اتصال متجول.
+			</p>
+		</tmpl_if>
+		<tmpl_if showCellID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_cellid_label"), (size(_("webui", "status_diagnostics_cellid_label")) - size(":")))></h3>
+			<p>
+				تحدد هذه القيمة برج الخلية المستخدم حاليًا.
+			</p>
+		</tmpl_if>
+	</tmpl_if>
+		
+	<tmpl_if isHSPATechnology>	
+		<h2><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> الحالة</h2>
+			
+		<h3>الحالة</h3>
+		<p>
+			بالنسبة لشبكة <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>، يتم دعم الحالات التالية:
+		</p>
+		<div class="blockgroup">
+			<ul>
+				<li>غير متوفر - لم يتم الكشف عن شبكة <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>.</li>
+				<li>متوفر - تم الكشف عن شبكة <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>.</li>
+			</ul>
+		</div>
+		<p>
+			يتم توفير عناصر البيانات التالية فقط إذا كانت الشبكة متوفرة.
+		</p>
+
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>
+				هذا هو اسم شبكة <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>.
+			</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p>
+				التكنولوجيا الحالية المستخدمة لشبكة اتصال <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>. القيم الممكنة، من الأبطأ إلى الأسرع، هي:
+			</p>
+			<ul>
+				<tmpl_if gsmSupported>
+					<li>GPRS</li>
+				</tmpl_if>
+				<tmpl_if wcdmaSupported>
+					<li>UMTS</li>
+				</tmpl_if>
+				<tmpl_if cdmaSupported>
+					<li>HSPA+</li>
+					<li>HSPA+ DC</li>
+				</tmpl_if>
+				<tmpl_if evdoSupported>
+					<li>EDGE</li>
+					<li>HSDPA</li>
+					<li>HSUPA</li>
+				</tmpl_if>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_networkid_label"), (size(_("webui", "status_diagnostics_networkid_label")) - size(":")))></h3>
+			<p>
+				اسم و/أو معرّف الشبكة الخاصة بشبكة الأجهزة المحمولة البرية العامة (PLMN).
+			</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_rssi_label"), (size(_("webui", "status_diagnostics_rssi_label")) - size(":")))></h3>
+			<p>
+				يشير هذا إلى RSSI إلى إشارة <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>. RSSI هو مقياس لقوة الإشارة بالديسيبل، نسبة إلى واحد مللي واط. وهي دائمًا سلبية لأن الأجهزة اللاسلكية المحمولة أقل قوة بكثير من واحد مللي واط. تشير القيم المطلقة الأعلى إلى إشارة أقوى، لذا فإن -50 ديسيبل مللي واط تعد إشارة أقوى من -70 ديسيبل مللي واط.
+			</p>
+
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_roaming_label"), (size(_("webui", "status_diagnostics_roaming_label")) - size(":")))></h3>
+			<p>
+				يشير هذا إلى ما إذا كان الاتصال الحالي هو اتصال متجول.
+			</p>
+
+		</tmpl_if>
+		<tmpl_if show3g>
+			<h2><tmpl_var _("webui", "status_diagnostics_threeg_label")></h2>
+			
+			<h3>الحالة</h3>
+			<p>قيم الحالة المحتملة هي:
+			</p>
+			<div class="blockgroup">
+				<ul>
+					<li>غير متوفر - لم يتم الكشف عن شبكة 3G.</li>
+					<li>متوفر - تم الكشف عن شبكة 3G.</li>
+				</ul>
+			</div>
+			<p>
+				يتم توفير عناصر البيانات التالية فقط إذا كانت الشبكة متوفرة.
+			</p>
+			<tmpl_if showNetworkOperator>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_network_label"), (size(_("webui", "status_diagnostics_threeg_network_label")) - size(":")))></h3>
+				<p>هذا هو اسم شبكة 3G.
+				</p>
+			</tmpl_if>
+			<tmpl_if show3g1xRssi>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_onex_label"), (size(_("webui", "status_diagnostics_threeg_onex_label")) - size(":")))></h3>
+			<p>RSSI هو مقياس لقوة الإشارة. الوحدة ديسيبل بالنسبة إلى 1 ملي واط، وهي دائمًا سلبية لأن الأجهزة اللاسلكية المحمولة أقل قوة بكثير من 1 ملي واط. تشير القيم المطلقة الأعلى إلى إشارة أقوى، لذا فإن -50 ديسيبل مللي واط تعد إشارة أقوى من -70 ديسيبل مللي واط. يشير هذا الحقل إلى RSSI لإشارة 1xRTT.
+			</p>
+			</tmpl_if>
+			<tmpl_if show3gEvdoRssi>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_evdo_label"), (size(_("webui", "status_diagnostics_threeg_evdo_label")) - size(":")))></h3>
+				<p>RSSI هو مقياس لقوة الإشارة. يشير هذا الحقل إلى RSSI لإشارة EVDO أو eHRPD.
+				</p>
+ 			</tmpl_if>
+			<tmpl_if show3gTechnology>
+ 				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+				<p>تستخدم التكنولوجيا الحالية مع شبكة الجيل الثالث. القيم المحتملة هي 1xRTT أو EVDO أو eHRPD.
+				</p>
+ 			</tmpl_if>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_ecio_label"), (size(_("webui", "status_diagnostics_threeg_ecio_label")) - size(":")))></h3>
+			<p>Ec/Io هو مقياس لمدى نظافة الإشارة، وهو نوع من نسبة الإشارة إلى الضوضاء. تتراوح القيم النموذجية من -10 إلى -40. قيمة -4 ستكون إشارة "نقية" للغاية.</p>
+ 
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_sid_label"), (size(_("webui", "status_diagnostics_threeg_sid_label")) - size(":")))></h3>
+			<p>SID (معرف النظام)، هو معرف شبكة يشير إلى نقطة الارتباط الحالية بشبكة بيانات الأجهزة المحمولة. قد تحمل مجموعة أبراج خلوية نفس قيمة SID. يشير هذا الحقل إلى SID الحالي. 	</p>		
+			<h3>النطاق</h3>
+			<p>
+				النطاق المستخدم للاتصال الحالي.
+			</p>
+			<tmpl_if showRoaming>
+				<h3>التجوال</h3>
+				<p>
+				يشير هذا إلى ما إذا كان الاتصال الحالي هو اتصال متجول.
+				</p>			
+			</tmpl_if>
+			<tmpl_if linkToFieldTest>	
+				<h2><tmpl_var _("webui", "status_diagnostics_field_test_button")></h2>
+				<p>سيوفر الزر "Field Test (الاختبار الميداني)" قائمة بمعلمات الشبكة ذات المستوى المنخفض التي يمكن أن تكون مفيدة لموظفي الدعم الفني عند استكشاف مشكلات اتصال الشبكة وإصلاحها.
+				</p>
+				
+				<p>لا يتوفر هذا الزر إلا إذا في حالة توفر شبكة الجيل الثالث.
+				</p>
+			</tmpl_if>
+			<h2><tmpl_var truncate(_("webui", "status_diagnostics_cellid_label"), (size(_("webui", "status_diagnostics_cellid_label")) - size(":")))></h2>
+			<p>يُستخدم رمز ECGI لتحديد الخلايا بشكل عام. 
+				</p>
+		</tmpl_if>
+	</tmpl_if>
+			
+</div>
+<!-- id="status_diagnostics" -->
+		

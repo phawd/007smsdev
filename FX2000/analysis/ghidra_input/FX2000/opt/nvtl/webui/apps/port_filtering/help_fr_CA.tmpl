@@ -1,0 +1,31 @@
+<!-- Port Filtering -->
+<div id="port_filtering">
+	<h1>Filtrage des ports</h1>
+	<h2>Vue d’ensemble</h2>
+	<p>Utilisez la fonctionnalité de filtrage des ports au besoin pour bloquer le trafic Internet sortant. Si ce paramètre est activé, seul le trafic des applications sélectionnées permet d’accéder à Internet. Le trafic est identifié par des numéros de port. Certaines applications sont prédéfinies. Vous pouvez définir des applications supplémentaires, mais vous devez connaître les détails du trafic utilisé et généré par les applications que vous souhaitez définir.</p>
+
+	<h2>Applications</h2>
+	<h3>Cases d’application à cocher</h3>
+	<p>Utilisez ces cases à cocher pour permettre l’accès à Internet pour chaque application lorsque la fonctionnalité de filtrage des ports est activée. Le trafic des applications sélectionnées peut accéder à Internet. Sinon, le trafic est bloqué.</p>
+	<h2>Applications personnalisées</h2>
+	<p>Cette fonctionnalité vous permet de définir vos propres applications (jusqu’à 10). Une fois définies, ces applications peuvent être activées et désactivées de la même manière que les applications prédéfinies. Pour définir une application, vous devez connaître les ports et le protocole (TCP, UDP) utilisés par l’application pour le trafic sortant. Pour commencer, cliquez sur le bouton <strong>Ajouter une application personnalisée</strong>, puis fournissez les données suivantes.</p>
+	<p>Veuillez noter que toute modification apportée à une application personnalisée n’est pas enregistrée tant que le bouton « Enregistrer les modifications » n’a pas été utilisé pour sauvegarder l’intégralité du contenu de la page.</p>
+	
+	<h3>Case d’application à cocher</h3>
+	<p>Utilisez cette case à cocher pour activer une application après l’avoir définie. Si elle est sélectionnée, le trafic de cette application peut accéder à Internet. Sinon, le trafic est bloqué.</p>
+	<h3>Nom de l’application</h3>
+	<p>Saisissez un nom approprié pour l’application que vous définissez.</p>
+	<h3>Plage de ports (port de début/port de fin)</h3>
+		<p>Chaque application a sa propre plage de ports. Indiquez le début et la fin de la plage de ports pour chaque application.</p>
+		<div class="blockgroup">
+			<ul>
+				<li>Pour un port unique, saisissez le numéro de port dans les champs <strong>Port de début</strong> et <strong>Port de fin</strong>.</li>
+				<li>Pour une plage de ports, saisissez le début de la plage dans le champ <strong>Port de début</strong> et la fin de la plage dans le champ <strong>Port de fin</strong>.</li>
+			</ul>
+		</div>
+	<h3>Protocole</h3>
+	<p>Pour chaque plage de ports, sélectionnez le protocole (TCP ou UDP) utilisé par cette plage.</p>
+	<h3>Supprimer</h3>
+	<p>Utilisez cette case à cocher pour supprimer une application personnalisée.</p>
+</div>
+<!-- id="port_filtering" -->

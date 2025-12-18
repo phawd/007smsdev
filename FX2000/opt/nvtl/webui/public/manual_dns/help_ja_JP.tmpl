@@ -1,0 +1,16 @@
+<!-- Manual DNS -->
+<div id="manual_dns">
+	<h1><tmpl_var _("webui", "adv_manual_dns_menu_text")></h1>
+	<h2>概要</h2>
+	<p>通常、DNSアドレスは自動的に提供されます。 このページでは、必要に応じてDNSを手動で指定できます。</p>
+
+	<h2>設定</h2>
+
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_enable_label"), (size(_("webui", "adv_manual_dns_enable_label")) - size(":")))></h3>
+	<p>この設定を使用して、手動のDNS機能をオンまたはオフにします。 オンの場合、以下のデータを提供する必要があります。</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address1_label"), (size(_("webui", "adv_manual_dns_address1_label")) - size(":")))></h3>
+	<p>目的のプライマリDNSのIPアドレスを入力します。 このアドレスは、手動DNS機能を使用するために必要です。</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address2_label"), (size(_("webui", "adv_manual_dns_address2_label")) - size(":")))></h3>
+	<p>目的のセカンダリ（バックアップ）DNSのIPアドレスを入力します。 このアドレスはオプションであり、希望に応じて空白のままにすることができます。</p>
+</div>
+<!-- id="manual_dns" -->

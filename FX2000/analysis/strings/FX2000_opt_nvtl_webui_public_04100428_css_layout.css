@@ -1,0 +1,305 @@
+/* =============================================================================
+ Page Layout Styles
+ ========================================================================== */
+html, body
+	height: 100%;
+	min-width: 954px; /* needed for iPad/iPhone scaling */
+/* =============================================================================
+ CONTAINER
+ ========================================================================== */
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+.container:after {
+  clear: both;
+.container:before,
+.container:after {
+  display: table;
+  content: " ";
+.container:after {
+  clear: both;
+#container
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -75px; 
+#container_inner
+/* =============================================================================
+ ========================================================================== */
+	border-bottom: 1px solid grey;
+#header_inner
+	position: relative;
+	max-width: 1440px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding: 32px;
+html.rtl #header_inner
+	padding: 20px 40px 20px 10px;
+#carrier_logo
+	display: block;
+	position: absolute;
+	bottom: 18px;
+	left: 15px;
+	top: 1px;
+html.rtl #carrier_logo
+	left: auto;
+	right: 15px;
+/* =============================================================================
+ PAGE LAYOUT
+ ========================================================================== */
+	max-width: 1440px;
+	position: relative;
+	margin: 0 auto;
+#main_inner
+padding: 0px 30px;
+#sidebar.left
+	width:20%;
+	padding: 0;
+	box-sizing: border-box;
+.page #app_container,
+.tabbed_page #app_container
+	float: left;
+	width: 76%;
+	padding-left: 40px;
+	margin-bottom: 20px;
+/* Hide Mobile Menu and Mobile header links.
+ * Only used for max display width of 768px; */
+#header_mobile_menu,
+#mobile_menu
+	display: none;
+html.rtl #sidebar.left
+	float: right;
+	padding: 21px 0 21px 14px;
+#sidebar_inner
+#app_container
+.ui-dialog #app_container {
+	width: inherit;
+	padding-left:0px;
+html.rtl .page #app_container,
+html.rtl .tabbed_page #app_container
+	float: right;
+.page #app_inner,
+.tabbed_page #app_inner
+.basic #app_inner
+.dialog_page #app_inner
+	background-image:none;
+	border-top: none;
+html.rtl .page #app_inner,
+html.rtl .tabbed_page #app_inner
+	padding: 20px 20px 20px 0;
+fieldset + fieldset,
+fieldset + form fieldset,
+form + form
+	margin-top: 20px;
+/* =============================================================================
+ APP FORM/TABLE LAYOUT
+ ========================================================================== */
+/* Rows & Columns */
+div.table
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	float: left;
+html.rtl div.col
+	float: right;
+/* Specific Columns */
+div.col.label,
+form div.col.label,
+fieldset.fake_form div.col.label
+	width: 212px; 
+	margin-right: 10px;
+html.rtl div.col.label,
+html.rtl form div.col.label,
+html.rtl fieldset.fake_form div.col.label
+	margin-left: 10px;
+	margin-right: 0;
+form div.col.label,
+fieldset.fake_form div.col.label
+	margin-top: 4px;
+#login form div.col.label
+	/* width: 130px; */
+div.col.input,
+form div.col.input,
+div.col.textCol,
+form div.col.textCol
+	/* width: 214px; */
+	margin-right: 10px;
+html.rtl div.col.input,
+html.rtl form div.col.input,
+html.rtl div.col.textCol,
+html.rtl form div.col.textCol
+	margin-left: 10px;
+	margin-right: 0;
+form div.col.input,
+form div.col.textCol,
+fieldset.fake_form div.col.textCol
+	line-height: 27px;
+form div.col.input div.checker,
+form div.col.input div.radio
+	margin-top: -5px;
+form div.col.help,
+fieldset.fake_form div.col.help
+	margin-top: 5px;
+div.col.help,
+form div.col.help
+	/* width: 198px; */
+div.col.help,
+div.col.inline_error
+	font-size: 0.8571em; /* 12px */
+	line-height: 1.25em;
+html.rtl form div.col.inline_error
+	margin-left: 0;
+	margin-right: 230px;
+#login form div.col.inline_error
+	margin-left: 140px;
+html.rtl #login form div.col.inline_error
+	margin-left: 0;
+	margin-right: 140px;
+div.col.buttonCol
+	float: none;
+	clear: both;
+	text-align: left;
+	padding: 5px 0;
+html.rtl div.col.buttonCol
+	text-align: right;
+div.col.buttonCol button,
+div.col.buttonCol a.btn
+	margin-right: 10px;
+html.rtl div.col.buttonCol button,
+html.rtl div.col.buttonCol a.btn
+	margin-right: 0;
+	margin-left: 10px;
+div.col.sub_table
+	float: none;
+	margin-left: 15px;
+html.rtl div.col.sub_table
+	margin-left: 0;
+	margin-right: 15px;
+div.sub_table div.col.label
+	/* width: 207px; */
+/* =============================================================================
+ TABLE STYLE
+ ========================================================================== */
+div.tableHeader,
+h3.tableHeader
+	width: 100%;
+table th
+	font-size: 14px;
+	padding: 5px 10px;
+table td
+	padding: 5px 10px;
+table td label
+	padding-right: 5px;
+html.rtl table td label
+	padding-right: 0;
+	padding-left: 5px;
+/* =========================================================================
+ WIDE TABLES
+ ========================================================================== */
+.wideTableWrap
+	overflow-x: auto;
+	width: auto;
+	max-width: 100%;
+.ie8 .wideTableWrap
+	overflow: auto;
+/* =============================================================================
+ FOOTER & STICKY FOOTER
+ ========================================================================== */
+	/* height: 75px;  #push must be the same height as #footer */
+#nvtlLogo
+	display: block;
+	position: absolute;
+	top: 31px;
+.footer {
+	height: 70px;
+.footer_inner {
+	padding: 0 10px;
+.footer #powered {
+    float: right;
+html.rtl #nvtlLogo
+	left: auto;
+	right: 0;
+#mifiDevice
+	position: absolute;
+	top: 21px;
+	left: auto;
+	right: 0;
+	text-align: right;
+html.rtl #mifiDevice
+	left: 0;
+	right: auto;
+	text-align: left;
+#mifiDevice img
+	width: 68px;
+	height: 30px;
+#mifiDevice p
+	margin: 0;
+	line-height: normal;
+	font-size: 0.86em; /* 12px */
+#mifiDevice p#powered
+	margin-top: 2px;
+	color: #8d8d8e;
+	font-size: 1.25em; /* 12px */
+                                                                          
+                                                                                 
+.filetype .uploader .action {                                                   
+    background: #fff none repeat scroll 0 0;                                    
+    border: 1px solid #ccc;                                                     
+    display: inline-block;                                                            
+    text-align: center;                                                               
+    width: 100px;                                                               
+    line-height: 19px;                                                 
+}          
+/*************************
+ *	Four column layout   *
+ *************************/
+ .table {
+	width: 100%;
+	min-width: 300px;
+.col-primary {
+	float: left;
+	width: 54%;
+.col-secondary {
+	width: 42%;
+	margin-left: 4%;
+	float: right;
+	width: 100%;
+	padding-bottom: 2%;
+	margin-bottom: 2%;
+	padding-right: 2px;
+.bg-color {
+	background-color: #E0E0E0;
+	padding-top: 3%;
+	padding-left: 2%;
+	padding-right: 1%;
+	box-sizing: border-box;
+.label-teeny {
+	width: 41%;
+	margin-right: 7%;
+.label-long {
+	width: 50%;
+	padding-right: 5%;
+.input-textbox {
+	width: 44.66%;
+.input-checkbox {
+	width: 30%;
+	box-sizing: border-box;
+.inline_error {
+	/* margin-left: 30%; */
+	margin-top: 1.5%;
+#adv_lan_form .inline_error {
+	margin-left: 0%;
+#adv_lan_form div.col.help {
+	width: 100%;
+/* 1024 Fix */
+@media only screen and (max-width: 1439px) {
+    #main {
+        max-width: 1024px;
+    #sidebar.left {
+        font-size: 14px !important;
+        width: 180px;
+    #sidebar.left .linkWrap {
+        font-size: 18px !important;
+    .page #app_container,
+    .tabbed_page #app_container {
+        width: 740px;

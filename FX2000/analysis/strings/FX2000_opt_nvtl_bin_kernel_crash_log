@@ -1,0 +1,50 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+__errno_location
+strerror
+snprintf
+__bss_start
+libmifi_debug.so
+libmificommon.so
+H	KxD	J{D
+kernel_crash_log
+KERNEL_CRASH_LOG
+[%s]:[%s] -  usage: %s <mem_size> <mem_address> <dmesg_size> <directory>
+[%s]:[%s] -  %s: mem_size=%u mem_addr=0x%x dmesg_size=%u directory=%s
+[%s]:[%s] -  %s: dmesg_size=%u must be a multiple of the BUF_SIZE=%u
+[%s]:[%s] -  %s: mem_size=%u must be a multiple of the dmesg_size=%u
+/dev/mem
+[%s]:[%s] -  %s: open(/dev/mem) failed: %s
+[%s]:[%s] -  %s: mmap() failed: %s
+[%s]:[%s] -  %s: skipping dmesg buffer %d
+[%s]:[%s] -  %s: open(%s) failed: %s
+[%s]:[%s] -  %s: detected zero in demsg buffer %d
+[%s]:[%s] -  %s: write(%s) failed: %s
+[%s]:[%s] -  %s: write(%s) returned %d not %d
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

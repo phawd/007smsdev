@@ -1,0 +1,27 @@
+<!-- Status Logs -->
+<div id="status_logs">
+	<h1><tmpl_var _("webui", "status_logs_menu_text")></h1>
+	<h2>Panoramica</h2>
+		Le informazioni del log sono utili per la risoluzione dei problemi, ma non sono necessarie per il normale funzionamento.
+	<h2>Impostazioni</h2>
+	<h3><tmpl_var truncate(_("webui", "status_logs_enable_logs_label"), (size(_("webui", "status_logs_enable_logs_label")) - size(":")))></h3>
+	<p>Selezionare questa casella per attivare i log secondo le proprie necessit
+	<h3><tmpl_var truncate(_("webui", "status_logs_delete_sys_logs_label"), (size(_("webui", "status_logs_delete_sys_logs_label")) - size(":")))></h3>
+	<p>Utilizzare l'elenco a discesa per selezionare quando eliminare i log. Seleziona l'opzione desiderata.</p>
+	<p>Si noti che, se il log 
+ pieno, i dati meno recenti vengono eliminati, indipendentemente da questa impostazione.</p>
+	<h2>Dati di log</h2>
+	<p>Le schede fornite consentono di selezionare il tipo di dati di log da visualizzare.
+	<h3><tmpl_var _("webui", "status_logs_mobile_network_log_href")></h3>
+	<p>Questo log contiene dati relativi alle connessioni alla rete mobile.
+	<h3><tmpl_var _("webui", "status_logs_system_log_href")></h3>
+	<p>Questo log tiene traccia degli eventi, ed eccezione delle connessioni dati mobili, che si sono verificati su questo dispositivo.
+	<h2>Pulsanti</h2>
+	<h3><tmpl_var _("webui", "status_logs_clear_log_btn")></h3>
+	<p>Facendo clic su questo pulsante si elimineranno tutti i dati di log esistenti. Ci
+ semplifica la lettura di nuovi dati.</p>
+	<h3><tmpl_var _("webui", "status_logs_refresh_btn")></h3>
+	<p>Utilizza questo per aggiornare i dati del log visualizzati.</p>
+	<h3><tmpl_var _("webui", "status_logs_download_btn")></h3>
+	<p>Utilizza questo pulsante se desideri scaricare i dati di log sul computer o sul dispositivo connesso.</p>
+<!-- end Status Logs -->

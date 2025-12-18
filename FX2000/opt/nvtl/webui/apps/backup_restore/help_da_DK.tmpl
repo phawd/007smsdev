@@ -1,0 +1,28 @@
+<!-- Backup and Restore -->
+<div id="backup_restore">
+         <h1><tmpl_var _("webui", "backup_restore_menu_text")></h1>
+
+         <h2>Oversigt</h2>
+         <p>Brug denne funktion til at tage backup af (downloade) en kopi af konfigurationsindstillingerne fra denne enhed til en fil på din computer, eller gendanne (uploade) en tidligere gemt konfigurationsfil. Denne konfigurationsfil indeholder alle indstillinger for enheden, routeren og systemfunktionerne. Det indeholder ingen indstillinger eller data for 4G-modemmet. Bemærk, at du kun kan gendanne en fil til den samme enhed, som den kom fra.</p>
+         <p>Denne skærm giver også mulighed for at nulstille alle indstillinger til fabriksstandardværdierne.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+         <h3>Administratoradgangskode</h3>
+         <p>Indtast den nuværende <tmpl_var _("webui", "webui_product_name")> administratoradgangskode i dette felt.</p>
+         <h3><tmpl_var _("webui", "backup_restore_backup_now_button")></h3>
+         <p>Klik på knappen Download for at downloade en kopi af den aktuelle konfigurationsfil til din computer. Hvis din browser beder dig om at gemme filen, kan du omdøbe den, hvis det ønskes.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+
+         <h3>Administratoradgangskode</h3>
+         <p>Indtast den nuværende <tmpl_var _("webui", "webui_product_name")> administratoradgangskode i dette felt.</p>
+         <h3><tmpl_var truncate(_("webui", "backup_restore_file_select_label"), (size(_("webui", "backup_restore_file_select_label")) - size(":")))></h3>
+         <p>Vælg den konfigurationsfil, du tidligere har downloadet fra denne <tmpl_var _("webui", "webui_product_name")> til din computer.</p>
+         <h3>Gendan nu-knap</h3>
+         <p>Når du har valgt en konfigurationsfil, skal du klikke på denne knap for at begynde upload af filen. Efter upload bruges konfigurationsfilen straks, og denne enhed genstartes.</p>
+         <p class="note"><strong>Bemærk:</strong> Upload af en konfigurationsfil ændrer ALLE de eksisterende indstillinger til at matche konfigurationsfilen. Dette kan ændre de nuværende Wi-Fi-indstillinger og afbryde alle eksisterende forbindelser til denne <tmpl_var _("webui", "webui_product_name")>, inklusive denne browsersession.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+         <p>Klik på knappen <strong>Gendan fabriksindstillinger</strong> for at nulstille alle indstillinger til deres standardfabriksindstillinger. Dette medfører en genstart og kan ændre de nuværende Wi-Fi-indstillinger, idet alle eksisterende forbindelser afbrydes til denne <tmpl_var _("webui", "webui_product_name")>, inklusive denne browsersession.</p>
+</div>
+ <!-- id="backup_restore" -->

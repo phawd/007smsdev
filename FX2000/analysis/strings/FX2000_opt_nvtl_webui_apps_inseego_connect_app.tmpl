@@ -1,0 +1,105 @@
+<tmpl_if isHidden>
+	<div class="notification app error">
+		<tmpl_var _("webui", "webui_app_hidden_text")>
+<tmpl_else>
+	<script type="text/javascript">
+			/* <![CDATA[ */
+		$(function()
+			if (jQuery.fn.slideButton) {
+				$("#InseegoConnectEnable").slideButton({
+					change : function($input) {						
+						if (jQuery.fn.slideButton) $input.slideButton("addLoader");
+						if($input.is(":checked") === true) {							
+							enableInseegoConnect($input.is(":checked"), $input);
+						} else {							
+							enableInseegoConnect($input.is(":checked"), $input);
+		function enableInseegoConnect(bool, $simSwitch) {
+			console.log("enableInseegoConnect start");			
+			var url = (bool) ? "<tmpl_udf GET_URI('inseego_connect_enable')>" : "<tmpl_udf GET_URI('inseego_connect_disable')>";
+			$.ajax({
+				url : url,
+				type : "POST",
+				data : {
+					gSecureToken : "<tmpl_var gSecureToken>"
+				dataType : "text",
+				success : function(data, textStatus, xhr){
+					// If no network connected, success event still occurs.
+					// We need to implicitly see an xhr.status greater than 0 to know we've actually
+					// made contact.
+					if ((xhr.readyState == 4 ) && (xhr.status == 200)) {
+						console.log("Ajax call success.");
+						if($("#InseegoConnectEnable").is(":checked") == false ){
+							$("#statusInformation").hide();
+						} else {
+							//$("#statusInformation").show();
+							location.reload();
+				error : function(xhr, textStatus, errorThrown){					
+					if (jQuery.fn.slideButton) $simSwitch.slideButton("undo");
+				complete : function(xhr, textStatus){					
+					if (jQuery.fn.slideButton) $simSwitch.slideButton("removeLoader");					
+	/* ]]> */
+	</script>
+	<tmpl_if isLocked>
+		<div class="notification app error">
+			<tmpl_var _("webui", "webui_app_locked_text")>
+		</div>
+	</tmpl_if>
+	<tmpl_if errorCount>
+		<div class="notification app error">
+			<div class="notification_inner">
+					<tmpl_var _("webui", "webui_save_code_failed_text")>
+				</p>
+			</div>
+		</div>
+	</tmpl_if>
+	<tmpl_if gPostSuccess>
+		<div class="notification app success">
+			<div class="notification_inner">
+					<tmpl_var _("webui", "webui_save_code_success_text")>
+				</p>
+			</div>
+		</div>
+	</tmpl_if>
+	<h2 id="statusHeader" class="tableHeader sectionHead clearfix"><tmpl_var _("webui", "inseego_connect_cloud_services_text")></h2>
+	<div class="toggleSettingContainer align-field">
+		<div class="form-group">
+				<label for="InseegoConnectEnable"><tmpl_var _("webui", "inseego_connect_label")></label>
+			<div class="toggle">
+				<input class="toggleSwitchCheckbox" type="checkbox" id="InseegoConnectEnable" name="InseegoConnectEnable" <tmpl_if IN_SET(inseegoconnectenabled, "on", "1")> checked="checked"</tmpl_if> <tmpl_if InseegoConnectEnableLocked> disabled="disabled" </tmpl_if> <tmpl_if isLocked>disabled="disabled"</tmpl_if> <tmpl_unless IN_SET(showInseegoConnectEnable, "on","1")> disabled="disabled"</tmpl_unless> />
+			</div>
+		</div>
+	<div id="statusInformation" <tmpl_unless IN_SET(inseegoconnectenabled, "on","1")> style="display:none;" </tmpl_unless> >
+		<fieldset class="first">
+			<h2 id="statusHeader" class="tableHeader sectionHead clearfix"><tmpl_var _("webui", "inseego_connect_status_text")></h2>
+			<div class="form-group clearfix">
+				<div class="label">
+					<tmpl_var _("webui", "inseego_connect_connection_state_label")>
+				</div>
+				<div class="input">
+					<tmpl_var serverConnectionState>
+				</div>
+			</div>	
+			<div class="form-group clearfix">
+				<div class="label">
+						<tmpl_var _("webui", "inseego_connect_last_reported_label")>
+				</div>
+				<div class="input">
+					<tmpl_var serverLastReportTime>
+				</div>
+			</div>
+			<div class="form-group clearfix">
+				<div class="label">
+						<tmpl_var _("webui", "inseego_connect_interval_label")>
+				</div>
+				<div class="input">
+					<tmpl_var reportingInterval>
+					<tmpl_var reportingUnits>
+				</div>
+			</div>
+		</fieldset>
+	<tmpl_if showMobileAppSection>
+		<h2 id="statusHeader" class="tableHeader sectionHead clearfix"><tmpl_var _("webui", "inseego_connect_mobile_app_text")></h2>
+			<tmpl_var _("webui", "inseego_connect_mobile_app_p1_text")> <a href="<tmpl_udf GET_EXTERNAL_URI('inseego_connect_mobile_app_link')>" target="_blank" rel="noopener noreferrer"><tmpl_var _("webui", "inseego_connect_mobile_app_link_text")></a> <tmpl_var _("webui", "inseego_connect_mobile_app_p2_text")>
+		</div>
+	</tmpl_if>
+</tmpl_if><!-- isHidden -->

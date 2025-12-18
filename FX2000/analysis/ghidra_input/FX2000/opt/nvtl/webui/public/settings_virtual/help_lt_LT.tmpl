@@ -1,0 +1,28 @@
+<div id="settings_virtual">
+	<h1>Išplėstinės nuostatos</h1>
+	
+	<tmpl_if appsList>
+		<h2>Apžvalga</h2>Išplėstinis meniu suteikia prieigą prie šių puslapių ir nuostatų:<div class="blockgroup">
+			<ul>
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title> – <tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+		<p>Atminkite, kad, esant įprastam veikimui ir įprastoms situacijoms, nereikia keisti nė vienos iš šių nuostatų numatytųjų verčių. Šias nuostatas keiskite tik tada, jei pakeitimus reikia atlikti esant konkrečiai situacijai.</p>
+	</tmpl_if>
+
+	<h2>Mygtukai</h2>
+	<tmpl_if showBackButton>
+		<h3>Grįžti atgal</h3>
+		<p>Spustelėkite, jei norite grįžti į ankstesnį puslapį.</p>
+	</tmpl_if>
+	
+	<tmpl_unless showBackButton>
+		<h3>Tęsti</h3>
+		<p>Naudokite jį norėdami pereiti į išplėstinius puslapius.</p>
+	</tmpl_unless>
+
+</div>

@@ -1,0 +1,89 @@
+<tmpl_if showIntroText>
+	<p class="headerNote"><tmpl_udf GET_PO_TEXT("customer_care_intro_text", gProductName)></p>
+</tmpl_if>
+
+	<h2 class="sectionHead"><tmpl_udf GET_PO_TEXT("customer_care_your_mifi_text", gProductName)></h2>
+
+<tmpl_if showModelNumber>
+	<div class="form-group">
+		<div class="label">
+			<tmpl_var _("webui", "customer_care_model_label")>
+		</div>
+		<div class="input">
+			<tmpl_var modelNumber>
+		</div>
+	</div>
+</tmpl_if>
+
+<tmpl_if showPhoneNumber>
+	<div class="form-group">
+		<div class="label">
+			<tmpl_var _("webui", "customer_care_your_wireless_number")>
+		</div>
+		<div class="input">
+			<tmpl_var modemInfoPhoneNumber>
+		</div>
+	</div>
+</tmpl_if>
+
+<div class="form-group">
+	<div class="label">
+		<tmpl_var _("webui", "customer_care_user_guide_label")>
+	</div>
+	<div class="input">
+		<li><a class="nolink" href="<tmpl_udf GET_EXTERNAL_URI('provider_user_guide')>" target="_blank"><tmpl_udf GET_PO_TEXT("customer_care_user_guide_text", gProductNumber)></a></li>
+	</div>
+</div>
+
+<div class="form-group">
+	<div class="label">
+		<tmpl_var _("webui", "customer_care_manufacturer_label")>
+	</div>
+	<div class="input">
+		<a class="nolink" href="http://www.inseego.com/" target="_blank"><tmpl_udf GET_PO_TEXT("customer_care_inseego_link_text", gProductName, gProductNumber)></a>
+	</div>
+</div>
+
+<tmpl_if (SIZE(supportSectionList) > 0)>
+		<tmpl_foreach supportSectionList as item>
+				<tmpl_if (SIZE(item.content) > 0)>
+						<fieldset<tmpl_if item.__last__> class="last"</tmpl_if>>
+								<tmpl_if item.title>
+										<h2 class="sectionHead"><tmpl_var _("webui", item.title)></h2>
+								</tmpl_if>
+
+								<div class="">
+										<tmpl_foreach item.content as item_content>
+												<div class="form-group noblock clearfix">
+														<tmpl_if (IN_SET(item_content.datatype, "url"))>
+																<div class="label"><tmpl_var _("webui", item_content.label)></div>
+																<div class="input">
+																		<a target="_blank" href="<tmpl_var _("webui", item_content.url)>"><tmpl_var _("webui", item_content.text)></a>
+																</div>
+														</tmpl_if>
+
+														<tmpl_if (IN_SET(item_content.datatype, "label"))>
+																<div class="label"><tmpl_var _("webui", item_content.label)></div>
+																<div class="input" x-ms-format-detection="none"><tmpl_var _("webui", item_content.value)></div>
+														</tmpl_if>
+
+														<tmpl_if (IN_SET(item_content.datatype, "text"))>
+																<div class="col"><tmpl_var _("webui", item_content.text)></div>
+														</tmpl_if>
+												</div>
+										</tmpl_foreach>
+								</div><!-- /.table -->
+
+						</fieldset>
+				</tmpl_if>
+		</tmpl_foreach>
+<tmpl_else>
+		<h2 class="sectionHead"><tmpl_var _("webui", "customer_care_customer_care")></h2>
+		<p><tmpl_var _("webui", "customer_care_contact_service_provider_text")></p>
+</tmpl_if>
+
+<tmpl_if unlockCarrierStatus>
+	<div class="action_links_container clearfix">
+		<a href="<tmpl_udf GET_URI('carrier_unlock')>" class="btn primary"><tmpl_var _("webui", "customer_care_unlock_btn")></a>
+	</div>
+</tmpl_if>

@@ -1,0 +1,79 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p>Voit käyttää tätä ON/OFF (PÄÄLLE / POIS PÄÄLTÄ) -asetusta tarvittaessa, jos haluat kytkeä matkapuhelinverkon datayhteyden pois päältä ja estää pääsyn matkapuhelinverkkoon. Tällöin yhdistetyt laitteet eivät voi muodostaa yhteyttä Internetiin eivätkä käyttää mobiilidatapakettiasi. Tavanomaisessa käytössä tämä asetus on jätettävä päälle.</p>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Yhteyden valinta</h3>
+			<p>Valitsemalla haluamasi vaihtoehdon voit hallita sitä, milloin <tmpl_var _("webui", "webui_product_name")> muodostaa datayhteyden mobiiliverkkoon.</p>
+	</tmpl_if>
+
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>Kytke ulkomaan ja kotimaan verkkovierailut tarvittaessa päälle tai pois päältä tällä asetuksella. Verkkovierailuista saatetaan periä ylimääräisiä datamaksuja.</p>
+	</tmpl_if>
+
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p>Oletusarvo on ”<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>”. <tmpl_var _("webui", "webui_product_name")> valitsee parhaan käytettävissä olevan teknologian.</p>
+		<p>Voit halutessasi muuttaa tätä, jos haluat rajoittaa käytettäviä verkkoteknologioita.</p>
+	</tmpl_if>
+
+	<h3>Manuaalinen verkon valinta</h3>
+		
+	<p>
+		Tämä ominaisuus on käytettävissä vain, jos Enable automatic network selection (Ota automaattinen verkon valinta käyttöön) on kytketty pois päältä. Ominaisuus voi olla hyödyllinen, jos käytettävissä on useita verkkoja ja haluat valita, mitä niistä käytetään.
+	</p>
+	<p>
+		Voit etsiä käytettävissä olevia verkkoja napsauttamalla ”Select Network” (Valitse verkko) -painiketta ja valita sitten haluamasi verkon.
+	</p>
+	
+	
+	<tmpl_if showApnSettings>
+		<tmpl_if ShowAdvancedSettingsToggleButton>
+			<h2>Lisäasetukset</h2>
+			<p>
+				Tällä otsikolla/linkillä voit näyttää tai piilottaa lisäasetukset tarpeen mukaan.
+			</p>
+		</tmpl_if>
+
+		<h3>
+			<tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))>
+		</h3>
+		<p>
+			APN on määritetty valmiiksi; APN:ää ei pidä vaihtaa, ellei sinulla ole yritystiliä (omalla APN:lläsi).
+		</p>
+
+		<p>
+			Jos sinun on vaihdettava APN, syötä matkapuhelinverkko-operaattorisi antama arvo.
+		</p>
+
+		<tmpl_if showApnAuthenticationSettings>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))>
+			</h3>
+			<div class="blockgroup">
+				<p>Valitse palveluntarjoajasi määrittämä vaihtoehto.</p>
+				<ul>
+					<li>Ei mitään</li>
+					<li>PAP</li>
+					<li>CHAP</li>
+				</ul>
+			</div>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))>
+			</h3>
+			<p>
+				Jos Authentication (Todennus) on asetettu tilaan <strong>None</strong> (Ei mitään), tämä voidaan jättää tyhjäksi. Muussa tapauksessa syötä palveluntarjoajasi määrittämä arvo.
+			</p>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))>
+			</h3>
+			<p>
+				Jos Authentication (Todennus) on asetettu tilaan <strong>None</strong> (Ei mitään), tämä voidaan jättää tyhjäksi. Muussa tapauksessa syötä palveluntarjoajasi määrittämä arvo.
+			</p>
+		</tmpl_if>
+	</tmpl_if>
+</div>

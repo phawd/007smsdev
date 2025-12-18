@@ -1,0 +1,42 @@
+<div id="device_info">
+	<h1><tmpl_udf GET_PO_TEXT("device_info_menu_text", gProductName)></h1>
+	<h3><tmpl_var truncate(_("webui", "device_info_manufacturer_label"), (size(_("webui", "device_info_manufacturer_label")) - size(":")))></h3>
+n <tmpl_var _("webui", "webui_product_name")>-laitteen valmistaja.</p>
+	<h3><tmpl_var truncate(_("webui", "device_info_model_label"), (size(_("webui", "device_info_model_label")) - size(":")))></h3>
+n laitteen virallinen mallin nimi ja numero.</p>
+	<h3><tmpl_var truncate(_("webui", "device_info_global_os_version_label"), (size(_("webui", "device_info_global_os_version_label")) - size(":")))></h3>
+	<p>Nykyisen asennetun ohjelmiston versio. T
+versionumero; seuraavat versiotiedot liittyv
+t eri ohjelmistokomponentteihin.</p>
+	<tmpl_if showSDMVersion>
+		<h3><tmpl_var truncate(_("webui", "device_info_global_sdm_version_label"), (size(_("webui", "device_info_global_sdm_version_label")) - size(":")))></h3>
+ versionumero liittyy laitehallintakomponenttiin. Laitehallinnan ohjelmistokomponentti p
+ivittyy tarvittaessa automaattisesti.</p>
+	</tmpl_if>
+	<div class="blockgroup">
+		<tmpl_if showMifiOsVersion>
+			<h4><tmpl_var truncate(_("webui", "device_info_os_version_label"), (size(_("webui", "device_info_os_version_label")) - size(":")))></h4>
+rjestelm
+n (OS, Operating System) ja sen komponenttien versionumero.</p>
+		</tmpl_if>
+			<h4><tmpl_var truncate(_("webui", "device_info_modem_version_label"), (size(_("webui", "device_info_modem_version_label")) - size(":")))></h4>
+			<p>4G-modeemikomponentin osalta t
+ on nykyisen asennetun laiteohjelmiston (ohjelmiston) versio.</p>
+		<tmpl_if showWifiFwVersion>
+			<h4>Wi-Fi-laiteohjelmistoversio</h4>
+			<p>Wi-Fi-komponentin osalta t
+ on nykyisen asennetun laiteohjelmiston (ohjelmiston) versio.</p>
+		</tmpl_if>
+		<h4><tmpl_var truncate(_("webui", "device_info_web_ui_version_label"), (size(_("webui", "device_info_web_ui_version_label")) - size(":")))></h4>
+			<p>Jetpack-verkkok
+n versionumero.</p>
+		<tmpl_if showLcdVersion>
+			<h4><tmpl_var truncate(_("webui", "device_info_lcd_ui_version_label"), (size(_("webui", "device_info_lcd_ui_version_label")) - size(":")))></h4>
+			<p>Laitteen n
+n vuorovaikutusta n
+n kanssa ohjaavan ohjelmiston versionumero.</p>
+		</tmpl_if>
+		<h4><tmpl_var truncate(_("webui", "device_info_pri_version_label"), (size(_("webui", "device_info_pri_version_label")) - size(":")))></h4>
+n laitteeseen t
+ hetkell
+ritysversion.</p>

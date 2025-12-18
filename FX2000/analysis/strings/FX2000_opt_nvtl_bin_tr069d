@@ -1,0 +1,271 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__errno_location
+libpthread.so.0
+__cxa_finalize
+mq_unlink
+librt.so.1
+mq_close
+mifi_dbg_get_level_name
+mifi_dbg_log
+pthread_self
+settings_set_setting
+mifi_dbg_syslog
+xmldata_initialize
+xmldata_setint32
+xmldata_setstring
+xmldata_shutdown
+xmldata_getstring
+snprintf
+xmldata_getint32
+easycwmp_uci_init
+easycwmp_uci_get_value
+easycwmp_uci_fini
+router2_get_allowed_port_list
+router2_set_allowed_port_list
+easycwmp_uci_set_value
+easycwmp_uci_commit
+tr069_set_modified_status
+xmldata_getcount
+xmldata_getstring_default
+modem2_get_imsi
+modem2_sim_get_mnc_length
+MsgBusGet
+tr069_get_enabled_status
+tr069_get_modified_status
+tr069_get_acs_server_config
+tr069_get_acs_client_config
+tr069_get_xmpp_config_list
+tr069_get_preserve_config
+tr069_set_enabled_status
+mifi_dbg_start
+settings_get_features
+msgq_create
+tr069_mon_init
+modem2_get_info
+modem2_sim_get_status
+watchdog_application_register
+msgq_receive
+msgq_resp_preprocess
+msgq_resp_postprocess
+watchdog_application_send_keep_alive
+tr069_mon_terminate
+mifi_dbg_stop
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+librouter2_api.so
+libuci.so
+libtr069_api.so
+H	KxD	J{D
+/dev/null
+[%s]:[%s] - %s: +++
+[%s]:[%s] - TR069 is set to: %d
+[%s]:[%s] - username=[%s], password=[%s], URL=[%s], port=[%d], Interface=[%d], IPType=[%d]
+[%s]:[%s] - username=[%s], password=[%s], Port Number=[%d], Connection Type=[%d], Authenticate Mode=[%d], Interval=[%d] CWMP Version=[%d] Log Level=[%d}
+[%s]:[%s] - username=[%s], password=[%s], Port Number=[%d], Connection Type=[%d], Authenticate Mode=[%d], Interval=[%d]
+[%s]:[%s] - TR069 restore settings is set to: %d
+[%s]:[%s] - TR069 modified settings is set to: %d
+[%s]:[%s] - Invalid TR069 value: %d
+tr069.settings.modified
+[%s]:[%s] - Settings Update: TR069 Settings Modified: [%d]
+tr069.settings.status
+[%s]:[%s] - Settings Update: TR069 Enabled: [%d]
+tr069.settings.server
+tr069.settings.client
+tr069.settings.xmpp
+[%s]:[%s] - username=[%s], password=[%s], URL=[%s], Jabber ID=[%s], Port Number=[%d], Level=[%d]
+tr069.settings.presrve
+[%s]:[%s] - Preserve Settings Update: TR069: [%d]
+[%s]:[%s] - TR069 factory reset need to implement here
+/opt/nvtl/data/tr069/config
+rm -rf %s
+/opt/nvtl/data/tr069/tr069_settings_bkp.xml
+[%s]:[%s] - Failed to create the file %s
+<Status>0</Status>
+<Modified>0</Modified>
+<S_UserName>easycwmp</S_UserName>
+<S_Password>easycwmp</S_Password>
+<S_URL>acs.inseego.com</S_URL>
+<S_Port>7547</S_Port>
+<S_IFName>1</S_IFName>
+<S_IPType>1</S_IPType>
+<C_UserName>easycwmp</C_UserName>
+<C_Password>easycwmp</C_Password>
+<C_Port>7547</C_Port>
+<C_ConnectionType>1</C_ConnectionType>
+<C_Mode>1</C_Mode>
+<C_Interval>100</C_Interval>
+<C_CwmpVersion>4</C_CwmpVersion>
+<C_Loglevel>0</C_Loglevel>
+<X_UserName></X_UserName>
+<X_Password></X_Password>
+<X_URL></X_URL>
+<X_JabberID></X_JabberID>
+<X_Port></X_Port>
+<X_Level>0</X_Level>
+<Preserve>1</Preserve>
+[%s]:[%s] - File %s created successfully
+/X/Status
+/X/Modified
+/X/S_UserName
+/X/S_Password
+/X/S_URL
+/X/S_Port
+/X/S_IFName
+/X/S_IPType
+/X/C_UserName
+/X/C_Password
+/X/C_Port
+/X/C_ConnectionType
+/X/C_Mode
+/X/C_Interval
+/X/C_CwmpVersion
+/X/C_Loglevel
+/X/X_UserName
+/X/X_Password
+/X/X_URL
+/X/X_JabberID
+/X/X_Port
+/X/X_Level
+/X/Preserve
+[%s]:[%s] - Failed to initilize the TR069 backup file. 
+[%s]:[%s] - Backup File TR069_BACKUP_FILE_NAME exists
+[%s]:[%s] - Backup XML File successfully initiated
+[%s]:[%s] - %s: unlink failed ret=%d for file:%s
+[%s]:[%s] - %s: Removed file: %s
+[%s]:[%s] - Failed in  initialization the BackUP XML file
+[%s]:[%s] - BackUP File not found
+/opt/nvtl/data/tr069/config/easycwmp
+@local[0]
+easycwmp
+interface
+/opt/nvtl/etc/tr069
+cp %s/%s %s
+username
+password
+FORCE_IPV6
+ipresolve
+FORCE_IPV4
+rmnet_data0
+logging_level
+cwmp_version
+periodic_enable
+periodic_interval
+authentication
+/opt/nvtl/data/tr069/config/tr069_xmpp
+tr069_xmpp_inseego
+allowed_jid
+tr069_xmpp
+id_connection_1
+serveraddr
+@xmpp_server[0]
+cp %s/tr069_xmpp %s/tr069_xmpp
+[%s]:[%s] - Failed to set tr069_set_modified_status settings. %d
+cp %s/network %s/network
+cp %s/wireless %s/wireless
+sh /usr/share/easycwmp/functions/easycwmpd start
+/opt/nvtl/etc/tr069/config.xml
+[%s]:[%s] - %s: Failed to open configuration file: %s
+/CarrierConfig/carrier
+%s[%d]/name
+%s[%d]/mccmnc
+carrier_mccmnc
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize tr069_get_status settings. %d
+[%s]:[%s] - Failed to initialize tr069_get_modified_status settings. %d
+[%s]:[%s] - Failed to initialize tr069_get_acs_server_config settings. %d
+[%s]:[%s] - Failed to initialize tr069_get_acs_client_server settings. %d
+[%s]:[%s] - Failed to initialize tr069_get_xmpp_config settings. %d
+[%s]:[%s] - Failed to initialize tr069_get_preserve_config settings. %d
+acs.inseego.com
+[%s]:[%s] - Error initializing tr069 settings, terminating.
+[%s]:[%s] - Stopping TR069 client.
+sh /usr/share/easycwmp/functions/easycwmpd stop
+[%s]:[%s] - Error initializing tr069 configuration, terminating.
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - [TR069_LOG] %s: TR069 feature[Not Supported].
+[%s]:[%s] - [TR069_LOG] %s: TR069 feature[is Supported].
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error initializing tr069 backup file, terminating.
+/tr069_mq
+[%s]:[%s] - Error opening message queue: %d, terminating.
+[%s]:[%s] - Success returned from Modem, Initializing TR069.
+[%s]:[%s] - Waiting for modem to initialize..
+/opt/nvtl/data/tr069
+/opt/nvtl/data/tr069/state
+tr069_main_thread
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - Kick watchdog here
+[%s]:[%s] - %s Server Terminating.
+tr069_set_status_impl
+tr069_set_acs_server_cfg_impl
+tr069_set_acs_client_cfg_impl
+tr069_set_xmpp_cfg_impl
+tr069_set_preserve_impl
+tr069_set_modified_impl
+tr069_set_modified_status_restore
+tr069_set_enabled_status_restore
+tr069_set_acs_server_config_restore
+tr069_set_acs_client_config_restore
+tr069_set_xmpp_config_list_restore
+tr069_set_preserve_config_restore
+tr069_backup_init
+tr069_update_config_from_carrier
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

@@ -1,0 +1,85 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+valga</h2>
+karda apsaugo j
+ prijungtus 
+renginius nuo kenk
+ interneto gaunamo duomen
+ srauto. U
+kardos i
+jungti negalima, ta
+iau galimos toliau nurodytos nuostatos.</p>
+	<h2>Nuostatos</h2>
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+	<tmpl_unless ShowDmzActive>
+		<h3>VPN perdava</h3>
+	</tmpl_unless>
+i funkcija leid
+ia VPN kliento programinei 
+rangai prijungtuose 
+renginiuose per 
+ prisijungti prie nuotolini
+ VPN serveri
+. Paprastai 
+ parinkt
+ reikia palikti 
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+		<tmpl_unless ShowDmzActive>
+			<h3>IPv6 nematomasis re
+imas</h3>
+		</tmpl_unless>
+karda paprastai blokuoja gaunamas IPv6 ry
+klausas, skirtas prie IPv6 prijungtam 
+renginiui.</p>
+			<p>Jei norite leisti 
+ioms gaunamoms ry
+klausoms pasiekti numatyt
+ prijungt
+ nuostat
+junkite. Nematomasis re
+imas tur
+jungiamas tik prireikus, nes jis suma
+ina <tmpl_var _("webui", "webui_product_name")> u
+kardos teikiam
+	</tmpl_if>
+	<tmpl_if ShowDmzActive>
+		<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+	<tmpl_else>
+		<h2>DMZ</h2>
+	</tmpl_if>
+	<p>Jei pa
+ta, prijungtas 
+renginys, nurodytas kaip DMZ IP adresas (DMZ paskirties vieta), gaus vis
+ingu atveju blokuot
+karda. Tai gali pad
+ti kai kurioms nepatikimoms tinklo programoms tinkamai veikti, ta
+iau DMZ 
+renginys turi tur
+ti savo u
+, kad apsisaugot
+ nuo kenk
+ko duomen
+ srauto.</p>
+	<tmpl_if ShowDmzActive>
+	<h3>DMZ 
+ymimasis langelis</h3>
+		<p>Naudokite j
+dami prireikus 
+jungti arba i
+ funkcij
+. Paprastai DMZ turi b
+jungta, nebent tai tikrai b
+tina.</p>	
+	</tmpl_if>
+	<h3>Paskirties IP adresas</h3>
+iame lauke 
+veskite prijungto 
+renginio, kur
+ norite paversti DMZ 
+renginiu (DMZ paskirties vieta), IP adres
+. Prijungt
+ ekrane galite patikrinti kiekvieno prijungto 
+renginio IP adres
+<!-- id="firewall" -->

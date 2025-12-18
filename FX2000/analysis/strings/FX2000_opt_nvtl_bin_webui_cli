@@ -1,0 +1,466 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+webui_get_error_string
+webui_get_network_technology_list
+__isoc99_scanf
+GLIBC_2.7
+webui_get_macid_from_ipaddress
+webui_set_remote_admin_conf
+webui_clear_https_settings
+webui_set_https_port
+webui_get_https_port
+webui_set_https_enabled
+webui_get_https_enabled
+webui_set_https_settings
+webui_get_https_settings
+webui_dm_perform_sim_unlock
+webui_dm_get_sim_restriction_status
+webui_dm_user_confirmed_ok
+webui_dm_cancel_profile_update
+webui_dm_start_profile_update
+webui_dm_retry_hfa_operation
+webui_dm_cancel_hfa_session
+webui_dm_start_hfa_session
+webui_dm_need_hfa_session
+webui_get_profile_update_status
+webui_set_automatic_network_selection
+webui_get_automatic_network_selection
+webui_get_network_technology_options
+webui_set_diagnostic_alert_choice
+webui_get_country_code
+webui_get_software_installation_duration
+webui_su_postpone_install
+webui_su_start_install
+webui_su_check_for_update
+webui_get_software_update_custom_msgs
+snprintf
+webui_set_software_update_settings
+webui_get_software_update_settings
+webui_get_last_software_update_status
+webui_get_software_update_status
+webui_get_site_title_info
+webui_get_external_uri_data
+webui_get_customer_support_info
+webui_get_lan_settings
+webui_set_advanced_settings
+webui_get_advanced_settings
+webui_get_apn_list
+webui_set_welcome_notification
+webui_get_welcome_notification
+webui_get_supported_languages
+webui_get_common_configurations
+webui_get_common_features
+webui_get_uri_data
+webui_get_app_configurations
+webui_get_app_features
+webui_get_app_properties
+webui_set_i18n_settings
+webui_get_i18n_settings
+webui_set_log_settings
+webui_get_log_settings
+webui_get_login_settings
+webui_set_login_settings
+webui_is_running
+mifi_dbg_start
+mifi_dbg_stop
+__bss_start
+librt.so.1
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libbluetooth_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libgps_api.so
+libfactory_reset_api.so
+libsms_api.so
+libwifi_api.so
+libm.so.6
+libccm2_api.so
+librouter2_api.so
+libfile_sharing_api.so
+libfota_api.so
+libled_api.so
+libbuzzer_api.so
+libans_api.so
+libusb_api.so
+libemd_api.so
+libsensor_api.so
+libvpn_api.so
+libsim_mgr_api.so
+libwan_mgr_api.so
+libcbsd_api.so
+libsysintclient.so
+libiconv.so.2
+libctpp2.so.2
+libcgicc.so.3
+libfcgi.so.0
+libfcgi++.so.0
+libcurl.so.4
+libcares.so.2
+libcrypto.so.1.1
+libssl.so.1.1
+libsqlite3.so.0
+libuisupport.so
+libwebui_api.so
+libstdc++.so.6
+libgcc_s.so.1
+H	KxD	J{D
+webui_get_network_technology_list() returned %d (%s)
+NetworkTechnologyOptionCount[%d]
+NetworkTechnologyOption[%d]: value[%d] prepend_text[%s] append_text[%s] po_keys_count[%d] locale_count[%d] EncloseBraces[%d]
+----------------------------------------------------------------------------
+po_key[%d]:[%s]
+format[%d]:locale[%s] specifier[%s]
+  -------------------------------PRIVATE API's--------------------------------------------
+ %27s - %s
+  -------------------------------PUBLIC API's--------------------------------------------
+  ---------------------------------------------------------------------------
+Enter ipaddress: 
+Enter family(AF_INET-%d,AF_INET6-%d: 
+webui_get_macid_from_ipaddress returned %d (%s)
+macid:[%s]
+webui_set_remote_admin_conf returned %d (%s)
+Enter enabled: 
+Enter wan ip: 
+webui_clear_https_settings returned %d (%s)
+Enter port: 
+webui_set_https_port returned %d (%s)
+webui_get_https_port returned %d (%s)
+port:[%d]
+Enter enabled (0: disable, 1: enable): 
+webui_set_https_enabled returned %d (%s)
+webui_get_https_enabled returned %d (%s)
+enabled:[%d]
+Enter certificate name (single word without spaces) (required): 
+Enter country name (two letter word) (required): 
+Enter state name (required): 
+Enter locality name (optional): 
+Enter organization name (required): 
+Enter ou name (optional): 
+Enter common name (optional): 
+Enter email address (optional): 
+Enter validity days (integer) (required): 
+webui_set_https_settings returned %d (%s)
+webui_get_https_settings returned %d (%s)
+certificate_name:[%s]
+country_name:[%s]
+state_name:[%s]
+locality_name:[%s]
+organization_name:[%s]
+ou_name:[%s]
+common_name:[%s]
+email_address:[%s]
+validity:[%d]
+Sim unlock value (0 => restricted, 1 => international_restricted, 2 => unrestricted): 
+webui_dm_perform_sim_unlock returned %d (%s)
+webui_dm_get_sim_restriction_status returned %d (%s)
+restriction_status:[%d]
+webui_dm_user_confirmed_ok returned %d (%s)
+webui_dm_cancel_profile_update returned %d (%s)
+webui_dm_start_profile_update returned %d (%s)
+webui_dm_retry_hfa_operation returned %d (%s)
+webui_dm_cancel_hfa_session returned %d (%s)
+webui_dm_start_hfa_session returned %d (%s)
+NOT_NEEDED
+webui_dm_need_hfa_session returned %d (%s), HFA Session is %s
+webui_get_profile_update_status returned %d (%s)
+status:[%d]
+iValue:[%d]
+sValue:[%s]
+errType:[%d]
+retry:no[%d] interval[%d] total[%d]
+automatic_network_selection (0 => disabled, 1 => enabled): 
+webui_get_automatic_network_selection returned %d (%s)
+automatic_network_selection enabled:[%d]
+webui_get_network_technology_options() returned %d (%s)
+Buffer Insufficient. count[%d]
+Index[%d]: Technology value(%d) label(%s)
+diagnostic alert choice (0 => cancel, 1 => confirm): 
+webui_set_diagnostic_alert_choice returned %d (%s)
+What is the external mcc_id:  
+webui_get_country_code returned %d (%s)
+mobile country code:[%d]
+calling code:[%d]
+mobile length:[%d]
+webui_get_software_installation_duration returned %d (%s)
+installation_duration:[%d]
+webui_su_postpone_install returned %d (%s)
+webui_su_start_install returned %d (%s)
+webui_su_check_for_update returned %d (%s)
+Specify language [en, es, etc..]: 
+webui_get_software_update_settings returned %d (%s)
+WebUI_SU Custom Msgs for lang[%s]:
+WebUI_SU Custom Msg-Pkg Description=[%s]
+WebUI_SU Custom Msg-Download Description=[%s]
+WebUI_SU Custom Msg-Ready to Install=[%s]
+WebUI_SU Custom Msg-Installation Success=[%s]
+WebUI_SU Custom Msg-Installation Failed=[%s]
+FUMO (0: Disable, 1: Enable): 
+Auto Polling (0: Disable, 1: Enable): 
+Low Battery Threshold (1-99): 
+fumoEnabled:[%u]
+autoPollEnabled:[%u]
+lowBatteryThreshold:[%u]
+webui_get_last_software_update_status returned %d (%s)
+Last software update status:[%d]
+webui_get_software_update_status returned %d (%s)
+value:[%d]
+version:[%s]
+isUserInitiated:[%d]
+webui_get_site_title_info returned %d (%s)
+site_title:[%s]
+What is the external uri_id:  
+webui_get_external_uri_data returned %d (%s)
+url:[%s]
+url_text:[%s]
+webui_get_customer_support_info returned %d (%s)
+In section[%d]: id is [%d] and title is [%s] content count is [%d]
+content[%d].url:[%s]
+content[%d].text:[%s]
+content[%d].label:[%s]
+content[%d].value:[%s]
+webui_get_lan_settings returned %d (%s)
+IPPT enabled:[%d]
+Edit IPPT enabled:[%d]
+Update WiFi on IPPT enabled:[%d]
+IPPT Interface enabled:[%d]
+Gateway settings enabled:[%d]
+advanced-settings login enabled [0/1]: 
+GPS login enabled [0/1]: 
+network-settings login enabled [0/1]: 
+webui_set_advanced_settings returned %d (%s)
+webui_get_advanced_settings returned %d (%s)
+login_enabled:[%d]
+gps_login_enabled:[%d]
+network_settings_login_enabled:[%d]
+What is the carrier id:
+webui_get_apn_list returned %d (%s)
+APN[%d].Value[%s]
+welcome notification (0 => disabled, 1 => enabled): 
+webui_set_welcome_notification returned %d (%s)
+webui_get_welcome_notification returned %d (%s)
+welcome_notification:[%d]
+webui_get_supported_languages returned %d (%s)
+language_info[%d].label:[%s] 
+language_info[%d].locale:[%s]
+webui_get_common_configurations returned %d (%s)
+Buffer Insufficient node count[%d]
+configurations[%d].config_name:[%s] 
+configurations[%d].value:[%s]
+webui_get_common_features returned %d (%s)
+features[%d].feature_name:[%s] 
+features[%d].feature_enabled:[%d]
+What is the uri_id:  
+webui_get_uri_data returned %d (%s)
+What is the app_id:  
+webui_get_app_configurations returned %d (%s)
+webui_get_app_features returned %d (%s)
+webui_get_app_properties returned %d (%s)
+app_enabled:[%d]
+What is the language [en_US]: 
+What is the date-format [0(mm/dd/yyyy), 1(dd.mm.yyyy), 2(dd/mm/yyyy), 3(yyyy/mm/dd)]: 
+What is the hour-format [0(12hr), 1(24hr)]: 
+What is the temparature-format [0(Fahrenheit), 1(Celsius)]: 
+What is the distance-format [0(US), 1(Metric)]]: 
+What is the numeric-format [0(period, 1(comma)]: 
+webui_set_i18n_settings returned %d (%s)
+webui_get_i18n_settings returned %d (%s)
+lang:[%s]
+date_fmt:[%d](0 => mm/dd/yyyy, 1 => dd.mm.yyyy, 2 => dd/mm/yyyy, 3 => yyyy/mm/dd)
+hour_fmt:[%d](0 => 12hr, 1 => 24hr)
+temp_fmt:[%d](0 => Fahrenheit, 1 => Celsius)
+distance_fmt:[%d](0 => US, 1 => Metric)
+numeric_fmt:[%d](0 => period, 1 => comma)
+Is log enabled [0/1]: 
+What is log life time ([1 - 4] days): 
+webui_set_log_settings returned %d (%s)
+webui_get_log_settings returned %d (%s)
+log_enabled:[%d]
+log_life_time(in days):[%d]
+webui_get_login_settings returned %d (%s)
+retries:[%d]
+auto_logout_period(secs):[%d]
+password:[%s]
+default_password:[%s]
+security.question: 
+What is your Birth date?
+What is your Mothers maiden name?
+Where is the street you grew up?
+security.answer:[%s]
+Choose the security question (0: Birth-date, 1: Mothers-maiden-name, 2: Grownup-street): 
+Answer(MM/DD/YYYY): 
+Answer: 
+Do you want to reset password [0/1]: 
+Enter new password: 
+webui_set_login_settings returned %d (%s)
+webui_is_running returned %d (%s)
+command [%s]
+command [%s] not found.
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+get_login_settings
+Get the login settings.
+set_login_settings
+Set the login settings
+get_log_settings
+Get the log settings.
+set_log_settings
+Set the log settings
+get_i18n_settings
+Get the internationalization information.
+set_i18n_settings
+Set the internationalization information.
+get_app_properties
+Get the properties of the Panel.
+get_app_features
+Get the features of the Panel.
+get_app_configurations
+Get the configurations of the Panel.
+get_uri_data
+Get the friendly url and title of the Panel.
+get_common_features
+Get the common features.
+get_common_configurations
+Get the common configurations.
+get_supported_languages
+Get the supported languages.
+get_welcome_notification
+Get the welcome notification enabled.
+set_welcome_notification
+Set the welcome notification enabled.
+get_apn_list
+Get the apn list
+get_advanced_settings
+Get the advanced settings.
+set_advanced_settings
+Set the advanced settings.
+get_lan_settings
+Get the LAN settings.
+get_customer_support_info
+Get the customer support info.
+get_external_uri_data
+Get the uri from external location.
+get_site_title_info
+Get the site title information.
+get_software_update_status
+Get the software update status.
+get_last_software_update_status
+Get installation status of last update.
+get_software_update_settings
+Get the software update settings.
+set_software_update_settings
+Set the software update settings.
+get_software_update_custom_messages
+Get the software update custom messages.
+su_check_for_update
+Check server to see if there are any new updates.
+su_start_install
+Start firmware installation procedure on device.
+su_potpone_install
+Postpone the installation of an update which is already downloaded.
+get_software_installation_duration
+Get the software installation duration.
+get_country_code
+Get the country code.
+set_diagnostic_alert_choice
+Set the diagnostic alert option.
+get_network_technology_options
+Get the network-technology-options listed in Settings.
+get_automatic_network_selection
+Get the automatic network selection enabled.
+set_automatic_network_selection
+Set the automatic network selection enabled.
+get_profile_update_status
+Get the profile update status.
+dm_need_hfa_session
+Check HFA session is to be triggered or not.
+dm_start_hfa_session
+Start HFA session.
+dm_cancel_hfa_session
+Cancel HFA session.
+dm_retry_hfa_operation
+Retry HFA operation.
+dm_start_profile_update
+Start CIDC session.
+dm_cancel_profile_update
+Cancel CIDC session.
+dm_user_confirmed_ok
+Sends user confirmation event to OMADM.
+get_sim_restriction_status
+Get SIM restriction status.
+dm_perform_sim_unlock
+Perform SIM Unlock operation.
+get_https_settings
+Get the https certificate settings.
+set_https_settings
+Set the https certificate settings
+get_https_enabled
+Get enabled status for https
+set_https_enabled
+Enable or disable https
+get_https_port
+Get port for https
+set_https_port
+Set port for https
+clear_https_settings
+Clear https settings
+set_remote_admin_conf
+Set the remote admin related lighttpd configuration
+get_macid_from_ipaddress
+Get macid based on ip address and ip family
+get_network_technology_list
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

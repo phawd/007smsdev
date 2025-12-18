@@ -1,0 +1,185 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+libpthread.so.0
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+__isoc99_fscanf
+GLIBC_2.7
+gettimeofday
+difftime
+snprintf
+sys_getSubscriberInfo
+sys_getSIMStatus
+sys_getCellularServiceStats
+lwm2m_get_ota_call_status
+lwm2m_ota_start_call
+sys_getCellularDataConnectionStatus
+sys_getActiveWanInterface
+MsgBusGet
+settings_get_features
+mifi_dbg_start
+mifi_dbg_stop
+msgq_does_queue_exist
+lwm2m_get_settings
+lwm2m_get_lifetime
+__bss_start
+librt.so.1
+libwatchdog_api.so
+librouter2_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libgps_api.so
+libfactory_reset_api.so
+libsms_api.so
+libwifi_api.so
+libccm2_api.so
+libfile_sharing_api.so
+libfota_api.so
+libled_api.so
+libbuzzer_api.so
+libans_api.so
+libusb_api.so
+libemd_api.so
+libsensor_api.so
+libvpn_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libwan_mgr_api.so
+libcbsd_api.so
+libsysintclient.so
+liblwm2m_model_api.so
+H	KxD	J{D
+/tmp/watch_lwm2m_application
+[%s]:[%s] - [lwm2m_watchdog] TRACK_LWM2M_APP not found.. Wait for LWM2M app to start
+/tmp/lwm2m_socket_connection_send_time
+/tmp/lwm2m_app_auth_fail_invalid
+/tmp/lwm2m_socket_connection_recv_time
+/tmp/lwm2m_socket_connection_send_failed
+[%s]:[%s] - [lwm2m_watchdog] LWM2M_SOCKET_CONNECTION_SEND_FAILED, restart LWM2M
+/tmp/lwm2m_app_auth_fail_cnt
+[%s]:[%s] - [lwm2m_watchdog] auth_fail_cnt [%d]
+[%s]:[%s] - [lwm2m_watchdog] LWM2M is idle delta(%lu), restart LWM2M.
+[%s]:[%s] - [lwm2m_watchdog] %s: sys_getSubscriberInfo failed, returned (%d). Try sysintcli getSubscriberInfo from cli.
+[%s]:[%s] - [lwm2m_watchdog]: SIM provider is ATnT.
+[%s]:[%s] - [lwm2m_watchdog]: SIM provider is not ATnT.
+[%s]:[%s] - [lwm2m_watchdog]: sys_getSIMStatus() failed, rc=[%d]
+[%s]:[%s] - [lwm2m_watchdog]: sys_getCellularServiceStats() failed, rc=[%d]
+/opt/nvtl/data/lwm2m/dm_call_retry_count_
+[%s]:[%s] - [lwm2m_watchdog] dm_call_retries set to [%d]. filename[%s]
+/opt/nvtl/data/lwm2m/use_ota_call
+/opt/nvtl/data/lwm2m/dm_call_retry_start_time_
+[%s]:[%s] - [lwm2m_watchdog]: interval[%lu] now[%lu] start_time[%lu] DM check will be done after [%lu] secs.
+[%s]:[%s] - [lwm2m_watchdog]: Deleting [%s].
+[%s]:[%s] - [lwm2m_watchdog]: lwm2m_get_ota_call_status() failed.
+[%s]:[%s] - [lwm2m_watchdog][LWM2M_CALL_START] %s: (V4V6) OTA call not UP!!!, initiating now
+[%s]:[%s] - [lwm2m_watchdog][LWM2M_CALL_START] %s: (V4V6) nvtl_ota_start_call() failed
+[%s]:[%s] - [lwm2m_watchdog][LWM2M_CALL_START] %s: OTA call (post_init V4V6) not UP!!!
+[%s]:[%s] - [lwm2m_watchdog]: DM call(V4V6) post_init up.
+[%s]:[%s] - [lwm2m_watchdog]: lwm2m_get_ota_call_status() post_init (V4V6)  failed.
+[%s]:[%s] - [lwm2m_watchdog]: DM call(V4V6) up.
+[%s]:[%s] - [lwm2m_watchdog][LWM2M_CALL_START] %s: (V4) OTA call not UP!!!, initiating now
+[%s]:[%s] - [lwm2m_watchdog][LWM2M_CALL_START] %s: (V4) nvtl_ota_start_call() failed
+[%s]:[%s] - [lwm2m_watchdog][LWM2M_CALL_START] %s: OTA call (post_init V4) not UP!!!
+[%s]:[%s] - [lwm2m_watchdog]: DM call(V4) post_init up.
+[%s]:[%s] - [lwm2m_watchdog]: lwm2m_get_ota_call_status() post_init (V4)  failed.
+[%s]:[%s] - [lwm2m_watchdog]: DM call(V4) up.
+[%s]:[%s] - [lwm2m_watchdog][LWM2M_CALL_START] %s: (V6) OTA call not UP!!!, initiating now
+[%s]:[%s] - [lwm2m_watchdog][LWM2M_CALL_START] %s: (V6) nvtl_ota_start_call() failed
+[%s]:[%s] - [lwm2m_watchdog][LWM2M_CALL_START] %s: OTA call (post_init V6) not UP!!!
+[%s]:[%s] - [lwm2m_watchdog]: DM call(V6) post_init up.
+[%s]:[%s] - [lwm2m_watchdog]: lwm2m_get_ota_call_status() post_init (V6)  failed.
+[%s]:[%s] - [lwm2m_watchdog]: DM call(V6) up.
+[%s]:[%s] - [lwm2m_watchdog][LWM2M_CALL_START] %s: Unsupported PDP IP type = %d
+[%s]:[%s] - [lwm2m_watchdog] dm_call_fail Delete [%s].
+[%s]:[%s] - [lwm2m_watchdog] dm_call_fail Create [%s].
+[%s]:[%s] - [lwm2m_watchdog]: DM retries expired...try after [%u] secs, now[%s]
+[%s]:[%s] - [lwm2m_watchdog] dm_call_success Delete [%s].
+[%s]:[%s] - [lwm2m_watchdog]: sys_getCellularDataConnectionStatus() failed, rc=[%d]
+[%s]:[%s] - [lwm2m_watchdog]: Data call up.
+[%s]:[%s] - [lwm2m_watchdog]: Data call not up.
+[%s]:[%s] - [lwm2m_watchdog]: Routing established...active_interface[%d][%s].
+[%s]:[%s] - [lwm2m_watchdog]: sys_getActiveWanInterface() failed, rc=[%d]
+settings.ready
+[%s]:[%s] - [lwm2m_watchdog] settings sub-system is not ready. retries left %d
+[%s]:[%s] - [lwm2m_watchdog] settings sub-system initialized successfully
+[%s]:[%s] - [lwm2m_watchdog] Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - [lwm2m_watchdog] Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - [lwm2m_watchdog] LWM2M Disabled in features.xml
+[%s]:[%s] - [lwm2m_watchdog] Starting lwm2m_watchdog application.
+[%s]:[%s] - [lwm2m_watchdog]Error initializing lwm2m settings, terminating.
+/lwm2m_model_mq
+[%s]:[%s] - [lwm2m_watchdog] LWM2M Model sub-system is not ready. retries left %d
+[%s]:[%s] - [lwm2m_watchdog] LWM2M Model sub-system initialized successfully.
+[%s]:[%s] - [lwm2m_watchdog]Error reading lwm2m settings, terminating.
+[%s]:[%s] - [lwm2m_watchdog]lwm2m_get_lifetime() failed.
+[%s]:[%s] - [lwm2m_watchdog] lifetime [%u].
+/tmp/lwm2m_application_started
+[%s]:[%s] - [lwm2m_watchdog]: Process[%d] started successfully.
+[%s]:[%s] - [lwm2m_watchdog]: sim_status[%d] tech[%d] dm_call[%d] data_conn[%d] ota_conn[%d] pre_req[%d].
+[%s]:[%s] - [lwm2m_watchdog]: First_time Connectivity_checks will be done after [300] secs.
+[%s]:[%s] - [lwm2m_watchdog]: Connectivity_checks will be done after [%d] secs.
+[%s]:[%s] - [lwm2m_watchdog]: Check pre-requisites again in [300] secs.
+/tmp/kill_lwm2m_app
+[%s]:[%s] - [lwm2m_watchdog]: authentication (retry-[%d]) will be attempted in [60] secs.
+[%s]:[%s] - [lwm2m_watchdog]: authentication will be attempted in [%d] secs.
+[%s]:[%s] - [lwm2m_watchdog]: watchdog-check will be after [30] secs.
+[%s]:[%s] - [lwm2m_watchdog]: watchdog-check will be after [%d] secs.
+[%s]:[%s] - [lwm2m_watchdog]: Created child_pid[%d].
+[%s]:[%s] - [lwm2m_watchdog] Stopping lwm2m_watchdog application.
+/opt/nvtl/bin/lwm2m_watchdog.sh
+check_pre_requisites
+check_pre_requisites
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

@@ -1,0 +1,24 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+	<p>Šajā ekrānā ir daudzas opcijas, kas ļauj iestatīt <tmpl_var _("webui", "webui_product_name")> darbību, lai tā labāk atbilstu jūsu vajadzībām.</p>
+	<h3>Valoda</h3>
+	<p>Atlasiet vēlamo valodu.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+	<p>Norādiet formātu, kādā datums tiek rādīts šajā tīmekļa interfeisā.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+	<p>Norādiet formātu, kādā laiks tiek rādīts šajā tīmekļa interfeisā.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+	<p>Atlasiet GPS augstumam un precizitātei izmantojamo ierīci.</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+	<p>Norādiet, kā tiek rādīti decimālskaitļi. Kā decimālzīmi varat atlasīt punktu (.) vai komatu (,).</p>
+
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+		<p>Ja Ethernet ports ir iespējots, statusa joslā tiek rādīts Ethernet indikators; pretējā gadījumā tas tiek paslēpts.</p>
+	</tmpl_if>
+	
+</div>

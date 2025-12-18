@@ -1,0 +1,29 @@
+DELETE FROM GlobalDataCounters;
+
+DELETE FROM SiteAccess;
+
+DELETE FROM KnownDevices;
+
+DELETE FROM DataSessions;
+
+DELETE FROM EthDataSessions;
+
+DELETE FROM UsageLogs;
+
+DELETE FROM SimInfo;
+
+DELETE FROM DataPlanResetDate;
+
+DELETE FROM SimResetDate;
+
+DELETE FROM EthResetDate;
+
+DELETE FROM EthMacResetDate;
+
+
+
+
+
+
+
+

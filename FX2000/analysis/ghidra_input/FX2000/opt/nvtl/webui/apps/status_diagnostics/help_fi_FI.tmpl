@@ -1,0 +1,210 @@
+<!-- Diagnostics -->
+<div id="status_diagnostics">
+	<h1><tmpl_var _("webui", "status_diagnostics_menu_text")></h1>
+	<h2>Yleiskatsaus</h2>
+	<p>Tällä sivulla on tietoja <tmpl_var _("webui", "webui_product_name")>-laitteesta ja käytettävissä olevista verkoista. Voit käyttää sivua tarvittaessa vianmääritykseen; sitä ei tarvita tavanomaisessa käytössä.</p>
+	<h2><tmpl_var _("webui", "status_diagnostics_modem_sub_header_text")></h2>
+
+	<tmpl_if showPhoneNumber>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_phone_number_label"), (size(_("webui", "status_diagnostics_phone_number_label")) - size(":")))></h3>
+		<p>Tämä on <tmpl_var _("webui", "webui_product_name")>-laitteen puhelinnumero.</p>
+	</tmpl_if>
+
+	<tmpl_if showImei>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imei_label"), (size(_("webui", "status_diagnostics_imei_label")) - size(":")))></h3>
+		<p>Tämän laitteen IMEI (International Mobile Equipment Identity, kansainvälinen matkaviestimen laitetunnus). IMEI on 15- tai 17-numeroinen koodi, jota käytetään yksittäisen matkaviestimen yksilölliseen tunnistamiseen<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>verkossa. IMEI ei muutu, kun SIM-kortti vaihdetaan.</p>
+	</tmpl_if>
+
+	<tmpl_if showImeisv>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imeisv_label"), (size(_("webui", "status_diagnostics_imeisv_label")) - size(":")))></h3>
+		<p>Tässä kentässä IMEI on yhdistetty tämäntyyppisen laitteen hyväksyntänumeroon.</p>
+	</tmpl_if>
+
+	<tmpl_if showMeid>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_meid_label"), (size(_("webui", "status_diagnostics_meid_label")) - size(":")))></h3>
+		<p>MEID (Mobile Equipment ID, matkaviestimen tunnus) on yksilöllinen numero, jota käytetään yksittäisen CDMA-verkossa olevan matkaviestimen tunnistamiseen.</p>
+	</tmpl_if>
+
+	<tmpl_if showIMSI>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imsi_label"), (size(_("webui", "status_diagnostics_imsi_label")) - size(":")))></h3>
+		<p>Kansainvälinen matkaviestintilaajatunnus (IMSI, International Mobile Subscriber Identity) on yksilöllinen numero, joka liittyy kaikkiin GSM (Global System for Mobile Communications)- ja UMTS (Universal Mobile Telecommunications System) -verkkojen matkapuhelimen käyttäjiin ja jota käytetään GSM-tilaajan tunnistamiseen.</p>
+	</tmpl_if>
+
+	<tmpl_if showFwVersion>						
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_fw_version_label"), (size(_("webui", "status_diagnostics_fw_version_label")) - size(":")))></h3>
+		<p>Modeemiin tällä hetkellä asennettuna olevan laiteohjelmiston (ohjelmiston) versio.</p>
+	</tmpl_if>
+
+	<tmpl_if showSimStatus>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_sim_status_label"), (size(_("webui", "status_diagnostics_sim_status_label")) - size(":")))></h3>
+		<p>Tämä osoittaa SIM-kortin tilan. Jos SIM-kortti puuttuu tai tämä kenttä ilmaisee jonkinlaisen SIM-kortin virheen, yhteys matkapuhelinverkkoon ei ole mahdollinen.</p>
+	</tmpl_if>
+
+	<tmpl_if showICCID>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_iccid_label"), (size(_("webui", "status_diagnostics_iccid_label")) - size(":")))></h3>
+		<p>Tämä yksilöllinen tunnistenumero annetaan SIM-kortille. Sitä ei näytetä, jos SIM-korttia ei ole asennettu tai jos SIM-kortissa esiintyy virhetila.</p>
+	</tmpl_if>
+
+	<tmpl_if showModemDetails>
+		<tmpl_if showMINMSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_msid_label"), (size(_("webui", "status_diagnostics_msid_label")) - size(":")))></h3>
+			<p>Tällä tunnuksella tunnistetaan tilaaja mobiilidataverkossa.</p>
+		</tmpl_if>
+		<tmpl_if showESN>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_esn_label"), (size(_("webui", "status_diagnostics_esn_label")) - size(":")))></h3>
+			<p>Elektroninen sarjanumero (ESN, Electronic Serial Number) on perinteinen menetelmä CDMA-verkkojen laitteiden yksilöimiseen, mutta se on korvattu MEID-tunnuksella. Laitteissa, joissa käytetään MEID-tunnusta (kuten tässä laitteessa), ESN on joko tyhjä tai kyseessä on nk. pseudo-ESN, joka ei välttämättä ole yksilöllinen.</p>
+ 		</tmpl_if>
+ 		<tmpl_if showHomeSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_home_sid_label"), (size(_("webui", "status_diagnostics_home_sid_label")) - size(":")))></h3>
+			<p>SID (System ID, järjestelmän tunnus) on verkon tunniste, joka ilmaisee liityntäpisteen mobiilidataverkkoon.</p>
+		</tmpl_if>
+		<tmpl_if showERIVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_eri_version_label"), (size(_("webui", "status_diagnostics_eri_version_label")) - size(":")))></h3>
+			<p>ERI (Enhanced Roaming Indicator, parannettu verkkovierailuilmaisin) -taulukko sisältää tietoja jokaisesta verkkovierailuverkosta, johon mobiililaite saa muodostaa yhteyden. Tässä kentässä ilmoitetaan tällä hetkellä asennettuna oleva ERI-versio. ERI-taulukko päivittyy automaattisesti.</p>
+ 		</tmpl_if>
+ 		<tmpl_if showPRLVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_prl_version_label"), (size(_("webui", "status_diagnostics_prl_version_label")) - size(":")))></h3>
+			<p>PRL-luetteloa (Preferred Roaming List, ensisijainen verkkovierailuluettelo) käytetään verkon valitsemiseen, kun käytettävissä on useita verkkoja. Tässä kentässä ilmoitetaan tällä hetkellä asennettuna olevan PRL:n versio. PRL päivittyy automaattisesti.</p>
+		</tmpl_if>			
+	</tmpl_if>
+	<tmpl_if lteSupported>			
+		<h2 class="sectionHead">5G/4G LTE -verkko</h2>
+
+		<tmpl_if showInternetStatus4G>			
+			<h3>Tila</h3>
+			<p>Verkon osalta<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>seuraavat tila-arvot ovat mahdollisia:</p>
+			<div class="blockgroup">
+				<ul>
+					<li>Not available (Ei käytettävissä) – verkkoa ei ole<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>havaittu.</li>
+					<li>Available (Käytettävissä) – verkko on<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>havaittu.</li>
+				</ul>
+			</div>
+			<p>Seuraavat tiedot annetaan vain, jos<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>verkko on käytettävissä.</p>
+		</tmpl_if>
+
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>Tämä on verkon<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>nimi.</p>
+		</tmpl_if>
+
+		<tmpl_if showSignalStrength>			
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_signal_strength_label"), (size(_("webui", "status_diagnostics_fourg_signal_strength_label")) - size(" (RSRP):")))></h3>
+			<p>Tämä osoittaa signaalin<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>voimakkuuden desibeleinä. Suuremmat absoluuttiset arvot tarkoittavat voimakkaampaa signaalia, joten -80 dBm on voimakkaampi signaali kuin -90 dBm.<tmpl_udf GET_PO_TEXT("status_diagnostics_lte_note_text")>
+			</p>
+		</tmpl_if>
+
+		<tmpl_if showSNR>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_sinr_label"), (size(_("webui", "status_diagnostics_sinr_label")) - size(":")))></h3>
+			<p>SNR on signaalin laadun mittari. Suuremmat numerot tarkoittavat parempaa signaalia.</p>
+		</tmpl_if>
+
+		<tmpl_if showLteBand>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_lte_band_label"), (size(_("webui", "status_diagnostics_lte_band_label")) - size(":")))></h3>
+			<p><tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>Verkot voivat käyttää eri taajuuksia eri alueilla. Tässä kentässä ilmoitetaan nykyisen yhteyden<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>taajuus.</p>
+		</tmpl_if>
+
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_roaming_label"), (size(_("webui", "status_diagnostics_fourg_roaming_label")) - size(":")))></h3>
+			<p>Tämä osoittaa, onko nykyinen yhteys verkkovierailuyhteys.</p>
+		</tmpl_if>
+	</tmpl_if>
+		
+	<tmpl_if isHSPATechnology>	
+		<h2><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> Tila</h2>
+			
+		<h3>Tila</h3>
+		<p><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>-laitteen verkon osalta tuetaan seuraavia tiloja:</p>
+		<div class="blockgroup">
+			<ul>
+				<li>Not available (Ei käytettävissä) – <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>-laitteen verkkoa ei ole havaittu.</li>
+				<li>Available (Käytettävissä) – <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>-laitteen verkko on havaittu.</li>
+			</ul>
+		</div>
+		<p>Seuraavat tiedot annetaan vain, jos verkko on käytettävissä.</p>
+
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>Tämä on <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>-laitteen verkon nimi.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>-laitteen verkossa käytettävä nykyinen verkkoteknologia. Mahdolliset arvot hitaimmasta nopeimpaan ovat seuraavat:</p>
+			<ul>
+				<tmpl_if gsmSupported>
+					<li>GPRS</li>
+				</tmpl_if>
+				<tmpl_if wcdmaSupported>
+					<li>UMTS</li>
+				</tmpl_if>
+				<tmpl_if cdmaSupported>
+					<li>HSPA+</li>
+					<li>HSPA+ DC</li>
+				</tmpl_if>
+				<tmpl_if evdoSupported>
+					<li>EDGE</li>
+					<li>HSDPA</li>
+					<li>HSUPA</li>
+				</tmpl_if>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_networkid_label"), (size(_("webui", "status_diagnostics_networkid_label")) - size(":")))></h3>
+			<p>Yleisen matkaviestinverkon (PLMN, Public Land Mobile Network) nimi ja/tai tunnus.</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_cellid_label"), (size(_("webui", "status_diagnostics_cellid_label")) - size(":")))></h3>
+			<p>Tämä arvo ilmaisee tällä hetkellä käytössä olevan matkapuhelinmaston.</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_rssi_label"), (size(_("webui", "status_diagnostics_rssi_label")) - size(":")))></h3>
+			<p>Tämä ilmaisee <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>-laitteen signaalin RSSI:n. RSSI mittaa signaalin voimakkuutta desibeleinä suhteessa yhteen milliwattiin. Arvo on aina negatiivinen, koska matkaviestintälaitteiden teho on aina paljon pienempi kuin yksi milliwatti. Suuremmat absoluuttiset arvot tarkoittavat voimakkaampaa signaalia, joten -50 dBm on voimakkaampi signaali kuin -70 dBm.</p>
+
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_roaming_label"), (size(_("webui", "status_diagnostics_roaming_label")) - size(":")))></h3>
+			<p>Tämä osoittaa, onko nykyinen yhteys verkkovierailuyhteys.</p>
+
+		</tmpl_if>
+		<tmpl_if show3g>
+			<h2><tmpl_var _("webui", "status_diagnostics_threeg_label")></h2>
+			
+			<h3>Tila</h3>
+			<p>Mahdolliset tila-arvot ovat seuraavat:</p>
+			<div class="blockgroup">
+				<ul>
+					<li>Not available (Ei käytettävissä) – 3G-verkkoa ei ole havaittu.</li>
+					<li>Available (Käytettävissä) – 3G-verkko on havaittu.</li>
+				</ul>
+			</div>
+			<p>Seuraavat tiedot annetaan vain, jos verkko on käytettävissä.</p>
+			<tmpl_if showNetworkOperator>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_network_label"), (size(_("webui", "status_diagnostics_threeg_network_label")) - size(":")))></h3>
+				<p>Tämä on 3G-verkon nimi.</p>
+			</tmpl_if>
+			<tmpl_if show3g1xRssi>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_onex_label"), (size(_("webui", "status_diagnostics_threeg_onex_label")) - size(":")))></h3>
+			<p>RSSI on signaalin voimakkuuden mittari. Yksikkö tarkoittaa desibelejä suhteessa yhteen milliwattiin, ja arvo on aina negatiivinen, koska matkaviestintälaitteiden teho aina paljon pienempi kuin yksi milliwatti. Suuremmat absoluuttiset arvot tarkoittavat voimakkaampaa signaalia, joten -50 dBm on voimakkaampi signaali kuin -70 dBm. Tässä kentässä ilmoitetaan 1xRTT-signaalin RSSI.</p>
+			</tmpl_if>
+			<tmpl_if show3gEvdoRssi>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_evdo_label"), (size(_("webui", "status_diagnostics_threeg_evdo_label")) - size(":")))></h3>
+				<p>RSSI on signaalin voimakkuuden mittari. Tässä kentässä ilmoitetaan EVDO- tai eHRPD-signaalin RSSI.</p>
+ 			</tmpl_if>
+			<tmpl_if show3gTechnology>
+ 				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+				<p>3G-verkossa nykyisin käytettävä teknologia. Mahdolliset arvot ovat 1xRTT, EVDO tai eHRPD.</p>
+ 			</tmpl_if>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_ecio_label"), (size(_("webui", "status_diagnostics_threeg_ecio_label")) - size(":")))></h3>
+			<p>Ec/Io mittaa signaalin ”puhtautta”. Kyseessä on eräänlainen signaali-kohinasuhde. Tyypilliset arvot vaihtelevat välillä -10 ja -40. Arvo -4 olisi erittäin ”puhdas” signaali.</p>
+ 
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_sid_label"), (size(_("webui", "status_diagnostics_threeg_sid_label")) - size(":")))></h3>
+			<p>SID (System ID, järjestelmän tunnus) on verkon tunniste, joka ilmaisee nykyisen liityntäpisteen mobiilidataverkkoon. Matkapuhelinmastojen ryhmällä voi olla sama SID-arvo. Tässä kentässä ilmoitetaan nykyinen SID.</p>		
+			<tmpl_if showRoaming>
+				<h3>Verkkovierailu</h3>
+				<p>Tämä osoittaa, onko nykyinen yhteys verkkovierailuyhteys.</p>			
+			</tmpl_if>
+			<tmpl_if linkToFieldTest>	
+				<h2><tmpl_var _("webui", "status_diagnostics_field_test_button")></h2>
+				<p>”Field Test” (Kenttätesti) -painike tuo esiin luettelon alhaisen tason verkkoparametreista, jotka voivat olla hyödyllisiä tekniselle tuelle verkkoyhteysongelmien vianmäärityksessä.</p>
+				
+				<p>Tämä painike on käytettävissä vain, jos 3G-verkko on käytettävissä.</p>
+			</tmpl_if>
+		</tmpl_if>
+	</tmpl_if>
+			
+</div>
+<!-- id="status_diagnostics" -->
+		

@@ -1,0 +1,95 @@
+/*
+ * messages.css
+ *
+ * These are system message, alerts, warnings, errors, and notification styles
+ * for the entire MLP interface.
+ */
+div.notifications_wrapper.global
+{
+	display: none;
+	background: #000 none repeat scroll 0 0;
+	padding: 4px;
+}
+
+div.notification.global
+{
+	display: table;
+	margin: 12px auto 0 auto;
+	padding: 8px 0 9px 50px;
+}
+
+html.rtl div.notification.global
+{
+	padding: 8px 50px 9px 0;
+}
+
+div.notification_inner
+{
+}
+
+div.notification.app
+{
+	margin: 0 auto 15px auto;
+	padding: 5px 0 0 47px;
+	min-height: 30px;
+	height: auto;
+	display: block;
+}
+
+html.rtl div.notification.app
+{
+	padding: 5px 47px 0 0;
+}
+
+div.notification.info
+{
+}
+
+div.notification.alert
+{
+}
+
+div.notification .title
+{
+	font-size: 1.15em; /* 16px */
+	margin-right: 10px;
+	float: left;
+	display: none;
+}
+
+html.rtl div.notification .title
+{
+	margin-right: 0;
+	margin-left: 10px;
+	float: right;
+}
+
+/* the p.message is only set on some pages. this fixes others */
+div.notification p.message
+{
+	font-size: 1.15em; /* 16px */
+}
+
+div.notification p.message a
+{
+	padding-left: .5em;
+	color: #fff;
+}
+
+html.rtl div.notification p.message a
+{
+	padding-left: 0;
+	padding-right: .5em;
+}
+
+div.notification p.aftertitle
+{
+	float: left;
+	color: #fff;
+	font-weight: bold;
+}
+
+html.rtl div.notification p.aftertitle
+{
+	float: right;
+}

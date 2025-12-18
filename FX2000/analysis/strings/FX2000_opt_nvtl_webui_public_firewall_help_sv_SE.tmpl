@@ -1,0 +1,74 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+versikt</h2>
+		<p>En brandv
+gg skyddar dina anslutna enheter mot skadlig inkommande trafik fr
+n internet. Brandv
+r inte st
+ngas av, men f
+ljande inst
+llningar 
+ngliga.</p>
+	<h2>Inst
+llningar</h2>
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+	<tmpl_unless ShowDmzActive>
+		<h3>VPN-genomfl
+	</tmpl_unless>
+		<p>Den h
+r funktionen till
+ter VPN-klientprogram p
+ anslutna enheter att ansluta till VPN-fj
+rrservrar via denna enhet. Vanligtvis b
+r detta alternativ l
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+		<tmpl_unless ShowDmzActive>
+			<h3>IPv6 transparent l
+		</tmpl_unless>
+			<p>Normalt kommer brandv
+ggen att blockera inkommande IPv6-anslutningsf
+gningar avsedda f
+r en IPv6-ansluten enhet.</p>
+			<p>Om du vill till
+ta att dessa inkommande anslutningsf
+gningar n
+r den avsedda anslutna enheten aktiverar du den h
+llningen. Transparent l
+r endast s
+ndigt, eftersom det minskar det skydd som ges av <tmpl_var _("webui", "webui_product_name")>-brandv
+ggen.</p>
+	</tmpl_if>
+	<tmpl_if ShowDmzActive>
+		<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+	<tmpl_else>
+		<h2>DMZ</h2>
+	</tmpl_if>
+	<p>Om detta 
+r markerat s
+ kommer den anslutna enhet som specificerats som IP-adress f
+r DMZ (DMZ-destination) att ta emot all trafik som annars skulle blockeras av brandv
+ggen. Detta kan bidra till att f
+ vissa problematiska n
+tverksapplikationer att fungera som de ska, men DMZ-enheten b
+r ha sin egen brandv
+r att skydda sig mot skadlig trafik.</p>
+	<tmpl_if ShowDmzActive>
+	<h3>DMZ-kryssruta</h3>
+		<p>Anv
+nd denna f
+ eller st
+nga av den h
+r funktionen efter behov. I allm
+r DMZ vara avst
+vida det inte verkligen 
+ndigt.</p>	
+	</tmpl_if>
+	<h3>Destinationens IP-adress</h3>
+		<p>Ange IP-adressen f
+r den anslutna enhet som du vill ska bli DMZ-enheten (DMZ-destinationen) i detta f
+lt. Du kan kontrollera IP-adressen f
+r varje ansluten enhet p
+r anslutna enheter.</p>
+<!-- id="firewall" -->

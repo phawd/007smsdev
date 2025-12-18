@@ -1,0 +1,19 @@
+<!-- Internet  Sessions -->
+<div id="session_log_info">
+	<h1><tmpl_var _("webui", "session_log_info_menu_text")></h1>
+
+	<p>Sessionsloggen innehåller följande data:</p>
+	<p>– Datum och tid (när anslutningen startade)</p>
+	<p>– Varaktighet (samma format som information för nuvarande session)</p>
+	<p>– Mottaget (format som för nuvarande session)</p>
+	<p>– Sända (format som för nuvarande session)</p>
+	<p>– Totala data (summan av Rx och Tx, format som information för nuvarande session)</p>
+	<tmpl_if RoamingStatusShow>
+                <p>- Roaming (Roaming / Teilweise / leer) Leer = Heimnetzwerk </p>
+        </tmpl_if>
+	<p>– IPv4 (IPv4 WWAN IP-adress)</p>
+	<p>– IPv6 (IPv6 WWAN IP-adress)</p>
+
+	<p>Loggen är i datumordning.</p>
+	<p>Användaren kan inte ändra ordningen och det finns inga alternativ relaterade till sessionsloggen.</p>
+</div>

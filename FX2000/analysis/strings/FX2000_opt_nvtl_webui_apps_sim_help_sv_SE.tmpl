@@ -1,0 +1,131 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_menu_text")></h1>
+        <h2>
+versikt</h2>
+        <p>SIM-kortet inuti din <tmpl_var _("webui", "webui_product_name")> kan l
+sas med en PIN. Om SIM-kortet 
+ste du ange PIN innan du ansluter till mobiln
+r PIN har skrivits koms den ih
+g till n
+sta avst
+ngning.</p>
+rutom att denna sida g
+r dig att ange SIM-PIN n
+ter den dig 
+sa upp ditt SIM eller 
+ndra SIM-PIN. I allm
+ste du ange befintlig PIN f
+ndra SIM. F
+r ett Novatel Wireless SIM 
+r standard-PIN tillg
+nglig fr
+n din tj
+nsteleverant
+	<h3><tmpl_var truncate(_("webui", "adv_sim_pin_lock_feature_label"), (size(_("webui", "adv_sim_pin_lock_feature_label")) - size(":")))></h3>
+ltet indikerar om PIN-l
+sfunktionen anv
+nds eller ej. Om den 
+ har PIN-l
+set aktiverats och SIM-PIN m
+ste anges f
+r att ansluta till mobiln
+tet. Om den 
+sfunktionen inte p
+slagen och SIM-PIN kr
+vs inte.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_status_label"), (size(_("webui", "adv_sim_status_label")) - size(":")))></h3>
+ltet indikerar SIM-kortets nuvarande status. M
+	<div class="blockgroup">
+	        <ul>
+	        <li>Redo 
+r det normala tillst
+ndet. SIM-PIN anv
+nds inte.</li>
+	        <li>PIN-l
+ SIM-PIN m
+ste anges innan du kan anv
+nda mobiln
+tet.</li>
+	        <li>PUK-l
+ste anges f
+r att kunna forts
+tta. PUK kan erh
+n din tj
+nsteleverant
+	        <li>Uppl
+ SIM-PIN beh
+vs, men har redan angetts.</li>
+	        <li>Inget SIM 
+ inget SIM detekterat. Om du har ett SIM, kontrollera att det 
+r korrekt isatt.</li>
+	        <li>SIM-fel 
+ ett SIM detekterades, men det svarade inte som f
+ntat och kan inte anv
+ndas.</li>       
+	        </ul>
+        <h2>SIM-
+rder</h2>
+        <p>De tillg
+rderna beror p
+ den nuvarande SIM-statusen. Alla m
+rder listas och f
+rklaras nedan.</p>
+		<h3>PIN-l
+		<p>Om SIM f
+rvarande 
+st uppmanas du att ange PIN. Observera att om en felaktig PIN anges f
+nger blir SIM PUK-l
+st. En r
+ sidan anger hur m
+nga felaktiga inmatningar som kommer att orsaka PUK-l
+ste PUK sedan erh
+n din tj
+nsteleverant
+		<h3>PUK-l
+		<p>Om SIM f
+rvarande 
+r den enda m
+rden att ange PUK. Observera att om en felaktig PUK anges f
+nger blir SIM permanent oanv
+ndbart. Du kommer att beh
+va skaffa ett nytt SIM. En r
+ sidan anger hur m
+nga inmatningsf
+		<h3><tmpl_var _("webui", "adv_sim_enable_pin_lock_option")></h3>
+		<p>Detta st
+ller in SIM s
+ att en PIN m
+ste anges vid start f
+r att ansluta till mobiln
+r att utf
+ra denna 
+ste du ange nuvarande PIN.</p>
+		<h3><tmpl_var _("webui", "adv_sim_disable_pin_option")></h3>
+		<p>Du kan anv
+nda den h
+llningen f
+r att st
+nga av ett PIN-l
+s som tidigare var aktiverat, s
+gon PIN inte l
+ngre beh
+ver matas in f
+r att ansluta till mobiln
+r att utf
+ra denna 
+ste du ange nuvarande PIN.</p>
+		<h3><tmpl_var _("webui", "adv_sim_change_pin_option")></h3>
+		<p>Om du vill 
+ndra befintlig PIN v
+ljer du det h
+r alternativet och anger sedan de data som kr
+		<div class="blockgroup">
+			<li>Nuvarande PIN</li>
+			<li>Ny PIN</li>
+			<li>Bekr
+fta ny PIN</li>
+			</ul>
+		</div>
+		<p><tmpl_var _("webui", "adv_sim_name_text")></p>
+<!-- id="sim" -->

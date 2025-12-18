@@ -1,0 +1,48 @@
+<!-- Status Logs -->
+<div id="status_logs">
+	<h1><tmpl_var _("webui", "status_logs_menu_text")></h1>
+bersicht</h2>
+		Die Protokollinformationen sind f
+r die Fehlerbehebung n
+tzlich, f
+r den normalen Betrieb werden sie nicht ben
+	<h2>Einstellungen</h2>
+	<h3><tmpl_var truncate(_("webui", "status_logs_enable_logs_label"), (size(_("webui", "status_logs_enable_logs_label")) - size(":")))></h3>
+	<p>Aktivieren Sie dieses Kontrollk
+stchen, um die Protokolle nach Bedarf zu aktivieren.</p>
+	<h3><tmpl_var truncate(_("webui", "status_logs_delete_sys_logs_label"), (size(_("webui", "status_logs_delete_sys_logs_label")) - size(":")))></h3>
+hlen Sie 
+ber die Dropdown-Liste aus, wann Protokolle gel
+scht werden. W
+hlen Sie die gew
+nschte Option.</p>
+	<p>Beachten Sie, dass unabh
+ngig von dieser Einstellung die 
+ltesten Daten gel
+scht werden, wenn das Protokoll voll ist.</p>
+	<h2>Protokolldaten</h2>
+ber die bereitgestellten Registerkarten k
+nnen Sie ausw
+hlen, welche Art von Protokolldaten Sie anzeigen m
+	<h3><tmpl_var _("webui", "status_logs_mobile_network_log_href")></h3>
+	<p>Dieses Protokoll enth
+lt Daten zu Verbindungen mit dem Mobilfunknetz.
+	<h3><tmpl_var _("webui", "status_logs_system_log_href")></h3>
+	<p>Dieses Protokoll zeichnet Ereignisse
+ mit Ausnahme von mobilen Datenverbindungen
+ auf, die auf diesem Ger
+t aufgetreten sind.
+	<h2>Schaltfl
+chen</h2>
+	<h3><tmpl_var _("webui", "status_logs_clear_log_btn")></h3>
+ber diese Schaltfl
+che werden alle vorhandenen Protokolldaten gel
+scht. Dadurch werden neue Daten leichter lesbar.</p>
+	<h3><tmpl_var _("webui", "status_logs_refresh_btn")></h3>
+	<p>Damit k
+nnen Sie die angezeigten Protokolldaten aktualisieren.</p>
+	<h3><tmpl_var _("webui", "status_logs_download_btn")></h3>
+ber diese Schaltfl
+nnen Sie Protokolldaten auf Ihren Computer oder ein verbundenes Ger
+t herunterladen.</p>
+<!-- end Status Logs -->

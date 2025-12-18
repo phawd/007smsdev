@@ -1,0 +1,407 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+GLIBC_2.4
+libc.so.6
+libcbsd_api.so
+cbsd_is_running
+msgq_does_queue_exist
+get_cbsd_error_code
+cbsd_get_sas_settings
+settings_get_setting
+cbsd_set_sas_settings
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+msgq_send_sync
+cbsd_set_cpi_settings
+cbsd_set_cert_settings
+cbsd_set_runtime_config_params
+cbsd_reset_settings
+cbsd_set_antenna_settings
+cbsd_get_cpi_settings
+cbsd_get_cert_settings
+cbsd_get_antenna_settings
+cbsd_details_validation
+snprintf
+cbsd_get_runtime_config_params
+cbsd_get_default_settings
+cbsd_get_settings
+cbsd_register_device
+msgq_send_async
+cbsd_grant_device
+cbsd_spectruminquiry_device
+cbsd_heartbeat_device
+cbsd_unregister_device
+cbsd_relinquish_device
+cbsd_get_registration_status
+cbsd_get_error_string
+cbsd_get_registration_status_string
+cbsd_get_response_code_string
+cbsd_connection_timer_expired
+cbsd_do_factory_reset
+cbsd_deregister_device
+cbsd_get_sas_settings_impl
+xmldata_getstring_default
+cbsd_get_cpi_settings_impl
+cbsd_get_certificate_settings_impl
+xmldata_getstring
+cbsd_get_register_settings
+xmldata_getint32
+cbsd_set_register_settings
+xmldata_setint32
+xmldata_save
+MsgBusSetInt32
+cbsd_get_data_enable_settings
+cbsd_set_data_enable_settings
+cbsd_get_default_settings_impl
+xmldata_getint64_default
+xmldata_getfloat_default
+xmldata_getint32_default
+cbsd_get_antenna_settings_impl
+cbsd_get_runtimeconfig_settings_impl
+xmldata_getdouble_default
+xmldata_getuint32_default
+cbsd_set_default_settings_impl
+xmldata_setstring
+xmldata_setint64
+xmldata_setfloat
+cbsd_set_sas_settings_impl
+cbsd_set_cpi_settings_impl
+cbsd_set_certificate_settings_impl
+cbsd_set_runtimeconfig_settings_impl
+xmldata_setdouble
+xmldata_setuint32
+cbsd_set_antenna_settings_impl
+initialize_settings
+cbsd_factory_reset_impl
+initialize_factory_reset_func
+__bss_start
+librt.so.1
+libpthread.so.0
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libmificommon.so
+libxmldata_api.so
+libmifimsgbus.so
+libcurl.so.4
+libssl.so.1.1
+libcrypto.so.1.1
+libm.so.6
+libjansson.so.4
+H	KxD	J{D
+/cbsd_mq
+cbsd.settings.sas
+[%s]:[%s] - Sending sync SAS settings get message to CBSD process.
+[%s]:[%s] - Sending sync runtime config param message to CBSD process.
+[%s]:[%s] - Sending sync reset settings to CBSD process.
+[%s]:[%s] - Sending sync antenna settings set message to CBSD process.
+cbsd.settings.cpi
+cbsd.settings.cert
+cbsd.settings.anteena
+[%s]:[%s] - Failed to get sas details, result code:%d
+[%s]:[%s] - %s: SAS information are incomplete
+[%s]:[%s] - Failed to certificates details, result code:%d
+[%s]:[%s] - %s: Certificate details are incomplete
+/opt/nvtl/data/cbsd/certificates
+[%s]:[%s] - %s: Certificate details are present, but certificates files are not present in device
+[%s]:[%s] - Failed to get antenna details, result code:%d
+[%s]:[%s] - %s: Antenna details are incomplete
+[%s]:[%s] - Sending sync get runtime config params message to CBSD process.
+cbsd.settings.defaults
+[%s]:[%s] - SAS get_settings result code:%d
+[%s]:[%s] - CPI get_settings result code:%d
+[%s]:[%s] - Certificate get_settings result code:%d
+[%s]:[%s] - Antenna get_settings result code:%d
+cbsd.settings.runtime
+[%s]:[%s] - Failed to get runtime config params, rc:%d
+[%s]:[%s] - Sending async register device message with [%d] to CBSD process.
+/cbsd_conn_handler_mq
+[%s]:[%s] - Sending async grant device message to CBSD process.
+[%s]:[%s] - Sending async spectruminquiry device message to CBSD process.
+[%s]:[%s] - Sending async heartbeat device message to CBSD process.
+[%s]:[%s] - Sending async unregister device message to CBSD process.
+[%s]:[%s] - Sending async relinquish device message to CBSD process.
+[%s]:[%s] - Sending sync get registration state message to CBSD process.
+CBSD: success.
+CBSD: general error.
+CBSD: one or more bad parameters passed into a function.
+CBSD: one or more buffer type parameters passed into API is too small.
+CBSD: the feature is unsupported.
+CBSD: process not running.
+CBSD: a device reset is required for the operation to take effect.
+CBSD: API not implemented for the platform.
+CBSD: unknown error.
+CBSD_STATE_START
+CBSD_STATE_UNREGISTERED
+CBSD_STATE_REGISTERING
+CBSD_STATE_GRANT_IDLE
+CBSD_STATE_GRANT_GRANTED
+CBSD_STATE_GRANT_AUTHORIZED
+unknown error
+DEVICE_NOT_IN_BAND48
+REGISTRATION_REQUEST_PREPARE_FAILED
+REGISTRATION_REQUEST_POST_FAILED
+SPECTRUM_INQUERY_REQUEST_PREPARE_FAILED
+SPECTRUM_INQUERY_REQUEST_POST_FAILED
+GRANT_REQUEST_PREPARE_FAILED
+GRANT_REQUEST_POST_FAILED
+HEARTBEAT_REQUEST_PREPARE_FAILED
+HEARTBEAT_REQUEST_POST_FAILED
+RESP_CODE_SUCESS
+VERSION_NOT_SUPPORTED
+BLACKLISTED
+MISSING_PARAM
+INVALID_VALUE
+CERT_ERROR
+DEREGISTER
+REG_PENDING
+GROUP_ERROR
+UNSUPPORTED_SPECTRUM
+INTERFERENCE
+GRANT_CONFLICT
+TERMINATED_GRANT
+SUSPENDED_GRANT
+UNSYNC_OP_PARAM
+[%s]:[%s] - Sending async connection timer expired event message to CBSD process.
+[%s]:[%s] - Sending sync factory reset event message to CBSD process.
+[%s]:[%s] - Sending async deregister device message to CBSD process.
+/Settings/CBSD/SAS/Operator
+/Settings/CBSD/SAS/URL
+/Settings/CBSD/SAS/Version
+/Settings/CBSD/SAS/CBSDUserID
+[%s]:[%s] - SAS settings :: Operator =[%s] URL=[%s] Version=[%s] CBSD_UserID[%s]
+/Settings/CBSD/CPI/UserID
+/Settings/CBSD/CPI/Name
+/Settings/CBSD/CPI/PrivateKey
+[%s]:[%s] - CPI settings :: UserID =[%s] Name=[%s] PrivateKey=[%s]
+/Settings/CBSD/Certificates/Certificate
+/Settings/CBSD/Certificates/CACertificate
+/Settings/CBSD/Certificates/PrivateKey
+/Settings/CBSD/Certificates/PrivateKeyPassPhrase
+[%s]:[%s] - Certificates settings info Certificate =[%s] CA_Certificate=[%s] PrivateKey=[%s]
+[%s]:[%s] - Invalid settings data passed.
+/Settings/CBSD/Register
+[%s]:[%s] - CBSD Register =[%d]
+cbsd.settings.register
+/Settings/CBSD/DataEnable
+[%s]:[%s] - CBSD DataEnable =[%d]
+cbsd.settings.dataenable
+callsign_a
+/Settings/CBSD/CallSign
+/Settings/CBSD/Category
+/Settings/CBSD/HeightType
+/Settings/CBSD/IndoorDeployment
+/Settings/CBSD/MeasCapability
+/Settings/CBSD/LowFrequency
+/Settings/CBSD/HighFrequency
+/Settings/CBSD/MaxEirp
+/Settings/CBSD/Antenna/Gain
+/Settings/CBSD/Antenna/Beamwidth
+[%s]:[%s] - Factory settings info CallSign=[%s] Category=[%s] HeightType=[%s] MeasCapability=[%s] LowFrequency=[%lld] HighFrequency=[%lld] MaxEirp=[%f] AntennaGain=[%d] AntennaBeamwidth=[%d]
+/Settings/CBSD/Antenna/Azimuth
+/Settings/CBSD/Antenna/Downtilt
+[%s]:[%s] - Antenna settings :: Azimuth=[%d] Downtilt:[%d]
+/Settings/CBSD/RuntimeConfig/Latitude
+/Settings/CBSD/RuntimeConfig/Longitude
+/Settings/CBSD/RuntimeConfig/TestMode
+/Settings/CBSD/RuntimeConfig/Requesttype
+/Settings/CBSD/RuntimeConfig/Winnftest
+/Settings/CBSD/RuntimeConfig/Federatedtest
+/Settings/CBSD/RuntimeConfig/Fccid
+/Settings/CBSD/RuntimeConfig/SerialNumber
+/Settings/CBSD/RuntimeConfig/MeasEnable
+/Settings/CBSD/RuntimeConfig/MeasCapability
+/Settings/CBSD/RuntimeConfig/Heartbeatlimit
+/Settings/CBSD/RuntimeConfig/LowFrequency
+/Settings/CBSD/RuntimeConfig/HighFrequency
+/Settings/CBSD/RuntimeConfig/CpiEnable
+/Settings/CBSD/RuntimeConfig/Devicejson
+/Settings/CBSD/RuntimeConfig/DeviceCpijson
+/Settings/CBSD/RuntimeConfig/DeviceCpiDatajson
+/Settings/CBSD/RuntimeConfig/Spectrumjson
+/Settings/CBSD/RuntimeConfig/Grantjson
+/Settings/CBSD/RuntimeConfig/Heartbeatstate
+/Settings/CBSD/RuntimeConfig/Heartbeatjson
+/Settings/CBSD/RuntimeConfig/MaxEirp
+[%s]:[%s] - FCC ID%*c= [%s]
+[%s]:[%s] - Serial number%*c= [%s]
+[%s]:[%s] - Longitude%*c= [%lf]
+[%s]:[%s] - Latitude%*c= [%lf]
+[%s]:[%s] - LowFrequency%*c= [%lld]
+[%s]:[%s] - HighFrequency%*c= [%lld]
+[%s]:[%s] - MeasCapability%*c= [%s]
+[%s]:[%s] - MeasCapability apply%*c= [%d]
+[%s]:[%s] - Test mode%*c= [%d]
+[%s]:[%s] - MaxEirp%*c= [%f]
+[%s]:[%s] - Heartbeat_count%*c= [%d]
+[%s]:[%s] - Device_json file%*c= [%s]
+[%s]:[%s] - Device_cpi_json file%*c= [%s]
+[%s]:[%s] - Device_cpidata_json file%*c= [%s]
+[%s]:[%s] - Spectrum_json file%*c= [%s]
+[%s]:[%s] - Grant_json%*c= [%s]
+[%s]:[%s] - Heartbeat_json file%*c= [%s]
+[%s]:[%s] - Heartbeat state%*c= [%d]
+[%s]:[%s] - Request type%*c= [%d]
+[%s]:[%s] - Winnf testcase%*c= [%d]
+[%s]:[%s] - Federated testcase%*c= [%d]
+cbsd.settings.defaults
+cbsd.settings.sas
+cbsd.settings.cpi
+cbsd.settings.cert
+cbsd.settings.runtime
+cbsd.settings.anteena
+[%s]:[%s] - Enter cbsd_factory_reset_impl
+[%s]:[%s] - Exit cbsd_factory_reset_impl
+GCC: (GNU) 8.2.0
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/watchdog/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/config
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/cbsd/src
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/cbsd/src/../include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/logging/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/xmldata/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/cbsd/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/modem2/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/factory_reset/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/usr/src/linux/usr/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel/config/../.
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-iprefix /opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/bin/arm-oe-linux-gnueabi/../../lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/cbsd/src/cbsd_api.c
+-mfpu=neon
+-mfloat-abi=hard
+-mcpu=arm10tdmi
+-mtls-dialect=gnu
+-march=armv5t
+-auxbase-strip cbsd_api.o
+-frecord-gcc-switches
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/cbsd/src/cbsd_settings.c
+-auxbase-strip cbsd_settings.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/cbsd/src/cbsd_factory_reset.c
+-auxbase-strip cbsd_factory_reset.o
+gold 1.16
+call_weak_fn
+crtstuff.c
+__TMC_LIST__
+deregister_tm_clones
+register_tm_clones
+__do_global_dtors_aux
+completed.11339
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+cbsd_api.c
+is_file_exists
+cbsd_settings.c
+cbsd_factory_reset.c
+__FRAME_END__
+__dso_handle
+__TMC_END__
+_DYNAMIC
+_GLOBAL_OFFSET_TABLE_
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+cbsd_is_running
+msgq_does_queue_exist
+get_cbsd_error_code
+cbsd_get_sas_settings
+settings_get_setting
+cbsd_set_sas_settings
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+msgq_send_sync
+cbsd_set_cpi_settings
+cbsd_set_cert_settings
+cbsd_set_runtime_config_params
+cbsd_reset_settings
+cbsd_set_antenna_settings
+cbsd_get_cpi_settings
+cbsd_get_cert_settings
+cbsd_get_antenna_settings
+cbsd_details_validation
+snprintf
+cbsd_get_runtime_config_params
+cbsd_get_default_settings
+cbsd_get_settings
+cbsd_register_device
+msgq_send_async
+cbsd_grant_device
+cbsd_spectruminquiry_device
+cbsd_heartbeat_device
+cbsd_unregister_device
+cbsd_relinquish_device
+cbsd_get_registration_status
+cbsd_get_error_string
+cbsd_get_registration_status_string
+cbsd_get_response_code_string
+cbsd_connection_timer_expired
+cbsd_do_factory_reset
+cbsd_deregister_device
+cbsd_get_sas_settings_impl
+xmldata_getstring_default
+cbsd_get_cpi_settings_impl
+cbsd_get_certificate_settings_impl
+xmldata_getstring
+cbsd_get_register_settings
+xmldata_getint32
+cbsd_set_register_settings
+xmldata_setint32
+xmldata_save
+MsgBusSetInt32
+cbsd_get_data_enable_settings
+cbsd_set_data_enable_settings
+cbsd_get_default_settings_impl
+xmldata_getint64_default
+xmldata_getfloat_default
+xmldata_getint32_default
+cbsd_get_antenna_settings_impl
+cbsd_get_runtimeconfig_settings_impl
+xmldata_getdouble_default
+xmldata_getuint32_default
+cbsd_set_default_settings_impl
+xmldata_setstring
+xmldata_setint64
+xmldata_setfloat
+cbsd_set_sas_settings_impl
+cbsd_set_cpi_settings_impl
+cbsd_set_certificate_settings_impl
+cbsd_set_runtimeconfig_settings_impl
+xmldata_setdouble
+xmldata_setuint32
+cbsd_set_antenna_settings_impl
+initialize_settings
+cbsd_factory_reset_impl
+initialize_factory_reset_func
+__bss_start
+.init_array
+.fini_array
+.comment
+.rel.plt
+.ARM.attributes
+.eh_frame_hdr
+.gnu.version_r
+.rel.dyn
+.gnu.version
+.note.gnu.gold-version
+.GCC.command.line
+.eh_frame
+.tm_clone_table
+.note.gnu.build-id
+.gnu.version_d
+.dynamic
+.shstrtab

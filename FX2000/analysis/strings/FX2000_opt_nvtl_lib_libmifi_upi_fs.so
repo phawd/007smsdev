@@ -1,0 +1,178 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+GLIBC_2.4
+libc.so.6
+libmifi_upi_fs.so
+mifi_dbg_get_level_name
+mifi_dbg_log
+libpthread.so.0
+__errno_location
+strerror
+RB_GetAvailableFreeSpace
+RB_GetRBDeltaOffset
+RecursiveFolderCreater
+RB_CopyFile
+RB_CreateFolder
+RB_DeleteFile
+RB_DeleteFolder
+get_mode
+RB_OpenFile
+RB_ResizeFile
+ftruncate
+RB_CloseFile
+RB_SyncFile
+RB_WriteFile
+mifi_upi_image_nand_cache_enable
+RB_ReadFile
+RB_GetFileSize
+RB_Unlink
+RB_VerifyLinkReference
+readlink
+RB_SetFileAttributes
+RB_GetDelta
+RB_Progress
+mifi_upi_display_update_progress
+RB_Trace
+RB_MoveFile
+RB_ResetTimerA
+mifi_led_on
+mifi_upi_display_init
+mifi_upi_display_close
+mifi_upi_display_result
+__bss_start
+__lxstat
+__fxstat
+libmifi_debug.so
+libmifi_leds.so
+libmifi_upi_image.so
+libmifi_mtd.so
+libpng15.so.15
+libz.so.1
+libm.so.6
+H	KxD	J{D
+[%s]:[%s] - %s: file_path=%s dir_path=%s
+[%s]:[%s] - %s: open(%s) failed: %s
+[%s]:[%s] - %s: fsync(%s) failed: %s
+[%s]:[%s] -  %s failed to get statvfs for %s
+[%s]:[%s] -  %s success %lu
+[%s]:[%s] -  %s path: %s
+[%s]:[%s] -  %s temppath: %s
+[%s]:[%s] -  %s mkdir result: %d errno: %d
+[%s]:[%s] -  %s: %s -> %s 
+[%s]:[%s] -  %s NULL file name find. Abort.
+[%s]:[%s] -  %s Open %s ENOENT %d
+[%s]:[%s] - %s Open %s failed. Abort.
+[%s]:[%s] - %s malloc failure (folderPath).
+[%s]:[%s] - %s read %d, but write %d, abort.
+[%s]:[%s] - %s : %s
+[%s]:[%s] - %s unlink value: %d, errno: %d
+[%s]:[%s] - %s delete failed with return value: %d errno %d
+[%s]:[%s] - %s: deleted: path=%s
+[%s]:[%s] - %s rmdir value: %d, errno: %d
+[%s]:[%s] - %s Delete folder problem value: %d, errno: %d
+[%s]:[%s] - %s : %s, mode:0x%x
+[%s]:[%s] - %s Create folder problem value: %d, errno: %d
+[%s]:[%s] - %s : Path:%s | Mode: %d
+[%s]:[%s] - %s: First open(%s) failed: %s
+[%s]:[%s] - %s copy dir[]=%s
+[%s]:[%s] - %s remove dir[]=%s
+[%s]:[%s] - %s Fail create folder, Leave RB_OpenFile
+[%s]:[%s] - %s After successful creating folder, fail open() with error %d
+[%s]:[%s] - %s: opened: path=%s fd=%ld
+[%s]:[%s] - %s : handle %ld, dwSize %lu
+[%s]:[%s] - %s : ret %d handle %ld %d
+[%s]:[%s] - %s wHandle = %ld
+[%s]:[%s] - %s: fd=%ld offset=%ld length=%ld
+[%s]:[%s] - %s malloc failure (p_heap).
+[%s]:[%s] - %s write failed with return value: %d
+[%s]:[%s] - %s lseek failed with return value: %d
+[%s]:[%s] - %s Failed with return value: %d, (%s)
+[%s]:[%s] - %s Bytes Write: %d
+[%s]:[%s] - %s : Handle:%ld , Pos:%ld , Size: %ld
+[%s]:[%s] - %s read failed with return value: %d
+[%s]:[%s] - %s Bytes Read: %d
+[%s]:[%s] - %s RB_GetFileSize handle=%ld size=%ld 
+[%s]:[%s] - %s 
+[%s]:[%s] - %s unlink failed with return value: %d errno %d
+[%s]:[%s] - %s unlink with return value: %d
+[%s]:[%s] - %s: readlink(%s) failed: %s
+[%s]:[%s] - %s not same linked path - linkedpath[%s] pReferenceFileName[%s]
+[%s]:[%s] - %s same linked path
+[%s]:[%s] - %s  %s %s
+[%s]:[%s] - %s symlink failed with return value: %d, errno: %d
+[%s]:[%s] - %s: symlink: oldpath=%s newpath=%s
+[%s]:[%s] - %s  
+[%s]:[%s] - %s ui16pFilePath NULL [error]
+[%s]:[%s] - %s ui8pAttribs NULL [error]
+[%s]:[%s] - %s stat failed with return value: %d
+[%s]:[%s] - %s stat->st_mode = symbolic link file
+[%s]:[%s] - %s stat->st_mode = regular file
+[%s]:[%s] - %s stat->st_mode = directory
+[%s]:[%s] - %s ui32AttribSize 0
+[%s]:[%s] - %s ui16pFilePath = %s
+[%s]:[%s] - %s ui32AttribSize = %lu
+[%s]:[%s] - %s ui8pAttribs = %s
+_redbend_
+[%s]:[%s] - %s Attributes structure is not valid
+[%s]:[%s] - %s setFileMode = 0%o
+[%s]:[%s] - %s setUserID = %d
+[%s]:[%s] - %s setGroupID = %d
+[%s]:[%s] - %s chown error
+[%s]:[%s] - %s chown errno = %d
+[%s]:[%s] - %s chmod error
+[%s]:[%s] - %s SUCCESS
+[%s]:[%s] - %s: offset 0x%lx(%ld), size 0x%lx(%ld) Delta File = %s 
+[%s]:[%s] - %s: open delta file %s failed.
+[%s]:[%s] - %s: error in read size
+[%s]:[%s] - %s: update %ld percent
+[%s]:[%s] - %s: %s -> %s 
+[%s]:[%s] - %s:NULL file name find. Abort.
+[%s]:[%s] - %s:failed to rename file: %s -> %s 
+[%s]:[%s] - %s:fsync Failed with return value: %ld
+[%s]:[%s] - %s: fsync(%d)
+syncFileAndDir
+RB_GetAvailableFreeSpace
+RecursiveFolderCreater
+RB_CopyFile
+RB_DeleteFile
+RB_DeleteFolder
+RB_CreateFolder
+RB_OpenFile
+RB_ResizeFile
+RB_CloseFile
+RB_WriteFile
+RB_ReadFile
+RB_GetFileSize
+RB_Unlink
+RB_VerifyLinkReference
+RB_SetFileAttributes
+RB_GetDelta
+RB_Progress
+RB_MoveFile
+RB_SyncFile
+RB_ResetTimerA
+%s:start YELLOW solid LED
+[%s]:[%s] - %s: progress=%d
+[%s]:[%s] - %s: called
+%s: ++ result = %d
+mifi_upi_display_update_progress
+mifi_upi_display_close
+mifi_upi_display_result
+gold 1.16
+.shstrtab
+.note.gnu.build-id
+.gnu.version
+.gnu.version_d
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

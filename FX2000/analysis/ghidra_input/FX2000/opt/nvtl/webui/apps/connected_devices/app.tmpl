@@ -1,0 +1,849 @@
+<tmpl_if isHidden>
+    <div class="notification app error">
+        <tmpl_var _("webui", "webui_app_hidden_text")>
+    </div>
+<tmpl_else>
+    <script type="text/javascript">
+    var clientListSize = parseInt("<tmpl_var connectedPrimaryWifiDevicesCount>");
+    var connectedDevicesSize = parseInt("<tmpl_var connectedDevicesCount>");
+    var guestClientListSize = parseInt("<tmpl_var connectedGuestDevicesCount>");
+    var totalWiFiClients = clientListSize + guestClientListSize;
+    var blockedClientListSize;
+    var totalClients = 0;
+    var isEditing = 0;
+    var inputTouched = 0;
+    var connectedInfoRow;
+    var blockedRow;
+    var maxBlockedDevices = (isNaN(parseInt("<tmpl_var maxBlockedDevices>"))) ? 0 : parseInt("<tmpl_var maxBlockedDevices>");
+    var maxWiFiClients = parseInt("<tmpl_var MaxWiFiClients>");
+    var guestWiFiStatus = parseInt("<tmpl_var GuestWifiEnabled>");
+    var minConnVal = 1;
+    var allowedConnectedClients = (isNaN(parseInt("<tmpl_var MaxWiFiClients>"))) ? 1 : parseInt("<tmpl_var MaxWiFiClients>", 10);
+    var maxConnVal = parseInt('<tmpl_var maxConnectionValue>');
+
+    $(function()
+    {
+        initTableBody();
+        refreshDevices(true);
+
+        $("#RefreshList").click(function() {
+            isEditing = 0;
+            inputTouched = 0;
+            refreshDevices(true);
+	    $("#RefreshList").hide();
+        });
+        $(document).ajaxSuccess(function(e, xhr, settings) {
+            if ((xhr.responseText) && (settings.dataType == "json")) {
+                try {
+                    var obj = jQuery.parseJSON(xhr.responseText || "null");
+
+                    if (typeof obj.statusData.statusBarMaxWiFiClientListSize !== undefined) {
+                        var allowedWifiClients = parseInt(obj.statusData.statusBarMaxWiFiClientListSize);
+                        if (maxWiFiClients != allowedWifiClients) {
+                            maxWiFiClients = allowedWifiClients;
+                            var txt = '<tmpl_var _("webui", "connected_devices_change_link")>' + ' ' + '<tmpl_var _("webui", "webui_opening_parenthesis")>' + maxWiFiClients + '<tmpl_var _("webui", "webui_closing_parenthesis")>';
+                            $("#ChangeMaxWiFiConnectionsLink").text(txt);
+                        }
+                    }
+
+                    var refreshDevicesCalled = false;
+
+                    if (typeof obj.statusData.statusBarWiFiClientListSize !== "undefined") {
+                        var primarySize = parseInt(obj.statusData.statusBarWiFiClientListSize);
+
+                        if(primarySize != clientListSize) {
+                            clientListSize = primarySize;
+                            if (isEditing) {
+                                $("#RefreshList").show();
+                                return;
+                            } else {
+                                $("#RefreshList").hide();
+                            }
+                            refreshDevices(true);
+                            refreshDevicesCalled = true;
+                        }
+                    }
+
+                    <tmpl_if GuestWifiSupported>
+                        if (typeof obj.statusData.statusBarGuestWifiEnabled !== "undefined") {
+                            var guestWifi = parseInt(obj.statusData.statusBarGuestWifiEnabled);
+                            if (guestWiFiStatus != guestWifi) {
+                                guestWiFiStatus = guestWifi;
+                            }
+                        }
+                        if (guestWiFiStatus && (typeof obj.statusData.statusBarGuestClientListSize !== "undefined")) {
+                            var guestSize = parseInt(obj.statusData.statusBarGuestClientListSize);
+                            
+                            if (guestClientListSize != guestSize) {
+                                guestClientListSize = guestSize;
+                                if (isEditing) {
+                                    $("#RefreshList").show();
+                                    return;
+                                } else {
+                                    $("#RefreshList").hide();
+                                }
+                                if (!refreshDevicesCalled) refreshDevices(true);
+                            }
+                        }
+                    </tmpl_if>
+
+                    if(totalWiFiClients != (clientListSize + guestClientListSize)) {
+                        totalWiFiClients = clientListSize + guestClientListSize;
+                        var txt = '<tmpl_var _("webui", "connected_devices_sub_header_text")>' + ' ' + '<tmpl_var _("webui", "webui_opening_parenthesis")>' + totalWiFiClients + '<tmpl_var _("webui", "webui_closing_parenthesis")>';
+                        $("#ConnectedDevicesTitle").text(txt);
+                    }
+                } catch(e) {}
+            }
+        });
+
+
+        /**
+         * There is a display issue involving the fading in of rows. If the screen is narrow, the table rows are displayed as blocks and not table-rows, they're default state.
+         * When the orientation is changed to wide and the width is greater than or equal to 580px, the table rows retain their block state. Rather they show be in table-row state,
+         * as widths greater than 580 displays a table. So the page must be refreshed on window width resize to reset table display properties to their defaults.
+         */
+        var ws = $(window).width();
+        $(window).on("resize", function() {
+            if ( (ws != $(window).width()) && (ws < 580) ) location.reload();
+        });
+
+        $("#minConnectionValue").html(minConnVal);
+        $("#maxConnectionValue").html(maxConnVal);
+
+        $("#ChangeMaxWiFiConnectionsLink").on('click', function() {
+            $("#slider").slider('value', allowedConnectedClients);
+            $("#connected_devices_set_connection_limit").dialog({
+                modal : true,
+                resizable : false,
+                draggable : false,
+                dialogClass : "modalPopup",
+                title: "<tmpl_var _("webui","connected_devices_change_connection_modal_title")>",
+                width: 600,
+                open : null,
+                close :null
+            });
+       });
+
+       var tooltip = $('<div id="tooltip" />');
+
+       $("#slider").slider({
+            min:minConnVal,
+            max:maxConnVal,
+            isRTL: <tmpl_if IN_SET(gLangDirection, "rtl")> true, <tmpl_else> false, </tmpl_if>
+            slide: function(event,ui) {
+                if( (ui.value == minConnVal) || (ui.value == maxConnVal) )
+                {
+                    tooltip.css('display','none');   
+                }
+                else
+                {
+                    tooltip.css('display','block');
+                    tooltip.text(ui.value);
+                }
+            },
+            change: function(event,ui) {
+                if( (ui.value == minConnVal) || (ui.value == maxConnVal) )
+                {
+                    tooltip.css('display','none');   
+                }
+                else
+                {
+                    tooltip.css('display','block');
+                    tooltip.text(ui.value);
+                }
+            }
+       })
+       .find(".ui-slider-handle").append(tooltip);
+
+        $("#saveConnectionLimit").on( "click", function() {
+            var url = "<tmpl_udf GET_URI('connected_devices_change_connection_limit')>";
+            var connectionLimit = $("#slider").slider("value");
+
+            $.ajax({
+                url : url,
+                type : "POST",
+                data : {
+                    gSecureToken : "<tmpl_var gSecureToken>",
+                    slider : connectionLimit  
+                },
+                dataType : "json",
+                success : function(data, textStatus, xhr) {
+                    $("#connecteddevicesMaxConnections").text(connectionLimit); 
+                    $("#connected_devices_set_connection_limit").dialog('close');    
+                    allowedConnectedClients = connectionLimit;           
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                        // If auth session has ended, force a new login with a fresh GET.
+                        if( (xhr.status == 401) || (xhr.status == 403) || (xhr.status == 406) ) window.location.replace(window.location.href);
+                }
+            });
+        });
+    });
+
+    function closePopup() {
+        $("#connected_devices_set_connection_limit").dialog('close');
+    }
+
+    /**
+     *	initTableBody()
+     *
+     *	Copy the DOM of the blocked table and the connected tables into memory.
+     * 	These will be cloned to create rows as needed. The original DOM elements will be replaced.
+     */
+    function initTableBody()
+    {
+        var connectedEl = $("#ConnectedDevicesPrimaryTable tr.deviceInformationRow");
+        var blockedEl = $("#BlockedDevicesTable tbody tr");
+
+        // De-uniform the form, if using uniform and these rows have been uniformed.
+        // Uniform 2 will only restore DOM elements, so we do this first, then clone.
+        if (jQuery.uniform) {
+            // This is for uniform 1 and uniform 2 compatibility.
+            var uniformOptions = (typeof $.uniform.options !== "undefined") ? $.uniform.options : $.uniform.defaults;
+            if (uniformOptions.filter) {
+                $.uniform.restore(connectedEl.find(uniformOptions.filter));
+                $.uniform.restore(blockedEl.find(uniformOptions.filter));
+            }
+        }
+        // Clone the row structures into memory.
+        connectedInfoRow = connectedEl.clone();
+        blockedRow = blockedEl.clone();
+    }
+
+    /**
+     * refreshDevices()
+     *
+     * Empty the blocked table and the connected tables, reset the layout, and get new data from CCM.
+     */
+    function refreshDevices(getDeviceData)
+    {
+        // Remove old data rows.
+        $("#ConnectedDevicesPrimaryTable tbody, #BlockedDevicesTable tbody").empty();
+        $(".no_devices").hide();
+        // Showing the loaders.
+        $(".loading").show();
+        // Get the devices data.
+        if (getDeviceData) {
+            getDevicesdata();
+        }
+    }
+
+    /**
+     * getDeviceData()
+     *
+     * Kicks off the AJAX call to get new data about connected, connected guest, and blocked devices
+     *
+     * Once we have data back, it will kick off the Build Table methods.
+     */
+    function getDevicesdata()
+    {
+        if (isEditing) return;
+        $.ajax({
+            url : "<tmpl_udf GET_URI('connected_devices_refresh')>",
+            type : "GET",
+            dataType : "json",
+            success : function(data) {
+                //check if there is data. if so, make the table. if not, show no devices message.
+                $(".loading").hide();
+		connectedDevicesSize = parseInt(data["connectedDevicesCount"]);
+                if(data["connectedDevicesList"].length > 0){
+                    clientListSize = parseInt(data["connectedPrimaryWifiDevicesCount"]);
+                    buildTableFromJson(data["connectedDevicesList"], "ConnectedDevicesPrimary", data["blockedDevicesList"].length);
+                    $("#ConnectedDevicesPrimaryTable").show();
+
+                } else {
+                    // Ideally this case should never occur.
+                    console.log("connectedDevicesList is empty");
+                }
+
+                if(data["connectedGuestDevicesList"].length > 0){
+                    guestClientListSize = data["connectedGuestDevicesList"].length;                                     
+                    buildTableFromJson(data["connectedGuestDevicesList"], "ConnectedDevicesGuest", data["blockedDevicesList"].length);
+                }
+
+                var text = '<tmpl_var _("webui", "connected_devices_block_devices_sub_header_text")>' + ' ' + '<tmpl_var _("webui", "webui_opening_parenthesis")>' +  data["blockedDevicesCount"] + '<tmpl_var _("webui", "webui_closing_parenthesis")>';
+
+                $("#BlockedDevicesTitle").text(text);
+                blockedClientListSize = data["blockedDevicesCount"];
+                if(data["blockedDevicesCount"] > 0) {
+                    $("#BlockedDevicesCountZero").hide();					
+                    buildTableFromJson(data["blockedDevicesList"], "BlockedDevices", data["blockedDevicesCount"]);
+                    $("#BlockedDevicesTable").show();
+                } else {
+                    $("#BlockedDevicesTable thead").find("tr").show();
+                    $("#BlockedDevicesCountZero").show();
+                }
+            },
+            error : function(xhr, textStatus, errorThrown) {
+                // If auth session has ended, force a new login with a fresh GET.
+                if( (xhr.status == 401) || (xhr.status == 403) || (xhr.status == 406) ) window.location.replace(window.location.href);
+            }
+        });
+    }
+
+    /**
+     * buildNewRow()
+     *
+     * rowType: string - connected, connectedGuest
+     * index: integer - row index
+     * localId: string - added to existing name and id attributes to make them unique in the DOM.
+     * interfaceType: string - interface type
+     * $el: object - jQuery DOM object
+     *
+     * returns the new row
+     *
+     * Clone a new display row from the one stored in memory.
+     * Give it a unique id. Add an edit button to expose the edit row.
+     */
+    function buildNewRow(rowType, index, localId, interfaceType, macAddress, deviceType, hostname, displayName, $el)
+    {
+        var newRow = $el.clone();
+        newRow.attr("id", rowType + index);
+
+        // Set the value for the device name input.
+        var editDeviceName = newRow.find("input.friendlyname");
+        editDeviceName.val(displayName);
+
+        editDeviceName.off("input");
+        editDeviceName.on("input", function() {
+            if(inputTouched == 0) {
+                isEditing = isEditing + 1;
+                inputTouched = 1;
+            }
+            $(this).closest("tr").attr("data-friendlyname", editDeviceName.val());
+            $(this).closest("tr").attr("data-namechange", "yes");
+        });
+
+        newRow.find(".deviceInformation").attr("id", "deviceInformation_" + index)
+        newRow.find(".hostName").attr("id", "hostName_" + index)
+        newRow.find(".blockDevice").attr("id", "blockCheckbox_" + index);
+
+        newRow.find(".blockDevice").on("change", function() {
+            if(inputTouched == 0) {
+                isEditing = isEditing + 1;
+                inputTouched = 1;
+            }
+            $(this).closest("tr").attr("data-blockchange", "yes");
+        });
+
+        /**
+         * Give the edit button a unique id and bind the click event
+         * to hide the info row and show the edit row.
+         */
+        newRow
+            .find(".edit")
+            .attr("id", "editLink_" + index)
+            .on("click", function() {
+                // Hide any open edit rows.
+                if($("#hostName_" + index).css('display') == 'none') {
+                    $("#hostName_" + index).show();
+                    $("#deviceInformation_" + index).hide();
+                    $("#editLink_" + index + " #dropdown").removeClass().addClass("down_arrow");
+                    editDeviceName.val((displayName == "") ? hostname : displayName);
+                    isEditing = isEditing - 1;
+                } else {
+                    $("#hostName_" + index).hide();
+                    $("#deviceInformation_" + index).fadeIn("slow");
+                    $("#editLink_" + index + " #dropdown").removeClass().addClass("up_arrow");
+                    isEditing = isEditing + 1;
+                }
+            });
+
+        newRow.find(".interfaceType span")
+            .attr("title", interfaceType)
+            .removeClass()
+            .addClass(interfaceType.toLowerCase());
+
+        return newRow;
+    }
+
+    /**
+     * containsPrintable()
+     *
+     * str: string - unicode string to test
+     *
+     * returns boolean
+     *
+     * Test if string contains printable characters and no control characters.
+     */
+    function containsPrintable(str)
+    {
+        return /^[\u0020-\uFFFF]*$/.test(str);
+    }
+
+    /**
+     * clearErrors()
+     *
+     * Remove any error elements added to the DOM.
+     */
+    function clearErrors()
+    {
+        $(".notification, .inline_error, .error").remove();
+    }
+
+    /**
+     * postBlockUnblockData()
+     *
+     * newRow: object - jQuery DOM object
+     * rowType: string - connected, connectedGuest
+     * id: integer - row index
+     *
+     * Refresh Devices kicks off the AJAX call to get new data about connected and
+     * blocked devices
+     *
+     * Once we have data back, it will kick off the Build Table methods.
+     */
+    function postBlockUnblockData(newRow, rowType, id)
+    {
+        var postUrl = ( rowType === "ConnectedDevicesPrimaryRow" ) ? "<tmpl_udf GET_URI('connected_devices_block_device')>"  : "<tmpl_udf GET_URI('connected_devices_unblock_device')>";
+        $.post(postUrl, {
+            deviceType : newRow.attr("data-type"),
+            hostname : newRow.attr("data-friendlyname"),
+            bssid : newRow.attr("data-mac"),
+            gSecureToken : "<tmpl_var gSecureToken>"
+        },
+        function(data) { 
+            isEditing = 0;
+            inputTouched = 0;
+            $("#" + rowType + id).remove();
+            refreshDevices(true);
+        }).fail(function() {
+            refreshDevices(true);
+        });
+    }
+
+    /**
+     * updateUniformElements()
+     *
+     * $el: object - jQuery DOM object
+     *
+     * If using the Uniform jQuery plugin, reapply uniform features to specific form elements in the DOM
+     */
+    function updateUniformElements($el)
+    {
+        if (jQuery.uniform) {
+            // This is for uniform 1 and uniform 2 compatibility.
+            var uniformOptions = (typeof $.uniform.options !== "undefined") ? $.uniform.options : $.uniform.defaults;
+            if (uniformOptions.filter) {
+                if (typeof $el !== "undefined") {
+                    $el.find(uniformOptions.filter).uniform();
+                } else {
+                    $(uniformOptions.filter).uniform();
+                }
+            }
+        }
+    }
+
+    function saveChangesAjax() {
+        postUrl = "<tmpl_udf GET_URI('connected_devices_savechanges')>";
+        
+        $.ajax({
+            url : postUrl,
+            type : "POST",
+            data : params,
+            dataType : "json",
+            async : false,
+            success : function(data, textStatus, xhr) {
+        	isEditing = 0;
+               	refreshDevices(true);
+		$("#postSuccess").show();
+            }
+        });
+    }
+
+    function saveChangesAction() {
+        params = {};
+        params["gSecureToken"] = "<tmpl_var gSecureToken>";
+        isError = false;
+        changesHappened = false;
+        totalClients=0;
+
+        params["size"] = connectedDevicesSize + guestClientListSize + blockedClientListSize ;
+        blockedListSize = 0;
+        for(i=0; i<(connectedDevicesSize + guestClientListSize); i++) {
+            pid = "#ConnectedDevicesPrimaryRow" + i
+            saveName = $(pid).attr("data-friendlyname");
+            if( ! containsPrintable(saveName) ) {
+                if(! isError) {
+                    clearErrors();
+                    isError = true;
+                }
+                $(pid).find("input.friendlyname").after('<p class="error">' + '<tmpl_var _("webui", "connected_devices_invalid_name")>' + '</p>');
+            }
+
+            j = i.toString();
+            str = "deviceList_" + j + "_mac"; params[str] = $(pid).attr("data-mac");
+            str = "deviceList_" + j + "_namechange"; params[str] = $(pid).attr("data-namechange"); if(params[str] == "") { params[str] = "no"; }
+            if(params[str] == "yes") changesHappened = true;
+            str = "deviceList_" + j + "_blockchange"; params[str] = $(pid).attr("data-blockchange"); if(params[str] == "") { params[str] = "no"; }
+            if(params[str] == "yes") changesHappened = true;
+            str = "deviceList_" + j + "_name"; params[str] = saveName;
+            str = "deviceList_" + j + "_block"; params[str] = ( $("#blockCheckbox_" + i).is(":checked") ? "yes" : "no" );
+            if(params[str] == "yes") {
+                blockedListSize = blockedListSize + 1;
+            }
+		    str = "deviceList_" + j + "_type"; params[str] = $(pid).attr("data-type");
+            totalClients++;
+
+            if(! isError && changesHappened) {
+                if(("<tmpl_var ShowBlockedLimitCheck>" === "1") && (blockedClientListSize + blockedListSize) > maxBlockedDevices) {
+                    changesHappened = false;
+                    modalPopup.createWindow(
+                        '<tmpl_var _("webui", "connected_devices_max_blocked_modal_title")>',
+                        '<p><tmpl_var _("webui", "connected_devices_multi_max_blocked_modal_text")></p>',
+                        430, 250,
+                        [{
+                            text : '<tmpl_var _("webui", "webui_modal_ok_button")>',
+                            className : "primary",
+                            trigger : function(){
+                                isEditing = 0;
+                                refreshDevices(true);
+                            }
+                        }]
+                    );
+                }
+            }
+        }
+        
+        noWhitelistButUnblock = false;
+        for(i=0;i<blockedClientListSize;i++) {
+            pid = "#BlockedDevicesRow" + i
+            saveName = $(pid).attr("data-friendlyname");
+
+            j = totalClients.toString();
+            str = "deviceList_" + j + "_mac"; params[str] = $(pid).attr("data-mac");
+            str = "deviceList_" + j + "_blockchange"; params[str] = $(pid).attr("data-blockchange"); if(params[str] == "") { params[str] = "no"; }
+            if(params[str] == "yes") changesHappened = true;
+            str = "deviceList_" + j + "_name"; params[str] = saveName;
+            str = "deviceList_" + j + "_block"; params[str] = ( $("#unblockCheckbox_" + i).is(":checked") ? "yes" : "no" );
+            blockval = params[str];
+            str = "deviceList_" + j + "_namechange"; params[str] = "none";
+            whitelistval = $(pid).attr("data-whitelist"); 
+            if(whitelistval == "false" && ("<tmpl_var macFilterEnabled>" === "on") && blockval == "no") { noWhitelistButUnblock = true; }
+            str = "deviceList_" + j + "_type"; params[str] = $(pid).attr("data-type");
+            totalClients++;
+
+            if(changesHappened) {
+                if(noWhitelistButUnblock) {
+                    modalPopup.createWindow(
+                        '<tmpl_var _("webui", "connected_devices_unblock_modal_title")>',
+                        "<p><tmpl_var _('webui', 'connected_devices_unblock_modal_text')></p>",
+                        430, 250,
+                        [{
+                            text : '<tmpl_var _("webui", "webui_modal_ok_button")>',
+                            className : "primary",
+                            trigger : function() {
+                              
+                            }
+                        }]
+                    );
+                } 
+            }
+        }
+
+        if(!isError && changesHappened) {
+           saveChangesAjax();
+        }     
+        
+    }
+
+    /**
+     * buildTableFromJson()
+     *
+     * data: object - AJAX result
+     * type: string - blocked, connected, or connectedGuest
+     * blockedListSize: integer - length of blocked devices list
+     *
+     * Builds new rows using AJAX result data. Gives rows appropriate attributes and event handling.
+     * These rows are replace rows in the existing tbody elements.
+     */
+    function buildTableFromJson(data, type, blockedListSize)
+    {
+        var newTableBody;
+        var index = 0;
+        if (type == "ConnectedDevicesGuest") {
+            type = "ConnectedDevicesPrimary";
+            if (connectedDevicesSize == 0) {
+                newTableBody = $("#" + type + "Table tbody").empty();
+            } else {
+                newTableBody = $("#" + type + "Table tbody");
+                index = connectedDevicesSize;
+            }
+        } else {
+            newTableBody = $("#" + type + "Table tbody").empty();
+        }
+        var rowType = type + "Row";
+        
+
+        //Loop each row of Devices.
+        $.each(data, function(id, value) {
+            var newRow;
+            id = id + index;
+            var localId = type + "_" + id;
+            var displayName = this.name;
+            displayName = (displayName == "") ? this.hostname : displayName;
+            displayName = ((displayName == "")||(typeof displayName == "undefined")) ? "Unknown" : displayName;
+            // Remove any entity encoding. It's not needed because jQuery will post as plain text.
+            var decoded = $('<div/>').html(displayName).text();
+            displayName = decoded;
+
+	     if (type == "ConnectedDevicesPrimary"){
+                newRow = buildNewRow(rowType, id, localId, this.interfaceType, this.macAddress, this.type, this.hostname, displayName, connectedInfoRow);
+            } else {
+                newRow = blockedRow.clone();
+                newRow.attr("id", rowType + id);
+                newRow.attr("data-whitelist", this.whitelist);
+                newRow.find(".unblockDevice").attr("id", "unblockCheckbox_" + id);
+
+                newRow.find(".unblockDevice").on("change", function() {
+                    $(this).closest("tr").attr("data-blockchange", "yes");
+                });
+            }
+
+            // Do all the stuff both rows have in common.
+            newRow.attr("data-mac", this.macAddress);
+            newRow.attr("data-type", this.type);
+            newRow.attr("data-hostname", this.hostname);
+            newRow.attr("data-friendlyname", displayName);
+
+            newRow.find(".hostName").text(displayName);
+            newRow.find(".ipAddress").text(this.ipAddress);
+            newRow.find(".ipV6Address").text(this.ipV6Address);            
+            newRow.find(".macAddress").text(this.macAddress);
+            newRow.find(".linkLocal").text(this.linkLocal);
+            newRow.find(".networkType").text(this.networkType);
+
+            var buttonCol = newRow.find(".buttonColumn");
+
+            // If this device can not be blocked, add it here.
+            if (this.disableBlock ) {
+                buttonCol.find("input").remove();
+            }
+            if (type == "BlockedDevices") {
+                buttonCol.find("input").attr("title", '<tmpl_var _("webui", "connected_devices_unblock_button_hover_text")>');
+                <tmpl_if ConnectedDeviceUnblockShow>
+                    <tmpl_if ConnectedDeviceUnblockLocked>
+                        buttonCol.find("input").prop("disabled", true);
+                    </tmpl_if>
+                    buttonCol.find("input").uniform();
+                <tmpl_else>
+                    buttonCol.find("input").remove();
+                </tmpl_if>
+            } else {
+                <tmpl_if ConnectedDeviceEditShow>
+                    <tmpl_if ConnectedDeviceEditLocked>
+                        newRow.find(".edit").prop("disabled", true);
+                    </tmpl_if>
+                <tmpl_else>
+                    newRow.find(".edit").remove();
+                </tmpl_if>
+                <tmpl_if ConnectedDeviceBlockShow>
+                    <tmpl_if ConnectedDeviceBlockLocked>
+                        buttonCol.find("input").prop("disabled", true);
+                    </tmpl_if>
+                    buttonCol.find("input").uniform();
+                <tmpl_else>
+                    buttonCol.find("input").remove();
+                </tmpl_if>
+            }
+            if(this.isSelf) {
+                newTableBody.prepend(newRow);
+            } else {
+                newTableBody.append(newRow);
+            }
+        });
+
+        $("#connectedSaveChanges").off("click");
+        $("#connectedSaveChanges").on("click", function() {
+            $("#postSuccess").hide();
+	    saveChangesAction();
+        });
+
+        //Fade in the rows since they start out hidden.
+        $("#" + type + "Table").find("tr").fadeIn("slow");
+
+        updateUniformElements($("#" + type + "Table tbody"));
+    }
+
+    </script>
+
+    <tmpl_if isLocked>
+        <div class="notification app error">
+            <tmpl_var _("webui", "webui_app_locked_text")>
+        </div>
+    </tmpl_if>
+
+    <tmpl_if errorCount>
+        <div class="notification app error">
+            <div class="notification_inner">
+                <tmpl_var _("webui", "webui_save_code_failed_text")>
+            </div>
+        </div>
+    </tmpl_if>
+
+    <div class="notification app success" id="postSuccess" style="display:none;">
+         <div class="notification_inner">
+               <tmpl_var _("webui", "webui_save_code_success_text")>
+         </div>
+    </div>
+
+    <!-- connected devices - START -->
+    <fieldset class="first">
+        <h3 id="ConnectedDevicesTitle" class="tableHeader sectionHead clearfix"><tmpl_var _("webui", "connected_devices_sub_header_text")>&nbsp;<tmpl_var _("webui", "webui_opening_parenthesis")><tmpl_var totalConnectedDevicesCount><tmpl_var _("webui", "webui_closing_parenthesis")></h3>
+
+        <p class="note" id="RefreshList" style="display:none;">
+            <tmpl_var _("webui", "connected_devices_list_not_updated_text")> <a href="#" id="RefreshList"> <tmpl_var _("webui", "connected_devices_refresh_link_text")> </a>
+        </p>
+
+        <p id="ConnectedDevicesPrimaryUpdatingData" class="loading">
+            <tmpl_var _("webui", "connected_devices_searching_for_devices_text")>
+        </p>
+
+        <table id="ConnectedDevicesPrimaryTable" class="devicesTable">
+            <colgroup>
+                <col class="interfaceType" />
+                <col class="deviceName" />
+                <col class="networkType" />
+                <col class="buttonColumn" />
+                <col class="edit" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th><tmpl_var _("webui", "connected_device_label")></th>
+                    <th></th>
+                    <th><tmpl_var _("webui", "connected_device_network_label")></th>
+                    <th><tmpl_var _("webui", "connected_device_block_label")></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-mac="" data-namechange="" data-blockchange="" data-friendlyname="" data-hostname="" data-type=""  class="deviceInformationRow">
+                    <td data-label="<tmpl_var _("webui", "connected_device_label")>" class="interfaceType"><span>&nbsp;</span></td>
+                    <td class="deviceName">
+                    <div class="inlineedit edit">
+                        <tmpl_if ConnectedDeviceEditShow>
+                            <button type="button" id="dropdown" class="down_arrow" title='<tmpl_var _("webui", "connected_devices_edit_device_hover_text")>' <tmpl_if ConnectedDeviceEditLocked>disabled="disabled"</tmpl_if>>
+                                <tmpl_var _("webui", "connected_devices_edit_device_button_text")>
+                            </button>
+                        </tmpl_if>
+                    </div>
+                        <div class="hostName">&nbsp;</div>
+                        <div class="deviceInformation" style="display:none;">
+                            <input class="friendlyname text long" name="editName" type="text" maxlength="32" value="" />
+                            <!--<input type="checkbox" name="saveDeviceName" class="save"/>-->
+                            <p><tmpl_var _("webui", "connected_devices_ip_address_label")><span class="ipAddress"></span></p>
+                            <p><tmpl_var _("webui", "connected_devices_ip_v6_address_label")><span class="ipV6Address"></span></p>
+                            <p><tmpl_var _("webui", "connected_devices_mac_address_label")> <span class="macAddress"></span></p>
+                            <tmpl_if isIPv6Supported><p><tmpl_var _("webui", "connected_devices_link_local_label")> <span class="linkLocal"></span></p></tmpl_if>
+                        </div>
+                    </td>
+                    <td data-label="<tmpl_var _("webui", "connected_device_network_label")>" class="networkType">&nbsp;</td>
+                    <td data-label="<tmpl_var _("webui", "connected_device_block_label")>" class="buttonColumn">
+                        <tmpl_if ConnectedDeviceBlockShow>
+                            <input class="blockDevice secondary" name="blockName" type="checkbox" <tmpl_if ConnectedDeviceBlockLocked>disabled="disabled"</tmpl_if> <tmpl_if isLocked> disabled="disabled"</tmpl_if> />
+                        </tmpl_if>
+                    </td>
+                    <td class="edit">
+                        <tmpl_if ConnectedDeviceEditShow>
+                            <button type="button" id="dropdown" class="down_arrow" title='<tmpl_var _("webui", "connected_devices_edit_device_hover_text")>' <tmpl_if ConnectedDeviceEditLocked>disabled="disabled"</tmpl_if>>
+                                <tmpl_var _("webui", "connected_devices_edit_device_button_text")>
+                            </button>
+                        </tmpl_if>
+                    </td>
+                </tr>
+	        </tbody>
+        </table>
+	</fieldset>
+    <!-- connected devices - END -->
+
+    <div id="connected_devices_set_connection_limit" style="display:none;" >
+        <div class="ig_row clearfix">
+            <p class="clearfix">
+                <tmpl_var _("webui", "connected_devices_change_connection_modal_text")>
+            </p>
+        </div>
+        <br />
+        <br />
+        <div class="ig_row clearfix">
+            <label for="slider"><tmpl_var _("webui", "connected_devices_change_connection_model_label")></label>
+            <span id="minConnectionValue"></span>
+            <div id="slider"></div>
+            <span id="maxConnectionValue"></span>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="row clearfix">
+            <div class="buttonset">
+                <button type="button" class="secondary" id="clearConnectionLimit" onclick='closePopup();'>
+                    <tmpl_var _("webui", "webui_modal_cancel_button")>
+                </button>
+                <button type="submit" class="primary" id="saveConnectionLimit">
+                    <tmpl_var _("webui", "webui_save_button")>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <p class="clearfix">
+        <span class="changeLink">
+            <a id="ChangeMaxWiFiConnectionsLink"><tmpl_var _("webui", "connected_devices_change_link")>&nbsp;<tmpl_var _("webui", "webui_opening_parenthesis")><span id="connecteddevicesMaxConnections"><tmpl_var MaxWiFiClients></span><tmpl_var _("webui", "webui_closing_parenthesis")>
+            </a>
+        </span>
+    </p>
+
+    <!-- Blocked devices - BEGIN -->
+    <fieldset class="last">
+        <h3 id="BlockedDevicesTitle" class="tableHeader sectionHead"><tmpl_var _("webui", "connected_devices_block_devices_sub_header_text")>&nbsp;<tmpl_var _("webui", "webui_opening_parenthesis")><tmpl_var blockedDevicesCount><tmpl_var _("webui", "webui_closing_parenthesis")></h3>
+        <p id="BlockedDevicesUpdatingData" class="loading">
+            <tmpl_var _("webui", "connected_devices_searching_for_blocked_devices_text")>
+        </p>
+
+        <table id="BlockedDevicesTable" class="devicesTable">
+            <colgroup>
+                <col class="icon" />
+                <col class="deviceName" />
+                <col class="buttonColumn" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th><tmpl_var _("webui", "connected_device_label")></th>
+                    <th></th>
+                    <th><tmpl_var _("webui", "connected_device_block_label")></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-mac="" data-whitelist="" data-blockchange="" class="deviceInformationRow">
+                    <td data-label="<tmpl_var _("webui", "connected_device_label")>" class="icon"><span class="Generic">&nbsp;</span></td>
+                    <td class="deviceName">
+                        <div class="hostName">&nbsp;</div>
+                        <p><tmpl_var _("webui", "connected_devices_mac_address_label")> <span class="macAddress"></span></p>
+                    </td>
+                    <td data-label="<tmpl_var _("webui", "connected_device_block_label")>" class="buttonColumn">
+                        <tmpl_if ConnectedDeviceUnblockShow>
+                            <input class="unblockDevice secondary" name="unblockName" type="checkbox" checked <tmpl_if ConnectedDeviceBlockLocked>disabled="disabled"</tmpl_if> <tmpl_if isLocked> disabled="disabled"</tmpl_if> />
+                        </tmpl_if>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="row clearfix no_devices" id="BlockedDevicesCountZero">
+            <div class="col icon" >
+            </div>
+            <div class="col text">
+                <p>
+                    <tmpl_var _("webui", "connected_devices_empty_blocked_list_text")>
+                </p>
+            </div>
+        </div>
+
+    </fieldset>
+    <!-- Blocked devices - END -->
+    <div class="button_container clearfix">
+        <button id="connectedSaveChanges" type="submit" class="primary" <tmpl_if isLocked>disabled="disabled"</tmpl_if>>
+            <tmpl_var _("webui", "webui_save_button")>
+        </button>
+    </div>
+</tmpl_if>
+

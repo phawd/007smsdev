@@ -1,0 +1,65 @@
+<!-- wifi_primary_settings -->
+<div id="wifi_primary_settings">
+	<h1>Wi-Fi - Red principal </h1>
+	<h2>Descripci
+		Para conectarse a la red de Wi-Fi principal <tmpl_var _("webui", "webui_product_name_with_suffix")>, los dispositivos conectados deben usar la configuraci
+n de Wi-Fi que se muestra en esta pantalla. Si usted cambia estos ajustes, los dispositivos conectados existentes pueden perder su conexi
+	<h3><tmpl_var _("webui", "wifi_primary_ssid_label")></h3>
+		Esto configura el nombre de la red o SSID para la red de Wi-Fi. Ingrese un nombre adecuado. El nombre puede tener 32 caracteres de largo como m
+	<h3><tmpl_var _("webui", "wifi_primary_security_label")></h3>
+	<p> Seleccione la opci
+n deseada para seguridad de Wi-Fi. </p>
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> permitir
+ que otras personas monitoreen su tr
+fico de WI-FI y usen su plan de datos para acceder a Internet. Si es posible, debe evitarse el uso de estas opciones.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> es el m
+s reciente y seguro, y debe usarse de ser posible. </li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> se puede usar si alguno de sus dispositivos m
+s antiguos no admiten WPA2. 
+			<strong><tmpl_var _("webui", "wifi_security_wpa3_transition_text")></strong> se puede usar para dispositivos de queja WPA2 y WPA3.
+	<h3><tmpl_var _("webui", "wifi_primary_password_label")></h3>
+		Ingrese la contrase
+a de Wi-Fi en este campo. Tambi
+n puede usar el bot
+n "Generar nueva clave" para que se inserte una contrase
+a aleatoria segura en este campo. Recuerde guardar sus cambios si usa esta opci
+		Estas configuraci
+ oculta de manera predeterminada, pero puede hacer clic en el encabezado/enlace para hacerla visible. Normalmente, estas opciones se pueden dejar en sus valores predeterminados, pero pueden cambiarse, de ser necesario, para que se adapten a su entorno en particular.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_ssid_label", gProductName)></h3>
+		Si este par
+metro est
+ seleccionado, este nombre de Wi-Fi no ser
+ visible en la pantalla t
+ctil. Si no est
+ seleccionado, el nombre de la red se puede visualizar en la pantalla t
+ctil dentro de la aplicaci
+n de Wi-Fi.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_password_label", gProductName)></h3>
+		Si este par
+metro est
+ seleccionado, esta contrase
+a de Wi-Fi no ser
+ visible en la pantalla t
+ctil. Si no est
+ seleccionado, la contrase
+a se puede visualizar en la pantalla t
+ctil dentro de la aplicaci
+n de Wi-Fi.
+	<h3><tmpl_var _("webui", "wifi_primary_broadcast_ssid_label")></h3>
+		Si se marca esta configuraci
+n, la red de Wi-Fi aparece en la lista de redes de Wi-Fi disponibles en sus dispositivos conectados. Si no se marca, esta red ser
+ invisible.
+	<tmpl_if showWiFiPrimaryWPS>
+		<h3><tmpl_var _("webui", "wifi_primary_wps_label")></h3>
+			La configuraci
+n protegida de Wi-Fi (WPS) es un sistema para permitir que dispositivos con Wi-Fi se conecten a una red Wi-Fi sin tener que ingresar la clave de red de forma manual. Si desea usar WPS, marque esta opci
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_primary_privacy_label")></h3>
+		Si se marca esta configuraci
+n, cada dispositivo conectado se a
+sla de todos los dem
+s dispositivos conectados. Esto ofrece una seguridad adicional si algunos dispositivos conectados son desconocidos o no se conf
+a completamente en ellos. Para el funcionamiento normal, esta opci
+n no deber
+a marcarse.
+<!-- id="wifi_primary_settings" -->

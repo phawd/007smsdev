@@ -1,0 +1,72 @@
+<div id="gps_status">
+	<h1><tmpl_var _("webui", "gps_status_menu_text")></h1>
+	<h2>Yleiskatsaus</h2>
+ <tmpl_var _("webui", "webui_product_name")>-laitteessa on GPS-vastaanotin. GPS-vastaanotin voi m
+ nykyisen sijaintisi, usein jopa sis
+tiloissa.<tmpl_if GPSOverWiFiEnableShow>Nykyinen sijainti n
+ sivulla, ja sijaintitiedot voidaan jakaa yhdistettyjen tietokoneiden kanssa k
+ GPS Wi-Fin kautta -ominaisuutta.</tmpl_if>
+	<h2>GPS:n k
+	<tmpl_if GPSEnableShow>
+		<h3><tmpl_var _("webui", "gps_status_enable_label")></h3>
+LLE / POIS P
+ voit kytke
+ GPS-toiminnon tarvittaessa p
+lle tai pois p
+		<h3><tmpl_udf GET_PO_TEXT("gps_status_startup_state_label", gProductName)></h3>
+ asetus m
+, milloin GPS-vastaanotin kytkeytyy pois p
+, kun se on kytketty p
+lle.</p>
+		<p>Jos asetus on kytketty P
+LLE, GPS-vastaanotin kytkeytyy pois p
+, kun <tmpl_var _("webui", "webui_product_name")>-laitteen virta katkaistaan. Sinun on kytkett
+ se uudelleen p
+lle, kun GPS-vastaanotinta seuraavan kerran tarvitaan.</p>
+	</tmpl_if>
+		<h3>GPS:n tila</h3>
+		<p>Jos GPS-vastaanotin ei ole viel
+ saanut paikkatietoa (sijaintia), <strong>Searching</strong> (Haetaan) -tila tulee n
+kyviin. Kun paikkatieto on saatu, seuraavat Current Location (Nykyinen sijainti) -tiedot n
+n ja Google-kartta n
+ visuaalisesti nykyisen sijainnin.</p>
+		<h2><tmpl_var _("webui", "gps_status_map_section_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "gps_status_latitude_label"), (size(_("webui", "gps_status_latitude_label")) - size(":")))></h3>
+		<p>Viimeisimm
+n paikkatiedon leveysaste.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_longitude_label"), (size(_("webui", "gps_status_longitude_label")) - size(":")))></h3>
+		<p>Viimeisimm
+n paikkatiedon pituusaste.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_altitude_label"), (size(_("webui", "gps_status_altitude_label")) - size(":")))></h3>
+		<p>Viimeisimm
+n paikkatiedon korkeus.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_accuracy_label"), (size(_("webui", "gps_status_accuracy_label")) - size(":")))></h3>
+ mitataan GPS-vastaanottimen saaman horisontaalisen paikkatiedon tarkkuutta.</p>
+		<tmpl_if GPSOverWiFiEnableShow>
+			<tmpl_if GPSPortNumberShow>		
+				<h2><tmpl_var _("webui", "gps_status_enable_sub_header_text")></h2>
+				<h3><tmpl_var truncate(_("webui", "gps_status_gps_over_wifi_label"), (size(_("webui", "gps_status_gps_over_wifi_label")) - size(":")))></h3>
+				<p><tmpl_var _("webui", "webui_product_name")> toimittaa GPS-tiedot National Marine Electronics Association (NMEA) -tekstivirtana.</p>
+				<p>NMEA (GPS) -portin k
+ on vakiomenetelm
+, jolla sovellukset voivat k
+ GPS-tietovirtaa Windowsissa ja muissa tietokoneymp
+. Jotta voit luoda t
+n portin, sinun on ladattava ja asennettava GPS Wi-Fin kautta -ajuri ymp
+llesi. T
+ ajuri luo NMEA-portin, hankkii GPS-tiedot <tmpl_var _("webui", "webui_product_name")>-laitteesta ja asettaa n
+ GPS-tiedot NMEA-yhteensopivien sovellusten saataville.</p>
+				<h3><tmpl_var truncate(_("webui", "gps_status_port_number_label"), (size(_("webui", "gps_status_port_number_label")) - size(":")))></h3>
+				<p>T
+ on portin numero, jota tietokoneesi ajuriohjelmisto k
+, jotta se voi muodostaa yhteyden t
+n laitteeseen ja hankkia GPS-tiedot. Portin numeroa ei pid
+ muuttaa, ellei siihen ole hyv
+			</tmpl_if>
+		</tmpl_if>
+	<tmpl_if GPSDownloadDriversShow>
+		<h3><tmpl_var _("webui", "gps_status_wifi_driver_download_link")></h3>
+set saatavilla olevien ajureiden lataussivulle.<tmpl_if GPSOverWiFiEnableShow>N
+ ajureita tarvitaan GPS Wi-Fin kautta -ominaisuuden k
+miseen.</tmpl_if>
+	</tmpl_if>

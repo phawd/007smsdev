@@ -1,0 +1,44 @@
+<!-- MAC Filter -->
+<div id="macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+	<h2>Oversigt</h2>
+r Mac-filterfunktionen er t
+ndt, forhindrer den adgang til dette Wi-Fi-netv
+rk for enhver enhed, der ikke er inkluderet i listen "Mac-adressefilter". Filteret g
+lder kun for Wi-Fi-netv
+rket og har ingen effekt p
+ USB-enheder.</p>
+	<h2>TIL/FRA-kontrol</h2>
+	<p>Brug denne kontrol til at t
+nde eller slukke Mac-filteret efter behov. F
+nder for det, skal du sikre dig, at nogle enheder er tilladt. Bem
+rk, at n
+r Mac-filteret t
+ndes, vil enhver tilsluttet enhed, der ikke er p
+ listen "Mac-adressefilter", straks blive koblet fra.</p>
+	<h2>Enhedsliste</h2>
+	<p>Alle kendte enheder er vist her, undtagen USB-enheder. Brug de medf
+lgende afkrydsningsfelter til at inkludere eller ekskludere enheder fra listen "Mac-adressefilter".</p>
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Brug opdateringsknappen til at opdatere listen efter behov.</p>
+	<h2>Drift</h2>
+	<h3>Blokeret versus Mac-filter</h3>
+	<p>Interaktionen mellem "blokerede" enheder og "Mac-filteret" er:</p>
+	<div class="blockgroup">
+	<li>Blokerede enheder blokeres altid fra Wi-Fi-netv
+rket, uanset om Mac-filteret er t
+ndt eller slukket.</li>
+	<li>Hvis MAC-filteret er t
+ndt, og en enhed er p
+ listen Blokeret, men ikke i listen Mac-adressefilter, kan den ikke oprette forbindelse. B
+de Mac-filter og blokering forhindrer forbindelse.</li>
+	<li>Hvis Mac-filteret er t
+ndt, og en enhed findes p
+ MAC-adressefilterlisten, er enheden i stand til at oprette forbindelse. N
+r den er tilsluttet, kan den derefter blokeres enten ved at fjerne den fra Mac-adressefilterlisten eller ved at bruge funktionen "Blok
+r". Generelt skal "Blok
+r" bruges til midlertidig blokering og Mac-filter til permanent blokering.</li>
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+	<p>Brug denne knap til at tilf
+je en ny enhed til enhedslisten.</p>
+<!--  macfilter  -->

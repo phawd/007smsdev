@@ -1,0 +1,27 @@
+<div id="settings_virtual">
+	<h1>Erweiterte Einstellungen</h1>
+	
+	<tmpl_if appsList>
+		<h2>Übersicht</h2>Über das Menü „Erweitert“ gelangen Sie zu folgenden Seiten und Einstellungen:<div class="blockgroup">
+			<ul>
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title> - <tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+		<p>Beachten Sie, dass für den normalen Betrieb unter normalen Umständen die Standardwerte dieser Einstellungen nicht geändert werden müssen. Ändern Sie diese Einstellungen nur, wenn Ihre konkrete Situation Änderungen erfordert.</p>
+	</tmpl_if>
+
+	<h2>Schaltflächen</h2>
+	<tmpl_if showBackButton>
+		<h3>Zurück</h3>
+		<p>Klicken Sie darauf, um zur vorherigen Seite zurückzukehren.</p>
+	</tmpl_if>
+	<tmpl_unless showBackButton>
+		<h3>Weiter</h3>
+		<p>Darüber gelangen Sie zu den nächsten Seiten.</p>
+	</tmpl_unless>
+
+</div>

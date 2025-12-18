@@ -1,0 +1,25 @@
+<!-- Status Logs -->
+<div id="status_logs">
+	<h1><tmpl_var _("webui", "status_logs_menu_text")></h1>
+	<h2>Overview</h2>
+		The Log information is useful for troubleshooting, but is not required for normal operation.
+	<h2>Settings</h2>
+	<h3><tmpl_var truncate(_("webui", "status_logs_enable_logs_label"), (size(_("webui", "status_logs_enable_logs_label")) - size(":")))></h3>
+	<p>Check this box to turn on logs as needed.</p>
+	<h3><tmpl_var truncate(_("webui", "status_logs_delete_sys_logs_label"), (size(_("webui", "status_logs_delete_sys_logs_label")) - size(":")))></h3>
+	<p>Use the drop-down list to select when logs are cleared. Select the desired option.</p>
+	<p>Note that if the log is full, the oldest data is deleted, regardless of this setting.</p>
+	<h2>Log Data</h2>
+	<p>The provided tabs allow you to select the type of log data to view.
+	<h3><tmpl_var _("webui", "status_logs_mobile_network_log_href")></h3>
+	<p>This log contains data regarding connections to the mobile network.
+	<h3><tmpl_var _("webui", "status_logs_system_log_href")></h3>
+	<p>This log records events - other than mobile data connections - which occurred on this device.
+	<h2>Buttons</h2>
+	<h3><tmpl_var _("webui", "status_logs_clear_log_btn")></h3>
+	<p>Clicking this button will delete all existing log data. This makes new data easier to read.</p>
+	<h3><tmpl_var _("webui", "status_logs_refresh_btn")></h3>
+	<p>Use this to update the log data which is displayed.</p>
+	<h3><tmpl_var _("webui", "status_logs_download_btn")></h3>
+	<p>Use this button if you wish to download log data to your computer or connected device.</p>
+<!-- end Status Logs -->

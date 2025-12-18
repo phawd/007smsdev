@@ -1,0 +1,107 @@
+<!-- SIM Lock -->
+<div id="adv_sim">
+        <h1><tmpl_var _("webui", "adv_sim_menu_text")></h1>
+        <h2>Vis
+o geral</h2>
+        <p>O cart
+o SIM dentro do seu <tmpl_var _("webui", "webui_product_name")> pode ser bloqueado com o uso de um PIN. Se o cart
+o SIM estiver bloqueado, voc
+ precisar
+ inserir o PIN antes de se conectar 
+vel. Depois de inserido, o PIN 
+ lembrado at
+ximo desligamento. </p>
+m de permitir que voc
+ insira o PIN do SIM quando necess
+rio, esta p
+gina tamb
+m permite que voc
+ desbloqueie o seu cart
+o SIM ou altere o PIN do SIM. Normalmente, 
+ preciso inserir o PIN existente para alterar o SIM. Para um SIM da Novatel Wireless, o PIN padr
+ disponibilizado pelo seu provedor de servi
+os. </p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_pin_lock_feature_label"), (size(_("webui", "adv_sim_pin_lock_feature_label")) - size(":")))>
+		<p>O campo indica se o recurso de bloqueio do SIM est
+o em uso. Se estiver "Ligado", o bloqueio do PIN foi ativado e o PIN do SIM dever
+ ser inserido para se conectar 
+vel. Se estiver "Desligado", o recurso de bloqueio do PIN n
+ ativado e o PIN do SIM n
+rio. </p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_status_label"), (size(_("webui", "adv_sim_status_label")) - size(":")))></h3>
+	<p>O campo indica o status atual do cart
+o SIM. Os valores poss
+	<div class="blockgroup">
+	        <ul>
+	        <li>Pronto - este 
+ o status normal. O PIN do SIM n
+ utilizado. </li>
+	        <li>PIN bloqueado - o PIN do SIM deve ser inserido para que voc
+ possa utilizar a rede m
+vel.</li>
+	        <li>PUK bloqueado - o PUK do SIM deve ser inserido para continuar. O PUK pode ser obtido com o seu provedor de servi
+os.</li>
+	        <li>Desbloqueado - o PIN do SIM 
+rio, mas j
+ foi inserido. </li>
+	        <li>Sem SIM - nenhum SIM foi detectado. Se voc
+ tiver um SIM, verifique se est
+ inserido corretamente.</li>
+	        <li>Erro de SIM - o SIM foi detectado, mas n
+o respondeu conforme o esperado e n
+o pode ser utilizado. </li>       
+	        </ul>
+        <h2>Opera
+es do SIM</h2>
+        <p>As a
+es dispon
+veis dependem do status atual do SIM. Todas as opera
+veis est
+o listadas e explicadas abaixo. </p>
+		<h3>Bloqueio do PIN</h3>
+		<p>Se o SIM estiver atualmente bloqueado pelo PIN, ser
+ solicitado que voc
+ insira o PIN. Observe que, se for inserido um PIN incorreto v
+rias vezes, o SIM fica bloqueado pelo PUK. Um contador na p
+gina indica quantas tentativas incorretas resultam no bloqueio do PUK. Se o PUK estiver bloqueado, ele precisar
+ ser obtido com o seu fornecedor de servi
+os. </p>
+		<h3>Bloqueio do PUK</h3>
+		<p>Se o SIM estiver atualmente bloqueado pelo PUK, a 
+nica opera
+ inserir o PUK. Observe que, se for inserido um PUK incorreto v
+rias vezes, o SIM ficar
+ permanentemente inutiliz
+vel. Voc
+ precisar
+ adquirir um novo SIM. Um contador na p
+gina indica quantas tentativas ainda restam. </p>
+		<h3><tmpl_var _("webui", "adv_sim_enable_pin_lock_option")></h3>
+		<p>Isso configura o SIM para que seja necess
+rio inserir um PIN no momento da inicializa
+o para se conectar 
+vel. Para efetuar essa opera
+ precisa inserir o PIN atual. </p>
+		<h3><tmpl_var _("webui", "adv_sim_disable_pin_option")></h3>
+		<p>Voc
+ pode usar essa configura
+o para desativar o bloqueio do PIN que foi ativado anteriormente, de modo que n
+o seja mais necess
+rio inserir um PIN para se conectar 
+vel. Para efetuar essa opera
+ precisa inserir o PIN atual. </p>
+		<h3><tmpl_var _("webui", "adv_sim_change_pin_option")></h3>
+		<p>Para alterar o PIN existente, selecione esta op
+o e, em seguida, insira os dados necess
+rios: </p>
+		<div class="blockgroup">
+			<li>PIN atual</li>
+			<li>Novo PIN</li>
+			<li>Confirmar novo PIN</li>
+			</ul>
+		</div>
+		<p>Para um SIM da Verizon Wireless, o novo PIN deve conter 4, 6 ou 8 d
+gitos. O PIN padr
+ disponibilizado pelo seu provedor de servi
+os. </p>
+<!-- id="adv_sim" -->

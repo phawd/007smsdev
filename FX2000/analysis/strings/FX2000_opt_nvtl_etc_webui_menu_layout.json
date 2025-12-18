@@ -1,0 +1,75 @@
+		"pageId": "apps_home",
+		"itemClass": "menu-home"
+		"pageId": "data_usage",
+		"itemClass": "data-usage"
+		"pageId": "wifi_settings",
+		"itemClass": "settings-hotspot parent",
+		"children": [
+    			"pageId": "wifi_advanced_settings",
+    			"itemClass": "settings-hotspot-advanced"
+    			"pageId": "wifi_primary_settings",
+    			"itemClass": "settings-hotspot-primary"
+    			"pageId": "wifi_guest_settings",
+    			"itemClass": "settings-hotspot-guest"
+			}                    			
+		"pageId": "connected_devices",
+		"itemClass": "connected-devices"
+		"pageId": "settings",
+		"itemClass": "settings parent",
+		"children": [
+				"pageId": "user_preferences",
+		                "itemClass": "settings-user-preferences"	
+				"pageId": "software_update",
+				"itemClass": "status-updates"
+				"pageId": "backup_restore",
+				"itemClass": "settings-device-sysbackup"
+                                "pageId": "ztp",
+                                "itemClass": "settings-ztp"
+                        },
+                                "pageId":"sim_manager",
+                                "itemClass": "settings-advanced-sim-manager"
+                        },
+				"pageId": "vpn",
+				"itemClass": "settings-advanced-vpn"
+				"pageId": "gps",
+				"itemClass": "gps"
+				"pageId": "settings_virtual",
+				"itemClass": "settings-advanced parent",
+				"children": [
+						"pageId": "settings_virtual",
+						"itemClass": "settings-advanced-bengal-advanced"
+						"pageId": "wwan_settings",
+						"itemClass": "settings-mobile-wwan"
+						"pageId": "manual_dns",
+						"itemClass": "settings-mobile-dns"
+						"pageId": "sim",
+						"itemClass": "settings-advanced-sim"
+						"pageId": "firewall",
+						"itemClass": "settings-advanced-firewall"
+						"pageId": "macfilter",
+						"itemClass": "settings-advanced-macfilter"
+						"pageId": "lan",
+						"itemClass": "settings-advanced-lan"
+						"pageId": "port_filtering",
+						"itemClass": "settings-advanced-port-filtering"
+						"pageId": "port_forward",
+						"itemClass": "settings-advanced-port-forwarding"
+					},					
+						"pageId": "inseego_connect",
+						"itemClass": "settings-advanced-inseego-connect"
+		"pageId": "about",
+		"itemClass": "about parent",
+		"children": [
+				"pageId": "status_current",
+				"itemClass": "status-current"
+				"pageId": "session_log_info",
+				"itemClass": "session-log-info"
+				"pageId": "status_diagnostics",
+				"itemClass": "status-diagnostics"
+				"pageId": "device_info",
+				"itemClass": "status-info"
+			},			
+				"pageId": "status_logs",
+				"itemClass": "status-logs"
+		"pageId": "customer_care",
+		"itemClass": "status-support"

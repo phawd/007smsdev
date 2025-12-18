@@ -1,0 +1,112 @@
+<!-- Connected Devices -->
+<div id="connected_devices">
+	<h1><tmpl_var _("webui", "connected_devices_menu_text")></h1>
+valga</h2>
+iame puslapyje rodoma i
+sami informacija apie kiekvien
+ prie <tmpl_var _("webui", "webui_product_name")> prijungt
+, taip pat pateikiamas vis
+	<h2><tmpl_var _("webui", "connected_devices_sub_header_text")></h2>
+ioje lentel
+je pateikiamas vis
+ tinklo prijungt
+ tinklo pavadinimas rodomas po antra
+s. Jei mobili
+ saitviet
+ naudojantis kompiuteris prijungiamas <tmpl_var _("webui", "webui_product_name")> per USB laid
+, tas kompiuteris bus nurodytas 
+ioje lentel
+		Rodoma tokia informacija apie kiekvien
+ prijungt
+io tipas</h3>
+	<p>Piktograma nurodo kiekvieno prijungto 
+renginio ry
+	<h3>Pavadinimas</h3>
+niausiai tai b
+na prijungto 
+renginio pagrindinio kompiuterio pavadinimas, nustatytas pa
+iame prijungtame 
+renginyje. Retais atvejais pagrindinio kompiuterio pavadinimas gali b
+ti netinkamas. Jei prijungto 
+renginio pavadinimui pakeisti naudojote parinkt
+Redaguoti
+, vietoje pagrindinio kompiuterio pavadinimo rodomas j
+ pateiktas pavadinimas.
+dami pakeisti bet kurio prijungto 
+renginio pavadinim
+, galite naudoti parinkt
+Redaguoti
+	<h3>IP adresas</h3>
+	<p>Prijungto 
+renginio IP adresas.</p>
+		<tmpl_var truncate(_("webui", "connected_devices_mac_address_label"), (size(_("webui", "connected_devices_mac_address_label")) - size(":")))>
+		MAC adresas yra unikalusis 
+io prijungto 
+renginio tinklo identifikatorius.
+	<tmpl_if isIPv6Supported>
+			<tmpl_var truncate(_("webui", "connected_devices_link_local_label"), (size(_("webui", "connected_devices_link_local_label")) - size(":")))>
+			Jei prijungtas 
+renginys palaiko IPv6, rodomas vietinio ry
+io IPv6 adresas.
+	</tmpl_if>
+	<tmpl_if GuestWifiSupported>
+		<h2><tmpl_var _("webui", "connected_devices_guest_title")></h2>
+			Jei naudojamas sve
+ tinklas, 
+ioje lentel
+je pateikiamas vis
+ prie sve
+ tinklo prijungt
+ tinklo pavadinimas rodomas po antra
+ pateikimas ir veikimas yra identi
+kas pagrindiniame tinkle i
+ pateikimui ir veikimui.
+	</tmpl_if>
+ blokavimas ir blokavimo panaikinimas</h2>
+	<h3>Mygtukas 
+blokuoti
+		Spustel
+jus mygtuk
+blokuoti
+ atjungiamas prijungtas 
+renginys ir neleid
+iama jo v
+l prijungti. Tada u
+blokuotas 
+renginys rodomas u
+blokuoti 
+renginiai blokuojami ir sve
+io, ir pagrindiniame tinkle.
+ parinkt
+ galima naudoti su kiekvienu prijungtu 
+renginiu, i
+skyrus savo 
+ ir bet kur
+ per USB prijungt
+		Pateikiamas vis
+as. Atminkite, kad 
+renginiai 
+iuo metu neprijungti ir j
+ prisijungimas u
+blokuotas, tod
+l jie neturi IP adreso. D
+l to jie identifikuojami pagal savo pavadinim
+ ir MAC adres
+	<h3>Mygtukas 
+Panaikinti u
+blokavim
+		Spustel
+jus mygtuk
+Panaikinti u
+blokavim
+ panaikinamas anks
+iau blokuoto 
+renginio u
+blokavimas, leid
+iant jam v
+l prisijungti. Atblokuotas 
+renginys pa
+alinamas i
+o ir, kai prisijungia, v
+l rodomas prijungt
+<!-- id="connected_devices" -->

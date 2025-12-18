@@ -1,0 +1,51 @@
+<!-- Backup and Restore -->
+<div id="backup_restore">
+         <h1><tmpl_var _("webui", "backup_restore_menu_text")></h1>
+
+         <h2>Panoramica</h2>
+         <p>Utilizza questa funzione per effettuare il backup (download) di una copia delle impostazioni di configurazione di questo dispositivo in un file sul computer o per ripristinare (caricare) un file di configurazione salvato in precedenza. Questo file di configurazione contiene tutte le impostazioni necessarie per le funzioni del dispositivo, del router e del sistema. Non contiene alcuna impostazione o dato per il modem 4G/5G. Si noti che è possibile ripristinare solo un file sullo stesso dispositivo da cui esso proviene.
+         </p>
+         <p>
+            Questa schermata offre anche la possibilità di ripristinare tutte le impostazioni ai valori predefiniti di fabbrica.
+         </p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+         <h3>Password amministratore</h3>
+         <p>
+                 Inserisci la password amministratore di <tmpl_var _("webui", "webui_product_name")> corrente in questo campo.
+         </p>
+         <h3><tmpl_var _("webui", "backup_restore_backup_now_button")></h3>
+         <p>
+                 Fai clic sul pulsante Scarica per scaricare una copia del file di configurazione corrente sul computer. Se il browser richiede di salvare il file, hai la facoltà di rinominarlo, se lo desideri.
+         </p>
+         <p class="note">
+                 <strong>Nota:</strong> Il file di backup non può essere modificato o visualizzato sul sistema dove lo si è scaricato o su qualsiasi altro dispositivo. Questo file può essere ripristinato solo per questo modello di <tmpl_var _("webui", "webui_product_name")> e le impostazioni possono essere visualizzate o modificate solo utilizzando l’interfaccia utente web.
+         </p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+
+         <h3>Password amministratore</h3>
+         <p>
+                 Inserisci la password amministratore di <tmpl_var _("webui", "webui_product_name")> corrente in questo campo.
+         </p>
+         <h3><tmpl_var truncate(_("webui", "backup_restore_file_select_label"), (size(_("webui", "backup_restore_file_select_label")) - size(":")))></h3>
+         <p>
+                 Seleziona il file di configurazione scaricato in precedenza da questo <tmpl_var _("webui", "webui_product_name")> sul computer.
+         </p>
+         <h3>Pulsante Ripristina adesso</h3>
+         <p>Dopo aver selezionato un file di configurazione, fai clic su questo pulsante per avviare il caricamento del file. Dopo il caricamento, il file di configurazione viene immediatamente applicato e il dispositivo si riavvia.
+         </p>
+         <p class="note">
+                 <strong>Nota:</strong> Il caricamento di un file di configurazione modifica TUTTE le impostazioni esistenti in modo che corrispondano con quelle presenti nel file di configurazione. Tutte le connessioni esistenti al <tmpl_var _("webui", "webui_product_name")> verranno interrotte, inclusa questa sessione tramite il browser web.
+         </p>
+
+         <h2><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+         <p>
+                 Fai clic sul pulsante <strong>Ripristina impostazioni predefinite</strong> per ripristinare tutte le impostazioni ai valori predefiniti di fabbrica. Ciò causa un riavvio, interrompendo tutte le connessioni esistenti al <tmpl_var _("webui", "webui_product_name")>, inclusa la presente sessione tramite il browser web.
+         </p>
+         <h2>Riavvia dispositivo</h2>
+         <p>
+                 Questo pulsante spegne e riaccende <tmpl_var _("webui", "webui_product_name")>.
+         </p>
+</div>
+ <!-- id="backup_restore" -->

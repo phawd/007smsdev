@@ -1,0 +1,10 @@
+DELETE FROM CustomAPN WHERE IMSI NOT LIKE '311480%';
+
+
+
+
+
+
+
+
+

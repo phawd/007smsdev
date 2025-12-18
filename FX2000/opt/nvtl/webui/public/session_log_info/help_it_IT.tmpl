@@ -1,0 +1,19 @@
+<!-- Internet  Sessions -->
+<div id="session_log_info">
+	<h1><tmpl_var _("webui", "session_log_info_menu_text")></h1>
+
+	<p>Il log delle sessioni contiene i seguenti dati:</p>
+	<p>- Data e ora (all&#39;avvio della connessione)</p>
+	<p>- Durata (stesso formato delle informazioni sulla sessione corrente)</p>
+	<p>- Ricevuti (stesso formato della sessione corrente)</p>
+	<p>- Trasmessi (stesso formato della sessione corrente)</p>
+	<p>- Dati totali (somma dei dati ricevuti e trasmessi nello stesso formato delle informazioni sulla sessione corrente)</p>
+	<tmpl_if RoamingStatusShow>
+                <p>- Roaming (Roaming / Teilweise / leer) Leer = Heimnetzwerk </p>
+        </tmpl_if>
+	<p>- IPv4 (indirizzo IP WWAN IPv4)</p>
+	<p>- IPv6 (indirizzo IP WWAN IPv6)</p>
+
+	<p>Il log è in ordine cronologico.</p>
+	<p>L&#39;utente non può modificare l&#39;ordine e non ci sono opzioni relative al log delle sessioni.</p>
+</div>

@@ -1,0 +1,39 @@
+<div id="settings_virtual">
+	<h1>Configura
+adas</h1>
+	<tmpl_if appsList>
+		<h2>Vis
+o geral</h2> O menu avan
+ acesso 
+s seguintes p
+ginas e configura
+es: <div class="blockgroup">
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title>
+<tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+		<p>Observe que, para uma opera
+o normal e situa
+es normais, n
+rio alterar o valor padr
+o de nenhuma configura
+o. Mude essas configura
+es apenas se a sua situa
+o em particular precisar de altera
+	</tmpl_if>
+	<h2>Bot
+	<tmpl_if showBackButton>
+		<h3>Retornar</h3>
+		<p>Clique aqui para retornar 
+gina anterior.</p>
+	</tmpl_if>
+	<tmpl_unless showBackButton>
+		<h3>Continuar</h3>
+		<p>Clique aqui para continuar para as p
+ginas avan
+adas.</p>
+	</tmpl_unless>

@@ -1,0 +1,38 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+versikt</h2>
+	<p>Dessa SMS-meddelanden kommer normalt fr
+n din tj
+nsteleverant
+r. Du ska inte f
+ka svara och f
+ljaktligen finns det inte n
+gon svarfunktion.</p>
+	<h2>Inneh
+	<tmpl_if showMessageCounter>
+		<h3>Meddelander
+knare</h3>
+knare upptill p
+rmen indikerar antalet ol
+sta (nya) meddelanden och det totala antalet meddelanden.</p>	
+		<p>Observera att alla meddelanden markeras som 
+r de visas p
+rmen.</p>
+	</tmpl_if>
+	<h3>Meddelandelista</h3>
+	<p>Alla meddelanden listas i datumordning. Ol
+sta (nya) meddelanden indikeras med en ikon. Meddelanden markeras automatiskt som 
+r de visas p
+r sidan, s
+ng sidan bes
+ks kommer de inte l
+ngre att visas som ol
+sta.</p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p>Den h
+r knappen finns i slutet av meddelandelistan. Anv
+nd den efter behov f
+r att radera alla meddelanden.</p>
+	</tmpl_if>

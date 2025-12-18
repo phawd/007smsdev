@@ -1,0 +1,17 @@
+config interface 'loopback'
+        option device 'lo'
+        option proto 'static'
+        option ipaddr '127.0.0.1'
+        option netmask '255.0.0.0'
+
+config interface 'lan'
+        option device 'bridge0'
+
+config interface 'lan1'
+        option device 'eth0'
+
+config interface 'int_wan'
+        option device 'rmnet-data0'
+
+config interface 'dm_wan'
+        option device 'rmnet-data3'

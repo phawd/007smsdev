@@ -1,0 +1,47 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+	<p>Cet 
+cran contient de nombreuses options qui vous permettent de r
+gler le comportement de appareil pour mieux r
+ vos besoins.</p>
+	<tmpl_if showDeviceName>
+                <h3><tmpl_var truncate(_("webui", "preferences_device_name_label"),(size(_("webui", "preferences_device_name_label")) - size(":")))></h3>
+                <p>
+                        Le nom de l
+appareil indique le nom du r
+seau de l
+appareil et l
+URL pour acc
+interface utilisateur de gestion Web locale de l
+appareil.
+                </p>
+        </tmpl_if>
+	<h3>Langue</h3>
+lectionnez la langue souhait
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+cisez le format dans lequel la date est affich
+e sur cette interface web.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+cisez le format dans lequel l
+heure est affich
+e sur cette interface web.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+lectionnez l
+ utiliser pour l
+altitude et la pr
+cision du GPS.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+cisez comment les nombres d
+cimaux sont affich
+s. Le point (.) ou la virgule (,) peuvent 
+lectionn
+tre utilis
+s comme point d
+cimal.</p>
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+indicateur Ethernet s
+affiche sur la barre d
+tat lorsque le port Ethernet est activ
+; sinon, il est masqu
+	</tmpl_if>

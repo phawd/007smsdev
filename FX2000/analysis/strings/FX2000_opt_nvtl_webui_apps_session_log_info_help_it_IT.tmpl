@@ -1,0 +1,27 @@
+<!-- Internet  Sessions -->
+<div id="session_log_info">
+	<h1><tmpl_var _("webui", "session_log_info_menu_text")></h1>
+	<p>Il log delle sessioni contiene i seguenti dati:</p>
+	<p>- Data e ora: la data e l'ora in cui 
+ iniziata la sessione Internet.</p>
+	<p>- Durata: la quantit
+ di tempo totale per la sessione Internet.</p>
+	<p>- Dati ricevuti: la quantit
+ di dati ricevuti per la sessione Internet. Questo contatore si azzera quando viene stabilita la connessione.</p>
+	<p>- Dati trasmessi: la quantit
+ di dati trasmessi per la sessione Internet. Questo contatore si azzera quando viene stabilita la connessione.</p>
+	<p>- Dati totali: la quantit
+ totale di dati per la sessione Internet. Si tratta della somma dei dati ricevuti e dei dati trasmessi.</p>
+	<tmpl_if RoamingStatusShow>
+		<p>- Roaming (roaming / parziale / vuoto) Vuoto = rete domestica</p>
+	</tmpl_if>
+	<p>- IPv4  L'indirizzo IP per la sessione.</p>
+	<p>- IPv6  L
+indirizzo IPv6 globale per la sessione (vuoto se l
+ disattivato o non 
+ supportato dalla connessione di rete o dall
+operatore corrente).</p>
+	<p>Il log 
+ in ordine cronologico. </p>
+	<p>L'utente non pu
+ modificare l'ordine e non ci sono opzioni relative al log delle sessioni.</p>

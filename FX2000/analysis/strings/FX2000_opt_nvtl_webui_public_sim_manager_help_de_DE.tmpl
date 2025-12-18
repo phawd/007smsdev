@@ -1,0 +1,78 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_manager_menu_text")></h1>
+        <h2>
+bersicht</h2>
+        <p>Die SIM-Karte in Ihrem <tmpl_var _("webui", "webui_product_name")> kann mit einer PIN gesperrt werden. Wenn die SIM-Karte gesperrt ist, m
+ssen Sie die PIN eingeben, bevor Sie sich mit dem Mobilfunknetz verbinden k
+nnen. Nach der Eingabe wird die PIN bis zum n
+chsten Herunterfahren gespeichert.</p>
+	<p>Auf dieser Seite k
+nnen Sie, wenn es erforderlich ist, die SIM-PIN eingeben und auch die SIM-Sperre aufheben oder die SIM-PIN 
+ndern. Grunds
+tzlich ist es erforderlich, die vorhandene PIN anzugeben, um die SIM-Karte wechseln zu k
+r eine Novatel Wireless SIM-Karte ist die Standard-PIN bei Ihrem Dienstanbieter erh
+ltlich.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_pin_lock_feature_label"), (size(_("webui", "adv_sim_manager_pin_lock_feature_label")) - size(":")))></h3>
+		<p>Das Feld gibt an, ob die PIN-Sperrfunktion verwendet wird oder nicht. Wenn 
+ eingestellt ist, wurde die PIN-Sperre eingeschaltet. Es ist erforderlich, die SIM-PIN einzugeben, um eine Verbindung mit dem Mobilfunknetz herzustellen. Wenn 
+ eingestellt ist, ist die PIN-Sperrfunktion nicht aktiviert. Die Eingabe der SIM-PIN ist nicht erforderlich.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_status_label"), (size(_("webui", "adv_sim_manager_status_label")) - size(":")))></h3>
+	<p>Das Feld gibt den aktuellen Status der SIM-Karte an. M
+gliche Werte sind:</p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>Bereit: Das ist der Normalzustand. Die SIM-PIN wird nicht verwendet.</li>
+	        <li>PIN gesperrt: Die SIM-PIN muss eingegeben werden, bevor Sie das Mobilfunknetz nutzen k
+nnen.</li>
+	        <li>PUK gesperrt: Der PUK f
+r die SIM-Karte muss eingegeben werden, um fortfahren zu k
+nnen. Den PUK erhalten Sie von Ihrem Dienstanbieter.</li>
+	        <li>Entsperrt: Die SIM-PIN ist erforderlich, wurde aber bereits eingegeben.</li>
+	        <li>Keine SIM: Es wurde keine SIM-Karte erkannt. Wenn Sie eine SIM-Karte haben, 
+fen Sie, ob sie richtig eingesetzt ist.</li>
+	        <li>SIM-Fehler: Eine SIM-Karte wurde erkannt, hat aber nicht wie erwartet reagiert und kann nicht verwendet werden.</li>       
+	        </ul>
+        <h2>SIM-Vorg
+nge</h2>
+        <p>Die verf
+gbaren Aktionen h
+ngen vom aktuellen SIM-Status ab. Im Folgenden werden alle m
+gliche Vorg
+nge aufgelistet und erl
+utert.</p>
+		<h3>PIN-Sperre</h3>
+		<p>Wenn die SIM-Karte aktuell mit einer PIN gesperrt ist, werden Sie aufgefordert, diese einzugeben. Beachten Sie, dass die SIM-Karte PUK-gesperrt wird, wenn die PIN zu h
+ufig falsch eingegeben wird. Ein Z
+hler auf der Seite gibt an, wie viele fehlerhafte Eingaben eine PUK-Sperre verursachen. Sobald die PUK-Sperre aktiv ist, m
+ssen Sie den PUK von Ihrem Dienstanbieter anfordern.</p>
+		<h3>PUK-Sperre</h3>
+		<p>Wenn f
+r die SIM-Karte aktuell eine PUK-Sperre besteht, k
+nnen Sie ausschlie
+lich den PUK eingeben. Hinweis: Wenn der PUK zu h
+ufig falsch eingegeben wird, wird die SIM-Karte dauerhaft unbrauchbar. Sie m
+ssen dann eine neue SIM-Karte erwerben. Ein Z
+hler auf der Seite zeigt an, wie viele Eingabeversuche noch verbleiben.</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_enable_pin_lock_option")></h3>
+		<p>Mit dieser Option wird f
+r die SIM-Karte festgelegt, dass beim Start die Eingabe einer PIN erforderlich ist, um eine Verbindung mit dem Mobilfunknetz herzustellen. Daf
+ssen Sie die aktuelle PIN eingeben.</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_disable_pin_option")></h3>
+ber diese Einstellung k
+nnen Sie eine zuvor aktivierte PIN-Sperre ausschalten. Dann ist die Eingabe einer PIN f
+r die Verbindung zum Mobilfunknetz nicht mehr erforderlich. Daf
+ssen Sie die aktuelle PIN eingeben.</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_change_pin_option")></h3>
+		<p>Wenn Sie die vorhandene PIN 
+chten, w
+hlen Sie diese Option und geben Sie dann die erforderlichen Daten ein:</p>
+		<div class="blockgroup">
+			<li>Aktuelle PIN</li>
+			<li>Neue PIN</li>
+			<li>Neue PIN best
+tigen</li>
+			</ul>
+		</div>
+		<p><tmpl_var _("webui", "adv_sim_manager_name_text")></p>
+<!-- id="sim" -->

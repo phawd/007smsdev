@@ -1,0 +1,34 @@
+<!-- MAC Filter -->
+<div id="macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+	<h2>Ülevaade</h2>
+	<p>Kui MAC-aadressi filtri funktsioon on sisse lülitatud, takistab see juurdepääsu sellele Wi-Fi-võrgule mis tahes seadmel, mis pole loendis „MAC-aadressi filter“. Filter rakendub ainult Wi-Fi-võrgule ega mõjuta USB-seadmeid.</p>
+	
+	<h2>SEES/VÄLJAS juhtnupp</h2>
+	<p>Kasutage seda nuppu MAC-aadressi filtri sisse- või väljalülitamiseks vastavalt vajadusele. Enne selle sisselülitamist peate veenduma, et mõned seadmed on lubatud. Pange tähele, et MAC-aadressi filtri sisselülitamisel katkestatakse kohe ühendus mis tahes ühendatud seadmega, mida pole loendis „MAC-aadressi filter“.</p>
+	
+	<h2>Seadmete loend</h2>
+	
+	<p>Siin on loetletud kõik teadaolevad seadmed, v.a USB-seadmed. Kasutage esitatud märkeruute, et lisada või välistada seadmeid loendist „MAC-aadressi filter“.</p>
+
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Loendi värskendamiseks vastavalt vajadusele kasutage värskendamise nuppu.</p>
+		
+	<h2>Kasutamine</h2>
+	
+	<h3>Blokeeritud vs MAC-aadressi filtriga</h3>
+	<p>Blokeeritud seadmete ja MAC-aadressi filtri koostoime on järgmine.</p>
+	<div class="blockgroup">
+	<ul>
+	<li>Blokeeritud seadmed blokeeritakse alati Wi-Fi-võrgust, olenemata sellest, kas MAC-aadressi filter on sisse või välja lülitatud.</li>
+	<li>Kui MAC-aadressi filter on sisse lülitatud ja seade on loendis Blokeeritud, kuid mitte loendis MAC-aadressi filter, ei saa see ühendust luua. Nii MAC-aadressi filter kui ka blokeerimine takistaksid ühendamist.</li>
+
+	<li>Kui MAC-aadressi filter on sisse lülitatud ja seade on loendis MAC-aadressi filter, saab seade ühenduse luua. Pärast ühendamist saab selle blokeerida, eemaldades selle MAC-aadressi filtrite loendist või kasutades funktsiooni Blokeeri. Üldiselt tuleks ajutiseks blokeerimiseks kasutada blokeerimist ja püsivaks blokeerimiseks MAC-aadressi filtrit.</li>
+	</ul>
+	</div>
+	
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+	<p>Kasutage seda nuppu uue seadme lisamiseks seadmete loendisse.</p>
+
+ </div>
+<!--  macfilter  -->

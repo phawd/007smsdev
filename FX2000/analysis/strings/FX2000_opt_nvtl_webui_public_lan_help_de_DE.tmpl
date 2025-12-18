@@ -1,0 +1,105 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+bersicht</h2>
+		<p>Diese Einstellungen gelten f
+r Ihr lokales Netzwerk oder LAN. F
+r dieses Ger
+t besteht das LAN aus diesem Ger
+t und allen verbundenen Ger
+ten (einschlie
+lich der 
+ber Ethernet verbundenen Ger
+te, sofern vorhanden).</p>
+	<h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+	<tmpl_if LANIPAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+		<p>Die IP-Adresse f
+r dieses Ger
+t, vom lokalen Netzwerk aus betrachtet. Normalerweise k
+nnen Sie den Standardwert verwenden.</p>
+	</tmpl_if>
+	<tmpl_if LANSubnetMaskShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+		<p>Der Standardwert 255.255.255.0 ist Standard f
+r kleine Netzwerke (Klasse 
+). Wenn Sie die LAN-IP-Adresse 
+ndern, stellen Sie sicher, dass Sie die richtige Subnetzmaske verwenden.</p>
+	</tmpl_if>
+	<tmpl_if LANMacAddressShow>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+		<p>Die MAC-Adresse ist eine eindeutige Netzwerkkennung, die bei der Herstellung eines Netzwerkger
+ts zugewiesen wird. In diesem schreibgesch
+tzten Feld wird die MAC-Adresse f
+r die WLAN- und USB-Schnittstellen dieses Ger
+ts angezeigt.</p>
+	</tmpl_if>
+	<tmpl_if LANDHCPEnableShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+		<p>Es empfiehlt sich, das zu pr
+fen. Der DHCP-Server weist jedem verbundenen Ger
+t eine IP-Adresse zu. Wenn der DHCP-Server ausgeschaltet werden w
+sste jedem verbundenen Ger
+t eine feste IP-Adresse zugewiesen werden.</p>
+	</tmpl_if>
+	<tmpl_if LANLANDHCPLeaseTimeShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+ber dieses Feld wird festgelegt, wie h
+ufig verbundene Ger
+te die IP-Adresse erneuern m
+ssen, die ihnen vom DHCP-Server zugewiesen wurde. Normalerweise k
+nnen Sie den Standardwert beibehalten, haben Sie aber besondere Anforderungen, k
+nnen Sie diesen Wert auch 
+ndern.</p>
+	</tmpl_if>
+	<tmpl_if LANDHCPStartAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>Es ist m
+glich, den vom DHCP-Server verwendeten IP-Adressbereich zu 
+ndern. Daf
+ssen Sie diesen Wert 
+ndern. Nur erfahrene Benutzer sollten diese Option verwenden.</p>
+	</tmpl_if>
+	<tmpl_if LANDHCPEndAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+		<p>Damit wird der Bereich der IP-Adressen angegeben, die den verbundenen Ger
+ten zugewiesen werden k
+nnen. Wenn Sie eine feste IP-Adresse auf einem verbundenen Ger
+t verwenden, sollten Sie eine IP-Adresse au
+erhalb dieses Bereichs verwenden.</p>
+	</tmpl_if>
+	<tmpl_if LANReservedIPAddressShow>		
+	<h3><tmpl_var truncate(_("webui", "adv_lan_reservedIp_help_label"), (size(_("webui", "adv_lan_reservedIp_help_label")) - size(":")))></h3>
+ber diese Funktion k
+nnen Sie sicherstellen, dass ein verbundenes Ger
+t vom <tmpl_var _("webui", "webui_product_name")> immer die gleiche IP-Adresse zugewiesen bekommt. Klicken Sie auf diese Schaltfl
+che, um den Einrichtungsbildschirm f
+r diese Funktion aufzurufen.</p>
+	</tmpl_if>
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>Wenn einige der verbundenen Ger
+te IPv6 unterst
+tzen, sollten Sie diese Einstellung aktivieren. 
+ber IPv6 verbundene Ger
+nnen damit IPv6-Verbindungen mit dem Internet herstellen.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+			<p>Das ist die IPv6-Adresse dieses Ger
+ts. Die verbindungslokale Adresse wird f
+r die IPv6-Kommunikation zwischen Ger
+ten im gleichen Netzwerk verwendet.</p>
+	</tmpl_if>	
+	<tmpl_if showLANDeviceName>
+                <h2><tmpl_var _("webui", "adv_lan_web_management_header_text")></h2>
+                <h3><tmpl_var truncate(_("webui", "adv_lan_url_name_label"), (size(_("webui", "adv_lan_url_name_label")) - size(":")))></h3>
+                <p>Der auf der Seite 
+Benutzereinstellungen
+ eingetragene Ger
+tename bildet die Grundlage f
+r die Zugriffs-URL auf die lokale Webverwaltungs-Schnittstelle f
+r das Ger
+        </tmpl_if>
+<!-- id="lan" -->

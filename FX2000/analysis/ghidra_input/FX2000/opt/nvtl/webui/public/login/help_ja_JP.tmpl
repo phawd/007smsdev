@@ -1,0 +1,10 @@
+<!-- Login -->
+<div id="login">
+	<h1><tmpl_var _("webui", "webui_product_name")> MiFi <tmpl_var _("webui", "webui_product_number")> サインイン</h1>
+	<p>続行するには、<tmpl_var _("webui", "webui_product_name")> 管理者パスワードを入力してください。</p>
+	<tmpl_if showForgotPassword>
+	<p>パスワードがわからない場合は、<strong>管理者パスワードを忘れた場合</strong> オプションを使用します。</p>
+	</tmpl_if>
+	<p>間違ったパスワードを何度も入力すると、ロックアウトされます。 このロックをクリアするには、 <tmpl_var _("webui", "webui_product_name")> を再起動する必要があります。</p>
+</div>
+<!-- id="login" -->

@@ -1,0 +1,16 @@
+<!-- Manual DNS -->
+<div id="manual_dns">
+	<h1><tmpl_var _("webui", "adv_manual_dns_menu_text")></h1>
+	<h2>Pārskats</h2>
+	<p>Parasti DNS adrese tiek norādīta automātiski. Šajā lapā varat manuāli norādīt DNS, ja nepieciešams.</p>
+
+	<h2>Iestatījumi</h2>
+
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_enable_label"), (size(_("webui", "adv_manual_dns_enable_label")) - size(":")))></h3>
+	<p>Izmantojiet šo iestatījumu, lai ieslēgtu vai izslēgtu manuālo DNS funkciju. Ja tā ir ieslēgta, jāsniedz tālāk norādītie dati.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address1_label"), (size(_("webui", "adv_manual_dns_address1_label")) - size(":")))></h3>
+	<p>Ievadiet vēlamā primārā DNS IP adresi. Šī adrese ir nepieciešama, lai izmantotu manuālo DNS funkciju.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address2_label"), (size(_("webui", "adv_manual_dns_address2_label")) - size(":")))></h3>
+	<p>Ievadiet vēlamā sekundārā (dublējuma) DNS IP adresi. Šī adrese nav obligāta, un, ja nepieciešams, lauku var atstāt tukšu.</p>
+</div>
+<!-- id="manual_dns" -->

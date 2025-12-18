@@ -1,0 +1,181 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+gps_get_error_string
+__isoc99_scanf
+GLIBC_2.7
+gps_api_is_running
+gps_update_wan_connection
+gps_force_xtra
+gps_get_status
+snprintf
+gps_start
+gps_stop
+gps_get_last_fix
+gps_set_supl_mode
+gps_get_default_status
+gps_set_default_status
+gps_get_nmea_over_tcp
+gps_set_nmea_over_tcp
+gps_get_privacy_setting
+gps_set_privacy_setting
+gps_get_mode
+gps_enable_powersave_mode
+mifi_dbg_start
+__bss_start
+librt.so.1
+libmifimsgbus.so
+libxmldata_api.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+librouter2_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libwifi_api.so
+libccm2_api.so
+libstdc++.so.6
+libgps_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+rc_to_str
+Converts an error code to the string.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+update_wan_connection
+(internal) tests the wan connection event from CCM.
+agps_mode_set
+Sets the default assisted GPS method.
+force_xtra
+Causes linux to initiate an XTRA data download.
+get_last_fix
+Retrieves most recent fix data.
+gps_status
+Returns the current status of the GPS engine.
+gps_start
+Starts the GPS engine.
+gps_stop
+Stops the GPS engine.
+get_active
+Get default active status.
+set_active
+Set default active status.
+get_nmea_tcp
+Get NMEA server settings.
+set_nmea_tcp
+Set NMEA server settings.
+get_privacy
+Get privacy policy status.
+set_privacy
+Set privacy policy status.
+get_mode
+Get GPS mode (XTRA, MSB, MSA.
+enable_powersave_mode
+Prepares GPS for suspend or wakeup.
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+Enter gps error code: 
+Error code 0x%X is [%s]
+%s returned %d (%s)
+Enter 0-3: NONE(0), WWAN(1), WIFI(2), ETH(3): 
+Disabled
+Searching
+status:[%s]
+alt_ellipsoid:[%f]
+fix_quality:[%d]
+fixed:[%d]
+heading:[%lf]
+horizontal_conf:[%d]
+horizontal_dop:[%f]
+horizontal_speed:[%f]
+horiz_speed_unc:[%f]
+horiz_unc_cir:[%f]
+latitude:[%lf]
+longitude:[%lf]
+num_locked_prn:[%d]
+position_dop:[%f]
+timestamp:[%u]
+first_fix_timestamp:[%u]
+vertical_dop:[%f]
+vertical_speed:[%f]
+vert_speed_unc:[%f]
+vertical_unc:[%f]
+Enter 0,1 or 2: XTRA(0), MSA(1), MSB(2): 
+default_status:[%s]
+Enter 1 or 0, On(1), Off(0): 
+enabled:[%d]
+port:[%d]
+Enter 1 or 0, Enabled(1), Disabled(0): 
+Enter a port number, (%d-%d): 
+accepted:[%d]
+Enter 1 or 0, Accept(1), Decline(0): 
+mode:[%s]
+Enter 1 or 0, suspend(1), wakeup(0): 
+command [%s]
+command [%s] not found.
+cmd_is_running
+cmd_update_wan_connection
+cmd_force_xtra
+cmd_gps_status
+cmd_gps_start
+cmd_gps_stop
+cmd_get_last_fix
+cmd_agps_mode_set
+cmd_get_active
+cmd_set_active
+cmd_get_nmea_tcp
+cmd_set_nmea_tcp
+cmd_get_privacy
+cmd_set_privacy
+cmd_get_mode
+cmd_enable_powersave_mode
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

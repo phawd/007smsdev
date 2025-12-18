@@ -1,0 +1,89 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p>
+			In den meisten Konfigurationen wird das <tmpl_var _("webui", "webui_product_name")> mit einer dynamischen IP und SIM-Karte verwendet, und der Access Point Name (APN) ist im Netzwerk verfügbar, zum Beispiel: Internet. Wenn Sie sich jedoch in einem privaten Netzwerk befinden, müssen Sie möglicherweise den APN auf dieser Registerkarte festlegen, damit das Netzwerk mit dem <tmpl_var _("webui", "webui_product_name")> kommunizieren kann.
+		</p>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Verbindungsvoreinstellung:</h3>
+			<p>
+				Wählen Sie die gewünschte Option, um zu steuern, wann das <tmpl_var _("webui", "webui_product_name")> eine Verbindung mit dem Mobilfunknetz herstellt.
+			</p>
+	</tmpl_if>
+
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>Mit dieser Einstellung können Sie Roaming im In- und Ausland nach Bedarf aktivieren oder deaktivieren. Beim Roaming können zusätzliche Datengebühren anfallen.</p>
+	</tmpl_if>
+
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p>
+			Der Standardwert lautet „<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>“. Das <tmpl_var _("webui", "webui_product_name")> wählt die beste verfügbare Technologie aus. 
+		</p>
+		<p>
+			Sofern erforderlich, ist es möglich, diese Einstellung zu ändern, um die zu verwendenden Netzwerktechnologien einzuschränken.
+		</p>
+	</tmpl_if>
+
+	<h3>Manuelle Netzwahl</h3>
+		
+	<p>
+		Diese Funktion ist nur verfügbar, wenn die automatische Netzwahl deaktiviert ist. Das kann nützlich sein, wenn mehrere Netzwerke verfügbar sind und Sie eine Präferenz haben, welches davon verwendet wird.
+	</p>
+	<p>
+		Klicken Sie auf die Schaltfläche „Netzwerk manuell auswählen“, um nach den verfügbaren Netzwerken zu suchen. Sie können dann das gewünschte Netzwerk auswählen.
+	</p>
+	
+	<tmpl_if showApnSettings>
+		<tmpl_if ShowAdvancedSettingsToggleButton>
+			<h2>Erweiterte Einstellungen</h2>
+			<p>
+				Verwenden Sie diese Überschrift/Link, um die erweiterten Einstellungen nach Bedarf anzuzeigen oder auszublenden.
+			</p>
+		</tmpl_if>
+		
+		<h3>
+			<tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))>
+		</h3>
+		<p>
+			Der APN ist vorkonfiguriert. Sie sollten den APN nicht ändern, es sei denn, Sie haben ein Firmenkonto (mit Ihrem eigenen APN).
+		</p>
+
+		<p>
+			Wenn Sie den APN ändern müssen, geben Sie den von Ihrem Mobilfunkanbieter bereitgestellten Wert ein.
+		</p>
+
+		<tmpl_if showApnAuthenticationSettings>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))>
+			</h3>
+			<div class="blockgroup">
+				<p>Wählen Sie die von Ihrem Dienstanbieter angegebene Option.
+				</p>
+				<ul>
+					<li>Keine</li>
+					<li>PAP</li>
+					<li>CHAP</li>
+				</ul>
+			</div>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))>
+			</h3>
+			<p>
+				Wenn die Authentifizierung <strong>Keine</strong> lautet, kann das Feld leer bleiben.
+				Andernfalls geben Sie den von Ihrem Dienstanbieter bereitgestellten Wert ein.
+			</p>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))>
+			</h3>
+			<p>
+				Wenn die Authentifizierung <strong>Keine</strong> lautet, kann das Feld leer bleiben.
+				Andernfalls geben Sie den von Ihrem Dienstanbieter bereitgestellten Wert ein.
+			</p>
+		</tmpl_if>
+	</tmpl_if>
+</div>

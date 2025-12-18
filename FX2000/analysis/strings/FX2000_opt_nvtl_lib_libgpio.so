@@ -1,0 +1,85 @@
+__gmon_start__
+GLIBC_2.4
+libc.so.6
+libgpio.so
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+g_nvtl_gpio_list
+libpthread.so.0
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+nvtl_gpio_get_value
+nvtl_gpio_set_value
+nvtl_gpio_get_direction
+nvtl_gpio_set_direction
+nvtl_gpio_set_default_pull
+nvtl_gpio_set_wakeup
+nvtl_gpio_register
+mifi_init_notify_thread
+mifi_register_event_handler
+nvtl_gpio_unregister
+mifi_unregister_event_handler
+mifi_shutdown_notify_thread
+__bss_start
+librt.so.1
+H	KxD	J{D
+[%s]:[%s] - nvtl_gpio_lib: failed to open %s [%d]
+[%s]:[%s] - nvtl_gpio_lib: failed to write %s=%s [%d]
+[%s]:[%s] - nvtl_gpio_lib: failed to read %s [%d]
+/sys/class/gpio
+%s/gpio%d
+%s/export
+[%s]:[%s] - nvtl_gpio_lib: gpio%d export failed! [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d exported [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d invalid gpio [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d path doesn't exist! [%d]
+%s/gpio%d/value
+[%s]:[%s] - nvtl_gpio_lib: gpio%d get value failed! [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d get value = %c [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d set value = %s failed! [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d set value = %s [%d]
+%s/gpio%d/direction
+[%s]:[%s] - nvtl_gpio_lib: gpio%d get direction failed! [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d get direction = %s [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d invalid direction %s [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d set direction=%s failed! [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d set direction = %s [%d]
+/sys/devices/platform/gpio_event
+[%s]:[%s] - nvtl_gpio_lib: failed to set gpio%d default pull=%d
+[%s]:[%s] - nvtl_gpio_lib: gpio%d set default pull=%d
+%s/wakeup
+[%s]:[%s] - nvtl_gpio_lib: failed to set gpio%d wakeup=%d
+[%s]:[%s] - nvtl_gpio_lib: gpio%d set wakeup=%d
+[%s]:[%s] - nvtl_gpio_lib: incorrect event from %d [%d]
+[%s]:[%s] - nvtl_gpio_lib: nvtl_gpio_callback:gpio%d value=%d
+[%s]:[%s] - nvtl_gpio_lib: gpio%d: invalid gpio [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio%d already registered
+[%s]:[%s] - nvtl_gpio_lib: no memory for registering gpio%d [%d]
+[%s]:[%s] - nvtl_gpio_lib: mifi_init_notify_thread failed [%d]
+[%s]:[%s] - nvtl_gpio_lib: mifi_register_event_handler(MIFI_DRIVER_GPIO) failed [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio event thread started
+%s/register
+[%s]:[%s] - nvtl_gpio_lib: failed to register gpio%d for event callback
+[%s]:[%s] - nvtl_gpio_lib: gpio%d registered for event callback
+%s/unregister
+[%s]:[%s] - nvtl_gpio_lib: failed to open file = %s [%d]
+[%s]:[%s] - nvtl_gpio_lib: gpio event thread terminated
+[%s]:[%s] - nvtl_gpio_lib: gpio%d unregistered for event callback
+gold 1.16
+.shstrtab
+.note.gnu.build-id
+.gnu.version
+.gnu.version_d
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

@@ -1,0 +1,26 @@
+<fieldset id="LastUpdate">
+    <h2 class="sectionHead"><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+    <tmpl_if SystemUpdateHappened>
+        <tmpl_unless IN_SET(LastSystemUpdateResult, 200)>
+            <p><tmpl_var _("webui", "software_update_last_update_fail_line1_text")><tmpl_var LastSystemUpdateVersion></p>
+            <p><tmpl_var _("webui", "software_update_last_update_fail_line2_text")><tmpl_var LastSystemUpdateDate>&nbsp;<tmpl_var _("webui", "webui_app_at_text")>&nbsp;<tmpl_var LastSystemUpdateTime></p>
+            <p>
+                <tmpl_var _("webui", "software_update_last_update_fail_error_code_text")>
+                <tmpl_var LastSystemUpdateResult>&nbsp;
+                <tmpl_if IN_SET(LastSystemUpdateResult, 200)>
+                    <tmpl_var _("webui", "software_update_result_success_text")>
+                <tmpl_elsif IN_SET(LastSystemUpdateResult, 401)>
+                    <tmpl_var _("webui", "software_update_result_user_rejected_text")>
+                <tmpl_else>
+                    <tmpl_var _("webui", "software_update_result_failed_text")> 
+                </tmpl_if>
+            </p>
+        <tmpl_else>
+            <p><tmpl_var _("webui", "software_update_last_update_success_text")><tmpl_var LastSystemUpdateVersion></p>
+            <p><tmpl_var _("webui", "software_update_last_update_success_line1_text")><tmpl_var LastSystemUpdateDate>&nbsp;<tmpl_var _("webui", "webui_app_at_text")>&nbsp;<tmpl_var LastSystemUpdateTime></p>
+            <p><tmpl_var _("webui", "software_update_description_label")><tmpl_var LastSystemUpdateDesc></p>
+        </tmpl_unless>
+    <tmpl_else>
+        <div><tmpl_var _("webui", "software_update_last_update_never_text")></div>
+    </tmpl_if>
+</fieldset>

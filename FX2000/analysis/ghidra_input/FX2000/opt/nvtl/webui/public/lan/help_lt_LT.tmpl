@@ -1,0 +1,61 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+	<h2>Apžvalga</h2>
+		<p>Šios nuostatos taikomos jūsų vietiniam tinklui arba LAN. Šio įrenginio LAN sudaro šis įrenginys ir visi prijungti įrenginiai (įskaitant prie eterneto prijungtus įrenginius, jei tokių yra).</p>
+			
+	<h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+
+	<tmpl_if LANIPAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+		<p>Šio įrenginio IP adresas, matomas vietiniame tinkle. Paprastai galima naudoti numatytąją vertę.</p>
+	</tmpl_if>
+
+	<tmpl_if LANSubnetMaskShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+		<p>Numatytoji vertė 255.255.255.0 yra standartinė nedideliems (C klasės) tinklams. Jei pakeisite LAN IP adresą, įsitikinkite, kad naudojate tinkamą potinklio kaukę.</p>
+	</tmpl_if>
+		
+	<tmpl_if LANMacAddressShow>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+		<p>MAC adresas yra unikalusis tinklo identifikatorius, priskiriamas gaminant tinklo įrenginį. Šiame tik skaitomame lauke rodomas šio įrenginio „Wi-Fi“ ir USB sąsajų MAC adresas.</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPEnableShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+		<p>Paprastai jį reikia palikti pažymėtą. DHCP serveris priskiria IP adresą kiekvienam prijungtam įrenginiui. Jei DHCP serveris buvo išjungtas, kiekvienam prijungtam įrenginiui reikės priskirti fiksuotą IP adresą.</p>
+	</tmpl_if>
+
+	<tmpl_if LANLANDHCPLeaseTimeShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+		<p>Šis laukas nustato, kaip dažnai prijungti įrenginiai turi atnaujinti IP adresą, kurį jiems priskyrė DHCP serveris. Paprastai galima palikti numatytąją vertę, tačiau jei turite specialių poreikių, šią vertę galite pakeisti.</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPStartAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>Jei norite pakeisti DHCP serverio naudojamą IP adresų diapazoną, galite tai padaryti pakeisdami šią vertę. Ši parinktis skirta tik kvalifikuotiems naudotojams.</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPEndAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+		<p>Ji nurodo IP adresų, kurie gali būti priskirti prijungtiems įrenginiams, diapazoną. Jei prijungtame įrenginyje naudojate fiksuotą IP adresą, turėtumėte naudoti IP adresą, kuris į šį diapazoną nepatenka.</p>
+	</tmpl_if>
+
+	<tmpl_if LANReservedIPAddressShow>		
+	<h3><tmpl_var truncate(_("webui", "adv_lan_reservedIp_button"), (size(_("webui", "adv_lan_reservedIp_button")) - size(":")))></h3>
+		<p>Šią funkciją galima naudoti norint užtikrinti, kad prijungtam įrenginiui <tmpl_var _("webui", "webui_product_name")> visada priskirs tą patį IP adresą. Spustelėkite šį mygtuką, jei norite pasiekti šios funkcijos sąrankos ekraną.</p>
+	</tmpl_if>
+		
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>Jei kai kurie jūsų prijungti įrenginiai palaiko IPv6, ši nuostata turi būti įjungta. Tada prie IPv6 prijungti įrenginiai galės užmegzti IPv6 ryšį su internetu.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+			<p>Tai šio įrenginio IPv6 adresas. Vietinio ryšio adresas naudojamas IPv6 ryšiui tarp to paties tinklo įrenginių palaikyti.</p>
+	</tmpl_if>	
+			
+</div>
+<!-- id="lan" -->
+

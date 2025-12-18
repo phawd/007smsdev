@@ -1,0 +1,46 @@
+<!-- Port Forwarding -->
+<div id="port_forward">
+	<h1>Enrutamiento de puertos</h1>
+	<h2>Descripción</h2>
+	<p>La función de Enrutamiento de puertos permite que el tráfico entrante de Internet se reenvíe a una computadora o un dispositivo particulares en su red de Wi-Fi. Normalmente, el firewall incorporado bloquea el tráfico entrante de Internet. Se usa el Enrutamiento de puertos para permitir a los usuarios de Internet acceder a cualquier servidor que se ejecute en la computadora, como un servidor web, FTP o de correo electrónico. En el caso de algunos juegos en línea, se debe usar el Enrutamiento de puertos para que los juegos funcionen correctamente. Tenga en cuenta que el uso del Enrutamiento de puertos crea un riesgo para la seguridad y debe permanecer desactivado cuando no se requiera. </p>
+<p><strong>Nota:</strong> Algunas redes inalámbricas móviles le proporcionan una dirección de IP en su propia red en lugar de una dirección de IP en Internet. En este caso, el Enrutamiento de puertos no se puede usar porque los usuarios de Internet no pueden ponerse en contacto con su dirección de IP. </p>
+
+	<h2>Aplicaciones de Enrutamiento de puertos</h2>
+	<h3>Casillas de verificación de las aplicaciones</h3>
+		<p> Se enumera una cantidad de aplicaciones comunes del servidor. Para usar cualquiera de estas aplicaciones, siga el procedimiento que se presenta a continuación: </p>
+		<ol>
+			<li>1. Instale la aplicación en una computadora que esté conectada a la red de Wi-Fi de este dispositivo.</li>
+			<li>2. En la computadora, verifique su dirección de IP para la red de Wi-Fi. De forma alternativa, puede verificar la dirección de IP de la computadora en la pantalla Dispositivos conectados.</li>
+			<li>3. En esta pantalla, ingrese la dirección de IP de su computadora en el campo <strong>Dirección de IP de dispositivo conectado</strong> al lado de la aplicación.</li>
+			<li>4. Active esta aplicación en esta pantalla al marcar su casilla de verificación.</li>
+			<li>5. Guarde los cambios.</li>
+			<li>6. En la pantalla <strong>Estado actual</strong>, tome nota de la dirección de IP en Internet de este dispositivo.</li>
+			<li>7. Pídales a los usuarios en Internet que se conecten a la dirección de IP en Internet de este dispositivo. Estas solicitudes de conexión se reenviarán a la dirección de IP especificada en el paso 3.</li>
+		</ol>
+
+	<h2>Aplicaciones personalizadas</h2>
+	<p>Esta función le permite definir sus propias aplicaciones. Una vez definidas, estas aplicaciones se pueden activar y desactivar de la misma manera que las aplicaciones predefinidas. Para definir una aplicación, debe conocer los puertos y el protocolo (TCP, UDP) usados por la aplicación para el tráfico entrante. Para comenzar, haga clic en el botón <strong>Agregar aplicación personalizada</strong> y luego ingrese los datos siguientes. </p>
+	<h3>Casilla de verificación de la aplicación</h3>
+	<p>Use esta casilla para activar una aplicación después de haberla definido. </p>
+	<h3>Nombre de la aplicación</h3>
+	<p> Ingrese un nombre adecuado para la aplicación que define. </p>
+
+	<h3>Dirección de IP del dispositivo conectado</h3>
+	<p> Ingrese la dirección de IP del dispositivo conectado que recibirá este tráfico. </p>
+
+	<h3>Tipo de puerto y números de puerto</h3>
+		<p>Cada aplicación posee su propio rango de puertos. Ingrese el comienzo y el final del rango de puertos para cada aplicación. </p>
+		<div class="blockgroup">
+			<ul>
+				<li>Para un rango de puertos, ingrese el comienzo del rango en el campo <strong>Desde</strong> y el fin del rango en el campo <strong>Hasta</strong>.</li>
+				<li>Para un puerto de traducción, ingrese el número de puerto en los campos <strong>Ext</strong> e <strong>Int</strong>.</li>
+			</ul>
+		</div>
+	<h3>Protocolo</h3>
+	<p> Para cada rango de puertos, seleccione el protocolo (TCP o UDP) usado por ese rango de puertos. </p>
+		
+	<h3>Eliminar</h3>
+	<p>Use esta casilla de verificación para eliminar una aplicación personalizada. </p>
+</div>
+<!-- id="port_forward" -->
+

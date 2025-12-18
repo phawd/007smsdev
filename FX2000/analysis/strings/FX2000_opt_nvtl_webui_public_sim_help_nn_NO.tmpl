@@ -1,0 +1,102 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_menu_text")></h1>
+        <h2>Oversikt</h2>
+        <p>SIM-kortet inne i din <tmpl_var _("webui", "webui_product_name")> kan l
+ses med en PIN-kode. Hvis SIM-kortet er l
+ du oppgi PIN-koden f
+r du kobler deg til mobilnettverket. N
+r PIN-koden er skrevet inn, huskes PIN-koden til neste avslutning.</p>
+	<p>I tillegg til at du kan angi PIN-koden for SIM-kortet ved behov, lar denne siden deg ogs
+se opp SIM-kortet, eller endre PIN-koden for SIM-kortet. Generelt m
+ du oppgi den eksisterende PIN-koden for 
+ endre SIM-kortet. For et Novatel Wireless SIM-kort er standard PIN-koden tilgjengelig fra tjenesteleverand
+ren.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_pin_lock_feature_label"), (size(_("webui", "adv_sim_pin_lock_feature_label")) - size(":")))></h3>
+		<p>Feltet viser om l
+sefunksjonen for PIN-kode er i bruk eller ikke. Hvis 
+, har PIN-kodel
+sen blitt sl
+, og PIN-koden for SIM-kortet m
+ skrives inn for 
+ koble til mobilnettverket. Hvis 
+, er ikke l
+sefunksjonen for PIN-kode sl
+, og PIN-koden for SIM-kortet er ikke n
+dvendig.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_status_label"), (size(_("webui", "adv_sim_status_label")) - size(":")))></h3>
+	<p>Feltet viser gjeldende status p
+ SIM-kortet. Mulige verdier er:</p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>Klar 
+ dette er normal tilstand. PIN-koden for SIM-kortet brukes ikke.</li>
+	        <li>PIN-kodel
+ PIN-koden for SIM-kortet m
+ legges inn f
+r du kan bruke mobilnettverket.</li>
+	        <li>PUK-kodel
+ PUK-koden for SIM-kortet m
+ legges inn for 
+ kunne fortsette. PUK-koden kan f
+s fra tjenesteleverand
+ren.</li>
+	        <li>Ul
+ PIN-koden for SIM-kortet er n
+dvendig, men er allerede tastet inn.</li>
+	        <li>SIM-kort mangler 
+ intet SIM-kort ble oppdaget. Hvis du har et SIM-kort, m
+ du kontrollere at det er satt inn riktig.</li>
+	        <li>SIM-kortfeil 
+ et SIM-kort ble oppdaget, men det svarte ikke som forventet, og kan ikke brukes.</li>       
+	        </ul>
+        <h2>SIM-kortoperasjoner</h2>
+        <p>Handlingene som er tilgjengelige avhenger av gjeldende SIM-kortstatus. Alle mulige operasjoner er listet opp og forklart nedenfor.</p>
+		<h3>PIN-kodel
+		<p>Hvis SIM-kortet for 
+yeblikket er PIN-kodel
+st, blir du bedt om 
+ oppgi PIN-koden. Merk at hvis en feil PIN-kode er skrevet inn for mange ganger, blir SIM-kortet PUK-l
+st. En teller p
+ siden viser hvor mange uriktige inntastinger som vil for
+rsake PUK-l
+r det er PUK-l
+ PUK-koden deretter skaffes fra tjenesteleverand
+ren.</p>
+		<h3>PUK-l
+		<p>Hvis SIM-kortet for 
+yeblikket er PUK-l
+st, er det 
+ skrive inn PUK-koden eneste mulige handling. Merk at hvis en feil PUK-kode legges inn for mange ganger, blir SIM-kortet permanent ubrukelig. Du m
+ skaffe et nytt SIM-kort. En teller p
+ siden viser hvor mange inntastingsfors
+k som gjenst
+		<h3><tmpl_var _("webui", "adv_sim_enable_pin_lock_option")></h3>
+		<p>Dette innstiller SIM-kortet til 
+ kreve at en PIN-kode tastes inn ved oppstart for 
+ koble til mobilnettverket. For 
+re denne operasjonen, m
+ du oppgi gjeldende PIN-kode.</p>
+		<h3><tmpl_var _("webui", "adv_sim_disable_pin_option")></h3>
+		<p>Du kan bruke denne innstillingen til 
+ av en PIN-kodel
+s som tidligere var sl
+, slik at det ikke lenger er n
+dvendig 
+ oppgi en PIN-kode for 
+ koble til mobilnettverket. For 
+re denne operasjonen, m
+ du oppgi gjeldende PIN-kode.</p>
+		<h3><tmpl_var _("webui", "adv_sim_change_pin_option")></h3>
+		<p>For 
+ endre den eksisterende PIN-koden, m
+ du velge du dette alternativet og deretter skrive inn de n
+dvendige dataene:</p>
+		<div class="blockgroup">
+			<li>Gjeldende PIN-kode</li>
+			<li>Ny PIN-kode</li>
+			<li>Bekreft ny PIN-kode</li>
+			</ul>
+		</div>
+		<p><tmpl_var _("webui", "adv_sim_name_text")></p>
+<!-- id="sim" -->

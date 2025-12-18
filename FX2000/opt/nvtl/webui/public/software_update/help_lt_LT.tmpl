@@ -1,0 +1,45 @@
+<!-- Software Update -->
+<div id="software_update">
+
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+
+	<h2>Apžvalga</h2>
+
+		<p>Programinės įrangos naujiniai automatiškai pateikiami per mobiliojo ryšio tinklą. Šiame puslapyje galite stebėti šiuos naujinius.</p>
+
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+
+	<h3>Dabartinė programinės įrangos versija</h3>
+	
+		<p>Šiame lauke parodoma šiuo metu įrenginyje įdiegtos programinės įrangos versija.</p>
+
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var _("webui", "software_update_current_software_configuration_version_label")></h3>
+			
+				<p><tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")></p>
+		</tmpl_if>
+	
+		<h2><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+
+		<h3><tmpl_var _("webui", "software_update_check_for_update_time_label")></h3>
+
+		<p>Šiame lauke parodoma, kada paskutinį kartą buvo tikrinta, ar yra <tmpl_var _("webui", "webui_product_name")> naujinių. Spustelėję mygtuką „Tikrinti, ar yra naujinių“, galite neautomatiškai patikrinti, ar yra naujinių.</p>
+	
+		<h3>Mygtukas „Tikrinti, ar yra naujinių“</h3>
+		<p>Jį galite naudoti norėdami patikrinti, ar jūsų <tmpl_var _("webui", "webui_product_name")> yra naujinių. Paprastai to daryti nebūtina, nes naujiniai automatiškai perkeliami į <tmpl_var _("webui", "webui_product_name")>. Jei atlikus šį patikrinimą prieinamas naujinys, jis bus atsisiųstas automatiškai.</p>
+	</tmpl_if>
+
+	<h3><tmpl_var _("webui", "software_update_check_for_update_status_label")></h3>
+
+		<p>Paprastai šis laukas būna tuščias, tačiau jeigu tikrinate, ar yra naujinių, čia rodomas to patikrinimo rezultatas. Be to, jei atsisiunčiamas naujinys, čia rodoma atsisiuntimo eiga.</p>
+	
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+		
+		<p>Šiame skydelyje rodoma išsami paskutinio programinės įrangos naujinio informacija.</p>
+	
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+	
+		<p>Šį skydelį galima atverti spustelėjus saitą / antraštę. Sistemos naujinimo istorijoje pateikiama išsami informacija apie paskutinius <tmpl_var SoftwareUpdateHistoryCount> naujinius, kurie buvo atsisiųsti ir įdiegti į šį įrenginį. Jei naujinių neįdiegta, šiame skydelyje bus rodoma dabartinė programinės įrangos versija.</p>
+</div>
+<!-- end Software Update -->

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lte IE 8]><html class="no-js ie8 oldie<tmpl_if IN_SET(gLangDirection, "rtl")> rtl</tmpl_if>" lang="<tmpl_var gHtmlLang>"<tmpl_if IN_SET(gLangDirection, "rtl")> dir="<tmpl_var gLangDirection>"</tmpl_if>><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js<tmpl_if IN_SET(gLangDirection, "rtl")> rtl</tmpl_if>" lang="<tmpl_var gHtmlLang>"<tmpl_if IN_SET(gLangDirection, "rtl")> dir="<tmpl_var gLangDirection>"</tmpl_if>><!--<![endif]-->
+	<head>
+		<tmpl_include "meta.tmpl">
+		<title><tmpl_include "admin_title.tmpl"></title>
+		<tmpl_include "links.tmpl">
+		<tmpl_include "scripts.tmpl">
+	</head>
+	<body id="<tmpl_var gPageId>" class="no_status_bar">
+		<div id="container" role="region" class="container">
+			<div id="container_inner">
+				<div id="" role="region" class="mt-row d-flex flex-wrap">
+					<div role="region" class="column xs-12">
+				<tmpl_include "notification.tmpl">
+				<tmpl_include "header_no_status_bar.tmpl">
+					</div>
+				</div>
+
+				<div id="main" role="main"  class="mt-container">
+					<div id="main_inner" class="clearfix mt-row d-flex flex-wrap">
+						<div id="app_container" role="region" class="page column  sm-12">
+							<div id="app_inner">
+						<tmpl_include "noscript.tmpl">
+
+
+								<div id="app_content">
+									<tmpl_include "app.tmpl">
+								</div>
+							</div>
+						</div> <!-- /#app_container -->
+
+					</div>  <!-- /#main_inner -->
+				</div> <!-- /#main -->
+
+			</div> <!-- /#container_inner -->
+			<div id="push"></div> <!-- for sticky footer -->
+		</div> <!-- /#container -->
+
+		<tmpl_include "footer.tmpl">
+	</body>
+</html>

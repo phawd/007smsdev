@@ -1,0 +1,34 @@
+<!-- MAC Filter -->
+<div id="macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+	<h2>Översikt</h2>
+	<p>MAC-filterfunktionen, om den är påslagen, kommer att förhindra åtkomst till detta Wi-Fi-nätverk för alla enheter som inte ingår i listan ”MAC-adressfilter”. Filtret gäller endast Wi-Fi-nätverket och har ingen effekt på USB-enheter.</p>
+	
+	<h2>PÅ/AV-kontroll</h2>
+	<p>Använd denna kontroll för att sätta på eller stänga av MAC-filtret efter behov. Innan du sätter på det måste du säkerställa att vissa enheter är tillåtna. Observera att när MAC-filtret sätts på kommer alla anslutna enheter som inte är med på listan ”MAC-adressfilter” omedelbart att kopplas bort.</p>
+	
+	<h2>Enhetslista</h2>
+	
+	<p>Alla kända enheter listas här, med undantag för USB-enheter. Använd kryssrutorna för att inkludera eller utesluta enheter från listan ”MAC-adressfilter”.</p>
+
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Använd uppdateringsknappen för att uppdatera listan efter behov.</p>
+		
+	<h2>Drift</h2>
+	
+	<h3>Blockerade kontra MAC-filter</h3>
+	<p>Interaktionen mellan ”blockerade” enheter och ”MAC-filter” är:</p>
+	<div class="blockgroup">
+	<ul>
+	<li>Blockerade enheter blockeras alltid från Wi-Fi-nätverket, oavsett om MAC-filtret är på eller av.</li>
+	<li>Om MAC-filtret är på och en enhet förekommer i listan över blockerade, men inte i listan MAC-adressfilter, kommer den inte att kunna ansluta. Både MAC-filtret och blockeringen skulle förhindra anslutning.</li>
+
+	<li>Om MAC-filtret är på och en enhet förekommer i MAC-adressfilterlistan kommer enheten att kunna ansluta. När den har anslutit kan den sedan blockeras antingen genom att den tas bort från MAC-adressfilterlistan eller genom att funktionen ”Blockera” används. Generellt ska ”Blockera” användas för tillfällig blockering och MAC-filtret för permanent blockering.</li>
+	</ul>
+	</div>
+	
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+	<p>Använd den här knappen för att lägga till en ny enhet i enhetslistan.</p>
+
+ </div>
+<!--  macfilter  -->

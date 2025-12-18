@@ -1,0 +1,93 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+nwqmi_init
+nwqmi_open_one
+nwqmi_nvtl_nv_item_write_cmd
+nwqmi_nvtl_nv_item_write_cmd_ex
+nwqmi_close
+nwqmi_nvtl_nv_item_read_cmd
+nwqmi_nvtl_nv_item_read_cmd_ex
+__bss_start
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+librt.so.1
+libpthread.so.0
+libmifi_debug.so
+libmificommon.so
+H	KxD	J{D
+		-h print help
+		-w write nv item
+		-r read nv item
+		-e <nv item id> the nv item id to read/write
+		-d <nv data> the data to write to the nv item
+		-i <index> the data for the array-type nv item
+NW_NV_ETHERNET_MAC_ID_I
+e:d:i:wrhv
+Error: no nv item input
+nw_cli_nv_item: calling nwqmi_init()
+Failed to open QMI communications
+NV Item not supported
+item id=%d, write=%d, index=%d
+Error: no data for nv item write
+Error: read only nv item
+Failed to open QMI services
+calling nwqmi_open()
+after nwqmi_open
+calling nwqmi_close()
+after close()
+MAC_ADDR_HI16=0xFFFF
+MAC_ADDR_LO32=0xFFFF1500
+00:15:FF:FF:FF:FF
+MAC_ADDR_LO32=0x%c
+%c%c%c%c%c%c
+MAC_ADDR_HI16=0x%c
+MAC_ADDR_LOW32=0xFFFF1500
+NV item inactive or read error.
+Something is wrong; IEMI can only be numeric digits.
+NW_NV_LINUX_ROOT_PASSWORD_I
+NW_NV_MAC_ID_I
+NW_NV_LINUX_RUN_LEVEL_I
+NW_NV_USB_DEFAULT_MODE_I
+NW_NV_PSM_DEFAULT_MODE_I
+NW_NV_MAC_ID_2_I
+NW_NV_USB_MAC_ID_I
+NW_NV_PRI_INFORMATION_I
+NW_NV_ETHERNET_MAC_ID_I
+NV_AUTO_POWER_I
+NW_NV_CARRIER_INFO_I
+NW_NV_ASYNC_DATA_ORIG_STR_I
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

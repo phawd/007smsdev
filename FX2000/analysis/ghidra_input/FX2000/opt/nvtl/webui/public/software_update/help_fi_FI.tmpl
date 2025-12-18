@@ -1,0 +1,45 @@
+<!-- Software Update -->
+<div id="software_update">
+
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+
+	<h2>Yleiskatsaus</h2>
+
+		<p>Ohjelmistopäivitykset toimitetaan automaattisesti matkapuhelinverkon kautta. Tällä sivulla voit seurata näitä päivityksiä.</p>
+
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+
+	<h3>Nykyinen ohjelmistoversio</h3>
+	
+		<p>Tässä kentässä ilmoitetaan laitteeseen tällä hetkellä asennettuna olevan ohjelmiston versio.</p>
+
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var _("webui", "software_update_current_software_configuration_version_label")></h3>
+			
+				<p><tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")></p>
+		</tmpl_if>
+	
+		<h2><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+
+		<h3><tmpl_var _("webui", "software_update_check_for_update_time_label")></h3>
+
+		<p>Tässä kentässä ilmoitetaan, milloin <tmpl_var _("webui", "webui_product_name")> tarkisti viimeksi, onko päivitys saatavilla. Voit tarkistaa päivitykset manuaalisesti ”Check for Update” (Tarkista päivitykset) -painikkeella.</p>
+	
+		<h3>Check for Update (Tarkista päivitykset) -painike</h3>
+		<p>Tällä voit tarkistaa, onko <tmpl_var _("webui", "webui_product_name")>-laitteellesi saatavilla päivitys. Yleensä tämä ei ole tarpeen, koska päivityksistä annetaan automaattisesti ilmoitus <tmpl_var _("webui", "webui_product_name")>-laitteeseen. Jos kuitenkin teet tämän tarkistuksen ja päivitys on saatavilla, se ladataan automaattisesti.</p>
+	</tmpl_if>
+
+	<h3><tmpl_var _("webui", "software_update_check_for_update_status_label")></h3>
+
+		<p>Tämä on yleensä tyhjä, mutta jos tarkistat päivitykset, tarkistuksen tulos näytetään tässä. Lisäksi jos päivitystä ladataan, latauksen eteneminen näytetään tässä.</p>
+	
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+		
+		<p>Tämä paneeli näyttää viimeisimmän ohjelmistopäivityksen tiedot.</p>
+	
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+	
+		<p>Tämä paneeli voidaan avata napsauttamalla linkkiä/otsikkoa. Järjestelmäpäivityshistoria sisältää tiedot <tmpl_var SoftwareUpdateHistoryCount>-laitteen viimeisimmistä päivityksistä, jotka on ladattu ja asennettu tähän laitteeseen. Jos päivityksiä ei ole asennettu, tässä paneelissa näkyy nykyinen ohjelmistoversio.</p>
+</div>
+<!-- end Software Update -->

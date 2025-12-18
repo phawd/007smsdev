@@ -1,0 +1,136 @@
+<script type="text/javascript">
+	var loginStatus = 0;
+	var homeUrl = "/" 
+	$(function()
+		<tmpl_if gIsPromptChangePassword>
+			<tmpl_if IN_SET(gIsLoggedIn, "1", "true")>
+				<tmpl_if gIsDefaultPassword>
+					modalPopup.createWindow(
+						'<tmpl_var _("webui", "admin_settings_change_password_menu_text")>', 
+						'<tmpl_var _("webui", "webui_default_password_alert_text")>', 
+						430, "auto", 
+						[{
+			            	text : '<tmpl_var _("webui", "webui_modal_continue_button")>',
+			            	className : "primary",
+			            	trigger: function() {
+			            		var width = 700;
+								var height = "auto";
+								var url = '<tmpl_udf GET_URI("set_passcode")>';
+								var title = '<tmpl_var _("webui", "admin_settings_change_password_title_text")>';
+								modalPopup.loadPage(
+									title,
+									url,
+									width, 
+									height, 
+									null,
+									function () {
+										$(".ui-dialog-titlebar-close").hide();
+									}, 
+									function() {
+										if(typeof gRedirectUrl != 'undefined'&& gRedirectUrl != ""){
+											location.replace('<tmpl_var gRedirectUrl>') 
+										}
+									},
+									false
+								);
+			            	}
+			        	}],
+			        	function() {
+							$(".ui-dialog-titlebar-close").hide();
+						}, 
+			        	function(){ },
+			        	false
+			        );
+				</tmpl_if>
+			</tmpl_if>
+		</tmpl_if>
+		$(document).ajaxSuccess(function(e, xhr, settings) {
+				if ((xhr.responseText) && (settings.dataType == "json")) {
+					try {
+						var obj = jQuery.parseJSON(xhr.responseText || "null");
+						if (typeof obj.loginStatus !== "undefined") {
+							var loginValue = obj.loginStatus;
+							if(loginStatus === 1 && loginValue === 0){
+								showLoginDialog('<p><tmpl_var _("webui", "webui_session_expire_text")></p>');
+							}
+							loginStatus = obj.loginStatus;
+					} catch(e) {}
+		$(window).scroll(function () {
+			var scrollHeight = $(window).scrollTop();
+			//console.log(scrollHeight);
+			if (($(window).width() <= 1024) && !$('.hamburger').hasClass("is-active")) {
+				if (scrollHeight >= 5) {
+					$('#hamburger').hide(0);
+				if (scrollHeight < 5) {
+					$('#hamburger').show(0);
+	function showLoginDialog(msg)
+		modalPopup.createWindow('<tmpl_var _("webui", "webui_app_warning_title")>', msg, 430, "auto", [{
+			text : '<tmpl_var _("webui", "webui_modal_ok_button")>',
+			className : "primary",
+            trigger : function() {
+            	location.replace(homeUrl);
+            }
+		}], null, function(){
+                location.replace(homeUrl);
+        });
+	/* ]]> */
+</script>
+<div id="header" role="region" class="">
+	<div class="mt-container">
+	<div id="header_inner" class="mt-row d-flex flex-wrap">
+		<div class="column md-3">
+			<nav id="hamburger" class=" hidden-md">
+				<div class="hamburger  hamburger--arrow" tabindex="0" aria-label="Menu" role="button" aria-controls="hamburger"
+					aria-expanded="true/false">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+				</div>
+				</div>
+				<tmpl_if gMenuLayout>
+					<div id="mobile_menu" class="mobile mobile_panel" style="display: none; width: 0px;">
+						<div id="mobile_menu_inner">
+							<tmpl_include "mobile_menu.tmpl">
+			</div>
+					</div> <!-- /#mobile_menu-->
+				</tmpl_if>
+			</nav>
+			<a id="carrier_logo" href="<tmpl_udf GET_URI('apps_home')>"
+				title="<tmpl_udf GET_PO_TEXT('vzw_header_go_home_link', gProductName)>">
+				<img src="/<tmpl_var gBaseAssetsPath>/images/logos/header_logo.png" alt="<tmpl_var _("
+					webui", "webui_header_logo_attr" )>" />
+				<span class="productName">
+				</span>
+				<span class="productNumber">
+					<tmpl_udf GET_PO_TEXT("status_bar_carrier_logo_sub_chunk_product_name_text", gProductName)>&nbsp;<tmpl_udf GET_PO_TEXT("status_bar_carrier_logo_sub_chunk_product_number_text", gProductNumber)>
+				</span>
+		</div>
+		<div class="column md-9">
+			<div class="mt-row d-flex flex-wrap global">
+				<div class="column md-12">
+					<div id="status_area" class="hidden-xs visible-md">
+			<tmpl_unless IN_SET(gPageId, "login")>
+							<div id="status_login" class="status clearfix hidden-xs visible-md">
+					<a id="admin_menu">
+						<tmpl_if IN_SET(gIsLoggedIn, "1", "true")>
+										<span id="logout">
+											<tmpl_var _("webui", "vzw_header_logout_link" )>
+										</span>
+						<tmpl_else>
+											<span id="login">
+												<tmpl_var _("webui", "vzw_header_login_link" )>
+											</span>
+						</tmpl_if>
+					</a>
+					<span id="administrator" class="closed"></span>
+				</div>
+				<div class="sub_menu">
+					<tmpl_include "admin_menu.tmpl">
+				</div>
+			</tmpl_unless>
+					</div>
+					<div id="status_bar" class=""></div>
+			</div>
+			</div>
+		</div>
+	</div><!-- /#header-inner -->
+</div><!-- /#header -->

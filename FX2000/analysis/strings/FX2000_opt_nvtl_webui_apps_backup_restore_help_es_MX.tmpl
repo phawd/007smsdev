@@ -1,0 +1,77 @@
+<!-- Backup and Restore -->
+<div id="backup_restore">
+         <h1><tmpl_var _("webui", "backup_restore_menu_text")></h1>
+         <h2>Descripci
+n general</h2>
+         <p>Utilice esta funci
+n para hacer una copia de seguridad (descargar) una copia de los ajustes de configuraci
+n de este dispositivo en un archivo en su computadora, o restaurar (cargar) un archivo de configuraci
+n previamente guardado. Este archivo de configuraci
+n contiene todos los ajustes del dispositivo, del enrutador y de las funciones del sistema. No contiene ning
+n ajuste o datos para el m
+dem 4G/5G. Tenga en cuenta que solo puede restaurar un archivo en el mismo dispositivo del que proviene.
+         </p>
+         <p>
+            Esta pantalla tambi
+n ofrece la posibilidad de restablecer todas las configuraciones a los valores predeterminados de f
+         </p>
+         <h2><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+         <h3>Contrase
+a del administrador</h3>
+         <p>
+                 Ingrese la contrase
+a de administrador actual de <tmpl_var _("webui", "webui_product_name")> en este campo.
+         </p>
+         <h3><tmpl_var _("webui", "backup_restore_backup_now_button")></h3>
+         <p>
+                 Haga clic en el bot
+n Descargar para descargar una copia del archivo de configuraci
+n actual en su computadora. Si su navegador le pide que guarde el archivo, puede cambiarle el nombre si lo desea.
+         </p>
+         <p class="note">
+                 <strong>Nota:</strong> El archivo de copia de seguridad no se puede editar ni ver en el sistema descargado ni en ning
+n otro dispositivo. Este archivo solo se puede restaurar para este modelo de <tmpl_var _("webui", "webui_product_name")>, y los ajustes solo se pueden ver o cambiar mediante la interfaz de usuario web.
+         </p>
+         <h2><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+         <h3>Contrase
+a del administrador</h3>
+         <p>
+                 Ingrese la contrase
+a de administrador actual de <tmpl_var _("webui", "webui_product_name")> en este campo.
+         </p>
+         <h3><tmpl_var truncate(_("webui", "backup_restore_file_select_label"), (size(_("webui", "backup_restore_file_select_label")) - size(":")))></h3>
+         <p>
+                 Seleccione el archivo de configuraci
+n que descarg
+ previamente de este <tmpl_var _("webui", "webui_product_name")> a su computadora.
+         </p>
+         <h3>Bot
+n Restaurar ahora</h3>
+         <p>Despu
+s de seleccionar un archivo de configuraci
+n, haga clic en este bot
+n para comenzar la carga del archivo. Despu
+s de la carga, el archivo de configuraci
+n se aplica inmediatamente y este dispositivo se reinicia.
+         </p>
+         <p class="note">
+                 <strong>Nota:</strong> Cargar un archivo de configuraci
+n cambia TODOS los ajustes existentes para que coincidan con el archivo de configuraci
+n. Todas las conexiones existentes se interrumpir
+n con este <tmpl_var _("webui", "webui_product_name")>, incluida esta sesi
+n de navegador web.
+         </p>
+         <h2><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+         <p>
+                 Haga clic en el bot
+n <strong>Restaurar los valores de f
+brica</strong> para restablecer todos los ajustes a sus valores predeterminados de f
+brica. Esto provoca un reinicio, rompiendo todas las conexiones existentes con este <tmpl_var _("webui", "webui_product_name")>, incluida esta sesi
+n de navegador web.
+         </p>
+         <h2>Reiniciar dispositivo</h2>
+         <p>
+                 Este bot
+n apaga y enciende su <tmpl_var _("webui", "webui_product_name")>.
+         </p>
+ <!-- id="backup_restore" -->

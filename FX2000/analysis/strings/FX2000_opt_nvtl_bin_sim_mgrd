@@ -1,0 +1,1160 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+pthread_setcancelstate
+libpthread.so.0
+_ITM_registerTMCloneTable
+pthread_join
+__cxa_finalize
+pthread_exit
+pthread_create
+mifi_dbg_get_level_name
+clock_gettime
+librt.so.1
+mifi_dbg_log
+timer_create
+mifi_dbg_syslog
+timer_settime
+timer_delete
+pthread_self
+pthread_detach
+snprintf
+modem2_sim_mgr_get_num_sims
+modem2_sim_mgr_get_state
+modem2_sim_mgr_get_slot_state
+xmldata_initialize
+xmldata_setint32
+xmldata_shutdown
+__errno_location
+xmldata_getint32
+sim_mgr_api_get_active_sim
+sim_mgr_api_get_switch_mode
+modem2_sim_mgr_reset_sim_switch_status
+modem2_sim_mgr_get_active_slot
+modem2_sim_mgr_get_active_imsi
+sim_mgr_api_get_prio_sim
+ccm2_wwan_disconnect
+ccm2_wwan_connect
+modem2_is_radio_enabled
+modem2_set_radio_enabled
+msgq_does_queue_exist
+msgq_send_async
+modem2_sim_mgr_get_sim_switch_status
+pthread_mutex_lock
+pthread_mutex_unlock
+mq_unlink
+modem2_uim_switch_slot
+sim_mgr_api_get_sim_info
+mq_close
+sim_mgr_api_set_auto_algo_configs
+sim_mgr_api_set_prio_sim
+sim_mgr_api_get_conn_monitor_mode
+sim_mgr_get_conn_configurations
+sim_mgr_api_get_conn_recovery_mode
+sim_mgr_api_get_recovery_all_configs
+modem2_get_enabled_tech_modes
+modem2_get_nr5g_disable_mode
+modem2_autorevert_get_timer
+modem2_set_enabled_tech_modes
+modem2_set_nr5g_disable_mode
+MsgBusPublishBinary
+mifi_dbg_start
+settings_get_features
+msgq_create
+msgq_receive
+msgq_resp_preprocess
+msgq_resp_postprocess
+modem2_sim_mgr_get_sim_init_status
+sim_mgr_api_get_sim_config_settings
+sim_mgr_api_set_sim_config_settings
+mifi_dbg_stop
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+sim_mgr_api_get_auto_algo_configs
+modem2_get_current_state
+sim_mgr_api_get_sig_qlty_configs
+sim_mgr_api_set_sig_qlty_configs
+dua_get_interface_data_usage_info
+sim_mgr_api_get_failback_configs
+MsgBusSetInt32
+modem2_get_call_status
+__bss_start
+libm.so.6
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libdmdb_api.so
+libdua_api.so
+libsqlite3.so.0
+libmodem2_api.so
+libccm2_api.so
+librouter2_api.so
+libwan_mgr_api.so
+libsim_mgr_api.so
+H	KxD	J{D
+[%s]:[%s] - [RECOVERY] %s: disconnect timer [%d]sec Started
+[%s]:[%s] - [RECOVERY] %s: create timer
+[%s]:[%s] - [RECOVERY] %s: set time
+[%s]:[%s] - [RECOVERY] %s: disconnect timer delete
+[%s]:[%s] - [RECOVERY] %s: timer delete[%d]
+[%s]:[%s] - [RECOVERY] %s: disconnect timer expired
+[%s]:[%s] - [RECOVERY] %s: disconnect handling
+[%s]:[%s] - [RECOVERY] %s: recovery period [%d]minutes
+[%s]:[%s] - [RECOVERY] %s: recovery period create [%d]
+[%s]:[%s] - [RECOVERY] %s: recovery period set time [%d]
+[%s]:[%s] - [RECOVERY] %s: recovery period timer delete
+[%s]:[%s] - [RECOVERY] %s: recovery timer delete[%d]
+[%s]:[%s] - [RECOVERY] %s: recovery period timer expired
+[%s]:[%s] - [RECOVERY] %s: recovery period timeout evt
+/opt/nvtl/data/sim_mgr/recoveryDB.xml
+[%s]:[%s] - [RECOVERY] %s: db file is deleted, creating now
+/opt/nvtl/data/sim_mgr/
+recoveryDB_def.xml
+recoveryDB.xml
+cp %s %s
+[%s]:[%s] - [RECOVERY] %s: db creation failed, hardcoding it
+/opt/nvtl/data/sim_mgr/recoveryDB_def.xml
+<Recovery>
+	<Reboot_Attempts>0</Reboot_Attempts>
+	<System_Reboot_Count>0</System_Reboot_Count>
+</Recovery>
+[%s]:[%s] - [RECOVERY] %s: db creation hardcoding failed
+[%s]:[%s] - [RECOVERY] %s: db exists
+/dev/null
+[%s]:[%s] - [SIMTHRD] %s: Num of SIMs[%d]
+[%s]:[%s] - [SIMTHRD] %s: get_state
+[%s]:[%s] - [SIMTHRD] %s: get_slot_state
+[%s]:[%s] - [SIMTHRD] %s: sim_status[%d]
+[%s]:[%s] - [RECOVERY] %s: reboot attempts[%d]
+/Recovery/Reboot_Attempts
+[%s]:[%s] - [RECOVERY] %s: reboot attempts config file[%s]
+/Recovery/System_Reboot_Count
+[%s]:[%s] - [RECOVERY] %s: system reboot count[%d]
+[%s]:[%s] - [RECOVERY] %s: system reboot config file: [%s]
+[%s]:[%s] - [RECOVERY] %s: system reboot config file[%s]
+automatic
+[%s]:[%s] - [SIMTHRD] %s: set switch mode[%s]
+[%s]:[%s] - [SIMTHRD] %s: prev[%s] - cur[%s] switch modes
+[%s]:[%s] - [SIMTHRD] %s: invalid mode[%d]
+[%s]:[%s] - [SIMTHRD] %s: iccid[%s]
+[%s]:[%s] - [SIMTHRD] %s: switch issue
+[%s]:[%s] - [SIMTHRD] %s: no switch required [%s] - [%s]
+[%s]:[%s] - [SIMTHRD] %s: inactive sim[%s] not switched, cur sim[%s]
+[%s]:[%s] - [SIMTHRD] %s: sim NOT pin_locked, switching with iccid not allowed
+[%s]:[%s] - [SIMTHRD] %s: stop_all_threads [failed]
+[%s]:[%s] - [SIMTHRD] %s: sim switch iccid[%s] success
+[%s]:[%s] - [SIMTHRD] %s: sim switch iccid[%s]
+[%s]:[%s] - [SIMTHRD] %s: imsi[%s]
+[%s]:[%s] - [SIMTHRD] %s: NO switch reqd imsi [%s] - [%s]
+[%s]:[%s] - [SIMTHRD] %s: sim switched to imsi[%s]
+[%s]:[%s] - [SIMTHRD] %s: sim switch to imsi[%s] failed
+[%s]:[%s] - [SIMTHRD] %s: set active imsi[%s]
+[%s]:[%s] - [SIMTHRD] %s: set active imsi[%s] [%d]
+ROUTER2_WAN_NONE
+ROUTER2_WAN_INTERNET_APN
+ROUTER2_WAN_INTERNET_WIFI
+ROUTER2_WAN_INTERNET_ETHERNET
+ROUTER2_WAN_INTERNET_USB
+ROUTER2_WAN_DATA_USAGE_APN
+ROUTER2_WAN_DM_APN
+ROUTER2_WAN_MAX
+WAN_STATE_NONE
+WAN_STATE_NOT_AVAILABLE
+WAN_STATE_AVAILABLE
+WAN_STATE_ONLINE
+WAN_STATE_ROUTED
+WAN_INVALID_REASON
+WAN_LINK_DOWN
+WAN_CONNECTIVITY_DOWN
+WAN_DATA_THRESHOLD_REACHED
+WAN_SIGNAL_WEAK
+WAN_HIGH_PRIORITY_ROUTED
+WAN_REASON_NOT_APPLICABLE
+WAN_REASON_MAX
+[%s]:[%s] - [RECOVERY][WAN] %s: status change
+[%s]:[%s] - [RECOVERY][WAN] %s: type[%s], status[%s] reason[%s]
+[%s]:[%s] - [RECOVERY][WAN] %s: MDM disconnect[%d]
+[%s]:[%s] - [RECOVERY][WAN] %s: dns state update
+[%s]:[%s] - [RECOVERY][WAN] %s: dnsfailure timeout evt
+[%s]:[%s] - [RECOVERY][WAN] %s: in progress
+[%s]:[%s] - [RECOVERY][WAN] %s: online[%d]
+[%s]:[%s] - [RECOVERY][WAN] %s: registration 
+[%s]:[%s] - [RECOVERY][WAN] %s: available[%d]
+[%s]:[%s] - [RECOVERY][WAN] %s: routed[%d]
+[%s]:[%s] - [RECOVERY][WAN] %s: type[%d] not handled
+[%s]:[%s] - [RECOVERY][WAN] %s: status[%d] not handled
+[%s]:[%s] - [RECOVERY] %s: active sim index - invalid param
+[%s]:[%s] - [RECOVERY] %s: active_index[%d]
+[%s]:[%s] - [RECOVERY] %s: active imsi[%d][%s]
+[%s]:[%s] - [RECOVERY] %s: active slot
+[%s]:[%s] - [RECOVERY] %s: prio imsi[%s] slot
+[%s]:[%s] - [RECOVERY] %s: active imsi[%s]
+[%s]:[%s] - [RECOVERY] %s: switch slot[%s] failed
+[%s]:[%s] - [RECOVERY] %s: Device already in priority SIM[%s]
+[%s]:[%s] - [RECOVERY] %s: get active sim
+[%s]:[%s] - [RECOVERY] %s: get prio sim slot error
+[%s]:[%s] - [RECOVERY][CCM] %s: MAX mdm_reset_cnt[%d]
+[%s]:[%s] - [RECOVERY][CCM] %s: wwan disconnect
+[%s]:[%s] - [RECOVERY][CCM] %s: wwan connect
+[%s]:[%s] - [RECOVERY][CCM] %s: reconnect [success]
+[%s]:[%s] - [RECOVERY][MDM] %s: reset
+[%s]:[%s] - [RECOVERY][MDM] %s: radio disabled[%d]
+[%s]:[%s] - [RECOVERY][MDM] %s: radio enabled[%d]
+[%s]:[%s] - [RECOVERY][MDM] %s: radio is enabled[%d]
+[%s]:[%s] - [RECOVERY][MDM] %s: reset [success]
+[%s]:[%s] - [RECOVERY] %s: Device reboot
+[%s]:[%s] - [RECOVERY] %s: Device rebooting...
+[%s]:[%s] - [RECOVERY] %s: pre-req init
+[%s]:[%s] - [RECOVERY] %s: non-recoverable [%d]
+[%s]:[%s] - [RECOVERY] %s: recoverable [%d], recovery_start_flag = %d
+[%s]:[%s] - [RECOVERY][CCM] %s:  disconnect timeout evt msg
+[%s]:[%s] - [RECOVERY][CCM] %s: handling already in progress
+[%s]:[%s] - [RECOVERY][CCM] %s: unknown prereq status [%d]
+[%s]:[%s] - [RECOVERY][MISC] %s: NON_RECOVER
+[%s]:[%s] - [RECOVERY][MDM] %s: NON_RECOVER reason[%s]
+[%s]:[%s] - [RECOVERY][CCM] %s: NON_RECOVER reason[%s]
+[%s]:[%s] - [RECOVERY][MDM] %s:  CAN_RECOVER
+[%s]:[%s] - [RECOVERY][CCM] %s:  CAN_RECOVER
+[%s]:[%s] - [RECOVERY][MISC] %s:  CAN_RECOVER
+[%s]:[%s] - [RECOVERY] %s: Unknown - EXCEPTION or uninitialized
+[%s]:[%s] - [RECOVERY] %s: 
+[%s]:[%s] - [RECOVERY][WAN] %s: Connected[%d]
+[%s]:[%s] - [RECOVERY][WAN] %s: APN - INTERNET[%d]
+[%s]:[%s] - [RECOVERY][WAN] %s: IP - IPV4[%d] stateconnected [%d]
+[%s]:[%s] - [RECOVERY][WAN] %s:disconnect timer delete
+[%s]:[%s] - [RECOVERY][WAN] %s:IPV4 connect success evt
+[%s]:[%s] - [RECOVERY][WAN] %s: IP - IPV6[%d] stateconnected [%d]
+[%s]:[%s] - [RECOVERY][WAN] %s:IPV6 connect success evt
+[%s]:[%s] - [RECOVERY][WAN] %s: PDP_IPV4V6
+[%s]:[%s] - [RECOVERY][WAN] %s: PDP_PPP
+[%s]:[%s] - [RECOVERY][WAN] %s: Unknown IP family
+[%s]:[%s] - [RECOVERY][WAN] %s: APN - APN_DM/APN_APPS/APN_UNUSED[%d]
+[%s]:[%s] - [RECOVERY][WAN] %s: APN - Unknown[%d]
+[%s]:[%s] - [RECOVERY][WAN] %s: IP - IPV4[%d] statedisconnected [%d]
+[%s]:[%s] - [RECOVERY][WAN] %s: IP - IPV6[%d] statedisconnected [%d]
+[%s]:[%s] - [RECOVERY][WAN] %s:Both IPV4 and IPV6 disconnected, Triggerring Recovery
+[%s]:[%s] - [RECOVERY][WAN] %s:  disconnect evt
+[%s]:[%s] - [RECOVERY][WAN] %s: recovery in progress
+MODEM2_MSG_INVALID_REASON
+MODEM2_MSG_ERR_MNS_SCANNING
+MODEM2_MSG_PCO_EVENT_SELF_ACTIVATION
+MODEM2_MSG_IP_TYPE_NOT_SUPPORTED
+MODEM2_MSG_EXCEPT_NONRECOVER_MAX
+MODEM2_MSG_PROFILE_FAILED
+MODEM2_MSG_CALL_VALIDATION_FAILED
+MODEM2_MSG_REASON_MAX
+CCM2_MSG_INVALID_REASON
+CCM2_MSG_USER_DISCONNECT
+CCM2_MSG_PCO_DISCONNECT
+CCM2_MSG_OMADM_APN_RESTORE
+CCM2_MSG_MODEM_RADIO_DISABLED
+CCM2_MSG_AUTOCONNECT_NONE
+CCM2_MSG_AIRPLANE_MODE_ENABLE
+CCM2_MSG_CELLULAR_DATA_DISABLE
+CCM2_MSG_EXCEPT_NONRECOVER_MAX
+CCM2_MSG_AUTOCONNECT_IF_NOT_ROAMING
+[%s]:[%s] - [RECOVERY] %s: reason %s
+[%s]:[%s] - [RECOVERY] %s: num of sims
+[%s]:[%s] - [RECOVERY] %s: Exception Override [YES]
+[%s]:[%s] - [RECOVERY][MISC] %s: NONRECOVERABLE reason[%d]
+[%s]:[%s] - [RECOVERY][MISC] %s: RECOVERABLE reason[%d]
+[%s]:[%s] - [RECOVERY][MISC] %s: UNKNOWN reason[%d]
+[%s]:[%s] - [RECOVERY][MISC] %s: exception handling reason[%d]
+[%s]:[%s] - [RECOVERY][MDM] %s: NONRECOVERABLE reason[%s]
+[%s]:[%s] - [RECOVERY][MDM] %s: RECOVERABLE reason[%s]
+[%s]:[%s] - [RECOVERY][MDM] %s:  MODEM2_MSG_CALL_VALIDATION_FAILED reason[%s]
+[%s]:[%s] - [RECOVERY][MDM] %s:  MODEM2_MSG_CALL_VALIDATION_FAILED [NEED NOT BE HANDLED]
+[%s]:[%s] - [RECOVERY][MDM] %s: CAN recover
+[%s]:[%s] - [RECOVERY][MDM] %s: UNKNOWN reason[%s]
+[%s]:[%s] - [RECOVERY][MDM] %s: exception handling reason[%s]
+[%s]:[%s] - [RECOVERY][CCM] %s: NON-RECOVERABLE reason[%s]
+[%s]:[%s] - [RECOVERY][CCM] %s: RECOVERABLE reason[%s]
+[%s]:[%s] - [RECOVERY][CCM] %s: UNKNOWN exception reason[%s]
+[%s]:[%s] - [RECOVERY][CCM] %s: exception handling reason[%s]
+[%s]:[%s] - [SIMTHRD] %s: - MDM call data -
+[%s]:[%s] - [SIMTHRD] %s: Invalid [modem_call_data] param
+[%s]:[%s] - [SIMTHRD] %s:MBVT_BINARY: MSGBUS_MODEM2_MDM_WWAN_IPV4_CONN_GET detected
+[%s]:[%s] - [SIMTHRD] %s:MBVT_BINARY: MSGBUS_MODEM2_MDM_WWAN_IPV6_CONN_GET detected
+[%s]:[%s] - [SIMTHRD] %s: Unknown modem call data
+[%s]:[%s] - [SIMTHRD] %s: - MDM call data/routing -
+[%s]:[%s] - [SIMTHRD] %s: invalid param
+[%s]:[%s] - [SIMTHRD] %s: WWAN_IPV4
+[%s]:[%s] - [SIMTHRD] %s: subnet mask :%s
+[%s]:[%s] - [SIMTHRD] %s: address:%s
+[%s]:[%s] - [SIMTHRD] %s: gateway address:%s
+[%s]:[%s] - [SIMTHRD] %s: DNS1 address:%s
+[%s]:[%s] - [SIMTHRD] %s: DNS2 address:%s
+[%s]:[%s] - [SIMTHRD] %s: WWAN_IPV6
+[%s]:[%s] - [SIMTHRD] %s: Unknown call type
+[%s]:[%s] - [SIMTHRD][MDM] %s: connect info
+/sim_mgr_mq
+[%s]:[%s] - [RECOVERY] %s: Sent recovery period completed
+[%s]:[%s] - [RECOVERY] %s: no SIM mgr thread
+[%s]:[%s] - [RECOVERY] %s: sent connect success
+[%s]:[%s] - [RECOVERY][WAN] %s: register success
+[%s]:[%s] - [RECOVERY][WAN] %s: Evt - disconnect
+[%s]:[%s] - [RECOVERY] %s: [DNS] routed
+[%s]:[%s] - [RECOVERY] %s: recovery init
+[%s]:[%s] - [RECOVERY] %s: SIM mgr thread not running
+[%s]:[%s] - [RECOVERY] %s: DNS failure
+/sim_mgr_sig_qlty_mq
+[%s]:[%s] - [SIMTHRD][SIGQLTY] %s: Evt - start
+[%s]:[%s] - [SIMTHRD] %s: sig qlty thread not running
+/sim_mgr_data_usage_mq
+[%s]:[%s] - [SIMTHRD][DATA_USAGE] %s: Evt - start
+[%s]:[%s] - [SIMTHRD] %s: data_usage thread not running
+/sim_mgr_prio_sim_mq
+[%s]:[%s] - [SIMTHRD][FAILBACK] %s: Evt - start
+[%s]:[%s] - [SIMTHRD] %s: no failback thread
+[%s]:[%s] - [SIMTHRD][DATA USAGE] %s: Evt - stop
+[%s]:[%s] - %s: no data usage thread
+[%s]:[%s] - [SIMTHRD][FAILBACK] %s: Evt - stop
+[%s]:[%s] - %s: no failback thread
+[%s]:[%s] - [SIMTHRD][FAILBACK] %s: Evt - exit
+[%s]:[%s] - [SIMTHRD][FAILBACK] %s: no failback thread
+[%s]:[%s] - [SIMTHRD][SIGQLTY] %s: Evt - stop
+[%s]:[%s] - [SIMTHRD] %s: no sig qlty thread
+[%s]:[%s] - [SIMTHRD][SIGQLTY] %s: Evt - exit
+[%s]:[%s] - [SIMTHRD][SIGQLTY] %s: started
+[%s]:[%s] - [SIMTHRD][SIGQLTY] %s: stoped
+[%s]:[%s] - [SIMTHRD][DATA_USAGE] %s: updating global settings data_usage, %d, new setting %d
+[%s]:[%s] - [SIMTHRD][DATA_USAGE] %s: started
+[%s]:[%s] - [SIMTHRD][DATA_USAGE] %s: stoped
+disabled
+[%s]:[%s] - [SIMTHRD] %s: conn monitor mode [%d]
+[%s]:[%s] - [SIMTHRD] %s: [como] disabled
+/sim_mgr_conn_monitor_mq
+[%s]:[%s] - [SIMTHRD] %s: [como] thread
+[%s]:[%s] - [SIMTHRD] %s: [como] enabled
+[%s]:[%s] - [SIMTHRD] %s: [como] interval[%d] retries[%d]
+[%s]:[%s] - [SIMTHRD] %s: prio sim[%s]
+[%s]:[%s] - [SIMTHRD] %s: non-active sim imsi
+[%s]:[%s] - [SIMTHRD] %s: prio sim config
+[%s]:[%s] - [SIMTHRD][FAILBACK] %s: thread
+[%s]:[%s] - [SIMTHRD][SIGQLTY] %s: is switch allowed
+[%s]:[%s] - [SIMTHRD][SIGQLTY] %s: non active sim
+[%s]:[%s] - [SIMTHRD] %s: index_value[%d] time_threshold[%d]
+[%s]:[%s] - [SIMTHRD][SIGQLTY] %s: param
+[%s]:[%s] - [SIMTHRD][SIGQLTY] %s: thread
+[%s]:[%s] - [SIMTHRD] %s: type [%d] status[%d]
+[%s]:[%s] - [SIMTHRD] %s: type[%d]
+[%s]:[%s] - [SIMTHRD] %s: num of sims
+[%s]:[%s] - [SIMTHRD] %s: active sim
+[%s]:[%s] - [SIMTHRD] %s: mode[%d] num_sims[%d] - active_imsi[%s]:input_imsi[%s]
+[%s]:[%s] - [SIMTHRD] %s: switch allowed
+[%s]:[%s] - [SIMTHRD] %s: no switch allowed [non active]
+[%s]:[%s] - [SIMTHRD] %s: no switch allowed [manual]
+[%s]:[%s] - [SIMTHRD] %s: no switch allowed [less sim]
+[%s]:[%s] - [RECOVERY] %s: recovery period[%d]
+[%s]:[%s] - [RECOVERY] %s: sim_switch_cnt[%d]
+[%s]:[%s] - [RECOVERY] %s: dns_fail_cnt[%d]
+[%s]:[%s] - [RECOVERY] %s: mdm_disconnect_timeout[%d]min
+[%s]:[%s] - [RECOVERY] %s: mdm_reset_cnt[%d]
+[%s]:[%s] - [RECOVERY] %s: dev_reset_cnt[%d]
+[%s]:[%s] - [RECOVERY] %s: system_reset_cnt[%d]
+[%s]:[%s] - [RECOVERY] %s: mdm_disconnect_timeout[%d]
+[%s]:[%s] - [RECOVERY] %s: rec period[%d]
+[%s]:[%s] - [RECOVERY] %s: unknown
+[%s]:[%s] - [SIMTHRD] %s: factory reset
+[%s]:[%s] - [SIMTHRD] %s: factory reset rc[%d]
+[%s]:[%s] - [SIMTHRD] %s: sim_mgr_state_machine_init:%d 
+[%s]:[%s] - [RECOVERY] %s: prereq_status_initalize [failed]
+[%s]:[%s] - [RECOVERY] %s: Recovery Prerequisites initialize
+[%s]:[%s] - [RECOVERY][WAN] %s: connect evt failed
+[%s]:[%s] - [RECOVERY] %s: conn state timer delete[failed] [%d]
+[%s]:[%s] - [RECOVERY][MDM] %s: make the device NON_RECOVERABLE 
+[%s]:[%s] - [SIMTHRD] %s: Evt[%d]
+[%s]:[%s] - [SIMTHRD] %s: Evt - SIM_SWITCH
+[%s]:[%s] - [SIMTHRD] %s: Evt - SWITCH_MODE
+[%s]:[%s] - [SIMTHRD] %s: sim switch mode[%d]
+[%s]:[%s] - %s:  SIM_MGR_MSG_SET_SWITCH_MODE_CONFIG
+[%s]:[%s] - [SIMTHRD] %s: recovery restart
+[%s]:[%s] - [SIMTHRD] %s: recovery restarted!! 
+[%s]:[%s] - [SIMTHRD] %s: Evt - ACTIVE_SIM_IMSI
+[%s]:[%s] - [SIMTHRD] %s: set active imsi[%d]
+[%s]:[%s] - [SIMTHRD] %s: Evt - SET_AUTO_RULES_CONFIG
+[%s]:[%s] - [SIMTHRD] %s: set auto rules [failed][%d]
+[%s]:[%s] - [SIMTHRD] %s: Evt - SET_CONN_MONITOR_SWITCH
+[%s]:[%s] - [SIMTHRD] %s: recovery restart [failed]
+[%s]:[%s] - [SIMTHRD] %s: recovery restarted!!
+[%s]:[%s] - [SIMTHRD] %s:  SET_CONN_TEST_CONFIG
+[%s]:[%s] - [SIMTHRD] %s: SET_CONN_CONFIG
+[%s]:[%s] - [SIMTHRD] %s: recovery restarted!! [success]
+[%s]:[%s] - [SIMTHRD] %s: Evt - SET_PRIO_SIM_CONFIG
+[%s]:[%s] - [SIMTHRD] %s: set prio config [failed][%d]
+[%s]:[%s] - [SIMTHRD] %s: Evt - SET_SIG_QLTY_CONFIG
+[%s]:[%s] - [SIMTHRD] %s: set sig qlty config [failed][%d]
+[%s]:[%s] - [SIMTHRD] %s: Evt - GET_SIM_SWITCH_STATUS
+[%s]:[%s] - [SIMTHRD] %s: Evt - SET_SIM_SWITCH_STATUS
+[%s]:[%s] - [SIMTHRD] %s: SET_ACTIVE_SIM_ICCID
+[%s]:[%s] - [RECOVERY] %s: Evt - SET_WAN_STATUS_CHANGE
+[%s]:[%s] - [RECOVERY][WAN] %s: status change [failed][%d]
+[%s]:[%s] - [RECOVERY] %s: Evt - SET_MDM_CALL_STATUS
+[%s]:[%s] - [RECOVERY][MDM] %s: call status  [failed - %d]
+[%s]:[%s] - [RECOVERY] %s: Evt - SET_MDM_CALL_ATTEMPT
+[%s]:[%s] - [RECOVERY] %s: [MDM] call attempt  [failed - %d]
+[%s]:[%s] - [RECOVERY][MDM] %s: prereq_status [failed - %d]
+[%s]:[%s] - [RECOVERY] %s: Evt - SET_CCM_CONN_PREREQ_STATUS
+[%s]:[%s] - [RECOVERY][CCM] %s: prereq_status [failed - %d]
+[%s]:[%s] - [RECOVERY] %s: Evt - SIM_MGR_MSG_SET_SIMMGR_CONN_PREREQ_STATUS
+[%s]:[%s] - [RECOVERY][MISC] %s: prereq_status [failed - %d]
+[%s]:[%s] - [RECOVERY] %s: Evt - SET_WAN_MDM_CONN_INFO
+[%s]:[%s] - [RECOVERY][WAN] %s: connect info [failed][%d]
+[%s]:[%s] - [RECOVERY] %s: Evt - SET_CONN_RECOVERY_MODE [%d]
+[%s]:[%s] - [RECOVERY] %s: recovery restart [failed]
+[%s]:[%s] - [RECOVERY] %s: recovery restarted!! [success]
+[%s]:[%s] - [RECOVERY] %s: Evt - RECOVERY_MODE_DISABLE
+[%s]:[%s] - [RECOVERY] %s: Evt - CONN_RECOVERY_PERIOD
+[%s]:[%s] - [RECOVERY] %s: recovery period [failed][%d]
+[%s]:[%s] - [RECOVERY] %s: [recovery] Evt - RECOVERY_DISCONN_TIMEOUT
+[%s]:[%s] - [RECOVERY] %s: disconn timeout [failed][%d]
+[%s]:[%s] - [RECOVERY] %s: Evt - SET_CONN_RECOVERY_SIMSWITCH
+[%s]:[%s] - [RECOVERY] %s: sim switch [failed][%d]
+[%s]:[%s] - [RECOVERY] %s: Evt - SET_CONN_RECOVERY_DNS
+[%s]:[%s] - [RECOVERY] %s: recovery DNS config[failed][%d]
+[%s]:[%s] - [RECOVERY] %s: Evt - SET_CONN_RECOVERY_MDMRESET
+[%s]:[%s] - [RECOVERY] %s: MDMRESET [failed][%d]
+[%s]:[%s] - [RECOVERY] %s: Evt - SET_CONN_RECOVERY_DEVRESET
+[%s]:[%s] - [RECOVERY] %s: DEVRESET [failed][%d]
+[%s]:[%s] - [RECOVERY] %s: Evt - SET_CONN_RECOVERY_ALL_CONFIGS
+[%s]:[%s] - [RECOVERY] %s: ALL_CONFIGS [failed][%d]
+[%s]:[%s] - [RECOVERY] %s: Evt - RECOVERY_SYSTEMRESET_CNT
+[%s]:[%s] - [RECOVERY] %s: Evt - SET_RECOVERY_MSG_CONNECT
+[%s]:[%s] - [RECOVERY] %s: sim switch algo rules verify [failed]
+[%s]:[%s] - [RECOVERY] %s: Evt - SET_RECOVERY_MSG_DISCONNECT
+[%s]:[%s] - [RECOVERY] %s: stop_all_threads [failed]
+[%s]:[%s] - [RECOVERY] %s: 	disconnect_recovery_handler [failed]
+[%s]:[%s] - [RECOVERY] %s: ### Recovery DISABLED ###
+[%s]:[%s] - [RECOVERY] %s: Evt - SET_RECOVERY_MSG_DNSFAILURE
+[%s]:[%s] - [RECOVERY] %s:  dns_failure_recovery_handler [failed]
+[%s]:[%s] - [RECOVERY] %s: Evt - SET_RECOVERY_MSG_DNSROUTED
+[%s]:[%s] - [RECOVERY] %s: recovery initalization [failed]
+[%s]:[%s] - [RECOVERY] %s: Evt - SET_RECOVERY_MSG_PERIOD_COMPLETED
+[%s]:[%s] - [RECOVERY] %s: file write [reboot_attempts] [failed]
+[%s]:[%s] - [RECOVERY] %s: recovery period timer [failed]
+[%s]:[%s] - [RECOVERY] %s: Evt - MSG_AUTO_FACTORY_RESET
+[%s]:[%s] - [SIMTHRD] %s: Evt - Unknown[%d]
+[%s]:[%s] - [SIMTHRD] %s: stop all threads
+[%s]:[%s] - [SIMTHRD][SIGQLTY] %s: stop failed
+[%s]:[%s] - [SIMTHRD][FAILBACK] %s: stop failed
+[%s]:[%s] - [SIMTHRD] %s: exits all threads
+[%s]:[%s] - [SIMTHRD][SIGQLTY] %s: exit failed
+[%s]:[%s] - [SIMTHRD][FAILBACK] %s: exit failed
+[%s]:[%s] - [SIMTHRD] %s: start
+[%s]:[%s] - [SIMTHRD] %s: no thread
+[%s]:[%s] - [SIMTHRD] %s: Evt - Send SIM_SWITCH
+[%s]:[%s] - [SIMTHRD] %s: Lock mutex status [%d]
+[%s]:[%s] - [SIMTHRD] %s: Unlock mutex status[%d]
+[%s]:[%s] - [SIMTHRD] %s: ##### sim switched #####
+[%s]:[%s] - [SIMTHRD] %s: sim switch req
+[%s]:[%s] - [SIMTHRD] %s: stop sim threads [%d][failed]
+[%s]:[%s] - [SIMTHRD] %s: sim switch [%d][failed]
+[%s]:[%s] - [SIMTHRD] %s: state machine started
+[%s]:[%s] - [SIMTHRD] %s: check sim[%s] in db
+[%s]:[%s] - [SIMTHRD] %s: sim[%s] available in db
+[%s]:[%s] - [SIMTHRD] %s: sim[%s] is NOT available in db
+[%s]:[%s] - [SIMTHRD] %s: imsi[%s] details added
+[%s]:[%s] - [SIMTHRD] %s: imsi[%s] adding failed
+[%s]:[%s] - [SIMTHRD] %s: get_num_sims
+[%s]:[%s] - [SIMTHRD] %s: i[%d] iccid[%s]
+[%s]:[%s] - [SIMTHRD] %s: active iccid [%s]
+[%s]:[%s] - [SIMTHRD] %s: non-active iccid [%s] is_pinlocked:%d sim_state:%d
+[%s]:[%s] - [SIMTHRD] %s: sim entry null
+[%s]:[%s] - [SIMTHRD] %s: NO sims [%d]
+[%s]:[%s] - [SIMTHRD] %s: get_num_sims from modem2 error
+[%s]:[%s] - [SIMTHRD] %s: i[%d] imsi[%s]
+[%s]:[%s] - [SIMTHRD] %s: active imsi [%s]
+[%s]:[%s] - [SIMTHRD] %s: check sim entry failed
+[%s]:[%s] - %s - priority SIM set to %s
+[%s]:[%s] - [SIMTHRD] %s: non-active imsi [%d][%s]
+[%s]:[%s] - [SIMTHRD] %s: sim entry NULL[%d] null
+[%s]:[%s] - [SIMTHRD] %s: NO SIMS[%d]
+[%s]:[%s] - [SIMTHRD] %s: active sim info[%s] loaded
+[%s]:[%s] - [SIMTHRD] %s: active sim info loading
+[%s]:[%s] - [SIMTHRD] %s: active sim[0] is [NULL]
+[%s]:[%s] - [SIMTHRD] %s: num of sims [0]
+[%s]:[%s] - [SIMTHRD] %s: get_sims_install_list_impl failed
+[%s]:[%s] - [SIMTHRD] %s: switch mode [%d]
+[%s]:[%s] - [SIMTHRD] %s: get_switch_mode
+[%s]:[%s] - [SIMTHRD] %s: conn_monitor[%d]
+[%s]:[%s] - [SIMTHRD] %s: get_conn_monitor_mode
+[%s]:[%s] - [SIMTHRD] %s: conn intr [%d]
+[%s]:[%s] - [SIMTHRD] %s: conn retries [%d]
+[%s]:[%s] - [SIMTHRD] %s: get_conn_configurations
+[%s]:[%s] - [SIMTHRD] %s: prio slot sim success[%s]
+[%s]:[%s] - [SIMTHRD] %s: get_prio_sim slot Error
+[%s]:[%s] - [SIMTHRD] %s: recovery_mode[%d]
+[%s]:[%s] - [SIMTHRD] %s: get_conn_recovery_mode
+[%s]:[%s] - [SIMTHRD] %s: period [%d]
+[%s]:[%s] - [SIMTHRD] %s: mdm_disconnect_timeout [%d]
+[%s]:[%s] - [SIMTHRD] %s: sim_switch_cnt [%d]
+[%s]:[%s] - [SIMTHRD] %s: dns_fail_cnt [%d]
+[%s]:[%s] - [SIMTHRD] %s: mdm_reset_cnt [%d]
+[%s]:[%s] - [SIMTHRD] %s: dev_reset_cnt [%d]
+[%s]:[%s] - [SIMTHRD] %s: system_reset_cnt [%d]
+[%s]:[%s] - [SIMTHRD] %s: failed get_conn_recovery_mode
+[%s]:[%s] - [SIMTHRD] %s: get all settings success
+[%s]:[%s] - [SIMTHRD] %s: get_active_sim_settings
+[%s]:[%s] - [SIMTHRD] %s: get_settings_general
+[%s]:[%s] - [SIMTHRD][WAN] %s: CONNECTED
+[%s]:[%s] - [SIMTHRD][WAN] %s: DORMANT
+[%s]:[%s] - [SIMTHRD][WAN] %s: CONNECTING
+[%s]:[%s] - [SIMTHRD][WAN] %s: DISCONNECTING
+[%s]:[%s] - [SIMTHRD][WAN] %s: ACTIVATING
+[%s]:[%s] - [SIMTHRD][WAN] %s: INITIALIZING
+[%s]:[%s] - [SIMTHRD][WAN] %s: SEARCHING
+[%s]:[%s] - [SIMTHRD][WAN] %s: NO_SERVICE
+[%s]:[%s] - [SIMTHRD][WAN] %s: NOT_ACTIVATED
+[%s]:[%s] - [SIMTHRD][WAN] %s: IDLE
+[%s]:[%s] - 
+------------------------
+[%s]:[%s] - 
+[%s]:[%s] - [SIMTHRD] %s: signal_quality[%d]
+[%s]:[%s] - [SIMTHRD] %s: data_usage[%d]
+[%s]:[%s] - [SIMTHRD] %s: speed_test[%d]
+[%s]:[%s] - [SIMTHRD] %s: location[%d]
+[%s]:[%s] - [SIMTHRD] %s: roaming[%d]
+[%s]:[%s] - [SIMTHRD] %s: scheduling[%d]
+[%s]:[%s] - [SIMTHRD] %s: rsrp index: [%d]
+[%s]:[%s] - [SIMTHRD] %s: time duration: [%d]
+[%s]:[%s] - [SIMTHRD] %s: sig_qlty_max_switches : [%d]
+[%s]:[%s] - [SIMTHRD] %s: sig_qlty_backoff_period: [%d] minutes
+[%s]:[%s] - [SIMTHRD] %s: failback_switch:[%d]
+[%s]:[%s] - [SIMTHRD] %s: failback_interval: [%d]
+[%s]:[%s] - [SIMTHRD] %s: actual_failback_interval: [%d]
+[%s]:[%s] - [SIMTHRD] %s: sim mgr settings init success
+[%s]:[%s] - [SIMTHRD] %s: get_all_settings_impl
+[%s]:[%s] - [SIMTHRD] %s: start auto algo threads
+[%s]:[%s] - [SIMTHRD][SIGQLTY] %s: tid[%d]
+[%s]:[%s] - [SIMTHRD][SIGQLTY] %s: init
+[%s]:[%s] - [SIMTHRD][FAILBACK] %s: tid[%d]
+[%s]:[%s] - [SIMTHRD][FAILBACK] %s: init
+[%s]:[%s] - [SIMTHRD] %s: [data] tid [%d] created
+[%s]:[%s] - [SIMTHRD] %s: [data] init
+[%s]:[%s] - [SIMTHRD] %s: get_num_sims[%d]
+[%s]:[%s] - [SIMTHRD] %s: switch mode [manual]
+[%s]:[%s] - [SIMTHRD] %s: stopped all algo threads
+[%s]:[%s] - [SIMTHRD] %s: switch mode [automatic]
+[%s]:[%s] - [SIMTHRD][FAILBACK] %s: [RECOVERY] started
+[%s]:[%s] - [SIMTHRD][FAILBACK] %s: [RECOVERY] thread not started [network_disconnected]
+[%s]:[%s] - [SIMTHRD][SIGQLTY] %s: [RECOVERY] sig qlty algo started
+[%s]:[%s] - [SIMTHRD][SIGQLTY] %s: [RECOVERY] thread not started [network_state_disconnected_e]
+[%s]:[%s] - [SIMTHRD][DATA_USAGE] %s: [RECOVERY] data_usage algo started
+[%s]:[%s] - [SIMTHRD][DATA_USAGE] %s: [RECOVERY] thread not started [network_state_disconnected_e]
+[%s]:[%s] - [SIMTHRD] %s: auto algos not enabled [sim count: %d]
+[%s]:[%s] - [SIMTHRD] %s: settings init
+[%s]:[%s] - [SIMTHRD] %s: settings success - state_machine started
+[%s]:[%s] - [SIMTHRD] %s: Start
+[%s]:[%s] - [SIMTHRD] %s: priority slot success sim[%s]
+[%s]:[%s] - [SIMTHRD] %s: new prio imsi set [%s]
+[%s]:[%s] - [SIMTHRD] %s: new prio imsi not set
+[%s]:[%s] - [SIMTHRD] %s: present prio imsi [NULL]
+[%s]:[%s] - [SIMTHRD] %s: present prio imsi [absent]
+[%s]:[%s] - [SIMTHRD] %s: modem get slot[1] state api [failed]
+[%s]:[%s] - [SIMTHRD] %s: num_sims == 2
+[%s]:[%s] - [SIMTHRD] %s: prio imsi [%s] already there..
+[%s]:[%s] - [SIMTHRD] %s: new prio imsi set
+[%s]:[%s] - [SIMTHRD] %s: present prio imsi [%s]
+[%s]:[%s] - [SIMTHRD] %s: present prio imsi db read [failed] slot
+[%s]:[%s] - [RECOVERY] %s: rec_prog_state [%d]
+[%s]:[%s] - [RECOVERY] %s: [recovery] conn state timer start[failed][%d]
+[%s]:[%s] - [RECOVERY] %s: ipv4_network_state_update
+[%s]:[%s] - [RECOVERY] %s: ipv6_network_state_update
+[%s]:[%s] - [RECOVERY] %s: dns_state_update
+[%s]:[%s] - [RECOVERY] %s: recovery initalization
+[%s]:[%s] - [RECOVERY] %s: restart - started
+[%s]:[%s] - [RECOVERY] %s: file write [set_reboot_config] [failed]
+[%s]:[%s] - [RECOVERY] %s: file write [system_reset_cnt] [failed]
+[%s]:[%s] - [RECOVERY] %s: recovery period timer delete [failed]
+[%s]:[%s] - [RECOVERY] %s: recovery period timer start [failed]
+[%s]:[%s] - [RECOVERY] %s: recovery bootup events [failed]
+[%s]:[%s] - [RECOVERY] %s: recovery restart - success
+[%s]:[%s] - [RECOVERY] %s: [sim_switch_cnt] [%d]
+[%s]:[%s] - [RECOVERY] %s: [recovery] sim_switch_cnt - max reached [%d]
+[%s]:[%s] - [RECOVERY] %s: ccm_reconnect[%d]
+[%s]:[%s] - [RECOVERY] %s: dns_fail_cnt - MAX reached [%d]
+[%s]:[%s] - [RECOVERY] %s: get_active_sim_index [%d]
+[%s]:[%s] - [RECOVERY] %s: recover_modem_reset[%d]
+[%s]:[%s] - [RECOVERY] %s: mdm_reset_cnt - MAX reached [%d]
+[%s]:[%s] - [RECOVERY] %s: file write [dev_reset_cnt] [failed]
+[%s]:[%s] - [RECOVERY] %s: device reset [failed]
+[%s]:[%s] - [RECOVERY] %s: dev_reset_cnt - MAX reached [%d]
+[%s]:[%s] - [RECOVERY] %s: invalid param
+[%s]:[%s] - [RECOVERY] %s: NON_RECOVERABLE_E [failed]
+[%s]:[%s] - [RECOVERY] %s: NON_RECOVERABLE_E [OCCURED]
+[%s]:[%s] - [RECOVERY] %s: (inactive_sim) IMSI:%s ICCID:%s
+[%s]:[%s] - [RECOVERY] %s: disconnect_recovery started
+[%s]:[%s] - [RECOVERY] %s: non_recoverable_exception [failed]
+[%s]:[%s] - [RECOVERY] %s: system_reset_cnt [%d]
+[%s]:[%s] - [RECOVERY] %s: read system_reset_cnt
+[%s]:[%s] - [RECOVERY] %s: mode [rec_state_none_e]
+[%s]:[%s] - [RECOVERY] %s: mode [rec_mode_progress_e]
+[%s]:[%s] - [RECOVERY] %s: state [rec_state_sim_switch_e]
+[%s]:[%s] - [RECOVERY] %s: num_sims[%d] switch_mode[%d]
+[%s]:[%s] - [RECOVERY] %s: state recovery_sim_switch [success]
+[%s]:[%s] - [RECOVERY] %s: state rec_state_priority_switch_e [started]
+[%s]:[%s] - [RECOVERY] %s: SIM_MGR_NO_SWITCH_REQD
+[%s]:[%s] - %s: rec_state_tech_reset_e 1 [%d]
+[%s]:[%s] - %s: rec_state_tech_reset_e 2 [%d], %d, %d
+[%s]:[%s] - %s: rec_state_tech_reset_e 3 [%d]
+[%s]:[%s] - %s: rec_state_tech_reset_e 4 [%d]
+[%s]:[%s] - %s: rec_state_tech_reset_e 5 [%d], %d
+[%s]:[%s] - %s: rec_state_tech_reset_e [success]
+[%s]:[%s] - [RECOVERY] %s:  recovery_tech_reset_handler [attempted]
+[%s]:[%s] - [RECOVERY] %s:  recovery_tech_reset_handler [failed]
+[%s]:[%s] - [RECOVERY] %s: state [rec_state_modem_reset_e]
+[%s]:[%s] - [RECOVERY] %s: state [rec_state_device_reset_e]
+[%s]:[%s] - %s: rec_state_modem_reset_e [success]
+[%s]:[%s] - [RECOVERY] %s: disconnect_timeout_evt_msg[failed]
+[%s]:[%s] - [RECOVERY] %s:  [recovery already in progress]
+[%s]:[%s] - [RECOVERY] %s:  recovery_mdm_reset_handler [failed]
+[%s]:[%s] - [RECOVERY] %s: state [rec_state_complete_e]
+[%s]:[%s] - [RECOVERY] %s:  rec_state_device_reset_e [success]
+[%s]:[%s] - [RECOVERY] %s:  recovery_device_reset_handler [failed]
+[%s]:[%s] - [RECOVERY] %s: get_reboot_config [failed]
+[%s]:[%s] - [RECOVERY] %s: recovery mode [rec_mode_none_e]
+[%s]:[%s] - [RECOVERY] %s: recovery mode [rec_mode_completed_e]
+[%s]:[%s] - [RECOVERY] %s: recovery mode [Unknown]
+[%s]:[%s] - [RECOVERY] %s: already MAX system reset reached [%d][%d]
+[%s]:[%s] - [RECOVERY] %s: ## No More Recovery ##
+[%s]:[%s] - [RECOVERY] %s: state - [rec_state_none_e]
+[%s]:[%s] - [RECOVERY] %s: mode - [rec_mode_progress_e]
+[%s]:[%s] - [RECOVERY] %s: rec_mode - DNS failure[%d] handle [success]
+[%s]:[%s] - [RECOVERY] %s: rec_mode - DNS failure[%d] MAX reached - disconnect event raised
+[%s]:[%s] - [RECOVERY] %s:  disconnect_recovery_handler[failed]
+[%s]:[%s] - [RECOVERY][WAN] %s: recovery init
+[%s]:[%s] - [RECOVERY] %s: rec_mode[%d] - DNS CCM recovery [failed]
+[%s]:[%s] - [RECOVERY] %s: recovery mode none
+[%s]:[%s] - [RECOVERY] %s: recovery completed
+[%s]:[%s] - [RECOVERY] %s: unknown recovery mode
+[%s]:[%s] - [RECOVERY] %s: recovery already in progress
+[%s]:[%s] - [RECOVERY] %s: prereq_verify [failed]
+sim.mgr.events.broadcast
+[%s]:[%s] - [CONFIG] %s: MsgBusPublishBinary() failed
+[%s]:[%s] - [SIMTHRD] %s: sim mgr - PID[%lu], process ID[%d]
+[%s]:[%s] - [SIMTHRD] %s: features read failed [%d]
+[%s]:[%s] - [SIMTHRD] %s: SIM manager feature[Not Supported].
+[%s]:[%s] - [SIMTHRD] %s: SIM manager feature [Supported].
+[%s]:[%s] - [SIMTHRD] %s: SIM manager multi sim [Not Supported].
+[%s]:[%s] - [SIMTHRD] %s: SIM manager multi sim [Supported].
+[%s]:[%s] - [SIMTHRD] %s: Error opening signal pipe [%d], terminating.
+[%s]:[%s] - [SIMTHRD] %s: Error attaching to the message bus.
+[%s]:[%s] - [SIMTHRD] %s: opening message queue: %d, terminating.
+[%s]:[%s] - [SIMTHRD] %s: threads creation[%d] failed
+[%s]:[%s] - [SIMTHRD] %s: Select returned [%d], errno: [%d]
+[%s]:[%s] - [SIMTHRD] %s: mq_receive returned [%d], errno: [%d]
+[%s]:[%s] - [SIMTHRD] %s: mdm get_sim_init_status failed [%d]
+[%s]:[%s] - [SIMTHRD] %s: -- mdm init pending --
+[%s]:[%s] - [SIMTHRD] %s: -- sim mgr waits[%d] sec --
+[%s]:[%s] - [SIMTHRD] %s: Get PRI settings
+[%s]:[%s] - [SIMTHRD] %s: Set SIM Mgr settings success
+[%s]:[%s] - [SIMTHRD] %s: Set SIM mgr settings failure[%d]
+[%s]:[%s] - [SIMTHRD] %s: Get SIM settings failure[%d]
+[%s]:[%s] - [SIMTHRD] %s: SIM switch status [%d]
+[%s]:[%s] - [SIMTHRD] %s: prio_sim imsi verify failed [%d]
+[%s]:[%s] - [SIMTHRD] %s: prio_sim imsi verify success
+[%s]:[%s] - [SIMTHRD] %s: sim switch rules failed [%d]
+[%s]:[%s] - [SIMTHRD] %s: ## sim_mgr init success ##
+[%s]:[%s] - [SIMTHRD] %s: bootup_events_verify [failed]
+[%s]:[%s] - [SIMTHRD] %s: ## sim_mgr init failed ##
+[%s]:[%s] - [SIMTHRD] %s: sim switch in progress[%d]
+[%s]:[%s] - [SIMTHRD] %s: timer delete failed 
+[%s]:[%s] - [SIMTHRD] %s: SIM manager Terminating...!!!
+sim_mgr_recovery_conn_state_timer_start
+sim_mgr_recovery_conn_state_timer_delete
+sim_mgr_recovery_conn_state_timer_thread
+sim_mgr_recovery_period_timer_start
+sim_mgr_recovery_period_timer_delete
+sim_mgr_recovery_period_timer_thread
+sim_mgr_check_recovery_db
+sim_mgr_get_inactive_sim
+sim_mgr_set_reboot_config
+sim_mgr_get_reboot_config
+sim_mgr_set_recovery_system_reboot_cnt_config
+sim_mgr_get_recovery_system_reboot_cnt_config
+sim_mgr_set_switch_mode_params
+sim_mgr_set_active_sim_iccid_pin_locked
+sim_mgr_change_active_sim_handle
+sim_mgr_set_active_sim_imsi
+sim_mgr_set_wan_status_change
+sim_mgr_conn_monitor_recover_get_active_sim_index
+sim_mgr_conn_monitor_recover_set_priority_sim
+sim_mgr_conn_monitor_recover_ccm_reconnect
+sim_mgr_conn_monitor_recover_modem_reset
+sim_mgr_conn_monitor_recover_device_reset
+sim_mgr_conn_monitor_prereq_status_initalize
+sim_mgr_conn_monitor_prereq_handler
+sim_mgr_conn_monitor_prereq_verify
+sim_mgr_msg_set_mdm_call_attempt_handler
+sim_mgr_msg_set_mdm_call_status_handler
+check_ccm_exception_override
+sim_mgr_msg_set_misc_conn_prereq_status_handler
+sim_mgr_msg_set_mdm_conn_prereq_status_handler
+sim_mgr_msg_set_ccm_conn_prereq_status_handler
+sim_mgr_print_wwan_mdm_connect_info
+sim_mgr_copy_wwan_mdm_connect_info
+sim_mgr_set_wwan_mdm_connect_info
+sim_mgr_recovery_period_timeout_evt_msg
+sim_mgr_recovery_connect_success_evt_msg
+sim_mgr_recovery_wan_register_success_evt_msg
+sim_mgr_recovery_network_disconnect_evt_msg
+sim_mgr_recovery_dnsrouted_evt_msg
+sim_mgr_recovery_initalization_evt_msg
+sim_mgr_recovery_dnsfailure_evt_msg
+sim_mgr_sig_qlty_start
+sim_mgr_data_usage_start
+sim_mgr_failback_start
+sim_mgr_data_usage_stop
+sim_mgr_failback_stop
+sim_mgr_failback_exit
+sim_mgr_sig_qlty_stop
+sim_mgr_sig_qlty_exit
+sim_mgr_set_auto_rules_params
+sim_mgr_set_conn_monitor_algo_state
+sim_mgr_set_conn_monitor_params
+sim_mgr_set_prio_sim_params
+sim_mgr_set_sig_qlty_params
+sim_mgr_set_sim_switch_status
+sim_mgr_is_switch_allowed
+sim_mgr_set_conn_recovery_configs_handle
+perform_automated_factory_reset
+sim_mgr_sim_pin_unlock
+sim_mgr_sim_puk_unlock
+sim_mgr_sim_recovery_start
+sim_mgr_sim_recovery_stop
+sim_mgr_handle_event_message
+sim_mgr_sim_stop_all_threads
+sim_mgr_sim_exit_all_threads
+sim_mgr_switch_slot_msg_impl
+sim_mgr_recover_ntwk_slot_msg_impl
+sim_mgr_switch_slot_impl
+sim_mgr_switch_slot_handle_impl
+sim_mgr_check_sim_entry
+sim_mgr_check_iccid
+sim_mgr_get_sims_install_list_impl
+sim_mgr_get_active_sim_settings_impl
+sim_mgr_get_settings_general_impl
+sim_mgr_get_all_settings_impl
+sim_mgr_wan_update
+print_sim_info
+sim_mgr_settings_init
+sim_mgr_create_threads
+sim_mgr_switching_rules
+sim_mgr_state_machine_initialize
+sim_mgr_verify_priority_sim
+sim_mgr_recovery_disconnect_state_handler
+sim_mgr_ipv4_network_state_update
+sim_mgr_ipv6_network_state_update
+sim_mgr_dns_state_update
+sim_mgr_conn_monitor_recovery_initialization
+sim_mgr_conn_monitor_recovery_restart
+sim_mgr_conn_recovery_sim_switch_handler
+sim_mgr_recovery_dns_fail_handler
+sim_mgr_conn_recovery_mdm_reset_handler
+sim_mgr_recovery_device_reset_handler
+sim_mgr_recovery_verify_non_recoverable_exception_handler
+sim_mgr_check_inactive_sim_data_available
+sim_mgr_recovery_conn_state_disconnect_recovery_handler
+sim_mgr_recovery_dns_failure_recovery_handler
+sim_mgr_recovery_bootup_events_verify
+msgbus_broadcast
+[%s]:[%s] - [RECOVERY][WAN] %s: Evt - wan_details Null
+/sim_mgr_mq
+[%s]:[%s] - [RECOVERY][WAN] %s: Evt - MSGQ does not exist
+[%s]:[%s] - [RECOVERY][WAN] %s: Evt - SET_WAN_STATUS_CHANGE
+[%s]:[%s] - [RECOVERY][MDM] %s: Evt - call_status_handler Null
+[%s]:[%s] - [RECOVERY][MDM] %s: Evt - MSGQ does not exist
+[%s]:[%s] - [RECOVERY][MDM] %s: Evt - SET_MDM_CALL_STATUS
+[%s]:[%s] - [RECOVERY][MDM] %s: Evt - conn_prereq_status Null
+[%s]:[%s] - [RECOVERY][MDM] %s: Evt - SET_MDM_CONN_PREREQ_STATUS
+[%s]:[%s] - [RECOVERY][CCM] %s: Evt - conn_prereq_status Null
+[%s]:[%s] - [RECOVERY][CCM] %s: Evt - MSGQ does not exist
+[%s]:[%s] - [RECOVERY][CCM] %s: Evt - SET_CCM_CONN_PREREQ_STATUS
+[%s]:[%s] - [RECOVERY] %s: Evt - [MDM] call_attempt_status_handler Null
+[%s]:[%s] - [RECOVERY] %s: Evt - [MDM] MSGQ does not exist
+[%s]:[%s] - [RECOVERY] %s: Evt - [MDM] SET_MDM_CALL_ATTEMPT_STATUS 
+/sim_mgr_data_usage_mq
+[%s]:[%s] - [DATA USAGE] %s: Evt - [MDM] MSGQ does not exist
+modem2.device_state
+[%s]:[%s] - [SIMTHRD][MDM] %s: Evt -  MSGBUS_MODEM2_EVT_DEV_STATE_CHAN
+modem2.sim_switch_status
+[%s]:[%s] - [RECOVERY][MDM] %s: Evt -  MSGBUS_MODEM2_SIM_SWITCH_STATUS
+modem2.sim_unlock_pin
+[%s]:[%s] - [SIMTHRD][MDM] %s: Evt -  MSGBUS_MODEM2_SIM_UNLOCK_PIN %d
+modem2.sim_unlock_puk
+[%s]:[%s] - [SIMTHRD][MDM] %s: Evt -  MSGBUS_MODEM2_SIM_UNLOCK_PUK %d
+sim_mgr.conn_recovery.start
+[%s]:[%s] - [SIMTHRD][MDM] %s: Evt -  MSGBUS_SIMMGR_CONN_RECOVERY_START %d
+sim_mgr.conn_recovery.stop
+[%s]:[%s] - [SIMTHRD][MDM] %s: Evt -  MSGBUS_SIMMGR_CONN_RECOVERY_STOP %d
+nvtl.dua.usage.info
+[%s]:[%s] - [DATA USAGE] %s:MBVT_INT32 EVT - [MDM] MSGBUS_DUA_USAGE_INFO_CHANNEL
+modem2.connection_prerequisite_status
+[%s]:[%s] - [RECOVERY][MDM] %s: EVT -  MSGBUS_MODEM2_CONN_PREREQ_STATUS
+ccm2.connection_prerequisite_status
+[%s]:[%s] - [RECOVERY][CCM] %s: EVT -   MSGBUS_CCM2_CONN_PREREQ_STATUS
+modem2.conn_state
+[%s]:[%s] - [RECOVERY][MDM] %s: EVT -  MSGBUS_MODEM2_EVT_CONN_STATE_CHAN
+wan_mgr.wan_status_change
+[%s]:[%s] - [RECOVERY][WAN] %s: EVT -  MSGBUS_WAN_MGR_WAN_STATUS_CHANGE_CHANNEL
+[%s]:[%s] - %s: [recovery] WAN interface Name [%d], status[%d] disconnect reason[%d] 
+modem2.call_attempt
+[%s]:[%s] - [RECOVERY] %s: EVT - [MDM]  MSGBUS_MODEM2_CALL_ATTEMPT
+nvtl.dua.usage.level
+[%s]:[%s] - [DATA USAGE] %s: EVT - [MDM] MSGBUS_DUA_USAGE_LEVEL_CHANNEL, interface = %d
+nvtl.dua.settings.expired
+[%s]:[%s] - [DATA USAGE] %s: EVT - [MDM] MSGBUS_DUA_USAGE_SETTINGS_EXPIRED_CHANNEL
+[%s]:[%s] - [DATA USAGE] %s: EVT - [MDM] MSGBUS_DUA_USAGE_INFO_CHANNEL,  mdm %s, data available %d, data used: %llu, plan_limit_bytes %llu
+[%s]:[%s] - [DATA USAGE] %s: EVT - [MDM] MSGBUS_DUA_USAGE_INFO_CHANNEL
+nvtl.dua.settings
+[%s]:[%s] - [DATA USAGE] %s: EVT - [MDM] MSGBUS_DUA_SETTINGS_LIST
+[%s]:[%s] - %s: default case should not be here
+[%s]:[%s] - [SIMTHRD] %s: MsgBus_Create Failed [%s]
+SIM_MGR_MBH
+[%s]:[%s] - [SIMTHRD] %s: MsgBus_Connect Failed [%s]
+[%s]:[%s] - [SIMTHRD] %s: MsgBus_SetCallback Failed [%s]
+nvtl.omadm.dm
+[%s]:[%s] - [SIMTHRD] %s: MsgBus_Subscribe to DM_CHANNEL Failed [%s]
+dmdb.main.initialized
+[%s]:[%s] - [SIMTHRD] %s: MsgBus_Subscribe to DMDB_INITIALIZED  Failed [%s]
+[%s]:[%s] - [SIMTHRD] %s: MsgBus_Subscribe to DEV_STATE_CHAN Failed [%s]
+[%s]:[%s] - [SIMTHRD] %s: MsgBus_Subscribe to SIM_SWITCH_STATUS Failed [%s]
+[%s]:[%s] - [SIMTHRD] %s: MsgBus_Subscribe to  WAN_IFC_STATUS_CHANGE_CHANNEL Failed [%s]
+[%s]:[%s] - [SIMTHRD] [RECOVERY] %s: MsgBus_Subscribe to MODEM2_EVT_CONN_STATE_CHAN failed [%s]
+[%s]:[%s] - [SIMTHRD] [RECOVERY] %s: MsgBus_Subscribe to MODEM2_CONN_PREREQ_STATUS Failed [%s]
+[%s]:[%s] - [SIMTHRD] [RECOVERY] %s: MsgBus_Subscribe to CCM2_CONN_PREREQ_STATUS Failed [%s]
+[%s]:[%s] - [SIMTHRD] [RECOVERY] %s: MsgBus_Subscribe to MSGBUS_MODEM2_CALL_ATTEMPT Failed [%s]
+[%s]:[%s] - [SIMTHRD] %s: MsgBus_Subscribe to MSGBUS_MODEM2_SIM_UNLOCK_PIN Failed [%s]
+[%s]:[%s] - [SIMTHRD] %s: MsgBus_Subscribe to MSGBUS_MODEM2_SIM_UNLOCK_PUK Failed [%s]
+[%s]:[%s] - [SIMTHRD] %s: MsgBus_Subscribe to MSGBUS_SIMMGR_CONN_RECOVERY_START Failed [%s]
+[%s]:[%s] - [SIMTHRD] %s: MsgBus_Subscribe to MSGBUS_SIMMGR_CONN_RECOVERY_STOP Failed [%s]
+[%s]:[%s] - [SIMTHRD] %s: MsgBus_Subscribe to MSGBUS_DUA_USAGE_LEVEL_CHANNEL Failed [%s]
+[%s]:[%s] - [SIMTHRD] %s: MsgBus_Subscribe to MSGBUS_DUA_USAGE_INFO_CHANNEL Failed [%s]
+[%s]:[%s] - [SIMTHRD] %s: MsgBus_Subscribe to MSGBUS_DUA_SETTINGS_LIST Failed [%s]
+[%s]:[%s] - [SIMTHRD] [RECOVERY] %s: SIMMgr MsgBus init success[%s]
+[%s]:[%s] - [SIMTHRD] [RECOVERY] %s: Disable Message bus interface [%s]
+sim_mgr_wan_status_change_handler
+modem2_call_status_handler
+modem2_conn_prerequisite_status_handler
+ccm2_conn_prerequisite_status_handler
+modem2_call_attempt_status_handler
+sim_mgr_data_usage_level_handler
+sim_mgr_data_usage_cycle_expiry_handler
+sim_mgr_data_exhausted_handler
+sim_mgr_msgbus_handler
+sim_mgr_mbh_init
+sim_mgr_mbh_deinit
+[%s]:[%s] - [SIGQLTY] %s: sending msg [%d]
+/sim_mgr_sig_qlty_mq
+[%s]:[%s] - [SIGQLTY] %s: thread MSGQ failed
+[%s]:[%s] - [MAXSWITCH] %s: **Timer cb func Invoked **
+[%s]:[%s] - [MAXSWITCH] %s: maxswitch timer delete[failed] [%d]
+[%s]:[%s] - [MAXSWITCH] %s: maxswitch timer start[failed][%d]
+[%s]:[%s] - [MAXSWITCH] %s: timer delete
+[%s]:[%s] - [MAXSWITCH] %s: timer delete[%d]
+[%s]:[%s] - [MAXSWITCH] %s:  **Timer STARTED**
+[%s]:[%s] - [MAXSWITCH] %s: timer [%d]sec Started
+[%s]:[%s] - [MAXSWITCH] %s: create timer
+[%s]:[%s] - [MAXSWITCH] %s: set time
+[%s]:[%s] - [SIGQLTY] %s: rsrp sample timeout
+[%s]:[%s] - [SIGQLTY] %s: sig samples window complete[%d] tick_count[%d]
+[%s]:[%s] - [SIGQLTY] %s: sig sample num[%d]
+[%s]:[%s] - [SIGQLTY] %s: sig initialization
+[%s]:[%s] - [SIGQLTY] %s: settings max_switches : %d, backoff_period:%d minutes
+[%s]:[%s] - [SIGQLTY] %s: -- SIGQLTY [NOT-OK] avg[%d] - index[%d] --
+[%s]:[%s] - [SIGQLTY] %s: ## SIGQLTY [SIM SWITCH] [%d] failed ##
+[%s]:[%s] - [SIGQLTY] %s: ## SIGQLTY [SIM SWITCH] success ##
+[%s]:[%s] - [SIGQLTY] %s: ## SIGQLTY is disabled/failed ##
+[%s]:[%s] - [MAXSWITCH]%s:sim_switch_cnt - max reached 
+[%s]:[%s] - [SIGQLTY] %s: result - cumulative value [%ld] / num_of_samples[%d] = avarage[%d]
+[%s]:[%s] - [SIGQLTY] %s: result - cumulative value [%ld] / num_of_samples[%d] = average[%d]
+[%s]:[%s] - [SIGQLTY] %s: ## SIGQLTY good ##
+[%s]:[%s] - [SIGQLTY] %s: ## SIGQLTY NOT GOOD ##
+[%s]:[%s] - [SIGQLTY] %s: RSRP[%d]
+[%s]:[%s] - [SIGQLTY] %s: Invalid RSRP cnt[%d]
+[%s]:[%s] - [SIGQLTY] %s: RSRP sample[%d][%d]
+[%s]:[%s] - [SIGQLTY] %s: sim_mgr event type[%d]
+[%s]:[%s] - [SIGQLTY] %s: Evt[%d] received
+[%s]:[%s] - [SIGQLTY] %s: Evt - init/start
+[%s]:[%s] - [SIGQLTY] %s: Evt - stop
+[%s]:[%s] - [SIGQLTY] %s: Evt - idle
+[%s]:[%s] - [SIGQLTY] %s: Evt - exit
+[%s]:[%s] - [SIGQLTY] %s: Evt - sigqlty params
+[%s]:[%s] - [SIGQLTY] %s: max times [modem2_get_current_state] failed
+[%s]:[%s] - [SIGQLTY] %s: opening MSGQ [%d] terminating.
+[%s]:[%s] - [SIGQLTY] %s: opening MSGQ success
+[%s]:[%s] - [SIGQLTY] %s: select rc[%d], errno: [%d]
+[%s]:[%s] - [CONFIG] %s: applying default value
+[%s]:[%s] - [CONFIG] %s: updated the default values
+[%s]:[%s] - [CONFIG] %s:  get_sig_qlty_configs failed 
+[%s]:[%s] - [CONFIG] %s:  get_active_sim imsi failed 
+[%s]:[%s] - [SIGQLTY] %s: MSGQ receive rc[%d] errno[%d]
+[%s]:[%s] - [SIGQLTY] %s: state - init
+[%s]:[%s] - [SIGQLTY] %s: -- start new test --
+[%s]:[%s] - [SIGQLTY] %s:  state - stop
+[%s]:[%s] - [SIGQLTY] %s: Error creating thread
+[%s]:[%s] - [SIGQLTY] %s: Signal Quality TID: %lu
+sim_mgr_sig_qlty_msg_queue_send
+sig_qlty_maxswitch_timer_expired
+sig_qlty_maxswitch_timer_delete
+sig_qlty_maxswitch_timer_start
+sim_mgr_sig_qlty_timeout_handler
+sim_mgr_sig_qlty_timer_handler
+sim_mgr_sig_qlty_initialization
+sim_mgr_sig_qlty_failure_handler
+sim_mgr_sig_qlty_calc_avarage
+sim_mgr_sig_qlty_test_handler
+sim_mgr_sig_qlty_sample_collect
+sim_mgr_handle_set_sig_qlty_params
+sim_mgr_sigqlty_handle_event_message
+sim_mgr_sig_qlty_rsrp_get
+sim_mgr_sig_qlty_thread_handler
+sim_mgr_signal_quality_init
+/sim_mgr_data_usage_mq
+[%s]:[%s] - [DATA USAGE] %s: event  exit
+[%s]:[%s] - [DATA USAGE] %s: EVT - [MDM] MSGBUS_DUA_USAGE_LEVEL_CHANNEL iface_type:%d imsi:%s iccid:%s level:%s
+[%s]:[%s] - [DATA USAGE] %s:  Level2 received: Sim Switch initiated
+[%s]:[%s] - [DATA USAGE] %s:  Level0 or Level1 received: 
+LevelFull
+[%s]:[%s] - [DATA USAGE] %s:  LevelFull received: Sending SIM_MGR_MSG_DATA_USAGE_CYCLE_EXPIRED message
+[%s]:[%s] - [DATA_USAGE] %s: undetermined Level message
+[%s]:[%s] - [DATA USAGE] %s:BEGIN
+[%s]:[%s] - [DATA USAGE] %s: Found SIM interface details
+[%s]:[%s] - [DATA USAGE] %s:Can't find sim data in database!
+[%s]:[%s] - [DATA USAGE] %s: get_num_sims
+[%s]:[%s] - [DATA USAGE] %s: multi sim not enabled switch slot failed[%d]
+[%s]:[%s] - [DATA USAGE] %s: Get active_sim
+[%s]:[%s] - [DATA USAGE] %s: get_state failed
+[%s]:[%s] - [DATA USAGE] %s  : active_imsi:%s inactive_imsi:%s
+[%s]:[%s] - [DATA USAGE] %s  : inactive_iccid%s 
+[%s]:[%s] - [DATA USAGE] %s: cycle expired: Reset the data usage 
+[%s]:[%s] - [DATA USAGE] %s: Check Inactive SIM for data
+[%s]:[%s] - [DATA USAGE] %s: switch sims [%d]
+[%s]:[%s] - [DATA USAGE] %s: switch slot in progress  [%d]. success = 
+[%s]:[%s] - [DATA USAGE] %s: switch slot failed[%d]
+[%s]:[%s] - [DATA USAGE] %s: switch slot success
+[%s]:[%s] - [DATA USAGE] %s:END
+[%s]:[%s] - [DATA USAGE] %s: Evt_msg null
+[%s]:[%s] - [DATA USAGE] %s: ignoring event since switching is disabled
+[%s]:[%s] - [DATA USAGE] %s: ignoring event since data usage is disabled
+[%s]:[%s] - [DATA USAGE] %s:  sim event type[%d]
+[%s]:[%s] - [DATA USAGE] %s: Evt - start
+[%s]:[%s] - [DATA USAGE] %s: Evt - exit
+[%s]:[%s] - [DATA USAGE] %s: thrd stop - exit
+[%s]:[%s] - [DATA USAGE] %s: calling sim switch - 
+[%s]:[%s] - [DATA USAGE] %s: Data Usage state - %d
+[%s]:[%s] - [DATA USAGE] %s: SIM_MGR_MSG_DATA_USAGE_LEVEL_GOOD_RECVD
+[%s]:[%s] - [DATA USAGE] %s: SIM_MGR_MSG_DATA_USAGE_LEVEL
+[%s]:[%s] - [DATA USAGE] %s: SIM_MGR_MSG_DATA_USAGE_CYCLE_EXPIRED
+[%s]:[%s] - [DATA USAGE] %s: SIM_MGR_MSG_DATA_USAGE_DATA_EXHASTED, both = %d
+[%s]:[%s] - [DATA USAGE] %s: Evt - unknown [%d]
+[%s]:[%s] - %s: [DATA USAGE] creating thread
+[%s]:[%s] - [DATA USAGE] %s: msgQ[%d] failed terminating
+[%s]:[%s] - [DATA USAGE] %s: select rc[%d] errno[%d]
+[%s]:[%s] - [DATA USAGE] %s: MSGQ rc[%d] errno[%d]
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Thread set calcellation failed
+[%s]:[%s] - [DATA USAGE] %s: switch slot req success
+[%s]:[%s] - [DATA USAGE] %s: active imsi[%s]
+[%s]:[%s] - [DATA USAGE] %s: prio imsi[%s]
+[%s]:[%s] - [DATA USAGE] %s: get prio sim
+[%s]:[%s] - [DATA USAGE] %s: get install sim list
+[%s]:[%s] - [FAILBACK_DATAUSAGE] %s: ## NO SWITCH: current sim is prio sim ##
+[%s]:[%s] - [FAILBACK_DATAUSAGE] %s: -- SWITCH to priority sim --
+[%s]:[%s] - %s - Inactive SIM is missing, no data
+[%s]:[%s] - [DATA USAGE] %s: data limits: [%d] [%s] [%s]
+[%s]:[%s] - [DATA USAGE] %s: data limits: [%d] [%d] avail[%d]
+[%s]:[%s] - [DATA USAGE] data limits %s: [%d] [%d] avail[%d]
+[%s]:[%s] - [DATA USAGE] %s: 
+[%s]:[%s] - [DATA USAGE] %s: get_num_sims %d
+[%s]:[%s] - [DATA USAGE] %s: get non-active IMSI for slot 2, %s
+[%s]:[%s] - [DATA USAGE] %s: get non-active IMSI for slot 1, %s
+[%s]:[%s] - [DATA USAGE] %s  : inactive_iccid:%s 
+[%s]:[%s] - [DATA USAGE] %s: failed [%d]
+[%s]:[%s] - [DATA USAGE] %s: failback_switch  [%d]
+[%s]:[%s] - [DATA USAGE] %s: switch slot in progress  [%d]
+[%s]:[%s] - [DATA USAGE] %s: Both SIMs data exhausted, switch back to priority SIM
+[%s]:[%s] - [DATA USAGE] %s: Both SIMs data exhausted, staying on current SIM
+[%s]:[%s] - %S - Called
+/sim_mgr_mq
+sim_mgr.cellular_wan_data.exhausted
+sim_mgr.cellular_wan_data.available
+sim_mgr_data_usage_handle_set_thread_exit_handle
+sim_mgr_data_usage_check_level
+sim_mgr_data_usage_cycle_expired
+sim_mgr_data_usage_handle_event_message
+sim_mgr_data_usage_thread_handler
+sim_mgr_prio_sim_switch_handler
+sim_mgr_is_cursim_prio
+sim_mgr_data_usage_prio_switch
+sim_mgr_get_data_usage_check_avail
+sim_mgr_data_usage_sim_switch
+check_both_sim_data_exhaust
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Thread set calcellation failed
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Thread set calcellation failed
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Thread set calcellation failed
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Thread set calcellation failed
+[%s]:[%s] - [FAILBACK] %s: prio timer start [%d]sec
+[%s]:[%s] - [FAILBACK] %s: prio create_timer[%d] failed
+[%s]:[%s] - [FAILBACK] %s: prio settime [%d] failed
+[%s]:[%s] - [FAILBACK] %s: prio timer id[%lx] for [%d]sec expiration
+[%s]:[%s] - %s:  
+[%s]:[%s] - [FAILBACK] %s: prio timer delete[%d] failed
+[%s]:[%s] - [FAILBACK] %s: prio timer delete [%d] success
+[%s]:[%s] - [FAILBACK] %s: prio timer expired [%u]
+[%s]:[%s] - [FAILBACK] %s: prio sim initalization
+[%s]:[%s] - [FAILBACK] %s: failback_state[None]
+[%s]:[%s] - [FAILBACK] %s: failback interval[%d]sec
+[%s]:[%s] - [FAILBACK] %s: param Evt - type[%d]
+[%s]:[%s] - [FAILBACK] %s: sim switch Evt - type[%d]
+[%s]:[%s] - [FAILBACK] %s: event [prio sim] exit
+[%s]:[%s] - [FAILBACK] %s: prio sim event type[%d]
+[%s]:[%s] - [FAILBACK] %s: Evt - start
+[%s]:[%s] - [FAILBACK] %s: Evt - stop
+[%s]:[%s] - [FAILBACK] %s: Evt - prio config
+[%s]:[%s] - [FAILBACK] %s: -- Evt - SIM switch [PRIO] --
+[%s]:[%s] - [FAILBACK] %s: Evt - exit
+[%s]:[%s] - [FAILBACK] %s: Evt - unknown [%d]
+[%s]:[%s] - [FAILBACK] %s: active imsi[%s]
+[%s]:[%s] - [FAILBACK] %s: prio imsi[%s]
+[%s]:[%s] - %s - active sim is not priority sim
+[%s]:[%s] - %s - Priority SIM is %s
+[%s]:[%s] - [FAILBACK] %s: get prio sim failed
+[%s]:[%s] - [FAILBACK] %s: get install sim list
+[%s]:[%s] - [FAILBACK] %s: switch slot failed[%d]
+[%s]:[%s] - [FAILBACK] %s: switch slot req success
+/sim_mgr_prio_sim_mq
+[%s]:[%s] - [FAILBACK] %s: msgQ[%d] failed terminating
+[%s]:[%s] - [FAILBACK] %s: timeout[%d]
+[%s]:[%s] - [FAILBACK] %s: select rc[%d] errno[%d]
+[%s]:[%s] - [FAILBACK] %s: MSGQ rc[%d] errno[%d]
+[%s]:[%s] - [FAILBACK] %s: start
+[%s]:[%s] - [FAILBACK] %s: -- current sim is priority sim --
+[%s]:[%s] - [FAILBACK] %s: -- not a priority sim --
+[%s]:[%s] - [FAILBACK] %s: -- prio switch not enabled --
+[%s]:[%s] - [FAILBACK] %s: ## NO SWITCH: current sim is prio sim ##
+[%s]:[%s] - [FAILBACK] %s: -- SWITCH to priority sim --
+[%s]:[%s] - [FAILBACK] %s: Evt - exit
+[%s]:[%s] - [FAILBACK] %s: thread stopped
+[%s]:[%s] - [FAILBACK] %s: creating thread
+[%s]:[%s] - [FAILBACK] %s: Thread TID: [%lu]
+sim_mgr_prio_timer_start
+sim_mgr_prio_timer_delete
+sim_mgr_prio_timer_thread
+sim_mgr_prio_sim_initalization
+sim_mgr_prio_sim_calc_final_failback_interval
+sim_mgr_handle_set_priosim_params_handle
+sim_mgr_handle_set_sim_switch_handle
+sim_mgr_handle_set_thread_exit_handle
+sim_mgr_priosim_handle_event_message
+sim_mgr_is_cursim_prio
+sim_mgr_prio_sim_switch_handler
+sim_mgr_prio_sim_thread_handler
+[%s]:[%s] - %s: conn monitor interval [%d sec] 
+[%s]:[%s] - %s: [conn monitor] create_timer [%d]
+[%s]:[%s] - %s: [conn monitor] timer delete
+[%s]:[%s] - %s: [conn monitor] timer delete [%d]
+[%s]:[%s] - %s: [conn monitor] timer expired [%u]
+[%s]:[%s] - %s: Failed MDM radio enable[%d]
+[%s]:[%s] - %s: Modem is not enabled
+[%s]:[%s] - %s: Failed v4 call status[%d]
+[%s]:[%s] - %s: Failed v6 call status[%d]
+[%s]:[%s] - %s: wwan_v4[%d] wwan_v6[%d]
+[%s]:[%s] - %s: No V4/V6 connection...
+[%s]:[%s] - %s: sim_mgr event: [%d][sim switch] received.
+[%s]:[%s] - %s: event [conn monitor] exit
+[%s]:[%s] - %s: conn monitor event: %d received.
+[%s]:[%s] - %s: [conn monitor] event start
+[%s]:[%s] - %s: [conn monitor] event stop
+[%s]:[%s] - %s: [conn monitor] event config
+[%s]:[%s] - %s: [conn monitor] event switch
+[%s]:[%s] - %s: [conn monitor] event exit
+[%s]:[%s] - %s: sim_mgr event message: [%d] unknown.
+[%s]:[%s] - %s: [conn monitor] connection recover...
+[%s]:[%s] - %s: sim ntwk recover returned fail[%d]
+[%s]:[%s] - %s: sim ntwk recover returned success
+[%s]:[%s] - %s: [conn monitor] timer delete success
+[%s]:[%s] - %s: [conn monitor] timer failed
+[%s]:[%s] - %s: [conn monitor] timer success
+/sim_mgr_conn_monitor_mq
+[%s]:[%s] - %s: Error opening [conn monitor] message queue: %d, terminating.
+[%s]:[%s] - %s: Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: [conn monitor] start
+[%s]:[%s] - #### %s: timeout [conn monitor]####
+[%s]:[%s] - %s: --- NO SWITCH: conn monitor[SIM connected]---
+[%s]:[%s] - %s: ---[conn monitor] fail cnt [%d]---
+[%s]:[%s] - %s: [conn monitor] state idle
+[%s]:[%s] - %s: Error conn monitor creating thread
+[%s]:[%s] - %s: Thread conn monitor TID: [%lu]
+sim_mgr_conn_monitor_start
+sim_mgr_conn_monitor_delete
+sim_mgr_conn_monitor_thread
+sim_mgr_modem_conn_state
+sim_mgr_conn_manager_set_sim_switch_handle
+sim_mgr_conn_monitor_set_thread_exit_handle
+sim_mgr_conn_monitor_handle_event_message
+sim_mgr_conn_monitor_recover_handler
+sim_mgr_conn_monitor_restart
+sim_mgr_conn_monitor_thread_handler
+sim_mgr_conn_monitor_init
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

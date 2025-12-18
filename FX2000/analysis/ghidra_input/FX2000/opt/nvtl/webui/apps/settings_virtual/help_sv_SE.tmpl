@@ -1,0 +1,28 @@
+<div id="settings_virtual">
+	<h1>Avancerade inställningar</h1>
+	
+	<tmpl_if appsList>
+		<h2>Översikt</h2>Menyn Avancerat ger åtkomst till följande sidor och inställningar:<div class="blockgroup">
+			<ul>
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title>&nbsp;-&nbsp;<tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+		<p>Observera att för normal drift och normala situationer behöver inga av dessa inställningar ändras från sina standardvärden. Ändra endast dessa inställningar om din särskilda situation kräver ändringar.</p>
+	</tmpl_if>
+
+	<h2>Knappar</h2>
+	<tmpl_if showBackButton>
+		<h3>Gå tillbaka</h3>
+		<p>Klicka på denna för att återgå till den föregående sidan.</p>
+	</tmpl_if>
+	
+	<tmpl_unless showBackButton>
+		<h3>Fortsätt</h3>
+		<p>Använd denna för att fortsätta till de följande sidorna.</p>
+	</tmpl_unless>
+
+</div>

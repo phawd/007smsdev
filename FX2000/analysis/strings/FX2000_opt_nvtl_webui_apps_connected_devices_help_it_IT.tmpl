@@ -1,0 +1,46 @@
+<!-- Connected Devices -->
+<div id="connected_devices">
+	<h1><tmpl_var _("webui", "connected_devices_menu_text")></h1>
+	<h2>Panoramica</h2>
+		Questa pagina mostra i dettagli di ciascun dispositivo connesso al <tmpl_var _("webui", "webui_product_name")>e, inoltre, elenca tutti i dispositivi bloccati.
+	<h2><tmpl_var _("webui", "connected_devices_sub_header_text")></h2>
+		Questa tabella elenca tutti i dispositivi connessi alla rete Wi-Fi. Il nome della rete Wi-Fi viene visualizzato dopo l&#39;intestazione. Se un computer 
+ connesso al <tmpl_var _("webui", "webui_product_name")> con tethering tramite un cavo USB, detto computer sar
+ elencato in questa tabella.
+		Per ciascun dispositivo connesso vengono visualizzate le seguenti informazioni:
+	<h3>Tipo di connessione</h3>
+		Ogni tipo di dispositivo connesso viene indicato da un
+	<h3>Nome</h3>
+		In genere, si tratta del nome host del dispositivo connesso, come impostato sullo stesso dispositivo connesso. In rari casi, il nome host potrebbe non essere disponibile. Se hai utilizzato l&#39;opzione "Modifica" per modificare il nome di un dispositivo connesso, il nome inserito viene visualizzato al posto del nome host.
+		Puoi utilizzare l&#39;opzione "Modifica" per modificare il nome di qualsiasi dispositivo connesso.
+	<h3>Indirizzo IP</h3>
+	<p>L&#39;indirizzo IP del dispositivo connesso.</p>
+		<tmpl_var truncate(_("webui", "connected_devices_mac_address_label"), (size(_("webui", "connected_devices_mac_address_label")) - size(":")))>
+		L&#39;indirizzo MAC 
+ un identificatore di rete univoco per il dispositivo connesso.
+	<tmpl_if isIPv6Supported>
+			<tmpl_var truncate(_("webui", "connected_devices_link_local_label"), (size(_("webui", "connected_devices_link_local_label")) - size(":")))>
+			Se il dispositivo connesso supporta l
+IPv6, viene visualizzato l&#39;Indirizzo IPv6 locale di collegamento.
+	</tmpl_if>
+	<tmpl_if GuestWifiSupported>
+		<h2><tmpl_var _("webui", "connected_devices_guest_title")></h2>
+			Se la rete Wi-Fi ospite 
+ in uso, questa tabella elenca tutti i dispositivi connessi alla rete Wi-Fi ospite. Il nome della rete Wi-Fi viene visualizzato dopo l&#39;intestazione.
+			La presentazione e il funzionamento dei dispositivi qui elencati sono identici a quelli dei dispositivi elencati nella rete principale.
+	</tmpl_if>
+	<h2>Blocco e sblocco di dispositivi</h2>
+	<h3>Pulsante di blocco</h3>
+		Facendo clic sul pulsante "Blocca" si disconnette il dispositivo connesso e se ne impedisce la riconnessione. Il dispositivo bloccato viene quindi visualizzato nell&#39;elenco 
+bloccati
+		I dispositivi bloccati vengono bloccati sia dalla rete ospite che dalla rete principale.
+ utilizzare questa opzione con ciascun dispositivo connesso, ad eccezione del proprio dispositivo e di qualsiasi dispositivo connesso tramite USB.
+	<h3>Elenco bloccati</h3>
+		Tutti i dispositivi bloccati vengono elencati qui. Si noti che, poich
+ questi dispositivi non sono attualmente connessi e non hanno la facolt
+ di connettersi, non dispongono di un indirizzo IP. Sono invece identificati dal proprio nome e indirizzo MAC.
+	<h3>Pulsante di sblocco</h3>
+		Facendo clic sul pulsante 
+ si sblocca un dispositivo precedentemente bloccato, permettendogli di riconnettersi. Il dispositivo sbloccato viene eliminato dall&#39;Elenco bloccati e, una volta connesso, riapparir
+ nell&#39;elenco dei dispositivi connessi.
+<!-- id="connected_devices" -->

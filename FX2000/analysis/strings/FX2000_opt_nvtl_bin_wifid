@@ -1,0 +1,704 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+libpthread.so.0
+__ctype_b_loc
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+pthread_join
+pthread_create
+MsgBusGet
+mifi_dbg_get_level_name
+mifi_dbg_log
+mifi_dbg_syslog
+settings_get_features
+__isoc99_fscanf
+GLIBC_2.7
+nv_system
+MsgBusSetInt32
+msgq_send_sync
+wifi_get_error_string
+xmldata_initialize
+xmldata_getint32
+xmldata_getstring
+parse_channels_from_list
+xmldata_getcount
+xmldata_shutdown
+file_write_version_string
+wifi_get_wlan_settings
+wifi_get_ap_settings
+wifi_get_ap_profile_count
+__isoc99_sscanf
+wifi_get_sta_settings
+wifi_get_ap_profile
+msgq_does_queue_exist
+msgq_send_async
+pthread_self
+mifi_dbg_start
+__errno_location
+msgq_create
+watchdog_application_register
+msgq_receive
+msgq_resp_handler
+mq_close
+mq_unlink
+wifi_mac_filter_db_updated
+wifi_update_blacklist_mac
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+MsgBusSetBinary
+wifi_get_pindex_from_intf
+router2_modify_bridge_interfaces
+__bss_start
+libmifimsgbus.so
+libxmldata_api.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+librouter2_api.so
+libdmdb_api.so
+libmificommon.so
+libmifi_debug.so
+libxml2.so.2
+libz.so.1
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libwifi_api.so
+H	KxD	J{D
+/dev/kmsg
+[MIFI_TIMESTAMP] - 
+BGNPLUSAX
+ACNPLUSAX
+WPA2 MIX
+WPA3 Transition
+OWE Transition
+PIN Method
+PPC Method
+secondary
+/dev/null
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - Wifi feature is DISABLED in features.xml
+ifconfig wlan%d | grep HWaddr > /tmp/wifi/tmp.txt
+[%s]:[%s] - Wifi command buffer[%s]
+[%s]:[%s] - Error in running the command:%s
+/tmp/wifi/tmp.txt
+%02x:%02x:%02x:%02x:%02x:%02x
+[%s]:[%s] - Wifi Mac address in tmp.txt for interface index %d : %02x:%02x:%02x:%02x:%02x:%02x
+[%s]:[%s] - File pointer for file %s to write macaddr is NULL
+%02x:%02x:%02x:%02x:%02x:%02x
+/tmp/wifi/wifi_macid_%d
+[%s]:[%s] - File pointer is NULL
+[%s]:[%s] - Incorrect mac address
+[%s]:[%s] - count is %d
+[%s]:[%s] - mac address is NULL
+/tmp/wifi/mac%d_tmp.txt
+cat /lib/firmware/wlan/qca_cld/wlan_mac.bin | grep Intf%dMacAddress | cut -d'=' -f 2 > %s
+[%s]:[%s] - Error in running the command for iteration %d:%s
+%02x%02x%02x%02x%02x%02x
+[%s]:[%s] - Wifi Mac address in %s for interface index %d : %02x:%02x:%02x:%02x:%02x:%02x
+[%s]:[%s] - MAC address is NULL retry again iteration %d
+/lib/firmware/wlan/qca_cld/wlan_mac.bin
+[%s]:[%s] - #######File pointer for file %s to write macaddr is NULL
+[%s]:[%s] - *********file pointer =0, Intf%dMacAddress=%02x%02x%02x%02x%02x%02x
+[%s]:[%s] - ********* line = %s, fp=%d
+[%s]:[%s] - *********file pointer =%d, Intf%dMacAddress=%02x%02x%02x%02x%02x%02x
+Intf%dMacAddress=%02x%02x%02x%02x%02x%02x
+NW_NV_MAC_ID_I
+NW_NV_MAC_ID_2_I
+[%s]:[%s] - Reading WIFI mac address from NV item %s
+nwnvitem -r -e %s > %s
+[%s]:[%s] - Reading WIFI mac address from wlan_mac.bin
+[%s]:[%s] - Wifi Mac address for interface index %d : %02x:%02x:%02x:%02x:%02x:%02x
+[%s]:[%s] - Writing	WIFI mac address read from NwNvitem to wlan_mac.bin
+[%s]:[%s] - Wifi invalid interface is given to stat.
+[%s]:[%s] - Wifi driver is not loaded or feature is disabled, something wrong!
+[%s]:[%s] - Wifi profile %d is disabled, can't start interface.
+[%s]:[%s] - Wifi sub-system is starting %s interface
+WIFI Hostapd running on wlan0 successfully.
+[%s]:[%s] - MIFI_TIMESTAMP:WIFI Hostapd running on wlan0 successfully.
+WIFI Hostapd running on wlan1 successfully.
+[%s]:[%s] - MIFI_TIMESTAMP:WIFI Hostapd running on wlan1 successfully.
+WIFI Hostapd on wlan0 failed.
+[%s]:[%s] - MIFI_TIMESTAMP:WIFI Hostapd on wlan0 failed.
+WIFI Hostapd on wlan1 failed.
+[%s]:[%s] - MIFI_TIMESTAMP:WIFI Hostapd on wlan1 failed.
+[%s]:[%s] - Wifi invalid interface is given to stop.
+[%s]:[%s] - Wifi interface %s is already disabled.
+[%s]:[%s] - Wifi sub-system is stopping %s interface
+[%s]:[%s] - Wifi interface %s stopped successfully.
+[%s]:[%s] - Status=0 sending MSGBUS_WIFI_5GHZ_DISABLED iface->profile_index=%d
+wifi.5ghz.disabled
+[%s]:[%s] - Status=0 sending MSGBUS_WIFI_2GHZ_DISABLED iface->profile_index=%d
+wifi.2ghz.disabled
+[%s]:[%s] - Wifi sub-system failed to stop %s interface.
+[%s]:[%s] - Invalid sta_list structure pointer,can't proceed to get STA list.
+/wlan%d_host_mq
+[%s]:[%s] - wifi_get_hostapd_associated_stations: hostapd_cli command did not completed in time, wait for 1s and get it from global database
+[%s]:[%s] - wifi_get_hostapd_associated_stations: returned rc= %d, %s
+[%s]:[%s] - Wifi interface and profile are invalid, can't proceed.
+[%s]:[%s] - Failed to start the hostapd thread on %s interface.
+WIFI Start Hostapd on wlan0
+[%s]:[%s] - MIFI_TIMESTAMP:WIFI Start Hostapd on wlan0
+WIFI Start Hostapd on wlan1
+[%s]:[%s] - MIFI_TIMESTAMP:WIFI Start Hostapd on wlan1
+runlevel | awk '{print $2}' > /root/runlevel.tmp
+/root/runlevel.tmp
+rm -f /root/runlevel.tmp
+/opt/nvtl/etc/wifi/config.xml
+/Config/WiFi/SystemMaxClientsAllowed
+/Config/WiFi/US24ChannelsList
+/Config/WiFi/US5ChannelsList
+/Config/WiFi/JP24ChannelsList
+/Config/WiFi/JP5ChannelsList
+/Config/WiFi/GB24ChannelsList
+/Config/WiFi/GB5ChannelsList
+/Config/WiFi/AU24ChannelsList
+/Config/WiFi/AU5ChannelsList
+/Config/WiFi/CountriesSupported
+/Config/WiFi/Interface
+/Config/WiFi/Interface[%d]/Name
+/Config/WiFi/BeaconInterval
+/Config/WiFi/Preamble
+/Config/WiFi/ModesAllowed
+/Config/WiFi/WPSAvailable
+/Config/WiFi/MaxClientsAllowed
+/Config/WiFi/APMaxInactivity
+/Config/WiFi/WPSDeviceName
+/Config/WiFi/WPSManfName
+/Config/WiFi/WPSModelName
+/Config/WiFi/WPSDevType
+/Config/WiFi/WPSFriendlyName
+/Config/WiFi/WPSConfigMethod
+/Config/WiFi/WlanDriverName
+/Config/WiFi/WiFiFWVersion
+[%s]:[%s] - Failed to open configuration file: %s
+/tmp/wifi
+[%s]:[%s] - Failed to get the wlan settings.
+[%s]:[%s] - *********wifi_get_wlan_settings success: enabled=%d, countryCode=%s
+[%s]:[%s] - Failed to initialize the AP settings, error code: %d
+[%s]:[%s] - **********wifi_get_ap_settings success: enabled=%d, maxClients=%d
+[%s]:[%s] - Failed to read count of AP profile, error code: %d
+[%s]:[%s] - Count of AP profiles is %d
+[%s]:[%s] - Failed to initialize the STA settings, error code: %d
+[%s]:[%s] - Failed to load the Wifi MAC address.
+[%s]:[%s] - **********Mac address will be assigned by the driver 
+[%s]:[%s] - Failed to initialize Wifi profile for %d index, error:%d
+[%s]:[%s] - ==============================================================
+[%s]:[%s] - Profile #         	 : [%d]
+[%s]:[%s] - Profile status         : [%d]
+[%s]:[%s] - Profile name           : [%s]
+[%s]:[%s] - SSID                   : [%s]
+[%s]:[%s] - Ignore broadcast SSID  : [%d]
+[%s]:[%s] - Wifi privacy           : [%d]
+[%s]:[%s] - Interface Feature Flags: [
+[%s]:[%s] - BLACKLIST, 
+[%s]:[%s] - WHITELIST, 
+[%s]:[%s] - INTERFACE_ISOLATION, 
+[%s]:[%s] - NO_GUEST_FILE_SHARING, 
+[%s]:[%s] - NO_GUEST_WEB_ACCESS
+[%s]:[%s] - ]
+[%s]:[%s] - WPS status             : [%d]
+[%s]:[%s] - Channel                : [%d]
+[%s]:[%s] - Channel width          : [%s]
+[%s]:[%s] - Mode                   : [%s]
+[%s]:[%s] - Security type          : [%s]
+[%s]:[%s] - Encryption type        : [%d]
+[%s]:[%s] - Authentication type    : [%s]
+[%s]:[%s] - WEP key index          : [%d]
+[%s]:[%s] - WEP key%d             : [%s]
+[%s]:[%s] - WPA Pre-Shared Key     : [%s]
+[%s]:[%s] - *** Wifi Settings Starts ***
+Disabled
+[%s]:[%s] - Wifi feature status is =%s
+Not loaded
+[%s]:[%s] - Wifi driver is =%s
+[%s]:[%s] - *** Wifi Profile %d Starts ***
+[%s]:[%s] - Wifi profile status = %s
+[%s]:[%s] - Wifi broadcast SSID = %s
+[%s]:[%s] - Wifi WPS status   = %s
+[%s]:[%s] - Wifi channel      = %d
+[%s]:[%s] - Wifi mode         = %s
+[%s]:[%s] - Wifi profile name = %s
+[%s]:[%s] - Wifi SSID         = %s
+[%s]:[%s] - Wifi security type = %s
+[%s]:[%s] - Wifi WEP auth key  = %s
+[%s]:[%s] - Wifi WEP key index = %d
+[%s]:[%s] - Wifi WEP key%d  = %s
+[%s]:[%s] - Wifi channel width = %s
+[%s]:[%s] - *** Wifi Profile %d Ends ***
+[%s]:[%s] - *** Wifi Interface %d Starts ***
+[%s]:[%s] - Interface name = %s
+[%s]:[%s] - Interface Index = %d
+[%s]:[%s] - MAC Addr =%02X:%02X:%02X:%02X:%02X:%02X
+[%s]:[%s] - Interface up and running = %s
+[%s]:[%s] - *** Wifi Interface %d Ends ***
+[%s]:[%s] - *** Wifi Capabilities %d Starts ***
+[%s]:[%s] - Interface name         = %s
+[%s]:[%s] - *** Wifi Capabilities %d Ends ***
+[%s]:[%s] - Modes                   = %d
+[%s]:[%s] - WPS Available           = %s
+[%s]:[%s] - Wifi support max clients= %d
+[%s]:[%s] - Max number of interface = %d
+[%s]:[%s] - Countries Supported     = %s
+[%s]:[%s] - Access point inactivity time is = %d 
+[%s]:[%s] - Driver name is = %s 
+[%s]:[%s] - WPS name is %s 
+[%s]:[%s] - WPS Manufacture name is %s 
+[%s]:[%s] - WPS model name is %s 
+[%s]:[%s] - WPS device type is %s 
+[%s]:[%s] - WPS congig methods is %s 
+[%s]:[%s] - WPS friendly name is %s 
+[%s]:[%s] - *** Wifi Settings Ends ***
+[%s]:[%s] - Wifi msg type pointer is invalid, can't proceed with wps start.
+[%s]:[%s] - Wifi invalid profile index for WPS start.
+[%s]:[%s] - Wifi profile %u doesn't have WPS enable, can't start WPS session.
+[%s]:[%s] - Couldn't find a wifi interface to start WPS.
+[%s]:[%s] - Invalid WPS method is configured.
+[%s]:[%s] - Wifi msg type pointer is invalid, can't proceed with wps stop.
+[%s]:[%s] - Wifi invalid AP profile index for WPS stop.
+[%s]:[%s] - Given profile index %d is not applied on any wifi interfaces.
+[%s]:[%s] - Wifi interface %s doesn't have WPS enable, so can't stop WPS session.
+Wifi driver already loaded
+[%s]:[%s] - Wifi drivers are already loaded
+WIFI Load Driver
+[%s]:[%s] - MIFI_TIMESTAMP:WIFI Load Driver
+/opt/nvtl/bin/wifi.sh
+%s load_driver %02X:%02X:%02X:%02X:%02X:%02X  %02X:%02X:%02X:%02X:%02X:%02X %d %d
+[%s]:[%s] - Error in running the script:%s
+[%s]:[%s] - Reading WIFI mac address from ifconfig command
+[%s]:[%s] - Reading WIFI mac address from mac address file
+%s loaded wlan driver %02X:%02X:%02X:%02X:%02X:%02X  %02X:%02X:%02X:%02X:%02X:%02X %d %d
+[%s]:[%s] - ############# Loaded wlan driver with dynamic mac address, creating wlan_mac.bin file now: %s
+WIFI Unload Driver
+[%s]:[%s] - MIFI_TIMESTAMP:WIFI Unload Driver
+%s unload_driver 
+[%s]:[%s] - Wifi stop command buffer[%s]
+[%s]:[%s] - Failed to launch the %s command.
+[%s]:[%s] - Wifi AP feature is disable.
+Wifi sub-system started successfully.
+[%s]:[%s] - Invalid wifi msg type for getting the device capabilities.
+[%s]:[%s] - Invalid wifi msg type for getting the iface mac address.
+[%s]:[%s] - Wifi interface %s is not up. Returning WIFI_SUCCESS
+[%s]:[%s] - wifi_get_sta_list: Returned rc=%d %s
+[%s]:[%s] - Trying to set the feature mask for interface [%s] 
+[%s]:[%s] - %s():%d saved mask[%d] enabled[%d] ram mask[%d]
+[%s]:[%s] - guest file sharing permission is changed, no need to restart hostapd
+[%s]:[%s] - %s():%d match =%d enabled =%d
+[%s]:[%s] - Only Wifi feature flag is changed.
+[%s]:[%s] - %s: update driver with max-clients
+/opt/nvtl/bin/iwpriv %s setMaxAssoc %d
+[%s]:[%s] - %s: cmd %s failed 
+[%s]:[%s] - %s: cmd %s success
+[%s]:[%s] - *************wifi_ap_apply_profiles_on_iface: Called from wifi_core_init
+[%s]:[%s] - *************wifi_ap_apply_profiles_on_iface: Called from handle_event
+[%s]:[%s] - Wifi Applying profile is already in progress.
+[%s]:[%s] - Factory MODE detected, only interface wlan0 will come up.
+[%s]:[%s] - Failed to load the Wifi driver, terminating.
+[%s]:[%s] - Starting the wlan0 interface [%d].
+[%s]:[%s] - Starting the wlan0 interface.
+[%s]:[%s] - Wifi or AP feature is set to disabled.
+[%s]:[%s] - Failed to read Wifi profile for %d index, error:%d
+[%s]:[%s] - %d Wifi AP profiles are active, maximum active profiles can be %d.
+[%s]:[%s] - wifi.c: Both active profiles with index %d mode=%d and %d mode=%d can be configured in same Wifi frequencies for OWE Transition mode.
+[%s]:[%s] - wifi.c: Both active profiles with index %d mode=%d and %d mode=%d are configured in same Wifi frequencies.
+[%s]:[%s] - %s():%d All (%d) profiles are deactive %d , stopping all.
+[%s]:[%s] - %s():%d No AP profile is modified nor settings changed.
+[%s]:[%s] - %s():%d Reset WiFi Profiles.
+[%s]:[%s] - Status=1 sending MSGBUS_WIFI_5GHZ_ENABLED iface->profile_index=%d
+wifi.5ghz.enabled
+[%s]:[%s] - Status=1 sending MSGBUS_WIFI_2GHZ_ENABLED iface->profile_index=%d
+wifi.2ghz.enabled
+[%s]:[%s] - Invalid blacklist MAC address pointer,can't proceed to update blacklist MAC.
+[%s]:[%s] - Wifi blacklist mac address is updated correctly.
+[%s]:[%s] - Nothing is changed in AP setting, no action required.
+[%s]:[%s] - AP old settings were enabled=%d max_clients=%d
+[%s]:[%s] - AP new settings are enabled=%d max_clients=%d
+[%s]:[%s] - AP settings are changed.
+[%s]:[%s] - AP is set to disable.
+[%s]:[%s] - Nothing is changed in STA setting, no action required.
+[%s]:[%s] - STA is set to enable.
+[%s]:[%s] - STA is set to disable.
+[%s]:[%s] - Wifi is set to enable.
+[%s]:[%s] - Wifi is set to disable.
+[%s]:[%s] - Invalid wifi interface index for getting profile index.
+[%s]:[%s] - ============wifi_get_intf_macaddr %02X:%02X:%02X:%02X:%02X:%02X
+WIFI Starting
+[%s]:[%s] - MIFI_TIMESTAMP:WIFI Starting
+/wifi_mq
+[%s]:[%s] - Waiting for previous Wifid to finish.
+[%s]:[%s] - Queue is deleted.
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error attaching to the message bus, terminating.
+[%s]:[%s] - Error attaching to the hostapd message bus, terminating.
+[%s]:[%s] - Error opening message queue: %d, terminating.
+[%s]:[%s] - ******************Let's sleep for 3seconds so that settingsd is up
+[%s]:[%s] - Failed to load the Wifi settings, terminating.
+[%s]:[%s] - Wifi is disabled, radio will not be initilize.
+wifi_main_thread
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s Server Terminating.
+wifi_check_feature_mask_changed_and_update
+wifi_update_driver_max_clients
+wifi_ap_apply_profiles_on_iface
+/dev/kmsg
+[MIFI_TIMESTAMP] - 
+dmdb.macfilter_enabled.settings
+dmdb.macfilter_type.settings
+[%s]:[%s] - Received %s blacklist to be cleared.
+dmdb.blacklist.device
+[%s]:[%s] - Received blacklist device notification from DMDB on %s interface.
+[%s]:[%s] - Received blacklist device notification with NULL data from DMDB.
+dmdb.unblock.device
+[%s]:[%s] - Received unblock device notification from DMDB on %s interface
+[%s]:[%s] - Received unblock device notification with NULL data from DMDB.
+[%s]:[%s] - %s: MsgBus_Create Failed
+WIFI_MBH
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe to unblock device.
+[%s]:[%s] - %s: MsgBus_Subscribe to Black list device Failed
+dmdb.blacklist.settings
+[%s]:[%s] - %s: MsgBus_Subscribe to Blacklist update is failed.
+dmdb.whitelist.settings
+[%s]:[%s] - %s: MsgBus_Subscribe to Whitelist update is failed.
+[%s]:[%s] - %s: MsgBus_Subscribe to MAC filter enable is failed.
+[%s]:[%s] - %s: MsgBus_Subscribe to MAC filter type is failed.
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+[%s]:[%s] - WPS is successful for MAC %02x:%02x:%02x:%02x:%02x:%02x with %s interface.
+wifi.wps_sta_connected
+[%s]:[%s] - STA WPS-CONNECT with MAC %02x:%02x:%02x:%02x:%02x:%02x on %s interface
+wifi.sta_connected
+[%s]:[%s] - STA CONNECT with MAC %02x:%02x:%02x:%02x:%02x:%02x on %s interface.
+wifi.wps_sta.disconnected
+[%s]:[%s] - STA WPS-DISCONNECT with MAC %02x:%02x:%02x:%02x:%02x:%02x on %s interface
+wifi.sta_disconnected
+[%s]:[%s] - STA DISCONNECT with MAC %02x:%02x:%02x:%02x:%02x:%02x on %s interface
+WIFI interface wlan0 started successfully (AP-ENABLED).
+WIFI interface wlan1 started successfully  (AP-ENABLED).
+[%s]:[%s] - MIFI_TIMESTAMP:WIFI interface %s started successfully.
+[%s]:[%s] - MIFI_TIMESTAMP:WIFI interface %s started successfully. privacy=%d, iface_feature_mask=%d
+wifi.wlan0.if_up
+wifi.wlan0.sta_list_updated
+[%s]:[%s] - MSGBUS_WIFI_WLAN0_STA_LIST_UPDATED_CHAN count=%d, on interface =%s stopped.
+wifi.wlan1.sta_list_updated
+[%s]:[%s] - MSGBUS_WIFI_WLAN1_STA_LIST_UPDATED_CHAN count=%d, on interface =%s stopped.
+wifi.wlan0.if_down
+[%s]:[%s] - Wlan interface %s is stopped.
+wifi.wps.failure
+[%s]:[%s] - WPS_OVERLAP_DETECTED, sending WPS_FAILURE 
+[%s]:[%s] - MSGBUS_HOSTAPD_AP_WPS_PBC_ACTIVE received on %s interface 
+[%s]:[%s] - MSGBUS_HOSTAPD_AP_WPS_PBC_DISABLE received on %s interface 
+[%s]:[%s] - MSGBUS_HOSTAPD_AP_WPS_PBC_TIMEOUT received on %s interface 
+[%s]:[%s] - wifi_hostapd_check_and_get_sta_list, interface if=%d ifname =%s, radioname=%s
+[%s]:[%s] - MSGBUS_WIFI_WLAN0_STA_LIST_UPDATED_CHAN, count = %d on interface =%s
+[%s]:[%s] - MSGBUS_WIFI_WLAN1_STA_LIST_UPDATED_CHAN, count = %d on interface =%s
+[%s]:[%s] - wifi_hostapd_check_and_get_sta_list, (sta_list == &hc->sta_list ==0)
+hostapd.ap.enabled
+[%s]:[%s] - Received AP_EVENT_ENABLED with NULL data from hostapd.
+hostapd.ap.disabled
+[%s]:[%s] - Received AP_EVENT_DISABLED with NULL data from hostapd.
+hostapd.ap.sta_connected
+[%s]:[%s] - Received AP_STA_CONNECTED with NULL data from hostapd.
+hostapd.ap.sta_disconnected
+[%s]:[%s] - Received AP_STA_DISCONNECTED with NULL data from hostapd.
+hostapd.ap.wps_sta_connected
+[%s]:[%s] - Received WPS_STA_CONNECTED with NULL data from hostapd.
+hostapd.ap.wps_sta_disconnected
+[%s]:[%s] - Received WPS_STA_DISCONNECTED with NULL data from hostapd.
+hostapd.ap.wps_overlap_detected
+[%s]:[%s] - Received WPS_OVERLAP with NULL data from hostapd.
+hostapd.ap.wps_pbc_active
+[%s]:[%s] - Received WPS_PBC_ACTIVE with NULL data from hostapd.
+hostapd.ap.wps_pbc_disable
+[%s]:[%s] - Received WPS_PBC_DISABLE with NULL data from hostapd.
+hostapd.ap.wps_pbc_timeout
+[%s]:[%s] - Received WPS_PBC_TIMEOUT with NULL data from hostapd.
+WIFI_HOSTAPD_MBH
+[%s]:[%s] - %s: MsgBus_Subscribe to AP_STA_CONNECTED
+[%s]:[%s] - %s: MsgBus_Subscribe to AP_STA_DISCONNECTED
+[%s]:[%s] - %s: MsgBus_Subscribe to AP_EVENT_ENABLED
+[%s]:[%s] - %s: MsgBus_Subscribe to AP_EVENT_DISABLED
+[%s]:[%s] - %s: MsgBus_Subscribe to AP_WPS_STA_CONNECTED
+[%s]:[%s] - %s: MsgBus_Subscribe to AP_WPS_STA_DISCONNECTED
+[%s]:[%s] - %s: MsgBus_Subscribe to WPS_OVERLAP_DETECTED
+[%s]:[%s] - %s: MsgBus_Subscribe to MSGBUS_HOSTAPD_AP_WPS_PBC_ACTIVE
+[%s]:[%s] - %s: MsgBus_Subscribe to MSGBUS_HOSTAPD_AP_WPS_PBC_DISABLE
+[%s]:[%s] - %s: MsgBus_Subscribe to MSGBUS_HOSTAPD_AP_WPS_PBC_TIMEOUT
+/dev/kmsg
+[MIFI_TIMESTAMP] - 
+/opt/nvtl/bin/hostapd
+[%s]:[%s] - hostapd cmd =[%s %s %s %s]
+[%s]:[%s] - Failed to fork()
+[%s]:[%s] - Invalid wifi interface %d during starting hostapd.
+/tmp/wifi/hostapd/wlan%d_hostapd.conf
+/tmp/wifi/hostapd/wlan%d_hostapd.log
+[%s]:[%s] - Invalid pointer for wifi-hostapd message structure.
+[%s]:[%s] - Invalid interface sent for hostapd configuration generation, during stop hostapd (%d).
+WIFI Stop Hostapd on wlan0
+[%s]:[%s] - MIFI_TIMESTAMP:WIFI Stop Hostapd on wlan0
+WIFI Stop Hostapd on wlan1
+[%s]:[%s] - MIFI_TIMESTAMP:WIFI Stop Hostapd on wlan1
+[%s]:[%s] - Stopping hostapd with PID [%d]
+[%s]:[%s] - Invalid wifi hostapd msg pointer passed during config receive.
+[%s]:[%s] - Invalid wifi interface %d during interface config receive.
+exec /opt/nvtl/bin/hostapd_cli -i wlan0  wps_check_pin %s
+[%s]:[%s] - Failed to Validate the WPS PIN.
+[%s]:[%s] - Invalid hostapd msg to start WPS session.
+[%s]:[%s] - Invalid wifi interface for WPS passed.
+exec /opt/nvtl/bin/hostapd_cli -i %s %s %s %s
+[%s]:[%s] - ***********wifi_check_wps_pin_valid failed: cmd =%s
+wifi.wps.failure
+exec /opt/nvtl/bin/hostapd_cli -i %s %s
+[%s]:[%s] - Invalid WPS method configured.
+[%s]:[%s] - **********Hostapd WPS start command [%s]
+[%s]:[%s] - Failed to start the WPS session.
+[%s]:[%s] - ***********WPS start failed: cmd =%s
+[%s]:[%s] - WPS Session is started on %s interface.
+[%s]:[%s] - WPS Session is failed.
+[%s]:[%s] - Invalid hostapd msg to stop WPS session.
+exec /opt/nvtl/bin/hostapd_cli -i %s wps_cancel
+[%s]:[%s] - Hostapd WPS stop command [%s]
+[%s]:[%s] - Failed to stop the WPS session.
+[%s]:[%s] - WPS session is stopped.
+vht_oper_centr_freq_seg0_idx=42
+ht_capab=[HT40+]
+ht_capab=[HT40-]
+vht_oper_centr_freq_seg0_idx=155
+[%s]:[%s] - *****wifi_is_dual_band enter*******
+[%s]:[%s] - *****wifi_is_dual_band enter2*******
+[%s]:[%s] - *****wifi_is_dual_band band2g=%d, band5g=%d*******
+hw_mode=b
+hw_mode=a
+hw_mode=g
+[%s]:[%s] - Invalid wifi interface %d during hostapd profile creation.
+/tmp/wifi/hostapd/wlan%d_hostapd.deny
+%02X:%02X:%02X:%02X:%02X:%02X 
+[%s]:[%s] - Error in opening the %s file
+interface=%s
+macaddr_acl=%d
+deny_mac_file=%s
+driver=%s
+ctrl_interface=/var/run/hostapd
+ieee80211ac=%d
+ieee80211n=%d
+ht_capab=[SHORT-GI-20] [GF] [DSSS_CCK-40] [LSIG-TXOP-PROT]
+#vht_oper_chwidth=%d
+vht_oper_chwidth=%d
+basic_rates=60,120,240
+require_ht=%d
+[%s]:[%s] - ********create_hostapd_conf:  mode==WIFI_MODE_BGN_PLUS_AX_2G on interface=%d, hw_mode=%s, pindex=%d
+ieee80211ax=%d
+he_bss_color=15
+he_su_beamformer=1
+he_su_beamformee=1
+he_mu_beamformer=1
+he_default_pe_duration=4
+he_twt_required=1
+he_rts_threshold=16
+[%s]:[%s] - ********create_hostapd_conf:  mode==WIFI_MODE_ACN_PLUS_AX_5G on interface=%d, hw_mode=%s, pindex=%d
+channel=%d
+chanlist=1 6 11-13
+chanlist=1 6 11
+chanlist=36 40 44 48
+chanlist=36 40 44 48 149 153 157 161
+acs_exclude_dfs=1
+require_vht=%d
+max_num_sta=%d
+beacon_int=%d
+preamble=%d
+ap_isolate=%d
+[%s]:[%s] - ==========before processing security %d
+auth_algs=%d
+wep_key0=%s
+wep_key0="%s"
+wep_key1=%s
+wep_key1="%s"
+wep_key2=%s
+wep_key2="%s"
+wep_key3=%s
+wep_key3="%s"
+wep_default_key=%d
+wpa_key_mgmt=WPA-PSK
+wpa_key_mgmt=SAE
+ieee80211w=2
+wpa_key_mgmt=SAE WPA-PSK
+ieee80211w=1
+sae_password=%s
+sae_anti_clogging_threshold=5
+sae_sync=5
+sae_groups=19 20 21
+sae_require_mfp=1
+wpa_key_mgmt=OWE
+[%s]:[%s] - ================Security OWE Transition for interface=%s
+[%s]:[%s] - ================Inside Security OWE Transition for interface=%s
+owe_groups=19 20 21
+owe_transition_bssid=%02X:%02X:%02X:%02X:%02X:%02X
+owe_transition_ssid="%s"
+[%s]:[%s] - ================Exiting wlan1 Security OWE Transition for interface=%s
+[%s]:[%s] - ================Exiting wlan0 Security OWE Transition for interface=%s
+wpa_pairwise=TKIP
+wpa_passphrase=%s
+wpa_pairwise=CCMP
+wpa_pairwise=TKIP CCMP
+wps_rf_bands=ag
+wps_rf_bands=g
+wps_rf_bands=a
+eap_server=%d
+wps_pin_requests=/var/run/hostapd.pin-req
+wps_state=%d
+ap_setup_locked=%d
+pbc_in_m1=%d
+device_name=%s
+manufacturer=%s
+model_name=%s
+device_type=%s
+config_methods=%s
+model_number=123
+serial_number=12345
+uuid=bec4aa70-bec4-bec4-bec4-726252423222
+friendly_name=%s
+ignore_broadcast_ssid=%d
+ieee80211d=1
+wmm_enabled=1
+wmm_ac_bk_cwmin=4
+wmm_ac_bk_cwmax=10
+wmm_ac_bk_aifs=7
+wmm_ac_bk_txop_limit=0
+wmm_ac_bk_acm=0
+wmm_ac_be_aifs=3
+wmm_ac_be_cwmin=4
+wmm_ac_be_cwmax=10
+wmm_ac_be_txop_limit=0
+wmm_ac_be_acm=0
+wmm_ac_vi_aifs=2
+wmm_ac_vi_cwmin=3
+wmm_ac_vi_cwmax=4
+wmm_ac_vi_txop_limit=94
+wmm_ac_vi_acm=0
+wmm_ac_vo_aifs=2
+wmm_ac_vo_cwmin=2
+wmm_ac_vo_cwmax=3
+wmm_ac_vo_txop_limit=47
+wmm_ac_vo_acm=0
+country_code=AU
+country_code=%s
+%02x:%02x:%02x:%02x:%02x:%02x
+[%s]:[%s] - Invalid pointer passed for getting sta list or ifname, return rc=WIFI_ERR
+/opt/nvtl/bin/hostapd_cli -i %s list_sta
+[%s]:[%s] - Getting STA list CMD[%s].
+[%s]:[%s] - Failed to launch the %s command. Return WIFI_ERR
+[%s]:[%s] - wifi_get_interface_sta_list: fgets(line)=%s
+[%s]:[%s] - wifi_get_interface_sta_list: %02X:%02X:%02X:%02X:%02X:%02X
+[%s]:[%s] - wifi_get_interface_sta_list: sta_list->count =%d
+[%s]:[%s] - wifi_get_interface_sta_list: returned rc= WIFI_SUCCESS
+[%s]:[%s] - Invalid pointer passed for getting sta list.
+[%s]:[%s] - wifi_get_sta_list_from_hostapd: returned rc= %d, %s
+[%s]:[%s] - Failed to open the %s file
+[%s]:[%s] - %02X:%02X:%02X:%02X:%02X:%02X 
+/opt/nvtl/bin/iwpriv %s setClearAcl 1
+[%s]:[%s] - Command is [%s]
+/opt/nvtl/bin/hostapd_cli -i %s update_acl deny %s
+[%s]:[%s] - Invalid blacklist mac address.
+[%s]:[%s] - Interface name is not found in block MAC address.
+[%s]:[%s] - We need not to add the MAC address %02X:%02X:%02X:%02X:%02X:%02X to the blacklist as interface flags=%d are not matched with block_event.block_reason=%d
+[%s]:[%s] - Wifi already has this MAC address %02X:%02X:%02X:%02X:%02X:%02X 
+[%s]:[%s] - Total number of blacklist MAC addresses are: %d
+[%s]:[%s] - Maximum blacklist mac address limit reached, need to remove the first MAC address
+/opt/nvtl/bin/hostapd_cli -i %s deauthenticate %02x:%02x:%02x:%02x:%02x:%02x
+[%s]:[%s] - MAC address is already there in black list.
+[%s]:[%s] - Clearing the MAC filtering [%s]
+[%s]:[%s] - Invalid wifi hostapd msg pointer passed during profile receive.
+[%s]:[%s] - Invalid wifi interface %d during profile receive.
+[%s]:[%s] - Invalid pointer passed for wifi hostapd.
+[%s]:[%s] - Received the %d command on hostapd threads.
+[%s]:[%s] - Command %d is not implemented by Wifi hostapd thread.
+[%s]:[%s] - Invalid wifi AP settings received.
+[%s]:[%s] - Invalid wifi settings received.
+[%s]:[%s] - Hostapd PID %d is reaped.
+[%s]:[%s] - %s: Start with pthread ID:%lu, process ID:%d.
+HOSTAPD_EVENT
+[%s]:[%s] - Invalid wifi interface %d during hostapd thread creation.
+/wlan%d_host_mq
+wifi_hostapd_thread-%d
+[%s]:[%s] - %s: Error opening message queue %s: %d, terminating.
+/tmp/wifi/hostapd
+[%s]:[%s] - Failed to process the hostapd events for interface:%d.
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - Failed to create the event thread for hostapd on wlan%d.
+[%s]:[%s] - %s: Terminate Thread on wlan%d interface
+[%s]:[%s] - Invalid wifi interface pointer to send hostapd.
+[%s]:[%s] - Invalid wifi config pointer to send hostapd.
+[%s]:[%s] - Invalid AP settings.
+[%s]:[%s] - Invalid Wlan settings.
+[%s]:[%s] - Invalid wifi profile pointer to send hostapd.
+[%s]:[%s] - Invalid iwps structure pointer,can't proceed with WPS session.
+[%s]:[%s] - Invalid WPS structure pointer given to stop WPS session.
+[%s]:[%s] - Failed to create the socket.
+[%s]:[%s] - Failed to %s %s interface to bridge, trying %d times
+WIFI Successfully attached wlan0 interface to bridge.
+WIFI Successfully detached wlan0 interface to bridge.
+WIFI Successfully attached wlan1 interface to bridge.
+WIFI Successfully detached wlan1 interface to bridge.
+attached
+detached
+[%s]:[%s] - Successfully %s %s interface to bridge, in %d attempts
+WIFI Failed to attach the wlan0 interface to bridge.
+WIFI Failed to detach the wlan0 interface to bridge.
+WIFI Failed to attach the wlan1 interface to bridge.
+WIFI Failed to detach the wlan1 interface to bridge.
+[%s]:[%s] - WIFI Failed to %s the %s interface to bridge.
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

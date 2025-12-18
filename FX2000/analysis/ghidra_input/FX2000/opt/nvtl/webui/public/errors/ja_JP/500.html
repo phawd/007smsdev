@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="cache-Control" content="no-cache, must-revalidate" />
+		<meta http-equiv="Expires" content="Mon, 26 Jul 1997 05:00:00 GMT" />
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>500 - Internal Server Error</title>
+		<link rel="stylesheet" type="text/css" href="/assets/css/ig_normalize.css" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/layout.css" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/mobile_768.css" media="screen and (max-width: 768px)" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/mobile_480.css" media="screen and (max-width: 480px)" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/mobile_320.css" media="screen and (max-width: 320px)" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/grid.css" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/look_and_feel.css" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/last.css" />
+		<link rel="stylesheet" type="text/css" href="/errors/assets/css/errors.css" />
+		<script type="text/javascript" src="/assets/script/jquery/jquery.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$.get('/model_string.txt', function(textData, status) {
+					var modelNo = textData;
+					$('.productName').html(modelNo); 
+				}, 'text');
+			});
+		</script>
+	</head>
+	<body class="error_page">
+		<div id="container">
+			<div id="container_inner">
+				<div id="header">
+					<div id="header_inner" class="clearfix">
+						<a id="carrier_logo" href="/">
+							<img src="/assets/images/logos/Inseego.png" alt=" InseeGo" />
+						</a>
+						<h3 class="productName">FX2000</h3>
+					</div><!-- /#header-inner -->
+				</div><!-- /#header -->
+				<div class="main">
+					<div>
+						<h2><!--<img class="error-icon" src="/assets/images/icons/notification/icn-error.png" alt="Error icon" /> -->Internal
+							Server Error</h2>
+						<h4>The server encountered an internal error and was unable to complete your request.</h4>
+						<a class="gohome" href="/">Take me home</a>
+					</div>
+				</div> <!-- /#main -->
+
+			</div> <!-- /#container_inner -->
+			<div id="push"></div> <!-- for sticky footer -->
+		</div> <!-- /#container -->
+
+		<div class="footer">
+			<div class="footer_inner ig_row">
+				<div class="ig_col logo_device" class="logoDevice">
+					<a id="inseegoLogo" href="http://www.inseego.com/" title="Inseego">
+						<img src="/assets/images/logos/Inseego.png" alt="Inseego" />
+					</a>
+					<span class="footerProductName"></span>
+				</div><!-- /.logo_device -->
+				<div class="ig_col copyright">
+					<p>&copy; <span id="copyYear"></span> All rights reserved.</p>
+				</div><!-- /.copyright -->
+				<div class="ig_col mifi_device">
+					<a id="inseegoUrl" href="http://www.inseego.com/" title="InseegoUrl">
+						<p id="powered">www.inseego.com</p>
+					</a>
+				</div>
+			</div><!-- /.footer_inner -->
+		</div><!-- /.footer -->
+
+	</body>
+	<script type="text/javascript">	
+		var currentYear = new Date().getFullYear();
+		$("#copyYear").html(currentYear);
+	</script>
+</html>

@@ -1,0 +1,48 @@
+<div id="gps_status">
+	<h1><tmpl_var _("webui", "gps_status_menu_text")></h1>
+	<h2>概要</h2>
+	<p>この <tmpl_var _("webui", "webui_product_name")> デバイスにはGPSレシーバーが組み込まれています。 GPSレシーバーは、時には室内であっても、現在地を特定できます。<tmpl_if GPSOverWiFiEnableShow>このページには現在地が表示され、位置情報はGPS over Wi-Fi機能を使用して接続されているコンピューターと共有できます。</tmpl_if>
+	</p>
+
+	<h2>GPS使用中</h2>
+
+	<tmpl_if GPSEnableShow>
+		<h3><tmpl_var _("webui", "gps_status_enable_label")></h3>
+		<p>このオン/オフ制御を使用して、必要に応じてこの機能をオンまたはオフにします。</p>
+		<h3><tmpl_udf GET_PO_TEXT("gps_status_startup_state_label", gProductName)></h3>
+		<p>この設定は、GPSレシーバーがオンになった後、オフになるタイミングを決定します。</p>
+		<p>オンの場合、<tmpl_var _("webui", "webui_product_name")> がシャットダウンされると、GPSレシーバーはオフになります。 次にGPSレシーバーが必要になったときに、電源を再びオンにする必要があります。</p>
+	</tmpl_if>
+
+		<h3>GPSステータス:</h3>
+		<p>GPSレシーバーがまだフィックス（位置）を取得していない場合、 <strong>検索中</strong>ステータスが表示されます。 フィックスが取得されると、次の現在地情報が表示され、Googleマップが開き、現在地が視覚的に示されます。</p>
+		<h2><tmpl_var _("webui", "gps_status_map_section_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "gps_status_latitude_label"), (size(_("webui", "gps_status_latitude_label")) - size(":")))></h3>
+		<p>最後の位置フィックスの緯度。</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_longitude_label"), (size(_("webui", "gps_status_longitude_label")) - size(":")))></h3>
+		<p>最後の位置フィックスの経度。</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_altitude_label"), (size(_("webui", "gps_status_altitude_label")) - size(":")))></h3>
+		<p>最後の位置フィックスの高度。</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_accuracy_label"), (size(_("webui", "gps_status_accuracy_label")) - size(":")))></h3>
+		<p>これは、GPSレシーバーによって取得された水平位置の精度の測定値です。</p>
+		<tmpl_if GPSOverWiFiEnableShow>
+			<tmpl_if GPSPortNumberShow>		
+				<h2><tmpl_var _("webui", "gps_status_enable_sub_header_text")></h2>
+			
+				<h3><tmpl_var truncate(_("webui", "gps_status_gps_over_wifi_label"), (size(_("webui", "gps_status_gps_over_wifi_label")) - size(":")))></h3>
+				<p>GPSデータは、National Marine Electronics Association（NMEA）テキストストリームの形式で <tmpl_var _("webui", "webui_product_name")> によって提供されます。</p>
+				<p>NMEA（GPS）ポートの使用は、アプリケーションがWindowsおよびその他のコンピューティングプラットフォームでGPSデータストリームにアクセスするための標準的な方法です。 このポートを作成するには、ご使用のプラットフォーム用のGPS over Wi-Fiドライバーをダウンロードしてインストールする必要があります。 このドライバーは、NMEAポートを作成し、GPSデータを <tmpl_var _("webui", "webui_product_name")> から取得し、このGPSデータをNMEA対応アプリケーションで利用できるようにします。</p>
+
+				<h3><tmpl_var truncate(_("webui", "gps_status_port_number_label"), (size(_("webui", "gps_status_port_number_label")) - size(":")))></h3>
+				<p>これは、このデバイスへの接続を確立してGPSデータを取得するためにコンピューターのドライバーソフトウェアで使用されるポート番号です。 正当な理由がない限り、ポート番号を変更しないでください。</p>
+			</tmpl_if>
+		</tmpl_if>
+
+	<tmpl_if GPSDownloadDriversShow>
+		<h3><tmpl_var _("webui", "gps_status_wifi_driver_download_link")></h3>
+		<p>これを使用して、利用可能なドライバーのダウンロードページにアクセスします。<tmpl_if GPSOverWiFiEnableShow>これらのドライバーは、GPS over Wi-Fi機能を使用するために必要です。</tmpl_if>
+		</p>
+	</tmpl_if>
+					
+</div>
+

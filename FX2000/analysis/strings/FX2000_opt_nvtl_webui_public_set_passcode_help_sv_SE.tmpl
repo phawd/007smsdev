@@ -1,0 +1,94 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>Admin-l
+senord</h1>
+versikt</h2>
+	<p>Admin-l
+senordet anv
+r att logga in p
+ Admin-webbplatsen f
+r denna <tmpl_var _("webui", "webui_product_name")>. Sidan <em>Admin-l
+senord</em> l
+ter dig 
+ndra Admin-l
+senordet och st
+lla in vissa s
+kerhetsalternativ som r
+r Admin-l
+senordet.</p>
+ndra Admin-l
+senordet f
+r <tmpl_var _("webui", "webui_product_name")></h2>
+r att byta till nuvarande Admin-l
+senord m
+ste du f
+rst ange det nuvarande Admin-l
+senordet i f
+ltet nedan. Sk
+rmen uppdateras sedan och ger m
+jlighet att st
+lla in ett nytt Admin-l
+senord och en s
+kerhetsfr
+ga som kan anv
+ndas om Admin-l
+senordet f
+rloras.</p>
+	<h3>Nuvarande Admin-l
+senord f
+r <tmpl_var _("webui", "webui_product_name")></h3>
+	<p>Ange det nuvarande Admin-l
+senordet f
+r <tmpl_var _("webui", "webui_product_name")> i det h
+ltet. Observera att om du anger ett felaktigt v
+nger kommer du att bli utl
+n Admin-webbplatsen f
+r denna <tmpl_var _("webui", "webui_product_name")>. F
+r att rensa detta l
+ste <tmpl_var _("webui", "webui_product_name")> startas om.</p>
+	<tmpl_if showDisplayPascode>
+		<h2>Visa Admin-l
+senordet f
+r <tmpl_var _("webui", "webui_product_name")></h2>
+		<p>Om den h
+llningen 
+ visas *********. Om den h
+llningen 
+r AV kan Admin-l
+senordet l
+ Jetpacks display.</p>
+	</tmpl_if>
+ndra Admin-l
+senordet f
+r <tmpl_var _("webui", "webui_product_name")></h2>
+	<h3>Nytt Admin-l
+senord</h3>
+	<p>Ange det nya Admin-l
+senordet med enbart bokst
+ver, siffror och vanliga skiljetecken. L
+senordet m
+ste vara minst eight tecken l
+ngt.</p>
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p>Ange det nya Admin-l
+senordet igen i det h
+ltet.</p>
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>Denna s
+kerhetsfr
+nds om Admin-l
+senordet f
+rloras och alternativet 
+Jag har gl
+mt Admin-l
+senordet
+nskad fr
+ga och ange ett svar i f
+ltet nedan.</p>
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Ange ett svar p
+kerhetsfr
+gan som valts ovan. Observera att svaren 
+r skiftl
+nsliga.</p>
+<!-- id="set_passcode" -->

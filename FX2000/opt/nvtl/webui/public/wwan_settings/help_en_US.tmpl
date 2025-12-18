@@ -1,0 +1,89 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p>
+			In most configurations, the <tmpl_var _("webui", "webui_product_name")> is used with a dynamic IP and SIM and the Access Point Name (APN) is available from the network, for example: internet. However, if you are on a private network, you may need to set the APN on this tab for the network to communicate with the <tmpl_var _("webui", "webui_product_name")>.
+		</p>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Connection Preference</h3>
+			<p>
+				Select the desired option, to control when the <tmpl_var _("webui", "webui_product_name")> will establish a data connection to the mobile network.
+			</p>
+	</tmpl_if>
+
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>Use this setting to turn international and domestic roaming on or off as needed. Additional data charges may apply when roaming.</p>
+	</tmpl_if>
+
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p>
+			The default value is "<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>". The <tmpl_var _("webui", "webui_product_name")> will select the best available technology. 
+		</p>
+		<p>
+			If desired, you can change this to limit the network technologies which will be used.
+		</p>
+	</tmpl_if>
+
+	<h3>Manual Network Selection</h3>
+		
+	<p>
+		This feature, available only if the enable automatic network selection is turned off. This can be useful if multiple networks are available, and you have a preference about which one is used.
+	</p>
+	<p>
+		Click the "Select Network Manually" button to scan for the available networks; you can then choose the desired network.
+	</p>
+	
+	<tmpl_if showApnSettings>
+		<tmpl_if ShowAdvancedSettingsToggleButton>
+			<h2>Advanced Settings</h2>
+			<p>
+				Use this Heading/Link to display or hide the advanced settings as needed.
+			</p>
+		</tmpl_if>
+		
+		<h3>
+			<tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))>
+		</h3>
+		<p>
+			The APN is pre-configured; you should not change the APN unless you have a corporate account (with your own APN).
+		</p>	
+		
+		<p>
+			If you need to change the APN, enter the value provided by your mobile network service provider.
+		</p>
+		
+		<tmpl_if showApnAuthenticationSettings>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))>
+			</h3>
+			<div class="blockgroup">
+				<p>Select the option specified by your service provider.
+				</p>
+				<ul>
+					<li>None</li>
+					<li>PAP</li>
+					<li>CHAP</li>
+				</ul>
+			</div>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))>
+			</h3>
+			<p>
+				If the Authentication is <strong>None</strong>, this can be left blank.
+				Otherwise, enter the value specified by your service provider.
+			</p>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))>
+			</h3>
+			<p>
+				If the Authentication is <strong>None</strong>, this can be left blank.
+				Otherwise, enter the value specified by your service provider.
+			</p>
+		</tmpl_if>
+	</tmpl_if>
+</div>

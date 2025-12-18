@@ -1,0 +1,54 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>Admin Password</h1>
+	<h2>Overview</h2>
+	<p>
+        	The Admin Password is used to sign in to this <tmpl_var _("webui", "webui_product_name")> Admin website.
+        	The <em>Admin Password</em> page allows you to change the Admin Password, and to set some security option relating to the Admin Password.
+	</p>
+
+
+	<h2>Change <tmpl_var _("webui", "webui_product_name")> Admin Password</h2>
+	<p>To change to current Admin Password, you must first enter the current Admin Password in the field below.
+	The screen will then update, and provide the option to set a new Admin Password and a security question for use
+	if the Admin Password is lost.
+	</p>
+
+	<h3>Current <tmpl_var _("webui", "webui_product_name")> Admin Password</h3>
+	<p>
+        	Enter the current <tmpl_var _("webui", "webui_product_name")> Admin Password in this field.
+        	Note that if you enter an incorrect value too many times, you will be locked out of this <tmpl_var _("webui", "webui_product_name")> Admin website.
+        	To clear this lock, the <tmpl_var _("webui", "webui_product_name")> must be restarted.
+	</p>
+	<tmpl_if showDisplayPascode>
+		<h2>Display the <tmpl_var _("webui", "webui_product_name")> Admin Password</h2>
+		<p>
+			If this setting is ON, then ********* is displayed. If this setting is OFF, then the Admin Password can be read on the Jetpack's display.
+		</p>
+	</tmpl_if>
+
+	<h2>Change <tmpl_var _("webui", "webui_product_name")> Admin Password</h2>
+	<h3>New Admin Password</h3>
+	<p>
+	        Enter the new Admin Password, using only letters, numbers, and standard punctuation symbols.
+        	The password must be at least 8 characters long.
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p>
+        	Re-enter the new Admin Password in this field.
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>This security question is used if the Admin Password is lost, and the "I forgot the Admin Password" option is used.
+ 	 Select the desired question, and provide an answer in the field below.
+	</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Provide an answer to the security question selected above.
+	Note that answers are case-sensitive.
+	</p>
+
+</div>
+<!-- id="set_passcode" -->
+

@@ -1,0 +1,110 @@
+<!-- wifi_guest_settings -->
+<div id="wifi_guest_settings">	
+io tinklas</h1>
+ galima naudoti norint suteikti laikin
+ prie interneto per <tmpl_var _("webui", "webui_product_name_with_suffix")> 
+. Norint prisijungti prie sve
+ tinklo, prijungtuose 
+renginiuose turi b
+ti naudojamos 
+iame ekrane rodomos 
+ nuostatos.
+jungti sve
+io tinkl
+, naudokite 
+iniatinklio administratoriaus s
+ arba <tmpl_var _("webui", "webui_product_name_with_suffix")> jutiklinio ekrano program
+ parinkt
+ diapazono pasirinkimas
+	<h3><tmpl_var _("webui", "wifi_guest_ssid_label")></h3>
+		Nustatomas sve
+ tinklo pavadinimas arba SSID. 
+veskite tinkam
+ pavadinim
+. Pavadinim
+ gali sudaryti iki 32 
+	<h3><tmpl_var _("webui", "wifi_guest_security_label")></h3>
+		Pasirinkite norim
+ saugos parinkt
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> leid
+ia kitiems asmenims steb
+ ir naudoti j
+ prieigai prie interneto. Jei 
+manoma, reik
+ vengti naudoti 
+ parinkt
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> yra naujausias ir saugiausias b
+das, tod
+manoma, tur
+ti naudojamas.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> galima naudoti, jei kai kurie senesni 
+renginiai nepalaiko WPA2.
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> gali b
+ti naudojamas WPA2 ir WPA3 skund
+renginiams.
+	<h3><tmpl_var _("webui", "wifi_guest_password_label")></h3>
+		Jei lauke <strong>Saugumas</strong> pasirinkta kita nuostata, o ne nuostata <strong>N
+ra</strong>, b
+iame lauke 
+veskite 
+. Taip pat galite naudoti mygtuk
+Generuoti nauj
+vestas sud
+tingas atsitiktinis slapta
+odis. Jei naudojate 
+ parinkt
+, nepamir
+yti pakeitim
+		Kaip numatyta, 
+ios nuostatos yra pasl
+ptos, ta
+iau galite spustel
+ti antra
+, kad jos b
+ matomos. Paprastai galima palikti numatyt
+ vertes, ta
+iau prireikus jas galima pakeisti, kad atitikt
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_ssid_label", gProductName)></h3>
+i nuostata pa
+ pavadinim
+ galima nuskaityti <tmpl_var _("webui", "webui_product_name_with_suffix")> jutikliniame ekrane naudojant 
+ meniu parinkt
+. Jei at
+ta, pavadinimas rodomas kaip 
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_password_label", gProductName)></h3>
+i nuostata pa
+ galima nuskaityti <tmpl_var _("webui", "webui_product_name_with_suffix")> jutikliniame ekrane naudojant 
+ meniu parinkt
+. Jei at
+ta, slapta
+odis rodomas kaip 
+	<h3><tmpl_var _("webui", "wifi_guest_broadcast_ssid_label")></h3>
+i nuostata pa
+ tinklas bus rodomas j
+ prijungt
+e. Jei at
+is tinklas bus nematomas.
+	<tmpl_if showWiFiGuestWPS>
+		<h3><tmpl_var _("webui", "wifi_guest_wps_label")></h3>
+ apsaugotoji s
+ranka (WPS) 
+ tai sistema, leid
+renginiams prisijungti prie 
+ tinklo neautomati
+vedant tinklo rakto. Jei norite naudoti WPS, 
+ parinkt
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_guest_privacy_label")></h3>
+i nuostata pa
+ta, kiekvienas prijungtas 
+renginys atskiriamas nuo vis
+ prijungt
+. Taip u
+tikrinamas papildomas saugumas, jei kai kurie prijungti 
+renginiai yra ne
+inomi arba nevisi
+kai patikimi. 
+prastai veikiant 
+ nuostat
+ reikia at
+<!-- id="wifi_guest_settings" -->

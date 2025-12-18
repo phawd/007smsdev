@@ -1,0 +1,66 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+	<h2>Übersicht</h2>
+		<p>Diese Einstellungen gelten für Ihr lokales Netzwerk oder LAN. Für dieses Gerät besteht das LAN aus diesem Gerät und allen verbundenen Geräten (einschließlich der über Ethernet verbundenen Geräte, sofern vorhanden).</p>
+			
+	<h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+
+	<tmpl_if LANIPAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+		<p>Die IP-Adresse für dieses Gerät, vom lokalen Netzwerk aus betrachtet. Normalerweise können Sie den Standardwert verwenden.</p>
+	</tmpl_if>
+
+	<tmpl_if LANSubnetMaskShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+		<p>Der Standardwert 255.255.255.0 ist Standard für kleine Netzwerke (Klasse „C“). Wenn Sie die LAN-IP-Adresse ändern, stellen Sie sicher, dass Sie die richtige Subnetzmaske verwenden.</p>
+	</tmpl_if>
+		
+	<tmpl_if LANMacAddressShow>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+		<p>Die MAC-Adresse ist eine eindeutige Netzwerkkennung, die bei der Herstellung eines Netzwerkgeräts zugewiesen wird. In diesem schreibgeschützten Feld wird die MAC-Adresse für die WLAN- und USB-Schnittstellen dieses Geräts angezeigt.</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPEnableShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+		<p>Es empfiehlt sich, das zu prüfen. Der DHCP-Server weist jedem verbundenen Gerät eine IP-Adresse zu. Wenn der DHCP-Server ausgeschaltet werden würde, müsste jedem verbundenen Gerät eine feste IP-Adresse zugewiesen werden.</p>
+	</tmpl_if>
+
+	<tmpl_if LANLANDHCPLeaseTimeShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+		<p>Über dieses Feld wird festgelegt, wie häufig verbundene Geräte die IP-Adresse erneuern müssen, die ihnen vom DHCP-Server zugewiesen wurde. Normalerweise können Sie den Standardwert beibehalten, haben Sie aber besondere Anforderungen, können Sie diesen Wert auch ändern.</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPStartAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>Es ist möglich, den vom DHCP-Server verwendeten IP-Adressbereich zu ändern. Dafür müssen Sie diesen Wert ändern. Nur erfahrene Benutzer sollten diese Option verwenden.</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPEndAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+		<p>Damit wird der Bereich der IP-Adressen angegeben, die den verbundenen Geräten zugewiesen werden können. Wenn Sie eine feste IP-Adresse auf einem verbundenen Gerät verwenden, sollten Sie eine IP-Adresse außerhalb dieses Bereichs verwenden.</p>
+	</tmpl_if>
+
+	<tmpl_if LANReservedIPAddressShow>		
+	<h3><tmpl_var truncate(_("webui", "adv_lan_reservedIp_help_label"), (size(_("webui", "adv_lan_reservedIp_help_label")) - size(":")))></h3>
+		<p>Über diese Funktion können Sie sicherstellen, dass ein verbundenes Gerät vom <tmpl_var _("webui", "webui_product_name")> immer die gleiche IP-Adresse zugewiesen bekommt. Klicken Sie auf diese Schaltfläche, um den Einrichtungsbildschirm für diese Funktion aufzurufen.</p>
+	</tmpl_if>
+		
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>Wenn einige der verbundenen Geräte IPv6 unterstützen, sollten Sie diese Einstellung aktivieren. Über IPv6 verbundene Geräte können damit IPv6-Verbindungen mit dem Internet herstellen.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+			<p>Das ist die IPv6-Adresse dieses Geräts. Die verbindungslokale Adresse wird für die IPv6-Kommunikation zwischen Geräten im gleichen Netzwerk verwendet.</p>
+	</tmpl_if>	
+	<tmpl_if showLANDeviceName>
+                <h2><tmpl_var _("webui", "adv_lan_web_management_header_text")></h2>
+                <h3><tmpl_var truncate(_("webui", "adv_lan_url_name_label"), (size(_("webui", "adv_lan_url_name_label")) - size(":")))></h3>
+                <p>Der auf der Seite „Benutzereinstellungen“ eingetragene Gerätename bildet die Grundlage für die Zugriffs-URL auf die lokale Webverwaltungs-Schnittstelle für das Gerä.</p>
+        </tmpl_if>
+			
+</div>
+<!-- id="lan" -->
+

@@ -1,0 +1,76 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+factory_reset_get_error_string
+factory_reset_api_is_running
+factory_reset_do_reset
+factory_reset_do_data_wipe
+factory_reset_set_hw_reset_enabled
+factory_reset_get_hw_reset_enabled
+mifi_dbg_start
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libpthread.so.0
+libxml2.so.2
+libz.so.1
+libdl.so.2
+libmifi_debug.so
+libmificommon.so
+libxmldata_api.so
+libmifimsgbus.so
+libdsm_api.so
+libfactory_reset_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+do_factory_reset
+Test of an sync api call to set data to factory_reset.
+do_factory_reset_wipe_data
+Test of an sync api call to set data to do factory_reset and data_wipe.
+get_hw_reset_sw_enabled
+Gets HW reset SW enabled: 0-disabled, 1-enabled
+set_hw_reset_sw_enabled
+Sets HW reset SW enabled: 0-disabled, 1-enabled
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+%s returned %d (%s)
+Invalid number of command line parameters.
+Enter HW reset status (0=Disable, 1=Enable): 
+HW reset SW status Complete.
+HW reset SW enabled:   %d
+command [%s]
+command [%s] not found.
+cmd_is_running
+cmd_do_factory_reset
+cmd_do_factory_reset_wipe_data
+cmd_set_hw_reset_sw_enabled
+cmd_get_hw_reset_sw_enabled
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

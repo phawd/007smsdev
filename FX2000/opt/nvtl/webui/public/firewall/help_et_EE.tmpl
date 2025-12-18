@@ -1,0 +1,40 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+	<h2>Ülevaade</h2>
+		<p>Tulemüür kaitseb teie ühendatud seadmeid internetist sissetuleva pahatahtliku liikluse eest. Tulemüüri ei saa välja lülitada, kuid saadaval on järgmised seaded.</p>
+			
+	<h2>Seaded</h2>
+			
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+	<tmpl_unless ShowDmzActive>
+		<h3>VPN-i läbipääs</h3>
+	</tmpl_unless>
+		<p>See funktsioon võimaldab ühendatud seadmete VPN-kliendi tarkvaral VPN-i kaugserveritega ühenduse luua. Tavaliselt peaks see suvand olema sisse lülitatud.</p>
+
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+		<tmpl_unless ShowDmzActive>
+			<h3>IPv6 läbipaistev režiim</h3>
+		</tmpl_unless>
+			<p>Tavaliselt blokeerib tulemüür IPv6-ga ühendatud seadmele mõeldud sissetulevad IPv6-ühenduse taotlused.</p>
+			<p>Kui soovite, et need sissetulevad ühendustaotlused jõuaksid soovitud ühendatud seadmeni, lülitage see säte sisse. Läbipaistev režiim tuleks sisse lülitada ainult siis, kui see on vajalik, sest see vähendab seadme <tmpl_var _("webui", "webui_product_name")> tulemüüri pakutavat kaitset.</p>
+	</tmpl_if>
+	
+	<tmpl_if ShowDmzActive>
+		<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+	<tmpl_else>
+		<h2>DMZ</h2>
+	</tmpl_if>
+	<p>Kui see on märgitud, saab ühendatud seade, mis on määratud DMZ IP-aadressiks (DMZ sihtkoht), kogu liikluse, mille tulemüür muidu blokeeriks. See võib aidata mõnel probleemsel võrgurakendusel korralikult toimida, kuid DMZ-seadmel peaks olema oma tulemüür, et kaitsta end pahatahtliku liikluse eest.</p>
+	<tmpl_if ShowDmzActive>
+	<h3>DMZ märkeruut</h3>
+				
+		<p>Kasutage seda funktsiooni vajaduse korral sisse- või väljalülitamiseks. Üldiselt peaks DMZ olema välja lülitatud, kui see pole hädavajalik.</p>	
+	</tmpl_if>
+	<h3>Sihtkoha IP-aadress</h3>
+		<p>Sisestage sellele väljale ühendatud seadme IP-aadress, mille soovite muuta DMZ-seadmeks (DMZ-sihtkohaks). Iga ühendatud seadme IP-aadressi saate kontrollida ühendatud seadmete ekraanilt.</p>
+			
+</div>
+<!-- id="firewall" -->
+

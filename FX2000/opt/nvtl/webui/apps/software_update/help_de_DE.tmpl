@@ -1,0 +1,63 @@
+<!-- Software Update -->
+<div id="software_update">
+
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+
+	<h2>Übersicht</h2>
+
+		<p>Softwareupdates werden automatisch über das Mobilfunknetz geliefert. Auf dieser Seite können Sie die Updates nachverfolgen.</p>
+
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+	<h3><tmpl_var _("webui", "software_update_current_software_modem_version_label")></h3>
+        <p>
+                The version of software currently installed for the modem component.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_kernel_version_label")></h3>
+        <p>
+                The version number for the Operating System and its components.
+        </p>
+        <tmpl_if showAppVersion>
+                <h3><tmpl_var _("webui", "software_update_current_software_app_version_label")></h3>
+                <p>
+                        The app version currently installed.
+                </p>
+        </tmpl_if>
+        <h3><tmpl_var _("webui", "software_update_current_software_cute_version_label")></h3>
+        <p>
+                The cute version of the software currently installed on your device.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_pri_version_label")></h3>
+        <p>
+                The configuration version currently applied to your device.
+        </p>
+
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var _("webui", "software_update_current_software_configuration_version_label")></h3>
+			
+				<p><tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")></p>
+		</tmpl_if>
+	</tmpl_if>
+	
+	<h2><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+
+	<h3><tmpl_var _("webui", "software_update_check_for_update_time_label")></h3>
+
+		<p>Dieses Feld gibt an, wann zuletzt geprüft wurde ob für <tmpl_var _("webui", "webui_product_name")> ein Update verfügbar ist. Sie können mit der Schaltfläche „Nach Updates suchen“ manuell nach einem Update suchen.</p>
+	
+	<h3>Schaltfläche „Nach Updates suchen“</h3>
+		<p>Damit können Sie prüfen, ob ein Update für das <tmpl_var _("webui", "webui_product_name")> verfügbar ist. Das ist in der Regel nicht erforderlich, da Updates automatisch auf das <tmpl_var _("webui", "webui_product_name")> übertragen werden. Wenn Sie diese Prüfung durchführen und ein Update verfügbar ist, wird es automatisch heruntergeladen.</p>
+
+	<h3><tmpl_var _("webui", "software_update_check_for_update_status_label")></h3>
+
+		<p>Normalerweise ist dieses Feld leer. Wenn Sie aber nach Updates suchen, wird das Ergebnis hier angezeigt. Wird ein Update heruntergeladen, wird hier auch der Fortschritt des Downloads angezeigt.</p>
+	
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+		
+		<p>In diesem Bereich werden Informationen zum letzten Softwareupdate angezeigt.</p>
+	
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+	
+		<p>Dieser Bereich lässt sich öffnen, indem Sie auf den Link/die Überschrift klicken. Der Systemupdate-Verlauf enthält Einzelheiten zu den letzten <tmpl_var SoftwareUpdateHistoryCount>-Updates, die auf dieses Gerät heruntergeladen und installiert wurden. Wurden keine Updates installiert, wird in diesem Bereich die aktuelle Softwareversion angezeigt.</p>
+</div>
+<!-- end Software Update -->

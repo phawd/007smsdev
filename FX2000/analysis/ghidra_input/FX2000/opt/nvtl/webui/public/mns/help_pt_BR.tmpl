@@ -1,0 +1,37 @@
+<!-- adv_mns -->
+<div id="adv_mns">
+	<h1>Seleção de rede</h1>
+	<h2>Visão geral</h2>
+	<p> Este dispositivo seleciona automaticamente a rede móvel ideal. Se estiver usando redes baseadas em GSM, você também pode selecionar uma rede manualmente. Esse recurso "<tmpl_var _("webui", "menu_adv_mns_text")>" só é útil se houver várias redes disponíveis. Se esse recurso for usado, este dispositivo se conecta apenas à rede especificada e ignora as outras redes disponíveis. </p>
+
+	<h2>Status</h2>
+	<p> Esta seção indica qual Seleção de Rede está em uso, a Manual ou a Automática. Se a Seleção de Rede Manual estiver em uso, a rede especificada também é exibida. </p>
+
+	<h2>Operação</h2>
+	<h3><tmpl_var _("webui","adv_mns_scan_for_networks_btn")></h3>
+	<p> Se a Seleção de Rede Manual for possível, este botão estará disponível. Clique nesse botão se desejar selecionar uma rede manualmente. O modem, então, faz uma busca de todas as redes disponíveis. Essa busca pode levar até dois minutos. </p>
+
+	<p> Observação: Se esse botão não for exibido, é porque a Seleção de Rede Manual não está disponível no local onde você se encontra usando sua rede atual. </p>
+
+	<h3>Lista de redes</h3>
+	<div class="blockgroup">
+	<p> Todas as redes disponíveis serão exibidas na Lista de redes assim que a busca de redes for concluída. Em seguida, você pode efetuar uma das seguintes operações: </p>
+	<ul>
+		<li> Cancelar - use esta opção para manter a seleção de rede automática. </li>
+		<li> Atualizar - use esta opção para fazer uma nova busca se a rede desejada não estiver listada. Talvez seja necessário mudar a sua localização para melhorar o sinal. </li>
+
+		<li> Selecionar - use esta opção para ativar a seleção de rede manual com a rede especificada. Observe que talvez não seja possível se conectar a todas as redes listadas. Se o seu provedor de serviços não tiver um acordo de roaming com a rede selecionada, haverá uma falha na tentativa de conexão. </li>
+	</ul>
+
+	<h3><tmpl_var _("webui","adv_mns_revert_to_automatic_btn")></h3>
+	<p> Se a Seleção de Rede Manual estiver em uso, este botão estará disponível. Clique nesse botão para mudar a seleção de rede de manual para automática. </p>
+
+	<h3>Retornar à tela de rede</h3>
+	<p> Use este link para retornar à tela de Redes. </p>
+		
+	</div>
+	
+</div>
+
+<!-- id="adv_mns" -->
+

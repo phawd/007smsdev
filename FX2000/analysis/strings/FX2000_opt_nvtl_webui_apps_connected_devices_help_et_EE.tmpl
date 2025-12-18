@@ -1,0 +1,79 @@
+<!-- Connected Devices -->
+<div id="connected_devices">
+	<h1><tmpl_var _("webui", "connected_devices_menu_text")></h1>
+levaade</h2>
+		Sellel lehel kuvatakse iga seadmega <tmpl_var _("webui", "webui_product_name")> 
+hendatud seadme 
+ksikasjad ja ka blokeeritud seadmete loend.
+	<h2><tmpl_var _("webui", "connected_devices_sub_header_text")></h2>
+		Tabelis on loetletud k
+ik Wi-Fi-v
+hendatud seadmed. Wi-Fi-v
+rgu nimi kuvatakse pealkirja j
+rel. Kui arvuti on 
+hendatud seadmega <tmpl_var _("webui", "webui_product_name")> USB-kaabli abil, siis on arvuti selles tabelis loetletud.
+hendatud seadme kohta kuvatakse j
+rgmine teave.
+henduse t
+		Ikoon n
+itab iga 
+hendatud seadme 
+henduse t
+	<h3>Nimi</h3>
+		Tavaliselt on see 
+hendatud seadme hostinimi, nagu on m
+hendatud seadmes endas. Harvadel juhtudel ei pruugi hostinimi saadaval olla. Kui olete 
+hendatud seadme nime muutmiseks kasutanud suvandit Muuda, kuvatakse hostinime asemel teie antud nimi.
+hendatud seadme nime muutmiseks saate kasutada suvandit Muuda.
+	<h3>IP-aadress</h3>
+hendatud seadme IP-aadress.</p>
+		<tmpl_var truncate(_("webui", "connected_devices_mac_address_label"), (size(_("webui", "connected_devices_mac_address_label")) - size(":")))>
+		MAC-aadress on selle 
+hendatud seadme ainulaadne v
+rguidentifikaator.
+	<tmpl_if isIPv6Supported>
+			<tmpl_var truncate(_("webui", "connected_devices_link_local_label"), (size(_("webui", "connected_devices_link_local_label")) - size(":")))>
+hendatud seade toetab IPv6, kuvatakse link-kohalik IPv6-aadress.
+	</tmpl_if>
+	<tmpl_if GuestWifiSupported>
+		<h2><tmpl_var _("webui", "connected_devices_guest_title")></h2>
+			Kui Wi-Fi k
+rk on kasutusel, loetletakse tabelis k
+ik Wi-Fi k
+hendatud seadmed. Wi-Fi-v
+rgu nimi kuvatakse pealkirja j
+			Siin loetletud seadmete esitusviis ja toimimine on identne p
+rgu all loetletud seadmetega.
+	</tmpl_if>
+	<h2>Seadmete blokeerimine ja blokeeringu t
+histamine</h2>
+	<h3>Blokeerimise nupp</h3>
+		Nupu Blokeeri kl
+psamine katkestab 
+hendatud seadme 
+henduse ja takistab selle taas
+hendamist. Blokeeritud seade kuvatakse blokeeritud seadmete loendis.
+		Blokeeritud seadmed blokeeritakse nii k
+lalis- kui ka p
+		See suvand on saadaval kasutamiseks iga 
+hendatud seadmega, v
+lja arvatud teie oma seadmega ja k
+igi USB-
+henduse kaudu 
+hendatud seadmetega.
+	<h3>Blokeeritud seadmete loend</h3>
+		Loetleb k
+ik blokeeritud seadmed. Pange t
+hele, et kuna need seadmed ei ole praegu 
+hendatud ja nende 
+hendamine on blokeeritud, ei ole neil IP-aadressi. Selle asemel identifitseeritakse nad nime ja MAC-aadressi j
+	<h3>Blokeeringu t
+histamise nupp</h3>
+		Blokeeringu t
+histamise nupul kl
+psamine t
+histab eelnevalt blokeeritud seadme blokeeringu, vabastades selle uuesti 
+hendamiseks. T
+histatud blokeeringuga seade kustutatakse blokeeritud seadmete loendist ja kuvatakse uuesti 
+hendatud seadmete loendis, kui see 
+<!-- id="connected_devices" -->

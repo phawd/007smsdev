@@ -1,0 +1,16 @@
+<!-- Manual DNS -->
+<div id="manual_dns">
+	<h1><tmpl_var _("webui", "adv_manual_dns_menu_text")></h1>
+	<h2>Ülevaade</h2>
+	<p>Tavaliselt antakse DNS-aadress automaatselt. Sellel lehel saate vajaduse korral DNS-i käsitsi määrata.</p>
+
+	<h2>Seaded</h2>
+
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_enable_label"), (size(_("webui", "adv_manual_dns_enable_label")) - size(":")))></h3>
+	<p>Kasutage seda sätet DNS-i funktsiooni käsitsi sisse- või väljalülitamiseks. Sisselülitamisel tuleb esitada järgmised andmed.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address1_label"), (size(_("webui", "adv_manual_dns_address1_label")) - size(":")))></h3>
+	<p>Sisestage soovitud esmase DNS-i IP-aadress. See aadress on vajalik funktsiooni Käsitsi DNS-i määramine kasutamiseks.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address2_label"), (size(_("webui", "adv_manual_dns_address2_label")) - size(":")))></h3>
+	<p>Sisestage soovitud sekundaarse (varu) DNS-i IP-aadress. See aadress on valikuline ja selle võib soovi korral tühjaks jätta.</p>
+</div>
+<!-- id="manual_dns" -->

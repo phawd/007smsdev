@@ -1,0 +1,48 @@
+<div id="gps_status">
+	<h1><tmpl_var _("webui", "gps_status_menu_text")></h1>
+	<h2>Översikt</h2>
+	<p>Den här <tmpl_var _("webui", "webui_product_name")>-enheten omfattar en GPS-mottagare. GPS-mottagaren kan bestämma din nuvarande plats, ofta till och med inomhus.<tmpl_if GPSOverWiFiEnableShow>Den nuvarande platsen visas på den här sidan och platsinformationen kan delas med anslutna datorer med GPS via Wi-Fi-funktionen.</tmpl_if>
+	</p>
+
+	<h2>Använda GPS</h2>
+
+	<tmpl_if GPSEnableShow>
+		<h3><tmpl_var _("webui", "gps_status_enable_label")></h3>
+		<p>Använd denna PÅ/AV-kontroll för att sätta på eller stänga av GPS-funktionen efter behov.</p>
+		<h3><tmpl_udf GET_PO_TEXT("gps_status_startup_state_label", gProductName)></h3>
+		<p>Den här inställningen avgör när GPS-mottagaren kommer att stängas av när den har slagits på.</p>
+		<p>Om den är PÅ stängs GPS-mottagaren av när <tmpl_var _("webui", "webui_product_name")> stängs av. Du måste sätta på den igen nästa gång som GPS-mottagaren behövs.</p>
+	</tmpl_if>
+
+		<h3>GPS-status</h3>
+		<p>Om GPS-mottagaren ännu inte har fått en fixering (plats) visas en status <strong>Söker</strong>. När en fix har erhållits visas följande information om nuvarande plats och en Google-karta visas för att indikera den nuvarande platsen visuellt.</p>
+		<h2><tmpl_var _("webui", "gps_status_map_section_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "gps_status_latitude_label"), (size(_("webui", "gps_status_latitude_label")) - size(":")))></h3>
+		<p>Latituden för den senaste platsfixen.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_longitude_label"), (size(_("webui", "gps_status_longitude_label")) - size(":")))></h3>
+		<p>Longituden för den senaste platsfixen.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_altitude_label"), (size(_("webui", "gps_status_altitude_label")) - size(":")))></h3>
+		<p>Höjden över havet för den senaste platsfixen.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_accuracy_label"), (size(_("webui", "gps_status_accuracy_label")) - size(":")))></h3>
+		<p>Detta är ett mått på precisionen i den horisontella position som erhålls av GPS-mottagaren.</p>
+		<tmpl_if GPSOverWiFiEnableShow>
+			<tmpl_if GPSPortNumberShow>		
+				<h2><tmpl_var _("webui", "gps_status_enable_sub_header_text")></h2>
+			
+				<h3><tmpl_var truncate(_("webui", "gps_status_gps_over_wifi_label"), (size(_("webui", "gps_status_gps_over_wifi_label")) - size(":")))></h3>
+				<p>GPS-data tillhandahålls av <tmpl_var _("webui", "webui_product_name")> i form en textström från NMEA (National Marine Electronics Association).</p>
+				<p>Att använda en NMEA-port (GPS) är en standardmetod för applikationer för att få åtkomst till en GPS-dataström i Windows och andra datorplattformar. För att skapa denna port måste du ladda ned och installera GPS via Wi-Fi-drivrutinen för din plattform. Den här drivrutinen kommer att skapa NMEA-porten, erhålla GPS-data från <tmpl_var _("webui", "webui_product_name")> och göra dessa GPS-data tillgängliga för NMEA-mottagliga applikationer.</p>
+
+				<h3><tmpl_var truncate(_("webui", "gps_status_port_number_label"), (size(_("webui", "gps_status_port_number_label")) - size(":")))></h3>
+				<p>Det här är det portnummer som används av drivrutinens programvara på din dator för att upprätta en anslutning till den här enheten och erhålla GPS-data. Du bör inte ändra portnumret såvida det inte finns en god anledning att göra det.</p>
+			</tmpl_if>
+		</tmpl_if>
+
+	<tmpl_if GPSDownloadDriversShow>
+		<h3><tmpl_var _("webui", "gps_status_wifi_driver_download_link")></h3>
+		<p>Använd detta för att få åtkomst till nedladdningssidan för de tillgängliga drivrutinerna.<tmpl_if GPSOverWiFiEnableShow>Dessa drivrutiner behövs för att använda GPS via Wi-Fi-funktionen.</tmpl_if>
+		</p>
+	</tmpl_if>
+					
+</div>
+

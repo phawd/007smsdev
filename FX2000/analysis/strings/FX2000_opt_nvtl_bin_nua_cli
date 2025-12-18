@@ -1,0 +1,488 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+su_api_test_mode_get_url_list
+nua_api_get_error_string
+snprintf
+su_api_test_mode_set_url
+su_api_test_mode_enable
+su_api_test_mode_get_status
+su_api_is_running
+su_api_get_status
+su_api_get_installation_status
+su_api_get_status_before_low_battery
+su_api_check_for_update
+su_api_get_download_progress
+su_api_start_install
+closedir
+su_api_postpone_install
+__errno_location
+libpthread.so.0
+su_api_test_set_test_imei
+su_api_test_set_poll_interval
+su_api_test_get_poll_interval
+su_api_test_get_autoinstall_time
+strerror
+su_api_get_settings
+su_api_get_custom_msgs
+getopt_long
+su_api_set_settings
+nua_api_get_cfg_settings
+nua_api_timer_timeout_ind
+nua_api_test_msg
+nua_api_sys_indication
+mifi_dbg_start
+mifi_dbg_get_level_name
+mifi_dbg_log
+mifi_dbg_syslog
+__bss_start
+__lxstat
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+librt.so.1
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libgps_api.so
+libfactory_reset_api.so
+libsms_api.so
+libwifi_api.so
+libccm2_api.so
+librouter2_api.so
+libfile_sharing_api.so
+libfota_api.so
+libled_api.so
+libbuzzer_api.so
+libans_api.so
+libusb_api.so
+libemd_api.so
+libsensor_api.so
+libvpn_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libwan_mgr_api.so
+libcbsd_api.so
+libsysintclient.so
+libcurl.so.4
+libssl.so.1.1
+libcrypto.so.1.1
+libcloud_engine_api.so
+libnua_api.so
+H	KxD	J{D
+Private API, Get configuration settings
+Private API, Send timeout indication
+su_condition
+Private API, Send fake msgbus indication for su conditions
+save_temp_files
+Private API, Keep temporary files
+test_retry_logic
+Private API, test retry logic for roam, nodata, download and report results
+get_max_pkg_size
+Private API, get max supported pkg size
+set_alarm
+Private API, set alarm
+delete_alarm
+Private API, delete alarm
+get_dev_info
+Private API, get device information
+get_version
+Private API, Get device version string
+get_roaming_status
+Private API, get roaming status
+factory_reset
+Private API, send factory reset indication
+register_dsm_handoff
+Private API, Register with DSM for handoff
+------------------
+Below list is popular commands
+Prints out usage and command listing.
+is_running
+Tells if NUA process is running.
+Setup IOT DM server for testing
+Retrieves NUA status.
+installation_status
+Retrieves NUA installation status.
+update_check
+Check and download an update if available from NUA server.
+progress
+Show current download progress in percentage.
+Start installation of update.
+postpone
+Postpone the install of downloaded update.
+Listen on NUA message bus channel
+set_imei
+Set test IMEI for the device used only by NUA.
+set_poll_interval
+Set polling interval for device, Minimum 60 seconds
+get_poll_interval
+Get polling interval for device
+set_autoinstall_time
+Set Autoinstall time for device, Minimum 60 seconds
+get_autoinstall_time
+Get Autoinstall time for device
+set_settings
+Set NUA settings.
+get_settings
+Get NUA settings.
+get_custom_msgs
+Get Custom messages for specified language, set by pkd dl_desc
+fumoEnable
+sumoAutoPollEnable
+lowBatteryThreshold
+  ---------------------------------------------------------------------------
+ %-30s - %s
+  ---------------------------------------------------------------------------
+nua_opr_err= 
+%-20s [%d] (%s)
+bl_err= 
+Printing NUA Status:
+----------------------
+update_status= 
+modem_pri_status= 
+%-20s [%d]
+linux_pri_status= 
+update_rec_id= 
+%-20s [%u]
+client_id= 
+%-20s [%s]
+defer_count=[%d]
+pkg_ver=[%s]
+pkg_name=[%s]
+pkg_desc=[%s]
+pkg_size=[%ld]
+Mandatory
+Optional
+update_type=[%d](%s)
+source=[%s]
+vendor=[%s]
+post_dnld_msg=[%s]
+post_dnld_url=[%s]
+est_upd_time=[%d]
+su.broadcast
+%s=[MSGBUS_SU_ASYNC_STATUS]
+%s=[MSGBUS_SU_READY_FOR_DOWNLOAD]
+%s=[MSGBUS_SU_DOWNLOAD_PROGRESS=%d]
+%s=[MSGBUS_SU_UPDATE_CONFIRM]
+%s=[MSGBUS_SU_UPDATE_LOW_BATTERY=%d]
+%s=[MSGBUS_SU_UPDATE_STARTING]
+estimated_update_time=[%u]
+%s=[MSGBUS_SU_UPDATE_STATUS]
+%s=[MSGBUS_SU_SESSION_STARTED]
+Type=[%s]
+%s=[MSGBUS_SU_SESSION_ABORTED]
+%s=[MSGBUS_SU_SESSION_ENDED]
+%s=[Unknown event=%d]
+%s=[Fatal error missing data]
+%s: MsgBus_Create Failed
+%s: MsgBus_Connect Failed
+%s: MsgBus_SetCallback Failed
+%s: MsgBus_Subscribe failed for:%s
+MsgBus setup complete. subscribed to:%s
+MsgBus disable interface
+Usage, examples:
+----------------
+print status                 : nua_cli iot
+Disable IOT mode             : nua_cli iot disable
+Enable default test pkg url  : nua_cli iot enable
+Enable specific test pkg url : nua_cli iot pkg <alias name such as real/small/large/real_down/small_down/large_down>
+Enable custom url            : nua_cli iot custom <https url>
+su_api_test_mode_get_url_list returned %d (%s)
+No test URL's configured
+calloc failed
+  %-10s   url=[%s]  [*Default]
+  %-10s   url=[%s]
+su_api_test_mode_set_url returned %d (%s)
+su_api_test_mode_enable returned %d (%s)
+IOT Mode: [enabled]
+su_api_test_mode_get_status returned %d (%s)
+Current settings:
+-----------------
+  IOT Mode: [disabled]
+  IOT Mode: [enabled]
+IOT Mode: [disabled]
+Invalid alias specified
+su_api_is_running returned %d (%s)
+su_api_get_status returned %d (%s)
+su_api_get_installation_status returned %d (%s)
+Installation status=[%s]
+NUA not ready
+A NUA session is already in progress
+su_api_check_for_update returned %d (%s)
+Now monitor %s channel for events or Call "status" command for state
+su_api_get_download_progress returned %d (%s)
+Download progress=[%u]
+su_api_start_install returned %d (%s)
+Watch device restarts in a moment
+  nua_cli postpone <time in minutes>
+su_api_postpone_install returned %d (%s)
+Installation postponed for %d Minutes
+  nua_cli set_imei <imei>
+su_api_test_set_test_imei returned %d (%s)
+Test IMEI=[%s] set
+  nua_cli set_poll_interval <time in seconds>
+su_api_test_set_poll_interval returned %d (%s)
+Poll internval set, seconds=[%u]
+type "nua.sh restart " or restart device to take effect
+  nua_cli get_poll_interval
+Error to get poll interval value
+Poll internval, seconds=[%u]
+  nua_cli set_autoinstall_time <time in seconds>
+	 Set "0" for ignore input from CLI. E.g: nua_cli set_autoinstall_time 0
+ nua_cli set_autoinstall_time <time in seconds>
+	Minimum value should be 60 seconds.
+/opt/nvtl/data/nua/autoinstall_time
+Failed to create cookie files.
+Successfully done. time = [%d] seconds.
+Error removing autoinstall_time cookie file.
+Ignored the auto-install input from CLI.
+  nua_cli get_autoinstall_time
+Auto-Install, seconds=[%u]
+su_api_get_settings returned %d (%s)
+NUA Settings:
+FUMO enabled=[%u]
+SU MO Auto Poll enabled=[%u]
+Low Battery Threshold=[%u]
+Low Battery Threshold with Charger=[%u]
+Model String=[%s]
+Customer ID=[%s]
+ %s %s <lang>
+su_api_get_custom_msgs returned %d (%s)
+NUA Custom Msgs for lang[%s]:
+NUA Custom Msg-Pkg Description=[%s]
+NUA Custom Msg-Download Description=[%s]
+NUA Custom Msg-Ready to Install=[%s]
+NUA Custom Msg-Installation Success=[%s]
+NUA Custom Msg-Installation Failed=[%s]
+f:s:l:w:
+Usage: %s %s -f <fumoEnable> -s <autoPollEnable> -l <lowBatteryThreshold> -w <lowBatteryThresholdWithCharger>
+fumo_enabled[%d] su_mo_auto_poll_enabled[%d] low_battery_threshold[%d] low_battery_threshold_with_charger[%d]
+su_api_set_settings returned %d (%s)
+nua_api_get_cfg_settings returned %d (%s)
+  nua_cli timeout <Timer id>
+nua_api_timer_timeout_ind returned %d (%s)
+  nua_cli test_retry_logic <dl/report> <0/1>
+  nua_cli test_retry_logic roam <0(disable),1(DL),2(Report),3(check)>
+  nua_cli test_retry_logic nodata <0(disable),1(DL),2(Report),3(check)>
+nua_api_test_msg returned %d (%s)
+To test retry logic [%s]:
+- Set valid package through nua_cli iot pkg <alias>
+- Do, check for update
+  nua_cli save_temp_files <0/1>
+Maximum package size=[%u]bytes
+ nua_cli set_alarm <ID> <Seconds> <repeat>
+Alarm set with following values:
+Seconds=[%lu]
+Repeat=[%u]
+  nua_cli delete_alarm <Timer id>
+Alarm ID=[%u], deleted
+IMEI=[%s]
+MFG=[%s]
+Model=[%s]
+version=[%s]
+Status=[%d](%s)
+  nua_cli sucondition_ind <roam/data/svc> <0/1>
+  nua_cli su_condition roam <0(Roam)/1(Home)>
+  nua_cli su_condition svc <0(Down)/1(Up)>
+Invalid option
+Invalid input data
+nua_api_sys_indication returned %d (%s)
+Issue "nua.sh restart" to complete factory reset
+  %s %s <register(1)/de-register(0)>
+command [%s]
+command [%s] not found.
+cmd_listen_for_msgbus
+OUT_OF_BOUNDS
+SU_OPR_ERR_OK
+SU_OPR_ERR_CALL
+SU_OPR_ERR_BUFFER
+SU_OPR_ERR_FEATURE_DISABLED
+SU_OPR_ERR_MEM_ALLOC_FIALURE
+SU_OPR_ERR_STORAGE
+SU_OPR_ERR_DEVICE_IN_ROAMING
+SU_OPR_ERR_NO_MOBILE_COVERAGE
+SU_OPR_ERR_BATT_LOW_FOR_INSTALL
+SU_OPR_ERR_OTA_CALL_DISABLED
+SU_OPR_ERR_OTA_CALL_FAILED
+SU_OPR_ERR_OTA_CALL_CONNECT_PROG
+SU_OPR_ERR_OTA_CALL_DNS_QUERY
+SU_OPR_ERR_OTA_CALL_NOT_PRESENT
+SU_OPR_ERR_SYS_INTF_FAILURE
+SU_OPR_ERR_DM_NO_UPD_PKG
+SU_OPR_ERR_ROAMING_OR_EMERGENCY
+SU_OPR_ERR_WIFI_NOT_AVAILABLE
+SU_OPR_ERR_DL_FILE_TOO_BIG
+SU_OPR_ERR_DL_CURL_RANGE
+SU_OPR_ERR_DL_CURL_API
+SU_OPR_ERR_DL_GENERAL
+SU_OPR_ERR_DL_NETWORK
+SU_OPR_ERR_DL_PKG_VALIDATION_FAILED
+SU_OPR_ERR_CANCEL
+SU_OPR_ERR_DM_GENERAL
+SU_OPR_ERR_DM_NETWORK
+SU_OPR_ERR_DM_IN_PROGRESS
+SU_OPR_ERR_DM_SU_CANCEL
+SU_OPR_ERR_DM_TREE_NODE
+SU_OPR_ERR_BOOTSTRAP
+SU_OPR_ERR_SYNML_CMD
+SU_OPR_ERR_NIA
+SU_OPR_ERR_AUTH
+SU_OPR_ERR_COMMS
+SU_OPR_ERR_COMMS_FATAL
+SU_OPR_ERR_ABORT
+SU_OPR_ERR_UNDEFINED
+SU_OPR_ERR_DD_PARSE
+SU_OPR_ERR_HTTP
+SU_OPR_ERR_HTTP_400
+SU_OPR_ERR_HTTP_401
+SU_OPR_ERR_HTTP_402
+SU_OPR_ERR_HTTP_403
+SU_OPR_ERR_HTTP_404
+SU_OPR_ERR_HTTP_405
+SU_OPR_ERR_HTTP_406
+SU_OPR_ERR_HTTP_407
+SU_OPR_ERR_HTTP_408
+SU_OPR_ERR_HTTP_409
+SU_OPR_ERR_HTTP_500
+SU_OPR_ERR_HTTP_501
+SU_OPR_ERR_HTTP_502
+SU_OPR_ERR_HTTP_503
+SU_STATE_NOTREADY
+SU_STATE_READY
+SU_STATE_IDLE
+SU_STATE_NI_SESSION
+SU_STATE_CHECKING_UPDATE
+SU_STATE_READY_FOR_DOWNLOAD
+SU_STATE_DOWNLOADING
+SU_STATE_READY_FOR_INSTALL
+SU_STATE_INSTALL_POSTPONED
+SU_STATE_BATT_TOO_LOW_FOR_INSTALL
+SU_STATE_INSTALL_IN_PROGRESS
+SU_STATE_INSTALL_COMPLETED
+SU_STATE_REPORTING_RESULTS
+[%s]:[%s] - %s
+Printing NUA configuration settings:
+model_str=[%s]
+cust_str=[%s]
+bootup_wwan_delay_secs=[%u]
+backend.cloud.enabled=[%u]
+backend.cloud.conn_timeout=[%u]
+backend.cloud.disable_cert_verify=[%u]
+backend.cloud.dd_file_name=[%s]
+backend.cloud.dd_file_size_max=[%u]
+backend.cloud.url.production=[%s]
+backend.cloud.url_test[%u]=[%s][%s]
+backend.cloud.key.dd=[%s]
+backend.cloud.key.result_d=[%s]
+su.retry.max_retry_no_data=[%u]
+su.retry.max_retry_roam=[%u]
+su.retry.max_retry_download=[%u]
+su.retry.max_retry_report=[%u]
+su.retry.retry_short_secs=[%u]
+su.retry.retry_long_secs=[%u]
+su.pri_only_update_supported=[%u]
+su.pre_install_wait_secs=[%u]
+su.su_device_poll_timer_days=[%u]
+su.install_defer_supported=[%u]
+su.install_at_powerdown=[%u]
+su.install_at_powerup=[%u]
+su.broadcast_msgbus_events=[%u]
+su.su_conds.deny_if_roaming=[%u]
+su.su_conds.deny_ui_fota_if_roaming=[%u]
+su.su_conds.deny_if_no_coverage=[%u]
+su.su_conds.deny_if_no_data_call=[%u]
+su.su_conds.deny_if_low_battery=[%u]
+su.batt_check.enabled=[%u]
+su.batt_check.monitor_enabled=[%u]
+su.batt_check.ignore_charger=[%u]
+su.ver.platform_prefix=[%s]
+su.ver.no_modem_version=[%u]
+su.ai.min_after_dl=[%u]
+su.ai.local_time_enabled=[%u]
+su.ai.window_open=[%u]
+su.ai.window_end=[%u]
+/opt/nvtl/data/nua/reg.xml
+/opt/nvtl/data/nua/custom_msgs.bin
+/tmp/nua_fota_installation_success
+[%s]:[%s] - %s: Skip=[%s]
+[%s]:[%s] - %s: Opened dir=[%s]
+[%s]:[%s] - %s: stat failed for=[%s]
+[%s]:[%s] - %s: Entering sub directory: %s
+[%s]:[%s] - %s: Deleting=[%s]
+[%s]:[%s] - %s: Remove failed on=[%s], erronno=[%d]
+/opt/nvtl/data/nua
+[%s]:[%s] - %s: Remove failed for=[%s], erronno[%d]
+[%s]:[%s] - %s: unlink failed ret=%d for file:%s
+[%s]:[%s] - %s: Removed file: %s
+[%s]:[%s] - %s: rename(%s, %s) failed=[%s]
+[%s]:[%s] - %s: fsyncing=[%s]
+[%s]:[%s] - %s: File not found [%s]
+[%s]:[%s] - %s: Read str=[%s] from file=[%s]
+[%s]:[%s] - %s: Cannot open dir, errno:%d
+[%s]:[%s] - %s: syncing %s complete
+[%s]:[%s] - %s: fopen() creation failed for %s
+[%s]:[%s] - %s: file (%s) write failed expected:%d, returned:%d
+[%s]:[%s] - %s: unlink failed for:%s rc=%d, errno:%d
+[%s]:[%s] - %s: File created :%s
+nua_file_is_delete_ok
+nua_dir_clean_up
+nua_file_remove
+nua_file_move
+nua_read_str_from_file
+nua_file_sync_and_close
+nua_file_create
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

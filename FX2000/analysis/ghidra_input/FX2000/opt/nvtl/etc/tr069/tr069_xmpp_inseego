@@ -1,0 +1,28 @@
+config xmpp 'xmpp'
+	option ConnReqXMPPConnection 'id_connection_1'
+	option allowed_jid ''
+#Log levels: Critical=0, Warning=1, Notice=2, Info=3, Debug=4
+	option log_level '0'
+	option capath '/etc/ssl/certs/'
+	option verify_peer '0'
+	option verify_severity '0'
+
+config xmpp_connection 'id_connection_1'
+	option enable '1'
+	option username 'username'
+	option password 'pass'
+	option domain 'domain'
+	option resource 'cpe'
+	option keep_alive_interval '30'
+	option keep_alive_time '30'
+	option connect_attempt ''
+	option retry_interval_max '120'
+	option serverconnectalgorithm 'ServerTable'
+
+config xmpp_server
+	option enable '1'
+	option priority '1'
+	option weight '0'
+	option port  ''
+	option serveraddr 'xmpp.jp'
+	option id 'id_connection_1'

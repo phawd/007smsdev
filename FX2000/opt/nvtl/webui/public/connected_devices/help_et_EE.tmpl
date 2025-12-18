@@ -1,0 +1,83 @@
+<!-- Connected Devices -->
+<div id="connected_devices">
+	<h1><tmpl_var _("webui", "connected_devices_menu_text")></h1>
+	<h2>Ülevaade</h2>
+	<p>
+		Sellel lehel kuvatakse iga seadmega <tmpl_var _("webui", "webui_product_name")> ühendatud seadme üksikasjad ja ka blokeeritud seadmete loend.
+	</p>
+
+	<h2><tmpl_var _("webui", "connected_devices_sub_header_text")></h2>
+	<p>
+		Tabelis on loetletud kõik Wi-Fi-võrguga ühendatud seadmed. Wi-Fi-võrgu nimi kuvatakse pealkirja järel. Kui arvuti on ühendatud seadmega <tmpl_var _("webui", "webui_product_name")> USB-kaabli abil, siis on arvuti selles tabelis loetletud.
+	</p>
+	<p>
+		Iga ühendatud seadme kohta kuvatakse järgmine teave.
+	</p>
+
+	<h3>Ühenduse tüüp</h3>
+	<p>
+		Ikoon näitab iga ühendatud seadme ühenduse tüüpi.
+	</p>
+
+	<h3>Nimi</h3>
+	<p>
+		Tavaliselt on see ühendatud seadme hostinimi, nagu on määratud ühendatud seadmes endas. Harvadel juhtudel ei pruugi hostinimi saadaval olla. Kui olete ühendatud seadme nime muutmiseks kasutanud suvandit Muuda, kuvatakse hostinime asemel teie antud nimi.
+	</p>
+	<p>
+		Ühendatud seadme nime muutmiseks saate kasutada suvandit Muuda.
+	</p>
+
+	<h3>IP-aadress</h3>
+	<p>Ühendatud seadme IP-aadress.</p>
+
+	<h3>
+		<tmpl_var truncate(_("webui", "connected_devices_mac_address_label"), (size(_("webui", "connected_devices_mac_address_label")) - size(":")))>
+	</h3>
+	<p>
+		MAC-aadress on selle ühendatud seadme ainulaadne võrguidentifikaator.
+	</p>
+
+	<tmpl_if isIPv6Supported>
+		<h3>
+			<tmpl_var truncate(_("webui", "connected_devices_link_local_label"), (size(_("webui", "connected_devices_link_local_label")) - size(":")))>
+		</h3>
+		<p>
+			Kui ühendatud seade toetab IPv6, kuvatakse link-kohalik IPv6-aadress.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if GuestWifiSupported>
+		<h2><tmpl_var _("webui", "connected_devices_guest_title")></h2>
+		<p>
+			Kui Wi-Fi külalisvõrk on kasutusel, loetletakse tabelis kõik Wi-Fi külalisvõrguga ühendatud seadmed. Wi-Fi-võrgu nimi kuvatakse pealkirja järel.
+		</p>
+		
+		<p>
+			Siin loetletud seadmete esitusviis ja toimimine on identne põhivõrgu all loetletud seadmetega.
+		</p>
+	</tmpl_if>
+	
+	<h2>Seadmete blokeerimine ja blokeeringu tühistamine</h2>
+	<h3>Blokeerimise nupp</h3>
+	<p>
+		Nupu Blokeeri klõpsamine katkestab ühendatud seadme ühenduse ja takistab selle taasühendamist. Blokeeritud seade kuvatakse blokeeritud seadmete loendis.
+	</p>
+	<p>
+		Blokeeritud seadmed blokeeritakse nii külalis- kui ka põhivõrgust.
+	</p>
+	<p>
+		See suvand on saadaval kasutamiseks iga ühendatud seadmega, välja arvatud teie oma seadmega ja kõigi USB-ühenduse kaudu ühendatud seadmetega.
+	</p>
+	
+	<h3>Blokeeritud seadmete loend</h3>
+	<p>
+		Loetleb kõik blokeeritud seadmed. Pange tähele, et kuna need seadmed ei ole praegu ühendatud ja nende ühendamine on blokeeritud, ei ole neil IP-aadressi. Selle asemel identifitseeritakse nad nime ja MAC-aadressi järgi.
+	</p>
+
+	<h3>Blokeeringu tühistamise nupp</h3>
+	<p>
+		Blokeeringu tühistamise nupul klõpsamine tühistab eelnevalt blokeeritud seadme blokeeringu, vabastades selle uuesti ühendamiseks. Tühistatud blokeeringuga seade kustutatakse blokeeritud seadmete loendist ja kuvatakse uuesti ühendatud seadmete loendis, kui see ühendub.
+	</p>
+</div>
+<!-- id="connected_devices" -->
+

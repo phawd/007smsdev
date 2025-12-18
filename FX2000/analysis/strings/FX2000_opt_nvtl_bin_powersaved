@@ -1,0 +1,308 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+mifi_dbg_get_level_name
+mifi_dbg_log
+mifi_dbg_syslog
+snprintf
+strtoull
+__errno_location
+libpthread.so.0
+msgq_send_async
+strerror
+dsm_get_string
+nvtl_gpio_register
+nvtl_gpio_unregister
+nvtl_gpio_get_value
+powersave_modem_init_modem
+mifi_register_event_handler
+powersave_modem_deinit
+dsm_get_state
+timer_create
+timerfd_create
+GLIBC_2.8
+timerfd_settime
+timer_settime
+dsm_set_suspend_wakeup_time
+dsm_shutdown_device
+powersave_get_settings
+xmldata_initialize
+xmldata_getstring_default
+xmldata_getuint64_default
+xmldata_getint32_default
+xmldata_getcount
+xmldata_getstring
+xmldata_shutdown
+MsgBusGet
+settings_get_features
+libdl.so.2
+ts_list_pop
+ts_list_destroy
+ts_list_init
+ts_list_push
+closedir
+dsm_is_running
+pthread_self
+mifi_dbg_start
+msgq_create
+mifi_init_notify_thread
+watchdog_application_register
+msgq_receive
+msgq_resp_handler
+mifi_shutdown_notify_thread
+mq_close
+mq_unlink
+mifi_dbg_stop
+powersave_dsm_state_change
+powersave_charger_det_change
+powersave_battery_det_change
+powersave_battery_state_change
+powersave_power_button_change
+powersave_usb_state_change
+powersave_display_state_change
+powersave_ip_client_change
+powersave_settings_changed
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+__bss_start
+libmifimsgbus.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libgpio.so
+libacm.so
+libpowersave_api.so
+H	KxD	J{D
+/var/run/runlevel
+POWERSAVE
+[%s]:[%s] - is_runlevel_complete check passed
+[%s]:[%s] - cannot open file %s,value:%s
+[%s]:[%s] - wrote to file:%s, value:%s
+[%s]:[%s] - file value matches file:%s,value:%s
+[%s]:[%s] - %s: intf_name=%s
+/sys/class/net/%s/statistics/rx_bytes
+[%s]:[%s] - error opening rx_bytes file for interface %s
+/sys/class/net/%s/statistics/tx_bytes
+[%s]:[%s] - error opening tx_bytes file for interface %s
+[%s]:[%s] - %s: RX Bytes:%llu, TX Bytes:%llu
+/powersave_mq
+[%s]:[%s] - powersave_gpio_event_callback::msgq_send_async failed: %s
+[%s]:[%s] - powersave_acm_event_callback::msgq_send_async failed: %s
+online_battery
+online_ac
+[%s]:[%s] - dsm state condition failed. curr_state=%s
+rmnet_data0
+rmnet_data2
+rmnet_data3
+[%s]:[%s] - interface %s IGNORED. interface components(modem) in deepsleep
+[%s]:[%s] - interface %s IGNORED. no clients connected
+[%s]:[%s] - interface %s traffic observed
+[%s]:[%s] - interface %s idle_time(%d) out
+[%s]:[%s] - nvtl_gpio_unregister(%s) failed
+[%s]:[%s] - gpio %s eq %s condition failed. curr_gpio_val=%d
+[%s]:[%s] - usb state condition failed. curr_usb_state=%s
+lsof /mnt/mmc/ 2> /dev/null
+[%s]:[%s] - %s: pclose() failed: %s
+[%s]:[%s] - %s: sdcard busy? len=%d exit_code=%d
+[%s]:[%s] - display condition failed: curr_state=ON 
+[%s]:[%s] - powersave_send_slic_wakeup::msgq_send_async failed: %s
+[%s]:[%s] - %s: SLIC event arrived
+[%s]:[%s] - slic state condition failed. g_powersave.slic_in_progress=%d
+[%s]:[%s] - suspend sanity failed! %s has the lock
+[%s]:[%s] - powersave_check_lock_status check passed
+[%s]:[%s] - suspend sanity failed! runlevel_complete=%d OR lock is held
+[%s]:[%s] - suspend_flags=0x%08X
+DEEPSLEEP
+DEEPSLEEP_HIGH_TEMP
+[%s]:[%s] - powersave in %s state
+[%s]:[%s] - suspend_wakeup_time=%llu sec
+[%s]:[%s] - %s: timer_create() failed: %s
+/sys/power/state
+[%s]:[%s] - %s: open(%s) failed: %s
+[%s]:[%s] - %s: timerfd_create failed: %s
+[%s]:[%s] - %s: timerfd_settime failed: %s
+/sys/power/wakeup_count
+[%s]:[%s] - %s: reading %s
+[%s]:[%s] - %s: timer_settime() failed: %s
+[%s]:[%s] - %s: read() EINTR
+[%s]:[%s] - %s: read(%s) failed: %s
+[%s]:[%s] - %s: write(%s) failed: %s
+[%s]:[%s] - %s: %s=%u
+[%s]:[%s] - enable_suspend_only_when_wifi_off = 0
+ps | grep -e /opt/nvtl/bin/[h]ostapd
+[%s]:[%s] - Detected WiFi OFF, go for suspend exit code:%d 
+[%s]:[%s] - Detected WiFi ON, Skip suspend exit code:%d
+[%s]:[%s] - SYSTEM_SUSPEND, NEXT_WAKEUP_TIME=%u
+[%s]:[%s] - Suspend Faked
+[%s]:[%s] - %s: system_suspend complete: ss_to_count=%d
+[%s]:[%s] - RESUME without a valid SUSPEND session?
+[%s]:[%s] - SYSTEM_RESUME, SUSPENDED_TIME = %llu msec
+[%s]:[%s] - Deep sleep on %d
+[%s]:[%s] - high temperature detected
+[%s]:[%s] - POWERSAVE_HIGH_TO_NORMAL_TEMP_DETECTED
+/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+[%s]:[%s] - Set freq GOV, cur:%s, new value:%s
+/sys/devices/system/cpu/cpufreq
+%s/%s/%s
+up_threshold
+[%s]:[%s] - CPU frequency scaling ENABLED
+performance
+[%s]:[%s] - CPU frequency scaling DISABLED
+[%s]:[%s] - failed to init suspend condition=%s
+[%s]:[%s] - failed to deinit suspend condition=%s
+/dev/null
+[%s]:[%s] - POWERSAVE_MSG_WAKELOCK_ACQUIRE
+[%s]:[%s] - app(%s) found in registry. wakelock acquired.
+[%s]:[%s] - new app(%s) added to registry. wakelock acquired.
+[%s]:[%s] - POWERSAVE_MSG_WAKELOCK_RELEASE
+[%s]:[%s] - app(%s) found in registry. wakelock released.
+[%s]:[%s] -  app(%s) not found. wakelock release ignored
+[%s]:[%s] - POWERSAVE_MSG_IP_CLIENT_CHANGE count=%d
+[%s]:[%s] - POWERSAVE_MSG_SUSPEND_WAKEUP
+[%s]:[%s] - spurios POWERSAVE_MSG_SUSPEND_WAKEUP? resetting the device state.
+[%s]:[%s] - periodic wakeup - battery temperature=%s
+[%s]:[%s] - POWERSAVE_MSG_POWER_BUTTON_STATE_CHANGE
+[%s]:[%s] - POWERSAVE_MSG_ACM_STATE_CHANGE
+[%s]:[%s] - POWERSAVE_MSG_USB_STATE_CHANGE=%s
+[%s]:[%s] - POWERSAVE_MSG_DISPLAY_STATE_CHANGE=%s
+[%s]:[%s] - POWERSAVE_MSG_GPIO_STATE_CHANGE
+[%s]:[%s] - POWERSAVE_MSG_CHARGER_DET_CHANGE=%s
+[%s]:[%s] - POWERSAVE_MSG_BATTERY_DET_CHANGE=%s
+[%s]:[%s] - POWERSAVE_MSG_BATTERY_STATE_CHANGE=%s
+[%s]:[%s] - POWERSAVE_MSG_DSM_POWER_STATE_CHANGE=%s
+[%s]:[%s] - POWERSAVE_MSG_BATTERY_TEMPERATURE_STATE_CHANGE=%s
+[%s]:[%s] - ELAPSED_TIME=%.3f sec
+[%s]:[%s] - TOTAL_IDLE_TIME=%llu sec
+[%s]:[%s] - TOTAL_IDLE_TIME=%llu sec previous_elapsed_time_msec: %llu
+[%s]:[%s] - device idle shutdown time expired
+[%s]:[%s] - REACHED_DEEP_SLEEP_WAKE_UP_TIME
+/opt/nvtl/etc/powersave/config.xml
+[%s]:[%s] - load the powersave configuration
+/Config/Init/Profile
+[%s]:[%s] - suspend settings: profile=%s
+/Config/Init/PollingInterval
+/Config/Init/FreqScalingEnabled
+/Config/Init/FreqScalingGovernor
+/Config/Init/FreqScalingOptions
+/Config/Suspend/PeriodicWakeup
+[%s]:[%s] - suspend settings: poll_time=%llu suspend_wakeup_time=%llu
+/Config/Suspend/Condition
+/Config/Suspend/Condition[%d]
+[%s]:[%s] - suspend_condition%d=%s
+[%s]:[%s] - condition parsing error
+/Config/Suspend/Level
+/Config/Suspend/Level[%d]
+[%s]:[%s] - suspend_level%d=%s
+[%s]:[%s] - level parsing error
+[%s]:[%s] - Failed to open configuration file: %s
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - Failed to initialize settings. powersave DISABLED in features.xml
+[%s]:[%s] - Failed to initialize settings. powersave_get_settings(%s) returned %d
+powersave.settings
+[%s]:[%s] - Failed to initialize settings. powersave DISABLED in settings.xml
+[%s]:[%s] - invalid deep sleep idle time. cannot be greater than shutdown idle time
+[%s]:[%s] - suspend :%d, enable_suspend_only_when_wifi_off : %d, deepsleep : %d shutdown : %d
+[%s]:[%s] - powersave settings initialized successfully
+[%s]:[%s] - Unloading powersave_notify clients
+[%s]:[%s] - Preparing to load client .so's @ /opt/nvtl/lib/powersave
+/opt/nvtl/lib/powersave
+[%s]:[%s] - Error opening %s: %s.
+powersave_notify
+[%s]:[%s] - Error loading powersave_notify function %s: %s.
+[%s]:[%s] - Loaded powersave_notify client %s -> %x
+[%s]:[%s] - Finished loading powersave_notify clients from .so's @ /opt/nvtl/lib/powersave
+[%s]:[%s] - dsm sub-system is not ready. retries left %d
+[%s]:[%s] - dsm get state failed
+[%s]:[%s] - dsm subsystem is not ready. timed out.
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - Error initializing powersave settings, terminating.
+[%s]:[%s] - Error initializing powersave configuration, terminating.
+[%s]:[%s] - Error initializing system suspend configuration, terminating.
+[%s]:[%s] - Error opening message queue: %d, terminating.
+[%s]:[%s] - error initializing netlink event thread
+[%s]:[%s] - error initializing suspend conditions
+[%s]:[%s] - powersave state machine started
+[%s]:[%s] - error initializing dsm subsystem
+mifi_powersave
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s Server Terminating.
+get_interface_info
+powersave_susp_cond_check_sdcard
+powersave_slic_event_handler
+system_suspend_init
+system_suspend
+powersave_system_suspend
+dsm.broadcast
+dmdb.connected.device.list
+powersave.settings
+POWERSAVE
+[%s]:[%s] - %s: From channel %s received message [%s]!
+POWERSAVE_MBH
+[%s]:[%s] - %s: MsgBus_Create Failed
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe Refresh Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+/powersave_mq
+POWERSAVE
+[%s]:[%s] - powersave_send_slic_wakeup::msgq_send_async failed: %s
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

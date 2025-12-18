@@ -1,0 +1,60 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+EVP_bf_cbc
+OPENSSL_1_1_0
+libcrypto.so.1.1
+EVP_aes_256_cbc
+EVP_aes_128_cbc
+EVP_aes_192_cbc
+EVP_des_cbc
+EVP_des_ede3_cbc
+EVP_BytesToKey
+EVP_CIPHER_CTX_new
+EVP_CIPHER_CTX_reset
+EVP_EncryptInit
+EVP_EncryptUpdate
+EVP_EncryptFinal
+EVP_CIPHER_CTX_free
+EVP_DecryptInit
+EVP_DecryptUpdate
+EVP_DecryptFinal
+H	KxD	J{D
+awk -F":" '{if(/^root:/){print $2}}' /etc/passwd > ./rhash.txt
+./rhash.txt
+invalid cipher
+read error
+error in encrypt update
+error in encrypt final
+write error
+error in decrypt update
+error in decrypt final
+invalid password
+input file error
+output file error
+Invalid arguments: <encrypt|decrypt> <src> <dest>
+Failed to encrypt file %s
+Failed to decrypt file %s
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

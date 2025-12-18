@@ -1,0 +1,61 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>Ela mostra o status da conex
+ internet atrav
+s da rede m
+vel. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>O nome da rede m
+ qual este dispositivo est
+ conectado no momento. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>A tecnologia da rede utilizada na conex
+o atual. A LTE 
+ a tecnologia mais veloz dispon
+vel hoje em dia. </p> 
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>Para a atual sess
+o da internet, o per
+odo de tempo decorrido desde que a conex
+o foi estabelecida. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))>
+	<p>Para a atual sess
+o da internet, a quantidade de dados recebidos. Este contador come
+a a partir do zero quando a conex
+ estabelecida. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>Para a atual sess
+o da internet, a quantidade de dados transmitidos. Este contador come
+a a partir do zero quando a conex
+ estabelecida. </p>
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+	<p> O endere
+o IP da internet atribu
+do a esse dispositivo. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))>
+	<p> A m
+scara de rede associada ao endere
+o IP acima. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	<p> O endere
+o IP do gateway associado ao endere
+o IP acima. </p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))>
+	<p> O Servidor de Nomes de Dom
+nios usado por esse dispositivo. </p>
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+	<p>O endere
+o IPv6 global do <tmpl_var _("webui", "webui_product_name")> est
+ exibido aqui. Este campo estar
+ em branco se o IPv6 estiver desativado ou n
+o for suportado pela conex
+o da rede atual. </p>
+<!-- id="status_internet" -->

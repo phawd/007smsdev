@@ -1,0 +1,53 @@
+<!-- WiFi Advanced -->
+<div id="wifi_advanced">
+	<h1>Wi-Fi</h1>
+	<h2>Översikt</h2>
+	<p>Normalt sett kan dessa Wi-Fi-inställningar lämnas med sina standardvärden, men vid behov kan du justera dem så att de passar just din miljö.</p>
+
+	<h2>På/av-kontroll för Wi-Fi</h2>
+	<p>Använd denna kontroll för att slå på eller stänga av Wi-Fi efter behov. Om den är avstängd kommer inte <tmpl_var _("webui", "webui_product_name_with_suffix")>s Wi-Fi-nätverk att vara tillgängligt, så det enda sättet att ansluta till <tmpl_var _("webui", "webui_product_name")> kommer att vara att använda en USB-kabel.</p>
+
+	<h3>Tillåt att ändringar av Wi-Fi-inställningar görs från Jetpack-skärmen</h3>
+	<p>Använd denna kontroll för att slå på eller stänga av Wi-Fi efter behov. Om den är avstängd kommer inte Wi-Fi-nätverket att vara tillgängligt, så det enda sättet att ansluta till kommer att vara att använda en USB-kabel.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_max_connections_label")></h3>
+	<p>Ställ in hur många enheter som samtidigt kan ansluta till <tmpl_var _("webui", "webui_product_name_with_suffix")>s Wi-Fi-nätverk.</p>
+
+	<h2><tmpl_var _("webui", "wifi_advanced_profile_title")></h2>
+	<p>Dessa inställningar bestämmer hur varje band (2,4 GHz och 5 GHz) används och bestämmer om Wi-Fi-nätverket för gäster är tillgängligt.</p>
+	<tmpl_if SwapToggleButtonAction>
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_ghz_band_label")></h3>
+		<p>Det 2,4 GHz 802.11-läge som detekteras automatiskt visas.</p>
+	<tmpl_else>
+		<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_ghz_band_label")></h3>
+		<p>Välj önskat alternativ för att tillämpa detta band på det primära nätverket, gästnätverket eller stänga av det här bandet.</p>
+
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_advanced_five_ghz_band_label")></h3>
+	<p>Välj önskat alternativ för att tillämpa detta band på det primära nätverket, gästnätverket eller stänga av det här bandet. Observera att du inte kan stänga av båda banden.</p>
+
+	<h2><tmpl_var _("webui", "wifi_advanced_two_point_four_g_band_options_title")></h2>
+	<p>Dessa inställningar är dolda som standard, men du kan klicka på rubriken/länken för att synliggöra dem. Dessa inställningar används när 2,4 GHz-bandet är aktivt.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_g_802_11_mode_label")></h3>
+	<p>Använd den här inställningen för att ändra Wi-Fi-läget, om så krävs. Vanligtvis lämnar du den här inställningen med dess standardvärde.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_g_channel_label")></h3>
+	<p>Detta bör stå kvar på <strong>Automatisk</strong> om du inte behöver välja en viss kanal för din miljö.</p>
+
+	<h2><tmpl_var _("webui", "wifi_advanced_five_g_options_title")></h2>
+	<p>Dessa inställningar är dolda som standard, men du kan klicka på rubriken/länken för att synliggöra dem. Dessa inställningar används när 5 GHz-bandet är aktivt.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_802_11_mode_label")></h3>
+	<p>Använd den här inställningen för att ändra Wi-Fi-läget, om så krävs. Generellt finns det ingen anledning att ändra standardvärdet.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_bandwidth_label")></h3>
+	<p>Välj önskat alternativ. Standardvärdet ska användas såvida du inte erfar interferens med andra Wi-Fi-enheter. I så fall kan minskning av bandbredden minska interferensen.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_channel_label")></h3>
+	<p>Detta bör stå kvar på <strong>Automatisk</strong> om du inte behöver välja en viss kanal för din miljö.</p>
+
+</div>
+
+<!-- id="wifi_advanced" -->
+

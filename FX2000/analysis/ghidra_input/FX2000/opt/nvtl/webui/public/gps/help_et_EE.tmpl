@@ -1,0 +1,48 @@
+<div id="gps_status">
+	<h1><tmpl_var _("webui", "gps_status_menu_text")></h1>
+	<h2>Ülevaade</h2>
+	<p>Seadmel <tmpl_var _("webui", "webui_product_name")> on GPS-vastuvõtja. GPS-vastuvõtja saab määrata teie praeguse asukoha, sageli isegi siseruumides.<tmpl_if GPSOverWiFiEnableShow>Sellel lehel kuvatakse praegune asukoht ja asukohateavet saab jagada ühendatud arvutitega, kasutades funktsiooni GPS Wi-Fi kaudu.</tmpl_if>
+	</p>
+
+	<h2>GPS-i kasutamine</h2>
+
+	<tmpl_if GPSEnableShow>
+		<h3><tmpl_var _("webui", "gps_status_enable_label")></h3>
+		<p>Kasutage seda SEES/VÄLJAS nuppu GPS-funktsiooni sisse- või väljalülitamiseks.</p>
+		<h3><tmpl_udf GET_PO_TEXT("gps_status_startup_state_label", gProductName)></h3>
+		<p>See säte määrab, millal GPS-vastuvõtja pärast sisselülitamist välja lülitub.</p>
+		<p>Kui see on SEES, lülitub GPS-vastuvõtja välja, kui seade <tmpl_var _("webui", "webui_product_name")> on välja lülitatud. Järgmine kord, kui GPS-vastuvõtjat vajate, peate selle uuesti sisse lülitama.</p>
+	</tmpl_if>
+
+		<h3>GPS-i olek</h3>
+		<p>Kui GPS-vastuvõtja ei ole veel asukohta kindlaks määranud, kuvatakse olek <strong>Otsing</strong>. Kui asukoht on kindlaks määratud, kuvatakse järgmine praeguse asukoha teave ja kuvatakse Google&#39;i kaart, mis näitab visuaalselt praegust asukohta.</p>
+		<h2><tmpl_var _("webui", "gps_status_map_section_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "gps_status_latitude_label"), (size(_("webui", "gps_status_latitude_label")) - size(":")))></h3>
+		<p>Viimase kindlaks määratud asukoha laiuskraad.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_longitude_label"), (size(_("webui", "gps_status_longitude_label")) - size(":")))></h3>
+		<p>Viimase kindlaks määratud asukoha pikkuskraad.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_altitude_label"), (size(_("webui", "gps_status_altitude_label")) - size(":")))></h3>
+		<p>Viimase kindlaks määratud asukoha kõrgus.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_accuracy_label"), (size(_("webui", "gps_status_accuracy_label")) - size(":")))></h3>
+		<p>See on GPS-vastuvõtjaga saadud horisontaalasendi täpsuse mõõt.</p>
+		<tmpl_if GPSOverWiFiEnableShow>
+			<tmpl_if GPSPortNumberShow>		
+				<h2><tmpl_var _("webui", "gps_status_enable_sub_header_text")></h2>
+			
+				<h3><tmpl_var truncate(_("webui", "gps_status_gps_over_wifi_label"), (size(_("webui", "gps_status_gps_over_wifi_label")) - size(":")))></h3>
+				<p>GPS-andmeid pakub National Marine Electronics Associationi (NMEA) <tmpl_var _("webui", "webui_product_name")> tekstivoog.</p>
+				<p>NMEA (GPS) pordi kasutamine on standardmeetod rakenduste juurdepääsuks GPS-andmevoogudele Windowsis ja muudes arvutiplatvormides. Selle pordi loomiseks peate oma platvormi jaoks alla laadima ja paigaldama GPS-i Wi-Fi-draiveri kaudu. See draiver loob NMEA pordi, hangib GPS-andmed seadest <tmpl_var _("webui", "webui_product_name")> ja teeb need GPS-andmed NMEA-teadlikele rakendustele kättesaadavaks.</p>
+
+				<h3><tmpl_var truncate(_("webui", "gps_status_port_number_label"), (size(_("webui", "gps_status_port_number_label")) - size(":")))></h3>
+				<p>See on pordinumber, mida draiveritarkvara kasutab teie arvutis ühenduse loomiseks selle seadmega ja GPS-andmete hankimiseks. Ärge muutke pordinumbrit, kui selleks ei ole mõjuvat põhjust.</p>
+			</tmpl_if>
+		</tmpl_if>
+
+	<tmpl_if GPSDownloadDriversShow>
+		<h3><tmpl_var _("webui", "gps_status_wifi_driver_download_link")></h3>
+		<p>Kasutage seda saadaolevate draiverite allalaadimislehe avamiseks.<tmpl_if GPSOverWiFiEnableShow>Neid draivereid on vaja GPS-i kasutamiseks Wi-Fi kaudu.</tmpl_if>
+		</p>
+	</tmpl_if>
+					
+</div>
+

@@ -1,0 +1,19 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<h2>Panoramica</h2>
+	<p>In genere questi messaggi SMS provengono dal fornitore del servizio. Non si dovrebbe rispondere a tali messaggi e pertanto non 
+ disponibile alcuna funzione di risposta.</p>
+	<h2>Contenuto</h2>
+	<tmpl_if showMessageCounter>
+		<h3>Contatori messaggi</h3>
+		<p>Nella parte superiore dello schermo sono presenti due contatori che indicano il numero di messaggi (nuovi) non letti e il numero totale di messaggi.</p>	
+		<p>Si noti che tutti i messaggi vengono impostati su "letti" una volta che vengono visualizzati in questa schermata.</p>
+	</tmpl_if>
+	<h3>Elenco messaggi</h3>
+	<p>I messaggi vengono elencati in ordine di data. I messaggi (nuovi) non letti sono indicati da un&#39;icona. I messaggi vengono automaticamente contrassegnati come "letti" una volta visualizzati in questa pagina, quindi, la prossima volta che si visita la pagina, non saranno pi
+ visualizzati come non letti.</p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p>Questo pulsante si trova in fondo all&#39;elenco dei messaggi. Usalo quando desideri eliminare tutti i messaggi.</p>
+	</tmpl_if>

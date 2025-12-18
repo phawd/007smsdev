@@ -1,0 +1,33 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>Ylläpitäjän salasana</h1>
+	<h2>Yleiskatsaus</h2>
+	<p>Ylläpitäjän salasanalla kirjaudutaan sisään tälle <tmpl_var _("webui", "webui_product_name")>-laitteen ylläpitäjän verkkosivustolle. <em>Admin Password</em> (Ylläpitäjän salasana) -sivulla voit vaihtaa ylläpitäjän salasanaa ja asettaa joitakin ylläpitäjän salasanaan liittyviä suojausasetuksia.</p>
+
+
+	<h2>Vaihda <tmpl_var _("webui", "webui_product_name")>-laitteen ylläpitäjän salasana</h2>
+	<p>Jotta voit vaihtaa nykyisen ylläpitäjän salasanan, sinun on ensin syötettävä nykyinen ylläpitäjän salasana alla olevaan kenttään. Tämän jälkeen näyttö päivittyy ja tarjoaa mahdollisuutta asettaa uusi ylläpitäjän salasana ja turvakysymys, jota käytetään, jos ylläpitäjän salasana katoaa.</p>
+
+	<h3>Nykyinen <tmpl_var _("webui", "webui_product_name")>-laitteen ylläpitäjän salasana</h3>
+	<p>Syötä nykyinen <tmpl_var _("webui", "webui_product_name")>-laitteen ylläpitäjän salasana tähän kenttään. Huomaa, että jos syötät väärän arvon liian monta kertaa, sinut lukitaan ulos tältä <tmpl_var _("webui", "webui_product_name")>-laitteen ylläpitäjän verkkosivustolta. Jotta voit poistaa tämän lukituksen, <tmpl_var _("webui", "webui_product_name")> on käynnistettävä uudelleen.</p>
+	<tmpl_if showDisplayPascode>
+		<h2>Näytä <tmpl_var _("webui", "webui_product_name")>-laitteen ylläpitäjän salasana</h2>
+		<p>Jos tämä asetus on kytketty PÄÄLLE, ******** näkyy. Jos tämä asetus on kytketty POIS PÄÄLTÄ, ylläpitäjän salasana voidaan lukea Jetpackin näytöstä.</p>
+	</tmpl_if>
+
+	<h2>Vaihda <tmpl_var _("webui", "webui_product_name")>-laitteen ylläpitäjän salasana</h2>
+	<h3>Uusi ylläpitäjän salasana</h3>
+	<p>Syötä uusi ylläpitäjän salasana käyttämällä vain kirjaimia, numeroita ja tavanomaisia välimerkkejä. Salasanan on oltava vähintään 8 merkkiä pitkä.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p>Syötä uusi ylläpitäjän salasana uudelleen tähän kenttään.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>Tätä turvakysymystä käytetään, jos ylläpitäjän salasana katoaa ja ”I forgot the Admin Password” (Unohdin ylläpitäjän salasanan) -vaihtoehtoa käytetään. Valitse haluttu kysymys ja anna vastaus alla olevaan kenttään.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Anna vastaus yllä valittuun turvakysymykseen. Huomaa, että vastauksissa huomioidaan kirjainkoko.</p>
+
+</div>
+<!-- id="set_passcode" -->
+

@@ -1,0 +1,33 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>Administratora parole</h1>
+	<h2>Pārskats</h2>
+	<p>Administratora parole tiek izmantota, lai pierakstītos šajā <tmpl_var _("webui", "webui_product_name")> administratora vietnē. Lapa <em>Administratora parole</em> ļauj mainīt administratora paroli un iestatīt dažas ar administratora paroli saistītas drošības opcijas.</p>
+
+
+	<h2>Mainīt <tmpl_var _("webui", "webui_product_name")> administratora paroli</h2>
+	<p>Lai mainītu pašreizējo administratora paroli, vispirms tālāk redzamajā laukā ir jāievada pašreizējā administratora parole. Pēc tam ekrāns tiks atjaunināts, un tajā būs pieejama opcija, lai iestatītu jaunu administratora paroli un ievadītu drošības jautājumu gadījumam, ja administratora parole ir pazaudēta.</p>
+
+	<h3>Pašreizējā <tmpl_var _("webui", "webui_product_name")> administratora parole</h3>
+	<p>Šajā laukā ievadiet pašreizējo <tmpl_var _("webui", "webui_product_name")> administratora paroli. Ņemiet vērā: ja pārāk daudz reižu ievadīsit nepareizu vērtību, šī <tmpl_var _("webui", "webui_product_name")> administratora vietne tiks bloķēta. Lai noņemtu šo bloķēšanu, <tmpl_var _("webui", "webui_product_name")> ir jārestartē.</p>
+	<tmpl_if showDisplayPascode>
+		<h2>Rādīt <tmpl_var _("webui", "webui_product_name")> administratora paroli</h2>
+		<p>Ja šis iestatījums ir ieslēgts, tiek parādīts ********. Ja šis iestatījums ir izslēgts, administratora paroli var nolasīt Jetpack displejā.</p>
+	</tmpl_if>
+
+	<h2>Mainīt <tmpl_var _("webui", "webui_product_name")> administratora paroli</h2>
+	<h3>Jauna administratora parole</h3>
+	<p>Ievadiet jauno administratora paroli, izmantojot tikai burtus, ciparus un standarta pieturzīmju simbolus. Parolē ir jābūt vismaz 8 rakstzīmēm.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p>Atkārtoti ievadiet jauno administratora paroli šajā laukā.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>Šis drošības jautājums tiek izmantots, ja administratora parole ir pazaudēta un tiek izmantota opcija "Es aizmirsu administratora paroli". Atlasiet vēlamo jautājumu un sniedziet atbildi tālāk redzamajā laukā.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Sniedziet atbildi uz iepriekš atlasīto drošības jautājumu. Ņemiet vērā, ka atbildes ir reģistrjutīgas.</p>
+
+</div>
+<!-- id="set_passcode" -->
+

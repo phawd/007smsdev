@@ -1,0 +1,4 @@
+<option value="<tmpl_var authTypeNone>"<tmpl_if IN_SET(NetworksFourGLTEAPNAuthentication, authTypeNone)> selected="selected"</tmpl_if>><tmpl_var _("webui", "wwan_settings_authentication_none_text")></option>
+<option value="<tmpl_var authTypePAP>"<tmpl_if IN_SET(NetworksFourGLTEAPNAuthentication, authTypePAP)> selected="selected"</tmpl_if>><tmpl_var _("webui", "wwan_settings_authentication_pap_text")></option>
+<option value="<tmpl_var authTypeCHAP>"<tmpl_if IN_SET(NetworksFourGLTEAPNAuthentication, authTypeCHAP)> selected="selected"</tmpl_if>><tmpl_var _("webui", "wwan_settings_authentication_chap_text")></option>
+<option value="<tmpl_var authTypePAPOrCHAP>"<tmpl_if IN_SET(NetworksFourGLTEAPNAuthentication, authTypePAPOrCHAP)> selected="selected"</tmpl_if>><tmpl_var _("webui", "wwan_settings_authentication_pap_chap_text")></option>

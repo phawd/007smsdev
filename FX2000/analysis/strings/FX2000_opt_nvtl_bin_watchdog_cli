@@ -1,0 +1,81 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+watchdog_get_app_list
+watchdog_get_error_string
+watchdog_application_send_keep_alive
+__isoc99_scanf
+GLIBC_2.7
+watchdog_application_register
+watchdog_set_settings
+watchdog_get_settings
+watchdog_is_running
+mifi_dbg_start
+__bss_start
+libmificommon.so
+libmifi_debug.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+librt.so.1
+libpthread.so.0
+libdl.so.2
+libwatchdog_api.so
+H	KxD	J{D
+watchdog_get_app_list returned %d (%s)
+list[%d].name:[%s]
+What is application name to send keepalive for:  
+watchdog_application_send_keep_alive returned %d (%s)
+What is application name to register:  
+Register ( 1 ) or unregister ( 0 ): 
+watchdog_application_register returned %d (%s)
+What is enabled ( 0 or 1 ): 
+What is interval ( seconds ):  
+watchdog_set_settings returned %d (%s)
+watchdog_get_settings returned %d (%s)
+enabled:[%d]
+interval:[%u]
+watchdog_is_running returned %d (%s)
+  ---------------------------------------------------------------------------
+ %15s - %s
+  ---------------------------------------------------------------------------
+command [%s]
+command [%s] not found.
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+get_settings
+Gets watchdog settings.
+set_settings
+Sets watchdog settings.
+application_register
+Registers or unregisters an application from watchdog.
+application_send_keep_alive
+Sends keepalive for an application.
+get_app_list
+get list of currently registered applications.
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

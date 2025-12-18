@@ -1,0 +1,4 @@
+<option value="<tmpl_var authTypeNone>"<tmpl_if IN_SET(SimMgrApnProfileAuthentication, authTypeNone)> selected="selected"</tmpl_if>><tmpl_var _("webui", "adv_sim_manager_authentication_none_text")></option>
+<option value="<tmpl_var authTypePAP>"<tmpl_if IN_SET(SimMgrApnProfileAuthentication, authTypePAP)> selected="selected"</tmpl_if>><tmpl_var _("webui", "adv_sim_manager_authentication_pap_text")></option>
+<option value="<tmpl_var authTypeCHAP>"<tmpl_if IN_SET(SimMgrApnProfileAuthentication, authTypeCHAP)> selected="selected"</tmpl_if>><tmpl_var _("webui", "adv_sim_manager_authentication_chap_text")></option>
+<option value="<tmpl_var authTypePAPOrCHAP>"<tmpl_if IN_SET(SimMgrApnProfileAuthentication, authTypePAPOrCHAP)> selected="selected"</tmpl_if>><tmpl_var _("webui", "adv_sim_manager_authentication_pap_chap_text")></option>

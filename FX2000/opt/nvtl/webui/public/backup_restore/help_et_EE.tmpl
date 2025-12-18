@@ -1,0 +1,28 @@
+<!-- Backup and Restore -->
+<div id="backup_restore">
+         <h1><tmpl_var _("webui", "backup_restore_menu_text")></h1>
+
+         <h2>Ülevaade</h2>
+         <p>Kasutage seda funktsiooni konfiguratsioonisätete koopia varundamiseks (allalaadimiseks) sellest seadmest arvutis olevasse faili või eelnevalt salvestatud konfiguratsioonifaili taastamiseks (üleslaadimiseks). See konfiguratsioonifail sisaldab kõiki seadme, ruuteri ja süsteemi funktsioonide seadeid. See ei sisalda 4G-modemi seadeid ega andmeid. Pange tähele, et saate faili taastada ainult samasse seadmesse, kust see pärines.</p>
+         <p>See ekraan võimaldab lähtestada kõik seaded tehase vaikeväärtustele.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+         <h3>Administraatori parool</h3>
+         <p>Sisestage sellele väljale praegune <tmpl_var _("webui", "webui_product_name")> administraatori parool.</p>
+         <h3><tmpl_var _("webui", "backup_restore_backup_now_button")></h3>
+         <p>Praeguse konfiguratsioonifaili koopia arvutisse allalaadimiseks klõpsake nuppu Laadi alla. Kui brauser palub teil faili salvestada, saate selle soovi korral ümber nimetada.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+
+         <h3>Administraatori parool</h3>
+         <p>Sisestage sellele väljale praegune <tmpl_var _("webui", "webui_product_name")> administraatori parool.</p>
+         <h3><tmpl_var truncate(_("webui", "backup_restore_file_select_label"), (size(_("webui", "backup_restore_file_select_label")) - size(":")))></h3>
+         <p>Valige konfiguratsioonifail, mille eelnevalt sellest seadmest <tmpl_var _("webui", "webui_product_name")> arvutisse laadisite.</p>
+         <h3>Nupp Taasta kohe</h3>
+         <p>Pärast konfiguratsioonifaili valimist klõpsake sellele nupule, et alustada faili üleslaadimisega. Pärast üleslaadimist rakendatakse konfiguratsioonifail kohe ja seade taaskäivitatakse.</p>
+         <p class="note"><strong>Märkus.</strong> Konfiguratsioonifaili üleslaadimine muudab KÕIKI olemasolevaid seadeid, et need vastaksid konfiguratsioonifailile. See võib muuta praeguseid Wi-Fi seadeid, katkestades kõik olemasolevad ühendused seadmega <tmpl_var _("webui", "webui_product_name")>, sh selle veebibrauseri seansi.</p>
+
+         <h2><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+         <p>Klõpsake nuppu <strong>Taasta tehase vaikeseaded</strong>, et lähtestada kõik seaded tehase vaikeväärtustele. See põhjustab taaskäivitumise ja võib muuta praeguseid Wi-Fi seadeid, katkestades kõik olemasolevad ühendused selle seadmega <tmpl_var _("webui", "webui_product_name")>, sh selle veebibrauseri seansi.</p>
+</div>
+ <!-- id="backup_restore" -->

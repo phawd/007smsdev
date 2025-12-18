@@ -1,0 +1,29 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+	<p>Denne sk
+rm indeholder mange indstillinger, der giver dig mulighed for at indstille <tmpl_var _("webui", "webui_product_name")>s adf
+rd for bedre at im
+dekomme dine behov.</p>
+	<h3>Sprog</h3>
+nskede sprog.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+	<p>Specific
+r det format, som datoen vises i, p
+ denne webbaserede interface.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+	<p>Specific
+r det format, som tiden vises i, p
+ denne webbaserede interface.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+lg den enhed, der skal bruges til GPS-h
+jde og -n
+jagtighed.</p>
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+	<p>Angiv, hvordan decimaltal vises. Punktum (.) eller komma (,) kan v
+lges til brug som decimalpunkt.</p>
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+		<p>Ethernet-indikatoren vises p
+ statuslinjen, n
+r Ethernet-porten er aktiveret; ellers er den skjult.</p>
+	</tmpl_if>

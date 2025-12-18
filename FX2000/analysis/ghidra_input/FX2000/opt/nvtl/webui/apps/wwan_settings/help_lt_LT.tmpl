@@ -1,0 +1,79 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p>Šią ĮJUNGIMO / IŠJUNGIMO nuostatą galite naudoti, kai reikia išjungti mobiliojo ryšio duomenų perdavimą ir neleisti pasiekti mobiliojo ryšio tinklo. Taip neleidžiama prijungtiems įrenginiams prisijungti prie interneto ir naudoti mobiliojo ryšio duomenų plano. Įprastai veikiant šią nuostatą reikia palikti įjungtą.</p>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Ryšio parinktis</h3>
+			<p>Pasirinkite norimą parinktį, kad galėtumėte kontroliuoti, kada bus užmegztas <tmpl_var _("webui", "webui_product_name")> duomenų ryšys su mobiliojo ryšio tinklu.</p>
+	</tmpl_if>
+
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>Naudokite šią nuostatą norėdami prireikus įjungti arba išjungti tarptautinį ir vietinį tarptinklinį ryšį. Tarptinkliniam ryšiui gali būti taikomi papildomi duomenų perdavimo mokesčiai.</p>
+	</tmpl_if>
+
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p>Numatytoji vertė yra „<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>“. <tmpl_var _("webui", "webui_product_name")> pasirinks geriausią galimą technologiją.</p>
+		<p>Jei norite, galite tai pakeisti, kad apribotumėte tinklo technologijas, kurios bus naudojamos.</p>
+	</tmpl_if>
+
+	<h3>Neautomatinis tinklo pasirinkimas</h3>
+		
+	<p>
+		Ši funkcija galima tik išjungus aktyvinto automatinio tinklo pasirinkimo funkciją. Tai gali būti naudinga, jei yra keli tinklai ir galite pasirinkti, kurį iš jų naudoti.
+	</p>
+	<p>
+		Norėdami nuskaityti galimus tinklus, spustelėkite mygtuką „Pasirinkti tinklą“; tada galite pasirinkti pageidaujamą tinklą.
+	</p>
+	
+	
+	<tmpl_if showApnSettings>
+		<tmpl_if ShowAdvancedSettingsToggleButton>
+			<h2>Išplėstinės nuostatos</h2>
+			<p>
+				Naudokite šią antraštę / saitą norėdami, kad būtų rodomos arba slepiamos papildomos nuostatos.
+			</p>
+		</tmpl_if>
+
+		<h3>
+			<tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))>
+		</h3>
+		<p>
+			APN yra iš anksto sukonfigūruotas; neturėtumėte keisti APN, nebent naudojatės įmonės paskyra (su savo APN).
+		</p>
+
+		<p>
+			Jei reikia pakeisti APN, įveskite mobiliojo ryšio tinklo paslaugų teikėjo pateiktą reikšmę.
+		</p>
+
+		<tmpl_if showApnAuthenticationSettings>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))>
+			</h3>
+			<div class="blockgroup">
+				<p>Pasirinkite paslaugų teikėjo nurodytą parinktį.</p>
+				<ul>
+					<li>Nėra</li>
+					<li>PAP</li>
+					<li>CHAP</li>
+				</ul>
+			</div>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))>
+			</h3>
+			<p>
+				Jei „Autentifikavimas“ reikšmė <strong>Nėra</strong>, šį lauką galima palikti tuščią. Priešingu atveju įveskite paslaugų teikėjo nurodytą reikšmę.
+			</p>
+			<h3>
+				<tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))>
+			</h3>
+			<p>
+				Jei „Autentifikavimas“ reikšmė <strong>Nėra</strong>, šį lauką galima palikti tuščią. Priešingu atveju įveskite paslaugų teikėjo nurodytą reikšmę.
+			</p>
+		</tmpl_if>
+	</tmpl_if>
+</div>

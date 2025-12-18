@@ -1,0 +1,91 @@
+<script type="text/javascript">
+/* <![CDATA[ */
+var maxSize = parseInt("<tmpl_var maxSideloadPackSize>");
+var isErrorProcessed = false;
+$(function()
+    <tmpl_if gPostSuccess>
+        window.location = '<tmpl_udf GET_URI("sideload_software_install")>';
+        toggleFileProcess("show");
+    </tmpl_if>
+    // The files object is only supported by HTML5 browsers. So, IE9 and less cannot safely upload files to the device.
+    if (window.FileReader) {
+        $("#softwareUpdateFile").on("change", function(){
+            var file = this.files[0];
+            var filesize = file.size;
+            var defaultErrorText = $("#softwareUpdateFileErrorMsg").html();
+            if (filesize > maxSize) {
+                $("#softwareUpdateFile").addClass("error");
+                $("#softwareUpdateFileErrorMsg").html('<tmpl_udf GET_PO_TEXT("sideload_software_update_file_unacceptable_size_error_text", maxSizeInMB)>');
+                $("#softwareUpdateFileErrorMsg").show();
+                $("#sideloadUploadFile").prop("disabled", true);
+                if (jQuery.uniform) $.uniform.update();
+            } else {
+                $("#softwareUpdateFile").removeClass("error");
+                $("#softwareUpdateFileErrorMsg").html(defaultErrorText);
+                $("#softwareUpdateFileErrorMsg").hide();
+                $("#sideloadUploadFile").prop("disabled", false);
+                if (jQuery.uniform) $.uniform.update();
+            }
+        });
+    } else {
+        $("#note").removeClass("note").addClass("warning").html("<tmpl_var _('webui', 'sideload_software_update_nonhtml5_warning_text')>");
+        $("#sideloadForm .button_container, #uploadInput").hide();
+    $("#sideloadUploadFile").on("click", function() {
+        statusStop();
+function statusStop()
+    if ($.statusBar) $.statusBar("stop");
+function toggleFileProcess(showHide)
+    if (showHide === "show") {
+        $("#softwareUpdateFileProcessingMsg").show();
+        $("#sideloadUploadFile").prop("disabled", true);
+    } else if (showHide === "hide") {
+        $("#softwareUpdateFileProcessingMsg").hide();
+        $("#sideloadUploadFile").prop("disabled", false);
+    if (jQuery.uniform) $.uniform.update("#sideloadUploadFile");
+/* ]]> */
+</script>
+<tmpl_if errorCount>
+    <div class="notification app error">
+        <div class="notification_inner">
+            <tmpl_var _("webui", "sideload_software_upload_failed_text")>
+        </div>
+    </div>
+</tmpl_if>
+        <h2 class="sectionHead"><tmpl_udf GET_PO_TEXT("sideload_software_update_header", gProductNumber, gProductName)></h2>
+        <p id="note" class="note">
+            <tmpl_var _("webui", "sideload_software_update_help_text")>
+        </p>
+<form id="sideloadForm" method="POST" action="<tmpl_udf GET_URI('sideload_software_update')>" enctype="multipart/form-data">
+    <fieldset id="sideload_field">
+        <input type="hidden" id="gSecureToken" name="gSecureToken" value="<tmpl_var gSecureToken>" />
+        <input type="hidden" id="isRequestSent" name="isRequestSent" value="<tmpl_var isRequestSent>" />
+        <div id="uploadInput">
+            <h3 class="sectionHead"><tmpl_var _("webui", "sideload_software_update_subheader")></h3>
+            <div class="table">
+                <div class="form-group clearfix">
+                    <div id="sideloadUpdateLabel" class="label">
+                        <label><tmpl_var _("webui", "sideload_software_update_file_select_label")></label>
+                    </div>
+                    <div class="input filetype">
+                        <input type="file" name="softwareUpdateFile" id="softwareUpdateFile"<tmpl_if softwareUpdateFileError> class="error"</tmpl_if> />
+                    </div>
+                    <div id="softwareUpdateFileErrorMsg" class="inline_error"<tmpl_unless softwareUpdateFileError> style="display:none;"</tmpl_unless>>
+                        <tmpl_if softwareUpdateFileError>
+                            <tmpl_var softwareUpdateFileError>
+                        <tmpl_else>
+                            <tmpl_var _("webui", "sideload_software_update_validation_error_text")>
+                        </tmpl_if>
+                    </div>
+                  <div class="clearfix"></div>   
+                </div><!-- /.row -->
+                <div class="button_container align-field clearfix">
+                    <button type="submit" id="sideloadUploadFile" class="primary">
+                        <tmpl_var _("webui", "sideload_software_update_file_upload_button")>
+                    </button>
+                </div> 
+            </div><!-- /.table -->
+        </div>
+        <p id="softwareUpdateFileProcessingMsg" class="loading" style="display:none;">
+            <tmpl_var _("webui", "sideload_software_update_processing_text")>
+        </p>
+    </fieldset>

@@ -22,6 +22,15 @@ try:
 except Exception:  # pyserial optional
     list_ports = None
 
+import os
+import sys
+sys.path.append(os.path.dirname(__file__))
+try:
+    from zerosms_safety import confirm_danger
+except Exception:
+    def confirm_danger(allow_flag: bool = False, prompt: Optional[str] = None, force_yes: bool = False) -> bool:  # type: ignore
+        return allow_flag or os.environ.get("ZEROSMS_DANGER_DO_IT", "0") == "1"
+
 DIAG_PROPERTIES = [
     "persist.vendor.usb.config",
     "persist.sys.usb.config",
@@ -85,6 +94,7 @@ class ProbeResult:
 
 
 USE_ROOT = True
+DANGER_DO_IT = False
 
 
 def check_prerequisites() -> None:
@@ -231,6 +241,14 @@ def build_arg_parser() -> argparse.ArgumentParser:
         "--adb-non-root",
         action="store_true",
         help="Run adb shell commands without invoking su",
+    )
+    parser.add_argument(
+        "--danger-do-it",
+        action="store_true",
+        help=(
+            "Enable dangerous operations (NV/EFS writes, unlocks). Requires "
+            "typing 'DO IT' where prompted, or set ZEROSMS_DANGER_DO_IT=1."
+        ),
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -556,6 +574,8 @@ def main() -> None:
     args = parser.parse_args()
     global USE_ROOT
     USE_ROOT = not args.adb_non_root
+    global DANGER_DO_IT
+    DANGER_DO_IT = getattr(args, 'danger_do_it', False)
 
     if args.command == "diag":
         if args.ai:
@@ -610,6 +630,28 @@ def main() -> None:
                     f"{port['device']:<15} {port['description']} "
                     f"({port['hwid']})"
                 )
+    elif args.command == "profile":
+        print("[+] Running full ADB diagnostic/profile...")
+        sections = [
+            ("getprop", "adb shell getprop"),
+            ("cpuinfo", "adb shell cat /proc/cpuinfo"),
+            ("meminfo", "adb shell cat /proc/meminfo"),
+            ("partitions", "adb shell cat /proc/partitions"),
+            ("mounts", "adb shell cat /proc/mounts"),
+            ("ifconfig", "adb shell ifconfig"),
+            ("netstat", "adb shell netstat -an"),
+            ("lsusb", "adb shell lsusb"),
+            ("dmesg_tail", "adb shell dmesg | tail -n 100"),
+            ("logcat_tail", "adb shell logcat -d -t 100"),
+        ]
+        profile = {}
+        for key, cmd in sections:
+            try:
+                proc = subprocess.run(cmd, shell=True, capture_output=True, text=True, check=False)
+                profile[key] = proc.stdout.strip()
+            except Exception as exc:
+                profile[key] = f"[ERROR] {exc}"
+        print(json.dumps(profile, indent=2))
     else:
         parser.error("Unsupported command")
 

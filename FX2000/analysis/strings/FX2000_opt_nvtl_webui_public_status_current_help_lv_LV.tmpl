@@ -1,0 +1,88 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>Tas par
+da interneta savienojuma statusu, izmantojot mobilo t
+klu.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+kla nosaukums, ar kuru 
+laik ir savienota.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+jam savienojumam izmantot
+kla tehnolo
+ija. LTE ir 
+ pieejam
+ tehnolo
+ija.</p> 
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+jai interneta sesijai 
+ laika periods, kas pag
+ savienojuma izveides.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))></h3>
+ interneta sesij
+emto datu apjoms. 
+is skait
+t no nulles, kad ir izveidots savienojums.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+ interneta sesij
+to datu apjoms. 
+is skait
+t no nulles, kad ir izveidots savienojums.</p>
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+ interneta IP adrese.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))></h3>
+kla maska, kas saist
+ta ar iepriek
+to IP adresi.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+rtejas IP adrese, kas saist
+ta ar iepriek
+to IP adresi.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))></h3>
+nu nosaukumu serveris, ko pa
+laik izmanto 
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+eit tiek par
+ta <tmpl_var _("webui", "webui_product_name")> glob
+ IPv6 adrese. 
+is lauks b
+s, ja IPv6 ir izsl
+gts vai to neatbalsta pa
+kla savienojums.</p>
+	<tmpl_if InternetStatusViewSessionShow>
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+	<p>Sesiju 
+tie dati.</p>
+	<p>- Datums un laiks (kad izveidots savienojums)</p>
+	<p>- Ilgums (t
+cija par pa
+jo sesiju)</p>
+	<p>- Sa
+emts (form
+jai sesijai)</p>
+ts (form
+jai sesijai)</p>
+	<p>- Kop
+jais datu apjoms (Rx un Tx summa, form
+ds pats k
+s sesijas inform
+cijai)</p>
+	<p>- Viesabon
+ana (Viesabon
+	<p>- IPv4 (IPv4 WWAN IP adrese)</p>
+	<p>- IPv6 (IPv6 WWAN IP adrese)</p>
+ls ir datumu sec
+	<p>Lietot
+js nevar main
+bu, un nav ar sesiju 
+lu saist
+tu opciju.</p>
+	</tmpl_if>
+<!-- id="status_internet" -->

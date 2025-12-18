@@ -1,0 +1,83 @@
+<!-- Software Update -->
+<div id="software_update">
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+valga</h2>
+		<p>Programin
+rangos naujiniai automati
+kai pateikiami per mobiliojo ry
+io tinkl
+iame puslapyje galite steb
+iuos naujinius.</p>
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+	<h3><tmpl_var _("webui", "software_update_current_software_modem_version_label")></h3>
+        <p>
+                The version of software currently installed for the modem component.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_kernel_version_label")></h3>
+        <p>
+                The version number for the Operating System and its components.
+        </p>
+        <tmpl_if showAppVersion>
+                <h3><tmpl_var _("webui", "software_update_current_software_app_version_label")></h3>
+                <p>
+                        The app version currently installed.
+                </p>
+        </tmpl_if>
+        <h3><tmpl_var _("webui", "software_update_current_software_cute_version_label")></h3>
+        <p>
+                The cute version of the software currently installed on your device.
+        </p>
+        <h3><tmpl_var _("webui", "software_update_current_software_pri_version_label")></h3>
+        <p>
+                The configuration version currently applied to your device.
+        </p>
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var _("webui", "software_update_current_software_configuration_version_label")></h3>
+				<p><tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")></p>
+		</tmpl_if>
+	</tmpl_if>
+	<h2><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+	<h3><tmpl_var _("webui", "software_update_check_for_update_time_label")></h3>
+iame lauke parodoma, kada paskutin
+ buvo tikrinta, ar yra <tmpl_var _("webui", "webui_product_name")> naujini
+. Spustel
+Tikrinti, ar yra naujini
+, galite neautomati
+kai patikrinti, ar yra naujini
+	<h3>Mygtukas 
+Tikrinti, ar yra naujini
+ galite naudoti nor
+dami patikrinti, ar j
+ <tmpl_var _("webui", "webui_product_name")> yra naujini
+. Paprastai to daryti neb
+tina, nes naujiniai automati
+kai perkeliami 
+ <tmpl_var _("webui", "webui_product_name")>. Jei atlikus 
+ patikrinim
+ prieinamas naujinys, jis bus atsisi
+stas automati
+kai.</p>
+	<h3><tmpl_var _("webui", "software_update_check_for_update_status_label")></h3>
+		<p>Paprastai 
+is laukas b
+iau jeigu tikrinate, ar yra naujini
+ia rodomas to patikrinimo rezultatas. Be to, jei atsisiun
+iamas naujinys, 
+ia rodoma atsisiuntimo eiga.</p>
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+iame skydelyje rodoma i
+sami paskutinio programin
+rangos naujinio informacija.</p>
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+ galima atverti spustel
+jus sait
+ / antra
+. Sistemos naujinimo istorijoje pateikiama i
+sami informacija apie paskutinius <tmpl_var SoftwareUpdateHistoryCount> naujinius, kurie buvo atsisi
+. Jei naujini
+diegta, 
+iame skydelyje bus rodoma dabartin
+ programin
+rangos versija.</p>
+<!-- end Software Update -->

@@ -1,0 +1,15 @@
+<div id="header" role="region" class="">
+	<div class="mt-container">
+		<div id="header_inner" class="mt-row d-flex flex-wrap">
+			<div class="column md-3">
+				<a id="carrier_logo" href="<tmpl_udf GET_URI('apps_home')>" title="<tmpl_udf GET_PO_TEXT('vzw_header_go_home_link', gProductName)>">
+					<img src="/<tmpl_var gBaseAssetsPath>/images/logos/header_logo.png" alt="<tmpl_var _("webui", "webui_header_logo_attr" )>" />
+					<span class="productName"></span>
+					<span class="productNumber">
+						<tmpl_udf GET_PO_TEXT("status_bar_carrier_logo_sub_chunk_product_name_text", gProductName)>&nbsp;<tmpl_udf GET_PO_TEXT("status_bar_carrier_logo_sub_chunk_product_number_text", gProductNumber)>
+					</span>
+				</a>
+			</div>
+		</div><!-- /#header-inner -->
+	</div>
+</div><!-- /#header -->

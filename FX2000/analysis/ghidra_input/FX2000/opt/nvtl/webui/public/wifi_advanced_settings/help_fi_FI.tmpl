@@ -1,0 +1,53 @@
+<!-- WiFi Advanced -->
+<div id="wifi_advanced">
+	<h1>Wi-Fi</h1>
+	<h2>Yleiskatsaus</h2>
+	<p>Nämä Wi-Fi-asetukset voidaan yleensä jättää oletusarvoihinsa, mutta tarvittaessa voit säätää niitä ympäristösi mukaan.</p>
+
+	<h2>Wi-Fi päälle / pois päältä -säädin</h2>
+	<p>Kytke Wi-Fi päälle tai pois päältä tällä säätimellä tarpeen mukaan. Jos tämä on kytketty pois päältä <tmpl_var _("webui", "webui_product_name_with_suffix")>-laitteen Wi-Fi-verkko ei ole käytettävissä, joten <tmpl_var _("webui", "webui_product_name")>-laitteeseen voi muodostaa yhteyden vain USB-kaapelia käyttämällä.</p>
+
+	<h3>Salli Wi-Fi-asetusten muutosten tekeminen Jetpack-näytöstä</h3>
+	<p>Kytke Wi-Fi päälle tai pois päältä tällä säätimellä tarpeen mukaan. Jos tämä on kytketty pois päältä, Wi-Fi-verkko ei ole käytettävissä, joten yhteyden voi muodostaa vain USB-kaapelia käyttämällä.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_max_connections_label")></h3>
+	<p>Määritä, kuinka monta laitetta voi muodostaa samanaikaisesti yhteyden <tmpl_var _("webui", "webui_product_name_with_suffix")>-laitteen Wi-Fi-verkkoon (-verkkoihin).</p>
+
+	<h2><tmpl_var _("webui", "wifi_advanced_profile_title")></h2>
+	<p>Tämä asetus määrittää sen, miten kutakin kaistaa (2,4 GHz ja 5 GHz) käytetään, sekä sen, onko Wi-Fi-vierasverkko käytettävissä.</p>
+	<tmpl_if SwapToggleButtonAction>
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_ghz_band_label")></h3>
+		<p>Automaattisesti havaittu 2,4 GHz 802.11 -tila näytetään.</p>
+	<tmpl_else>
+		<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_ghz_band_label")></h3>
+		<p>Valitse haluamasi vaihtoehto: voit käyttää tätä taajuutta ensisijaisessa verkossa tai vierasverkossa taikka kytkeä tämän taajuuden pois päältä.</p>
+
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_advanced_five_ghz_band_label")></h3>
+	<p>Valitse haluamasi vaihtoehto: voit käyttää tätä taajuutta ensisijaisessa verkossa tai vierasverkossa taikka kytkeä tämän taajuuden pois päältä. Huomaa, että et voi kytkeä molempia taajuuksia pois päältä.</p>
+
+	<h2><tmpl_var _("webui", "wifi_advanced_two_point_four_g_band_options_title")></h2>
+	<p>Nämä asetukset ovat oletusarvoisesti piilotettuina, mutta napsauttamalla otsikkoa/linkkiä saat ne näkyviin. Näitä asetuksia käytetään aina, kun 2,4 GHz:n taajuus on aktiivinen.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_g_802_11_mode_label")></h3>
+	<p>Tällä asetuksella voit vaihtaa tarvittaessa Wi-Fi-tilaa. Yleensä tämä asetus jätetään oletusarvoonsa.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_two_point_four_g_channel_label")></h3>
+	<p>Tämä pitäisi jättää <strong>Automatic</strong> (Automaattinen) -tilaan, ellei sinun tarvitse valita tiettyä kanavaa ympäristöllesi.</p>
+
+	<h2><tmpl_var _("webui", "wifi_advanced_five_g_options_title")></h2>
+	<p>Nämä asetukset ovat oletusarvoisesti piilotettuina, mutta napsauttamalla otsikkoa/linkkiä saat ne näkyviin. Näitä asetuksia käytetään aina, kun 5 GHz:n taajuus on aktiivinen.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_802_11_mode_label")></h3>
+	<p>Tällä asetuksella voit vaihtaa tarvittaessa Wi-Fi-tilaa. Yleensä oletusarvoa ei ole syytä vaihtaa.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_bandwidth_label")></h3>
+	<p>Valitse haluttu vaihtoehto. Oletusarvoa pitäisi käyttää, ellet havaitse häiriöitä muissa Wi-Fi-laitteissa. Tällöin kaistanleveyden pienentäminen voi vähentää häiriöitä.</p>
+
+	<h3><tmpl_var _("webui", "wifi_advanced_five_g_channel_label")></h3>
+	<p>Tämä pitäisi jättää <strong>Automatic</strong> (Automaattinen) -tilaan, ellei sinun tarvitse valita tiettyä kanavaa ympäristöllesi.</p>
+
+</div>
+
+<!-- id="wifi_advanced" -->
+

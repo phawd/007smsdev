@@ -163,6 +163,41 @@ nwcli write_nv <NV_ID> <DATA>
 nwcli read_nv 0xEAAC 1
 ```
 
+### 🛡️ New Safety Gate: CLI confirmation
+
+Recent tooling updates add a runtime confirmation gate for dangerous
+operations. When using our Python tools (`mifi_controller.py`,
+`spc_calculator.py`, and `zerosms_cli.py`) you must explicitly enable
+dangerous operations with `--danger-do-it` and type `DO IT` when prompted
+to proceed. Alternatively, set the environment variable
+`ZEROSMS_DANGER_DO_IT=1` to skip prompts in automation.
+
+This is an additional layer to the PR-level `DO IT` sign-off and does not
+replace the requirement to include a documented rollback plan in PRs that
+modify NV operations.
+
+### Option C: PRI Override (mifi_controller.py)
+
+The `mifi_controller.py` tool now supports an "Option C" PRI override flow.
+This operation can be performed via either NV write (NV 60044) or by updating
+the EFS device configuration (`/policyman/device_config.xml`).
+
+Usage:
+
+```bash
+# Dry-run (shows intended change, safe)
+python3 tools/mifi_controller.py pri-override --new-pri NEWPRI --dry-run --method nv
+
+# Apply (requires interactive 'DO IT' confirmation or env var)
+python3 tools/mifi_controller.py pri-override --new-pri NEWPRI --method nv --danger-do-it
+```
+
+Notes:
+- Prefer `--dry-run` to verify the intended change first.
+- `--method nv` writes to NV 60044 (dangerous and requires the safety gate).
+- `--method efs` updates `/policyman/device_config.xml` (backup is created).
+- Always verify the change and keep backups in case a rollback is required.
+
 ---
 
 ## Safe Unlock Workflow (Step-by-Step)

@@ -1,0 +1,40 @@
+<!-- Firewall -->
+<div id="firewall">
+	<h1><tmpl_var _("webui", "adv_firewall_menu_text")></h1>
+	<h2>Pārskats</h2>
+		<p>Ugunsmūris aizsargā jūsu pievienotās ierīces pret ļaunprātīgu no interneta ienākošu trafiku. Ugunsmūri nevar izslēgt, bet ir pieejami tālāk norādītie iestatījumi.</p>
+			
+	<h2>Iestatījumi</h2>
+			
+	<h3><tmpl_var _("webui", "adv_firewall_vpn_passthrough_enable_label")></h3>
+	<tmpl_unless ShowDmzActive>
+		<h3>VPN caurlaide</h3>
+	</tmpl_unless>
+		<p>Šī funkcija ļauj VPN klienta programmatūrai pievienotajās ierīcēs caur šo ierīci izveidot savienojumu ar attāliem VPN serveriem. Parasti šī opcija ir jāatstāj ieslēgta.</p>
+
+	<tmpl_if ipv6Supported>
+		<h3><tmpl_var _("webui", "adv_firewall_ipv6_transparent_label")></h3>
+		<tmpl_unless ShowDmzActive>
+			<h3>IPv6 caurspīdīgais režīms</h3>
+		</tmpl_unless>
+			<p>Parasti ugunsmūris bloķē ienākošos IPv6 savienojuma pieprasījumus, kas paredzēti ierīcei, kurai izveidots savienojums ar IPv6.</p>
+			<p>Ja vēlaties atļaut šiem ienākošajiem savienojuma pieprasījumiem sasniegt paredzēto pievienoto ierīci, ieslēdziet šo iestatījumu. Caurspīdīgo režīmu drīkst ieslēgt tikai nepieciešamības gadījumā, jo tas samazina <tmpl_var _("webui", "webui_product_name")> ugunsmūra nodrošināto aizsardzību.</p>
+	</tmpl_if>
+	
+	<tmpl_if ShowDmzActive>
+		<h2><tmpl_var _("webui", "adv_firewall_dmz_sub_header_text")></h2>
+	<tmpl_else>
+		<h2>DMZ</h2>
+	</tmpl_if>
+	<p>Ja šī opcija ir atzīmēta, pievienotā ierīce, kas norādīta kā DMZ IP adrese (DMZ galamērķis), saņems visu trafiku, ko pretējā gadījumā bloķētu ugunsmūris. Tas var palīdzēt dažām traucējošām tīkla lietojumprogrammām pareizi darboties, bet DMZ ierīcei ir jābūt savam ugunsmūrim, lai pasargātu sevi no ļaunprātīgas datplūsmas.</p>
+	<tmpl_if ShowDmzActive>
+	<h3>DMZ izvēles rūtiņa</h3>
+				
+		<p>Izmantojiet šo opciju, lai pēc nepieciešamības ieslēgtu vai izslēgtu šo funkciju. Parasti DMZ ir jābūt izslēgtam, ja vien tas nav patiešām nepieciešams.</p>	
+	</tmpl_if>
+	<h3>Mērķa IP adrese</h3>
+		<p>Šajā laukā ievadiet tās pievienotās ierīces IP adresi, kuru vēlaties padarīt par DMZ ierīci (DMZ galamērķi). Katras pievienotās ierīces IP adresi var pārbaudīt pievienoto ierīču ekrānā.</p>
+			
+</div>
+<!-- id="firewall" -->
+

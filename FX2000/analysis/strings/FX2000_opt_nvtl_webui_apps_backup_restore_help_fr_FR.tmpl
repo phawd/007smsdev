@@ -1,0 +1,105 @@
+<!-- Backup and Restore -->
+<div id="backup_restore">
+         <h1><tmpl_var _("webui", "backup_restore_menu_text")></h1>
+         <h2>Vue d
+ensemble</h2>
+         <p>Utilisez cette fonctionnalit
+ pour sauvegarder (t
+charger) une copie des param
+tres de configuration de cet appareil dans un fichier sur votre ordinateur, ou restaurer (t
+charger) un fichier de configuration pr
+demment enregistr
+. Ce fichier de configuration contient tous les param
+tres des fonctionnalit
+appareil, du routeur et du syst
+me. Il ne contient aucun param
+tre et aucune donn
+e pour le modem 4G/5G. Veuillez noter que vous ne pouvez restaurer un fichier que sur le m
+me appareil que celui dont il provient.
+         </p>
+         <p>
+            Cet 
+cran permet 
+galement de r
+initialiser tous les param
+tres aux param
+usine par d
+         </p>
+         <h2><tmpl_var _("webui", "backup_restore_the_backup_sub_header_text")></h2>
+         <h3>Mot de passe administrateur</h3>
+         <p>
+                 Saisissez le mot de passe administrateur actuel <tmpl_var _("webui", "webui_product_name")> dans ce champ.
+         </p>
+         <h3><tmpl_var _("webui", "backup_restore_backup_now_button")></h3>
+         <p>
+                 Cliquez sur le bouton T
+charger pour t
+charger une copie du fichier de configuration actuel sur votre ordinateur. Si votre navigateur vous invite 
+ enregistrer le fichier, vous pouvez le renommer si vous le souhaitez.
+         </p>
+         <p class="note">
+                 <strong>Remarque
+:</strong> Le fichier de sauvegarde ne peut pas 
+tre modifi
+ ou visualis
+ sur le syst
+ ou sur tout autre appareil. Ce fichier ne peut 
+tre restaur
+ que pour ce mod
+le de <tmpl_var _("webui", "webui_product_name")> et les param
+tres ne peuvent 
+tre affich
+s ou modifi
+aide de l
+interface utilisateur Web.
+         </p>
+         <h2><tmpl_var _("webui", "backup_restore_the_restore_sub_header_text")></h2>
+         <h3>Mot de passe administrateur</h3>
+         <p>
+                 Saisissez le mot de passe administrateur actuel <tmpl_var _("webui", "webui_product_name")> dans ce champ.
+         </p>
+         <h3><tmpl_var truncate(_("webui", "backup_restore_file_select_label"), (size(_("webui", "backup_restore_file_select_label")) - size(":")))></h3>
+         <p>
+                 S
+lectionnez le fichier de configuration que vous avez t
+demment depuis ce <tmpl_var _("webui", "webui_product_name")> sur votre ordinateur.
+         </p>
+         <h3>Bouton Restaurer maintenant</h3>
+         <p>Apr
+s avoir s
+lectionn
+ un fichier de configuration, cliquez sur ce bouton pour commencer le t
+chargement du fichier. Apr
+chargement, le fichier de configuration est imm
+diatement appliqu
+ et cet appareil red
+         </p>
+         <p class="note">
+                 <strong>Remarque
+:</strong> le t
+chargement d
+un fichier de configuration modifie TOUS les param
+tres existants pour qu
+ils correspondent au fichier de configuration. Toutes les connexions existantes 
+ ce <tmpl_var _("webui", "webui_product_name")> seront interrompues, y compris cette session de navigateur Web.
+         </p>
+         <h2><tmpl_var _("webui", "backup_restore_factory_restore_sub_header_text")></h2>
+         <p>
+                 Cliquez sur le bouton <strong>Restaurer les param
+usine par d
+faut</strong> pour r
+initialiser tous les param
+tres aux param
+usine par d
+appareil red
+marre, interrompant toutes les connexions existantes 
+ ce <tmpl_var _("webui", "webui_product_name")>, y compris cette session de navigateur Web.
+         </p>
+         <h2>Red
+marrer l
+appareil</h2>
+         <p>
+                 Ce bouton permet d
+teindre et de rallumer votre <tmpl_var _("webui", "webui_product_name")>.
+         </p>
+ <!-- id="backup_restore" -->

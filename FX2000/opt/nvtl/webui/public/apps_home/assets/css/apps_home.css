@@ -1,0 +1,457 @@
+
+
+.ig_section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+  }
+  
+  
+  
+  
+  .ig_row:before {
+	display: table;
+	content: " ";
+  }
+  
+  .ig_row:after {
+	display: table;
+	content: " ";
+	clear: both;
+  }
+  
+  .ig_row:before {
+	display: table;
+	content: " ";
+  }
+  
+  .ig_row:after {
+	display: table;
+	content: " ";
+	clear: both;
+  }
+  
+  
+  
+  
+  .ig_col {
+	display: block;
+	float: left;
+	margin: 0%;
+	box-sizing: border-box;
+  }
+  
+  .ig_card {
+	padding: 15px;
+	position: relative;
+	box-sizing: border-box;
+	min-height: 198px;
+  }
+  
+  .ig_card_body {
+	min-height: 216px;
+  }
+  
+  .ig_card_body .row {
+	padding: 4px;
+	margin-bottom: 0px;
+  }
+  
+  .ig_card_body p {
+	padding: 4px;
+	margin: 0px;
+  }
+  
+  .ig_card_footer {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	width: 100%;
+	text-align: right;
+  }
+  
+  .ig_col:first-child {
+	margin-left: 0;
+  }
+  
+  .ig_col:last-child {
+	margin-right: 0;
+  }
+  
+  .ig_group {
+	zoom: 1;
+	
+  }
+  
+  .ig_group:before {
+	content: "";
+	display: table;
+  }
+  
+  .ig_group:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
+  
+  
+  
+  .ig_12 {
+	width: 100%;
+  }
+  
+  .ig_11 {
+	width: 91.66%;
+  }
+  
+  .ig_10 {
+	width: 83.33%;
+  }
+  
+  .ig_9 {
+	width: 75%;
+  }
+  
+  .ig_8 {
+	width: 66.66%;
+  }
+  
+  .ig_7 {
+	width: 58.33%;
+  }
+  
+  .ig_6 {
+	width: 50%;
+  }
+  
+  .ig_5 {
+	width: 41.66%;
+  }
+  
+  .ig_4 {
+	width: 33.33%;
+  }
+  
+  .ig_3 {
+	width: 25%;
+  }
+  
+  .ig_2 {
+	width: 16.66%;
+  }
+  
+  .ig_1 {
+	width: 8.333%;
+  }
+  
+  .ig_offset_3 {
+	margin-left: 25%;
+  }
+  
+  
+  
+  
+  @media only screen and (max-width: 480px) {
+	.col {
+	  margin: 1% 0 1% 0%;
+	}
+	.ig_1,
+  .ig_2,
+  .ig_3,
+  .ig_4,
+  .ig_5,
+  .ig_6,
+  .ig_7,
+  .ig_8,
+  .ig_9,
+  .ig_10,
+  .ig_11,
+  .ig_12 {
+	  width: 100%;
+	}
+	.ig_offset_3 {
+	  margin-left: 0%;
+	}
+  }
+  
+  .border-left {
+	border-left: 1px solid grey;
+  }
+  
+  .border-top {
+	border-top: 1px solid grey;
+  }
+  
+  body#apps_home div#main {
+	padding-bottom: 0px !important;
+  }
+  
+  fieldset#home h2 {
+	margin-top: 0px;
+  }
+  
+  fieldset#home .ig_col {
+	border: solid grey;
+	border-width: 0px 1px 0px 0px;
+  }
+  
+  fieldset#home .ig_col .ig_col {
+	border: solid grey;
+	border-width: 0px 0 0 1px;
+  }
+  
+  fieldset#home .ig_col:first-child {
+	border-left: 0px;
+  }
+  
+  fieldset#home .ig_col:last-child {
+	border-right: 0px;
+	border-bottom: 0px;
+  }
+  
+  .navigationLink {
+	display: inline-block;
+  }
+  
+  .navigationLink img {
+	width: 35px;
+	height: 35px;
+  }
+  
+  #connectedDevices {
+	height: 561px;
+  }
+  
+  #ConnectedDevicesUpdatingData.loading,
+  #retrieval_status.loading {
+	background-position: left;
+	padding-left: 35px;
+	line-height: 32px;
+  }
+  
+  table#connectedDevicesTable tr {
+	height: auto;
+	min-height: inherit;
+  }
+  
+  table#connectedDevicesTable th {
+	text-align: left;
+	padding: 4px 0px;
+  }
+  
+  table#connectedDevicesTable td {
+	text-align: left;
+	padding: 5px 0px !important;
+  }
+  
+  .footer {
+	position: relative !important;
+	border-top: 1px solid grey;
+	padding-top: 15px;
+  }
+  
+  .footer .footer_inner {
+	max-width: 1440px;
+	margin: auto;
+  }
+  
+  .roundedButton {
+	padding: 5px 25px;
+	background-color: #0082ca;
+	color: white;
+  }
+  
+  .roundedButton[disabled] {
+	padding: 5px 25px;
+  }
+  
+  .duCircleBlock {
+	width: auto;
+  }
+  
+  .duCircleBlock .count {
+	white-space: nowrap;
+  }
+  
+  #wifi.ig_card input {
+	border: 0px;
+	padding: 4px !important;
+	width: inherit !important;
+  }
+  
+  #guestPwd strong + span {
+  
+	box-sizing: border-box;
+  }
+  
+  #guestPwd input + span.toggle-password {
+	margin: 0px;
+	position: relative;
+	top: 4px;
+}
+
+.toggle-password-primary,
+.toggle-password-guest {
+  position: relative;
+  width: 25px;
+  height: 15px;
+  float: right;
+  }
+  
+  @media only screen and (max-width: 1439px) {
+	#main {
+	  max-width: 100% !important;
+	}
+  }
+  
+  @media (max-width: 1124px) and (min-width: 1025px) {
+	fieldset#home .ig_col.ig_9:first-child {
+	  border-left: 1px solid grey;
+	}
+	fieldset#home .ig_9 {
+	  width: 100% !important;
+	}
+	fieldset#home .ig_9 + .ig_3 {
+	  width: 100%;
+	  border: 1px solid grey !important;
+	  box-sizing: border-box;
+	  border-bottom: 0px !important;
+	}
+	fieldset#home .ig_9 + .ig_3 > #connectedDevices {
+	  height: auto !important;
+	}
+	fieldset#home .ig_9 + .ig_3 > #connectedDevices .ig_card_body {
+	  min-height: auto;
+	}
+  }
+  
+@media screen and (max-width: 480px) {
+  fieldset#home {
+    width: 100%;
+  }
+  #dataUsage,
+.ig_card {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+}
+
+  :lang(ar) *,
+  html[dir="rtl"] * {
+	direction: rtl;
+  }
+  
+  :lang(ar) .ig_col,
+  html[dir="rtl"] .ig_col {
+	float: right;
+  }
+  
+  :lang(ar) #wifi.ig_card,
+  :lang(ar) #dataUsage.ig_card,
+  html[dir="rtl"] #wifi.ig_card,
+  html[dir="rtl"] #dataUsage.ig_card {
+	border-left: 1px solid grey;
+  }
+  
+  :lang(ar) fieldset#home .ig_col:first-child,
+  html[dir="rtl"] fieldset#home .ig_col:first-child {
+	border-width: 0px 0px 0px 0px;
+  }
+  
+  :lang(ar) fieldset#home .row,
+  html[dir="rtl"] fieldset#home .row {
+	display: inlineblock;
+	clear: both;
+  }
+  
+  :lang(ar) fieldset#home .row strong,
+  html[dir="rtl"] fieldset#home .row strong {
+	white-space: nowrap;
+  }
+  
+  :lang(ar) fieldset#home .row strong + span,
+  html[dir="rtl"] fieldset#home .row strong + span {
+	display: inline-block;
+  }
+  
+  :lang(ar) #ConnectedDevicesUpdatingData.loading,
+  :lang(ar) #retrieval_status.loading,
+  html[dir="rtl"] #ConnectedDevicesUpdatingData.loading,
+  html[dir="rtl"] #retrieval_status.loading {
+	background-position: right;
+	padding-right: 35px;
+  }
+  
+  :lang(ar) table#connectedDevicesTable th,
+  :lang(ar) table#connectedDevicesTable td,
+  html[dir="rtl"] table#connectedDevicesTable th,
+  html[dir="rtl"] table#connectedDevicesTable td {
+	text-align: right;
+  }
+  
+  :lang(ar) .ig_card_body a[href^="http"],
+  html[dir="rtl"] .ig_card_body a[href^="http"] {
+	padding-right: 0px !important;
+	padding-left: 20px;
+	background: none !important;
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+  }
+  
+  :lang(ar) .ig_card_body a[href^="http"]:after,
+  html[dir="rtl"] .ig_card_body a[href^="http"]:after {
+	content: "";
+	width: 10px;
+	height: 10px;
+	margin: 0 10px 0 0;
+	background: url(../../../assets/images/icons/icn-external_link.png) no-repeat left;
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+  }
+  
+  :lang(ar) .ig_card_footer,
+  html[dir="rtl"] .ig_card_footer {
+	text-align: left;
+  }
+  
+  :lang(ar) .ig_card_footer .navigationLink img,
+  html[dir="rtl"] .ig_card_footer .navigationLink img {
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	-webkit-filter: FlipH;
+	filter: FlipH;
+	-ms-filter: "FlipH";
+  }
+  
+  :lang(ar) body#apps_home .footer .col,
+  html[dir="rtl"] body#apps_home .footer .col {
+	float: right;
+}
+
+:lang(ar) .toggle-password-primary,
+:lang(ar) .toggle-password-guest,
+html[dir="rtl"] .toggle-password-primary,
+html[dir="rtl"] .toggle-password-guest {
+  float: left;
+}
+
+:lang(ar) #primaryPwd span > span:first-child,
+:lang(ar) #guestPwd span > span:first-child,
+html[dir="rtl"] #primaryPwd span > span:first-child,
+html[dir="rtl"] #guestPwd span > span:first-child {
+  width: 225px;
+  display: inline-block;
+}
+  
+#home-support .label {
+  width: 100px;
+  font-weight: 700;
+}
+
+#home-support .input {
+  width: 205px;
+}

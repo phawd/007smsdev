@@ -1,0 +1,55 @@
+<!-- Internet  Status -->
+<div id="status_current">
+	<h1><tmpl_var _("webui", "status_current_menu_text")></h1>
+
+	<h3><tmpl_var truncate(_("webui", "status_current_connection_status_label"), (size(_("webui", "status_current_connection_status_label")) - size(":")))></h3>
+	<p>يعرض هذا حالة الاتصال الخاصة بالاتصال بالإنترنت عبر شبكة الهاتف المحمول.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_network_name_label"), (size(_("webui", "status_current_network_name_label")) - size(":")))></h3>
+	<p>اسم شبكة الأجهزة المحمولة التي يتصل بها هذا الجهاز حاليًا.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_technology_label"), (size(_("webui", "status_current_technology_label")) - size(":")))></h3>
+	<p>تقنية الشبكة المستخدمة للاتصال حاليًا. تعد LTE أسرع التقنيات المتاحة.</p> 
+	<!--                    
+	<h3>APN</h3>
+	<p>The Access Point Name (APN) is pre-configured for the Verizon network, and cannot be changed.
+	</p>    
+	-->
+        <h3><tmpl_var truncate(_("webui", "status_current_connection_time_label"), (size(_("webui", "status_current_connection_time_label")) - size(":")))></h3>
+	<p>بالنسبة لجلسة الإنترنت الحالية، فهي الفترة الزمنية المنقضية منذ إنشاء الاتصال بالإنترنت.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_received_label"), (size(_("webui", "status_current_received_label")) - size(":")))></h3>
+	<p>بالنسبة لجلسة الإنترنت الحالية، كمية البيانات الواردة. يبدأ هذا العداد من الصفر عند إنشاء الاتصال.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_transmitted_label"), (size(_("webui", "status_current_transmitted_label")) - size(":")))></h3>
+	<p>بالنسبة لجلسة الإنترنت الحالية، كمية البيانات المرسلة. يبدأ هذا العداد من الصفر عند إنشاء الاتصال.</p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv4_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4_label"), (size(_("webui", "status_current_ipv4_label")) - size(":")))></h3>
+	<p>عنوان IP للإنترنت المعين لهذا الجهاز.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4mask_label"), (size(_("webui", "status_current_ipv4mask_label")) - size(":")))></h3>
+	<p>قناع الشبكة المرتبط بعنوان IP أعلاه.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4gateway_label"), (size(_("webui", "status_current_ipv4gateway_label")) - size(":")))></h3>
+	<p>عنوان IP للبوابة المرتبط بعنوان IP أعلاه.</p>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv4dns_label"), (size(_("webui", "status_current_ipv4dns_label")) - size(":")))></h3>
+	<p>خادم اسم النطاق المستخدم حاليًا بواسطة هذا الجهاز.</p>
+
+	<h2><tmpl_var _("webui", "status_current_sub_header_ipv6_text")></h2>
+	<h3><tmpl_var truncate(_("webui", "status_current_ipv6global_label"), (size(_("webui", "status_current_ipv6global_label")) - size(":")))></h3>
+	<p>يُعرض عنوان IPv6 العالمي لـ <tmpl_var _("webui", "webui_product_name")> هنا. سيكون هذا فارغًا إذا تم إيقاف تشغيل IPv6، أو لم يكن مدعومًا باتصال الشبكة الحالي.</p>
+
+	<tmpl_if InternetStatusViewSessionShow>
+	<h2><tmpl_var _("webui", "status_current_internet_session_btn")></h2>
+	<p>يحتوي سجل الجلسة على البيانات التالية:</p>
+	<p>- التاريخ والوقت (عند بدء الاتصال)</p>
+	<p>- المدة (نفس تنسيق معلومات الجلسة الحالية)</p>
+	<p>- المُستّلَم (تنسيق مماثل لما في الدورة الحالية)</p>
+	<p>- المُرسَل (تنسيق مماثل لما في الدورة الحالية)</p>
+	<p>- إجمالي البيانات (مجموع المستَلَم و المرسَل، التنسيق كما هو الحال بالنسبة لمعلومات الجلسة الحالية)</p>
+	<p>- التجوال (تجوال/جزئي/فارغ) فارغ = شبكة منزلية</p>
+	<p>- IPv4 (عنوان IPv4 WWAN IP)</p>
+	<p>- IPv6 (عنوان IPv6 WWAN IP)</p>
+
+	<p>السجل مرتب حسب التاريخ.</p>
+	<p>لا يمكن للمستخدم تغيير الترتيب، ولا توجد خيارات تتعلق بترتيب سجل الجلسة.</p>
+	</tmpl_if>
+
+</div> 
+<!-- id="status_internet" -->
+

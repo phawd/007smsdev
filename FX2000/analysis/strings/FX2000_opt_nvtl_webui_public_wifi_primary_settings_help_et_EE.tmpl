@@ -1,0 +1,87 @@
+<!-- wifi_primary_settings -->
+<div id="wifi_primary_settings">
+	<h1>Wi-Fi 
+levaade</h2>
+		<tmpl_var _("webui", "webui_product_name_with_suffix")> Wi-Fi p
+henduse loomiseks peavad 
+hendatud seadmed kasutama sellel kuval n
+idatud Wi-Fi-seadeid. Nende s
+tete muutmisel v
+ivad olemasolevad 
+hendatud seadmed 
+henduse kaotada.
+	<h3><tmpl_var _("webui", "wifi_primary_ssid_label")></h3>
+rab Wi-Fi-v
+rgunime v
+i SSID. Sisestage sobiv nimi. Nimi v
+ib olla kuni 32 t
+rki pikk.
+	<h3><tmpl_var _("webui", "wifi_primary_security_label")></h3>
+		Valige Wi-Fi turvalisuse jaoks soovitud suvand.
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> v
+imaldab teistel inimestel j
+lgida teie Wi-Fi-liiklust ja kasutada teie andmesidepaketti internetile juurdep
+suks. Kui 
+imalik, tuleks selle v
+imaluse kasutamist v
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> on uusim ja k
+ige turvalisem meetod ning seda tuleks v
+imaluse korral kasutada.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> saab kasutada, kui m
+ni teie vanem seade ei toeta WPA2.
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> saab kasutada WPA2 ja WPA3 kaebusseadmete jaoks.
+	<h3><tmpl_var _("webui", "wifi_primary_password_label")></h3>
+		Sisestage sellele v
+ljale Wi-Fi parool. Sellele v
+ljale saate sisestada ka tugeva juhusliku parooli nupuga Loo uus parool. 
+rge unustage selle suvandi kasutamisel muudatusi salvestada.
+		Need seaded on vaikimisi peidetud, kuid nende n
+htavaks muutmiseks v
+psata pealkirjal/lingil. Tavaliselt v
+tta need suvandid vaikev
+rtustele, kuid neid saab vajaduse korral muuta vastavalt teie konkreetsele keskkonnale.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_ssid_label", gProductName)></h3>
+		Kui see s
+rgitud, on Wi-Fi nimi seadme <tmpl_var _("webui", "webui_product_name_with_suffix")> puuteekraanil loetav, kasutades men
+suvandit Wi-Fi. M
+rkimata j
+tmisel kuvatakse nimi kujul ****** *.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_password_label", gProductName)></h3>
+		Kui see s
+rgitud, on Wi-Fi parool seadme <tmpl_var _("webui", "webui_product_name_with_suffix")> puuteekraanil loetav, kasutades men
+suvandit Wi-Fi. Kui see on m
+rkimata, kuvatakse parool kujul ****** *.
+	<h3><tmpl_var _("webui", "wifi_primary_broadcast_ssid_label")></h3>
+		Kui see s
+rgitud, kuvatakse seda Wi-Fi-v
+rku teie 
+hendatud seadmetes saadaolevate Wi-Fi-v
+rkude loendis. Kui see on m
+rkimata, on see v
+htamatu.
+	<tmpl_if showWiFiPrimaryWPS>
+		<h3><tmpl_var _("webui", "wifi_primary_wps_label")></h3>
+			Wi-Fi Protected Setup (WPS) on s
+steem, mis v
+imaldab Wi-Fi-seadmetel luua 
+henduse Wi-Fi-v
+rguga ilma v
+rguparooli k
+sitsi sisestamata. Kui soovite WPS-i kasutada, m
+rkige see suvand.
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_primary_privacy_label")></h3>
+		Kui see s
+rgitud, isoleeritakse k
+hendatud seadmed k
+igist teistest 
+hendatud seadmetest. See pakub t
+iendavat turvalisust, kui m
+hendatud seadmed on tundmatud v
+i ei ole t
+ielikult usaldusv
+rsed. Tavap
+raseks t
+ks peab see olema m
+rkimata.
+<!-- id="wifi_primary_settings" -->

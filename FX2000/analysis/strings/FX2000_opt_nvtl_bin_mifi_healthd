@@ -1,0 +1,487 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+pthread_create
+libpthread.so.0
+pthread_join
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+strftime
+snprintf
+modem2_get_active_tech_profile
+modem2_get_tech_profile
+modem2_get_active_band
+MsgBusGet
+settings_get_features
+mifi_health_get_mem_diag_settings
+mifi_health_get_ab_failsafe_settings
+mifi_health_get_lowmem_reboot_settings
+msgq_send_async
+pthread_self
+mifi_dbg_start
+__errno_location
+msgq_create
+msgq_receive
+msgq_resp_preprocess
+msgq_resp_postprocess
+mq_close
+librt.so.1
+mq_unlink
+mifi_dbg_stop
+mifi_health_dsm_broad_cast_event
+mifi_health_api_shutdown_event
+mifi_health_sim_mgr_broad_cast_event
+mifi_health_mss_disconnect_event
+mifi_health_modem2_signal_stats
+mifi_health_modem2_call
+mifi_health_api_nua_restart
+mifi_health_api_wan_mgr_priority_list
+mifi_health_api_wan_mgr_failback_settings
+mifi_health_api_wan_mgr_monitor_settings
+mifi_health_api_wan_mgr_manual_settings
+mifi_health_api_wan_mgr_auto_switch
+mifi_health_api_wan_mgr_status
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+closedir
+strerror
+modem2_get_network_time
+gmtime_r
+modem2_get_error_string
+msgq_resp_handler
+dsm_get_state
+mifi_health_api_dsm_state
+msgq_does_queue_exist
+__bss_start
+__lxstat
+libwatchdog_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifi_config.so
+libsettings_api.so
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libdmdb_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libmifi_health_api.so
+H	KxD	J{D
+shutdown
+crash_modem
+crash_unknown
+MSS_Disc
+Temp_Change
+TPM_enter
+TPM_exit
+NUA_Restarted
+WAN_Mgr_Priority_Settings
+WAN_Mgr_Failback_ettings
+WAN_Mgr_Monitor_Settings
+WAN_Mgr_Manual_Settings
+WAN_Mgr_Auto_Switch
+WAN_Mgr_Status
+Sim_Mgr_Pin_Locked
+Sim_Mgr_Active_Switch
+Sim_Mgr_Device_Reset
+Sim_Mgr_Priority_Switch
+Sim_Mgr_Modem_Recovery_Switch
+Sim_Mgr_Modem_Reset
+Sim_Mgr_Switch_Status
+Sim_Mgr_Wan_Sts_Down
+Sim_Mgr_Wan_Sts_Online
+Sim_Mgr_Wan_Sts_Available
+Sim_Mgr_Wan_Sts_Routed
+Sim_Mgr_Switch_Sig_Quality
+Sim_Mgr_Switch_Auto_Priority
+Unknown_event
+/dev/null
+MIFI_HEALTH
+[%s]:[%s] - %s: gmtime() failed
+%m_%d_%Y_%H_%M_%S
+%s,%ld,%d,%s
+/opt/nvtl/data/health/mifi_health_data_log
+%s.%d.bz2
+[%s]:[%s] - %s: Move cur_file_name=[%s], new_file_name=[%s]
+tar cvjf
+%s %s.bz2 -C %s %s
+mifi_health_data_log
+/opt/nvtl/data/health
+[%s]:[%s] - %s: Tar command=[%s]
+[%s]:[%s] - %s: Rotate log file
+LOG_FORMAT_VER,1
+[%s]:[%s] - %s: Creating log file
+/opt/nvtl/data/health/mifi_health_daily_log
+[%s]:[%s] - %s: Creating daily log file
+/tmp/mifi_health_daily_log
+[%s]:[%s] - %s: Bootup reason [%s]
+[%s]:[%s] - %s: Shutdown reason [%s]
+[%s]:[%s] - %s: Reboot reason [%s]
+[%s]:[%s] - %s: Factory reset
+[%s]:[%s] - %s: Watchdog app reason [%s]
+[%s]:[%s] - %s: Modem crash reason [%s]
+[%s]:[%s] - %s: Apps processor app reason [%s]
+[%s]:[%s] - %s: Unknown crash reason [%s]
+[%s]:[%s] - %s: DSM poll [%d] [%d] [%d] [%d] [%d] [%d] [%d] [%d] [%d] [%d] 	[%d] [%d] [%d] [%d] [%d] [%d] [%d] [%d] [%d] [%d] [%d] [%d]
+,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d
+[%s]:[%s] - %s: DSM Temp change [%d] [%d] [%d] [%d] [%d] [%d] [%d] [%d]
+[%s]:[%s] - %s: Temp Delta=[%d]
+,%d,%d,%d,%d,%d,%d,%d,%d
+[%s]:[%s] - %s: DSM TPM enter [%d] [%d] [%d] [%d] [%d] [%d] [%d] [%d]
+[%s]:[%s] - %s: DSM EXIT enter [%d] [%d] [%d] [%d] [%d] [%d] [%d] [%d]
+[%s]:[%s] - %s: MSS Disconnect event [%d] [%s] [%d] [%d] [%d] [%d] [%d] 	 [%d] [%d] [%d] [%s] [%s] [%s] [%d] [%d] [%d] [%d] [%d] [%d] [%d]
+,%d,%s,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%s,%d,%d,%d,%d,%d,%d
+[%s]:[%s] - %s: Ingore other=[%d] Connection PDN
+[%s]:[%s] - %s: wwan state=[%d]
+ Connected state
+ Disconnected state
+[%s]:[%s] - %s: Current wwan_state=[%d] - But, previous state is not connected. Ignore this=[%s] call state
+[%s]:[%s] - %s: Modem2 Connect event [%s] [%s] [%d] [%d] [%d] [%d] [%d] 	 [%d] [%d] [%d] [%s] [%s] [%s] [%d] [%d] [%d] [%d]
+,%s,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%s,%d,%d,%d,%d
+[%s]:[%s] - %s: apn=%d
+ ip_family=%d
+ wwan_state=%d
+ end_reason=%d
+ verbose_end_reason_type=%d
+ verbose_end_reason=%d
+ wwan_iface=%s
+[%s]:[%s] - %s: active_profile_index=%d pdp_type=%d
+[%s]:[%s] - %s:data_ip4_prev_time=%s
+ current_time=%s
+[%s]:[%s] - %s: data apn v4 failed
+[%s]:[%s] - %s:data_ip6_prev_time=%s
+ current_time=%s
+[%s]:[%s] - %s: data apn v6 failed
+/tmp/failsafe_internet_pdn_fail_count
+[%s]:[%s] - %s: internet_pdn_connect_fail_count=%d
+dm_pdn_connect_fail_count=%d
+[%s]:[%s] - %s:dm_ip4_prev_time=%s
+ current_time=%s
+[%s]:[%s] - %s: dm apn v4 failed
+[%s]:[%s] - %s:dm_ip6_prev_time=%s
+ current_time=%s
+[%s]:[%s] - %s: dm apn v6 failed
+/tmp/failsafe_dm_pdn_fail_count
+[%s]:[%s] - %s: Failed to get tech profile with index=%d
+[%s]:[%s] - Failed to get the active index. %d
+[%s]:[%s] - %s: Ignore other=[%d] Connection PDN
+[%s]:[%s] - %s: Modem2 Connect event [%s] [%s] [%d] [%d] [%d] [%d] [%d] 	  [%d] [%d] [%d] [%s] [%s] [%s] [%d] [%d] [%d] [%d]
+%s,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%s,%d,%d,%d,%d
+[%s]:[%s] - %s: band_no: %d
+[%s]:[%s] - %s: NUA Restarted
+[%s]:[%s] - %s: WAN Mgr Priority List Info: [%d] [%d]
+[%s]:[%s] - %s: WAN Mgr Failback Settings Info: [%d] [%d]
+[%s]:[%s] - %s: WAN Mgr Monitor Settings Info: [%d] [%d] [%d] [%d] [%d] [%s] [%s] [%s]
+,%d,%d,%d,%d,%d,%s,%s,%s
+[%s]:[%s] - %s: WAN Mgr Manual Settings info: [%d]
+[%s]:[%s] - %s: WAN Mgr Auto Switch Status info: [%d]
+[%s]:[%s] - %s: WAN Mgr Status info: [%d] [%d] [%d]
+,%d,%d,%d 
+[%s]:[%s] - %s: MIFI_HEALTH_MSG_SIM_MGR_PIN_LOCKED configured switch mode=%d current switch mode=%d pinlocked=%d active slot=%d
+[%s]:[%s] - %s: MIFI_HEALTH_MSG_SIM_MGR_PIN_LOCKED iccid=%s
+[%s]:[%s] - %s: MIFI_HEALTH_MSG_SIM_MGR_PIN_LOCKED imsi=%s
+,%d,%d,%d,%d,%s,%s,%d
+[%s]:[%s] - %s:MIFI_HEALTH_MSG_SIM_MGR_ACTIVE_SWITCH  configured switch mode=%d current switch mode=%d
+[%s]:[%s] - %s: MIFI_HEALTH_MSG_SIM_MGR_ACTIVE_SWITCH imsi=%s
+,%d,%d,%s,%d
+[%s]:[%s] - %s: MIFI_HEALTH_SIM_MGR_DEVICE_RESET: 
+[%s]:[%s] - %s: MIFI_HEALTH_MSG_SIM_MGR_PRIORITY_SWITCH: 
+[%s]:[%s] - %s:MIFI_HEALTH_SIM_MGR_MODEM_RECOVERY_SWITCH:
+,%d,%d,%d,%d
+[%s]:[%s] - %s:MIFI_HEALTH_SIM_MGR_MODEM_RESET_SIM_MGR:
+[%s]:[%s] - %s: MIFI_HEALTH_SIM_MGR_SWITCH_STATUS 
+[%s]:[%s] - %s: MIFI_HEALTH_SM_WAN_STS_DOWN: 
+,%d,%d,%d
+[%s]:[%s] - %s MIFI_HEALTH_SM_WAN_STS_ONLINE: 
+[%s]:[%s] - %s: MIFI_HEALTH_SM_WAN_STS_AVAILABLE: 
+[%s]:[%s] - %s: MIFI_HEALTH_SM_WAN_STS_ROUTED: 
+[%s]:[%s] - %s: MIFI_HEALTH_SM_SWITCH_SIG_QUALITY 
+,%d,%d,%s,%d,%d,%d
+[%s]:[%s] - %s: MIFI_HEALTH_SM_SWITCH_AUTO_PRIORITY: 
+,%d,%d,%s,%s,%d
+[%s]:[%s] - %s: default 
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - MIFI HEALTH disabled in features.xml
+[%s]:[%s] - MIFI_HEALTH mem diag initialized with the following settings: 
+[%s]:[%s] - max_log_file_size: %d
+[%s]:[%s] - max_no_of_backups: %d
+[%s]:[%s] - safe_zone_least_mem: %d
+[%s]:[%s] - critical_zone_start_mem: %d
+[%s]:[%s] - safe_zone_poll_interval_sec: %d
+[%s]:[%s] - moderate_zone_poll_interval_sec: %d
+[%s]:[%s] - critical_zone_poll_interval_sec: %d
+[%s]:[%s] - safe_zone_store_mem_stats_interval_mins: %d
+[%s]:[%s] - moderate_zone_store_mem_stats_interval_mins: %d
+[%s]:[%s] - critical_zone_store_men_stats_interval_mins: %d
+[%s]:[%s] - enable_debug_mode: %d
+[%s]:[%s] - top_cpu_usage_threshold: %d
+[%s]:[%s] - Failed to initialize settings. mifi_health_get_mem_diag_settings returned %d
+[%s]:[%s] - MIFI_HEALTH AB failsafe initialized with the following settings: 
+[%s]:[%s] - verify_duration: %d
+[%s]:[%s] - crash_cnt: %d
+[%s]:[%s] - wdt_reboot_cnt: %d
+[%s]:[%s] - pdn_connect_retry_cnt: %d
+[%s]:[%s] - Failed to initialize settings. mifi_health_get_ab_failsafe_settings returned %d
+[%s]:[%s] - MIFI_HEALTH LowMem reboot initialized with the following settings: 
+[%s]:[%s] - mem_threshold: %d
+[%s]:[%s] - check_interval: %d
+[%s]:[%s] - min_uptime: %d
+[%s]:[%s] - reboot_time_window_open: %d
+[%s]:[%s] - reboot_time_window_end: %d
+[%s]:[%s] - Failed to initialize settings. mifi_health_get_lowmem_reboot_settings returned %d
+[%s]:[%s] - lowmem_reboot_enabled: %d
+[%s]:[%s] - lowmem_reboot disabled in features.xml
+[%s]:[%s] - %s: Directory not present even after created once
+mkdir -p 
+[%s]:[%s] - %s: Failed to create MIFI_HEALTH_DATA_DIR data directory, rc:%d
+[%s]:[%s] - %s: Successfully created Data directory
+[%s]:[%s] - %s: Data directory found
+[%s]:[%s] - %s: MIFI_HEALTH_MSG_SYS_BOOTUP
+/mifi_health_mq
+/opt/nvtl/bin/nvtl_launch_mem_diag.sh start %d %d %d %d %d %d %d %d %d %d %d %d
+[%s]:[%s] - %s: System command %s return status:= %d
+[%s]:[%s] - %s: failed to start Memory Diagnostics Application  - cmd=[%s], rc=[%d]
+[%s]:[%s] - %s: Memory Diagnostics Application started
+/opt/nvtl/bin/nvtl_launch_ab_failsafe.sh start %d %d %d %d
+[%s]:[%s] - %s: failed to start AB Failsafe Application  - cmd=[%s], rc=[%d]
+[%s]:[%s] - %s: AB Failsafe Application started
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error initializing mifi_health settings, terminating.
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - MIFI HEALTH data directory not present, terminating.
+[%s]:[%s] - Failed to start mem diag application rc:%d
+[%s]:[%s] - %s:ab_failsafe feature enabled, initializing failsafe app
+[%s]:[%s] - Failed to start AB failsafe application rc:%d
+[%s]:[%s] - %s:ab_failsafe feature disabled, app not started 
+[%s]:[%s] - Error opening message queue: %d, terminating.
+[%s]:[%s] - Failed to post MIFI_HEALTH_MSG_SYS_BOOTUP, rc:%d, terminating.
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - Kick watchdog here
+[%s]:[%s] - %s Server Terminating.
+mifi_health_get_utc_timestamp
+mifi_health_log_file_rotate
+mifi_health_log_event
+mifi_health_bootup_event_handle
+mifi_health_shutdown_event_handle
+mifi_health_reboot_event_handle
+mifi_health_factory_reset_event_handle
+mifi_health_watchdog_app_event_handle
+mifi_health_modem_crash_event_handle
+mifi_health_app_crash_event_handle
+mifi_health_unknown_crash_event_handle
+mifi_health_dsm_poll_state_event_handle
+mifi_health_dsm_temp_change_event_handle
+mifi_health_dsm_tpm_entry_event_handle
+mifi_health_dsm_tpm_exit_event_handle
+mifi_health_mss_disconnect_event_handle
+mifi_health_modem2_call_connect_event_handle
+mifi_health_modem2_call_fail_event_handle
+mifi_health_read_band_info
+mifi_health_nua_restart_event_handle
+mifi_health_wan_mgr_priority_event_handle
+mifi_health_wan_mgr_failback_event_handle
+mifi_health_wan_mgr_monitor_event_handle
+mifi_health_wan_mgr_manual_event_handle
+mifi_health_wan_mgr_auto_switch_event_handle
+mifi_health_wan_mgr_status_event_handle
+mifi_health_sim_mgr_pin_locked_event_handle
+mifi_health_sim_mgr_active_switch_event_handle
+mifi_health_sim_mgr_device_reset_event_handle
+mifi_health_sim_mgr_priority_switch_event_handle
+mifi_health_sim_mgr_modem_recovery_switch_event_handle
+mifi_health_sim_mgr_modem_reset_event_handle
+mifi_health_sim_mgr_switch_sts_event_handle
+mifi_health_sim_mgr_wan_sts_down_event_handle
+mifi_health_sim_mgr_wan_sts_online_event_handle
+mifi_health_sim_mgr_wan_sts_available_event_handle
+mifi_health_sim_mgr_wan_sts_routed_event_handle
+mifi_health_sim_mgr_switch_sig_quality_event_handle
+mifi_health_sim_mgr_switch_auto_priority_event_handle
+mifi_health_handle_event_message
+verify_and_create_app_data_dir
+mifi_health_main_post_internal_event
+mem_diag_init
+ab_failsafe_init
+MIFI_HEALTH
+[%s]:[%s] - %s: Missing data on msgbus
+Shutdown
+[%s]:[%s] - %s:  SIM_MGR_MANUAL_ACTIVE_SIM_SWITCH_ICCID_PIN_LOCKED 
+[%s]:[%s] - %s:  SIM_MGR_MANUAL_ACTIVE_SIM_SWITCH 
+[%s]:[%s] - %s: SIM_MGR_AUTO_PRIORITY_SIM_SWITCH: 
+[%s]:[%s] - %s: SIM_MGR_AUTO_MODEM_RECOVERY_SIM_SWITCH 
+[%s]:[%s] - %s: SIM_MGR_AUTO_SIM_SWITCH_SIG_QUALITY: 
+[%s]:[%s] - %s: SIM_MGR_AUTO_FAIL_BACK_PRIORITY_SIM_SWITCH: 
+[%s]:[%s] - %s:default:
+[%s]:[%s] - %s:MIFI_HEALTH_SIM_MGR_SWITCH_STATUS:
+[%s]:[%s] - %s:SIM_MGR_DEVICE_RESET_SIM_MGR:
+[%s]:[%s] - %s:SIM_MGR_WAN_STATUS_DOWN:
+[%s]:[%s] - %s:SIM_MGR_WAN_STATUS_ONLINE:
+[%s]:[%s] - %s:SIM_MGR_WAN_STATE_AVAILABLE:
+[%s]:[%s] - %s:SIM_MGR_WAN_STATE_ROUTED:
+[%s]:[%s] - %s:default :
+[%s]:[%s] - %s: disconnectReason mapping error
+mifi_health.ab_failsafe_start
+[%s]:[%s] - %s: MSGBUS_MIFI_HEALTH_AB_FAILSAFE_START recieved
+mifi_health.ab_failsafe_end
+[%s]:[%s] - %s: MSGBUS_MIFI_HEALTH_AB_FAILSAFE_END recieved
+dsm.broadcast
+mss.disconnect.message
+mss.simswap.success
+[%s]:[%s] - %s: Ignore
+mss.simswap.exception
+modem2.operator_change
+modem2.data_signal_change
+modem2.sig_str
+modem2.conn_state
+modem2.call_fail
+ccm2.wan_stats
+su.broadcast
+wan_mgr.wan_priority.settings.channel
+wan_mgr.wan_fail_back.settings.channel
+wan_mgr.wan_mon.settings.channel
+wan_mgr.manual_wan.settings.channel
+wan_mgr.auto_switch.settings.channel
+wan_mgr.wan_status_change
+sim.mgr.events.broadcast
+[%s]:[%s] - %s: MSGBUS_SM_HEALTH_BROADCAST
+[%s]:[%s] - %s: MsgBus_Create Failed
+MIFI_HEALTH_MBH
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe Refresh Failed
+[%s]:[%s] - %s: MsgBus_Subscribe refresh failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+mifi_health_msgbus_receive_dsm_events
+mifi_health_msgbus_receive_sim_mgr_events
+mifi_health_msgbus_receive_mss_disconnect
+mifi_health_msgbus_receive_modem2_signal
+mifi_health_msgbus_receive_modem2_call_status
+mifi_health_msgbus_receive_modem2_call_fail
+mifi_health_msgbus_receive_ccm2_wan_stats
+mifi_health_msgbus_receive_nua_restart_event
+mifi_health_msgbus_receive_wan_mgr_priority_list_settings
+mifi_health_msgbus_receive_wan_mgr_failback_settings
+mifi_health_msgbus_receive_wan_mgr_monitor_settings
+mifi_health_msgbus_receive_wan_mgr_manual_settings
+mifi_health_msgbus_receive_wan_mgr_auto_switch
+mifi_health_msgbus_receive_wan_mgr_status
+mifi_health_msgbus_handler
+MIFI_HEALTH
+[%s]:[%s] - %s: Skip=[%s]
+[%s]:[%s] - %s: Opened dir=[%s]
+[%s]:[%s] - %s: stat failed for=[%s]
+[%s]:[%s] - %s: Entering sub directory: %s
+[%s]:[%s] - %s: Deleting=[%s]
+[%s]:[%s] - %s: Remove failed on=[%s], erronno=[%d]
+/opt/nvtl/data/health
+[%s]:[%s] - %s: Remove failed for=[%s], erronno[%d]
+[%s]:[%s] - %s: unlink failed ret=%d for file:%s
+[%s]:[%s] - %s: Removed file: %s
+[%s]:[%s] - %s: rename(%s, %s) failed=[%s]
+[%s]:[%s] - %s: fsyncing=[%s]
+cp %s %s
+[%s]:[%s] - %s: cp command failed (%s) failed, rc=%d
+[%s]:[%s] - %s: File not found [%s]
+[%s]:[%s] - %s: Read str=[%s] from file=[%s]
+[%s]:[%s] - %s: Cannot open dir, errno:%d
+[%s]:[%s] - %s: syncing %s complete
+[%s]:[%s] - %s: fopen() append failed for %s
+[%s]:[%s] - %s: fopen() creation failed for %s
+[%s]:[%s] - %s: file (%s) write failed expected:%d, returned:%d
+[%s]:[%s] - %s: unlink failed for:%s rc=%d, errno:%d
+[%s]:[%s] - %s: File created :%s
+[%s]:[%s] - %s: %d written to file=[%s]
+mifi_health_file_is_delete_ok
+mifi_health_dir_clean_up
+mifi_health_file_remove
+mifi_health_file_move
+mifi_health_file_copy
+mifi_health_read_str_from_file
+mifi_health_file_sync_and_close
+mifi_health_file_appen_str
+mifi_health_file_create
+mifi_health_write_int_to_file
+MIFI_HEALTH
+[%s]:[%s] - %s: Some data in mifi_health_thread [%d] [%d]
+[%s]:[%s] - %s: MIFI_HEALTH_MSG_SYS_REBOOT - %s
+/mifi_health_mq
+[%s]:[%s] - %s: sleeping on bootup cooling period
+[%s]:[%s] - %s: sysinfo call failed
+%m/%d/%y %I:%M:%S %P
+[%s]:[%s] - %s: tmp_buf=%s local_time=%ld time_zone=%d DST=%d
+[%s]:[%s] - %s: uptime=%d, freemem=%d MB, time_hour=%d
+[%s]:[%s] - %s: lowmem detected
+[%s]:[%s] - %s: uptime exceeds min_uptime
+[%s]:[%s] - %s: time with in reboot window, about to reboot device
+lowmem_reboot,%d,%d,%d/%d/%d_%d:%d:%d
+[%s]:[%s] - %s: modem2_get_network_time failed. returned %d (%s)
+[%s]:[%s] - %s: Start with pthread ID:%lu, process ID:%d.
+/mifi_health_thread_mq
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: Get DSM state
+[%s]:[%s] - %s: Get memory info
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Terminate Thread Example, TID: %lu.
+[%s]:[%s] - %s: Thread example send async data.
+log_event_with_mifi_health
+get_mem_info
+mifi_health_thread
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

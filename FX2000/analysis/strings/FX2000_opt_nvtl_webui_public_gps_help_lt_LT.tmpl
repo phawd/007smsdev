@@ -1,0 +1,107 @@
+<div id="gps_status">
+	<h1><tmpl_var _("webui", "gps_status_menu_text")></h1>
+valga</h2>
+iame <tmpl_var _("webui", "webui_product_name")> 
+renginyje 
+taisytas GPS imtuvas. GPS imtuvas gali nustatyti j
+ buvimo viet
+nai net jums b
+nant patalpose.<tmpl_if GPSOverWiFiEnableShow>
+iame puslapyje rodoma dabartin
+ buvimo vieta, kuri
+ galima bendrinti su prijungtais kompiuteriais naudojant GPS per 
+ funkcij
+.</tmpl_if>
+	<h2>GPS naudojimas</h2>
+	<tmpl_if GPSEnableShow>
+		<h3><tmpl_var _("webui", "gps_status_enable_label")></h3>
+		<p>Naudokite 
+JUNGIMO / I
+JUNGIMO valdikl
+dami prireikus 
+jungti arba i
+jungti GPS funkcij
+		<h3><tmpl_udf GET_PO_TEXT("gps_status_startup_state_label", gProductName)></h3>
+i nuostata apibr
+ia, kada 
+jungus GPS imtuv
+sijungs.</p>
+		<p>Jei 
+JUNGTAS, GPS imtuvas i
+sijungs i
+jungus <tmpl_var _("webui", "webui_product_name")>. Kit
+, kai prireiks GPS imtuvo, tur
+jungti.</p>
+	</tmpl_if>
+		<h3>GPS b
+sena</h3>
+		<p>Jei GPS imtuvas dar negavo koordina
+ (buvimo vietos), rodoma b
+sena <strong>Ie
+koma</strong>. Gavus koordinates, parodoma 
+ios dabartin
+s buvimo vietos informacija, taip pat rodomas 
+lapis, kuriame vizualiai nurodoma dabartin
+ buvimo vieta.</p>
+		<h2><tmpl_var _("webui", "gps_status_map_section_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "gps_status_latitude_label"), (size(_("webui", "gps_status_latitude_label")) - size(":")))></h3>
+		<p>Paskutin
+s buvimo vietos koordina
+ platuma.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_longitude_label"), (size(_("webui", "gps_status_longitude_label")) - size(":")))></h3>
+		<p>Paskutin
+s buvimo vietos koordina
+ ilguma.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_altitude_label"), (size(_("webui", "gps_status_altitude_label")) - size(":")))></h3>
+		<p>Paskutin
+s buvimo vietos koordina
+ros lygio.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_accuracy_label"), (size(_("webui", "gps_status_accuracy_label")) - size(":")))></h3>
+		<p>Tai GPS imtuvo gautos horizontaliosios pad
+ties tikslumo matas.</p>
+		<tmpl_if GPSOverWiFiEnableShow>
+			<tmpl_if GPSPortNumberShow>		
+				<h2><tmpl_var _("webui", "gps_status_enable_sub_header_text")></h2>
+				<h3><tmpl_var truncate(_("webui", "gps_status_gps_over_wifi_label"), (size(_("webui", "gps_status_gps_over_wifi_label")) - size(":")))></h3>
+				<p>GPS duomenis kaip Nacionalin
+ elektronikos asociacijos (NMEA) tekstini
+ teikia <tmpl_var _("webui", "webui_product_name")>.</p>
+				<p>NMEA (GPS) prievado naudojimas yra standartinis b
+das programoms pasiekti GPS duomen
+ sistemoje 
+ ir kitose duomen
+ apdorojimo kompiuteriu platformose. Nor
+dami sukurti 
+ prievad
+, turite atsisi
+diegti savo platformos GPS per 
+ tvarkykl
+i tvarkykl
+ sukurs NMEA prievad
+, gaus GPS duomenis i
+ <tmpl_var _("webui", "webui_product_name")> ir pateiks 
+iuos GPS duomenis NMEA palaikan
+ioms programoms.</p>
+				<h3><tmpl_var truncate(_("webui", "gps_status_port_number_label"), (size(_("webui", "gps_status_port_number_label")) - size(":")))></h3>
+				<p>Tai prievado numeris, kur
+ kompiuterio tvarkykl
+s programin
+ranga naudoja ry
+renginiu u
+megzti ir GPS duomenims gauti. Jei n
+ra rimtos prie
+asties tai daryti, prievado numerio keisti nereik
+			</tmpl_if>
+		</tmpl_if>
+	<tmpl_if GPSDownloadDriversShow>
+		<h3><tmpl_var _("webui", "gps_status_wifi_driver_download_link")></h3>
+		<p>Naudokite j
+dami pasiekti galim
+ tvarkykli
+ atsisiuntimo puslap
+.<tmpl_if GPSOverWiFiEnableShow>
+ tvarkykli
+ reikia norint naudoti GPS per 
+ funkcij
+.</tmpl_if>
+	</tmpl_if>

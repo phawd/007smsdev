@@ -1,0 +1,211 @@
+<!-- Diagnostics -->
+<div id="status_diagnostics">
+	<h1><tmpl_var _("webui", "status_diagnostics_menu_text")></h1>
+	<h2>Oversigt</h2>
+	<p>Denne side indeholder oplysninger om <tmpl_var _("webui", "webui_product_name")> og de tilgængelige netværk. Brug den efter behov til fejlfinding; den er ikke påkrævet til normal drift.</p>
+	<h2><tmpl_var _("webui", "status_diagnostics_modem_sub_header_text")></h2>
+
+	<tmpl_if showPhoneNumber>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_phone_number_label"), (size(_("webui", "status_diagnostics_phone_number_label")) - size(":")))></h3>
+		<p>Dette er telefonnummeret til <tmpl_var _("webui", "webui_product_name")>.</p>
+	</tmpl_if>
+
+	<tmpl_if showImei>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imei_label"), (size(_("webui", "status_diagnostics_imei_label")) - size(":")))></h3>
+		<p>IMEI (International Mobile Equipment Identity) til denne enhed. IMEI er en 15- eller 17-cifret kode, der bruges til unikt at identificere en individuel mobilstation på et<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>netværk. IMEI ændres ikke, når simkortet skiftes.</p>
+	</tmpl_if>
+
+	<tmpl_if showImeisv>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imeisv_label"), (size(_("webui", "status_diagnostics_imeisv_label")) - size(":")))></h3>
+		<p>Dette felt kombinerer IMEI med et godkendelsesnummer for denne type enhed.</p>
+	</tmpl_if>
+
+	<tmpl_if showMeid>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_meid_label"), (size(_("webui", "status_diagnostics_meid_label")) - size(":")))></h3>
+		<p>MEID (Mobile Equipment ID) er et unikt nummer, der bruges til at identificere en individuel mobilstation på et CDMA-netværk.</p>
+	</tmpl_if>
+
+	<tmpl_if showIMSI>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imsi_label"), (size(_("webui", "status_diagnostics_imsi_label")) - size(":")))></h3>
+		<p>En international mobilabonnentidentitet (IMSI) er et unikt nummer, der er knyttet til al Global System for Mobile Communications (GSM) og Universal Mobile Telecommunications System (UMTS) netværks mobiltelefonbrugere, der bruges til at identificere en GSM-abonnent.</p>
+	</tmpl_if>
+	
+	<tmpl_if showFwVersion>					
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_fw_version_label"), (size(_("webui", "status_diagnostics_fw_version_label")) - size(":")))></h3>
+		<p>Den version af firmware (software), der i øjeblikket er installeret i modemmet.</p>
+	</tmpl_if>
+
+	<tmpl_if showSimStatus>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_sim_status_label"), (size(_("webui", "status_diagnostics_sim_status_label")) - size(":")))></h3>
+		<p>Dette angiver simkortets status. Hvis simkortet mangler, eller dette felt angiver en form for simkortfejl, er forbindelse til mobilnetværket ikke mulig.</p>
+	</tmpl_if>
+
+	<tmpl_if showICCID>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_iccid_label"), (size(_("webui", "status_diagnostics_iccid_label")) - size(":")))></h3>
+		<p>Dette unikke ID-nummer er tildelt simkortet. Det vises ikke, hvis der ikke er sat et simkort i, eller der findes en simkort-fejltilstand.</p>
+	</tmpl_if>
+
+	<tmpl_if showModemDetails>
+		<tmpl_if showMINMSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_msid_label"), (size(_("webui", "status_diagnostics_msid_label")) - size(":")))></h3>
+			<p>Denne ID bruges til at identificere en abonnent på det mobile datanetværk.</p>
+		</tmpl_if>
+		<tmpl_if showESN>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_esn_label"), (size(_("webui", "status_diagnostics_esn_label")) - size(":")))></h3>
+			<p>Elektronisk serienummer (ESN) er den traditionelle metode til unikt at identificere enheder på CDMA-netværk, men det er blevet erstattet af MEID. For enheder, der bruger en MEID (som denne enhed), er ESN enten tom eller en pseudo-ESN, som ikke garanteres at være unik.</p>
+ 		</tmpl_if>
+ 		<tmpl_if showHomeSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_home_sid_label"), (size(_("webui", "status_diagnostics_home_sid_label")) - size(":")))></h3>
+			<p>SID (System ID) er en netværksidentifikator, der angiver tilknytningspunktet til det mobile datanetværk.</p>
+		</tmpl_if>
+		<tmpl_if showERIVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_eri_version_label"), (size(_("webui", "status_diagnostics_eri_version_label")) - size(":")))></h3>
+			<p>ERI (Enhanced Roaming Indicator)-tabellen indeholder oplysninger om hvert roamingnetværk, som den mobile enhed har tilladelse til at oprette forbindelse til. Dette felt angiver den aktuelt installerede ERI-version. ERI-tabellen opdateres automatisk.</p>
+ 		</tmpl_if>
+ 		<tmpl_if showPRLVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_prl_version_label"), (size(_("webui", "status_diagnostics_prl_version_label")) - size(":")))></h3>
+			<p>PRL (Preferred Roaming List) bruges til at vælge et netværk, når flere netværk er tilgængelige. Dette felt angiver den version af PRL, der i øjeblikket er installeret. PRL opdateres automatisk.</p>
+		</tmpl_if>			
+	</tmpl_if>
+	<tmpl_if lteSupported>			
+		<h2 class="sectionHead">5G/4G LTE-netværk</h2>
+		
+		<tmpl_if showInternetStatus4G>		
+			<h3>Status</h3>
+			<p>For<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>netværket er de mulige statusværdier:</p>
+			
+			<div class="blockgroup">
+				<ul>
+					<li>Ikke tilgængelig - intet<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>netværk er blevet registreret.</li>
+					<li>Tilgængelig - et<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>netværk er blevet registreret.</li>
+				</ul>
+			</div>
+			<p>Følgende dataelementer leveres kun, hvis<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>netværket er tilgængeligt.</p>
+		</tmpl_if>
+
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>Dette er navnet på<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>netværk.</p>
+		</tmpl_if>
+
+		<tmpl_if showSignalStrength>			
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_signal_strength_label"), (size(_("webui", "status_diagnostics_fourg_signal_strength_label")) - size(" (RSRP):")))></h3>
+			<p>Dette indikerer styrken af<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>signalet, målt i dBm. Højere absolutte værdier indikerer et stærkere signal, så -80 dBm er et stærkere signal end -90 dBm.<tmpl_udf GET_PO_TEXT("status_diagnostics_lte_note_text")>
+			</p>
+		</tmpl_if>
+
+		<tmpl_if showSNR>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_sinr_label"), (size(_("webui", "status_diagnostics_sinr_label")) - size(":")))></h3>
+			<p>SNR er et mål for signalkvalitet. Højere tal indikerer et bedre signal.</p>
+		</tmpl_if>
+
+		<tmpl_if showLteBand>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_lte_band_label"), (size(_("webui", "status_diagnostics_lte_band_label")) - size(":")))></h3>
+			<p><tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>netværk kan bruge forskellige bånd i forskellige regioner. Dette felt angiver det bånd, der bruges til den aktuelle<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>forbindelse.</p>
+		</tmpl_if>
+
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_roaming_label"), (size(_("webui", "status_diagnostics_fourg_roaming_label")) - size(":")))></h3>
+			<p>Dette angiver, om den aktuelle forbindelse er en roamingforbindelse.</p>
+		</tmpl_if>
+	</tmpl_if>
+		
+	<tmpl_if isHSPATechnology>	
+		<h2><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> Status</h2>
+			
+		<h3>Status</h3>
+		<p>For <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>s netværk understøttes følgende tilstande:</p>
+		<div class="blockgroup">
+			<ul>
+				<li>Ikke tilgængelig - intet <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>-netværk er blevet registreret.</li>
+				<li>Tilgængelig - et <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>-netværk er blevet registreret.</li>
+			</ul>
+		</div>
+		<p>Følgende dataelementer leveres kun, hvis netværket er tilgængeligt.</p>
+
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>Dette er navnet på <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>s netværk.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p>Den aktuelle teknologi, der bruges til <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>s netværk. Mulige værdier, fra langsomst til hurtigst, er:</p>
+			<ul>
+				<tmpl_if gsmSupported>
+					<li>GPRS</li>
+				</tmpl_if>
+				<tmpl_if wcdmaSupported>
+					<li>UMTS</li>
+				</tmpl_if>
+				<tmpl_if cdmaSupported>
+					<li>HSPA +</li>
+					<li>HSPA + DC</li>
+				</tmpl_if>
+				<tmpl_if evdoSupported>
+					<li>EDGE</li>
+					<li>HSDPA</li>
+					<li>HSUPA</li>
+				</tmpl_if>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_networkid_label"), (size(_("webui", "status_diagnostics_networkid_label")) - size(":")))></h3>
+			<p>Navn og/eller ID på netværket Public Land Mobile Network (PLMN).</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_cellid_label"), (size(_("webui", "status_diagnostics_cellid_label")) - size(":")))></h3>
+			<p>Denne værdi identificerer den mobilmast, der i øjeblikket er i brug.</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_rssi_label"), (size(_("webui", "status_diagnostics_rssi_label")) - size(":")))></h3>
+			<p>Dette indikerer RSSI for <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")>s signal. RSSI er et mål for signalstyrke i decibel i forhold til én milliwatt. Det er altid negativt, fordi mobile radioenheder er meget mindre kraftige end en milliwatt. Højere absolutte værdier indikerer et stærkere signal, så -50dBm er et stærkere signal end -70dBm.</p>
+
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_roaming_label"), (size(_("webui", "status_diagnostics_roaming_label")) - size(":")))></h3>
+			<p>Dette angiver, om den aktuelle forbindelse er en roamingforbindelse.</p>
+
+		</tmpl_if>
+		<tmpl_if show3g>
+			<h2><tmpl_var _("webui", "status_diagnostics_threeg_label")></h2>
+			
+			<h3>Status</h3>
+			<p>De mulige statusværdier er:</p>
+			<div class="blockgroup">
+				<ul>
+					<li>Ikke tilgængelig - intet 3G-netværk er fundet.</li>
+					<li>Tilgængelig - der er fundet et 3G-netværk.</li>
+				</ul>
+			</div>
+			<p>Følgende dataelementer leveres kun, hvis netværket er tilgængeligt.</p>
+			<tmpl_if showNetworkOperator>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_network_label"), (size(_("webui", "status_diagnostics_threeg_network_label")) - size(":")))></h3>
+				<p>Dette er navnet på 3G-netværket.</p>
+			</tmpl_if>
+			<tmpl_if show3g1xRssi>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_onex_label"), (size(_("webui", "status_diagnostics_threeg_onex_label")) - size(":")))></h3>
+			<p>RSSI er et mål for signalstyrke. Enheden er decibel i forhold til 1 milliwatt og er altid negativ, fordi mobile radioenheder er meget mindre kraftige end 1 milliwatt. Højere absolutte værdier indikerer et stærkere signal, så -50 dBm er et stærkere signal end -70 dBm. Dette felt angiver RSSI for 1xRTT-signalet.</p>
+			</tmpl_if>
+			<tmpl_if show3gEvdoRssi>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_evdo_label"), (size(_("webui", "status_diagnostics_threeg_evdo_label")) - size(":")))></h3>
+				<p>RSSI er et mål for signalstyrke. Dette felt angiver RSSI for EVDO- eller eHRPD-signalet.</p>
+ 			</tmpl_if>
+			<tmpl_if show3gTechnology>
+ 				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+				<p>Den aktuelle teknologi, der bruges til 3G-netværket. Mulige værdier er 1xRTT, EVDO eller eHRPD.</p>
+ 			</tmpl_if>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_ecio_label"), (size(_("webui", "status_diagnostics_threeg_ecio_label")) - size(":")))></h3>
+			<p>Ec/Io er et mål for, hvor "rent" signalet er, og er en type signal-til-støj-forhold. Typiske værdier spænder fra -10 til -40. En værdi på -4 ville være et meget "rent" signal.</p>
+ 
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_sid_label"), (size(_("webui", "status_diagnostics_threeg_sid_label")) - size(":")))></h3>
+			<p>SID (System ID) er en netværksidentifikator, der angiver det aktuelle tilknytningspunkt til det mobile datanetværk. En gruppe af mobilmaste kan have den samme SID-værdi. Dette felt angiver den aktuelle SID.</p>		
+			<tmpl_if showRoaming>
+				<h3>Roaming</h3>
+				<p>Dette angiver, om den aktuelle forbindelse er en roamingforbindelse.</p>			
+			</tmpl_if>
+			<tmpl_if linkToFieldTest>	
+				<h2><tmpl_var _("webui", "status_diagnostics_field_test_button")></h2>
+				<p>Knappen "Felttest" giver en liste over netværksparametre på lavt niveau, som kan være nyttige for teknisk supportpersonale, når de fejlfinder problemer med netværksforbindelser.</p>
+				
+				<p>Denne knap er kun tilgængelig, hvis 3G-netværket er tilgængeligt.</p>
+			</tmpl_if>
+		</tmpl_if>
+	</tmpl_if>
+			
+</div>
+<!-- id="status_diagnostics" -->
+		

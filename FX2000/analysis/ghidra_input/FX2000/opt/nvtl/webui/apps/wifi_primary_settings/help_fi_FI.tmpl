@@ -1,0 +1,73 @@
+<!-- wifi_primary_settings -->
+<div id="wifi_primary_settings">
+	<h1>Wi-Fi – Ensisijainen verkko</h1>
+	
+	<h2>Yleiskatsaus</h2>
+	<p>
+		Jotta voit muodostaa yhteyden <tmpl_var _("webui", "webui_product_name_with_suffix")>-laitteen ensisijaiseen Wi-Fi-verkkoon, yhdistettyjen laitteiden on käytettävä tässä näytössä näkyviä Wi-Fi-asetuksia. Jos muutat näitä asetuksia, olemassa olevien yhdistettyjen laitteiden yhteys saattaa katketa.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_ssid_label")></h3>
+	<p>
+		Tämä asettaa verkon nimen tai SSID:n Wi-Fi-verkolle. Anna sopiva nimi. Nimi voi olla enintään 32 merkkiä pitkä.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_security_label")></h3>
+	<p>
+		Valitse haluamasi Wi-Fi-suojausvaihtoehto.
+	</p>
+
+	<ul>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> sallii muiden seurata Wi-Fi-liikennettäsi ja käyttää datapakettiasi Internetin käyttämiseen. Jos mitenkään mahdollista, tämän vaihtoehdon käyttöä pitäisi välttää.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> on uusin ja turvallisin menetelmä, ja sitä pitäisi käyttää, jos mahdollista.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> -vaihtoehtoa voidaan käyttää, jos jotkin vanhemmista laitteistasi eivät tue WPA2:ta.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> voidaan käyttää WPA2- ja WPA3-valituslaitteisiin.
+		</li>
+	</ul>	
+	
+	<h3><tmpl_var _("webui", "wifi_primary_password_label")></h3>
+	<p>
+		Anna Wi-Fi-salasana tähän kenttään. Jos haluat, että tähän kenttään asetetaan vahva satunnainen salasana, voit käyttää myös ”Generate New Key” (Laadi uusi avain) -painiketta. Muista tallentaa muutokset, jos käytät tätä vaihtoehtoa.
+	</p>
+
+	<p>
+		Nämä asetukset ovat oletusarvoisesti piilotettuina, mutta napsauttamalla otsikkoa/linkkiä saat ne näkyviin. 
+		Nämä asetukset voidaan yleensä jättää oletusarvoihinsa, mutta tarvittaessa voit muuttaa niitä ympäristösi mukaan.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_ssid_label", gProductName)></h3>
+	<p>
+		Jos tämä asetus on valittuna, Wi-Fi-nimi on luettavissa <tmpl_var _("webui", "webui_product_name_with_suffix")>-laitteen kosketusnäytöstä käyttämällä ”Wi-Fi”-valikkovaihtoehtoa. Jos sitä ei ole valittu, nimi näkyy muodossa ******.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_password_label", gProductName)></h3>
+	<p>
+		Jos tämä asetus on valittuna, Wi-Fi-salasana on luettavissa <tmpl_var _("webui", "webui_product_name_with_suffix")>-laitteen kosketusnäytöstä käyttämällä ”Wi-Fi”-valikkovaihtoehtoa. Jos sitä ei ole valittu, salasana näkyy muodossa ******.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_primary_broadcast_ssid_label")></h3>
+	<p>
+		Jos tämä asetus on valittuna, tämä Wi-Fi-verkko näkyy käytettävissä olevien Wi-Fi-verkkojen luettelossa yhdistetyissä laitteissasi. Jos sitä ei ole valittu, tämä verkko ei ole näkyvissä.
+	</p>
+	<tmpl_if showWiFiPrimaryWPS>
+		<h3><tmpl_var _("webui", "wifi_primary_wps_label")></h3>
+		<p>
+			Wi-Fi Protected Setup (WPS) on järjestelmä, jonka avulla Wi-Fi-laitteet voivat muodostaa yhteyden Wi-Fi-verkkoon ilman, että verkkoavain jouduttaisiin syöttämään manuaalisesti. Jos haluat käyttää WPS:ää, valitse tämä asetus.
+		</p>
+	</tmpl_if>
+
+	<h3><tmpl_var _("webui", "wifi_primary_privacy_label")></h3>
+	<p>
+		Jos tämä asetus on valittuna, jokainen yhdistetty laite on erillään kaikista muista yhdistetyistä laitteista. Tämä tarjoaa lisäturvaa, jos jotkin yhdistetyt laitteet ovat tuntemattomia tai niihin ei luoteta täysin. Tämän ei pitäisi olla valittuna tavanomaisessa käytössä.
+	</p>	
+</div>
+
+<!-- id="wifi_primary_settings" -->
+

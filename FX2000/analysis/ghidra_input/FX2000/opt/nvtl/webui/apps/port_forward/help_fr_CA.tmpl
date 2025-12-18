@@ -1,0 +1,45 @@
+<!-- Port Forwarding -->
+<div id="port_forward">
+	<h1>Réacheminement de port</h1>
+	<h2>Vue d’ensemble</h2>
+	<p>La fonctionnalité de réacheminement de port permet de transférer le trafic Internet entrant vers un ordinateur ou un appareil particulier de votre réseau Wi-Fi. Normalement, le pare-feu intégré bloque le trafic Internet entrant. Vous utilisez le réacheminement de port pour permettre aux internautes d’accéder à n’importe quel serveur que vous utilisez sur votre ordinateur, tel qu’un serveur Web, FTP ou de messagerie. Pour certains jeux en ligne, le réacheminement de port est nécessaire pour que les jeux fonctionnent correctement. Veuillez noter que l’utilisation du réacheminement de port crée un risque pour la sécurité et qu’il ne doit être utilisé qu’en cas de besoin.</p>
+<p><strong>Remarque :</strong> Certains réseaux mobiles sans fil vous fournissent une adresse IP sur leur propre réseau plutôt qu’une adresse IP Internet. Dans ce cas, le réacheminement de port ne peut pas être utilisé, car les internautes ne peuvent pas atteindre votre adresse IP.</p>
+
+	<h2>Applications de réacheminement de port</h2>
+	<h3>Cases d’application à cocher</h3>
+		<p>Un certain nombre d’applications serveur communes sont énumérées. Pour utiliser l’une de ces applications, suivez cette procédure :</p>
+		<ol>
+			<li>1. Installez l’application sur un ordinateur qui est connecté au réseau Wi-Fi de cet appareil.</li>
+			<li>2. Sur l’ordinateur, vérifiez l’adresse IP de ce dernier pour le réseau Wi-Fi. Vous pouvez également vérifier l’adresse IP de l’ordinateur à l’écran Appareils connectés.</li>
+			<li>3. À cet écran, saisissez l’adresse IP de l’ordinateur dans le champ <strong>Adresse IP de l’appareil connecté</strong> à côté de l’application.</li>
+			<li>4. Activez cette application dans cet écran en sélectionnant sa case à cocher.</li>
+			<li>5. Enregistrez vos modifications.</li>
+			<li>6. À l’écran <strong>État actuel</strong>, notez l’adresse IP Internet de cet appareil.</li>
+			<li>7. Demandez aux utilisateurs sur Internet de se connecter à l’adresse IP Internet de cet appareil. Ces demandes de connexion seront transmises à l’adresse IP spécifiée à l’étape 3.</li>
+		</ol>
+
+	<h2>Applications personnalisées</h2>
+	<p>Cette fonctionnalité vous permet de définir vos propres applications. Une fois définies, ces applications peuvent être activées ou désactivées de la même manière que les applications prédéfinies. Pour définir une application, vous devez connaître les ports et le protocole (TCP, UDP) utilisés par l’application pour le trafic entrant. Pour commencer, cliquez sur le bouton <strong>Ajouter une application personnalisée</strong>, puis fournissez les données suivantes.</p>
+	<h3>Case d’application à cocher</h3>
+	<p>Utilisez-la pour activer une application après l’avoir définie.</p>
+	<h3>Nom de l’application</h3>
+	<p>Saisissez un nom approprié pour l’application que vous définissez.</p>
+
+	<h3>Adresse IP de l’appareil connecté</h3>
+	<p>Saisissez l’adresse IP de l’appareil connecté qui recevra ce trafic.</p>
+
+	<h3>Type de port et numéros de port</h3>
+		<p>Chaque application a sa propre plage de ports. Indiquez le début et la fin de la plage de ports pour chaque application.</p>
+		<div class="blockgroup">
+			<ul>
+				<li>Pour la plage de ports, saisissez le début de la plage dans le champ <strong>De</strong> et la fin de la plage dans le champ <strong>À</strong>.</li>
+				<li>Pour un port de traduction, saisissez le numéro de port dans les champs <strong>Ext</strong> et <strong>Int</strong>.</li>
+			</ul>
+		</div>
+	<h3>Protocole</h3>
+	<p>Pour chaque plage de ports, sélectionnez le protocole (TCP ou UDP) utilisé par cette plage.</p>
+		
+	<h3>Supprimer</h3>
+	<p>Utilisez cette case à cocher pour supprimer une application personnalisée.</p>
+</div>
+<!-- id="port_forward" -->

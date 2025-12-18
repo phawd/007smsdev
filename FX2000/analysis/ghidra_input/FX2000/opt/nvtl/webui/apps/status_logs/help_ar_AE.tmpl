@@ -1,0 +1,36 @@
+<!-- Status Logs -->
+<div id="status_logs">
+	<h1><tmpl_var _("webui", "status_logs_menu_text")></h1>
+	<h2>نظرة عامة</h2>
+	<p>
+		معلومات السجل مفيدة لاستكشاف الأخطاء وإصلاحها، ولكنها ليست ضرورية للتشغيل العادي.
+	</p>
+	
+	<h2>الإعدادات</h2>
+	<h3><tmpl_var truncate(_("webui", "status_logs_enable_logs_label"), (size(_("webui", "status_logs_enable_logs_label")) - size(":")))></h3>
+	<p>حدد هذا المربع لتشغيل السجلات حسب الحاجة.</p>
+	<h3><tmpl_var truncate(_("webui", "status_logs_delete_sys_logs_label"), (size(_("webui", "status_logs_delete_sys_logs_label")) - size(":")))></h3>
+	<p>استخدم القائمة المنسدلة لتحديد وقت مسح السجلات. حدد الخيار المطلوب.</p>
+	<p>لاحظ أنه إذا كان السجل ممتلئًا، فسيتم حذف أقدم البيانات بغض النظر عن هذا الإعداد.</p>
+	
+	<h2>تسجيل البيانات</h2>
+	<p>تسمح لك علامات التبويب المتوفرة بتحديد نوع بيانات السجل المراد عرضه.
+	</p>
+	<h3><tmpl_var _("webui", "status_logs_mobile_network_log_href")></h3>
+	<p>يحتوي هذا السجل على بيانات تتعلق بالاتصالات بشبكة الأجهزة المحمولة.
+	</p>
+	<h3><tmpl_var _("webui", "status_logs_system_log_href")></h3>
+	<p>يسجل هذا السجل الأحداث - بخلاف اتصالات بيانات الأجهزة المحمولة - التي حدثت على هذا الجهاز.
+	</p>
+	
+	<h2>الأزرار</h2>
+	
+	<h3><tmpl_var _("webui", "status_logs_clear_log_btn")></h3>
+	<p>سيؤدي النقر فوق هذا الزر إلى حذف جميع بيانات السجل الموجودة. هذا يزيد سهولة قراءة البيانات الجديدة.</p>
+	<h3><tmpl_var _("webui", "status_logs_refresh_btn")></h3>
+	<p>استخدم هذا لتحديث بيانات السجل التي يتم عرضها.</p>
+	<h3><tmpl_var _("webui", "status_logs_download_btn")></h3>
+	<p>استخدم هذا الزر إذا كنت ترغب في تنزيل بيانات السجل على جهاز الكمبيوتر الخاص بك أو الجهاز المتصل.</p>
+	
+</div>
+<!-- end Status Logs -->

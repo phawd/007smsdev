@@ -1,0 +1,251 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+wan_mgr_api_is_running
+msgq_does_queue_exist
+wan_mgr_log_internal_config
+msgq_send_async
+wan_mgr_get_error_string
+wan_mgr_get_wan_priorities_settings
+wan_mgr_get_supported_wan_count
+router2_utils_get_wan_type_str
+wan_mgr_set_manual_wan
+wan_mgr_get_wan_telemetry_info_list
+wan_mgr_state_str
+wan_mgr_disconnect_reason_str
+wan_mgr_get_manual_wan
+wan_mgr_set_auto_switch
+wan_mgr_get_auto_switch
+wan_mgr_set_wan_priorities
+wan_mgr_set_failback_settings
+wan_mgr_get_failback_settings
+wan_mgr_set_wan_monitor_settings
+wan_mgr_get_wan_monitor_settings
+wan_mgr_register_wan
+wan_mgr_send_status_validation
+wan_mgr_deregister_wan
+wan_mgr_set_no_con_timeout
+wan_mgr_get_no_con_timeout
+mifi_dbg_start
+__bss_start
+librt.so.1
+libmifimsgbus.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libsqlite3.so.0
+librouter2_api.so
+libwan_mgr_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+is_running
+Tells if the associated process is running.
+Logs the internal status of wan_mgr.
+get_manual_wan
+get default wan interface.
+set_manual_wan
+set default wan interface.
+get_auto_switch
+get auto switch current status.
+set_auto_switch
+set auto switch enable/disable.
+get_wan_priority_list
+get wan priority list
+set_wan_priority_list
+set wan priority list
+get_wan_failback
+get wan failback
+set_wan_failback
+set wanfailback
+get_wan_monitor_properties
+get wan monitor properties
+set_wan_monitor_properties
+set wan monitor properties
+get_all_wan_info
+get all wan interface info
+register_wan
+Register WAN Interface
+deregister_wan
+Deregister WAN Interface
+get_wan_telemetry_info
+get telemetry info
+send_wan_status_info
+send wan status info
+set_no_con_timeout
+set no connectivity timeout
+get_no_con_timeout
+get no connectivity timeout
+/wan_mgr_mq
+WAN_MGR: success.
+WAN_MGR: general error.
+WAN_MGR: one or more bad parameters passed into a function.
+WAN_MGR: one or more buffer type parameters passed into API is too small.
+WAN_MGR: the feature is unsupported.
+WAN_MGR: process not running.
+WAN_MGR: a device reset is required for the operation to take effect.
+WAN_MGR: API not implemented for the platform.
+WAN_MGR: WAN is already configured.
+WAN_MGR: WAN already registered.
+WAN_MGR: unknown error.
+  --------------------------------------------------------------------------- 
+  %-25s - %s
+  ---------------------------------------------------------------------------
+returned success
+wan_mgr_is_running returned %d (%s)
+Failed to get wan priority settings.
+Failed to get the supported WAN count.
+make sure auto_switch is disabled before configuring manual_wan 
+You can configure the manual WAN for the following WANs:
+WAN manager wan_type : [%s]
+Enter the manual WAN Type (1=WWAN, 2=Wifi, 3=Ethernet 4=USB): 
+%s returned %d (%s)
+Supported WAN count : [%d]
+_________________________________________________________________ 
+WAN manager wan type        : [%s]
+WAN manager priority        : [%d]
+WAN manager wan state       : [%s]
+WAN manager wan routed time : [%d]Sec
+WAN manager wan routed count : [%d]
+WAN manager wan online count : [%d]
+wan switches due to [%s] is : [%d] 
+WAN manager wan watchdog triggers : [%llu]
+WAN manager wan failed triggers   : [%llu]
+-------------------------------------------------------------------
+WAN manager recovery count           : [%d]
+WAN manager successful recovery count: [%d]
+WAN manager failure recovery count  :  [%d]
+The default wan is [%s]
+Enter WAN Auto Switch Value(0/1): 
+The Auto Switch Value is [%d]
+You can configure the priorities for the following WANs:
+WAN manager wan wan_type : [%s]
+Enter the WAN Type (1=WWAN, 2=Wifi, 3=Ethernet 4=USB): 
+Enter WAN priority for WAN[%d]:
+Record[%d]: WAN wan_type[%d] WAN priority:[%d]
+WAN manager priority     : [%d]
+Invalid number of command line parameters!!!
+Failback enabled (0/1) Failback timer Range(0-86400Sec)
+Enter the failback feature enable or disable (0:disable, 1:enable): 
+Enter the failback timer Range(0-1440 min): 
+Failback feature:[%d] WAN failback timer[%d]
+WAN manager failback enable : [%d]
+WAN manager failback interval : [%d]
+<wan manager enable (0/1)> <retry count> <routed monitor interval> <online monitor interval> <failed monitor interval>
+<DNS URL1> <DNS URL2> <DNS URL3> <auto-switch enable (0/1)>
+Enter the WAN monitor feature enable or disable (0:disable, 1:enable): 
+Enter the use connected device state feature enable or disable (0:disable, 1:enable): 
+Enter the interface retry count, Range(0-10): 
+Enter the routed monitor interval, Range(30-86400 sec) : 
+Enter the online monitor interval, Range(1-1440 min): 
+Enter the failed monitor interval, Range(10-600 sec): 
+Enter the first DNS URL: 
+Enter the second dns url: 
+Enter the third dns url: 
+WAN monitor Enabled  : [%d]
+WAN use client connected state : [%d]
+WAN monitor retry count : [%d]
+WAN monitor routed monitor interval : [%d] sec
+WAN monitor online monitor interval : [%d] min
+WAN monitor failed monitor interval : [%d] sec
+WAN monitor dns url1 : [%s]
+WAN monitor dns url2 : [%s]
+WAN monitor dns url3 : [%s]
+Suppoted WAN Count: [%d]
+Disabled
+Auto-Switch Status: [%s]
+Manual WAN: [%s]
+Suppoted WAN Priorities:
+WAN Type [%s]
+WAN Priority [%d]
+Failback Status : [%s]
+Failback Timer :  [%d] min
+WAN Monitor Feature Status : [%s]
+WAN use client connected state : [%s]
+WAN Retry Count: [%d]
+Routed WAN monitor interval: [%d] sec
+Online WAN monitor interval: [%d] min
+Failed WAN monitor interval: [%d] sec
+DNS URL-1: [%s]
+DNS URL-2: [%s]
+DNS URL-3: [%s]
+WAN Type Index: %d Type:[%s]
+Enter WAN Type Index: 
+Enter WAN Name: 
+Enter family [IPv4 : 2, IPv6: 10]: 
+select the status to send (0:NONE, 1:NOT_AVAILABLE, 2:AVAILABLE, 3:ONLINE, 4:ROUTED) 
+select the disconnect reason (0:WAN_INVALID_REASON,   1:WAN_LINK_DOWN, 2:WAN_CONNECTIVITY_DOWN, 3:WAN_DATA_THRESHOLD_REACHED,   4:WAN_SIGNAL_WEAK, 5:WAN_REASON_NOT_APPLICABLE) 
+WAN Disconnect Reason %d Type:[%s]
+Enter WAN Disconnect Reason: 
+Enter the no connectivity timeout value
+%s returned %d [%s]
+command [%s]
+command [%s] not found.
+cmd_set_manual_wan
+cmd_get_wan_telemetry_info
+cmd_get_manual_wan
+cmd_set_auto_switch
+cmd_get_auto_switch
+cmd_set_wan_priority_list
+cmd_get_wan_priority_list
+cmd_set_wan_failback
+cmd_get_wan_failback
+cmd_set_wan_monitor_properties
+cmd_get_wan_monitor_properties
+cmd_get_all_wan_info
+cmd_wan_register_wan
+cmd_send_wan_status_info
+cmd_wan_deregister_wan
+cmd_set_no_con_timeout
+cmd_get_no_con_timeout
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

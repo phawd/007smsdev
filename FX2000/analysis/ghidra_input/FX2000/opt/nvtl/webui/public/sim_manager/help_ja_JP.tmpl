@@ -1,0 +1,47 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_manager_menu_text")></h1>
+        <h2>概要</h2>
+        <p><tmpl_var _("webui", "webui_product_name")> 内部のSIMカードをPINを使用してロックできます。 SIMカードがロックされている場合は、モバイルネットワークに接続する前にPINを入力する必要があります。 入力すると、PINは次のシャットダウンまで記憶されます。</p>
+
+	<p>このページでは、必要に応じてSIM PINを入力できるだけでなく、SIMのロックを解除したり、SIM PINを変更したりすることもできます。 通常、SIMを変更するには、既存のPINを提供する必要があります。 Novatel Wireless SIMの場合、デフォルトのPINはサービスプロバイダーから入手できます。</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_pin_lock_feature_label"), (size(_("webui", "adv_sim_manager_pin_lock_feature_label")) - size(":")))></h3>
+		<p>このフィールドは、PINロック機能が使用されているかどうかを示します。 「オン」の場合、PINロックがオンになっているため、モバイルネットワークに接続するにはSIM PINを入力する必要があります。 「オフ」の場合、PINロック機能はオンになっていないため、SIM PINは必要ありません。</p>
+
+	<h3><tmpl_var truncate(_("webui", "adv_sim_manager_status_label"), (size(_("webui", "adv_sim_manager_status_label")) - size(":")))></h3>
+	<p>このフィールドは、SIMカードの現在のステータスを示します。 可能な値は次のとおりです。</p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>準備完了-これは通常の状態です。 SIM PINは使用されていません。</li>
+	        <li>PINロック済み-モバイルネットワークを使用するには、SIM PINを入力する必要があります。</li>
+	        <li>PUKロック済み-続行するには、SIMのPUKを入力する必要があります。 PUKはサービスプロバイダーから取得できます。</li>
+	        <li>ロック解除-SIM PINが必要ですが、すでに入力されています。</li>
+	        <li>SIMなし-SIMが検出されませんでした。 SIMをお持ちの場合は、正しく挿入されていることを確認してください。</li>
+	        <li>SIMエラー-SIMが検出されましたが、期待どおりに応答せず、使用できません。</li>       
+	        </ul>
+	</div>
+        <h2>SIMの操作</h2>
+        <p>利用可能なアクションは、現在のSIMステータスによって異なります。 可能なすべての操作を以下にリストして説明します。</p>
+
+		<h3>PINロック</h3>
+		<p>SIMが現在PINロックされている場合は、PINの入力を求められます。 間違ったPINを何度も入力すると、SIMはPUKロックされます。 ページ上のカウンタは、PUKロックを引き起こす不正なエントリの数を示します。 PUKロックされたら、PUKをサービスプロバイダーから取得する必要があります。</p>
+		<h3>PUKロック</h3>
+		<p>SIMが現在PUKロックされている場合、可能な操作はPUKの入力だけです。 誤ったPUKを何度も入力すると、SIMが永久に使用できなくなることに注意してください。 新しいSIMを入手する必要があります。 ページ上のカウンターは、エントリ試行の残り回数を示します。</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_enable_pin_lock_option")></h3>
+		<p>これによりSIMが設定され、モバイルネットワークに接続するために起動時にPINの入力が必要になります。 この操作を実行するには、現在のPINを入力する必要があります。</p>
+
+		<h3><tmpl_var _("webui", "adv_sim_manager_disable_pin_option")></h3>
+		<p>この設定を使用して、以前にオンになっていたPINロックをオフにすることができます。これにより、モバイルネットワークに接続するためにPINを入力する必要がなくなります。 この操作を実行するには、現在のPINを入力する必要があります。</p>
+		<h3><tmpl_var _("webui", "adv_sim_manager_change_pin_option")></h3>
+		<p>既存のPINを変更するには、このオプションを選択して、必要なデータを入力します。</p>
+		<div class="blockgroup">
+			<ul>
+			<li>現在のPIN</li>
+			<li>新しいPIN</li>
+			<li>新しいPINを確認する</li>
+			</ul>
+		</div>
+		<p><tmpl_var _("webui", "adv_sim_manager_name_text")></p>
+</div>
+<!-- id="sim" -->
+

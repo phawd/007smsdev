@@ -1,0 +1,48 @@
+<div id="gps_status">
+	<h1><tmpl_var _("webui", "gps_status_menu_text")></h1>
+	<h2>Panoramica</h2>
+	<p>Il dispositivo <tmpl_var _("webui", "webui_product_name")> è dotato di un ricevitore GPS. Il ricevitore GPS è in grado determinare la posizione corrente, spesso anche al chiuso.<tmpl_if GPSOverWiFiEnableShow>Questa pagina mostra la posizione corrente e si possono condividere le informazioni sulla posizione con i computer connessi utilizzando la funzione GPS over Wi-Fi.</tmpl_if>
+	</p>
+
+	<h2>Utilizzare il GPS</h2>
+
+	<tmpl_if GPSEnableShow>
+		<h3><tmpl_var _("webui", "gps_status_enable_label")></h3>
+		<p>Utilizza questo controllo ON/OFF per attivare o disattivare la funzione GPS secondo le esigenze.</p>
+		<h3><tmpl_udf GET_PO_TEXT("gps_status_startup_state_label", gProductName)></h3>
+		<p>Questa impostazione determina quando il ricevitore GPS si spegnerà, una volta acceso.</p>
+		<p>Se impostato su ON, il ricevitore GPS si spegnerà una volta che il <tmpl_var _("webui", "webui_product_name")> è viene spento. Dovrai riattivarlo la prossima volta che avrai bisogno del ricevitore GPS.</p>
+	</tmpl_if>
+
+		<h3>Stato GPS</h3>
+		<p>Se il ricevitore GPS non ha ancora ottenuto un fix (posizione), apparirà lo stato di <strong>ricerca...</strong>. Una volta ottenuto il fix verranno visualizzate le seguenti informazioni sulla posizione corrente oltre a una mappa di Google che indica visivamente la posizione corrente.</p>
+		<h2><tmpl_var _("webui", "gps_status_map_section_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "gps_status_latitude_label"), (size(_("webui", "gps_status_latitude_label")) - size(":")))></h3>
+		<p>La latitudine per l&#39;ultimo fix della posizione.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_longitude_label"), (size(_("webui", "gps_status_longitude_label")) - size(":")))></h3>
+		<p>La longitudine per l&#39;ultimo fix della posizione.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_altitude_label"), (size(_("webui", "gps_status_altitude_label")) - size(":")))></h3>
+		<p>L’altitudine per l&#39;ultimo fix della posizione.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_accuracy_label"), (size(_("webui", "gps_status_accuracy_label")) - size(":")))></h3>
+		<p>Questa è una misura dell&#39;accuratezza della posizione orizzontale ottenuta tramite il ricevitore GPS.</p>
+		<tmpl_if GPSOverWiFiEnableShow>
+			<tmpl_if GPSPortNumberShow>		
+				<h2><tmpl_var _("webui", "gps_status_enable_sub_header_text")></h2>
+			
+				<h3><tmpl_var truncate(_("webui", "gps_status_gps_over_wifi_label"), (size(_("webui", "gps_status_gps_over_wifi_label")) - size(":")))></h3>
+				<p>I dati GPS sono forniti da <tmpl_var _("webui", "webui_product_name")> sotto forma di flusso di testo secondo le specifiche della National Marine Electronics Association (NMEA).</p>
+				<p>L&#39;uso di una porta NMEA (GPS) è un metodo standard che le applicazioni hanno per accedere a un flusso di dati GPS su Windows e altre piattaforme. Per creare questa porta, devi scaricare e installare il driver GPS over Wi-Fi per la tua piattaforma. Questo driver creerà la porta NMEA, otterrà i dati GPS dal <tmpl_var _("webui", "webui_product_name")>e renderà tali dati GPS disponibili per le applicazioni che supportano NMEA.</p>
+
+				<h3><tmpl_var truncate(_("webui", "gps_status_port_number_label"), (size(_("webui", "gps_status_port_number_label")) - size(":")))></h3>
+				<p>Questo è il numero di porta utilizzato dal software del driver sul computer per stabilire una connessione a questo dispositivo e ottenere i dati GPS. A meno che non vi sia una buona ragione per farlo, non dovresti modificare il numero di porta.</p>
+			</tmpl_if>
+		</tmpl_if>
+
+	<tmpl_if GPSDownloadDriversShow>
+		<h3><tmpl_var _("webui", "gps_status_wifi_driver_download_link")></h3>
+		<p>Utilizzalo per accedere alla pagina di download dei driver disponibili.<tmpl_if GPSOverWiFiEnableShow>Questi driver sono necessari per utilizzare la funzione GPS over Wi-Fi.</tmpl_if>
+		</p>
+	</tmpl_if>
+					
+</div>
+

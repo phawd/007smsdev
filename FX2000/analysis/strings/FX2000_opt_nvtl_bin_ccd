@@ -1,0 +1,191 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+mq_close
+librt.so.1
+mq_unlink
+__libc_start_main
+__gmon_start__
+__errno_location
+libpthread.so.0
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+clock_gettime
+watchdog_application_send_keep_alive
+snprintf
+mifi_dbg_get_level_name
+mifi_dbg_log
+sys_getSIMCarrierMNCLen
+sys_getSIMCarrierIMSI
+sys_getSIMCarrierGID
+mifi_dbg_syslog
+xmldata_initialize
+xmldata_getcount
+xmldata_getstring
+xmldata_getint32
+xmldata_shutdown
+MsgBusGet
+settings_get_features
+pthread_self
+mifi_dbg_start
+msgq_create
+watchdog_application_register
+msgq_receive
+msgq_resp_preprocess
+msgq_resp_postprocess
+mifi_dbg_stop
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libmificommon.so
+libmifi_debug.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libdmdb_api.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libgps_api.so
+libfactory_reset_api.so
+libsms_api.so
+libwifi_api.so
+libccm2_api.so
+librouter2_api.so
+libfile_sharing_api.so
+libfota_api.so
+libled_api.so
+libbuzzer_api.so
+libans_api.so
+libusb_api.so
+libemd_api.so
+libsensor_api.so
+libvpn_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libwan_mgr_api.so
+libcbsd_api.so
+libsysintclient.so
+libcc_api.so
+H	KxD	J{D
+/dev/null
+[%s]:[%s] - cc_carrier_id_make
+[%s]:[%s] - mnc_len : %d
+[%s]:[%s] - imsi : %s
+[%s]:[%s] - mccmnc : %s
+[%s]:[%s] - carrier_id->cid : %s
+[%s]:[%s] - MNC not available
+[%s]:[%s] - MNC LENGTH not available
+gid1_length : %d
+[%s]:[%s] - gid1 [%d] : 0x%2x
+[%s]:[%s] - String-gid1 %s
+[%s]:[%s] - carrier-gid1 %s
+[%s]:[%s] - GID1 not available
+gid2_length : %d
+[%s]:[%s] - gid2 [%d] : 0x%2x
+[%s]:[%s] - String-gid2 %s
+%s-%s-%s
+[%s]:[%s] - carrier-gid2 %s
+[%s]:[%s] - GID2 not available
+/opt/nvtl/data/cc/carrier_customization.xml
+/opt/nvtl/etc/cc/carrier_customization.xml
+[%s]:[%s] - Some SIM issue carrier id not available
+[%s]:[%s] -  carrier count unavailable 
+[%s]:[%s] - carrier_count %d
+[%s]:[%s] -  carrier list unavailable 
+[%s]:[%s] - retrived ci %s xml ci %s
+[%s]:[%s] - Whole String match %s current id
+[%s]:[%s] - GID1 is not found id
+[%s]:[%s] - MCCMNC-GID1  String match %s current id
+[%s]:[%s] - MCCMNC  String match %s current id
+[%s]:[%s] - CC XML File doesnt exists..
+[%s]:[%s] - Current carrier Id Unavailable.
+/CarrierList/Carrier
+[%s]:[%s] - Found %d Carriers
+/CarrierList/Carrier[%d]/@id
+[%s]:[%s] - Found the id %s
+/CarrierList/Carrier[%d]/Enable
+[%s]:[%s] - Enable value is %d
+[%s]:[%s] - ID not found  
+[%s]:[%s] - Failed to open CC xml file: %s
+[%s]:[%s] - Found %d Carriers 
+[%s]:[%s] - Failed to initialise %s
+[%s]:[%s] - ID %d Value %s
+[%s]:[%s] - There is No carriers in %s
+/CarrierList/Carrier[%d]/Name
+/CarrierList/Carrier[%d]/Logo
+[%s]:[%s] - Carrier ID  %s NOT found
+TextSting
+browser lcd
+lcd browser
+[%s]:[%s] - Found the ID %s
+/CarrierList/Carrier[%d]/ItemList/Item
+[%s]:[%s] - Found %d Items
+/CarrierList/Carrier[%d]/ItemList/Item[%d]/Type
+[%s]:[%s] -  type copied %d
+/CarrierList/Carrier[%d]/ItemList/Item[%d]/Text
+[%s]:[%s] -  text copied %s
+/CarrierList/Carrier[%d]/ItemList/Item[%d]/Value
+[%s]:[%s] -  value copied %s
+/CarrierList/Carrier[%d]/ItemList/Item[%d]/DisplaySurfaces
+[%s]:[%s] -  display copied %d
+[%s]:[%s] - Items found  %d
+[%s]:[%s] - func %s received %d type
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - Carrier customization is disabled in features.xml..%d
+/CarrierList/Version
+[%s]:[%s] - Error: CC XML File doesnt exists
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Feature initialization failure. 
+[%s]:[%s] - CC initialization failure. 
+[%s]:[%s] - Error opening message queue: %d, terminating.
+cc_main_thread
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s Server Terminating.
+cc_handle_event_message
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

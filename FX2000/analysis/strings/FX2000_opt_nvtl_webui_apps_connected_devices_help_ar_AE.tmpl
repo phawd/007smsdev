@@ -1,0 +1,20 @@
+<!-- Connected Devices -->
+<div id="connected_devices">
+	<h1><tmpl_var _("webui", "connected_devices_menu_text")></h1>
+<tmpl_var _("webui", "webui_product_name")>
+	<h2><tmpl_var _("webui", "connected_devices_sub_header_text")></h2>
+ Wi-Fi. 
+<tmpl_var _("webui", "webui_product_name")> 
+ IP</h3>
+		<tmpl_var truncate(_("webui", "connected_devices_mac_address_label"), (size(_("webui", "connected_devices_mac_address_label")) - size(":")))>
+	<tmpl_if isIPv6Supported>
+			<tmpl_var truncate(_("webui", "connected_devices_link_local_label"), (size(_("webui", "connected_devices_link_local_label")) - size(":")))>
+	</tmpl_if>
+	<tmpl_if GuestWifiSupported>
+		<h2><tmpl_var _("webui", "connected_devices_guest_title")></h2>
+	</tmpl_if>
+ Block (
+ Block (
+ Unblock (
+ Unblock (
+<!-- id="connected_devices" -->

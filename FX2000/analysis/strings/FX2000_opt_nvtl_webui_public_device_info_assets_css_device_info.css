@@ -1,0 +1,13 @@
+#device_info #priCustomization
+	width: 350px;
+#device_info #priCustomization .col
+	width: auto;
+#device_info #priCustomization form div.col.inline_error,
+#device_info #priCustomization div.col.inline_success
+	margin-left: 0;
+html.rtl #device_info #priCustomization form div.col.inline_error,
+html.rtl #device_info #priCustomization div.col.inline_success
+	margin-right: 0;
+@media screen and (max-width: 768px)
+	#device_info #priCustomization
+		width: auto;

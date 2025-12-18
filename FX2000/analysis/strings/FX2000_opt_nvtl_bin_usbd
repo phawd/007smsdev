@@ -1,0 +1,479 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+libpthread.so.0
+mifi_dbg_get_level_name
+mifi_dbg_log
+sem_destroy
+MsgBusSetInt32
+pthread_join
+mifi_dbg_syslog
+router2_get_ip_passthrough
+dsm_get_usb_mac_addr
+dsm_get_usb_default_mode
+sem_post
+snprintf
+pthread_create
+sem_init
+sem_wait
+dsm_get_state
+convert_start_mode
+convert_temp_tether
+dsm_set_usb_default_mode
+convert_mode_switch
+dsm_reset_device
+router2_api_is_running
+ccm2_is_running
+router2_modify_bridge_interfaces
+usb_update_bridge
+usb_get_tether_enabled
+xmldata_initialize
+xmldata_getstring_default
+xmldata_shutdown
+__isoc99_fscanf
+GLIBC_2.7
+xmldata_getint32_default
+convert_nwif_mode
+MsgBusGet
+settings_get_features
+pthread_self
+mifi_dbg_start
+__errno_location
+msgq_create
+watchdog_application_register
+msgq_receive
+msgq_resp_preprocess
+msgq_resp_postprocess
+mq_close
+mq_unlink
+mifi_dbg_stop
+__isoc99_sscanf
+strerror
+nanosleep
+usb_handle_dsm_usb_detect_event
+usb_handle_dsm_usb_state_event
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+BIO_new_mem_buf
+OPENSSL_1_1_0
+libcrypto.so.1.1
+PEM_read_bio_RSA_PUBKEY
+PEM_read_bio_RSAPrivateKey
+RSA_private_decrypt
+RSA_public_encrypt
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libfactory_reset_api.so
+librouter2_api.so
+libdmdb_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libwifi_api.so
+libccm2_api.so
+libemd_api.so
+libusb_api.so
+libcom_subsystem_api.so
+libssl.so.1.1
+libpcap.so.1
+H	KxD	J{D
+/dev/null
+[%s]:[%s] - %s: attach=%d last_attach=%d
+usb.attached_to_bridge
+[%s]:[%s] - %s: MsgBusSetInt32(%s) failed
+[%s]:[%s] - %s: return=%d: g_usb.features.usb_tethering=%d g_usb.settings.tether_enabled=%d g_usb.state.temp_tether=%d
+[%s]:[%s] - %s: return=%d: g_usb.features.ip_passthrough=%d r2_ippt_setting.active=%d
+00:15:FF:FF:FF:FF
+00:15:FF:FF:FF:FE
+[%s]:[%s] - %s: dsm_get_usb_mac_addr() failed
+[%s]:[%s] - %s: USB addr Host=[%s], Dev=[%s]
+[%s]:[%s] - %s: dsm_get_usb_default_mode() failed
+[%s]:[%s] - %s: Get default USB Mode=[%d]
+/opt/nvtl/data/usb/entmode
+[%s]:[%s] - %s: usb_file_remove(%s) failed
+/opt/nvtl/data/usb/p_entmode
+[%s]:[%s] - %s: enter
+[%s]:[%s] - %s: return
+[%s]:[%s] - %s: dsm_get_state() failed: rc=%d
+[%s]:[%s] - %s: start_mode=%d %s
+[%s]:[%s] - %s: USB already started
+[%s]:[%s] - %s: LPM and FTM and Online only when in EUM
+/opt/nvtl/data/usb/nwif
+[%s]:[%s] - %s: start_mode=%d is invalid
+[%s]:[%s] - %s: Error reading NW NV items
+[%s]:[%s] - %s: USB not started
+[%s]:[%s] - %s: g_usb.state.start_mode=%d g_usb.settings.tether_enabled=%d
+[%s]:[%s] - %s: enabled=%d g_usb.settings.tether_enabled=%d
+[%s]:[%s] - %s: USB tethering feature not enabled
+[%s]:[%s] - %s: tether_enabled setting is not changed, returning
+[%s]:[%s] - %s: temp_tether=%d (%s) g_usb.state.usb_gadget_configured=%d
+[%s]:[%s] - %s: Should only be called when USB is configured
+[%s]:[%s] - %s:starting of the function Set default USB Mode=[%d]
+[%s]:[%s] - %s:USB HID security check failed
+[%s]:[%s] - %s: dsm_set_usb_default_mode(%d) failed
+[%s]:[%s] - %s: Set default USB Mode=[%d]
+[%s]:[%s] - %s: usb_set_default_mode() failed
+[%s]:[%s] - %s: usb_file_write_str(%s) failed
+[%s]:[%s] - %s: mode=%d is invalid
+[%s]:[%s] - %s: mode=%d (%s) reboot=%d
+[%s]:[%s] - %s: dsm_reset_device() failed: rc=%d
+[%s]:[%s] - %s: attach=%d
+[%s]:[%s] - %s: waited 10 seconds for router2 and ccm2
+[%s]:[%s] - %s: router and ccm are running
+[%s]:[%s] - %s: returning since IPPT=1 and attach=0
+[%s]:[%s] - %s: returning since IPPT=1 and auto_detect_running=1
+[%s]:[%s] - %s: router2_modify_bridge_interfaces() failed with %d
+[%s]:[%s] - %s: configured=%d g_usb.state.usb_resumed_not_configured=%d
+USB Enumerated
+[%s]:[%s] - %s: usb_update_bridge() failed: rc=%d
+[%s]:[%s] - %s: resumed=%d g_usb.state.usb_resumed_not_configured=%d
+[%s]:[%s] - %s: Deleting files: [%s] [%s] [%s]
+[%s]:[%s] - %s: USB_MSG_GET_CONFIG
+[%s]:[%s] - %s: USB_MSG_GET_STATE
+[%s]:[%s] - %s: USB_MSG_START
+[%s]:[%s] - %s: USB_MSG_RESTART
+[%s]:[%s] - %s: USB_MSG_SET_TETHER_ENABLED
+[%s]:[%s] - %s: USB_MSG_SET_TETHER_ENABLED_TEMP
+[%s]:[%s] - %s: USB_MSG_MODE_SWITCH
+[%s]:[%s] - %s: USB_MSG_UPDATE_BRIDGE
+[%s]:[%s] - %s: USB_MSG_HANDLE_DETECT_EVENT
+[%s]:[%s] - %s: USB_MSG_FACTORY_RESET
+[%s]:[%s] - %s: USB_MSG_NONE
+[%s]:[%s] - %s: USB_MSG_MAX
+/sysconf/settings.xml
+[%s]:[%s] - %s: Failed to open configuration file: %s
+/Settings/Modem/CertifiedCarrier
+/opt/nvtl/etc/usb/config.xml
+/Config/USB/VendorID
+Novatel Wireless
+/Config/USB/ManufacturerString
+MiFi XXXX
+/Config/USB/ProductString
+/sys/devices/soc0/serial_number
+error: file open failed.
+ser_num: %x
+,serial,diag,ffs,blank5,blank6,blank7,blank8,blank9,blank10,blank11,acm,hid
+/Config/FunctionList/DebugMode/OnlineMode
+blank0,serial,diag,ffs,blank5,blank6,blank7,blank8,blank9,blank10,blank11,acm,hid
+/Config/FunctionList/DebugMode/OnlineModeNoTether
+/Config/FunctionList/DebugMode/FactoryTestMode
+,serial,diag,ffs,blank5,rmnet,blank7,blank8,blank9,blank10,blank11,acm,hid
+/Config/FunctionList/DebugMode/LabTestMode
+blank0,blank1,blank2,blank3,ffs,blank5,blank6,blank7,blank8,blank9,blank10,blank11,blank12,blank13,hid
+/Config/FunctionList/DebugMode/LowPowerMode
+,hid:acm:mass_storage
+/Config/FunctionList/EndUserMode/OnlineMode
+/Config/FunctionList/EndUserMode/LowPowerMode
+,hid,serial
+/Config/FunctionList/EnterpriseMode/OnlineMode
+/Config/ProductID/DebugMode
+/Config/ProductID/EndUserMode
+/Config/ProductID/EndUserModeLPM
+/Config/ProductID/EnterpriseMode
+/Config/NetworkInterface/Mode
+/Config/NetworkInterface/IPAEnabled
+/Config/NetworkInterface/AutoDetect/SamplePeriod
+/Config/NetworkInterface/AutoDetect/Iterations
+[%s]:[%s] - %s: USB initialized with the following configuration:
+[%s]:[%s] - %s: USB.VendorID=[%s]
+[%s]:[%s] - %s: USB.ManufacturerString=[%s]
+[%s]:[%s] - %s: USB.ProductString=[%s]
+[%s]:[%s] - %s: USB.SerialString=[%s]
+[%s]:[%s] - %s: FunctionList.DebugMode.OnlineMode=[%s]
+[%s]:[%s] - %s: FunctionList.DebugMode.OnlineModeNoTether=[%s]
+[%s]:[%s] - %s: FunctionList.DebugMode.FactoryTestMode=[%s]
+[%s]:[%s] - %s: FunctionList.DebugMode.LabTestMode=[%s]
+[%s]:[%s] - %s: FunctionList.DebugMode.LowPowerMode=[%s]
+[%s]:[%s] - %s: FunctionList.EndUserMode.OnlineMode=[%s]
+[%s]:[%s] - %s: FunctionList.EndUserMode.LowPowerMode=[%s]
+[%s]:[%s] - %s: FunctionList.EnterpriseMode.OnlineMode=[%s]
+[%s]:[%s] - %s: ProductID.DebugMode=[%s]
+[%s]:[%s] - %s: ProductID.EndUserMode=[%s]
+[%s]:[%s] - %s: ProductID.EndUserModeLPM=[%s]
+[%s]:[%s] - %s: ProductID.EnterpriseMode=[%s]
+[%s]:[%s] - %s: NetworkInterface.Mode=[%d][%s]
+[%s]:[%s] - %s: NetworkInterface.IPAEnabled=[%d]
+[%s]:[%s] - %s: NetworkInterface.AutoDetect.SamplePeriod=[%d]
+[%s]:[%s] - %s: NetworkInterface.AutoDetect.Iterations=[%d]
+settings.ready
+[%s]:[%s] - %s: settings sub-system is not ready. retries left %d
+[%s]:[%s] - %s: settings sub-system initialized successfully
+[%s]:[%s] - %s: Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - %s: USB initialized with the following settings:
+[%s]:[%s] - %s: tether_enabled=[%d]
+[%s]:[%s] - %s: Failed to initialize settings. usb_get_settings returned %d
+[%s]:[%s] - %s: settings_get_features() failed: rc=%d
+[%s]:[%s] - %s: g_usb.features.usb_tethering=[%d] g_usb.features.ip_passthrough=[%d]
+[%s]:[%s] - %s: Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - %s: Error opening signal pipe: %d, terminating.
+[%s]:[%s] - %s: Error attaching to the message bus.
+[%s]:[%s] - %s: Error initializing usb configuration, terminating.
+[%s]:[%s] - %s: Error initializing usb settings, terminating.
+[%s]:[%s] - %s: Error initializing usb features, terminating.
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+[%s]:[%s] - %s: Error reading NW NV items, continuing with defaults
+usb_main
+[%s]:[%s] - %s: usb_auto_detect_init() failed
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s Server Terminating.
+usb_update_attached_to_bridge_msgbus_chan
+usb_is_tether_enabled
+usb_is_IPPT_enabled
+usb_read_nw_nv_items
+usb_get_enterprise_mode
+usb_start_lpm
+usb_start_ftm
+usb_start_online
+usb_start_online_no_tether
+usb_start_ltm
+usb_start_impl
+usb_stop_impl
+usb_restart_impl
+usb_tether_enabled_change
+usb_set_tether_enabled_impl
+usb_set_tether_enabled_temp_impl
+usb_set_default_mode
+usb_mode_switch_impl
+usb_update_bridge_impl
+usb_handle_dsm_usb_detect_event_impl
+usb_handle_dsm_usb_state_event_impl
+usb_factory_reset_impl
+usb_handle_event_message
+usb_product_string_init
+usb_config_init
+usb_settings_init
+usb_features_init
+/dev/kmsg
+[MIFI_TIMESTAMP] - 
+[%s]:[%s] - %s: stopping /sbin/adbd
+start-stop-daemon -K -n adbd
+[%s]:[%s] - %s: unlink(%s) failed: %s
+[%s]:[%s] - %s: Removed file: %s
+/opt/nvtl/data/usb
+[%s]:[%s] - %s: open(%s) failed: %s
+[%s]:[%s] - %s: syncing %s complete
+[%s]:[%s] - %s: path=%s data=%s len=%d
+[%s]:[%s] - %s: fopen(%s) failed: %s
+[%s]:[%s] - %s: write(%s) returned %d not %d: %s
+[%s]:[%s] - %s: unlink(%s) failed: %s
+[%s]:[%s] - %s: usb_file_sync_and_close(%s) failed
+[%s]:[%s] - %s: file=%s buf=%s
+[%s]:[%s] - %s: dir=%s file=%s value=%s
+[%s]:[%s] - %s: write() failed: %s
+[%s]:[%s] - %s: file=%s value=%s caller=%s
+/sys/module/g_android/parameters/
+[%s]:[%s] - %s: usb_sysfs_write(%s %s %s) failed
+[%s]:[%s] - %s: %s(%s, %s) failed
+/sys/class/android_usb/android0/
+/sys/kernel/config/usb_gadget/g1/
+/sys/kernel/config/usb_gadget/g1/strings/0x409/
+/sys/kernel/config/usb_gadget/g1/configs/c.1/strings/0x409/
+/sys/module/usb_f_gsi/parameters/
+[%s]:[%s] - %s:
+/opt/nvtl/bin/config_usb 0
+[%s]:[%s] - %s: g_usb.state.pid=%s g_usb.state.function_list=%s
+idVendor
+idProduct
+bDeviceClass
+bDeviceSubClass
+manufacturer
+serialnumber
+configuration
+gsi_host_addr
+gsi_dev_addr
+/opt/nvtl/bin/config_usb 1
+/opt/nvtl/bin/config_usb 7
+/opt/nvtl/bin/config_usb 2
+/opt/nvtl/bin/config_usb 8
+/opt/nvtl/bin/config_usb 3
+/opt/nvtl/bin/config_usb 10
+/opt/nvtl/bin/config_usb 4
+/opt/nvtl/bin/config_usb 5
+/opt/nvtl/bin/config_usb 9
+rndis,hid,mass_storage
+/opt/nvtl/bin/config_usb 11
+/opt/nvtl/bin/config_usb 6
+[%s]:[%s] - %s: g_usb.state.net_if_func_name=%s is invalid
+[%s]:[%s] - %s: g_usb.config.nwif_mode=%d
+rndis_qc
+[%s]:[%s] - %s: nwif_mode=%d is invalid
+/opt/nvtl/data/usb/nwif
+[%s]:[%s] - %s: usb_file_write_str(%s) failed
+[%s]:[%s] - %s: enter
+[%s]:[%s] - %s: invalid name read from file: g_usb.state.net_if_func_name=%s
+[%s]:[%s] - %s: valid name read from file: g_usb.state.net_if_func_name=%s g_usb.config.ipa_enabled=%d
+[%s]:[%s] - %s: IPA enable does not match name read from file: g_usb.state.net_if_func_name=%s g_usb.config.ipa_enabled=%d
+[%s]:[%s] - %s: usb_file_read_str(%s) failed
+[%s]:[%s] - %s: g_usb.state.net_if_name=%s
+[%s]:[%s] - %s: socket() failed: %s
+[%s]:[%s] - %s: ioctl(SIOCGIFFLAGS) failed: %s
+[%s]:[%s] - %s: bringing up g_usb.state.net_if_name=%s
+[%s]:[%s] - %s: ioctl(SIOCSIFFLAGS) failed: %s
+[%s]:[%s] - %s: g_usb.state.net_if_name=%s g_usb.state.mac_addr_dev=%s
+[%s]:[%s] - %s: in_ether() failed: %s
+[%s]:[%s] - %s: ioctl(SIOCSIFHWADDR) failed: %s
+[%s]:[%s] - MIFI_TIMESTAMP - %s
+[%s]:[%s] - %s: pidstr=%s
+[%s]:[%s] - %s: funcstr=%s
+usb_stop_adbd
+usb_file_remove
+usb_file_sync_and_close
+usb_file_write_str
+usb_file_read_str
+usb_sysfs_write
+usb_android_mod_param_write
+usb_android_class_write
+usb_configfs_write
+usb_configfs_strings_write
+usb_configfs_configuration_write
+usb_gsi_mod_param_write
+usb_stop_gadget_driver
+usb_start_gadget_driver
+usb_set_net_if_name
+usb_init_net_if_func_name
+usb_set_net_if_func_name
+usb_ifconfig_up
+usb_ifconfig_hw_addr
+usb_get_online_pid
+usb_get_online_function
+[%s]:[%s] - %s: path=%s
+[%s]:[%s] - %s: open(%s) failed: %s
+[%s]:[%s] - %s: read() failed: %s
+[%s]:[%s] - %s: buf=%s is not an integer
+[%s]:[%s] - %s: num_pkts=%u
+[%s]:[%s] - %s: g_usb.state.net_if_name=%s ms=%d max_iter=%d
+/sys/class/net/%s/statistics/rx_packets
+[%s]:[%s] - %s: file %s does not exist
+[%s]:[%s] - %s: g_auto_detect.run_algo=0
+[%s]:[%s] - %s: no packets detected
+[%s]:[%s] - %s: packets detected
+[%s]:[%s] - %s: g_usb.state: net_if_func_name=%s net_if_name=%s function_list=%s
+rndis_qc
+/opt/nvtl/data/usb/nwif
+[%s]:[%s] - %s: usb_file_write_str(%s) failed
+[%s]:[%s] - %s: g_usb.state.pid=%s g_usb.state.function_list=%s
+[%s]:[%s] - %s: auto detect failed - forcing RNDIS
+[%s]:[%s] - %s: auto detect success
+[%s]:[%s] - %s: usb_update_bridge() failed: rc=%d
+[%s]:[%s] - %s: return
+[%s]:[%s] - %s: enter
+[%s]:[%s] - %s: sem_wait() failed: %s
+[%s]:[%s] - %s: exit
+[%s]:[%s] - %s: sem_init() failed: %s
+[%s]:[%s] - %s: pthread_init() failed: %s
+[%s]:[%s] - %s: sem_post() failed: %s
+[%s]:[%s] - %s: sem_destroy() failed: %s
+usb_auto_detect_read_pkt_stat
+usb_auto_detect_wait_for_pkts
+switch_net_if_type
+usb_auto_detect_algo_run
+usb_auto_detect_thread
+usb_auto_detect_init
+usb_auto_detect_start
+usb_auto_detect_stop
+usb_auto_detect_terminate
+dsm.broadcast
+[%s]:[%s] - %s: MSGBUS_DSM_USB_DET:[%d]
+[%s]:[%s] - %s: handling DSM_USB_CONFIGURED
+[%s]:[%s] - %s: handling DSM_USB_DISCONNECTED
+[%s]:[%s] - %s: MSGBUS_DSM_USB_STATE:[%d]
+[%s]:[%s] - %s: handling DSM_USB_STATE_RESUMED
+[%s]:[%s] - %s: handling DSM_USB_STATE_SUSPENDED
+[%s]:[%s] - %s: MsgBus_Create Failed
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe Refresh Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+usb_msgbus_handler
+[%s]:[%s] - %s:Plaint text is %s 
+abcdefghijklmnopqrstuvwxyz0123456789
+/dev/hidg0
+[%s]:[%s] - %s:open failed
+[%s]:[%s] - %s: written length is %d
+/sys/devices/virtual/android_usb/android0/ctrlxfer_event/ctrlxfer_wEncryptData
+[%s]:[%s] - %s:open failed 
+/opt/nvtl/bin/public.pem
+/opt/nvtl/bin/private.pem
+[%s]:[%s] - Unable to allocate memory for BIO method function
+[%s]:[%s] - Unable to create RSA
+[%s]:[%s] - Reading public key failed
+[%s]:[%s] - Encrypting plain text data failed
+[%s]:[%s] - %s: Encrpted length is %d
+[%s]:[%s] - %s: Encrpted data is 
+[%s]:[%s] - [%d]= %X
+[%s]:[%s] - Sending encrypted data to tool failed
+[%s]:[%s] - Reading encrypted data failed
+[%s]:[%s] - Reading private key failed
+[%s]:[%s] - %s:decrypted length =%d
+[%s]:[%s] - Decryption of encrypted data failed
+[%s]:[%s] - Plain data is:%s 
+[%s]:[%s] - Decrypted data is:%s
+[%s]:[%s] - %s: Encryption failed
+[%s]:[%s] - %s: Decryption failed
+get_random_data
+send_encrypted_data
+read_encrypted_data
+read_public_key
+read_private_key
+usb_hid_encrypt
+usb_hid_decrypt
+usb_process_security_check
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

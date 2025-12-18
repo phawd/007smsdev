@@ -1,0 +1,79 @@
+<!-- wifi_guest_settings -->
+<div id="wifi_guest_settings">	
+	<h1>Wi-Fi – Külalisvõrk</h1>
+	<p>
+		Wi-Fi külalisvõrku saab kasutada <tmpl_var _("webui", "webui_product_name_with_suffix")> Wi-Fi-võrgu kaudu ajutise internetiühenduse pakkumiseks. Wi-Fi külalisvõrguga ühenduse loomiseks peavad ühendatud seadmed kasutama sellel kuval näidatud Wi-Fi-seadeid.
+	</p>
+	
+	<p>
+		Külalisvõrgu sisselülitamiseks kasutage selle veebiadministraatori liidese Wi-Fi üldkuva või seadme <tmpl_var _("webui", "webui_product_name_with_suffix")> puuteekraani Wi-Fi-rakenduse suvandit Wi-Fi sagedusriba valimine.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_guest_ssid_label")></h3>
+	<p>
+		See määrab külastaja Wi-Fi-võrgu nime ehk SSID. Sisestage sobiv nimi. Nimi võib olla kuni 32 tähemärki pikk.
+	</p>
+	
+	<h3><tmpl_var _("webui", "wifi_guest_security_label")></h3>
+	<p>
+		Valige Wi-Fi turvalisuse jaoks soovitud suvand.
+	</p>
+	
+	<ul>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> võimaldab teistel inimestel jälgida teie Wi-Fi-liiklust ja kasutada teie andmesidepaketti internetile juurdepääsuks. Kui üldse võimalik, tuleks selle võimaluse kasutamist vältida.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> on uusim ja kõige turvalisem meetod ning seda tuleks võimaluse korral kasutada.
+		</li>
+		<li>	
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> saab kasutada, kui mõni teie vanem seade ei toeta WPA2.
+		</li>
+		<li>
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> saab kasutada WPA2 ja WPA3 kaebusseadmete jaoks.
+		</li>
+	</ul>
+
+	<h3><tmpl_var _("webui", "wifi_guest_password_label")></h3>
+	<p>
+		Kui väljal <strong>Turve</strong> valiti muu säte kui <strong>Puudub</strong>, on vajalik Wi-Fi parool.
+	</p>
+
+	<p>
+		Sisestage sellele väljale Wi-Fi parool. Sellele väljale saate sisestada ka tugeva juhusliku parooli nupuga Loo uus parool. Ärge unustage selle suvandi kasutamisel muudatusi salvestada.
+	</p>
+	
+	<p>
+		Need seaded on vaikimisi peidetud, kuid nende nähtavaks muutmiseks võite klõpsata pealkirjal/lingil. 
+		Tavaliselt võib jätta need suvandid vaikeväärtustele, kuid neid saab vajaduse korral muuta vastavalt teie konkreetsele keskkonnale.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_ssid_label", gProductName)></h3>
+	<p>
+		Kui see säte on märgitud, on Wi-Fi nimi seadme <tmpl_var _("webui", "webui_product_name_with_suffix")> puuteekraanil loetav, kasutades menüüsuvandit Wi-Fi. Märkimata jätmisel kuvatakse nimi kujul ****** *.
+	</p>
+
+	<h3><tmpl_udf GET_PO_TEXT("wifi_guest_show_password_label", gProductName)></h3>
+	<p>
+		Kui see säte on märgitud, on Wi-Fi parool seadme <tmpl_var _("webui", "webui_product_name_with_suffix")> puuteekraanil loetav, kasutades menüüsuvandit Wi-Fi. Kui see on märkimata, kuvatakse parool kujul ****** *.
+	</p>
+
+	<h3><tmpl_var _("webui", "wifi_guest_broadcast_ssid_label")></h3>
+	<p>
+		Kui see säte on märgitud, kuvatakse seda Wi-Fi-võrku teie ühendatud seadmetes saadaolevate Wi-Fi-võrkude loendis. Kui see on märkimata, on see võrk nähtamatu.
+	</p>
+
+	<tmpl_if showWiFiGuestWPS>
+		<h3><tmpl_var _("webui", "wifi_guest_wps_label")></h3>
+		<p>
+			Wi-Fi Protected Setup (WPS) on süsteem, mis võimaldab Wi-Fi-seadmetel luua ühenduse Wi-Fi-võrguga ilma võrguparooli käsitsi sisestamata. Kui soovite WPS-i kasutada, märkige see suvand.
+		</p>
+	</tmpl_if>
+
+	<h3><tmpl_var _("webui", "wifi_guest_privacy_label")></h3>
+	<p>
+		Kui see säte on märgitud, isoleeritakse kõik ühendatud seadmed kõigist teistest ühendatud seadmetest. See pakub täiendavat turvalisust, kui mõned ühendatud seadmed on tundmatud või ei ole täielikult usaldusväärsed. Tavapäraseks tööks peab see olema märkimata.
+	</p>
+</div>
+
+<!-- id="wifi_guest_settings" -->

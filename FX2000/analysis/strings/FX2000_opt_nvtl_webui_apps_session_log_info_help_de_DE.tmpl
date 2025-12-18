@@ -1,0 +1,26 @@
+<!-- Internet  Sessions -->
+<div id="session_log_info">
+	<h1><tmpl_var _("webui", "session_log_info_menu_text")></h1>
+	<p>Folgende Daten sind im Sitzungsprotokoll enthalten:</p>
+	<p>- Datum und Uhrzeit: Datum und Uhrzeit zu Beginn der Internetsitzung.</p>
+	<p>- Dauer: Die gesamte Dauer der Internetsitzung.</p>
+	<p>- Empfangene Daten (Rx): Die Menge der w
+hrend der Internetsitzung empfangenen Daten. Der Z
+hler beginnt bei Null, wenn die Verbindung hergestellt ist.</p>
+bertragene Daten (Tx): Die Menge der w
+hrend der Internetsitzung 
+bertragenen Daten. Der Z
+hler beginnt bei Null, wenn die Verbindung hergestellt ist.</p>
+	<p>- Daten insgesamt: Die gesamte Datenmenge w
+hrend der Internetsitzung. Das entspricht der Summe der empfangenen und gesendeten Daten.</p>
+	<tmpl_if RoamingStatusShow>
+		<p>- Roaming (Roaming/teilweise/leer) Leer=Heimnetzwerk</p>
+	</tmpl_if>
+	<p>- IPv4: Die IP-Adresse f
+r die Sitzung.</p>
+	<p>- Ipv6: Die globale IPv6-Adresse f
+r die Sitzung (leer, wenn IPv6 deaktiviert ist oder von der aktuellen Netzwerkverbindung oder dem aktuellen Netzbetreiber nicht unterst
+tzt wird).</p>
+	<p>Das Protokoll ist nach Datum geordnet. </p>
+	<p>Der Benutzer kann die Reihenfolge nicht 
+ndern, und es gibt keine Optionen in Bezug auf das Sitzungsprotokoll.</p>

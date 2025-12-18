@@ -1,0 +1,34 @@
+<!-- MAC Filter -->
+<div id="macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+	<h2>Yleiskatsaus</h2>
+	<p>Jos MAC Filter (MAC-suodatin) -ominaisuus on kytketty päälle, se estää pääsyn tähän Wi-Fi-verkkoon kaikilta laitteilta, jotka eivät sisälly ”MAC Address Filter” (MAC-osoitesuodatin) -luetteloon. Suodatin koskee vain Wi-Fi-verkkoa, eikä sillä ole vaikutusta USB-laitteisiin.</p>
+	
+	<h2>PÄÄLLE / POIS PÄÄLTÄ -säädin</h2>
+	<p>Tällä säätimellä voit kytkeä MAC-suodattimen päälle tai pois päältä tarpeen mukaan. Ennen kuin kytket sen päälle, sinun on varmistettava, että jotkin laitteet ovat sallittuja. Huomaa, että kun MAC-suodatin on kytketty päälle, kaikkien yhdistettyjen laitteiden, jotka eivät ole ”MAC Address Filter” (MAC-osoitesuodatin) -luettelossa, yhteys katkaistaan välittömästi.</p>
+	
+	<h2>Laiteluettelo</h2>
+	
+	<p>Kaikki tunnetut laitteet on lueteltu tässä, USB-laitteita lukuun ottamatta. Annettuja valintaruutuja käyttämällä voit sisällyttää laitteita ”MAC Address Filter” (MAC-osoitesuodatin) -luetteloon tai sulkea niitä pois.</p>
+
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Päivitä luettelo tarvittaessa päivityspainikkeella.</p>
+		
+	<h2>Käyttö</h2>
+	
+	<h3>Estetty vs. MAC-suodatin</h3>
+	<p>”Blocked” (Estetty) -tilaan asetettujen laitteiden ja ”MAC Filter” (MAC-suodatin) -toiminnon välinen vuorovaikutus on seuraavanlainen:</p>
+	<div class="blockgroup">
+	<ul>
+	<li>Estetyt laitteet estetään aina Wi-Fi-verkosta riippumatta siitä, onko MAC-suodatin kytketty päälle vai pois päältä.</li>
+	<li>Jos MAC-suodatin on kytketty päälle ja laite on estettyjen laitteiden luettelossa, mutta ei MAC-osoitesuodattimien luettelossa, se ei voi muodostaa yhteyttä. Sekä MAC Filter (MAC-suodatin) että Block (Estä) estäisivät yhteyden muodostamisen.</li>
+
+	<li>Jos MAC-suodatin on kytketty päälle ja laite on MAC-osoitesuodattimien luettelossa, laite voi muodostaa yhteyden. Kun laite on muodostanut yhteyden, se voidaan estää joko poistamalla se MAC-osoitesuodattimien luettelosta tai käyttämällä ”Block” (Estä) -ominaisuutta. Yleensä ”Block” (Estä) -toimintoa tulisi käyttää väliaikaiseen estoon ja MAC Filter (MAC-suodatin) -toimintoa pysyvään estoon.</li>
+	</ul>
+	</div>
+	
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+	<p>Tällä painikkeella voit lisätä uuden laitteen laiteluetteloon.</p>
+
+ </div>
+<!--  macfilter  -->

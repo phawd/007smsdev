@@ -1,0 +1,72 @@
+<div id="gps_status">
+	<h1><tmpl_var _("webui", "gps_status_menu_text")></h1>
+bersicht</h2>
+	<p>Dieses <tmpl_var _("webui", "webui_product_name")>-Ger
+lt einen GPS-Empf
+nger. Der GPS-Empf
+nger kann Ihren aktuellen Standort bestimmen, oft sogar in Innenr
+umen.<tmpl_if GPSOverWiFiEnableShow>Der aktuelle Standort wird auf dieser Seite angezeigt, und die Standortinformationen k
+nnen mithilfe der Funktion 
+ber WLAN
+ mit den verbundenen Computern ausgetauscht werden.</tmpl_if>
+	<h2>GPS verwenden</h2>
+	<tmpl_if GPSEnableShow>
+		<h3><tmpl_var _("webui", "gps_status_enable_label")></h3>
+ber dieses EIN/AUS-Steuerelement k
+nnen Sie die GPS-Funktion nach Bedarf aktivieren oder deaktivieren.</p>
+		<h3><tmpl_udf GET_PO_TEXT("gps_status_startup_state_label", gProductName)></h3>
+		<p>Damit wird festgelegt, wann sich der GPS-Empf
+nger ausschaltet, sobald er eingeschaltet ist.</p>
+		<p>Wenn 
+ eingestellt ist, schaltet sich der GPS-Empf
+nger aus, sobald das <tmpl_var _("webui", "webui_product_name")> abgeschaltet wird. Wenn Sie den GPS-Empf
+nger das n
+chste Mal ben
+tigen, m
+ssen Sie ihn wieder einschalten.</p>	
+	</tmpl_if>
+		<h3>GPS-Status</h3>
+		<p>Wenn der GPS-Empf
+nger noch keinen Bezugspunkt (Standort) erhalten hat, wird der Status <strong>Suchen</strong> angezeigt. Sobald ein Bezugspunkt gefunden wurde, werden die folgenden Informationen zum aktuellen Standort angezeigt. Au
+erdem erscheint eine Google-Karte, auf der der aktuelle Standort dargestellt wird.</p>
+		<h2><tmpl_var _("webui", "gps_status_map_section_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "gps_status_latitude_label"), (size(_("webui", "gps_status_latitude_label")) - size(":")))></h3>
+		<p>Der Breitengrad f
+r die letzte Bezugspunktbestimmung.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_longitude_label"), (size(_("webui", "gps_status_longitude_label")) - size(":")))></h3>
+		<p>Der L
+ngengrad f
+r die letzte Bezugspunktbestimmung.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_altitude_label"), (size(_("webui", "gps_status_altitude_label")) - size(":")))></h3>
+		<p>Die H
+r die letzte Bezugspunktbestimmung.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_accuracy_label"), (size(_("webui", "gps_status_accuracy_label")) - size(":")))></h3>
+		<p>Das ist ein Ma
+r die Genauigkeit der vom GPS-Empf
+nger ermittelten horizontalen Position.</p>
+		<tmpl_if GPSOverWiFiEnableShow>
+			<tmpl_if GPSPortNumberShow>		
+				<h2><tmpl_var _("webui", "gps_status_enable_sub_header_text")></h2>
+				<h3><tmpl_var truncate(_("webui", "gps_status_gps_over_wifi_label"), (size(_("webui", "gps_status_gps_over_wifi_label")) - size(":")))></h3>
+				<p>GPS-Daten werden vom <tmpl_var _("webui", "webui_product_name")> in Form eines Textstreams im NMEA-Format (National Marine Electronics Association) bereitgestellt.</p>
+				<p>NMEA-Ports (GPS-Port) werden unter Windows und anderen Computerplattformen standardm
+ig von Anwendungen verwendet, um auf einen GPS-Datenstream zuzugreifen. Um diesen Port zu erstellen, m
+ssen Sie den Treiber 
+ber WLAN
+r Ihre Plattform herunterladen und installieren. Dieser Treiber erstellt den NMEA-Port, ruft GPS-Daten vom <tmpl_var _("webui", "webui_product_name")> ab und stellt diese GPS-Daten NMEA-f
+higen Anwendungen zur Verf
+gung.</p>
+				<h3><tmpl_var truncate(_("webui", "gps_status_port_number_label"), (size(_("webui", "gps_status_port_number_label")) - size(":")))></h3>
+				<p>Das ist die Portnummer, die von der Treibersoftware auf Ihrem Computer verwendet wird, um eine Verbindung zu diesem Ger
+t herzustellen und die GPS-Daten abzurufen. 
+ndern Sie diese Portnummer nur, wenn es unbedingt erforderlich ist.</p>
+			</tmpl_if>
+		</tmpl_if>
+	<tmpl_if GPSDownloadDriversShow>
+		<h3><tmpl_var _("webui", "gps_status_wifi_driver_download_link")></h3>
+		<p>Damit gelangen Sie auf die Download-Seite, auf der die verf
+gbaren Treiber bereitgestellt werden.<tmpl_if GPSOverWiFiEnableShow>Diese Treiber sind f
+r die Nutzung der Funktion 
+ber WLAN
+ erforderlich.</tmpl_if>
+	</tmpl_if>

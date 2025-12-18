@@ -1,0 +1,19 @@
+<!-- Internet  Sessions -->
+<div id="session_log_info">
+	<h1><tmpl_var _("webui", "session_log_info_menu_text")></h1>
+
+	<p>Sessionsloggen indeholder følgende data:</p>
+	<p>- Dato og tid (for hvornår tilslutning starter)</p>
+	<p>- Varighed (samme format som de aktuelle sessionsoplysninger)</p>
+	<p>- Modtaget (format som for den aktuelle session)</p>
+	<p>- Overført (format som for den aktuelle session)</p>
+	<p>- Samlede data (summen af Rx og Tx, format som for de aktuelle sessionsoplysninger)</p>
+	<tmpl_if RoamingStatusShow>
+                <p>- Roaming (roaming / delvis / blank) tom = hjemmenetværk </p>
+        </tmpl_if>
+	<p>- IPv4 (IPv4 WWAN IP-adresse)</p>
+	<p>- IPv6 (IPv6 WWAN IP-adresse)</p>
+
+	<p>Loggen er i datorækkefølge.</p>
+	<p>Brugeren kan ikke ændre rækkefølgen, og der er ingen muligheder i forbindelse med sessionsloggen.</p>
+</div>

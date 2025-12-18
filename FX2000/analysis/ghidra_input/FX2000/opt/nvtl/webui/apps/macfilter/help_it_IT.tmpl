@@ -1,0 +1,52 @@
+<!-- MAC Filter -->
+<div id="macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+	<h2>Panoramica</h2>
+	<p>Il filtro MAC consente solo ai dispositivi selezionati di accedere alla rete <tmpl_var _("webui", "webui_product_name")> tramite DHCP. Per impostazione predefinita, il filtro MAC è disattivato. Utilizzare questa scheda per attivare il filtro MAC e definire gli accessi al dispositivo.
+	</p>
+	
+	<h2>Controllo ON/OFF</h2>
+	<p>Per utilizzare il filtro MAC, selezionare i dispositivi dall’elenco dei dispositivi a cui consentire la connessione alla rete tramite DHCP e spostare <b>l’interruttore</b> ON/OFF del Filtro Mac<b> su ON</b>. Fare clic su <b>Salva le modifiche (Save Changes)</b>.
+	</p>
+	
+	<h2>Elenco dei dispositivi</h2>
+	
+	<p>L'attivazione del filtro MAC disconnette immediatamente dalla rete tutti i dispositivi che non sono inclusi nel filtro. 
+	</p>
+
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Se necessario, utilizza il pulsante di aggiornamento per aggiornare l'elenco.
+	</p>
+		
+	<h2>Funzionamento</h2>
+	
+	<h3>Blocco rispetto all’uso del filtro MAC</h3>
+	<p>L'interazione tra i dispositivi "bloccati" e il "filtro MAC" è:
+	</p>
+	<div class="blockgroup">
+	<ul>
+	<li>I dispositivi bloccati vengono sempre bloccati dalla rete, indipendentemente dal fatto che il filtro MAC sia attivo o meno.
+	</li>
+	<li>Se il filtro MAC è attivo e un dispositivo si trova nell'elenco “Bloccati”, ma non nell'elenco Filtro indirizzi MAC, questo non sarà in grado di connettersi. Sia il filtro MAC che il blocco ne impedirebbero la connessione.
+	</li>
+
+	<li>Se il filtro MAC è attivo e un dispositivo si trova nell'elenco Filtro indirizzi MAC, il dispositivo sarà in grado di connettersi. 
+	Una volta connesso, si può bloccarlo rimuovendolo dall'elenco Filtro indirizzi MAC o utilizzando la funzione "Blocca".
+	Generalmente, il "Blocco" andrebbe usato per un blocco temporaneo mentre il filtro MAC per il blocco permanente.
+	</li>
+	</ul>
+	</div>
+	
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+	<p>Utilizza questo pulsante per aggiungere un nuovo dispositivo all'elenco dei dispositivi.
+	</p>
+
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Per eliminare tutte le modifiche non salvate e aggiornare l’elenco, fare clic su <b>Aggiorna la lista (Refresh List)</b> e <b>Conferma (Confirm)</b>.
+	</p>
+
+	<h3>Eliminare un dispositivo</h3>
+	<p>Per eliminare un dispositivo dall'elenco, selezionare la rispettiva casella di controllo Elimina (Delete) e fare clic su Salva le modifiche (Save Changes).</p>
+
+ </div>
+<!--  macfilter  -->

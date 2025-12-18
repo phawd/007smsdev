@@ -1,0 +1,176 @@
+#connected_devices p span.changeLink,
+#connected_devices p span.deviceCount
+{
+	float: right;
+	display: block;
+}
+
+#connected_devices p span.deviceCount,
+html.rtl #connected_devices p span.changeLink
+{
+	float: left;
+}
+
+html.rtl #connected_devices p span.deviceCount
+{
+	float: right;
+}
+
+#connected_devices p span.changeLink a
+{
+	text-align: right;
+	color: #06c;
+	text-decoration: underline;
+}
+
+#connected_devices p span.changeLink a:hover
+{
+	color: #ec2227;
+}
+
+html.rtl #connected_devices p span.changeLink
+{
+	text-align: inherit;
+}
+
+/* Start the row without a display so it can populate and fade in! */
+#connected_devices table.devicesTable
+{
+	margin: 10px 0;
+}
+
+#connected_devices table.devicesTable col.icon
+{
+	width: 70px;
+}
+
+#connected_devices table.devicesTable tr
+{
+	display: none;
+}
+
+@media screen and (max-width: 520px)
+{
+	#connected_devices p span.changeLink,
+	#connected_devices p span.deviceCount,
+	html.rtl #connected_devices p span.changeLink,
+	html.rtl #connected_devices p span.deviceCount
+	{
+		float: none;
+		display: block;
+		text-align: inherit;
+		line-height: inherit;
+	}
+
+	/* Force table to not be like tables anymore */
+	#connected_devices table,
+	#connected_devices thead,
+	#connected_devices tfoot,
+	#connected_devices tbody,
+	#connected_devices tr,
+	#connected_devices th,
+	#connected_devices td
+	{
+		display: block;
+	}
+
+	#connected_devices thead,
+	#connected_devices tfoot,
+	#connected_devices colgroup
+	{
+		display: none !important;
+	}
+
+	#connected_devices table col
+	{
+		width: 100% !important;
+	}
+
+	/* Contain floats for rows */
+	#connected_devices table tr.deviceInformationRow:before,
+	#connected_devices table tr.deviceInformationRow:after,
+	#connected_devices table tr.editDeviceRow:before,
+	#connected_devices table tr.editDeviceRow:after
+	{
+		content: "";
+		display: table;
+	}
+
+	#connected_devices table tr.deviceInformationRow:after,
+	#connected_devices table tr.editDeviceRow:after
+	{
+		clear: both;
+	}
+
+	#connected_devices table tr.deviceInformationRow,
+	#connected_devices table tr.editDeviceRow
+	{
+		height: auto;
+		min-height: 0;
+		padding: 10px 0;
+		zoom: 1;
+	}
+
+	#connected_devices table tr.editDeviceRow
+	{
+		display: none;
+	}
+
+	#connected_devices th,
+	#connected_devices td
+	{
+		line-height: 27px;
+		float: left;
+	}
+
+	html.rtl #connected_devices th,
+	html.rtl #connected_devices td
+	{
+		float: right;
+	}
+
+	#connected_devices tr.editDeviceRow td .selector,
+	#connected_devices tr.editDeviceRow td.selectContainer
+	{
+		float: none;
+	}
+
+	#connected_devices tr.editDeviceRow td input
+	{
+		width: auto !important;
+	}
+
+	#connected_devices tr.editDeviceRow td .selector select
+	{
+		width: 100% !important;
+	}
+
+	#connected_devices tr.editDeviceRow td .selector
+	{
+		margin-bottom: 10px;
+	}
+
+	#connected_devices td.deviceInformation,
+	#connected_devices td.edit
+	{
+		clear: left;
+	}
+
+	html.rtl #connected_devices td.deviceInformation,
+	html.rtl #connected_devices td.edit
+	{
+		clear: right;
+	}
+
+	#connected_devices td.deviceInformation
+	{
+		padding-top: 8px;
+	}
+
+	/* Connected Device Icons */
+	#connected_devices table.devicesTable tbody tr td.interfaceType span.wifi,
+	#connected_devices table.devicesTable tbody tr td.interfaceType span.usb
+	{
+		margin: 6px 0 !important;
+	}
+}

@@ -1,0 +1,48 @@
+<div id="gps_status">
+	<h1><tmpl_var _("webui", "gps_status_menu_text")></h1>
+	<h2>نظرة عامة</h2>
+	<p>يشتمل جهاز <tmpl_var _("webui", "webui_product_name")> هذا على جهاز استقبال GPS. يمكن لجهاز استقبال GPS تحديد موقعك الحالي، غالبًا في الداخل.<tmpl_if GPSOverWiFiEnableShow>يتم عرض الموقع الحالي على هذه الصفحة، ويمكن مشاركة معلومات الموقع مع أجهزة الكمبيوتر المتصلة باستخدام ميزة GPS عبر Wi-Fi.</tmpl_if>
+	</p>
+
+	<h2>استخدام GPS</h2>
+
+	<tmpl_if GPSEnableShow>
+		<h3><tmpl_var _("webui", "gps_status_enable_label")></h3>
+		<p>استخدم عنصر التحكم ON/OFF (التشغيل/إيقاف التشغيل) لتشغيل ميزة GPS أو إيقاف تشغيلها حسب الحاجة.</p>
+		<h3><tmpl_udf GET_PO_TEXT("gps_status_startup_state_label", gProductName)></h3>
+		<p>بمجرد تشغيل هذا الإعداد فإنه سيحدد وقت إيقاف تشغيل جهاز استقبال GPS.</p>
+		<p>إذا كان وضع الإعداد هو التشغيل، فسيتم إيقاف جهاز استقبال GPS بمجرد إيقاف تشغيل<tmpl_var _("webui", "webui_product_name")>. ستحتاج إلى تشغيله مرة أخرى في المرة التالية التي تحتاج فيها إلى تشغيل جهاز استقبال GPS.</p>
+	</tmpl_if>
+
+		<h3>حالة GPS</h3>
+		<p>إذا لم يحصل جهاز استقبال GPS على موقع، فستظهر حالة <strong>جارٍ البحث</strong>. بمجرد الحصول على موقع، يتم عرض معلومات الموقع الحالي التالية، وتظهر خريطة Google تشير إلى الموقع الحالي بشكل مرئي.</p>
+		<h2><tmpl_var _("webui", "gps_status_map_section_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "gps_status_latitude_label"), (size(_("webui", "gps_status_latitude_label")) - size(":")))></h3>
+		<p>خط العرض للموقع الأخير.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_longitude_label"), (size(_("webui", "gps_status_longitude_label")) - size(":")))></h3>
+		<p>خط الطول للموقع الأخير.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_altitude_label"), (size(_("webui", "gps_status_altitude_label")) - size(":")))></h3>
+		<p>الارتفاع للموقع الأخير.</p>
+		<h3><tmpl_var truncate(_("webui", "gps_status_accuracy_label"), (size(_("webui", "gps_status_accuracy_label")) - size(":")))></h3>
+		<p>هذا مقياس دقة للموضع الأفقي الذي حصل عليه جهاز استقبال GPS.</p>
+		<tmpl_if GPSOverWiFiEnableShow>
+			<tmpl_if GPSPortNumberShow>		
+				<h2><tmpl_var _("webui", "gps_status_enable_sub_header_text")></h2>
+			
+				<h3><tmpl_var truncate(_("webui", "gps_status_gps_over_wifi_label"), (size(_("webui", "gps_status_gps_over_wifi_label")) - size(":")))></h3>
+				<p>يتم توفير بيانات نظام GPS بواسطة<tmpl_var _("webui", "webui_product_name")> في شكل دفق نصي للرابطة الوطنية للإلكترونيات البحرية (NMEA).</p>
+				<p>يعد استخدام منفذ NMEA (GPS) طريقة قياسية للتطبيقات للوصول إلى دفق بيانات GPS في Windows وأنظمة التشغيل الحوسبة الأساسية الأخرى. لإنشاء هذا المنفذ، يجب تنزيل وتثبيت برنامج تشغيل GPS عبر Wi-Fi لنظامك الأساسي. سيقوم برنامج التشغيل هذا بإنشاء منفذ NMEA، والحصول على بيانات GPS من <tmpl_var _("webui", "webui_product_name")>وإتاحة بيانات نظام GPS هذه للتطبيقات التي تدعم NMEA.</p>
+
+				<h3><tmpl_var truncate(_("webui", "gps_status_port_number_label"), (size(_("webui", "gps_status_port_number_label")) - size(":")))></h3>
+				<p>هذا هو رقم المنفذ الذي يستخدمه برنامج التشغيل على جهاز الكمبيوتر الخاص بك لإنشاء اتصال بهذا الجهاز والحصول على بيانات GPS. ما لم يكن هناك سبب وجيه للقيام بذلك، يجب ألا تغير رقم المنفذ.</p>
+			</tmpl_if>
+		</tmpl_if>
+
+	<tmpl_if GPSDownloadDriversShow>
+		<h3><tmpl_var _("webui", "gps_status_wifi_driver_download_link")></h3>
+		<p>استخدم هذا للوصول إلى صفحة التنزيل الخاصة ببرامج التشغيل المتوفرة.<tmpl_if GPSOverWiFiEnableShow>برامج التشغيل هذه مطلوبة لاستخدام ميزة GPS عبر Wi-Fi.</tmpl_if>
+		</p>
+	</tmpl_if>
+					
+</div>
+

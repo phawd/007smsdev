@@ -1,0 +1,82 @@
+<!-- Connected Devices -->
+<div id="connected_devices">
+	<h1><tmpl_var _("webui", "connected_devices_menu_text")></h1>
+	<h2>Översikt</h2>
+	<p>
+		Den här sidan visar uppgifter om varje enhet som är ansluten till <tmpl_var _("webui", "webui_product_name")> och listar även alla blockerade enheter.
+	</p>
+
+	<h2><tmpl_var _("webui", "connected_devices_sub_header_text")></h2>
+	<p>
+		Denna tabell listar alla enheter som är anslutna till Wi-Fi-nätverket. Wi-Fi-nätverksnamnet visas efter rubriken. Om en dator är kopplad till <tmpl_var _("webui", "webui_product_name")> med en USB-kabel, skulle den datorn listas i denna tabell.
+	</p>
+	<p>
+		Följande information visas för varje ansluten enhet:
+	</p>
+
+	<h3>Anslutningstyp</h3>
+	<p>
+		En ikon indikerar typen av anslutning för varje ansluten enhet.
+	</p>
+	
+	<h3>Namn</h3>
+	<p>
+		Normalt är detta värdnamnet på den anslutna enheten, såsom det angetts på den anslutna enheten. I sällsynta fall kan värdnamnet vara otillgängligt. Om du har använt alternativet ”Redigera” för att ändra namnet på en ansluten enhet visas det namn du uppgett i stället för värdnamnet.
+	</p>
+	<p>
+		Du kan använda alternativet ”Redigera” för att ändra namnet på alla anslutna enheter.
+	</p>
+	
+	<h3>IP-adress</h3>
+	<p>Den anslutna enhetens IP-adress.</p>
+
+	<h3>
+		<tmpl_var truncate(_("webui", "connected_devices_mac_address_label"), (size(_("webui", "connected_devices_mac_address_label")) - size(":")))>
+	</h3>
+	<p>
+		MAC-adressen är ett unikt nätverks-id för den här anslutna enheten.
+	</p>
+
+	<tmpl_if isIPv6Supported>
+		<h3>
+			<tmpl_var truncate(_("webui", "connected_devices_link_local_label"), (size(_("webui", "connected_devices_link_local_label")) - size(":")))>
+		</h3>
+		<p>
+			Om den anslutna enheten stöder IPv6 visas den lokala länkens IPv6-adress.
+		</p>
+	</tmpl_if>
+
+	<tmpl_if GuestWifiSupported>
+		<h2><tmpl_var _("webui", "connected_devices_guest_title")></h2>
+		<p>
+			Om Wi-Fi-nätverket för gäster används listar denna tabell alla enheter som är anslutna till Wi-Fi-nätverket för gäster. Wi-Fi-nätverksnamnet visas efter rubriken.
+		</p>
+		
+		<p>
+			Presentation och drift för enheter som anges här är identiska med enheter som listas under det primära nätverket.
+		</p>
+	</tmpl_if>
+	
+	<h2>Blockering och avblockering av enheter</h2>
+	<h3>Blockeringsknapp</h3>
+	<p>
+		Att klicka på knappen ”Blockera” kopplar från den anslutna enheten och hindrar den från att ansluta igen. Den blockerade enheten visas sedan i listan över blockerade.
+	</p>
+	<p>
+		Blockerade enheter blockeras från både gästnätverket och det primära nätverket.
+	</p>
+	<p>
+		Det här alternativet är tillgängligt för användning med varje ansluten enhet, med undantag för din egen enhet, och alla enheter som är anslutna via USB.
+	</p>
+	
+	<h3>Lista över blockerade</h3>
+	<p>
+		Här listas alla enheter som du har blockerat. Observera att eftersom dessa enheter för närvarande inte är anslutna och är blockerade från anslutning har de inte någon IP-adress. I stället identifieras de med sitt namn och sin MAC-adress.
+	</p>
+
+	<h3>Avblockeringsknapp</h3>
+	<p>
+		Att klicka på knappen Avblockera häver blockeringen av en tidigare blockerad enhet och gör den fri att ansluta igen. Den avblockerade enheten raderas från listan över blockerade och dyker åter upp i listan Anslutna enheter när den ansluter.
+	</p>
+</div>
+<!-- id="connected_devices" -->

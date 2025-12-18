@@ -1,0 +1,18 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<h2>Ülevaade</h2>
+	<p>Need SMS-sõnumid on tavaliselt teenusepakkujalt. Te ei tohiks üritada vastata ja seetõttu ei ole vastamisfunktsioon saadaval.</p>
+	<h2>Sisukord</h2>
+	<tmpl_if showMessageCounter>
+		<h3>Sõnumiloendurid</h3>
+		<p>Kaks loendurit ekraani ülaosas näitavad lugemata (uute) sõnumite arvu ja sõnumite koguarvu.</p>	
+		<p>Pange tähele, et kõik teated on pärast sellel ekraanil kuvamist seatud olekusse „loetud“.</p>
+	</tmpl_if>
+	<h3>Sõnumiloend</h3>
+	<p>Kõik teated on loetletud kuupäevade järjekorras. Lugemata (uued) teated on tähistatud ikooniga. Sõnumid märgitakse sellel lehel kuvamisel automaatselt loetuks, nii et järgmine kord, kui lehele minnakse, ei kuvata neid enam lugemata sõnumitena.</p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p>See nupp asub sõnumiloendi lõpus. Kasutage seda vajaduse korral kõigi sõnumite kustutamiseks.</p>
+	</tmpl_if>
+</div>

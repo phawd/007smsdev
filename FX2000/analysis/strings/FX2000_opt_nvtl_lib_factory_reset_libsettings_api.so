@@ -1,0 +1,149 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+GLIBC_2.4
+libc.so.6
+libsettings_api.so
+settings_is_running
+msgq_does_queue_exist
+settings_backup
+msgq_send_sync
+settings_restore
+settings_factory_reset
+settings_get_features
+settings_get_branding_info
+settings_get_setting
+mifi_dbg_get_level_name
+mifi_dbg_log
+msgq_send_sync_large_payload
+settings_set_setting
+mifi_dbg_syslog
+settings_get_error_string
+settings_factory_reset_hook
+initialize_factory_reset_func
+__bss_start
+libmificommon.so
+libwatchdog_api.so
+libmifi_debug.so
+libmifimsgbus.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifi_config.so
+librt.so.1
+libpthread.so.0
+libdl.so.2
+H	KxD	J{D
+/settings_mq
+SETTINGS
+[%s]:[%s] - %s: detected large payload.
+[%s]:[%s] - %s msgq send len: %d, large payload length: %d.
+[%s]:[%s] - %s msgq send len: %d.
+[%s]:[%s] - settings_set_setting(%s) failed with code: %d
+Device reset required to affect changes.
+[%s]:[%s] - Settings update: for %s. %s
+SETTINGS: success.
+SETTINGS: general error.
+SETTINGS: one or more bad parameters passed into a function.
+SETTINGS: one or more buffer type parameters passed into API is too small.
+SETTINGS: process not running.
+SETTINGS: a device reset is required for the operation to take effect.
+SETTINGS: operation not registered for the subsystem.
+SETTINGS: buffer passed into api is too large for the message queue.
+SETTINGS: unknown error.
+settings_get_setting
+settings_set_setting
+SETTINGS
+[%s]:[%s] - %s: Starting factory reset
+[%s]:[%s] - %s: factory reset done with rc=%d
+settings_factory_reset_hook
+GCC: (GNU) 8.2.0
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/watchdog/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/logging/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/xmldata/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/config
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/src
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/src/../inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/usr/src/linux/usr/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel/config/../.
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/factory_reset/inc
+-iprefix /opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/bin/arm-oe-linux-gnueabi/../../lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/src/settings_api.c
+-mfpu=neon
+-mfloat-abi=hard
+-mcpu=arm10tdmi
+-mtls-dialect=gnu
+-march=armv5t
+-auxbase-strip settings_api.o
+-frecord-gcc-switches
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/src/settings_factory_reset.c
+-auxbase-strip settings_factory_reset.o
+gold 1.16
+call_weak_fn
+crtstuff.c
+__TMC_LIST__
+deregister_tm_clones
+register_tm_clones
+__do_global_dtors_aux
+completed.11339
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+settings_api.c
+__func__.7950
+__func__.7962
+settings_factory_reset.c
+__func__.8507
+__FRAME_END__
+__dso_handle
+__TMC_END__
+_DYNAMIC
+_GLOBAL_OFFSET_TABLE_
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+settings_is_running
+msgq_does_queue_exist
+settings_backup
+msgq_send_sync
+settings_restore
+settings_factory_reset
+settings_get_features
+settings_get_branding_info
+settings_get_setting
+mifi_dbg_get_level_name
+mifi_dbg_log
+msgq_send_sync_large_payload
+settings_set_setting
+mifi_dbg_syslog
+settings_get_error_string
+settings_factory_reset_hook
+initialize_factory_reset_func
+__bss_start
+.init_array
+.fini_array
+.comment
+.rel.plt
+.ARM.attributes
+.eh_frame_hdr
+.gnu.version_r
+.rel.dyn
+.gnu.version
+.note.gnu.gold-version
+.GCC.command.line
+.eh_frame
+.tm_clone_table
+.note.gnu.build-id
+.gnu.version_d
+.dynamic
+.shstrtab

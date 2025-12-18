@@ -1,0 +1,275 @@
+/lib/ld-linux-armhf.so.3
+pthread_join
+GLIBC_2.4
+libpthread.so.0
+libc.so.6
+pthread_create
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+mq_unlink
+mq_close
+MsgBusSetBinary
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+xmldata_initialize
+xmldata_getstring
+snprintf
+file_sharing_get_folder_settings_list
+__errno_location
+strerror
+file_sharing_mon_add_service
+router2_get_lan_settings
+MsgBusGet
+settings_get_features
+file_sharing_get_settings
+pthread_self
+mifi_dbg_start
+msgq_create
+watchdog_application_register
+msgq_receive
+msgq_resp_handler
+mifi_dbg_stop
+file_sharing_settings_changed
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+service_monitor_add
+service_monitor_list
+service_monitor_validate
+msgq_does_queue_exist
+msgq_send_async
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+librouter2_api.so
+libfile_sharing_api.so
+H	KxD	J{D
+/dev/null
+not_detected
+detected_mounted
+detected_mount_error
+detected_unsupported_fs
+detected_supported_fs
+drive_unmounted
+detected_mounted_read_only
+usb_drive_undefined
+undefined
+file_sharing.broadcast
+FILE_SHARING
+[%s]:[%s] - msgbus broadcast - %s
+/opt/nvtl/etc/file_sharing/config.xml
+/Config/MountPoint
+/Config/ShareAllName
+[%s]:[%s] - Failed to open configuration file: %s
+[%s]:[%s] - %s: +++
+/opt/nvtl/bin/nvtl_usb_flash.sh %s start
+/opt/nvtl/bin/nvtl_usb_flash.sh %s stop
+[%s]:[%s] - System command %s return status:= %d
+[%s]:[%s] - WEXITSTATUS failed wih rc: %d
+[%s]:[%s] - %s: ---
+[%s]:[%s] - %s +++
+[%s]:[%s] - %s: file_sharing_get_folder_settings_list() failed: %d
+/etc/samba/smb.conf
+[%s]:[%s] - %s: open(%s) failed: %s
+# This is auto generated smb.conf
+[global]
+	workgroup=WORKGROUP
+	netbios name=%s
+	server string=%s
+	server min protocol = SMB2
+	server max protocol = SMB2
+	dns proxy=yes
+	max log size = 1000
+	syslog = 0
+	panic action = /usr/share/samba/panic-action
+	map to guest = bad user
+	wins support = yes
+	name resolve order = wins lmhosts hosts bcast
+	domain master = yes
+	local master = yes
+	preferred master = yes
+	load printers = no
+	disable spoolss = yes
+	printcap name = /dev/null
+	full_audit:prefix = %%u|%%I|%%S
+	full_audit:failure = connect
+	full_audit:success = connect disconnect opendir mkdir rmdir closedir open close read pread write pwrite sendfile rename unlink chmod fchmod chown fchown chdir ftruncate lock symlink readlink link mknod realpath
+	full_audit:facility = local5
+	full_audit:priority = notice
+[%s]:[%s] - %s: write(%s) failed: %s
+# This is public section
+	path=%s/%s
+	read only = %s
+	writable = %s
+	guest only = yes
+	guest ok = yes
+	browseable = yes
+	force user = root
+/mnt/USB
+[%s]:[%s] - %s: share option is invalid. %s not created
+[%s]:[%s] - %s ---
+[%s]:[%s] - file_sharing_create_smb_config() failed with %d
+[%s]:[%s] - file_sharing_fs_type: %d
+avahi-daemon
+/etc/init.d/avahi-daemon start
+[%s]:[%s] - %s: file_sharing_mon_add_service(avahi) failed: rc=%d
+/opt/nvtl/bin/nvtl_smbd.sh start
+[%s]:[%s] - %s: file_sharing_mon_add_service(smbd) failed: rc=%d
+/opt/nvtl/bin/nvtl_nmbd.sh start
+[%s]:[%s] - %s: file_sharing_mon_add_service(nmbd) failed: rc=%d
+[%s]:[%s] - %s: start=%d
+/opt/nvtl/bin/nvtl_samba.sh %s  %s %s start
+[%s]:[%s] - starting Samba 
+/opt/nvtl/bin/nvtl_samba.sh %s %s %s stop
+[%s]:[%s] - stopping Samba 
+[%s]:[%s] - start/stop Samba: system command return status:= %d
+[%s]:[%s] - start/stop Samba failed with rc: %d
+/opt/nvtl/bin/nvtl_avahi.sh start
+[%s]:[%s] - starting Avahi 
+/opt/nvtl/bin/nvtl_avahi.sh stop
+[%s]:[%s] - stopping Avahi 
+[%s]:[%s] - start/stop Avahi: system command return status:= %d
+[%s]:[%s] - start/stop Avahi failed with rc: %d
+[%s]:[%s] - %s: val=%d
+[%s]:[%s] - Samba is disabled, hence not starting it.
+[%s]:[%s] - ROUTER2 not running rc: %d
+[%s]:[%s] - Unknown Failure rc: %d
+[%s]:[%s] - file_sharing_execute_cmd() failed: rc=%d
+settings.ready
+[%s]:[%s] - settings file_sharing is not ready. retries left %d
+[%s]:[%s] - settings file_sharing initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings file_sharing not ready?
+[%s]:[%s] - Failed to initialize settings. settings_api_get_features returned %d
+[%s]:[%s] - Failed to initialize settings. file sharing DISABLED in features.xml
+[%s]:[%s] - %s: file_sharing_get_settings() failed: %d
+[%s]:[%s] - %s: file_sharing_get_folder_settings_list() failed: %d
+[%s]:[%s] - enabled: %d
+[%s]:[%s] - samba_host_name: %s
+[%s]:[%s] - share_option: %d
+[%s]:[%s] - share_all_type: %d
+[%s]:[%s] - share_folder_name: %s
+[%s]:[%s] - share_folder_type: %d
+FILE_SHARING_MSG_NONE
+FILE_SHARING_START_STOP_SHARE
+FILE_SHARING_POWERSAVE_STATE
+FILE_SHARING_MOUNT_UMOUNT
+FILE_SHARING_USB_STATE
+FILE_SHARING_SETTING_CHANGED
+FILE_SHARING_GET_STATE
+FILE_SHARING_GET_SMB_HOST_NAME
+FILE_SHARING_SET_FS_TYPE_NAME
+FILE_SHARING_GET_FS_TYPE_NAME
+FILE_SHARING_MSG_MAX
+[%s]:[%s] - %s: evt_msg->type=%s (%d)
+[%s]:[%s] - %s: file_sharing_in_progress=%d g_file_sharing_settings_data.enabled=%d
+[%s]:[%s] - %s: file_sharing_settings_init() failed: %d
+[%s]:[%s] - %s: g_file_sharing_settings_data.enabled=%d
+[%s]:[%s] - %s: file_sharing_create_smb_config() failed: %d
+[%s]:[%s] - %s: file_sharing_start_sharing_impl() failed: %d
+[%s]:[%s] - %s: file_sharing_mount_partition() failed: %d
+[%s]:[%s] - %s: evt_msg->type=%d is invalid
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - Error initializing file sharing configuration, terminating.
+[%s]:[%s] - Error initializing file_sharing settings, terminating.
+/file_sharing_mq
+[%s]:[%s] - Error opening message queue: %d, terminating.
+[%s]:[%s] - Error starting file mon thread.rc = %d
+file_sharing_main_thread
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s Server Terminating.
+file_sharing_mount_partition
+file_sharing_create_smb_config
+start_stop_avahi_service_monitor
+start_stop_samba_service_monitor
+file_sharing_execute_cmd
+file_sharing_start_sharing_impl
+file_sharing_settings_init
+file_sharing_handle_event_message
+file_sharing.settings
+file_sharing.settings.folder.list
+FILE_SHARING
+[%s]:[%s] - %s: From channel %s received message [%s]!
+FILE_SHARING_MBH
+[%s]:[%s] - %s: MsgBus_Create Failed
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe Refresh Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+FILE_SHARING
+[%s]:[%s] - %s: service_monitor_add() failed
+[%s]:[%s] - %s: invalid evt_msg->type=%d
+[%s]:[%s] - %s: Start with pthread ID:%lu, process ID:%d.
+/file_sharing_mon_mq
+[%s]:[%s] - %s: msgq_create() failed: %s, terminating.
+file_sharing_moniter_thread
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Terminate Thread Example, TID: %lu.
+handle_event_message
+file_sharing_mon
+file_sharing_mon_init
+file_sharing_mon_terminate
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

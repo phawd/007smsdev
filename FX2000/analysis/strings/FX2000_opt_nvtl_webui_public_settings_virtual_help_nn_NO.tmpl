@@ -1,0 +1,27 @@
+<div id="settings_virtual">
+	<h1>Avanserte innstillinger</h1>
+	<tmpl_if appsList>
+		<h2>Oversikt</h2>Avansert-menyen gir tilgang til f
+lgende sider og innstillinger:<div class="blockgroup">
+				<tmpl_foreach appsList as app>
+					<tmpl_unless (IN_SET(app.pageId, currentAppId))>
+						<li><tmpl_var app.title>
+<tmpl_var app.text></li>
+					</tmpl_unless>
+				</tmpl_foreach>
+			</ul>
+		</div>
+		<p>Merk at for normal drift og normale situasjoner, trenger ingen av disse innstillingene endres fra standardverdiene. Endre disse innstillingene kun hvis din spesielle situasjon krever endringer.</p>
+	</tmpl_if>
+	<h2>Knapper</h2>
+	<tmpl_if showBackButton>
+ tilbake</h3>
+		<p>Klikk p
+ denne for 
+ tilbake til forrige side.</p>
+	</tmpl_if>
+	<tmpl_unless showBackButton>
+		<h3>Fortsett</h3>
+		<p>Bruk denne for 
+ fortsette til de avanserte sidene.</p>
+	</tmpl_unless>

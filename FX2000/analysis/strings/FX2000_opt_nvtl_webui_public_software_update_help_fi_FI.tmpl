@@ -1,0 +1,61 @@
+<!-- Software Update -->
+<div id="software_update">
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+	<h2>Yleiskatsaus</h2>
+		<p>Ohjelmistop
+ivitykset toimitetaan automaattisesti matkapuhelinverkon kautta. T
+ sivulla voit seurata n
+ivityksi
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+	<h3>Nykyinen ohjelmistoversio</h3>
+ ilmoitetaan laitteeseen t
+ hetkell
+ asennettuna olevan ohjelmiston versio.</p>
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var _("webui", "software_update_current_software_configuration_version_label")></h3>
+				<p><tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")></p>
+		</tmpl_if>
+		<h2><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+		<h3><tmpl_var _("webui", "software_update_check_for_update_time_label")></h3>
+ ilmoitetaan, milloin <tmpl_var _("webui", "webui_product_name")> tarkisti viimeksi, onko p
+ivitys saatavilla. Voit tarkistaa p
+ivitykset manuaalisesti 
+Check for Update
+ (Tarkista p
+ivitykset) -painikkeella.</p>
+		<h3>Check for Update (Tarkista p
+ivitykset) -painike</h3>
+ voit tarkistaa, onko <tmpl_var _("webui", "webui_product_name")>-laitteellesi saatavilla p
+ivitys. Yleens
+ ei ole tarpeen, koska p
+ivityksist
+ annetaan automaattisesti ilmoitus <tmpl_var _("webui", "webui_product_name")>-laitteeseen. Jos kuitenkin teet t
+n tarkistuksen ja p
+ivitys on saatavilla, se ladataan automaattisesti.</p>
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "software_update_check_for_update_status_label")></h3>
+ on yleens
+, mutta jos tarkistat p
+ivitykset, tarkistuksen tulos n
+ksi jos p
+ ladataan, latauksen eteneminen n
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+ paneeli n
+ viimeisimm
+n ohjelmistop
+ivityksen tiedot.</p>
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+ paneeli voidaan avata napsauttamalla linkki
+/otsikkoa. J
+rjestelm
+ivityshistoria sis
+ tiedot <tmpl_var SoftwareUpdateHistoryCount>-laitteen viimeisimmist
+ivityksist
+, jotka on ladattu ja asennettu t
+n laitteeseen. Jos p
+ivityksi
+ ei ole asennettu, t
+ paneelissa n
+kyy nykyinen ohjelmistoversio.</p>
+<!-- end Software Update -->

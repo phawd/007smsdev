@@ -1,0 +1,388 @@
+<!-- Diagnostics -->
+<div id="status_diagnostics">
+	<h1><tmpl_var _("webui", "status_diagnostics_menu_text")></h1>
+rskats</h2>
+ ir inform
+cija par <tmpl_var _("webui", "webui_product_name")> un pieejamajiem t
+kliem. Izmantojiet to p
+c nepiecie
+bas trauc
+jumu nov
+anai; tas nav nepiecie
+ams norm
+lai darb
+bai.</p>
+	<h2><tmpl_var _("webui", "status_diagnostics_modem_sub_header_text")></h2>
+	<tmpl_if showPhoneNumber>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_phone_number_label"), (size(_("webui", "status_diagnostics_phone_number_label")) - size(":")))></h3>
+is ir <tmpl_var _("webui", "webui_product_name")> t
+a numurs.</p>
+	</tmpl_if>
+	<tmpl_if showImei>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imei_label"), (size(_("webui", "status_diagnostics_imei_label")) - size(":")))></h3>
+		<p>IMEI (International Mobile Equipment Identity 
+ starptautisk
+kojuma identit
+cei. IMEI ir 15 vai 17 ciparu kods, ko izmanto, lai unik
+li identific
+tu atsevi
+u mobilo staciju<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>t
+. Mainot SIM karti, IMEI nemain
+	</tmpl_if>
+	<tmpl_if showImeisv>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imeisv_label"), (size(_("webui", "status_diagnostics_imeisv_label")) - size(":")))></h3>
+ IMEI apvieno ar 
+ tipa ier
+ces apstiprin
+juma numuru.</p>
+	</tmpl_if>
+	<tmpl_if showMeid>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_meid_label"), (size(_("webui", "status_diagnostics_meid_label")) - size(":")))></h3>
+		<p>MEID (mobil
+kojuma ID) ir unik
+ls numurs, ko izmanto, lai identific
+tu atsevi
+u mobilo staciju CDMA t
+	</tmpl_if>
+	<tmpl_if showIMSI>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imsi_label"), (size(_("webui", "status_diagnostics_imsi_label")) - size(":")))></h3>
+		<p>Starptautisk
+ mobilo sakaru abonenta identit
+te (IMSI) ir unik
+ls numurs, kas saist
+ts ar visiem Glob
+s mobilo sakaru sist
+mas (GSM) un Univers
+s mobilo telekomunik
+ciju sist
+mas (UMTS) t
+kla mobilo t
+u lietot
+jiem, kurus izmanto GSM abonenta identific
+anai.</p>
+	</tmpl_if>
+	<tmpl_if showFwVersion>					
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_fw_version_label"), (size(_("webui", "status_diagnostics_fw_version_label")) - size(":")))></h3>
+		<p>Modem
+reiz instal
+s programmaparat
+ras (programmat
+ras) versija.</p>
+	</tmpl_if>
+	<tmpl_if showSimStatus>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_sim_status_label"), (size(_("webui", "status_diagnostics_sim_status_label")) - size(":")))></h3>
+		<p>Tas nor
+da SIM kartes statusu. Ja tr
+kst SIM kartes vai 
+is lauks nor
+du SIM kartes k
+du, savienojums ar mobilo t
+klu nav iesp
+jams.</p>
+	</tmpl_if>
+	<tmpl_if showICCID>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_iccid_label"), (size(_("webui", "status_diagnostics_iccid_label")) - size(":")))></h3>
+lais ID numurs tiek pie
+irts SIM kartei. Tas netiek r
+ts, ja SIM karte nav instal
+ta vai past
+v SIM kartes k
+voklis.</p>
+	</tmpl_if>
+	<tmpl_if showModemDetails>
+		<tmpl_if showMINMSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_msid_label"), (size(_("webui", "status_diagnostics_msid_label")) - size(":")))></h3>
+is ID tiek izmantots, lai identific
+tu abonentu mobilo datu t
+		</tmpl_if>
+		<tmpl_if showESN>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_esn_label"), (size(_("webui", "status_diagnostics_esn_label")) - size(":")))></h3>
+			<p>Elektroniskais s
+rijas numurs (ESN) ir tradicion
+la metode ier
+lai identific
+anai CDMA t
+klos, bet to aizst
+j MEID. Ier
+s tiek izmantots MEID (piem
+cei), ESN ir tuk
+s vai tiek izmantots pseido-ESN, kas nav garant
+ 		</tmpl_if>
+ 		<tmpl_if showHomeSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_home_sid_label"), (size(_("webui", "status_diagnostics_home_sid_label")) - size(":")))></h3>
+			<p>SID (sist
+mas ID) ir t
+kla identifikators, kas nor
+da piesaistes punktu mobilo datu t
+klam.</p>
+		</tmpl_if>
+		<tmpl_if showERIVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_eri_version_label"), (size(_("webui", "status_diagnostics_eri_version_label")) - size(":")))></h3>
+			<p>ERI (Enhanced Roaming Indicator 
+ uzlabot
+s viesabon
+anas indikatoru) tabul
+ ir inform
+cija par katru viesabon
+klu, ar kuru mobilajai ier
+cei ir at
+auts izveidot savienojumu. 
+laik instal
+ ERI versija. ERI tabula tiek atjaunin
+ta autom
+tiski.</p>
+ 		</tmpl_if>
+ 		<tmpl_if showPRLVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_prl_version_label"), (size(_("webui", "status_diagnostics_prl_version_label")) - size(":")))></h3>
+			<p>PRL (Preferred Roaming List 
+s viesabon
+anas saraksts) tiek izmantots, lai atlas
+klu, ja ir pieejami vair
+reiz instal
+ PRL versija. PRL tiek atjaunin
+ts autom
+tiski.</p>
+		</tmpl_if>			
+	</tmpl_if>
+	<tmpl_if lteSupported>			
+		<h2 class="sectionHead">5G/4G LTE t
+kls</h2>
+		<tmpl_if showInternetStatus4G>	
+			<h3>Statuss</h3>
+klam<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>iesp
+s statusa v
+bas ir t
+			<div class="blockgroup">
+				<ul>
+					<li>Nav pieejams 
+<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>t
+kls nav noteikts.</li>
+					<li>Pieejams 
+<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>t
+kls ir noteikts.</li>
+				</ul>
+			</div>
+tos datu vienumus iesniedz tikai tad, ja<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>t
+kls ir pieejams.</p>
+		</tmpl_if>
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+is ir<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>t
+kla nosaukums.</p>
+		</tmpl_if>
+		<tmpl_if showSignalStrength>			
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_signal_strength_label"), (size(_("webui", "status_diagnostics_fourg_signal_strength_label")) - size(" (RSRP):")))></h3>
+			<p>Nor
+da<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>sign
+la stiprumu, ko m
+ra dBm. Augst
+kas absol
+c -80 dBm ir sp
+ -90 dBm.<tmpl_udf GET_PO_TEXT("status_diagnostics_lte_note_text")>
+		</tmpl_if>
+		<tmpl_if showSNR>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_sinr_label"), (size(_("webui", "status_diagnostics_sinr_label")) - size(":")))></h3>
+			<p>SNR ir sign
+la kvalit
+js. Liel
+ki skait
+da uz lab
+		</tmpl_if>
+		<tmpl_if showLteBand>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_lte_band_label"), (size(_("webui", "status_diagnostics_lte_band_label")) - size(":")))></h3>
+			<p><tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>t
+kli var izmantot da
+das joslas da
+is lauks nor
+da joslu, kas izmantota pa
+jam<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>savienojumam.</p>
+		</tmpl_if>
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_roaming_label"), (size(_("webui", "status_diagnostics_fourg_roaming_label")) - size(":")))></h3>
+			<p>Tas nor
+da, vai pa
+jais savienojums ir viesabon
+anas savienojums.</p>
+		</tmpl_if>
+	</tmpl_if>
+	<tmpl_if isHSPATechnology>	
+		<h2><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> Statuss</h2>
+		<h3>Statuss</h3>
+		<p><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> t
+klam tiek atbalst
+tie statusi.</p>
+		<div class="blockgroup">
+				<li>Nav pieejams 
+ <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> t
+kls nav noteikts.</li>
+				<li>Pieejams 
+ <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> t
+kls ir noteikts.</li>
+			</ul>
+		</div>
+tie datu vienumi tiek nodro
+ti tikai tad, ja t
+kls ir pieejams.</p>
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+is ir <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> t
+kla nosaukums.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p>Pa
+ <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> t
+ izmantot
+ tehnolo
+ija. Iesp
+bas no l
+kajai ir 
+das:</p>
+				<tmpl_if gsmSupported>
+					<li>GPRS</li>
+				</tmpl_if>
+				<tmpl_if wcdmaSupported>
+					<li>UMTS</li>
+				</tmpl_if>
+				<tmpl_if cdmaSupported>
+					<li>HSPA+</li>
+					<li>HSPA+ DC</li>
+				</tmpl_if>
+				<tmpl_if evdoSupported>
+					<li>MALA</li>
+					<li>HSDPA</li>
+					<li>HSUPA</li>
+				</tmpl_if>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_networkid_label"), (size(_("webui", "status_diagnostics_networkid_label")) - size(":")))></h3>
+			<p>Publisk
+ sauszemes mobil
+kla (PLMN) nosaukums un/vai ID.</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_cellid_label"), (size(_("webui", "status_diagnostics_cellid_label")) - size(":")))></h3>
+ba identific
+laik izmantoto mobilo sakaru torni.</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_rssi_label"), (size(_("webui", "status_diagnostics_rssi_label")) - size(":")))></h3>
+			<p>Tas nor
+da <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> sign
+la RSSI. RSSI ir sign
+la stipruma m
+jums decibelos attiec
+ pret vienu milivatu. Tas vienm
+r ir negat
+vs, jo mobilo radioier
+u jauda ir daudz maz
+ka par vienu milivatu. Augst
+kas absol
+da uz sp
+c -50dBm ir sp
+ -70dBm.</p>
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_roaming_label"), (size(_("webui", "status_diagnostics_roaming_label")) - size(":")))></h3>
+			<p>Tas nor
+da, vai pa
+jais savienojums ir viesabon
+anas savienojums.</p>
+		</tmpl_if>
+		<tmpl_if show3g>
+			<h2><tmpl_var _("webui", "status_diagnostics_threeg_label")></h2>
+			<h3>Statuss</h3>
+tas iesp
+s statusa v
+bas.</p>
+			<div class="blockgroup">
+				<ul>
+					<li>Nav pieejams 
+kls nav noteikts.</li>
+					<li>Pieejams 
+kls ir noteikts.</li>
+				</ul>
+			</div>
+tie datu vienumi tiek nodro
+ti tikai tad, ja t
+kls ir pieejams.</p>
+			<tmpl_if showNetworkOperator>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_network_label"), (size(_("webui", "status_diagnostics_threeg_network_label")) - size(":")))></h3>
+is ir 3G t
+kla nosaukums.</p>
+			</tmpl_if>
+			<tmpl_if show3g1xRssi>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_onex_label"), (size(_("webui", "status_diagnostics_threeg_onex_label")) - size(":")))></h3>
+			<p>RSSI ir sign
+la stipruma m
+ba ir decibeli attiec
+ pret 1 milivatu, un t
+r ir negat
+va, jo mobilo radioier
+u jauda ir daudz maz
+k par 1 milivatu. Augst
+kas absol
+da uz sp
+c -50 dBm ir sp
+ -70 dBm. 
+is lauks nor
+da 1xRTT sign
+la RSSI.</p>
+			</tmpl_if>
+			<tmpl_if show3gEvdoRssi>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_evdo_label"), (size(_("webui", "status_diagnostics_threeg_evdo_label")) - size(":")))></h3>
+				<p>RSSI ir sign
+la stipruma m
+is lauks nor
+da EVDO vai eHRPD sign
+la RSSI.</p>
+ 			</tmpl_if>
+			<tmpl_if show3gTechnology>
+ 				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+				<p>Pa
+ tehnolo
+ija, ko izmanto 3G t
+bas ir 1xRTT, EVDO vai eHRPD.</p>
+ 			</tmpl_if>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_ecio_label"), (size(_("webui", "status_diagnostics_threeg_ecio_label")) - size(":")))></h3>
+			<p>Ec/Io ir sign
+js, un tas ir sign
+la un trok
+a attiec
+bas koeficients. Tipisk
+bas ir diapazon
+ no -10 l
+dz -40. V
+rs" sign
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_sid_label"), (size(_("webui", "status_diagnostics_threeg_sid_label")) - size(":")))></h3>
+			<p>SID (sist
+mas ID) ir t
+kla identifikators, kas nor
+jo piesaistes punktu mobilo datu t
+klam. Mobilo sakaru tor
+u grupai var b
+da SID v
+is lauks nor
+jo SID.</p>		
+			<tmpl_if showRoaming>
+				<h3>Viesabon
+ana</h3>
+				<p>Tas nor
+da, vai pa
+jais savienojums ir viesabon
+anas savienojums.</p>			
+			</tmpl_if>
+			<tmpl_if linkToFieldTest>	
+				<h2><tmpl_var _("webui", "status_diagnostics_field_test_button")></h2>
+				<p>Poga "Izm
+jums ekspluat
+cijas apst
+os" nodro
+ina zema l
+kla parametru sarakstu, kas var noder
+t tehnisk
+ atbalsta darbiniekiem, kad tie nov
+kla savienojam
+bas probl
+mas.</p>
+ poga ir pieejama tikai tad, ja ir pieejams 3G t
+kls.</p>
+			</tmpl_if>
+		</tmpl_if>
+	</tmpl_if>
+<!-- id="status_diagnostics" -->

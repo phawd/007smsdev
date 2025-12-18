@@ -1,0 +1,160 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+ans_get_error_string
+ans_get_current_notification_list
+__isoc99_scanf
+GLIBC_2.7
+ans_set_audio_alerts_enabled
+ans_get_audio_alerts_enabled
+ans_set_stealth_mode_enabled
+ans_get_stealth_mode_enabled
+ans_get_notification_settings
+ans_is_running
+ans_trigger_notification
+ans_acknowledge_notification
+ans_set_notification_settings
+mifi_dbg_start
+__bss_start
+librt.so.1
+libmificommon.so
+libmifimsgbus.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libdmdb_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libwifi_api.so
+libccm2_api.so
+libbuzzer_api.so
+libusb_api.so
+libsensor_api.so
+libuisupport.so
+libcurl.so.4
+libcares.so.2
+libcrypto.so.1.1
+libssl.so.1.1
+libiconv.so.2
+libans_api.so
+H	KxD	J{D
+ans_get_current_notification_list returned %d (%s)
+ANS notifications: count = %d; List:
+list[%d].id:[%s]
+list[%d].category:[%s]
+list[%d].label:[%s]
+list[%d].title:[%s]
+list[%d].text:[%s]
+list[%d].audio_alert_type:[%s]
+list[%d].audio_alert_enabled:[%d]
+list[%d].wake_display_enabled:[%d]
+list[%d].severity:[%d](0 => info, 1 => warning, 2 => alert, 3 => critical)
+list[%d].lifetime:[%d](0 => transient, 1 => state)
+list[%d].display_surfaces:[%d](0 => None, 1 => Browser, 2 => LCD, 3 => All)
+list[%d].enabled:[%d]
+Select audio alerts enabled setting [0("not enabled"), 1("Enabled")]
+enabled: %d
+ans_set_audio_alerts_enabled returned %d (%s)
+ans_get_audio_alerts_enabled returned %d (%s)
+enabled:[%d]
+Select Stealth mode enabled setting [0("not enabled"), 1("Enabled")]
+ans_set_stealth_mode_enabled returned %d (%s)
+ans_get_stealth_mode_enabled returned %d (%s)
+  ---------------------------------------------------------------------------
+ %15s - %s
+  ---------------------------------------------------------------------------
+ans_get_notification_settings returned %d (%s)
+ANS notifications item List:
+ans_is_running returned %d (%s)
+What is id of the notification to generate/remove:  
+add/remove(1/0): 
+ans_trigger_notification returned %d (%s)
+What is id of the notification to acknowledge:  
+ans_acknowledge_notification returned %d (%s)
+Invalid arguments.
+Enter number of notifications you want to set:
+Enter notification id:
+Enable notification (1,0)?:
+Enable audio alert notification (1,0)?:
+Enable wake display notification (1,0)?:
+Enter display surfaces (0 : None, 1 : Browser, 2 : LCD, 3 : All) :
+notification.id : %s
+notification.enabled : %d
+notification.audio_alert_enabled : %d
+notification.wake_display_enabled : %d
+notification.display_surfaces : %d
+==========================================================
+ans_set_notification_settings returned %d (%s)
+command [%s]
+command [%s] not found.
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+get_notification_settings
+Test of an sync api call to get data from settings ans.
+set_notification_settings
+Test of an sync api call to set data to settings ans.
+get_stealth_mode_enabled
+Test of api call to get data from stealth mode enabled setting.
+set_stealth_mode_enabled
+Test of api call to set data to stealth mode enabled setting.
+get_audio_alerts_enabled
+Test of api call to get data from audio alerts enabled setting.
+set_audio_alerts_enabled
+Test of api call to set data to audio alerts enabled setting.
+get_current_notification_list
+gets list of current notifications.
+acknowledge_notification
+causes notification to be tagges as acknowledged.
+trigger_notification
+private API CLI to fake notification addition or removal.
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

@@ -1,0 +1,171 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+pthread_create
+libpthread.so.0
+pthread_join
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mq_close
+mifi_dbg_log
+dsm_reset_device
+mq_unlink
+factory_reset_get_hw_reset_enabled
+xmldata_initialize
+xmldata_getint32_default
+libdl.so.2
+ts_list_pop
+ts_list_destroy
+timer_create
+timer_delete
+ts_list_push
+timer_settime
+closedir
+ts_list_init
+MsgBusGet
+sigaction
+pthread_self
+sigemptyset
+mifi_dbg_start
+__errno_location
+strerror
+msgq_create
+watchdog_application_register
+msgq_receive
+msgq_resp_handler
+xmldata_shutdown
+mifi_dbg_stop
+factory_reset_settings_changed
+factory_reset_fota_upgrade_status_changed
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+factory_reset_do_reset
+xmldata_getstring
+msgq_send_async
+msgq_does_queue_exist
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libmificommon.so
+libxmldata_api.so
+libmifimsgbus.so
+libdsm_api.so
+libfactory_reset_api.so
+H	KxD	J{D
+/dev/null
+FACTORY_RESET
+[%s]:[%s] - Factory reset got SIGINT or SIGTERM %d
+[%s]:[%s] - Factory reset with data-wipe value %d
+[%s]:[%s] - Factory reset ignored due to fota in progress %d
+[%s]:[%s] - Logs cleared marker placement post factory reset.
+[%s]:[%s] - {mifios_wanevent}:cleared_wan_log
+[%s]:[%s] - {mifios_sysevent}:cleared_system_log
+[%s]:[%s] - Failed to initialize settings. factory_reset_get_settings returned %d
+[%s]:[%s] - hardware_reset_enabled: %d
+/opt/nvtl/etc/factory_reset/config.xml
+[%s]:[%s] - FACTORY_RESET config initialized
+/Config/DataWipe/Enabled
+/Config/Fota/Enabled
+[%s]:[%s] - CONFIG - Data wipe=%d FOTA=%d
+[%s]:[%s] - Failed to open configuration file: %s
+[%s]:[%s] - registering factory reset%x
+[%s]:[%s] - Unloading factory reset subsystem modules
+[%s]:[%s] - Preparing to load .so's @ [%s].
+[%s]:[%s] - Error opening %s: %s.
+initialize_factory_reset_func
+[%s]:[%s] - Error loading function pointer %s->initialize_factory_reset_func: %s.
+[%s]:[%s] - Loaded initialize_factory_reset_func for %s
+[%s]:[%s] - Finished loading initialize_factory_reset_func from .so's @ [%s].
+[%s]:[%s] - load_shared_libraries - begin.
+/opt/nvtl/lib/factory_reset
+/opt/nvtl/data/branding/lib/factory_reset
+[%s]:[%s] - load_shared_libraries - end.
+settings.ready
+[%s]:[%s] - settings factory_reset is not ready. retries left %d
+[%s]:[%s] - settings factory_reset initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings factory_reset not ready?
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - Error initializing factory_reset configuration, terminating.
+[%s]:[%s] - Error initializing factory_reset settings, terminating.
+/factory_reset_mq
+[%s]:[%s] - Error opening message queue: %d, terminating.
+factory_reset_main_thread
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s Server Terminating.
+factory_reset.settings
+fota.upgrade_status
+FACTORY_RESET
+[%s]:[%s] - %s: From channel %s received message [%s]!
+FACTORY_RESET_MBH
+[%s]:[%s] - %s: MsgBus_Create Failed
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe Refresh Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+released
+FACTORY_RESET
+[%s]:[%s] - reset_key_button = %s
+[%s]:[%s] - factory reset starts
+/Config/ResetKey/Timeout
+/Config/ResetKey/EventPath
+/Config/ResetKey/EventCode
+[%s]:[%s] - %s: CONFIG - Debounce timeout=%d, Event path=%s, Event code=%d
+/reset_key_mq
+[%s]:[%s] - reset_timeout_handler::msgq_send_async failed: %s
+[%s]:[%s] - failed to initialize factory reset timer
+[%s]:[%s] - factory reset timer initialized
+/dev/input/event%i
+gpio-keys
+[%s]:[%s] - factory reset unable to open reset input device
+[%s]:[%s] - System Reset......
+[%s]:[%s] - %s: Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error initializing reset key configuration, terminating.
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+[%s]:[%s] - Error initializing key event
+reset_key_thread
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - keys read returned %d, errno: %d.
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Terminate Thread Example, TID: %lu.
+[%s]:[%s] - %s: reset_hw_button_override entry 
+[%s]:[%s] - %s: reset_hw_button_override exit 
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

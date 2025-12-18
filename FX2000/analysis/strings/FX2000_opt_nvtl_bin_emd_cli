@@ -1,0 +1,133 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+emd_get_error_string
+emd_api_is_running
+emd_get_eth_enabled
+emd_set_eth_enabled
+libpthread.so.0
+emd_get_ethernet_iface_type
+emd_set_ethernet_iface_type
+emd_connect_eth_wan
+emd_get_ethernet_static_ip_conf
+emd_set_ethernet_static_ip_conf
+emd_get_ethernet_macaddr
+mifi_dbg_start
+__bss_start
+librt.so.1
+libmifimsgbus.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libusb_api.so
+libfactory_reset_api.so
+librouter2_api.so
+libwan_mgr_api.so
+libemd_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+is_running
+Tells if the associated process is running.
+Logs the internal status of emd.
+get_iface_type
+Gets the current Ethernet iface type.
+set_iface_type
+Sets the Ethernet iface type settings.
+get_iface_status
+Gets the current Ethernet iface status.
+set_iface_status
+Sets the Ethernet iface status settings.
+get_eth_static
+Gets the Ethernet static WAN IP address.
+set_eth_static
+Sets the Ethernet static WAN IP address.
+connect_wan
+Connect Ethernet WAN.
+get_ethernet_macaddr
+Gets the current Ethernet iface MAC address.
+  --------------------------------------------------------------------------- 
+  %-25s - %s
+  ---------------------------------------------------------------------------
+%s returned %d (%s)
+emd_is_running returned %d (%s)
+%s returned %d [%s]
+Disabled
+DHCP WAN
+Static WAN
+PPPoE WAN
+Ethernet interface type is :   [%s]
+Enter Ethernet interface Status (0=Disable, 1=Enabled): 
+Ethernet Interface typ settings Change requires reset of device:
+Do you want to reset the device Y/N:
+Enter Ethernet interface type (2=LAN, 3=DHCP WAN, 4=Static WAN, 5=PPPoE WAN): 
+Ethernet WAN Static Configuration :
+IP address: [%s]
+Netmask [%s]
+Gateway: [%s]
+Enter the static WAN IP: 
+Enter the static WAN Mask: 
+Enter the static WAN Gateway: 
+Ethernet Interface ip settings Change requires reset of device:
+dsm_cli reset_device 1
+Interface %s mac  is: %.2x:%.2x:%.2x:%.2x:%.2x:%.2x
+command [%s]
+command [%s] not found.
+cmd_help
+cmd_get_ethernet_iface_status
+cmd_set_ethernet_iface_status
+cmd_get_ethernet_iface_type
+cmd_set_ethernet_iface_type
+cmd_get_ethernet_static_wan_conf
+cmd_set_ethernet_static_wan_conf
+cmd_get_ethernet_macaddr
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

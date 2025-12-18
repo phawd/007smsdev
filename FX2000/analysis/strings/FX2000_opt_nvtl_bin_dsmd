@@ -1,0 +1,516 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+pthread_join
+libpthread.so.0
+pthread_create
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+nanosleep
+__errno_location
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+strerror
+MsgBusPublishBinary
+dsm_get_string
+setutent
+endutent
+getutent
+settings_get_features
+dsm_modem_power_down
+sysfs_get_event_str
+dsm_shutdown_device
+sysfs_get_event_int
+timer_create
+timer_settime
+timer_delete
+sysfs_set_event_int
+dsm_modem_set_state
+snprintf
+strtoull
+msgq_send_async
+__isoc99_sscanf
+GLIBC_2.7
+dsm_get_settings
+xmldata_initialize
+xmldata_getint32_default
+xmldata_getcount
+xmldata_getstring_default
+xmldata_shutdown
+MsgBusGet
+sigemptyset
+sigaction
+mifi_init_notify_thread
+mifi_register_event_handler
+mifi_shutdown_notify_thread
+mifi_dbg_get_level_from_module
+pthread_self
+mifi_dbg_start
+msgq_create
+dsm_modem_init
+watchdog_application_register
+msgq_receive
+msgq_resp_handler
+dsm_modem_deinit
+mq_close
+mq_unlink
+mifi_dbg_stop
+dsm_settings_changed
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+dsm_send_modem_safe_shutdown_ack
+dsm_send_modem_state_changed
+dsm_reset_device
+settings_factory_reset
+dsm_modem_get_imei
+dsm_modem_is_persistent_runlevel
+dsm_modem_set_persistent_runlevel
+dsm_modem_get_default_mode
+dsm_modem_set_default_mode
+dsm_modem_get_wifi1_mac
+dsm_send_battery_id
+dsm_check_battery_insert
+dsm_send_battery_capacity
+dsm_send_battery_voltage
+dsm_send_battery_current
+dsm_send_battery_voltage_state
+dsm_send_battery_temperature
+dsm_send_battery_temperature_state
+dsm_get_state
+msgq_does_queue_exist
+sysfs_set_event_str
+__bss_start
+__lxstat
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+H	KxD	J{D
+[%s]:[%s] - Executing system(%s)
+[%s]:[%s] - system(%s) failed: rc=%d
+telinit 0
+[%s]:[%s] - Shutting down the device
+[%s]:[%s] - Rebooting the device
+[%s]:[%s] - syscall(Sys_reboot) failed: %s
+/var/run/runlevel
+dsm.broadcast
+[%s]:[%s] - %s: MsgBusPublishBinary() failed
+[%s]:[%s] - msgbus broadcast - %s
+[%s]:[%s] - %s: current=%c previous=%c
+[%s]:[%s] - %s: Could not find run level in utmp
+/opt/nvtl/bin/nvtl_lpm.sh start
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - deviceui_supported feature is DISABLED in features.xml
+[%s]:[%s] - Sending Power Down Command to device ui: devui_safe_shutdown=%d
+telinit 6
+[%s]:[%s] - Sending Power Down Command to modem.
+[%s]:[%s] - Sending about to Exit LPM mode.
+pwr_on_cause_pwr_button
+pwr_on_cause_reboot
+[%s]:[%s] - battery_state = %s
+batt_vbat_low
+[%s]:[%s] - %s: event=%d
+[%s]:[%s] - battery_voltage_state = %s
+batt_temp_warning
+batt_temp_power_off
+[%s]:[%s] - set_battery_temperature_state-%s: event=%d
+[%s]:[%s] - battery_temperature_state = %s
+[%s]:[%s] - battery_capacity = %d
+[%s]:[%s] - battery_current = %d
+[%s]:[%s] - battery_temperature = %d deci-c
+[%s]:[%s] - %s: battery_voltage = %d
+[%s]:[%s] - battery_id = %d
+chg_ac_connected
+chg_slow_ac_connected
+chg_usb_connected
+[%s]:[%s] - charger_det = %s
+batt_det_true
+[%s]:[%s] - battery_det = %s
+usb_connected
+usb_configured
+[%s]:[%s] - usb_det = %s
+suspended
+[%s]:[%s] - usb_state = %s
+dcp_connected
+[%s]:[%s] - dcp_det = %s
+pwr_button_pressed
+pwr_button_pressed_2s
+[%s]:[%s] - power_button = %s
+chg_fault
+[%s]:[%s] - charger_fault = true
+[%s]:[%s] - charger_fault = false
+[%s]:[%s] - get display state failed!
+[%s]:[%s] - set display state = %s failed!
+[%s]:[%s] - set touch state = %s failed!
+[%s]:[%s] - display_state = %s
+[%s]:[%s] - set wakeup time = %d
+telinit %d
+[%s]:[%s] - Entering persistent runlevel %d mode
+typec_source
+[%s]:[%s] - typec_pwr_role = %s
+/opt/nvtl/tmp/file_sharing/device_present
+/opt/nvtl/tmp/cdc_ether/device_present
+/opt/nvtl/tmp/usb_host/device_present
+[%s]:[%s] - %s: new type is ANY but existing is not NONE
+[%s]:[%s] - usb_device_type = %s
+[%s]:[%s] - set_typec_pwr_role = %s
+[%s]:[%s] - %s: prev_state=%s state=%s
+telinit 1
+[%s]:[%s] - %s: waiting for device to move to LPM runlevel...
+telinit 3
+[%s]:[%s] - %s: waiting for device to move to ONLINE runlevel...
+[%s]:[%s] - {mifios_sysevent}:State change from [%s] to [%s]!
+[%s]:[%s] - Switching to LPM HID to facilitate usb mode switch !
+/etc/init.d/start_usb stop
+/etc/init.d/start_usb lpm
+[%s]:[%s] - Invalid battery shutdown
+[%s]:[%s] - No battery shutdown
+[%s]:[%s] - sysfsset_event_int(SYSFS_DISABLE_USB_PON) failed
+[%s]:[%s] - Shutdown due to battery power off temperature
+[%s]:[%s] - %s: event=%s power_state=%s
+[%s]:[%s] - Received %s Shutdown: Modem[%d] DevUI[%d]
+[%s]:[%s] - control hand off to FOTA. Reboot
+[%s]:[%s] - control hand off to FOTA. Shutdown
+/opt/nvtl/bin/powersave.sh stop
+[%s]:[%s] - Received %s Shutdown: LPM[%d]
+[%s]:[%s] - control hand off to FOTA. LPM
+[%s]:[%s] - message=%s ignored in persistent runlevel
+DISABLED
+[%s]:[%s] - CSM: set dcp charging = %s failed!
+[%s]:[%s] - CSM: set dcp charging = %s. battery_capacity=%d dcp_det=%s
+[%s]:[%s] - %s: chg_enable=%d prev_chg_enable=%d
+[%s]:[%s] - CSM: set device charging = %s failed!
+[%s]:[%s] - CSM: set device charging = %s. battery_det=%s charger_det=%s battery_temperature_state=%s charger_fault=%d
+[%s]:[%s] - CSM: set max charge current = %d failed
+[%s]:[%s] - CSM: set max charge current = %d
+[%s]:[%s] - %s: battery_capacity=%d dcp_det=%s prev_dcp_charging_disabled=%d
+[%s]:[%s] - %s: chg_enable=%d
+/opt/nvtl/bin/config_pd 0
+/opt/nvtl/bin/config_pd 1
+/opt/nvtl/bin/config_pd 2
+/opt/nvtl/bin/config_pd 3
+[%s]:[%s] - %s: battery_capacity=%d typec_pwr_role=%s usb_device_type=%s
+/sys/class/net/wlan%d/statistics/rx_bytes
+[%s]:[%s] - %s: rx_bytes[0]=%llu rx_bytes[1]=%llu
+[%s]:[%s] - %s: wlan_rx_bytes=%llu prev_wlan_rx_bytes=%llu
+[%s]:[%s] - %s: battery_pack_state=%s g_dsm.state.battery_pack_state=%s
+[%s]:[%s] - %s: prev_time=%u curr_time=%u
+[%s]:[%s] - CSM: battery pack state = %s
+[%s]:[%s] - %s: event=%s
+[%s]:[%s] - dsm_factory_reset_timeout_handler::msgq_send_async failed: %s
+[%s]:[%s] - dsm_power_button_2s_timeout_handler::msgq_send_async failed: %s
+[%s]:[%s] - dsm_usb_event_handler::msgq_send_async failed: %s
+[%s]:[%s] - %s: pwr_event: group=%d event=%d
+[%s]:[%s] - dsm_power_event_handler::msgq_send_async failed: %s
+[%s]:[%s] - dsm_battery_event_handler::msgq_send_async capacity failed: %s
+[%s]:[%s] - dsm_battery_event_handler::msgq_send_async current failed: %s
+[%s]:[%s] - dsm_battery_event_handler::msgq_send_async temperature failed: %s
+[%s]:[%s] - received message = %s
+telinit 2
+[%s]:[%s] - Timer shut down received - Setting DevUI and Modem safe shutdown flags
+/opt/nvtl/etc/dsm/config.xml
+/Config/PSM/BatteryEnabled
+[%s]:[%s] - Config: BatteryEnabled=%d
+/Config/PSM/BatteryChargingStatisticsEnabled
+[%s]:[%s] - Config: BatteryChargingStatisticsEnabled=%d
+/Config/PSM/LPMEnabled
+[%s]:[%s] - Config: LPMEnabled=%d
+/Config/PSM/BootOnlineWithChargerEnabled
+[%s]:[%s] - Config: BootOnlineWithChargerEnabled=%d
+/Config/PSM/PowerButtonLongPressShutdown
+[%s]:[%s] - Config: PowerButtonLongPressShutdown=%d
+/Config/PSM/LPMChargingCompleteShutdownEnabled
+[%s]:[%s] - Config: LPMChargingCompleteShutdownEnabled=%d
+/Config/PSM/MIFIDisplaySupported
+[%s]:[%s] - Config: MIFIDisplaySupported=%d
+/Config/PSM/UIControlsShutdownEnabled
+[%s]:[%s] - Config: UIControlsShutdownEnabled=%d
+/Config/CSM/MaxInputCurrentAC
+[%s]:[%s] - Config: MaxInputCurrentAC=%d
+/Config/CSM/MaxInputCurrentUSB
+[%s]:[%s] - Config: MaxInputCurrentUSB=%d
+/Config/CSM/ChargeCurrentConfigEnabled
+[%s]:[%s] - Config: ChargeCurrentConfigEnabled=%d
+/Config/PSM/PersistentDataLoc
+[%s]:[%s] - Config: persistent_data_loc=%s
+/Config/CSM/BatteryPackType
+[%s]:[%s] - Config: BatteryPackType=%d
+[%s]:[%s] - Failed to open configuration file: %s
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize settings. dsm_get_settings(%s) returned %d
+dsm.settings
+[%s]:[%s] - dsm settings initialized successfully
+[%s]:[%s] - failed to initialize power down timer
+[%s]:[%s] - power down timer initialized
+[%s]:[%s] - failed to initialize power 2s timer
+[%s]:[%s] - power button 2s timer  initialized
+/dev/input/event%i
+qpnp_pon
+rk816_pwrkey
+[%s]:[%s] - error initializing netlink event thread
+[%s]:[%s] - power_on_cause = %s
+[%s]:[%s] - False interrupt! Forced to battery_temperature_state = %s
+[%s]:[%s] - battery_voltage = %d
+[%s]:[%s] - charger_fault = %s
+/dev/null
+[%s]:[%s] - dsm_signal_handler::msgq_send_async failed: %s
+Discharging
+[%s]:[%s] - %s: sysfs_get_event_str() failed
+[%s]:[%s] - %s: is_charger_discharging=%d
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - Error initializing dsm settings, terminating.
+[%s]:[%s] - Error initializing dsm configuration, terminating.
+[%s]:[%s] - Error opening message queue: %d, terminating.
+[%s]:[%s] - Error initializing NWQMI, continuing.
+[%s]:[%s] - Error initializing key events
+[%s]:[%s] - Error initializing mifi events
+[%s]:[%s] - Error initializing battery monitor
+[%s]:[%s] - DSM state machine started
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - keys read returned %d, errno: %d.
+[%s]:[%s] - %s Server Terminating.
+msgbus_broadcast
+dsm_get_runlevel
+set_battery_voltage_state
+set_battery_temperature_state
+set_battery_voltage
+set_usb_device_type
+psm_set_state
+psm_handle_state_machine
+csm_set_device_charging
+csm_handle_dcp_charging
+csm_set_typec_charging
+csm_handle_typec_charging
+csm_get_wlan_rx_bytes
+csm_charge_inhibit_while_wifi
+csm_set_charging
+csm_handle_state_machine
+dsm_power_event_handler
+is_charger_discharging
+check_for_invalid_charger
+dsm.settings
+[%s]:[%s] - %s: From channel %s received message [%s]!
+[%s]:[%s] - %s: MsgBus_Create Failed
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+[%s]:[%s] - %s: MsgBus_Subscribe Refresh Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+[%s]:[%s] - FACTORY RESET FAILED!!!
+[%s]:[%s] - FACTORY RESET DONE FROM MODEM. RESETTING DEVICE!!!
+[%s]:[%s] - %s: unlink failed ret=%d for file:%s
+[%s]:[%s] - %s: Removed file: %s
+[%s]:[%s] - %s: Cannot open dir, errno:%d
+[%s]:[%s] - %s: syncing %s complete
+[%s]:[%s] - %s: File not found [%s]
+[%s]:[%s] - %s: Read str=[%s] from file=[%s]
+[%s]:[%s] - %s: File not found=[%s]
+[%s]:[%s] - %s: Read value=[%u] from file=[%s]
+[%s]:[%s] - %s: fopen() creation failed for %s
+[%s]:[%s] - %s: file (%s) write failed expected:%d, returned:%d
+[%s]:[%s] - %s: unlink failed for:%s rc=%d, errno:%d
+[%s]:[%s] - %s: File created=[%s]
+[%s]:[%s] - %s: dsm_modem_get_imei() failed
+[%s]:[%s] - %s: nv_resp[]: 0=%02x 5=%02x 6=%02x 7=%02x 8=%02x
+[%s]:[%s] - %s: IMEI not programmed
+00:15:FF:
+[%s]:[%s] - Reading persistent RL setting
+NvtlLinuxRunLevel
+[%s]:[%s] - Reading cookie
+[%s]:[%s] - Runlevel cookie not found, Default is RL 2
+[%s]:[%s] - Reading another cookie
+NvtlPersistentRunLevel
+[%s]:[%s] - is_persistent=[%d], RL=[%d]
+[%s]:[%s] - Couldn't create runlevel cookie
+[%s]:[%s] - Couldn't create persistent cookie
+[%s]:[%s] - Couldn't delete persistent cookie
+NvtlUSBDefaultMode
+[%s]:[%s] - Default USB mode cookie not found
+[%s]:[%s] - Default USB mode=[%d]
+[%s]:[%s] - Invalid USB default mode=[%d] specified
+[%s]:[%s] - Failed to create USB Default mode cookie
+[%s]:[%s] - dsm_modem_set_default_mode() failed
+[%s]:[%s] - Set default USB mode=[%d]
+/opt/nvtl/data/system/factory_mac_usb
+[%s]:[%s] - Failed to read USB device Mac address
+/opt/nvtl/data/system/factory_mac_usb_host
+[%s]:[%s] - Failed to read USB Host Mac address
+[%s]:[%s] - Use default USB Host MAC address
+00:15:FF:FF:FF:FF
+[%s]:[%s] - Use default USB Device MAC address
+00:15:FF:FF:FF:FE
+[%s]:[%s] - USB Host=[%s], Device=[%s]
+/opt/nvtl/data/system/factory_mac_wlan0
+[%s]:[%s] - Failed to read WLAN 1 Mac address
+/opt/nvtl/data/system/factory_mac_wlan1
+[%s]:[%s] - Failed to read WLAN 2 Mac address
+[%s]:[%s] - Failed to WiFi 1 Mac address
+[%s]:[%s] - Failed to WiFi 2 Mac address
+[%s]:[%s] - WiFi 1=[%s], 2=[%s]
+dsm_file_remove
+dsm_file_sync_and_close
+dsm_read_str_from_file
+dsm_read_str_conv_to_uint32
+dsm_file_create
+dsm_create_usb_mac_from_imei
+[%s]:[%s] - %s: failed to read BATT_ID
+[%s]:[%s] - %s: Battery ID = %d
+[%s]:[%s] - %s: failed to read BATT_THERM
+[%s]:[%s] - %s: Battery Temperature = %d deci-celsius
+[%s]:[%s] - %s: failed to read VBAT_MON
+[%s]:[%s] - %s: Battery Voltage = %d micro-volts
+[%s]:[%s] - %s: failed to read BATT_CAPACITY
+[%s]:[%s] - %s: failed to read VBAT_MON
+[%s]:[%s] - %s: failed to read BATT_CURRENT
+[%s]:[%s] - %s: charge_discharge over
+[%s]:[%s] - %s: Starting charge_discharge timer
+[%s]:[%s] - %s: Stopping charge_discharge timer
+[%s]:[%s] - Battery Capacity = %d percent, Temperature = %d deci-c, Voltage = %d micro-volts Current = %d micro-amps
+[%s]:[%s] - Battery Capacity = %d percent, Temperature = %d deci-c, Voltage = %d micro-volts Current = %d micro-amps  
+/opt/nvtl/etc/dsm/config.xml
+/Config/BMT/MinBatteryID
+[%s]:[%s] - %s: CONFIG - MinBatteryID=%d
+/Config/BMT/MaxBatteryID
+[%s]:[%s] - %s: CONFIG - MaxBatteryID=%d
+/Config/BMT/TemperatureMonitorEnabled
+[%s]:[%s] - %s: CONFIG - TemperatureMonitorEnabled=%d
+/Config/BMT/TemperatureNormalLow
+[%s]:[%s] - %s: CONFIG - TemperatureNormalLow=%d
+/Config/BMT/TemperatureNormalHigh
+[%s]:[%s] - %s: CONFIG - TemperatureNormalHigh=%d
+/Config/BMT/TemperatureTurnonLow
+[%s]:[%s] - %s: CONFIG - TemperatureTurnonLow=%d
+/Config/BMT/TemperatureTurnonHigh
+[%s]:[%s] - %s: CONFIG - TemperatureTurnonHigh=%d
+/Config/BMT/TemperatureChargerDischargeDelayMilliSec
+[%s]:[%s] - %s: CONFIG - TemperatureChargerDischargeDelayMilliSec=%d
+/Config/BMT/TemperaturePowerOffMin
+[%s]:[%s] - %s: CONFIG - TemperaturePowerOffMin=%d
+/Config/BMT/TemperaturePowerOffMax
+[%s]:[%s] - %s: CONFIG - TemperaturePowerOffMax=%d
+/Config/BMT/CapacityMonitorEnabled
+[%s]:[%s] - %s: CONFIG - CapacityMonitorEnabled=%d
+/Config/BMT/BatteryLogPeriod
+[%s]:[%s] - %s: CONFIG - BatteryLogPeriod=%d
+/Config/BMT/VBATLow
+[%s]:[%s] - %s: CONFIG - VBATLow=%d
+/Config/BMT/VBAT5Percent
+[%s]:[%s] - %s: CONFIG - VBAT5Percent=%d
+/Config/BMT/VBAT10Percent
+[%s]:[%s] - %s: CONFIG - VBAT10Percent=%d
+/Config/BMT/VBAT25Percent
+[%s]:[%s] - %s: CONFIG - VBAT25Percent=%d
+/Config/BMT/VBAT50Percent
+[%s]:[%s] - %s: CONFIG - VBAT50Percent=%d
+/Config/BMT/VBAT75Percent
+[%s]:[%s] - %s: CONFIG - VBAT75Percent=%d
+/Config/BMT/VBAT95Percent
+[%s]:[%s] - %s: CONFIG - VBAT95Percent=%d
+/Config/BMT/VBAT100Percent
+[%s]:[%s] - %s: CONFIG - VBAT100Percent=%d
+[%s]:[%s] - Failed to open configuration file: %s
+[%s]:[%s] - %s: Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - Error initializing dsm battery monitor configuration, terminating.
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Terminate Thread Example, TID: %lu.
+[%s]:[%s] - %s: send_batt_det=%d
+/sys/mifi/pwr_event/chg_det
+/sys/mifi/pwr_event/usb_det
+/sys/mifi/pwr_event/dcp_det
+/sys/mifi/pwr_event/chg_fault
+/sys/mifi/pwr_event/batt_det
+/sys/mifi/pwr_event/batt_temp
+/sys/mifi/pwr_event/batt_vbat
+/sys/mifi/pwr_event/pwr_button
+/sys/mifi/pwr_event/pwr_on_cause
+/sys/mifi/pwr_event/typec_pwr_role
+/sys/class/dual_role_usb/otg_default/device/charging_enable
+/sys/class/dual_role_usb/otg_default/device/chg_set_ilimit
+/sys/class/dual_role_usb/otg_default/device/chg_set_chg_curr
+/sys/class/power_supply/battery/capacity
+/sys/class/power_supply/battery/current_now
+/sys/class/power_supply/battery/present
+/sys/class/power_supply/battery/voltage_now
+/sys/class/power_supply/battery/temp
+/opt/nvtl/devices/lcd/on
+/opt/nvtl/devices/lcd/orientation
+/opt/nvtl/devices/lcd/brightness
+/opt/nvtl/devices/touch/on
+/sys/class/dual_role_usb/otg_default/power_role
+/sys/class/dual_role_usb/otg_default/data_role
+/charging_enable
+/control/reg_disable
+/control/reinitialize
+/control/reinitialize_src_pref
+/sys/bus/platform/drivers/msm-dwc3/a600000.ssusb/otg_state
+/sys/class/power_supply/usb/typec_cc_orientation
+/sys/bus/platform/drivers/dwc3/a600000.dwc3/udc/a600000.dwc3/current_speed
+/sys/module/pm_8x60/parameters/sleep_time_override
+[%s]:[%s] - SYSFS: failed to open %s
+[%s]:[%s] - SYSFS: failed to write %s=%s
+[%s]:[%s] - SYSFS: failed to read %s
+[%s]:[%s] - SYSFS: event=%d not supported on this platform
+Result:%d 
+[%s]:[%s] - SYSFS: event=%d not supported on this platform OR value = NULL
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

@@ -1,0 +1,80 @@
+<div id="gps_status">
+	<h1><tmpl_var _("webui", "gps_status_menu_text")></h1>
+	<h2>Descripci
+	<p> Este dispositivo <tmpl_var _("webui", "webui_product_name")> incorpora un receptor de GPS. El receptor de GPS puede determinar su ubicaci
+n actual, a menudo incluso en interiores. <tmpl_if GPSOverWiFiEnableShow>La ubicaci
+n actual se muestra en esta p
+gina, y la informaci
+n de la ubicaci
+n se puede compartir con computadoras conectadas por medio del uso de la funci
+n GPS sobre Wi-Fi.</tmpl_if>
+	<h2>Uso del GPS</h2>
+	<tmpl_if GPSEnableShow>
+		<h3><tmpl_var _("webui", "gps_status_enable_label")></h3>
+		<p> Use este control ENCENDER/APAGAR para activar o desactivar la funci
+n GPS seg
+n sea necesario. </p>
+		<h3><tmpl_udf GET_PO_TEXT("gps_status_startup_state_label", gProductName)></h3>
+		<p>Esta configuraci
+n determina cu
+ndo se desactivar
+ el receptor de GPS una vez que est
+ activado.</p>
+		<p>Si est
+ ENCENDIDO, el receptor de GPS se desactivar
+ una vez que se apague el <tmpl_var _("webui", "webui_product_name")>. Deber
+ volver a encenderlo la pr
+xima vez que necesite el receptor de GPS.</p>
+	</tmpl_if>
+		<h3>Estado del GPS</h3>
+		<p> Si el receptor de GPS a
+n no ha obtenido un punto fijo (ubicaci
+n), aparece un estado de <strong>B
+squeda</strong>. Una vez que se haya obtenido un punto fijo, se muestra la siguiente informaci
+n de Ubicaci
+n actual y aparece el mapa de Google para indicar visualmente la ubicaci
+n actual. </p>
+		<h2><tmpl_var _("webui", "gps_status_map_section_header_text")></h2>
+		<h3><tmpl_var truncate(_("webui", "gps_status_latitude_label"), (size(_("webui", "gps_status_latitude_label")) - size(":")))></h3>
+		<p> La Latitud para el 
+ltimo punto fijo de ubicaci
+		<h3><tmpl_var truncate(_("webui", "gps_status_longitude_label"), (size(_("webui", "gps_status_longitude_label")) - size(":")))></h3>
+		<p> La Longitud para el 
+ltimo punto fijo de ubicaci
+		<h3><tmpl_var truncate(_("webui", "gps_status_altitude_label"), (size(_("webui", "gps_status_altitude_label")) - size(":")))></h3>
+		<p> La Altitud para el 
+ltimo punto fijo de ubicaci
+		<h3><tmpl_var truncate(_("webui", "gps_status_accuracy_label"), (size(_("webui", "gps_status_accuracy_label")) - size(":")))></h3>
+		<p> Es una medida de la precisi
+n de la posici
+n horizontal obtenida por el receptor de GPS. </p>
+		<tmpl_if GPSOverWiFiEnableShow>
+			<tmpl_if GPSPortNumberShow>		
+				<h2><tmpl_var _("webui", "gps_status_enable_sub_header_text")></h2>
+				<h3><tmpl_var truncate(_("webui", "gps_status_gps_over_wifi_label"), (size(_("webui", "gps_status_gps_over_wifi_label")) - size(":")))></h3>
+				<p>Los datos de GPS son suministrados por el <tmpl_var  _("webui", "webui_product_name")> en forma de secuencia de texto de la Asociaci
+n Nacional de Electr
+nica Marina (NMEA por sus siglas en ingl
+s). </p>
+				<p>El uso de un puerto (GPS) de NMEA es un m
+todo est
+ndar para que las aplicaciones accedan a un flujo de datos de GPS en Windows y otras plataformas inform
+ticas. Para crear este puerto, debe descargar e instalar el controlador de GPS sobre Wi-Fi para su plataforma. Este controlador crear
+ el puerto de NMEA, obtendr
+ los datos de GPS del <tmpl_var  _("webui", "webui_product_name")>, y pondr
+ estos datos del GPS a disposici
+n para las aplicaciones compatibles con NMEA. </p>
+				<h3><tmpl_var truncate(_("webui", "gps_status_port_number_label"), (size(_("webui", "gps_status_port_number_label")) - size(":")))></h3>
+				<p> Este es el n
+mero de puerto utilizado por el software del controlador en su computadora para establecer una conexi
+n con este dispositivo y obtener los datos de GPS. A menos que tenga un buen motivo para hacerlo, no debe modificar el n
+mero de puerto. </p>
+			</tmpl_if>
+		</tmpl_if>
+	<tmpl_if GPSDownloadDriversShow>
+		<h3><tmpl_var _("webui", "gps_status_wifi_driver_download_link")></h3>
+		<p> Utilice esta opci
+n para acceder a la p
+gina de descarga de los controladores disponibles. <tmpl_if GPSOverWiFiEnableShow>Estos controladores son necesarios para utilizar la funci
+n de GPS sobre Wi-Fi.</tmpl_if>
+	</tmpl_if>

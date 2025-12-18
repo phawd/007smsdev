@@ -1,0 +1,18 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<h2>Oversikt</h2>
+	<p>Disse SMS-meldingene kommer vanligvis fra tjenesteleverandøren. Du bør ikke prøve å svare, og det er derfor ingen svarfunksjon.</p>
+	<h2>Innhold</h2>
+	<tmpl_if showMessageCounter>
+		<h3>Meldingsteller</h3>
+		<p>To tellere øverst på skjermen indikerer antall uleste (nye) meldinger og totalt antall meldinger.</p>	
+		<p>Legg merke til at alle meldingene er satt til «les» når de vises på dette skjermbildet.</p>
+	</tmpl_if>
+	<h3>Meldingsliste</h3>
+	<p>Alle meldinger er oppført i datorekkefølge. Uleste (nye) meldinger er indikert med et ikon. Meldinger merkes automatisk som «les» når de vises på denne siden, så neste gang siden legges inn, vises de ikke lenger som ulest.</p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p>Denne knappen er på slutten av meldingslisten. Bruk den etter behov for å slette alle meldinger.</p>
+	</tmpl_if>
+</div>

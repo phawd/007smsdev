@@ -1,0 +1,160 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+libiconv_open
+libiconv
+libiconv_close
+sms_get_error_string
+__isoc99_scanf
+GLIBC_2.7
+sms_api_is_running
+sms_api_get_unread_count
+sms_api_get_list
+sms_api_set_state
+sms_api_read
+sms_api_send
+sms_api_delete
+sms_api_get_ab_list
+sms_api_get_ab_entry
+sms_api_get_ab_entry_by_address
+sms_api_get_ab_entry_by_name
+__isoc99_sscanf
+sms_api_edit_ab_entry
+sms_api_add_ab_entry
+sms_api_delete_ab_entry
+mifi_dbg_start
+__bss_start
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+librt.so.1
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libfactory_reset_api.so
+libiconv.so.2
+libsms_api.so
+H	KxD	J{D
+Prints out usage and command listing.
+print_error_codes
+Prints out all the error codes and their descriptions.
+rc_to_str
+Converts an error code to the string.
+is_running
+Tells if the associated process is running.
+get_unread
+Returns the count of unread messages.
+get_list
+Returns the list of sms message headers.
+set_state
+Sets the read status of an sms message.
+Reads an SMS message.
+Sends an SMS message.
+Deletes an SMS message.
+ab_get_list
+Gets the list of address book ids.
+ab_get_entry
+Gets an address book entry.
+ab_get_entry_addr
+Gets an address book entry searchin by address.
+ab_get_entry_name
+Gets an address book entry searchin by name.
+ab_edit_entry
+Modifies an existing address book entry.
+ab_add_entry
+Adds a new address book entry.
+ab_del_entry
+Deletes an existing address book entry.
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+Enter sms error code: 
+Error code 0x%X is [%s]
+%s returned %d (%s)
+count:[%d]
+Enter 0,1, 2 or 3: PreInbox(0), Inbox(1), Outbox(2), Sentbox(3): 
+list[%d].id:[%d]
+list[%d].state:[%s]
+list[%d].storage:[%d]
+Enter mailbox id 0-3: PreInbox(0), Inbox(1), Outbox(2), Sentbox(3): 
+Enter message index 0-%d: 
+Enter message state Unread(0), Read(1): 
+Enter mailbox id PreInbox(0), Inbox(1), Outbox(2), Sentbox(3): 
+Enter message id 0-%d): 
+smsc:[%s]
+utc:[%s]
+local:[%s]
+address:[%s]
+body:[%s]
+Enter phone number: 
+Enter message: 
+Enter contact id 0-%d: 
+name:[%s]
+Enter contact address: 
+Enter contact name: 
+command [%s]
+command [%s] not found.
+cmd_is_running
+cmd_get_unread
+cmd_get_list
+cmd_set_state
+cmd_read
+cmd_send
+cmd_delete
+cmd_ab_get_list
+cmd_ab_get_entry
+cmd_ab_get_entry_addr
+cmd_ab_get_entry_name
+cmd_ab_edit_entry
+cmd_ab_add_entry
+cmd_ab_del_entry
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

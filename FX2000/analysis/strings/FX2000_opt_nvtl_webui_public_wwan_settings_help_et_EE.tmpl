@@ -1,0 +1,95 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+		<p>Vajaduse korral saate s
+tet SEES/V
+LJAS kasutada mobiilsideandmete v
+litamiseks ja mobiilsidev
+rgule juurdep
+su takistamiseks. See takistab 
+hendatud seadmetel interneti
+henduse loomist ja mobiilse andmesidepaketi kasutamist. Tavap
+raseks kasutamiseks peab see s
+te olema sisse l
+litatud.</p>
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+henduse eelistus</h3>
+			<p>Valige soovitud suvand, et kontrollida, millal <tmpl_var _("webui", "webui_product_name")> loob andme
+henduse mobiilsidev
+rguga.</p>
+	</tmpl_if>
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>Kasutage seda s
+tet, et rahvusvaheline ja riigisisene r
+ndlus vajaduse j
+rgi sisse v
+litada. R
+ndluse puhul v
+idakse kohaldada t
+iendavaid andmesidetasusid.</p>
+	</tmpl_if>
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p>Vaikev
+rtus on 
+<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>
+. <tmpl_var _("webui", "webui_product_name")> valib parima saadaoleva tehnoloogia.</p>
+		<p>Soovi korral saate seda muuta, et piirata kasutatavaid v
+rgutehnoloogiaid.</p>
+	</tmpl_if>
+sitsi valimine</h3>
+	<p>See funktsioon on saadaval ainult siis, kui v
+rgu automaatne valimine on v
+litatud. See v
+ib olla kasulik, kui saadaval on mitu v
+rku ja teil on eelistus selle kohta, millist neist kasutatakse.</p>
+	<p>Saadaolevate v
+rkude otsimiseks kl
+psake nuppu Vali v
+rk, seej
+rel saate valida soovitud v
+rgu.</p>
+	<tmpl_unless apnProfileSettings>
+		<tmpl_if NetworksFourGLTEAPNShow>
+			<h3><tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))></h3>
+			<p>APN on eelkonfigureeritud; te ei tohiks APN-i muuta, kui teil pole ettev
+ttekontot (oma APN-iga).</p>
+		</tmpl_if>
+		<tmpl_if NetworksCustomAPNShow>
+			<h3><tmpl_var truncate(_("webui", "wwan_settings_custom_apn_label"), (size(_("webui", "wwan_settings_custom_apn_label")) - size(":")))></h3>
+			<p>Seda APN-i kasutatakse, kui vahetate SIM-kaardi mitte-Verizoni SIM-kaardi vastu. Vastasel korral seda ignoreeritakse ja sellel puudub m
+		</tmpl_if>
+	<tmpl_else>
+psemad seaded</h2>
+		<p>Kasutage seda pealkirja/linki t
+psemate s
+tete kuvamiseks v
+i peitmiseks vastavalt vajadusele.</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_apn_label"), (size(_("webui", "wwan_settings_apn_label")) - size(":")))></h3>
+		<p>Kui teil on vaja APN-i muuta, sisestage mobiilsideteenuse pakkuja pakutav v
+rtus.</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p>Valige teenusepakkuja m
+ratud suvand.</p>
+				<li>Puudub</li>
+				<li>PAP</li>
+				<li>CHAP</li>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))></h3>
+		<p>Kui seade Autentimine v
+rtuseks on valitud <strong>Puudub</strong>, v
+ib selle t
+tta. Vastasel korral sisestage teenusepakkuja m
+rtus.</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))></h3>
+		<p>Kui seade Autentimine v
+rtuseks on valitud <strong>Puudub</strong>, v
+ib selle t
+tta. Vastasel korral sisestage teenusepakkuja m
+rtus.</p>
+	</tmpl_unless>

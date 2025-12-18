@@ -1,0 +1,203 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+libpthread.so.0
+__aeabi_unwind_cpp_pr0
+libgcc_s.so.1
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_createERjj
+GLIBCXX_3.4.21
+libstdc++.so.6
+pthread_self
+mifi_dbg_start
+mifi_dbg_get_level_name
+mifi_dbg_syslog
+mifi_dbg_log
+MsgBusGet
+settings_get_features
+msgq_create
+watchdog_application_register
+MsgBusSetInt32
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+msgq_receive
+msgq_resp_handler
+mifi_dbg_stop
+__errno_location
+file_write_version_string
+mq_close
+mq_unlink
+xmldata_initialize
+xmldata_getuint32_default
+xmldata_getcount
+xmldata_getstring
+xmldata_shutdown
+xmldata_getnodename
+_ZNSt8ios_base4InitC1Ev
+GLIBCXX_3.4
+__aeabi_atexit
+CXXABI_ARM_1.3.3
+_ZNSt8ios_base4InitD1Ev
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libxml2.so.2
+libmificommon.so
+libmifi_debug.so
+libmifimsgbus.so
+libxmldata_api.so
+libiconv.so.2
+libz.so.1
+libdl.so.2
+libcurl.so.4
+libcares.so.2
+libcrypto.so.1.1
+libssl.so.1.1
+libsqlite3.so.0
+libuisupport.so
+libdevui_api.so
+libm.so.6
+H	KxD	J{D
+int main(int, char**)
+int deviceui_settings_init()
+int deviceui_handle_event_message(devui_msg_type*)
+void deviceui_get_configurations_impl(devui_msg_type*)
+void deviceui_get_features_impl(devui_msg_type*)
+void deviceui_get_apps_menu_info_impl(devui_msg_type*)
+void deviceui_factory_reset_impl(devui_msg_type*)
+void deviceui_get_info_panels_list_impl(devui_msg_type*)
+-version
+/dev/null
+DEVUI_FRAMEWORK
+[%s]:[%s] -  %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - %s Error opening signal pipe: %d, terminating.
+/opt/nvtl/data/branding/etc/devui/config.xml
+/opt/nvtl/etc/devui/config.xml
+[%s]:[%s] - %s Config file path: %s
+settings.ready
+[%s]:[%s] - %s settings is not ready. retries left %d
+[%s]:[%s] - %s settings initialized successfully
+[%s]:[%s] - %s Failed to initialize settings. settings_api_get_features returned %d
+[%s]:[%s] - %s Failed to initialize settings. Deviceui is disabled in features.xml
+[%s]:[%s] - %s Error initializing Deviceui settings, terminating.
+[%s]:[%s] - %s Error allocating message buffer: %d, terminating.
+[%s]:[%s] - %s allocated message buffer
+/devui_mq
+[%s]:[%s] - %s Error opening message queue: %d, terminating.
+devui_main_thread
+[%s]:[%s] - %s Devui Framework initialized. Notifying ready status on %s channel
+devui.ready
+[%s]:[%s] - %s Select returned %d, errno: %d.
+[%s]:[%s] - %s msgq receive len: %d, rc: %d.
+[%s]:[%s] - %s msgq receive expected len: %d, rc: %d.
+[%s]:[%s] - %s evt_msg->type DEVUI_MSG_GET_CONFIGURATIONS
+[%s]:[%s] - %s: BEGIN
+[%s]:[%s] - %s device ui initialized, reading configurations from global structure
+[%s]:[%s] -  %s configurations count:[%d]
+[%s]:[%s] - %s device ui not initialized, reading configurations from config file
+/Config/Configs/node()/text()
+[%s]:[%s] - %s xmldata_getcount() Failed to get count of %s
+[%s]:[%s] - %s Configuration Count:[%d]
+/Config/Configs/*[%d]
+/Config/Configs/%s
+[%s]:[%s] - %s Failed to open config file: %s
+[%s]:[%s] - %s: END %d Len %d
+[%s]:[%s] - %s evt_msg->type DEVUI_MSG_GET_FEATURES
+[%s]:[%s] - %s device ui initialized, reading features from global structure
+[%s]:[%s] - %s features count:[%d]
+[%s]:[%s] - %s device ui not initialized, reading features from config file
+/Config/Features/node()/text()
+[%s]:[%s] - %s Features Count:[%d]
+/Config/Features/*[%d]
+/Config/Features/%s
+[%s]:[%s] - %s evt_msg->type DEVUI_MSG_GET_APPS_MENU_INFO
+/Config/Menu/App
+[%s]:[%s] - %s Insufficient buffer.
+/Config/Menu/App[%d]/Enabled
+/Config/Menu/App[%d]/@id
+[%s]:[%s] - %s evt_msg->type DEVUI_MSG_FACTORY_RESET
+devui.factory.reset
+[%s]:[%s] - %s: END returning %d
+[%s]:[%s] - %s evt_msg->type DEVUI_MSG_GET_INFO_PANELS_LIST
+/Config/InfoPanel/DefaultPanelIndex
+/Config/InfoPanel/Panels/Panel
+/Config/InfoPanel/Panels/Panel[%d]/Enabled
+/Config/InfoPanel/Panels/Panel[%d]/QML
+[%s]:[%s] - %s evt_msg->type %d not implemented
+[%s]:[%s] - %s mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s Devui Framework initiating shut down
+[%s]:[%s] -  %s Server Terminating.
+[%s]:[%s] - %s Failed to initialize settings. Settings not ready?
+/usr/share/locale
+/etc/profile
+/opt/nvtl/
+/opt/nvtl/bin/
+/opt/nvtl/etc/
+/opt/nvtl/data/
+_log_config.cfg
+/sysconf/
+ui_def_config.xml
+ui_config.xml
+acl_config.xml
+restore_ace_defaults
+webui_site_config.json
+app_config.json
+menu_layout.json
+app.tmpl
+/var/log/debug-logs.tgz
+storelogs.sh
+model_string.txt
+gpsstatus
+uinative
+websupport
+uisupport
+<absent>
+mifisess
+gBaseAssetsPath
+gHtmlLang
+gLangDirection
+gHttpStatusCode
+gHttpStatusErrorMsg
+gCssList
+gSecureToken
+gIsLoggedIn
+gMenuLayout
+gPostSuccess
+gSiteTitle
+gModelName
+gHelpURL
+gProductName
+gProductNumber
+gRedirectUrl
+gIsSMSEnabled
+gIsAdminSettingsEnabled
+gIsDefaultPassword
+gIsPromptChangePassword
+gIsSMSLOCKED
+gIsDeviceAgent
+gIsMultiSimSupported
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

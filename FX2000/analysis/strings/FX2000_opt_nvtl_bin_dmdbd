@@ -1,0 +1,611 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+clock_gettime
+librt.so.1
+watchdog_application_send_keep_alive
+libpthread.so.0
+mifi_dbg_get_level_name
+mifi_dbg_log
+nv_sys_lowercase
+list_update_device
+list_delete_device
+list_get_device
+list_merge_dynamic_data
+list_merge_persistent_data
+list_merge_settings
+settings_get_setting
+mifi_dbg_syslog
+MsgBusPublishInt32
+MsgBusSetInt32
+xmldata_initialize
+xmldata_getuint32
+xmldata_shutdown
+MsgBusGet
+settings_get_features
+dmdb_get_mac_filter_type
+dmdb_get_site_access_monitor_enabled
+strptime
+pthread_self
+mifi_dbg_start
+__errno_location
+msgq_create
+watchdog_application_register
+msgq_receive
+msgq_resp_preprocess
+msgq_resp_postprocess
+mq_close
+mq_unlink
+mifi_dbg_stop
+dmdb_configure_site_access_monitor
+dmdb_get_mac_filter_enabled
+dmdb_configure_mac_filter
+dmdb_configure_white_list
+dmdb_configure_black_list
+dmdb_update_connection_stats
+ccm2_wan_get_conn_state
+dmdb_update_wan_session_states
+dmdb_update_eth_wan_connection_stats
+dmdb_update_wifi_clients
+MsgBus_Create
+MsgBus_Connect
+MsgBus_Release
+MsgBus_SetCallback
+MsgBus_Disconnect
+MsgBus_Subscribe
+dmdb_get_whitelist
+dmdb_get_blacklist
+msgq_does_queue_exist
+msgq_send_sync
+snprintf
+nv_system
+ccm2_get_ipv6_enabled
+pthread_create
+pthread_detach
+strtok_r
+__isoc99_sscanf
+GLIBC_2.7
+usb_get_state
+strcasecmp
+wifi_get_ap_enabled
+MsgBusSetBinary
+wifi_get_pindex_from_intf
+wifi_get_ap_profile
+usb_get_tether_enabled
+localtime
+strftime
+dmdb_get_device
+dmdb_update_device_list
+msgq_resp_handler
+msgq_send_async
+pthread_join
+ccm2_wan_get_wan_stats
+modem2_get_bytes_counters
+modem2_get_current_state
+dmdb_update_eth_session
+settings_get_branding_info
+modem2_get_info
+dmdb_new_data_session
+dmdb_new_eth_session
+dmdb_update_data_session
+sqlite3_exec
+settings_set_setting
+sqlite3_open_v2
+sqlite3_close
+sqlite3_prepare_v2
+sqlite3_step
+sqlite3_column_int
+sqlite3_finalize
+sqlite3_bind_text
+sqlite3_column_text
+sqlite3_reset
+sqlite3_bind_int
+sqlite3_column_int64
+sqlite3_extended_errcode
+sqlite3_bind_int64
+list_reset
+list_insert_device_if_necessary
+__bss_start
+libmifimsgbus.so
+libxmldata_api.so
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxml2.so.2
+libz.so.1
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+librouter2_api.so
+libwifi_api.so
+libccm2_api.so
+libusb_api.so
+libsqlite3.so.0
+H	KxD	J{D
+/dev/null
+[%s]:[%s] - [%s] [%s]
+[%s]:[%s] - [%s] list count: %d
+[%s]:[%s] - [%s] list->entries[%d].mac: %s
+[%s]:[%s] - [%s] list count: %d payload size [%d]
+[%s]:[%s] - [%s] list count: %d, size: %d
+[%s]:[%s] - %s begin
+dmdb.device_list.settings
+[%s]:[%s] - settings_get_setting(%s) for device update failed with code: %d
+[%s]:[%s] - %s end
+[%s]:[%s] - %s: Error updating usage stats for %s.
+dmdb.dus.statistics.reset
+dmdb.dus.eth.statistics.reset
+[%s]:[%s] - %s: sim swap detected, deleting usage data for mdn: %s.
+[%s]:[%s] - %s: sim swap detected, not deleting usage data.
+dmdb.dus.sim.changed
+[%s]:[%s] - %s: Error updating sim info for iccid: %s, mdn: %s, imsi: %s.
+/opt/nvtl/etc/dmdb/config.xml
+/Config/Database/DeviceDatabaseSize
+/Config/Database/SessionDatabaseSize
+/Config/Database/SAMDatabaseSize
+/Config/Database/SAMThreshold
+/Config/Database/FlashWriteFreq
+/Config/TrafficStatus/LowTransferThreshold
+/Config/TrafficStatus/RxThreshold
+/Config/TrafficStatus/TxThreshold
+/Config/PerClientUsage
+/Config/ResetUsageOnSimSwap
+/Config/ResetDataOnFactoryReset
+[%s]:[%s] - DMDB initialized with the following configurations: 
+[%s]:[%s] - Max Device Count: [%d]
+[%s]:[%s] - Reset data on factory reset: [%d]
+[%s]:[%s] - Failed to open configuration file: %s
+settings.ready
+[%s]:[%s] - settings sub-system is not ready. retries left %d
+[%s]:[%s] - settings sub-system initialized successfully
+[%s]:[%s] - Failed to initialize settings. Settings sub-system not ready?
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+[%s]:[%s] - Data Usage monitor service is DISABLED in features.xml
+[%s]:[%s] - Data Usage monitor service is enabled in features.xml
+[%s]:[%s] - Site Access Monitor DISABLED in features.xml
+[%s]:[%s] - Site Access Monitor enabled in features.xml
+[%s]:[%s] - settings_get_setting(%s) failed with code: %d
+[%s]:[%s] - Failed to initialize dmdb macfilter settings. %d
+[%s]:[%s] - Failed to initialize SAM settings. %d
+[%s]:[%s] - %s starting.
+[%s]:[%s] - %s done.
+dmdb.whitelist.settings
+dmdb.blacklist.settings
+dmdb.reserved_ip.settings
+dmdb.internet_blocked.settings
+dmdb.main.initialized
+[%s]:[%s] - %s Process Start with pthread ID:%lu, process ID:%d.
+[%s]:[%s] - %s: Starting main loop, run: %d.
+[%s]:[%s] - Error opening signal pipe: %d, terminating.
+[%s]:[%s] - Error attaching to the message bus.
+[%s]:[%s] - Error initializing dmdb configuration, terminating.
+[%s]:[%s] - Error initializing dmdb settings, terminating.
+[%s]:[%s] - Error initializing dmdb database: %d, terminating.
+/dmdb_mq
+[%s]:[%s] - Error opening message queue: %d, terminating.%d
+dmdb_main_thread
+[%s]:[%s] - Select returned %d, errno: %d.
+[%s]:[%s] - mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s Server Terminating.
+dmdb_get_device_impl
+dmdb_set_device_impl
+dmdb_delete_device_impl
+dmdb_get_known_device_list_impl
+dmdb_get_connected_device_list_impl
+dmdb_get_device_settings_list_impl
+dmdb_set_device_settings_list_impl
+dmdb_get_list_by_name_impl
+dmdb_update_device_list_impl
+dmdb_dus_set_usage_data_impl
+dmdb_update_sim_info_impl
+dmdb_database_init
+[%s]:[%s] - %s:%s event received on channel: %s
+DMDB_MBH
+dmdb.sam_enabled.settings
+dmdb.macfilter_type.settings
+dmdb.macfilter_enabled.settings
+dmdb.whitelist.settings
+dmdb.blacklist.settings
+ccm2.wan_connection
+modem2.uim_state
+ccm2.wan_stats
+emd_eth.wan_stats
+wifi.wlan0.sta_list_updated
+wifi.wlan1.sta_list_updated
+[%s]:[%s] - %s: MsgBus_Create Failed
+[%s]:[%s] - %s: MsgBus_Connect Failed
+[%s]:[%s] - %s: MsgBus_SetCallback Failed
+modem2.conn_state
+[%s]:[%s] - %s: MsgBus_Subscribe Refresh Failed
+[%s]:[%s] - %s: Init MsgBus done
+[%s]:[%s] - %s: Disable Message bus interface
+dmdb_msgbus_handler
+[%s]:[%s] - Failed to initialize settings. settings_get_features returned %d
+/router2_mq
+[%s]:[%s] - %s: Got bridge interface: %s, result code: %d, retries: %d.
+[%s]:[%s] - %s: Failed to get bridge interface: %s, result code: %d, retries: %d.
+[%s]:[%s] - %s: Falling back to default bridge interface: %s.
+wifi.wlan0.sta_list_updated
+wifi.wlan1.sta_list_updated
+[%s]:[%s] - %s: Querying IPV6 neighbors with ping6
+ping6 -c 3 -I %s ff02::1 >/dev/null 2>&1
+[%s]:[%s] - %s: Failed to ping6 ipv6 neighbors
+[%s]:[%s] - %s: Error creating thread ipv6_addr_thread
+/opt/nvtl/tmp/router2/dhcpd.leases
+[%s]:[%s] - %s: dhcp lease file not found 
+starts %d %d/%d/%d %d:%d:%d;
+ethernet
+client-hostname
+vendor-string = 
+param-req-list = 
+[%s]:[%s] - %s: Duplicate DHCP entry: mac = %s, host = %s
+[%s]:[%s] - %s: New DHCP entry: mac = %s, host = %s
+cat /proc/net/arp | awk 'NR!=1 {if ($3) print $1 "|" $4 "|" $6 "|" $3}' > /tmp/arp_cache
+[%s]:[%s] - %s: Cannot create a temporary file for parsing the arp cache
+/tmp/arp_cache
+[%s]:[%s] - %s: Failed to open the arp_cache file
+[%s]:[%s] - %s: Arp ip=%s mac=%s ifc=%s, flags=0x%02x
+00:00:00:00:00:00
+[%s]:[%s] - %s: skipping mac: %s, ifc: %s, flags: %d.
+/opt/nvtl/bin/nwnvitem -r -e NW_NV_USB_MAC_ID_I
+[%s]:[%s] - %s: Failed to read usb mac id from NV item.
+[%s]:[%s] - %s: Failed to read usb mac id from USB subsystem.
+/sbin/ip -f inet6 neigh show | awk '{print $1 "|" $5 }' > /tmp/ipv6_neigh
+/tmp/ipv6_neigh
+[%s]:[%s] - %s: Failed to open the ipv6_neigh file
+[%s]:[%s] - %s: %s: mac: %s: found = %d
+[%s]:[%s] - %s: %s: adding mac: %s
+[%s]:[%s] - %s: %s: added mac: %s
+%02x:%02x:%02x:%02x:%02x:%02x
+[%s]:[%s] - %s: %s: MACFILTER mac: %s, match %d
+[%s]:[%s] - %s: %s: MACFILTER NOT Whitelisted
+[%s]:[%s] - %s: %s: MACFILTER NOT Whitelisted and not in feature mask
+[%s]:[%s] - %s: %s: MACFILTER IS Blacklisted
+[%s]:[%s] - %s: %s: MACFILTER IS Blacklisted but not in feature mask
+[%s]:[%s] - %s: %s: MACFILTER Adding to blacklist, Mac filter type: BOTH
+dmdb.blacklist.device
+[%s]:[%s] - %s: %s: MACFILTER Adding to blacklist, Mac filter type: White List
+[%s]:[%s] - %s: %s: MACFILTER Adding to blacklist, Mac filter type: Black List
+[%s]:[%s] - Removing %s the blocked client from connected list
+[%s]:[%s] - Removing %s the blocked client from dynamic list
+usb.attached_to_bridge
+[%s]:[%s] - %s: %s: usb_attached_to_bridge = %d, usb_tether_enabled = %d, rc = %d
+[%s]:[%s] - %s: %s: arp clients=%d, wifi_clients=%d, dhcp_clients=%d
+[%s]:[%s] - %s: IP Client: iptype=%s, ifctype=%s, ip=%s, link_local=%s, ipv6=%s, mac=%s, hostname=%s, vendor_class = %s param_req_list = %s
+[%s]:[%s] - %smac: %s
+[%s]:[%s] - persistent settings:
+[%s]:[%s] - %ssettings.name: %s
+[%s]:[%s] - %ssettings.type: %d
+[%s]:[%s] - %ssettings.blacklist: %d
+[%s]:[%s] - %ssettings.whitelist: %d
+[%s]:[%s] - %ssettings.internet blocked: %d
+[%s]:[%s] - %ssettings.reserved ip: %s
+[%s]:[%s] - persistent data:
+[%s]:[%s] - %sentry.id: %d
+[%s]:[%s] - %sentry.hostname: %s
+[%s]:[%s] - %sentry.vendor_class: %s
+[%s]:[%s] - %sentry.param_req_list: %s
+%Y-%m-%d %H:%M:%S
+[%s]:[%s] - %sentry.last_connected: %s
+Ethernet
+[%s]:[%s] - %sentry.interface: %s
+[%s]:[%s] - dynamic data:
+[%s]:[%s] - %sdata.connected: %d
+[%s]:[%s] - %sdata.iptype: %s
+[%s]:[%s] - %sdata.ipv4: %s
+[%s]:[%s] - %sdata.ipv6: %s
+[%s]:[%s] - %sdata.link_local: %s
+[%s]:[%s] - %sdata.lease_time: %d
+[%s]:[%s] - %s: current hostname %s
+[%s]:[%s] - %s: restoring the previous hostname %s
+[%s]:[%s] - %s: %s: begin static_list count = %d, last_check = %ld, now = %ld
+[%s]:[%s] - %s: %s: Found %d clients, last count =%d
+[%s]:[%s] - Not updating client connect time for mac: %s
+[%s]:[%s] - %s: IP client updated: mac=%s, ifc=%s, type=%s, ip=%s, host=%s
+[%s]:[%s] - %s: Updating client connect time for mac: %s
+[%s]:[%s] - %s: {mifios_sysevent}:New IP client: mac=%s, ifc=%s, type=%s, ip=%s, host=%s
+[%s]:[%s] - %s: {mifios_sysevent}:Removed IP client: mac=%s, ifc=%s, type=%s, ip=%s, host=%s
+[%s]:[%s] - %s: %s: list changed, static_list count = %d, dynamic list count = %d
+[%s]:[%s] - %s: update entry: mac %s interface %d name %s
+dmdb.connected.device.list
+[%s]:[%s] - %s: client list changed event, count: %d
+dmdb.dus.report.statistics
+[%s]:[%s] - %s: Start with pthread ID:%lu, process ID:%d.
+/dmdb_device_monitor_mq
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+[%s]:[%s] - Error initializing device monitor features, terminating.
+[%s]:[%s] - Error initializing device monitor configuration, terminating.
+dmdb_monitor_thread
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: Poll interval elapsed, checking for new arp entries...
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - %s: Terminate Thread, TID: %lu.
+get_arp_list
+is_known_wifi_mac_address
+add_known_wifi_mac_address
+process_wifi_list
+get_ip_client_list
+check_hostname
+update_client_count
+[%s]:[%s] - %s: state[%d]: %d, %d  %d, %d
+192.0.0.2
+[%s]:[%s] - %s: current: %llu saved: %llu, bearer: %d, newstats: %d
+[%s]:[%s] - %s: creating new session
+[%s]:[%s] - %s: 1 rx = [%llu], tx = [%llu]
+[%s]:[%s] - %s: end state being saved: %d, %d
+[%s]:[%s] - %s: rx: %llu, tx: %llu
+[%s]:[%s] - %s: saved rx: %llu, tx: %llu
+[%s]:[%s] - %s: connected rx_since: %llu, tx_since: %llu
+[%s]:[%s] - %s: Setting new traffic status = [%d]
+dmdb.dus.traffic_status
+dmdb.dus.report.statistics
+[%s]:[%s] - %s: saved stats rx = [%llu], rx6 = [%llu], tx = [%llu], tx6 = [%llu]
+[%s]:[%s] - %s: current stats rx = [%llu], rx6 = [%llu], tx = [%llu], tx6 = [%llu]
+[%s]:[%s] - %s: delta stats rx = [%llu], rx6 = [%llu], tx = [%llu], tx6 = [%llu]
+dmdb.dus.statistics.updated
+[%s]:[%s] - %s: DMDB Data Usage thread initialized with the following configurations:
+[%s]:[%s] - %s: Max Internet Session Count: [%d]
+[%s]:[%s] - %s: Write to flash every [%d] seconds
+[%s]:[%s] - %s: Traffic status low transfer threshold: [%d]
+[%s]:[%s] - %s: Traffic status receive threshold: [%d]
+[%s]:[%s] - %s: Traffic status transmit threshold: [%d]
+[%s]:[%s] - %s: Per client usage enabled: [%d]
+[%s]:[%s] - %s: Reset usage on sim swap: [%d]
+[%s]:[%s] - %s: Start with pthread ID:%lu, process ID:%d.
+/dmdb_data_usage_mq
+[%s]:[%s] - %s: Error opening message queue: %d, terminating.
+[%s]:[%s] - Error initializing dus configuration, terminating.
+dmdb_dus_thread
+[%s]:[%s] - %s: mq_receive returned %d, errno: %d.
+[%s]:[%s] - %s: timer elapsed, flushing dus counters to flash
+[%s]:[%s] - %s: Thread Exiting.
+[%s]:[%s] - %s: Error creating thread
+[%s]:[%s] - %s: Thread created TID: %lu
+[%s]:[%s] - Sending sync DATA_USAGE_MSG_GET_CURRENT_SESSION_STATS to data usage thread.
+[%s]:[%s] - Sending async DATA_USAGE_MSG_HANDLE_RESET to data usage thread.
+[%s]:[%s] - Sending async DATA_USAGE_MSG_ETH_HANDLE_RESET to data usage thread.
+[%s]:[%s] - %s: Terminate Thread, TID: %lu.
+dmdb_update_wan_session_states_impl
+dmdb_update_connection_stats_impl
+dmdb_update_eth_connection_stats_impl
+update_statistics
+SELECT COUNT(*) FROM SystemDefaults WHERE Version='1.5'
+INSERT INTO KnownDevices (Mac, Name, VendorClass, ParamReqList, LastConnectedDate, Interface) VALUES (?, ?, ?, ?, NULL, ?);
+UPDATE KnownDevices SET Name=?, VendorClass=?, ParamReqList=?, LastConnectedDate=?, Interface=? WHERE Mac like ?;
+SELECT ID, Name, VendorClass, ParamReqList, LastConnectedDate, Interface FROM KnownDevices WHERE MAC like ? ORDER BY ID ASC LIMIT 1;
+SELECT ID, Mac, Name, VendorClass, ParamReqList, LastConnectedDate, Interface FROM KnownDevices ORDER BY ID ASC;
+DELETE FROM KnownDevices WHERE Mac like ?;
+SELECT COUNT(*) FROM KnownDevices;
+SELECT Mac from KnownDevices WHERE LastConnectedDate IS NOT NULL ORDER BY LastConnectedDate ASC;
+SELECT Mac from KnownDevices WHERE LastConnectedDate IS NULL ORDER BY ID ASC;
+INSERT INTO DataPlanResetDate (ResetDate) VALUES (DATETIME('NOW'));
+SELECT ResetDate FROM DataPlanResetDate ORDER BY IDDataPlanResetDate DESC LIMIT 1;
+INSERT INTO SimResetDate (ResetDate, IMSI) VALUES (DATETIME('NOW'), ?);
+SELECT ResetDate FROM SimResetDate WHERE IMSI LIKE ? ORDER BY IDSimResetDate DESC LIMIT 1;
+INSERT INTO EthResetDate (ResetDate) VALUES (DATETIME('NOW'));
+SELECT ResetDate FROM EthResetDate ORDER BY IDEthResetDate DESC LIMIT 1;
+INSERT INTO EthMacResetDate (ResetDate, MAC) VALUES (DATETIME('NOW'), ?);
+SELECT ResetDate FROM EthMacResetDate WHERE MAC LIKE ? ORDER BY IDEthMacResetDate DESC LIMIT 1;
+SELECT ID, IMSI, MDN, ICCID, FWVersion, Interface, Bearer, MonoStart, MonoEnd, StartDate, EndDate, IPv4, IPv6, Roaming, BytesTXIPv4, BytesRXIPv4, BytesTXIPv6, BytesRXIPv6 		 from DataSessions WHERE StartDate < EndDate
+ORDER BY StartDate Desc;
+SELECT ID, IMSI, MDN, ICCID, FWVersion, Interface, Bearer, StartDate, EndDate, IPv4, IPv6, Roaming, BytesTXIPv4, BytesRXIPv4, BytesTXIPv6, BytesRXIPv6 		 from DataSessions ORDER BY StartDate Desc LIMIT 1;
+SELECT ID from DataSessions WHERE ID=? AND DATE('NOW') > DATE(StartDate);
+SELECT ID, IMSI, MDN, ICCID, FWVersion, Interface, Bearer, StartDate, EndDate, IPv4, IPv6, Roaming, BytesTXIPv4, BytesRXIPv4, BytesTXIPv6, BytesRXIPv6 		 from DataSessions WHERE MDN like ? ORDER BY StartDate Desc LIMIT 1;
+SELECT ID, IMSI, MDN, ICCID, FWVersion, Interface, Bearer, StartDate, EndDate, IPv4, IPv6, Roaming, BytesTXIPv4, BytesRXIPv4, BytesTXIPv6, BytesRXIPv6 		 from DataSessions WHERE IMSI like ? ORDER BY StartDate Desc LIMIT 1;
+UPDATE DataSessions SET IPv4=?, BytesTXIPv4=?, BytesRXIPv4=?, IPv6=?, BytesTXIPv6=?, BytesRXIPv6=?, EndDate=DATETIME('NOW'), MonoEnd=? WHERE ID=?;
+INSERT INTO DataSessions (IMSI, MDN, ICCID, FWVersion, Interface, Bearer, MonoStart, MonoEnd, StartDate, EndDate, IPv4, IPv6, Roaming, BytesTXIPv4, BytesRXIPv4, BytesTXIPv6, BytesRXIPv6)		 VALUES (?,?,?,?,?,?,?,?,DATETIME('NOW'),DATETIME('NOW'),?,?,?,?,?,?,?);
+SELECT COUNT(*) FROM DataSessions;
+SELECT ID FROM DataSessions WHERE EndDate < DATETIME(?);
+SELECT ID FROM DataSessions WHERE EndDate < DATETIME(?) AND IMSI LIKE ?;
+SELECT ID FROM DataSessions ORDER BY StartDate ASC LIMIT 1;
+DELETE FROM DataSessions WHERE ID = ?;
+SELECT SUM(BytesTXIPv4) + SUM(BytesTXIPv6) AS BytesTX, SUM(BytesRXIPv4) + SUM(BytesRXIPv6) AS BytesRX FROM DataSessions 
+DELETE FROM DataSessions WHERE IMSI like ?;
+SELECT ID, MAC, FWVersion, Interface, MonoStart, MonoEnd, StartDate, EndDate, IPv4, IPv6, BytesTXIPv4, BytesRXIPv4, BytesTXIPv6, BytesRXIPv6 		 from EthDataSessions WHERE StartDate <= EndDate
+SELECT ID, MAC, FWVersion, Interface, StartDate, EndDate, IPv4, IPv6, BytesTXIPv4, BytesRXIPv4, BytesTXIPv6, BytesRXIPv6 		 from EthDataSessions ORDER BY StartDate Desc LIMIT 1;
+SELECT ID from EthDataSessions WHERE ID=? AND DATE('NOW') > DATE(StartDate);
+SELECT ID, MAC, FWVersion, Interface, StartDate, EndDate, IPv4, IPv6, BytesTXIPv4, BytesRXIPv4, BytesTXIPv6, BytesRXIPv6 		 from EthDataSessions WHERE MAC like ? ORDER BY StartDate Desc LIMIT 1;
+UPDATE EthDataSessions SET IPv4=?, BytesTXIPv4=?, BytesRXIPv4=?, IPv6=?, BytesTXIPv6=?, BytesRXIPv6=?, EndDate=DATETIME('NOW'), MonoEnd=? WHERE ID=?;
+INSERT INTO EthDataSessions (MAC, FWVersion, Interface, MonoStart, MonoEnd, StartDate, EndDate, IPv4, IPv6, BytesTXIPv4, BytesRXIPv4, BytesTXIPv6, BytesRXIPv6)		 VALUES (?,?,?,?,?,DATETIME('NOW'),DATETIME('NOW'),?,?,?,?,?,?);
+SELECT COUNT(*) FROM EthDataSessions;
+SELECT ID FROM EthDataSessions WHERE EndDate < DATETIME(?);
+SELECT ID FROM EthDataSessions WHERE EndDate < DATETIME(?) AND MAC LIKE ?;
+SELECT ID FROM EthDataSessions ORDER BY StartDate ASC LIMIT 1;
+DELETE FROM EthDataSessions WHERE ID = ?;
+SELECT SUM(BytesTXIPv4) + SUM(BytesTXIPv6) AS BytesTX, SUM(BytesRXIPv4) + SUM(BytesRXIPv6) AS BytesRX FROM EthDataSessions 
+DELETE FROM EthDataSessions WHERE MAC like ?;
+SELECT ID, Mac, IDDataSession, IDKnownDevice, StartDate, EndDate, IPv4, IPv6, BytesTX, BytesRX, BytesTXIPv4, BytesRXIPv4, BytesTXIPv6, BytesRXIPv6 		 from UsageLogs 
+SELECT ID, Mac, IDDataSession, IDKnownDevice, StartDate, EndDate, IPv4, IPv6, BytesTX, BytesRX, BytesTXIPv4, BytesRXIPv4, BytesTXIPv6, BytesRXIPv6 		 from UsageLogs WHERE Mac like ? AND State = 0 ORDER BY StartDate Desc LIMIT 1;
+UPDATE UsageLogs SET IPv4=?, IPv6=?, BytesTX=?, BytesRX=?, BytesTXIPv4=?, BytesRXIPv4=?, BytesTXIPv6=?, BytesRXIPv6=?, EndDate=DATETIME('NOW') WHERE ID=?;
+UPDATE UsageLogs SET IPv4=?, BytesTXIPv4=?, BytesRXIPv4=?, EndDate=DATETIME('NOW') WHERE ID=?;
+UPDATE UsageLogs SET IPv6=?, BytesTXIPv6=?, BytesRXIPv6=?, EndDate=DATETIME('NOW') WHERE ID=?;
+INSERT INTO UsageLogs (Mac, IDDataSession, IDKnownDevice, StartDate, EndDate, UploadStatus, State, IPv4, IPv6, BytesTX, BytesRX, BytesTXIPv4, BytesRXIPv4, BytesTXIPv6, BytesRXIPv6)		 VALUES (?,?,?,DATETIME('NOW'),DATETIME('NOW'),?,?,?,?,?,?,?,?,?,?);
+DELETE FROM UsageLogs WHERE IDDataSession = ?
+SELECT COUNT(*) FROM UsageLogs;
+DELETE FROM UsageLogs WHERE IDDataSession in (Select ID from DataSessions WHERE MDN like ?);
+DELETE FROM UsageLogs WHERE UploadStatus = 1 AND IDDataSession IN (SELECT ID from DataSessions WHERE MDN LIKE ?);
+UPDATE UsageLogs Set UploadStatus = 1, State = 1 WHERE UploadStatus < 1 AND IDDataSession IN (SELECT ID from DataSessions WHERE MDN LIKE ?);
+SELECT UsageLogs.Mac, KnownDevices.Name, DataSessions.FWVersion, DataSessions.MDN, KnownDevices.VendorClass, KnownDevices.ParamReqList, Cast (( JulianDay(UsageLogs.EndDate) - JulianDay(UsageLogs.StartDate)) *24*60*60 As Integer), UsageLogs.StartDate, UsageLogs.BytesTX, UsageLogs.BytesRX 	FROM UsageLogs JOIN DataSessions ON UsageLogs.IDDataSession = DataSessions.ID 	JOIN KnownDevices ON UsageLogs.IDKnownDevice = KnownDevices.ID 	WHERE UsageLogs.UploadStatus = ? AND DataSessions.MDN like ?;
+UPDATE SystemDefaults SET SupportClientData = 0;
+UPDATE SystemDefaults SET SupportClientData = 1;
+SELECT SupportClientData FROM SystemDefaults LIMIT 1;
+UPDATE UsageLogs SET State = ?, EndDate = DATETIME('NOW') WHERE ID = ? and State <> 1;
+UPDATE UsageLogs SET State = ?, EndDate = DATETIME('NOW') WHERE IDDataSession = ? AND State <> 1;
+SELECT ResetDate FROM DataPlanResetDate ORDER BY ResetDate DESC LIMIT 1;
+INSERT INTO SiteAccess (MAC, IDKnownDevice, AccessDate, Domain) VALUES(?, ?, ?, ?);
+SELECT ID, MAC, AccessDate, Domain FROM SiteAccess 
+ORDER BY AccessDate DESC;
+SELECT ID, MAC, AccessDate, Domain FROM SiteAccess WHERE Mac LIKE ? AND Domain LIKE ? ORDER BY AccessDate DESC LIMIT 1;
+SELECT COUNT(*) FROM SiteAccess;
+DELETE FROM SiteAccess WHERE AccessDate < DATETIME(?);
+SELECT ID FROM SiteAccess ORDER BY AccessDate ASC LIMIT 1;
+DELETE FROM SiteAccess WHERE ID = ?;
+SELECT ICCID, MDN, IMSI from SimInfo LIMIT 1;
+UPDATE SimInfo SET ICCID=?, MDN=?, IMSI=?;
+INSERT INTO SimInfo (ICCID, MDN, IMSI) VALUES(?,?,?);
+SELECT DATE(?) IS NULL;
+[%s]:[%s] - %s: execute sql script failed, script: %s, sql err_code: %d, sql err_msg: %s
+dmdb.device_list.settings
+[%s]:[%s] - settings_get_setting(%s) failed with code: %d
+[%s]:[%s] - %s: count %d
+[%s]:[%s] - %s: match found
+[%s]:[%s] - %s: setting new list %d
+[%s]:[%s] - settings_set_setting(%s) failed with code: %d
+[%s]:[%s] - Settings Update: Device List Count: [%d]
+[%s]:[%s] - Settings Update: Mac: [%s], Name: [%s], Type: [%d], White List Enabled: [%d], Black List Enabled: [%d], Block Internet Enabled: [%d], Reserved Ip: [%s]
+/opt/nvtl/data/dmdb/dmdb.db
+/opt/nvtl/etc/dmdb/DMDB-init.sql
+/opt/nvtl/data/dmdb/
+[%s]:[%s] - %s: open database failed on chmod, result: %d
+[%s]:[%s] - %s: open database failed, sql result: %d
+[%s]:[%s] - %s: open database sqlite3_open_v2(%s) failed, sql result: %d
+[%s]:[%s] - %s: open database chmod failed, result: %d
+[%s]:[%s] - %s: database open sqlite3_open_v2(%s) failed, sql result: %d
+chmod ug+w 
+/opt/nvtl/etc/dmdb/DMDB-reset.sql
+[%s]:[%s] - %s: reset database failed, sql result: %d
+[%s]:[%s] - %s: get row count sqlite3 statement prepare failed, sql result: %d
+[%s]:[%s] - %s: validate date sqlite3 statement prepare failed, sql result: %d
+%Y-%m-%d %H:%M:%S
+[%s]:[%s] - %s: get device sqlite3 statement prepare failed, sql result: %d
+[%s]:[%s] - %s: get device list sqlite3 statement prepare failed, sql result: %d
+[%s]:[%s] - %s: %s query 1 found a candidate, deleting mac: %s
+[%s]:[%s] - %s: %s query 1 found a candidate, deleted mac: %s
+[%s]:[%s] - %s: %s query 2 found a candidate, deleting settings for mac: %s
+[%s]:[%s] - %s: %s query 2 found a candidate, deleting mac: %s
+[%s]:[%s] - %s: %s query 2 found a candidate, deleted mac: %s
+[%s]:[%s] - %s: %s query 3 found a candidate, deleting settings for mac: %s
+[%s]:[%s] - %s: %s query 3 found a candidate, deleting mac: %s
+[%s]:[%s] - %s: %s query 3 found a candidate, deleted mac: %s
+[%s]:[%s] - %s: purge oldest record failed, sql result: %d
+[%s]:[%s] - %s: purge oldest record succeeded.
+[%s]:[%s] - %s: purge oldest record failed, all devices are currently connected.
+[%s]:[%s] - %s: database max size %d reached, purging oldest record...
+[%s]:[%s] - %s: database full, insert failed due to inability to purge records, rc: %d
+[%s]:[%s] - %s: insert record failed, sql result: %d
+[%s]:[%s] - %s: update device failed, sql result: %d
+[%s]:[%s] - %s: delete device failed, sql result: %d
+ StartDate >= DATETIME(?) 
+ EndDate <= DATETIME(?) 
+ MDN LIKE ? 
+ imsi LIKE ? 
+ iccid LIKE ? 
+ Bearer IN (
+ Roaming > ? 
+ Roaming = ? 
+[%s]:[%s] - %s: sql string: %s
+[%s]:[%s] - %s: get usage statistics sqlite3 statement prepare failed, sql result: %d
+ MAC LIKE ? 
+[%s]:[%s] - %s: get usage sqlite3 statement prepare failed, sql result: %d
+[%s]:[%s] - %s: get usage log sqlite3 statement prepare failed, sql result: %d
+[%s]:[%s] - %s: insert usage record statement prepare failed, sql result: %d, ext result: %d
+[%s]:[%s] - %s: insert usage record statement bind failed, sql result: %d
+[%s]:[%s] - %s: insert usage record statement step failed, sql result: %d
+[%s]:[%s] - %s: insert usage record failed, sql result: %d
+[%s]:[%s] - %s sending
+[%s]:[%s] - %s: updating usage log, unable to find a valid data session: %d
+[%s]:[%s] - %s: updating existing usage log: rc %d, mac %s, id %d, tx %llu, rx %llu
+[%s]:[%s] - %s: update usage failed, sql result: %d
+[%s]:[%s] - %s: inserting new usage log: rc %d, mac %s, id %d, tx %llu, rx %llu
+[%s]:[%s] - %s: delete row %d failed, sql result: %d
+[%s]:[%s] - %s: DELETE row succeeded sql: %s
+[%s]:[%s] - %s: %s DELETE usage for session id %d
+[%s]:[%s] - %s: purge oldest session failed, sql result: %d
+[%s]:[%s] - %s: purge oldest session succeeded.
+[%s]:[%s] - %s: set reset date failed, sql result: %d
+[%s]:[%s] - %s: reset date updated.
+[%s]:[%s] - %s: set sim reset date failed, sql result: %d
+[%s]:[%s] - %s: sim reset date updated.
+[%s]:[%s] - %s: last reset date query failed, sql result: %d
+[%s]:[%s] - %s: last reset date query succeeded %s.
+[%s]:[%s] - %s: last sim reset date query failed, sql result: %d
+[%s]:[%s] - %s: last sim reset date query succeeded %s.
+[%s]:[%s] - %s: delete sessions prior to %s failed, sql result: %d
+[%s]:[%s] - %s: delete sessions prior to %s succeeded.
+[%s]:[%s] - %s: insert session record statement prepare failed, sql result: %d, ext result: %d
+[%s]:[%s] - %s: insert session record statement bind failed, sql result: %d
+[%s]:[%s] - %s: insert session record statement step failed, sql result: %d
+[%s]:[%s] - %s: insert session record failed, sql result: %d
+[%s]:[%s] - %s: update session record statement prepare failed, sql result: %d, ext result: %d
+[%s]:[%s] - %s: udpate session record statement bind failed, sql result: %d
+[%s]:[%s] - %s: update session record statement step failed, sql result: %d
+[%s]:[%s] - %s: update session record failed, sql result: %d
+[%s]:[%s] - %s: get current session sqlite3 statement prepare failed, sql result: %d
+ IMSI LIKE ? 
+ ICCID LIKE ? 
+ Interface = ? 
+ Bearer = ? 
+[%s]:[%s] - %s: get sessions sqlite3 statement prepare failed, sql result: %d
+[%s]:[%s] - %s: prepare client records sqlite3 statement prepare failed, sql result: %d
+ AccessDate >= DATETIME(?) 
+ AccessDate <= DATETIME(?) 
+[%s]:[%s] - %s: get site access sqlite3 statement prepare failed, sql result: %d
+[%s]:[%s] - %s: get last site access sqlite3 statement prepare failed, sql result: %d
+[%s]:[%s] - %s: purge oldest site failed, sql result: %d
+[%s]:[%s] - %s: purge oldest site succeeded.
+[%s]:[%s] - %s: delete sites failed, sql result: %d
+[%s]:[%s] - %s: delete sites succeeded.
+[%s]:[%s] - %s: insert site access sqlite3 statement prepare failed, sql result: %d
+[%s]:[%s] - %s: get sim info sqlite3 statement prepare failed, sql result: %d
+[%s]:[%s] - %s: set sim info sqlite3 statement prepare failed, sql result: %d
+[%s]:[%s] - %s: delete usage log sqlite3 statement prepare failed, sql result: %d
+[%s]:[%s] - %s: delete session log sqlite3 statement prepare failed, sql result: %d
+[%s]:[%s] - %s: delete usage on sim swap succeeded.
+[%s]:[%s] - %s: set mac reset date failed, sql result: %d
+ INTERFACE LIKE ? 
+delete_device_from_settings
+db_purge_oldest_device
+db_set_usage_log
+db_purge_oldest_session
+db_purge_oldest_eth_session
+db_delete_usage_prior_to
+db_delete_sim_usage_prior_to
+db_delete_eth_usage_prior_to
+db_delete_eth_mac_usage_prior_to
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

@@ -1,0 +1,109 @@
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var installationTime = parseInt(<tmpl_var estimagedUpgradeTime>); // in mins
+    var installationTimerUpdateRate = 1000; // 1 sec
+    var pollingRate = 2000; // 2 secs
+    var startupDelay = 10000; // trigger polling after 10 secs
+    var delta = -1;
+    var installTimerId;
+    var stopPolling = 0;
+
+    $(function()
+    {
+        if (!isNaN(installationTime)) {
+            installationTime = installationTime * 60 * 1000; // mins to milli-secs conversion
+        } else {
+            installationTime = 0;
+        }
+        updateProgressBar();
+        setTimeout(getSoftwareInstallStatus, startupDelay);
+    });
+
+    function updateProgressBar()
+    {
+        delta = (delta + 1);
+        var percent = 0;
+        if (installationTime != 0) {
+            percent = Math.round(((delta*1000)/installationTime)*100);
+        }
+        if (percent <= 100) {
+            $("#lineUsagePercentage").attr('style', 'width: ' + percent + '%');
+            if (percent >= 5) {                                                              
+                $("#lineUsagePercentage").html(percent + '%');                           
+            }  
+            installTimerId = setTimeout(updateProgressBar, installationTimerUpdateRate);
+        } else {
+            clearTimeout(installTimerId);
+            $("#SoftwareInstallTitle").html("<tmpl_udf GET_PO_TEXT('software_install_not_responding_title_text', gProductName)>");
+            $("#SoftwareInstallProgressBar").hide();
+            $("#SoftwareInstallNote").hide();
+            $("#SoftwareInstallStatus").removeAttr('class').addClass("notification app warning noresp").html("<tmpl_udf GET_PO_TEXT('software_install_not_responding_text', gProductNumber)>");
+            $("#homeLink").hide();
+        }
+    }
+
+    function getSoftwareInstallStatus()
+    {
+        $.ajax({
+            url : '<tmpl_udf GET_URI("software_install_status")>',
+            type : "GET",
+            dataType : "json",
+            success : function(data) {
+                if (data) {
+                    if (data.lastSuStatus != -1) {
+                        $("#SoftwareInstallTitle").html("<tmpl_var _('webui', 'software_install_title_text')>");
+                        $("#SoftwareInstallNote").hide();
+                        $("#SoftwareInstallProgressBar").hide();
+                        $("#softwareInstallContentInner").addClass("status");
+                        clearTimeout(installTimerId);
+                        stopPolling = 1;
+                        $("#homeLink").show();
+                    }
+                    if (data.lastSuStatus == 1) { // WEBUI_SOFTWARE_UPDATE_INSTALLATION_SUCCESS
+                        $("#SoftwareInstallStatus").removeAttr('class').addClass("note success").html("<tmpl_udf GET_PO_TEXT('software_install_success_text', gProductName, gProductNumber)>");
+                    } else if (data.lastSuStatus == 0) { // WEBUI_SOFTWARE_UPDATE_INSTALLATION_FAILED                      
+                        $("#SoftwareInstallStatus").removeAttr('class').addClass("notification app error fail").html("<tmpl_udf GET_PO_TEXT( 'software_install_failed_text', gProductName, gProductNumber)>");
+                    }                    
+                }
+            },
+            error : function(xhr, textStatus, errorThrown) {
+
+            },
+            complete : function() {
+                if (stopPolling != 1) {
+                    setTimeout(getSoftwareInstallStatus, pollingRate);
+                }
+            }
+        });
+    }
+
+
+    /* ]]> */
+</script>
+
+<div id="softwareInstallContent">
+    <div id="softwareInstallContentInner">
+        <h2 id="SoftwareInstallTitle"><tmpl_var _("webui", "software_install_progress_title_text")></h2>
+        <div id="SoftwareInstallStatus" class="notification app error progress">
+            <tmpl_udf GET_PO_TEXT("software_install_warning_text", gProductName, gProductNumber)>
+        </div>
+        
+            <div id="SoftwareInstallProgressBar" class="progress_bar_wrapper clearfix">
+                <div class="mt-row clearfix">
+                    <div class="progress">
+                        <div id="download_progress_bar" class="data_usage progress_bar ui-progressbar">
+                            <div id="totalUsagePercentage" class="ui-widget-header" style="width:100%;"></div>
+                            <div id="lineUsagePercentage" class="ui-widget-header-line" style="width:0%;"></div>
+                        </div>
+                        <span id="ProgressBarZeroPercent"><tmpl_var _("webui", "webui_numeric_zero_text")><tmpl_var _("webui", "webui_percentage_symbol")></span>
+                        <span id="ProgressBarHundredPercent"><tmpl_var _("webui", "webui_numeric_one_text")><tmpl_var _("webui", "webui_numeric_zero_text")><tmpl_var _("webui", "webui_numeric_zero_text")><tmpl_var _("webui", "webui_percentage_symbol")></span>
+                    </div>
+                </div>
+            </div>
+     
+        <div id="SoftwareInstallNote"><tmpl_udf GET_PO_TEXT( 'software_install_note_text', estimagedUpgradeTime)></div>
+        <div id="homeLink" style="display:none;" class="clearfix">
+            <a class="gohome" href="/"><tmpl_udf GET_PO_TEXT("software_install_home_link", gProductName)></a>
+        </div>
+    </div>
+</div>

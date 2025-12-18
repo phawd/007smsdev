@@ -1,0 +1,32 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<h2>Yleiskatsaus</h2>
+ tekstiviestit ovat yleens
+ palveluntarjoajaltasi. Niihin ei pid
+ vastata, joten vastaustoimintoa ei ole tarjolla.</p>
+	<h2>Sis
+	<tmpl_if showMessageCounter>
+		<h3>Viestilaskurit</h3>
+osassa olevat kaksi laskuria ilmaisevat lukemattomien (uusien) viestien m
+n ja viestien kokonaism
+		<p>Huomaa, ett
+ kaikki viestit on asetettu 
+luetuiksi
+, kun ne n
+	</tmpl_if>
+	<h3>Viestiluettelo</h3>
+	<p>Kaikki viestit on lueteltu p
+rjestyksess
+. Lukemattomat (uudet) viestit ilmaistaan kuvakkeella. Viestit merkit
+n automaattisesti 
+luetuiksi
+, kun ne n
+ sivulla, joten seuraavan kerran, kun sivulle siirryt
+n, ne eiv
+y lukemattomina.</p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+ painike on viestiluettelon lopussa. Voit tarvittaessa poistaa sill
+ kaikki viestit.</p>
+	</tmpl_if>

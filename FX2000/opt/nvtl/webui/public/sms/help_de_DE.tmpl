@@ -1,0 +1,18 @@
+<!-- Messages -->
+<div id="sms">
+	<h1><tmpl_var _("webui", "sms_menu_text")></h1>
+	<h2>Übersicht</h2>
+	<p>Diese SMS-Meldungen stammen in der Regel von Ihrem Dienstanbieter. Sie sollten nicht versuchen, zu antworten. Daher ist keine Antwortfunktion vorgesehen.</p>
+	<h2>Inhalt</h2>
+	<tmpl_if showMessageCounter>
+		<h3>Meldungszähler</h3>
+		<p>Zwei Zähler oben am Bildschirmrand geben die Anzahl der ungelesenen (neuen) Meldungen und die Gesamtzahl der Meldungen an.</p>	
+		<p>Beachten Sie, dass alle Meldungen auf „gelesen“ gesetzt werden, sobald sie auf diesem Bildschirm angezeigt werden.</p>
+	</tmpl_if>
+	<h3>Meldungsliste</h3>
+	<p>Alle Meldungen werden nach dem Datum sortiert. Ungelesene (neue) Meldungen werden durch ein Symbol gekennzeichnet. Meldungen werden automatisch als „gelesen“ markiert, sobald sie auf dieser Seite angezeigt werden. Wenn die Seite das nächste Mal aufgerufen wird, werden sie also nicht mehr als ungelesen angezeigt.</p>
+	<tmpl_if showDeleteAllButton>
+		<h3><tmpl_var _("webui", "sms_delete_all_button")></h3>
+		<p>Diese Schaltfläche befindet sich am Ende der Meldungsliste. Darüber können Sie bei Bedarf alle Meldungen löschen.</p>
+	</tmpl_if>
+</div>

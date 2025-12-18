@@ -1,0 +1,37 @@
+#help_faq .question
+	cursor: pointer;
+	font-weight: normal;
+	color: #06c;
+	text-decoration: underline;
+	margin-top: 20px;
+#help_faq #question_1
+	margin-top: 0;
+#help_faq .question:hover,
+#help_faq .question:focus,
+#help_faq .question.open
+	color: #c00;
+#help_faq .question.open
+	text-decoration: none;
+#help_faq .answer
+	display: none;
+	margin-bottom: 20px;
+#help_faq .answer h4
+	margin-top: 10px;
+	font-weight: bold;
+#help_faq table
+	border: 1px solid #000;	
+#help_faq .answer table th
+	width: 30%;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	background-color: #dddddd;
+#help_faq .answer table th + th
+	width: auto;
+#help_faq .answer ul
+	margin-left: 20px;
+html.rtl #help_faq .answer ul
+	margin-left: 0;
+	margin-right: 20px;
+#help_faq .answer ul li
+	margin-bottom: 5px;
+	list-style-type: square;

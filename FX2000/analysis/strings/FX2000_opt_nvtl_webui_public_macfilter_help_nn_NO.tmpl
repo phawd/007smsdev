@@ -1,0 +1,47 @@
+<!-- MAC Filter -->
+<div id="macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+	<h2>Oversikt</h2>
+	<p>MAC-filterfunksjonen, hvis den er sl
+, vil forhindre tilgang til dette wifi-nettverket av enhver enhet som ikke er inkludert i listen 
+MAC -adressefilter
+. Filteret gjelder bare wifi-nettverket, og har ingen innvirkning p
+ USB-enheter.</p>
+/AV-kontroll</h2>
+	<p>Bruk denne kontrollen til 
+ eller av MAC-filteret etter behov. F
+ du forsikre deg om at noen enheter er tillatt. Merk at n
+r MAC-filteret er sl
+, vil alle tilkoblede enheter som ikke er i listen 
+MAC-adressefilter
+ umiddelbart kobles fra.</p>
+	<h2>Liste over enheter</h2>
+	<p>Alle kjente enheter er oppf
+rt her, bortsett fra USB-enheter. Bruk avkryssingsrutene for 
+ inkludere eller ekskludere enheter fra listen 
+MAC-adressefilter
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Bruk oppdateringsknappen for 
+ oppdatere listen etter behov.</p>
+	<h2>Drift</h2>
+	<h3>Blokkert som funksjon av MAC-filter</h3>
+	<p>Samspillet mellom de 
+blokkerte
+ enhetene og 
+MAC-filteret
+ er:</p>
+	<div class="blockgroup">
+	<li>Blokkerte enheter blokkeres alltid fra wifi-nettverket, uavhengig av om MAC-filteret er av eller p
+	<li>Hvis MAC-filteret er p
+, og en enhet er i blokkeringslisten, men ikke i MAC-adressefilterlisten, vil den ikke kunne koble seg til. B
+de MAC-filter og blokkeringen ville forhindre tilkobling.</li>
+	<li>Hvis MAC-filteret er p
+, og en enhet er i MAC-adressefilterlisten, vil enheten kunne koble seg til. N
+r den koblet til, kan den deretter blokkeres enten ved 
+ fjerne den fra MAC-adressefilterlisten, eller ved 
+ -funksjonen. Generelt b
+ brukes til midlertidig blokkering, og MAC-filteret for permanent blokkering.</li>
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+	<p>Bruk denne knappen for 
+ legge til en ny enhet i enhetslisten.</p>
+<!--  macfilter  -->

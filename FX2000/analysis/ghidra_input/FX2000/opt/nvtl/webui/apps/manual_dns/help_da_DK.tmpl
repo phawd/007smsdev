@@ -1,0 +1,16 @@
+<!-- Manual DNS -->
+<div id="manual_dns">
+	<h1><tmpl_var _("webui", "adv_manual_dns_menu_text")></h1>
+	<h2>Oversigt</h2>
+	<p>Normalt leveres DNS-adressen automatisk. Denne side giver dig mulighed for manuelt at specificere en DNS om nødvendigt.</p>
+
+	<h2>Indstillinger</h2>
+
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_enable_label"), (size(_("webui", "adv_manual_dns_enable_label")) - size(":")))></h3>
+	<p>Brug denne indstilling til at tænde eller slukke for den manuelle DNS-funktion. Hvis den er tændt, skal følgende data leveres.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address1_label"), (size(_("webui", "adv_manual_dns_address1_label")) - size(":")))></h3>
+	<p>Indtast IP-adressen på den ønskede primære DNS. Denne adresse er påkrævet for at bruge funktionen Manuel DNS.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_manual_dns_address2_label"), (size(_("webui", "adv_manual_dns_address2_label")) - size(":")))></h3>
+	<p>Indtast IP-adressen på den ønskede sekundære (backup) DNS. Denne adresse er valgfri og kan eventuelt efterlades tom.</p>
+</div>
+<!-- id="manual_dns" -->

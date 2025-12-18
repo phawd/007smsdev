@@ -1,0 +1,229 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+insg_mqtt_send_teminal_commands
+__aeabi_unwind_cpp_pr1
+libgcc_s.so.1
+__aeabi_unwind_cpp_pr0
+insg_mqtt_send_command
+insg_mqtt_set_demo_enabled
+insg_mqtt_get_demo_enabled
+insg_mqtt_get_error_string
+insg_mqtt_get_last_reported
+insg_mqtt_get_connection_status
+insg_mqtt_get_heartbeat_timer_enabled
+insg_mqtt_set_deviceagent_enabled
+insg_mqtt_get_deviceagent_enabled
+insg_mqtt_get_cert_key_type
+insg_mqtt_set_reg_retry_interval
+insg_mqtt_get_reg_retry_interval
+insg_mqtt_set_checkin_interval
+insg_mqtt_get_checkin_interval
+insg_mqtt_set_ping_interval
+insg_mqtt_get_configurations
+insg_mqtt_get_server_url
+insg_mqtt_get_topics
+insg_mqtt_is_running
+insg_mqtt_set_cert_key_type
+insg_mqtt_set_server_url
+mifi_dbg_start
+mifi_dbg_stop
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libdmdb_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+librt.so.1
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libmodem2_api.so
+libgps_api.so
+libfactory_reset_api.so
+libsms_api.so
+libwifi_api.so
+libm.so.6
+libccm2_api.so
+librouter2_api.so
+libfile_sharing_api.so
+libfota_api.so
+libled_api.so
+libbuzzer_api.so
+libans_api.so
+libusb_api.so
+libemd_api.so
+libsensor_api.so
+libvpn_api.so
+libbluetooth_api.so
+libsim_mgr_api.so
+libwan_mgr_api.so
+libcbsd_api.so
+libsysintclient.so
+libcurl.so.4
+libssl.so.1.1
+libcrypto.so.1.1
+libconfiguration_module.so
+libjansson.so.4
+libuuid.so.1
+libwebui_api.so
+libdevui_api.so
+libdua_api.so
+libuisupport.so
+libdeviceagent_api.so
+libmosquitto.so.1
+libstdc++.so.6
+H	KxD	J{D
+Enter command:
+command_status: 1 SUCCESS 
+command_status: 0 FAILURE 
+  -------------------------------PUBLIC API's--------------------------------------------
+ %27s - %s
+  ---------------------------------------------------------------------------
+Please provide JSON Command data to post to deviceagent.
+please provide device agent enable value in command line
+Device-agent demo flag is set to: [%d]
+    Please restart device agent or device to apply the changes.
+Error setting demo enable value: %d
+Device-agent demo enabled flag value: [%d]
+ insg_mqtt_get_demo_enabled returned %d (%s)
+Device last reported at: [%s]
+Error getting 'Last reported time'. Return value %d (%s)
+Connection Status: [%d]
+Error getting Connection status. Return value %d (%s)
+heartbeat timer enable value:[%d]
+insg_mqtt_get_heartbeat_timer_enabled returned %d (%s)
+Device Agent enable value is set
+Error setting device agent enable value: %d
+device agent enable value:[%d]
+ insg_mqtt_get_deviceagent_enabled returned %d (%s)
+Inseego Connect Cert key type: [ Test ]
+Inseego Connect Cert key type: [ Release ]
+Failed getting Inseego Connect Client Check-In interval. ErrCode: %d (%s)
+please provide Inseego connect client registration retry interval in command line
+MQTT Registration Retry interval is set to: [%d]
+Error setting checkin interval %d
+Inseego Connect Client Reg-Retry interval: [%d]
+Failed getting Inseego Connect Client Reg-Retry interval. ErrCode: %d (%s)
+please provide checkin interval in command line
+MQTT Checkin interval is set to: [%d]
+Inseego Connect Client check-in interval: [%d]
+please provide ping interval value in command line
+MQTT Ping interval is set
+Error setting ping interval %d
+mqtt ping interval:[%d]
+insg_mqtt_get_configurations returned %d (%s)
+mqtt broker username: [%s]
+mqtt broker url:[%s]
+mqtt port:[%d]
+server url:[%s]
+insg_mqtt_get_topics returned %d (%s)
+insg_mqtt_is_running returned %d (%s)
+set_cert_key_type
+please provide key-type.
+Usage: %s %s < 0 | 1 >. Where 0 is for Dev/QA Env. And 1 is for Production/Staging Env.
+Inseego Connect Client Key type set to: [%d]
+Error setting key_type. ErrCode: %d
+set_server_url
+please provide Server url.
+Usage: %s %s <Server-URL>
+Server URL too large. Max char. limit is 127 characters!!
+Inseego Connect URL set to [%s]
+Error setting Inseego Connect URL. Error: %d
+command [%s]
+command [%s] not found.
+Prints usage and command listing.
+print_error_codes
+Prints all the error codes and their descriptions.
+is_running
+Tells if the associated process is running.
+get_topics
+Gets the topics.
+get_mqtt_port
+get MQTT port
+get_mqtt_url
+get MQTT Broker URL
+get_mqtt_username
+get mqtt username
+get_server_url
+get Server URL
+set Server URL
+get_mqtt_ping_interval
+get MQTT ping interval
+set_mqtt_ping_interval
+set MQTT ping interval
+get_check_in_interval
+get MQTT check in interval
+set_check_in_interval
+set MQTT check in interval
+get_reg_retry_interval
+get registration/handshake retry interval
+set_reg_retry_interval
+set registration/handshake retry interval
+get_cert_key_type
+get Cert. key type.
+set Cert. key type. to 0 or 1. [0 => Dev/QA (Test) env, 1 => Prod/Staging (Release) env]
+get_deviceagent_enable
+get deviceagent enable value
+set_deviceagent_enable
+set deviceagent enable value
+get_heartbeat_timer_enable
+get heartbeat timer enable
+get_connection_status
+get connection status
+get_last_reported
+get last reported (Check-In) time
+get_demo_enable
+get device-agent demo enabled flag
+set_demo_enable
+set device-agent demo enable flag
+send_dummy_config
+Mimicks as if CFG_UPDATE or other commands are sent from cloud.
+send_oob_terminal_command
+Sending terminal commands to Serial Port
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

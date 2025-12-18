@@ -1,0 +1,88 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+	<h2>Yleiskatsaus</h2>
+ asetukset koskevat paikallista verkkoasi tai LAN-verkkoasi. T
+n laitteen LAN-verkko koostuu t
+ laitteesta ja kaikista siihen yhdistetyist
+ laitteista (mukaan lukien Ethernetin kautta yhdistetyt laitteet, jos sellaisia on).</p>
+	<h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+	<tmpl_if LANIPAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+n laitteen IP-osoite, paikallisesta verkosta katsottuna. Voit yleens
+ oletusarvoa.</p>
+	</tmpl_if>
+	<tmpl_if LANSubnetMaskShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+		<p>Oletusarvo 255.255.255.0 on vakio pienille (luokan 
+) verkoille. Jos muutat LAN-verkon IP-osoitetta, varmista, ett
+t oikeaa aliverkon peitett
+	</tmpl_if>
+	<tmpl_if LANMacAddressShow>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+		<p>MAC-osoite on yksil
+llinen verkkotunniste, joka m
+n verkkolaite valmistettaessa. T
+ vain luku -kentt
+n laitteen Wi-Fi- ja USB-liittymien MAC-osoitteen.</p>
+	</tmpl_if>
+	<tmpl_if LANDHCPEnableShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+isi yleens
+ olla valittuna. DHCP-palvelin m
+ IP-osoitteen jokaiselle yhdistetylle laitteelle. Jos DHCP-palvelin oli kytkettyn
+, kullekin yhdistetylle laitteelle on m
+ IP-osoite.</p>
+	</tmpl_if>
+	<tmpl_if LANLANDHCPLeaseTimeShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+, kuinka usein yhdistettyjen laitteiden on uusittava DHCP-palvelimen niille m
+ IP-osoite. T
+ voidaan yleens
+ oletusarvoon, mutta voit muuttaa t
+ arvoa, jos sinulla on erityisvaatimuksia.</p>
+	</tmpl_if>
+	<tmpl_if LANDHCPStartAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>Jos haluat muuttaa DHCP-palvelimen k
+ IP-osoitealuetta, voit tehd
+ sen muuttamalla t
+ arvoa. T
+ vaihtoehto on tarkoitettu vain asiantuntijak
+jille.</p>
+	</tmpl_if>
+	<tmpl_if LANDHCPEndAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+ osoittaa niiden IP-osoitteiden alueen, jotka voidaan m
+ yhdistetyille laitteille. Jos yhdistetyss
+ laitteessa on k
+ IP-osoite, k
+ IP-osoitetta, joka on t
+n alueen ulkopuolella.</p>
+	</tmpl_if>
+	<tmpl_if LANReservedIPAddressShow>		
+	<h3><tmpl_var truncate(_("webui", "adv_lan_reservedIp_help_label"), (size(_("webui", "adv_lan_reservedIp_help_label")) - size(":")))></h3>
+ ominaisuutta voidaan k
+ varmistamaan, ett
+ <tmpl_var _("webui", "webui_product_name")> m
+ yhdistetylle laitteelle aina saman IP-osoitteen. T
+ painiketta napsauttamalla p
+n ominaisuuden asetusn
+	</tmpl_if>
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>Jos jotkin yhdistetyt laitteesi tukevat IPv6:ta, t
+ asetus pit
+isi kytke
+lle. IPv6:n kautta yhdistetyt laitteet voivat t
+in muodostaa IPv6-yhteyksi
+ Internetiin.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+n laitteen IPv6-osoite. Link-Local-osoitetta (paikallista osoitetta) k
+n IPv6-tietoliikenteess
+ samassa verkossa olevien laitteiden v
+	</tmpl_if>	
+<!-- id="lan" -->

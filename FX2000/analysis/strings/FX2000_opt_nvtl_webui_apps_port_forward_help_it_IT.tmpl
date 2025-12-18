@@ -1,0 +1,146 @@
+<!-- Port Forwarding -->
+<div id="port_forward">
+	<h1>Port Forwarding</h1>
+	<h2>Panoramica</h2>
+	<p>Il Port Forwarding consente di inoltrare specifiche applicazioni verso un particolare dispositivo connesso alla rete. Normalmente, il firewall integrato blocca il traffico in entrata da Internet. Il port forwarding consente agli utenti Internet di accedere a un qualsiasi server in esecuzione sul computer, come un server Web, FTP o di posta elettronica.
+	<b>Importante:</b> Il port forwarding crea un rischio per la sicurezza e non dovrebbe essere attivato a meno che non sia necessario.
+	Alcune reti mobili forniscono un indirizzo IP sulla propria rete piuttosto che un indirizzo IP pubblico. In questo caso, non 
+ possibile utilizzare il Port Forwarding, poich
+ gli utenti Internet non possono raggiungere l'indirizzo IP dell'utente.
+	<h2>Applicazioni di port forwarding</h2>
+	<h3>Caselle di controllo dell'applicazione</h3>
+			Selezionare la casella accanto a ciascuna delle applicazioni di port forwarding che si desidera consentire. Per inoltrare l
+intero traffico WAN in entrata su una porta specifica a un singolo client LAN, immetti l'indirizzo IP del dispositivo di destinazione nel campo Indirizzo IP Applicazione.
+			<li>1. Installa l'applicazione su un computer connesso alla rete del dispositivo.</li>
+			<li>2. Puoi controllare l
+indirizzo IP del computer nella schermata dei dispositivi connessi sul computer.</li>
+			<li>3. In questa schermata, inserisci l'indirizzo IP del computer nel campo <strong>Indirizzo IP del dispositivo connesso</strong> di fianco all'applicazione.</li>
+			<li>4. Attiva l
+applicazione in questa schermata selezionando la relativa casella di controllo.</li>
+			<li>5. Salva le modifiche.</li>
+			<li>6. Prendi nota dell'indirizzo IP Internet di questo dispositivo nella schermata <strong>Stato corrente</strong>.</li>
+			<li>7. Chiedere agli utenti su Internet di connettersi all'indirizzo IP Internet di questo dispositivo. Queste richieste di connessione verranno inoltrate all'indirizzo IP specificato al passaggio 3.</li>
+			La seguente tabella mostra i numeri di porta e le informazioni sul protocollo per ciascuna delle applicazioni di port forwarding elencata.
+			<table class="portForwardingTable" id="">
+	 	<thead>
+			<tr class="">
+				<th class=""> Nome dell
+applicazione</th>
+				<th class="">Porta</th>
+				<th class="">TCP*</th>
+				<th class="">STCP*</th>
+				<th class="">UDP*</th>
+			</tr>
+		</thead>
+		<tbody>
+				<td> DNS</td>
+				<td> 53</td>
+				<td> S
+				<td> No</td>
+				<td> S
+			</tr>
+				<td> Controllo FTP (comando)</td>
+				<td> 21</td>
+				<td> S
+				<td> S
+				<td> Assegnato</td>
+			</tr>
+				<td> Trasferimento dati FTP</td>
+				<td> 20</td>
+				<td> S
+				<td> S
+				<td> Assegnato</td>
+			</tr>
+				<td> HTTP</td>
+				<td> 80</td>
+				<td> S
+				<td> S
+				<td> Assegnato</td>
+			</tr>
+				<td> HTTPS</td>
+				<td> 443</td>
+				<td> S
+				<td> S
+				<td> Assegnato</td>
+			</tr>
+				<td> NNTP</td>
+				<td> 119</td>
+				<td> S
+				<td> No</td>
+				<td> Assegnato</td>
+			</tr>
+				<td> POP3</td>
+				<td> 110</td>
+				<td> S
+				<td> No</td>
+				<td> Assegnato</td>
+			</tr>
+				<td> POP3S</td>
+				<td> 995</td>
+				<td> S
+				<td> No</td>
+				<td> S
+			</tr>
+				<td> SMTP</td>
+				<td> 25</td>
+				<td> S
+				<td> No</td>
+				<td> Assegnato</td>
+			</tr>
+				<td> SecureSMTP</td>
+				<td> 465</td>
+				<td> S
+				<td> No</td>
+				<td> No</td>
+			</tr>
+				<td> SNMP</td>
+				<td> 161</td>
+				<td> Assegnato</td>
+				<td> No</td>
+				<td> S
+			</tr>
+				<td> Telnet</td>
+				<td> 23</td>
+				<td> S
+				<td> No</td>
+				<td> Assegnato</td>
+			</tr>
+				<td> TFTP</td>
+				<td> 69</td>
+				<td> Assegnato</td>
+				<td> No</td>
+				<td> S
+			</tr>
+		</tbody>
+	</table>
+	<p><b>S
+</b> indica che il protocollo 
+ standardizzato per il numero di porta.</p>
+	<p><b>No</b> indica che il protocollo non 
+ standardizzato per il numero di porta.</p>
+	<p><b>Assegnato</b> indica che il numero di porta 
+ assegnato dalla IANA (Internet Assigned Numbers Authority) per l'utilizzo del protocollo, ma potrebbe non essere standardizzato.</p>	
+	<h2>Applicazioni personalizzate</h2>
+	<p>Questa funzione consente di definire le proprie applicazioni. Una volta definite, queste applicazioni possono essere attivate o disattivate nello stesso modo delle applicazioni predefinite. Per definire un'applicazione, 
+ necessario conoscere le porte e il protocollo (TCP, UDP) che l
+applicazione utilizza per il traffico in entrata. Per iniziare, fai clic sul pulsante <strong>Aggiungi applicazione personalizzata</strong>, quindi fornisci i seguenti dati. 
+	<h3>Casella di controllo dell'applicazione</h3>
+	<p>Seleziona questa casella se desideri che la nuova applicazione sia in grado di accedere a Internet (abilitando il port forwarding).
+	<h3>Nome dell'applicazione</h3>
+		Immetti un nome adatto per l'applicazione che stai definendo.
+	<h3>Indirizzo IP del dispositivo connesso</h3>
+		Inserisci l'indirizzo IP del dispositivo connesso che ricever
+ il traffico.
+	<h3>Tipo di porta e numeri di porta</h3>
+		<p>Ogni applicazione dispone del proprio intervallo di porte. Immetti l'inizio e la fine dell'intervallo di porte per ciascuna applicazione.
+		<div class="blockgroup">
+				<li>Per un intervallo di porte, immetti l'inizio dell'intervallo nel campo <strong>Da</strong> e la fine dell'intervallo nel campo <strong>Fino a</strong>.</li>
+				<li>Per una porta di traslazione, immetti il numero di porta in entrambi campi<strong>Ext</strong> e <strong>Int</strong>.</li>
+			</ul>
+		</div>
+	<h3>Protocollo</h3>
+		Per ciascun intervallo di porte, seleziona il protocollo (TCP o UDP) che tale intervallo deve utilizzare.
+	<h3>Elimina</h3>
+	<p>Utilizza questa casella di controllo per eliminare un'applicazione personalizzata.
+	<p><b>NOTA:</b> Fai di nuovo clic sulla scheda Port Forwarding per rimuovere le applicazioni personalizzate eliminate dalla schermata aperta. </p>
+<!-- id="port_forward" -->

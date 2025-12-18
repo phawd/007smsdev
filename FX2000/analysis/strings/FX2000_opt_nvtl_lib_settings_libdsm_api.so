@@ -1,0 +1,424 @@
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+GLIBC_2.4
+libc.so.6
+libdsm_api.so
+__cxa_finalize
+dsm_is_running
+msgq_does_queue_exist
+libpthread.so.0
+dsm_get_state
+mifi_dbg_get_level_name
+mifi_dbg_log
+msgq_send_sync
+dsm_shutdown_device
+msgq_send_async
+dsm_reset_device
+dsm_set_persistent_mode
+dsm_send_fota_update
+dsm_send_devui_safe_shutdown_ack
+dsm_send_lpm_safe_exit_ack
+dsm_set_display_state
+mifi_dbg_syslog
+dsm_set_suspend_wakeup_time
+dsm_set_usb_device_type
+dsm_set_usb_typec_pwr_role_pref
+dsm_get_wifi_mac_addr
+dsm_get_usb_mac_addr
+dsm_get_usb_default_mode
+dsm_set_usb_default_mode
+dsm_get_persistent_rl
+dsm_set_persistent_rl
+dsm_get_settings
+settings_get_setting
+dsm_set_settings
+settings_set_setting
+dsm_get_battery_capability
+dsm_get_string
+dsm_get_error_string
+dsm_send_battery_id
+dsm_check_battery_insert
+dsm_send_battery_temperature_state
+dsm_send_battery_temperature
+dsm_send_battery_voltage_state
+dsm_send_battery_capacity
+dsm_send_battery_voltage
+dsm_send_battery_current
+dsm_settings_changed
+dsm_send_modem_safe_shutdown_ack
+dsm_send_modem_state_changed
+dsm_get_ui_controls_shutdown_enabled
+dsm_get_settings_impl
+xmldata_getuint32_default
+dsm_set_settings_impl
+xmldata_setuint32
+xmldata_save
+MsgBusSetInt32
+dsm_get_battery_capability_impl
+xmldata_getint32
+initialize_settings
+sysfs_set_event_int
+sysfs_get_event_int
+__isoc99_sscanf
+GLIBC_2.7
+sysfs_set_event_str
+sysfs_get_event_str
+__bss_start
+librt.so.1
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libm.so.6
+libmifi_events.so
+H	KxD	J{D
+[%s]:[%s] - dsm queue doesn't exist. process not running?
+[%s]:[%s] - Sending DSM_MSG_GET_STATE message to DSM process.
+[%s]:[%s] - Sending DSM_MSG_SHUTDOWN_DEVICE message to DSM process.
+[%s]:[%s] - Sending DSM_MSG_RESET_DEVICE message to DSM process.
+[%s]:[%s] - invalid runlevel?
+[%s]:[%s] - Sending DSM_MSG_SET_PERSISTENT_MODE runlevel=%d message to DSM process.
+[%s]:[%s] - Sending DSM_MSG_SEND_FOTA_UPDATE request=%d message to DSM process.
+[%s]:[%s] - Sending DSM_MSG_DEVUI_SAFE_SHUTDOWN message to DSM process.
+[%s]:[%s] - Sending DSM_MSG_LPM_SAFE_EXIT message to DSM process.
+[%s]:[%s] - invalid state value=%d
+[%s]:[%s] - Sending DSM_MSG_SET_DISPLAY_STATE=%d message to DSM process.
+[%s]:[%s] - invalid wakeup time value. should be > 0
+[%s]:[%s] - Sending DSM_MSG_SET_SUSPEND_WAKEUP_TIME time_in_seconds=%d message to DSM process.
+[%s]:[%s] - invalid usb_device_type?
+[%s]:[%s] - Sending DSM_MSG_SET_USB_DEVICE_TYPE usb_device_type=%d message to DSM process.
+[%s]:[%s] - invalid pwr_role_pref?
+[%s]:[%s] - Sending DSM_MSG_SET_USB_TYPEC_PWR_ROLE_PREF pwr_role_pref=%d message to DSM process.
+[%s]:[%s] - Invalid input
+[%s]:[%s] - Sending DSM_MSG_GET_WIFI_MAC_ADDR, intfs=[%d] to DSM process.
+[%s]:[%s] - %s: dsm_get_usb_mac_addr failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - Sending DSM_MSG_GET_USB_MAC_ADDR to DSM process.
+[%s]:[%s] - %s: DSM_MSG_GET_USB_MAC_ADDR failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - mode address is empty
+[%s]:[%s] - Sending DSM_MSG_GET_USB_MODE to DSM process.
+[%s]:[%s] - %s: DSM_MSG_GET_USB_MODE failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - Invalid mode specified
+[%s]:[%s] - Sending DSM_MSG_SET_USB_MODE = [%d] to DSM process.
+[%s]:[%s] - %s: DSM_MSG_SET_USB_MODE failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - Sending DSM_MSG_GET_PERSISTENT_RL to DSM process.
+[%s]:[%s] - %s: DSM_MSG_GET_PERSISTENT_RL failed, rc=[%d], err_rc=[%d]
+[%s]:[%s] - Sending DSM_MSG_SET_PERSISTENT_RL to DSM process.
+[%s]:[%s] - %s: DSM_MSG_SET_PERSISTENT_RL failed, rc=[%d], err_rc=[%d]
+dsm.settings
+[%s]:[%s] - settings_get_setting result code:%d
+[%s]:[%s] - Successfully retrieved settings for %s
+[%s]:[%s] - settings->critical_battery_threshold: %d
+[%s]:[%s] - settings->battery_pack_active: %d
+[%s]:[%s] - settings->battery_pack_low_battery_threshold: %d
+[%s]:[%s] - Settings Update: Critical Battery Threshold: [%d],Battery Pack Active: [%d],Battery Pack Low Battery Threshold: [%d]
+dsm.battery_capacity
+[%s]:[%s] - battery capability: %d
+online_usb
+online_ac
+online_battery
+persistent
+not_power_button
+power_button
+charging
+discharging
+notcharging
+power_off
+disconnected
+connected
+configured
+suspended
+released
+pressed_2s
+disabled
+unavailable
+available
+shutdown
+get_state
+shutdown_device
+reset_device
+set_persistent_mode
+send_fota_update
+devui_safe_shutdown
+lpm_safe_exit
+set_display_state
+set_suspend_wakeup_time
+settings_changed
+charger_det
+charger_fault
+battery_det
+battery_voltage_state
+battery_temperature_state
+battery_temperature
+battery_voltage
+battery_capacity
+battery_current
+usb_state
+battery_id
+check_battery_insert
+timer_shutdown
+modem_safe_shutdown
+modem_state_changed
+set_usb_typec_pwr_role_state
+set_usb_device_type
+set_usb_typec_pwr_role_pref
+get_ui_controls_shutdown_enabled
+get_wifi_mac_addr
+get_usb_mac_addr
+get_usb_mode
+set_usb_mode
+set_fan_ctrl_state
+get_persistent_rl
+set_persistent_rl
+power_state
+battery_state
+battery_pack_state
+display_state
+voltage_low_state_change_refused
+fota_update
+undefined
+DSM: success.
+DSM: general error.
+DSM: one or more bad parameters passed into a function.
+DSM: one or more buffer type parameters passed into API is too small.
+DSM: the feature is unsupported.
+DSM: process not running.
+DSM: a device reset is required for the operation to take effect.
+DSM: API not implemented for the platform.
+DSM: unknown error.
+[%s]:[%s] - Sending DSM_MSG_BATTERY_ID valid=%d message to DSM process.
+[%s]:[%s] - Sending DSM_MSG_CHECK_BATTERY_INSERT message to DSM process.
+[%s]:[%s] - Sending DSM_MSG_BATTERY_TEMPERATURE_STATE value=%d message to DSM process.
+[%s]:[%s] - Sending DSM_MSG_BATTERY_TEMPERATURE=%d message to DSM process.
+[%s]:[%s] - Sending DSM_MSG_BATTERY_VOLTAGE_STATE value=%d message to DSM process.
+[%s]:[%s] - Sending DSM_MSG_BATTERY_CAPACITY value=%d message to DSM process.
+[%s]:[%s] - Sending DSM_MSG_BATTERY_VOLTAGE value=%d message to DSM process.
+[%s]:[%s] - Sending DSM_MSG_BATTERY_CURRENT value=%d message to DSM process.
+[%s]:[%s] - Sending DSM_MSG_SETTINGS_CHANGED value=%d message to DSM process.
+[%s]:[%s] - Sending DSM_MSG_MODEM_SAFE_SHUTDOWN message to DSM process.
+[%s]:[%s] - Sending DSM_MSG_MODEM_STATE_CHANGED runlevel=%d message to DSM process.
+[%s]:[%s] - Sending DSM_MSG_GET_UI_CONTROLS_SHUTDOWN_ENABLED message to DSM process.
+dsm_get_wifi_mac_addr
+dsm_get_usb_mac_addr
+dsm_get_usb_default_mode
+dsm_set_usb_default_mode
+dsm_get_persistent_rl
+dsm_set_persistent_rl
+/Settings/DSM/CriticalBatteryThreshold
+/Settings/BatteryPack/Enabled
+/Settings/BatteryPack/LowBatteryThreshold
+dsm.settings
+/Settings/DSM/BatteryCapability
+dsm.battery_capacity
+/sys/mifi/pwr_event/chg_det
+/sys/mifi/pwr_event/usb_det
+/sys/mifi/pwr_event/dcp_det
+/sys/mifi/pwr_event/chg_fault
+/sys/mifi/pwr_event/batt_det
+/sys/mifi/pwr_event/batt_temp
+/sys/mifi/pwr_event/batt_vbat
+/sys/mifi/pwr_event/pwr_button
+/sys/mifi/pwr_event/pwr_on_cause
+/sys/mifi/pwr_event/typec_pwr_role
+/sys/class/dual_role_usb/otg_default/device/charging_enable
+/sys/class/dual_role_usb/otg_default/device/chg_set_ilimit
+/sys/class/dual_role_usb/otg_default/device/chg_set_chg_curr
+/sys/class/power_supply/battery/capacity
+/sys/class/power_supply/battery/current_now
+/sys/class/power_supply/battery/present
+/sys/class/power_supply/battery/voltage_now
+/sys/class/power_supply/battery/temp
+/opt/nvtl/devices/lcd/on
+/opt/nvtl/devices/lcd/orientation
+/opt/nvtl/devices/lcd/brightness
+/opt/nvtl/devices/touch/on
+/sys/class/dual_role_usb/otg_default/power_role
+/sys/class/dual_role_usb/otg_default/data_role
+/charging_enable
+/control/reg_disable
+/control/reinitialize
+/control/reinitialize_src_pref
+/sys/bus/platform/drivers/msm-dwc3/a600000.ssusb/otg_state
+/sys/class/power_supply/usb/typec_cc_orientation
+/sys/bus/platform/drivers/dwc3/a600000.dwc3/udc/a600000.dwc3/current_speed
+/sys/module/pm_8x60/parameters/sleep_time_override
+[%s]:[%s] - SYSFS: failed to open %s
+[%s]:[%s] - SYSFS: failed to write %s=%s
+[%s]:[%s] - SYSFS: failed to read %s
+[%s]:[%s] - SYSFS: event=%d not supported on this platform
+Result:%d 
+[%s]:[%s] - SYSFS: event=%d not supported on this platform OR value = NULL
+GCC: (GNU) 8.2.0
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/xmldata/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/watchdog/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/config
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/settings/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/msgbus/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/logging/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/common/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/mal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi-framework
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/qmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include/loc-hal
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct/mdm9xxx/nwqmi/loc_sdx55
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/qct
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/modem/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dsm/src
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dsm/src/../include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dsm/inc
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/devices/sysfs
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/usr/src/linux/usr/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/build-target/kernel/include
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/products/duvel/config/../.
+-I /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-iprefix /opt/gcc-8.2.0/poky/build/tmp-glibc/sysroots/x86_64/usr/bin/arm-oe-linux-gnueabi/../../lib/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/8.2.0/
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/include
+-isystem /opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/build/platforms/SDX55/Output/platform-duvel_LE14/sysroot-target/usr/include
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dsm/src/dsm_api.c
+-mfpu=neon
+-mfloat-abi=hard
+-mcpu=arm10tdmi
+-mtls-dialect=gnu
+-march=armv5t
+-auxbase-strip dsm_api.o
+-Wstrict-prototypes
+-Wno-unused-parameter
+-Wimplicit-fallthrough=0
+-Wno-bool-compare
+-Wno-logical-not-parentheses
+-Wno-unused-function
+-frecord-gcc-switches
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dsm/src/dsm_settings.c
+-auxbase-strip dsm_settings.o
+/opt/nvtl/builds/release2/SDX55_4.05.1.1_OS_4.14_App_4.006/MiFiOS2/source/core/dsm/src/sysfs.c
+-auxbase-strip sysfs.o
+gold 1.16
+call_weak_fn
+crtstuff.c
+__TMC_LIST__
+deregister_tm_clones
+register_tm_clones
+__do_global_dtors_aux
+completed.11339
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+dsm_api.c
+validate_dsm_settings_t
+__func__.9025
+__func__.9031
+__func__.9037
+__func__.9043
+__func__.9049
+__func__.9055
+dsm_settings.c
+_sysfs_get_sysfs_str
+_sysfs_write_sysfs
+_sysfs_read_sysfs
+__FRAME_END__
+__dso_handle
+__TMC_END__
+_DYNAMIC
+_GLOBAL_OFFSET_TABLE_
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+dsm_is_running
+msgq_does_queue_exist
+dsm_get_state
+mifi_dbg_get_level_name
+mifi_dbg_log
+msgq_send_sync
+dsm_shutdown_device
+msgq_send_async
+dsm_reset_device
+dsm_set_persistent_mode
+dsm_send_fota_update
+dsm_send_devui_safe_shutdown_ack
+dsm_send_lpm_safe_exit_ack
+dsm_set_display_state
+mifi_dbg_syslog
+dsm_set_suspend_wakeup_time
+dsm_set_usb_device_type
+dsm_set_usb_typec_pwr_role_pref
+dsm_get_wifi_mac_addr
+dsm_get_usb_mac_addr
+dsm_get_usb_default_mode
+dsm_set_usb_default_mode
+dsm_get_persistent_rl
+dsm_set_persistent_rl
+dsm_get_settings
+settings_get_setting
+dsm_set_settings
+settings_set_setting
+dsm_get_battery_capability
+dsm_get_string
+dsm_get_error_string
+dsm_send_battery_id
+dsm_check_battery_insert
+dsm_send_battery_temperature_state
+dsm_send_battery_temperature
+dsm_send_battery_voltage_state
+dsm_send_battery_capacity
+dsm_send_battery_voltage
+dsm_send_battery_current
+dsm_settings_changed
+dsm_send_modem_safe_shutdown_ack
+dsm_send_modem_state_changed
+dsm_get_ui_controls_shutdown_enabled
+dsm_get_settings_impl
+xmldata_getuint32_default
+dsm_set_settings_impl
+xmldata_setuint32
+xmldata_save
+MsgBusSetInt32
+dsm_get_battery_capability_impl
+xmldata_getint32
+initialize_settings
+sysfs_set_event_int
+sysfs_get_event_int
+__isoc99_sscanf
+sysfs_set_event_str
+sysfs_get_event_str
+__bss_start
+.init_array
+.fini_array
+.comment
+.rel.plt
+.ARM.attributes
+.eh_frame_hdr
+.gnu.version_r
+.rel.dyn
+.gnu.version
+.note.gnu.gold-version
+.GCC.command.line
+.eh_frame
+.tm_clone_table
+.note.gnu.build-id
+.gnu.version_d
+.dynamic
+.shstrtab

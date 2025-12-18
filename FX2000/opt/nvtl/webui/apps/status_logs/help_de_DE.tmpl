@@ -1,0 +1,36 @@
+<!-- Status Logs -->
+<div id="status_logs">
+	<h1><tmpl_var _("webui", "status_logs_menu_text")></h1>
+	<h2>Übersicht</h2>
+	<p>
+		Die Protokollinformationen sind für die Fehlerbehebung nützlich, für den normalen Betrieb werden sie nicht benötigt.
+	</p>
+	
+	<h2>Einstellungen</h2>
+	<h3><tmpl_var truncate(_("webui", "status_logs_enable_logs_label"), (size(_("webui", "status_logs_enable_logs_label")) - size(":")))></h3>
+	<p>Aktivieren Sie dieses Kontrollkästchen, um die Protokolle nach Bedarf zu aktivieren.</p>
+	<h3><tmpl_var truncate(_("webui", "status_logs_delete_sys_logs_label"), (size(_("webui", "status_logs_delete_sys_logs_label")) - size(":")))></h3>
+	<p>Wählen Sie über die Dropdown-Liste aus, wann Protokolle gelöscht werden. Wählen Sie die gewünschte Option.</p>
+	<p>Beachten Sie, dass unabhängig von dieser Einstellung die ältesten Daten gelöscht werden, wenn das Protokoll voll ist.</p>
+	
+	<h2>Protokolldaten</h2>
+	<p>Über die bereitgestellten Registerkarten können Sie auswählen, welche Art von Protokolldaten Sie anzeigen möchten.
+	</p>
+	<h3><tmpl_var _("webui", "status_logs_mobile_network_log_href")></h3>
+	<p>Dieses Protokoll enthält Daten zu Verbindungen mit dem Mobilfunknetz.
+	</p>
+	<h3><tmpl_var _("webui", "status_logs_system_log_href")></h3>
+	<p>Dieses Protokoll zeichnet Ereignisse – mit Ausnahme von mobilen Datenverbindungen – auf, die auf diesem Gerät aufgetreten sind.
+	</p>
+	
+	<h2>Schaltflächen</h2>
+	
+	<h3><tmpl_var _("webui", "status_logs_clear_log_btn")></h3>
+	<p>Über diese Schaltfläche werden alle vorhandenen Protokolldaten gelöscht. Dadurch werden neue Daten leichter lesbar.</p>
+	<h3><tmpl_var _("webui", "status_logs_refresh_btn")></h3>
+	<p>Damit können Sie die angezeigten Protokolldaten aktualisieren.</p>
+	<h3><tmpl_var _("webui", "status_logs_download_btn")></h3>
+	<p>Über diese Schaltfläche können Sie Protokolldaten auf Ihren Computer oder ein verbundenes Gerät herunterladen.</p>
+	
+</div>
+<!-- end Status Logs -->

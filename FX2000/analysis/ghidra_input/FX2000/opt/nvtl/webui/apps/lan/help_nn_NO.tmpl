@@ -1,0 +1,60 @@
+<!-- LAN -->
+<div id="lan">
+	<h1><tmpl_var _("webui", "adv_lan_menu_text")></h1>
+	<h2>Oversikt</h2>
+		<p>Disse innstillingene gjelder for ditt lokale nettverk eller LAN. For denne enheten består LAN av denne enheten og alle tilkoblede enheter (inkludert ethernet-tilkoblede enheter, hvis de finnes).</p>
+			
+	<h2><tmpl_var _("webui", "adv_lan_ip4_sub_header_text")></h2>
+	<tmpl_if LANIPAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_address_label"), (size(_("webui", "adv_lan_ip4_address_label")) - size(":")))></h3>
+		<p>IP-adressen til denne enheten, slik den ses fra det lokale nettverket. Normalt kan du bruke standardverdien.</p>
+	</tmpl_if>
+
+	<tmpl_if LANSubnetMaskShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_subnet_mask_label"), (size(_("webui", "adv_lan_ip4_subnet_mask_label")) - size(":")))></h3>
+		<p>Standardverdien 255.255.255.0 er standard for små (klasse «C») nettverk. Hvis du endrer LAN-IP-adresse, må du forsikre deg om at du bruker riktig nettverksmaske.</p>
+	</tmpl_if>
+		
+	<tmpl_if LANMacAddressShow>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_mac_address_label"), (size(_("webui", "adv_lan_ip4_mac_address_label")) - size(":")))></h3>
+		<p>MAC-adressen er en unik nettverksidentifikator, som tildeles når en nettverksenhet er produsert. Dette skrivebeskyttede feltet viser MAC-adressen for wifi- og USB-grensesnittene på denne enheten.</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPEnableShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_enable_label"), (size(_("webui", "adv_lan_ip4_dhcp_enable_label")) - size(":")))></h3>
+		<p>Normalt bør dette være avkrysset. DHCP-serveren tildeler en IP-adresse til hver tilkoblet enhet. Hvis DHCP-serveren blir slått av, må hver tilkoblet enhet tilordnes en fast IP-adresse.</p>
+	</tmpl_if>
+
+	<tmpl_if LANLANDHCPLeaseTimeShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_lease_time_label"), (size(_("webui", "adv_lan_ip4_dhcp_lease_time_label")) - size(":")))></h3>
+		<p>Dette feltet bestemmer hvor ofte tilkoblede enheter må fornye IP-adressen som er tilordnet av DHCP-serveren. Normalt kan standardverdien beholdes, men hvis du har spesielle krav, kan du endre denne verdien.</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPStartAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_dhcp_range_begin_label"), (size(_("webui", "adv_lan_ip4_dhcp_range_begin_label")) - size(":")))></h3>
+		<p>Hvis du ønsker å endre IP-adresseområdet som brukes av DHCP-serveren, kan du gjøre det ved å endre denne verdien. Dette alternativet er kun for ekspertbrukere.</p>
+	</tmpl_if>
+
+	<tmpl_if LANDHCPEndAddressShow>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip4_current_dhcp_range_label"), (size(_("webui", "adv_lan_ip4_current_dhcp_range_label")) - size(":")))></h3>
+		<p>Dette viser intervallet av IP-adresser som kan tildeles tilkoblede enheter. Hvis du bruker en fast IP-adresse på en tilkoblet enhet, bør du bruke en IP-adresse som er utenfor dette området.</p>
+	</tmpl_if>
+
+	<tmpl_if LANReservedIPAddressShow>		
+	<h3><tmpl_var truncate(_("webui", "adv_lan_reservedIp_help_label"), (size(_("webui", "adv_lan_reservedIp_help_label")) - size(":")))></h3>
+		<p>Denne funksjonen kan brukes til å sikre at en tilkoblet enhet alltid tildeles den samme IP-adressen av <tmpl_var _("webui", "webui_product_name")>. Klikk på denne knappen for å få tilgang til konfigurasjonsskjermen for denne funksjonen.</p>
+	</tmpl_if>
+		
+	<tmpl_if ipv6Supported>		
+		<h2><tmpl_var _("webui", "adv_lan_ip6_sub_header_text")></h2>
+		<tmpl_if showIPv6EnableOption>
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_enable_label"), (size(_("webui", "adv_lan_ip6_enable_label")) - size(":")))></h3>
+			<p>Hvis noen av de tilkoblede enhetene dine støtter IPv6, må denne innstillingen være slått på. IPv6-tilkoblede enheter vil da kunne opprette IPv6-tilkoblinger til internett.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "adv_lan_ip6_link_local_label"), (size(_("webui", "adv_lan_ip6_link_local_label")) - size(":")))></h3>
+			<p>Dette er IPv6-adressen til denne enheten. Den koblingslokale adressen brukes til IPv6-kommunikasjon mellom enheter på samme nettverk.</p>
+	</tmpl_if>	
+			
+</div>
+<!-- id="lan" -->
+

@@ -1,0 +1,47 @@
+<!-- Software Update -->
+<div id="software_update">
+	<h1><tmpl_var _("webui", "software_update_menu_text")></h1>
+	<h2>Oversigt</h2>
+		<p>Softwareopdateringer leveres automatisk via mobilnetv
+ denne side kan du overv
+ge disse opdateringer.</p>
+	<h2><tmpl_var _("webui", "software_update_current_software_sub_header_text")></h2>
+	<h3>Nuv
+rende softwareversion</h3>
+		<p>Dette felt angiver versionen af den software, der aktuelt er installeret p
+ denne enhed.</p>
+	<tmpl_if SoftwareUpdateCheckShow>
+		<tmpl_if ConfigurationVersionShow>
+			<h3><tmpl_var _("webui", "software_update_current_software_configuration_version_label")></h3>
+				<p><tmpl_var _("webui", "software_update_current_software_configuration_version_help_label")></p>
+		</tmpl_if>
+	</tmpl_if>
+	<h2><tmpl_var _("webui", "software_update_check_for_update_sub_header_text")></h2>
+	<h3><tmpl_var _("webui", "software_update_check_for_update_time_label")></h3>
+		<p>Dette felt angiver, hvorn
+r <tmpl_var _("webui", "webui_product_name")> senest s
+gte efter tilg
+ngelige opdateringer. Du kan manuelt s
+ge efter en opdatering ved hj
+lp af knappen "Kontroll
+r for opdatering".</p>
+	<h3>Kontroll
+r, om der er opdateringsknap</h3>
+		<p>Den kan du bruge til at kontrollere, om der findes en opdatering til din <tmpl_var _("webui", "webui_product_name")>. Normalt er dette ikke n
+dvendigt, da opdateringer automatisk skubbes til <tmpl_var _("webui", "webui_product_name")>. Hvis du udf
+rer denne kontrol, og en opdatering er tilg
+ngelig, downloades den automatisk.</p>
+	<h3><tmpl_var _("webui", "software_update_check_for_update_status_label")></h3>
+		<p>Normalt vil denne v
+re tom, men hvis du s
+ger efter en opdatering, vises resultatet af denne s
+gning her. Hvis der downloades en opdatering, vises downloadforl
+bet her.</p>
+	<h2><tmpl_var _("webui", "software_update_last_update_sub_header_text")></h2>
+		<p>Dette panel viser detaljerne om den seneste softwareopdatering.</p>
+	<h2><tmpl_var _("webui", "software_update_history_sub_header_show_text")></h2>
+		<p>Dette panel kan 
+bnes ved at klikke p
+ linket/overskriften. Systemopdateringshistorikken indeholder oplysninger om de seneste opdateringer til <tmpl_var SoftwareUpdateHistoryCount>, der er blevet downloadet og installeret p
+ denne enhed. Hvis der ikke er installeret nogen opdateringer, viser dette panel den aktuelle softwareversion.</p>
+<!-- end Software Update -->

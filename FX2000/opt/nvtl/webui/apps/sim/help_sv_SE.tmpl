@@ -1,0 +1,47 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_menu_text")></h1>
+        <h2>Översikt</h2>
+        <p>SIM-kortet inuti din <tmpl_var _("webui", "webui_product_name")> kan låsas med en PIN. Om SIM-kortet är låst måste du ange PIN innan du ansluter till mobilnätet. När PIN har skrivits koms den ihåg till nästa avstängning.</p>
+
+	<p>Förutom att denna sida gör det möjligt för dig att ange SIM-PIN när så behövs låter den dig även låsa upp ditt SIM eller ändra SIM-PIN. I allmänhet måste du ange befintlig PIN för att ändra SIM. För ett Novatel Wireless SIM är standard-PIN tillgänglig från din tjänsteleverantör.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_pin_lock_feature_label"), (size(_("webui", "adv_sim_pin_lock_feature_label")) - size(":")))></h3>
+		<p>Fältet indikerar om PIN-låsfunktionen används eller ej. Om den är ”På” har PIN-låset aktiverats och SIM-PIN måste anges för att ansluta till mobilnätet. Om den är ”Av” är PIN-låsfunktionen inte påslagen och SIM-PIN krävs inte.</p>
+
+	<h3><tmpl_var truncate(_("webui", "adv_sim_status_label"), (size(_("webui", "adv_sim_status_label")) - size(":")))></h3>
+	<p>Fältet indikerar SIM-kortets nuvarande status. Möjliga värden är:</p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>Redo – detta är det normala tillståndet. SIM-PIN används inte.</li>
+	        <li>PIN-låst – SIM-PIN måste anges innan du kan använda mobilnätet.</li>
+	        <li>PUK-låst – PUK för SIM måste anges för att kunna fortsätta. PUK kan erhållas från din tjänsteleverantör.</li>
+	        <li>Upplåst – SIM-PIN behövs, men har redan angetts.</li>
+	        <li>Inget SIM – inget SIM detekterat. Om du har ett SIM, kontrollera att det är korrekt isatt.</li>
+	        <li>SIM-fel – ett SIM detekterades, men det svarade inte som förväntat och kan inte användas.</li>       
+	        </ul>
+	</div>
+        <h2>SIM-åtgärder</h2>
+        <p>De tillgängliga åtgärderna beror på den nuvarande SIM-statusen. Alla möjliga åtgärder listas och förklaras nedan.</p>
+
+		<h3>PIN-lås</h3>
+		<p>Om SIM för närvarande är PIN-låst uppmanas du att ange PIN. Observera att om en felaktig PIN anges för många gånger blir SIM PUK-låst. En räknare på sidan anger hur många felaktiga inmatningar som kommer att orsaka PUK-lås. När PUK är låst måste PUK sedan erhållas från din tjänsteleverantör.</p>
+		<h3>PUK-lås</h3>
+		<p>Om SIM för närvarande är PUK-låst är den enda möjliga åtgärden att ange PUK. Observera att om en felaktig PUK anges för många gånger blir SIM permanent oanvändbart. Du kommer att behöva skaffa ett nytt SIM. En räknare på sidan anger hur många inmatningsförsök som återstår.</p>
+		<h3><tmpl_var _("webui", "adv_sim_enable_pin_lock_option")></h3>
+		<p>Detta ställer in SIM så att en PIN måste anges vid start för att ansluta till mobilnätet. För att utföra denna åtgärd måste du ange nuvarande PIN.</p>
+
+		<h3><tmpl_var _("webui", "adv_sim_disable_pin_option")></h3>
+		<p>Du kan använda den här inställningen för att stänga av ett PIN-lås som tidigare var aktiverat, så att någon PIN inte längre behöver matas in för att ansluta till mobilnätet. För att utföra denna åtgärd måste du ange nuvarande PIN.</p>
+		<h3><tmpl_var _("webui", "adv_sim_change_pin_option")></h3>
+		<p>Om du vill ändra befintlig PIN väljer du det här alternativet och anger sedan de data som krävs:</p>
+		<div class="blockgroup">
+			<ul>
+			<li>Nuvarande PIN</li>
+			<li>Ny PIN</li>
+			<li>Bekräfta ny PIN</li>
+			</ul>
+		</div>
+		<p><tmpl_var _("webui", "adv_sim_name_text")></p>
+</div>
+<!-- id="sim" -->
+

@@ -1,0 +1,128 @@
+<Root data_type="Object">
+    <basic_settings data_type="Object">
+        <firmware data_type="Object">
+            <modem_version data_type="String">
+                <__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any String</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+            </modem_version>
+            <device_version data_type="String">
+                <__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any String</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+            </device_version>
+            <sku data_type="String">
+                <__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any String</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+            </sku>
+			<pri data_type="String">
+                <__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any String</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+            </pri>
+            <cute_version data_type="String">
+                <__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any String</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+            </cute_version>
+        </firmware>
+        <hardware data_type="Object">
+            <model_name data_type="String">
+                <__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any String</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+            </model_name>
+            <model_number data_type="String">
+                <__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Any String</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+            </model_number>
+            <mac_address data_type="String">
+                <__ATTRIBUTES__>
+					<is_required>1</is_required>
+					<default_value>Any String</default_value>
+					<is_unique>0</is_unique>
+					<possible_values>
+						<possible_value>Valid MAC address formatted String</possible_value>
+					</possible_values>
+				</__ATTRIBUTES__>
+            </mac_address>
+        </hardware>
+		<supported_commands data_type="String">
+			<__ATTRIBUTES__>
+				<is_required>0</is_required>
+				<default_value>DO_CHECKIN</default_value>
+				<is_unique>0</is_unique>
+				<possible_values>
+					<possible_value>REMOVE_CREDENTIALS</possible_value>
+					<possible_value>RESTART</possible_value>
+					<possible_value>FACTORY_RESET</possible_value>
+					<possible_value>GET_DEBUG_LOGS</possible_value>
+					<possible_value>FOTA_CHECK</possible_value>
+					<possible_value>DO_CHECKIN</possible_value>
+					<possible_value>GET_FOTA_STATUS</possible_value>
+					<possible_value>CFG_UPDATE</possible_value>
+					<possible_value>GET_FULL_CONFIG</possible_value>
+					<possible_value>RUN_OOB_ACTION</possible_value>
+				</possible_values>
+			</__ATTRIBUTES__>
+        </supported_commands>
+    </basic_settings>
+    <imei data_type="String">
+        <__ATTRIBUTES__>
+			<is_required>1</is_required>
+			<default_value>Any String</default_value>
+			<is_unique>0</is_unique>
+			<possible_values>
+				<possible_value>Any String</possible_value>
+			</possible_values>
+		</__ATTRIBUTES__>
+    </imei>
+    <timestamp data_type="String">
+        <__ATTRIBUTES__>
+			<is_required>1</is_required>
+			<default_value>0</default_value>
+			<is_unique>0</is_unique>
+			<possible_values>
+			<possible_value>
+				Unix epoch time representing number of seconds elapsed since epoch reference time.
+			</possible_value>
+			</possible_values>
+		</__ATTRIBUTES__>
+    </timestamp>

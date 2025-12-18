@@ -1,0 +1,24 @@
+<div id="user_preferences">
+	<h1><tmpl_var _("webui", "preferences_personalization_sub_header_text")></h1>
+	<p>この画面には、ユーザーのニーズに応えるため、<tmpl_var _("webui", "webui_product_name")> の動作を設定できる多数のオプションが含まれています。</p>
+	<h3>言語:</h3>
+	<p>希望する言語を選択します。</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_date_format_label"), (size(_("webui", "preferences_date_format_label")) - size(":")))></h3>
+	<p>このWebベースのインターフェイス上の日付の表示形式を指定します。</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_time_format_label"), (size(_("webui", "preferences_time_format_label")) - size(":")))></h3>
+	<p>このWebベースのインターフェイス上の時刻の表示形式を指定します。</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_distace_format_label"), (size(_("webui", "preferences_distace_format_label")) - size(":")))></h3>
+	<p>GPSの高度と精度に使用する単位を選択します。</p>
+
+	<h3><tmpl_var truncate(_("webui", "preferences_numeric_format_label"), (size(_("webui", "preferences_numeric_format_label")) - size(":")))></h3>
+	<p>10進数の表示方法を指定します。 小数点として使用するためにピリオド（.）またはコンマ（,）を選択できます。</p>
+
+	<tmpl_if showEthernetEnable>
+		<h3><tmpl_var _("webui", "preferences_ethernet_enable_label" )></h3>
+		<p>イーサネットポートが有効になると、ステータスバーにイーサネットインジケータが表示されます。それ以外の場合は非表示になります。</p>
+	</tmpl_if>
+	
+</div>

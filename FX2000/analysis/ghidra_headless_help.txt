@@ -1,0 +1,39 @@
+Picked up _JAVA_OPTIONS: -Duser.home="/home/ph0d/snap/ghidra/33"
+Picked up _JAVA_OPTIONS: -Duser.home="/home/ph0d/snap/ghidra/33"
+Picked up _JAVA_OPTIONS: -Duser.home="/home/ph0d/snap/ghidra/33"
+openjdk version "21.0.8" 2025-07-15
+OpenJDK Runtime Environment (build 21.0.8+9-Ubuntu-0ubuntu122.04.1)
+OpenJDK 64-Bit Server VM (build 21.0.8+9-Ubuntu-0ubuntu122.04.1, mixed mode)
+Headless Analyzer Usage: analyzeHeadless
+           <project_location> <project_name>[/<folder_path>]
+             | ghidra://<server>[:<port>]/<repository_name>[/<folder_path>]
+           [[-import [<directory>|<file>]+] | [-process [<project_file>]]]
+           [-prescript <ScriptName>]
+           [-postscript <ScriptName>]
+           [-scriptPath "<path1>[;<path2>...]"]
+           [-propertiesPath "<path1>[;<path2>...]"]
+           [-scriptlog <path to script log file>]
+           [-log <path to log file>]
+           [-overwrite]
+           [-recursive]
+           [-readOnly]
+           [-deleteproject]
+           [-noanalysis]
+           [-processor <languageID>]
+           [-cspec <compilerSpecID>]
+           [-analysisTimeoutPerFile <timeout in seconds>]
+           [-keystore <KeystorePath>]
+           [-connect [<userID>]]
+           [-p]
+           [-commit ["<comment>"]]]
+           [-okToDelete]
+           [-max-cpu <max cpu cores to use>]
+           [-librarySearchPaths <path1>[;<path2>...]]
+           [-loader <desired loader name>]
+           [-loader-<loader argument name> <loader argument value>]
+
+     - All uses of $GHIDRA_HOME or $USER_HOME in script path must be preceded by '\'
+
+Please refer to 'analyzeHeadlessREADME.html' for detailed usage examples and notes.
+
+

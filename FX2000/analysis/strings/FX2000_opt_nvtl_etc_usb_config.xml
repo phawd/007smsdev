@@ -1,0 +1,38 @@
+<Config>
+    <USB>
+        <VendorID>0x1410</VendorID>
+        <ManufacturerString>Novatel Wireless</ManufacturerString>
+        <ProductString>FX2000</ProductString>
+        <SerialString>0123456789ABCDEF</SerialString>
+    </USB>
+    <FunctionList>
+        <DebugMode>
+            <OnlineMode>,dun,diag,adb,hid</OnlineMode>
+            <OnlineModeNoTether>rndis,dun,diag,adb,hid</OnlineModeNoTether>
+            <FactoryTestMode>,dun,diag,adb,hid</FactoryTestMode>
+            <LabTestMode>diag,dun,rmnet,dpl,qdss,adb,hid</LabTestMode>
+            <LowPowerMode>adb,hid</LowPowerMode>
+        </DebugMode>
+        <EndUserMode>
+            <OnlineMode>,hid,mass_storage</OnlineMode>
+            <LowPowerMode>hid,mass_storage</LowPowerMode>
+        </EndUserMode>
+        <EnterpriseMode>
+            <OnlineMode>,hid,serial</OnlineMode>
+        </EnterpriseMode>
+    </FunctionList>
+    <ProductID>
+        <DebugMode>0xB023</DebugMode>
+        <EndUserMode>0xB020</EndUserMode>
+        <EndUserModeLPM>0xB010</EndUserModeLPM>
+        <EnterpriseMode>0xB022</EnterpriseMode>
+    </ProductID>
+    <NetworkInterface>
+        <Mode>2</Mode>	                     <!-- 0(rndis), 1(ecm), 2(auto) -->
+        <IPAEnabled>0</IPAEnabled>           <!-- 1(enabled), 0(disabled)  -->
+	<AutoDetect>
+	    <SamplePeriod>10</SamplePeriod>  <!-- number of seconds to wait for pkts -->
+	    <Iterations>2</Iterations>       <!-- number of times to wait for pkts -->
+	</AutoDetect>
+    </NetworkInterface>
+</Config>

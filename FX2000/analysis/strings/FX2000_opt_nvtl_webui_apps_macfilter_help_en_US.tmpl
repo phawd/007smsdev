@@ -1,0 +1,27 @@
+<!-- MAC Filter -->
+<div id="macfilter">
+	<h1><tmpl_var _("webui", "adv_macfilter_menu_text")></h1>
+	<h2>Overview</h2>
+	<p>The MAC filter allows only selected devices to access the <tmpl_var _("webui", "webui_product_name")> network through DHCP. By default, MAC filter is turned off. Use this tab to turn the MAC Filter on and specify device access.
+	<h2>ON/OFF Control</h2>
+	<p>To use the MAC filter, select the device(s) from the device list that you want to be allowed to connect to the network through DHCP and move the <b>MAC Filter ON/OFF</b> slider to <b>ON</b>. Click <b>Save Changes</b>.
+	<h2>Device List</h2>
+	<p>Turning on MAC filtering immediately disconnects all devices that are not included in the filter from the network. 
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>Use the refresh button to update the list as needed.
+	<h2>Operation</h2>
+	<h3>Blocked versus MAC Filter</h3>
+	<p>The interaction between the "Blocked" devices and the "MAC Filter" is:
+	<div class="blockgroup">
+	<li>Blocked devices are always blocked from the network, regardless of whether the MAC Filter is on or off.
+	<li>If the MAC Filter is on, and a device is in the Blocked list, but not in the MAC Address Filter list, then it will not be able to connect. Both the MAC Filter and the Block would prevent connection.
+	<li>If the MAC Filter is on, and a device is in the MAC Address Filter list, then the device will be able to connect. 
+	Having connected, it can then be blocked either by removing it from the MAC Address Filter list, or by using the "Block" feature.
+	Generally, the "Block" should be used for temporary blocking, and the MAC Filter for permanent blocking.
+	<h3><tmpl_var _("webui", "adv_macfilter_add_device_button")></h3>
+	<p>Use this button to add a new device to the devices list.
+	<h3><tmpl_var _("webui", "adv_macfilter_refresh_button")></h3>
+	<p>To discard any unsaved changes and refresh the list, click <b>Refresh List</b> and <b>Confirm</b>.
+	<h3>Delete a device</h3>
+	<p>To delete a device from the list, select its Delete checkbox and click Save Changes.</p>
+<!--  macfilter  -->

@@ -1,0 +1,33 @@
+<!-- Change Admin Password  -->
+<div id="set_passcode">
+	<h1>Mot de passé administrateur</h1>
+	<h2>Vue d’ensemble</h2>
+	<p>Le mot de passé administrateur est utilisé pour se connecter au site web administrateur de ce <tmpl_var _("webui", "webui_product_name")>. La page <em>Mot de passé administrateur</em> vous permet de modifier le mot de passé administrateur et de définir certaines options de sécurité relatives au mot de passé administrateur.</p>
+
+
+	<h2>Modifier le mot de passé administrateur <tmpl_var _("webui", "webui_product_name")></h2>
+	<p>Pour modifier le mot de passé administrateur actuel, vous devez d’abord saisir le mot de passé administrateur actuel dans le champ ci-dessous. L’écran se met alors à jour et offre la possibilité de définir un nouveau mot de passé administrateur et une question de sécurité à utiliser en cas de perte de ce dernier.</p>
+
+	<h3>Mot de passé administrateur <tmpl_var _("webui", "webui_product_name")> actuel</h3>
+	<p>Saisissez le mot de passé administrateur actuel <tmpl_var _("webui", "webui_product_name")> dans ce champ. Veuillez noter que si vous saisissez une valeur incorrecte trop souvent, votre accès à ce site web administrateur <tmpl_var _("webui", "webui_product_name")> sera bloqué. Pour déverrouiller, redémarrez le <tmpl_var _("webui", "webui_product_name")>.</p>
+	<tmpl_if showDisplayPascode>
+		<h2>Afficher le mot de passé administrateur <tmpl_var _("webui", "webui_product_name")></h2>
+		<p>Si ce paramètre est activé, alors ********* s’affiche. Si ce paramètre est désactivé, alors le mot de passé administrateur s’affiche sur l’écran du Jetpack.</p>
+	</tmpl_if>
+
+	<h2>Modifier le mot de passé administrateur <tmpl_var _("webui", "webui_product_name")></h2>
+	<h3>Nouveau mot de passé administrateur</h3>
+	<p>Saisissez le nouveau mot de passé administrateur en utilisant uniquement des lettres, des chiffres et des symboles de ponctuation standard. Le mot de passé doit comporter au moins 8 caractères.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_confirm_passcode_label"), (size(_("webui", "set_passcode_confirm_passcode_label")) - size(":")))></h3>
+	<p>Saisissez à nouveau le nouveau mot de passé administrateur dans ce champ.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_question_label"), (size(_("webui", "set_passcode_security_question_label")) - size(":")))></h3>
+	<p>Cette question de sécurité est utilisée en cas de perte du mot de passé administrateur et lorsque l’option « J’ai oublié le mot de passé administrateur » est utilisée. Sélectionnez la question souhaitée, et fournissez une réponse dans le champ ci-dessous.</p>
+
+	<h3><tmpl_var truncate(_("webui", "set_passcode_security_answer_label"), (size(_("webui", "set_passcode_security_answer_label")) - size(":")))></h3>
+	<p>Fournissez une réponse à la question de sécurité sélectionnée ci-dessus. Veuillez noter que les réponses sont sensibles à la casse.</p>
+
+</div>
+<!-- id="set_passcode" -->
+

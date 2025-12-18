@@ -1,0 +1,8 @@
+<tmpl_foreach APNDropdownOptions as option>
+	<option value="<tmpl_var option.val>"<tmpl_if IN_SET(SimMgrApn, option.val)> selected="selected"</tmpl_if>>
+		<tmpl_var option.val>
+	</option>
+</tmpl_foreach>
+<option value="Add APN" <tmpl_unless IN_ARRAY(SimMgrApn, APNDropdownOptionValues)>selected="selected"</tmpl_unless>>
+	<tmpl_var _("webui", "adv_sim_manager_Add_apn_option")>
+</option>

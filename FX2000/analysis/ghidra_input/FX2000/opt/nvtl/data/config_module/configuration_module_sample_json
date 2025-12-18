@@ -1,0 +1,200 @@
+[
+	{
+		"BlockedDevices" : [
+			{
+				"DeviceMacAddress" : "aa:bb:cc:dd:ee:00"
+			},
+			{
+				"DeviceMacAddress" : "aa:bb:cc:dd:ee:11" 
+			}
+		],
+		"WhiteListedDevices" : [
+			{
+				"DeviceMacAddress" : "00:bb:cc:dd:ee:00"
+			},
+			{
+				"DeviceMacAddress" : "11:bb:cc:dd:ee:11"
+			}
+		],
+		"WiFiNetworkSettings" : {
+			"WiFiSSID" : "MiFi-Moretti-0000",
+			"WiFiSSIDBroadcastEnabled" : true,
+			"WiFiSecurityMode" : "WPA/WPA2 Mixed Mode",
+			"WiFiKey" : "12345678",
+			"WiFiNameOnDisplay" : true,
+			"WiFiPasswordOnDisplay" : true,
+			"WiFiWPSEnabled" : true,
+			"WiFiPrivacySeparationEnabled" : false
+		},
+		"WiFiGuestNetworkSettings" : {
+			"WiFiGuestSSID" : "MiFi-Moretti-Guest-0000",
+            "WiFiGuestSSIDBroadcastEnabled": true,
+			"WiFiGuestSecurityMode" : "WPA3/WPA2 Transition",
+			"WiFiGuestKey" : "12345678",
+			"WiFiGuestNameOnDisplay" : false,
+			"WiFiGuestPasswordOnDisplay" : false,
+			"WiFiGuestWPSEnabled" : true,
+			"WiFiGuestPrivacySeparationEnabled" : false
+		},
+		"WiFiAdvancedSettings" : {
+			"WiFiEnabled" : true,
+			"WiFiAllowChangesOnTouchScreen" : true,
+			"WiFiMaxClients" : 15,
+			"WiFi24GHzBand": "Primary network",
+			"WiFi5GHzBand": "Guest network",
+			"WiFi24GHz80211Mode" : "802.11bgn",
+			"WiFi24GHzChannel" : 0,
+			"WiFi5GHz80211Mode" : "802.11ac",
+			"WiFi5GHzBandwidth" : 80,
+			"WiFi5GHzChannel" : 0
+		},
+		"Preferences": {
+			"AllowPreferencesChangeOnDisplay": false,
+			"ResetEnabled": true,
+			"USBModePreferences": {
+				"USBMode": "Internet access via USB and Wifi",
+				"USBModePrompt": true
+			},
+			"DisplayTimeout": 30,
+			"SleepTime": 5,
+			"ShutdownTime": 24,
+			"LEDEnabled": true,
+			"StealthMode": false,
+			"WakeupDisplayOnNotificationEnabled": true,
+			"AudioPreferences": {
+				"AudioEnabled": true,
+				"AudioStartupShutdown": true,
+				"AudioLowBattery": true,
+				"AudioCriticalLowBattery": true,
+				"AudioCharging": true,
+				"AudioUSBComputerConnection": true,
+				"AudioSIMErrors": true,
+				"AudioPCOServiceErrors": true,
+				"AudioNewMessage": true,
+				"AudioConnectedDeviceJoins": true,
+				"AudioSoftwareUpdate": true,
+				"AudioRoaming": true,
+				"AudioWiFiTurnOff": true,
+				"AudioNetworkSelection": true
+			},
+			"Language": "English",
+			"Date": "mm/dd/yyyy",
+			"Time": 12,
+			"NumberFormat": "3,234.00",
+			"Distance": "feet"
+		},
+		"AdminPasswordSettings" : {
+			"AdminPassword" : "12345678",
+			"AdminPasswordOnDisplay": false,
+			"AdminPasswordSecurityQuestion" : "What is the name of the street you grew up on?",
+			"AdminPasswordSecurityAnswer" : "Abc Street"
+		},
+		"GPSSettings" : {
+			"GPSEnabled" : true,
+			"GPSTurnOff" : true,
+			"GPSNMEAOverWiFiEnabled" : true,
+			"GPSNMEAOverWiFiPortNumber" : 11010
+		},
+		"CarrierSettings" : {
+			"CellularDataEnabled" : true,
+			"APN" : "VZWIMS",
+			"EnableAutoNetworkSelection" : true,
+			"RoamingEnabled" : true
+		},
+		"LogsSettings": {
+			"LogsEnabled": true,
+			"LogsDeletion": "After 1 day"
+		},
+		"ManualDNSSettings" : {
+			"ManualDNSEnabled" : false,
+			"ManualDNSAddress1" : "",
+			"ManualDNSAddress2" : ""
+		},
+		"FirewallSettings" : {
+			"VPNPassthroughEnabled" : true,
+			"IPv6TransparentModeEnabled" : false,
+			"DMZEnabled" : false,
+			"DMZIpAddress" : ""
+		},
+		"MACFilterSettings" : {
+			"MACFilterEnabled" : false
+		},
+		"LANSettings" : {
+			"RouterIPv4Address" : "192.168.1.1",
+			"RouterSubnetMask" : "255.255.255.0",
+			"DHCPEnabled" : true,
+			"DHCPLeaseTime" : 12345,
+			"DHCPAddressRangeStart" : "192.168.1.2",
+			"IPv6Enabled" : true
+
+		},
+		"PortFilteringSettings" : {
+			"PortFilteringEnabled" : false,
+			"PortFilteringEmail" : false,
+			"PortFilteringFTP" : false,
+			"PortFilteringHTTP" : false,
+			"PortFilteringHTTPS" : false,
+			"PortFilteringTelnet" : false,
+			"PortFilteringCustomApplications" : [
+				{
+					"AppName" : "Custom App1",
+					"AppEnable" : true,
+					"AppStartPortNumber" : 5000,
+					"AppEndPortNumber" : 5001,
+					"AppType" : "TCP"
+				}
+
+			]
+		},
+		"PortForwardingSettings" : {
+			"PortForwardingEnabled" : false,
+			"PortForwardingDNS" : false,
+			"PortForwardingDNSIpAddress" : "192.168.1.2",
+			"PortForwardingFTP" : false,
+			"PortForwardingFTPIpAddress" : "192.168.1.2",
+			"PortForwardingHTTP" : false,
+			"PortForwardingHTTPIpAddress" : "192.168.1.2",
+			"PortForwardingNNTP" : false,
+			"PortForwardingNNTPIpAddress" : "192.168.1.2",
+			"PortForwardingPOP3" : false,
+			"PortForwardingPOP3IpAddress" : "192.168.1.2",
+			"PortForwardingTelnet" : false,
+			"PortForwardingTelnetIpAddress" : "192.168.1.2",
+			"PortForwardingSMTP" : false,
+			"PortForwardingSMTPIpAddress" : "192.168.1.2",
+			"PortForwardingSNMP" : false,
+			"PortForwardingSNMPIpAddress" : "192.168.1.2",
+			"PortForwardingTFTP" : false,
+			"PortForwardingTFTPIpAddress" : "192.168.1.2",
+			"PortForwardingCustomApplications" : [
+				{
+					"AppName" : "Custom App1",
+					"AppEnabled" : true,
+					"AppStartPortNumber" : 5000,
+					"AppEndPortNumber" : 5001,
+					"AppPortType" : "Range",
+					"AppType": "TCP",
+					"AppIpAddress" : "192.168.1.3"
+				}
+				
+			]
+		},
+       "ReservedIpSettings": {
+	  	   "ReservedIpList": [{
+		    	"ReservedIpMAC": "fe:07:c2:93:d3:05",
+			    "DeviceName": "Lenovo",
+		     	"ReservedIpAddress": "192.168.1.7"
+	        	}]
+	    },
+		"VpnSettings" : {
+			"AutoConnectVPNEnabled" : true,
+			"CertificatesURL": "http://xyz.com/certs.zip",
+			"Username" : "",
+			"Password" : "12345678"
+		},
+		"DeviceAgent" : {
+			"DeviceAgentEnabled": true,
+			"CheckinDuration": 3600
+			}
+	}
+]

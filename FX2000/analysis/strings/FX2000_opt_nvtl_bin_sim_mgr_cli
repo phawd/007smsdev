@@ -1,0 +1,348 @@
+/lib/ld-linux-armhf.so.3
+GLIBC_2.4
+libc.so.6
+__libc_start_main
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+sim_mgr_api_is_running
+sim_mgr_get_error_string
+sim_mgr_api_set_auto_algo_configs
+sim_mgr_api_get_auto_algo_configs
+sim_mgr_get_conn_configurations
+sim_mgr_set_conn_configurations
+sim_mgr_api_get_is_multi_sim_supported
+sim_mgr_api_get_switch_mode
+sim_mgr_api_set_switch_mode
+sim_mgr_api_get_active_sim
+sim_mgr_api_get_prio_sim
+sim_mgr_api_set_active_sim
+sim_mgr_api_set_active_iccid_pin_locked
+sim_mgr_api_get_conn_monitor_mode
+sim_mgr_api_set_conn_monitor_mode
+sim_mgr_api_get_conn_recovery_mode
+sim_mgr_api_set_conn_recovery_mode
+sim_mgr_api_get_conn_recovery_period
+sim_mgr_api_set_conn_recovery_period
+sim_mgr_api_get_recovery_max_sim_switches
+sim_mgr_api_set_recovery_max_sim_switches
+sim_mgr_api_get_conn_recovery_max_DNS_fail_cnt
+sim_mgr_api_set_conn_recovery_max_DNS_fail_cnt
+sim_mgr_api_get_conn_recovery_max_system_reset_cnt
+sim_mgr_api_set_conn_recovery_max_system_reset_cnt
+sim_mgr_api_get_recovery_mdm_disconnect_timeout
+sim_mgr_api_set_recovery_mdm_disconnect_timeout
+sim_mgr_api_get_recovery_max_mdm_reset_cnt
+sim_mgr_api_set_recovery_max_mdm_reset_cnt
+sim_mgr_api_get_recovery_max_device_reset_cnt
+sim_mgr_api_set_recovery_max_device_reset_cnt
+sim_mgr_api_get_recovery_all_configs
+sim_mgr_api_set_recovery_all_configs
+sim_mgr_api_get_priority_SIM_configs
+sim_mgr_api_set_priority_SIM_configs
+sim_mgr_api_get_sig_qlty_configs
+mifi_dbg_get_level_name
+mifi_dbg_log
+sim_mgr_api_set_sig_qlty_configs
+sim_mgr_api_get_sim_config_settings
+sim_mgr_api_delete_sim
+sim_mgr_api_get_sim_info
+sim_mgr_api_get_sim_switch_status
+mifi_dbg_start
+__bss_start
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libnwqmi.so
+libmal_qct.so
+libdl.so.2
+libpthread.so.0
+librt.so.1
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libacm.so
+libgpio.so
+libpowersave_api.so
+libdmdb_api.so
+libdua_api.so
+libsqlite3.so.0
+libmodem2_api.so
+libccm2_api.so
+librouter2_api.so
+libwan_mgr_api.so
+libsim_mgr_api.so
+H	KxD	J{D
+----------------
+Below list is miscellaneous simulated events
+Prints out usage and command listing.
+is_running
+Tells if the associated process is running.
+get_sim_config_settings
+Gets SIM's configurations
+get_is_multi_sim_supported
+Gets whether multi sim is supported or not for the current product.
+get_switch_mode
+Gets the Sim-Mgr switch mode.
+set_switch_mode
+Sets the Sim-Mgr switch mode.
+get_active_sim
+Gets the Sim-Mgr active sim.
+set_active_sim
+Sets the Sim-Mgr active sim.
+get_sim_switch_status
+get sim switch status
+set_active_iccid_pin_locked
+Sets the Sim-Mgr active iccid for PIN Locked Sim.
+get_priority_sim
+Gets the Sim-Mgr priority sim.
+get_auto_algo_configs
+Gets the Sim-Mgr auto algorithms configurations.
+set_auto_algo_configs
+Sets the Sim-Mgr auto algorithms configurations.
+get_priority_SIM_configs
+gets priority SIM failback configurations
+set_priority_SIM_configs
+sets priority SIM failback configurations
+get_sig_qlty_configs
+gets signal quality configurations
+set_sig_qlty_configs
+sets signal quality configurations
+get_sim_info
+get sim info
+delete_sim_info
+delete sim info
+get_conn_monitor_mode
+Get connection monitor mode [Enable/Disable]
+set_conn_monitor_mode
+Set connection monitor mode [Enable/Disable]
+get_conn_recovery_mode
+Get connection recovery mode [Enable/Disable]
+set_conn_recovery_mode
+Set connection recovery mode [Enable/Disable]
+get_conn_configs
+Gets the Sim-Mgr connection configurations.
+set_conn_configs
+Sets the Sim-Mgr connection configurations.
+get_recovery_period
+Get connection recovery period, 30-1440 minute
+set_recovery_period
+Set connection recovery period 30-1440 minute
+get_recovery_max_sim_switches
+Get connection recovery maximum allowed SIM switches, 0 - 10 counts
+set_recovery_max_sim_switches
+Set connection recovery maximum allowed SIM switches, 0 - 10 counts
+get_recovery_max_DNS_fail_cnt
+Get connection recovery maximum DNS fail count, 0 - 10 counts
+set_recovery_max_DNS_fail_cnt
+Set connection recovery maximum DNS fail count, 0 - 10 counts
+get_recovery_max_mdm_disconnect_timeout
+Get connection recovery maximum modem disconnect timeout, 30 - 1440 minutes
+set_recovery_max_mdm_disconnect_timeout
+Set connection recovery maximum modem disconnect timeout, 30 - 40 minutes
+get_recovery_max_mdm_reset_cnt
+Get connection recovery maximum modem reset count, 1 - 5 counts
+set_recovery_max_mdm_reset_cnt
+Set connection recovery maximum modem reset count, 1 - 5 counts
+get_recovery_max_device_reset_cnt
+Get connection recovery maximum device reset count, 0 - 5 counts
+set_recovery_max_device_reset_cnt
+Set connection recovery maximum device reset count, 0 - 5 counts
+get_recovery_max_system_reset_cnt
+Get connection recovery maximum system reset count, 0 - 10 counts
+set_recovery_max_system_reset_cnt
+Set connection recovery maximum system reset count, 0 - 10 counts
+get_all_recovery_configs
+Get conn recovery configs
+set_all_recovery_configs
+Set conn recovery configs
+  ---------------------------------------------------------------------------
+ %-25s - %s
+  ---------------------------------------------------------------------------
+%s returned %d (%s)
+signal quality:
+data usage:
+signal_quality: [%d]
+data_usage: [%d]
+speed_test: [%d]
+location: [%d]
+roaming: [%d]
+scheduling: [%d]
+------------------------
+--[get] connection configs--
+connection interval:[%d] 
+connection retriies: [%d]
+--[set] connection configs--
+connection interval:
+connection retriies:
+--[get] is device supports multi sim features--
+multi sim
+single sim
+is_multi_sim_supported:[%d][%s]
+--[get] sim switch mode--
+Automatic
+switch_mode:[%d][%s]
+--[set] sim switch mode--
+switch mode:
+--[get] active sim--
+active sim imsi:[%s]
+priority sim imsi:[%s]
+active sim imsi:
+sim iccid:
+--[get] connection monitor--
+Disabled
+conn mode: [%s]
+--[set] connection monitor--
+conn mode:
+--[recovery] [get] connection recovery mode--
+%s: [recovery] returned %d (%s)
+[recovery] conn recovery mode: [%s]
+--[recovery] [set] connection recovery mode--
+[recovery] conn recovery mode:
+--[recovery] [get] connection recovery period--
+[recovery] conn recovery period: [%d]
+--[recovery] [set] connection recovery period--
+[recovery] conn recovery period:
+--[recovery] [get] connection recovery max sim switches--
+%s: [recovery]  returned %d (%s)
+[recovery] conn recovery max sim switches cnt: [%d]
+--[recovery] [set] connection recovery max sim switch cnt--
+[recovery] conn recovery max sim switch cnt:
+--[recovery] [get] connection recovery max DNS fail cnt--
+[recovery] conn recovery max DNS fail cnt: [%d]
+--[recovery] [set] connection recovery max DNS fail cnt--
+[recovery] conn recovery max DNS fail cnt:
+--[recovery] [get] connection recovery max system_reset cnt--
+[recovery] conn recovery max system_reset: [%d]
+--[recovery] [set] connection recovery max system_reset cnt--
+[recovery] conn recovery max system_reset_cnt:
+--[recovery] [get] connection recovery max mdm_disconnect_timeout--
+[recovery] conn recovery mdm_disconnect_timeout: [%d]
+--[recovery] [set] connection recovery max mdm disconnect timeout--
+[recovery] conn recovery max mdm disconnect timeout:
+--[recovery] [get] connection recovery max mdm reset cnt--
+[recovery] conn recovery reset cnt: [%d]
+--[recovery] [set] connection recovery max mdm reset cnt--
+[recovery] conn recovery max mdm reset cnt:
+--[recovery] [get] connection recovery max device reset cnt--
+[recovery] conn recovery device reset cnt: [%d]
+--[recovery] [set] connection recovery max device reset cnt--
+[recovery] conn recovery max device reset cnt:
+--[recovery] [get] connection recovery all configs--
+[recovery] period			: [%d]
+[recovery] mdm_disconnect_timeout	: [%d]
+[recovery] max_sim_switch_cnt		: [%d]
+[recovery] max_wan_dns_fail_cnt		: [%d]
+[recovery] max_modem_reset_cnt		: [%d]
+[recovery] max_device_reset_cnt		: [%d]
+[recovery] system_reset_cnt		: [%d]
+--[recovery] [set] connection recovery configs--
+[recovery] period range[30-1440] minutes:
+[recovery] mdm_disconnect_timeout[1-15] minutes:
+[recovery] max_sim_switch_cnt range[3-10]:
+[recovery] max_wan_dns_fail_cnt[3-10]:
+[recovery] max_modem_reset_cnt[0-5]:
+[recovery] max_device_reset_cnt[0-1]:
+failback_switch:[%d]
+failback_interval: [%d]
+actual_failback_interval: [%d]
+failback switch[0/1]:
+failback interval:
+actual failback interval:
+ %s returned %d (%s)
+rsrp: [%d]
+time duration: [%d]
+max signal strength switches: [%d]
+signal strength backoff time period: [%d]
+[%s]:[%s] - %s - couldn't get sig_qlty_config!
+imsi,  = :
+rsrp, (current %d) = :
+test duration, current = %d:
+max switches, current = %d:
+backoff period, current = %d:
+multi_sim_supported: [%d]
+switch_mode: [%d]
+prio_imsi: [%s]
+conn_monitor: [%d]
+conn_interval: [%d]
+conn_retries: [%d]
+--[delete] sim info--
+time duration: [%d]
+sim switching status: %d
+command [%s] not found.
+cmd_is_running
+cmd_set_auto_algo_configs
+cmd_get_auto_algo_configs
+cmd_get_conn_configs
+cmd_set_conn_configs
+cmd_get_is_multi_sim_supported
+cmd_get_switch_mode
+cmd_set_switch_mode
+cmd_get_active_sim
+cmd_get_priority_sim
+cmd_set_active_sim
+cmd_set_active_iccid_pin_locked
+cmd_get_connection_monitor_mode
+cmd_set_connection_monitor_mode
+cmd_get_connection_recovery_mode
+cmd_set_connection_recovery_mode
+cmd_get_recovery_period
+cmd_set_recovery_period
+cmd_get_recovery_max_sim_switches
+cmd_set_recovery_max_sim_switches
+cmd_get_recovery_max_DNS_fail_cnt
+cmd_set_recovery_max_DNS_fail_cnt
+cmd_get_recovery_max_system_reset_cnt
+cmd_set_recovery_max_system_reset_cnt
+cmd_get_recovery_max_mdm_disconnect_timeout
+cmd_set_recovery_max_mdm_disconnect_timeout
+cmd_get_recovery_max_mdm_reset_cnt
+cmd_set_recovery_max_mdm_reset_cnt
+cmd_get_recovery_max_device_reset_cnt
+cmd_set_recovery_max_device_reset_cnt
+cmd_get_recovery_all_configs
+cmd_set_recovery_all_configs
+cmd_get_priority_SIM_configs
+cmd_set_priority_SIM_configs
+cmd_get_sig_qlty_configs
+cmd_set_sig_qlty_configs
+cmd_get_sim_config_settings
+cmd_delete_sim_info
+cmd_get_sim_info
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

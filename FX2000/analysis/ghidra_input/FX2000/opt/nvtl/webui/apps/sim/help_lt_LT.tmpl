@@ -1,0 +1,47 @@
+<!-- SIM Lock -->
+<div id="sim">
+        <h1><tmpl_var _("webui", "adv_sim_menu_text")></h1>
+        <h2>Apžvalga</h2>
+        <p>SIM kortelę, esančią jūsų <tmpl_var _("webui", "webui_product_name")>, galima užblokuoti naudojant PIN. Jei SIM kortelė užblokuota, prieš prisijungdami prie mobiliojo ryšio tinklo turite įvesti PIN. Įvestas PIN įsimenamas iki kito išjungimo.</p>
+
+	<p>Šiame puslapyje prireikus galite ne tik įvesti SIM PIN, bet ir atblokuoti SIM arba pakeisti jos PIN. Paprastai norint pakeisti SIM reikia nurodyti esamą PIN. „Novatel Wireless“ SIM numatytąjį PIN galite gauti iš paslaugų teikėjo.</p>
+	<h3><tmpl_var truncate(_("webui", "adv_sim_pin_lock_feature_label"), (size(_("webui", "adv_sim_pin_lock_feature_label")) - size(":")))></h3>
+		<p>Lauke parodoma, ar naudojama PIN užrakto funkcija, ar ne. Jei „Įjungta“, PIN užraktas buvo įjungtas ir norint prisijungti prie mobiliojo ryšio tinklo reikia įvesti SIM PIN. Jei „Išjungta“, PIN užrakto funkcija neįjungta ir SIM PIN nereikia.</p>
+
+	<h3><tmpl_var truncate(_("webui", "adv_sim_status_label"), (size(_("webui", "adv_sim_status_label")) - size(":")))></h3>
+	<p>Lauke parodoma dabartinė SIM kortelės būsena. Galimos reikšmės:</p>
+	<div class="blockgroup">
+	        <ul>
+	        <li>„Parengta“ – tai įprasta būsena. SIM PIN nenaudojamas.</li>
+	        <li>„PIN užblokuotas“ – prieš naudojant mobiliojo ryšio tinklą reikia įvesti SIM PIN.</li>
+	        <li>„PUK užblokuotas“ – norint toliau naudoti reikia įvesti SIM PUK. PUK galima gauti iš paslaugų teikėjo.</li>
+	        <li>„Atblokuota“ – SIM PIN reikalingas, tačiau jau įvestas.</li>
+	        <li>„Nėra SIM“ – SIM neaptikta. Jei turite SIM, patikrinkite, ar ji įdėta tinkamai.</li>
+	        <li>„SIM klaida“ – aptikta SIM, tačiau ji neatsakė taip, kaip tikėtasi, todėl negali būti naudojama.</li>       
+	        </ul>
+	</div>
+        <h2>SIM operacijos</h2>
+        <p>Galimi veiksmai priklauso nuo dabartinės SIM būsenos. Toliau išvardytos ir paaiškintos visos galimos operacijos.</p>
+
+		<h3>PIN užraktas</h3>
+		<p>Jei SIM šiuo metu užblokuota PIN, būsite paraginti įvesti PIN. Atminkite, kad per daug kartų įvedus neteisingą PIN, SIM bus užblokuota PUK. Puslapių skaitiklis parodo netinkamų įrašų, dėl kurių užblokuojamas PUK, skaičių. Kai PUK užblokuojamas, jį vėl reikia gauti iš paslaugų teikėjo.</p>
+		<h3>PUK užraktas</h3>
+		<p>Jei SIM šiuo metu užblokuota PUK, vienintelė galima operacija yra įvesti PUK. Atminkite, kad per daug kartų įvedus neteisingą PUK, SIM taps visam laikui netinkama naudoti. Jums reikės gauti naują SIM. Puslapių skaitiklis parodo, kiek liko bandymų įvesti.</p>
+		<h3><tmpl_var _("webui", "adv_sim_enable_pin_lock_option")></h3>
+		<p>SIM nustatoma taip, kad paleidžiant reikėtų įvesti PIN, norint prisijungti prie mobiliojo ryšio tinklo. Norėdami atlikti šią operaciją, turite įvesti dabartinį PIN.</p>
+
+		<h3><tmpl_var _("webui", "adv_sim_disable_pin_option")></h3>
+		<p>Naudodami šią nuostatą galite išjungti anksčiau įjungtą PIN užraktą, kad norint prisijungti prie mobiliojo ryšio tinklo nebereikėtų įvesti PIN. Norėdami atlikti šią operaciją, turite įvesti dabartinį PIN.</p>
+		<h3><tmpl_var _("webui", "adv_sim_change_pin_option")></h3>
+		<p>Norėdami pakeisti esamą PIN, pasirinkite šią parinktį ir įveskite reikiamus duomenis:</p>
+		<div class="blockgroup">
+			<ul>
+			<li>Dabartinis PIN</li>
+			<li>Naujas PIN</li>
+			<li>Patvirtinkite naują PIN</li>
+			</ul>
+		</div>
+		<p><tmpl_var _("webui", "adv_sim_name_text")></p>
+</div>
+<!-- id="sim" -->
+

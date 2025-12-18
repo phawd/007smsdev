@@ -1,0 +1,67 @@
+<!-- wifi_primary_settings -->
+<div id="wifi_primary_settings">
+	<h1>Wifi 
+rnettverk</h1>
+	<h2>Oversikt</h2>
+ koble til <tmpl_var _("webui", "webui_product_name_with_suffix")> prim
+r-wifi-nettverket, m
+ tilkoblede enheter bruke wifi-innstillingene som vises p
+ denne skjermen. Hvis du endrer disse innstillingene, kan eksisterende tilkoblede enheter miste forbindelsen.
+	<h3><tmpl_var _("webui", "wifi_primary_ssid_label")></h3>
+		Dette angir nettverksnavnet eller SSID for wifi-nettverket. Skriv inn et passende navn. Navnet kan v
+re opptil 32 tegn langt.
+	<h3><tmpl_var _("webui", "wifi_primary_security_label")></h3>
+nsket alternativ for wifi-sikkerhet.
+			<strong><tmpl_var _("webui", "wifi_security_none_text")></strong> g
+r att andra kan 
+vervaka din Wi-Fi-trafik och anv
+nda din dataplan f
+tkomst till internet. Om det 
+ver huvud taget 
+r detta alternativ undvikas.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_text")></strong> er den seneste og sikreste metoden, og b
+r brukes om mulig.
+			<strong><tmpl_var _("webui", "wifi_security_wpa2_mix_text")></strong> kan brukes hvis noen av de eldre enhetene dine ikke st
+tter WPA2.
+			<strong><tmpl_var _("webui","wifi_security_wpa3_transition_text")></strong> kan anv
+r WPA2- och WPA3-klagom
+lsenheter.
+	<h3><tmpl_var _("webui", "wifi_primary_password_label")></h3>
+		Skriv inn wifi-passordet i dette feltet. Du kan ogs
+ bruke knappen 
+Generer ny n
+ et sterkt tilfeldig passord satt inn i dette feltet. Husk 
+ lagre endringene dine hvis du bruker dette alternativet.
+		Disse innstillingene er skjult som standard, men du kan klikke p
+ overskriften/koblingen for 
+re dem synlige. 
+		Normalt kan disse alternativene beholde standardverdiene, men kan om n
+dvendig endres for 
+ passe til ditt spesielle milj
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_ssid_label", gProductName)></h3>
+		Hvis denne innstillingen er krysset av, er wifi-navnet lesbart p
+ <tmpl_var _("webui", "webui_product_name_with_suffix")> ber
+ringsskjermen ved 
+ bruke menyalternativet 
+. Hvis det ikke er merket av, vises navnet som ******.
+	<h3><tmpl_udf GET_PO_TEXT("wifi_primary_show_password_label", gProductName)></h3>
+		Hvis denne innstillingen er krysset av, er wifi-passordet lesbart p
+ <tmpl_var _("webui", "webui_product_name_with_suffix")> ber
+ringsskjermen ved 
+ bruke menyalternativet 
+. Hvis det ikke er avkrysset, vises passordet som ******.
+	<h3><tmpl_var _("webui", "wifi_primary_broadcast_ssid_label")></h3>
+		Hvis denne innstillingen er krysset av, vises dette wifi-nettverket i listen over tilgjengelige wifi-nettverk p
+ de tilkoblede enhetene dine. Hvis det ikke er krysset av, vil dette nettverket v
+re usynlig.
+	<tmpl_if showWiFiPrimaryWPS>
+		<h3><tmpl_var _("webui", "wifi_primary_wps_label")></h3>
+			Wifi-beskyttet konfigurasjon (WPS) er et system som lar wifi-enheter koble seg til et wifi-nettverk uten 
+tte angi nettverksn
+kkelen manuelt. Hvis du 
+ bruke WPS, kryss av for dette alternativet.
+	</tmpl_if>
+	<h3><tmpl_var _("webui", "wifi_primary_privacy_label")></h3>
+		Hvis denne innstillingen er avkrysset, blir hver tilkoblet enhet isolert fra alle andre tilkoblede enheter. Dette gir ekstra sikkerhet hvis noen tilkoblede enheter er ukjente eller ikke er helt klarerte. For normal drift b
+r dette ikke avkrysses.
+<!-- id="wifi_primary_settings" -->

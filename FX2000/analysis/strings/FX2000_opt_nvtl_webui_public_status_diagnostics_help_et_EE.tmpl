@@ -1,0 +1,320 @@
+<!-- Diagnostics -->
+<div id="status_diagnostics">
+	<h1><tmpl_var _("webui", "status_diagnostics_menu_text")></h1>
+levaade</h2>
+	<p>Sellel lehel on teave seadme <tmpl_var _("webui", "webui_product_name")> ja saadaolevate v
+rkude kohta. Kasutage seda vajadusel t
+rkeotsinguks; see ei ole n
+utav tavap
+raseks kasutamiseks.</p>
+	<h2><tmpl_var _("webui", "status_diagnostics_modem_sub_header_text")></h2>
+	<tmpl_if showPhoneNumber>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_phone_number_label"), (size(_("webui", "status_diagnostics_phone_number_label")) - size(":")))></h3>
+		<p>See on seadme <tmpl_var _("webui", "webui_product_name")> telefoninumber.</p>
+	</tmpl_if>
+	<tmpl_if showImei>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imei_label"), (size(_("webui", "status_diagnostics_imei_label")) - size(":")))></h3>
+		<p>Selle seadme IMEI (International Mobile Equipment Identity). IMEI on 15- v
+i 17-kohaline kood, mida kasutatakse 
+ksiku liikuva jaama kordumatuks tuvastamiseks<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>v
+rgus. SIM-kaardi muutmisel IMEI ei muutu.</p>
+	</tmpl_if>
+	<tmpl_if showImeisv>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imeisv_label"), (size(_("webui", "status_diagnostics_imeisv_label")) - size(":")))></h3>
+		<p>Sellel v
+ljal on IMEI 
+hendatud seda t
+pi seadme t
+bikinnitusnumbriga.</p>
+	</tmpl_if>
+	<tmpl_if showMeid>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_meid_label"), (size(_("webui", "status_diagnostics_meid_label")) - size(":")))></h3>
+		<p>MEID (Mobile Equipment ID) on kordumatu number, mida kasutatakse CDMA-v
+rgus oleva 
+ksiku mobiilse jaama tuvastamiseks.</p>
+	</tmpl_if>
+	<tmpl_if showIMSI>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_imsi_label"), (size(_("webui", "status_diagnostics_imsi_label")) - size(":")))></h3>
+		<p>International Mobile Subscriber Identity (IMSI) on kordumatu number, mis on seotud k
+lemaailmse mobiilsides
+steemi (GSM) ja universaalse mobiilsides
+steemi (UMTS) v
+rgu mobiiltelefonikasutajatega, keda kasutatakse GSM-abonendi tuvastamiseks.</p>
+	</tmpl_if>
+	<tmpl_if showFwVersion>					
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_fw_version_label"), (size(_("webui", "status_diagnostics_fw_version_label")) - size(":")))></h3>
+		<p>Modemisse paigaldatud p
+sivara (tarkvara) versioon.</p>
+	</tmpl_if>
+	<tmpl_if showSimStatus>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_sim_status_label"), (size(_("webui", "status_diagnostics_sim_status_label")) - size(":")))></h3>
+		<p>See n
+itab SIM-kaardi olekut. Kui SIM-kaart puudub v
+itab SIM-kaardi t
+rget, ei ole mobiilsidev
+hendamine v
+imalik.</p>
+	</tmpl_if>
+	<tmpl_if showICCID>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_iccid_label"), (size(_("webui", "status_diagnostics_iccid_label")) - size(":")))></h3>
+		<p>See kordumatu ID-number on m
+ratud SIM-kaardile. Seda ei kuvata, kui SIM-kaarti ei ole paigaldatud v
+i kui SIM-kaardil on t
+rge.</p>
+	</tmpl_if>
+	<tmpl_if showModemDetails>
+		<tmpl_if showMINMSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_msid_label"), (size(_("webui", "status_diagnostics_msid_label")) - size(":")))></h3>
+			<p>Seda ID-d kasutatakse abonendi tuvastamiseks mobiilses andmev
+rgus.</p>
+		</tmpl_if>
+		<tmpl_if showESN>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_esn_label"), (size(_("webui", "status_diagnostics_esn_label")) - size(":")))></h3>
+			<p>Electronic Serial Number ehk elektrooniline seerianumber (ESN) on traditsiooniline meetod CDMA-v
+rkudes olevate seadmete kordumatuks tuvastamiseks, kuid selle on asendanud MEID. Seadmete puhul, mis kasutavad MEID-d (nagu see seade), on ESN kas t
+i kasutatakse pseudo-ESN-i, mille kordumatus pole garanteeritud.</p>
+ 		</tmpl_if>
+ 		<tmpl_if showHomeSID>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_home_sid_label"), (size(_("webui", "status_diagnostics_home_sid_label")) - size(":")))></h3>
+			<p>SID (s
+steemi ID) on v
+rgu identifikaator, mis n
+itab mobiilse andmev
+henduspunkti.</p>
+		</tmpl_if>
+		<tmpl_if showERIVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_eri_version_label"), (size(_("webui", "status_diagnostics_eri_version_label")) - size(":")))></h3>
+			<p>ERI (Enhanced Roaming Indicator) tabel sisaldab teavet iga r
+rgu kohta, millega mobiilsideseadmel on lubatud 
+hendus luua. See v
+itab praegu paigaldatud ERI versiooni. ERI tabelit v
+rskendatakse automaatselt.</p>
+ 		</tmpl_if>
+ 		<tmpl_if showPRLVersion>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_prl_version_label"), (size(_("webui", "status_diagnostics_prl_version_label")) - size(":")))></h3>
+			<p>PRL-i (Preferred Roaming List ehk eelistatud r
+ndlusloend) kasutatakse v
+rgu valimiseks, kui saadaval on mitu v
+rku. See v
+itab praegu paigaldatud PRL-i versiooni. PRL-i v
+rskendatakse automaatselt.</p>
+		</tmpl_if>			
+	</tmpl_if>
+	<tmpl_if lteSupported>			
+		<h2 class="sectionHead">5G/4G LTE v
+		<tmpl_if showInternetStatus4G>	
+			<h3>Olek</h3>
+rgul<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>v
+ivad olla j
+rgmised olekuv
+rtused.</p>
+			<div class="blockgroup">
+				<ul>
+					<li>Pole saadaval 
+rku<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>ei tuvastatud.</li>
+					<li>Saadaval 
+<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>tuvastati v
+rk.</li>
+				</ul>
+			</div>
+rgmised andme
+hikud esitatakse ainult juhul, kui<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>v
+rk on saadaval.</p>
+		</tmpl_if>
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>See on v
+rgu<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>nimi.</p>
+		</tmpl_if>
+		<tmpl_if showSignalStrength>			
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_signal_strength_label"), (size(_("webui", "status_diagnostics_fourg_signal_strength_label")) - size(" (RSRP):")))></h3>
+			<p>See n
+itab signaali tugevust,<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>m
+detuna dBm-des. Suuremad absoluutv
+rtused n
+itavad tugevamat signaali, seega on -80 dBm tugevam signaal kui -90 dBm.<tmpl_udf GET_PO_TEXT("status_diagnostics_lte_note_text")>
+		</tmpl_if>
+		<tmpl_if showSNR>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_sinr_label"), (size(_("webui", "status_diagnostics_sinr_label")) - size(":")))></h3>
+			<p>SNR on signaali kvaliteedi m
+dik. Suuremad numbrid n
+itavad paremat signaali.</p>
+		</tmpl_if>
+		<tmpl_if showLteBand>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_lte_band_label"), (size(_("webui", "status_diagnostics_lte_band_label")) - size(":")))></h3>
+			<p><tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>V
+ivad erinevates piirkondades erinevaid sagedusalasid kasutada. See v
+itab sagedusriba, mida kasutatakse<tmpl_udf GET_PO_TEXT("status_diagnostics_technology_text")>praeguse 
+henduse jaoks.</p>
+		</tmpl_if>
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_roaming_label"), (size(_("webui", "status_diagnostics_fourg_roaming_label")) - size(":")))></h3>
+itab, kas praegune 
+hendus on r
+hendus.</p>
+		</tmpl_if>
+	</tmpl_if>
+	<tmpl_if isHSPATechnology>	
+		<h2><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> Olek</h2>
+		<h3>Olek</h3>
+		<p><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> v
+rgu puhul toetatakse j
+rgmisi olekuid.</p>
+		<div class="blockgroup">
+				<li>Pole saadaval 
+ <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> v
+rku ei tuvastatud.</li>
+				<li>Saadaval 
+ tuvastati <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> v
+rk.</li>
+			</ul>
+		</div>
+rgmised andme
+ksused on saadaval ainult siis, kui v
+rk on saadaval.</p>
+		<tmpl_if showNetworkOperator>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_fourg_network_operator_label"), (size(_("webui", "status_diagnostics_fourg_network_operator_label")) - size(":")))></h3>
+			<p>See on <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> v
+rgu nimi.</p>
+		</tmpl_if>	
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p><tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> v
+rgus kasutatav praegune tehnoloogia. V
+imalikud v
+rtused alates aeglaseimast kuni kiireimani on j
+rgmised:</p>
+				<tmpl_if gsmSupported>
+					<li>GPRS</li>
+				</tmpl_if>
+				<tmpl_if wcdmaSupported>
+					<li>UMTS</li>
+				</tmpl_if>
+				<tmpl_if cdmaSupported>
+					<li>HSPA+</li>
+					<li>HSPA+ DC</li>
+				</tmpl_if>
+				<tmpl_if evdoSupported>
+					<li>EDGE</li>
+					<li>HSDPA</li>
+					<li>HSUPA</li>
+				</tmpl_if>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_networkid_label"), (size(_("webui", "status_diagnostics_networkid_label")) - size(":")))></h3>
+ldkasutatava maapealse mobiilsidev
+rgu (PLMN) nimi ja/v
+i ID.</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_cellid_label"), (size(_("webui", "status_diagnostics_cellid_label")) - size(":")))></h3>
+			<p>See v
+histab hetkel kasutatavat mobiilimasti.</p>
+		<h3><tmpl_var truncate(_("webui", "status_diagnostics_rssi_label"), (size(_("webui", "status_diagnostics_rssi_label")) - size(":")))></h3>
+			<p>See n
+itab <tmpl_var _("webui", "status_diagnostics_gsm_umts_hspa_text")> signaali RSSI-d. RSSI on signaalitugevuse m
+t detsibellides 
+he millivati suhtes. See on alati negatiivne, sest mobiilsed raadioseadmed on palju v
+imsad kui 
+ks millivatt. Suuremad absoluutv
+rtused n
+itavad tugevamat signaali, nii et 
+50 dBm on tugevam signaal kui 
+70 dBm.</p>
+		<tmpl_if showRoaming>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_roaming_label"), (size(_("webui", "status_diagnostics_roaming_label")) - size(":")))></h3>
+itab, kas praegune 
+hendus on r
+hendus.</p>
+		</tmpl_if>
+		<tmpl_if show3g>
+			<h2><tmpl_var _("webui", "status_diagnostics_threeg_label")></h2>
+			<h3>Olek</h3>
+imalikud olekuv
+rtused on j
+rgmised.</p>
+			<div class="blockgroup">
+				<ul>
+					<li>Pole saadaval 
+rku ei tuvastatud.</li>
+					<li>Saadaval 
+ tuvastati 3G-v
+rk.</li>
+				</ul>
+			</div>
+rgmised andme
+ksused on saadaval ainult siis, kui v
+rk on saadaval.</p>
+			<tmpl_if showNetworkOperator>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_network_label"), (size(_("webui", "status_diagnostics_threeg_network_label")) - size(":")))></h3>
+				<p>See on 3G-v
+rgu nimi.</p>
+			</tmpl_if>
+			<tmpl_if show3g1xRssi>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_onex_label"), (size(_("webui", "status_diagnostics_threeg_onex_label")) - size(":")))></h3>
+			<p>RSSI on signaali tugevuse m
+hik on detsibelle 
+he millivati kohta ja on alati negatiivne, sest mobiilsed raadioseadmed on palju v
+imsad kui 
+ks millivatt. Suuremad absoluutv
+rtused n
+itavad tugevamat signaali, seega on 
+50 dBm tugevam signaal kui 
+70 dBm. See v
+itab RSSI-d 1xRTT-signaali jaoks.</p>
+			</tmpl_if>
+			<tmpl_if show3gEvdoRssi>
+				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_evdo_label"), (size(_("webui", "status_diagnostics_threeg_evdo_label")) - size(":")))></h3>
+				<p>RSSI on signaali tugevuse m
+t. See v
+itab EVDO v
+i eHRPD signaali RSSI-d.</p>
+ 			</tmpl_if>
+			<tmpl_if show3gTechnology>
+ 				<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_technology_label"), (size(_("webui", "status_diagnostics_threeg_technology_label")) - size(":")))></h3>
+				<p>Praegu 3G-v
+rgus kasutatav tehnoloogia. V
+imalikud v
+rtused on 1xRTT, EVDO v
+i eHRPD.</p>
+ 			</tmpl_if>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_ecio_label"), (size(_("webui", "status_diagnostics_threeg_ecio_label")) - size(":")))></h3>
+			<p>Ec/Io n
+itab, kui puhas signaal on, ning on signaali ja m
+ra suhte t
+pilised v
+rtused on vahemikus 
+10 kuni 
+4 oleks v
+ signaal.</p>
+			<h3><tmpl_var truncate(_("webui", "status_diagnostics_threeg_sid_label"), (size(_("webui", "status_diagnostics_threeg_sid_label")) - size(":")))></h3>
+			<p>SID (s
+steemi ID) on v
+rgu identifikaator, mis n
+itab mobiilse andmesidev
+rgu praegust 
+henduspunkti. Mobiilsidetornide grupil v
+ib olla sama SID-v
+rtus. See v
+itab praegust SID-i.</p>		
+			<tmpl_if showRoaming>
+				<h3>R
+ndlus</h3>
+				<p>N
+itab, kas praegune 
+hendus on r
+hendus.</p>			
+			</tmpl_if>
+			<tmpl_if linkToFieldTest>	
+				<h2><tmpl_var _("webui", "status_diagnostics_field_test_button")></h2>
+				<p>Nupp V
+litest annab loendi madalatasemelistest v
+rguparameetritest, mis v
+ivad olla kasulikud tehnilise toe t
+tajatele v
+henduse probleemide t
+rkeotsingul.</p>
+				<p>See nupp on saadaval ainult siis, kui 3G-v
+rk on saadaval.</p>
+			</tmpl_if>
+		</tmpl_if>
+	</tmpl_if>
+<!-- id="status_diagnostics" -->

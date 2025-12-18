@@ -1,0 +1,119 @@
+<div id="wwan_settings">
+	<h1><tmpl_var _("webui", "wwan_settings_menu_text")></h1>
+	<tmpl_if NetworksCellularDataEnableShow>
+		<h2><tmpl_var _("webui", "wwan_settings_cellular_data_label")></h2>
+JUNGIMO / I
+JUNGIMO nuostat
+ galite naudoti, kai reikia i
+jungti mobiliojo ry
+io duomen
+ perdavim
+ ir neleisti pasiekti mobiliojo ry
+io tinklo. Taip neleid
+iama prijungtiems 
+renginiams prisijungti prie interneto ir naudoti mobiliojo ry
+io duomen
+ plano. 
+prastai veikiant 
+ nuostat
+ reikia palikti 
+	</tmpl_if>
+	<tmpl_if NetworksConnectionPreferenceShow>
+		<h3>Ry
+io parinktis</h3>
+			<p>Pasirinkite norim
+ parinkt
+, kad gal
+te kontroliuoti, kada bus u
+megztas <tmpl_var _("webui", "webui_product_name")> duomen
+ys su mobiliojo ry
+io tinklu.</p>
+	</tmpl_if>
+	<tmpl_if showRoamSetting>
+		<h3><tmpl_var _("webui", "wwan_settings_roaming_label")></h3>
+		<p>Naudokite 
+ nuostat
+dami prireikus 
+jungti arba i
+jungti tarptautin
+ ir vietin
+ tarptinklin
+. Tarptinkliniam ry
+iui gali b
+ti taikomi papildomi duomen
+ perdavimo mokes
+iai.</p>
+	</tmpl_if>
+	<tmpl_if NetworksPreferredTechnologyShow>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_preferred_technology_label"), (size(_("webui", "wwan_settings_preferred_technology_label")) - size(":")))></h3>
+		<p>Numatytoji vert
+<tmpl_var _("webui", "wwan_settings_preferred_technology_default_option_text")>
+. <tmpl_var _("webui", "webui_product_name")> pasirinks geriausi
+ technologij
+		<p>Jei norite, galite tai pakeisti, kad apribotum
+te tinklo technologijas, kurios bus naudojamos.</p>
+	</tmpl_if>
+	<h3>Neautomatinis tinklo pasirinkimas</h3>
+i funkcija galima tik i
+jungus aktyvinto automatinio tinklo pasirinkimo funkcij
+. Tai gali b
+ti naudinga, jei yra keli tinklai ir galite pasirinkti, kur
+ naudoti.</p>
+dami nuskaityti galimus tinklus, spustel
+kite mygtuk
+Pasirinkti tinkl
+; tada galite pasirinkti pageidaujam
+	<tmpl_unless apnProfileSettings>
+		<tmpl_if NetworksFourGLTEAPNShow>
+			<h3><tmpl_var truncate(_("webui", "wwan_settings_fourg_lte_apn_label"), (size(_("webui", "wwan_settings_fourg_lte_apn_label")) - size(":")))></h3>
+			<p>APN yra i
+ anksto sukonfig
+ruotas; netur
+te keisti APN, nebent naudojat
+s paskyra (su savo APN).</p>
+		</tmpl_if>
+		<tmpl_if NetworksCustomAPNShow>
+			<h3><tmpl_var truncate(_("webui", "wwan_settings_custom_apn_label"), (size(_("webui", "wwan_settings_custom_apn_label")) - size(":")))></h3>
+is APN naudojamas, jei SIM pakei
+ SIM. Prie
+ingu atveju jo nepaisoma ir jis neturi jokio poveikio.</p>
+		</tmpl_if>
+	<tmpl_else>
+s nuostatos</h2>
+		<p>Naudokite 
+dami, kad b
+ rodomos arba slepiamos papildomos nuostatos.</p>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_apn_label"), (size(_("webui", "wwan_settings_apn_label")) - size(":")))></h3>
+		<p>Jei reikia pakeisti APN, 
+veskite mobiliojo ry
+io tinklo paslaug
+jo pateikt
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_authentication_label"), (size(_("webui", "wwan_settings_authentication_label")) - size(":")))></h3>
+		<div class="blockgroup">
+			<p>Pasirinkite paslaug
+jo nurodyt
+ parinkt
+				<li>N
+				<li>PAP</li>
+				<li>CHAP</li>
+			</ul>
+		</div>
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_username_label"), (size(_("webui", "wwan_settings_username_label")) - size(":")))></h3>
+		<p>Jei 
+Autentifikavimas
+ <strong>N
+ra</strong>, 
+ galima palikti tu
+ingu atveju 
+veskite paslaug
+jo nurodyt
+		<h3><tmpl_var truncate(_("webui", "wwan_settings_password_label"), (size(_("webui", "wwan_settings_password_label")) - size(":")))></h3>
+		<p>Jei 
+Autentifikavimas
+ <strong>N
+ra</strong>, 
+ galima palikti tu
+ingu atveju 
+veskite paslaug
+jo nurodyt
+	</tmpl_unless>

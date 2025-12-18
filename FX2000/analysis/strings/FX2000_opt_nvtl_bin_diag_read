@@ -1,0 +1,373 @@
+/lib/ld-linux-armhf.so.3
+pthread_join
+GLIBC_2.4
+libpthread.so.0
+libc.so.6
+pthread_create
+__libc_start_main
+__gmon_start__
+snprintf
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+__errno_location
+mifi_dbg_get_level_name
+strerror
+mifi_dbg_syslog
+mifi_dbg_log
+closedir
+readdir_r
+__isoc99_fscanf
+GLIBC_2.7
+libdl.so.2
+nwqmi_nvtl_nv_item_write_cmd
+dsm_set_persistent_mode
+dsm_get_state
+dsm_shutdown_device
+dsm_reset_device
+fuel_gauge_get_battery_version_type
+fuel_gauge_read_voltage
+fuel_gauge_read_current
+fuel_gauge_read_temperature
+fuel_gauge_read_batt_id
+dsm_set_display_state
+nwqmi_nvtl_nv_item_read_cmd
+mifi_dbg_start
+mifi_dbg_stop
+__bss_start
+libqmi_client_qmux.so.1
+libqmi.so.1
+libqmiidl.so.1
+libqmiservices.so.1
+libdiag.so.1
+libgthread-2.0.so.0
+libglib-2.0.so.0
+libqmi_cci.so.1
+libqmi_csi.so.1
+libqmi_sap.so.1
+libqmi_common_so.so.1
+libqmi_encdec.so.1
+libxmldata_api.so
+libxml2.so.2
+libz.so.1
+libwatchdog_api.so
+libmifi_config.so
+libsettings_api.so
+libmifimsgbus.so
+libmifi_debug.so
+libmificommon.so
+libnwqmi.so
+libmal_qct.so
+librt.so.1
+libm.so.6
+libmifi_events.so
+libdsm_api.so
+libfuel_gauge.so
+H	KxD	J{D
+DIAGREAD
+[%s]:[%s] - %s: write() failed: %s
+[%s]:[%s] - %s: wrote %d bytes
+[%s]:[%s] - %s: read() returned %d
+[%s]:[%s] - %s: lseek() failed: %s
+[%s]:[%s] - %s: offset=%d bytes=%d
+[%s]:[%s] - %s: rsp->bytes_written=%d
+/sys/bus/platform/drivers/dwc3/a600000.dwc3/udc/a600000.dwc3/current_speed
+[%s]:[%s] - =========> Supported speed = %s
+[%s]:[%s] - =========> replay_buffer = %c
+[%s]:[%s] - %s:reply empty
+[%s]:[%s] -  %s:req empty
+/sys/class/power_supply/usb/typec_cc_orientation
+[%s]:[%s] - =========> USB Con_Pos(1/2) = %s
+/opt/nvtl/lib/libMifiapi.so
+[%s]:[%s] - diag_read: Loaded DLL
+MifiSys_DisableUSBConsole
+MifiSys_EnableUSBConsole
+[%s]:[%s] - diag_read: Calling function DLL
+[%s]:[%s] - diag_read: err code %x
+MifiReg_InitSDK
+MifiReg_CloseSDK
+MifiSys_SetSSHFlag
+[%s]:[%s] - diag_read: Stop FTP service
+/etc/init.d/vsftpd stop
+[%s]:[%s] - diag_read: Start FTP service
+/etc/init.d/vsftpd start
+[%s]:[%s] - diag_read: Invalid requested value
+/omapconf/password
+/omapconf/password/root
+[%s]:[%s] - diag_read: Cannot open the root password file.
+[%s]:[%s] - diag_read: Update root password error
+/omapconf/wifi/macid
+[%s]:[%s] - diag_read: Cannot open the wifi macid file for read.
+/omapconf/wifi
+[%s]:[%s] - Cannot open the wifi macid file for write.
+[%s]:[%s] - Update wifi macid error
+[%s]:[%s] - Sanity problem
+/omapconf/certificate
+/omapconf/certificate/%d
+/omapconf/certificate/%d/cert
+[%s]:[%s] - Cannot open %s for write.
+[%s]:[%s] - Update certificate error
+/omapconf/certificate/%d/key
+[%s]:[%s] - Update key error
+/omapconf/wifi/calibration
+[%s]:[%s] - Cannot open the wifi calibration file for write.
+[%s]:[%s] - Update wifi calibration error.
+[%s]:[%s] - error opening socket
+/opt/nvtl/etc/mifios-version
+LINUX-%s
+[%s]:[%s] - Date received %s
+echo "date %s" > /system/etc/default_date
+runlevel | awk '{print $2}' > /root/runlevel.tmp
+/root/runlevel.tmp
+rm -f /root/runlevel.tmp
+[%s]:[%s] - Update NW_NV_LINUX_RUN_LEVEL_I error=%d
+[%s]:[%s] - Received the wrong response switching to run level %d
+[%s]:[%s] - Unknown run levels
+/opt/nvtl/bin/wifi_diag.sh %d 1234 6
+[%s]:[%s] - Normal mode command %s
+/opt/nvtl/bin/wifi_diag.sh %d
+[%s]:[%s] - Unknown wifi mode %d
+/opt/nvtl/bin/wmiconfig -i %s --version
+Firmware Rev
+/sbin/iwgetid %s
+/opt/nvtl/bin/iwconfig %s essid %s;/opt/nvtl/bin/iwconfig %s commit
+/opt/nvtl/bin/iwconfig %s txpower %d
+/opt/nvtl/bin/iwconfig %s essid off;/opt/nvtl/bin/iwconfig %s channel %d;/opt/nvtl/bin/iwconfig %s commit
+g 0 0 0 0 0 0
+g 2 0 0 0 0 0
+g 1 0 1 0 0 0
+/opt/nvtl/bin/iwconfig %s essid off;/opt/nvtl/bin/wmiconfig -i %s --wmode %s;/opt/nvtl/bin/wmiconfig -i %s --set_ht_cap %s;/opt/nvtl/bin/iwconfig %s commit
+/opt/nvtl/bin/iwconfig %s essid off
+/opt/nvtl/bin/iwconfig %s essid on;/opt/nvtl/bin/iwconfig %s commit
+/opt/nvtl/bin/wl down
+/opt/nvtl/bin/wl up
+[%s]:[%s] - %s:  %s
+wl bss down; wl band a ;wl bss up;
+wl bss down; wl band b ;wl bss up
+%x:%x:%x:%x:%x:%x
+wl pkteng_start %s tx %d %d %d
+wl pkteng_stop tx
+wl 5g_rate
+wl 2g_rate
+ -r %.1f
+[%s]:[%s] - %s
+wl down; wl mpc 0; wl scansuppress 1; wl phy_txpwrctrl 0; wl country ALL; wl phy_watchdog 0 ; wl up
+wl down; wl mpc 0; wl scansuppress 1; wl phy_txpwrctrl 1; wl country ALL; wl phy_watchdog 0 ; wl up
+/opt/nvtl/bin/wmiconfig -i %s --power=maxperf
+/opt/nvtl/bin/wmiconfig -i %s --power=rec
+[%s]:[%s] - dsm get state failed! 
+[%s]:[%s] - Not a valid Input 
+echo %d > /sys/class/gpio/export
+echo "out" > /sys/class/gpio/gpio%d/direction
+echo %d > /sys/class/gpio/gpio%d/value
+/sys/class/gpio/gpio%d/value
+[%s]:[%s] - Not a valid Input
+ls "/sys/bus/w1/devices/w1 bus master"
+/sys/bus/w1/devices/w1 bus master/w1_master_slave_count
+[%s]:[%s] - Next cmd received within 5 secs of prev cmd, ignoring
+/opt/nvtl/bin/nvtl_dhcp.sh start
+ifconfig eth0 up
+brctl addif br0 eth0
+[%s]:[%s] - Both Linux and Modem == req type [ %d]
+/opt/nvtl/bin/diag_check_md5.sh Linux_Modem &
+[%s]:[%s] - Failed to execute script [/opt/nvtl/bin/diag_check_md5.sh &], return value= [%d]
+[%s]:[%s] - Only Linux == req type [ %d]
+/opt/nvtl/bin/diag_check_md5.sh Linux &
+[%s]:[%s] - Only Modem == req type [ %d]
+/opt/nvtl/bin/diag_check_md5.sh Modem &
+[%s]:[%s] - Invalid == req type [ %d]
+[%s]:[%s] - Successfully executed the sync command
+[%s]:[%s] - Failed to execute the sync command
+[%s]:[%s] - %s[%d]
+/opt/nvtl/data/eth/qcom/emac_config.ini
+[%s]:[%s] - MAC address read failed, result %d!
+%02x:%02x:%02x:%02x:%02x:%02x
+sync && sync
+[%s]:[%s] - %s:RESPONSE =>  %02x:%02x:%02x:%02x:%02x:%02x
+nwnvitem -r -e %s
+[%s]:[%s] - Read Mac
+[%s]:[%s] - %x 
+[%s]:[%s] - 
+NW_NV_ASYNC_DATA_ORIG_STR_I
+[%s]:[%s] - %s:Request ======>  %02x:%02x:%02x:%02x:%02x:%02x
+/opt/nvtl/bin
+[%s]:[%s] - File open failed
+nwnvitem -w -e NW_NV_ASYNC_DATA_ORIG_STR_I -d %s
+[%s]:[%s] - rsp status %d version/type %s mV.
+[%s]:[%s] - rsp status %d mV %d mV.
+[%s]:[%s] - rsp status %d current %d mA.
+[%s]:[%s] - rsp status %d temperature %d degree.
+[%s]:[%s] - rsp status %d battery id %d.
+echo 0 > /sys/class/power_supply/battery/input_suspend
+echo 1 > /sys/class/power_supply/battery/input_suspend
+/opt/nvtl/bin/tests/lcd_pattern_test.sh %d &
+/opt/nvtl/bin/tests/lcd_pattern_test.sh %d %d &
+/sys/bus/i2c/devices/0-0015/control/write_reg_addr
+/sys/bus/i2c/devices/0-0015/control/write_reg_value
+/sys/bus/i2c/drivers/smb347/0-0015/control/chg_set_ilimit
+[%s]:[%s] - Ilim is %d
+[%s]:[%s] - old value %d
+[%s]:[%s] - new value %d
+[%s]:[%s] - %s: Exception - should not be here
+[%s]:[%s] - %s: Failed writing to chg control file value=%d, ilim value=%d
+[%s]:[%s] - NVTL - Set current limiter override.
+[%s]:[%s] - Bad command %d
+[%s]:[%s] - Current run level is %d
+[%s]:[%s] - Current limiter value set to %d
+[%s]:[%s] - Bad run level %d
+[%s]:[%s] - NVTL - SD card test command
+/opt/nvtl/bin/tests/sd_test.sh
+[%s]:[%s] - System call failed, status = %d
+[%s]:[%s] - SD test script failed, status = %d
+lsmod	| grep %s | awk '{ print $1 }' > /root/acc.tmp
+/root/acc.tmp
+rm -f /root/acc.tmp
+[%s]:[%s] - NVTL - Accelerometer test command
+[%s]:[%s] - Device not in FTM mode
+[%s]:[%s] - Reset the device
+/opt/nvtl/bin/dsm_cli reset_device 1
+[%s]:[%s] - Read wifi macid error %d
+[%s]:[%s] - Update wifi macid error %d
+/sbin/sys_reboot bootloader
+[%s]:[%s] - cmd: %s
+[%s]:[%s] - Switch to fastboot mode error %d
+%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c
+[%s]:[%s] - ================temp>==%s
+nslookup %s
+[%s]:[%s] - ================system_cmd_response=%s
+[%s]:[%s] - %s:search not found %s
+Resolve URL failed
+[%s]:[%s] - %s:req empty
+Address 2
+/sys/class/net/eth0/speed
+[%s]:[%s] - ==========>%s Mb/s
+[%s]:[%s] - %s: Invalid command input: %d
+/opt/nvtl/bin/tests/mifi_leds_test
+[%s]:[%s] - %s: Missing LED control application: %s
+%s -c 2 -m 1 -o %c -f 0 &> /dev/null
+[%s]:[%s] - %s: command too long with app %s
+[%s]:[%s] - %s: Unable to control LED on device, err %d
+[%s]:[%s] - %s: malloc(%d) failed: %s
+[%s]:[%s] - %s: calling read()
+[%s]:[%s] - %s: read() failed: %s
+[%s]:[%s] - %s: read() returned 0
+[%s]:[%s] - %s: nr=%d
+[%s]:[%s] - %s: short read(): nr=%d
+[%s]:[%s] - %s: msg_type=%08x: not %08x - discarding message
+[%s]:[%s] - %s: pkg->nw_diag_cmd=0x%02x
+[%s]:[%s] - %s: bad command (%04x)
+[%s]:[%s] - %s: malloc() failed: %s
+[%s]:[%s] - %s: nr=%d: invalid cmd: cmd_code=0x%02x s/b=0x%02x subsys_id=0x%02x s/b=0x%02x
+[%s]:[%s] - %s: exiting while loop
+/dev/diag
+[%s]:[%s] - %s: /dev/diag open failed
+[%s]:[%s] - %s: fd=%d bind_params.proc_id=%d
+NVTL_DIAG_SYNC_EVENT_PKT_
+[%s]:[%s] - %s: ioctl() failed: %s
+diag_read/main: fork(), Exiting
+diag_read/main(child): setsid()
+diag_read/main(child): chdir()
+Error Initializing debug logging, Exiting
+[%s]:[%s] - Starting MAIN thread
+[%s]:[%s] - pthread_create() error: %d
+[%s]:[%s] - Exiting MAIN thread
+diag_efs2_stat_handler
+diag_efs2_mkdir_handler
+diag_efs2_rmdir_handler
+diag_efs2_opendir_handler
+diag_efs2_closedir_handler
+diag_efs2_readdir_handler
+diag_efs2_delete_handler
+diag_efs2_fstat_handler
+diag_efs2_open_handler
+diag_efs2_close_handler
+diag_efs2_read_handler
+diag_efs2_write_handler
+usb_get_type_handler
+usb_get_type_handler
+usb_get_conn_pos_handler
+usb_get_conn_pos_handler
+usb_control_handler
+ftp_control_handler
+new_root_control_handler
+wifi_get_macid_handler
+wifi_set_macid_handler
+cert_handler
+key_handler
+wifical_handler
+cert_clear_handler
+wifi_diag_handler
+version_handler
+set_date_handler
+get_run_level_handler
+set_run_level_handler
+set_wifi_mode_handler
+get_wifi_fw_revision_handler
+get_wifi_ssid_handler
+set_wifi_ssid_handler
+set_wifi_init_mimo_siso
+set_wifi_tx_power_handler
+set_wifi_channel_handler
+set_wifi_wmode_handler
+wifi_sleep_handler
+wifi_rf_toggle_handler
+wifi_set_band_handler
+wifi_tx_pkt_trans_handler
+wifi_set_data_rate_handler
+wifi_set_txpwr_open_close_loop_handler
+wifi_maxperf_handler
+mifi_events_handler
+gpio_test_handler
+diag_1wire_test_handler
+diag_ethernet_test_handler
+diag_check_md5sum
+diag_sync
+system_command1
+diag_nw_get_macaddress
+diag_nw_get_macaddress
+diag_nv_get_macaddress
+diag_nv_get_macaddress
+diag_nv_set_macaddress
+diag_nv_set_macaddress
+diag_nw_fuel_gauge_get_battery_version_type
+diag_nw_fuel_gauge_read_vbat_handler
+diag_nw_fuel_gauge_read_current_handler
+diag_nw_fuel_gauge_read_temp_handler
+diag_nw_read_bat_id_handler
+diag_nw_display_on_off_handler
+diag_nw_charger_start_stop_handler
+diag_run_lcd_script
+current_lim_set
+diag_nw_set_ilim_override
+diag_sd_card_test
+diag_nw_accelerometer_test_hanlder
+reset_device_handler
+wifi_read_mac_addr_handler
+wifi_write_mac_addr_handler
+diag_nw_fastboot_mode_handler
+system_command
+get_ns_lookup
+get_ns_lookup
+get_eth_net_speed
+get_eth_net_speed
+moretti_led_on_off
+diag_read_loop
+diag_thread
+gold 1.16
+.shstrtab
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.ARM.extab
+.ARM.exidx
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

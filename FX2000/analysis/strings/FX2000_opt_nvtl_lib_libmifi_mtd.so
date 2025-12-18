@@ -1,0 +1,143 @@
+GLIBC_2.4
+libc.so.6
+libmifi_mtd.so
+__gmon_start__
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+__cxa_finalize
+mtd_find_partition_name_from_address
+mtd_get_address_offset_in_partition
+mtd_find_partition_by_name
+mtd_get_partition_bad_blocks
+mifi_dbg_get_level_name
+mifi_dbg_log
+mtd_read_partition
+__errno_location
+strerror
+mtd_read_close
+mtd_adjust_for_bad_block
+mtd_scan_partitions
+__isoc99_sscanf
+GLIBC_2.7
+mtd_find_partition_by_device_name
+mtd_find_partition_by_index
+mtd_mount_partition
+mtd_partition_info
+mtd_read_skip_to
+mtd_read_data
+mtd_write_partition
+mtd_write_data
+mtd_erase_blocks
+mtd_write_close
+mifi_get_address_offset_in_partition
+mifi_get_partition_name_from_address
+mifi_get_partition_by_name
+mifi_get_number_partitions
+mifi_get_sector_size
+mifi_erase_sector
+mifi_write_data
+mifi_write_partial_block
+mifi_read_data
+mifi_get_ecc_stats
+__bss_start
+H	KxD	J{D
+[%s]:[%s] - %s: p_partition->: device_index=%d size=%u erase_size=%u start_block=%d end_block=%d name=%s
+[%s]:[%s] - %s: Can't open read context
+[%s]:[%s] - %s: name=%s start_address=0x%lx end_address=0x%lx erase_size=0x%x
+[%s]:[%s] - %s: bad block detected: offset=0x%lx block=%ld num_bad_blocks=%u
+[%s]:[%s] - %s: ioctl(MEMGETBADBLOCK) failed: %s
+[%s]:[%s] - %s: MAX_BAD_BLOCKS exceeded in partition
+[%s]:[%s] - %s: address=0x%lx bad_block_count=%d, retval=0x%lx
+[%s]:[%s] - %s: g_mtd_state.partition=%p
+/proc/mtd
+mtd%d: %x %x "%63[^"]
+userdata
+[%s]:[%s] - %s: skip get bad blocks on partition=%s
+/dev/mtdblock%d
+[%s]:[%s] - %s: Invalid partition index %d
+[%s]:[%s] -  %s Failed to mount %s on %s: %s
+[%s]:[%s] -  %s Mount %s on %s read-only
+[%s]:[%s] - %s: Fixing execute permissions for %s
+[%s]:[%s] - %s Couldn't fix permissions for %s: %s
+/dev/mtd%d
+[%s]:[%s] - %s: partition->name=%s fd=%d data=%p
+[%s]:[%s] - %s: mtd: ECCGETSTATS error (%s)
+[%s]:[%s] - %s: mtd: read error at 0x%08llx (%s)
+[%s]:[%s] - %s: mtd: ECC errors (%d soft, %d hard) at 0x%08llx
+[%s]:[%s] - %s: mtd: mgbb=%d block at 0x%08llx (errno=%d), block 0x%lx
+[%s]:[%s] - %s: success: pos=0x%08llx block=0x%lx
+[%s]:[%s] - %s: ctx->partition->erase_size=%u ctx->buffer=%p ctx->consumed=%u ctx->fd=%d data=%p len=%u
+[%s]:[%s] - %s: mtd: block %lu at 0x%08lx is bad
+[%s]:[%s] - %s: mtd: erase failure at 0x%08lx (%s)
+[%s]:[%s] - %s: mtd: write error at 0x%08lx (%s)
+[%s]:[%s] - %s: mtd: re-read error at 0x%08lx (%s)
+[%s]:[%s] - %s: mtd: verification error at 0x%08lx (%s)
+[%s]:[%s] - %s: mtd: wrote block after %d retries
+[%s]:[%s] - %s: success: pos=0x%08lx block=0x%lx
+[%s]:[%s] - %s: mtd: skipping write block at 0x%08lx
+[%s]:[%s] - %s: ctx->partition->erase_size=%u ctx->buffer=%p ctx->stored=%u ctx->fd=%d data=%p len=%u
+[%s]:[%s] - %s: ctx->partition->erase_size=%u ctx->buffer=%p ctx->stored=%u ctx->fd=%d blocks=%d
+[%s]:[%s] - %s: mtd: block at 0x%08lx is bad
+[%s]:[%s] - %s: mtd: erase failure at 0x%08lx
+[%s]:[%s] - %s: ctx->partition->erase_size=%u ctx->buffer=%p ctx->stored=%u ctx->fd=%d
+mtd_get_partition_bad_blocks
+mtd_adjust_for_bad_block
+mtd_scan_partitions
+mtd_find_partition_by_index
+mtd_mount_partition
+read_block
+mtd_read_data
+write_block
+mtd_write_data
+mtd_erase_blocks
+mtd_write_close
+[%s]:[%s] - %s: Can't find %s
+[%s]:[%s] - %s begin: partition_name: %s, sector_address: 0x%lx
+[%s]:[%s] - %s: sector_address=0x%x is invalid: partition: size=0x%x erase_size=0x%x
+[%s]:[%s] - %s: Can't open write context
+[%s]:[%s] - %s: Can't set sector location
+[%s]:[%s] - %s: Can't erase sector location
+[%s]:[%s] - %s: partition_name=%s data=%p address=0x%lx length=%ld
+[%s]:[%s] - %s Invalid sector address %lu, total size %d
+[%s]:[%s] - %s: Write success
+[%s]:[%s] - %s: mtd_write_data() failed: trying again: retry=%d
+[%s]:[%s] - %s: Can't finish data
+[%s]:[%s] - %s: Partition name:%s Invalid address %lu, total size %u
+[%s]:[%s] - mtd: not writing bad block at 0x%08lx (ret %d errno %d)
+[%s]:[%s] - mtd: erase failure at 0x%08lx (%s)
+[%s]:[%s] - mtd: write error at 0x%08lx (%s)
+[%s]:[%s] - mtd: re-read error at 0x%08lx (%s)
+[%s]:[%s] - mtd: verification error at 0x%08lx (%s)
+[%s]:[%s] - mtd: wrote block after %d retries
+[%s]:[%s] - mtd: successfully wrote block at %lx
+[%s]:[%s] - Can't finish data
+[%s]:[%s] - mtd: skipping write block at 0x%08lx
+[%s]:[%s] - %s: partition_name=%s data=%p address=0x%lx size=%lu
+[%s]:[%s] - %s: Invalid sector address %lu, total size %u
+[%s]:[%s] - %s: Can't open read context
+[%s]:[%s] - %s: Can't read data (%s)
+/dev/mtd%d
+[%s]:[%s] - %s: Can't open %s
+[%s]:[%s] - %s: ioctl ECCGETSTATS failed
+mifi_get_sector_size
+mifi_erase_sector
+mifi_write_data
+mifi_write_partial_block
+mifi_read_data
+mifi_get_ecc_stats
+gold 1.16
+.shstrtab
+.note.gnu.build-id
+.gnu.version
+.gnu.version_d
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.eh_frame
+.eh_frame_hdr
+.fini_array
+.init_array
+.dynamic
+.tm_clone_table
+.note.gnu.gold-version
+.ARM.attributes

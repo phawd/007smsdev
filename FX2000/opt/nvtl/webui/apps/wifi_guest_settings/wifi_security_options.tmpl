@@ -1,0 +1,35 @@
+<tmpl_if ShowWifiSecurityNone>
+    <option value="0"<tmpl_if IN_SET(WifiGuestSecurity, "0")> selected="selected"</tmpl_if>>
+        <tmpl_var _("webui", "wifi_security_none_text")>
+    </option> <!-- NONE -->
+</tmpl_if>
+
+<option value="4"<tmpl_if IN_SET(WifiGuestSecurity, "4")> selected="selected"</tmpl_if>>
+    <tmpl_var _("webui", "wifi_security_wpa2_text")>
+</option> <!-- WPA2 -->
+
+<option value="5"<tmpl_if IN_SET(WifiGuestSecurity, "5")> selected="selected"</tmpl_if>>
+    <tmpl_var _("webui", "wifi_security_wpa2_mix_text")>
+</option> <!-- WPA2MIX -->
+
+<tmpl_if ShowWPA3SecurityOption>
+<option value="6"<tmpl_if IN_SET(WifiGuestSecurity, "6")> selected="selected"</tmpl_if>>
+    <tmpl_var _("webui", "wifi_security_wpa3_text")>
+</option> <!-- WPA3 -->
+</tmpl_if>
+
+<option value="7"<tmpl_if IN_SET(WifiGuestSecurity, "7")> selected="selected"</tmpl_if>>
+    <tmpl_var _("webui", "wifi_security_wpa3_transition_text")>
+</option> <!-- WPA3_TRANSITION -->
+
+<tmpl_if ShowOWESecurityOption>
+<option value="8"<tmpl_if IN_SET(WifiGuestSecurity, "8")> selected="selected"</tmpl_if>>
+    <tmpl_var _("webui", "wifi_security_owe_text")>
+</option> <!-- OWE -->
+</tmpl_if>
+
+<tmpl_if ShowOWEEnhancedSecurityOption>
+<option value="9"<tmpl_if IN_SET(WifiGuestSecurity, "9")> selected="selected"</tmpl_if>>
+    <tmpl_var _("webui", "wifi_security_open_enhanced_text")>
+</option> <!-- OWE_TRANSITION -->
+</tmpl_if>
