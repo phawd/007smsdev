@@ -121,7 +121,7 @@ BUILD SUCCESSFUL
 ---
 
 <!-- 
-Thanks for contributing to ZeroSMS!
+Thanks for contributing to SMS Test!
 
 Please review:
 - CONTRIBUTING.md for contribution guidelines

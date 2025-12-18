@@ -195,7 +195,7 @@ def main():
     import sys
     
     # Primary analysis target
-    lib_path = r'f:\repo\zerosms\mifi_backup\proprietary_analysis\libraries\libmal_qct.so'
+    lib_path = r'f:\repo\007smsdev\mifi_backup\proprietary_analysis\libraries\libmal_qct.so'
     
     print("="*70)
     print("Phase 6A: SPC Algorithm Disassembly Analysis")

@@ -156,8 +156,8 @@ def disassemble_function(lib_path: str, func_addr: int, func_size: int = 256) ->
 
 
 def main():
-    lib_dir = Path(r'f:\repo\zerosms\mifi_backup\proprietary_analysis\libraries_full\lib')
-    output_dir = Path(r'f:\repo\zerosms\mifi_backup\proprietary_analysis')
+    lib_dir = Path(r'f:\repo\007smsdev\mifi_backup\proprietary_analysis\libraries_full\lib')
+    output_dir = Path(r'f:\repo\007smsdev\mifi_backup\proprietary_analysis')
     
     if not lib_dir.exists():
         print(f"Library directory not found: {lib_dir}")
