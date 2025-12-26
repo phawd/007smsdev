@@ -4,6 +4,10 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
+kotlin {
+    jvmToolchain(21)
+}
+
 android {
     namespace = "com.smstest.app"
     compileSdk = 35
