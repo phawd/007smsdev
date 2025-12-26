@@ -1,0 +1,74 @@
+# 007smsdev Prune Manifest (SMS/Device/Usability Core)
+
+# Core CLI and helpers
+- tools/smstest_cli.py
+- tools/mifi_at_cmd.py
+- tools/qualcomm_modem_access.py
+- tools/auto_type0_sms.sh
+- tools/binary_analyzer.py
+- tools/arm_disassembler.py
+- tools/qemu_runner.py
+- tools/spc_calculator.py
+- tools/toolchain_manager.py
+- tools/fs_exploration.sh
+- tools/phase5_recursive_pull.sh
+- tools/phase5_device_extraction_ondevice.sh
+- tools/phase5_device_extraction_v3.sh
+- tools/phase5_efs2_forensic_extraction.sh
+- tools/phase5_device_extraction_v2.sh
+- tools/phase4_tier1_bypass.sh
+- tools/phase5_forensic_investigation.sh
+- tools/fast_audit.sh
+- tools/advanced_nv_exploration.sh
+- tools/nv_extended_audit.sh
+
+# Project0 (token-efficient pipeline)
+- tools/project0/scanner.py
+- tools/project0/rizin_wrapper.py
+- tools/project0/ghidra_script_generator.py
+- tools/project0/web_helper.py
+- tools/project0/sequential_helper.py
+- tools/project0/test_pipeline.py
+- tools/project0/web_cache/
+- tools/project0/seq_cache/
+
+# Static/dynamic analysis
+- analysis/ghidra_batch_analysis.ps1
+- analysis/ghidra_deep_analysis.py
+- analysis/ghidra_unlock_analysis.py
+- analysis/rizin_analysis/
+- analysis/extract_qmi_details.py
+- analysis/extract_unlock_functions.py
+- analysis/extract_cli_commands.py
+- analysis/quick_analyze.py
+- analysis/bulk_download_binaries.ps1
+- analysis/download_all_binaries.ps1
+- analysis/binary_list.txt
+- analysis/binary_analysis_results.txt
+
+# Device binaries
+- mifi_backup/binaries/
+- mifi_backup/proprietary_analysis/binaries/
+
+# Android app core
+- app/src/main/java/com/smstest/app/core/at/
+- app/src/main/java/com/smstest/app/core/model/
+- app/src/main/java/com/smstest/app/core/Logger.kt
+- app/src/main/java/com/smstest/app/core/SmsManagerWrapper.kt
+- app/src/main/java/com/smstest/app/core/RootAccessManager.kt
+- app/src/main/java/com/smstest/app/core/receiver/SmsReceiver.kt
+- app/src/main/java/com/smstest/app/core/receiver/DeliveryReceiver.kt
+- app/src/main/java/com/smstest/app/core/CommandLineInterface.kt
+- app/src/main/java/com/smstest/app/core/OptimizationAnalyzer.kt
+
+# Documentation & build
+- docs/ANDROID_DEVICE_GUIDE.md
+- docs/MIFI_DEVICE_GUIDE.md
+- README.md
+- SECURITY.md
+- PHASE_*.md
+- build.gradle.kts
+- gradle.properties
+- settings.gradle.kts
+- gradlew
+- gradlew.bat
