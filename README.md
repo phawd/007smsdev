@@ -270,8 +270,8 @@ This script can be used to:
 ### Configuration & Secrets
 
 - Set the Apify API key via `APIFY_API_KEY` in `~/.gradle/gradle.properties` or an environment variable before building. The `app/build.gradle.kts` script reads from Gradle properties first, then falls back to environment variables, and finally to a `REPLACE_ME` placeholder if nothing is provided.
-- Avoid committing real credentials to the repo—use `local.properties` or a `.env`-style export instead.
-- Confirm that `local.properties` and generated binary artifacts remain untracked before opening pull requests.
+- Avoid committing real credentials to the repo—prefer `~/.gradle/gradle.properties` or a `.env`-style environment export instead.
+- Confirm that `local.properties` (used for local SDK paths and similar settings) and generated binary artifacts remain untracked before opening pull requests.
 - Linux and Bash/WSL examples:
   - `~/.gradle/gradle.properties`
     ```
