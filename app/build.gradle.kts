@@ -4,12 +4,19 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
+// Prefer secrets from gradle.properties or environment variables to avoid
+// committing credentials into source control.
+private val apifyApiKey = providers
+    .gradleProperty("APIFY_API_KEY")
+    .orElse(providers.environmentVariable("APIFY_API_KEY"))
+    .orElse("REPLACE_ME")
+
 android {
     namespace = "com.zerosms.testing"
     compileSdk = 35
 
     defaultConfig {
-        buildConfigField("String", "APIFY_API_KEY", "\"apify_api_LcA85Ft1nCmHpYYJbrd6kQ6bl16es71wsCAY\"")
+        buildConfigField("String", "APIFY_API_KEY", "\"${apifyApiKey.get()}\"")
         applicationId = "com.zerosms.testing"
         minSdk = 24
         targetSdk = 35

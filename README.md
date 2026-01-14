@@ -76,6 +76,16 @@ ZeroSMS is a professional-grade testing tool designed to validate messaging prot
 
 ## Architecture
 
+ZeroSMS is organized to keep device-facing protocol work, UI, and reference materials isolated from one another:
+
+- `app/` — Android application code. `core/` holds protocol wrappers and device utilities; `ui/` contains the Compose surfaces; `ZeroSMSApplication.kt` and `MainActivity.kt` wire everything together.
+- `tools/` — Desktop and helper utilities for AT command probing and modem enablement.
+- `legacy/` — A read-only snapshot of the original silent-sms-flash1 project for behavioral comparison.
+- `docs/` — Deep-dive research notes, forensic traces, and implementation guides for each device family.
+- `binaries/`, `mifi_catalog/`, and other hardware artifacts — Collected firmware and extracted assets for investigations.
+
+The modern Android module targets MVVM with clean boundaries. Protocol-specific code (SMS/MMS/RCS) lives under `core/`, while receivers and trackers focus on lifecycle-safe hooks. Compose screens and navigation live under `ui/` and should depend only on stable interfaces from `core`.
+
 ## Tools: Direct Device Access (Python)
 
 For advanced users and debugging, a standalone Python script is provided to send AT commands directly to modem device files (e.g., Qualcomm, Inseego, MediaTek, USB modems) from a PC or rooted Android with Python support.
@@ -236,10 +246,6 @@ python tools/qualcomm_modem_access.py /dev/smd0 sms qualcomm +1234567890 "Hello 
 python tools/qualcomm_modem_access.py /dev/ttyUSB0 sms mtk +1234567890 "Test MTK SMS"
 ```
 
-python tools/qualcomm_modem_access.py /dev/ttyUSB0 sms mtk +1234567890 "Test MTK SMS"
-
-```
-
 This script can be used to:
 
 - Test AT command responses on any supported device path
@@ -260,6 +266,21 @@ This script can be used to:
 - **Kotlin**: 2.1.0
 - **Compose**: BOM 2024.11.00
 - **Android Gradle Plugin**: 8.8.0
+
+### Configuration & Secrets
+
+- Set the Apify API key via `APIFY_API_KEY` in `~/.gradle/gradle.properties` or an environment variable before building. The `app/build.gradle.kts` script reads from Gradle properties first, then falls back to environment variables, and finally to a `REPLACE_ME` placeholder if nothing is provided.
+- Avoid committing real credentials to the repo—use `local.properties` or a `.env`-style export instead.
+- Confirm that `local.properties` and generated binary artifacts remain untracked before opening pull requests.
+- Linux and Bash/WSL examples:
+  - `~/.gradle/gradle.properties`
+    ```
+    APIFY_API_KEY=your_apify_key_here
+    ```
+  - or export for a single shell session:
+    ```bash
+    export APIFY_API_KEY=your_apify_key_here
+    ```
 
 ## Permissions Required
 
