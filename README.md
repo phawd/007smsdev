@@ -84,7 +84,7 @@ ZeroSMS is organized to keep device-facing protocol work, UI, and reference mate
 - `docs/` — Deep-dive research notes, forensic traces, and implementation guides for each device family.
 - `binaries/`, `mifi_catalog/`, and other hardware artifacts — Collected firmware and extracted assets for investigations.
 
-The modern Android module targets MVVM with clean boundaries. Protocol-specific code (SMS/MMS/RCS) lives under `core/`, while receivers and trackers focus on lifecycle-safe hooks. Compose screens and navigation live under `ui/` and should depend only on stable interfaces from `core`.
+The modern Android module follows an MVVM-style separation: protocol and data logic (the **Model**) live under `core/`, lifecycle-aware state holders that expose `StateFlow` to the UI act as **ViewModels`, and Jetpack Compose screens and navigation under `ui/` are the **View**, depending only on stable interfaces from `core`.
 
 ## Tools: Direct Device Access (Python)
 
