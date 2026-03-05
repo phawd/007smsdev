@@ -6,7 +6,7 @@
 
 ```bash
 # Clone repository
-git clone https://github.com/itds-consulting/android-silent-ping-sms.git
+git clone https://github.com/itds-consulting/android-silent-ping-sms.git 007smsdev
 cd 007smsdev
 
 # Build debug APK
