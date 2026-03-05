@@ -143,11 +143,13 @@ fun HomeScreen(
             strategy = DeviceInfoManager.getRecommendedSmsStrategy()
         )
     }
-    val dependencyIssues = DependencyChecker.collect(
-        context = context,
-        rootAvailable = rootAvailable,
-        atReady = atReady
-    )
+    val dependencyIssues = remember(rootAvailable, atReady) {
+        DependencyChecker.collect(
+            context = context,
+            rootAvailable = rootAvailable,
+            atReady = atReady
+        )
+    }
 
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
