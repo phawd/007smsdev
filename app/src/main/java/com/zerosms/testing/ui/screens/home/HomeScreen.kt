@@ -61,10 +61,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.zerosms.testing.BuildConfig
+import com.zerosms.testing.core.dependencies.DependencyAction
+import com.zerosms.testing.core.dependencies.DependencyChecker
+import com.zerosms.testing.core.dependencies.DependencyIssue
 import com.zerosms.testing.core.device.DeviceInfo
 import com.zerosms.testing.core.device.DeviceInfoManager
 import com.zerosms.testing.core.device.ModemChipset
@@ -82,6 +86,9 @@ import com.zerosms.testing.ui.theme.SMSBlue
 import java.util.UUID
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import android.content.Intent
+import android.net.Uri
+import android.provider.Settings
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -136,6 +143,11 @@ fun HomeScreen(
             strategy = DeviceInfoManager.getRecommendedSmsStrategy()
         )
     }
+    val dependencyIssues = DependencyChecker.collect(
+        context = context,
+        rootAvailable = rootAvailable,
+        atReady = atReady
+    )
 
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
@@ -174,6 +186,30 @@ fun HomeScreen(
                         text = "RFC-compliant tooling for flash, silent, MMS, and RCS scenarios",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+
+            if (dependencyIssues.isNotEmpty()) {
+                item {
+                    DependencyStatusCard(
+                        issues = dependencyIssues,
+                        onAction = { issue ->
+                            when (val action = issue.action) {
+                                is DependencyAction.OpenUrl -> {
+                                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(action.url))
+                                    context.startActivity(intent)
+                                }
+                                is DependencyAction.OpenAppSettings -> {
+                                    val intent = Intent(
+                                        Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                                        Uri.fromParts("package", context.packageName, null)
+                                    )
+                                    context.startActivity(intent)
+                                }
+                                is DependencyAction.None -> Unit
+                            }
+                        }
                     )
                 }
             }
@@ -320,6 +356,76 @@ fun HomeScreen(
                     category = category,
                     onClick = { onNavigateToTest(category.type) }
                 )
+            }
+        }
+    }
+}
+
+@Composable
+private fun DependencyStatusCard(
+    issues: List<DependencyIssue>,
+    onAction: (DependencyIssue) -> Unit
+) {
+    Card(
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.errorContainer
+        ),
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    imageVector = Icons.Filled.VisibilityOff,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.onErrorContainer
+                )
+                Spacer(Modifier.width(8.dp))
+                Text(
+                    text = "Setup required",
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.onErrorContainer,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+
+            issues.forEach { issue ->
+                Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                    Text(
+                        text = issue.title,
+                        style = MaterialTheme.typography.bodyLarge,
+                        fontWeight = FontWeight.SemiBold,
+                        color = MaterialTheme.colorScheme.onErrorContainer
+                    )
+                    Text(
+                        text = issue.description,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onErrorContainer,
+                        maxLines = 3,
+                        overflow = TextOverflow.Ellipsis
+                    )
+                    when (val action = issue.action) {
+                        is DependencyAction.OpenUrl -> {
+                            OutlinedButton(
+                                onClick = { onAction(issue) }
+                            ) {
+                                Text(action.label)
+                            }
+                        }
+                        is DependencyAction.OpenAppSettings -> {
+                            OutlinedButton(
+                                onClick = { onAction(issue) }
+                            ) {
+                                Text(action.label)
+                            }
+                        }
+                        is DependencyAction.None -> {
+                            AssistChip(
+                                onClick = {},
+                                label = { Text(action.label) }
+                            )
+                        }
+                    }
+                }
             }
         }
     }

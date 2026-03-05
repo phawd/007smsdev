@@ -1,6 +1,6 @@
-# Android Device Guide for ZeroSMS
+# Android Device Guide for 007SMS DEV
 
-This guide covers Android device setup, discovery, and SMS/AT command operations for the ZeroSMS testing suite.
+This guide covers Android device setup, discovery, and SMS/AT command operations for the 007SMS DEV testing suite.
 
 ## Device Requirements
 
@@ -45,7 +45,7 @@ Modem paths are auto-detected via `DeviceInfoManager`.
 
 ## AT Command Managers
 
-ZeroSMS supports multiple AT command backends for different chipsets:
+007SMS DEV supports multiple AT command backends for different chipsets:
 
 | Manager | Description | Requirements |
 |---------|-------------|--------------|

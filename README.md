@@ -1,10 +1,12 @@
-# ZeroSMS Testing Suite
+# 007SMS DEV Testing Suite
 
 Comprehensive SMS, MMS, and RCS testing application with full RFC compliance for Android.
 
+Primary mission: support controlled/closed-environment workflows (including CBRS labs) for specialized SMS testing across varied hardware.
+
 ## Overview
 
-ZeroSMS is a professional-grade testing tool designed to validate messaging protocols against industry standards. It provides extensive testing capabilities for:
+007SMS DEV is a professional-grade testing tool designed to validate messaging protocols against industry standards. It provides extensive testing capabilities for:
 
 - **SMS (Short Message Service)** - GSM 03.40, GSM 03.38, 3GPP TS 23.040
 - **MMS (Multimedia Messaging Service)** - OMA MMS Encapsulation Protocol, WAP-209
@@ -75,6 +77,18 @@ ZeroSMS is a professional-grade testing tool designed to validate messaging prot
 - **RFC 6120** - XMPP Core (Extensible Messaging)
 
 ## Architecture
+
+007SMS DEV is organized to keep device-facing protocol work, UI, and reference materials isolated from one another:
+
+- `app/` — Android application code. `core/` holds protocol wrappers and device utilities; `ui/` contains the Compose surfaces; `ZeroSMSApplication.kt` and `MainActivity.kt` wire everything together.
+- `tools/` — Desktop and helper utilities for AT command probing and modem enablement.
+- `legacy/` — A read-only snapshot of the original silent-sms-flash1 project for behavioral comparison.
+- `docs/` — Deep-dive research notes, forensic traces, and implementation guides for each device family.
+- `binaries/`, `mifi_catalog/`, and other hardware artifacts — Collected firmware and extracted assets for investigations.
+
+For compatibility, internal Android package identifiers still use `com.zerosms.testing`; branding and operator-facing text use 007SMS DEV.
+
+The modern Android module targets MVVM with clean boundaries. Protocol-specific code (SMS/MMS/RCS) lives under `core/`, while receivers and trackers focus on lifecycle-safe hooks. Compose screens and navigation live under `ui/` and should depend only on stable interfaces from `core`.
 
 ## Tools: Direct Device Access (Python)
 
@@ -157,7 +171,7 @@ app/
 The original “silent-sms-flash1” Java project has been imported verbatim under
 `legacy/silent-sms-flash1`. This snapshot retains its Groovy Gradle scripts,
 drawables, documentation, and historical APK builds for compliance review. It
-is intentionally isolated from the primary ZeroSMS module—treat it as a
+is intentionally isolated from the primary 007SMS DEV module—treat it as a
 read-only reference when comparing behaviors or porting features forward.
 
 ## Key Components
@@ -236,10 +250,6 @@ python tools/qualcomm_modem_access.py /dev/smd0 sms qualcomm +1234567890 "Hello 
 python tools/qualcomm_modem_access.py /dev/ttyUSB0 sms mtk +1234567890 "Test MTK SMS"
 ```
 
-python tools/qualcomm_modem_access.py /dev/ttyUSB0 sms mtk +1234567890 "Test MTK SMS"
-
-```
-
 This script can be used to:
 
 - Test AT command responses on any supported device path
@@ -260,6 +270,21 @@ This script can be used to:
 - **Kotlin**: 2.1.0
 - **Compose**: BOM 2024.11.00
 - **Android Gradle Plugin**: 8.8.0
+
+### Configuration & Secrets
+
+- Set the Apify API key via `APIFY_API_KEY` in `~/.gradle/gradle.properties` or an environment variable before building. The `app/build.gradle.kts` script reads from Gradle properties first, then falls back to environment variables, and finally to a `REPLACE_ME` placeholder if nothing is provided.
+- Avoid committing real credentials to the repo—use `local.properties` or a `.env`-style export instead.
+- Confirm that `local.properties` and generated binary artifacts remain untracked before opening pull requests.
+- Linux and Bash/WSL examples:
+  - `~/.gradle/gradle.properties`
+    ```
+    APIFY_API_KEY=your_apify_key_here
+    ```
+  - or export for a single shell session:
+    ```bash
+    export APIFY_API_KEY=your_apify_key_here
+    ```
 
 ## Permissions Required
 
@@ -323,7 +348,7 @@ This script can be used to:
 
 ### Desktop Helper (Python)
 
-ZeroSMS ships with a lightweight helper script for desktop automation (`tools/zerosms_cli.py`). It mirrors the APK’s Qualcomm diag toggle and AT-based SMS sending via adb:
+007SMS DEV ships with a lightweight helper script for desktop automation (`tools/zerosms_cli.py`). It mirrors the APK’s Qualcomm diag toggle and AT-based SMS sending via adb:
 
 - `python3 tools/zerosms_cli.py diag --profile inseego-m2000` — enable diag ports for a given preset
 - `python3 tools/zerosms_cli.py diag --ai` — AI mode cycles every preset until diag is active
@@ -383,7 +408,7 @@ exit                 # Exit CLI
 
 ### Quick Start
 
-1. Launch ZeroSMS application
+1. Launch 007SMS DEV application
 2. Grant required permissions
 3. Select test category (SMS/MMS/RCS)
 4. Configure test parameters
@@ -476,4 +501,4 @@ For issues, questions, or contributions, please open an issue on the repository.
 
 ---
 
-**ZeroSMS** - Professional messaging protocol testing for Android is an Android application that allows users to send silent SMS messages without notifying the recipient. This can be useful for various purposes, such as network testing or discreet communication. This is not meant for public distribution and should be used responsibly.
+**007SMS DEV** - Professional messaging protocol testing for Android is an Android application that allows users to send silent SMS messages without notifying the recipient. This can be useful for various purposes, such as network testing or discreet communication. This is not meant for public distribution and should be used responsibly.

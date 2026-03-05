@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
 Helper CLI for enabling Qualcomm diagnostic ports and sending SMS via AT
-commands using adb + root access. This mirrors the ZeroSMS in-app
+commands using adb + root access. This mirrors the 007SMS DEV in-app
 functionality for users who prefer a desktop workflow.
 """
 
 import argparse
 import base64
+import importlib.util
 import json
-
 import platform
 import shutil
 import shlex
@@ -17,9 +17,15 @@ import sys
 from dataclasses import dataclass
 from typing import List, Optional, Tuple
 
-try:
+_serial_spec = importlib.util.find_spec("serial")
+_serial_tools_spec = (
+    importlib.util.find_spec("serial.tools.list_ports")
+    if _serial_spec is not None
+    else None
+)
+if _serial_tools_spec is not None:
     from serial.tools import list_ports
-except Exception:  # pyserial optional
+else:
     list_ports = None
 
 DIAG_PROPERTIES = [
@@ -89,7 +95,10 @@ USE_ROOT = True
 
 def check_prerequisites() -> None:
     if shutil.which("adb") is None:
-        sys.exit("adb is not available on PATH. Install Android Platform Tools first.")
+        print("[ERROR] adb is not available on PATH.")
+        print("Install Android Platform Tools:")
+        print("https://developer.android.com/studio/releases/platform-tools")
+        sys.exit(1)
     if platform.system().lower() == "windows":
         # Warn about missing pyserial for COM scan on Windows
         if list_ports is None:
@@ -97,6 +106,8 @@ def check_prerequisites() -> None:
                 "[!] pyserial not installed; COM port scanning will be unavailable.",
                 file=sys.stderr,
             )
+            print("Install with: pip install pyserial", file=sys.stderr)
+            print("Download: https://pypi.org/project/pyserial/", file=sys.stderr)
 
 
 def run_adb_command(args: List[str]) -> subprocess.CompletedProcess:
@@ -224,7 +235,7 @@ def send_sms_via_at(device: str, destination: str, message: str) -> None:
 
 def build_arg_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="ZeroSMS desktop helper for enabling Qualcomm diag and "
+        description="007SMS DEV desktop helper for enabling Qualcomm diag and "
         "sending SMS via AT commands.",
     )
     parser.add_argument(
@@ -551,9 +562,16 @@ def list_com_ports() -> List[dict]:
 
 
 def main() -> None:
-    check_prerequisites()
     parser = build_arg_parser()
     args = parser.parse_args()
+
+    if args.command in {"diag", "sms", "probe"}:
+        check_prerequisites()
+    elif args.command == "comscan" and list_ports is None:
+        print("[ERROR] pyserial is required for comscan.")
+        print("Install with: pip install pyserial")
+        print("Download: https://pypi.org/project/pyserial/")
+        sys.exit(1)
     global USE_ROOT
     USE_ROOT = not args.adb_non_root
 

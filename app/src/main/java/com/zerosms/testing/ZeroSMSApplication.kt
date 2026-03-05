@@ -9,7 +9,7 @@ class ZeroSMSApplication : Application() {
     
     companion object {
         const val NOTIFICATION_CHANNEL_ID = "zerosms_channel"
-        const val NOTIFICATION_CHANNEL_NAME = "ZeroSMS Notifications"
+        const val NOTIFICATION_CHANNEL_NAME = "007SMS DEV Notifications"
     }
     
     override fun onCreate() {

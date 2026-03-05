@@ -1,9 +1,22 @@
-import sys
-import serial
-import time
-import serial.tools.list_ports
-
+import importlib.util
+import shutil
 import subprocess
+import sys
+import time
+
+serial = None
+
+
+def ensure_pyserial():
+    global serial
+    if importlib.util.find_spec("serial") is None:
+        print("[ERROR] Missing dependency: pyserial")
+        print("Install with: pip install pyserial")
+        print("Download: https://pypi.org/project/pyserial/")
+        sys.exit(1)
+    import serial  # noqa: F401
+    import serial.tools.list_ports  # noqa: F401
+    return serial
 
 
 def enable_diag_port(device_type):
@@ -15,6 +28,12 @@ def enable_diag_port(device_type):
         print(
             "  adb shell su -c 'setprop persist.sys.usb.config diag,serial_cdev,rmnet,adb'"
         )
+        if shutil.which("adb") is None:
+            print("  [!] adb not found on PATH.")
+            print("  Download Android Platform Tools:")
+            print("  https://developer.android.com/studio/releases/platform-tools")
+            print()
+            return
         print("  (You may need to reboot or replug USB)")
         try:
             subprocess.run(
@@ -49,6 +68,7 @@ def enable_diag_port(device_type):
 
 
 def list_serial_ports():
+    ensure_pyserial()
     print("Available serial ports:")
     ports = serial.tools.list_ports.comports()
     for idx, port in enumerate(ports):
@@ -70,6 +90,7 @@ def list_serial_ports():
 
 
 def send_at_command(device_path, command, baudrate=115200, timeout=2, wait=0.5):
+    ensure_pyserial()
     try:
         with serial.Serial(device_path, baudrate, timeout=timeout) as ser:
             ser.write((command + "\r").encode())
@@ -96,6 +117,7 @@ def initialize_modem(device_path, modem_type, baudrate=115200):
 
 
 def send_sms(device_path, modem_type, phone_number, message, baudrate=115200):
+    ensure_pyserial()
     print(f"[INFO] Sending SMS to {phone_number} via {modem_type} modem...")
     # Set text mode
     print(send_at_command(device_path, "AT+CMGF=1", baudrate))

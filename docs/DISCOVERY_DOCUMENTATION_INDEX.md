@@ -1,7 +1,7 @@
-# ZeroSMS Extended Discovery Documentation Index
+# 007SMS DEV Extended Discovery Documentation Index
 
 **Last Updated**: December 4, 2025  
-**Project**: ZeroSMS - Android SMS/MMS/RCS Testing Suite with Extended Device Research  
+**Project**: 007SMS DEV - Android SMS/MMS/RCS Testing Suite with Extended Device Research  
 **Status**: Session 3 Complete - Writable NV Item Confirmed
 
 ## Quick Navigation

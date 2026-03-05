@@ -5,7 +5,7 @@ import android.util.Log
 import java.io.File
 
 /**
- * Optimization analyzer for ZeroSMS codebase
+ * Optimization analyzer for 007SMS DEV codebase
  * Recursively searches for optimization opportunities
  */
 class OptimizationAnalyzer(private val context: Context) {
@@ -203,7 +203,7 @@ class OptimizationAnalyzer(private val context: Context) {
     
     fun generateOptimizationReport(suggestions: List<OptimizationSuggestion>): String {
         val report = StringBuilder()
-        report.appendLine("=== ZeroSMS Codebase Optimization Report ===\n")
+        report.appendLine("=== 007SMS DEV Codebase Optimization Report ===\n")
         
         val groupedSuggestions = suggestions.groupBy { it.type }
         
