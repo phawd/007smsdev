@@ -24,11 +24,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up JDK 17
+      - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 17
+          java-version: 21
 
       - name: Cache Gradle
         uses: actions/cache@v4
@@ -46,6 +46,14 @@ jobs:
 
       - name: Run Unit Tests
         run: ./gradlew testDebugUnitTest --no-daemon || true
+
+      - name: Upload Debug APK
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: ignore
 
       - name: Run ktlint
         run: |
