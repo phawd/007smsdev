@@ -1,0 +1,226 @@
+Classfile /F:/repo/007smsdev/analysis/ant_javacard_extracted/pro/javacard/sdk/JavaCardSDK$2.class
+  Last modified Sep 20, 2025; size 1110 bytes
+  SHA-256 checksum 29fa03f0f9a370b12e83464f073a5ba307b520647f484a8677fafb13f6b864fc
+  Compiled from "JavaCardSDK.java"
+class pro.javacard.sdk.JavaCardSDK$2
+  minor version: 0
+  major version: 52
+  flags: (0x1020) ACC_SUPER, ACC_SYNTHETIC
+  this_class: #16                         // pro/javacard/sdk/JavaCardSDK$2
+  super_class: #17                        // java/lang/Object
+  interfaces: 0, fields: 1, methods: 1, attributes: 3
+Constant pool:
+   #1 = Methodref          #30.#31        // pro/javacard/sdk/SDKVersion.values:()[Lpro/javacard/sdk/SDKVersion;
+   #2 = Fieldref           #16.#32        // pro/javacard/sdk/JavaCardSDK$2.$SwitchMap$pro$javacard$sdk$SDKVersion:[I
+   #3 = Fieldref           #30.#33        // pro/javacard/sdk/SDKVersion.V212:Lpro/javacard/sdk/SDKVersion;
+   #4 = Methodref          #30.#34        // pro/javacard/sdk/SDKVersion.ordinal:()I
+   #5 = Class              #35            // java/lang/NoSuchFieldError
+   #6 = Fieldref           #30.#36        // pro/javacard/sdk/SDKVersion.V310:Lpro/javacard/sdk/SDKVersion;
+   #7 = Fieldref           #30.#37        // pro/javacard/sdk/SDKVersion.V320:Lpro/javacard/sdk/SDKVersion;
+   #8 = Fieldref           #30.#38        // pro/javacard/sdk/SDKVersion.V320_24_1:Lpro/javacard/sdk/SDKVersion;
+   #9 = Fieldref           #30.#39        // pro/javacard/sdk/SDKVersion.V320_25_0:Lpro/javacard/sdk/SDKVersion;
+  #10 = Fieldref           #30.#40        // pro/javacard/sdk/SDKVersion.V211:Lpro/javacard/sdk/SDKVersion;
+  #11 = Fieldref           #30.#41        // pro/javacard/sdk/SDKVersion.V221:Lpro/javacard/sdk/SDKVersion;
+  #12 = Fieldref           #30.#42        // pro/javacard/sdk/SDKVersion.V222:Lpro/javacard/sdk/SDKVersion;
+  #13 = Fieldref           #30.#43        // pro/javacard/sdk/SDKVersion.V301:Lpro/javacard/sdk/SDKVersion;
+  #14 = Fieldref           #30.#44        // pro/javacard/sdk/SDKVersion.V304:Lpro/javacard/sdk/SDKVersion;
+  #15 = Fieldref           #30.#45        // pro/javacard/sdk/SDKVersion.V305:Lpro/javacard/sdk/SDKVersion;
+  #16 = Class              #46            // pro/javacard/sdk/JavaCardSDK$2
+  #17 = Class              #48            // java/lang/Object
+  #18 = Utf8               $SwitchMap$pro$javacard$sdk$SDKVersion
+  #19 = Utf8               [I
+  #20 = Utf8               <clinit>
+  #21 = Utf8               ()V
+  #22 = Utf8               Code
+  #23 = Utf8               LineNumberTable
+  #24 = Utf8               LocalVariableTable
+  #25 = Utf8               StackMapTable
+  #26 = Utf8               SourceFile
+  #27 = Utf8               JavaCardSDK.java
+  #28 = Utf8               EnclosingMethod
+  #29 = Class              #49            // pro/javacard/sdk/JavaCardSDK
+  #30 = Class              #50            // pro/javacard/sdk/SDKVersion
+  #31 = NameAndType        #51:#52        // values:()[Lpro/javacard/sdk/SDKVersion;
+  #32 = NameAndType        #18:#19        // $SwitchMap$pro$javacard$sdk$SDKVersion:[I
+  #33 = NameAndType        #53:#54        // V212:Lpro/javacard/sdk/SDKVersion;
+  #34 = NameAndType        #55:#56        // ordinal:()I
+  #35 = Utf8               java/lang/NoSuchFieldError
+  #36 = NameAndType        #57:#54        // V310:Lpro/javacard/sdk/SDKVersion;
+  #37 = NameAndType        #58:#54        // V320:Lpro/javacard/sdk/SDKVersion;
+  #38 = NameAndType        #59:#54        // V320_24_1:Lpro/javacard/sdk/SDKVersion;
+  #39 = NameAndType        #60:#54        // V320_25_0:Lpro/javacard/sdk/SDKVersion;
+  #40 = NameAndType        #61:#54        // V211:Lpro/javacard/sdk/SDKVersion;
+  #41 = NameAndType        #62:#54        // V221:Lpro/javacard/sdk/SDKVersion;
+  #42 = NameAndType        #63:#54        // V222:Lpro/javacard/sdk/SDKVersion;
+  #43 = NameAndType        #64:#54        // V301:Lpro/javacard/sdk/SDKVersion;
+  #44 = NameAndType        #65:#54        // V304:Lpro/javacard/sdk/SDKVersion;
+  #45 = NameAndType        #66:#54        // V305:Lpro/javacard/sdk/SDKVersion;
+  #46 = Utf8               pro/javacard/sdk/JavaCardSDK$2
+  #47 = Utf8               InnerClasses
+  #48 = Utf8               java/lang/Object
+  #49 = Utf8               pro/javacard/sdk/JavaCardSDK
+  #50 = Utf8               pro/javacard/sdk/SDKVersion
+  #51 = Utf8               values
+  #52 = Utf8               ()[Lpro/javacard/sdk/SDKVersion;
+  #53 = Utf8               V212
+  #54 = Utf8               Lpro/javacard/sdk/SDKVersion;
+  #55 = Utf8               ordinal
+  #56 = Utf8               ()I
+  #57 = Utf8               V310
+  #58 = Utf8               V320
+  #59 = Utf8               V320_24_1
+  #60 = Utf8               V320_25_0
+  #61 = Utf8               V211
+  #62 = Utf8               V221
+  #63 = Utf8               V222
+  #64 = Utf8               V301
+  #65 = Utf8               V304
+  #66 = Utf8               V305
+{
+  static final int[] $SwitchMap$pro$javacard$sdk$SDKVersion;
+    descriptor: [I
+    flags: (0x1018) ACC_STATIC, ACC_FINAL, ACC_SYNTHETIC
+
+  static {};
+    descriptor: ()V
+    flags: (0x0008) ACC_STATIC
+    Code:
+      stack=3, locals=1, args_size=0
+         0: invokestatic  #1                  // Method pro/javacard/sdk/SDKVersion.values:()[Lpro/javacard/sdk/SDKVersion;
+         3: arraylength
+         4: newarray       int
+         6: putstatic     #2                  // Field $SwitchMap$pro$javacard$sdk$SDKVersion:[I
+         9: getstatic     #2                  // Field $SwitchMap$pro$javacard$sdk$SDKVersion:[I
+        12: getstatic     #3                  // Field pro/javacard/sdk/SDKVersion.V212:Lpro/javacard/sdk/SDKVersion;
+        15: invokevirtual #4                  // Method pro/javacard/sdk/SDKVersion.ordinal:()I
+        18: iconst_1
+        19: iastore
+        20: goto          24
+        23: astore_0
+        24: getstatic     #2                  // Field $SwitchMap$pro$javacard$sdk$SDKVersion:[I
+        27: getstatic     #6                  // Field pro/javacard/sdk/SDKVersion.V310:Lpro/javacard/sdk/SDKVersion;
+        30: invokevirtual #4                  // Method pro/javacard/sdk/SDKVersion.ordinal:()I
+        33: iconst_2
+        34: iastore
+        35: goto          39
+        38: astore_0
+        39: getstatic     #2                  // Field $SwitchMap$pro$javacard$sdk$SDKVersion:[I
+        42: getstatic     #7                  // Field pro/javacard/sdk/SDKVersion.V320:Lpro/javacard/sdk/SDKVersion;
+        45: invokevirtual #4                  // Method pro/javacard/sdk/SDKVersion.ordinal:()I
+        48: iconst_3
+        49: iastore
+        50: goto          54
+        53: astore_0
+        54: getstatic     #2                  // Field $SwitchMap$pro$javacard$sdk$SDKVersion:[I
+        57: getstatic     #8                  // Field pro/javacard/sdk/SDKVersion.V320_24_1:Lpro/javacard/sdk/SDKVersion;
+        60: invokevirtual #4                  // Method pro/javacard/sdk/SDKVersion.ordinal:()I
+        63: iconst_4
+        64: iastore
+        65: goto          69
+        68: astore_0
+        69: getstatic     #2                  // Field $SwitchMap$pro$javacard$sdk$SDKVersion:[I
+        72: getstatic     #9                  // Field pro/javacard/sdk/SDKVersion.V320_25_0:Lpro/javacard/sdk/SDKVersion;
+        75: invokevirtual #4                  // Method pro/javacard/sdk/SDKVersion.ordinal:()I
+        78: iconst_5
+        79: iastore
+        80: goto          84
+        83: astore_0
+        84: getstatic     #2                  // Field $SwitchMap$pro$javacard$sdk$SDKVersion:[I
+        87: getstatic     #10                 // Field pro/javacard/sdk/SDKVersion.V211:Lpro/javacard/sdk/SDKVersion;
+        90: invokevirtual #4                  // Method pro/javacard/sdk/SDKVersion.ordinal:()I
+        93: bipush        6
+        95: iastore
+        96: goto          100
+        99: astore_0
+       100: getstatic     #2                  // Field $SwitchMap$pro$javacard$sdk$SDKVersion:[I
+       103: getstatic     #11                 // Field pro/javacard/sdk/SDKVersion.V221:Lpro/javacard/sdk/SDKVersion;
+       106: invokevirtual #4                  // Method pro/javacard/sdk/SDKVersion.ordinal:()I
+       109: bipush        7
+       111: iastore
+       112: goto          116
+       115: astore_0
+       116: getstatic     #2                  // Field $SwitchMap$pro$javacard$sdk$SDKVersion:[I
+       119: getstatic     #12                 // Field pro/javacard/sdk/SDKVersion.V222:Lpro/javacard/sdk/SDKVersion;
+       122: invokevirtual #4                  // Method pro/javacard/sdk/SDKVersion.ordinal:()I
+       125: bipush        8
+       127: iastore
+       128: goto          132
+       131: astore_0
+       132: getstatic     #2                  // Field $SwitchMap$pro$javacard$sdk$SDKVersion:[I
+       135: getstatic     #13                 // Field pro/javacard/sdk/SDKVersion.V301:Lpro/javacard/sdk/SDKVersion;
+       138: invokevirtual #4                  // Method pro/javacard/sdk/SDKVersion.ordinal:()I
+       141: bipush        9
+       143: iastore
+       144: goto          148
+       147: astore_0
+       148: getstatic     #2                  // Field $SwitchMap$pro$javacard$sdk$SDKVersion:[I
+       151: getstatic     #14                 // Field pro/javacard/sdk/SDKVersion.V304:Lpro/javacard/sdk/SDKVersion;
+       154: invokevirtual #4                  // Method pro/javacard/sdk/SDKVersion.ordinal:()I
+       157: bipush        10
+       159: iastore
+       160: goto          164
+       163: astore_0
+       164: getstatic     #2                  // Field $SwitchMap$pro$javacard$sdk$SDKVersion:[I
+       167: getstatic     #15                 // Field pro/javacard/sdk/SDKVersion.V305:Lpro/javacard/sdk/SDKVersion;
+       170: invokevirtual #4                  // Method pro/javacard/sdk/SDKVersion.ordinal:()I
+       173: bipush        11
+       175: iastore
+       176: goto          180
+       179: astore_0
+       180: return
+      Exception table:
+         from    to  target type
+             9    20    23   Class java/lang/NoSuchFieldError
+            24    35    38   Class java/lang/NoSuchFieldError
+            39    50    53   Class java/lang/NoSuchFieldError
+            54    65    68   Class java/lang/NoSuchFieldError
+            69    80    83   Class java/lang/NoSuchFieldError
+            84    96    99   Class java/lang/NoSuchFieldError
+           100   112   115   Class java/lang/NoSuchFieldError
+           116   128   131   Class java/lang/NoSuchFieldError
+           132   144   147   Class java/lang/NoSuchFieldError
+           148   160   163   Class java/lang/NoSuchFieldError
+           164   176   179   Class java/lang/NoSuchFieldError
+      LineNumberTable:
+        line 219: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+      StackMapTable: number_of_entries = 22
+        frame_type = 87 /* same_locals_1_stack_item */
+          stack = [ class java/lang/NoSuchFieldError ]
+        frame_type = 0 /* same */
+        frame_type = 77 /* same_locals_1_stack_item */
+          stack = [ class java/lang/NoSuchFieldError ]
+        frame_type = 0 /* same */
+        frame_type = 77 /* same_locals_1_stack_item */
+          stack = [ class java/lang/NoSuchFieldError ]
+        frame_type = 0 /* same */
+        frame_type = 77 /* same_locals_1_stack_item */
+          stack = [ class java/lang/NoSuchFieldError ]
+        frame_type = 0 /* same */
+        frame_type = 77 /* same_locals_1_stack_item */
+          stack = [ class java/lang/NoSuchFieldError ]
+        frame_type = 0 /* same */
+        frame_type = 78 /* same_locals_1_stack_item */
+          stack = [ class java/lang/NoSuchFieldError ]
+        frame_type = 0 /* same */
+        frame_type = 78 /* same_locals_1_stack_item */
+          stack = [ class java/lang/NoSuchFieldError ]
+        frame_type = 0 /* same */
+        frame_type = 78 /* same_locals_1_stack_item */
+          stack = [ class java/lang/NoSuchFieldError ]
+        frame_type = 0 /* same */
+        frame_type = 78 /* same_locals_1_stack_item */
+          stack = [ class java/lang/NoSuchFieldError ]
+        frame_type = 0 /* same */
+        frame_type = 78 /* same_locals_1_stack_item */
+          stack = [ class java/lang/NoSuchFieldError ]
+        frame_type = 0 /* same */
+        frame_type = 78 /* same_locals_1_stack_item */
+          stack = [ class java/lang/NoSuchFieldError ]
+        frame_type = 0 /* same */
+}
+SourceFile: "JavaCardSDK.java"
+EnclosingMethod: #29.#0                 // pro.javacard.sdk.JavaCardSDK
+InnerClasses:
+  static #16;                             // class pro/javacard/sdk/JavaCardSDK$2

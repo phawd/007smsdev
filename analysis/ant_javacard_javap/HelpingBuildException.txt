@@ -1,0 +1,79 @@
+Classfile /F:/repo/007smsdev/analysis/ant_javacard_extracted/pro/javacard/ant/HelpingBuildException.class
+  Last modified Sep 20, 2025; size 710 bytes
+  SHA-256 checksum 4877609f91257266a4e3e2b0079915c58ded51655e505a59a9ca45589b4766b0
+  Compiled from "HelpingBuildException.java"
+public class pro.javacard.ant.HelpingBuildException extends org.apache.tools.ant.BuildException
+  minor version: 0
+  major version: 52
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #7                          // pro/javacard/ant/HelpingBuildException
+  super_class: #8                         // org/apache/tools/ant/BuildException
+  interfaces: 0, fields: 1, methods: 1, attributes: 1
+Constant pool:
+   #1 = Class              #25            // java/lang/StringBuilder
+   #2 = Methodref          #1.#26         // java/lang/StringBuilder."<init>":()V
+   #3 = Methodref          #1.#27         // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #4 = String             #28            // \n\nPLEASE READ https://github.com/martinpaljak/ant-javacard#readme
+   #5 = Methodref          #1.#29         // java/lang/StringBuilder.toString:()Ljava/lang/String;
+   #6 = Methodref          #8.#30         // org/apache/tools/ant/BuildException."<init>":(Ljava/lang/String;)V
+   #7 = Class              #31            // pro/javacard/ant/HelpingBuildException
+   #8 = Class              #32            // org/apache/tools/ant/BuildException
+   #9 = Utf8               serialVersionUID
+  #10 = Utf8               J
+  #11 = Utf8               ConstantValue
+  #12 = Long               -2365126253968479314l
+  #14 = Utf8               <init>
+  #15 = Utf8               (Ljava/lang/String;)V
+  #16 = Utf8               Code
+  #17 = Utf8               LineNumberTable
+  #18 = Utf8               LocalVariableTable
+  #19 = Utf8               this
+  #20 = Utf8               Lpro/javacard/ant/HelpingBuildException;
+  #21 = Utf8               msg
+  #22 = Utf8               Ljava/lang/String;
+  #23 = Utf8               SourceFile
+  #24 = Utf8               HelpingBuildException.java
+  #25 = Utf8               java/lang/StringBuilder
+  #26 = NameAndType        #14:#33        // "<init>":()V
+  #27 = NameAndType        #34:#35        // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #28 = Utf8               \n\nPLEASE READ https://github.com/martinpaljak/ant-javacard#readme
+  #29 = NameAndType        #36:#37        // toString:()Ljava/lang/String;
+  #30 = NameAndType        #14:#15        // "<init>":(Ljava/lang/String;)V
+  #31 = Utf8               pro/javacard/ant/HelpingBuildException
+  #32 = Utf8               org/apache/tools/ant/BuildException
+  #33 = Utf8               ()V
+  #34 = Utf8               append
+  #35 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #36 = Utf8               toString
+  #37 = Utf8               ()Ljava/lang/String;
+{
+  private static final long serialVersionUID;
+    descriptor: J
+    flags: (0x001a) ACC_PRIVATE, ACC_STATIC, ACC_FINAL
+    ConstantValue: long -2365126253968479314l
+
+  public pro.javacard.ant.HelpingBuildException(java.lang.String);
+    descriptor: (Ljava/lang/String;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=2, args_size=2
+         0: aload_0
+         1: new           #1                  // class java/lang/StringBuilder
+         4: dup
+         5: invokespecial #2                  // Method java/lang/StringBuilder."<init>":()V
+         8: aload_1
+         9: invokevirtual #3                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        12: ldc           #4                  // String \n\nPLEASE READ https://github.com/martinpaljak/ant-javacard#readme
+        14: invokevirtual #3                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        17: invokevirtual #5                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        20: invokespecial #6                  // Method org/apache/tools/ant/BuildException."<init>":(Ljava/lang/String;)V
+        23: return
+      LineNumberTable:
+        line 30: 0
+        line 31: 23
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      24     0  this   Lpro/javacard/ant/HelpingBuildException;
+            0      24     1   msg   Ljava/lang/String;
+}
+SourceFile: "HelpingBuildException.java"

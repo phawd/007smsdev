@@ -1,0 +1,334 @@
+Classfile /F:/repo/007smsdev/analysis/ant_javacard_extracted/pro/javacard/capfile/AID.class
+  Last modified Sep 20, 2025; size 2012 bytes
+  SHA-256 checksum f5e08d1990cee850c729fabc61464c57b464eca8298172429b7fca9d2abf036d
+  Compiled from "AID.java"
+public final class pro.javacard.capfile.AID
+  minor version: 0
+  major version: 52
+  flags: (0x0031) ACC_PUBLIC, ACC_FINAL, ACC_SUPER
+  this_class: #16                         // pro/javacard/capfile/AID
+  super_class: #24                        // java/lang/Object
+  interfaces: 0, fields: 1, methods: 9, attributes: 1
+Constant pool:
+    #1 = Methodref          #16.#59       // pro/javacard/capfile/AID."<init>":([BII)V
+    #2 = Methodref          #60.#61       // pro/javacard/capfile/HexUtils.hex2bin:(Ljava/lang/String;)[B
+    #3 = Methodref          #16.#62       // pro/javacard/capfile/AID."<init>":([B)V
+    #4 = Methodref          #24.#63       // java/lang/Object."<init>":()V
+    #5 = Class              #64           // java/lang/IllegalArgumentException
+    #6 = Class              #65           // java/lang/StringBuilder
+    #7 = Methodref          #6.#63        // java/lang/StringBuilder."<init>":()V
+    #8 = String             #66           // AID must be between 5 and 16 bytes:
+    #9 = Methodref          #6.#67        // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #10 = Methodref          #6.#68        // java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+   #11 = Methodref          #6.#69        // java/lang/StringBuilder.toString:()Ljava/lang/String;
+   #12 = Methodref          #5.#70        // java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+   #13 = Methodref          #71.#72       // java/util/Arrays.copyOfRange:([BII)[B
+   #14 = Fieldref           #16.#73       // pro/javacard/capfile/AID.bytes:[B
+   #15 = Class              #74           // java/lang/String
+   #16 = Class              #75           // pro/javacard/capfile/AID
+   #17 = Methodref          #60.#76       // pro/javacard/capfile/HexUtils.stringToBin:(Ljava/lang/String;)[B
+   #18 = String             #77           // AID should be string
+   #19 = Methodref          #78.#79       // "[B".clone:()Ljava/lang/Object;
+   #20 = Class              #26           // "[B"
+   #21 = Methodref          #60.#80       // pro/javacard/capfile/HexUtils.bin2hex:([B)Ljava/lang/String;
+   #22 = Methodref          #71.#81       // java/util/Arrays.hashCode:([B)I
+   #23 = Methodref          #71.#82       // java/util/Arrays.equals:([B[B)Z
+   #24 = Class              #83           // java/lang/Object
+   #25 = Utf8               bytes
+   #26 = Utf8               [B
+   #27 = Utf8               <init>
+   #28 = Utf8               ([B)V
+   #29 = Utf8               Code
+   #30 = Utf8               LineNumberTable
+   #31 = Utf8               LocalVariableTable
+   #32 = Utf8               this
+   #33 = Utf8               Lpro/javacard/capfile/AID;
+   #34 = Utf8               Exceptions
+   #35 = Utf8               (Ljava/lang/String;)V
+   #36 = Utf8               str
+   #37 = Utf8               Ljava/lang/String;
+   #38 = Utf8               ([BII)V
+   #39 = Utf8               offset
+   #40 = Utf8               I
+   #41 = Utf8               length
+   #42 = Utf8               StackMapTable
+   #43 = Utf8               fromString
+   #44 = Utf8               (Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+   #45 = Utf8               s
+   #46 = Utf8               Ljava/lang/Object;
+   #47 = Utf8               getBytes
+   #48 = Utf8               ()[B
+   #49 = Utf8               getLength
+   #50 = Utf8               ()I
+   #51 = Utf8               toString
+   #52 = Utf8               ()Ljava/lang/String;
+   #53 = Utf8               hashCode
+   #54 = Utf8               equals
+   #55 = Utf8               (Ljava/lang/Object;)Z
+   #56 = Utf8               o
+   #57 = Utf8               SourceFile
+   #58 = Utf8               AID.java
+   #59 = NameAndType        #27:#38       // "<init>":([BII)V
+   #60 = Class              #84           // pro/javacard/capfile/HexUtils
+   #61 = NameAndType        #85:#86       // hex2bin:(Ljava/lang/String;)[B
+   #62 = NameAndType        #27:#28       // "<init>":([B)V
+   #63 = NameAndType        #27:#87       // "<init>":()V
+   #64 = Utf8               java/lang/IllegalArgumentException
+   #65 = Utf8               java/lang/StringBuilder
+   #66 = Utf8               AID must be between 5 and 16 bytes:
+   #67 = NameAndType        #88:#89       // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #68 = NameAndType        #88:#90       // append:(I)Ljava/lang/StringBuilder;
+   #69 = NameAndType        #51:#52       // toString:()Ljava/lang/String;
+   #70 = NameAndType        #27:#35       // "<init>":(Ljava/lang/String;)V
+   #71 = Class              #91           // java/util/Arrays
+   #72 = NameAndType        #92:#93       // copyOfRange:([BII)[B
+   #73 = NameAndType        #25:#26       // bytes:[B
+   #74 = Utf8               java/lang/String
+   #75 = Utf8               pro/javacard/capfile/AID
+   #76 = NameAndType        #94:#86       // stringToBin:(Ljava/lang/String;)[B
+   #77 = Utf8               AID should be string
+   #78 = Class              #26           // "[B"
+   #79 = NameAndType        #95:#96       // clone:()Ljava/lang/Object;
+   #80 = NameAndType        #97:#98       // bin2hex:([B)Ljava/lang/String;
+   #81 = NameAndType        #53:#99       // hashCode:([B)I
+   #82 = NameAndType        #54:#100      // equals:([B[B)Z
+   #83 = Utf8               java/lang/Object
+   #84 = Utf8               pro/javacard/capfile/HexUtils
+   #85 = Utf8               hex2bin
+   #86 = Utf8               (Ljava/lang/String;)[B
+   #87 = Utf8               ()V
+   #88 = Utf8               append
+   #89 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #90 = Utf8               (I)Ljava/lang/StringBuilder;
+   #91 = Utf8               java/util/Arrays
+   #92 = Utf8               copyOfRange
+   #93 = Utf8               ([BII)[B
+   #94 = Utf8               stringToBin
+   #95 = Utf8               clone
+   #96 = Utf8               ()Ljava/lang/Object;
+   #97 = Utf8               bin2hex
+   #98 = Utf8               ([B)Ljava/lang/String;
+   #99 = Utf8               ([B)I
+  #100 = Utf8               ([B[B)Z
+{
+  private final byte[] bytes;
+    descriptor: [B
+    flags: (0x0012) ACC_PRIVATE, ACC_FINAL
+
+  public pro.javacard.capfile.AID(byte[]) throws java.lang.IllegalArgumentException;
+    descriptor: ([B)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=4, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: iconst_0
+         3: aload_1
+         4: arraylength
+         5: invokespecial #1                  // Method "<init>":([BII)V
+         8: return
+      LineNumberTable:
+        line 31: 0
+        line 32: 8
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       9     0  this   Lpro/javacard/capfile/AID;
+            0       9     1 bytes   [B
+    Exceptions:
+      throws java.lang.IllegalArgumentException
+
+  public pro.javacard.capfile.AID(java.lang.String) throws java.lang.IllegalArgumentException;
+    descriptor: (Ljava/lang/String;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: invokestatic  #2                  // Method pro/javacard/capfile/HexUtils.hex2bin:(Ljava/lang/String;)[B
+         5: invokespecial #3                  // Method "<init>":([B)V
+         8: return
+      LineNumberTable:
+        line 35: 0
+        line 36: 8
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       9     0  this   Lpro/javacard/capfile/AID;
+            0       9     1   str   Ljava/lang/String;
+    Exceptions:
+      throws java.lang.IllegalArgumentException
+
+  public pro.javacard.capfile.AID(byte[], int, int) throws java.lang.IllegalArgumentException;
+    descriptor: ([BII)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=5, locals=4, args_size=4
+         0: aload_0
+         1: invokespecial #4                  // Method java/lang/Object."<init>":()V
+         4: iload_3
+         5: iconst_5
+         6: if_icmplt     15
+         9: iload_3
+        10: bipush        16
+        12: if_icmple     42
+        15: new           #5                  // class java/lang/IllegalArgumentException
+        18: dup
+        19: new           #6                  // class java/lang/StringBuilder
+        22: dup
+        23: invokespecial #7                  // Method java/lang/StringBuilder."<init>":()V
+        26: ldc           #8                  // String AID must be between 5 and 16 bytes:
+        28: invokevirtual #9                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        31: iload_3
+        32: invokevirtual #10                 // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        35: invokevirtual #11                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        38: invokespecial #12                 // Method java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+        41: athrow
+        42: aload_0
+        43: aload_1
+        44: iload_2
+        45: iload_2
+        46: iload_3
+        47: iadd
+        48: invokestatic  #13                 // Method java/util/Arrays.copyOfRange:([BII)[B
+        51: putfield      #14                 // Field bytes:[B
+        54: return
+      LineNumberTable:
+        line 38: 0
+        line 39: 4
+        line 40: 15
+        line 42: 42
+        line 43: 54
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      55     0  this   Lpro/javacard/capfile/AID;
+            0      55     1 bytes   [B
+            0      55     2 offset   I
+            0      55     3 length   I
+      StackMapTable: number_of_entries = 2
+        frame_type = 255 /* full_frame */
+          offset_delta = 15
+          locals = [ class pro/javacard/capfile/AID, class "[B", int, int ]
+          stack = []
+        frame_type = 26 /* same */
+    Exceptions:
+      throws java.lang.IllegalArgumentException
+
+  public static pro.javacard.capfile.AID fromString(java.lang.Object);
+    descriptor: (Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: aload_0
+         1: instanceof    #15                 // class java/lang/String
+         4: ifeq          22
+         7: new           #16                 // class pro/javacard/capfile/AID
+        10: dup
+        11: aload_0
+        12: checkcast     #15                 // class java/lang/String
+        15: invokestatic  #17                 // Method pro/javacard/capfile/HexUtils.stringToBin:(Ljava/lang/String;)[B
+        18: invokespecial #3                  // Method "<init>":([B)V
+        21: areturn
+        22: new           #5                  // class java/lang/IllegalArgumentException
+        25: dup
+        26: ldc           #18                 // String AID should be string
+        28: invokespecial #12                 // Method java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+        31: athrow
+      LineNumberTable:
+        line 46: 0
+        line 47: 7
+        line 49: 22
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      32     0     s   Ljava/lang/Object;
+      StackMapTable: number_of_entries = 1
+        frame_type = 22 /* same */
+
+  public byte[] getBytes();
+    descriptor: ()[B
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #14                 // Field bytes:[B
+         4: invokevirtual #19                 // Method "[B".clone:()Ljava/lang/Object;
+         7: checkcast     #20                 // class "[B"
+        10: areturn
+      LineNumberTable:
+        line 53: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      11     0  this   Lpro/javacard/capfile/AID;
+
+  public int getLength();
+    descriptor: ()I
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #14                 // Field bytes:[B
+         4: arraylength
+         5: ireturn
+      LineNumberTable:
+        line 57: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   Lpro/javacard/capfile/AID;
+
+  public java.lang.String toString();
+    descriptor: ()Ljava/lang/String;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #14                 // Field bytes:[B
+         4: invokestatic  #21                 // Method pro/javacard/capfile/HexUtils.bin2hex:([B)Ljava/lang/String;
+         7: areturn
+      LineNumberTable:
+        line 62: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       8     0  this   Lpro/javacard/capfile/AID;
+
+  public int hashCode();
+    descriptor: ()I
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #14                 // Field bytes:[B
+         4: invokestatic  #22                 // Method java/util/Arrays.hashCode:([B)I
+         7: ireturn
+      LineNumberTable:
+        line 67: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       8     0  this   Lpro/javacard/capfile/AID;
+
+  public boolean equals(java.lang.Object);
+    descriptor: (Ljava/lang/Object;)Z
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_1
+         1: instanceof    #16                 // class pro/javacard/capfile/AID
+         4: ifeq          22
+         7: aload_1
+         8: checkcast     #16                 // class pro/javacard/capfile/AID
+        11: getfield      #14                 // Field bytes:[B
+        14: aload_0
+        15: getfield      #14                 // Field bytes:[B
+        18: invokestatic  #23                 // Method java/util/Arrays.equals:([B[B)Z
+        21: ireturn
+        22: iconst_0
+        23: ireturn
+      LineNumberTable:
+        line 72: 0
+        line 73: 7
+        line 75: 22
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      24     0  this   Lpro/javacard/capfile/AID;
+            0      24     1     o   Ljava/lang/Object;
+      StackMapTable: number_of_entries = 1
+        frame_type = 22 /* same */
+}
+SourceFile: "AID.java"

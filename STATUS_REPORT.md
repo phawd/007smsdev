@@ -315,8 +315,8 @@ Proof: NV 60044 changed from "PRI.90029477..." to "NVTL rocks!!"
 
 ### 🔴 Critical (Blocking)
 
-1. **Install Ghidra**
-   - Download: <https://github.com/NationalSecurityAgency/ghidra/releases>
+1. ✅ **Install Ghidra**
+   - Installed in: `c:\ghidra`
    - Install JDK 11+: `winget install Oracle.JDK.21`
    - Configure: ARM:LE:32:v7
 

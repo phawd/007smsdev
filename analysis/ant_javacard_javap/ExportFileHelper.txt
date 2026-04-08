@@ -1,0 +1,282 @@
+Classfile /F:/repo/007smsdev/analysis/ant_javacard_extracted/pro/javacard/sdk/ExportFileHelper.class
+  Last modified Sep 20, 2025; size 2089 bytes
+  SHA-256 checksum 4e2107736a5ea306c42cf48c95b5b061cb75bd3c74414bb5191393edeb42ce0b
+  Compiled from "ExportFileHelper.java"
+public final class pro.javacard.sdk.ExportFileHelper
+  minor version: 0
+  major version: 52
+  flags: (0x0031) ACC_PUBLIC, ACC_FINAL, ACC_SUPER
+  this_class: #25                         // pro/javacard/sdk/ExportFileHelper
+  super_class: #26                        // java/lang/Object
+  interfaces: 0, fields: 0, methods: 2, attributes: 2
+Constant pool:
+    #1 = Methodref          #26.#55       // java/lang/Object."<init>":()V
+    #2 = Class              #56           // java/io/DataInputStream
+    #3 = Class              #57           // java/nio/file/OpenOption
+    #4 = Methodref          #58.#59       // java/nio/file/Files.newInputStream:(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;
+    #5 = Methodref          #2.#60        // java/io/DataInputStream."<init>":(Ljava/io/InputStream;)V
+    #6 = Methodref          #2.#61        // java/io/DataInputStream.readInt:()I
+    #7 = Methodref          #2.#62        // java/io/DataInputStream.readByte:()B
+    #8 = Integer            16435934
+    #9 = Methodref          #63.#64       // java/util/Optional.empty:()Ljava/util/Optional;
+   #10 = Methodref          #2.#65        // java/io/DataInputStream.close:()V
+   #11 = Class              #66           // java/io/IOException
+   #12 = Class              #67           // java/lang/StringBuilder
+   #13 = Methodref          #12.#55       // java/lang/StringBuilder."<init>":()V
+   #14 = String             #68           // Invalid major version:
+   #15 = Methodref          #12.#69       // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #16 = Methodref          #12.#70       // java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+   #17 = Methodref          #12.#71       // java/lang/StringBuilder.toString:()Ljava/lang/String;
+   #18 = Methodref          #11.#72       // java/io/IOException."<init>":(Ljava/lang/String;)V
+   #19 = Fieldref           #27.#73       // pro/javacard/sdk/ExportFileHelper$ExportFileVersion.V21:Lpro/javacard/sdk/ExportFileHelper$ExportFileVersion;
+   #20 = Methodref          #63.#74       // java/util/Optional.of:(Ljava/lang/Object;)Ljava/util/Optional;
+   #21 = Fieldref           #27.#75       // pro/javacard/sdk/ExportFileHelper$ExportFileVersion.V23:Lpro/javacard/sdk/ExportFileHelper$ExportFileVersion;
+   #22 = String             #76           // Invalid minor version:
+   #23 = Class              #77           // java/lang/Throwable
+   #24 = Methodref          #23.#78       // java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+   #25 = Class              #79           // pro/javacard/sdk/ExportFileHelper
+   #26 = Class              #80           // java/lang/Object
+   #27 = Class              #81           // pro/javacard/sdk/ExportFileHelper$ExportFileVersion
+   #28 = Utf8               ExportFileVersion
+   #29 = Utf8               InnerClasses
+   #30 = Utf8               <init>
+   #31 = Utf8               ()V
+   #32 = Utf8               Code
+   #33 = Utf8               LineNumberTable
+   #34 = Utf8               LocalVariableTable
+   #35 = Utf8               this
+   #36 = Utf8               Lpro/javacard/sdk/ExportFileHelper;
+   #37 = Utf8               getVersion
+   #38 = Utf8               (Ljava/nio/file/Path;)Ljava/util/Optional;
+   #39 = Utf8               magic
+   #40 = Utf8               I
+   #41 = Utf8               minor
+   #42 = Utf8               B
+   #43 = Utf8               major
+   #44 = Utf8               dis
+   #45 = Utf8               Ljava/io/DataInputStream;
+   #46 = Utf8               path
+   #47 = Utf8               Ljava/nio/file/Path;
+   #48 = Utf8               StackMapTable
+   #49 = Class              #82           // java/nio/file/Path
+   #50 = Utf8               Exceptions
+   #51 = Utf8               Signature
+   #52 = Utf8               (Ljava/nio/file/Path;)Ljava/util/Optional<Lpro/javacard/sdk/ExportFileHelper$ExportFileVersion;>;
+   #53 = Utf8               SourceFile
+   #54 = Utf8               ExportFileHelper.java
+   #55 = NameAndType        #30:#31       // "<init>":()V
+   #56 = Utf8               java/io/DataInputStream
+   #57 = Utf8               java/nio/file/OpenOption
+   #58 = Class              #83           // java/nio/file/Files
+   #59 = NameAndType        #84:#85       // newInputStream:(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;
+   #60 = NameAndType        #30:#86       // "<init>":(Ljava/io/InputStream;)V
+   #61 = NameAndType        #87:#88       // readInt:()I
+   #62 = NameAndType        #89:#90       // readByte:()B
+   #63 = Class              #91           // java/util/Optional
+   #64 = NameAndType        #92:#93       // empty:()Ljava/util/Optional;
+   #65 = NameAndType        #94:#31       // close:()V
+   #66 = Utf8               java/io/IOException
+   #67 = Utf8               java/lang/StringBuilder
+   #68 = Utf8               Invalid major version:
+   #69 = NameAndType        #95:#96       // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #70 = NameAndType        #95:#97       // append:(I)Ljava/lang/StringBuilder;
+   #71 = NameAndType        #98:#99       // toString:()Ljava/lang/String;
+   #72 = NameAndType        #30:#100      // "<init>":(Ljava/lang/String;)V
+   #73 = NameAndType        #101:#102     // V21:Lpro/javacard/sdk/ExportFileHelper$ExportFileVersion;
+   #74 = NameAndType        #103:#104     // of:(Ljava/lang/Object;)Ljava/util/Optional;
+   #75 = NameAndType        #105:#102     // V23:Lpro/javacard/sdk/ExportFileHelper$ExportFileVersion;
+   #76 = Utf8               Invalid minor version:
+   #77 = Utf8               java/lang/Throwable
+   #78 = NameAndType        #106:#107     // addSuppressed:(Ljava/lang/Throwable;)V
+   #79 = Utf8               pro/javacard/sdk/ExportFileHelper
+   #80 = Utf8               java/lang/Object
+   #81 = Utf8               pro/javacard/sdk/ExportFileHelper$ExportFileVersion
+   #82 = Utf8               java/nio/file/Path
+   #83 = Utf8               java/nio/file/Files
+   #84 = Utf8               newInputStream
+   #85 = Utf8               (Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;
+   #86 = Utf8               (Ljava/io/InputStream;)V
+   #87 = Utf8               readInt
+   #88 = Utf8               ()I
+   #89 = Utf8               readByte
+   #90 = Utf8               ()B
+   #91 = Utf8               java/util/Optional
+   #92 = Utf8               empty
+   #93 = Utf8               ()Ljava/util/Optional;
+   #94 = Utf8               close
+   #95 = Utf8               append
+   #96 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #97 = Utf8               (I)Ljava/lang/StringBuilder;
+   #98 = Utf8               toString
+   #99 = Utf8               ()Ljava/lang/String;
+  #100 = Utf8               (Ljava/lang/String;)V
+  #101 = Utf8               V21
+  #102 = Utf8               Lpro/javacard/sdk/ExportFileHelper$ExportFileVersion;
+  #103 = Utf8               of
+  #104 = Utf8               (Ljava/lang/Object;)Ljava/util/Optional;
+  #105 = Utf8               V23
+  #106 = Utf8               addSuppressed
+  #107 = Utf8               (Ljava/lang/Throwable;)V
+{
+  private pro.javacard.sdk.ExportFileHelper();
+    descriptor: ()V
+    flags: (0x0002) ACC_PRIVATE
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 36: 0
+        line 37: 4
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lpro/javacard/sdk/ExportFileHelper;
+
+  public static java.util.Optional<pro.javacard.sdk.ExportFileHelper$ExportFileVersion> getVersion(java.nio.file.Path) throws java.io.IOException;
+    descriptor: (Ljava/nio/file/Path;)Ljava/util/Optional;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=4, locals=6, args_size=1
+         0: new           #2                  // class java/io/DataInputStream
+         3: dup
+         4: aload_0
+         5: iconst_0
+         6: anewarray     #3                  // class java/nio/file/OpenOption
+         9: invokestatic  #4                  // Method java/nio/file/Files.newInputStream:(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;
+        12: invokespecial #5                  // Method java/io/DataInputStream."<init>":(Ljava/io/InputStream;)V
+        15: astore_1
+        16: aload_1
+        17: invokevirtual #6                  // Method java/io/DataInputStream.readInt:()I
+        20: istore_2
+        21: aload_1
+        22: invokevirtual #7                  // Method java/io/DataInputStream.readByte:()B
+        25: istore_3
+        26: aload_1
+        27: invokevirtual #7                  // Method java/io/DataInputStream.readByte:()B
+        30: istore        4
+        32: iload_2
+        33: ldc           #8                  // int 16435934
+        35: if_icmpeq     50
+        38: invokestatic  #9                  // Method java/util/Optional.empty:()Ljava/util/Optional;
+        41: astore        5
+        43: aload_1
+        44: invokevirtual #10                 // Method java/io/DataInputStream.close:()V
+        47: aload         5
+        49: areturn
+        50: iload         4
+        52: iconst_2
+        53: if_icmpeq     84
+        56: new           #11                 // class java/io/IOException
+        59: dup
+        60: new           #12                 // class java/lang/StringBuilder
+        63: dup
+        64: invokespecial #13                 // Method java/lang/StringBuilder."<init>":()V
+        67: ldc           #14                 // String Invalid major version:
+        69: invokevirtual #15                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        72: iload         4
+        74: invokevirtual #16                 // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        77: invokevirtual #17                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        80: invokespecial #18                 // Method java/io/IOException."<init>":(Ljava/lang/String;)V
+        83: athrow
+        84: iload_3
+        85: iconst_1
+        86: if_icmpne     104
+        89: getstatic     #19                 // Field pro/javacard/sdk/ExportFileHelper$ExportFileVersion.V21:Lpro/javacard/sdk/ExportFileHelper$ExportFileVersion;
+        92: invokestatic  #20                 // Method java/util/Optional.of:(Ljava/lang/Object;)Ljava/util/Optional;
+        95: astore        5
+        97: aload_1
+        98: invokevirtual #10                 // Method java/io/DataInputStream.close:()V
+       101: aload         5
+       103: areturn
+       104: iload_3
+       105: iconst_3
+       106: if_icmpne     124
+       109: getstatic     #21                 // Field pro/javacard/sdk/ExportFileHelper$ExportFileVersion.V23:Lpro/javacard/sdk/ExportFileHelper$ExportFileVersion;
+       112: invokestatic  #20                 // Method java/util/Optional.of:(Ljava/lang/Object;)Ljava/util/Optional;
+       115: astore        5
+       117: aload_1
+       118: invokevirtual #10                 // Method java/io/DataInputStream.close:()V
+       121: aload         5
+       123: areturn
+       124: new           #11                 // class java/io/IOException
+       127: dup
+       128: new           #12                 // class java/lang/StringBuilder
+       131: dup
+       132: invokespecial #13                 // Method java/lang/StringBuilder."<init>":()V
+       135: ldc           #22                 // String Invalid minor version:
+       137: invokevirtual #15                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       140: iload_3
+       141: invokevirtual #16                 // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+       144: invokevirtual #17                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       147: invokespecial #18                 // Method java/io/IOException."<init>":(Ljava/lang/String;)V
+       150: athrow
+       151: astore_2
+       152: aload_1
+       153: invokevirtual #10                 // Method java/io/DataInputStream.close:()V
+       156: goto          165
+       159: astore_3
+       160: aload_2
+       161: aload_3
+       162: invokevirtual #24                 // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       165: aload_2
+       166: athrow
+      Exception table:
+         from    to  target type
+            16    43   151   Class java/lang/Throwable
+            50    97   151   Class java/lang/Throwable
+           104   117   151   Class java/lang/Throwable
+           124   151   151   Class java/lang/Throwable
+           152   156   159   Class java/lang/Throwable
+      LineNumberTable:
+        line 40: 0
+        line 41: 16
+        line 43: 21
+        line 44: 26
+        line 46: 32
+        line 47: 38
+        line 55: 43
+        line 47: 47
+        line 48: 50
+        line 49: 56
+        line 50: 84
+        line 51: 89
+        line 55: 97
+        line 51: 101
+        line 52: 104
+        line 53: 109
+        line 55: 117
+        line 53: 121
+        line 54: 124
+        line 40: 151
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           21     130     2 magic   I
+           26     125     3 minor   B
+           32     119     4 major   B
+           16     151     1   dis   Ljava/io/DataInputStream;
+            0     167     0  path   Ljava/nio/file/Path;
+      StackMapTable: number_of_entries = 7
+        frame_type = 255 /* full_frame */
+          offset_delta = 50
+          locals = [ class java/nio/file/Path, class java/io/DataInputStream, int, int, int ]
+          stack = []
+        frame_type = 33 /* same */
+        frame_type = 19 /* same */
+        frame_type = 19 /* same */
+        frame_type = 255 /* full_frame */
+          offset_delta = 26
+          locals = [ class java/nio/file/Path, class java/io/DataInputStream ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 7
+          locals = [ class java/nio/file/Path, class java/io/DataInputStream, class java/lang/Throwable ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 5 /* same */
+    Exceptions:
+      throws java.io.IOException
+    Signature: #52                          // (Ljava/nio/file/Path;)Ljava/util/Optional<Lpro/javacard/sdk/ExportFileHelper$ExportFileVersion;>;
+}
+SourceFile: "ExportFileHelper.java"
+InnerClasses:
+  public static final #28= #27 of #25;    // ExportFileVersion=class pro/javacard/sdk/ExportFileHelper$ExportFileVersion of class pro/javacard/sdk/ExportFileHelper

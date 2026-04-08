@@ -1,0 +1,947 @@
+Classfile /F:/repo/007smsdev/analysis/ant_javacard_extracted/pro/javacard/sdk/SDKVersion.class
+  Last modified Sep 20, 2025; size 5340 bytes
+  SHA-256 checksum a9ccf90096ade1671346067c828c9a6e80ae7647fc955e9a059b8bc08a7ba25c
+  Compiled from "SDKVersion.java"
+public final class pro.javacard.sdk.SDKVersion extends java.lang.Enum<pro.javacard.sdk.SDKVersion>
+  minor version: 0
+  major version: 52
+  flags: (0x4031) ACC_PUBLIC, ACC_FINAL, ACC_SUPER, ACC_ENUM
+  this_class: #4                          // pro/javacard/sdk/SDKVersion
+  super_class: #64                        // java/lang/Enum
+  interfaces: 0, fields: 16, methods: 12, attributes: 4
+Constant pool:
+    #1 = Fieldref           #4.#136       // pro/javacard/sdk/SDKVersion.$VALUES:[Lpro/javacard/sdk/SDKVersion;
+    #2 = Methodref          #137.#138     // "[Lpro/javacard/sdk/SDKVersion;".clone:()Ljava/lang/Object;
+    #3 = Class              #87           // "[Lpro/javacard/sdk/SDKVersion;"
+    #4 = Class              #139          // pro/javacard/sdk/SDKVersion
+    #5 = Methodref          #64.#140      // java/lang/Enum.valueOf:(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    #6 = Methodref          #64.#141      // java/lang/Enum."<init>":(Ljava/lang/String;I)V
+    #7 = Fieldref           #4.#142       // pro/javacard/sdk/SDKVersion.v:Ljava/lang/String;
+    #8 = Fieldref           #4.#143       // pro/javacard/sdk/SDKVersion.class_file_target:Ljava/lang/String;
+    #9 = Class              #144          // java/util/HashSet
+   #10 = Methodref          #9.#145       // java/util/HashSet."<init>":()V
+   #11 = Methodref          #9.#146       // java/util/HashSet."<init>":(Ljava/util/Collection;)V
+   #12 = Fieldref           #4.#147       // pro/javacard/sdk/SDKVersion.targets:Ljava/util/Set;
+   #13 = Class              #148          // java/lang/Integer
+   #14 = Methodref          #13.#149      // java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+   #15 = Methodref          #150.#151     // java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+   #16 = Fieldref           #4.#152       // pro/javacard/sdk/SDKVersion.jdks:Ljava/util/Set;
+   #17 = Methodref          #153.#154     // java/util/Collections.unmodifiableSet:(Ljava/util/Set;)Ljava/util/Set;
+   #18 = Methodref          #4.#155       // pro/javacard/sdk/SDKVersion.equals:(Ljava/lang/Object;)Z
+   #19 = Methodref          #4.#156       // pro/javacard/sdk/SDKVersion.values:()[Lpro/javacard/sdk/SDKVersion;
+   #20 = Methodref          #150.#157     // java/util/Arrays.stream:([Ljava/lang/Object;)Ljava/util/stream/Stream;
+   #21 = InvokeDynamic      #0:#163       // #0:test:(Ljava/lang/String;)Ljava/util/function/Predicate;
+   #22 = InterfaceMethodref #164.#165     // java/util/stream/Stream.filter:(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+   #23 = InterfaceMethodref #164.#166     // java/util/stream/Stream.findFirst:()Ljava/util/Optional;
+   #24 = Methodref          #4.#167       // pro/javacard/sdk/SDKVersion.ordinal:()I
+   #25 = Methodref          #106.#155     // java/lang/String.equals:(Ljava/lang/Object;)Z
+   #26 = String             #65           // V211
+   #27 = String             #168          // 2.1.1
+   #28 = String             #169          // 1.1
+   #29 = Methodref          #4.#170       // pro/javacard/sdk/SDKVersion."<init>":(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Collection;Ljava/util/List;)V
+   #30 = Fieldref           #4.#171       // pro/javacard/sdk/SDKVersion.V211:Lpro/javacard/sdk/SDKVersion;
+   #31 = String             #67           // V212
+   #32 = String             #172          // 2.1.2
+   #33 = Fieldref           #4.#173       // pro/javacard/sdk/SDKVersion.V212:Lpro/javacard/sdk/SDKVersion;
+   #34 = String             #68           // V221
+   #35 = String             #174          // 2.2.1
+   #36 = String             #175          // 1.2
+   #37 = Fieldref           #4.#176       // pro/javacard/sdk/SDKVersion.V221:Lpro/javacard/sdk/SDKVersion;
+   #38 = String             #69           // V222
+   #39 = String             #177          // 2.2.2
+   #40 = String             #178          // 1.5
+   #41 = Fieldref           #4.#179       // pro/javacard/sdk/SDKVersion.V222:Lpro/javacard/sdk/SDKVersion;
+   #42 = String             #70           // V301
+   #43 = String             #180          // 3.0.1
+   #44 = String             #181          // 1.6
+   #45 = Fieldref           #4.#182       // pro/javacard/sdk/SDKVersion.V301:Lpro/javacard/sdk/SDKVersion;
+   #46 = String             #71           // V304
+   #47 = String             #183          // 3.0.4
+   #48 = Fieldref           #4.#184       // pro/javacard/sdk/SDKVersion.V304:Lpro/javacard/sdk/SDKVersion;
+   #49 = String             #72           // V305
+   #50 = String             #185          // 3.0.5
+   #51 = Fieldref           #4.#186       // pro/javacard/sdk/SDKVersion.V305:Lpro/javacard/sdk/SDKVersion;
+   #52 = String             #73           // V310
+   #53 = String             #187          // 3.1.0
+   #54 = String             #188          // 1.7
+   #55 = Fieldref           #4.#189       // pro/javacard/sdk/SDKVersion.V310:Lpro/javacard/sdk/SDKVersion;
+   #56 = String             #74           // V320
+   #57 = String             #190          // 3.2.0
+   #58 = Fieldref           #4.#191       // pro/javacard/sdk/SDKVersion.V320:Lpro/javacard/sdk/SDKVersion;
+   #59 = String             #75           // V320_24_1
+   #60 = Fieldref           #4.#192       // pro/javacard/sdk/SDKVersion.V320_24_1:Lpro/javacard/sdk/SDKVersion;
+   #61 = String             #76           // V320_25_0
+   #62 = String             #193          // 1.8
+   #63 = Fieldref           #4.#194       // pro/javacard/sdk/SDKVersion.V320_25_0:Lpro/javacard/sdk/SDKVersion;
+   #64 = Class              #195          // java/lang/Enum
+   #65 = Utf8               V211
+   #66 = Utf8               Lpro/javacard/sdk/SDKVersion;
+   #67 = Utf8               V212
+   #68 = Utf8               V221
+   #69 = Utf8               V222
+   #70 = Utf8               V301
+   #71 = Utf8               V304
+   #72 = Utf8               V305
+   #73 = Utf8               V310
+   #74 = Utf8               V320
+   #75 = Utf8               V320_24_1
+   #76 = Utf8               V320_25_0
+   #77 = Utf8               v
+   #78 = Utf8               Ljava/lang/String;
+   #79 = Utf8               class_file_target
+   #80 = Utf8               jdks
+   #81 = Utf8               Ljava/util/Set;
+   #82 = Utf8               Signature
+   #83 = Utf8               Ljava/util/Set<Ljava/lang/Integer;>;
+   #84 = Utf8               targets
+   #85 = Utf8               Ljava/util/Set<Lpro/javacard/sdk/SDKVersion;>;
+   #86 = Utf8               $VALUES
+   #87 = Utf8               [Lpro/javacard/sdk/SDKVersion;
+   #88 = Utf8               values
+   #89 = Utf8               ()[Lpro/javacard/sdk/SDKVersion;
+   #90 = Utf8               Code
+   #91 = Utf8               LineNumberTable
+   #92 = Utf8               valueOf
+   #93 = Utf8               (Ljava/lang/String;)Lpro/javacard/sdk/SDKVersion;
+   #94 = Utf8               LocalVariableTable
+   #95 = Utf8               name
+   #96 = Utf8               <init>
+   #97 = Utf8               (Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Collection;Ljava/util/List;)V
+   #98 = Utf8               this
+   #99 = Utf8               classfile
+  #100 = Utf8               Ljava/util/Collection;
+  #101 = Utf8               Ljava/util/List;
+  #102 = Utf8               LocalVariableTypeTable
+  #103 = Utf8               Ljava/util/Collection<Lpro/javacard/sdk/SDKVersion;>;
+  #104 = Utf8               Ljava/util/List<Ljava/lang/Integer;>;
+  #105 = Utf8               StackMapTable
+  #106 = Class              #196          // java/lang/String
+  #107 = Class              #197          // java/util/Collection
+  #108 = Class              #198          // java/util/List
+  #109 = Class              #199          // java/util/Set
+  #110 = Utf8               (Ljava/lang/String;Ljava/lang/String;Ljava/util/Collection<Lpro/javacard/sdk/SDKVersion;>;Ljava/util/List<Ljava/lang/Integer;>;)V
+  #111 = Utf8               toString
+  #112 = Utf8               ()Ljava/lang/String;
+  #113 = Utf8               ()Ljava/util/Set;
+  #114 = Utf8               ()Ljava/util/Set<Lpro/javacard/sdk/SDKVersion;>;
+  #115 = Utf8               isOneOf
+  #116 = Utf8               ([Lpro/javacard/sdk/SDKVersion;)Z
+  #117 = Utf8               versions
+  #118 = Utf8               javaVersion
+  #119 = Utf8               jdkVersions
+  #120 = Utf8               ()Ljava/util/Set<Ljava/lang/Integer;>;
+  #121 = Utf8               fromVersion
+  #122 = Utf8               (Ljava/lang/String;)Ljava/util/Optional;
+  #123 = Utf8               versionString
+  #124 = Utf8               (Ljava/lang/String;)Ljava/util/Optional<Lpro/javacard/sdk/SDKVersion;>;
+  #125 = Utf8               equalOrNewer
+  #126 = Utf8               (Lpro/javacard/sdk/SDKVersion;)Z
+  #127 = Utf8               other
+  #128 = Utf8               lambda$fromVersion$0
+  #129 = Utf8               (Ljava/lang/String;Lpro/javacard/sdk/SDKVersion;)Z
+  #130 = Utf8               ver
+  #131 = Utf8               <clinit>
+  #132 = Utf8               ()V
+  #133 = Utf8               Ljava/lang/Enum<Lpro/javacard/sdk/SDKVersion;>;
+  #134 = Utf8               SourceFile
+  #135 = Utf8               SDKVersion.java
+  #136 = NameAndType        #86:#87       // $VALUES:[Lpro/javacard/sdk/SDKVersion;
+  #137 = Class              #87           // "[Lpro/javacard/sdk/SDKVersion;"
+  #138 = NameAndType        #200:#201     // clone:()Ljava/lang/Object;
+  #139 = Utf8               pro/javacard/sdk/SDKVersion
+  #140 = NameAndType        #92:#202      // valueOf:(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+  #141 = NameAndType        #96:#203      // "<init>":(Ljava/lang/String;I)V
+  #142 = NameAndType        #77:#78       // v:Ljava/lang/String;
+  #143 = NameAndType        #79:#78       // class_file_target:Ljava/lang/String;
+  #144 = Utf8               java/util/HashSet
+  #145 = NameAndType        #96:#132      // "<init>":()V
+  #146 = NameAndType        #96:#204      // "<init>":(Ljava/util/Collection;)V
+  #147 = NameAndType        #84:#81       // targets:Ljava/util/Set;
+  #148 = Utf8               java/lang/Integer
+  #149 = NameAndType        #92:#205      // valueOf:(I)Ljava/lang/Integer;
+  #150 = Class              #206          // java/util/Arrays
+  #151 = NameAndType        #207:#208     // asList:([Ljava/lang/Object;)Ljava/util/List;
+  #152 = NameAndType        #80:#81       // jdks:Ljava/util/Set;
+  #153 = Class              #209          // java/util/Collections
+  #154 = NameAndType        #210:#211     // unmodifiableSet:(Ljava/util/Set;)Ljava/util/Set;
+  #155 = NameAndType        #212:#213     // equals:(Ljava/lang/Object;)Z
+  #156 = NameAndType        #88:#89       // values:()[Lpro/javacard/sdk/SDKVersion;
+  #157 = NameAndType        #214:#215     // stream:([Ljava/lang/Object;)Ljava/util/stream/Stream;
+  #158 = Utf8               BootstrapMethods
+  #159 = MethodHandle       6:#216        // REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #160 = MethodType         #213          //  (Ljava/lang/Object;)Z
+  #161 = MethodHandle       6:#217        // REF_invokeStatic pro/javacard/sdk/SDKVersion.lambda$fromVersion$0:(Ljava/lang/String;Lpro/javacard/sdk/SDKVersion;)Z
+  #162 = MethodType         #126          //  (Lpro/javacard/sdk/SDKVersion;)Z
+  #163 = NameAndType        #218:#219     // test:(Ljava/lang/String;)Ljava/util/function/Predicate;
+  #164 = Class              #220          // java/util/stream/Stream
+  #165 = NameAndType        #221:#222     // filter:(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+  #166 = NameAndType        #223:#224     // findFirst:()Ljava/util/Optional;
+  #167 = NameAndType        #225:#226     // ordinal:()I
+  #168 = Utf8               2.1.1
+  #169 = Utf8               1.1
+  #170 = NameAndType        #96:#97       // "<init>":(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Collection;Ljava/util/List;)V
+  #171 = NameAndType        #65:#66       // V211:Lpro/javacard/sdk/SDKVersion;
+  #172 = Utf8               2.1.2
+  #173 = NameAndType        #67:#66       // V212:Lpro/javacard/sdk/SDKVersion;
+  #174 = Utf8               2.2.1
+  #175 = Utf8               1.2
+  #176 = NameAndType        #68:#66       // V221:Lpro/javacard/sdk/SDKVersion;
+  #177 = Utf8               2.2.2
+  #178 = Utf8               1.5
+  #179 = NameAndType        #69:#66       // V222:Lpro/javacard/sdk/SDKVersion;
+  #180 = Utf8               3.0.1
+  #181 = Utf8               1.6
+  #182 = NameAndType        #70:#66       // V301:Lpro/javacard/sdk/SDKVersion;
+  #183 = Utf8               3.0.4
+  #184 = NameAndType        #71:#66       // V304:Lpro/javacard/sdk/SDKVersion;
+  #185 = Utf8               3.0.5
+  #186 = NameAndType        #72:#66       // V305:Lpro/javacard/sdk/SDKVersion;
+  #187 = Utf8               3.1.0
+  #188 = Utf8               1.7
+  #189 = NameAndType        #73:#66       // V310:Lpro/javacard/sdk/SDKVersion;
+  #190 = Utf8               3.2.0
+  #191 = NameAndType        #74:#66       // V320:Lpro/javacard/sdk/SDKVersion;
+  #192 = NameAndType        #75:#66       // V320_24_1:Lpro/javacard/sdk/SDKVersion;
+  #193 = Utf8               1.8
+  #194 = NameAndType        #76:#66       // V320_25_0:Lpro/javacard/sdk/SDKVersion;
+  #195 = Utf8               java/lang/Enum
+  #196 = Utf8               java/lang/String
+  #197 = Utf8               java/util/Collection
+  #198 = Utf8               java/util/List
+  #199 = Utf8               java/util/Set
+  #200 = Utf8               clone
+  #201 = Utf8               ()Ljava/lang/Object;
+  #202 = Utf8               (Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+  #203 = Utf8               (Ljava/lang/String;I)V
+  #204 = Utf8               (Ljava/util/Collection;)V
+  #205 = Utf8               (I)Ljava/lang/Integer;
+  #206 = Utf8               java/util/Arrays
+  #207 = Utf8               asList
+  #208 = Utf8               ([Ljava/lang/Object;)Ljava/util/List;
+  #209 = Utf8               java/util/Collections
+  #210 = Utf8               unmodifiableSet
+  #211 = Utf8               (Ljava/util/Set;)Ljava/util/Set;
+  #212 = Utf8               equals
+  #213 = Utf8               (Ljava/lang/Object;)Z
+  #214 = Utf8               stream
+  #215 = Utf8               ([Ljava/lang/Object;)Ljava/util/stream/Stream;
+  #216 = Methodref          #227.#228     // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #217 = Methodref          #4.#229       // pro/javacard/sdk/SDKVersion.lambda$fromVersion$0:(Ljava/lang/String;Lpro/javacard/sdk/SDKVersion;)Z
+  #218 = Utf8               test
+  #219 = Utf8               (Ljava/lang/String;)Ljava/util/function/Predicate;
+  #220 = Utf8               java/util/stream/Stream
+  #221 = Utf8               filter
+  #222 = Utf8               (Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+  #223 = Utf8               findFirst
+  #224 = Utf8               ()Ljava/util/Optional;
+  #225 = Utf8               ordinal
+  #226 = Utf8               ()I
+  #227 = Class              #230          // java/lang/invoke/LambdaMetafactory
+  #228 = NameAndType        #231:#235     // metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #229 = NameAndType        #128:#129     // lambda$fromVersion$0:(Ljava/lang/String;Lpro/javacard/sdk/SDKVersion;)Z
+  #230 = Utf8               java/lang/invoke/LambdaMetafactory
+  #231 = Utf8               metafactory
+  #232 = Class              #237          // java/lang/invoke/MethodHandles$Lookup
+  #233 = Utf8               Lookup
+  #234 = Utf8               InnerClasses
+  #235 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #236 = Class              #238          // java/lang/invoke/MethodHandles
+  #237 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #238 = Utf8               java/lang/invoke/MethodHandles
+{
+  public static final pro.javacard.sdk.SDKVersion V211;
+    descriptor: Lpro/javacard/sdk/SDKVersion;
+    flags: (0x4019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL, ACC_ENUM
+
+  public static final pro.javacard.sdk.SDKVersion V212;
+    descriptor: Lpro/javacard/sdk/SDKVersion;
+    flags: (0x4019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL, ACC_ENUM
+
+  public static final pro.javacard.sdk.SDKVersion V221;
+    descriptor: Lpro/javacard/sdk/SDKVersion;
+    flags: (0x4019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL, ACC_ENUM
+
+  public static final pro.javacard.sdk.SDKVersion V222;
+    descriptor: Lpro/javacard/sdk/SDKVersion;
+    flags: (0x4019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL, ACC_ENUM
+
+  public static final pro.javacard.sdk.SDKVersion V301;
+    descriptor: Lpro/javacard/sdk/SDKVersion;
+    flags: (0x4019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL, ACC_ENUM
+
+  public static final pro.javacard.sdk.SDKVersion V304;
+    descriptor: Lpro/javacard/sdk/SDKVersion;
+    flags: (0x4019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL, ACC_ENUM
+
+  public static final pro.javacard.sdk.SDKVersion V305;
+    descriptor: Lpro/javacard/sdk/SDKVersion;
+    flags: (0x4019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL, ACC_ENUM
+
+  public static final pro.javacard.sdk.SDKVersion V310;
+    descriptor: Lpro/javacard/sdk/SDKVersion;
+    flags: (0x4019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL, ACC_ENUM
+
+  public static final pro.javacard.sdk.SDKVersion V320;
+    descriptor: Lpro/javacard/sdk/SDKVersion;
+    flags: (0x4019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL, ACC_ENUM
+
+  public static final pro.javacard.sdk.SDKVersion V320_24_1;
+    descriptor: Lpro/javacard/sdk/SDKVersion;
+    flags: (0x4019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL, ACC_ENUM
+
+  public static final pro.javacard.sdk.SDKVersion V320_25_0;
+    descriptor: Lpro/javacard/sdk/SDKVersion;
+    flags: (0x4019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL, ACC_ENUM
+
+  final java.lang.String v;
+    descriptor: Ljava/lang/String;
+    flags: (0x0010) ACC_FINAL
+
+  final java.lang.String class_file_target;
+    descriptor: Ljava/lang/String;
+    flags: (0x0010) ACC_FINAL
+
+  final java.util.Set<java.lang.Integer> jdks;
+    descriptor: Ljava/util/Set;
+    flags: (0x0010) ACC_FINAL
+    Signature: #83                          // Ljava/util/Set<Ljava/lang/Integer;>;
+
+  final java.util.Set<pro.javacard.sdk.SDKVersion> targets;
+    descriptor: Ljava/util/Set;
+    flags: (0x0010) ACC_FINAL
+    Signature: #85                          // Ljava/util/Set<Lpro/javacard/sdk/SDKVersion;>;
+
+  private static final pro.javacard.sdk.SDKVersion[] $VALUES;
+    descriptor: [Lpro/javacard/sdk/SDKVersion;
+    flags: (0x101a) ACC_PRIVATE, ACC_STATIC, ACC_FINAL, ACC_SYNTHETIC
+
+  public static pro.javacard.sdk.SDKVersion[] values();
+    descriptor: ()[Lpro/javacard/sdk/SDKVersion;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=1, locals=0, args_size=0
+         0: getstatic     #1                  // Field $VALUES:[Lpro/javacard/sdk/SDKVersion;
+         3: invokevirtual #2                  // Method "[Lpro/javacard/sdk/SDKVersion;".clone:()Ljava/lang/Object;
+         6: checkcast     #3                  // class "[Lpro/javacard/sdk/SDKVersion;"
+         9: areturn
+      LineNumberTable:
+        line 26: 0
+
+  public static pro.javacard.sdk.SDKVersion valueOf(java.lang.String);
+    descriptor: (Ljava/lang/String;)Lpro/javacard/sdk/SDKVersion;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: ldc           #4                  // class pro/javacard/sdk/SDKVersion
+         2: aload_0
+         3: invokestatic  #5                  // Method java/lang/Enum.valueOf:(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+         6: checkcast     #4                  // class pro/javacard/sdk/SDKVersion
+         9: areturn
+      LineNumberTable:
+        line 26: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      10     0  name   Ljava/lang/String;
+
+  private pro.javacard.sdk.SDKVersion(java.lang.String, java.lang.String, java.util.Collection<pro.javacard.sdk.SDKVersion>, java.util.List<java.lang.Integer>);
+    descriptor: (Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Collection;Ljava/util/List;)V
+    flags: (0x0002) ACC_PRIVATE
+    Code:
+      stack=7, locals=7, args_size=7
+         0: aload_0
+         1: aload_1
+         2: iload_2
+         3: invokespecial #6                  // Method java/lang/Enum."<init>":(Ljava/lang/String;I)V
+         6: aload_0
+         7: aload_3
+         8: putfield      #7                  // Field v:Ljava/lang/String;
+        11: aload_0
+        12: aload         4
+        14: putfield      #8                  // Field class_file_target:Ljava/lang/String;
+        17: aload_0
+        18: aload         5
+        20: ifnonnull     33
+        23: new           #9                  // class java/util/HashSet
+        26: dup
+        27: invokespecial #10                 // Method java/util/HashSet."<init>":()V
+        30: goto          42
+        33: new           #9                  // class java/util/HashSet
+        36: dup
+        37: aload         5
+        39: invokespecial #11                 // Method java/util/HashSet."<init>":(Ljava/util/Collection;)V
+        42: putfield      #12                 // Field targets:Ljava/util/Set;
+        45: aload_0
+        46: new           #9                  // class java/util/HashSet
+        49: dup
+        50: aload         6
+        52: ifnonnull     73
+        55: iconst_1
+        56: anewarray     #13                 // class java/lang/Integer
+        59: dup
+        60: iconst_0
+        61: bipush        8
+        63: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        66: aastore
+        67: invokestatic  #15                 // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+        70: goto          75
+        73: aload         6
+        75: invokespecial #11                 // Method java/util/HashSet."<init>":(Ljava/util/Collection;)V
+        78: putfield      #16                 // Field jdks:Ljava/util/Set;
+        81: return
+      LineNumberTable:
+        line 46: 0
+        line 47: 6
+        line 48: 11
+        line 49: 17
+        line 50: 45
+        line 51: 81
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      82     0  this   Lpro/javacard/sdk/SDKVersion;
+            0      82     3     v   Ljava/lang/String;
+            0      82     4 classfile   Ljava/lang/String;
+            0      82     5 targets   Ljava/util/Collection;
+            0      82     6  jdks   Ljava/util/List;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+            0      82     5 targets   Ljava/util/Collection<Lpro/javacard/sdk/SDKVersion;>;
+            0      82     6  jdks   Ljava/util/List<Ljava/lang/Integer;>;
+      StackMapTable: number_of_entries = 4
+        frame_type = 255 /* full_frame */
+          offset_delta = 33
+          locals = [ class pro/javacard/sdk/SDKVersion, class java/lang/String, int, class java/lang/String, class java/lang/String, class java/util/Collection, class java/util/List ]
+          stack = [ class pro/javacard/sdk/SDKVersion ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 8
+          locals = [ class pro/javacard/sdk/SDKVersion, class java/lang/String, int, class java/lang/String, class java/lang/String, class java/util/Collection, class java/util/List ]
+          stack = [ class pro/javacard/sdk/SDKVersion, class java/util/Set ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 30
+          locals = [ class pro/javacard/sdk/SDKVersion, class java/lang/String, int, class java/lang/String, class java/lang/String, class java/util/Collection, class java/util/List ]
+          stack = [ class pro/javacard/sdk/SDKVersion, uninitialized 46, uninitialized 46 ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 1
+          locals = [ class pro/javacard/sdk/SDKVersion, class java/lang/String, int, class java/lang/String, class java/lang/String, class java/util/Collection, class java/util/List ]
+          stack = [ class pro/javacard/sdk/SDKVersion, uninitialized 46, uninitialized 46, class java/util/Collection ]
+    Signature: #110                         // (Ljava/lang/String;Ljava/lang/String;Ljava/util/Collection<Lpro/javacard/sdk/SDKVersion;>;Ljava/util/List<Ljava/lang/Integer;>;)V
+
+  public java.lang.String toString();
+    descriptor: ()Ljava/lang/String;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #7                  // Field v:Ljava/lang/String;
+         4: areturn
+      LineNumberTable:
+        line 55: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lpro/javacard/sdk/SDKVersion;
+
+  public java.util.Set<pro.javacard.sdk.SDKVersion> targets();
+    descriptor: ()Ljava/util/Set;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #12                 // Field targets:Ljava/util/Set;
+         4: invokestatic  #17                 // Method java/util/Collections.unmodifiableSet:(Ljava/util/Set;)Ljava/util/Set;
+         7: areturn
+      LineNumberTable:
+        line 59: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       8     0  this   Lpro/javacard/sdk/SDKVersion;
+    Signature: #114                         // ()Ljava/util/Set<Lpro/javacard/sdk/SDKVersion;>;
+
+  public boolean isOneOf(pro.javacard.sdk.SDKVersion...);
+    descriptor: ([Lpro/javacard/sdk/SDKVersion;)Z
+    flags: (0x0081) ACC_PUBLIC, ACC_VARARGS
+    Code:
+      stack=2, locals=6, args_size=2
+         0: aload_1
+         1: astore_2
+         2: aload_2
+         3: arraylength
+         4: istore_3
+         5: iconst_0
+         6: istore        4
+         8: iload         4
+        10: iload_3
+        11: if_icmpge     37
+        14: aload_2
+        15: iload         4
+        17: aaload
+        18: astore        5
+        20: aload_0
+        21: aload         5
+        23: invokevirtual #18                 // Method equals:(Ljava/lang/Object;)Z
+        26: ifeq          31
+        29: iconst_1
+        30: ireturn
+        31: iinc          4, 1
+        34: goto          8
+        37: iconst_0
+        38: ireturn
+      LineNumberTable:
+        line 63: 0
+        line 64: 20
+        line 65: 29
+        line 63: 31
+        line 66: 37
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           20      11     5     v   Lpro/javacard/sdk/SDKVersion;
+            0      39     0  this   Lpro/javacard/sdk/SDKVersion;
+            0      39     1 versions   [Lpro/javacard/sdk/SDKVersion;
+      StackMapTable: number_of_entries = 3
+        frame_type = 254 /* append */
+          offset_delta = 8
+          locals = [ class "[Lpro/javacard/sdk/SDKVersion;", int, int ]
+        frame_type = 22 /* same */
+        frame_type = 248 /* chop */
+          offset_delta = 5
+
+  public java.lang.String javaVersion();
+    descriptor: ()Ljava/lang/String;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #8                  // Field class_file_target:Ljava/lang/String;
+         4: areturn
+      LineNumberTable:
+        line 70: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lpro/javacard/sdk/SDKVersion;
+
+  public java.util.Set<java.lang.Integer> jdkVersions();
+    descriptor: ()Ljava/util/Set;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #16                 // Field jdks:Ljava/util/Set;
+         4: invokestatic  #17                 // Method java/util/Collections.unmodifiableSet:(Ljava/util/Set;)Ljava/util/Set;
+         7: areturn
+      LineNumberTable:
+        line 74: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       8     0  this   Lpro/javacard/sdk/SDKVersion;
+    Signature: #120                         // ()Ljava/util/Set<Ljava/lang/Integer;>;
+
+  public static java.util.Optional<pro.javacard.sdk.SDKVersion> fromVersion(java.lang.String);
+    descriptor: (Ljava/lang/String;)Ljava/util/Optional;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: invokestatic  #19                 // Method values:()[Lpro/javacard/sdk/SDKVersion;
+         3: invokestatic  #20                 // Method java/util/Arrays.stream:([Ljava/lang/Object;)Ljava/util/stream/Stream;
+         6: aload_0
+         7: invokedynamic #21,  0             // InvokeDynamic #0:test:(Ljava/lang/String;)Ljava/util/function/Predicate;
+        12: invokeinterface #22,  2           // InterfaceMethod java/util/stream/Stream.filter:(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+        17: invokeinterface #23,  1           // InterfaceMethod java/util/stream/Stream.findFirst:()Ljava/util/Optional;
+        22: areturn
+      LineNumberTable:
+        line 78: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      23     0 versionString   Ljava/lang/String;
+    Signature: #124                         // (Ljava/lang/String;)Ljava/util/Optional<Lpro/javacard/sdk/SDKVersion;>;
+
+  public boolean equalOrNewer(pro.javacard.sdk.SDKVersion);
+    descriptor: (Lpro/javacard/sdk/SDKVersion;)Z
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: invokevirtual #24                 // Method ordinal:()I
+         4: aload_1
+         5: invokevirtual #24                 // Method ordinal:()I
+         8: if_icmplt     15
+        11: iconst_1
+        12: goto          16
+        15: iconst_0
+        16: ireturn
+      LineNumberTable:
+        line 82: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      17     0  this   Lpro/javacard/sdk/SDKVersion;
+            0      17     1 other   Lpro/javacard/sdk/SDKVersion;
+      StackMapTable: number_of_entries = 2
+        frame_type = 15 /* same */
+        frame_type = 64 /* same_locals_1_stack_item */
+          stack = [ int ]
+
+  private static boolean lambda$fromVersion$0(java.lang.String, pro.javacard.sdk.SDKVersion);
+    descriptor: (Ljava/lang/String;Lpro/javacard/sdk/SDKVersion;)Z
+    flags: (0x100a) ACC_PRIVATE, ACC_STATIC, ACC_SYNTHETIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_1
+         1: getfield      #7                  // Field v:Ljava/lang/String;
+         4: aload_0
+         5: invokevirtual #25                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+         8: ireturn
+      LineNumberTable:
+        line 78: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       9     0 versionString   Ljava/lang/String;
+            0       9     1   ver   Lpro/javacard/sdk/SDKVersion;
+
+  static {};
+    descriptor: ()V
+    flags: (0x0008) ACC_STATIC
+    Code:
+      stack=11, locals=0, args_size=0
+         0: new           #4                  // class pro/javacard/sdk/SDKVersion
+         3: dup
+         4: ldc           #26                 // String V211
+         6: iconst_0
+         7: ldc           #27                 // String 2.1.1
+         9: ldc           #28                 // String 1.1
+        11: aconst_null
+        12: aconst_null
+        13: invokespecial #29                 // Method "<init>":(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Collection;Ljava/util/List;)V
+        16: putstatic     #30                 // Field V211:Lpro/javacard/sdk/SDKVersion;
+        19: new           #4                  // class pro/javacard/sdk/SDKVersion
+        22: dup
+        23: ldc           #31                 // String V212
+        25: iconst_1
+        26: ldc           #32                 // String 2.1.2
+        28: ldc           #28                 // String 1.1
+        30: aconst_null
+        31: aconst_null
+        32: invokespecial #29                 // Method "<init>":(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Collection;Ljava/util/List;)V
+        35: putstatic     #33                 // Field V212:Lpro/javacard/sdk/SDKVersion;
+        38: new           #4                  // class pro/javacard/sdk/SDKVersion
+        41: dup
+        42: ldc           #34                 // String V221
+        44: iconst_2
+        45: ldc           #35                 // String 2.2.1
+        47: ldc           #36                 // String 1.2
+        49: aconst_null
+        50: aconst_null
+        51: invokespecial #29                 // Method "<init>":(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Collection;Ljava/util/List;)V
+        54: putstatic     #37                 // Field V221:Lpro/javacard/sdk/SDKVersion;
+        57: new           #4                  // class pro/javacard/sdk/SDKVersion
+        60: dup
+        61: ldc           #38                 // String V222
+        63: iconst_3
+        64: ldc           #39                 // String 2.2.2
+        66: ldc           #40                 // String 1.5
+        68: aconst_null
+        69: aconst_null
+        70: invokespecial #29                 // Method "<init>":(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Collection;Ljava/util/List;)V
+        73: putstatic     #41                 // Field V222:Lpro/javacard/sdk/SDKVersion;
+        76: new           #4                  // class pro/javacard/sdk/SDKVersion
+        79: dup
+        80: ldc           #42                 // String V301
+        82: iconst_4
+        83: ldc           #43                 // String 3.0.1
+        85: ldc           #44                 // String 1.6
+        87: aconst_null
+        88: iconst_2
+        89: anewarray     #13                 // class java/lang/Integer
+        92: dup
+        93: iconst_0
+        94: bipush        8
+        96: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        99: aastore
+       100: dup
+       101: iconst_1
+       102: bipush        11
+       104: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       107: aastore
+       108: invokestatic  #15                 // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+       111: invokespecial #29                 // Method "<init>":(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Collection;Ljava/util/List;)V
+       114: putstatic     #45                 // Field V301:Lpro/javacard/sdk/SDKVersion;
+       117: new           #4                  // class pro/javacard/sdk/SDKVersion
+       120: dup
+       121: ldc           #46                 // String V304
+       123: iconst_5
+       124: ldc           #47                 // String 3.0.4
+       126: ldc           #44                 // String 1.6
+       128: aconst_null
+       129: iconst_2
+       130: anewarray     #13                 // class java/lang/Integer
+       133: dup
+       134: iconst_0
+       135: bipush        8
+       137: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       140: aastore
+       141: dup
+       142: iconst_1
+       143: bipush        11
+       145: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       148: aastore
+       149: invokestatic  #15                 // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+       152: invokespecial #29                 // Method "<init>":(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Collection;Ljava/util/List;)V
+       155: putstatic     #48                 // Field V304:Lpro/javacard/sdk/SDKVersion;
+       158: new           #4                  // class pro/javacard/sdk/SDKVersion
+       161: dup
+       162: ldc           #49                 // String V305
+       164: bipush        6
+       166: ldc           #50                 // String 3.0.5
+       168: ldc           #44                 // String 1.6
+       170: aconst_null
+       171: iconst_2
+       172: anewarray     #13                 // class java/lang/Integer
+       175: dup
+       176: iconst_0
+       177: bipush        8
+       179: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       182: aastore
+       183: dup
+       184: iconst_1
+       185: bipush        11
+       187: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       190: aastore
+       191: invokestatic  #15                 // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+       194: invokespecial #29                 // Method "<init>":(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Collection;Ljava/util/List;)V
+       197: putstatic     #51                 // Field V305:Lpro/javacard/sdk/SDKVersion;
+       200: new           #4                  // class pro/javacard/sdk/SDKVersion
+       203: dup
+       204: ldc           #52                 // String V310
+       206: bipush        7
+       208: ldc           #53                 // String 3.1.0
+       210: ldc           #54                 // String 1.7
+       212: iconst_2
+       213: anewarray     #4                  // class pro/javacard/sdk/SDKVersion
+       216: dup
+       217: iconst_0
+       218: getstatic     #48                 // Field V304:Lpro/javacard/sdk/SDKVersion;
+       221: aastore
+       222: dup
+       223: iconst_1
+       224: getstatic     #51                 // Field V305:Lpro/javacard/sdk/SDKVersion;
+       227: aastore
+       228: invokestatic  #15                 // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+       231: iconst_3
+       232: anewarray     #13                 // class java/lang/Integer
+       235: dup
+       236: iconst_0
+       237: bipush        8
+       239: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       242: aastore
+       243: dup
+       244: iconst_1
+       245: bipush        11
+       247: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       250: aastore
+       251: dup
+       252: iconst_2
+       253: bipush        17
+       255: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       258: aastore
+       259: invokestatic  #15                 // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+       262: invokespecial #29                 // Method "<init>":(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Collection;Ljava/util/List;)V
+       265: putstatic     #55                 // Field V310:Lpro/javacard/sdk/SDKVersion;
+       268: new           #4                  // class pro/javacard/sdk/SDKVersion
+       271: dup
+       272: ldc           #56                 // String V320
+       274: bipush        8
+       276: ldc           #57                 // String 3.2.0
+       278: ldc           #54                 // String 1.7
+       280: iconst_3
+       281: anewarray     #4                  // class pro/javacard/sdk/SDKVersion
+       284: dup
+       285: iconst_0
+       286: getstatic     #48                 // Field V304:Lpro/javacard/sdk/SDKVersion;
+       289: aastore
+       290: dup
+       291: iconst_1
+       292: getstatic     #51                 // Field V305:Lpro/javacard/sdk/SDKVersion;
+       295: aastore
+       296: dup
+       297: iconst_2
+       298: getstatic     #55                 // Field V310:Lpro/javacard/sdk/SDKVersion;
+       301: aastore
+       302: invokestatic  #15                 // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+       305: iconst_3
+       306: anewarray     #13                 // class java/lang/Integer
+       309: dup
+       310: iconst_0
+       311: bipush        8
+       313: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       316: aastore
+       317: dup
+       318: iconst_1
+       319: bipush        11
+       321: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       324: aastore
+       325: dup
+       326: iconst_2
+       327: bipush        17
+       329: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       332: aastore
+       333: invokestatic  #15                 // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+       336: invokespecial #29                 // Method "<init>":(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Collection;Ljava/util/List;)V
+       339: putstatic     #58                 // Field V320:Lpro/javacard/sdk/SDKVersion;
+       342: new           #4                  // class pro/javacard/sdk/SDKVersion
+       345: dup
+       346: ldc           #59                 // String V320_24_1
+       348: bipush        9
+       350: ldc           #57                 // String 3.2.0
+       352: ldc           #54                 // String 1.7
+       354: iconst_4
+       355: anewarray     #4                  // class pro/javacard/sdk/SDKVersion
+       358: dup
+       359: iconst_0
+       360: getstatic     #48                 // Field V304:Lpro/javacard/sdk/SDKVersion;
+       363: aastore
+       364: dup
+       365: iconst_1
+       366: getstatic     #51                 // Field V305:Lpro/javacard/sdk/SDKVersion;
+       369: aastore
+       370: dup
+       371: iconst_2
+       372: getstatic     #55                 // Field V310:Lpro/javacard/sdk/SDKVersion;
+       375: aastore
+       376: dup
+       377: iconst_3
+       378: getstatic     #58                 // Field V320:Lpro/javacard/sdk/SDKVersion;
+       381: aastore
+       382: invokestatic  #15                 // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+       385: iconst_2
+       386: anewarray     #13                 // class java/lang/Integer
+       389: dup
+       390: iconst_0
+       391: bipush        11
+       393: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       396: aastore
+       397: dup
+       398: iconst_1
+       399: bipush        17
+       401: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       404: aastore
+       405: invokestatic  #15                 // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+       408: invokespecial #29                 // Method "<init>":(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Collection;Ljava/util/List;)V
+       411: putstatic     #60                 // Field V320_24_1:Lpro/javacard/sdk/SDKVersion;
+       414: new           #4                  // class pro/javacard/sdk/SDKVersion
+       417: dup
+       418: ldc           #61                 // String V320_25_0
+       420: bipush        10
+       422: ldc           #57                 // String 3.2.0
+       424: ldc           #62                 // String 1.8
+       426: iconst_4
+       427: anewarray     #4                  // class pro/javacard/sdk/SDKVersion
+       430: dup
+       431: iconst_0
+       432: getstatic     #48                 // Field V304:Lpro/javacard/sdk/SDKVersion;
+       435: aastore
+       436: dup
+       437: iconst_1
+       438: getstatic     #51                 // Field V305:Lpro/javacard/sdk/SDKVersion;
+       441: aastore
+       442: dup
+       443: iconst_2
+       444: getstatic     #55                 // Field V310:Lpro/javacard/sdk/SDKVersion;
+       447: aastore
+       448: dup
+       449: iconst_3
+       450: getstatic     #58                 // Field V320:Lpro/javacard/sdk/SDKVersion;
+       453: aastore
+       454: invokestatic  #15                 // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+       457: iconst_4
+       458: anewarray     #13                 // class java/lang/Integer
+       461: dup
+       462: iconst_0
+       463: bipush        8
+       465: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       468: aastore
+       469: dup
+       470: iconst_1
+       471: bipush        11
+       473: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       476: aastore
+       477: dup
+       478: iconst_2
+       479: bipush        17
+       481: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       484: aastore
+       485: dup
+       486: iconst_3
+       487: bipush        21
+       489: invokestatic  #14                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       492: aastore
+       493: invokestatic  #15                 // Method java/util/Arrays.asList:([Ljava/lang/Object;)Ljava/util/List;
+       496: invokespecial #29                 // Method "<init>":(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Collection;Ljava/util/List;)V
+       499: putstatic     #63                 // Field V320_25_0:Lpro/javacard/sdk/SDKVersion;
+       502: bipush        11
+       504: anewarray     #4                  // class pro/javacard/sdk/SDKVersion
+       507: dup
+       508: iconst_0
+       509: getstatic     #30                 // Field V211:Lpro/javacard/sdk/SDKVersion;
+       512: aastore
+       513: dup
+       514: iconst_1
+       515: getstatic     #33                 // Field V212:Lpro/javacard/sdk/SDKVersion;
+       518: aastore
+       519: dup
+       520: iconst_2
+       521: getstatic     #37                 // Field V221:Lpro/javacard/sdk/SDKVersion;
+       524: aastore
+       525: dup
+       526: iconst_3
+       527: getstatic     #41                 // Field V222:Lpro/javacard/sdk/SDKVersion;
+       530: aastore
+       531: dup
+       532: iconst_4
+       533: getstatic     #45                 // Field V301:Lpro/javacard/sdk/SDKVersion;
+       536: aastore
+       537: dup
+       538: iconst_5
+       539: getstatic     #48                 // Field V304:Lpro/javacard/sdk/SDKVersion;
+       542: aastore
+       543: dup
+       544: bipush        6
+       546: getstatic     #51                 // Field V305:Lpro/javacard/sdk/SDKVersion;
+       549: aastore
+       550: dup
+       551: bipush        7
+       553: getstatic     #55                 // Field V310:Lpro/javacard/sdk/SDKVersion;
+       556: aastore
+       557: dup
+       558: bipush        8
+       560: getstatic     #58                 // Field V320:Lpro/javacard/sdk/SDKVersion;
+       563: aastore
+       564: dup
+       565: bipush        9
+       567: getstatic     #60                 // Field V320_24_1:Lpro/javacard/sdk/SDKVersion;
+       570: aastore
+       571: dup
+       572: bipush        10
+       574: getstatic     #63                 // Field V320_25_0:Lpro/javacard/sdk/SDKVersion;
+       577: aastore
+       578: putstatic     #1                  // Field $VALUES:[Lpro/javacard/sdk/SDKVersion;
+       581: return
+      LineNumberTable:
+        line 27: 0
+        line 28: 19
+        line 29: 38
+        line 30: 57
+        line 31: 76
+        line 32: 117
+        line 33: 158
+        line 35: 200
+        line 36: 268
+        line 37: 342
+        line 38: 414
+        line 26: 502
+}
+Signature: #133                         // Ljava/lang/Enum<Lpro/javacard/sdk/SDKVersion;>;
+SourceFile: "SDKVersion.java"
+InnerClasses:
+  public static final #233= #232 of #236; // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+BootstrapMethods:
+  0: #159 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #160 (Ljava/lang/Object;)Z
+      #161 REF_invokeStatic pro/javacard/sdk/SDKVersion.lambda$fromVersion$0:(Ljava/lang/String;Lpro/javacard/sdk/SDKVersion;)Z
+      #162 (Lpro/javacard/sdk/SDKVersion;)Z

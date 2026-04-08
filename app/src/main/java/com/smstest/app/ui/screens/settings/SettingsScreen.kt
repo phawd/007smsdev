@@ -19,6 +19,7 @@ import com.smstest.app.core.device.SmsStrategy
 import com.smstest.app.core.export.LogExporter
 import com.smstest.app.core.qualcomm.QualcommDiagManager
 import com.smstest.app.core.qualcomm.QualcommDiagProfile
+import com.smstest.app.core.root.RootAccessManager
 import com.smstest.app.core.settings.SettingsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -280,6 +281,7 @@ fun SettingRow(
 
 @Composable
 fun RootAccessCard() {
+    val context = LocalContext.current
     var rootAvailable by remember { mutableStateOf<Boolean?>(null) }
     var atCommandsAvailable by remember { mutableStateOf<Boolean?>(null) }
     var modemDevice by remember { mutableStateOf<String?>(null) }
@@ -297,10 +299,17 @@ fun RootAccessCard() {
     }
 
     LaunchedEffect(Unit) {
-        // Check root and AT commands
-        // In production, inject SmsManagerWrapper via DI
-        
         scope.launch {
+            rootAvailable = RootAccessManager.isRootAvailable()
+            if (rootAvailable == true) {
+                val devices = AtCommandManager.probeDevices()
+                modemDevice = devices.firstOrNull()
+                atCommandsAvailable = modemDevice?.let { AtCommandManager.initializeAtOnDevice(it) } ?: false
+            } else {
+                atCommandsAvailable = false
+                modemDevice = null
+            }
+
             val config = withContext(Dispatchers.IO) { QualcommDiagManager.getActiveUsbConfig() }
             diagUsbConfig = config
             diagStatusMessage = config?.let { "USB config: $it" } ?: "Qualcomm USB config unavailable"
@@ -357,7 +366,25 @@ fun RootAccessCard() {
             Spacer(Modifier.height(12.dp))
             
             Button(
-                onClick = { /* Reinitialize AT commands */ },
+                onClick = {
+                    scope.launch {
+                        rootAvailable = RootAccessManager.isRootAvailable()
+                        if (rootAvailable == true) {
+                            val devices = AtCommandManager.probeDevices()
+                            modemDevice = devices.firstOrNull()
+                            atCommandsAvailable = modemDevice?.let { AtCommandManager.initializeAtOnDevice(it) } ?: false
+                            if (atCommandsAvailable == true) {
+                                Toast.makeText(context, "AT initialized on ${modemDevice ?: "unknown"}", Toast.LENGTH_SHORT).show()
+                            } else {
+                                Toast.makeText(context, "AT initialization failed", Toast.LENGTH_SHORT).show()
+                            }
+                        } else {
+                            atCommandsAvailable = false
+                            modemDevice = null
+                            Toast.makeText(context, "Root access required", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                },
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Icon(Icons.Default.Refresh, contentDescription = null)
@@ -460,7 +487,12 @@ fun DeviceDetectionCard() {
     LaunchedEffect(Unit) {
         DeviceInfoManager.detectionProgress.collect { progress ->
             detectionLog = progress
-            isDetecting = progress.isNotEmpty() && !progress.lastOrNull().orEmpty().contains("complete")
+        }
+    }
+
+    LaunchedEffect(Unit) {
+        DeviceInfoManager.isDetecting.collect { running ->
+            isDetecting = running
         }
     }
 
@@ -561,7 +593,7 @@ fun DeviceDetectionCard() {
             Button(
                 onClick = { 
                     scope.launch {
-                        DeviceInfoManager.detectDevice()
+                        DeviceInfoManager.refresh(context)
                     }
                 },
                 modifier = Modifier.fillMaxWidth(),

@@ -1,0 +1,500 @@
+Classfile /F:/repo/007smsdev/analysis/ant_javacard_extracted/pro/javacard/capfile/HexUtils.class
+  Last modified Sep 20, 2025; size 2174 bytes
+  SHA-256 checksum 6969d00f52ec136bf15ec7e44f9412683ecb3d951189a8be86bc3b7be4b10f6c
+  Compiled from "HexUtils.java"
+class pro.javacard.capfile.HexUtils
+  minor version: 0
+  major version: 52
+  flags: (0x0020) ACC_SUPER
+  this_class: #27                         // pro/javacard/capfile/HexUtils
+  super_class: #28                        // java/lang/Object
+  interfaces: 0, fields: 1, methods: 7, attributes: 1
+Constant pool:
+    #1 = Methodref          #28.#65       // java/lang/Object."<init>":()V
+    #2 = Fieldref           #27.#66       // pro/javacard/capfile/HexUtils.UPPER_HEX:[C
+    #3 = Class              #67           // java/lang/String
+    #4 = Methodref          #3.#68        // java/lang/String."<init>":([C)V
+    #5 = Methodref          #3.#69        // java/lang/String.toCharArray:()[C
+    #6 = Class              #70           // java/lang/IllegalArgumentException
+    #7 = Class              #71           // java/lang/StringBuilder
+    #8 = Methodref          #7.#65        // java/lang/StringBuilder."<init>":()V
+    #9 = String             #72           // Odd number of characters:
+   #10 = Methodref          #7.#73        // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #11 = Methodref          #7.#74        // java/lang/StringBuilder.toString:()Ljava/lang/String;
+   #12 = Methodref          #6.#75        // java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+   #13 = Methodref          #76.#77       // java/lang/Character.digit:(CI)I
+   #14 = String             #78           // Illegal hex:
+   #15 = Methodref          #7.#79        // java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+   #16 = Methodref          #27.#80       // pro/javacard/capfile/HexUtils.decodeHexString_imp:(Ljava/lang/String;)[B
+   #17 = Methodref          #27.#81       // pro/javacard/capfile/HexUtils.encodeHexString_imp:([B)Ljava/lang/String;
+   #18 = Methodref          #3.#82        // java/lang/String.toUpperCase:()Ljava/lang/String;
+   #19 = String             #83           //
+   #20 = String             #84           //
+   #21 = Methodref          #3.#85        // java/lang/String.replaceAll:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+   #22 = String             #86           // :
+   #23 = String             #87           // 0X
+   #24 = String             #88           // \n
+   #25 = String             #89           // \t
+   #26 = String             #90           // ;
+   #27 = Class              #91           // pro/javacard/capfile/HexUtils
+   #28 = Class              #92           // java/lang/Object
+   #29 = Utf8               UPPER_HEX
+   #30 = Utf8               [C
+   #31 = Utf8               <init>
+   #32 = Utf8               ()V
+   #33 = Utf8               Code
+   #34 = Utf8               LineNumberTable
+   #35 = Utf8               LocalVariableTable
+   #36 = Utf8               this
+   #37 = Utf8               Lpro/javacard/capfile/HexUtils;
+   #38 = Utf8               encodeHexString_imp
+   #39 = Utf8               ([B)Ljava/lang/String;
+   #40 = Utf8               i
+   #41 = Utf8               I
+   #42 = Utf8               j
+   #43 = Utf8               data
+   #44 = Utf8               [B
+   #45 = Utf8               l
+   #46 = Utf8               out
+   #47 = Utf8               StackMapTable
+   #48 = Class              #44           // "[B"
+   #49 = Class              #30           // "[C"
+   #50 = Utf8               decodeHexString_imp
+   #51 = Utf8               (Ljava/lang/String;)[B
+   #52 = Utf8               f
+   #53 = Utf8               str
+   #54 = Utf8               Ljava/lang/String;
+   #55 = Utf8               len
+   #56 = Utf8               hex2bin
+   #57 = Utf8               hex
+   #58 = Utf8               bin2hex
+   #59 = Utf8               bin
+   #60 = Utf8               stringToBin
+   #61 = Utf8               s
+   #62 = Utf8               <clinit>
+   #63 = Utf8               SourceFile
+   #64 = Utf8               HexUtils.java
+   #65 = NameAndType        #31:#32       // "<init>":()V
+   #66 = NameAndType        #29:#30       // UPPER_HEX:[C
+   #67 = Utf8               java/lang/String
+   #68 = NameAndType        #31:#93       // "<init>":([C)V
+   #69 = NameAndType        #94:#95       // toCharArray:()[C
+   #70 = Utf8               java/lang/IllegalArgumentException
+   #71 = Utf8               java/lang/StringBuilder
+   #72 = Utf8               Odd number of characters:
+   #73 = NameAndType        #96:#97       // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #74 = NameAndType        #98:#99       // toString:()Ljava/lang/String;
+   #75 = NameAndType        #31:#100      // "<init>":(Ljava/lang/String;)V
+   #76 = Class              #101          // java/lang/Character
+   #77 = NameAndType        #102:#103     // digit:(CI)I
+   #78 = Utf8               Illegal hex:
+   #79 = NameAndType        #96:#104      // append:(C)Ljava/lang/StringBuilder;
+   #80 = NameAndType        #50:#51       // decodeHexString_imp:(Ljava/lang/String;)[B
+   #81 = NameAndType        #38:#39       // encodeHexString_imp:([B)Ljava/lang/String;
+   #82 = NameAndType        #105:#99      // toUpperCase:()Ljava/lang/String;
+   #83 = Utf8
+   #84 = Utf8
+   #85 = NameAndType        #106:#107     // replaceAll:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+   #86 = Utf8               :
+   #87 = Utf8               0X
+   #88 = Utf8               \n
+   #89 = Utf8               \t
+   #90 = Utf8               ;
+   #91 = Utf8               pro/javacard/capfile/HexUtils
+   #92 = Utf8               java/lang/Object
+   #93 = Utf8               ([C)V
+   #94 = Utf8               toCharArray
+   #95 = Utf8               ()[C
+   #96 = Utf8               append
+   #97 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #98 = Utf8               toString
+   #99 = Utf8               ()Ljava/lang/String;
+  #100 = Utf8               (Ljava/lang/String;)V
+  #101 = Utf8               java/lang/Character
+  #102 = Utf8               digit
+  #103 = Utf8               (CI)I
+  #104 = Utf8               (C)Ljava/lang/StringBuilder;
+  #105 = Utf8               toUpperCase
+  #106 = Utf8               replaceAll
+  #107 = Utf8               (Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+{
+  private static final char[] UPPER_HEX;
+    descriptor: [C
+    flags: (0x001a) ACC_PRIVATE, ACC_STATIC, ACC_FINAL
+
+  pro.javacard.capfile.HexUtils();
+    descriptor: ()V
+    flags: (0x0000)
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 24: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lpro/javacard/capfile/HexUtils;
+
+  public static java.lang.String encodeHexString_imp(byte[]);
+    descriptor: ([B)Ljava/lang/String;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=6, locals=5, args_size=1
+         0: aload_0
+         1: arraylength
+         2: istore_1
+         3: iload_1
+         4: iconst_1
+         5: ishl
+         6: newarray       char
+         8: astore_2
+         9: iconst_0
+        10: istore_3
+        11: iconst_0
+        12: istore        4
+        14: iload_3
+        15: iload_1
+        16: if_icmpge     62
+        19: aload_2
+        20: iload         4
+        22: iinc          4, 1
+        25: getstatic     #2                  // Field UPPER_HEX:[C
+        28: sipush        240
+        31: aload_0
+        32: iload_3
+        33: baload
+        34: iand
+        35: iconst_4
+        36: iushr
+        37: caload
+        38: castore
+        39: aload_2
+        40: iload         4
+        42: iinc          4, 1
+        45: getstatic     #2                  // Field UPPER_HEX:[C
+        48: bipush        15
+        50: aload_0
+        51: iload_3
+        52: baload
+        53: iand
+        54: caload
+        55: castore
+        56: iinc          3, 1
+        59: goto          14
+        62: new           #3                  // class java/lang/String
+        65: dup
+        66: aload_2
+        67: invokespecial #4                  // Method java/lang/String."<init>":([C)V
+        70: areturn
+      LineNumberTable:
+        line 30: 0
+        line 31: 3
+        line 33: 9
+        line 34: 19
+        line 35: 39
+        line 33: 56
+        line 37: 62
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           11      51     3     i   I
+           14      48     4     j   I
+            0      71     0  data   [B
+            3      68     1     l   I
+            9      62     2   out   [C
+      StackMapTable: number_of_entries = 2
+        frame_type = 255 /* full_frame */
+          offset_delta = 14
+          locals = [ class "[B", int, class "[C", int, int ]
+          stack = []
+        frame_type = 249 /* chop */
+          offset_delta = 47
+
+  public static byte[] decodeHexString_imp(java.lang.String);
+    descriptor: (Ljava/lang/String;)[B
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=5, locals=7, args_size=1
+         0: aload_0
+         1: invokevirtual #5                  // Method java/lang/String.toCharArray:()[C
+         4: astore_1
+         5: aload_1
+         6: arraylength
+         7: istore_2
+         8: iload_2
+         9: iconst_1
+        10: iand
+        11: ifeq          41
+        14: new           #6                  // class java/lang/IllegalArgumentException
+        17: dup
+        18: new           #7                  // class java/lang/StringBuilder
+        21: dup
+        22: invokespecial #8                  // Method java/lang/StringBuilder."<init>":()V
+        25: ldc           #9                  // String Odd number of characters:
+        27: invokevirtual #10                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        30: aload_0
+        31: invokevirtual #10                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        34: invokevirtual #11                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        37: invokespecial #12                 // Method java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+        40: athrow
+        41: iload_2
+        42: iconst_1
+        43: ishr
+        44: newarray       byte
+        46: astore_3
+        47: iconst_0
+        48: istore        4
+        50: iconst_0
+        51: istore        5
+        53: iload         5
+        55: iload_2
+        56: if_icmpge     179
+        59: aload_1
+        60: iload         5
+        62: caload
+        63: bipush        16
+        65: invokestatic  #13                 // Method java/lang/Character.digit:(CI)I
+        68: iconst_4
+        69: ishl
+        70: istore        6
+        72: iload         6
+        74: ifge          107
+        77: new           #6                  // class java/lang/IllegalArgumentException
+        80: dup
+        81: new           #7                  // class java/lang/StringBuilder
+        84: dup
+        85: invokespecial #8                  // Method java/lang/StringBuilder."<init>":()V
+        88: ldc           #14                 // String Illegal hex:
+        90: invokevirtual #10                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        93: aload_1
+        94: iload         5
+        96: caload
+        97: invokevirtual #15                 // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       100: invokevirtual #11                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       103: invokespecial #12                 // Method java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+       106: athrow
+       107: iinc          5, 1
+       110: iload         6
+       112: aload_1
+       113: iload         5
+       115: caload
+       116: bipush        16
+       118: invokestatic  #13                 // Method java/lang/Character.digit:(CI)I
+       121: ior
+       122: istore        6
+       124: iload         6
+       126: ifge          159
+       129: new           #6                  // class java/lang/IllegalArgumentException
+       132: dup
+       133: new           #7                  // class java/lang/StringBuilder
+       136: dup
+       137: invokespecial #8                  // Method java/lang/StringBuilder."<init>":()V
+       140: ldc           #14                 // String Illegal hex:
+       142: invokevirtual #10                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       145: aload_1
+       146: iload         5
+       148: caload
+       149: invokevirtual #15                 // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+       152: invokevirtual #11                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       155: invokespecial #12                 // Method java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+       158: athrow
+       159: iinc          5, 1
+       162: aload_3
+       163: iload         4
+       165: iload         6
+       167: sipush        255
+       170: iand
+       171: i2b
+       172: bastore
+       173: iinc          4, 1
+       176: goto          53
+       179: aload_3
+       180: areturn
+      LineNumberTable:
+        line 41: 0
+        line 42: 5
+        line 43: 8
+        line 44: 14
+        line 46: 41
+        line 48: 47
+        line 49: 59
+        line 50: 72
+        line 51: 77
+        line 53: 107
+        line 54: 110
+        line 55: 124
+        line 56: 129
+        line 58: 159
+        line 59: 162
+        line 48: 173
+        line 61: 179
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           72     101     6     f   I
+           50     129     4     i   I
+           53     126     5     j   I
+            0     181     0   str   Ljava/lang/String;
+            5     176     1  data   [C
+            8     173     2   len   I
+           47     134     3   out   [B
+      StackMapTable: number_of_entries = 5
+        frame_type = 253 /* append */
+          offset_delta = 41
+          locals = [ class "[C", int ]
+        frame_type = 254 /* append */
+          offset_delta = 11
+          locals = [ class "[B", int, int ]
+        frame_type = 252 /* append */
+          offset_delta = 53
+          locals = [ int ]
+        frame_type = 51 /* same */
+        frame_type = 248 /* chop */
+          offset_delta = 19
+
+  public static byte[] hex2bin(java.lang.String);
+    descriptor: (Ljava/lang/String;)[B
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokestatic  #16                 // Method decodeHexString_imp:(Ljava/lang/String;)[B
+         4: areturn
+      LineNumberTable:
+        line 66: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0   hex   Ljava/lang/String;
+
+  public static java.lang.String bin2hex(byte[]);
+    descriptor: ([B)Ljava/lang/String;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokestatic  #17                 // Method encodeHexString_imp:([B)Ljava/lang/String;
+         4: areturn
+      LineNumberTable:
+        line 70: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0   bin   [B
+
+  public static byte[] stringToBin(java.lang.String);
+    descriptor: (Ljava/lang/String;)[B
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: aload_0
+         1: invokevirtual #18                 // Method java/lang/String.toUpperCase:()Ljava/lang/String;
+         4: ldc           #19                 // String
+         6: ldc           #20                 // String
+         8: invokevirtual #21                 // Method java/lang/String.replaceAll:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+        11: ldc           #22                 // String :
+        13: ldc           #20                 // String
+        15: invokevirtual #21                 // Method java/lang/String.replaceAll:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+        18: astore_0
+        19: aload_0
+        20: ldc           #23                 // String 0X
+        22: ldc           #20                 // String
+        24: invokevirtual #21                 // Method java/lang/String.replaceAll:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+        27: ldc           #24                 // String \n
+        29: ldc           #20                 // String
+        31: invokevirtual #21                 // Method java/lang/String.replaceAll:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+        34: ldc           #25                 // String \t
+        36: ldc           #20                 // String
+        38: invokevirtual #21                 // Method java/lang/String.replaceAll:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+        41: astore_0
+        42: aload_0
+        43: ldc           #26                 // String ;
+        45: ldc           #20                 // String
+        47: invokevirtual #21                 // Method java/lang/String.replaceAll:(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+        50: astore_0
+        51: aload_0
+        52: invokestatic  #16                 // Method decodeHexString_imp:(Ljava/lang/String;)[B
+        55: areturn
+      LineNumberTable:
+        line 74: 0
+        line 75: 19
+        line 76: 42
+        line 77: 51
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      56     0     s   Ljava/lang/String;
+
+  static {};
+    descriptor: ()V
+    flags: (0x0008) ACC_STATIC
+    Code:
+      stack=4, locals=0, args_size=0
+         0: bipush        16
+         2: newarray       char
+         4: dup
+         5: iconst_0
+         6: bipush        48
+         8: castore
+         9: dup
+        10: iconst_1
+        11: bipush        49
+        13: castore
+        14: dup
+        15: iconst_2
+        16: bipush        50
+        18: castore
+        19: dup
+        20: iconst_3
+        21: bipush        51
+        23: castore
+        24: dup
+        25: iconst_4
+        26: bipush        52
+        28: castore
+        29: dup
+        30: iconst_5
+        31: bipush        53
+        33: castore
+        34: dup
+        35: bipush        6
+        37: bipush        54
+        39: castore
+        40: dup
+        41: bipush        7
+        43: bipush        55
+        45: castore
+        46: dup
+        47: bipush        8
+        49: bipush        56
+        51: castore
+        52: dup
+        53: bipush        9
+        55: bipush        57
+        57: castore
+        58: dup
+        59: bipush        10
+        61: bipush        65
+        63: castore
+        64: dup
+        65: bipush        11
+        67: bipush        66
+        69: castore
+        70: dup
+        71: bipush        12
+        73: bipush        67
+        75: castore
+        76: dup
+        77: bipush        13
+        79: bipush        68
+        81: castore
+        82: dup
+        83: bipush        14
+        85: bipush        69
+        87: castore
+        88: dup
+        89: bipush        15
+        91: bipush        70
+        93: castore
+        94: putstatic     #2                  // Field UPPER_HEX:[C
+        97: return
+      LineNumberTable:
+        line 26: 0
+}
+SourceFile: "HexUtils.java"

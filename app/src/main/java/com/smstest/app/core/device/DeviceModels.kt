@@ -1,8 +1,5 @@
 package com.smstest.app.core.device
 
-/**
- * Device information
- */
 data class DeviceInfo(
     val manufacturer: String,
     val model: String,
@@ -15,9 +12,6 @@ data class DeviceInfo(
     val basebandVersion: String
 )
 
-/**
- * Modem information
- */
 data class ModemInfo(
     val chipset: ModemChipset,
     val radioType: RadioType,
@@ -26,9 +20,6 @@ data class ModemInfo(
     val supportsDirectModemAccess: Boolean
 )
 
-/**
- * Supported modem chipsets
- */
 enum class ModemChipset(val displayName: String) {
     QUALCOMM_GENERIC("Qualcomm Generic"),
     QUALCOMM_MSM7XXX("Qualcomm MSM7xxx"),
@@ -44,9 +35,6 @@ enum class ModemChipset(val displayName: String) {
     UNKNOWN("Unknown")
 }
 
-/**
- * Radio technology types
- */
 enum class RadioType(val displayName: String) {
     GSM("GSM/UMTS/HSPA"),
     CDMA("CDMA/EVDO"),
@@ -55,25 +43,19 @@ enum class RadioType(val displayName: String) {
     UNKNOWN("Unknown")
 }
 
-/**
- * AT command communication methods
- */
-enum class AtCommandMethod {
-    QCRIL_SMD,          // Qualcomm SMD (Shared Memory Device)
-    MEDIATEK_CCCI,      // MediaTek CCCI (Cross Core Communication Interface)
-    SAMSUNG_IPC,        // Samsung IPC (Inter-Processor Communication)
-    HUAWEI_APPVCOM,     // Huawei/HiSilicon APPVCOM
-    INTEL_TTY,          // Intel modem TTY
-    SPREADTRUM_STTY,    // Spreadtrum STTY
-    STANDARD_TTY,       // Standard TTY/USB
-    UNKNOWN             // Unknown/Generic
+enum class AtCommandMethod(val displayName: String) {
+    QCRIL_SMD("Qualcomm SMD"),
+    MEDIATEK_CCCI("MediaTek CCCI"),
+    SAMSUNG_IPC("Samsung IPC"),
+    HUAWEI_APPVCOM("Huawei APPVCOM"),
+    INTEL_TTY("Intel TTY"),
+    SPREADTRUM_STTY("Spreadtrum STTY"),
+    STANDARD_TTY("Standard TTY/USB"),
+    UNKNOWN("Unknown")
 }
 
-/**
- * SMS sending strategies
- */
-enum class SmsStrategy {
-    AT_COMMANDS_PRIMARY,    // Use AT commands as primary method
-    AT_WITH_FALLBACK,       // Try AT commands, fallback to standard API
-    STANDARD_API_ONLY       // Use only standard Android SMS API
+enum class SmsStrategy(val displayName: String) {
+    AT_COMMANDS_PRIMARY("AT Commands (Primary)"),
+    AT_WITH_FALLBACK("AT with Fallback"),
+    STANDARD_API_ONLY("Standard API Only")
 }

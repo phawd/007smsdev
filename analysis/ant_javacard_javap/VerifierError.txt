@@ -1,0 +1,81 @@
+Classfile /F:/repo/007smsdev/analysis/ant_javacard_extracted/pro/javacard/sdk/VerifierError.class
+  Last modified Sep 20, 2025; size 603 bytes
+  SHA-256 checksum 8f564a3358f3efd7e038ee6767851ad50d639da2f0a0011297631bee4afe07c9
+  Compiled from "VerifierError.java"
+public class pro.javacard.sdk.VerifierError extends java.lang.Exception
+  minor version: 0
+  major version: 52
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #3                          // pro/javacard/sdk/VerifierError
+  super_class: #4                         // java/lang/Exception
+  interfaces: 0, fields: 1, methods: 2, attributes: 1
+Constant pool:
+   #1 = Methodref          #4.#24         // java/lang/Exception."<init>":(Ljava/lang/String;Ljava/lang/Throwable;)V
+   #2 = Methodref          #4.#25         // java/lang/Exception."<init>":(Ljava/lang/String;)V
+   #3 = Class              #26            // pro/javacard/sdk/VerifierError
+   #4 = Class              #27            // java/lang/Exception
+   #5 = Utf8               serialVersionUID
+   #6 = Utf8               J
+   #7 = Utf8               ConstantValue
+   #8 = Long               9099882918121440945l
+  #10 = Utf8               <init>
+  #11 = Utf8               (Ljava/lang/String;Ljava/lang/Throwable;)V
+  #12 = Utf8               Code
+  #13 = Utf8               LineNumberTable
+  #14 = Utf8               LocalVariableTable
+  #15 = Utf8               this
+  #16 = Utf8               Lpro/javacard/sdk/VerifierError;
+  #17 = Utf8               message
+  #18 = Utf8               Ljava/lang/String;
+  #19 = Utf8               cause
+  #20 = Utf8               Ljava/lang/Throwable;
+  #21 = Utf8               (Ljava/lang/String;)V
+  #22 = Utf8               SourceFile
+  #23 = Utf8               VerifierError.java
+  #24 = NameAndType        #10:#11        // "<init>":(Ljava/lang/String;Ljava/lang/Throwable;)V
+  #25 = NameAndType        #10:#21        // "<init>":(Ljava/lang/String;)V
+  #26 = Utf8               pro/javacard/sdk/VerifierError
+  #27 = Utf8               java/lang/Exception
+{
+  private static final long serialVersionUID;
+    descriptor: J
+    flags: (0x001a) ACC_PRIVATE, ACC_STATIC, ACC_FINAL
+    ConstantValue: long 9099882918121440945l
+
+  public pro.javacard.sdk.VerifierError(java.lang.String, java.lang.Throwable);
+    descriptor: (Ljava/lang/String;Ljava/lang/Throwable;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=3, args_size=3
+         0: aload_0
+         1: aload_1
+         2: aload_2
+         3: invokespecial #1                  // Method java/lang/Exception."<init>":(Ljava/lang/String;Ljava/lang/Throwable;)V
+         6: return
+      LineNumberTable:
+        line 28: 0
+        line 29: 6
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       7     0  this   Lpro/javacard/sdk/VerifierError;
+            0       7     1 message   Ljava/lang/String;
+            0       7     2 cause   Ljava/lang/Throwable;
+
+  public pro.javacard.sdk.VerifierError(java.lang.String);
+    descriptor: (Ljava/lang/String;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: invokespecial #2                  // Method java/lang/Exception."<init>":(Ljava/lang/String;)V
+         5: return
+      LineNumberTable:
+        line 32: 0
+        line 33: 5
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   Lpro/javacard/sdk/VerifierError;
+            0       6     1 message   Ljava/lang/String;
+}
+SourceFile: "VerifierError.java"

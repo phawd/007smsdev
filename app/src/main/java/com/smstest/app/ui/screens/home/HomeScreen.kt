@@ -76,6 +76,7 @@ import com.smstest.app.core.device.SmsStrategy
 import com.smstest.app.core.root.RootAccessManager
 import com.smstest.app.core.settings.SettingsRepository
 import com.smstest.app.core.sms.SmsManagerWrapper
+import com.smstest.app.core.sms.SmsSendReport
 import com.smstest.app.ui.theme.MMSGreen
 import com.smstest.app.ui.theme.RCSPurple
 import com.smstest.app.ui.theme.SMSBlue
@@ -108,6 +109,7 @@ fun HomeScreen(
     val modemInfo by DeviceInfoManager.modemInfo.collectAsState()
     val detectionProgress by DeviceInfoManager.detectionProgress.collectAsState()
     val detectionRunning by DeviceInfoManager.isDetecting.collectAsState()
+    val lastSendReport by smsManagerWrapper.lastSendReport.collectAsState()
     val testCategories = remember { getTestCategories() }
 
     LaunchedEffect(Unit) {
@@ -295,6 +297,12 @@ fun HomeScreen(
                 )
             }
 
+            lastSendReport?.let { report ->
+                item {
+                    VerboseSendReportCard(report = report)
+                }
+            }
+
             item {
                 Column {
                     Text(
@@ -320,6 +328,44 @@ fun HomeScreen(
                     category = category,
                     onClick = { onNavigateToTest(category.type) }
                 )
+            }
+        }
+    }
+}
+
+@Composable
+private fun VerboseSendReportCard(report: SmsSendReport) {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer)
+    ) {
+        Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Text("Last Send Report", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+            Text(
+                "Type=${report.type} Route=${report.route} Success=${report.success}",
+                style = MaterialTheme.typography.bodySmall
+            )
+            Text(
+                "Root=${report.usedRoot} AT=${report.usedAt} Parts=${report.parts}",
+                style = MaterialTheme.typography.bodySmall
+            )
+            report.modemDevice?.let {
+                Text("Device=$it", style = MaterialTheme.typography.bodySmall)
+            }
+            report.protocolId?.let {
+                Text("PID=0x${"%02X".format(it)}", style = MaterialTheme.typography.bodySmall)
+            }
+            report.dataCodingScheme?.let {
+                Text("DCS=0x${"%02X".format(it)}", style = MaterialTheme.typography.bodySmall)
+            }
+            report.error?.let {
+                Text("Error: $it", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.error)
+            }
+            if (report.details.isNotEmpty()) {
+                Text("Diagnostics", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.SemiBold)
+                report.details.takeLast(6).forEach { line ->
+                    Text("• $line", style = MaterialTheme.typography.bodySmall)
+                }
             }
         }
     }

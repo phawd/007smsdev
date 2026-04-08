@@ -33,15 +33,13 @@ f:\repo\zerosms\mifi_backup\binaries\
 
 ### Option 1: Ghidra (FREE, Recommended)
 
-**Download:** <https://ghidra-sre.org>  
-**Installation:**
+**Location:** `c:\ghidra` (Installed)
+
+**Run:**
 
 ```bash
 # Windows
-Invoke-WebRequest -Uri "https://ghidra-sre.org/ghidra_latest_build.zip" -OutFile ghidra.zip
-Expand-Archive ghidra.zip
-cd ghidra_*/bin
-./ghidraRun.bat
+c:\ghidra\ghidraRun.bat
 ```
 
 **Usage:**

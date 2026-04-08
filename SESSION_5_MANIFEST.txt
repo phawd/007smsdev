@@ -243,8 +243,8 @@ adb shell sh /tmp/phase5_filesystem_extraction.sh /tmp/phase5_backup
 
 ### 🟢 PRIORITY 3 (CAN START NOW): 2-4 hours
 ```bash
-# 1. Download Ghidra (free, 300 MB)
-#    https://ghidra-sre.org
+# 1. Start Ghidra (installed in c:\ghidra)
+#    c:\ghidra\ghidraRun.bat
 # 2. Open: mifi_backup/binaries/libmodem2_api.so
 # 3. Run: arm_analysis_tools/ghidra_spc_analyzer.py
 # 4. Document findings

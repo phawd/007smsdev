@@ -1,0 +1,1513 @@
+Classfile /F:/repo/007smsdev/analysis/ant_javacard_extracted/pro/javacard/sdk/OffCardVerifier.class
+  Last modified Sep 20, 2025; size 11189 bytes
+  SHA-256 checksum fcc4d0714b6d65d90cdfe9134f2c6b27e5c374bb56b79e30593bead1dde04819
+  Compiled from "OffCardVerifier.java"
+public final class pro.javacard.sdk.OffCardVerifier
+  minor version: 0
+  major version: 52
+  flags: (0x0031) ACC_PUBLIC, ACC_FINAL, ACC_SUPER
+  this_class: #9                          // pro/javacard/sdk/OffCardVerifier
+  super_class: #80                        // java/lang/Object
+  interfaces: 0, fields: 1, methods: 9, attributes: 3
+Constant pool:
+    #1 = Methodref          #229.#230     // pro/javacard/sdk/JavaCardSDK.getVersion:()Lpro/javacard/sdk/SDKVersion;
+    #2 = Class              #231          // pro/javacard/sdk/SDKVersion
+    #3 = Fieldref           #2.#232       // pro/javacard/sdk/SDKVersion.V211:Lpro/javacard/sdk/SDKVersion;
+    #4 = Fieldref           #2.#233       // pro/javacard/sdk/SDKVersion.V212:Lpro/javacard/sdk/SDKVersion;
+    #5 = Methodref          #2.#234       // pro/javacard/sdk/SDKVersion.isOneOf:([Lpro/javacard/sdk/SDKVersion;)Z
+    #6 = Class              #235          // java/lang/RuntimeException
+    #7 = String             #236          // Verification is supported with JavaCard SDK 2.2.1 or later
+    #8 = Methodref          #6.#237       // java/lang/RuntimeException."<init>":(Ljava/lang/String;)V
+    #9 = Class              #238          // pro/javacard/sdk/OffCardVerifier
+   #10 = Methodref          #9.#239       // pro/javacard/sdk/OffCardVerifier."<init>":(Lpro/javacard/sdk/JavaCardSDK;)V
+   #11 = Methodref          #80.#240      // java/lang/Object."<init>":()V
+   #12 = Fieldref           #9.#241       // pro/javacard/sdk/OffCardVerifier.sdk:Lpro/javacard/sdk/JavaCardSDK;
+   #13 = Class              #242          // java/util/ArrayList
+   #14 = Methodref          #46.#243      // java/util/Vector.stream:()Ljava/util/stream/Stream;
+   #15 = InvokeDynamic      #0:#249       // #0:apply:()Ljava/util/function/Function;
+   #16 = InterfaceMethodref #250.#251     // java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+   #17 = Methodref          #252.#253     // java/util/stream/Collectors.toList:()Ljava/util/stream/Collector;
+   #18 = InterfaceMethodref #250.#254     // java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+   #19 = Class              #255          // java/util/Collection
+   #20 = Methodref          #13.#256      // java/util/ArrayList."<init>":(Ljava/util/Collection;)V
+   #21 = Methodref          #229.#257     // pro/javacard/sdk/JavaCardSDK.getExportDir:()Ljava/nio/file/Path;
+   #22 = InterfaceMethodref #189.#258     // java/util/List.add:(Ljava/lang/Object;)Z
+   #23 = Methodref          #77.#259      // java/io/File.toPath:()Ljava/nio/file/Path;
+   #24 = Methodref          #9.#260       // pro/javacard/sdk/OffCardVerifier.verify:(Ljava/nio/file/Path;Ljava/util/List;)V
+   #25 = Fieldref           #2.#261       // pro/javacard/sdk/SDKVersion.V304:Lpro/javacard/sdk/SDKVersion;
+   #26 = Fieldref           #2.#262       // pro/javacard/sdk/SDKVersion.V305:Lpro/javacard/sdk/SDKVersion;
+   #27 = Fieldref           #2.#263       // pro/javacard/sdk/SDKVersion.V310:Lpro/javacard/sdk/SDKVersion;
+   #28 = Fieldref           #2.#264       // pro/javacard/sdk/SDKVersion.V320_25_0:Lpro/javacard/sdk/SDKVersion;
+   #29 = Fieldref           #265.#266     // java/lang/System.err:Ljava/io/PrintStream;
+   #30 = String             #267          // NB! Please use JavaCard SDK 3.2.0 / 25.0 for verifying!
+   #31 = Methodref          #268.#269     // java/io/PrintStream.println:(Ljava/lang/String;)V
+   #32 = Methodref          #229.#270     // pro/javacard/sdk/JavaCardSDK.getRelease:()Ljava/lang/String;
+   #33 = String             #271          // 3.0.5u4
+   #34 = Methodref          #78.#272      // java/lang/String.equals:(Ljava/lang/Object;)Z
+   #35 = String             #273          // NB! Please use JavaCard SDK 3.0.5u4 or later for verifying!
+   #36 = InterfaceMethodref #189.#243     // java/util/List.stream:()Ljava/util/stream/Stream;
+   #37 = String             #274          // capfile
+   #38 = Class              #275          // java/nio/file/attribute/FileAttribute
+   #39 = Methodref          #276.#277     // java/nio/file/Files.createTempDirectory:(Ljava/lang/String;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;
+   #40 = Class              #278          // java/nio/file/OpenOption
+   #41 = Methodref          #276.#279     // java/nio/file/Files.newInputStream:(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;
+   #42 = Methodref          #191.#280     // pro/javacard/capfile/CAPFile.fromStream:(Ljava/io/InputStream;)Lpro/javacard/capfile/CAPFile;
+   #43 = String             #281          // com.sun.javacard.offcardverifier.Verifier
+   #44 = Methodref          #229.#282     // pro/javacard/sdk/JavaCardSDK.getClassLoader:()Ljava/lang/ClassLoader;
+   #45 = Methodref          #76.#283      // java/lang/Class.forName:(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+   #46 = Class              #284          // java/util/Vector
+   #47 = Methodref          #46.#240      // java/util/Vector."<init>":()V
+   #48 = InterfaceMethodref #189.#285     // java/util/List.iterator:()Ljava/util/Iterator;
+   #49 = InterfaceMethodref #192.#286     // java/util/Iterator.hasNext:()Z
+   #50 = InterfaceMethodref #192.#287     // java/util/Iterator.next:()Ljava/lang/Object;
+   #51 = Class              #288          // java/nio/file/Path
+   #52 = Class              #289          // java/nio/file/LinkOption
+   #53 = Methodref          #276.#290     // java/nio/file/Files.isDirectory:(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z
+   #54 = InterfaceMethodref #51.#291      // java/nio/file/Path.toRealPath:([Ljava/nio/file/LinkOption;)Ljava/nio/file/Path;
+   #55 = Class              #292          // java/nio/file/FileVisitOption
+   #56 = Methodref          #276.#293     // java/nio/file/Files.walk:(Ljava/nio/file/Path;[Ljava/nio/file/FileVisitOption;)Ljava/util/stream/Stream;
+   #57 = InvokeDynamic      #1:#297       // #1:test:()Ljava/util/function/Predicate;
+   #58 = InterfaceMethodref #250.#298     // java/util/stream/Stream.filter:(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+   #59 = InvokeDynamic      #2:#249       // #2:apply:()Ljava/util/function/Function;
+   #60 = Methodref          #46.#301      // java/util/Vector.addAll:(Ljava/util/Collection;)Z
+   #61 = Methodref          #276.#302     // java/nio/file/Files.isReadable:(Ljava/nio/file/Path;)Z
+   #62 = InterfaceMethodref #51.#303      // java/nio/file/Path.toString:()Ljava/lang/String;
+   #63 = String             #304          // .exp
+   #64 = Methodref          #78.#305      // java/lang/String.endsWith:(Ljava/lang/String;)Z
+   #65 = InterfaceMethodref #51.#306      // java/nio/file/Path.toFile:()Ljava/io/File;
+   #66 = Methodref          #46.#258      // java/util/Vector.add:(Ljava/lang/Object;)Z
+   #67 = String             #307          // .jar
+   #68 = Methodref          #9.#308       // pro/javacard/sdk/OffCardVerifier.extractExps:(Ljava/nio/file/Path;Ljava/nio/file/Path;)Ljava/util/List;
+   #69 = Methodref          #191.#309     // pro/javacard/capfile/CAPFile.getPackageName:()Ljava/lang/String;
+   #70 = Class              #310          // java/io/FileInputStream
+   #71 = Methodref          #70.#311      // java/io/FileInputStream."<init>":(Ljava/io/File;)V
+   #72 = String             #312          // 3.0.5u3
+   #73 = String             #313          // 3.0.5u2
+   #74 = Methodref          #2.#314       // pro/javacard/sdk/SDKVersion.equalOrNewer:(Lpro/javacard/sdk/SDKVersion;)Z
+   #75 = String             #315          // verifyCap
+   #76 = Class              #316          // java/lang/Class
+   #77 = Class              #317          // java/io/File
+   #78 = Class              #318          // java/lang/String
+   #79 = Methodref          #76.#319      // java/lang/Class.getMethod:(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+   #80 = Class              #320          // java/lang/Object
+   #81 = Methodref          #321.#322     // java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+   #82 = Methodref          #70.#323      // java/io/FileInputStream.close:()V
+   #83 = Class              #324          // java/lang/Throwable
+   #84 = Methodref          #83.#325      // java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+   #85 = Class              #326          // java/lang/reflect/InvocationTargetException
+   #86 = Class              #327          // pro/javacard/sdk/VerifierError
+   #87 = Methodref          #85.#328      // java/lang/reflect/InvocationTargetException.getTargetException:()Ljava/lang/Throwable;
+   #88 = Methodref          #83.#329      // java/lang/Throwable.getMessage:()Ljava/lang/String;
+   #89 = Methodref          #86.#330      // pro/javacard/sdk/VerifierError."<init>":(Ljava/lang/String;Ljava/lang/Throwable;)V
+   #90 = Class              #331          // java/lang/Exception
+   #91 = Class              #332          // java/lang/StringBuilder
+   #92 = Methodref          #91.#240      // java/lang/StringBuilder."<init>":()V
+   #93 = String             #333          // Verification failed:
+   #94 = Methodref          #91.#334      // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #95 = Methodref          #90.#329      // java/lang/Exception.getMessage:()Ljava/lang/String;
+   #96 = Methodref          #91.#303      // java/lang/StringBuilder.toString:()Ljava/lang/String;
+   #97 = Methodref          #190.#323     // java/io/InputStream.close:()V
+   #98 = Methodref          #9.#335       // pro/javacard/sdk/OffCardVerifier.rmminusrf:(Ljava/nio/file/Path;)V
+   #99 = Class              #336          // java/lang/ReflectiveOperationException
+  #100 = Class              #337          // java/io/IOException
+  #101 = String             #338          // Could not run verifier:
+  #102 = Methodref          #6.#330       // java/lang/RuntimeException."<init>":(Ljava/lang/String;Ljava/lang/Throwable;)V
+  #103 = InterfaceMethodref #339.#340     // java/util/Comparator.reverseOrder:()Ljava/util/Comparator;
+  #104 = InterfaceMethodref #250.#341     // java/util/stream/Stream.sorted:(Ljava/util/Comparator;)Ljava/util/stream/Stream;
+  #105 = InvokeDynamic      #3:#345       // #3:accept:()Ljava/util/function/Consumer;
+  #106 = InterfaceMethodref #250.#346     // java/util/stream/Stream.forEach:(Ljava/util/function/Consumer;)V
+  #107 = Class              #347          // java/io/FileNotFoundException
+  #108 = Class              #348          // java/nio/file/NoSuchFileException
+  #109 = Methodref          #6.#349       // java/lang/RuntimeException."<init>":(Ljava/lang/Throwable;)V
+  #110 = InterfaceMethodref #51.#350      // java/nio/file/Path.resolve:(Ljava/lang/String;)Ljava/nio/file/Path;
+  #111 = InterfaceMethodref #51.#351      // java/nio/file/Path.normalize:()Ljava/nio/file/Path;
+  #112 = InterfaceMethodref #51.#352      // java/nio/file/Path.toAbsolutePath:()Ljava/nio/file/Path;
+  #113 = InterfaceMethodref #51.#353      // java/nio/file/Path.startsWith:(Ljava/nio/file/Path;)Z
+  #114 = Class              #354          // java/lang/IllegalArgumentException
+  #115 = String             #355          // Invalid path in JAR:
+  #116 = Methodref          #91.#356      // java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+  #117 = String             #357          //  vs
+  #118 = Methodref          #114.#237     // java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+  #119 = Methodref          #13.#240      // java/util/ArrayList."<init>":()V
+  #120 = Class              #358          // java/util/jar/JarFile
+  #121 = Methodref          #120.#311     // java/util/jar/JarFile."<init>":(Ljava/io/File;)V
+  #122 = Methodref          #120.#359     // java/util/jar/JarFile.entries:()Ljava/util/Enumeration;
+  #123 = InterfaceMethodref #221.#360     // java/util/Enumeration.hasMoreElements:()Z
+  #124 = InterfaceMethodref #221.#361     // java/util/Enumeration.nextElement:()Ljava/lang/Object;
+  #125 = Class              #362          // java/util/jar/JarEntry
+  #126 = Methodref          #125.#363     // java/util/jar/JarEntry.getName:()Ljava/lang/String;
+  #127 = Methodref          #78.#364      // java/lang/String.toLowerCase:()Ljava/lang/String;
+  #128 = Methodref          #9.#365       // pro/javacard/sdk/OffCardVerifier.under:(Ljava/nio/file/Path;Ljava/lang/String;)Ljava/nio/file/Path;
+  #129 = InterfaceMethodref #51.#366      // java/nio/file/Path.getParent:()Ljava/nio/file/Path;
+  #130 = String             #367          // Null parent
+  #131 = Methodref          #100.#237     // java/io/IOException."<init>":(Ljava/lang/String;)V
+  #132 = Methodref          #276.#368     // java/nio/file/Files.createDirectories:(Ljava/nio/file/Path;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;
+  #133 = Methodref          #120.#369     // java/util/jar/JarFile.getInputStream:(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
+  #134 = Methodref          #276.#370     // java/nio/file/Files.newOutputStream:(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/OutputStream;
+  #135 = Methodref          #190.#371     // java/io/InputStream.read:([B)I
+  #136 = Methodref          #222.#372     // java/io/OutputStream.write:([BII)V
+  #137 = Methodref          #222.#323     // java/io/OutputStream.close:()V
+  #138 = Methodref          #120.#323     // java/util/jar/JarFile.close:()V
+  #139 = Utf8               sdk
+  #140 = Utf8               Lpro/javacard/sdk/JavaCardSDK;
+  #141 = Utf8               withSDK
+  #142 = Utf8               (Lpro/javacard/sdk/JavaCardSDK;)Lpro/javacard/sdk/OffCardVerifier;
+  #143 = Utf8               Code
+  #144 = Utf8               LineNumberTable
+  #145 = Utf8               LocalVariableTable
+  #146 = Utf8               StackMapTable
+  #147 = Utf8               <init>
+  #148 = Utf8               (Lpro/javacard/sdk/JavaCardSDK;)V
+  #149 = Utf8               this
+  #150 = Utf8               Lpro/javacard/sdk/OffCardVerifier;
+  #151 = Utf8               verifyAgainst
+  #152 = Utf8               (Ljava/io/File;Lpro/javacard/sdk/JavaCardSDK;Ljava/util/Vector;)V
+  #153 = Utf8               f
+  #154 = Utf8               Ljava/io/File;
+  #155 = Utf8               target
+  #156 = Utf8               exps
+  #157 = Utf8               Ljava/util/Vector;
+  #158 = Utf8               exports
+  #159 = Utf8               Ljava/util/List;
+  #160 = Utf8               LocalVariableTypeTable
+  #161 = Utf8               Ljava/util/Vector<Ljava/io/File;>;
+  #162 = Utf8               Ljava/util/List<Ljava/nio/file/Path;>;
+  #163 = Utf8               Exceptions
+  #164 = Utf8               Signature
+  #165 = Utf8               (Ljava/io/File;Lpro/javacard/sdk/JavaCardSDK;Ljava/util/Vector<Ljava/io/File;>;)V
+  #166 = Utf8               (Ljava/nio/file/Path;Lpro/javacard/sdk/JavaCardSDK;Ljava/util/List;)V
+  #167 = Utf8               Ljava/nio/file/Path;
+  #168 = Utf8               (Ljava/nio/file/Path;Lpro/javacard/sdk/JavaCardSDK;Ljava/util/List<Ljava/nio/file/Path;>;)V
+  #169 = Utf8               verify
+  #170 = Utf8               (Ljava/nio/file/Path;Ljava/util/List;)V
+  #171 = Utf8               e
+  #172 = Utf8               m
+  #173 = Utf8               Ljava/lang/reflect/Method;
+  #174 = Utf8               input
+  #175 = Utf8               Ljava/io/FileInputStream;
+  #176 = Utf8               Ljava/lang/reflect/InvocationTargetException;
+  #177 = Utf8               Ljava/lang/Exception;
+  #178 = Utf8               cap
+  #179 = Utf8               Lpro/javacard/capfile/CAPFile;
+  #180 = Utf8               verifier
+  #181 = Utf8               Ljava/lang/Class;
+  #182 = Utf8               expfiles
+  #183 = Utf8               packagename
+  #184 = Utf8               Ljava/lang/String;
+  #185 = Utf8               in
+  #186 = Utf8               Ljava/io/InputStream;
+  #187 = Utf8               tmp
+  #188 = Utf8               Ljava/lang/Class<*>;
+  #189 = Class              #373          // java/util/List
+  #190 = Class              #374          // java/io/InputStream
+  #191 = Class              #375          // pro/javacard/capfile/CAPFile
+  #192 = Class              #376          // java/util/Iterator
+  #193 = Utf8               (Ljava/nio/file/Path;Ljava/util/List<Ljava/nio/file/Path;>;)V
+  #194 = Utf8               rmminusrf
+  #195 = Utf8               (Ljava/nio/file/Path;)V
+  #196 = Utf8               Ljava/io/IOException;
+  #197 = Utf8               path
+  #198 = Utf8               under
+  #199 = Utf8               (Ljava/nio/file/Path;Ljava/lang/String;)Ljava/nio/file/Path;
+  #200 = Utf8               out
+  #201 = Utf8               name
+  #202 = Utf8               p
+  #203 = Utf8               extractExps
+  #204 = Utf8               (Ljava/nio/file/Path;Ljava/nio/file/Path;)Ljava/util/List;
+  #205 = Utf8               r
+  #206 = Utf8               I
+  #207 = Utf8               buf
+  #208 = Utf8               [B
+  #209 = Utf8               fo
+  #210 = Utf8               Ljava/io/OutputStream;
+  #211 = Utf8               is
+  #212 = Utf8               dir
+  #213 = Utf8               entry
+  #214 = Utf8               Ljava/util/jar/JarEntry;
+  #215 = Utf8               entries
+  #216 = Utf8               Ljava/util/Enumeration;
+  #217 = Utf8               jarfile
+  #218 = Utf8               Ljava/util/jar/JarFile;
+  #219 = Utf8               jarfilePath
+  #220 = Utf8               Ljava/util/Enumeration<Ljava/util/jar/JarEntry;>;
+  #221 = Class              #377          // java/util/Enumeration
+  #222 = Class              #378          // java/io/OutputStream
+  #223 = Class              #208          // "[B"
+  #224 = Utf8               (Ljava/nio/file/Path;Ljava/nio/file/Path;)Ljava/util/List<Ljava/nio/file/Path;>;
+  #225 = Utf8               lambda$verify$0
+  #226 = Utf8               (Ljava/nio/file/Path;)Z
+  #227 = Utf8               SourceFile
+  #228 = Utf8               OffCardVerifier.java
+  #229 = Class              #379          // pro/javacard/sdk/JavaCardSDK
+  #230 = NameAndType        #380:#381     // getVersion:()Lpro/javacard/sdk/SDKVersion;
+  #231 = Utf8               pro/javacard/sdk/SDKVersion
+  #232 = NameAndType        #382:#383     // V211:Lpro/javacard/sdk/SDKVersion;
+  #233 = NameAndType        #384:#383     // V212:Lpro/javacard/sdk/SDKVersion;
+  #234 = NameAndType        #385:#386     // isOneOf:([Lpro/javacard/sdk/SDKVersion;)Z
+  #235 = Utf8               java/lang/RuntimeException
+  #236 = Utf8               Verification is supported with JavaCard SDK 2.2.1 or later
+  #237 = NameAndType        #147:#387     // "<init>":(Ljava/lang/String;)V
+  #238 = Utf8               pro/javacard/sdk/OffCardVerifier
+  #239 = NameAndType        #147:#148     // "<init>":(Lpro/javacard/sdk/JavaCardSDK;)V
+  #240 = NameAndType        #147:#388     // "<init>":()V
+  #241 = NameAndType        #139:#140     // sdk:Lpro/javacard/sdk/JavaCardSDK;
+  #242 = Utf8               java/util/ArrayList
+  #243 = NameAndType        #389:#390     // stream:()Ljava/util/stream/Stream;
+  #244 = Utf8               BootstrapMethods
+  #245 = MethodHandle       6:#391        // REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #246 = MethodType         #392          //  (Ljava/lang/Object;)Ljava/lang/Object;
+  #247 = MethodHandle       5:#23         // REF_invokeVirtual java/io/File.toPath:()Ljava/nio/file/Path;
+  #248 = MethodType         #393          //  (Ljava/io/File;)Ljava/nio/file/Path;
+  #249 = NameAndType        #394:#395     // apply:()Ljava/util/function/Function;
+  #250 = Class              #396          // java/util/stream/Stream
+  #251 = NameAndType        #397:#398     // map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+  #252 = Class              #399          // java/util/stream/Collectors
+  #253 = NameAndType        #400:#401     // toList:()Ljava/util/stream/Collector;
+  #254 = NameAndType        #402:#403     // collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+  #255 = Utf8               java/util/Collection
+  #256 = NameAndType        #147:#404     // "<init>":(Ljava/util/Collection;)V
+  #257 = NameAndType        #405:#406     // getExportDir:()Ljava/nio/file/Path;
+  #258 = NameAndType        #407:#408     // add:(Ljava/lang/Object;)Z
+  #259 = NameAndType        #409:#406     // toPath:()Ljava/nio/file/Path;
+  #260 = NameAndType        #169:#170     // verify:(Ljava/nio/file/Path;Ljava/util/List;)V
+  #261 = NameAndType        #410:#383     // V304:Lpro/javacard/sdk/SDKVersion;
+  #262 = NameAndType        #411:#383     // V305:Lpro/javacard/sdk/SDKVersion;
+  #263 = NameAndType        #412:#383     // V310:Lpro/javacard/sdk/SDKVersion;
+  #264 = NameAndType        #413:#383     // V320_25_0:Lpro/javacard/sdk/SDKVersion;
+  #265 = Class              #414          // java/lang/System
+  #266 = NameAndType        #415:#416     // err:Ljava/io/PrintStream;
+  #267 = Utf8               NB! Please use JavaCard SDK 3.2.0 / 25.0 for verifying!
+  #268 = Class              #417          // java/io/PrintStream
+  #269 = NameAndType        #418:#387     // println:(Ljava/lang/String;)V
+  #270 = NameAndType        #419:#420     // getRelease:()Ljava/lang/String;
+  #271 = Utf8               3.0.5u4
+  #272 = NameAndType        #421:#408     // equals:(Ljava/lang/Object;)Z
+  #273 = Utf8               NB! Please use JavaCard SDK 3.0.5u4 or later for verifying!
+  #274 = Utf8               capfile
+  #275 = Utf8               java/nio/file/attribute/FileAttribute
+  #276 = Class              #422          // java/nio/file/Files
+  #277 = NameAndType        #423:#424     // createTempDirectory:(Ljava/lang/String;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;
+  #278 = Utf8               java/nio/file/OpenOption
+  #279 = NameAndType        #425:#426     // newInputStream:(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;
+  #280 = NameAndType        #427:#428     // fromStream:(Ljava/io/InputStream;)Lpro/javacard/capfile/CAPFile;
+  #281 = Utf8               com.sun.javacard.offcardverifier.Verifier
+  #282 = NameAndType        #429:#430     // getClassLoader:()Ljava/lang/ClassLoader;
+  #283 = NameAndType        #431:#432     // forName:(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+  #284 = Utf8               java/util/Vector
+  #285 = NameAndType        #433:#434     // iterator:()Ljava/util/Iterator;
+  #286 = NameAndType        #435:#436     // hasNext:()Z
+  #287 = NameAndType        #437:#438     // next:()Ljava/lang/Object;
+  #288 = Utf8               java/nio/file/Path
+  #289 = Utf8               java/nio/file/LinkOption
+  #290 = NameAndType        #439:#440     // isDirectory:(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z
+  #291 = NameAndType        #441:#442     // toRealPath:([Ljava/nio/file/LinkOption;)Ljava/nio/file/Path;
+  #292 = Utf8               java/nio/file/FileVisitOption
+  #293 = NameAndType        #443:#444     // walk:(Ljava/nio/file/Path;[Ljava/nio/file/FileVisitOption;)Ljava/util/stream/Stream;
+  #294 = MethodType         #408          //  (Ljava/lang/Object;)Z
+  #295 = MethodHandle       6:#445        // REF_invokeStatic pro/javacard/sdk/OffCardVerifier.lambda$verify$0:(Ljava/nio/file/Path;)Z
+  #296 = MethodType         #226          //  (Ljava/nio/file/Path;)Z
+  #297 = NameAndType        #446:#447     // test:()Ljava/util/function/Predicate;
+  #298 = NameAndType        #448:#449     // filter:(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+  #299 = MethodHandle       9:#65         // REF_invokeInterface java/nio/file/Path.toFile:()Ljava/io/File;
+  #300 = MethodType         #450          //  (Ljava/nio/file/Path;)Ljava/io/File;
+  #301 = NameAndType        #451:#452     // addAll:(Ljava/util/Collection;)Z
+  #302 = NameAndType        #453:#226     // isReadable:(Ljava/nio/file/Path;)Z
+  #303 = NameAndType        #454:#420     // toString:()Ljava/lang/String;
+  #304 = Utf8               .exp
+  #305 = NameAndType        #455:#456     // endsWith:(Ljava/lang/String;)Z
+  #306 = NameAndType        #457:#458     // toFile:()Ljava/io/File;
+  #307 = Utf8               .jar
+  #308 = NameAndType        #203:#204     // extractExps:(Ljava/nio/file/Path;Ljava/nio/file/Path;)Ljava/util/List;
+  #309 = NameAndType        #459:#420     // getPackageName:()Ljava/lang/String;
+  #310 = Utf8               java/io/FileInputStream
+  #311 = NameAndType        #147:#460     // "<init>":(Ljava/io/File;)V
+  #312 = Utf8               3.0.5u3
+  #313 = Utf8               3.0.5u2
+  #314 = NameAndType        #461:#462     // equalOrNewer:(Lpro/javacard/sdk/SDKVersion;)Z
+  #315 = Utf8               verifyCap
+  #316 = Utf8               java/lang/Class
+  #317 = Utf8               java/io/File
+  #318 = Utf8               java/lang/String
+  #319 = NameAndType        #463:#464     // getMethod:(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+  #320 = Utf8               java/lang/Object
+  #321 = Class              #465          // java/lang/reflect/Method
+  #322 = NameAndType        #466:#467     // invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+  #323 = NameAndType        #468:#388     // close:()V
+  #324 = Utf8               java/lang/Throwable
+  #325 = NameAndType        #469:#470     // addSuppressed:(Ljava/lang/Throwable;)V
+  #326 = Utf8               java/lang/reflect/InvocationTargetException
+  #327 = Utf8               pro/javacard/sdk/VerifierError
+  #328 = NameAndType        #471:#472     // getTargetException:()Ljava/lang/Throwable;
+  #329 = NameAndType        #473:#420     // getMessage:()Ljava/lang/String;
+  #330 = NameAndType        #147:#474     // "<init>":(Ljava/lang/String;Ljava/lang/Throwable;)V
+  #331 = Utf8               java/lang/Exception
+  #332 = Utf8               java/lang/StringBuilder
+  #333 = Utf8               Verification failed:
+  #334 = NameAndType        #475:#476     // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #335 = NameAndType        #194:#195     // rmminusrf:(Ljava/nio/file/Path;)V
+  #336 = Utf8               java/lang/ReflectiveOperationException
+  #337 = Utf8               java/io/IOException
+  #338 = Utf8               Could not run verifier:
+  #339 = Class              #477          // java/util/Comparator
+  #340 = NameAndType        #478:#479     // reverseOrder:()Ljava/util/Comparator;
+  #341 = NameAndType        #480:#481     // sorted:(Ljava/util/Comparator;)Ljava/util/stream/Stream;
+  #342 = MethodType         #482          //  (Ljava/lang/Object;)V
+  #343 = MethodHandle       6:#483        // REF_invokeStatic pro/javacard/capfile/CAPFile.uncheckedDelete:(Ljava/nio/file/Path;)V
+  #344 = MethodType         #195          //  (Ljava/nio/file/Path;)V
+  #345 = NameAndType        #484:#485     // accept:()Ljava/util/function/Consumer;
+  #346 = NameAndType        #486:#487     // forEach:(Ljava/util/function/Consumer;)V
+  #347 = Utf8               java/io/FileNotFoundException
+  #348 = Utf8               java/nio/file/NoSuchFileException
+  #349 = NameAndType        #147:#470     // "<init>":(Ljava/lang/Throwable;)V
+  #350 = NameAndType        #488:#489     // resolve:(Ljava/lang/String;)Ljava/nio/file/Path;
+  #351 = NameAndType        #490:#406     // normalize:()Ljava/nio/file/Path;
+  #352 = NameAndType        #491:#406     // toAbsolutePath:()Ljava/nio/file/Path;
+  #353 = NameAndType        #492:#226     // startsWith:(Ljava/nio/file/Path;)Z
+  #354 = Utf8               java/lang/IllegalArgumentException
+  #355 = Utf8               Invalid path in JAR:
+  #356 = NameAndType        #475:#493     // append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+  #357 = Utf8                vs
+  #358 = Utf8               java/util/jar/JarFile
+  #359 = NameAndType        #215:#494     // entries:()Ljava/util/Enumeration;
+  #360 = NameAndType        #495:#436     // hasMoreElements:()Z
+  #361 = NameAndType        #496:#438     // nextElement:()Ljava/lang/Object;
+  #362 = Utf8               java/util/jar/JarEntry
+  #363 = NameAndType        #497:#420     // getName:()Ljava/lang/String;
+  #364 = NameAndType        #498:#420     // toLowerCase:()Ljava/lang/String;
+  #365 = NameAndType        #198:#199     // under:(Ljava/nio/file/Path;Ljava/lang/String;)Ljava/nio/file/Path;
+  #366 = NameAndType        #499:#406     // getParent:()Ljava/nio/file/Path;
+  #367 = Utf8               Null parent
+  #368 = NameAndType        #500:#501     // createDirectories:(Ljava/nio/file/Path;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;
+  #369 = NameAndType        #502:#503     // getInputStream:(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
+  #370 = NameAndType        #504:#505     // newOutputStream:(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/OutputStream;
+  #371 = NameAndType        #506:#507     // read:([B)I
+  #372 = NameAndType        #508:#509     // write:([BII)V
+  #373 = Utf8               java/util/List
+  #374 = Utf8               java/io/InputStream
+  #375 = Utf8               pro/javacard/capfile/CAPFile
+  #376 = Utf8               java/util/Iterator
+  #377 = Utf8               java/util/Enumeration
+  #378 = Utf8               java/io/OutputStream
+  #379 = Utf8               pro/javacard/sdk/JavaCardSDK
+  #380 = Utf8               getVersion
+  #381 = Utf8               ()Lpro/javacard/sdk/SDKVersion;
+  #382 = Utf8               V211
+  #383 = Utf8               Lpro/javacard/sdk/SDKVersion;
+  #384 = Utf8               V212
+  #385 = Utf8               isOneOf
+  #386 = Utf8               ([Lpro/javacard/sdk/SDKVersion;)Z
+  #387 = Utf8               (Ljava/lang/String;)V
+  #388 = Utf8               ()V
+  #389 = Utf8               stream
+  #390 = Utf8               ()Ljava/util/stream/Stream;
+  #391 = Methodref          #510.#511     // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #392 = Utf8               (Ljava/lang/Object;)Ljava/lang/Object;
+  #393 = Utf8               (Ljava/io/File;)Ljava/nio/file/Path;
+  #394 = Utf8               apply
+  #395 = Utf8               ()Ljava/util/function/Function;
+  #396 = Utf8               java/util/stream/Stream
+  #397 = Utf8               map
+  #398 = Utf8               (Ljava/util/function/Function;)Ljava/util/stream/Stream;
+  #399 = Utf8               java/util/stream/Collectors
+  #400 = Utf8               toList
+  #401 = Utf8               ()Ljava/util/stream/Collector;
+  #402 = Utf8               collect
+  #403 = Utf8               (Ljava/util/stream/Collector;)Ljava/lang/Object;
+  #404 = Utf8               (Ljava/util/Collection;)V
+  #405 = Utf8               getExportDir
+  #406 = Utf8               ()Ljava/nio/file/Path;
+  #407 = Utf8               add
+  #408 = Utf8               (Ljava/lang/Object;)Z
+  #409 = Utf8               toPath
+  #410 = Utf8               V304
+  #411 = Utf8               V305
+  #412 = Utf8               V310
+  #413 = Utf8               V320_25_0
+  #414 = Utf8               java/lang/System
+  #415 = Utf8               err
+  #416 = Utf8               Ljava/io/PrintStream;
+  #417 = Utf8               java/io/PrintStream
+  #418 = Utf8               println
+  #419 = Utf8               getRelease
+  #420 = Utf8               ()Ljava/lang/String;
+  #421 = Utf8               equals
+  #422 = Utf8               java/nio/file/Files
+  #423 = Utf8               createTempDirectory
+  #424 = Utf8               (Ljava/lang/String;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;
+  #425 = Utf8               newInputStream
+  #426 = Utf8               (Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;
+  #427 = Utf8               fromStream
+  #428 = Utf8               (Ljava/io/InputStream;)Lpro/javacard/capfile/CAPFile;
+  #429 = Utf8               getClassLoader
+  #430 = Utf8               ()Ljava/lang/ClassLoader;
+  #431 = Utf8               forName
+  #432 = Utf8               (Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+  #433 = Utf8               iterator
+  #434 = Utf8               ()Ljava/util/Iterator;
+  #435 = Utf8               hasNext
+  #436 = Utf8               ()Z
+  #437 = Utf8               next
+  #438 = Utf8               ()Ljava/lang/Object;
+  #439 = Utf8               isDirectory
+  #440 = Utf8               (Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z
+  #441 = Utf8               toRealPath
+  #442 = Utf8               ([Ljava/nio/file/LinkOption;)Ljava/nio/file/Path;
+  #443 = Utf8               walk
+  #444 = Utf8               (Ljava/nio/file/Path;[Ljava/nio/file/FileVisitOption;)Ljava/util/stream/Stream;
+  #445 = Methodref          #9.#512       // pro/javacard/sdk/OffCardVerifier.lambda$verify$0:(Ljava/nio/file/Path;)Z
+  #446 = Utf8               test
+  #447 = Utf8               ()Ljava/util/function/Predicate;
+  #448 = Utf8               filter
+  #449 = Utf8               (Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+  #450 = Utf8               (Ljava/nio/file/Path;)Ljava/io/File;
+  #451 = Utf8               addAll
+  #452 = Utf8               (Ljava/util/Collection;)Z
+  #453 = Utf8               isReadable
+  #454 = Utf8               toString
+  #455 = Utf8               endsWith
+  #456 = Utf8               (Ljava/lang/String;)Z
+  #457 = Utf8               toFile
+  #458 = Utf8               ()Ljava/io/File;
+  #459 = Utf8               getPackageName
+  #460 = Utf8               (Ljava/io/File;)V
+  #461 = Utf8               equalOrNewer
+  #462 = Utf8               (Lpro/javacard/sdk/SDKVersion;)Z
+  #463 = Utf8               getMethod
+  #464 = Utf8               (Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+  #465 = Utf8               java/lang/reflect/Method
+  #466 = Utf8               invoke
+  #467 = Utf8               (Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+  #468 = Utf8               close
+  #469 = Utf8               addSuppressed
+  #470 = Utf8               (Ljava/lang/Throwable;)V
+  #471 = Utf8               getTargetException
+  #472 = Utf8               ()Ljava/lang/Throwable;
+  #473 = Utf8               getMessage
+  #474 = Utf8               (Ljava/lang/String;Ljava/lang/Throwable;)V
+  #475 = Utf8               append
+  #476 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #477 = Utf8               java/util/Comparator
+  #478 = Utf8               reverseOrder
+  #479 = Utf8               ()Ljava/util/Comparator;
+  #480 = Utf8               sorted
+  #481 = Utf8               (Ljava/util/Comparator;)Ljava/util/stream/Stream;
+  #482 = Utf8               (Ljava/lang/Object;)V
+  #483 = Methodref          #191.#513     // pro/javacard/capfile/CAPFile.uncheckedDelete:(Ljava/nio/file/Path;)V
+  #484 = Utf8               accept
+  #485 = Utf8               ()Ljava/util/function/Consumer;
+  #486 = Utf8               forEach
+  #487 = Utf8               (Ljava/util/function/Consumer;)V
+  #488 = Utf8               resolve
+  #489 = Utf8               (Ljava/lang/String;)Ljava/nio/file/Path;
+  #490 = Utf8               normalize
+  #491 = Utf8               toAbsolutePath
+  #492 = Utf8               startsWith
+  #493 = Utf8               (Ljava/lang/Object;)Ljava/lang/StringBuilder;
+  #494 = Utf8               ()Ljava/util/Enumeration;
+  #495 = Utf8               hasMoreElements
+  #496 = Utf8               nextElement
+  #497 = Utf8               getName
+  #498 = Utf8               toLowerCase
+  #499 = Utf8               getParent
+  #500 = Utf8               createDirectories
+  #501 = Utf8               (Ljava/nio/file/Path;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;
+  #502 = Utf8               getInputStream
+  #503 = Utf8               (Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
+  #504 = Utf8               newOutputStream
+  #505 = Utf8               (Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/OutputStream;
+  #506 = Utf8               read
+  #507 = Utf8               ([B)I
+  #508 = Utf8               write
+  #509 = Utf8               ([BII)V
+  #510 = Class              #514          // java/lang/invoke/LambdaMetafactory
+  #511 = NameAndType        #515:#519     // metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #512 = NameAndType        #225:#226     // lambda$verify$0:(Ljava/nio/file/Path;)Z
+  #513 = NameAndType        #520:#195     // uncheckedDelete:(Ljava/nio/file/Path;)V
+  #514 = Utf8               java/lang/invoke/LambdaMetafactory
+  #515 = Utf8               metafactory
+  #516 = Class              #522          // java/lang/invoke/MethodHandles$Lookup
+  #517 = Utf8               Lookup
+  #518 = Utf8               InnerClasses
+  #519 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #520 = Utf8               uncheckedDelete
+  #521 = Class              #523          // java/lang/invoke/MethodHandles
+  #522 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #523 = Utf8               java/lang/invoke/MethodHandles
+{
+  private final pro.javacard.sdk.JavaCardSDK sdk;
+    descriptor: Lpro/javacard/sdk/JavaCardSDK;
+    flags: (0x0012) ACC_PRIVATE, ACC_FINAL
+
+  public static pro.javacard.sdk.OffCardVerifier withSDK(pro.javacard.sdk.JavaCardSDK);
+    descriptor: (Lpro/javacard/sdk/JavaCardSDK;)Lpro/javacard/sdk/OffCardVerifier;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=5, locals=1, args_size=1
+         0: aload_0
+         1: invokevirtual #1                  // Method pro/javacard/sdk/JavaCardSDK.getVersion:()Lpro/javacard/sdk/SDKVersion;
+         4: iconst_2
+         5: anewarray     #2                  // class pro/javacard/sdk/SDKVersion
+         8: dup
+         9: iconst_0
+        10: getstatic     #3                  // Field pro/javacard/sdk/SDKVersion.V211:Lpro/javacard/sdk/SDKVersion;
+        13: aastore
+        14: dup
+        15: iconst_1
+        16: getstatic     #4                  // Field pro/javacard/sdk/SDKVersion.V212:Lpro/javacard/sdk/SDKVersion;
+        19: aastore
+        20: invokevirtual #5                  // Method pro/javacard/sdk/SDKVersion.isOneOf:([Lpro/javacard/sdk/SDKVersion;)Z
+        23: ifeq          36
+        26: new           #6                  // class java/lang/RuntimeException
+        29: dup
+        30: ldc           #7                  // String Verification is supported with JavaCard SDK 2.2.1 or later
+        32: invokespecial #8                  // Method java/lang/RuntimeException."<init>":(Ljava/lang/String;)V
+        35: athrow
+        36: new           #9                  // class pro/javacard/sdk/OffCardVerifier
+        39: dup
+        40: aload_0
+        41: invokespecial #10                 // Method "<init>":(Lpro/javacard/sdk/JavaCardSDK;)V
+        44: areturn
+      LineNumberTable:
+        line 44: 0
+        line 45: 26
+        line 46: 36
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      45     0   sdk   Lpro/javacard/sdk/JavaCardSDK;
+      StackMapTable: number_of_entries = 1
+        frame_type = 36 /* same */
+
+  private pro.javacard.sdk.OffCardVerifier(pro.javacard.sdk.JavaCardSDK);
+    descriptor: (Lpro/javacard/sdk/JavaCardSDK;)V
+    flags: (0x0002) ACC_PRIVATE
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: invokespecial #11                 // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: aload_1
+         6: putfield      #12                 // Field sdk:Lpro/javacard/sdk/JavaCardSDK;
+         9: return
+      LineNumberTable:
+        line 49: 0
+        line 50: 4
+        line 51: 9
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      10     0  this   Lpro/javacard/sdk/OffCardVerifier;
+            0      10     1   sdk   Lpro/javacard/sdk/JavaCardSDK;
+
+  public void verifyAgainst(java.io.File, pro.javacard.sdk.JavaCardSDK, java.util.Vector<java.io.File>) throws pro.javacard.sdk.VerifierError, java.io.IOException;
+    descriptor: (Ljava/io/File;Lpro/javacard/sdk/JavaCardSDK;Ljava/util/Vector;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=4, locals=5, args_size=4
+         0: new           #13                 // class java/util/ArrayList
+         3: dup
+         4: aload_3
+         5: invokevirtual #14                 // Method java/util/Vector.stream:()Ljava/util/stream/Stream;
+         8: invokedynamic #15,  0             // InvokeDynamic #0:apply:()Ljava/util/function/Function;
+        13: invokeinterface #16,  2           // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+        18: invokestatic  #17                 // Method java/util/stream/Collectors.toList:()Ljava/util/stream/Collector;
+        21: invokeinterface #18,  2           // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+        26: checkcast     #19                 // class java/util/Collection
+        29: invokespecial #20                 // Method java/util/ArrayList."<init>":(Ljava/util/Collection;)V
+        32: astore        4
+        34: aload         4
+        36: aload_2
+        37: invokevirtual #21                 // Method pro/javacard/sdk/JavaCardSDK.getExportDir:()Ljava/nio/file/Path;
+        40: invokeinterface #22,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+        45: pop
+        46: aload_0
+        47: aload_1
+        48: invokevirtual #23                 // Method java/io/File.toPath:()Ljava/nio/file/Path;
+        51: aload         4
+        53: invokevirtual #24                 // Method verify:(Ljava/nio/file/Path;Ljava/util/List;)V
+        56: return
+      LineNumberTable:
+        line 55: 0
+        line 56: 34
+        line 57: 46
+        line 58: 56
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      57     0  this   Lpro/javacard/sdk/OffCardVerifier;
+            0      57     1     f   Ljava/io/File;
+            0      57     2 target   Lpro/javacard/sdk/JavaCardSDK;
+            0      57     3  exps   Ljava/util/Vector;
+           34      23     4 exports   Ljava/util/List;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+            0      57     3  exps   Ljava/util/Vector<Ljava/io/File;>;
+           34      23     4 exports   Ljava/util/List<Ljava/nio/file/Path;>;
+    Exceptions:
+      throws pro.javacard.sdk.VerifierError, java.io.IOException
+    Signature: #165                         // (Ljava/io/File;Lpro/javacard/sdk/JavaCardSDK;Ljava/util/Vector<Ljava/io/File;>;)V
+
+  public void verifyAgainst(java.nio.file.Path, pro.javacard.sdk.JavaCardSDK, java.util.List<java.nio.file.Path>) throws pro.javacard.sdk.VerifierError, java.io.IOException;
+    descriptor: (Ljava/nio/file/Path;Lpro/javacard/sdk/JavaCardSDK;Ljava/util/List;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=5, locals=5, args_size=4
+         0: aload_2
+         1: invokevirtual #1                  // Method pro/javacard/sdk/JavaCardSDK.getVersion:()Lpro/javacard/sdk/SDKVersion;
+         4: iconst_3
+         5: anewarray     #2                  // class pro/javacard/sdk/SDKVersion
+         8: dup
+         9: iconst_0
+        10: getstatic     #25                 // Field pro/javacard/sdk/SDKVersion.V304:Lpro/javacard/sdk/SDKVersion;
+        13: aastore
+        14: dup
+        15: iconst_1
+        16: getstatic     #26                 // Field pro/javacard/sdk/SDKVersion.V305:Lpro/javacard/sdk/SDKVersion;
+        19: aastore
+        20: dup
+        21: iconst_2
+        22: getstatic     #27                 // Field pro/javacard/sdk/SDKVersion.V310:Lpro/javacard/sdk/SDKVersion;
+        25: aastore
+        26: invokevirtual #5                  // Method pro/javacard/sdk/SDKVersion.isOneOf:([Lpro/javacard/sdk/SDKVersion;)Z
+        29: ifeq          56
+        32: aload_0
+        33: getfield      #12                 // Field sdk:Lpro/javacard/sdk/JavaCardSDK;
+        36: invokevirtual #1                  // Method pro/javacard/sdk/JavaCardSDK.getVersion:()Lpro/javacard/sdk/SDKVersion;
+        39: getstatic     #28                 // Field pro/javacard/sdk/SDKVersion.V320_25_0:Lpro/javacard/sdk/SDKVersion;
+        42: if_acmpeq     56
+        45: getstatic     #29                 // Field java/lang/System.err:Ljava/io/PrintStream;
+        48: ldc           #30                 // String NB! Please use JavaCard SDK 3.2.0 / 25.0 for verifying!
+        50: invokevirtual #31                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        53: goto          79
+        56: aload_0
+        57: getfield      #12                 // Field sdk:Lpro/javacard/sdk/JavaCardSDK;
+        60: invokevirtual #32                 // Method pro/javacard/sdk/JavaCardSDK.getRelease:()Ljava/lang/String;
+        63: ldc           #33                 // String 3.0.5u4
+        65: invokevirtual #34                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+        68: ifne          79
+        71: getstatic     #29                 // Field java/lang/System.err:Ljava/io/PrintStream;
+        74: ldc           #35                 // String NB! Please use JavaCard SDK 3.0.5u4 or later for verifying!
+        76: invokevirtual #31                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        79: new           #13                 // class java/util/ArrayList
+        82: dup
+        83: aload_3
+        84: invokeinterface #36,  1           // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+        89: invokestatic  #17                 // Method java/util/stream/Collectors.toList:()Ljava/util/stream/Collector;
+        92: invokeinterface #18,  2           // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+        97: checkcast     #19                 // class java/util/Collection
+       100: invokespecial #20                 // Method java/util/ArrayList."<init>":(Ljava/util/Collection;)V
+       103: astore        4
+       105: aload         4
+       107: aload_2
+       108: invokevirtual #21                 // Method pro/javacard/sdk/JavaCardSDK.getExportDir:()Ljava/nio/file/Path;
+       111: invokeinterface #22,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+       116: pop
+       117: aload_0
+       118: aload_1
+       119: aload         4
+       121: invokevirtual #24                 // Method verify:(Ljava/nio/file/Path;Ljava/util/List;)V
+       124: return
+      LineNumberTable:
+        line 62: 0
+        line 63: 45
+        line 65: 56
+        line 66: 71
+        line 69: 79
+        line 70: 105
+        line 71: 117
+        line 72: 124
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0     125     0  this   Lpro/javacard/sdk/OffCardVerifier;
+            0     125     1     f   Ljava/nio/file/Path;
+            0     125     2 target   Lpro/javacard/sdk/JavaCardSDK;
+            0     125     3  exps   Ljava/util/List;
+          105      20     4 exports   Ljava/util/List;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+            0     125     3  exps   Ljava/util/List<Ljava/nio/file/Path;>;
+          105      20     4 exports   Ljava/util/List<Ljava/nio/file/Path;>;
+      StackMapTable: number_of_entries = 2
+        frame_type = 56 /* same */
+        frame_type = 22 /* same */
+    Exceptions:
+      throws pro.javacard.sdk.VerifierError, java.io.IOException
+    Signature: #168                         // (Ljava/nio/file/Path;Lpro/javacard/sdk/JavaCardSDK;Ljava/util/List<Ljava/nio/file/Path;>;)V
+
+  public void verify(java.nio.file.Path, java.util.List<java.nio.file.Path>) throws pro.javacard.sdk.VerifierError, java.io.IOException;
+    descriptor: (Ljava/nio/file/Path;Ljava/util/List;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=6, locals=13, args_size=3
+         0: ldc           #37                 // String capfile
+         2: iconst_0
+         3: anewarray     #38                 // class java/nio/file/attribute/FileAttribute
+         6: invokestatic  #39                 // Method java/nio/file/Files.createTempDirectory:(Ljava/lang/String;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;
+         9: astore_3
+        10: aload_1
+        11: iconst_0
+        12: anewarray     #40                 // class java/nio/file/OpenOption
+        15: invokestatic  #41                 // Method java/nio/file/Files.newInputStream:(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;
+        18: astore        4
+        20: aload         4
+        22: invokestatic  #42                 // Method pro/javacard/capfile/CAPFile.fromStream:(Ljava/io/InputStream;)Lpro/javacard/capfile/CAPFile;
+        25: astore        5
+        27: ldc           #43                 // String com.sun.javacard.offcardverifier.Verifier
+        29: iconst_1
+        30: aload_0
+        31: getfield      #12                 // Field sdk:Lpro/javacard/sdk/JavaCardSDK;
+        34: invokevirtual #44                 // Method pro/javacard/sdk/JavaCardSDK.getClassLoader:()Ljava/lang/ClassLoader;
+        37: invokestatic  #45                 // Method java/lang/Class.forName:(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+        40: astore        6
+        42: new           #46                 // class java/util/Vector
+        45: dup
+        46: invokespecial #47                 // Method java/util/Vector."<init>":()V
+        49: astore        7
+        51: aload_2
+        52: invokeinterface #48,  1           // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+        57: astore        8
+        59: aload         8
+        61: invokeinterface #49,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+        66: ifeq          246
+        69: aload         8
+        71: invokeinterface #50,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        76: checkcast     #51                 // class java/nio/file/Path
+        79: astore        9
+        81: aload         9
+        83: iconst_0
+        84: anewarray     #52                 // class java/nio/file/LinkOption
+        87: invokestatic  #53                 // Method java/nio/file/Files.isDirectory:(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z
+        90: ifeq          151
+        93: aload         7
+        95: aload         9
+        97: iconst_0
+        98: anewarray     #52                 // class java/nio/file/LinkOption
+       101: invokeinterface #54,  2           // InterfaceMethod java/nio/file/Path.toRealPath:([Ljava/nio/file/LinkOption;)Ljava/nio/file/Path;
+       106: iconst_0
+       107: anewarray     #55                 // class java/nio/file/FileVisitOption
+       110: invokestatic  #56                 // Method java/nio/file/Files.walk:(Ljava/nio/file/Path;[Ljava/nio/file/FileVisitOption;)Ljava/util/stream/Stream;
+       113: invokedynamic #57,  0             // InvokeDynamic #1:test:()Ljava/util/function/Predicate;
+       118: invokeinterface #58,  2           // InterfaceMethod java/util/stream/Stream.filter:(Ljava/util/function/Predicate;)Ljava/util/stream/Stream;
+       123: invokedynamic #59,  0             // InvokeDynamic #2:apply:()Ljava/util/function/Function;
+       128: invokeinterface #16,  2           // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+       133: invokestatic  #17                 // Method java/util/stream/Collectors.toList:()Ljava/util/stream/Collector;
+       136: invokeinterface #18,  2           // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+       141: checkcast     #19                 // class java/util/Collection
+       144: invokevirtual #60                 // Method java/util/Vector.addAll:(Ljava/util/Collection;)Z
+       147: pop
+       148: goto          243
+       151: aload         9
+       153: invokestatic  #61                 // Method java/nio/file/Files.isReadable:(Ljava/nio/file/Path;)Z
+       156: ifeq          243
+       159: aload         9
+       161: invokeinterface #62,  1           // InterfaceMethod java/nio/file/Path.toString:()Ljava/lang/String;
+       166: ldc           #63                 // String .exp
+       168: invokevirtual #64                 // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+       171: ifeq          190
+       174: aload         7
+       176: aload         9
+       178: invokeinterface #65,  1           // InterfaceMethod java/nio/file/Path.toFile:()Ljava/io/File;
+       183: invokevirtual #66                 // Method java/util/Vector.add:(Ljava/lang/Object;)Z
+       186: pop
+       187: goto          243
+       190: aload         9
+       192: invokeinterface #62,  1           // InterfaceMethod java/nio/file/Path.toString:()Ljava/lang/String;
+       197: ldc           #67                 // String .jar
+       199: invokevirtual #64                 // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+       202: ifeq          243
+       205: aload         7
+       207: aload         9
+       209: aload_3
+       210: invokestatic  #68                 // Method extractExps:(Ljava/nio/file/Path;Ljava/nio/file/Path;)Ljava/util/List;
+       213: invokeinterface #36,  1           // InterfaceMethod java/util/List.stream:()Ljava/util/stream/Stream;
+       218: invokedynamic #59,  0             // InvokeDynamic #2:apply:()Ljava/util/function/Function;
+       223: invokeinterface #16,  2           // InterfaceMethod java/util/stream/Stream.map:(Ljava/util/function/Function;)Ljava/util/stream/Stream;
+       228: invokestatic  #17                 // Method java/util/stream/Collectors.toList:()Ljava/util/stream/Collector;
+       231: invokeinterface #18,  2           // InterfaceMethod java/util/stream/Stream.collect:(Ljava/util/stream/Collector;)Ljava/lang/Object;
+       236: checkcast     #19                 // class java/util/Collection
+       239: invokevirtual #60                 // Method java/util/Vector.addAll:(Ljava/util/Collection;)Z
+       242: pop
+       243: goto          59
+       246: aload         5
+       248: invokevirtual #69                 // Method pro/javacard/capfile/CAPFile.getPackageName:()Ljava/lang/String;
+       251: astore        8
+       253: new           #70                 // class java/io/FileInputStream
+       256: dup
+       257: aload_1
+       258: invokeinterface #65,  1           // InterfaceMethod java/nio/file/Path.toFile:()Ljava/io/File;
+       263: invokespecial #71                 // Method java/io/FileInputStream."<init>":(Ljava/io/File;)V
+       266: astore        9
+       268: aload_0
+       269: getfield      #12                 // Field sdk:Lpro/javacard/sdk/JavaCardSDK;
+       272: invokevirtual #32                 // Method pro/javacard/sdk/JavaCardSDK.getRelease:()Ljava/lang/String;
+       275: ldc           #72                 // String 3.0.5u3
+       277: invokevirtual #34                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+       280: ifne          314
+       283: aload_0
+       284: getfield      #12                 // Field sdk:Lpro/javacard/sdk/JavaCardSDK;
+       287: invokevirtual #32                 // Method pro/javacard/sdk/JavaCardSDK.getRelease:()Ljava/lang/String;
+       290: ldc           #73                 // String 3.0.5u2
+       292: invokevirtual #34                 // Method java/lang/String.equals:(Ljava/lang/Object;)Z
+       295: ifne          314
+       298: aload_0
+       299: getfield      #12                 // Field sdk:Lpro/javacard/sdk/JavaCardSDK;
+       302: invokevirtual #1                  // Method pro/javacard/sdk/JavaCardSDK.getVersion:()Lpro/javacard/sdk/SDKVersion;
+       305: getstatic     #27                 // Field pro/javacard/sdk/SDKVersion.V310:Lpro/javacard/sdk/SDKVersion;
+       308: invokevirtual #74                 // Method pro/javacard/sdk/SDKVersion.equalOrNewer:(Lpro/javacard/sdk/SDKVersion;)Z
+       311: ifeq          375
+       314: aload         6
+       316: ldc           #75                 // String verifyCap
+       318: iconst_3
+       319: anewarray     #76                 // class java/lang/Class
+       322: dup
+       323: iconst_0
+       324: ldc           #77                 // class java/io/File
+       326: aastore
+       327: dup
+       328: iconst_1
+       329: ldc           #78                 // class java/lang/String
+       331: aastore
+       332: dup
+       333: iconst_2
+       334: ldc           #46                 // class java/util/Vector
+       336: aastore
+       337: invokevirtual #79                 // Method java/lang/Class.getMethod:(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+       340: astore        10
+       342: aload         10
+       344: aconst_null
+       345: iconst_3
+       346: anewarray     #80                 // class java/lang/Object
+       349: dup
+       350: iconst_0
+       351: aload_1
+       352: invokeinterface #65,  1           // InterfaceMethod java/nio/file/Path.toFile:()Ljava/io/File;
+       357: aastore
+       358: dup
+       359: iconst_1
+       360: aload         8
+       362: aastore
+       363: dup
+       364: iconst_2
+       365: aload         7
+       367: aastore
+       368: invokevirtual #81                 // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+       371: pop
+       372: goto          429
+       375: aload         6
+       377: ldc           #75                 // String verifyCap
+       379: iconst_3
+       380: anewarray     #76                 // class java/lang/Class
+       383: dup
+       384: iconst_0
+       385: ldc           #70                 // class java/io/FileInputStream
+       387: aastore
+       388: dup
+       389: iconst_1
+       390: ldc           #78                 // class java/lang/String
+       392: aastore
+       393: dup
+       394: iconst_2
+       395: ldc           #46                 // class java/util/Vector
+       397: aastore
+       398: invokevirtual #79                 // Method java/lang/Class.getMethod:(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+       401: astore        10
+       403: aload         10
+       405: aconst_null
+       406: iconst_3
+       407: anewarray     #80                 // class java/lang/Object
+       410: dup
+       411: iconst_0
+       412: aload         9
+       414: aastore
+       415: dup
+       416: iconst_1
+       417: aload         8
+       419: aastore
+       420: dup
+       421: iconst_2
+       422: aload         7
+       424: aastore
+       425: invokevirtual #81                 // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+       428: pop
+       429: aload         9
+       431: invokevirtual #82                 // Method java/io/FileInputStream.close:()V
+       434: goto          459
+       437: astore        10
+       439: aload         9
+       441: invokevirtual #82                 // Method java/io/FileInputStream.close:()V
+       444: goto          456
+       447: astore        11
+       449: aload         10
+       451: aload         11
+       453: invokevirtual #84                 // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       456: aload         10
+       458: athrow
+       459: goto          520
+       462: astore        9
+       464: new           #86                 // class pro/javacard/sdk/VerifierError
+       467: dup
+       468: aload         9
+       470: invokevirtual #87                 // Method java/lang/reflect/InvocationTargetException.getTargetException:()Ljava/lang/Throwable;
+       473: invokevirtual #88                 // Method java/lang/Throwable.getMessage:()Ljava/lang/String;
+       476: aload         9
+       478: invokevirtual #87                 // Method java/lang/reflect/InvocationTargetException.getTargetException:()Ljava/lang/Throwable;
+       481: invokespecial #89                 // Method pro/javacard/sdk/VerifierError."<init>":(Ljava/lang/String;Ljava/lang/Throwable;)V
+       484: athrow
+       485: astore        9
+       487: new           #86                 // class pro/javacard/sdk/VerifierError
+       490: dup
+       491: new           #91                 // class java/lang/StringBuilder
+       494: dup
+       495: invokespecial #92                 // Method java/lang/StringBuilder."<init>":()V
+       498: ldc           #93                 // String Verification failed:
+       500: invokevirtual #94                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       503: aload         9
+       505: invokevirtual #95                 // Method java/lang/Exception.getMessage:()Ljava/lang/String;
+       508: invokevirtual #94                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       511: invokevirtual #96                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       514: aload         9
+       516: invokespecial #89                 // Method pro/javacard/sdk/VerifierError."<init>":(Ljava/lang/String;Ljava/lang/Throwable;)V
+       519: athrow
+       520: aload         4
+       522: ifnull        560
+       525: aload         4
+       527: invokevirtual #97                 // Method java/io/InputStream.close:()V
+       530: goto          560
+       533: astore        5
+       535: aload         4
+       537: ifnull        557
+       540: aload         4
+       542: invokevirtual #97                 // Method java/io/InputStream.close:()V
+       545: goto          557
+       548: astore        6
+       550: aload         5
+       552: aload         6
+       554: invokevirtual #84                 // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       557: aload         5
+       559: athrow
+       560: aload_3
+       561: invokestatic  #98                 // Method rmminusrf:(Ljava/nio/file/Path;)V
+       564: goto          611
+       567: astore        4
+       569: new           #6                  // class java/lang/RuntimeException
+       572: dup
+       573: new           #91                 // class java/lang/StringBuilder
+       576: dup
+       577: invokespecial #92                 // Method java/lang/StringBuilder."<init>":()V
+       580: ldc           #101                // String Could not run verifier:
+       582: invokevirtual #94                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       585: aload         4
+       587: invokevirtual #95                 // Method java/lang/Exception.getMessage:()Ljava/lang/String;
+       590: invokevirtual #94                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       593: invokevirtual #96                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       596: aload         4
+       598: invokespecial #102                // Method java/lang/RuntimeException."<init>":(Ljava/lang/String;Ljava/lang/Throwable;)V
+       601: athrow
+       602: astore        12
+       604: aload_3
+       605: invokestatic  #98                 // Method rmminusrf:(Ljava/nio/file/Path;)V
+       608: aload         12
+       610: athrow
+       611: return
+      Exception table:
+         from    to  target type
+           268   429   437   Class java/lang/Throwable
+           439   444   447   Class java/lang/Throwable
+           253   459   462   Class java/lang/reflect/InvocationTargetException
+           253   459   485   Class java/lang/Exception
+            20   520   533   Class java/lang/Throwable
+           540   545   548   Class java/lang/Throwable
+            10   560   567   Class java/lang/ReflectiveOperationException
+            10   560   567   Class java/io/IOException
+            10   560   602   any
+           567   604   602   any
+      LineNumberTable:
+        line 76: 0
+        line 77: 10
+        line 78: 20
+        line 81: 27
+        line 84: 42
+        line 85: 51
+        line 87: 81
+        line 88: 93
+        line 89: 151
+        line 90: 159
+        line 91: 174
+        line 92: 190
+        line 93: 205
+        line 96: 243
+        line 98: 246
+        line 100: 253
+        line 102: 268
+        line 103: 314
+        line 104: 342
+        line 105: 372
+        line 106: 375
+        line 107: 403
+        line 109: 429
+        line 100: 437
+        line 113: 459
+        line 109: 462
+        line 110: 464
+        line 111: 485
+        line 112: 487
+        line 114: 520
+        line 77: 533
+        line 118: 560
+        line 119: 564
+        line 114: 567
+        line 115: 569
+        line 118: 602
+        line 119: 608
+        line 120: 611
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           81     162     9     e   Ljava/nio/file/Path;
+          342      30    10     m   Ljava/lang/reflect/Method;
+          403      26    10     m   Ljava/lang/reflect/Method;
+          268     191     9 input   Ljava/io/FileInputStream;
+          464      21     9     e   Ljava/lang/reflect/InvocationTargetException;
+          487      33     9     e   Ljava/lang/Exception;
+           27     493     5   cap   Lpro/javacard/capfile/CAPFile;
+           42     478     6 verifier   Ljava/lang/Class;
+           51     469     7 expfiles   Ljava/util/Vector;
+          253     267     8 packagename   Ljava/lang/String;
+           20     540     4    in   Ljava/io/InputStream;
+          569      33     4     e   Ljava/lang/Exception;
+            0     612     0  this   Lpro/javacard/sdk/OffCardVerifier;
+            0     612     1     f   Ljava/nio/file/Path;
+            0     612     2  exps   Ljava/util/List;
+           10     602     3   tmp   Ljava/nio/file/Path;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+           42     478     6 verifier   Ljava/lang/Class<*>;
+           51     469     7 expfiles   Ljava/util/Vector<Ljava/io/File;>;
+            0     612     2  exps   Ljava/util/List<Ljava/nio/file/Path;>;
+      StackMapTable: number_of_entries = 22
+        frame_type = 255 /* full_frame */
+          offset_delta = 59
+          locals = [ class pro/javacard/sdk/OffCardVerifier, class java/nio/file/Path, class java/util/List, class java/nio/file/Path, class java/io/InputStream, class pro/javacard/capfile/CAPFile, class java/lang/Class, class java/util/Vector, class java/util/Iterator ]
+          stack = []
+        frame_type = 252 /* append */
+          offset_delta = 91
+          locals = [ class java/nio/file/Path ]
+        frame_type = 38 /* same */
+        frame_type = 250 /* chop */
+          offset_delta = 52
+        frame_type = 250 /* chop */
+          offset_delta = 2
+        frame_type = 253 /* append */
+          offset_delta = 67
+          locals = [ class java/lang/String, class java/io/FileInputStream ]
+        frame_type = 60 /* same */
+        frame_type = 53 /* same */
+        frame_type = 71 /* same_locals_1_stack_item */
+          stack = [ class java/lang/Throwable ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 9
+          locals = [ class pro/javacard/sdk/OffCardVerifier, class java/nio/file/Path, class java/util/List, class java/nio/file/Path, class java/io/InputStream, class pro/javacard/capfile/CAPFile, class java/lang/Class, class java/util/Vector, class java/lang/String, class java/io/FileInputStream, class java/lang/Throwable ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 8 /* same */
+        frame_type = 249 /* chop */
+          offset_delta = 2
+        frame_type = 66 /* same_locals_1_stack_item */
+          stack = [ class java/lang/reflect/InvocationTargetException ]
+        frame_type = 86 /* same_locals_1_stack_item */
+          stack = [ class java/lang/Exception ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 34
+          locals = [ class pro/javacard/sdk/OffCardVerifier, class java/nio/file/Path, class java/util/List, class java/nio/file/Path, class java/io/InputStream ]
+          stack = []
+        frame_type = 76 /* same_locals_1_stack_item */
+          stack = [ class java/lang/Throwable ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 14
+          locals = [ class pro/javacard/sdk/OffCardVerifier, class java/nio/file/Path, class java/util/List, class java/nio/file/Path, class java/io/InputStream, class java/lang/Throwable ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 8 /* same */
+        frame_type = 249 /* chop */
+          offset_delta = 2
+        frame_type = 70 /* same_locals_1_stack_item */
+          stack = [ class java/lang/Exception ]
+        frame_type = 98 /* same_locals_1_stack_item */
+          stack = [ class java/lang/Throwable ]
+        frame_type = 8 /* same */
+    Exceptions:
+      throws pro.javacard.sdk.VerifierError, java.io.IOException
+    Signature: #193                         // (Ljava/nio/file/Path;Ljava/util/List<Ljava/nio/file/Path;>;)V
+
+  private static void rmminusrf(java.nio.file.Path);
+    descriptor: (Ljava/nio/file/Path;)V
+    flags: (0x000a) ACC_PRIVATE, ACC_STATIC
+    Code:
+      stack=3, locals=2, args_size=1
+         0: aload_0
+         1: iconst_0
+         2: anewarray     #55                 // class java/nio/file/FileVisitOption
+         5: invokestatic  #56                 // Method java/nio/file/Files.walk:(Ljava/nio/file/Path;[Ljava/nio/file/FileVisitOption;)Ljava/util/stream/Stream;
+         8: invokestatic  #103                // InterfaceMethod java/util/Comparator.reverseOrder:()Ljava/util/Comparator;
+        11: invokeinterface #104,  2          // InterfaceMethod java/util/stream/Stream.sorted:(Ljava/util/Comparator;)Ljava/util/stream/Stream;
+        16: invokedynamic #105,  0            // InvokeDynamic #3:accept:()Ljava/util/function/Consumer;
+        21: invokeinterface #106,  2          // InterfaceMethod java/util/stream/Stream.forEach:(Ljava/util/function/Consumer;)V
+        26: goto          43
+        29: astore_1
+        30: goto          43
+        33: astore_1
+        34: new           #6                  // class java/lang/RuntimeException
+        37: dup
+        38: aload_1
+        39: invokespecial #109                // Method java/lang/RuntimeException."<init>":(Ljava/lang/Throwable;)V
+        42: athrow
+        43: return
+      Exception table:
+         from    to  target type
+             0    26    29   Class java/io/FileNotFoundException
+             0    26    29   Class java/nio/file/NoSuchFileException
+             0    26    33   Class java/io/IOException
+      LineNumberTable:
+        line 124: 0
+        line 129: 26
+        line 125: 29
+        line 129: 30
+        line 127: 33
+        line 128: 34
+        line 130: 43
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           34       9     1     e   Ljava/io/IOException;
+            0      44     0  path   Ljava/nio/file/Path;
+      StackMapTable: number_of_entries = 3
+        frame_type = 93 /* same_locals_1_stack_item */
+          stack = [ class java/io/IOException ]
+        frame_type = 67 /* same_locals_1_stack_item */
+          stack = [ class java/io/IOException ]
+        frame_type = 9 /* same */
+
+  private static java.nio.file.Path under(java.nio.file.Path, java.lang.String);
+    descriptor: (Ljava/nio/file/Path;Ljava/lang/String;)Ljava/nio/file/Path;
+    flags: (0x000a) ACC_PRIVATE, ACC_STATIC
+    Code:
+      stack=4, locals=3, args_size=2
+         0: aload_0
+         1: aload_1
+         2: invokeinterface #110,  2          // InterfaceMethod java/nio/file/Path.resolve:(Ljava/lang/String;)Ljava/nio/file/Path;
+         7: invokeinterface #111,  1          // InterfaceMethod java/nio/file/Path.normalize:()Ljava/nio/file/Path;
+        12: invokeinterface #112,  1          // InterfaceMethod java/nio/file/Path.toAbsolutePath:()Ljava/nio/file/Path;
+        17: astore_2
+        18: aload_2
+        19: aload_0
+        20: invokeinterface #113,  2          // InterfaceMethod java/nio/file/Path.startsWith:(Ljava/nio/file/Path;)Z
+        25: ifne          64
+        28: new           #114                // class java/lang/IllegalArgumentException
+        31: dup
+        32: new           #91                 // class java/lang/StringBuilder
+        35: dup
+        36: invokespecial #92                 // Method java/lang/StringBuilder."<init>":()V
+        39: ldc           #115                // String Invalid path in JAR:
+        41: invokevirtual #94                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        44: aload_2
+        45: invokevirtual #116                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+        48: ldc           #117                // String  vs
+        50: invokevirtual #94                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        53: aload_0
+        54: invokevirtual #116                // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+        57: invokevirtual #96                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        60: invokespecial #118                // Method java/lang/IllegalArgumentException."<init>":(Ljava/lang/String;)V
+        63: athrow
+        64: aload_2
+        65: areturn
+      LineNumberTable:
+        line 133: 0
+        line 134: 18
+        line 135: 28
+        line 136: 64
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      66     0   out   Ljava/nio/file/Path;
+            0      66     1  name   Ljava/lang/String;
+           18      48     2     p   Ljava/nio/file/Path;
+      StackMapTable: number_of_entries = 1
+        frame_type = 252 /* append */
+          offset_delta = 64
+          locals = [ class java/nio/file/Path ]
+
+  public static java.util.List<java.nio.file.Path> extractExps(java.nio.file.Path, java.nio.file.Path) throws java.io.IOException;
+    descriptor: (Ljava/nio/file/Path;Ljava/nio/file/Path;)Ljava/util/List;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=4, locals=12, args_size=2
+         0: new           #13                 // class java/util/ArrayList
+         3: dup
+         4: invokespecial #119                // Method java/util/ArrayList."<init>":()V
+         7: astore_2
+         8: new           #120                // class java/util/jar/JarFile
+        11: dup
+        12: aload_0
+        13: invokeinterface #65,  1           // InterfaceMethod java/nio/file/Path.toFile:()Ljava/io/File;
+        18: invokespecial #121                // Method java/util/jar/JarFile."<init>":(Ljava/io/File;)V
+        21: astore_3
+        22: aload_3
+        23: invokevirtual #122                // Method java/util/jar/JarFile.entries:()Ljava/util/Enumeration;
+        26: astore        4
+        28: aload         4
+        30: invokeinterface #123,  1          // InterfaceMethod java/util/Enumeration.hasMoreElements:()Z
+        35: ifeq          272
+        38: aload         4
+        40: invokeinterface #124,  1          // InterfaceMethod java/util/Enumeration.nextElement:()Ljava/lang/Object;
+        45: checkcast     #125                // class java/util/jar/JarEntry
+        48: astore        5
+        50: aload         5
+        52: invokevirtual #126                // Method java/util/jar/JarEntry.getName:()Ljava/lang/String;
+        55: invokevirtual #127                // Method java/lang/String.toLowerCase:()Ljava/lang/String;
+        58: ldc           #63                 // String .exp
+        60: invokevirtual #64                 // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+        63: ifeq          269
+        66: aload_1
+        67: aload         5
+        69: invokevirtual #126                // Method java/util/jar/JarEntry.getName:()Ljava/lang/String;
+        72: invokestatic  #128                // Method under:(Ljava/nio/file/Path;Ljava/lang/String;)Ljava/nio/file/Path;
+        75: astore        6
+        77: aload         6
+        79: invokeinterface #129,  1          // InterfaceMethod java/nio/file/Path.getParent:()Ljava/nio/file/Path;
+        84: astore        7
+        86: aload         7
+        88: ifnonnull     101
+        91: new           #100                // class java/io/IOException
+        94: dup
+        95: ldc           #130                // String Null parent
+        97: invokespecial #131                // Method java/io/IOException."<init>":(Ljava/lang/String;)V
+       100: athrow
+       101: aload         7
+       103: iconst_0
+       104: anewarray     #52                 // class java/nio/file/LinkOption
+       107: invokestatic  #53                 // Method java/nio/file/Files.isDirectory:(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z
+       110: ifne          123
+       113: aload         7
+       115: iconst_0
+       116: anewarray     #38                 // class java/nio/file/attribute/FileAttribute
+       119: invokestatic  #132                // Method java/nio/file/Files.createDirectories:(Ljava/nio/file/Path;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/file/Path;
+       122: pop
+       123: aload_3
+       124: aload         5
+       126: invokevirtual #133                // Method java/util/jar/JarFile.getInputStream:(Ljava/util/zip/ZipEntry;)Ljava/io/InputStream;
+       129: astore        8
+       131: aload         6
+       133: iconst_0
+       134: anewarray     #40                 // class java/nio/file/OpenOption
+       137: invokestatic  #134                // Method java/nio/file/Files.newOutputStream:(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/OutputStream;
+       140: astore        9
+       142: sipush        1024
+       145: newarray       byte
+       147: astore        10
+       149: aload         8
+       151: aload         10
+       153: invokevirtual #135                // Method java/io/InputStream.read:([B)I
+       156: istore        11
+       158: iload         11
+       160: iconst_m1
+       161: if_icmpne     167
+       164: goto          180
+       167: aload         9
+       169: aload         10
+       171: iconst_0
+       172: iload         11
+       174: invokevirtual #136                // Method java/io/OutputStream.write:([BII)V
+       177: goto          149
+       180: aload         9
+       182: ifnull        220
+       185: aload         9
+       187: invokevirtual #137                // Method java/io/OutputStream.close:()V
+       190: goto          220
+       193: astore        10
+       195: aload         9
+       197: ifnull        217
+       200: aload         9
+       202: invokevirtual #137                // Method java/io/OutputStream.close:()V
+       205: goto          217
+       208: astore        11
+       210: aload         10
+       212: aload         11
+       214: invokevirtual #84                 // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       217: aload         10
+       219: athrow
+       220: aload         8
+       222: ifnull        260
+       225: aload         8
+       227: invokevirtual #97                 // Method java/io/InputStream.close:()V
+       230: goto          260
+       233: astore        9
+       235: aload         8
+       237: ifnull        257
+       240: aload         8
+       242: invokevirtual #97                 // Method java/io/InputStream.close:()V
+       245: goto          257
+       248: astore        10
+       250: aload         9
+       252: aload         10
+       254: invokevirtual #84                 // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       257: aload         9
+       259: athrow
+       260: aload_2
+       261: aload         6
+       263: invokeinterface #22,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+       268: pop
+       269: goto          28
+       272: aload_3
+       273: invokevirtual #138                // Method java/util/jar/JarFile.close:()V
+       276: goto          300
+       279: astore        4
+       281: aload_3
+       282: invokevirtual #138                // Method java/util/jar/JarFile.close:()V
+       285: goto          297
+       288: astore        5
+       290: aload         4
+       292: aload         5
+       294: invokevirtual #84                 // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       297: aload         4
+       299: athrow
+       300: aload_2
+       301: areturn
+      Exception table:
+         from    to  target type
+           142   180   193   Class java/lang/Throwable
+           200   205   208   Class java/lang/Throwable
+           131   220   233   Class java/lang/Throwable
+           240   245   248   Class java/lang/Throwable
+            22   272   279   Class java/lang/Throwable
+           281   285   288   Class java/lang/Throwable
+      LineNumberTable:
+        line 141: 0
+        line 142: 8
+        line 143: 22
+        line 144: 28
+        line 145: 38
+        line 146: 50
+        line 147: 66
+        line 148: 77
+        line 149: 86
+        line 150: 91
+        line 151: 101
+        line 152: 113
+        line 156: 123
+        line 157: 131
+        line 158: 142
+        line 160: 149
+        line 161: 158
+        line 162: 164
+        line 164: 167
+        line 165: 177
+        line 166: 180
+        line 156: 193
+        line 166: 220
+        line 156: 233
+        line 167: 260
+        line 169: 269
+        line 170: 272
+        line 142: 279
+        line 171: 300
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+          158      19    11     r   I
+          149      31    10   buf   [B
+          142      78     9    fo   Ljava/io/OutputStream;
+          131     129     8    is   Ljava/io/InputStream;
+           77     192     6     f   Ljava/nio/file/Path;
+           86     183     7   dir   Ljava/nio/file/Path;
+           50     219     5 entry   Ljava/util/jar/JarEntry;
+           28     244     4 entries   Ljava/util/Enumeration;
+           22     278     3 jarfile   Ljava/util/jar/JarFile;
+            0     302     0 jarfilePath   Ljava/nio/file/Path;
+            0     302     1   out   Ljava/nio/file/Path;
+            8     294     2  exps   Ljava/util/List;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+           28     244     4 entries   Ljava/util/Enumeration<Ljava/util/jar/JarEntry;>;
+            8     294     2  exps   Ljava/util/List<Ljava/nio/file/Path;>;
+      StackMapTable: number_of_entries = 20
+        frame_type = 254 /* append */
+          offset_delta = 28
+          locals = [ class java/util/List, class java/util/jar/JarFile, class java/util/Enumeration ]
+        frame_type = 254 /* append */
+          offset_delta = 72
+          locals = [ class java/util/jar/JarEntry, class java/nio/file/Path, class java/nio/file/Path ]
+        frame_type = 21 /* same */
+        frame_type = 254 /* append */
+          offset_delta = 25
+          locals = [ class java/io/InputStream, class java/io/OutputStream, class "[B" ]
+        frame_type = 252 /* append */
+          offset_delta = 17
+          locals = [ int ]
+        frame_type = 249 /* chop */
+          offset_delta = 12
+        frame_type = 76 /* same_locals_1_stack_item */
+          stack = [ class java/lang/Throwable ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 14
+          locals = [ class java/nio/file/Path, class java/nio/file/Path, class java/util/List, class java/util/jar/JarFile, class java/util/Enumeration, class java/util/jar/JarEntry, class java/nio/file/Path, class java/nio/file/Path, class java/io/InputStream, class java/io/OutputStream, class java/lang/Throwable ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 8 /* same */
+        frame_type = 249 /* chop */
+          offset_delta = 2
+        frame_type = 76 /* same_locals_1_stack_item */
+          stack = [ class java/lang/Throwable ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 14
+          locals = [ class java/nio/file/Path, class java/nio/file/Path, class java/util/List, class java/util/jar/JarFile, class java/util/Enumeration, class java/util/jar/JarEntry, class java/nio/file/Path, class java/nio/file/Path, class java/io/InputStream, class java/lang/Throwable ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 8 /* same */
+        frame_type = 249 /* chop */
+          offset_delta = 2
+        frame_type = 248 /* chop */
+          offset_delta = 8
+        frame_type = 250 /* chop */
+          offset_delta = 2
+        frame_type = 70 /* same_locals_1_stack_item */
+          stack = [ class java/lang/Throwable ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 8
+          locals = [ class java/nio/file/Path, class java/nio/file/Path, class java/util/List, class java/util/jar/JarFile, class java/lang/Throwable ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 8 /* same */
+        frame_type = 249 /* chop */
+          offset_delta = 2
+    Exceptions:
+      throws java.io.IOException
+    Signature: #224                         // (Ljava/nio/file/Path;Ljava/nio/file/Path;)Ljava/util/List<Ljava/nio/file/Path;>;
+
+  private static boolean lambda$verify$0(java.nio.file.Path);
+    descriptor: (Ljava/nio/file/Path;)Z
+    flags: (0x100a) ACC_PRIVATE, ACC_STATIC, ACC_SYNTHETIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: aload_0
+         1: invokeinterface #62,  1           // InterfaceMethod java/nio/file/Path.toString:()Ljava/lang/String;
+         6: ldc           #63                 // String .exp
+         8: invokevirtual #64                 // Method java/lang/String.endsWith:(Ljava/lang/String;)Z
+        11: ireturn
+      LineNumberTable:
+        line 88: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      12     0     p   Ljava/nio/file/Path;
+}
+SourceFile: "OffCardVerifier.java"
+InnerClasses:
+  public static final #517= #516 of #521; // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+BootstrapMethods:
+  0: #245 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #246 (Ljava/lang/Object;)Ljava/lang/Object;
+      #247 REF_invokeVirtual java/io/File.toPath:()Ljava/nio/file/Path;
+      #248 (Ljava/io/File;)Ljava/nio/file/Path;
+  1: #245 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #294 (Ljava/lang/Object;)Z
+      #295 REF_invokeStatic pro/javacard/sdk/OffCardVerifier.lambda$verify$0:(Ljava/nio/file/Path;)Z
+      #296 (Ljava/nio/file/Path;)Z
+  2: #245 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #246 (Ljava/lang/Object;)Ljava/lang/Object;
+      #299 REF_invokeInterface java/nio/file/Path.toFile:()Ljava/io/File;
+      #300 (Ljava/nio/file/Path;)Ljava/io/File;
+  3: #245 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #342 (Ljava/lang/Object;)V
+      #343 REF_invokeStatic pro/javacard/capfile/CAPFile.uncheckedDelete:(Ljava/nio/file/Path;)V
+      #344 (Ljava/nio/file/Path;)V

@@ -1,0 +1,958 @@
+Classfile /F:/repo/007smsdev/analysis/ant_javacard_extracted/pro/javacard/capfile/WellKnownAID.class
+  Last modified Sep 20, 2025; size 6475 bytes
+  SHA-256 checksum 862f2259738e66a31e1685d3775193d883e3d3134c9e8918ecd98008ed7f06a8
+  Compiled from "WellKnownAID.java"
+public final class pro.javacard.capfile.WellKnownAID
+  minor version: 0
+  major version: 52
+  flags: (0x0031) ACC_PUBLIC, ACC_FINAL, ACC_SUPER
+  this_class: #109                        // pro/javacard/capfile/WellKnownAID
+  super_class: #123                       // java/lang/Object
+  interfaces: 0, fields: 2, methods: 6, attributes: 1
+Constant pool:
+    #1 = Methodref          #123.#164     // java/lang/Object."<init>":()V
+    #2 = Class              #165          // java/util/Properties
+    #3 = Methodref          #2.#164       // java/util/Properties."<init>":()V
+    #4 = Methodref          #2.#166       // java/util/Properties.load:(Ljava/io/InputStream;)V
+    #5 = Methodref          #2.#167       // java/util/Properties.stringPropertyNames:()Ljava/util/Set;
+    #6 = InterfaceMethodref #168.#169     // java/util/Set.iterator:()Ljava/util/Iterator;
+    #7 = InterfaceMethodref #148.#170     // java/util/Iterator.hasNext:()Z
+    #8 = InterfaceMethodref #148.#171     // java/util/Iterator.next:()Ljava/lang/Object;
+    #9 = Class              #172          // java/lang/String
+   #10 = Fieldref           #109.#173     // pro/javacard/capfile/WellKnownAID.wellKnownRegistry:Ljava/util/Map;
+   #11 = Methodref          #174.#175     // pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+   #12 = Methodref          #2.#176       // java/util/Properties.getProperty:(Ljava/lang/String;)Ljava/lang/String;
+   #13 = InterfaceMethodref #177.#178     // java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+   #14 = Class              #179          // java/lang/ClassCastException
+   #15 = Fieldref           #180.#181     // java/lang/System.err:Ljava/io/PrintStream;
+   #16 = Class              #182          // java/lang/StringBuilder
+   #17 = Methodref          #16.#164      // java/lang/StringBuilder."<init>":()V
+   #18 = String             #183          // Invalid format:
+   #19 = Methodref          #16.#184      // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #20 = Methodref          #14.#185      // java/lang/ClassCastException.getMessage:()Ljava/lang/String;
+   #21 = Methodref          #16.#186      // java/lang/StringBuilder.toString:()Ljava/lang/String;
+   #22 = Methodref          #187.#188     // java/io/PrintStream.println:(Ljava/lang/String;)V
+   #23 = Class              #189          // java/io/IOException
+   #24 = Fieldref           #180.#190     // java/lang/System.out:Ljava/io/PrintStream;
+   #25 = String             #191          // Could not parse AID list:
+   #26 = Methodref          #23.#185      // java/io/IOException.getMessage:()Ljava/lang/String;
+   #27 = Class              #192          // java/nio/file/LinkOption
+   #28 = Methodref          #193.#194     // java/nio/file/Files.exists:(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z
+   #29 = Class              #195          // java/nio/file/OpenOption
+   #30 = Methodref          #193.#196     // java/nio/file/Files.newInputStream:(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;
+   #31 = Methodref          #109.#166     // pro/javacard/capfile/WellKnownAID.load:(Ljava/io/InputStream;)V
+   #32 = Methodref          #153.#197     // java/io/InputStream.close:()V
+   #33 = Class              #198          // java/lang/Throwable
+   #34 = Methodref          #33.#199      // java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+   #35 = Fieldref           #109.#200     // pro/javacard/capfile/WellKnownAID.javaCardRegistry:Ljava/util/Map;
+   #36 = InterfaceMethodref #177.#201     // java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+   #37 = InterfaceMethodref #177.#202     // java/util/Map.getOrDefault:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+   #38 = Methodref          #203.#204     // java/util/Optional.ofNullable:(Ljava/lang/Object;)Ljava/util/Optional;
+   #39 = Class              #205          // java/util/LinkedHashMap
+   #40 = Methodref          #39.#164      // java/util/LinkedHashMap."<init>":()V
+   #41 = String             #206          // A0000000620001
+   #42 = String             #207          // java.lang
+   #43 = String             #208          // A0000000620002
+   #44 = String             #209          // java.io
+   #45 = String             #210          // A0000000620003
+   #46 = String             #211          // java.rmi
+   #47 = String             #212          // A0000000620101
+   #48 = String             #213          // javacard.framework
+   #49 = String             #214          // A000000062010101
+   #50 = String             #215          // javacard.framework.service
+   #51 = String             #216          // A0000000620102
+   #52 = String             #217          // javacard.security
+   #53 = String             #218          // A0000000620201
+   #54 = String             #219          // javacardx.crypto
+   #55 = String             #220          // A0000000620202
+   #56 = String             #221          // javacardx.biometry
+   #57 = String             #222          // A0000000620203
+   #58 = String             #223          // javacardx.external
+   #59 = String             #224          // A0000000620204
+   #60 = String             #225          // javacardx.biometry1toN
+   #61 = String             #226          // A0000000620205
+   #62 = String             #227          // javacardx.security
+   #63 = String             #228          // A000000062020501
+   #64 = String             #229          // javacardx.security.cert
+   #65 = String             #230          // A000000062020502
+   #66 = String             #231          // javacardx.security.derivation
+   #67 = String             #232          // A000000062020503
+   #68 = String             #233          // javacardx.security.util
+   #69 = String             #234          // A000000062020801
+   #70 = String             #235          // javacardx.framework.util
+   #71 = String             #236          // A00000006202080101
+   #72 = String             #237          // javacardx.framework.util.intx
+   #73 = String             #238          // A000000062020802
+   #74 = String             #239          // javacardx.framework.math
+   #75 = String             #240          // A000000062020803
+   #76 = String             #241          // javacardx.framework.tlv
+   #77 = String             #242          // A000000062020804
+   #78 = String             #243          // javacardx.framework.string
+   #79 = String             #244          // A000000062020805
+   #80 = String             #245          // javacardx.framework.event
+   #81 = String             #246          // A000000062020806
+   #82 = String             #247          // javacardx.framework.nio
+   #83 = String             #248          // A000000062020807
+   #84 = String             #249          // javacardx.framework.time
+   #85 = String             #250          // A0000000620209
+   #86 = String             #251          // javacardx.apdu
+   #87 = String             #252          // A000000062020901
+   #88 = String             #253          // javacardx.apdu.util
+   #89 = String             #254          // A00000015100
+   #90 = String             #255          // org.globalplatform
+   #91 = String             #256          // A00000015102
+   #92 = String             #257          // org.globalplatform.contactless
+   #93 = String             #258          // A0000000030000
+   #94 = String             #259          // visa.openplatform
+   #95 = String             #260          // A0000001515350
+   #96 = String             #261          // SSD creation package
+   #97 = String             #262          // A000000151535041
+   #98 = String             #263          // SSD creation applet
+   #99 = String             #264          // A0000000090003FFFFFFFF8910710001
+  #100 = String             #265          // sim.access
+  #101 = String             #266          // A0000000090003FFFFFFFF8910710002
+  #102 = String             #267          // sim.toolkit
+  #103 = String             #268          // A0000000090005FFFFFFFF8916010000
+  #104 = String             #269          // uicc.hci.framework
+  #105 = String             #270          // A0000000090005FFFFFFFF8916020100
+  #106 = String             #271          // uicc.hci.services.cardemulation
+  #107 = String             #272          // A0000000090005FFFFFFFF8916020200
+  #108 = String             #273          // uicc.hci.services.connectivity
+  #109 = Class              #274          // pro/javacard/capfile/WellKnownAID
+  #110 = String             #275          // aid_list.properties
+  #111 = Methodref          #276.#277     // java/lang/Class.getResourceAsStream:(Ljava/lang/String;)Ljava/io/InputStream;
+  #112 = Class              #278          // java/lang/RuntimeException
+  #113 = String             #279          // Can not load builtin list of AID-s:
+  #114 = Methodref          #112.#280     // java/lang/RuntimeException."<init>":(Ljava/lang/String;Ljava/lang/Throwable;)V
+  #115 = Methodref          #180.#281     // java/lang/System.getenv:()Ljava/util/Map;
+  #116 = String             #282          // AID_LIST
+  #117 = String             #283          // user.home
+  #118 = Methodref          #180.#176     // java/lang/System.getProperty:(Ljava/lang/String;)Ljava/lang/String;
+  #119 = String             #284          // .apdu4j
+  #120 = Methodref          #285.#286     // java/nio/file/Paths.get:(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;
+  #121 = InterfaceMethodref #152.#186     // java/nio/file/Path.toString:()Ljava/lang/String;
+  #122 = Methodref          #109.#287     // pro/javacard/capfile/WellKnownAID.load:(Ljava/nio/file/Path;)V
+  #123 = Class              #288          // java/lang/Object
+  #124 = Utf8               javaCardRegistry
+  #125 = Utf8               Ljava/util/Map;
+  #126 = Utf8               Signature
+  #127 = Utf8               Ljava/util/Map<Lpro/javacard/capfile/AID;Ljava/lang/String;>;
+  #128 = Utf8               wellKnownRegistry
+  #129 = Utf8               <init>
+  #130 = Utf8               ()V
+  #131 = Utf8               Code
+  #132 = Utf8               LineNumberTable
+  #133 = Utf8               LocalVariableTable
+  #134 = Utf8               this
+  #135 = Utf8               Lpro/javacard/capfile/WellKnownAID;
+  #136 = Utf8               load
+  #137 = Utf8               (Ljava/io/InputStream;)V
+  #138 = Utf8               k
+  #139 = Utf8               Ljava/lang/String;
+  #140 = Utf8               props
+  #141 = Utf8               Ljava/util/Properties;
+  #142 = Utf8               e
+  #143 = Utf8               Ljava/lang/ClassCastException;
+  #144 = Utf8               Ljava/io/IOException;
+  #145 = Utf8               in
+  #146 = Utf8               Ljava/io/InputStream;
+  #147 = Utf8               StackMapTable
+  #148 = Class              #289          // java/util/Iterator
+  #149 = Utf8               (Ljava/nio/file/Path;)V
+  #150 = Utf8               p
+  #151 = Utf8               Ljava/nio/file/Path;
+  #152 = Class              #290          // java/nio/file/Path
+  #153 = Class              #291          // java/io/InputStream
+  #154 = Utf8               getJavaCardName
+  #155 = Utf8               (Lpro/javacard/capfile/AID;)Ljava/lang/String;
+  #156 = Utf8               aid
+  #157 = Utf8               Lpro/javacard/capfile/AID;
+  #158 = Utf8               getName
+  #159 = Utf8               (Lpro/javacard/capfile/AID;)Ljava/util/Optional;
+  #160 = Utf8               (Lpro/javacard/capfile/AID;)Ljava/util/Optional<Ljava/lang/String;>;
+  #161 = Utf8               <clinit>
+  #162 = Utf8               SourceFile
+  #163 = Utf8               WellKnownAID.java
+  #164 = NameAndType        #129:#130     // "<init>":()V
+  #165 = Utf8               java/util/Properties
+  #166 = NameAndType        #136:#137     // load:(Ljava/io/InputStream;)V
+  #167 = NameAndType        #292:#293     // stringPropertyNames:()Ljava/util/Set;
+  #168 = Class              #294          // java/util/Set
+  #169 = NameAndType        #295:#296     // iterator:()Ljava/util/Iterator;
+  #170 = NameAndType        #297:#298     // hasNext:()Z
+  #171 = NameAndType        #299:#300     // next:()Ljava/lang/Object;
+  #172 = Utf8               java/lang/String
+  #173 = NameAndType        #128:#125     // wellKnownRegistry:Ljava/util/Map;
+  #174 = Class              #301          // pro/javacard/capfile/AID
+  #175 = NameAndType        #302:#303     // fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+  #176 = NameAndType        #304:#305     // getProperty:(Ljava/lang/String;)Ljava/lang/String;
+  #177 = Class              #306          // java/util/Map
+  #178 = NameAndType        #307:#308     // put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+  #179 = Utf8               java/lang/ClassCastException
+  #180 = Class              #309          // java/lang/System
+  #181 = NameAndType        #310:#311     // err:Ljava/io/PrintStream;
+  #182 = Utf8               java/lang/StringBuilder
+  #183 = Utf8               Invalid format:
+  #184 = NameAndType        #312:#313     // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #185 = NameAndType        #314:#315     // getMessage:()Ljava/lang/String;
+  #186 = NameAndType        #316:#315     // toString:()Ljava/lang/String;
+  #187 = Class              #317          // java/io/PrintStream
+  #188 = NameAndType        #318:#319     // println:(Ljava/lang/String;)V
+  #189 = Utf8               java/io/IOException
+  #190 = NameAndType        #320:#311     // out:Ljava/io/PrintStream;
+  #191 = Utf8               Could not parse AID list:
+  #192 = Utf8               java/nio/file/LinkOption
+  #193 = Class              #321          // java/nio/file/Files
+  #194 = NameAndType        #322:#323     // exists:(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z
+  #195 = Utf8               java/nio/file/OpenOption
+  #196 = NameAndType        #324:#325     // newInputStream:(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;
+  #197 = NameAndType        #326:#130     // close:()V
+  #198 = Utf8               java/lang/Throwable
+  #199 = NameAndType        #327:#328     // addSuppressed:(Ljava/lang/Throwable;)V
+  #200 = NameAndType        #124:#125     // javaCardRegistry:Ljava/util/Map;
+  #201 = NameAndType        #329:#330     // get:(Ljava/lang/Object;)Ljava/lang/Object;
+  #202 = NameAndType        #331:#308     // getOrDefault:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+  #203 = Class              #332          // java/util/Optional
+  #204 = NameAndType        #333:#334     // ofNullable:(Ljava/lang/Object;)Ljava/util/Optional;
+  #205 = Utf8               java/util/LinkedHashMap
+  #206 = Utf8               A0000000620001
+  #207 = Utf8               java.lang
+  #208 = Utf8               A0000000620002
+  #209 = Utf8               java.io
+  #210 = Utf8               A0000000620003
+  #211 = Utf8               java.rmi
+  #212 = Utf8               A0000000620101
+  #213 = Utf8               javacard.framework
+  #214 = Utf8               A000000062010101
+  #215 = Utf8               javacard.framework.service
+  #216 = Utf8               A0000000620102
+  #217 = Utf8               javacard.security
+  #218 = Utf8               A0000000620201
+  #219 = Utf8               javacardx.crypto
+  #220 = Utf8               A0000000620202
+  #221 = Utf8               javacardx.biometry
+  #222 = Utf8               A0000000620203
+  #223 = Utf8               javacardx.external
+  #224 = Utf8               A0000000620204
+  #225 = Utf8               javacardx.biometry1toN
+  #226 = Utf8               A0000000620205
+  #227 = Utf8               javacardx.security
+  #228 = Utf8               A000000062020501
+  #229 = Utf8               javacardx.security.cert
+  #230 = Utf8               A000000062020502
+  #231 = Utf8               javacardx.security.derivation
+  #232 = Utf8               A000000062020503
+  #233 = Utf8               javacardx.security.util
+  #234 = Utf8               A000000062020801
+  #235 = Utf8               javacardx.framework.util
+  #236 = Utf8               A00000006202080101
+  #237 = Utf8               javacardx.framework.util.intx
+  #238 = Utf8               A000000062020802
+  #239 = Utf8               javacardx.framework.math
+  #240 = Utf8               A000000062020803
+  #241 = Utf8               javacardx.framework.tlv
+  #242 = Utf8               A000000062020804
+  #243 = Utf8               javacardx.framework.string
+  #244 = Utf8               A000000062020805
+  #245 = Utf8               javacardx.framework.event
+  #246 = Utf8               A000000062020806
+  #247 = Utf8               javacardx.framework.nio
+  #248 = Utf8               A000000062020807
+  #249 = Utf8               javacardx.framework.time
+  #250 = Utf8               A0000000620209
+  #251 = Utf8               javacardx.apdu
+  #252 = Utf8               A000000062020901
+  #253 = Utf8               javacardx.apdu.util
+  #254 = Utf8               A00000015100
+  #255 = Utf8               org.globalplatform
+  #256 = Utf8               A00000015102
+  #257 = Utf8               org.globalplatform.contactless
+  #258 = Utf8               A0000000030000
+  #259 = Utf8               visa.openplatform
+  #260 = Utf8               A0000001515350
+  #261 = Utf8               SSD creation package
+  #262 = Utf8               A000000151535041
+  #263 = Utf8               SSD creation applet
+  #264 = Utf8               A0000000090003FFFFFFFF8910710001
+  #265 = Utf8               sim.access
+  #266 = Utf8               A0000000090003FFFFFFFF8910710002
+  #267 = Utf8               sim.toolkit
+  #268 = Utf8               A0000000090005FFFFFFFF8916010000
+  #269 = Utf8               uicc.hci.framework
+  #270 = Utf8               A0000000090005FFFFFFFF8916020100
+  #271 = Utf8               uicc.hci.services.cardemulation
+  #272 = Utf8               A0000000090005FFFFFFFF8916020200
+  #273 = Utf8               uicc.hci.services.connectivity
+  #274 = Utf8               pro/javacard/capfile/WellKnownAID
+  #275 = Utf8               aid_list.properties
+  #276 = Class              #335          // java/lang/Class
+  #277 = NameAndType        #336:#337     // getResourceAsStream:(Ljava/lang/String;)Ljava/io/InputStream;
+  #278 = Utf8               java/lang/RuntimeException
+  #279 = Utf8               Can not load builtin list of AID-s:
+  #280 = NameAndType        #129:#338     // "<init>":(Ljava/lang/String;Ljava/lang/Throwable;)V
+  #281 = NameAndType        #339:#340     // getenv:()Ljava/util/Map;
+  #282 = Utf8               AID_LIST
+  #283 = Utf8               user.home
+  #284 = Utf8               .apdu4j
+  #285 = Class              #341          // java/nio/file/Paths
+  #286 = NameAndType        #329:#342     // get:(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;
+  #287 = NameAndType        #136:#149     // load:(Ljava/nio/file/Path;)V
+  #288 = Utf8               java/lang/Object
+  #289 = Utf8               java/util/Iterator
+  #290 = Utf8               java/nio/file/Path
+  #291 = Utf8               java/io/InputStream
+  #292 = Utf8               stringPropertyNames
+  #293 = Utf8               ()Ljava/util/Set;
+  #294 = Utf8               java/util/Set
+  #295 = Utf8               iterator
+  #296 = Utf8               ()Ljava/util/Iterator;
+  #297 = Utf8               hasNext
+  #298 = Utf8               ()Z
+  #299 = Utf8               next
+  #300 = Utf8               ()Ljava/lang/Object;
+  #301 = Utf8               pro/javacard/capfile/AID
+  #302 = Utf8               fromString
+  #303 = Utf8               (Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+  #304 = Utf8               getProperty
+  #305 = Utf8               (Ljava/lang/String;)Ljava/lang/String;
+  #306 = Utf8               java/util/Map
+  #307 = Utf8               put
+  #308 = Utf8               (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+  #309 = Utf8               java/lang/System
+  #310 = Utf8               err
+  #311 = Utf8               Ljava/io/PrintStream;
+  #312 = Utf8               append
+  #313 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #314 = Utf8               getMessage
+  #315 = Utf8               ()Ljava/lang/String;
+  #316 = Utf8               toString
+  #317 = Utf8               java/io/PrintStream
+  #318 = Utf8               println
+  #319 = Utf8               (Ljava/lang/String;)V
+  #320 = Utf8               out
+  #321 = Utf8               java/nio/file/Files
+  #322 = Utf8               exists
+  #323 = Utf8               (Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z
+  #324 = Utf8               newInputStream
+  #325 = Utf8               (Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;
+  #326 = Utf8               close
+  #327 = Utf8               addSuppressed
+  #328 = Utf8               (Ljava/lang/Throwable;)V
+  #329 = Utf8               get
+  #330 = Utf8               (Ljava/lang/Object;)Ljava/lang/Object;
+  #331 = Utf8               getOrDefault
+  #332 = Utf8               java/util/Optional
+  #333 = Utf8               ofNullable
+  #334 = Utf8               (Ljava/lang/Object;)Ljava/util/Optional;
+  #335 = Utf8               java/lang/Class
+  #336 = Utf8               getResourceAsStream
+  #337 = Utf8               (Ljava/lang/String;)Ljava/io/InputStream;
+  #338 = Utf8               (Ljava/lang/String;Ljava/lang/Throwable;)V
+  #339 = Utf8               getenv
+  #340 = Utf8               ()Ljava/util/Map;
+  #341 = Utf8               java/nio/file/Paths
+  #342 = Utf8               (Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;
+{
+  private static final java.util.Map<pro.javacard.capfile.AID, java.lang.String> javaCardRegistry;
+    descriptor: Ljava/util/Map;
+    flags: (0x001a) ACC_PRIVATE, ACC_STATIC, ACC_FINAL
+    Signature: #127                         // Ljava/util/Map<Lpro/javacard/capfile/AID;Ljava/lang/String;>;
+
+  private static final java.util.Map<pro.javacard.capfile.AID, java.lang.String> wellKnownRegistry;
+    descriptor: Ljava/util/Map;
+    flags: (0x001a) ACC_PRIVATE, ACC_STATIC, ACC_FINAL
+    Signature: #127                         // Ljava/util/Map<Lpro/javacard/capfile/AID;Ljava/lang/String;>;
+
+  private pro.javacard.capfile.WellKnownAID();
+    descriptor: ()V
+    flags: (0x0002) ACC_PRIVATE
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 41: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lpro/javacard/capfile/WellKnownAID;
+
+  public static void load(java.io.InputStream);
+    descriptor: (Ljava/io/InputStream;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=4, locals=4, args_size=1
+         0: new           #2                  // class java/util/Properties
+         3: dup
+         4: invokespecial #3                  // Method java/util/Properties."<init>":()V
+         7: astore_1
+         8: aload_1
+         9: aload_0
+        10: invokevirtual #4                  // Method java/util/Properties.load:(Ljava/io/InputStream;)V
+        13: aload_1
+        14: invokevirtual #5                  // Method java/util/Properties.stringPropertyNames:()Ljava/util/Set;
+        17: invokeinterface #6,  1            // InterfaceMethod java/util/Set.iterator:()Ljava/util/Iterator;
+        22: astore_2
+        23: aload_2
+        24: invokeinterface #7,  1            // InterfaceMethod java/util/Iterator.hasNext:()Z
+        29: ifeq          63
+        32: aload_2
+        33: invokeinterface #8,  1            // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        38: checkcast     #9                  // class java/lang/String
+        41: astore_3
+        42: getstatic     #10                 // Field wellKnownRegistry:Ljava/util/Map;
+        45: aload_3
+        46: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+        49: aload_1
+        50: aload_3
+        51: invokevirtual #12                 // Method java/util/Properties.getProperty:(Ljava/lang/String;)Ljava/lang/String;
+        54: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+        59: pop
+        60: goto          23
+        63: goto          127
+        66: astore_1
+        67: getstatic     #15                 // Field java/lang/System.err:Ljava/io/PrintStream;
+        70: new           #16                 // class java/lang/StringBuilder
+        73: dup
+        74: invokespecial #17                 // Method java/lang/StringBuilder."<init>":()V
+        77: ldc           #18                 // String Invalid format:
+        79: invokevirtual #19                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        82: aload_1
+        83: invokevirtual #20                 // Method java/lang/ClassCastException.getMessage:()Ljava/lang/String;
+        86: invokevirtual #19                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        89: invokevirtual #21                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        92: invokevirtual #22                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        95: goto          127
+        98: astore_1
+        99: getstatic     #24                 // Field java/lang/System.out:Ljava/io/PrintStream;
+       102: new           #16                 // class java/lang/StringBuilder
+       105: dup
+       106: invokespecial #17                 // Method java/lang/StringBuilder."<init>":()V
+       109: ldc           #25                 // String Could not parse AID list:
+       111: invokevirtual #19                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       114: aload_1
+       115: invokevirtual #26                 // Method java/io/IOException.getMessage:()Ljava/lang/String;
+       118: invokevirtual #19                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       121: invokevirtual #21                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       124: invokevirtual #22                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+       127: return
+      Exception table:
+         from    to  target type
+             0    63    66   Class java/lang/ClassCastException
+             0    63    98   Class java/io/IOException
+      LineNumberTable:
+        line 107: 0
+        line 108: 8
+        line 109: 13
+        line 110: 42
+        line 111: 60
+        line 116: 63
+        line 112: 66
+        line 113: 67
+        line 116: 95
+        line 114: 98
+        line 115: 99
+        line 117: 127
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           42      18     3     k   Ljava/lang/String;
+            8      55     1 props   Ljava/util/Properties;
+           67      28     1     e   Ljava/lang/ClassCastException;
+           99      28     1     e   Ljava/io/IOException;
+            0     128     0    in   Ljava/io/InputStream;
+      StackMapTable: number_of_entries = 5
+        frame_type = 253 /* append */
+          offset_delta = 23
+          locals = [ class java/util/Properties, class java/util/Iterator ]
+        frame_type = 249 /* chop */
+          offset_delta = 39
+        frame_type = 66 /* same_locals_1_stack_item */
+          stack = [ class java/lang/ClassCastException ]
+        frame_type = 95 /* same_locals_1_stack_item */
+          stack = [ class java/io/IOException ]
+        frame_type = 28 /* same */
+
+  public static void load(java.nio.file.Path);
+    descriptor: (Ljava/nio/file/Path;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=3, locals=4, args_size=1
+         0: aload_0
+         1: iconst_0
+         2: anewarray     #27                 // class java/nio/file/LinkOption
+         5: invokestatic  #28                 // Method java/nio/file/Files.exists:(Ljava/nio/file/Path;[Ljava/nio/file/LinkOption;)Z
+         8: ifne          12
+        11: return
+        12: aload_0
+        13: iconst_0
+        14: anewarray     #29                 // class java/nio/file/OpenOption
+        17: invokestatic  #30                 // Method java/nio/file/Files.newInputStream:(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/io/InputStream;
+        20: astore_1
+        21: aload_1
+        22: invokestatic  #31                 // Method load:(Ljava/io/InputStream;)V
+        25: aload_1
+        26: ifnull        56
+        29: aload_1
+        30: invokevirtual #32                 // Method java/io/InputStream.close:()V
+        33: goto          56
+        36: astore_2
+        37: aload_1
+        38: ifnull        54
+        41: aload_1
+        42: invokevirtual #32                 // Method java/io/InputStream.close:()V
+        45: goto          54
+        48: astore_3
+        49: aload_2
+        50: aload_3
+        51: invokevirtual #34                 // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+        54: aload_2
+        55: athrow
+        56: goto          88
+        59: astore_1
+        60: getstatic     #15                 // Field java/lang/System.err:Ljava/io/PrintStream;
+        63: new           #16                 // class java/lang/StringBuilder
+        66: dup
+        67: invokespecial #17                 // Method java/lang/StringBuilder."<init>":()V
+        70: ldc           #25                 // String Could not parse AID list:
+        72: invokevirtual #19                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        75: aload_1
+        76: invokevirtual #26                 // Method java/io/IOException.getMessage:()Ljava/lang/String;
+        79: invokevirtual #19                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        82: invokevirtual #21                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        85: invokevirtual #22                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        88: return
+      Exception table:
+         from    to  target type
+            21    25    36   Class java/lang/Throwable
+            41    45    48   Class java/lang/Throwable
+            12    56    59   Class java/io/IOException
+      LineNumberTable:
+        line 120: 0
+        line 121: 11
+        line 122: 12
+        line 123: 21
+        line 124: 25
+        line 122: 36
+        line 126: 56
+        line 124: 59
+        line 125: 60
+        line 127: 88
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           21      35     1    in   Ljava/io/InputStream;
+           60      28     1     e   Ljava/io/IOException;
+            0      89     0     p   Ljava/nio/file/Path;
+      StackMapTable: number_of_entries = 7
+        frame_type = 12 /* same */
+        frame_type = 255 /* full_frame */
+          offset_delta = 23
+          locals = [ class java/nio/file/Path, class java/io/InputStream ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 11
+          locals = [ class java/nio/file/Path, class java/io/InputStream, class java/lang/Throwable ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 5 /* same */
+        frame_type = 249 /* chop */
+          offset_delta = 1
+        frame_type = 66 /* same_locals_1_stack_item */
+          stack = [ class java/io/IOException ]
+        frame_type = 28 /* same */
+
+  public static java.lang.String getJavaCardName(pro.javacard.capfile.AID);
+    descriptor: (Lpro/javacard/capfile/AID;)Ljava/lang/String;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+         3: aload_0
+         4: invokeinterface #36,  2           // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+         9: checkcast     #9                  // class java/lang/String
+        12: areturn
+      LineNumberTable:
+        line 130: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      13     0   aid   Lpro/javacard/capfile/AID;
+
+  public static java.util.Optional<java.lang.String> getName(pro.javacard.capfile.AID);
+    descriptor: (Lpro/javacard/capfile/AID;)Ljava/util/Optional;
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=4, locals=1, args_size=1
+         0: getstatic     #10                 // Field wellKnownRegistry:Ljava/util/Map;
+         3: aload_0
+         4: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+         7: aload_0
+         8: invokeinterface #36,  2           // InterfaceMethod java/util/Map.get:(Ljava/lang/Object;)Ljava/lang/Object;
+        13: checkcast     #9                  // class java/lang/String
+        16: invokeinterface #37,  3           // InterfaceMethod java/util/Map.getOrDefault:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+        21: checkcast     #9                  // class java/lang/String
+        24: invokestatic  #38                 // Method java/util/Optional.ofNullable:(Ljava/lang/Object;)Ljava/util/Optional;
+        27: areturn
+      LineNumberTable:
+        line 134: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      28     0   aid   Lpro/javacard/capfile/AID;
+    Signature: #160                         // (Lpro/javacard/capfile/AID;)Ljava/util/Optional<Ljava/lang/String;>;
+
+  static {};
+    descriptor: ()V
+    flags: (0x0008) ACC_STATIC
+    Code:
+      stack=7, locals=3, args_size=0
+         0: new           #39                 // class java/util/LinkedHashMap
+         3: dup
+         4: invokespecial #40                 // Method java/util/LinkedHashMap."<init>":()V
+         7: putstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+        10: new           #39                 // class java/util/LinkedHashMap
+        13: dup
+        14: invokespecial #40                 // Method java/util/LinkedHashMap."<init>":()V
+        17: putstatic     #10                 // Field wellKnownRegistry:Ljava/util/Map;
+        20: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+        23: ldc           #41                 // String A0000000620001
+        25: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+        28: ldc           #42                 // String java.lang
+        30: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+        35: pop
+        36: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+        39: ldc           #43                 // String A0000000620002
+        41: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+        44: ldc           #44                 // String java.io
+        46: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+        51: pop
+        52: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+        55: ldc           #45                 // String A0000000620003
+        57: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+        60: ldc           #46                 // String java.rmi
+        62: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+        67: pop
+        68: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+        71: ldc           #47                 // String A0000000620101
+        73: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+        76: ldc           #48                 // String javacard.framework
+        78: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+        83: pop
+        84: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+        87: ldc           #49                 // String A000000062010101
+        89: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+        92: ldc           #50                 // String javacard.framework.service
+        94: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+        99: pop
+       100: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       103: ldc           #51                 // String A0000000620102
+       105: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       108: ldc           #52                 // String javacard.security
+       110: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       115: pop
+       116: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       119: ldc           #53                 // String A0000000620201
+       121: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       124: ldc           #54                 // String javacardx.crypto
+       126: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       131: pop
+       132: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       135: ldc           #55                 // String A0000000620202
+       137: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       140: ldc           #56                 // String javacardx.biometry
+       142: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       147: pop
+       148: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       151: ldc           #57                 // String A0000000620203
+       153: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       156: ldc           #58                 // String javacardx.external
+       158: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       163: pop
+       164: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       167: ldc           #59                 // String A0000000620204
+       169: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       172: ldc           #60                 // String javacardx.biometry1toN
+       174: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       179: pop
+       180: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       183: ldc           #61                 // String A0000000620205
+       185: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       188: ldc           #62                 // String javacardx.security
+       190: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       195: pop
+       196: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       199: ldc           #63                 // String A000000062020501
+       201: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       204: ldc           #64                 // String javacardx.security.cert
+       206: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       211: pop
+       212: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       215: ldc           #65                 // String A000000062020502
+       217: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       220: ldc           #66                 // String javacardx.security.derivation
+       222: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       227: pop
+       228: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       231: ldc           #67                 // String A000000062020503
+       233: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       236: ldc           #68                 // String javacardx.security.util
+       238: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       243: pop
+       244: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       247: ldc           #69                 // String A000000062020801
+       249: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       252: ldc           #70                 // String javacardx.framework.util
+       254: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       259: pop
+       260: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       263: ldc           #71                 // String A00000006202080101
+       265: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       268: ldc           #72                 // String javacardx.framework.util.intx
+       270: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       275: pop
+       276: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       279: ldc           #73                 // String A000000062020802
+       281: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       284: ldc           #74                 // String javacardx.framework.math
+       286: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       291: pop
+       292: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       295: ldc           #75                 // String A000000062020803
+       297: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       300: ldc           #76                 // String javacardx.framework.tlv
+       302: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       307: pop
+       308: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       311: ldc           #77                 // String A000000062020804
+       313: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       316: ldc           #78                 // String javacardx.framework.string
+       318: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       323: pop
+       324: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       327: ldc           #79                 // String A000000062020805
+       329: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       332: ldc           #80                 // String javacardx.framework.event
+       334: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       339: pop
+       340: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       343: ldc           #81                 // String A000000062020806
+       345: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       348: ldc           #82                 // String javacardx.framework.nio
+       350: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       355: pop
+       356: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       359: ldc           #83                 // String A000000062020807
+       361: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       364: ldc           #84                 // String javacardx.framework.time
+       366: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       371: pop
+       372: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       375: ldc           #85                 // String A0000000620209
+       377: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       380: ldc           #86                 // String javacardx.apdu
+       382: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       387: pop
+       388: getstatic     #35                 // Field javaCardRegistry:Ljava/util/Map;
+       391: ldc           #87                 // String A000000062020901
+       393: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       396: ldc           #88                 // String javacardx.apdu.util
+       398: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       403: pop
+       404: getstatic     #10                 // Field wellKnownRegistry:Ljava/util/Map;
+       407: ldc           #89                 // String A00000015100
+       409: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       412: ldc           #90                 // String org.globalplatform
+       414: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       419: pop
+       420: getstatic     #10                 // Field wellKnownRegistry:Ljava/util/Map;
+       423: ldc           #91                 // String A00000015102
+       425: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       428: ldc           #92                 // String org.globalplatform.contactless
+       430: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       435: pop
+       436: getstatic     #10                 // Field wellKnownRegistry:Ljava/util/Map;
+       439: ldc           #93                 // String A0000000030000
+       441: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       444: ldc           #94                 // String visa.openplatform
+       446: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       451: pop
+       452: getstatic     #10                 // Field wellKnownRegistry:Ljava/util/Map;
+       455: ldc           #95                 // String A0000001515350
+       457: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       460: ldc           #96                 // String SSD creation package
+       462: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       467: pop
+       468: getstatic     #10                 // Field wellKnownRegistry:Ljava/util/Map;
+       471: ldc           #97                 // String A000000151535041
+       473: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       476: ldc           #98                 // String SSD creation applet
+       478: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       483: pop
+       484: getstatic     #10                 // Field wellKnownRegistry:Ljava/util/Map;
+       487: ldc           #99                 // String A0000000090003FFFFFFFF8910710001
+       489: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       492: ldc           #100                // String sim.access
+       494: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       499: pop
+       500: getstatic     #10                 // Field wellKnownRegistry:Ljava/util/Map;
+       503: ldc           #101                // String A0000000090003FFFFFFFF8910710002
+       505: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       508: ldc           #102                // String sim.toolkit
+       510: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       515: pop
+       516: getstatic     #10                 // Field wellKnownRegistry:Ljava/util/Map;
+       519: ldc           #103                // String A0000000090005FFFFFFFF8916010000
+       521: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       524: ldc           #104                // String uicc.hci.framework
+       526: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       531: pop
+       532: getstatic     #10                 // Field wellKnownRegistry:Ljava/util/Map;
+       535: ldc           #105                // String A0000000090005FFFFFFFF8916020100
+       537: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       540: ldc           #106                // String uicc.hci.services.cardemulation
+       542: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       547: pop
+       548: getstatic     #10                 // Field wellKnownRegistry:Ljava/util/Map;
+       551: ldc           #107                // String A0000000090005FFFFFFFF8916020200
+       553: invokestatic  #11                 // Method pro/javacard/capfile/AID.fromString:(Ljava/lang/Object;)Lpro/javacard/capfile/AID;
+       556: ldc           #108                // String uicc.hci.services.connectivity
+       558: invokeinterface #13,  3           // InterfaceMethod java/util/Map.put:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       563: pop
+       564: ldc           #109                // class pro/javacard/capfile/WellKnownAID
+       566: ldc           #110                // String aid_list.properties
+       568: invokevirtual #111                // Method java/lang/Class.getResourceAsStream:(Ljava/lang/String;)Ljava/io/InputStream;
+       571: astore_0
+       572: aload_0
+       573: ifnull        580
+       576: aload_0
+       577: invokestatic  #31                 // Method load:(Ljava/io/InputStream;)V
+       580: aload_0
+       581: ifnull        611
+       584: aload_0
+       585: invokevirtual #32                 // Method java/io/InputStream.close:()V
+       588: goto          611
+       591: astore_1
+       592: aload_0
+       593: ifnull        609
+       596: aload_0
+       597: invokevirtual #32                 // Method java/io/InputStream.close:()V
+       600: goto          609
+       603: astore_2
+       604: aload_1
+       605: aload_2
+       606: invokevirtual #34                 // Method java/lang/Throwable.addSuppressed:(Ljava/lang/Throwable;)V
+       609: aload_1
+       610: athrow
+       611: goto          646
+       614: astore_0
+       615: new           #112                // class java/lang/RuntimeException
+       618: dup
+       619: new           #16                 // class java/lang/StringBuilder
+       622: dup
+       623: invokespecial #17                 // Method java/lang/StringBuilder."<init>":()V
+       626: ldc           #113                // String Can not load builtin list of AID-s:
+       628: invokevirtual #19                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       631: aload_0
+       632: invokevirtual #26                 // Method java/io/IOException.getMessage:()Ljava/lang/String;
+       635: invokevirtual #19                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       638: invokevirtual #21                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       641: aload_0
+       642: invokespecial #114                // Method java/lang/RuntimeException."<init>":(Ljava/lang/String;Ljava/lang/Throwable;)V
+       645: athrow
+       646: invokestatic  #115                // Method java/lang/System.getenv:()Ljava/util/Map;
+       649: ldc           #116                // String AID_LIST
+       651: ldc           #117                // String user.home
+       653: invokestatic  #118                // Method java/lang/System.getProperty:(Ljava/lang/String;)Ljava/lang/String;
+       656: iconst_2
+       657: anewarray     #9                  // class java/lang/String
+       660: dup
+       661: iconst_0
+       662: ldc           #119                // String .apdu4j
+       664: aastore
+       665: dup
+       666: iconst_1
+       667: ldc           #110                // String aid_list.properties
+       669: aastore
+       670: invokestatic  #120                // Method java/nio/file/Paths.get:(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;
+       673: invokeinterface #121,  1          // InterfaceMethod java/nio/file/Path.toString:()Ljava/lang/String;
+       678: invokeinterface #37,  3           // InterfaceMethod java/util/Map.getOrDefault:(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+       683: checkcast     #9                  // class java/lang/String
+       686: iconst_0
+       687: anewarray     #9                  // class java/lang/String
+       690: invokestatic  #120                // Method java/nio/file/Paths.get:(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;
+       693: astore_0
+       694: aload_0
+       695: invokestatic  #122                // Method load:(Ljava/nio/file/Path;)V
+       698: return
+      Exception table:
+         from    to  target type
+           572   580   591   Class java/lang/Throwable
+           596   600   603   Class java/lang/Throwable
+           564   611   614   Class java/io/IOException
+      LineNumberTable:
+        line 38: 0
+        line 39: 10
+        line 46: 20
+        line 47: 36
+        line 48: 52
+        line 50: 68
+        line 51: 84
+        line 52: 100
+        line 54: 116
+        line 55: 132
+        line 56: 148
+        line 57: 164
+        line 58: 180
+        line 59: 196
+        line 60: 212
+        line 61: 228
+        line 63: 244
+        line 64: 260
+        line 65: 276
+        line 66: 292
+        line 67: 308
+        line 68: 324
+        line 69: 340
+        line 70: 356
+        line 73: 372
+        line 74: 388
+        line 77: 404
+        line 78: 420
+        line 79: 436
+        line 81: 452
+        line 82: 468
+        line 84: 484
+        line 85: 500
+        line 86: 516
+        line 87: 532
+        line 88: 548
+        line 91: 564
+        line 93: 572
+        line 94: 576
+        line 95: 580
+        line 91: 591
+        line 97: 611
+        line 95: 614
+        line 96: 615
+        line 100: 646
+        line 101: 694
+        line 102: 698
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+          572      39     0    in   Ljava/io/InputStream;
+          615      31     0     e   Ljava/io/IOException;
+          694       4     0     p   Ljava/nio/file/Path;
+      StackMapTable: number_of_entries = 7
+        frame_type = 252 /* append */
+          offset_delta = 580
+          locals = [ class java/io/InputStream ]
+        frame_type = 74 /* same_locals_1_stack_item */
+          stack = [ class java/lang/Throwable ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 11
+          locals = [ class java/io/InputStream, class java/lang/Throwable ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 5 /* same */
+        frame_type = 249 /* chop */
+          offset_delta = 1
+        frame_type = 66 /* same_locals_1_stack_item */
+          stack = [ class java/io/IOException ]
+        frame_type = 31 /* same */
+}
+SourceFile: "WellKnownAID.java"

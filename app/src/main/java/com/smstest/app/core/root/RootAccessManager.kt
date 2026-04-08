@@ -2,25 +2,33 @@ package com.smstest.app.core.root
 
 import android.util.Log
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.withContext
 import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.File
 import java.io.InputStreamReader
 
-/**
- * Root access manager for executing privileged commands.
- * Provides detection of root availability and command execution.
- */
 object RootAccessManager {
     private const val TAG = "RootAccessManager"
 
-    /**
-     * Check if root access is available on device.
-     */
+    private val _rootAvailable = MutableStateFlow<Boolean?>(null)
+    val rootAvailable: StateFlow<Boolean?> = _rootAvailable.asStateFlow()
+
+    private val _activityLog = MutableStateFlow<List<RootActivity>>(emptyList())
+    val activityLog: StateFlow<List<RootActivity>> = _activityLog.asStateFlow()
+
+    fun logActivity(message: String, type: RootActivityType) {
+        val entry = RootActivity(System.currentTimeMillis(), message, type)
+        _activityLog.update { it + entry }
+        Log.d(TAG, "Activity: $message ($type)")
+    }
+
     suspend fun isRootAvailable(): Boolean = withContext(Dispatchers.IO) {
         try {
-            // Check for su binary in common locations
             val suPaths = listOf(
                 "/system/bin/su",
                 "/system/xbin/su",
@@ -30,52 +38,41 @@ object RootAccessManager {
                 "/data/local/bin/su",
                 "/data/local/su"
             )
-            
-            // First check if any su binary exists
             val suExists = suPaths.any { File(it).exists() }
             if (!suExists) {
-                Log.d(TAG, "No su binary found in common paths")
+                _rootAvailable.value = false
                 return@withContext false
             }
-            
-            // Try to execute su command
+
             val process = Runtime.getRuntime().exec("su -c id")
             val reader = BufferedReader(InputStreamReader(process.inputStream))
             val output = reader.readText()
             val exitCode = process.waitFor()
             reader.close()
-            
+
             val hasRoot = exitCode == 0 && output.contains("uid=0")
-            Log.d(TAG, "Root check: exitCode=$exitCode, hasRoot=$hasRoot")
+            _rootAvailable.value = hasRoot
             hasRoot
         } catch (e: Exception) {
             Log.e(TAG, "Root check failed", e)
+            _rootAvailable.value = false
             false
         }
     }
 
-    /**
-     * Execute a command with root privileges.
-     */
     suspend fun executeRootCommand(command: String): RootCommandResult = withContext(Dispatchers.IO) {
         try {
-            Log.d(TAG, "Executing root command: $command")
-            
             val process = Runtime.getRuntime().exec("su")
             val outputStream = DataOutputStream(process.outputStream)
-            
             outputStream.writeBytes("$command\n")
             outputStream.writeBytes("exit\n")
             outputStream.flush()
-            
+
             val stdout = BufferedReader(InputStreamReader(process.inputStream)).readText()
             val stderr = BufferedReader(InputStreamReader(process.errorStream)).readText()
             val exitCode = process.waitFor()
-            
             outputStream.close()
-            
-            Log.d(TAG, "Command result: exitCode=$exitCode, stdout=${stdout.take(100)}")
-            
+
             RootCommandResult(
                 success = exitCode == 0,
                 output = stdout,
@@ -83,7 +80,6 @@ object RootAccessManager {
                 exitCode = exitCode
             )
         } catch (e: Exception) {
-            Log.e(TAG, "Root command failed", e)
             RootCommandResult(
                 success = false,
                 output = "",
@@ -93,9 +89,6 @@ object RootAccessManager {
         }
     }
 
-    /**
-     * Get available modem device ports.
-     */
     suspend fun getModemPorts(): List<String> = withContext(Dispatchers.IO) {
         val candidates = listOf(
             "/dev/smd0",
@@ -110,59 +103,19 @@ object RootAccessManager {
             "/dev/qmi0",
             "/dev/qmi1"
         )
-        
         val available = mutableListOf<String>()
         for (path in candidates) {
-            if (File(path).exists()) {
-                available.add(path)
-                Log.d(TAG, "Found modem port: $path")
-            }
+            if (File(path).exists()) available.add(path)
         }
-        
-        // Also check /dev for tty* pattern
-        try {
-            val devDir = File("/dev")
-            val ttyDevices = devDir.listFiles()?.filter { 
-                it.name.startsWith("tty") && (it.name.contains("USB") || it.name.contains("ACM"))
-            }?.map { it.absolutePath } ?: emptyList()
-            
-            for (tty in ttyDevices) {
-                if (tty !in available) {
-                    available.add(tty)
-                    Log.d(TAG, "Found additional tty device: $tty")
-                }
-            }
-        } catch (e: Exception) {
-            Log.e(TAG, "Error scanning /dev", e)
-        }
-        
         available
     }
 
-    /**
-     * Check if device path is accessible with root.
-     */
     suspend fun checkDeviceAccess(devicePath: String): Boolean = withContext(Dispatchers.IO) {
-        try {
-            if (!File(devicePath).exists()) {
-                Log.d(TAG, "Device does not exist: $devicePath")
-                return@withContext false
-            }
-            
-            // Try to read device with root
-            val result = executeRootCommand("test -r $devicePath && test -w $devicePath && echo OK")
-            val accessible = result.success && result.output.contains("OK")
-            Log.d(TAG, "Device access check for $devicePath: $accessible")
-            accessible
-        } catch (e: Exception) {
-            Log.e(TAG, "Device access check failed", e)
-            false
-        }
+        if (!File(devicePath).exists()) return@withContext false
+        val result = executeRootCommand("test -r $devicePath && test -w $devicePath && echo OK")
+        result.success && result.output.contains("OK")
     }
 
-    /**
-     * Get Android system property value.
-     */
     suspend fun getSystemProperty(property: String): String? = withContext(Dispatchers.IO) {
         try {
             val process = Runtime.getRuntime().exec("getprop $property")
@@ -172,14 +125,10 @@ object RootAccessManager {
             process.waitFor()
             value?.takeIf { it.isNotEmpty() }
         } catch (e: Exception) {
-            Log.e(TAG, "Failed to get property $property", e)
             null
         }
     }
 
-    /**
-     * Get device model information.
-     */
     suspend fun getDeviceInfo(): DeviceInfo = withContext(Dispatchers.IO) {
         DeviceInfo(
             manufacturer = getSystemProperty("ro.product.manufacturer") ?: "Unknown",
@@ -192,9 +141,6 @@ object RootAccessManager {
     }
 }
 
-/**
- * Result of a root command execution.
- */
 data class RootCommandResult(
     val success: Boolean,
     val output: String,
@@ -203,9 +149,6 @@ data class RootCommandResult(
     val cancelled: Boolean = false
 )
 
-/**
- * Device information.
- */
 data class DeviceInfo(
     val manufacturer: String,
     val model: String,
@@ -215,18 +158,12 @@ data class DeviceInfo(
     val baseband: String
 )
 
-/**
- * Activity log entry for root operations
- */
 data class RootActivity(
     val timestamp: Long,
     val message: String,
     val type: RootActivityType
 )
 
-/**
- * Type of root activity
- */
 enum class RootActivityType {
     INFO, SUCCESS, WARNING, ERROR, DEBUG
 }

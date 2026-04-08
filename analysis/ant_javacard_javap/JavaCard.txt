@@ -1,0 +1,527 @@
+Classfile /F:/repo/007smsdev/analysis/ant_javacard_extracted/pro/javacard/ant/JavaCard.class
+  Last modified Sep 20, 2025; size 3884 bytes
+  SHA-256 checksum a06e9750f0d03ee244e8756bbe908858c14c2e092e299f549b60b74b57c4a9f8
+  Compiled from "JavaCard.java"
+public final class pro.javacard.ant.JavaCard extends org.apache.tools.ant.Task
+  minor version: 0
+  major version: 52
+  flags: (0x0031) ACC_PUBLIC, ACC_FINAL, ACC_SUPER
+  this_class: #19                         // pro/javacard/ant/JavaCard
+  super_class: #44                        // org/apache/tools/ant/Task
+  interfaces: 0, fields: 3, methods: 6, attributes: 3
+Constant pool:
+    #1 = Methodref          #44.#89       // org/apache/tools/ant/Task."<init>":()V
+    #2 = Fieldref           #19.#90       // pro/javacard/ant/JavaCard.lts:[I
+    #3 = Fieldref           #19.#91       // pro/javacard/ant/JavaCard.master_jckit_path:Ljava/lang/String;
+    #4 = Class              #92           // java/util/Vector
+    #5 = Methodref          #4.#89        // java/util/Vector."<init>":()V
+    #6 = Fieldref           #19.#93       // pro/javacard/ant/JavaCard.packages:Ljava/util/Vector;
+    #7 = Class              #94           // pro/javacard/ant/JCCap
+    #8 = Methodref          #7.#95        // pro/javacard/ant/JCCap."<init>":(Ljava/lang/String;)V
+    #9 = Methodref          #4.#96        // java/util/Vector.add:(Ljava/lang/Object;)Z
+   #10 = Methodref          #97.#98       // java/util/logging/LogManager.getLogManager:()Ljava/util/logging/LogManager;
+   #11 = String             #99           //
+   #12 = Methodref          #97.#100      // java/util/logging/LogManager.getLogger:(Ljava/lang/String;)Ljava/util/logging/Logger;
+   #13 = Methodref          #77.#101      // java/util/logging/Logger.getLevel:()Ljava/util/logging/Level;
+   #14 = Class              #102          // java/lang/Thread
+   #15 = InvokeDynamic      #0:#107       // #0:run:(Lpro/javacard/ant/JavaCard;)Ljava/lang/Runnable;
+   #16 = Methodref          #14.#108      // java/lang/Thread."<init>":(Ljava/lang/Runnable;)V
+   #17 = Methodref          #109.#110     // java/lang/Runtime.getRuntime:()Ljava/lang/Runtime;
+   #18 = Methodref          #109.#111     // java/lang/Runtime.addShutdownHook:(Ljava/lang/Thread;)V
+   #19 = Class              #112          // pro/javacard/ant/JavaCard
+   #20 = Methodref          #113.#114     // java/lang/Class.getPackage:()Ljava/lang/Package;
+   #21 = Methodref          #115.#116     // java/lang/Package.getImplementationVersion:()Ljava/lang/String;
+   #22 = Class              #117          // java/lang/StringBuilder
+   #23 = Methodref          #22.#89       // java/lang/StringBuilder."<init>":()V
+   #24 = String             #118          // ant-javacard
+   #25 = Methodref          #22.#119      // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #26 = String             #120          // development
+   #27 = Methodref          #22.#121      // java/lang/StringBuilder.toString:()Ljava/lang/String;
+   #28 = Class              #122          // org/apache/tools/ant/Project
+   #29 = Methodref          #19.#123      // pro/javacard/ant/JavaCard.log:(Ljava/lang/String;I)V
+   #30 = InterfaceMethodref #124.#125     // java/util/stream/IntStream.of:([I)Ljava/util/stream/IntStream;
+   #31 = InvokeDynamic      #1:#128       // #1:test:()Ljava/util/function/IntPredicate;
+   #32 = InterfaceMethodref #124.#129     // java/util/stream/IntStream.noneMatch:(Ljava/util/function/IntPredicate;)Z
+   #33 = String             #130          // Please consider using a LTS JDK version:
+   #34 = Methodref          #131.#132     // java/util/Arrays.toString:([I)Ljava/lang/String;
+   #35 = Methodref          #4.#133       // java/util/Vector.iterator:()Ljava/util/Iterator;
+   #36 = InterfaceMethodref #80.#134      // java/util/Iterator.hasNext:()Z
+   #37 = InterfaceMethodref #80.#135      // java/util/Iterator.next:()Ljava/lang/Object;
+   #38 = Methodref          #7.#136       // pro/javacard/ant/JCCap.execute:()V
+   #39 = Methodref          #109.#137     // java/lang/Runtime.removeShutdownHook:(Ljava/lang/Thread;)Z
+   #40 = Methodref          #77.#138      // java/util/logging/Logger.setLevel:(Ljava/util/logging/Level;)V
+   #41 = Methodref          #139.#140     // pro/javacard/ant/Misc.getCurrentJDKVersion:()I
+   #42 = String             #141          // Ctrl-C, cleaning up
+   #43 = Methodref          #139.#142     // pro/javacard/ant/Misc.cleanTemp:()V
+   #44 = Class              #143          // org/apache/tools/ant/Task
+   #45 = Utf8               lts
+   #46 = Utf8               [I
+   #47 = Utf8               master_jckit_path
+   #48 = Utf8               Ljava/lang/String;
+   #49 = Utf8               packages
+   #50 = Utf8               Ljava/util/Vector;
+   #51 = Utf8               Signature
+   #52 = Utf8               Ljava/util/Vector<Lpro/javacard/ant/JCCap;>;
+   #53 = Utf8               <init>
+   #54 = Utf8               ()V
+   #55 = Utf8               Code
+   #56 = Utf8               LineNumberTable
+   #57 = Utf8               LocalVariableTable
+   #58 = Utf8               this
+   #59 = Utf8               Lpro/javacard/ant/JavaCard;
+   #60 = Utf8               setJCKit
+   #61 = Utf8               (Ljava/lang/String;)V
+   #62 = Utf8               msg
+   #63 = Utf8               createCap
+   #64 = Utf8               ()Lpro/javacard/ant/JCCap;
+   #65 = Utf8               pkg
+   #66 = Utf8               Lpro/javacard/ant/JCCap;
+   #67 = Utf8               execute
+   #68 = Utf8               p
+   #69 = Utf8               rootLogger
+   #70 = Utf8               Ljava/util/logging/Logger;
+   #71 = Utf8               beforeLevel
+   #72 = Utf8               Ljava/util/logging/Level;
+   #73 = Utf8               cleanup
+   #74 = Utf8               Ljava/lang/Thread;
+   #75 = Utf8               ver
+   #76 = Utf8               StackMapTable
+   #77 = Class              #144          // java/util/logging/Logger
+   #78 = Class              #145          // java/util/logging/Level
+   #79 = Class              #146          // java/lang/String
+   #80 = Class              #147          // java/util/Iterator
+   #81 = Class              #148          // java/lang/Throwable
+   #82 = Utf8               lambda$execute$1
+   #83 = Utf8               (I)Z
+   #84 = Utf8               x
+   #85 = Utf8               I
+   #86 = Utf8               lambda$execute$0
+   #87 = Utf8               SourceFile
+   #88 = Utf8               JavaCard.java
+   #89 = NameAndType        #53:#54       // "<init>":()V
+   #90 = NameAndType        #45:#46       // lts:[I
+   #91 = NameAndType        #47:#48       // master_jckit_path:Ljava/lang/String;
+   #92 = Utf8               java/util/Vector
+   #93 = NameAndType        #49:#50       // packages:Ljava/util/Vector;
+   #94 = Utf8               pro/javacard/ant/JCCap
+   #95 = NameAndType        #53:#61       // "<init>":(Ljava/lang/String;)V
+   #96 = NameAndType        #149:#150     // add:(Ljava/lang/Object;)Z
+   #97 = Class              #151          // java/util/logging/LogManager
+   #98 = NameAndType        #152:#153     // getLogManager:()Ljava/util/logging/LogManager;
+   #99 = Utf8
+  #100 = NameAndType        #154:#155     // getLogger:(Ljava/lang/String;)Ljava/util/logging/Logger;
+  #101 = NameAndType        #156:#157     // getLevel:()Ljava/util/logging/Level;
+  #102 = Utf8               java/lang/Thread
+  #103 = Utf8               BootstrapMethods
+  #104 = MethodHandle       6:#158        // REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #105 = MethodType         #54           //  ()V
+  #106 = MethodHandle       7:#159        // REF_invokeSpecial pro/javacard/ant/JavaCard.lambda$execute$0:()V
+  #107 = NameAndType        #160:#161     // run:(Lpro/javacard/ant/JavaCard;)Ljava/lang/Runnable;
+  #108 = NameAndType        #53:#162      // "<init>":(Ljava/lang/Runnable;)V
+  #109 = Class              #163          // java/lang/Runtime
+  #110 = NameAndType        #164:#165     // getRuntime:()Ljava/lang/Runtime;
+  #111 = NameAndType        #166:#167     // addShutdownHook:(Ljava/lang/Thread;)V
+  #112 = Utf8               pro/javacard/ant/JavaCard
+  #113 = Class              #168          // java/lang/Class
+  #114 = NameAndType        #169:#170     // getPackage:()Ljava/lang/Package;
+  #115 = Class              #171          // java/lang/Package
+  #116 = NameAndType        #172:#173     // getImplementationVersion:()Ljava/lang/String;
+  #117 = Utf8               java/lang/StringBuilder
+  #118 = Utf8               ant-javacard
+  #119 = NameAndType        #174:#175     // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #120 = Utf8               development
+  #121 = NameAndType        #176:#173     // toString:()Ljava/lang/String;
+  #122 = Utf8               org/apache/tools/ant/Project
+  #123 = NameAndType        #177:#178     // log:(Ljava/lang/String;I)V
+  #124 = Class              #179          // java/util/stream/IntStream
+  #125 = NameAndType        #180:#181     // of:([I)Ljava/util/stream/IntStream;
+  #126 = MethodType         #83           //  (I)Z
+  #127 = MethodHandle       6:#182        // REF_invokeStatic pro/javacard/ant/JavaCard.lambda$execute$1:(I)Z
+  #128 = NameAndType        #183:#184     // test:()Ljava/util/function/IntPredicate;
+  #129 = NameAndType        #185:#186     // noneMatch:(Ljava/util/function/IntPredicate;)Z
+  #130 = Utf8               Please consider using a LTS JDK version:
+  #131 = Class              #187          // java/util/Arrays
+  #132 = NameAndType        #176:#188     // toString:([I)Ljava/lang/String;
+  #133 = NameAndType        #189:#190     // iterator:()Ljava/util/Iterator;
+  #134 = NameAndType        #191:#192     // hasNext:()Z
+  #135 = NameAndType        #193:#194     // next:()Ljava/lang/Object;
+  #136 = NameAndType        #67:#54       // execute:()V
+  #137 = NameAndType        #195:#196     // removeShutdownHook:(Ljava/lang/Thread;)Z
+  #138 = NameAndType        #197:#198     // setLevel:(Ljava/util/logging/Level;)V
+  #139 = Class              #199          // pro/javacard/ant/Misc
+  #140 = NameAndType        #200:#201     // getCurrentJDKVersion:()I
+  #141 = Utf8               Ctrl-C, cleaning up
+  #142 = NameAndType        #202:#54      // cleanTemp:()V
+  #143 = Utf8               org/apache/tools/ant/Task
+  #144 = Utf8               java/util/logging/Logger
+  #145 = Utf8               java/util/logging/Level
+  #146 = Utf8               java/lang/String
+  #147 = Utf8               java/util/Iterator
+  #148 = Utf8               java/lang/Throwable
+  #149 = Utf8               add
+  #150 = Utf8               (Ljava/lang/Object;)Z
+  #151 = Utf8               java/util/logging/LogManager
+  #152 = Utf8               getLogManager
+  #153 = Utf8               ()Ljava/util/logging/LogManager;
+  #154 = Utf8               getLogger
+  #155 = Utf8               (Ljava/lang/String;)Ljava/util/logging/Logger;
+  #156 = Utf8               getLevel
+  #157 = Utf8               ()Ljava/util/logging/Level;
+  #158 = Methodref          #203.#204     // java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #159 = Methodref          #19.#205      // pro/javacard/ant/JavaCard.lambda$execute$0:()V
+  #160 = Utf8               run
+  #161 = Utf8               (Lpro/javacard/ant/JavaCard;)Ljava/lang/Runnable;
+  #162 = Utf8               (Ljava/lang/Runnable;)V
+  #163 = Utf8               java/lang/Runtime
+  #164 = Utf8               getRuntime
+  #165 = Utf8               ()Ljava/lang/Runtime;
+  #166 = Utf8               addShutdownHook
+  #167 = Utf8               (Ljava/lang/Thread;)V
+  #168 = Utf8               java/lang/Class
+  #169 = Utf8               getPackage
+  #170 = Utf8               ()Ljava/lang/Package;
+  #171 = Utf8               java/lang/Package
+  #172 = Utf8               getImplementationVersion
+  #173 = Utf8               ()Ljava/lang/String;
+  #174 = Utf8               append
+  #175 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #176 = Utf8               toString
+  #177 = Utf8               log
+  #178 = Utf8               (Ljava/lang/String;I)V
+  #179 = Utf8               java/util/stream/IntStream
+  #180 = Utf8               of
+  #181 = Utf8               ([I)Ljava/util/stream/IntStream;
+  #182 = Methodref          #19.#206      // pro/javacard/ant/JavaCard.lambda$execute$1:(I)Z
+  #183 = Utf8               test
+  #184 = Utf8               ()Ljava/util/function/IntPredicate;
+  #185 = Utf8               noneMatch
+  #186 = Utf8               (Ljava/util/function/IntPredicate;)Z
+  #187 = Utf8               java/util/Arrays
+  #188 = Utf8               ([I)Ljava/lang/String;
+  #189 = Utf8               iterator
+  #190 = Utf8               ()Ljava/util/Iterator;
+  #191 = Utf8               hasNext
+  #192 = Utf8               ()Z
+  #193 = Utf8               next
+  #194 = Utf8               ()Ljava/lang/Object;
+  #195 = Utf8               removeShutdownHook
+  #196 = Utf8               (Ljava/lang/Thread;)Z
+  #197 = Utf8               setLevel
+  #198 = Utf8               (Ljava/util/logging/Level;)V
+  #199 = Utf8               pro/javacard/ant/Misc
+  #200 = Utf8               getCurrentJDKVersion
+  #201 = Utf8               ()I
+  #202 = Utf8               cleanTemp
+  #203 = Class              #207          // java/lang/invoke/LambdaMetafactory
+  #204 = NameAndType        #208:#212     // metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #205 = NameAndType        #86:#54       // lambda$execute$0:()V
+  #206 = NameAndType        #82:#83       // lambda$execute$1:(I)Z
+  #207 = Utf8               java/lang/invoke/LambdaMetafactory
+  #208 = Utf8               metafactory
+  #209 = Class              #214          // java/lang/invoke/MethodHandles$Lookup
+  #210 = Utf8               Lookup
+  #211 = Utf8               InnerClasses
+  #212 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+  #213 = Class              #215          // java/lang/invoke/MethodHandles
+  #214 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #215 = Utf8               java/lang/invoke/MethodHandles
+{
+  private final int[] lts;
+    descriptor: [I
+    flags: (0x0012) ACC_PRIVATE, ACC_FINAL
+
+  private java.lang.String master_jckit_path;
+    descriptor: Ljava/lang/String;
+    flags: (0x0002) ACC_PRIVATE
+
+  private java.util.Vector<pro.javacard.ant.JCCap> packages;
+    descriptor: Ljava/util/Vector;
+    flags: (0x0002) ACC_PRIVATE
+    Signature: #52                          // Ljava/util/Vector<Lpro/javacard/ant/JCCap;>;
+
+  public pro.javacard.ant.JavaCard();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=5, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method org/apache/tools/ant/Task."<init>":()V
+         4: aload_0
+         5: iconst_4
+         6: newarray       int
+         8: dup
+         9: iconst_0
+        10: bipush        8
+        12: iastore
+        13: dup
+        14: iconst_1
+        15: bipush        11
+        17: iastore
+        18: dup
+        19: iconst_2
+        20: bipush        17
+        22: iastore
+        23: dup
+        24: iconst_3
+        25: bipush        21
+        27: iastore
+        28: putfield      #2                  // Field lts:[I
+        31: aload_0
+        32: aconst_null
+        33: putfield      #3                  // Field master_jckit_path:Ljava/lang/String;
+        36: aload_0
+        37: new           #4                  // class java/util/Vector
+        40: dup
+        41: invokespecial #5                  // Method java/util/Vector."<init>":()V
+        44: putfield      #6                  // Field packages:Ljava/util/Vector;
+        47: return
+      LineNumberTable:
+        line 36: 0
+        line 38: 4
+        line 39: 31
+        line 40: 36
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      48     0  this   Lpro/javacard/ant/JavaCard;
+
+  public void setJCKit(java.lang.String);
+    descriptor: (Ljava/lang/String;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: putfield      #3                  // Field master_jckit_path:Ljava/lang/String;
+         5: return
+      LineNumberTable:
+        line 43: 0
+        line 44: 5
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   Lpro/javacard/ant/JavaCard;
+            0       6     1   msg   Ljava/lang/String;
+
+  public pro.javacard.ant.JCCap createCap();
+    descriptor: ()Lpro/javacard/ant/JCCap;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=2, args_size=1
+         0: new           #7                  // class pro/javacard/ant/JCCap
+         3: dup
+         4: aload_0
+         5: getfield      #3                  // Field master_jckit_path:Ljava/lang/String;
+         8: invokespecial #8                  // Method pro/javacard/ant/JCCap."<init>":(Ljava/lang/String;)V
+        11: astore_1
+        12: aload_0
+        13: getfield      #6                  // Field packages:Ljava/util/Vector;
+        16: aload_1
+        17: invokevirtual #9                  // Method java/util/Vector.add:(Ljava/lang/Object;)Z
+        20: pop
+        21: aload_1
+        22: areturn
+      LineNumberTable:
+        line 47: 0
+        line 48: 12
+        line 49: 21
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      23     0  this   Lpro/javacard/ant/JavaCard;
+           12      11     1   pkg   Lpro/javacard/ant/JCCap;
+
+  public void execute();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=8, args_size=1
+         0: invokestatic  #10                 // Method java/util/logging/LogManager.getLogManager:()Ljava/util/logging/LogManager;
+         3: ldc           #11                 // String
+         5: invokevirtual #12                 // Method java/util/logging/LogManager.getLogger:(Ljava/lang/String;)Ljava/util/logging/Logger;
+         8: astore_1
+         9: aload_1
+        10: invokevirtual #13                 // Method java/util/logging/Logger.getLevel:()Ljava/util/logging/Level;
+        13: astore_2
+        14: new           #14                 // class java/lang/Thread
+        17: dup
+        18: aload_0
+        19: invokedynamic #15,  0             // InvokeDynamic #0:run:(Lpro/javacard/ant/JavaCard;)Ljava/lang/Runnable;
+        24: invokespecial #16                 // Method java/lang/Thread."<init>":(Ljava/lang/Runnable;)V
+        27: astore_3
+        28: invokestatic  #17                 // Method java/lang/Runtime.getRuntime:()Ljava/lang/Runtime;
+        31: aload_3
+        32: invokevirtual #18                 // Method java/lang/Runtime.addShutdownHook:(Ljava/lang/Thread;)V
+        35: ldc           #19                 // class pro/javacard/ant/JavaCard
+        37: invokevirtual #20                 // Method java/lang/Class.getPackage:()Ljava/lang/Package;
+        40: invokevirtual #21                 // Method java/lang/Package.getImplementationVersion:()Ljava/lang/String;
+        43: astore        4
+        45: aload_0
+        46: new           #22                 // class java/lang/StringBuilder
+        49: dup
+        50: invokespecial #23                 // Method java/lang/StringBuilder."<init>":()V
+        53: ldc           #24                 // String ant-javacard
+        55: invokevirtual #25                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        58: aload         4
+        60: ifnonnull     68
+        63: ldc           #26                 // String development
+        65: goto          70
+        68: aload         4
+        70: invokevirtual #25                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        73: invokevirtual #27                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        76: iconst_2
+        77: invokevirtual #29                 // Method log:(Ljava/lang/String;I)V
+        80: aload_0
+        81: getfield      #2                  // Field lts:[I
+        84: invokestatic  #30                 // InterfaceMethod java/util/stream/IntStream.of:([I)Ljava/util/stream/IntStream;
+        87: invokedynamic #31,  0             // InvokeDynamic #1:test:()Ljava/util/function/IntPredicate;
+        92: invokeinterface #32,  2           // InterfaceMethod java/util/stream/IntStream.noneMatch:(Ljava/util/function/IntPredicate;)Z
+        97: ifeq          130
+       100: aload_0
+       101: new           #22                 // class java/lang/StringBuilder
+       104: dup
+       105: invokespecial #23                 // Method java/lang/StringBuilder."<init>":()V
+       108: ldc           #33                 // String Please consider using a LTS JDK version:
+       110: invokevirtual #25                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       113: aload_0
+       114: getfield      #2                  // Field lts:[I
+       117: invokestatic  #34                 // Method java/util/Arrays.toString:([I)Ljava/lang/String;
+       120: invokevirtual #25                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       123: invokevirtual #27                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       126: iconst_1
+       127: invokevirtual #29                 // Method log:(Ljava/lang/String;I)V
+       130: aload_0
+       131: getfield      #6                  // Field packages:Ljava/util/Vector;
+       134: invokevirtual #35                 // Method java/util/Vector.iterator:()Ljava/util/Iterator;
+       137: astore        5
+       139: aload         5
+       141: invokeinterface #36,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+       146: ifeq          169
+       149: aload         5
+       151: invokeinterface #37,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+       156: checkcast     #7                  // class pro/javacard/ant/JCCap
+       159: astore        6
+       161: aload         6
+       163: invokevirtual #38                 // Method pro/javacard/ant/JCCap.execute:()V
+       166: goto          139
+       169: invokestatic  #17                 // Method java/lang/Runtime.getRuntime:()Ljava/lang/Runtime;
+       172: aload_3
+       173: invokevirtual #39                 // Method java/lang/Runtime.removeShutdownHook:(Ljava/lang/Thread;)Z
+       176: pop
+       177: aload_1
+       178: aload_2
+       179: invokevirtual #40                 // Method java/util/logging/Logger.setLevel:(Ljava/util/logging/Level;)V
+       182: goto          203
+       185: astore        7
+       187: invokestatic  #17                 // Method java/lang/Runtime.getRuntime:()Ljava/lang/Runtime;
+       190: aload_3
+       191: invokevirtual #39                 // Method java/lang/Runtime.removeShutdownHook:(Ljava/lang/Thread;)Z
+       194: pop
+       195: aload_1
+       196: aload_2
+       197: invokevirtual #40                 // Method java/util/logging/Logger.setLevel:(Ljava/util/logging/Level;)V
+       200: aload         7
+       202: athrow
+       203: return
+      Exception table:
+         from    to  target type
+           130   169   185   any
+           185   187   185   any
+      LineNumberTable:
+        line 56: 0
+        line 57: 9
+        line 59: 14
+        line 63: 28
+        line 64: 35
+        line 65: 45
+        line 66: 80
+        line 67: 100
+        line 70: 130
+        line 71: 161
+        line 72: 166
+        line 74: 169
+        line 75: 177
+        line 76: 182
+        line 74: 185
+        line 75: 195
+        line 76: 200
+        line 77: 203
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+          161       5     6     p   Lpro/javacard/ant/JCCap;
+            0     204     0  this   Lpro/javacard/ant/JavaCard;
+            9     195     1 rootLogger   Ljava/util/logging/Logger;
+           14     190     2 beforeLevel   Ljava/util/logging/Level;
+           28     176     3 cleanup   Ljava/lang/Thread;
+           45     159     4   ver   Ljava/lang/String;
+      StackMapTable: number_of_entries = 7
+        frame_type = 255 /* full_frame */
+          offset_delta = 68
+          locals = [ class pro/javacard/ant/JavaCard, class java/util/logging/Logger, class java/util/logging/Level, class java/lang/Thread, class java/lang/String ]
+          stack = [ class pro/javacard/ant/JavaCard, class java/lang/StringBuilder ]
+        frame_type = 255 /* full_frame */
+          offset_delta = 1
+          locals = [ class pro/javacard/ant/JavaCard, class java/util/logging/Logger, class java/util/logging/Level, class java/lang/Thread, class java/lang/String ]
+          stack = [ class pro/javacard/ant/JavaCard, class java/lang/StringBuilder, class java/lang/String ]
+        frame_type = 59 /* same */
+        frame_type = 252 /* append */
+          offset_delta = 8
+          locals = [ class java/util/Iterator ]
+        frame_type = 250 /* chop */
+          offset_delta = 29
+        frame_type = 79 /* same_locals_1_stack_item */
+          stack = [ class java/lang/Throwable ]
+        frame_type = 17 /* same */
+
+  private static boolean lambda$execute$1(int);
+    descriptor: (I)Z
+    flags: (0x100a) ACC_PRIVATE, ACC_STATIC, ACC_SYNTHETIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: iload_0
+         1: invokestatic  #41                 // Method pro/javacard/ant/Misc.getCurrentJDKVersion:()I
+         4: if_icmpne     11
+         7: iconst_1
+         8: goto          12
+        11: iconst_0
+        12: ireturn
+      LineNumberTable:
+        line 66: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      13     0     x   I
+      StackMapTable: number_of_entries = 2
+        frame_type = 11 /* same */
+        frame_type = 64 /* same_locals_1_stack_item */
+          stack = [ int ]
+
+  private void lambda$execute$0();
+    descriptor: ()V
+    flags: (0x1002) ACC_PRIVATE, ACC_SYNTHETIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: aload_0
+         1: ldc           #42                 // String Ctrl-C, cleaning up
+         3: iconst_2
+         4: invokevirtual #29                 // Method log:(Ljava/lang/String;I)V
+         7: invokestatic  #43                 // Method pro/javacard/ant/Misc.cleanTemp:()V
+        10: return
+      LineNumberTable:
+        line 60: 0
+        line 61: 7
+        line 62: 10
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      11     0  this   Lpro/javacard/ant/JavaCard;
+}
+SourceFile: "JavaCard.java"
+InnerClasses:
+  public static final #210= #209 of #213; // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles
+BootstrapMethods:
+  0: #104 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #105 ()V
+      #106 REF_invokeSpecial pro/javacard/ant/JavaCard.lambda$execute$0:()V
+      #105 ()V
+  1: #104 REF_invokeStatic java/lang/invoke/LambdaMetafactory.metafactory:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #126 (I)Z
+      #127 REF_invokeStatic pro/javacard/ant/JavaCard.lambda$execute$1:(I)Z
+      #126 (I)Z

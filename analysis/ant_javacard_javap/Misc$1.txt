@@ -1,0 +1,176 @@
+Classfile /F:/repo/007smsdev/analysis/ant_javacard_extracted/pro/javacard/ant/Misc$1.class
+  Last modified Sep 20, 2025; size 1605 bytes
+  SHA-256 checksum 45b81ab1ef27f17d9ee7ccee4f2fab09f2de15c72bede7d25d90b8485b703b72
+  Compiled from "Misc.java"
+class pro.javacard.ant.Misc$1 extends java.nio.file.SimpleFileVisitor<java.nio.file.Path>
+  minor version: 0
+  major version: 52
+  flags: (0x0020) ACC_SUPER
+  this_class: #7                          // pro/javacard/ant/Misc$1
+  super_class: #8                         // java/nio/file/SimpleFileVisitor
+  interfaces: 0, fields: 0, methods: 5, attributes: 4
+Constant pool:
+   #1 = Methodref          #8.#40         // java/nio/file/SimpleFileVisitor."<init>":()V
+   #2 = Methodref          #41.#42        // java/nio/file/Files.delete:(Ljava/nio/file/Path;)V
+   #3 = Fieldref           #43.#44        // java/nio/file/FileVisitResult.CONTINUE:Ljava/nio/file/FileVisitResult;
+   #4 = Class              #45            // java/nio/file/Path
+   #5 = Methodref          #7.#46         // pro/javacard/ant/Misc$1.postVisitDirectory:(Ljava/nio/file/Path;Ljava/io/IOException;)Ljava/nio/file/FileVisitResult;
+   #6 = Methodref          #7.#47         // pro/javacard/ant/Misc$1.visitFile:(Ljava/nio/file/Path;Ljava/nio/file/attribute/BasicFileAttributes;)Ljava/nio/file/FileVisitResult;
+   #7 = Class              #48            // pro/javacard/ant/Misc$1
+   #8 = Class              #49            // java/nio/file/SimpleFileVisitor
+   #9 = Utf8               <init>
+  #10 = Utf8               ()V
+  #11 = Utf8               Code
+  #12 = Utf8               LineNumberTable
+  #13 = Utf8               LocalVariableTable
+  #14 = Utf8               this
+  #15 = Utf8               InnerClasses
+  #16 = Utf8               Lpro/javacard/ant/Misc$1;
+  #17 = Utf8               visitFile
+  #18 = Utf8               (Ljava/nio/file/Path;Ljava/nio/file/attribute/BasicFileAttributes;)Ljava/nio/file/FileVisitResult;
+  #19 = Utf8               file
+  #20 = Utf8               Ljava/nio/file/Path;
+  #21 = Utf8               attrs
+  #22 = Utf8               Ljava/nio/file/attribute/BasicFileAttributes;
+  #23 = Utf8               Exceptions
+  #24 = Class              #50            // java/io/IOException
+  #25 = Utf8               postVisitDirectory
+  #26 = Utf8               (Ljava/nio/file/Path;Ljava/io/IOException;)Ljava/nio/file/FileVisitResult;
+  #27 = Utf8               dir
+  #28 = Utf8               e
+  #29 = Utf8               Ljava/io/IOException;
+  #30 = Utf8               StackMapTable
+  #31 = Utf8               (Ljava/lang/Object;Ljava/io/IOException;)Ljava/nio/file/FileVisitResult;
+  #32 = Utf8               (Ljava/lang/Object;Ljava/nio/file/attribute/BasicFileAttributes;)Ljava/nio/file/FileVisitResult;
+  #33 = Utf8               Signature
+  #34 = Utf8               Ljava/nio/file/SimpleFileVisitor<Ljava/nio/file/Path;>;
+  #35 = Utf8               SourceFile
+  #36 = Utf8               Misc.java
+  #37 = Utf8               EnclosingMethod
+  #38 = Class              #51            // pro/javacard/ant/Misc
+  #39 = NameAndType        #52:#53        // rmminusrf:(Ljava/nio/file/Path;)V
+  #40 = NameAndType        #9:#10         // "<init>":()V
+  #41 = Class              #54            // java/nio/file/Files
+  #42 = NameAndType        #55:#53        // delete:(Ljava/nio/file/Path;)V
+  #43 = Class              #56            // java/nio/file/FileVisitResult
+  #44 = NameAndType        #57:#58        // CONTINUE:Ljava/nio/file/FileVisitResult;
+  #45 = Utf8               java/nio/file/Path
+  #46 = NameAndType        #25:#26        // postVisitDirectory:(Ljava/nio/file/Path;Ljava/io/IOException;)Ljava/nio/file/FileVisitResult;
+  #47 = NameAndType        #17:#18        // visitFile:(Ljava/nio/file/Path;Ljava/nio/file/attribute/BasicFileAttributes;)Ljava/nio/file/FileVisitResult;
+  #48 = Utf8               pro/javacard/ant/Misc$1
+  #49 = Utf8               java/nio/file/SimpleFileVisitor
+  #50 = Utf8               java/io/IOException
+  #51 = Utf8               pro/javacard/ant/Misc
+  #52 = Utf8               rmminusrf
+  #53 = Utf8               (Ljava/nio/file/Path;)V
+  #54 = Utf8               java/nio/file/Files
+  #55 = Utf8               delete
+  #56 = Utf8               java/nio/file/FileVisitResult
+  #57 = Utf8               CONTINUE
+  #58 = Utf8               Ljava/nio/file/FileVisitResult;
+{
+  pro.javacard.ant.Misc$1();
+    descriptor: ()V
+    flags: (0x0000)
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/nio/file/SimpleFileVisitor."<init>":()V
+         4: return
+      LineNumberTable:
+        line 88: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lpro/javacard/ant/Misc$1;
+
+  public java.nio.file.FileVisitResult visitFile(java.nio.file.Path, java.nio.file.attribute.BasicFileAttributes) throws java.io.IOException;
+    descriptor: (Ljava/nio/file/Path;Ljava/nio/file/attribute/BasicFileAttributes;)Ljava/nio/file/FileVisitResult;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=3, args_size=3
+         0: aload_1
+         1: invokestatic  #2                  // Method java/nio/file/Files.delete:(Ljava/nio/file/Path;)V
+         4: getstatic     #3                  // Field java/nio/file/FileVisitResult.CONTINUE:Ljava/nio/file/FileVisitResult;
+         7: areturn
+      LineNumberTable:
+        line 92: 0
+        line 93: 4
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       8     0  this   Lpro/javacard/ant/Misc$1;
+            0       8     1  file   Ljava/nio/file/Path;
+            0       8     2 attrs   Ljava/nio/file/attribute/BasicFileAttributes;
+    Exceptions:
+      throws java.io.IOException
+
+  public java.nio.file.FileVisitResult postVisitDirectory(java.nio.file.Path, java.io.IOException) throws java.io.IOException;
+    descriptor: (Ljava/nio/file/Path;Ljava/io/IOException;)Ljava/nio/file/FileVisitResult;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=3, args_size=3
+         0: aload_2
+         1: ifnonnull     12
+         4: aload_1
+         5: invokestatic  #2                  // Method java/nio/file/Files.delete:(Ljava/nio/file/Path;)V
+         8: getstatic     #3                  // Field java/nio/file/FileVisitResult.CONTINUE:Ljava/nio/file/FileVisitResult;
+        11: areturn
+        12: aload_2
+        13: athrow
+      LineNumberTable:
+        line 99: 0
+        line 100: 4
+        line 101: 8
+        line 104: 12
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      14     0  this   Lpro/javacard/ant/Misc$1;
+            0      14     1   dir   Ljava/nio/file/Path;
+            0      14     2     e   Ljava/io/IOException;
+      StackMapTable: number_of_entries = 1
+        frame_type = 12 /* same */
+    Exceptions:
+      throws java.io.IOException
+
+  public java.nio.file.FileVisitResult postVisitDirectory(java.lang.Object, java.io.IOException) throws java.io.IOException;
+    descriptor: (Ljava/lang/Object;Ljava/io/IOException;)Ljava/nio/file/FileVisitResult;
+    flags: (0x1041) ACC_PUBLIC, ACC_BRIDGE, ACC_SYNTHETIC
+    Code:
+      stack=3, locals=3, args_size=3
+         0: aload_0
+         1: aload_1
+         2: checkcast     #4                  // class java/nio/file/Path
+         5: aload_2
+         6: invokevirtual #5                  // Method postVisitDirectory:(Ljava/nio/file/Path;Ljava/io/IOException;)Ljava/nio/file/FileVisitResult;
+         9: areturn
+      LineNumberTable:
+        line 88: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      10     0  this   Lpro/javacard/ant/Misc$1;
+    Exceptions:
+      throws java.io.IOException
+
+  public java.nio.file.FileVisitResult visitFile(java.lang.Object, java.nio.file.attribute.BasicFileAttributes) throws java.io.IOException;
+    descriptor: (Ljava/lang/Object;Ljava/nio/file/attribute/BasicFileAttributes;)Ljava/nio/file/FileVisitResult;
+    flags: (0x1041) ACC_PUBLIC, ACC_BRIDGE, ACC_SYNTHETIC
+    Code:
+      stack=3, locals=3, args_size=3
+         0: aload_0
+         1: aload_1
+         2: checkcast     #4                  // class java/nio/file/Path
+         5: aload_2
+         6: invokevirtual #6                  // Method visitFile:(Ljava/nio/file/Path;Ljava/nio/file/attribute/BasicFileAttributes;)Ljava/nio/file/FileVisitResult;
+         9: areturn
+      LineNumberTable:
+        line 88: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      10     0  this   Lpro/javacard/ant/Misc$1;
+    Exceptions:
+      throws java.io.IOException
+}
+Signature: #34                          // Ljava/nio/file/SimpleFileVisitor<Ljava/nio/file/Path;>;
+SourceFile: "Misc.java"
+EnclosingMethod: #38.#39                // pro.javacard.ant.Misc.rmminusrf
+InnerClasses:
+  #7;                                     // class pro/javacard/ant/Misc$1

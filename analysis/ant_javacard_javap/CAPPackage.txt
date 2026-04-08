@@ -1,0 +1,400 @@
+Classfile /F:/repo/007smsdev/analysis/ant_javacard_extracted/pro/javacard/capfile/CAPPackage.class
+  Last modified Sep 20, 2025; size 2328 bytes
+  SHA-256 checksum 9a3e005777a6482b3ddc30348468d12769c7d78be1737298234419735e7aff26
+  Compiled from "CAPPackage.java"
+public final class pro.javacard.capfile.CAPPackage
+  minor version: 0
+  major version: 52
+  flags: (0x0031) ACC_PUBLIC, ACC_FINAL, ACC_SUPER
+  this_class: #7                          // pro/javacard/capfile/CAPPackage
+  super_class: #9                         // java/lang/Object
+  interfaces: 0, fields: 4, methods: 10, attributes: 1
+Constant pool:
+   #1 = Methodref          #7.#57         // pro/javacard/capfile/CAPPackage."<init>":(Lpro/javacard/capfile/AID;IILjava/lang/String;)V
+   #2 = Methodref          #9.#58         // java/lang/Object."<init>":()V
+   #3 = Fieldref           #7.#59         // pro/javacard/capfile/CAPPackage.aid:Lpro/javacard/capfile/AID;
+   #4 = Fieldref           #7.#60         // pro/javacard/capfile/CAPPackage.major:I
+   #5 = Fieldref           #7.#61         // pro/javacard/capfile/CAPPackage.minor:I
+   #6 = Fieldref           #7.#62         // pro/javacard/capfile/CAPPackage.name:Ljava/lang/String;
+   #7 = Class              #63            // pro/javacard/capfile/CAPPackage
+   #8 = Methodref          #64.#65        // pro/javacard/capfile/AID.equals:(Ljava/lang/Object;)Z
+   #9 = Class              #66            // java/lang/Object
+  #10 = Methodref          #67.#68        // java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+  #11 = Methodref          #69.#70        // java/util/Objects.hash:([Ljava/lang/Object;)I
+  #12 = String             #71            // %-32s v%d.%d %s
+  #13 = Methodref          #7.#72         // pro/javacard/capfile/CAPPackage.getName:()Ljava/util/Optional;
+  #14 = Methodref          #73.#74        // pro/javacard/capfile/WellKnownAID.getName:(Lpro/javacard/capfile/AID;)Ljava/util/Optional;
+  #15 = String             #75            // (unknown)
+  #16 = Methodref          #76.#77        // java/util/Optional.orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+  #17 = Class              #78            // java/lang/String
+  #18 = Methodref          #17.#79        // java/lang/String.format:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+  #19 = String             #80            // %d.%d
+  #20 = Methodref          #76.#81        // java/util/Optional.ofNullable:(Ljava/lang/Object;)Ljava/util/Optional;
+  #21 = Utf8               aid
+  #22 = Utf8               Lpro/javacard/capfile/AID;
+  #23 = Utf8               major
+  #24 = Utf8               I
+  #25 = Utf8               minor
+  #26 = Utf8               name
+  #27 = Utf8               Ljava/lang/String;
+  #28 = Utf8               <init>
+  #29 = Utf8               (Lpro/javacard/capfile/AID;II)V
+  #30 = Utf8               Code
+  #31 = Utf8               LineNumberTable
+  #32 = Utf8               LocalVariableTable
+  #33 = Utf8               this
+  #34 = Utf8               Lpro/javacard/capfile/CAPPackage;
+  #35 = Utf8               (Lpro/javacard/capfile/AID;IILjava/lang/String;)V
+  #36 = Utf8               equals
+  #37 = Utf8               (Ljava/lang/Object;)Z
+  #38 = Utf8               o
+  #39 = Utf8               other
+  #40 = Utf8               Ljava/lang/Object;
+  #41 = Utf8               StackMapTable
+  #42 = Utf8               hashCode
+  #43 = Utf8               ()I
+  #44 = Utf8               toString
+  #45 = Utf8               ()Ljava/lang/String;
+  #46 = Utf8               getVersionString
+  #47 = Utf8               getAid
+  #48 = Utf8               ()Lpro/javacard/capfile/AID;
+  #49 = Utf8               getMinor
+  #50 = Utf8               getMajor
+  #51 = Utf8               getName
+  #52 = Utf8               ()Ljava/util/Optional;
+  #53 = Utf8               Signature
+  #54 = Utf8               ()Ljava/util/Optional<Ljava/lang/String;>;
+  #55 = Utf8               SourceFile
+  #56 = Utf8               CAPPackage.java
+  #57 = NameAndType        #28:#35        // "<init>":(Lpro/javacard/capfile/AID;IILjava/lang/String;)V
+  #58 = NameAndType        #28:#82        // "<init>":()V
+  #59 = NameAndType        #21:#22        // aid:Lpro/javacard/capfile/AID;
+  #60 = NameAndType        #23:#24        // major:I
+  #61 = NameAndType        #25:#24        // minor:I
+  #62 = NameAndType        #26:#27        // name:Ljava/lang/String;
+  #63 = Utf8               pro/javacard/capfile/CAPPackage
+  #64 = Class              #83            // pro/javacard/capfile/AID
+  #65 = NameAndType        #36:#37        // equals:(Ljava/lang/Object;)Z
+  #66 = Utf8               java/lang/Object
+  #67 = Class              #84            // java/lang/Integer
+  #68 = NameAndType        #85:#86        // valueOf:(I)Ljava/lang/Integer;
+  #69 = Class              #87            // java/util/Objects
+  #70 = NameAndType        #88:#89        // hash:([Ljava/lang/Object;)I
+  #71 = Utf8               %-32s v%d.%d %s
+  #72 = NameAndType        #51:#52        // getName:()Ljava/util/Optional;
+  #73 = Class              #90            // pro/javacard/capfile/WellKnownAID
+  #74 = NameAndType        #51:#91        // getName:(Lpro/javacard/capfile/AID;)Ljava/util/Optional;
+  #75 = Utf8               (unknown)
+  #76 = Class              #92            // java/util/Optional
+  #77 = NameAndType        #93:#94        // orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+  #78 = Utf8               java/lang/String
+  #79 = NameAndType        #95:#96        // format:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+  #80 = Utf8               %d.%d
+  #81 = NameAndType        #97:#98        // ofNullable:(Ljava/lang/Object;)Ljava/util/Optional;
+  #82 = Utf8               ()V
+  #83 = Utf8               pro/javacard/capfile/AID
+  #84 = Utf8               java/lang/Integer
+  #85 = Utf8               valueOf
+  #86 = Utf8               (I)Ljava/lang/Integer;
+  #87 = Utf8               java/util/Objects
+  #88 = Utf8               hash
+  #89 = Utf8               ([Ljava/lang/Object;)I
+  #90 = Utf8               pro/javacard/capfile/WellKnownAID
+  #91 = Utf8               (Lpro/javacard/capfile/AID;)Ljava/util/Optional;
+  #92 = Utf8               java/util/Optional
+  #93 = Utf8               orElse
+  #94 = Utf8               (Ljava/lang/Object;)Ljava/lang/Object;
+  #95 = Utf8               format
+  #96 = Utf8               (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+  #97 = Utf8               ofNullable
+  #98 = Utf8               (Ljava/lang/Object;)Ljava/util/Optional;
+{
+  final pro.javacard.capfile.AID aid;
+    descriptor: Lpro/javacard/capfile/AID;
+    flags: (0x0010) ACC_FINAL
+
+  final int major;
+    descriptor: I
+    flags: (0x0010) ACC_FINAL
+
+  final int minor;
+    descriptor: I
+    flags: (0x0010) ACC_FINAL
+
+  final java.lang.String name;
+    descriptor: Ljava/lang/String;
+    flags: (0x0010) ACC_FINAL
+
+  public pro.javacard.capfile.CAPPackage(pro.javacard.capfile.AID, int, int);
+    descriptor: (Lpro/javacard/capfile/AID;II)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=5, locals=4, args_size=4
+         0: aload_0
+         1: aload_1
+         2: iload_2
+         3: iload_3
+         4: aconst_null
+         5: invokespecial #1                  // Method "<init>":(Lpro/javacard/capfile/AID;IILjava/lang/String;)V
+         8: return
+      LineNumberTable:
+        line 34: 0
+        line 35: 8
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       9     0  this   Lpro/javacard/capfile/CAPPackage;
+            0       9     1   aid   Lpro/javacard/capfile/AID;
+            0       9     2 major   I
+            0       9     3 minor   I
+
+  public pro.javacard.capfile.CAPPackage(pro.javacard.capfile.AID, int, int, java.lang.String);
+    descriptor: (Lpro/javacard/capfile/AID;IILjava/lang/String;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=5, args_size=5
+         0: aload_0
+         1: invokespecial #2                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: aload_1
+         6: putfield      #3                  // Field aid:Lpro/javacard/capfile/AID;
+         9: aload_0
+        10: iload_2
+        11: putfield      #4                  // Field major:I
+        14: aload_0
+        15: iload_3
+        16: putfield      #5                  // Field minor:I
+        19: aload_0
+        20: aload         4
+        22: putfield      #6                  // Field name:Ljava/lang/String;
+        25: return
+      LineNumberTable:
+        line 37: 0
+        line 38: 4
+        line 39: 9
+        line 40: 14
+        line 41: 19
+        line 42: 25
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      26     0  this   Lpro/javacard/capfile/CAPPackage;
+            0      26     1   aid   Lpro/javacard/capfile/AID;
+            0      26     2 major   I
+            0      26     3 minor   I
+            0      26     4  name   Ljava/lang/String;
+
+  public boolean equals(java.lang.Object);
+    descriptor: (Ljava/lang/Object;)Z
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=3, args_size=2
+         0: aload_1
+         1: instanceof    #7                  // class pro/javacard/capfile/CAPPackage
+         4: ifeq          54
+         7: aload_1
+         8: checkcast     #7                  // class pro/javacard/capfile/CAPPackage
+        11: astore_2
+        12: aload_0
+        13: getfield      #3                  // Field aid:Lpro/javacard/capfile/AID;
+        16: aload_2
+        17: getfield      #3                  // Field aid:Lpro/javacard/capfile/AID;
+        20: invokevirtual #8                  // Method pro/javacard/capfile/AID.equals:(Ljava/lang/Object;)Z
+        23: ifeq          52
+        26: aload_0
+        27: getfield      #4                  // Field major:I
+        30: aload_2
+        31: getfield      #4                  // Field major:I
+        34: if_icmpne     52
+        37: aload_0
+        38: getfield      #5                  // Field minor:I
+        41: aload_2
+        42: getfield      #5                  // Field minor:I
+        45: if_icmpne     52
+        48: iconst_1
+        49: goto          53
+        52: iconst_0
+        53: ireturn
+        54: iconst_0
+        55: ireturn
+      LineNumberTable:
+        line 46: 0
+        line 47: 7
+        line 48: 12
+        line 50: 54
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           12      42     2     o   Lpro/javacard/capfile/CAPPackage;
+            0      56     0  this   Lpro/javacard/capfile/CAPPackage;
+            0      56     1 other   Ljava/lang/Object;
+      StackMapTable: number_of_entries = 3
+        frame_type = 252 /* append */
+          offset_delta = 52
+          locals = [ class pro/javacard/capfile/CAPPackage ]
+        frame_type = 64 /* same_locals_1_stack_item */
+          stack = [ int ]
+        frame_type = 250 /* chop */
+          offset_delta = 0
+
+  public int hashCode();
+    descriptor: ()I
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=4, locals=1, args_size=1
+         0: iconst_3
+         1: anewarray     #9                  // class java/lang/Object
+         4: dup
+         5: iconst_0
+         6: aload_0
+         7: getfield      #3                  // Field aid:Lpro/javacard/capfile/AID;
+        10: aastore
+        11: dup
+        12: iconst_1
+        13: aload_0
+        14: getfield      #4                  // Field major:I
+        17: invokestatic  #10                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        20: aastore
+        21: dup
+        22: iconst_2
+        23: aload_0
+        24: getfield      #5                  // Field minor:I
+        27: invokestatic  #10                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        30: aastore
+        31: invokestatic  #11                 // Method java/util/Objects.hash:([Ljava/lang/Object;)I
+        34: ireturn
+      LineNumberTable:
+        line 55: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      35     0  this   Lpro/javacard/capfile/CAPPackage;
+
+  public java.lang.String toString();
+    descriptor: ()Ljava/lang/String;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=7, locals=1, args_size=1
+         0: ldc           #12                 // String %-32s v%d.%d %s
+         2: iconst_4
+         3: anewarray     #9                  // class java/lang/Object
+         6: dup
+         7: iconst_0
+         8: aload_0
+         9: getfield      #3                  // Field aid:Lpro/javacard/capfile/AID;
+        12: aastore
+        13: dup
+        14: iconst_1
+        15: aload_0
+        16: getfield      #4                  // Field major:I
+        19: invokestatic  #10                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        22: aastore
+        23: dup
+        24: iconst_2
+        25: aload_0
+        26: getfield      #5                  // Field minor:I
+        29: invokestatic  #10                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        32: aastore
+        33: dup
+        34: iconst_3
+        35: aload_0
+        36: invokevirtual #13                 // Method getName:()Ljava/util/Optional;
+        39: aload_0
+        40: getfield      #3                  // Field aid:Lpro/javacard/capfile/AID;
+        43: invokestatic  #14                 // Method pro/javacard/capfile/WellKnownAID.getName:(Lpro/javacard/capfile/AID;)Ljava/util/Optional;
+        46: ldc           #15                 // String (unknown)
+        48: invokevirtual #16                 // Method java/util/Optional.orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+        51: checkcast     #17                 // class java/lang/String
+        54: invokevirtual #16                 // Method java/util/Optional.orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+        57: aastore
+        58: invokestatic  #18                 // Method java/lang/String.format:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+        61: areturn
+      LineNumberTable:
+        line 60: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      62     0  this   Lpro/javacard/capfile/CAPPackage;
+
+  public java.lang.String getVersionString();
+    descriptor: ()Ljava/lang/String;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=5, locals=1, args_size=1
+         0: ldc           #19                 // String %d.%d
+         2: iconst_2
+         3: anewarray     #9                  // class java/lang/Object
+         6: dup
+         7: iconst_0
+         8: aload_0
+         9: getfield      #4                  // Field major:I
+        12: invokestatic  #10                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        15: aastore
+        16: dup
+        17: iconst_1
+        18: aload_0
+        19: getfield      #5                  // Field minor:I
+        22: invokestatic  #10                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        25: aastore
+        26: invokestatic  #18                 // Method java/lang/String.format:(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+        29: areturn
+      LineNumberTable:
+        line 64: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      30     0  this   Lpro/javacard/capfile/CAPPackage;
+
+  public pro.javacard.capfile.AID getAid();
+    descriptor: ()Lpro/javacard/capfile/AID;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #3                  // Field aid:Lpro/javacard/capfile/AID;
+         4: areturn
+      LineNumberTable:
+        line 68: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lpro/javacard/capfile/CAPPackage;
+
+  public int getMinor();
+    descriptor: ()I
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #5                  // Field minor:I
+         4: ireturn
+      LineNumberTable:
+        line 72: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lpro/javacard/capfile/CAPPackage;
+
+  public int getMajor();
+    descriptor: ()I
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #4                  // Field major:I
+         4: ireturn
+      LineNumberTable:
+        line 76: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lpro/javacard/capfile/CAPPackage;
+
+  public java.util.Optional<java.lang.String> getName();
+    descriptor: ()Ljava/util/Optional;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: getfield      #6                  // Field name:Ljava/lang/String;
+         4: invokestatic  #20                 // Method java/util/Optional.ofNullable:(Ljava/lang/Object;)Ljava/util/Optional;
+         7: areturn
+      LineNumberTable:
+        line 80: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       8     0  this   Lpro/javacard/capfile/CAPPackage;
+    Signature: #54                          // ()Ljava/util/Optional<Ljava/lang/String;>;
+}
+SourceFile: "CAPPackage.java"

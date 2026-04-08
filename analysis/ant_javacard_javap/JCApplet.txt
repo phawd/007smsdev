@@ -1,0 +1,197 @@
+Classfile /F:/repo/007smsdev/analysis/ant_javacard_extracted/pro/javacard/ant/JCApplet.class
+  Last modified Sep 20, 2025; size 1237 bytes
+  SHA-256 checksum bded6ac1bf691caabe14f3c647008248573d0f91b65541a54cf177fcdd87e045
+  Compiled from "JCApplet.java"
+public class pro.javacard.ant.JCApplet
+  minor version: 0
+  major version: 52
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #16                         // pro/javacard/ant/JCApplet
+  super_class: #17                        // java/lang/Object
+  interfaces: 0, fields: 2, methods: 3, attributes: 1
+Constant pool:
+   #1 = Methodref          #17.#38        // java/lang/Object."<init>":()V
+   #2 = Fieldref           #16.#39        // pro/javacard/ant/JCApplet.klass:Ljava/lang/String;
+   #3 = Fieldref           #16.#40        // pro/javacard/ant/JCApplet.aid:[B
+   #4 = Methodref          #41.#42        // pro/javacard/ant/Misc.stringToBin:(Ljava/lang/String;)[B
+   #5 = Class              #43            // org/apache/tools/ant/BuildException
+   #6 = Class              #44            // java/lang/StringBuilder
+   #7 = Methodref          #6.#38         // java/lang/StringBuilder."<init>":()V
+   #8 = String             #45            // Applet AID must be between 5 and 16 bytes:
+   #9 = Methodref          #6.#46         // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #10 = Methodref          #6.#47         // java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+  #11 = Methodref          #6.#48         // java/lang/StringBuilder.toString:()Ljava/lang/String;
+  #12 = Methodref          #5.#49         // org/apache/tools/ant/BuildException."<init>":(Ljava/lang/String;)V
+  #13 = Class              #50            // java/lang/IllegalArgumentException
+  #14 = String             #51            // Not a valid applet AID:
+  #15 = Methodref          #13.#52        // java/lang/IllegalArgumentException.getMessage:()Ljava/lang/String;
+  #16 = Class              #53            // pro/javacard/ant/JCApplet
+  #17 = Class              #54            // java/lang/Object
+  #18 = Utf8               klass
+  #19 = Utf8               Ljava/lang/String;
+  #20 = Utf8               aid
+  #21 = Utf8               [B
+  #22 = Utf8               <init>
+  #23 = Utf8               ()V
+  #24 = Utf8               Code
+  #25 = Utf8               LineNumberTable
+  #26 = Utf8               LocalVariableTable
+  #27 = Utf8               this
+  #28 = Utf8               Lpro/javacard/ant/JCApplet;
+  #29 = Utf8               setClass
+  #30 = Utf8               (Ljava/lang/String;)V
+  #31 = Utf8               msg
+  #32 = Utf8               setAID
+  #33 = Utf8               e
+  #34 = Utf8               Ljava/lang/IllegalArgumentException;
+  #35 = Utf8               StackMapTable
+  #36 = Utf8               SourceFile
+  #37 = Utf8               JCApplet.java
+  #38 = NameAndType        #22:#23        // "<init>":()V
+  #39 = NameAndType        #18:#19        // klass:Ljava/lang/String;
+  #40 = NameAndType        #20:#21        // aid:[B
+  #41 = Class              #55            // pro/javacard/ant/Misc
+  #42 = NameAndType        #56:#57        // stringToBin:(Ljava/lang/String;)[B
+  #43 = Utf8               org/apache/tools/ant/BuildException
+  #44 = Utf8               java/lang/StringBuilder
+  #45 = Utf8               Applet AID must be between 5 and 16 bytes:
+  #46 = NameAndType        #58:#59        // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #47 = NameAndType        #58:#60        // append:(I)Ljava/lang/StringBuilder;
+  #48 = NameAndType        #61:#62        // toString:()Ljava/lang/String;
+  #49 = NameAndType        #22:#30        // "<init>":(Ljava/lang/String;)V
+  #50 = Utf8               java/lang/IllegalArgumentException
+  #51 = Utf8               Not a valid applet AID:
+  #52 = NameAndType        #63:#62        // getMessage:()Ljava/lang/String;
+  #53 = Utf8               pro/javacard/ant/JCApplet
+  #54 = Utf8               java/lang/Object
+  #55 = Utf8               pro/javacard/ant/Misc
+  #56 = Utf8               stringToBin
+  #57 = Utf8               (Ljava/lang/String;)[B
+  #58 = Utf8               append
+  #59 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #60 = Utf8               (I)Ljava/lang/StringBuilder;
+  #61 = Utf8               toString
+  #62 = Utf8               ()Ljava/lang/String;
+  #63 = Utf8               getMessage
+{
+  java.lang.String klass;
+    descriptor: Ljava/lang/String;
+    flags: (0x0000)
+
+  byte[] aid;
+    descriptor: [B
+    flags: (0x0000)
+
+  public pro.javacard.ant.JCApplet();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: aconst_null
+         6: putfield      #2                  // Field klass:Ljava/lang/String;
+         9: aload_0
+        10: aconst_null
+        11: putfield      #3                  // Field aid:[B
+        14: return
+      LineNumberTable:
+        line 31: 0
+        line 28: 4
+        line 29: 9
+        line 32: 14
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      15     0  this   Lpro/javacard/ant/JCApplet;
+
+  public void setClass(java.lang.String);
+    descriptor: (Ljava/lang/String;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: putfield      #2                  // Field klass:Ljava/lang/String;
+         5: return
+      LineNumberTable:
+        line 35: 0
+        line 36: 5
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   Lpro/javacard/ant/JCApplet;
+            0       6     1   msg   Ljava/lang/String;
+
+  public void setAID(java.lang.String);
+    descriptor: (Ljava/lang/String;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=4, locals=3, args_size=2
+         0: aload_0
+         1: aload_1
+         2: invokestatic  #4                  // Method pro/javacard/ant/Misc.stringToBin:(Ljava/lang/String;)[B
+         5: putfield      #3                  // Field aid:[B
+         8: aload_0
+         9: getfield      #3                  // Field aid:[B
+        12: arraylength
+        13: iconst_5
+        14: if_icmplt     27
+        17: aload_0
+        18: getfield      #3                  // Field aid:[B
+        21: arraylength
+        22: bipush        16
+        24: if_icmple     58
+        27: new           #5                  // class org/apache/tools/ant/BuildException
+        30: dup
+        31: new           #6                  // class java/lang/StringBuilder
+        34: dup
+        35: invokespecial #7                  // Method java/lang/StringBuilder."<init>":()V
+        38: ldc           #8                  // String Applet AID must be between 5 and 16 bytes:
+        40: invokevirtual #9                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        43: aload_0
+        44: getfield      #3                  // Field aid:[B
+        47: arraylength
+        48: invokevirtual #10                 // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        51: invokevirtual #11                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        54: invokespecial #12                 // Method org/apache/tools/ant/BuildException."<init>":(Ljava/lang/String;)V
+        57: athrow
+        58: goto          92
+        61: astore_2
+        62: new           #5                  // class org/apache/tools/ant/BuildException
+        65: dup
+        66: new           #6                  // class java/lang/StringBuilder
+        69: dup
+        70: invokespecial #7                  // Method java/lang/StringBuilder."<init>":()V
+        73: ldc           #14                 // String Not a valid applet AID:
+        75: invokevirtual #9                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        78: aload_2
+        79: invokevirtual #15                 // Method java/lang/IllegalArgumentException.getMessage:()Ljava/lang/String;
+        82: invokevirtual #9                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        85: invokevirtual #11                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        88: invokespecial #12                 // Method org/apache/tools/ant/BuildException."<init>":(Ljava/lang/String;)V
+        91: athrow
+        92: return
+      Exception table:
+         from    to  target type
+             0    58    61   Class java/lang/IllegalArgumentException
+      LineNumberTable:
+        line 40: 0
+        line 41: 8
+        line 42: 27
+        line 46: 58
+        line 44: 61
+        line 45: 62
+        line 47: 92
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           62      30     2     e   Ljava/lang/IllegalArgumentException;
+            0      93     0  this   Lpro/javacard/ant/JCApplet;
+            0      93     1   msg   Ljava/lang/String;
+      StackMapTable: number_of_entries = 4
+        frame_type = 27 /* same */
+        frame_type = 30 /* same */
+        frame_type = 66 /* same_locals_1_stack_item */
+          stack = [ class java/lang/IllegalArgumentException ]
+        frame_type = 30 /* same */
+}
+SourceFile: "JCApplet.java"

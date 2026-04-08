@@ -2,7 +2,7 @@
 """
 Generate a Ghidra Java script for headless analysis (based on FindNCKUnlockLogic.java)
 Writes to `analysis/ghidra_scripts/generated_FindNCKUnlockLogic.java`.
-User should run `analyzeHeadless` with the generated script.
+User should run `c:\ghidra\support\analyzeHeadless.bat` with the generated script.
 """
 import os
 

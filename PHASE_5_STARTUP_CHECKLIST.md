@@ -272,7 +272,7 @@ tools/smstest_cli.py (new subcommands)
 
 ---
 
-## Critical Resource Requirements
+    ## Critical Resource Requirements
 
 ### Hardware
 
@@ -288,7 +288,7 @@ tools/smstest_cli.py (new subcommands)
 
 ### Software - Need to Obtain
 
-- ⚠️ IDA Pro (paid, $599) OR Ghidra (free)
+- ✅ Ghidra (installed in c:\ghidra)
 - ⚠️ Hex editor (010 Editor recommended, or free alternatives)
 - ⚠️ ARM disassembler tools (Capstone, etc.)
 

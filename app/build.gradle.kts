@@ -5,7 +5,7 @@ plugins {
 }
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(25)
 }
 
 android {
@@ -35,10 +35,20 @@ android {
         }
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = file("smstest_release.jks")
+            storePassword = "android123"
+            keyAlias = "smstest"
+            keyPassword = "android123"
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
+            signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -60,7 +70,7 @@ android {
     }
     
     kotlinOptions {
-        jvmTarget = "21"
+        jvmTarget = "21"  // Android max supported JVM target
     }
     
     buildFeatures {

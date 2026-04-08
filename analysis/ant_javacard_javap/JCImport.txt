@@ -1,0 +1,104 @@
+Classfile /F:/repo/007smsdev/analysis/ant_javacard_extracted/pro/javacard/ant/JCImport.class
+  Last modified Sep 20, 2025; size 572 bytes
+  SHA-256 checksum 2a8d9bbadd7e6386243f60d47e5c374cb2c6a01c6600e7573617a966080ee13f
+  Compiled from "JCImport.java"
+public class pro.javacard.ant.JCImport
+  minor version: 0
+  major version: 52
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #4                          // pro/javacard/ant/JCImport
+  super_class: #5                         // java/lang/Object
+  interfaces: 0, fields: 2, methods: 3, attributes: 1
+Constant pool:
+   #1 = Methodref          #5.#22         // java/lang/Object."<init>":()V
+   #2 = Fieldref           #4.#23         // pro/javacard/ant/JCImport.exps:Ljava/lang/String;
+   #3 = Fieldref           #4.#24         // pro/javacard/ant/JCImport.jar:Ljava/lang/String;
+   #4 = Class              #25            // pro/javacard/ant/JCImport
+   #5 = Class              #26            // java/lang/Object
+   #6 = Utf8               exps
+   #7 = Utf8               Ljava/lang/String;
+   #8 = Utf8               jar
+   #9 = Utf8               <init>
+  #10 = Utf8               ()V
+  #11 = Utf8               Code
+  #12 = Utf8               LineNumberTable
+  #13 = Utf8               LocalVariableTable
+  #14 = Utf8               this
+  #15 = Utf8               Lpro/javacard/ant/JCImport;
+  #16 = Utf8               setExps
+  #17 = Utf8               (Ljava/lang/String;)V
+  #18 = Utf8               msg
+  #19 = Utf8               setJar
+  #20 = Utf8               SourceFile
+  #21 = Utf8               JCImport.java
+  #22 = NameAndType        #9:#10         // "<init>":()V
+  #23 = NameAndType        #6:#7          // exps:Ljava/lang/String;
+  #24 = NameAndType        #8:#7          // jar:Ljava/lang/String;
+  #25 = Utf8               pro/javacard/ant/JCImport
+  #26 = Utf8               java/lang/Object
+{
+  java.lang.String exps;
+    descriptor: Ljava/lang/String;
+    flags: (0x0000)
+
+  java.lang.String jar;
+    descriptor: Ljava/lang/String;
+    flags: (0x0000)
+
+  public pro.javacard.ant.JCImport();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: aconst_null
+         6: putfield      #2                  // Field exps:Ljava/lang/String;
+         9: aload_0
+        10: aconst_null
+        11: putfield      #3                  // Field jar:Ljava/lang/String;
+        14: return
+      LineNumberTable:
+        line 25: 0
+        line 26: 4
+        line 27: 9
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      15     0  this   Lpro/javacard/ant/JCImport;
+
+  public void setExps(java.lang.String);
+    descriptor: (Ljava/lang/String;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: putfield      #2                  // Field exps:Ljava/lang/String;
+         5: return
+      LineNumberTable:
+        line 30: 0
+        line 31: 5
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   Lpro/javacard/ant/JCImport;
+            0       6     1   msg   Ljava/lang/String;
+
+  public void setJar(java.lang.String);
+    descriptor: (Ljava/lang/String;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: putfield      #3                  // Field jar:Ljava/lang/String;
+         5: return
+      LineNumberTable:
+        line 34: 0
+        line 35: 5
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   Lpro/javacard/ant/JCImport;
+            0       6     1   msg   Ljava/lang/String;
+}
+SourceFile: "JCImport.java"
