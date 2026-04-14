@@ -100,21 +100,27 @@ object LogExporter {
             val csvContent = buildString {
                 // CSV Header
                 appendLine("Scenario ID,Message ID,Status,Delivery Status,Timestamp,Duration (ms),Message Size,Parts,Errors,RFC Violations")
-                
+
                 // CSV Data
                 results.forEach { result ->
                     val errors = result.errors.joinToString("; ").replace(",", ";").replace("\n", " ")
                     val violations = result.rfcViolations.joinToString("; ").replace(",", ";").replace("\n", " ")
-                    
+
+                    // Map using the established TestResult fields
+                    val timestampStr = result.timestamp
+                    val duration = result.sendDuration
+                    val messageSize = result.messageSize
+                    val parts = result.messageParts
+
                     appendLine(listOf(
                         result.scenarioId,
                         result.messageId,
                         result.status.name,
                         result.deliveryStatus.name,
-                        result.timestamp,
-                        result.sendDuration.toString(),
-                        result.messageSize.toString(),
-                        result.messageParts.toString(),
+                        timestampStr.toString(),
+                        duration.toString(),
+                        messageSize.toString(),
+                        parts.toString(),
                         "\"$errors\"",
                         "\"$violations\""
                     ).joinToString(","))
@@ -145,7 +151,10 @@ object LogExporter {
             val passed = results.count { it.status == TestStatus.PASSED }
             val failed = results.count { it.status == TestStatus.FAILED }
             val running = results.count { it.status == TestStatus.RUNNING }
-            val pending = results.count { it.status == TestStatus.PENDING }
+            val timeout = results.count { it.status == TestStatus.TIMEOUT }
+            val cancelled = results.count { it.status == TestStatus.CANCELLED }
+            // 'Pending' isn't an explicit TestStatus; infer as the remaining tests that haven't transitioned
+            val pending = results.size - (passed + failed + running + timeout + cancelled)
             
             val content = buildString {
                 appendLine("========================================")

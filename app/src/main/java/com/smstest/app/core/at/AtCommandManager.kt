@@ -309,14 +309,14 @@ object AtCommandManager {
             val escapedDevice = escapeShellSingle(devicePath)
             val command = """
                 DEVICE='$escapedDevice'
-                if [ ! -e "$DEVICE" ]; then
+                if [ ! -e "${'$'}DEVICE" ]; then
                   echo '__NO_DEVICE__'
                   exit 20
                 fi
-                if [ ! -r "$DEVICE" ] || [ ! -w "$DEVICE" ]; then
-                  chmod 666 "$DEVICE" >/dev/null 2>&1 || true
+                if [ ! -r "${'$'}DEVICE" ] || [ ! -w "${'$'}DEVICE" ]; then
+                  chmod 666 "${'$'}DEVICE" >/dev/null 2>&1 || true
                 fi
-                exec 3<>"$DEVICE" || { echo '__OPEN_FAILED__'; exit 21; }
+                exec 3<>"${'$'}DEVICE" || { echo '__OPEN_FAILED__'; exit 21; }
                 $writeScript
                 if command -v timeout >/dev/null 2>&1; then
                   timeout $readTimeoutSec cat <&3 2>/dev/null | tr -d '\000' | head -c 2048
@@ -330,32 +330,15 @@ object AtCommandManager {
             AtSessionResult(success, result.output.trim(), result.error.trim(), result.exitCode)
         }
 
+    // Provider can be replaced for alternative-licensed implementations
+    private var deviceProvider: AtDeviceProvider = AtDeviceProviderLoader.loadProviderOrDefault()
+
+    fun setDeviceProvider(provider: AtDeviceProvider) {
+        deviceProvider = provider
+    }
+
     private fun buildCandidateDeviceList(preferredPaths: List<String>): List<Pair<String, ModemChipset>> {
-        val known = linkedMapOf<String, ModemChipset>()
-        preferredPaths.forEach { known[it] = ModemChipset.UNKNOWN }
-        val staticCandidates = mapOf(
-            "/dev/smd0" to ModemChipset.QUALCOMM_GENERIC,
-            "/dev/smd11" to ModemChipset.QUALCOMM_GENERIC,
-            "/dev/ttyHS0" to ModemChipset.QUALCOMM_SDM,
-            "/dev/ttyHS1" to ModemChipset.QUALCOMM_SDM,
-            "/dev/ttyUSB0" to ModemChipset.UNKNOWN,
-            "/dev/ttyUSB1" to ModemChipset.UNKNOWN,
-            "/dev/ttyUSB2" to ModemChipset.UNKNOWN,
-            "/dev/ttyACM0" to ModemChipset.UNKNOWN,
-            "/dev/ttyACM1" to ModemChipset.UNKNOWN,
-            "/dev/radio/pttycmd1" to ModemChipset.MEDIATEK_GENERIC,
-            "/dev/radio/pttycmd2" to ModemChipset.MEDIATEK_GENERIC,
-            "/dev/ttyMT0" to ModemChipset.MEDIATEK_GENERIC,
-            "/dev/ttyCMIPC0" to ModemChipset.MEDIATEK_GENERIC,
-            "/dev/umts_ipc0" to ModemChipset.SAMSUNG_EXYNOS,
-            "/dev/appvcom" to ModemChipset.HISILICON_KIRIN,
-            "/dev/gsmtty1" to ModemChipset.INTEL_XMM,
-            "/dev/stty_lte1" to ModemChipset.SPREADTRUM,
-            "/dev/wwan0at" to ModemChipset.QUALCOMM_SDM,
-            "/dev/wwan1at" to ModemChipset.QUALCOMM_SDM
-        )
-        staticCandidates.forEach { (path, chipset) -> known.putIfAbsent(path, chipset) }
-        return known.entries.map { it.key to it.value }
+        return deviceProvider.getCandidateDeviceList(preferredPaths)
     }
 
     private fun atLine(command: String): ByteArray = "$command\r".toByteArray(Charsets.US_ASCII)

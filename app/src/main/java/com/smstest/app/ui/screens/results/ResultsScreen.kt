@@ -5,6 +5,13 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Download
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Error
+import androidx.compose.material.icons.filled.Schedule
+import androidx.compose.material.icons.filled.AccessTime
+import androidx.compose.material.icons.filled.Cancel
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -34,7 +41,7 @@ fun ResultsScreen(
                 title = { Text("Test Results") },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(Icons.Filled.ArrowBack, contentDescription = "Back")
                     }
                 },
                 actions = {
@@ -45,7 +52,7 @@ fun ResultsScreen(
                             LogExporter.exportTestResults(context, testResults)
                         }
                     }) {
-                        Icon(Icons.Default.Download, contentDescription = "Export")
+                        Icon(Icons.Filled.Download, contentDescription = "Export")
                     }
                 }
             )
@@ -172,11 +179,11 @@ fun TestResultCard(result: TestResult) {
             ) {
                 Icon(
                     imageVector = when (result.status) {
-                        TestStatus.PASSED -> Icons.Default.CheckCircle
-                        TestStatus.FAILED -> Icons.Default.Error
-                        TestStatus.RUNNING -> Icons.Default.Schedule
-                        TestStatus.TIMEOUT -> Icons.Default.AccessTime
-                        TestStatus.CANCELLED -> Icons.Default.Cancel
+                        TestStatus.PASSED -> Icons.Filled.CheckCircle
+                        TestStatus.FAILED -> Icons.Filled.Error
+                        TestStatus.RUNNING -> Icons.Filled.Schedule
+                        TestStatus.TIMEOUT -> Icons.Filled.AccessTime
+                        TestStatus.CANCELLED -> Icons.Filled.Cancel
                     },
                     contentDescription = null,
                     tint = when (result.status) {

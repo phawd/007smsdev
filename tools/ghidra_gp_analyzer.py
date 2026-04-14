@@ -4,7 +4,7 @@
 
 from ghidra.program.model.listing import Function
 from ghidra.program.model.symbol import SymbolType
-from ghidra.util.task import TaskMonitor
+
 
 print("=== GlobalPlatformPro JAR Analysis ===")
 print("Searching for SCP key derivation and crypto functions...")
