@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.smstest.app.ui.screens.home.HomeScreen
+import com.smstest.app.ui.screens.research.ResearchArtifactsScreen
 import com.smstest.app.ui.screens.test.TestScreen
 import com.smstest.app.ui.screens.results.ResultsScreen
 import com.smstest.app.ui.screens.settings.SettingsScreen
@@ -18,6 +19,7 @@ sealed class Screen(val route: String) {
     object Results : Screen("results")
     object Settings : Screen("settings")
     object Monitor : Screen("monitor")
+    object ResearchArtifacts : Screen("research-artifacts")
 }
 
 @Composable
@@ -41,6 +43,9 @@ fun AppNavigation() {
                 },
                 onNavigateToMonitor = {
                     navController.navigate(Screen.Monitor.route)
+                },
+                onNavigateToResearchArtifacts = {
+                    navController.navigate(Screen.ResearchArtifacts.route)
                 }
             )
         }
@@ -67,6 +72,12 @@ fun AppNavigation() {
         
         composable(Screen.Monitor.route) {
             MonitorScreen(
+                onNavigateBack = { navController.popBackStack() }
+            )
+        }
+
+        composable(Screen.ResearchArtifacts.route) {
+            ResearchArtifactsScreen(
                 onNavigateBack = { navController.popBackStack() }
             )
         }
