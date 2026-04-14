@@ -90,7 +90,8 @@ fun HomeScreen(
     onNavigateToTest: (String) -> Unit,
     onNavigateToResults: () -> Unit,
     onNavigateToSettings: () -> Unit,
-    onNavigateToMonitor: () -> Unit = {}
+    onNavigateToMonitor: () -> Unit = {},
+    onNavigateToResearchArtifacts: () -> Unit = {}
 ) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
@@ -204,6 +205,17 @@ fun HomeScreen(
                         Spacer(Modifier.width(8.dp))
                         Text("SMS Monitor")
                     }
+                }
+            }
+
+            item {
+                OutlinedButton(
+                    onClick = onNavigateToResearchArtifacts,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Icon(Icons.Filled.DataObject, contentDescription = null)
+                    Spacer(Modifier.width(8.dp))
+                    Text("Research Artifacts")
                 }
             }
 
