@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -8,12 +10,24 @@ kotlin {
     jvmToolchain(25)
 }
 
+// Load signing and API configuration from local.properties (not committed to VCS)
+val localProps = Properties()
+val localPropsFile = rootProject.file("local.properties")
+if (localPropsFile.exists()) {
+    localProps.load(localPropsFile.inputStream())
+}
+
 android {
     namespace = "com.smstest.app"
     compileSdk = 35
 
     defaultConfig {
-        buildConfigField("String", "APIFY_API_KEY", "\"apify_api_LcA85Ft1nCmHpYYJbrd6kQ6bl16es71wsCAY\"")
+        // API key is read from local.properties or environment variable; never hard-code secrets.
+        // An empty string is intentional for CI/debug builds that don't use the Apify API.
+        val apifyApiKey = localProps.getProperty("apify.api.key")
+            ?: System.getenv("APIFY_API_KEY")
+            ?: ""
+        buildConfigField("String", "APIFY_API_KEY", "\"$apifyApiKey\"")
         applicationId = "com.smstest.app"
         minSdk = 24
         targetSdk = 35
@@ -35,12 +49,26 @@ android {
         }
     }
 
-    signingConfigs {
-        create("release") {
-            storeFile = file("smstest_release.jks")
-            storePassword = "android123"
-            keyAlias = "smstest"
-            keyPassword = "android123"
+    // Release signing – keystore credentials are read from local.properties or environment.
+    // See docs/APK_BUILD_GUIDE.md for setup instructions.
+    val keystoreFile = localProps.getProperty("release.keystore.file")
+        ?: System.getenv("RELEASE_KEYSTORE_FILE")
+    val keystorePassword = localProps.getProperty("release.keystore.password")
+        ?: System.getenv("RELEASE_KEYSTORE_PASSWORD")
+    val keyAlias = localProps.getProperty("release.key.alias")
+        ?: System.getenv("RELEASE_KEY_ALIAS")
+    val keyPassword = localProps.getProperty("release.key.password")
+        ?: System.getenv("RELEASE_KEY_PASSWORD")
+
+    if (keystoreFile != null && keystorePassword != null
+        && keyAlias != null && keyPassword != null) {
+        signingConfigs {
+            create("release") {
+                storeFile = file(keystoreFile)
+                storePassword = keystorePassword
+                this.keyAlias = keyAlias
+                this.keyPassword = keyPassword
+            }
         }
     }
 
@@ -48,11 +76,15 @@ android {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
-            signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            // Apply signing config when keystore credentials are available
+            val releaseSigningConfig = signingConfigs.findByName("release")
+            if (releaseSigningConfig != null) {
+                signingConfig = releaseSigningConfig
+            }
         }
         debug {
             applicationIdSuffix = ".debug"
@@ -60,8 +92,8 @@ android {
         }
     }
     testOptions {
-        unitTests.all {
-            it.useJUnitPlatform()
+        unitTests {
+            isIncludeAndroidResources = true
         }
     }
     compileOptions {
@@ -120,6 +152,9 @@ dependencies {
     
     // Testing
     testImplementation("junit:junit:4.13.2")
+    testImplementation("org.robolectric:robolectric:4.13")
+    testImplementation("androidx.test:core:1.6.1")
+    testImplementation("org.mockito:mockito-core:5.14.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
     androidTestImplementation(platform("androidx.compose:compose-bom:2024.11.00"))

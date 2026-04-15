@@ -28,7 +28,19 @@ app/release/
 # Temp and cache
 *.log
 *.tmp
+tmp_*
 *.swp
 *~
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
 
 .fake
