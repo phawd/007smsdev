@@ -34,27 +34,27 @@ class DeliveryReceiver : BroadcastReceiver() {
         when (resultCode) {
             Activity.RESULT_OK -> {
                 Logger.i(TAG, "SMS sent successfully: $messageId")
-                updateDeliveryStatus(messageId, DeliveryStatus.SENT, "SENT")
+                updateDeliveryStatus(messageId, DeliveryStatus.SENT, MessageTracker.STATUS_SENT)
             }
             SmsManager.RESULT_ERROR_GENERIC_FAILURE -> {
                 Logger.e(TAG, "SMS generic failure: $messageId")
-                updateDeliveryStatus(messageId, DeliveryStatus.FAILED, "FAILED", "Generic failure")
+                updateDeliveryStatus(messageId, DeliveryStatus.FAILED, MessageTracker.STATUS_FAILED, "Generic failure")
             }
             SmsManager.RESULT_ERROR_NO_SERVICE -> {
                 Logger.e(TAG, "SMS no service: $messageId")
-                updateDeliveryStatus(messageId, DeliveryStatus.FAILED, "FAILED", "No service")
+                updateDeliveryStatus(messageId, DeliveryStatus.FAILED, MessageTracker.STATUS_FAILED, "No service")
             }
             SmsManager.RESULT_ERROR_NULL_PDU -> {
                 Logger.e(TAG, "SMS null PDU: $messageId")
-                updateDeliveryStatus(messageId, DeliveryStatus.FAILED, "FAILED", "Null PDU")
+                updateDeliveryStatus(messageId, DeliveryStatus.FAILED, MessageTracker.STATUS_FAILED, "Null PDU")
             }
             SmsManager.RESULT_ERROR_RADIO_OFF -> {
                 Logger.e(TAG, "SMS radio off: $messageId")
-                updateDeliveryStatus(messageId, DeliveryStatus.FAILED, "FAILED", "Radio off")
+                updateDeliveryStatus(messageId, DeliveryStatus.FAILED, MessageTracker.STATUS_FAILED, "Radio off")
             }
             else -> {
                 Logger.w(TAG, "SMS unknown result: $messageId, code: $resultCode")
-                updateDeliveryStatus(messageId, DeliveryStatus.FAILED, "FAILED", "Unknown result code $resultCode")
+                updateDeliveryStatus(messageId, DeliveryStatus.FAILED, MessageTracker.STATUS_FAILED, "Unknown result code $resultCode")
             }
         }
     }
@@ -63,15 +63,15 @@ class DeliveryReceiver : BroadcastReceiver() {
         when (resultCode) {
             Activity.RESULT_OK -> {
                 Logger.i(TAG, "SMS delivered successfully: $messageId")
-                updateDeliveryStatus(messageId, DeliveryStatus.DELIVERED, "DELIVERED")
+                updateDeliveryStatus(messageId, DeliveryStatus.DELIVERED, MessageTracker.STATUS_DELIVERED)
             }
             Activity.RESULT_CANCELED -> {
                 Logger.e(TAG, "SMS delivery cancelled: $messageId")
-                updateDeliveryStatus(messageId, DeliveryStatus.UNDELIVERABLE, "FAILED", "Delivery cancelled")
+                updateDeliveryStatus(messageId, DeliveryStatus.UNDELIVERABLE, MessageTracker.STATUS_FAILED, "Delivery cancelled")
             }
             else -> {
                 Logger.w(TAG, "SMS delivery unknown result: $messageId, code: $resultCode")
-                updateDeliveryStatus(messageId, DeliveryStatus.FAILED, "FAILED", "Unknown delivery result $resultCode")
+                updateDeliveryStatus(messageId, DeliveryStatus.FAILED, MessageTracker.STATUS_FAILED, "Unknown delivery result $resultCode")
             }
         }
     }

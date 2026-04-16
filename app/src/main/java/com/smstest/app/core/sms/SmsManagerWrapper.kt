@@ -429,7 +429,7 @@ class SmsManagerWrapper(private val context: Context) {
         if (!report.success) updateStatus(message.id, DeliveryStatus.FAILED)
         MessageTracker.updateStatus(
             messageId = message.id,
-            status = if (report.success) "SENT" else "FAILED",
+            status = if (report.success) MessageTracker.STATUS_SENT else MessageTracker.STATUS_FAILED,
             details = report.error ?: report.details.lastOrNull() ?: ""
         )
     }

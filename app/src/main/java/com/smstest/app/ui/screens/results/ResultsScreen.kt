@@ -20,6 +20,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.smstest.app.core.export.LogExporter
 import com.smstest.app.core.tracking.MessageTracker
+import com.smstest.app.core.tracking.MessageTracker.STATUS_DELIVERED
+import com.smstest.app.core.tracking.MessageTracker.STATUS_FAILED
+import com.smstest.app.core.tracking.MessageTracker.STATUS_PREPARING
+import com.smstest.app.core.tracking.MessageTracker.STATUS_SENT
 import com.smstest.app.core.tracking.TrackedMessage
 import com.smstest.app.ui.theme.*
 import java.text.SimpleDateFormat
@@ -74,7 +78,7 @@ fun ResultsScreen(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 modifier = Modifier.padding(bottom = 16.dp)
             ) {
-                listOf("ALL", "SENT", "DELIVERED", "FAILED", "PREPARING").forEach { filter ->
+                listOf("ALL", STATUS_SENT, STATUS_DELIVERED, STATUS_FAILED, STATUS_PREPARING).forEach { filter ->
                     FilterChip(
                         selected = selectedFilter == filter,
                         onClick = { selectedFilter = filter },
@@ -100,7 +104,9 @@ fun ResultsScreen(
                     verticalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
                     val filtered = messages.filter { msg ->
-                        selectedFilter == "ALL" || msg.status == selectedFilter
+                        selectedFilter == "ALL" ||
+                            msg.status == selectedFilter ||
+                            (selectedFilter == STATUS_SENT && msg.status == STATUS_DELIVERED)
                     }
                     items(filtered, key = { it.id }) { msg ->
                         TrackedMessageCard(msg)
@@ -113,9 +119,9 @@ fun ResultsScreen(
 
 @Composable
 private fun TrackedMessageSummary(messages: List<TrackedMessage>) {
-    val sent = messages.count { it.status in listOf("SENT", "DELIVERED") }
-    val failed = messages.count { it.status == "FAILED" }
-    val pending = messages.count { it.status == "PREPARING" }
+    val sent = messages.count { it.status in listOf(STATUS_SENT, STATUS_DELIVERED) }
+    val failed = messages.count { it.status == STATUS_FAILED }
+    val pending = messages.count { it.status == STATUS_PREPARING }
 
     Row(
         modifier = Modifier.fillMaxWidth(),
@@ -164,15 +170,15 @@ private fun TrackedMessageCard(msg: TrackedMessage) {
     val tsFormat = remember { SimpleDateFormat("MMM dd HH:mm:ss", Locale.getDefault()) }
 
     val statusColor = when (msg.status) {
-        "DELIVERED" -> SuccessGreen
-        "SENT" -> SuccessGreen
-        "FAILED" -> ErrorRed
+        STATUS_DELIVERED -> SuccessGreen
+        STATUS_SENT -> SuccessGreen
+        STATUS_FAILED -> ErrorRed
         else -> WarningOrange
     }
     val statusIcon = when (msg.status) {
-        "DELIVERED", "SENT" -> Icons.Filled.CheckCircle
-        "FAILED" -> Icons.Filled.Error
-        "PREPARING" -> Icons.Filled.Schedule
+        STATUS_DELIVERED, STATUS_SENT -> Icons.Filled.CheckCircle
+        STATUS_FAILED -> Icons.Filled.Error
+        STATUS_PREPARING -> Icons.Filled.Schedule
         else -> Icons.Filled.Cancel
     }
 

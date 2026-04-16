@@ -14,6 +14,11 @@ import java.util.concurrent.ConcurrentHashMap
  */
 object MessageTracker {
     private const val TAG = "MessageTracker"
+
+    const val STATUS_PREPARING = "PREPARING"
+    const val STATUS_SENT = "SENT"
+    const val STATUS_DELIVERED = "DELIVERED"
+    const val STATUS_FAILED = "FAILED"
     
     // Track all messages with their current status
     private val _messages = MutableStateFlow<Map<String, TrackedMessage>>(emptyMap())
@@ -51,7 +56,7 @@ object MessageTracker {
             body = body,
             encoding = encoding,
             messageClass = messageClass,
-            status = "PREPARING",
+            status = STATUS_PREPARING,
             createdAt = System.currentTimeMillis()
         )
         
@@ -82,10 +87,10 @@ object MessageTracker {
             
             // Create notification based on status
             when (status) {
-                "SENT" -> addNotification("✅ Message Sent", "ID: ${messageId.take(8)}", NotificationLevel.SUCCESS)
-                "DELIVERED" -> addNotification("🎉 Message Delivered", "ID: ${messageId.take(8)}", NotificationLevel.SUCCESS)
-                "FAILED" -> addNotification("❌ Send Failed", details.ifEmpty { "Unknown error" }, NotificationLevel.ERROR)
-                "PENDING" -> addNotification("⏳ Sending...", "ID: ${messageId.take(8)}", NotificationLevel.INFO)
+                STATUS_SENT -> addNotification("✅ Message Sent", "ID: ${messageId.take(8)}", NotificationLevel.SUCCESS)
+                STATUS_DELIVERED -> addNotification("🎉 Message Delivered", "ID: ${messageId.take(8)}", NotificationLevel.SUCCESS)
+                STATUS_FAILED -> addNotification("❌ Send Failed", details.ifEmpty { "Unknown error" }, NotificationLevel.ERROR)
+                STATUS_PREPARING -> addNotification("⏳ Sending...", "ID: ${messageId.take(8)}", NotificationLevel.INFO)
             }
             
             Logger.i(TAG, "Status update: $messageId -> $status: $details")

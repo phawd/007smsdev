@@ -37,7 +37,10 @@ private fun resolveMessageType(typeStr: String): MessageType = when (typeStr.upp
     "RCS", "RCS_TEXT" -> MessageType.RCS_TEXT
     "RCS_FILE_TRANSFER" -> MessageType.RCS_FILE_TRANSFER
     "RCS_GROUP_CHAT" -> MessageType.RCS_GROUP_CHAT
-    else -> MessageType.SMS_TEXT
+    else -> {
+        com.smstest.app.core.Logger.w("TestScreen", "Unknown message type: $typeStr, defaulting to SMS_TEXT")
+        MessageType.SMS_TEXT
+    }
 }
 
 private val SMS_TYPES = setOf(
@@ -245,6 +248,15 @@ fun TestScreen(
                     Button(
                         onClick = {
                             scope.launch {
+                                // Validate binary port before entering the try block so return@launch
+                                // is valid and the finally still resets testRunning.
+                                if (messageTypeEnum == MessageType.SMS_BINARY &&
+                                    binaryPort.trim().isNotEmpty() &&
+                                    binaryPort.trim().toIntOrNull() == null
+                                ) {
+                                    snackbarHostState.showSnackbar("Invalid port number — must be a valid integer")
+                                    return@launch
+                                }
                                 testRunning = true
                                 try {
                                     val port = if (messageTypeEnum == MessageType.SMS_BINARY) {

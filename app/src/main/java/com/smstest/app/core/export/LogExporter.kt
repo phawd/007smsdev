@@ -228,7 +228,7 @@ object LogExporter {
                         msg.status,
                         tsFormat.format(Date(msg.createdAt)),
                         tsFormat.format(Date(msg.lastUpdate))
-                    ).joinToString(","))
+                    ).joinToString(",") { escapeCsvField(it) })
                 }
             }
 
@@ -238,6 +238,16 @@ object LogExporter {
         } catch (e: Exception) {
             Log.e(TAG, "Failed to export tracked messages", e)
             false
+        }
+    }
+
+    /** Wrap a CSV field in quotes if it contains a comma, quote, or newline. */
+    private fun escapeCsvField(value: String): String {
+        val escaped = value.replace("\"", "\"\"")
+        return if (escaped.contains(',') || escaped.contains('"') || escaped.contains('\n')) {
+            "\"$escaped\""
+        } else {
+            escaped
         }
     }
 
