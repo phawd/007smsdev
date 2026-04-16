@@ -15,6 +15,7 @@ import com.smstest.app.core.model.MessageType
 import com.smstest.app.core.model.SmsEncoding
 import com.smstest.app.core.root.RootAccessManager
 import com.smstest.app.core.root.RootActivityType
+import com.smstest.app.core.tracking.MessageTracker
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -55,6 +56,14 @@ class SmsManagerWrapper(private val context: Context) {
     suspend fun sendSms(message: Message): Result<String> = withContext(Dispatchers.IO) {
         val diagnostics = mutableListOf<String>()
         val messageId = message.id
+        MessageTracker.trackMessage(
+            messageId = messageId,
+            destination = message.destination,
+            messageType = message.type.name,
+            body = message.body.orEmpty(),
+            encoding = message.encoding.name,
+            messageClass = message.messageClass.name
+        )
         try {
             diagnostics += "Preparing ${message.type} to ${message.destination}"
             val rootAvailable = RootAccessManager.isRootAvailable()
@@ -418,6 +427,11 @@ class SmsManagerWrapper(private val context: Context) {
             if (report.success) RootActivityType.SUCCESS else RootActivityType.ERROR
         )
         if (!report.success) updateStatus(message.id, DeliveryStatus.FAILED)
+        MessageTracker.updateStatus(
+            messageId = message.id,
+            status = if (report.success) "SENT" else "FAILED",
+            details = report.error ?: report.details.lastOrNull() ?: ""
+        )
     }
 }
 

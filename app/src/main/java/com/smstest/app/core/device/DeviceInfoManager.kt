@@ -3,7 +3,7 @@ package com.smstest.app.core.device
 import android.content.Context
 import android.os.Build
 import android.telephony.TelephonyManager
-import android.util.Log
+import com.smstest.app.core.Logger
 import com.smstest.app.core.at.AtCapabilityScanResult
 import com.smstest.app.core.at.AtCommandManager
 import com.smstest.app.core.root.RootAccessManager
@@ -86,7 +86,7 @@ object DeviceInfoManager {
                 RootActivityType.SUCCESS
             )
         } catch (e: Exception) {
-            Log.e(TAG, "Device detection failed", e)
+            Logger.e(TAG, "Device detection failed", e)
             appendProgress("❌ Detection failed: ${e.message}")
             RootAccessManager.logActivity("Detection failed: ${e.message}", RootActivityType.ERROR)
         } finally {
@@ -187,6 +187,6 @@ object DeviceInfoManager {
     private fun appendProgress(line: String) {
         val updated = _detectionProgress.value + line
         _detectionProgress.value = updated.takeLast(50)
-        Log.d(TAG, line)
+        Logger.d(TAG, line)
     }
 }

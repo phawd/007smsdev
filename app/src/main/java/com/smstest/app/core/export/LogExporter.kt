@@ -10,6 +10,7 @@ import com.smstest.app.core.root.RootActivity
 import com.smstest.app.core.root.RootActivityType
 import com.smstest.app.core.model.TestResult
 import com.smstest.app.core.model.TestStatus
+import com.smstest.app.core.tracking.TrackedMessage
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
@@ -106,11 +107,10 @@ object LogExporter {
                     val errors = result.errors.joinToString("; ").replace(",", ";").replace("\n", " ")
                     val violations = result.rfcViolations.joinToString("; ").replace(",", ";").replace("\n", " ")
 
-                    // Map using the established TestResult fields
-                    val timestampStr = result.timestamp
-                    val duration = result.sendDuration
-                    val messageSize = result.messageSize
-                    val parts = result.messageParts
+                    val timestampStr = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US).format(result.startTime)
+                    val duration = result.metrics?.sendDuration ?: 0L
+                    val messageSize = result.metrics?.messageSize ?: 0
+                    val parts = result.metrics?.partsSent ?: 0
 
                     appendLine(listOf(
                         result.scenarioId,
@@ -201,6 +201,46 @@ object LogExporter {
         }
     }
     
+    /**
+     * Export tracked messages to a CSV file and share.
+     */
+    fun exportTrackedMessages(context: Context, messages: List<TrackedMessage>): Boolean {
+        return try {
+            if (messages.isEmpty()) {
+                Log.w(TAG, "No tracked messages to export")
+                return false
+            }
+
+            val dateFormat = SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.US)
+            val timestamp = dateFormat.format(Date())
+            val fileName = "smstest_messages_$timestamp.csv"
+            val tsFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US)
+
+            val csvContent = buildString {
+                appendLine("Message ID,Destination,Type,Encoding,Class,Status,Created,Last Updated")
+                messages.forEach { msg ->
+                    appendLine(listOf(
+                        msg.id.take(8),
+                        msg.destination,
+                        msg.type,
+                        msg.encoding,
+                        msg.messageClass,
+                        msg.status,
+                        tsFormat.format(Date(msg.createdAt)),
+                        tsFormat.format(Date(msg.lastUpdate))
+                    ).joinToString(","))
+                }
+            }
+
+            shareTextFile(context, fileName, csvContent, "text/csv")
+            Log.i(TAG, "Tracked messages exported successfully: $fileName")
+            true
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to export tracked messages", e)
+            false
+        }
+    }
+
     /**
      * Helper function to write file and launch share intent
      */

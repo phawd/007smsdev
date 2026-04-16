@@ -10,7 +10,6 @@ import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Error
 import androidx.compose.material.icons.filled.Schedule
-import androidx.compose.material.icons.filled.AccessTime
 import androidx.compose.material.icons.filled.Cancel
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -20,7 +19,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.smstest.app.core.export.LogExporter
-import com.smstest.app.core.model.*
+import com.smstest.app.core.tracking.MessageTracker
+import com.smstest.app.core.tracking.TrackedMessage
 import com.smstest.app.ui.theme.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -31,10 +31,10 @@ fun ResultsScreen(
     onNavigateBack: () -> Unit
 ) {
     val context = LocalContext.current
-    // TODO: Connect to actual test results repository/database
-    val testResults = remember { emptyList<TestResult>() }
+    val messagesMap by MessageTracker.messages.collectAsState()
+    val messages = remember(messagesMap) { messagesMap.values.sortedByDescending { it.createdAt } }
     var selectedFilter by remember { mutableStateOf("ALL") }
-    
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -46,10 +46,10 @@ fun ResultsScreen(
                 },
                 actions = {
                     IconButton(onClick = {
-                        if (testResults.isEmpty()) {
+                        if (messages.isEmpty()) {
                             Toast.makeText(context, "No results to export", Toast.LENGTH_SHORT).show()
                         } else {
-                            LogExporter.exportTestResults(context, testResults)
+                            LogExporter.exportTrackedMessages(context, messages)
                         }
                     }) {
                         Icon(Icons.Filled.Download, contentDescription = "Export")
@@ -65,16 +65,16 @@ fun ResultsScreen(
                 .padding(16.dp)
         ) {
             // Summary Cards
-            TestSummaryCards(testResults)
-            
+            TrackedMessageSummary(messages)
+
             Spacer(Modifier.height(16.dp))
-            
+
             // Filter Chips
             Row(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                 modifier = Modifier.padding(bottom = 16.dp)
             ) {
-                listOf("ALL", "PASSED", "FAILED", "RUNNING").forEach { filter ->
+                listOf("ALL", "SENT", "DELIVERED", "FAILED", "PREPARING").forEach { filter ->
                     FilterChip(
                         selected = selectedFilter == filter,
                         onClick = { selectedFilter = filter },
@@ -82,17 +82,29 @@ fun ResultsScreen(
                     )
                 }
             }
-            
+
             // Results List
-            LazyColumn(
-                verticalArrangement = Arrangement.spacedBy(12.dp)
-            ) {
-                val filteredResults = testResults.filter {
-                    selectedFilter == "ALL" || it.status.name == selectedFilter
+            if (messages.isEmpty()) {
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(
+                        "No messages sent yet.\nUse Test Scenarios or the Send button to get started.",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
                 }
-                
-                items(filteredResults) { result ->
-                    TestResultCard(result = result)
+            } else {
+                LazyColumn(
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    val filtered = messages.filter { msg ->
+                        selectedFilter == "ALL" || msg.status == selectedFilter
+                    }
+                    items(filtered, key = { it.id }) { msg ->
+                        TrackedMessageCard(msg)
+                    }
                 }
             }
         }
@@ -100,33 +112,18 @@ fun ResultsScreen(
 }
 
 @Composable
-fun TestSummaryCards(results: List<TestResult>) {
-    val passed = results.count { it.status == TestStatus.PASSED }
-    val failed = results.count { it.status == TestStatus.FAILED }
-    val running = results.count { it.status == TestStatus.RUNNING }
-    
+private fun TrackedMessageSummary(messages: List<TrackedMessage>) {
+    val sent = messages.count { it.status in listOf("SENT", "DELIVERED") }
+    val failed = messages.count { it.status == "FAILED" }
+    val pending = messages.count { it.status == "PREPARING" }
+
     Row(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        SummaryCard(
-            title = "Passed",
-            count = passed,
-            color = SuccessGreen,
-            modifier = Modifier.weight(1f)
-        )
-        SummaryCard(
-            title = "Failed",
-            count = failed,
-            color = ErrorRed,
-            modifier = Modifier.weight(1f)
-        )
-        SummaryCard(
-            title = "Running",
-            count = running,
-            color = WarningOrange,
-            modifier = Modifier.weight(1f)
-        )
+        SummaryCard(title = "Sent", count = sent, color = SuccessGreen, modifier = Modifier.weight(1f))
+        SummaryCard(title = "Failed", count = failed, color = ErrorRed, modifier = Modifier.weight(1f))
+        SummaryCard(title = "Pending", count = pending, color = WarningOrange, modifier = Modifier.weight(1f))
     }
 }
 
@@ -139,9 +136,7 @@ fun SummaryCard(
 ) {
     Card(
         modifier = modifier,
-        colors = CardDefaults.cardColors(
-            containerColor = color.copy(alpha = 0.1f)
-        )
+        colors = CardDefaults.cardColors(containerColor = color.copy(alpha = 0.1f))
     ) {
         Column(
             modifier = Modifier.padding(16.dp),
@@ -164,144 +159,74 @@ fun SummaryCard(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TestResultCard(result: TestResult) {
+private fun TrackedMessageCard(msg: TrackedMessage) {
     var expanded by remember { mutableStateOf(false) }
-    
+    val tsFormat = remember { SimpleDateFormat("MMM dd HH:mm:ss", Locale.getDefault()) }
+
+    val statusColor = when (msg.status) {
+        "DELIVERED" -> SuccessGreen
+        "SENT" -> SuccessGreen
+        "FAILED" -> ErrorRed
+        else -> WarningOrange
+    }
+    val statusIcon = when (msg.status) {
+        "DELIVERED", "SENT" -> Icons.Filled.CheckCircle
+        "FAILED" -> Icons.Filled.Error
+        "PREPARING" -> Icons.Filled.Schedule
+        else -> Icons.Filled.Cancel
+    }
+
     Card(
         onClick = { expanded = !expanded },
         modifier = Modifier.fillMaxWidth()
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
-            // Header
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Icon(
-                    imageVector = when (result.status) {
-                        TestStatus.PASSED -> Icons.Filled.CheckCircle
-                        TestStatus.FAILED -> Icons.Filled.Error
-                        TestStatus.RUNNING -> Icons.Filled.Schedule
-                        TestStatus.TIMEOUT -> Icons.Filled.AccessTime
-                        TestStatus.CANCELLED -> Icons.Filled.Cancel
-                    },
+                    imageVector = statusIcon,
                     contentDescription = null,
-                    tint = when (result.status) {
-                        TestStatus.PASSED -> SuccessGreen
-                        TestStatus.FAILED -> ErrorRed
-                        TestStatus.RUNNING -> WarningOrange
-                        TestStatus.TIMEOUT -> WarningOrange
-                        TestStatus.CANCELLED -> MaterialTheme.colorScheme.onSurfaceVariant
-                    }
+                    tint = statusColor
                 )
-                
                 Spacer(Modifier.width(12.dp))
-                
                 Column(modifier = Modifier.weight(1f)) {
                     Text(
-                        text = result.scenarioId,
+                        text = msg.destination,
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = SimpleDateFormat("MMM dd, yyyy HH:mm:ss", Locale.getDefault())
-                            .format(result.startTime),
+                        text = "${msg.type} • ${tsFormat.format(Date(msg.createdAt))}",
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }
-                
-                Badge {
-                    Text(result.status.name)
+                Badge(containerColor = statusColor) {
+                    Text(msg.status)
                 }
             }
-            
-            // Delivery Status
-            Spacer(Modifier.height(8.dp))
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Text(
-                    text = "Delivery: ${result.deliveryStatus}",
-                    style = MaterialTheme.typography.bodySmall
-                )
-                result.metrics?.let {
-                    Text(
-                        text = "${it.sendDuration}ms",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.primary
-                    )
-                }
-            }
-            
-            // Expanded Details
+
             if (expanded) {
-                HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
-                
-                // Metrics
-                result.metrics?.let { metrics ->
-                    Text("Performance Metrics", style = MaterialTheme.typography.titleSmall)
-                    Spacer(Modifier.height(8.dp))
-                    
-                    MetricRow("Send Duration", "${metrics.sendDuration}ms")
-                    metrics.deliveryDuration?.let {
-                        MetricRow("Delivery Duration", "${it}ms")
-                    }
-                    MetricRow("Message Size", "${metrics.messageSize} bytes")
-                    MetricRow("Parts Sent", "${metrics.partsSent}")
-                    MetricRow("Parts Received", "${metrics.partsReceived}")
+                HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+                Text("ID: ${msg.id.take(8)}…", style = MaterialTheme.typography.bodySmall)
+                Text("Encoding: ${msg.encoding}", style = MaterialTheme.typography.bodySmall)
+                Text("Class: ${msg.messageClass}", style = MaterialTheme.typography.bodySmall)
+                if (msg.body.isNotBlank()) {
+                    Text("Body: ${msg.body.take(80)}${if (msg.body.length > 80) "…" else ""}",
+                        style = MaterialTheme.typography.bodySmall)
                 }
-                
-                // Errors
-                if (result.errors.isNotEmpty()) {
-                    Spacer(Modifier.height(12.dp))
-                    Text("Errors", style = MaterialTheme.typography.titleSmall)
-                    result.errors.forEach { error ->
-                        Text(
-                            text = "• $error",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = ErrorRed
-                        )
-                    }
-                }
-                
-                // RFC Violations
-                if (result.rfcViolations.isNotEmpty()) {
-                    Spacer(Modifier.height(12.dp))
-                    Text("RFC Violations", style = MaterialTheme.typography.titleSmall)
-                    result.rfcViolations.forEach { violation ->
-                        Text(
-                            text = "• $violation",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = WarningOrange
-                        )
+                if (msg.statusHistory.isNotEmpty()) {
+                    Spacer(Modifier.height(4.dp))
+                    Text("History", style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.SemiBold)
+                    msg.statusHistory.takeLast(5).forEach { update ->
+                        val t = tsFormat.format(Date(update.timestamp))
+                        val detail = if (update.details.isNotBlank()) " — ${update.details}" else ""
+                        Text("• $t ${update.status}$detail", style = MaterialTheme.typography.bodySmall)
                     }
                 }
             }
         }
     }
 }
-
-@Composable
-fun MetricRow(label: String, value: String) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 4.dp),
-        horizontalArrangement = Arrangement.SpaceBetween
-    ) {
-        Text(
-            text = label,
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
-        )
-        Text(
-            text = value,
-            style = MaterialTheme.typography.bodySmall,
-            fontWeight = FontWeight.Bold
-        )
-    }
-}
-
-

@@ -91,6 +91,7 @@ fun HomeScreen(
     onNavigateToResults: () -> Unit,
     onNavigateToSettings: () -> Unit,
     onNavigateToMonitor: () -> Unit = {},
+    onNavigateToScenarios: () -> Unit = {},
     onNavigateToResearchArtifacts: () -> Unit = {}
 ) {
     val context = LocalContext.current
@@ -205,6 +206,17 @@ fun HomeScreen(
                         Spacer(Modifier.width(8.dp))
                         Text("SMS Monitor")
                     }
+                }
+            }
+
+            item {
+                Button(
+                    onClick = onNavigateToScenarios,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Icon(Icons.Filled.ViewStream, contentDescription = null)
+                    Spacer(Modifier.width(8.dp))
+                    Text("Test Scenarios")
                 }
             }
 
@@ -346,7 +358,7 @@ fun HomeScreen(
 }
 
 @Composable
-private fun VerboseSendReportCard(report: SmsSendReport) {
+fun VerboseSendReportCard(report: SmsSendReport) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer)

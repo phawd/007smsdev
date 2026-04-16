@@ -1,6 +1,6 @@
 package com.smstest.app.core.tracking
 
-import android.util.Log
+import com.smstest.app.core.Logger
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -61,7 +61,7 @@ object MessageTracker {
         logEvent("INFO", "Message $messageId created for $destination")
         addNotification("📤 Preparing message", "To: $destination", NotificationLevel.INFO)
         
-        Log.i(TAG, "Tracking new message: $messageId to $destination")
+        Logger.i(TAG, "Tracking new message: $messageId to $destination")
     }
     
     /**
@@ -88,8 +88,8 @@ object MessageTracker {
                 "PENDING" -> addNotification("⏳ Sending...", "ID: ${messageId.take(8)}", NotificationLevel.INFO)
             }
             
-            Log.i(TAG, "Status update: $messageId -> $status: $details")
-        } ?: Log.w(TAG, "Message not found: $messageId")
+            Logger.i(TAG, "Status update: $messageId -> $status: $details")
+        } ?: Logger.w(TAG, "Message not found: $messageId")
     }
     
     /**
@@ -112,11 +112,10 @@ object MessageTracker {
         }
         
         when (level) {
-            "ERROR" -> Log.e(TAG, message)
-            "WARN" -> Log.w(TAG, message)
-            "INFO" -> Log.i(TAG, message)
-            "DEBUG" -> Log.d(TAG, message)
-            else -> Log.v(TAG, message)
+            "ERROR" -> Logger.e(TAG, message)
+            "WARN" -> Logger.w(TAG, message)
+            "INFO" -> Logger.i(TAG, message)
+            else -> Logger.d(TAG, message)
         }
     }
     
